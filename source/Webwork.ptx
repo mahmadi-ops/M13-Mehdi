@@ -42,7 +42,7 @@ defines:
     <li> None of these</li>
   </ol>
 </p>
-<p>Enter number of statement that is correct.</p> 
+<p>Enter number of statement that is correct: <var name="'$sum'" width="5"/></p> 
 </statement>
 
   <solution>
@@ -52,14 +52,6 @@ defines:
   </solution>
 </webwork>
 
-<exercise label="mylabel">
-  <webwork>
-    <statement>
-      <p>
-        <m>1+2=</m><var name="'3'" width="5"/>
-      </p>
-    </statement>
-  </webwork>
-</exercise>
+
   
 </section>
