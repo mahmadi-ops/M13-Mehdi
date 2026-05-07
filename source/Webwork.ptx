@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Webwork</title>
+  <p>
+    In this section, we will include samples of Webwork problems.
+  </p>
+    <exercise xml:id="exe-numeric-sum">
+      <webwork>
+        <pg-code>
+          Context("LimitedNumeric");
+          $a = Compute(random(1, 9));
+          $b = Compute(random(1, 9));
+          $c = $a + $b;
+        </pg-code>
+        <statement>
+          <p>Compute <m><var name="$a"/> + <var name="$b"/></m>.</p>
+          <instruction>Type your answer without using the <c>+</c> sign.</instruction>
+          <p>The sum is <var name="$c" width="2"/>.</p>
+        </statement>
+        <solution>
+          <p><m><var name="$a"/> + <var name="$b"/> = <var name="$c"/></m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
+    
+     <exercise xml:id="exe-implicit-plane">
+      <webwork>
+        <pg-code>
+          Context("ImplicitPlane");
+          $ans = ImplicitPlane("x+y=1");
+        </pg-code>
+        <statement>
+          <p>The answer is <m>x+y=1</m>.</p>
+          <p><var name="$ans" width="8"/></p>
+        </statement>
+      </webwork>
+
+  
+</section>
