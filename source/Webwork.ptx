@@ -42,7 +42,7 @@ defines:
     <li> None of these</li>
   </ol>
 </p>
-<p>Enter number of statement that is correct: <var name="'$sum'" width="5"/></p> 
+<p>Enter number of statement that is correct: <var name="$sum" width="5"/></p> 
 </statement>
 
   <solution>
