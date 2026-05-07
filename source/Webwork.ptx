@@ -24,15 +24,15 @@ if($sum==3) {$ans='an ellipsoid'};
   </pg-code>
 
 <statement>
-
-
 <p>
 State whether the equation 
 </p>
 <m> \left( \frac{x}{<var name="$a"/>} \right)^2 <var name="$ysign"/> \left( \frac{y}{<var name="$b"/>} \right)^2 <var name="$zsign"/> \left( \frac{z}{<var name="$c"/>} \right)^2=1 </m>
+
 <p>
 defines (enter number of statement): 
 </p>
+
 <p>
   <ol>
     <li> A hyperboloid of two sheets</li>
