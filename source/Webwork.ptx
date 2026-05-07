@@ -52,6 +52,14 @@ defines:
   </solution>
 </webwork>
 
-
+<exercise label="mylabel">
+  <webwork>
+    <statement>
+      <p>
+        <m>1+2=</m><var name="'3'" width="5"/>
+      </p>
+    </statement>
+  </webwork>
+</exercise>
   
 </section>
