@@ -34,10 +34,12 @@ State whether the equation
 defines (enter number of statement): 
 </p>
 <p>
-1. A hyperboloid of two sheets
-2. A hyperboloid of one sheet
-3. An ellipsoid
-4. None of these
+  <ol>
+    <li> A hyperboloid of two sheets</li>
+    <li> A hyperboloid of one sheet</li>
+    <li> An ellipsoid</li>
+    <li> None of these</li>
+  </ol>
 </p>
 </statement>
 
