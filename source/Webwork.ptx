@@ -29,7 +29,7 @@ if($sum==3) {$ans='an ellipsoid'};
 <p>
 State whether the equation 
 </p>
-<m> \left( \frac{x}{<var name="$a"/>} \right)^2 $ysign \left( \frac{y}{$b} \right)^2 $zsign \left( \frac{z}{$c} \right)^2=1\) </m>
+<m> \left( \frac{x}{<var name="$a"/>} \right)^2 <var name="$ysign"/> \left( \frac{y}{<var name="$b"/>} \right)^2 <var name="$zsign"/> \left( \frac{z}{<var name="$c"/>} \right)^2=1\) </m>
 <p>
 defines (enter number of statement): 
 </p>
