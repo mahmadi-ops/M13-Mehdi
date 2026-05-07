@@ -4,26 +4,40 @@
   <p>
     In this section, we will include samples of Webwork problems.
   </p>
-  
+
 <webwork>
   <pg-code>
     Context("LimitedNumeric");
-    $a = Compute(random(1, 9));
-    $b = Compute(random(1, 9));
-    $c = $a + $b;
+   $a=random(2,8,1);
+$b=random(2,8,1);
+$c=random(2,8,1);
+$ysign=list_random(0,1);
+$zsign=list_random(0,1);
+$sum=$ysign+$zsign+1;
+if ($ysign==0) {$ysign='-'};
+if ($ysign==1) {$ysign='+'};
+if ($zsign==0) {$zsign='-'};
+if ($zsign==1) {$zsign='+'};
+if($sum==1) {$ans='a hyperboloid of two sheets'};
+if($sum==2) {$ans='a hyperboloid of one sheet'};
+if($sum==3) {$ans='an ellipsoid'};
   </pg-code>
 
-  <statement>
-    <p>
-      Compute <m><var name="$a"/> + <var name="$b"/></m>.
-    </p>
-    <instruction>
-      Type your answer without using the <c>+</c> sign.
-    </instruction>
-    <p>
-      The sum is <var name="$c" width="2"/>.
-    </p>
-  </statement>
+<statement>
+
+
+<p>
+State whether the equation 
+</p>
+<m> \left( \frac{x}{$a} \right)^2 $ysign \left( \frac{y}{$b} \right)^2 $zsign \left( \frac{z}{$c} \right)^2=1\) </m>
+<p>
+defines (enter number of statement): 
+</p>
+1. A hyperboloid of two sheets
+2. A hyperboloid of one sheet
+3. An ellipsoid
+4. None of these
+</statement>
 
   <solution>
     <p>
