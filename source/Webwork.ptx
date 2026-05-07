@@ -29,9 +29,9 @@ State whether the equation
 </p>
 <m> \left( \frac{x}{<var name="$a"/>} \right)^2 <var name="$ysign"/> \left( \frac{y}{<var name="$b"/>} \right)^2 <var name="$zsign"/> \left( \frac{z}{<var name="$c"/>} \right)^2=1 </m>
 
-<p>
+<instruction>
 defines (enter number of statement): 
-</p>
+</instruction>
 
 <p>
   <ol>
