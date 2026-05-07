@@ -28,11 +28,11 @@ if($sum==3) {$ans='an ellipsoid'};
 State whether the equation 
 
 <m> \left( \frac{x}{<var name="$a"/>} \right)^2 <var name="$ysign"/> \left( \frac{y}{<var name="$b"/>} \right)^2 <var name="$zsign"/> \left( \frac{z}{<var name="$c"/>} \right)^2=1 </m>
+defines:
 </p>
 
-<p>
-defines (enter number of statement): 
-</p>
+
+
 
 <p>
   <ol>
@@ -42,6 +42,7 @@ defines (enter number of statement):
     <li> None of these</li>
   </ol>
 </p>
+<p>Enter number of statement that is correct.</p> 
 </statement>
 
   <solution>
