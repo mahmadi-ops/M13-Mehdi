@@ -47,7 +47,7 @@ defines:
 
   <solution>
     <p>
-     This equation is the equation of <var name="$sum"/>.
+     This equation is the equation of <var name="$ans"/>.
     </p>
   </solution>
 </webwork>
