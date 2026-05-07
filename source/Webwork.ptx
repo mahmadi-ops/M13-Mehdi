@@ -5,7 +5,7 @@
     In this section, we will include samples of Webwork problems.
   </p>
 
-<webwork>
+<exercise label="mylabel"><webwork>
   <pg-code>
     Context("LimitedNumeric");
    $a=random(2,8,1);
@@ -50,7 +50,8 @@ defines:
      This equation is the equation of <var name="$ans"/>.
     </p>
   </solution>
-</webwork>
+</webwork >
+</exercise>
 
 
   
