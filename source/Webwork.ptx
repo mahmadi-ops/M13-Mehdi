@@ -53,5 +53,42 @@ defines:
 </webwork >
 </exercise>
 
+<div id="tutor-chatbot" style="border: 1px solid #ccc; padding: 20px; max-width: 400px; border-radius: 8px;">
+  <h3>Class Assistant</h3>
+  <div id="chat-box" style="height: 200px; overflow-y: scroll; margin-bottom: 10px; border: 1px solid #eee; padding: 5px;">
+    <p><strong>Bot:</strong> Hello! Select a question from the menu below to get started.</p>
+  </div>
+  
+  <select id="student-question" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    <option value="">-- Choose an approved question --</option>
+    <option value="What are the office hours for this class?">What are the office hours?</option>
+    <option value="When is the deadline for Assignment 1?">When is Assignment 1 due?</option>
+    <option value="Can you explain standard deviation?">Explain standard deviation</option>
+  </select>
+  
+  <button onclick="askTutor()" style="width: 100%; padding: 8px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Ask</button>
+</div>
+
+<script>
+async function askTutor() {
+  const selectElement = document.getElementById('student-question');
+  const question = selectElement.value;
+  if (!question) return;
+
+  const chatBox = document.getElementById('chat-box');
+  chatBox.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+
+  // Call your secure backend wrapper
+  const response = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: question })
+  });
+  
+  const data = await response.json();
+  chatBox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+  chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+}
+</script>
   
 </section>
