@@ -53,41 +53,82 @@ defines:
 </webwork >
 </exercise>
 
-<div id="tutor-chatbot" style="border: 1px solid #ccc; padding: 20px; max-width: 400px; border-radius: 8px;">
+<div id="tutor-chatbot" style="border: 1px solid #ccc; padding: 20px; max-width: 400px; border-radius: 8px; font-family: sans-serif; background: #fff;">
   <h3>Class Assistant</h3>
-  <div id="chat-box" style="height: 200px; overflow-y: scroll; margin-bottom: 10px; border: 1px solid #eee; padding: 5px;">
+  <div id="chat-box" style="height: 200px; overflow-y: auto; margin-bottom: 10px; border: 1px solid #eee; padding: 10px; background: #f9f9f9; border-radius: 4px;">
     <p><strong>Bot:</strong> Hello! Select a question from the menu below to get started.</p>
   </div>
   
-  <select id="student-question" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  <select id="student-question" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;">
     <option value="">-- Choose an approved question --</option>
     <option value="What are the office hours for this class?">What are the office hours?</option>
     <option value="When is the deadline for Assignment 1?">When is Assignment 1 due?</option>
     <option value="Can you explain standard deviation?">Explain standard deviation</option>
   </select>
   
-  <button onclick="askTutor()" style="width: 100%; padding: 8px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Ask</button>
+  <button id="ask-btn" onclick="askTutor()" style="width: 100%; padding: 8px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Ask</button>
 </div>
 
 <script>
 async function askTutor() {
+  const apiKey = "YOUR_GEMINI_API_KEY_HERE"; // <-- REPLACE WITH YOUR ACTUAL GEMINI API KEY
+  
   const selectElement = document.getElementById('student-question');
   const question = selectElement.value;
+  const button = document.getElementById('ask-btn');
   if (!question) return;
 
   const chatBox = document.getElementById('chat-box');
-  chatBox.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
-
-  // Call your secure backend wrapper
-  const response = await fetch('/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: question })
-  });
   
-  const data = await response.json();
-  chatBox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
-  chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+  // 1. Show user's question and a loading state
+  chatBox.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+  const loadingId = "loading-" + Date.now();
+  chatBox.innerHTML += `<p id="${loadingId}"><strong>Bot:</strong> <i>Thinking...</i></p>`;
+  chatBox.scrollTop = chatBox.scrollHeight;
+  
+  // Disable button while waiting
+  button.disabled = true;
+  button.style.background = "#aaa";
+
+  // 2. Setup strict system instructions directly inside the payload
+  const systemInstruction = `You are a strict educational assistant. Your only job is to answer these specific questions:
+  1. "What are the office hours for this class?" (Answer: Mon/Wed 2-4 PM in Room 302)
+  2. "When is the deadline for Assignment 1?" (Answer: Friday at 11:59 PM)
+  3. "Can you explain standard deviation?" (Answer: Standard deviation measures the amount of variation or dispersion of a set of values.)
+  If the user's prompt does not closely match one of these, reply exactly with: "I am sorry, I can only answer approved course questions."`;
+
+  // 3. Call Gemini directly using standard browser fetch
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: question }] }],
+        systemInstruction: { parts: [{ text: systemInstruction }] }
+      })
+    });
+
+    const data = await response.json();
+    
+    // Extract the text text from Gemini's response structure
+    const reply = data.candidates[0].content.parts[0].text;
+    
+    // Remove loading indicator and show real reply
+    document.getElementById(loadingId).remove();
+    chatBox.innerHTML += `<p><strong>Bot:</strong> ${reply}</p>`;
+    
+  } catch (error) {
+    console.error(error);
+    document.getElementById(loadingId).remove();
+    chatBox.innerHTML += `<p style="color: red;"><strong>Bot:</strong> Error connecting to the assistant.</p>`;
+  }
+
+  // Reset UI
+  button.disabled = false;
+  button.style.background = "#007bff";
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 </script>
   
