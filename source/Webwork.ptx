@@ -53,11 +53,15 @@ defines:
 </webwork >
 </exercise>
 
-<interactive xml:id="gemini-chatbot" platform="html" width="100%" aspect="4:3">
-  <instructions>
-    <p>Select a question below to consult the AI Course Assistant.</p>
-  </instructions>
-  <iframe src="tutor.html" />
-</interactive>
+<div id="ai-tutor">
+  <textarea id="question"
+            placeholder="Ask about this section"></textarea>
+
+  <button onclick="askTutor()">
+      Ask Tutor
+  </button>
+
+  <div id="response"></div>
+</div>
   
 </section>
