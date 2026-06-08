@@ -53,15 +53,6 @@ defines:
 </webwork >
 </exercise>
 
-<div id="ai-tutor">
-  <textarea id="question"
-            placeholder="Ask about this section"></textarea>
 
-  <button onclick="askTutor()">
-      Ask Tutor
-  </button>
-
-  <div id="response"></div>
-</div>
   
 </section>
