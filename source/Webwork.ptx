@@ -5,7 +5,7 @@
     In this section, we will include samples of Webwork problems.
   </p>
 
-<exercise label="mylabel"><webwork>
+<exercise label="FirstWebWork"><webwork>
   <pg-code>
     Context("LimitedNumeric");
    $a=random(2,8,1);
@@ -51,6 +51,53 @@ defines:
     </p>
   </solution>
 </webwork >
+</exercise>
+
+<exercise label="SecondWebWork"><webwork>
+  <pg-code>
+    Context("Numeric");
+$a = random(1,4);
+$b = random(5,10);
+$c = random(1,10);
+Context()->variables->are(x=>"Real",y=>"Real");
+$constraint = Formula("$a*x^2+$b*y^2")->reduce();
+$LM1 = Compute(2*$a);
+$LM2 = Compute(2*$b);
+$ans = Compute("(2*$c)/(($a*$b)^(1/2))")->reduce();
+$image = image("https://d1q29jrdo98n6g.cloudfront.net/embed/p640cd40206726200325f16b1/Rec_insc_ellipse.png", 
+width=>400,height=>400);
+  </pg-code>
+
+<statement>
+<p>
+Find the maximum area of a rectangle which is inscribed in <m>[$constraint]=[$c]</m>.
+</p>
+</statement>
+
+  <solution>
+    <p>
+The area of the rectangle is <m>f(x,y)=4xy</m> and the constraint is <m>g(x,y)=[$constraint]-[$c]=0</m>. 
+Due to the Lagrange Multiplier method, we have <m>\vec{\nabla f}=\lambda \vec{\nabla g}</m>, which gives 
+the following vector equation: 
+    
+    <m>\langle 4y, 4x\rangle=\lambda \langle [$LM1] x, [$LM2] y\rangle</m>.
+    
+This vector equation is equivalent to these two scalar equations: 
+    
+    <m>4y=[$LM1]\lambda x</m>,
+    
+    <m>4x=[$LM2]\lambda y</m>.
+    
+We divide the above equations: <m>\frac{4y}{4x}=\frac{[$LM1] \lambda x}{[$LM2] \lambda y} 
+\Rightarrow \frac{y}{x}=\frac{[$LM1] x}{[$LM2] y} \Rightarrow y^2=\frac{[$a]}{[$b]} x^2</m>. 
+
+Then, we replace this equation into 
+<m>g(x,y)=[$constraint]-[$c]=0</m> to get <m>[$a]x^2+[$a]x^2=[$c]</m>. Hence, <m>x=\sqrt{\frac{[$c]}{[$LM1]}}</m> 
+and <m>y=\sqrt{\frac{[$c]}{[$LM2]}}</m> and the maximum area is 
+<m>4\left(\sqrt{\frac{[$c]}{[$LM1]}}\right)\left(\sqrt{\frac{[$c]}{[$LM2]}}\right)=[$ans]</m>.
+    </p>
+  </solution>
+</webwork>
 </exercise>
 
 </section>
