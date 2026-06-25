@@ -53,6 +53,16 @@ defines:
 </webwork >
 </exercise>
 
+<figure>
+      <caption> The rectangle inscribed in the ellipse. </caption>
+      <image source="Rec_insc_ellipse.png" width="70%">
+        <description>
+          <p>The area of the rectangle is <m>f(x,y)=4xy</m> and the constraint is <m>g(x,y)=[$constraint]-[$c]=0</m>.
+          </p>
+        </description>
+      </image>
+    </figure>
+
 <exercise label="SecondWebWork"><webwork>
   <pg-code>
     Context("Numeric");
@@ -70,18 +80,10 @@ $ans = Compute("(2*$c)/(($a*$b)^(1/2))")->reduce();
 <p>
 Find the maximum area of a rectangle which is inscribed in <m>[$constraint]=[$c]</m>.
 </p>
+
 </statement>
 
   <solution>
-     <figure>
-      <caption> The rectangle inscribed in the ellipse. </caption>
-      <image source="Rec_insc_ellipse.pdf" width="40%">
-        <description>
-          <p>The area of the rectangle is <m>f(x,y)=4xy</m> and the constraint is <m>g(x,y)=[$constraint]-[$c]=0</m>.
-          </p>
-        </description>
-      </image>
-    </figure>
     <p>
 The area of the rectangle is <m>f(x,y)=4xy</m> and the constraint is <m>g(x,y)=[$constraint]-[$c]=0</m>. 
 Due to the Lagrange Multiplier method, we have <m>\vec{\nabla f}=\lambda \vec{\nabla g}</m>, which gives 
