@@ -3,7 +3,7 @@
 
   <bibinfo>
     <author>
-      <personname>Mehdi Ahmadi</personname>
+      <personname>Mehdi Ahmadi and Norman Paris</personname>
     </author>
     <date><today /></date>
   </bibinfo>
@@ -14,7 +14,28 @@
 
   <abstract>
     <p>
-      This document is a template for my future notes.
+      These pages aim to design and implement a series of interactive, accessible web-based 
+      modules that strengthen students’ conceptual understanding of foundational mathematical 
+      ideas through explicit connections to physical phenomena. The project responds to a 
+      persistent challenge observed across STEM disciplines at SCU: students often demonstrate 
+      procedural competence in Mathematics while lacking the ability to transfer their mathematical 
+      knowledge across courses, particularly when mathematical ideas are applied in physical contexts. 
+    </p>
+
+    <p>
+      Two of the main goals of this project are to:
+      <ol>
+        <li>
+          <p>
+            Enhance students’ conceptual understanding of mathematics through physically motivated examples and problems
+          </p>
+        </li>
+        <li>
+          <p>
+            Develop accessible instructional materials that support diverse learners, including those using screen readers or tactile graphics
+          </p>
+        </li>
+      </ol>
     </p>
   </abstract>
 

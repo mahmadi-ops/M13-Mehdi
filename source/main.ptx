@@ -10,7 +10,7 @@
   </docinfo>
 
   <article xml:id="shorttitlelowercase">
-    <title>A Template For My Future Notes</title>
+    <title>MATH 13: Complementary Interactive Modules</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
     <xi:include href="Taylor.ptx" />
