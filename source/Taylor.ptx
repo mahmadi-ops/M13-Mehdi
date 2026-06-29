@@ -1,52 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Taylor Series and its convergence</title>
-  
   <introduction>
     <p>
-      This section is about infinite series. We will mainly focus on presenting the 
-      definitions and providing some examples such as the geometric series.
+      The main objectives of this section are to answer the following questions:
     </p>
   </introduction>
+  <objectives>
+      <ol>
+        <li>
+          <p>
+            Under what conditions, the function <m> f(x) </m> is equal to the Taylor series generated 
+            by <m>f</m> at <m>x = a</m>? That is, when can we say 
+            <m>f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If the Taylor polynomial of degree <m>n</m>, <m>p_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k</m> , is used as an 
+            approximation to <m>f(x)</m>, what is the error in this approximation? 
+            That is, what is the value of <m>R_n(x) = f(x) - p_n(x)</m>?
+          </p>
+        </li>
+      </ol>
 
-  <subsection xml:id="subsec-definitions">
-    <title>Basic Definitions</title>
-    <definition xml:id="def-sequence">
+  </objectives>
+
+   <subsection xml:id="subsection-1">
+    <title> The Remainder Theorem </title>
+    <theorem xml:id="thm-remainder-theorem">
       <statement>
-        <p>A sequence is a list of numbers <m>a_0, a_1, a_2, \ldots</m> 
-        indexed by the natural numbers.</p>
+        <p>
+          Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on an open interval 
+          <m>I</m> containing <m>a</m>. Then for each <m>x\in I</m> and for each positive integer <m>n</m>, there exists a number 
+          <m>c</m> between <m>a</m> and <m>x</m> such that
+          <me>
+            f(x) = p_n(x) + R_n(x),
+          </me>
+          where 
+          <me>
+            p_n(x)= \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k,
+          </me>
+          and
+        <me>
+          R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}.
+        </me>
+        </p>
       </statement>
-    </definition>
+    </theorem>
+    <lemma xml:id="lemma-mean-value-theorem">
+      <statement>
+        <p>
+          Let <m>f(x)</m> be a function that is (n+1) times differentiable. Also, suppose that   
+        </p>
+        
+      </statement>
+      </lemma>
+    <proof>
+      <p>
+        The proof of the remainder theorem is based on the mean value theorem and Taylor's theorem.
+      </p>
+    </proof>
+    <remark>
+  <title>The existence of <m>c</m></title>
+  <p>
+   The remainder theorem, merely points out the existence of the number <m>c</m>. It does not provide 
+   a method for finding the value of <m>c</m>. However, in many cases, we can find <alert>an upper bound</alert> 
+   for the error term <m>R_n(x)</m> without knowing the exact value of <m>c</m>. 
+  </p>
+</remark>
+<example>
+      <title>Finding an upper bound for the error term</title>
+      <p>
+        Consider the function <m>f(x) = e^x</m>. We want to approximate <m>e^{0.1}</m> 
+        using the Taylor polynomial of degree 2 at <m>x=0</m>. The Taylor polynomial is given by:
+      </p>
+      <me>
+        p_2(x) = 1 + x + \frac{x^2}{2}
+      </me>
+      <p>
+        The error term is given by:
+      </p>
+      <me>
+        R_2(0.1) = \frac{f^{(3)}(c)}{3!} (0.1)^3= \frac{e^c}{6} (0.1)^3
+      </me>
+      <p>
+        Since <m>c</m> is between <m>0</m> and <m>0.1</m>, we have <m>0 \leq c \leq 0.1</m>. 
+        Therefore, we can bound the remainder term as follows:
+      </p>
+      <me>
+        R_2(0.1) \leq \frac{e^{0.1}}{6} (0.1)^3 \approx 0.000184
+      </me>
+      <p>
+        This shows that the error in approximating <m>e^{0.1}</m> using the Taylor polynomial 
+        of degree 2 is less than <m>0.000184</m>.
+      </p>
+      <p>
+      In fact, if we compute the actual value of <m>e^{0.1}</m> and compare it with the approximation
+      given by <m>p_2(0.1)</m>, we find that the actual error is approximately <m>0.000</m>, which 
+      is indeed less than the upper bound we calculated.
+      </p>
+      </example>
   </subsection>
  
-  <subsection xml:id="subsection-1">
-    <title>Partial Sums</title>
-    <definition xml:id="def-partial-sum">
-      <statement>
-        <p>The sum of the first <m> n </m> terms in a sequence is denoted by <m> S_n </m> and it is known as a partial sum.</p>
-      </statement>
-    </definition>
-    
-    <example xml:id="example-geometric-series">
-      <statement>
-        <p>Find the sum of the geometric series <m> \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \cdots</m></p>
-      </statement>
-      <solution>
-        <p>Since this is a geometric series with first term <m>a = \frac{1}{2}</m> and ratio <m>r = \frac{1}{2}</m>, the sum is:
-        <me>S_n =\sum_{i=0}^n a_i=\frac{a}{1-r} = \frac{\frac{1}{2}}{1-\frac{1}{2}} = 1</me>
-        </p>
-      </solution>
+    <subsection xml:id="subsection-2">
+    <title>An example of a Taylor series that converges</title>
+    <p>
+      Consider the function <m>f(x) = e^x</m>. We know that <m>f^{(n)}(x) = e^x</m> for all <m>n\geq 0</m>. 
+      Therefore, the Taylor series generated by <m>f</m> at <m>x=0</m> is given by:
+    </p> but it can be found in many calculus textbooks.
+    <me>
+      \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n = \sum_{n=0}^{\infty} \frac{1}{n!} x^n
+    </me>
+    <p>
+      We will show that this series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>. To do this, we will use the remainder theorem. We have:
+    </p>
+    <me>
+      R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} x^{n+1} = \frac{e^c}{(n+1)!} x^{n+1}
+    </me>
+    <p>
+      First, we consider the case when <m>x>0</m>. Since <m>c</m> is between <m>0</m> and <m>x</m>, 
+      we have <m>0 \leq c \leq x</m>. Therefore, we can bound the remainder term as follows:    
+    </p>
+    <me>
+      R_n(x) \leq \frac{e^x}{(n+1)!} x^{n+1}
+    </me>
+    <p>
+      Now we can compute the limit of the remainder term as <m>n\to \infty</m>:
+    </p>
+    <me>
+      \lim_{n\to \infty} |R_n(x)| \leq \lim_{n\to \infty} \frac{e^x}{(n+1)!} x^{n+1} = 0
+    </me>
+    <p>
+      This shows that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x>0</m>. 
+      The second case is when <m>x &lt; 0</m>. In this case, since <m>c</m> is between <m>x</m> and <m>0</m>,
+      we have <m>x \leq c \leq 0</m>. Hence, we can bound the remainder term as follows:
+    </p>
+    <me>
+      |R_n(x)| \leq \frac{1}{(n+1)!} |x|^{n+1}
+    </me>
+    <p>
+      Now we can compute the limit of the remainder term as <m>n\to \infty</m>:
+    </p>
+    <me>
+      \lim_{n\to \infty} |R_n(x)| \leq \lim_{n\to \infty} \frac{1}{(n+1)!} |x|^{n+1} = 0
+    </me>
+    <p>
+      This shows that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x &lt; 0</m>. Therefore, 
+      we conclude that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>.
+    </p>    
+  </subsection>
+
+  <subsection xml:id="subsection-3">
+    <title> The error in using a Taylor polynomial</title>
+    <p>
+      In this subsection, we will discuss how to approximate the error in using a Taylor polynomial to approximate a function. 
+      We will use the remainder theorem to bound the error term <m>R_n(x)</m>.
+    </p>
+    <p>
+      Suppose we want to approximate <m>f(x)</m> using the Taylor polynomial of degree <m>n</m> at <m>x=a</m>. 
+      The error in this approximation is given by <m>R_n(x) = f(x) - p_n(x)</m>. By the remainder theorem, we have:
+    </p>
+    <me>
+      R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}
+    </me>
+    <p>
+      To bound the error term, we need to find an upper bound for <m>|f^{(n+1)}(c)|</m> on the interval between 
+      <m>a</m> and <m>x</m>.
+    </p> 
+    <example>
+      <title>Approximating <m>e^x</m> using a Taylor polynomial</title>
+      <p>
+        Let's approximate <m>f(x) = e^x</m> using the Taylor polynomial of degree 2 at <m>x=0</m>. 
+        The Taylor polynomial is given by:
+      </p>
+      <me>
+        p_2(x) = 1 + x + \frac{x^2}{2}
+      </me>
+      <p>
+        We want to approximate <m>e^{0.5}</m>. The error term is given by:
+      </p>
+      <me>
+        R_2(0.5) = \frac{f^{(3)}(c)}{3!} (0.5)^3
+      </me>
+      <p>
+        Since <m>f^{(3)}(x) = e^x</m>, we have:
+      </p>
+      <me>
+        |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.5)^3
+      </me>
+      <p>
+        Therefore, the error in approximating <m>e^{0.5}</m> using the Taylor polynomial of degree 2 is bounded by:
+      </p>
+      <me>
+        |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.125) \approx 0.034
+      </me>
     </example>
 
-    <figure>
-      <caption>Visual Example of a Geometric Series</caption>
-      <image source="fig1.pdf" width="40%">
-        <description>
-          <p>The sum of areas of the rectangles represents the 
-          partial sum of the geometric series.
-          </p>
-        </description>
-      </image>
-    </figure>
+    <example> 
+      <title>Approximating <m>\sin(x)</m> using a Taylor polynomial</title>
+      <p>
+        Assume that we use the Taylor polynomial of degree 3 at <m>x=0</m> to approximate <m>\sin(x)</m>. For approximately what values of <m>x</m> 
+        can you replace <m>\sin(x)</m> by such a Taylor polynomial with an error of magnitude no greater than <m> 4 \times 10^{-3}</m>?
+      </p>
+    </example>  
   </subsection>
+    
+  
+
 </section>
