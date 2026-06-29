@@ -48,25 +48,21 @@
         </p>
       </statement>
     </theorem>
-    <lemma xml:id="lemma-mean-value-theorem">
-      <statement>
-        <p>
-          Let <m>f(x)</m> be a function that is (n+1) times differentiable. Also, suppose that   
-        </p>
-        
-      </statement>
-      </lemma>
     <proof>
       <p>
-        The proof of the remainder theorem is based on the mean value theorem and Taylor's theorem.
+        The proof of the remainder theorem is based on the mean value theorem and Taylor's theorem and we have included 
+        the proof in <xref ref="subsection-5"/>. The proof is postponed to the end of this section because 
+        it requires some technical details that are not necessary for understanding the main ideas of this section. 
+        <alert> The students are not expected to know the proof, however, they should understand the statement and its 
+          implications. Interested students are encouraged to read the proof.</alert> 
       </p>
     </proof>
     <remark>
-  <title>The existence of <m>c</m></title>
+  <title>Finding an upper bound for the error term without knowing the value of <m>c</m></title>
   <p>
-   The remainder theorem, merely points out the existence of the number <m>c</m>. It does not provide 
-   a method for finding the value of <m>c</m>. However, in many cases, we can find <alert>an upper bound</alert> 
-   for the error term <m>R_n(x)</m> without knowing the exact value of <m>c</m>. 
+  Usually the value of <m>c</m> is not explicitly known. However, in many cases, we can find <alert>an upper bound</alert> 
+   for the error term <m>R_n(x)</m> without knowing the exact value of <m>c</m>. This is achieved by finding an upper bound <m> M</m>
+   for <m>|f^{(n+1)}(c)|</m>, where <m>c</m> is between <m>a</m> and <m>x</m>, and then using this upper bound to estimate the error term.
   </p>
 </remark>
 <example>
@@ -89,7 +85,7 @@
         Therefore, we can bound the remainder term as follows:
       </p>
       <me>
-        R_2(0.1) \leq \frac{e^{0.1}}{6} (0.1)^3 \approx 0.000184
+        R_2(0.1) \leq \frac{e^{0.1}}{6} (0.1)^3 \approx 0.00018
       </me>
       <p>
         This shows that the error in approximating <m>e^{0.1}</m> using the Taylor polynomial 
@@ -97,10 +93,19 @@
       </p>
       <p>
       In fact, if we compute the actual value of <m>e^{0.1}</m> and compare it with the approximation
-      given by <m>p_2(0.1)</m>, we find that the actual error is approximately <m>0.000</m>, which 
+      given by <m>p_2(0.1)</m>, we find that the actual error is <m>e^{0.1} - p_2(0.1) \approx 0.00017</m>, which 
       is indeed less than the upper bound we calculated.
       </p>
+       <figure xml:id="fig-geogebra-Taylor1">
+    <caption>
+      This is the graph of example 1. The red curve is the graph of <m>f(x) = e^x</m> and the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>.
+    </caption>
+    <interactive geogebra="xzdc5jpq" width="100%" shift-drag-zoom="yes"/>
+  </figure>
       </example>
+
+      
+
   </subsection>
  
     <subsection xml:id="subsection-2">
@@ -209,8 +214,7 @@
   <subsection xml:id="subsection-5">
     <title> Proof of the remainder theorem</title>
     <p>
-      In this subsection, we will provide a proof of the remainder theorem. 
-      The proof is based on the mean value theorem and Taylor's theorem. 
+      In this subsection, we will provide a proof of the remainder theorem.
     </p>
     <p>
       Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on an open interval
@@ -283,7 +287,7 @@
         <m>f^{(n+1)}(c) = 0</m>.
       </p>
     </proof>
-    <remark>
+    <remark xml:id="rmk-zero-error-function">  
       <title>Remark regarding the error function</title>
     <p>
       Note that for the error function  <m> R_n(x) = f(x) - p_n(x) </m>, we have 
@@ -294,7 +298,7 @@
       Now, assume that <m>x\neq a</m>. We can construct the function 
       <m>g(t) = R_n(t) - \frac{R_n(x)}{(x-a)^{n+1}} (t-a)^{n+1}</m> 
       such that <m>g(a) = g(x) = 0</m> and <m>g^{(k)}(a) = 0</m> for <m>k = 1, 2, ..., n</m>. 
-      Therefore, by the lemma and considering the remark, there exists a number <m>c</m> between 
+      Therefore, by the lemma and considering <xref ref="rmk-zero-error-function"/>, there exists a number <m>c</m> between 
       <m>a</m> and <m>x</m> such that <m>g^{(n+1)}(c)=0</m>. After computing  <m>g^{(n+1)}(c)</m>, we have
       <m>R_n^{(n+1)}(c) - \frac{R_n(x)}{(x-a)^{n+1}} (n+1)! = 0</m>. Since <m>R_n^{(n+1)}(c) = f^{(n+1)}(c)</m>, we have
       <m>R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}</m>. This completes the proof of the remainder theorem.
