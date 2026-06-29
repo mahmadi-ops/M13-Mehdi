@@ -239,7 +239,7 @@
       <statement>   
         <p>
           Let <m>f(x)</m> be a function that is <m>(n+1)</m>-times differentiable. 
-          Also, suppose that <m>f(a) = f'(a) = f''(a) = ... = f^{(n)}(a) = 0</m>. 
+          Also, suppose that <m>f(a) = f'(a) = f''(a) = ... = f^{(n)}(a) = 0</m> and <m>f(x) = 0</m>, where <m>x\neq a</m>.
           Then there exists a number <m>c</m> between <m>a</m> and <m>x</m> such that 
           <m>f^{(n+1)}(c) = 0</m>.
         </p>
@@ -283,12 +283,23 @@
         <m>f^{(n+1)}(c) = 0</m>.
       </p>
     </proof>
-
-    
+    <remark>
+      <title>Remark regarding the error function</title>
     <p>
-      This completes the proof of the remainder theorem.
+      Note that for the error function  <m> R_n(x) = f(x) - p_n(x) </m>, we have 
+      <m>R_n(a) = R_n'(a) = R_n''(a) = ... = R_n^{(n)}(a) = 0</m>.
     </p>
-  </subsection>
+    </remark>
+    <p>
+      Now, assume that <m>x\neq a</m>. We can construct the function 
+      <m>g(t) = R_n(t) - \frac{R_n(x)}{(x-a)^{n+1}} (t-a)^{n+1}</m> 
+      such that <m>g(a) = g(x) = 0</m> and <m>g^{(k)}(a) = 0</m> for <m>k = 1, 2, ..., n</m>. 
+      Therefore, by the lemma and considering the remark, there exists a number <m>c</m> between 
+      <m>a</m> and <m>x</m> such that <m>g^{(n+1)}(c)=0</m>. After computing  <m>g^{(n+1)}(c)</m>, we have
+      <m>R_n^{(n+1)}(c) - \frac{R_n(x)}{(x-a)^{n+1}} (n+1)! = 0</m>. Since <m>R_n^{(n+1)}(c) = f^{(n+1)}(c)</m>, we have
+      <m>R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}</m>. This completes the proof of the remainder theorem.
+    </p>
+    </subsection>
     
 
     
