@@ -205,6 +205,92 @@
       </p>
     </example>  
   </subsection>
+
+  <subsection xml:id="subsection-5">
+    <title> Proof of the remainder theorem</title>
+    <p>
+      In this subsection, we will provide a proof of the remainder theorem. 
+      The proof is based on the mean value theorem and Taylor's theorem. 
+    </p>
+    <p>
+      Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on an open interval
+       <m>I</m> containing <m>a </m>. We want to show that for each <m>x\in I</m> and for each 
+       positive integer <m>n</m>, there exists a number <m>c</m> between <m>a</m> and <m>x</m> such that
+    </p>
+    <me>
+      f(x) = p_n(x) + R_n(x),
+    </me>
+    <p>
+      where
+    </p>
+    <me>
+      p_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k,
+    </me>
+    <p>
+      and
+    </p>
+    <me>
+      R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}.
+    </me>
+    <p>
+      To prove this, we will first prove the following lemma:
+    </p>
+    <lemma xml:id="lemma-1">
+      <statement>   
+        <p>
+          Let <m>f(x)</m> be a function that is <m>(n+1)</m>-times differentiable. 
+          Also, suppose that <m>f(a) = f'(a) = f''(a) = ... = f^{(n)}(a) = 0</m>. 
+          Then there exists a number <m>c</m> between <m>a</m> and <m>x</m> such that 
+          <m>f^{(n+1)}(c) = 0</m>.
+        </p>
+      </statement> 
+    </lemma>
+    <proof> 
+      <p>
+        The proof of this lemma is based on the mean value theorem. 
+        Since <m>f(a) = f'(a) = f''(a) = ... = f^{(n)}(a) = 0</m>, we can apply the mean value theorem 
+        repeatedly to show that there exists a number <m>c</m> between <m>a</m> and <m>x</m> such that 
+        <m>f^{(n+1)}(c) = 0</m>. Below we will do so step by step. 
+      </p>
+      <p>
+        First, since <m>f(a) = f(x) = 0</m>, by the mean value theorem, there exists a number <m>c_1</m> between 
+        <m>a</m> and <m>x</m> such that 
+      </p>
+      <me>
+        f'(c_1) = \frac{f(x) - f(a)}{x - a} = 0
+      </me>
+      <p>
+       Second, since <m>f'(a) = f'(c_1) = 0</m>, by the mean value theorem, there exists a number <m>c_2</m> between <m>a</m> and <m>c_1</m> such that 
+      </p>
+      <me>
+        f''(c_2) = \frac{f'(c_1) - f'(a)}{c_1 - a} = 0
+      </me>
+      <p>
+        Then by continuing this process, we can show that there exists a number 
+        <m>c_n</m> between <m>a</m> and <m>c_{n-1}</m> such that 
+      </p>
+      <me>
+        f^{(n)}(c_n) = 0
+      </me>
+      <p>
+        Since <m>f^{(n)}(a) = f^{(n)}(c_n) = 0</m>, by the mean value theorem, there exists a number <m>c_{n+1}</m> between <m>a</m> and <m>c_n</m> such that 
+      </p>
+      <me>
+        f^{(n+1)}(c_{n+1}) = 0
+      </me>
+      <p>
+        Therefore, we have shown that there exists a number <m>c = c_{n+1}</m> between <m>a</m> and <m>x</m> such that 
+        <m>f^{(n+1)}(c) = 0</m>.
+      </p>
+    </proof>
+
+    
+    <p>
+      This completes the proof of the remainder theorem.
+    </p>
+  </subsection>
+    
+
     
   
 
