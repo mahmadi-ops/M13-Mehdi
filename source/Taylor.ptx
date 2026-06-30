@@ -249,39 +249,39 @@
         p_3(x) = x - \frac{x^3}{6}
       </me>
       <p>
-        The error term is given by:
+       Since  p_3(x) = p_4(x), the error term is given by:
       </p>
       <me>
-        R_3(x) = \frac{f^{(4)}(c)}{4!} x^4
+        R_4(x) = \frac{f^{(5)}(c)}{5!} x^5
       </me>
       <p>
-        Since <m>f^{(4)}(x) = \sin(x)</m>, we have:
+        Since <m>f^{(5)}(x) = \cos(x)</m>, we have:
       </p>
       <me>
-        |R_3(x)| \leq \frac{|x|^4}{24}
+        |R_4(x)| \leq \frac{|x|^5}{120}
       </me>
       <p>
         We want to find the values of <m>x</m> such that:
       </p>
       <me>
-        \frac{|x|^4}{24} \leq 4 \times 10^{-3}
+        \frac{|x|^5}{120} \leq 4 \times 10^{-3}
       </me>
       <p>
         This gives us:
       </p>
       <me>
-        |x|^4 \leq 0.096
+        |x|^5 \leq 0.48
       </me>
       <p>
-        Taking the fourth root, we get:
+        Taking the fifth root, we get:
       </p>
       <me>
-        |x| \leq 0.562
+        |x| \leq 0.86347
       </me>
       <p>
         Therefore, we can replace <m>\sin(x)</m> by the Taylor polynomial of degree 3 
         at <m>x=0</m> with an error of magnitude no greater than 
-        <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.562</m>.
+        <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
     </solution>
   </subsection>
