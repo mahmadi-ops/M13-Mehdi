@@ -132,7 +132,7 @@
       The vertical distance between the two points represents the error in the approximation. 
       Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
     </caption>
-    <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no"/>
+    <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11"/>
   </figure>
       </example>
       
@@ -283,8 +283,72 @@
         at <m>x=0</m> with an error of magnitude no greater than 
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
+       <figure xml:id="fig-geogebra-Taylor2">
+    <caption>
+     Use the slider to change the value of <m>x_0</m> and see how the error changes. 
+     Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
+    </caption>
+    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9"/>
+  </figure>
+
     </solution>
-  </subsection>
+  
+  <example>
+    <title> Finding the value of <m>n</m> such that the error is less than a given tolerance</title>
+    <p>
+      Find the smallest value of <m>n</m> for which the polynomial approximation for <m>\sin(x)</m> 
+      is accurate to <m>±0.005</m> for values of <m>x</m> in the interval <m>[-\pi/2, \pi/2]</m>.
+      </p>
+      </example>
+    <solution>
+      <p>
+        The Taylor polynomial of degree <m>n</m> at <m>x=0</m> for <m>\sin(x)</m> is given by:
+      </p>
+      <me>
+        p_n(x) = \sum_{k=0}^{n} \frac{(-1)^k}{(2k+1)!} x^{2k+1}
+      </me>
+      <p>
+        The error term is given by:
+      </p>
+      <me>
+        R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} x^{n+1}
+      </me>
+      <p>
+        Since <m>f^{(n+1)}(x)</m> is either <m>\cos(x)</m> or <m>\sin(x)</m>, we have:  
+      </p>
+      <me>
+        |R_n(x)| \leq \frac{|x|^{n+1}}{(n+1)!}
+      </me>
+      <p>
+        We want to find the smallest value of <m>n</m> such that:
+      </p>
+      <me>
+        \frac{|x|^{n+1}}{(n+1)!} \leq 0.005
+      </me>
+      <p>
+        Since <m>|x| \leq \pi/2</m> for <m>x \in [-\pi/2, \pi/2]</m>, and approximating 
+        <m>\pi/2 \approx 2</m>, we have:
+      </p>
+        <me>
+        \frac{|x|^{n+1}}{(n+1)!} \lt \frac{2^{n+1}}{(n+1)!}
+        </me>
+      <p>
+        Therefore, we want to find the smallest value of <m>n</m> such that:  
+      </p>
+      <me>
+        \frac{2^{n+1}}{(n+1)!} \lt 0.005
+      </me>
+      <p>
+        We can check the values of <m>n</m> starting from <m>n=0</m> until 
+       we find the smallest value of <m>n</m> that satisfies the inequality. 
+       After checking, we find that the smallest value of <m>n</m> that satisfies 
+       the inequality is <m>n=8</m>. 
+      </p>
+      <interactive desmos="ttox1bvxku" width="60%" aspect="2:3" />
+      </solution> 
+      
+</subsection>
+
   
   <subsection>
     <title> Applications of Taylor's Formula</title>
