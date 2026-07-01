@@ -208,13 +208,18 @@
     <example>
       <title>Approximating <m>e^x</m> using a Taylor polynomial</title>
       <p>
-        Let's approximate <m>f(x) = e^x</m> using the Taylor polynomial of degree 2 at <m>x=0</m>. 
-        The Taylor polynomial is given by:
+        Approximate <m>e^{0.5}</m> using the Taylor polynomial of degree 2 at <m>x=0</m>. 
+        Find an upper bound for the error in this approximation.
+      </p>
+      </example>
+      <solution>
+      <p>
+        We will approximate <m>f(x) = e^x</m> using the Taylor polynomial of degree 2 at <m>x=0</m>:
       </p>
       <me>
         p_2(x) = 1 + x + \frac{x^2}{2}
       </me>
-      <p>
+      <p> 
         We want to approximate <m>e^{0.5}</m>. The error term is given by:
       </p>
       <me>
@@ -232,7 +237,7 @@
       <me>
         |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.125) \approx 0.034
       </me>
-    </example>
+    </solution>
 
     <example> 
       <title>Approximating <m>\sin(x)</m> using a Taylor polynomial</title>
@@ -283,7 +288,17 @@
         at <m>x=0</m> with an error of magnitude no greater than 
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
-       <figure xml:id="fig-geogebra-Taylor2">
+      <figure xml:id="fig-geogebra-Taylor2A">
+    <caption>
+     The red curve is the graph of <m>f(x) = \sin(x)</m> 
+     and the blue curve is the graph of the Taylor polynomial <m>p_3(x)= x - \frac{x^3}{6}</m>. 
+     Use the slider to change the value of <m>x</m> and see how the error changes for different 
+     values of <m>x</m>. Note that for the slider values have been limited to fit the page. 
+     </caption>
+    <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
+    shift-drag-zoom="no" aspect="16:10"/>
+  </figure>
+       <figure xml:id="fig-geogebra-Taylor2B">
     <caption>
      Use the slider to change the value of <m>x_0</m> and see how the error changes. 
      Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
@@ -470,7 +485,7 @@
       </p>
     </proof>
     <remark xml:id="rmk-zero-error-function">  
-      <title>Remark regarding the error function</title>
+      <title>The error function and its derivatives are zero at the point of expansion</title>
     <p>
       Note that for the error function  <m> R_n(x) = f(x) - p_n(x) </m>, we have 
       <m>R_n(a) = R_n'(a) = R_n''(a) = ... = R_n^{(n)}(a) = 0</m>.
