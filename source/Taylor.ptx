@@ -25,6 +25,12 @@
       </ol>
 
   </objectives>
+  <p>
+    <xref ref="Taylor-Formula"/> and <xref ref="thm-remainder-theorem"/> will enable us to answer these questions.
+    We will begin by stating Taylor's formula and the remainder estimation theorem, and then we will discuss some applications of these theorems.
+    The proof of the remainder theorem is postponed to the end of this section because it requires some technical details that are not necessary 
+    for understanding the main ideas of this section. 
+  </p>
 
    <subsection xml:id="subsection-1">
     <title> Taylor's Formula and The Remainder Estimation Theorem </title>
@@ -84,57 +90,15 @@
     </theorem>
     <proof>
       <p>
-        The proof of the remainder estimation theorem is based on the Taylor's formula and the fact that 
-        <m>|f^{(n+1)}(c)| \leq M</m> for some upper bound <m>M</m>. Therefore, we have
+        The proof of the remainder estimation theorem is based on the Taylor's formula <xref ref="Taylor-Formula" />. 
+        Suppose that we can find an upper bound <m>M</m> for <m>|f^{(n+1)}(c)|</m> on the interval between <m>a</m> and <m>x</m>, i.e., <m>|f^{(n+1)}(c)| \leq M</m>, then:
       </p>
       <me>
         |R_n(x)| = \left| \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1} \right| \leq \frac{M}{(n+1)!} |x-a|^{n+1}.
       </me> 
     </proof>
 
-<example>
-      <title>Finding an upper bound for the error term</title>
-      <p>
-        Consider the function <m>f(x) = e^x</m>. We want to approximate <m>e^{0.5}</m> 
-        using the Taylor polynomial of degree 2 at <m>x=0</m>. The Taylor polynomial is given by:
-      </p>
-      <me>
-        p_2(x) = 1 + x + \frac{x^2}{2}
-      </me>
-      <p>
-        The error term is given by:
-      </p>
-      <me>
-        R_2(0.5) = \frac{f^{(3)}(c)}{3!} (0.5)^3= \frac{e^c}{6} (0.5)^3
-      </me>
-      <p>
-        Since <m>c</m> is between <m>0</m> and <m>0.5</m>, we have <m>0 \leq c \leq 0.5</m>. 
-        Therefore, we can bound the remainder term as follows:
-      </p>
-      <me>
-        R_2(0.5) \leq \frac{e^{0.5}}{6} (0.5)^3 \approx 0.03435
-      </me>
-      <p>
-        This shows that the error in approximating <m>e^{0.5}</m> using the Taylor polynomial 
-        of degree 2 is less than <m>0.0026</m>.
-      </p>
-      <p>
-      In fact, if we compute the actual value of <m>e^{0.5}</m> and compare it with the approximation
-      given by <m>p_2(0.5)</m>, we find that the actual error is <m>e^{0.5} - p_2(0.5) \approx 0.02372</m>, which 
-      is indeed less than the upper bound we calculated.
-      </p>
-       <figure xml:id="fig-geogebra-Taylor1">
-    <caption>
-      The red curve is the graph of <m>f(x) = e^x</m> and 
-      the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>. 
-      The exact value of <m>e^{0.5}</m> is represented by the red point and 
-      the approximation given by <m>p_2(0.5)</m> is represented by the blue point. 
-      The vertical distance between the two points represents the error in the approximation. 
-      Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
-    </caption>
-    <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11"/>
-  </figure>
-      </example>
+
       
 
 
@@ -235,8 +199,24 @@
         Therefore, the error in approximating <m>e^{0.5}</m> using the Taylor polynomial of degree 2 is bounded by:
       </p>
       <me>
-        |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.125) \approx 0.034
+        |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.125) \approx 0.03435
       </me>
+      <p>
+      In fact, if we compute the actual value of <m>e^{0.5}</m> and compare it with the approximation
+      given by <m>p_2(0.5)</m>, we find that the actual error is <m>e^{0.5} - p_2(0.5) \approx 0.02372</m>, which 
+      is indeed less than the upper bound we calculated.
+      </p>
+       <figure xml:id="fig-geogebra-Taylor1">
+    <caption>
+      The red curve is the graph of <m>f(x) = e^x</m> and 
+      the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>. 
+      The exact value of <m>e^{0.5}</m> is represented by the red point and 
+      the approximation given by <m>p_2(0.5)</m> is represented by the blue point. 
+      The vertical distance between the two points represents the error in the approximation. 
+      Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
+    </caption>
+    <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11"/>
+  </figure>
     </solution>
 
     <example> 
@@ -254,7 +234,7 @@
         p_3(x) = x - \frac{x^3}{6}
       </me>
       <p>
-       Since  p_3(x) = p_4(x), the error term is given by:
+       Since <m>p_3(x) = p_4(x)</m>, the error term is given by:
       </p>
       <me>
         R_4(x) = \frac{f^{(5)}(c)}{5!} x^5
