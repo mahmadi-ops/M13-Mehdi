@@ -175,7 +175,6 @@
         Approximate <m>e^{0.5}</m> using the Taylor polynomial of degree 2 at <m>x=0</m>. 
         Find an upper bound for the error in this approximation.
       </p>
-      </example>
       <solution>
       <p>
         We will approximate <m>f(x) = e^x</m> using the Taylor polynomial of degree 2 at <m>x=0</m>:
@@ -218,6 +217,7 @@
     <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11"/>
   </figure>
     </solution>
+    </example>
 
     <example> 
       <title>Given a desired error bound, find values of <m>x</m> for which the approximation is guaranteed to be valid</title>
@@ -225,7 +225,7 @@
         Assume that we use the Taylor polynomial of degree 3 at <m>x=0</m> to approximate <m>\sin(x)</m>. For approximately what values of <m>x</m> 
         can you replace <m>\sin(x)</m> by such a Taylor polynomial with an error of magnitude no greater than <m> 4 \times 10^{-3}</m>?
       </p>
-    </example>  
+      
     <solution>
       <p>
         The Taylor polynomial of degree 3 at <m>x=0</m> for <m>\sin(x)</m> is given by:
@@ -287,6 +287,7 @@
   </figure>
 
     </solution>
+    </example>
   
   <example>
     <title> Finding the value of <m>n</m> such that the error is less than a given tolerance</title>
@@ -294,7 +295,7 @@
       Find the smallest value of <m>n</m> for which the polynomial approximation for <m>\sin(x)</m> 
       is accurate to <m>±0.005</m> for values of <m>x</m> in the interval <m>[-\pi/2, \pi/2]</m>.
       </p>
-      </example>
+      
     <solution>
       <p>
         The Taylor polynomial of degree <m>n</m> at <m>x=0</m> for <m>\sin(x)</m> is given by:
@@ -341,6 +342,7 @@
       </p>
       <interactive desmos="7b85e78f17" width="70%" aspect="1:2" />
       </solution> 
+      </example>
       
 </subsection>
 
