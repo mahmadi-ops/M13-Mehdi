@@ -240,7 +240,7 @@
     </solution>
 
     <example> 
-      <title>Approximating <m>\sin(x)</m> using a Taylor polynomial</title>
+      <title>Given a desired error bound, find values of <m>x</m> for which the approximation is guaranteed to be valid</title>
       <p>
         Assume that we use the Taylor polynomial of degree 3 at <m>x=0</m> to approximate <m>\sin(x)</m>. For approximately what values of <m>x</m> 
         can you replace <m>\sin(x)</m> by such a Taylor polynomial with an error of magnitude no greater than <m> 4 \times 10^{-3}</m>?
