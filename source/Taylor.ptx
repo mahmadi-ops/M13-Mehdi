@@ -205,7 +205,7 @@
       given by <m>p_2(0.5)</m>, we find that the actual error is <m>e^{0.5} - p_2(0.5) \approx 0.02372</m>, which 
       is indeed less than the upper bound we calculated.
       </p>
-       <figure xml:id="fig-geogebra-Taylor1">
+       <figure xml:id="fig-geogebra-Taylor1" numbered="no">
     <caption>
       The red curve is the graph of <m>f(x) = e^x</m> and 
       the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>. 
