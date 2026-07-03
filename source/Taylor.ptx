@@ -371,11 +371,26 @@
         K = mc^2-m_0c^2
       </me>
       <example>
-        <title>Newtonian kinetic energy a good substitute for relativistic kinetic energy when <m>v \ll c</m></title>
+        <title>Newtonian kinetic energy as an approximation to relativistic kinetic energy when <m>v \ll c</m></title>
         <p>
         Show that the kinetic energy of an object moving with velocity
         <m>v</m> can be approximated by the formula <m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>.
         </p>
+        <solution>
+          <p>
+            We can rewrite the kinetic energy as follows:
+          </p>
+          <me>
+            K = mc^2-m_0c^2 = m_0c^2 \left( \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} - 1 \right)
+          </me>
+          <p>
+            Let <m>x = \frac{v^2}{c^2}</m>. Then we have:
+          </p>
+          <me>
+            K = m_0c^2 \left( \frac{1}{\sqrt{1 - x}} - 1 \right)
+          </me> 
+          
+        </solution>
       </example>
       
       <example> 
