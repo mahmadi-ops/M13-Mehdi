@@ -16,7 +16,7 @@
       <!-- <qrcode image="image.png" /> -->
     </common>
 
-     <numbering>
+    <!--  <numbering> -->
     <!-- the divisions element describes the numbering of divisions.  -->
     <!-- @part-structure should be "decorative" or "structural",      -->
     <!-- were the latter would restart numbering chapters within each -->
@@ -26,16 +26,25 @@
     <!-- numbering should appear.                                     -->
     <!-- For use with a book organized by part, you can set the -->
     <!--  @part-structure to "decorative" or "structural" -->
-      <divisions level="3"/>
+    <!-- <divisions level="3"/> -->
 
     <!-- The next elements say how the levels deep to break up the    -->
     <!-- numbering of the respective elements. Can't be more than the -->
     <!-- @level on divisions above.                                   -->
-      <blocks level="1" />
-      <examples level="1" />
-      <figures level="1" distinct="yes"/>
+    <!--  <blocks level="1" /> -->
+    <!--  <examples level="2" /> -->
+    <!--  <figures level="3"/> -->
 
-  </numbering>
+  <!-- </numbering> -->
 
+ <numbering>
+  <divisions level="3"/>
+
+  <blocks level="1" />
+  <projects level="2" />
+  <examples level="2" />
+  <figures level="1"/>
+
+</numbering>
 
 </publication>
