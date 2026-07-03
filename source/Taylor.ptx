@@ -389,7 +389,35 @@
           <me>
             K = m_0c^2 \left( \frac{1}{\sqrt{1 - x}} - 1 \right)
           </me> 
+          <p>
+            Now we can use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1 - x}}</m> at <m>x=0</m> 
+            to approximate <m>K</m>. The Taylor series for <m>f(x)</m> at <m>x=0</m> is given by:
+          </p>  
+
+          <me>
+            f(x) = 1 + \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + \cdots
+          </me>
+          <p>
+            Therefore, we have:
+          </p>
+          <me>
+            K = m_0c^2 \left( \frac{1}{\sqrt{1 - x}} - 1 \right) = m_0c^2 \left( \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + \cdots \right) 
+          </me>
+          <p>
+            Substituting <m>x = \frac{v^2}{c^2}</m>, we get:
+          </p>
+          <me>
+            K = m_0c^2 \left( \frac{1}{2}\frac{v^2}{c^2} + \frac{3}{8}\frac{v^4}{c^4} + \frac{5}{16}\frac{v^6}{c^6} + \cdots \right) = \frac{1}{2} m_0v^2 + \frac{3}{8} m_0\frac{v^4}{c^2} + \frac{5}{16} m_0\frac{v^6}{c^4} + \cdots
+          </me>
+          <p>
+            When <m>v \ll c</m>, the higher order terms in the series become negligible, and we can approximate the kinetic energy as:
+          </p>
+          <me>
+            K \approx \frac{1}{2} m_0v^2
+          </me>
           
+
+
         </solution>
       </example>
       
