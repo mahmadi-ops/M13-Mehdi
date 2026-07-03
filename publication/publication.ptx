@@ -38,13 +38,11 @@
   <!-- </numbering> -->
 
  <numbering>
-  <divisions level="3"/>
-
+  <divisions level="3" />
   <blocks level="1" />
   <projects level="2" />
-  <examples level="2" />
-  <figures level="1"/>
-
+  <equations level="1" />
+  <footnotes level="1" />
 </numbering>
 
 </publication>
