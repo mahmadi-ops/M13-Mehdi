@@ -175,6 +175,7 @@
         Approximate <m>e^{0.5}</m> using the Taylor polynomial of degree 2 at <m>x=0</m>. 
         Find an upper bound for the error in this approximation.
       </p>
+      </example>
       <solution>
       <p>
         We will approximate <m>f(x) = e^x</m> using the Taylor polynomial of degree 2 at <m>x=0</m>:
@@ -205,19 +206,26 @@
       given by <m>p_2(0.5)</m>, we find that the actual error is <m>e^{0.5} - p_2(0.5) \approx 0.02372</m>, which 
       is indeed less than the upper bound we calculated.
       </p>
-       <figure xml:id="fig-geogebra-Taylor1" numbered="no">
-    <caption>
-      The red curve is the graph of <m>f(x) = e^x</m> and 
-      the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>. 
-      The exact value of <m>e^{0.5}</m> is represented by the red point and 
-      the approximation given by <m>p_2(0.5)</m> is represented by the blue point. 
-      The vertical distance between the two points represents the error in the approximation. 
-      Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
-    </caption>
-    <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11"/>
-  </figure>
-    </solution>
-    </example>
+       
+  <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11">
+  <description>
+    The red curve is the graph of <m>f(x) = e^x</m> and
+    the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>.
+    The exact value of <m>e^{0.5}</m> is represented by the red point and
+    the approximation given by <m>p_2(0.5)</m> is represented by the blue point.
+    The vertical distance between the two points represents the error in the approximation.
+    Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
+  </description>
+  </interactive>
+  <p>
+  The red curve is the graph of <m>f(x) = e^x</m> and
+    the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>.
+    The exact value of <m>e^{0.5}</m> is represented by the red point and
+    the approximation given by <m>p_2(0.5)</m> is represented by the blue point.
+    The vertical distance between the two points represents the error in the approximation.
+    Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
+  </p>
+  </solution>
 
     <example> 
       <title>Given a desired error bound, find values of <m>x</m> for which the approximation is guaranteed to be valid</title>
@@ -225,6 +233,7 @@
         Assume that we use the Taylor polynomial of degree 3 at <m>x=0</m> to approximate <m>\sin(x)</m>. For approximately what values of <m>x</m> 
         can you replace <m>\sin(x)</m> by such a Taylor polynomial with an error of magnitude no greater than <m> 4 \times 10^{-3}</m>?
       </p>
+      </example>
     <solution>
       <p>
         The Taylor polynomial of degree 3 at <m>x=0</m> for <m>\sin(x)</m> is given by:
@@ -267,26 +276,22 @@
         at <m>x=0</m> with an error of magnitude no greater than 
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
-      <figure xml:id="fig-geogebra-Taylor2A">
-    <caption>
+    <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
+    shift-drag-zoom="no" aspect="16:10"/>
+    <description>
      The red curve is the graph of <m>f(x) = \sin(x)</m> 
      and the blue curve is the graph of the Taylor polynomial <m>p_3(x)= x - \frac{x^3}{6}</m>. 
      Use the slider to change the value of <m>x</m> and see how the error changes for different 
      values of <m>x</m>. Note that for the slider values have been limited to fit the page. 
-     </caption>
-    <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
-    shift-drag-zoom="no" aspect="16:10"/>
-  </figure>
-       <figure xml:id="fig-geogebra-Taylor2B">
-    <caption>
+     </description>
+
+    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9"/>
+    <description>
      Use the slider to change the value of <m>x_0</m> and see how the error changes. 
      Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
-    </caption>
-    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9"/>
-  </figure>
-
+    </description>
     </solution>
-    </example>
+  
   
   <example>
     <title> Finding the value of <m>n</m> such that the error is less than a given tolerance</title>
@@ -294,6 +299,7 @@
       Find the smallest value of <m>n</m> for which the polynomial approximation for <m>\sin(x)</m> 
       is accurate to <m>±0.005</m> for values of <m>x</m> in the interval <m>[-\pi/2, \pi/2]</m>.
       </p>
+      </example>
       
     <solution>
       <p>
@@ -341,7 +347,7 @@
       </p>
       <interactive desmos="7b85e78f17" width="70%" aspect="1:2" />
       </solution> 
-      </example>
+  
       
 </subsection>
 
@@ -351,10 +357,10 @@
     <p>
       Physicists often use Taylor series to approximate functions in order to 
       simplify calculations. The first example is the kinetic energy of an object 
-      in relativistic mechanics. We will discuss the amount of error in such an approximation 
-      and when it is a valid approximation to be used. The second example is the approximation 
-      of the value of <m>\pi</m> using Taylor series. We will also 
-      discuss how to find an upper bound for the error in this approximation.
+      in relativistic mechanics. The second example is the approximation 
+      of the period of a pendulum. We will discuss the error in using these approximations and 
+      when it is valid to use them. Additionally, we will discuss how to use the taylor series to 
+      estimate value of <m>\pi</m> in the last example.
     </p>
 
     <subsubsection>
@@ -463,7 +469,137 @@
       </subsubsection>
 
       
- <subsubsection>
+
+    <subsubsection xml:id="subsubsec-elliptic_integral_of_first_kind">
+      <title>Elliptic Integral of the First Kind and The Period of the Nonlinear Pendulum</title>
+      <p>
+        In this subsection, we will discuss how to approximate the value of the elliptic integral 
+        of the first kind using Taylor series, which is defined as follows:
+      </p>
+      <me>
+        K(z) = \int_{0}^{\pi/2} \frac{d\theta}{\sqrt{1 - z^2 \sin^2 \theta}},
+      </me>
+      <p>
+      where  <m>|z| \lt 1</m></p>.
+      <p>
+        We will use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1-x^2}}</m> to approximate the 
+        value of <m>K(z)</m> as follows:
+      </p>
+      <me>
+        K(z) = \int_{0}^{\pi/2} \frac{d\theta}{\sqrt{1 - z^2 \sin^2 \theta}} 
+        = \int_{0}^{\pi/2} f(z \sin \theta) d\theta
+      </me>
+      <p>
+        We can use the Taylor series for <m>f(x)</m> at <m>x=0</m> 
+        to approximate <m>K(z)</m>. The Taylor series for <m>f(x)</m> at <m>x=0</m> is given by:
+      </p>
+      <me>
+        f(x) = 1 + \frac{1}{2}x^2 + \frac{3}{8}x^4 + \frac{5}{16}x^6 + \cdots
+      </me>
+      <p>
+        Therefore, we have:
+      </p>
+      <md>
+       <mrow>  K(z) \amp = \int_{0}^{\pi/2} f(z \sin \theta) d\theta </mrow>
+       <mrow> \amp       = \int_{0}^{\pi/2} \left( 1 + \frac{1}{2}z^2 \sin^2 \theta 
+        + \frac{3}{8}z^4 \sin^4 \theta + \frac{5}{16}z^6 \sin^6 \theta + \cdots \right) d\theta </mrow>
+      </md>
+      <p>
+        We can integrate term by term to get:
+      </p>
+      <me>
+        K(z) = \frac{\pi}{2} + \frac{\pi}{8} z^2 + \frac{3\pi}{128} z^4 + \frac{5\pi}{512} z^6 + \cdots.
+      </me>
+      <example>
+        <title>Approximating the period of the nonlinear pendulum using Taylor series</title>
+        <p>
+        The exact expression for the period of a pendulum of length <m>l</m> is given by:
+        </p>
+        <me>
+          T = 4 \sqrt{\frac{l}{g}} K(\sin(\theta_0/2)),
+        </me>
+        <p>
+        where <m>g</m> is the acceleration due to gravity and <m>\theta_0</m> is the 
+        maximum angular displacement of the pendulum. 
+        </p>
+        <p>
+        In most introductory courses, the period of a pendulum of length <m>l</m> for small angles is 
+        approximated by using the constant term in the Taylor series for <m>K(z)</m> to get:
+        </p>
+        <me>
+          T = 2 \pi \sqrt{\frac{l}{g}}.
+        </me>
+        <p>
+        Find the period of a pendulum of length <m>l</m> for a maximum angular displacement 
+        of <m>\theta_0</m> using the Taylor series for <m>K(z)</m> up to the term in <m>z^2</m>.
+        What is the error in this approximation? and compare it to the error in using the constant term in the Taylor series 
+        for <m>K(z)</m> to approximate the period of the pendulum.
+        </p>
+      </example>
+
+      <solution>
+        <p>
+          We can use the Taylor series for <m>K(z)</m> up to the term in <m>z^2</m> 
+          to approximate the period of the pendulum as follows:
+        </p>
+        <me>
+          K(z) \approx \frac{\pi}{2} + \frac{\pi}{8} z^2
+        </me>
+        <p>
+          Therefore, we have:
+        </p>
+        <me>
+          T \approx 4 \sqrt{\frac{l}{g}} \left( \frac{\pi}{2} + \frac{\pi}{8} \sin^2(\theta_0/2) \right)
+        </me>
+        <p>
+          The absolute value of the error in this approximation is given by:
+        </p>
+        <me>
+          |R(z)| = |K(z) - \left( \frac{\pi}{2} + \frac{\pi}{8} z^2 \right)|
+        </me>
+        <p>
+          Using the remainder theorem, we can bound the error term as follows:
+        </p>
+        <me>
+          |R_2(z)| \leq \frac{M}{3!} |z|^3
+        </me>
+        <p>
+          where <m>M</m> is an upper bound for <m>|f^{(3)}(c)|</m> on the interval between <m>0</m> and <m>z</m>.
+          Since <m>f^{(3)}(x) = \frac{15}{16} (1-x^2)^{-7/2}</m>, we have:
+        </p>
+        <me>
+          |R_2(z)| \leq \frac{15}{16} |z|^3
+        </me>
+        <p>
+        To Compare the error in using the constant term in the Taylor series for <m>K(z)</m> 
+        to approximate the period of the pendulum, we have:
+        </p>
+        <me>
+          |R_0(z)| \leq \frac{M}{1!} |z| = |z|
+        </me>
+        <p>
+        where <m>M</m> is an upper bound for <m>|f^{(1)}(c)|</m> on the interval between <m>0</m> and <m>z</m>.
+        Since <m>f^{(1)}(x) = \frac{\pi}{2}</m>, we have:
+        </p>
+        <me>
+          |R_0(z)| \leq \frac{\pi}{2} |z|
+        </me>
+        <p>
+          Therefore, we can conclude that the error in using the Taylor series for 
+          <m>K(z)</m> up to the term in <m>z^2</m> to approximate the period of the 
+          pendulum is much smaller than the error in using the constant term in the 
+          Taylor series for <m>K(z)</m> to approximate the period of the pendulum. 
+          For example, if we take <m>\theta_0 = 30^\circ</m>, we have 
+          <m>z = \sin(15^\circ) \approx 0.2588</m> and the error in using the Taylor series for
+          <m>K(z)</m> up to the term in <m>z^2</m> is <m> |R_2(z)| \leq \frac{15}{16} (0.2588)^3 \approx 0.0065</m>, 
+          while the error in using the constant term in the Taylor series for <m>K(z)</m> is <m>|R_0(z)| \leq \frac{\pi}{2} (0.2588) \approx 0.406</m>. 
+          The upper bound for the relative error in using the Taylor series for <m>K(\pi/6)</m> up to the term in <m>z^2</m> is <m>0.0065/1.5708 \approx 0.0041</m>,
+          while the upper bound for the relative error in using the constant term in the Taylor series for <m>K(\pi/6)</m> is <m>0.406/1.5708 \approx 0.258</m>. 
+        </p>
+      </solution>
+    </subsubsection>
+
+     <subsubsection>
     <title>Approximating the value of <m>\pi</m> using Taylor series</title>
     <p>
       In this subsection, we will discuss how to approximate the value of <m>\pi</m> using Taylor series. 
@@ -477,9 +613,54 @@
       </p>
     </example>
     </subsubsection>
+
+   <!--  <example xml:id="ex-multi-part">
+    <title>Multi-Part Example Title</title>
+    <statement>
+        <p>A introductory paragraph for the overall example.</p>
+        <ol marker="a.">
+            <li>
+                <p>Statement or question for the first part.</p>
+            </li>
+            <li>
+                <p>Statement or question for the second part.</p>
+            </li>
+        </ol>
+    </statement>
+    <hint>
+        <p>A helpful tip for solving the example.</p>
+    </hint>
+    <solution>
+        <p>The detailed step-by-step resolution.</p>
+    </solution>
+</example> -->
+
   </subsection>
+
+  <worksheet xml:id="activity-01-intro-activity">
+  <title>In-Class Activity</title>
+
+  <!-- Optional introduction 
+  <introduction>
+    <p>
+      This is the introduction to the activity.
+    </p>
+  </introduction> -->
+
+  <!-- Exercises start here.  --> 
+  <exercise xml:id="ex-tf-1">
+    <title>True or False</title>
+    <statement correct="no">
+        <p>If we manage to find the maximum value of <m>|f^{(n+1)}(c)|</m> for <m>c</m> in the interval between <m>a</m> and <m>x</m>, 
+          then we can find the exact error in the Taylor polynomial approximation.</p>
+    </statement>
+    <feedback>
+        <p>Incorrect. While finding the maximum value of <m>|f^{(n+1)}(c)|</m> allows us to find an upper bound for the error, it does not give the exact error.</p>
+    </feedback>
+</exercise>
     
-    
+
+</worksheet>
 
   <subsection xml:id="subsection-5">
     <title> Proof of the remainder theorem</title>
@@ -576,27 +757,7 @@
     </subsection>
     
 
-  <worksheet xml:id="activity-01-intro-activity">
-  <title>In-Class Activity</title>
-
-  <!-- Optional introduction 
-  <introduction>
-    <p>
-      This is the introduction to the activity.
-    </p>
-  </introduction> -->
-
-  <!-- Exercises start here.  --> 
-  <exercise xml:id="ex-tf-1">
-    <title>True or False</title>
-    <statement correct="no">
-        <p>If we manage to find the maximum value of <m>|f^{(n+1)}(c)|</m> for <m>c</m> in the interval between <m>a</m> and <m>x</m>, 
-          then we can find the exact error in the Taylor polynomial approximation.</p>
-    </statement>
-    <feedback>
-        <p>Incorrect. While finding the maximum value of <m>|f^{(n+1)}(c)|</m> allows us to find an upper bound for the error, it does not give the exact error.</p>
-    </feedback>
-</exercise>
+  
 
 <!--<exercise label="matching-bases">
 
@@ -662,7 +823,6 @@
 
 
 
-</worksheet>
 
   
 
