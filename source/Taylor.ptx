@@ -18,8 +18,9 @@
         <li>
           <p>
             If the Taylor polynomial of degree <m>n</m>, <m>p_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k</m> , is used as an 
-            approximation to <m>f(x)</m>, what is the error in this approximation? 
-            That is, what is the value of <m>R_n(x) = f(x) - p_n(x)</m>?
+            approximation to <m>f(x)</m>, how can we estimate the error in this approximation? 
+            That is, how can we estimate the magnitude of <m>
+            R_n(x) = f(x) - p_n(x)</m>?
           </p>
         </li>
       </ol>
