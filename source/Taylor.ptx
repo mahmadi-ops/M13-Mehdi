@@ -433,6 +433,7 @@
         to estimate the error in using the Newtonian kinetic energy formula <m>K \approx \frac{1}{2} m_0v^2</m> to approximate 
         the relativistic kinetic energy of the car. The speed of light is <m>c = 3 \times 10^8 m/s</m>.
         </p>
+      </example>
         <solution>
           <p>
             Note that when using the Newtonian kinetic energy formula, we are using
@@ -466,7 +467,7 @@
             is a very good approximation to the relativistic kinetic energy for a car moving at <m> 30 m/s</m>.
           </p>
         </solution>
-      </example>
+   
       </subsubsection>
 
       
