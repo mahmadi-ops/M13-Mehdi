@@ -511,6 +511,81 @@
       <me>
         K(z) = \frac{\pi}{2} + \frac{\pi}{8} z^2 + \frac{3\pi}{128} z^4 + \frac{5\pi}{512} z^6 + \cdots.
       </me>
+      <p>
+        For comparison purposes, we will consider the Taylor polynomial of degree 2 at <m>z=0</m>:
+      </p>
+      <p>
+        In figure <xref ref="fig-prefigure-elliptic-integral-K"/>, we show the graph of <m>K(z)</m> along with 
+        two Taylor approximations of the zeroth order, <m>p_0(z)=\frac{\pi}{2}</m>, and the second order, 
+        <m>p_2(z)=\frac{\pi}{2}+\frac{\pi}{8}z^2</m>, centered at <m>z=0</m>. As expected and can be observed from the graph, 
+        the Taylor polynomial of degree 2 provides a better approximation to <m>K(z)</m> than the Taylor polynomial of degree 0.  
+        Note that as value of <m>z</m> increases, the zeroth order approximation becomes less accurate very quickly, while the second order approximation  
+        remains relatively accurate for a larger range of <m>z</m> values. This is consistent with our expectation that the fact that 
+        the Taylor polynomial of degree 2 should provide a better approximation to <m>K(z)</m> than the Taylor polynomial of degree 0.
+      </p>
+    
+   <figure xml:id="fig-prefigure-elliptic-integral-K">
+    <caption>
+        The complete elliptic integral of the first kind <m>K(z)</m> with two Taylor approximations 
+        of the zeroth order, <m>p_0(z)=\frac{\pi}{2}</m>, and the second order, <m>p_2(z)=\frac{\pi}{2}+\frac{\pi}{8}z^2</m>, 
+        centered at <m>z=0</m>.
+    </caption>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org" label="elliptic-integral-K">
+    <diagram dimensions="(400,300)" margins="5">
+      <!-- K(z) = pi / (2 * AGM(1, sqrt(1-z^2))) via four AGM iterations -->
+      <definition>b0(z) = sqrt(1 - z^2)</definition>
+      <definition>a1(z) = (1 + b0(z))/2</definition>
+      <definition>b1(z) = sqrt(b0(z))</definition>
+      <definition>a2(z) = (a1(z) + b1(z))/2</definition>
+      <definition>b2(z) = sqrt(a1(z)*b1(z))</definition>
+      <definition>a3(z) = (a2(z) + b2(z))/2</definition>
+      <definition>b3(z) = sqrt(a2(z)*b2(z))</definition>
+      <definition>a4(z) = (a3(z) + b3(z))/2</definition>
+      <definition>K(z) = pi/(2*a4(z))</definition>
+      <!-- Taylor approximations about z = 0 -->
+      <definition>p0(z) = pi/2</definition>
+      <definition>p2(z) = pi/2 + pi/8*z^2</definition>
+      <coordinates bbox="(-1, 0, 1, 5)">
+        <grid-axes xlabel="z" hlabels="(-1, 0.5, 1)"/>
+        <graph at="p0-graph" function="p0" stroke="gray"/>
+        <graph at="p2-graph" function="p2" stroke="green"/>
+        <graph at="K-graph" function="K" domain="(-0.9999, 0.9999)"
+               stroke="blue" sonify="yes"/>
+        <group at="intercept">
+          <point p="(0, pi/2)" fill="red"/>
+          <label anchor="(0, pi/2)" alignment="ne"><m>\pi/2</m></label>
+        </group>
+        <legend at="legend" anchor="(-0.95, 4.9)" alignment="se">
+          <item ref="K-graph"><m>K(z)</m></item>
+          <item ref="p2-graph"><m>p_2(z)=\frac{\pi}{2}+\frac{\pi}{8}z^2</m></item>
+          <item ref="p0-graph"><m>p_0(z)=\frac{\pi}{2}</m></item>
+        </legend>
+      </coordinates>
+      <annotations>
+        <annotation ref="K-graph"
+            text="The complete elliptic integral of the first kind K of z with two Taylor approximations centered at z equals 0">
+          <annotation ref="K-graph"
+              text="The graph of K of z, an even function with minimum value pi over 2 at z equals 0, increasing without bound as z approaches plus or minus 1"
+              sonify="yes"/>
+          <annotation ref="p2-graph"
+              text="The second order Taylor approximation, p 2 of z equals pi over 2 plus pi over 8 z squared, which closely matches K near z equals 0"/>
+          <annotation ref="p0-graph"
+              text="The constant approximation, p 0 of z equals pi over 2, a horizontal line through the minimum of K"/>
+          <annotation ref="intercept"
+              text="The point 0 comma pi over 2, where the graph of K and both Taylor approximations agree"/>
+          <annotation ref="legend"
+              text="A legend identifying the three graphs by color: K of z in blue, p 2 in green, and p 0 in gray"/>
+        </annotation>
+      </annotations>
+    </diagram>
+  </prefigure>
+</image>
+</figure>
+
+
+
       <example>
         <title>Approximating the period of the nonlinear pendulum using Taylor series</title>
         <p>
@@ -668,7 +743,7 @@
           from the positive charge along the axis of the dipole is given by:
         </p>
         <me>
-          E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{(r)^2} - \frac{q}{(r+d)^2} \right)
+          E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right)
         </me>
         <p>
           Use the Taylor series to approximate the electric field <m>E</m> at point <m>P</m> 
