@@ -45,4 +45,10 @@
   <footnotes level="1" />
 </numbering>
 
+  <source/>
+  <html>
+    <!-- Activates the pre-configured wide stylesheet layout -->
+    <css style="wide"/>
+  </html>
+
 </publication>
