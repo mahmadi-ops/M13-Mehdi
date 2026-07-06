@@ -531,7 +531,7 @@
         centered at <m>z=0</m>.
     </caption>
 
-<image width="60%">
+<image width="80%">
   <prefigure xmlns="https://prefigure.org" label="elliptic-integral-K">
     <diagram dimensions="(400,300)" margins="5">
       <!-- K(z) = pi / (2 * AGM(1, sqrt(1-z^2))) via four AGM iterations -->
@@ -570,13 +570,13 @@
               text="The graph of K of z, an even function with minimum value pi over 2 at z equals 0, increasing without bound as z approaches plus or minus 1"
               sonify="yes"/>
           <annotation ref="p2-graph"
-              text="The second order Taylor approximation, p 2 of z equals pi over 2 plus pi over 8 z squared, which closely matches K near z equals 0"/>
+              text="The second order Taylor approximation, p 2 of z equals pi over 2 plus pi over 8 z squared, which closely matches K near z equals 0" sonify="yes"/>
           <annotation ref="p0-graph"
-              text="The constant approximation, p 0 of z equals pi over 2, a horizontal line through the minimum of K"/>
+              text="The constant approximation, p 0 of z equals pi over 2, a horizontal line through the minimum of K" sonify="yes"/>
           <annotation ref="intercept"
-              text="The point 0 comma pi over 2, where the graph of K and both Taylor approximations agree"/>
+              text="The point 0 comma pi over 2, where the graph of K and both Taylor approximations agree" sonify="yes"/>
           <annotation ref="legend"
-              text="A legend identifying the three graphs by color: K of z in blue, p 2 in green, and p 0 in gray"/>
+              text="A legend identifying the three graphs by color: K of z in blue, p 2 in green, and p 0 in gray" sonify="yes"/>
         </annotation>
       </annotations>
     </diagram>
@@ -588,6 +588,7 @@
 
       <example>
         <title>Approximating the period of the nonlinear pendulum using Taylor series</title>
+
         <p>
         The exact expression for the period of a pendulum of length <m>l</m> is given by:
         </p>
@@ -611,6 +612,62 @@
         What is the error in this approximation? and compare it to the error in using the constant term in the Taylor series 
         for <m>K(z)</m> to approximate the period of the pendulum.
         </p>
+                <figure xml:id="fig-simple-pendulum">
+  <caption>Simple pendulum.</caption>
+  <image width="70%">
+    <prefigure xmlns="https://prefigure.org" label="simple-pendulum">
+      <diagram dimensions="(300,320)" margins="10">
+        <definition>theta = radians(28)</definition>
+        <definition>l = 1</definition>
+        <definition>pivot = (0, 0)</definition>
+        <definition>bob = (l*sin(theta), -l*cos(theta))</definition>
+        <coordinates bbox="(-0.7, -1.25, 0.9, 0.15)" aspect-ratio="1">
+          <group at="ceiling">
+            <line p1="(-0.45, 0)" p2="(0.45, 0)" thickness="2"/>
+            <repeat parameter="k=0..8">
+              <line p1="(-0.42 + 0.1*k, 0)" p2="(-0.36 + 0.1*k, 0.07)" thickness="1"/>
+            </repeat>
+          </group>
+          <line at="vertical" p1="pivot" p2="(0, -1.12)" dash="6 5" thickness="1"/>
+          <arc at="swing-arc" center="pivot" radius="l" range="(244, 296)"
+               dash="6 5" stroke="black" thickness="1"/>
+          <group at="string">
+            <line p1="pivot" p2="bob" thickness="2"/>
+            <label anchor="(0.5*bob[0], 0.5*bob[1])" alignment="e">
+              <m>\ell</m>
+            </label>
+          </group>
+          <angle-marker at="angle" points="((0, -0.6), pivot, bob)" radius="45">
+            <m>\theta_0</m>
+          </angle-marker>
+          <point at="pivot-point" p="pivot" fill="black" size="3"/>
+          <group at="mass">
+            <point p="bob" fill="black" size="7">
+              <m>m</m>
+            </point>
+          </group>
+        </coordinates>
+        <annotations>
+          <annotation ref="ceiling"
+              text="A simple pendulum: a mass m suspended from a fixed support by a string of length l, displaced by an angle theta 0 from the vertical">
+            <annotation ref="ceiling"
+                text="The fixed support at the top, drawn with hatch marks"/>
+            <annotation ref="string"
+                text="The string of length l, connecting the support to the mass"/>
+            <annotation ref="mass"
+                text="The mass m at the end of the string"/>
+            <annotation ref="angle"
+                text="The angle theta 0 between the string and the vertical reference line"/>
+            <annotation ref="vertical"
+                text="A dashed vertical line through the pivot, marking the equilibrium position"/>
+            <annotation ref="swing-arc"
+                text="A dashed arc showing the path along which the mass swings"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
       </example>
 
       <solution>
