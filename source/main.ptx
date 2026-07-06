@@ -7,6 +7,12 @@
     \newcommand{\real}{\Bbb R}
     \newcommand{\R}{\mathbb{R}}
   </macros>
+    <!-- ... your existing docinfo ... -->
+<latex-image-preamble>
+  \usepackage{tikz}
+  \usepackage{amsmath}
+  \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+</latex-image-preamble>
   </docinfo>
 
   <article xml:id="shorttitlelowercase">
