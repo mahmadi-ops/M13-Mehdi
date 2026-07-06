@@ -659,8 +659,63 @@
         <p>Incorrect. While finding the maximum value of <m>|f^{(n+1)}(c)|</m> allows us to find an upper bound for the error, it does not give the exact error.</p>
     </feedback>
 </exercise>
-    
 
+<exercise>
+    <title>Approximating The Electric Field due to an Electric Dipole</title>
+    <statement>
+        <p>Consider an electric dipole consisting of two charges, <m>+q</m> and <m>-q</m>, 
+          separated by a distance <m>d</m>. The electric field at a point <m>P</m> located at a distance <m>r</m>
+          from the positive charge along the axis of the dipole is given by:
+        </p>
+        <me>
+          E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{(r)^2} - \frac{q}{(r+d)^2} \right)
+        </me>
+        <p>
+          Use the Taylor series to approximate the electric field <m>E</m> at point <m>P</m> 
+          for <m>d \ll r</m>. Show that the leading term in the approximation is proportional to 
+          <m>d/r^3</m>.
+        </p>
+    </statement>
+    <solution>
+        <p>To approximate the electric field <m>E</m> at point <m>P</m> 
+           for <m>d \ll r</m>, we can use the Taylor series expansion for 
+           the function <m>f(x) = \frac{1}{(r+x)^2}</m> around <m>x=0</m>.
+        </p>
+        <p>We have:</p>
+        <me>
+          f(x) = \frac{1}{(r+x)^2} = \frac{1}{r^2} \left( 1 + \frac{x}{r} \right)^{-2}
+        </me>
+        <p>Using the binomial series expansion, we can write:</p>
+        <me>
+          \left( 1 + \frac{x}{r} \right)^{-2} = 1 - 2\frac{x}{r} + 3\frac{x^2}{r^2} - 4\frac{x^3}{r^3} + \cdots
+        </me>
+        <p>Substituting <m>x=d</m> and <m>x=0</m>, we get:</p>
+        <me>
+          f(d) = \frac{1}{(r+d)^2} = \frac{1}{r^2} \left( 1 - 2\frac{d}{r} + 3\frac{d^2}{r^2} - 4\frac{d^3}{r^3} + \cdots \right)
+        </me>
+        <me>
+          f(0) = \frac{1}{r^2}
+        </me>
+        <p>Now, we can write the electric field <m>E</m> as:</p>
+        <me>
+          E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right) = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r^2} - \frac{1}{(r+d)^2} \right)
+        </me>
+        <p>Substituting the Taylor series expansion for <m>f(d)</m> and <m>f(0)</m>, we get:</p>
+        <me>
+          E = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r^2} - \frac{1}{r^2} \left( 1 - 2\frac{d}{r} + 3\frac{d^2}{r^2} - 4\frac{d^3}{r^3} + \cdots \right) \right)
+        </me>   
+        <p>Simplifying, we have:</p>
+        <me>
+          E = \frac{q}{4\pi\epsilon_0} \left( 2\frac{d}{r^3} - 3\frac{d^2}{r^4} + 4\frac{d^3}{r^5} - \cdots \right)
+        </me>
+        <p>Thus, the leading term in the approximation is:</p>
+        <me>
+          E \approx \frac{q}{4\pi\epsilon_0} \cdot 2\frac{d}{r^3}
+        </me>
+        <p>which shows that the leading term is proportional to <m>d/r^3</m>.</p>
+    </solution>   
+    
+</exercise>
 </worksheet>
 
   <subsection xml:id="subsection-5">
