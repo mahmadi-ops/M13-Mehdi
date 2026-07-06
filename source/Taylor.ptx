@@ -57,6 +57,69 @@
         </p>
       </statement>
     </theorem>
+  <figure xml:id="fig-taylor-formula">
+  <caption>Taylor's Formula: <m>f(x) = p_n(x) + R_n(x)</m>. The Taylor
+  polynomial <m>p_n</m> agrees with <m>f</m> at <m>x = a</m>; away from
+  <m>a</m>, the vertical gap between them is the remainder
+  <m>R_n(x)</m>.</caption>
+  <image width="65%">
+    <prefigure xmlns="https://prefigure.org" label="taylor-formula">
+      <diagram dimensions="(420,320)" margins="8">
+        <!-- Schematic for Taylor's Formula: f(x) = p_n(x) + R_n(x).
+             f and its Taylor polynomial p_n agree (and are tangent) at x = a;
+             they separate as x moves away, the vertical gap being R_n(x). -->
+        <definition>a = 1</definition>
+        <definition>f(x) = 0.9 + 0.55*sin(1.15*(x - 0.4)) + 0.09*x</definition>
+        <definition>pn(x) = f(a) + 0.5778*(x - a) - 0.379*(x - a)^2</definition>
+        <definition>xt = 3.1</definition>
+        <coordinates bbox="(-0.4, -0.3, 4.1, 2.3)">
+          <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+          <graph at="fgraph" function="f" domain="(-0.2, 3.9)"
+                 stroke="blue" thickness="2.5"/>
+          <graph at="pngraph" function="pn" domain="(-0.2, 3.9)"
+                 stroke="red" thickness="2"/>
+          <group at="tangency">
+            <point p="(a, f(a))" fill="black" size="3"/>
+            <line p1="(a, 0)" p2="(a, f(a))" dash="4 4" stroke="gray" thickness="1"/>
+            <label anchor="(a, 0)" alignment="s" offset="(0,-2)"><m>a</m></label>
+          </group>
+          <group at="remainder">
+            <line p1="(xt, 0)" p2="(xt, f(xt))" dash="4 4" stroke="gray" thickness="1"/>
+            <label anchor="(xt, 0)" alignment="s" offset="(0,-2)"><m>x</m></label>
+            <point p="(xt, f(xt))" fill="blue" size="3"/>
+            <point p="(xt, pn(xt))" fill="red" size="3"/>
+            <line p1="(xt, pn(xt))" p2="(xt, f(xt))"
+                  stroke="black" thickness="2" arrows="2"/>
+            <label anchor="(xt, pn(xt))" alignment="sw" offset="(-8,-14)">
+              <m>R_n(x)</m>
+            </label>
+          </group>
+          <label at="flabel" anchor="(3.55, f(3.55))" alignment="n" offset="(0,8)">
+            <m>f(x)</m>
+          </label>
+          <label at="pnlabel" anchor="(3.5, pn(3.5))" alignment="e" offset="(6,-2)">
+            <m>p_n(x)</m>
+          </label>
+        </coordinates>
+        <annotations>
+          <annotation ref="fgraph"
+              text="A schematic illustration of Taylor's Formula, f of x equals p n of x plus R n of x. A function f and its Taylor polynomial p n agree at x equals a and separate as x moves away, the gap being the remainder">
+            <annotation ref="fgraph"
+                text="The graph of the function f of x, shown in blue"
+                sonify="yes"/>
+            <annotation ref="pngraph"
+                text="The graph of the Taylor polynomial p n of x, shown in red, which is tangent to f at x equals a and closely matches f near a"
+                sonify="yes"/>
+            <annotation ref="tangency"
+                text="The point x equals a, where f and its Taylor polynomial p n agree; the approximation is exact here"/>
+            <annotation ref="remainder"
+                text="At a point x away from a, the vertical gap between f and p n is the remainder R n of x, the error in the Taylor approximation"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
     <proof>
       <p>
         The proof of the remainder theorem is based on the mean value theorem and Taylor's theorem and we have included 
@@ -377,12 +440,136 @@
       <me>
         K = mc^2-m_0c^2
       </me>
-      <example>
+      <p>
+      In the case when <m>v \ll c</m>, we can use the Taylor series to approximate the kinetic energy. 
+      In example <xref ref="example-1"/> we will show that the kinetic energy can be approximated by 
+      the formula <m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>. See <xref ref="fig-relativistic-ke"/> 
+      for a comparison of the relativistic kinetic energy and its Newtonian approximation. 
+      </p>
+
+      <figure xml:id="fig-ke-cartoon">
+  <caption>Relativistic versus Newtonian kinetic energy. The relativistic
+  energy races toward a wall at the speed of light <m>c</m>, while the
+  Newtonian energy follows a gentle parabola; the two agree only when
+  <m>v \ll c</m>.</caption>
+  <image width="65%">
+    <prefigure xmlns="https://prefigure.org" label="ke-cartoon">
+      <diagram dimensions="(440,330)" margins="8">
+        <!-- Cartoonish: relativistic KE races toward the "wall" at v=c;
+             Newtonian KE ambles along a gentle parabola. Natural units c=1, m0=1. -->
+        <definition>Krel(v) = 1/sqrt(1 - v^2) - 1</definition>
+        <definition>Knewt(v) = v^2/2</definition>
+        <coordinates bbox="(-0.08, -0.22, 1.2, 2.35)">
+          <axes at="axes" xlabel="v" decorations="no" arrows="1"/>
+          <!-- the cosmic speed-limit "wall" at v = c, with hatching -->
+          <group at="wall">
+            <line p1="(1, 0)" p2="(1, 2.3)" stroke="gray" thickness="2.5"/>
+            <repeat parameter="k=0..10">
+              <line p1="(1, 0.02 + 0.21*k)" p2="(1.07, 0.13 + 0.21*k)"
+                    stroke="gray" thickness="1.5"/>
+            </repeat>
+          </group>
+          <!-- chunky curves -->
+          <graph at="newtonian" function="Knewt" domain="(0, 1.16)"
+                 stroke="green" thickness="4.5"/>
+          <graph at="relativistic" function="Krel" domain="(0, 0.95)"
+                 stroke="blue" thickness="4.5"/>
+          <!-- axis landmarks -->
+          <label at="c-label" anchor="(1, 0)" alignment="ne" offset="(9,3)"><m>c</m></label>
+          <label at="origin-label" anchor="(0, 0)" alignment="sw"><m>0</m></label>
+          <!-- playful direct labels -->
+          <label at="rel-label" anchor="(0.86, Krel(0.86))" alignment="nw" offset="(-6,8)">
+            <m>\text{relativistic}</m>
+          </label>
+          <label at="newt-label" anchor="(0.8, Knewt(0.8))" alignment="se" offset="(4,-6)">
+            <m>\text{Newtonian}</m>
+          </label>
+          <!-- callout: the two agree when v is small -->
+          <label at="agree-label" anchor="(0.28, 0.62)" alignment="n">
+            <m>\text{For}\, v \ll c: K_{\text{rel}} \approx K_{\text{new}}</m>
+          </label>
+          <line at="agree-arrow" p1="(0.30, 0.55)" p2="(0.42, 0.14)"
+                stroke="black" thickness="2" arrows="1"/>
+        </coordinates>
+        <annotations>
+          <annotation ref="relativistic"
+              text="A cartoon comparison of relativistic and Newtonian kinetic energy versus speed v. The relativistic energy races upward toward a wall at the speed of light c, while the Newtonian energy ambles along a gentle parabola">
+            <annotation ref="relativistic"
+                text="The relativistic kinetic energy, which shoots up without bound as v approaches the speed of light c"
+                sonify="yes"/>
+            <annotation ref="newtonian"
+                text="The Newtonian kinetic energy, a gentle parabola that stays finite and matches the relativistic curve only when v is much less than c"
+                sonify="yes"/>
+            <annotation ref="wall"
+                text="A hatched wall at v equals c, the speed of light, a barrier the relativistic energy approaches but never reaches"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
+      <figure xml:id="fig-relativistic-ke">
+  <caption>Relativistic kinetic energy compared with its Newtonian
+  approximation. The two nearly coincide when <m>v \ll c</m>, but the
+  relativistic energy grows without bound as <m>v \to c</m>.</caption>
+  <image width="60%">
+    <prefigure xmlns="https://prefigure.org" label="relativistic-ke">
+      <diagram dimensions="(400,300)" margins="8">
+        <!-- Natural units: c = 1, m0 = 1.
+             Relativistic:  Krel(v) = 1/sqrt(1 - v^2) - 1
+             Newtonian:     Knewt(v) = (1/2) v^2 -->
+        <definition>Krel(v) = 1/sqrt(1 - v^2) - 1</definition>
+        <definition>Knewt(v) = v^2/2</definition>
+        <coordinates bbox="(-0.05, -0.15, 1.15, 2.2)">
+          <axes at="axes" xlabel="v" decorations="no" arrows="1"/>
+          <line at="asymptote" p1="(1, 0)" p2="(1, 2.2)" dash="5 5"
+                stroke="gray" thickness="1"/>
+          <graph at="newtonian" function="Knewt" domain="(0, 1.12)"
+                 stroke="green" thickness="2"/>
+          <graph at="relativistic" function="Krel" domain="(0, 0.945)"
+                 stroke="blue" thickness="2"/>
+          <label at="c-label" anchor="(1, 0)" alignment="ne" offset="(2,2)">
+            <m>c</m>
+          </label>
+          <label at="origin-label" anchor="(0, 0)" alignment="sw">
+            <m>0</m>
+          </label>
+          <legend at="legend" anchor="(0.06, 2.05)" alignment="se">
+            <item ref="relativistic"><m>K_{rel} = mc^2 - m_0c^2</m></item>
+            <item ref="newtonian"><m>K_{new} = \tfrac{1}{2}m_0v^2</m></item>
+          </legend>
+        </coordinates>
+        <annotations>
+          <annotation ref="relativistic"
+              text="A comparison of relativistic and Newtonian kinetic energy as functions of speed v, for v between 0 and the speed of light c">
+            <annotation ref="relativistic"
+                text="The relativistic kinetic energy, K equals m c squared minus m naught c squared, which increases without bound as v approaches the speed of light c"
+                sonify="yes"/>
+            <annotation ref="newtonian"
+                text="The Newtonian approximation, K approximately one half m naught v squared, a parabola that closely matches the relativistic curve when v is much less than c"
+                sonify="yes"/>
+            <annotation ref="asymptote"
+                text="A dashed vertical line at v equals c, the speed of light, which the relativistic energy approaches as a vertical asymptote"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+      <example xml:id="example-1">
         <title>Newtonian kinetic energy as an approximation to relativistic kinetic energy when <m>v \ll c</m></title>
         <p>
         Show that the kinetic energy of an object moving with velocity
         <m>v</m> can be approximated by the formula <m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>.
         </p>
+        <hint>
+          <p>
+            We can use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1 - x}}</m> at <m>x=0</m> to approximate <m>K</m>. 
+            Use <m>x = \frac{v^2}{c^2}</m>.
+          </p>
+        </hint>
+        </example>
         <solution>
           <p>
             We can rewrite the kinetic energy as follows:
@@ -424,7 +611,7 @@
             K \approx \frac{1}{2} m_0v^2.
           </me>
         </solution>
-      </example>
+      
       
       <example> 
         <title>Estimating the error in using the Newtonian kinetic energy formula to approximate the relativistic kinetic energy</title>
@@ -434,6 +621,9 @@
         the relativistic kinetic energy of the car. The speed of light is <m>c = 3 \times 10^8 m/s</m>.
         </p>
       </example>
+
+      
+
         <solution>
           <p>
             Note that when using the Newtonian kinetic energy formula, we are using
