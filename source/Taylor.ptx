@@ -201,23 +201,24 @@
     </p>
 
    <figure xml:id="fig-exp-taylor">
-  <caption>The function <m>f(x) = e^x</m> with its Taylor polynomials
-  <m>p_1, \dots, p_4</m> about <m>0</m>, shown for both <m>x &lt; 0</m> and
-  <m>x &gt; 0</m>. The two sample points mark the value <m>e^c</m> appearing in
-  the remainder: for <m>x &lt; 0</m> we have <m>e^c &lt; 1</m>, and for
-  <m>x &gt; 0</m> we have <m>e^c &lt; e^x</m>.</caption>
-  <image width="60%">
+  <caption>Schematic graph of <m>f(x) = e^x</m> and its Taylor polynomials
+  <m>p_1, \dots, p_4</m> about <m>0</m>. For a positive <m>x</m> the remainder
+  uses some <m>c</m> with <m>0 &lt; c &lt; x</m>, giving <m>e^c &lt; e^x</m>;
+  for a negative <m>x</m> it uses some <m>c</m> with <m>x &lt; c &lt; 0</m>,
+  giving <m>e^c &lt; 1</m>.</caption>
+  <image width="80%">
     <prefigure xmlns="https://prefigure.org" label="exp-taylor">
       <diagram dimensions="(440,360)" margins="8">
-        <!-- e^x with Taylor polynomials p1..p4 about 0, both x<0 and x>0,
-             plus two sample points illustrating the remainder bound e^c. -->
+        <!-- Schematic: e^x with Taylor polynomials p1..p4 about 0.
+             No axis numbers; dashed markers show a representative x>0 with an
+             intermediate c (0<c<x), and a representative x<0 with c (x<c<0). -->
         <definition>f(x) = exp(x)</definition>
         <definition>p1(x) = 1 + x</definition>
         <definition>p2(x) = 1 + x + x^2/2</definition>
         <definition>p3(x) = 1 + x + x^2/2 + x^3/6</definition>
         <definition>p4(x) = 1 + x + x^2/2 + x^3/6 + x^4/24</definition>
         <coordinates bbox="(-2.7, -1.9, 2.25, 8)">
-          <grid-axes xlabel="x" ylabel="y" hlabels="(-2, 1, 2)" vlabels="(-1, 1, 8)"/>
+          <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
           <graph at="p1" function="p1" domain="(-2.5, 2)" stroke="orange" thickness="1.5"/>
           <graph at="p2" function="p2" domain="(-2.5, 2)" stroke="green" thickness="1.5"/>
           <graph at="p3" function="p3" domain="(-2.5, 2)" stroke="purple" thickness="1.5"/>
@@ -227,16 +228,28 @@
             <m>f(x) = e^x</m>
           </label>
           <point at="center" p="(0, 1)" fill="black" size="2.5"/>
-          <group at="neg-sample">
-            <point p="(-0.8, f(-0.8))" fill="maroon" size="4"/>
-            <label anchor="(-0.8, f(-0.8))" alignment="nw" offset="(-4,4)" color="maroon">
-              <m>e^c \mathrel{\unicode{x3C}} 1</m>
-            </label>
+          <group at="pos-x">
+            <line p1="(0.8, 0)" p2="(0.8, f(0.8))" dash="4 4" stroke="gray" thickness="1"/>
+            <label anchor="(0.8, 0)" alignment="s" offset="(6,-2)"><m>x \gt 0</m></label>
           </group>
           <group at="pos-sample">
-            <point p="(1, f(1))" fill="olive" size="4"/>
-            <label anchor="(1, f(1))" alignment="e" offset="(8,0)" color="olive">
+            <line p1="(0.5, 0)" p2="(0.5, f(0.5))" dash="4 4" stroke="olive" thickness="1"/>
+            <label anchor="(0.5, 0)" alignment="s" offset="(-4,-2)" color="olive"><m>c</m></label>
+            <point p="(0.5, f(0.5))" fill="olive" size="4"/>
+            <label anchor="(0.5, f(0.5))" alignment="n" offset="(-4,16)" color="olive">
               <m>e^c \mathrel{\unicode{x3C}} e^x</m>
+            </label>
+          </group>
+          <group at="neg-x">
+            <line p1="(-0.8, 0)" p2="(-0.8, f(-0.8))" dash="4 4" stroke="gray" thickness="1"/>
+            <label anchor="(-0.8, 0)" alignment="s" offset="(-6,-2)"><m>x \mathrel{\unicode{x3C}} 0</m></label>
+          </group>
+          <group at="neg-sample">
+            <line p1="(-0.5, 0)" p2="(-0.5, f(-0.5))" dash="4 4" stroke="maroon" thickness="1"/>
+            <label anchor="(-0.5, 0)" alignment="s" offset="(4,-2)" color="maroon"><m>c</m></label>
+            <point p="(-0.5, f(-0.5))" fill="maroon" size="4"/>
+            <label anchor="(-0.5, f(-0.5))" alignment="n" offset="(-8,16)" color="maroon">
+              <m>e^c \mathrel{\unicode{x3C}} 1</m>
             </label>
           </group>
           <legend at="legend" anchor="(-2.5, 7.7)" alignment="se" scale="0.85">
@@ -249,19 +262,17 @@
         </coordinates>
         <annotations>
           <annotation ref="fgraph"
-              text="The exponential function f of x equals e to the x, together with its Taylor polynomials p 1 through p 4 centered at 0, shown for both negative and positive x. Two sample points illustrate the bound on e to the c that appears in the remainder term">
-            <annotation ref="fgraph"
-                text="The function f of x equals e to the x, a thick blue curve"
-                sonify="yes"/>
+              text="Schematic graph of f of x equals e to the x with its Taylor polynomials p 1 through p 4 about 0. Dashed markers show a representative positive x with an intermediate value c between 0 and x, and a representative negative x with an intermediate c between x and 0. The sample points show the size of e to the c used to bound the remainder">
+            <annotation ref="fgraph" text="The function f of x equals e to the x, a thick blue curve" sonify="yes"/>
             <annotation ref="p1" text="The first degree Taylor polynomial p 1"/>
             <annotation ref="p2" text="The second degree Taylor polynomial p 2"/>
             <annotation ref="p3" text="The third degree Taylor polynomial p 3"/>
-            <annotation ref="p4" text="The fourth degree Taylor polynomial p 4, nearly matching e to the x near 0"/>
-            <annotation ref="center" text="The center of expansion at the point 0 comma 1"/>
-            <annotation ref="neg-sample"
-                text="For negative x, a point where c is between x and 0, so c is negative and e to the c is less than 1"/>
-            <annotation ref="pos-sample"
-                text="For positive x, a point where c is between 0 and x, so c is less than x and e to the c is less than e to the x"/>
+            <annotation ref="p4" text="The fourth degree Taylor polynomial p 4"/>
+            <annotation ref="center" text="The center of expansion where the curves meet on the vertical axis"/>
+            <annotation ref="pos-x" text="A dashed marker at a representative positive x"/>
+            <annotation ref="pos-sample" text="A point at c between 0 and the positive x, where e to the c is less than e to the x"/>
+            <annotation ref="neg-x" text="A dashed marker at a representative negative x"/>
+            <annotation ref="neg-sample" text="A point at c between the negative x and 0, where e to the c is less than 1"/>
           </annotation>
         </annotations>
       </diagram>
