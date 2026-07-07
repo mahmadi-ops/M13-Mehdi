@@ -745,12 +745,135 @@
 
       <subsubsection xml:id="subsubsec-pendulum-small-angle">
         <title>Small-Angle Approximation for a Pendulum</title>
+<p>
+  We begin this section by briefly reviewing the forces acting on a simple pendulum and how
+  the small-angle approximation allows us to treat its motion as simple harmonic motion.
+</p>
+
+        <p>
+  The bob moves along the arc, so only the component of gravity
+  <em>tangent</em> to that arc drives the motion. Resolving the weight
+  <m>m\vec{\mathbf{g}}</m> into a component along the string
+  (<m>mg\cos\theta</m>, balanced by the string tension
+  <m>\vec{\mathbf{F}}_T</m>) and a component tangent to the arc, as shown in
+  <xref ref="fig-pendulum-forces"/>, gives the restoring force
+</p>
+<me>
+  F = -mg\sin\theta .
+</me>
+<p>
+  The minus sign indicates that the force always points back toward the
+  equilibrium (straight-down) position. This is <em>not</em> Hooke's law: the
+  force is proportional to <m>\sin\theta</m>, not to the displacement itself,
+  so the motion is not exactly simple harmonic. Writing the arc displacement
+  as <m>x = \ell\theta</m>, we would need <m>F</m> to be proportional to
+  <m>x</m><mdash/>that is, to <m>\theta</m><mdash/>for the motion to be simple
+  harmonic.
+</p>
+<p>
+  The small-angle approximation bridges this gap. From the Taylor series
+</p>
+<me>
+  \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots,
+</me>
+<p>
+  when <m>\theta</m> is small (in radians) the higher-order terms are
+  negligible and <m>\sin\theta \approx \theta</m>. The restoring force then
+  becomes
+</p>
+<me>
+  F \approx -mg\theta = -\frac{mg}{\ell}\,x,
+</me>
+<p>
+  which <em>is</em> Hooke's law <m>F = -kx</m> with effective spring constant
+  <m>k = \dfrac{mg}{\ell}</m>. Thus, for small swings the pendulum behaves as
+  a simple harmonic oscillator, with period
+</p>
+<me>
+  T = 2\pi\sqrt{\frac{\ell}{g}},
+</me>
+<p>
+  independent of both the amplitude and the mass. Taylor's Remainder Theorem
+  (see <xref ref="ex-small-angle-pendulum"/>) enables us to quantify how
+  small <m>\theta</m> must be for this approximation<mdash/>.
+</p>
+
+        <figure xml:id="fig-pendulum-forces">
+  <caption>Forces on a simple pendulum. The weight <m>m\vec{\mathbf{g}}</m>
+  resolves into a component <m>mg\cos\theta</m> along the string (balanced by
+  the tension <m>\vec{\mathbf{F}}_T</m>) and a component <m>mg\sin\theta</m>
+  tangent to the arc, which acts as the restoring force.</caption>
+  <image width="70%">
+    <prefigure xmlns="https://prefigure.org" label="pendulum-forces">
+      <diagram dimensions="(360,400)" margins="8">
+        <definition>theta = radians(33)</definition>
+        <definition>fscale = 0.6</definition>
+        <definition>ft = 0.62</definition>
+        <definition>pivot = (0, 0)</definition>
+        <definition>bob = (sin(theta), -cos(theta))</definition>
+        <definition>mgEnd = (sin(theta), -cos(theta) - fscale)</definition>
+        <definition>ftEnd = (sin(theta) - ft*sin(theta), -cos(theta) + ft*cos(theta))</definition>
+        <definition>sinEnd = (sin(theta) - fscale*sin(theta)*cos(theta), -cos(theta) - fscale*sin(theta)*sin(theta))</definition>
+        <definition>cosEnd = (sin(theta) + fscale*cos(theta)*sin(theta), -cos(theta) - fscale*cos(theta)*cos(theta))</definition>
+        <coordinates bbox="(-0.55, -1.62, 1.08, 0.18)" aspect-ratio="1">
+          <line p1="(-0.4, 0)" p2="(0.4, 0)" thickness="2"/>
+          <repeat parameter="k=0..7">
+            <line p1="(-0.38 + 0.11*k, 0)" p2="(-0.32 + 0.11*k, 0.07)" thickness="1"/>
+          </repeat>
+          <line p1="pivot" p2="(0, -1.18)" dash="5 4" stroke="gray" thickness="1"/>
+          <arc center="pivot" radius="1" range="(236, 304)" dash="4 4" stroke="gray" thickness="1"/>
+          <line at="string" p1="pivot" p2="bob" thickness="2"/>
+          <label anchor="(0.5*bob[0], 0.5*bob[1])" alignment="e"><m>\ell</m></label>
+          <angle-marker points="((0,-0.55), pivot, bob)" radius="42"><m>\theta</m></angle-marker>
+          <line p1="(0, -cos(theta))" p2="bob" dash="4 4" stroke="gray" thickness="1"/>
+          <label anchor="(0.5*bob[0], -cos(theta))" alignment="n" offset="(0,3)"><m>\ell\sin\theta</m></label>
+          <label anchor="(0.25, -0.9)" alignment="s"><m>x</m></label>
+          <line at="FT" p1="bob" p2="ftEnd" stroke="magenta" thickness="3" arrows="1"/>
+          <label anchor="ftEnd" alignment="ne" offset="(3,3)" color="magenta"><m>\vec{\mathbf{F}}_T</m></label>
+          <line at="mgvec" p1="bob" p2="mgEnd" stroke="magenta" thickness="3" arrows="1"/>
+          <label anchor="mgEnd" alignment="s" offset="(0,-3)" color="magenta"><m>m\vec{\mathbf{g}}</m></label>
+          <line at="mgsin" p1="bob" p2="sinEnd" stroke="magenta" thickness="2" arrows="1"/>
+          <label anchor="sinEnd" alignment="sw" offset="(-4,-2)"><m>mg\sin\theta</m></label>
+          <line at="mgcos" p1="bob" p2="cosEnd" dash="4 3" stroke="magenta" thickness="2" arrows="1"/>
+          <label anchor="cosEnd" alignment="se" offset="(4.7,-2)"><m>mg\cos\theta</m></label>
+          <point p="bob" fill="green" size="9"/>
+          <label anchor="bob" alignment="e" offset="(9,2)"><m>m</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="string"
+              text="A simple pendulum: a bob of mass m on a string of length l making an angle theta with the vertical. The weight m g points straight down and is resolved into two components: m g cosine theta along the string, balanced by the tension F sub T, and m g sine theta tangent to the arc, which is the restoring force driving the motion">
+            <annotation ref="string" text="The string of length l at angle theta from the vertical"/>
+            <annotation ref="FT" text="The tension F sub T, directed along the string toward the pivot" sonify="yes"/>
+            <annotation ref="mgvec" text="The weight m g, directed straight down" sonify="yes"/>
+            <annotation ref="mgsin" text="The tangential component m g sine theta, the restoring force" sonify="yes"/>
+            <annotation ref="mgcos" text="The radial component m g cosine theta, along the string" sonify="yes"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
      <example xml:id="ex-small-angle-pendulum">
       <title>Simple Harmonic Motion of a Pendulum as an Approximation</title>
       <statement>
       <p>Use the remainder theorem to analyze the claim made in Giancoli's textbook that for small angles, <m>\sin\theta \approx \theta</m>.  
         Specifically, show that the error is less than <m>1\%</m> for angles below <m>15^\circ</m>.</p>
-      </statement>
+        <p>
+          Here is the exact quote from Giancoli's textbook:      
+          </p>
+       <blockquote>
+       <p>
+       <q>For angles less than <m>15^\circ</m>, the difference between
+    <m>\theta</m> (in radians) and <m>\sin\theta</m> is less than
+    <m>1\%</m>.</q>
+  </p>
+ <!-- <attribution>
+    Giancoli, <pubtitle>Physics for Scientists and Engineers with Modern
+    Physics</pubtitle> <xref ref="biblio-giancoli"/>, p. 380
+  </attribution> --> 
+</blockquote>
+         </statement>
       </example>
       <solution xml:id="sol-small-angle-pendulum">
   <p>
