@@ -533,7 +533,7 @@
       <figure xml:id="fig-ke-cartoon">
   <caption>Relativistic versus Newtonian kinetic energy. The relativistic
   energy races toward a wall at the speed of light <m>c</m>, while the
-  Newtonian energy follows a gentle parabola; the two agree only when
+  Newtonian energy follows a gentle parabola; the two are approximately in agreement only when
   <m>v \ll c</m>.</caption>
   <image width="65%">
     <prefigure xmlns="https://prefigure.org" label="ke-cartoon">
@@ -562,10 +562,10 @@
           <label at="origin-label" anchor="(0, 0)" alignment="sw"><m>0</m></label>
           <!-- playful direct labels -->
           <label at="rel-label" anchor="(0.86, Krel(0.86))" alignment="nw" offset="(-6,8)">
-            <m>\text{relativistic}</m>
+            <m>\text{Relativistic} K</m>
           </label>
           <label at="newt-label" anchor="(0.8, Knewt(0.8))" alignment="se" offset="(4,-6)">
-            <m>\text{Newtonian}</m>
+            <m>\text{Newtonian} K</m>
           </label>
           <!-- callout: the two agree when v is small -->
           <label at="agree-label" anchor="(0.28, 0.62)" alignment="n">
@@ -576,7 +576,7 @@
         </coordinates>
         <annotations>
           <annotation ref="relativistic"
-              text="A cartoon comparison of relativistic and Newtonian kinetic energy versus speed v. The relativistic energy races upward toward a wall at the speed of light c, while the Newtonian energy ambles along a gentle parabola">
+              text="A comparison of relativistic and Newtonian kinetic energy versus speed v. The relativistic energy races upward toward a wall at the speed of light c, while the Newtonian energy ambles along a gentle parabola">
             <annotation ref="relativistic"
                 text="The relativistic kinetic energy, which shoots up without bound as v approaches the speed of light c"
                 sonify="yes"/>
@@ -743,6 +743,124 @@
    
       </subsubsection>
 
+      <subsubsection xml:id="subsubsec-pendulum-small-angle">
+        <title>Small-Angle Approximation for a Pendulum</title>
+     <example xml:id="ex-small-angle-pendulum">
+      <title>Simple Harmonic Motion of a Pendulum as an Approximation</title>
+      <statement>
+      <p>Use the remainder theorem to analyze the claim made in Giancoli's textbook that for small angles, <m>\sin\theta \approx \theta</m>.  
+        Specifically, show that the error is less than <m>1\%</m> for angles below <m>15^\circ</m>.</p>
+      </statement>
+      </example>
+      <solution xml:id="sol-small-angle-pendulum">
+  <p>
+    In deriving simple harmonic motion for a pendulum, the restoring force
+    is <m>F = -mg\sin\theta</m>, which is proportional to <m>\sin\theta</m>
+    rather than to the angular displacement <m>\theta</m> itself. The motion
+    is therefore not <em>exactly</em> simple harmonic. Giancoli resolves this
+    by appealing to the smallness of the angle: for angles below
+    <m>15^\circ</m>, he states that
+    <q>the difference between <m>\theta</m> (in radians) and
+    <m>\sin\theta</m> is less than <m>1\%</m></q> <!-- <xref ref="biblio-giancoli"/>. -->
+    He notes that this can be seen <q>by looking at the series
+    expansion</q> of <m>\sin\theta</m>, namely
+  </p>
+  <me>
+    \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}
+      - \frac{\theta^7}{7!} + \cdots .
+  </me>
+  <p>
+    We can turn this observation into a quantitative statement
+    using Taylor's Remainder Theorem. Let <m>f(\theta) = \sin\theta</m>,
+    expanded about <m>\theta = 0</m>. Replacing <m>\sin\theta</m> by
+    <m>\theta</m> amounts to using the first-degree Taylor polynomial
+    <m>p_1(\theta) = \theta</m>. Since the coefficient of <m>\theta^2</m> in
+    the series above is zero, we have
+    <m>p_1(\theta) = p_2(\theta) = \theta</m>, so the error is controlled by
+    the third derivative: for some <m>c</m> with <m>0 \lt c \lt \theta</m>,
+  </p>
+  <me>
+    \sin\theta - \theta = R_2(\theta)
+      = \frac{f'''(c)}{3!}\,\theta^3
+      = -\frac{\cos c}{6}\,\theta^3 .
+  </me>
+  <p>
+    Because <m>|\cos c| \le 1</m>, the absolute error satisfies
+  </p>
+  <me>
+    \left| \sin\theta - \theta \right|
+      = \frac{\cos c}{6}\,\theta^3 \le \frac{\theta^3}{6},
+  </me>
+  <p>
+    and dividing by <m>\theta</m> bounds the <term>relative</term> error:
+  </p>
+  <me>
+    \frac{\left| \theta - \sin\theta \right|}{\theta} \le \frac{\theta^2}{6}.
+  </me>
+  <p>
+    This confirms Giancoli's claim and even sharpens it. The relative error
+    stays below <m>1\%</m> precisely when
+    <m>\dfrac{\theta^2}{6} \lt 0.01</m>, that is, when
+    <m>\theta \lt \sqrt{0.06} \approx 0.245</m> radians, or about
+    <m>14^\circ</m>. At Giancoli's stated cutoff of <m>15^\circ = \pi/12</m>
+    radians, the bound gives
+  </p>
+  <me>
+    \frac{\left| \theta - \sin\theta \right|}{\theta}
+      \le \frac{(\pi/12)^2}{6} \approx 0.0114,
+  </me>
+  <p>
+    i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
+    boundary of the <q>less than <m>1\%</m></q> regime, and Taylor's
+    Remainder Theorem locates the true <m>1\%</m> threshold at
+    <m>\theta \approx 14^\circ</m>. This is precisely the range in which the
+    pendulum behaves as a simple harmonic oscillator with period
+    <m>T = 2\pi\sqrt{\ell/g}</m>.
+  </p>
+  <figure xml:id="fig-relative-error-1pct">
+  <caption>The relative error <m>\dfrac{|\theta - \sin\theta|}{\sin\theta}</m>
+  rises above the <m>1\%</m> threshold <m>y = 0.01</m> at
+  <m>\theta^* \approx 0.244</m> radians (about <m>14^\circ</m>), the root of
+  <m>\theta = 1.01\sin\theta</m>.</caption>
+  <image width="70%">
+    <prefigure xmlns="https://prefigure.org" label="relative-error-1pct">
+      <diagram dimensions="(420,320)" margins="8">
+        <!-- Relative error g(theta) = |theta - sin theta| / sin theta crossing y = 0.01.
+             Intersection at theta* = 0.244097 rad (root of theta = 1.01 sin theta). -->
+        <definition>g(t) = (t - sin(t))/sin(t)</definition>
+        <definition>tstar = 0.244097</definition>
+        <coordinates bbox="(-0.03, -0.003, 0.42, 0.031)">
+          <grid-axes xlabel="\theta" hlabels="(0, 0.1, 0.4)" vlabels="(0.01, 0.01, 0.03)"/>
+          <line at="onepct" p1="(-0.02, 0.01)" p2="(0.42, 0.01)" dash="5 4"
+                stroke="red" thickness="1.5"/>
+          <label at="pctlabel" anchor="(0.02, 0.01)" alignment="n" offset="(0,4)" color="red">
+            <m>y = 0.01\ (1\%)</m>
+          </label>
+          <graph at="gcurve" function="g" domain="(0.004, 0.4)" stroke="blue" thickness="2.5"/>
+          <label at="glabel" anchor="(0.36, g(0.36))" alignment="nw" offset="(-2,4)" color="blue">
+            <m>\dfrac{|\theta - \sin\theta|}{\sin\theta}</m>
+          </label>
+          <line at="drop" p1="(tstar, 0)" p2="(tstar, 0.01)" dash="4 4"
+                stroke="gray" thickness="1"/>
+          <point at="xpoint" p="(tstar, 0.01)" fill="black" size="4"/>
+          <label at="xlabel" anchor="(tstar, 0.01)" alignment="se" offset="(6,-2)">
+            <m>\theta^* \approx 0.244</m>
+          </label>
+        </coordinates>
+        <annotations>
+          <annotation ref="gcurve"
+              text="The relative error in approximating sin theta by theta, given by the absolute value of theta minus sin theta all over sin theta, plotted against theta in radians. The curve rises from zero and crosses the one percent threshold line y equals 0.01 at approximately theta equals 0.244 radians, about 14 degrees">
+            <annotation ref="gcurve" text="The relative error curve, rising as theta increases" sonify="yes"/>
+            <annotation ref="onepct" text="The horizontal threshold line at y equals 0.01, representing one percent error"/>
+            <annotation ref="xpoint" text="The intersection point at theta equals approximately 0.244 radians, where the relative error first reaches one percent"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+</solution>
+</subsubsection>
 
      <subsubsection>
     <title>Approximating the value of <m>\pi</m> using Taylor series</title>
