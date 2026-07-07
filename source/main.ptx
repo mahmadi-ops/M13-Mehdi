@@ -20,6 +20,7 @@
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
     <xi:include href="Taylor.ptx" />
+    <xi:include href="Dotproduct.ptx" />
     <!-- <xi:include href="section-2.ptx" /> -->
    <!-- <xi:include href="Span.ptx" /> -->
    <!-- <xi:include href="Webwork.ptx" /> -->
