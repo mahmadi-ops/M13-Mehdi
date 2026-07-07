@@ -729,11 +729,11 @@
             |R_1(x)| \leq m_0 c^2 \frac{3}{8} \left( 1 - \frac{v^2}{c^2} \right)^{-5/2} \left( \frac{v^2}{c^2} \right)^2
           </me>
           <p>
-            Substituting <m>v/c = 10^{-7} m/s</m> and  <m>c = 3 \times 10^8 m/s</m>, we get:
+            Substituting <m>v/c = 10^{-7}</m> and  <m>c = 3 \times 10^8 m/s</m>, we get:
           </p>
           <me>
             |R_1(x)| \leq m_0 (3 \times 10^8)^2 \frac{3}{8} \left( 1 -  10^{-14} \right)^{-5/2} 
-            \left(10^{-14} \right)^2 \lt 4 \times 10^{-12} m_0
+            \left(10^{-14} \right)^2 \lt 4 \times 10^{-11} m_0
           </me>
           <p>
             This shows that the error is extremely small, and the Newtonian kinetic energy formula 
