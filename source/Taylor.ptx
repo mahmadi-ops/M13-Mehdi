@@ -198,6 +198,78 @@
     </me>
     <p>
       This shows that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x>0</m>. 
+    </p>
+
+   <figure xml:id="fig-exp-taylor">
+  <caption>The function <m>f(x) = e^x</m> with its Taylor polynomials
+  <m>p_1, \dots, p_4</m> about <m>0</m>, shown for both <m>x &lt; 0</m> and
+  <m>x &gt; 0</m>. The two sample points mark the value <m>e^c</m> appearing in
+  the remainder: for <m>x &lt; 0</m> we have <m>e^c &lt; 1</m>, and for
+  <m>x &gt; 0</m> we have <m>e^c &lt; e^x</m>.</caption>
+  <image width="60%">
+    <prefigure xmlns="https://prefigure.org" label="exp-taylor">
+      <diagram dimensions="(440,360)" margins="8">
+        <!-- e^x with Taylor polynomials p1..p4 about 0, both x<0 and x>0,
+             plus two sample points illustrating the remainder bound e^c. -->
+        <definition>f(x) = exp(x)</definition>
+        <definition>p1(x) = 1 + x</definition>
+        <definition>p2(x) = 1 + x + x^2/2</definition>
+        <definition>p3(x) = 1 + x + x^2/2 + x^3/6</definition>
+        <definition>p4(x) = 1 + x + x^2/2 + x^3/6 + x^4/24</definition>
+        <coordinates bbox="(-2.7, -1.9, 2.25, 8)">
+          <grid-axes xlabel="x" ylabel="y" hlabels="(-2, 1, 2)" vlabels="(-1, 1, 8)"/>
+          <graph at="p1" function="p1" domain="(-2.5, 2)" stroke="orange" thickness="1.5"/>
+          <graph at="p2" function="p2" domain="(-2.5, 2)" stroke="green" thickness="1.5"/>
+          <graph at="p3" function="p3" domain="(-2.5, 2)" stroke="purple" thickness="1.5"/>
+          <graph at="p4" function="p4" domain="(-2.5, 2)" stroke="red" thickness="1.5"/>
+          <graph at="fgraph" function="f" domain="(-2.5, 2)" stroke="blue" thickness="3"/>
+          <label at="flabel" anchor="(-1.55, 4.4)" alignment="w" color="blue">
+            <m>f(x) = e^x</m>
+          </label>
+          <point at="center" p="(0, 1)" fill="black" size="2.5"/>
+          <group at="neg-sample">
+            <point p="(-0.8, f(-0.8))" fill="maroon" size="4"/>
+            <label anchor="(-0.8, f(-0.8))" alignment="nw" offset="(-4,4)" color="maroon">
+              <m>e^c \mathrel{\unicode{x3C}} 1</m>
+            </label>
+          </group>
+          <group at="pos-sample">
+            <point p="(1, f(1))" fill="olive" size="4"/>
+            <label anchor="(1, f(1))" alignment="e" offset="(8,0)" color="olive">
+              <m>e^c \mathrel{\unicode{x3C}} e^x</m>
+            </label>
+          </group>
+          <legend at="legend" anchor="(-2.5, 7.7)" alignment="se" scale="0.85">
+            <item ref="fgraph"><m>e^x</m></item>
+            <item ref="p4"><m>p_4</m></item>
+            <item ref="p3"><m>p_3</m></item>
+            <item ref="p2"><m>p_2</m></item>
+            <item ref="p1"><m>p_1</m></item>
+          </legend>
+        </coordinates>
+        <annotations>
+          <annotation ref="fgraph"
+              text="The exponential function f of x equals e to the x, together with its Taylor polynomials p 1 through p 4 centered at 0, shown for both negative and positive x. Two sample points illustrate the bound on e to the c that appears in the remainder term">
+            <annotation ref="fgraph"
+                text="The function f of x equals e to the x, a thick blue curve"
+                sonify="yes"/>
+            <annotation ref="p1" text="The first degree Taylor polynomial p 1"/>
+            <annotation ref="p2" text="The second degree Taylor polynomial p 2"/>
+            <annotation ref="p3" text="The third degree Taylor polynomial p 3"/>
+            <annotation ref="p4" text="The fourth degree Taylor polynomial p 4, nearly matching e to the x near 0"/>
+            <annotation ref="center" text="The center of expansion at the point 0 comma 1"/>
+            <annotation ref="neg-sample"
+                text="For negative x, a point where c is between x and 0, so c is negative and e to the c is less than 1"/>
+            <annotation ref="pos-sample"
+                text="For positive x, a point where c is between 0 and x, so c is less than x and e to the c is less than e to the x"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
+    <p>
       The second case is when <m>x &lt; 0</m>. In this case, since <m>c</m> is between <m>x</m> and <m>0</m>,
       we have <m>x \leq c \leq 0</m>. Hence, we can bound the remainder term as follows:
     </p>
