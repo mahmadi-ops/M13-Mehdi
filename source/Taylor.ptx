@@ -1193,6 +1193,75 @@
     </solution>   
     
 </exercise>
+<exercise xml:id="exer-dipole-tolerance">
+  <title>How small must the separation be?</title>
+  <statement>
+    <p>
+      A dipole is often treated as a <term>point dipole</term> by replacing
+      the exact axial field
+      <me>
+        E = \frac{1}{4\pi\epsilon_0}\left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right)
+      </me>
+      with its leading-order Taylor term for <m>d \ll r</m>,
+      <me>
+        E \approx \frac{1}{4\pi\epsilon_0}\cdot\frac{2qd}{r^3}.
+      </me>
+      Suppose this approximation must agree with the exact field to within a
+      relative error of <m>1\%</m>. If the field point <m>P</m> is
+      <m>r = 3.0\ \text{cm}</m> from the positive charge, how small must the
+      charge separation <m>d</m> be for the point-dipole approximation to be
+      valid?
+    </p>
+  </statement>
+  <hint>
+    <p>
+      The dominant error comes from the <em>next</em> term in the expansion.
+      Using
+      <m>E = \dfrac{q}{4\pi\epsilon_0}\left( \dfrac{2d}{r^3} -
+      \dfrac{3d^2}{r^4} + \cdots \right)</m>, form the relative error of the
+      leading term and keep only the largest contribution.
+    </p>
+  </hint>
+  <answer>
+    <p>
+      <m>d \lesssim \dfrac{2}{3}(0.01)\,r \approx 0.020\ \text{cm} = 0.20\ \text{mm}.</m>
+    </p>
+  </answer>
+  <solution>
+    <p>
+      From the Taylor expansion,
+      <me>
+        E = \frac{q}{4\pi\epsilon_0}\left( \frac{2d}{r^3} - \frac{3d^2}{r^4}
+        + \cdots \right),
+      </me>
+      the leading term is <m>E_{\text{lead}} = \dfrac{q}{4\pi\epsilon_0}\cdot
+      \dfrac{2d}{r^3}</m>, and the first neglected term is
+      <m>\dfrac{q}{4\pi\epsilon_0}\cdot\dfrac{3d^2}{r^4}</m>. The relative
+      error of the approximation is therefore
+      <me>
+        \frac{\left| E_{\text{lead}} - E \right|}{E}
+          \approx \frac{\dfrac{3d^2}{r^4}}{\dfrac{2d}{r^3}}
+          = \frac{3}{2}\cdot\frac{d}{r}.
+      </me>
+      Notice that <m>q</m> and <m>\epsilon_0</m> cancel, so the relative error
+      depends only on the ratio <m>d/r</m>. Requiring this to be at most
+      <m>1\% = 0.01</m> gives
+      <me>
+        \frac{3}{2}\cdot\frac{d}{r} \le 0.01
+        \qquad\Longrightarrow\qquad
+        d \le \frac{2}{3}(0.01)\,r.
+      </me>
+      With <m>r = 3.0\ \text{cm}</m>,
+      <me>
+        d \le \frac{2}{3}(0.01)(3.0\ \text{cm}) = 0.020\ \text{cm} = 0.20\ \text{mm}.
+      </me>
+      So the point-dipole approximation is accurate to <m>1\%</m> only when the
+      charges are separated by less than about <m>0.2\ \text{mm}</m> at this
+      distance<mdash/>consistent with <xref ref="fig-dipole-field"/>, where the
+      two curves visibly merge as <m>r</m> grows relative to <m>d</m>.
+    </p>
+  </solution>
+</exercise>
 </worksheet>
 
   <subsection xml:id="subsection-5">
