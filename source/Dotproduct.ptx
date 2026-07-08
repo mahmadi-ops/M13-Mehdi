@@ -247,6 +247,13 @@ and <m>c</m> is a scalar, then
 <subsection xml:id="sec-projection">
 <title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
 
+<figure xml:id="fig-projection-shadow">
+  <caption>The projection of <m>\vec{u}</m> onto <m>\vec{v}</m> as a shadow cast by light from above.</caption>
+  <video xml:id="video-projection-shadow"
+         source="videos/projection_shadow.mp4"
+         width="70%" aspect="16:9" preview="generic"/>
+</figure>
+
 <p>
 The projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m> is
 denoted <m>\text{proj}_{\mathbf v}\mathbf u</m>, and is shown in
@@ -285,13 +292,13 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 <angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
 </coordinates>
 
-<annotations text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v." sonify="yes">
-<annotation ref="vec-v" text="Vector v, along the horizontal direction." sonify="yes"/>
-<annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v." sonify="yes"/>
-<annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v." sonify="yes"/>
-<annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v." sonify="yes"/>
-<annotation ref="angle-theta" text="The angle theta between u and v." sonify="yes"/>
-<annotation ref="right-angle" text="A right angle where the perpendicular component meets v." sonify="yes"/>
+<annotations text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+<annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
+<annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+<annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
+<annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
+<annotation ref="angle-theta" text="The angle theta between u and v."/>
+<annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
 </annotations>
 </diagram>
 </prefigure>
@@ -465,6 +472,84 @@ and the work done is
 </men>
 </solution>
 </example>
+
+
+
+<example xml:id="ex-inclined-plane">
+      <statement>
+        <p>
+          Suppose a mass of <m>10\text{ kg}</m> is resting on an inclined plane. 
+          Gravity exerts a force equivalent to <m>mg</m> on the object, where <m>g = 9.8\text{ m/s}^2</m> is 
+          the gravitational acceleration. Suppose the incline is tilted at a <m>30^{\circ}</m> angle. 
+          Compute the components of the force that are parallel and perpendicular to the inclined plane.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, we determine the total gravitational force vector <m>\vec{F}</m> acting on the mass[cite: 1]. 
+          Using <m>g = 9.8\text{ m/s}^2</m>[cite: 1]:
+          <me>|\vec{F}| = (10)(9.8) = 98\text{ N}</me>
+          Acting entirely in the negative vertical direction, this gives[cite: 1]:
+          <me>\vec{F} = \langle 0, -98 \rangle = -98\hat{j}</me>
+        </p>
+
+        <!-- Diagram inserted here -->
+        <figure xml:id="fig-inclined-forces">
+          <caption>Forces acting on a mass on a <m>30^{\circ}</m> incline[cite: 1].</caption>
+          <prefigure>
+           <canvas x-bounds="[-2, 6]" y-bounds="[-5, 4]">
+  <!-- The Inclined Plane -->
+  <line x1="0" y1="0" x2="5.196" y2="3" stroke="black" thickness="2" />
+  <line x1="0" y1="0" x2="5.196" y2="0" stroke="black" thickness="1" dash="4 4" />
+  <line x1="5.196" y1="0" x2="5.196" y2="3" stroke="black" thickness="1" dash="4 4" />
+  <label anchor="(1.2, 0.2)">30°</label>
+
+  <!-- The Object (Centered at a point on the incline) -->
+  <group transform="translate(2.598, 1.5) rotate(30)">
+    <rectangle center="(0,0.4)" width="1.2" height="0.8" fill="lightgray" stroke="black" />
+    
+    <!-- Force Vectors originating from center of mass -->
+    <!-- Gravity: straight down -->
+    <vector to="(0,-3)" stroke="blue" thickness="2" />
+    <label anchor="(0.3,-2.8)" color="blue"><m>\vec{F}</m></label>
+
+    <!-- Parallel Component: down the slope -->
+    <vector to="(-1.5,0)" stroke="red" thickness="2" />
+    <label anchor="(-1.8,0.3)" color="red"><m>\vec{F}_{\parallel}</m></label>
+
+    <!-- Perpendicular Component: into the slope -->
+    <vector to="(0,-2.598)" stroke="purple" thickness="2" />
+    <label anchor="(-0.5,-2.2)" color="purple"><m>\vec{F}_{\perp}</m></label>
+  </group>
+</canvas>
+          </prefigure>
+        </figure>
+
+        <p>
+          Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane[cite: 1]. 
+          Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal[cite: 1]:
+          <me>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+          where <m>|\vec{v}| = 1</m>[cite: 1].
+        </p>
+        <p>
+          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>[cite: 1]:
+          <me>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{|\vec{v}|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</me>
+          Computing the dot product[cite: 1]:
+          <me>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</me>
+          Thus, the parallel force vector is[cite: 1]:
+          <me>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+        </p>
+        <p>
+          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction[cite: 1]:
+          <md>
+            <mrow>\vec{F}_{\perp} \amp = \vec{F} - \vec{F}_{\parallel}</mrow>
+            <mrow>\amp = \langle 0, -98 \rangle - 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</mrow>
+            <mrow>\amp = 49 \left( \langle 0, -2 \rangle - \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle \right)</mrow>
+            <mrow>\amp = 49 \left\langle -\frac{\sqrt{3}}{2}, -\frac{3}{2} \right\rangle</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
 
 </subsection>
 
