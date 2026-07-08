@@ -262,7 +262,7 @@
         </coordinates>
         <annotations>
           <annotation ref="fgraph"
-              text="Schematic graph of f of x equals e to the x with its Taylor polynomials p 1 through p 4 about 0. Dashed markers show a representative positive x with an intermediate value c between 0 and x, and a representative negative x with an intermediate c between x and 0. The sample points show the size of e to the c used to bound the remainder">
+              text="Schematic graph of f of x equals e to the x with its Taylor polynomials p1 through p 4 about 0. Dashed markers show a representative positive x with an intermediate value c between 0 and x, and a representative negative x with an intermediate c between x and 0. The sample points show the size of e to the c used to bound the remainder">
             <annotation ref="fgraph" text="The function f of x equals e to the x, a thick blue curve" sonify="yes"/>
             <annotation ref="p1" text="The first degree Taylor polynomial p 1"/>
             <annotation ref="p2" text="The second degree Taylor polynomial p 2"/>
