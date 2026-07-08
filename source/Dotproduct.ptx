@@ -406,6 +406,13 @@ is the magnitude of the force in the direction of motion.
 </statement>
 </definition>
 
+<figure xml:id="fig-work-force">
+  <caption>A constant force <m>\mathbf F</m> acting on an object causing a displacement from <m>A</m> to <m>B</m>.</caption>
+  <video xml:id="video-work-force"
+         source="videos/work_force_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
 <figure xml:id="fig-work">
 <caption>
 A force <m>\mathbf F</m> displaces an object from <m>P</m> to <m>Q</m> along
