@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Dot Product</title>
-  <?xml version="1.0" encoding="UTF-8"?>
-
-<pretext xml:lang="en-US">
-<article xml:id="the-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
 
 <!-- ================================================================ -->
-<section xml:id="sec-law-of-cosines">
+<subsection xml:id="sec-law-of-cosines">
 <title>Law of Cosines and the Angle between Two Vectors</title>
 
 <p>
@@ -27,23 +22,26 @@ The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
 <m>\mathbf w = \mathbf u - \mathbf v</m>, together with the angle
 <m>\theta</m> between <m>\mathbf u</m> and <m>\mathbf v</m>.
 </caption>
-<image width="45%">
+<image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-law-of-cosines">
 <diagram dimensions="(300,300)" margins="10">
 <definition>u=(1.5,4)</definition>
 <definition>v=(4,1)</definition>
 <definition>w=u-v</definition>
 <coordinates bbox="(-0.5,-0.5,4.5,4.5)">
-<vector at="vec-u" v="u" tail="(0,0)" stroke="blue" alignment="nw">
+<vector at="vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="vec-v" v="v" tail="(0,0)" stroke="blue"/>
+<vector at="vec-w" v="w" tail="v" stroke="magenta"/>
+<label at="u-label" anchor="(0.75,2)" alignment="nw" color="blue">
 <m>\mathbf u</m>
-</vector>
-<vector at="vec-v" v="v" tail="(0,0)" stroke="blue" alignment="se">
+</label>
+<label at="v-label" anchor="(2,0.5)" alignment="se" color="blue">
 <m>\mathbf v</m>
-</vector>
-<vector at="vec-w" v="w" tail="v" stroke="magenta" alignment="ne">
+</label>
+<label at="w-label" anchor="(2.75,2.5)" alignment="ne" color="magenta">
 <m>\mathbf w</m>
-</vector>
-<angle-marker at="angle-theta" points="(u,(0,0),v)" radius="18" clear-background="yes">
+</label>
+<angle-marker at="angle-theta" points="(v,(0,0),u)" radius="18" clear-background="no">
 <m>\theta</m>
 </angle-marker>
 </coordinates>
@@ -65,14 +63,12 @@ Writing <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
 <m>\mathbf w = \mathbf u - \mathbf v</m>, and hence
 </p>
 
-<md xml:id="eq-2">
-<mrow>
-|\mathbf w|^2 = |\mathbf u - \mathbf v|^2 = (u_1-v_1)^2 + (u_2-v_2)^2 + (u_3-v_3)^2
-</mrow>
-<mrow>
+<men xml:id="eq-2">
+\begin{aligned}
+|\mathbf w|^2 \amp = |\mathbf u - \mathbf v|^2 = (u_1-v_1)^2 + (u_2-v_2)^2 + (u_3-v_3)^2 \\
 \amp = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2(u_1v_1+u_2v_2+u_3v_3).
-</mrow>
-</md>
+\end{aligned}
+</men>
 
 <p>
 Also, from the law of cosines in <xref ref="eq-1"/> we have
@@ -100,12 +96,13 @@ can be evaluated using the following equation.
 </statement>
 </theorem>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-dot-product">
+<subsection xml:id="sec-dot-product">
 <title>The Dot Product</title>
 
+<introduction>
 <p>
 The term <m>u_1v_1+u_2v_2+u_3v_3</m> in the numerator of <xref ref="eq-4"/>
 is known as the <term>dot product</term> of the two vectors
@@ -152,13 +149,13 @@ Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
 </p>
 </statement>
 <solution>
-<p>
-<md>
-<mrow>\vec{CA} = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle</mrow>
-<mrow>\vec{CB} = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle</mrow>
-<mrow>\vec{CA}\cdot\vec{CB} = 1 - 1 = 0 \implies \vec{CA} \perp \vec{CB}.</mrow>
-</md>
-</p>
+<me>
+\begin{aligned}
+\vec{CA} \amp = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle \\
+\vec{CB} \amp = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle \\
+\vec{CA}\cdot\vec{CB} \amp = 1 - 1 = 0 \implies \vec{CA} \perp \vec{CB}.
+\end{aligned}
+</me>
 
 <figure xml:id="fig-right-triangle">
 <caption>
@@ -182,7 +179,7 @@ right angle at <m>C</m>.
 <vector at="vec-cb" v="B-C" tail="C" stroke="red" thickness="4" alignment="ne">
 <m>\vec{CB}</m>
 </vector>
-<angle-marker at="right-angle" points="(A,C,B)" clear-background="yes"/>
+<angle-marker at="right-angle" points="(B,C,A)" clear-background="yes"/>
 </coordinates>
 
 <annotations text="A coordinate grid showing triangle A B C, with A at 1 comma negative 1, B at 1 comma 1, and C at 2 comma 0, together with the vectors C A and C B, which meet at a right angle at C.">
@@ -211,19 +208,20 @@ For the triangle of <xref ref="example-right-triangle"/>
 <p>
 For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
 </p>
-<md>
-<mrow>\vec{AC} = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies |\vec{AC}| = \sqrt2</mrow>
-<mrow>\vec{AB} = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies |\vec{AB}| = 2</mrow>
-<mrow>\vec{AB}\cdot\vec{AC} = 0 + 2 = 2</mrow>
-<mrow>
-\cos\theta = \frac{\vec{AB}\cdot\vec{AC}}{|\vec{AB}||\vec{AC}|}
+<me>
+\begin{aligned}
+\vec{AC} \amp = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies |\vec{AC}| = \sqrt2 \\
+\vec{AB} \amp = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies |\vec{AB}| = 2 \\
+\vec{AB}\cdot\vec{AC} \amp = 0 + 2 = 2 \\
+\cos\theta \amp = \frac{\vec{AB}\cdot\vec{AC}}{|\vec{AB}||\vec{AC}|}
 = \frac{2}{2\sqrt2} = \frac{1}{\sqrt2} \implies \theta = \frac{\pi}{4}.
-</mrow>
-</md>
+\end{aligned}
+</me>
 </solution>
 </example>
+</introduction>
 
-<subsection xml:id="subsec-properties">
+<subsubsection xml:id="subsec-properties">
 <title>Properties of the Dot Product</title>
 
 <fact xml:id="fact-properties">
@@ -241,12 +239,12 @@ and <m>c</m> is a scalar, then
 </ol>
 </statement>
 </fact>
+</subsubsection>
+
 </subsection>
 
-</section>
-
 <!-- ================================================================ -->
-<section xml:id="sec-projection">
+<subsection xml:id="sec-projection">
 <title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
 
 <p>
@@ -265,31 +263,35 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 <prefigure xmlns="https://prefigure.org" label="prefigure-projection">
 <diagram dimensions="(340,260)" margins="10">
 <coordinates bbox="(-0.5,-1,7,6)">
-<vector at="vec-v" v="(6,0)" tail="(0,0)" stroke="blue" alignment="s">
+<vector at="vec-v" v="(6,0)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-u" v="(4,5)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-proj" v="(4,0)" tail="(0,0)" stroke="maroon" thickness="5"/>
+<vector at="vec-perp" v="(0,5)" tail="(4,0)" stroke="maroon" thickness="5"/>
+<label at="v-label" anchor="(6,-0.3)" alignment="s" color="blue">
 <m>\mathbf v</m>
-</vector>
-<vector at="vec-u" v="(4,5)" tail="(0,0)" stroke="blue" alignment="nw">
+</label>
+<label at="u-label" anchor="(2,2.5)" alignment="nw" color="blue">
 <m>\mathbf u</m>
-</vector>
-<vector at="vec-proj" v="(4,0)" tail="(0,0)" stroke="magenta" thickness="5" alignment="s">
-<m>\text{proj}_{\mathbf v}\mathbf u</m>
-</vector>
-<vector at="vec-perp" v="(0,5)" tail="(4,0)" stroke="magenta" thickness="5" alignment="e">
-<m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>
-</vector>
-<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="16" clear-background="yes">
+</label>
+<label at="proj-label" anchor="(2,-0.3)" alignment="s" color="maroon">
+<m>\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u</m>
+</label>
+<label at="perp-label" anchor="(4,2.5)" alignment="e" color="maroon">
+<m>\mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>
+</label>
+<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
 <m>\theta</m>
 </angle-marker>
-<angle-marker at="right-angle" points="((0,0),(4,0),(4,5))" clear-background="yes"/>
+<angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
 </coordinates>
 
-<annotations text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
-<annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
-<annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
-<annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
-<annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
-<annotation ref="angle-theta" text="The angle theta between u and v."/>
-<annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+<annotations text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v." sonify="yes">
+<annotation ref="vec-v" text="Vector v, along the horizontal direction." sonify="yes"/>
+<annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v." sonify="yes"/>
+<annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v." sonify="yes"/>
+<annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v." sonify="yes"/>
+<annotation ref="angle-theta" text="The angle theta between u and v." sonify="yes"/>
+<annotation ref="right-angle" text="A right angle where the perpendicular component meets v." sonify="yes"/>
 </annotations>
 </diagram>
 </prefigure>
@@ -350,15 +352,15 @@ other perpendicular to it.
 Since the projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m>
 is parallel to <m>\mathbf v</m>, we have
 </p>
-<md>
-<mrow>\mathbf u \cdot \mathbf v = (2\times1)+(2\times1)+(2\times0) = 4</mrow>
-<mrow>|\mathbf v| = \sqrt{1+1} = \sqrt2</mrow>
-<mrow>
+<me>
+\begin{aligned}
+\mathbf u \cdot \mathbf v \amp = (2\times1)+(2\times1)+(2\times0) = 4 \\
+|\mathbf v| \amp = \sqrt{1+1} = \sqrt2 \\
 \mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u
-= \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v
+\amp = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v
 = \frac{4}{2}(\mathbf i+\mathbf j) = 2\mathbf i + 2\mathbf j.
-</mrow>
-</md>
+\end{aligned}
+</me>
 <p>
 For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
 </p>
@@ -370,10 +372,10 @@ For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
 </example>
 </paragraphs>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-work">
+<subsection xml:id="sec-work">
 <title>An Application of the Dot Product: Work</title>
 
 <p>
@@ -413,29 +415,29 @@ magnitude of the force in the direction of motion, <m>|\mathbf F|\cos\theta</m>.
 <coordinates bbox="(-0.5,-1,7,3)">
 <point at="point-p" p="P" alignment="sw"><m>P</m></point>
 <point at="point-q" p="Q" alignment="s"><m>Q</m></point>
-<vector at="vec-d" v="Q-P" tail="P" stroke="magenta" thickness="5" alignment="s">
+<vector at="vec-d" v="Q-P" tail="P" stroke="maroon" thickness="5" alignment="s">
 <m>\mathbf D</m>
 </vector>
 <vector at="vec-f" v="Fv" tail="Q" stroke="blue" thickness="4" alignment="ne">
 <m>\mathbf F</m>
 </vector>
 <line at="ref-line" endpoints="(Q,R)" stroke="lightgray" thickness="1"/>
-<angle-marker at="angle-theta" points="(R,Q,(6,1.5))" radius="16" clear-background="yes">
+<angle-marker at="angle-theta" points="(R,Q,(6,1.5))" radius="23" clear-background="no">
 <m>\theta</m>
 </angle-marker>
-<label at="label-cos" anchor="(5,-0.4)" clear-background="yes">
+<label at="label-cos" anchor="(5,-0.4)" clear-background="no">
 <m>|\mathbf F|\cos\theta</m>
 </label>
 </coordinates>
 
-<annotations text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion.">
-<annotation ref="point-p" text="The starting point P."/>
-<annotation ref="point-q" text="The ending point Q."/>
-<annotation ref="vec-d" text="The displacement vector D, from P to Q."/>
-<annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion."/>
-<annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta."/>
-<annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion."/>
-<annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta."/>
+<annotations text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes" >
+<annotation ref="point-p" text="The starting point P." sonify="yes"/>
+<annotation ref="point-q" text="The ending point Q." sonify="yes"/>
+<annotation ref="vec-d" text="The displacement vector D, from P to Q." sonify="yes"/>
+<annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes"/>
+<annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta." sonify="yes"/>
+<annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion." sonify="yes"/>
+<annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes"/>
 </annotations>
 </diagram>
 </prefigure>
@@ -464,7 +466,6 @@ and the work done is
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</article>
-</pretext>
+</section>
