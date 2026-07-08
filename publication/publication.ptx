@@ -55,8 +55,8 @@
 
   <!-- publication.ptx -->
 
-  <source>
+<!--  <source>
   <directories external="assets" generated="generated-assets"/>
-</source>
+</source> -->
 
 </publication>

@@ -251,7 +251,7 @@ and <m>c</m> is a scalar, then
   <caption>The projection of <m>\vec{u}</m> onto <m>\vec{v}</m> as a shadow cast by light from above.</caption>
   <video xml:id="video-projection-shadow"
          source="videos/projection_shadow.mp4"
-         width="70%" aspect="16:9" preview="generic"/>
+         width="70%" aspect="16:9"/>
 </figure>
 
 <p>
