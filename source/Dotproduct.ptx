@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
 
 <!-- ================================================================ -->
@@ -518,11 +518,11 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
 The displacement vector is <m>\mathbf D = \vec{AB} = \langle 6,2,12\rangle</m>,
 and the work done is
 </p>
-<men>
+<me>
 \text{Work} = \mathbf F \cdot \mathbf D
 = \langle 8,-6,9\rangle \cdot \langle 6,2,12\rangle
 = 48 - 12 + 108 = 144.
-</men>
+</me>
 </solution>
 </example>
 
