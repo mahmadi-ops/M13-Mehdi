@@ -77,9 +77,10 @@ Writing <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
 <men xml:id="eq-2">
 \begin{aligned}
 |\mathbf w|^2 \amp = |\mathbf u - \mathbf v|^2 = (u_1-v_1)^2 + (u_2-v_2)^2 + (u_3-v_3)^2 \\
-\amp = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2(u_1v_1+u_2v_2+u_3v_3).
+\amp = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2(u_1v_1+u_2v_2+u_3v_3). 
 \end{aligned}
 </men>
+
 
 <p>
 Also, from the law of cosines in <xref ref="eq-1"/> we have
