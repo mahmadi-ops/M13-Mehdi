@@ -19,6 +19,7 @@
     <title>Complementary Modules For MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
+    <xi:include href="Parametrization.ptx" />
     <xi:include href="Taylor.ptx" />
     <xi:include href="Dotproduct.ptx" />
     <xi:include href="SampleGraphs.ptx" />
