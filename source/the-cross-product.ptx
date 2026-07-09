@@ -48,6 +48,24 @@ its length is <m>|\mathbf u||\mathbf v||\sin\theta|</m>.
        width="70%" aspect="16:9"/>
 </figure>
 
+<figure xml:id="fig-right-hand-rule-illustration">
+  <caption>Two equivalent right-hand rules for <m>\mathbf{u}\times\mathbf{v}</m>.</caption>
+  <sidebyside widths="48% 48%" margins="2%">
+    <figure xml:id="fig-rhr-imt">
+      <caption>Index–Middle–Thumb method.</caption>
+      <image source="images/rhr-index-middle-thumb.png" width="100%">
+        <shortdescription>Index finger along u, middle finger along v, thumb along u cross v.</shortdescription>
+      </image>
+    </figure>
+    <figure xml:id="fig-rhr-curl">
+      <caption>Rotating-fingers method.</caption>
+      <image source="images/rhr-rotating-fingers.png" width="100%">
+        <shortdescription>Fingers curl from u toward v, thumb points along u cross v.</shortdescription>
+      </image>
+    </figure>
+  </sidebyside>
+</figure>
+
 <figure xml:id="fig-right-hand-rule">
 <caption>
 The right-hand rule: the fingers of the right hand curl from
@@ -190,7 +208,6 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <m>\theta</m>
 </angle-marker>
 </coordinates>
-
 <annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
 <annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
 <annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>

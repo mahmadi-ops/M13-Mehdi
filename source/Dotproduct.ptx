@@ -46,16 +46,21 @@ The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
 </angle-marker>
 </coordinates>
 
-<annotations text="A triangle formed by the vectors u, v, and w, where w equals u minus v. The vectors u and v are drawn tail to tail from the origin, and w connects the tip of v to the tip of u. The angle theta lies between u and v at the origin.">
-<annotation ref="vec-u" text="Vector u, drawn from the origin."/>
-<annotation ref="vec-v" text="Vector v, drawn from the origin."/>
-<annotation ref="vec-w" text="Vector w, equal to u minus v, drawn from the tip of v to the tip of u."/>
-<annotation ref="angle-theta" text="The angle theta between u and v, located at the origin."/>
+<annotations>
+<annotation ref="figure" text="A triangle formed by the vectors u, v, and w, where w equals u minus v. The vectors u and v are drawn tail to tail from the origin, and w connects the tip of v to the tip of u. The angle theta lies between u and v at the origin.">
+  <annotation ref="vec-u" text="Vector u, drawn from the origin."/>
+  <annotation ref="vec-v" text="Vector v, drawn from the origin."/>
+  <annotation ref="vec-w" text="Vector w, equal to u minus v, drawn from the tip of v to the tip of u."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
 </image>
-</figure><proof>
+</figure>
+
+
+<proof>
   <p>
     Watch the video below for a proof of the law of cosines using vectors.
   </p>
@@ -194,12 +199,14 @@ right angle at <m>C</m>.
 <angle-marker at="right-angle" points="(B,C,A)" clear-background="yes"/>
 </coordinates>
 
-<annotations text="A coordinate grid showing triangle A B C, with A at 1 comma negative 1, B at 1 comma 1, and C at 2 comma 0, together with the vectors C A and C B, which meet at a right angle at C.">
-<annotation ref="grid" text="A coordinate grid with x and y axes."/>
-<annotation ref="triangle" text="Triangle A B C, plotted on the grid."/>
-<annotation ref="vec-ca" text="The vector C A, drawn in blue from C to A."/>
-<annotation ref="vec-cb" text="The vector C B, drawn in red from C to B."/>
-<annotation ref="right-angle" text="A right angle marker at C, confirming that C A and C B are perpendicular."/>
+<annotations>
+<annotation ref="figure" text="A coordinate grid showing triangle A B C, with A at 1 comma negative 1, B at 1 comma 1, and C at 2 comma 0, together with the vectors C A and C B, which meet at a right angle at C.">
+  <annotation ref="grid" text="A coordinate grid with x and y axes."/>
+  <annotation ref="triangle" text="Triangle A B C, plotted on the grid."/>
+  <annotation ref="vec-ca" text="The vector C A, drawn in blue from C to A."/>
+  <annotation ref="vec-cb" text="The vector C B, drawn in red from C to B."/>
+  <annotation ref="right-angle" text="A right angle marker at C, confirming that C A and C B are perpendicular."/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
@@ -296,7 +303,7 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 <m>\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u</m>
 </label>
 <label at="perp-label" anchor="(4,2.5)" alignment="e" color="maroon">
-<m>\mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>
+<m>\mathbf u_{\perp} = \mathbf u - \mathbf u_{\parallel}</m>
 </label>
 <angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
 <m>\theta</m>
@@ -304,13 +311,15 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 <angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
 </coordinates>
 
-<annotations text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
-<annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
-<annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
-<annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
-<annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
-<annotation ref="angle-theta" text="The angle theta between u and v."/>
-<annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+<annotations>
+<annotation ref="figure" text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+  <annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
+  <annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+  <annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
+  <annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v."/>
+  <annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
@@ -469,14 +478,16 @@ magnitude of the force in the direction of motion, <m>|\mathbf F|\cos\theta</m>.
 </label>
 </coordinates>
 
-<annotations text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes" >
-<annotation ref="point-p" text="The starting point P." sonify="yes"/>
-<annotation ref="point-q" text="The ending point Q." sonify="yes"/>
-<annotation ref="vec-d" text="The displacement vector D, from P to Q." sonify="yes"/>
-<annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes"/>
-<annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta." sonify="yes"/>
-<annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion." sonify="yes"/>
-<annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes"/>
+<annotations>
+<annotation ref="figure" text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes" >
+  <annotation ref="point-p" text="The starting point P." sonify="yes"/>
+  <annotation ref="point-q" text="The ending point Q." sonify="yes"/>
+  <annotation ref="vec-d" text="The displacement vector D, from P to Q." sonify="yes"/>
+  <annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes"/>
+  <annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta." sonify="yes"/>
+  <annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion." sonify="yes"/>
+  <annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes"/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
