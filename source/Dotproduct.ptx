@@ -365,6 +365,7 @@ as a sum of two vectors, one of which is parallel to <m>\mathbf v</m> and the
 other perpendicular to it.
 </p>
 </statement>
+</example>
 <solution>
 <p>
 Since the projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m>
@@ -386,8 +387,20 @@ For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
 \mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u
 = (2\mathbf i+2\mathbf j+2\mathbf k) - (2\mathbf i+2\mathbf j) = 2\mathbf k.
 </men>
+<p>
+To achieve a visual understanding of this decomposition, watch the video below.
+</p>
+<figure xml:id="fig-decompose-3d">
+  <caption>Decomposing <m>\mathbf u = 2\mathbf i + 2\mathbf j + 2\mathbf k</m> into
+  <m>\mathbf u_{\parallel} = 2\mathbf i + 2\mathbf j</m>, lying in the
+  <m>xy</m>-plane along <m>\mathbf v</m>, and <m>\mathbf u_{\perp} = 2\mathbf k</m>,
+  pointing straight up.</caption>
+  <video xml:id="video-decompose-3d"
+         source="videos/decompose_3d_v3_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
 </solution>
-</example>
+
 </paragraphs>
 
 </subsection>
