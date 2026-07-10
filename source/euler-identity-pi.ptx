@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Guided problem: computing pi with Euler's identity -->
+<!-- Place the rendered video at <external>/videos/euler-pi-error.mp4 -->
+<project xml:id="proj-euler-pi">
+  <title>Computing <m>\pi</m> with Euler's identity</title>
+
+  <introduction>
+    <p>
+      In <xref ref="ex-approx-pi-arctan"/> we approximated <m>\pi</m> by evaluating the
+      Taylor series for <m>\arctan(x)</m> at <m>x = 1</m>, and Taylor's Remainder Theorem
+      gave the error bound <m>\frac{4}{n+1}</m>, which decreases very slowly. In this
+      guided problem we compute <m>\pi</m> far more efficiently using
+      <term>Euler's identity</term>
+      <me>
+        \arctan\left(\tfrac{1}{2}\right) + \arctan\left(\tfrac{1}{3}\right) = \frac{\pi}{4},
+      </me>
+      which lets us evaluate the Taylor series at the small arguments
+      <m>x = \tfrac12</m> and <m>x = \tfrac13</m>, where it converges much faster.
+    </p>
+  </introduction>
+
+  <task>
+    <title>Proving Euler's identity</title>
+    <statement>
+      <p>
+        Let <m>\alpha = \arctan\left(\tfrac12\right)</m> and
+        <m>\beta = \arctan\left(\tfrac13\right)</m>. Use the addition formula
+        <me>
+          \tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\,\tan\beta}
+        </me>
+        to prove that <m>\alpha + \beta = \dfrac{\pi}{4}</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Compute <m>\tan(\alpha+\beta)</m> first. Then explain why <m>\alpha + \beta</m>
+        must lie in the interval <m>\left(0, \tfrac{\pi}{2}\right)</m>, and why this pins
+        down its value.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Since <m>\tan\alpha = \tfrac12</m> and <m>\tan\beta = \tfrac13</m>,
+        <me>
+          \tan(\alpha+\beta)
+          = \frac{\tfrac12 + \tfrac13}{1 - \tfrac12\cdot\tfrac13}
+          = \frac{\tfrac56}{\tfrac56} = 1.
+        </me>
+        Moreover <m>0 \lt \tfrac13 \lt \tfrac12 \lt 1</m> implies
+        <m>0 \lt \beta \le \alpha \lt \tfrac{\pi}{4}</m>, so
+        <m>\alpha + \beta \in \left(0, \tfrac{\pi}{2}\right)</m>. The only angle in this
+        interval whose tangent equals <m>1</m> is <m>\tfrac{\pi}{4}</m>, so
+        <m>\alpha + \beta = \tfrac{\pi}{4}</m>. (Without the interval check we could only
+        conclude <m>\alpha + \beta = \tfrac{\pi}{4} + k\pi</m> for some integer <m>k</m>.)
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>The approximation</title>
+    <statement>
+      <p>
+        Let <m>T_n(x)</m> be the Taylor polynomial of order <m>n</m> for
+        <m>\arctan(x)</m> centered at <m>0</m>. Use Euler's identity to explain why
+        <me>
+          \pi \approx 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right].
+        </me>
+        Write out this approximation explicitly for <m>n = 3</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Multiply Euler's identity by <m>4</m> and replace each arctangent by its Taylor
+        polynomial.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        By Euler's identity,
+        <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>.
+        Replacing <m>\arctan(x)</m> by <m>T_n(x)</m> at <m>x=\tfrac12</m> and
+        <m>x=\tfrac13</m> gives the stated approximation. For <m>n = 3</m>,
+        <m>T_3(x) = x - \tfrac{x^3}{3}</m>, so
+        <md>
+          <mrow>\pi \amp\approx 4\left[\left(\tfrac12 - \tfrac{1}{24}\right)
+            + \left(\tfrac13 - \tfrac{1}{81}\right)\right]</mrow>
+          <mrow>\amp= 4\left[\tfrac{11}{24} + \tfrac{26}{81}\right]
+            \approx 3.117284.</mrow>
+        </md>
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>Bounding the error with the Remainder Theorem</title>
+    <statement>
+      <p>
+        In <xref ref="ex-approx-pi-arctan"/> we showed that the derivatives of
+        <m>f(x) = \arctan(x)</m> satisfy
+        <m>\left|f^{(n+1)}(t)\right| \le n!</m> for all <m>t</m>. Use Taylor's Remainder
+        Theorem to show that for <m>|x| \le 1</m>
+        <me>
+          \left|\arctan(x) - T_n(x)\right| \le \frac{|x|^{n+1}}{n+1},
+        </me>
+        and conclude that
+        <me>
+          \left|\pi - 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
+          \le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1} + \left(\tfrac13\right)^{n+1}\right].
+        </me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Apply Taylor's Remainder Theorem with <m>M = n!</m> exactly as in
+        <xref ref="ex-approx-pi-arctan"/>, but keep the factor <m>|x|^{n+1}</m>. Then use
+        the triangle inequality on the two remainders.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Taylor's Remainder Theorem with <m>M = n!</m> gives
+        <me>
+          |R_n(x)| \le \frac{n!}{(n+1)!}\,|x|^{n+1} = \frac{|x|^{n+1}}{n+1}.
+        </me>
+        Writing <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>
+        and using the triangle inequality,
+        <md>
+          <mrow>\left|\pi - 4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
+            \amp\le 4\left|R_n\!\left(\tfrac12\right)\right|
+            + 4\left|R_n\!\left(\tfrac13\right)\right|</mrow>
+          <mrow>\amp\le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1}
+            + \left(\tfrac13\right)^{n+1}\right].</mrow>
+        </md>
+        Unlike the bound <m>\frac{4}{n+1}</m> at <m>x = 1</m>, this bound decays
+        <em>geometrically</em>: each increase of <m>n</m> by one cuts it by better than
+        half.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>How much better is it?</title>
+    <statement>
+      <p>
+        Evaluate the error bound for <m>n = 9</m> and compare it with the bound
+        <m>\tfrac{4}{10} = 0.4</m> obtained in <xref ref="ex-approx-pi-arctan"/> for the
+        same order. Then find the smallest <m>n</m> for which the bound guarantees an
+        error of at most <m>10^{-6}</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        For the second part, the term <m>\left(\tfrac12\right)^{n+1}</m> dominates; try
+        increasing odd values of <m>n</m>.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        For <m>n = 9</m>,
+        <me>
+          \frac{4}{10}\left[\left(\tfrac12\right)^{10} + \left(\tfrac13\right)^{10}\right]
+          = \frac{4}{10}\left[\frac{1}{1024} + \frac{1}{59049}\right]
+          \approx 3.97 \times 10^{-4},
+        </me>
+        roughly a thousand times smaller than the bound <m>0.4</m> at <m>x = 1</m>; the
+        approximation itself is <m>4\left[T_9\!\left(\tfrac12\right) +
+        T_9\!\left(\tfrac13\right)\right] \approx 3.141741</m>. For an error of at most
+        <m>10^{-6}</m>, testing odd values gives, at <m>n = 15</m>, a bound of about
+        <m>3.8\times10^{-6}</m>, while at <m>n = 17</m>
+        <me>
+          \frac{4}{18}\left[\left(\tfrac12\right)^{18} + \left(\tfrac13\right)^{18}\right]
+          \approx 8.5 \times 10^{-7} \lt 10^{-6},
+        </me>
+        so <m>n = 17</m> suffices. By contrast, the bound <m>\frac{4}{n+1}</m> from
+        <m>x = 1</m> would require <m>n \ge 3{,}999{,}999</m> for the same guarantee.
+      </p>
+    </solution>
+  </task>
+
+  <conclusion>
+    <p>
+      The video below shows the approximation
+      <m>4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]</m>
+      converging to <m>\pi</m>, and compares its error, together with the
+      Remainder-Theorem bound, against the much slower method at <m>x = 1</m>.
+    </p>
+    <figure xml:id="fig-euler-pi-video">
+      <caption>
+        The error of Euler's-identity approximation (with its bound
+        <m>\frac{4}{n+1}\left[\left(\frac12\right)^{n+1} + \left(\frac13\right)^{n+1}\right]</m>)
+        decreasing geometrically as <m>n</m> increases, compared with the series at <m>x=1</m>.
+      </caption>
+      <video xml:id="video-euler-pi-error" source="videos/euler-pi-error.mp4" width="85%"/>
+    </figure>
+  </conclusion>
+</project>
