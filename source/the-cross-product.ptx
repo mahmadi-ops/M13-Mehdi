@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Cross Product</title>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-cross-definition">
+<title>Definition and Properties of the Cross Product</title>
+
+<p>
+Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
+<m>\mathbb R^3</m>, the <term>cross product</term>
+<m>\mathbf u \times \mathbf v</m> is a <em>vector</em> defined as follows.
+</p>
+
+<definition xml:id="def-cross-product">
+<title>The Cross Product (First Definition)</title>
+<statement>
+<men xml:id="eq-cross-geometric">
+\mathbf u \times \mathbf v = \left(|\mathbf u||\mathbf v|\sin\theta\right)\mathbf n.
+</men>
+</statement>
+</definition>
+
+<p>
+Note that <m>|\mathbf u||\mathbf v||\sin\theta|</m> is the length of the
+cross product <m>\mathbf u \times \mathbf v</m>. Since
+<m>\sin(\theta)</m> can be negative, we need to include its absolute
+value.
+</p>
+
+<p>
+The vector <m>\mathbf n</m> is the unit vector that determines the
+direction of <m>\mathbf u \times \mathbf v</m> using the right-hand
+rule. Note that <m>\mathbf u \times \mathbf v</m> is orthogonal
+(perpendicular) to both vectors, as shown in
+<xref ref="fig-cross-product-video"/>.
+</p>
+
+<figure xml:id="fig-cross-product-video">
+<caption>
+The cross product <m>\mathbf u \times \mathbf v</m> points in the
+direction of the unit vector <m>\mathbf n</m>, given by the right-hand
+rule, and is orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>;
+its length is <m>|\mathbf u||\mathbf v||\sin\theta|</m>.
+</caption>
+<video xml:id="video-cross-product"
+       source="videos/cross_product_3d_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-right-hand-rule-illustration">
+  <caption>Two equivalent right-hand rules for <m>\mathbf{u}\times\mathbf{v}</m>.</caption>
+  <sidebyside widths="48% 48%" margins="2%">
+    <figure xml:id="fig-rhr-imt">
+      <caption>Index–Middle–Thumb method.</caption>
+      <image source="images/rhr-index-middle-thumb.png" width="100%">
+        <shortdescription>Index finger along u, middle finger along v, thumb along u cross v.</shortdescription>
+      </image>
+    </figure>
+    <figure xml:id="fig-rhr-curl">
+      <caption>Rotating-fingers method.</caption>
+      <image source="images/rhr-rotating-fingers.png" width="100%">
+        <shortdescription>Fingers curl from u toward v, thumb points along u cross v.</shortdescription>
+      </image>
+    </figure>
+  </sidebyside>
+</figure>
+
+<figure xml:id="fig-right-hand-rule">
+<caption>
+The right-hand rule: the fingers of the right hand curl from
+<m>\mathbf u</m> toward <m>\mathbf v</m>, and the thumb points in the
+direction of the unit vector <m>\mathbf n</m>, along
+<m>\mathbf u \times \mathbf v</m>. Drag to rotate the picture.
+</caption>
+<interactive xml:id="interactive-right-hand-rule"
+             iframe="right-hand-rule.html"
+             width="100%" aspect="16:9"/>
+</figure>
+
+<p>
+From <xref ref="eq-cross-geometric"/>, it follows that the cross product
+of two parallel vectors is zero.
+</p>
+
+<fact xml:id="fact-parallel-vectors">
+<title>Parallel Vectors</title>
+<statement>
+<men xml:id="eq-parallel-vectors">
+\mathbf u \parallel \mathbf v \iff \mathbf u \times \mathbf v = \mathbf 0,
+\qquad \mathbf u, \mathbf v \neq \mathbf 0.
+</men>
+</statement>
+</fact>
+
+<theorem xml:id="thm-cross-properties">
+<title>Properties of the Cross Product</title>
+<statement>
+<p>
+If <m>\mathbf u</m>, <m>\mathbf v</m>, and <m>\mathbf w</m> are any
+vectors and <m>r</m>, <m>s</m> are scalars, then
+</p>
+
+<p>
+<ol>
+<li><p><m>(r\mathbf u) \times (s\mathbf v) = (rs)(\mathbf u \times \mathbf v)</m></p></li>
+<li><p><m>\mathbf u \times (\mathbf v + \mathbf w) = \mathbf u \times \mathbf v + \mathbf u \times \mathbf w</m></p></li>
+<li><p><m>(\mathbf v + \mathbf w) \times \mathbf u = \mathbf v \times \mathbf u + \mathbf w \times \mathbf u</m></p></li>
+<li><p><m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m></p></li>
+<li><p><m>\mathbf 0 \times \mathbf u = \mathbf 0</m></p></li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+<remark xml:id="remark-anticommutative">
+<p>
+Note that property (4) follows from <xref ref="eq-cross-geometric"/> and
+the fact that <m>\sin(-\theta) = -\sin(\theta)</m>.
+</p>
+</remark>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-cross-components">
+<title>Second Definition of the Cross Product</title>
+
+<p>
+Writing the vectors in components gives another definition for the cross
+product.
+</p>
+
+<definition xml:id="def-cross-components">
+<title>The Cross Product (Second Definition)</title>
+<statement>
+<p>
+If <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>, then
+</p>
+
+<men xml:id="eq-cross-components">
+\mathbf u \times \mathbf v =
+\langle u_2v_3 - u_3v_2,\; u_3v_1 - u_1v_3,\; u_1v_2 - u_2v_1\rangle.
+</men>
+</statement>
+</definition>
+
+<p>
+One way to remember the second definition of the cross product is to
+write it as a determinant:
+</p>
+
+<men xml:id="eq-cross-determinant">
+\mathbf u \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+u_1 \amp u_2 \amp u_3 \\
+v_1 \amp v_2 \amp v_3
+\end{vmatrix}
+=
+\begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\mathbf i
+- \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\mathbf j
++ \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\mathbf k,
+</men>
+
+<p>
+where
+</p>
+
+<men xml:id="eq-two-by-two-determinant">
+\begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = ad - bc.
+</men>
+
+<p>
+The magnitude of <m>\mathbf u \times \mathbf v</m> is equal to the area
+of the parallelogram built on the two vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, as shown in <xref ref="fig-parallelogram-area"/>.
+</p>
+
+<figure xml:id="fig-parallelogram-area">
+<caption>
+The parallelogram built on the vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, with base <m>|\mathbf v|</m> and height
+<m>|\mathbf u||\sin(\theta)|</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-area">
+<diagram dimensions="(340,200)" margins="10">
+<definition>u=(2,3)</definition>
+<definition>v=(5,0)</definition>
+<coordinates bbox="(-0.5,-0.6,7.5,3.6)">
+<line at="par-side-top" endpoints="(u, u+v)" stroke="red" thickness="2"/>
+<line at="par-side-right" endpoints="(v, u+v)" stroke="blue" thickness="2"/>
+<line at="par-height" endpoints="(u, (2,0))" stroke="black" dash="4 4"/>
+<vector at="par-vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="par-vec-v" v="v" tail="(0,0)" stroke="red"/>
+<label at="par-u-label" anchor="(1,1.5)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="par-v-label" anchor="(2.3,-0.2)" alignment="s" color="red">
+<m>\mathbf v</m>
+</label>
+<label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
+<m>|\mathbf u|\sin(\theta)</m>
+</label>
+<angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+</coordinates>
+<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
+<annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+<annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>
+<annotation ref="par-side-top" text="The side of the parallelogram parallel to v, starting at the tip of u."/>
+<annotation ref="par-side-right" text="The side of the parallelogram parallel to u, starting at the tip of v."/>
+<annotation ref="par-height" text="The dashed height of the parallelogram, with length equal to the length of u times the sine of theta."/>
+<annotation ref="par-angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<fact xml:id="fact-parallelogram-area">
+<title>Area of the Parallelogram</title>
+<statement>
+<men xml:id="eq-parallelogram-area">
+\text{Area of the parallelogram}
+= |\mathbf u||\mathbf v||\sin\theta|
+= |\mathbf u \times \mathbf v|.
+</men>
+</statement>
+</fact>
+
+<example xml:id="example-cross-compute">
+<title>Computing a cross product</title>
+<statement>
+<p>
+Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
+<m>\mathbf u = \langle 1,-1,2\rangle</m> and
+<m>\mathbf v = \langle 3,-2,1\rangle</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-cross-compute">
+<title>Solution</title>
+
+<md xml:id="eq-example-cross-compute">
+<mrow>
+\mathbf u \times \mathbf v \amp=
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp -1 \amp 2 \\
+3 \amp -2 \amp 1
+\end{vmatrix}
+=
+\begin{vmatrix} -1 \amp 2 \\ -2 \amp 1 \end{vmatrix}\mathbf i
+- \begin{vmatrix} 1 \amp 2 \\ 3 \amp 1 \end{vmatrix}\mathbf j
++ \begin{vmatrix} 1 \amp -1 \\ 3 \amp -2 \end{vmatrix}\mathbf k
+</mrow>
+<mrow>
+\amp= (-1+4)\mathbf i - (1-6)\mathbf j + (-2+3)\mathbf k
+= 3\mathbf i + 5\mathbf j + \mathbf k
+= \langle 3,5,1\rangle.
+</mrow>
+</md>
+
+</paragraphs>
+
+<exercise xml:id="exercise-cross-identity">
+<statement>
+<p>
+Show that
+<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
+</p>
+</statement>
+</exercise>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-perpendicular-vector">
+<title>Computing a Vector Perpendicular to Two Other Vectors</title>
+
+<example xml:id="example-perpendicular-vector">
+<title>Computing a vector perpendicular to two other vectors</title>
+<statement>
+<p>
+Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
+<m>C(0,-2,3)</m>. Find a unit vector which is orthogonal to both
+<m>\vec{AB}</m> and <m>\vec{AC}</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-perpendicular-vector">
+<title>Solution</title>
+
+<p>
+We first compute the two vectors:
+</p>
+
+<md xml:id="eq-perpendicular-setup">
+<mrow>\vec{AB} \amp= \langle 1,1,-3\rangle</mrow>
+<mrow>\vec{AC} \amp= \langle -1,-1,1\rangle.</mrow>
+</md>
+
+<p>
+The cross product <m>\vec{AB} \times \vec{AC}</m> is orthogonal to both
+vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
+</p>
+
+<md xml:id="eq-perpendicular-cross">
+<mrow>
+\vec{AB} \times \vec{AC} \amp=
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 1 \amp -3 \\
+-1 \amp -1 \amp 1
+\end{vmatrix}
+=
+\begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf i
+- \begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf j
++ \begin{vmatrix} 1 \amp 1 \\ -1 \amp -1 \end{vmatrix}\mathbf k
+</mrow>
+<mrow>
+\amp= (1-3)\mathbf i - (1-3)\mathbf j + (-1+1)\mathbf k
+= -2\mathbf i + 2\mathbf j
+= \langle -2,2,0\rangle.
+</mrow>
+</md>
+
+<p>
+The unit vector in question is then computed as follows:
+</p>
+
+<me xml:id="eq-perpendicular-unit">
+       \begin{aligned}
+\mathbf n \amp = \frac{\vec{AB} \times \vec{AC}}{\left|\vec{AB} \times \vec{AC}\right|}\\
+\amp = \frac{1}{\sqrt 8}\langle -2,2,0\rangle
+= \left\langle -\frac{1}{\sqrt 2},\frac{1}{\sqrt 2},0\right\rangle
+= -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
+\end{aligned}
+</me>
+
+</paragraphs>
+
+<figure xml:id="fig-normal-vector-video">
+<caption>
+The unit vector <m>\mathbf n</m> is orthogonal to both
+<m>\vec{AB}</m> and <m>\vec{AC}</m>, and hence to the plane through the
+points <m>A</m>, <m>B</m>, and <m>C</m>.
+</caption>
+<video xml:id="video-normal-vector"
+       source="videos/normal_vector_3d_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-triangle-area">
+<title>Computing the Area of a Triangle</title>
+
+<example xml:id="example-triangle-area">
+<title>Computing the area of a triangle</title>
+<statement>
+<p>
+Find the area of the triangle with the vertices <m>A(1,-1,2)</m>,
+<m>B(2,0,-1)</m>, and <m>C(0,-2,3)</m>. Note that these are the same
+points that we had in the previous example.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-triangle-area">
+<title>Solution</title>
+
+<p>
+To find the area of the triangle, we first compute the area of the
+parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
+<xref ref="fig-triangle-area"/>, and then divide by <m>2</m>:
+</p>
+
+<md xml:id="eq-triangle-area">
+<mrow>
+\text{Area of the parallelogram} \amp=
+\left|\vec{AB} \times \vec{AC}\right| = \sqrt 8 = 2\sqrt 2
+</mrow>
+<mrow>
+\text{Area of the triangle} \amp=
+\frac12 \left|\vec{AB} \times \vec{AC}\right| = \sqrt 2.
+</mrow>
+</md>
+
+</paragraphs>
+
+<figure xml:id="fig-triangle-area">
+<caption>
+The triangle built on the vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>
+is half of the corresponding parallelogram.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-triangle-area">
+<diagram dimensions="(340,200)" margins="10">
+<definition>b=(4,0)</definition>
+<definition>c=(1.5,3)</definition>
+<coordinates bbox="(-0.5,-0.6,6,3.6)">
+<line at="tri-side-bc" endpoints="(c, b)" stroke="black" dash="4 4"/>
+<line at="tri-side-top" endpoints="(c, b+c)" stroke="red" dash="4 4"/>
+<line at="tri-side-right" endpoints="(b, b+c)" stroke="blue" dash="4 4"/>
+<vector at="tri-vec-ac" v="c" tail="(0,0)" stroke="blue"/>
+<vector at="tri-vec-ab" v="b" tail="(0,0)" stroke="red"/>
+<label at="tri-ac-label" anchor="(0.75,1.5)" alignment="nw" color="blue">
+<m>\vec{AC}</m>
+</label>
+<label at="tri-ab-label" anchor="(2,0)" alignment="s" color="red">
+<m>\vec{AB}</m>
+</label>
+</coordinates>
+
+<annotations text="A triangle formed by the vectors AB and AC drawn tail to tail from the vertex A, together with a dashed segment from the tip of AC to the tip of AB. Two more dashed segments complete the parallelogram built on AB and AC, showing that the triangle is half of the parallelogram.">
+<annotation ref="tri-vec-ab" text="Vector AB, along the horizontal direction."/>
+<annotation ref="tri-vec-ac" text="Vector AC, drawn from the same tail as AB."/>
+<annotation ref="tri-side-bc" text="The dashed third side of the triangle, from the tip of AC to the tip of AB."/>
+<annotation ref="tri-side-top" text="A dashed side completing the parallelogram, parallel to AB."/>
+<annotation ref="tri-side-right" text="A dashed side completing the parallelogram, parallel to AC."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-true-false">
+<title>True or False?</title>
+
+<example xml:id="example-true-false">
+<title>True or False?</title>
+<statement>
+<p>
+<ol marker="I.">
+<li>
+<p>
+Let <m>\vec u</m> and <m>\vec v</m> be two vectors in
+<m>\mathbb R^3</m>. Then, <m>\vec u \times \text{proj}_{\vec v}\vec u</m>
+is perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
+</p>
+</li>
+<li>
+<p>
+Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
+<m>\mathbb R^3</m>. Then,
+<m>\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2 = 1</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-true-false">
+
+<p>
+<em>Statement I</em> is true. Note that
+<m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
+<m>\vec u</m> and <m>\text{proj}_{\vec v}\vec u</m>, which gives:
+</p>
+
+<me xml:id="eq-true-false-1">
+       \begin{aligned}
+\left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot
+\left(\vec u - \text{proj}_{\vec v}\vec u\right)
+\amp =
+\left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \vec u
+- \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \text{proj}_{\vec v}\vec u\\
+= 0 - 0 = 0,
+\end{aligned}
+</me>
+
+<p>
+and therefore <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is
+perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
+</p>
+
+<p>
+<em>Statement II</em> is true. Note that:
+</p>
+
+<md xml:id="eq-true-false-2">
+<mrow>
+\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
+\amp= |\vec u|^2|\vec v|^2\cos^2\theta + |\vec u|^2|\vec v|^2\sin^2\theta
+</mrow>
+<mrow>
+\amp= |\vec u|^2|\vec v|^2\left(\cos^2\theta + \sin^2\theta\right)
+= |\vec u|^2|\vec v|^2.
+</mrow>
+</md>
+
+<p>
+Now, since <m>\vec u</m> and <m>\vec v</m> are standard unit vectors, we
+have <m>|\vec u| = |\vec v| = 1</m>, which means:
+</p>
+
+<me xml:id="eq-true-false-3">
+\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
+= |\vec u|^2|\vec v|^2 = 1.
+</me>
+
+</solution>
+
+</subsection>
+
+</section>
