@@ -871,12 +871,17 @@
 </figure>
 
  
-<video source="external/videos/pendulum_forces.mp4" width="85%"/>
-<p>
-  Forces on a simple pendulum: <m>m\vec{g}</m> decomposes into a radial
-  component <m>mg\cos\theta</m> (balanced by tension <m>\vec{F}_T</m>)
-  and a tangential restoring force <m>mg\sin\theta</m>.
-</p>
+<figure xml:id="fig-pendulum-forces-video">
+  <caption>
+    Forces on a simple pendulum. The weight <m>m\vec{g}</m> resolves into a
+    radial component <m>mg\cos\theta</m> along the string, balanced by the
+    tension <m>\vec{F}_T</m>, and a tangential component <m>mg\sin\theta</m>
+    directed toward equilibrium, which acts as the restoring force. For small
+    angles, <m>\sin\theta \approx \theta</m> gives
+    <m>F \approx -\dfrac{mg}{\ell}x</m>.
+  </caption>
+  <video source="videos/pendulum_forces.mp4" width="90%" preview="default"/>
+</figure>
 
 
 
@@ -1010,11 +1015,17 @@
   </image>
 </figure>
 
-<video source="videos/small_angle_error.mp4" width="95%"/>
-<p>
-  A moving pendulum alongside a live comparison table (Part 1), followed
-  by the Taylor remainder bound and the relative-error plot (Part 2).
-</p>
+<figure xml:id="fig-small-angle-error-video">
+  <caption>
+    A pendulum swinging through decreasing amplitudes while the relative error
+    of the approximation <m>\sin\theta \approx \theta</m> is computed at each
+    angle, followed by the Taylor remainder bound
+    <m>\dfrac{|\theta - \sin\theta|}{\theta} \le \dfrac{\theta^2}{6}</m> and
+    the graph locating the <m>1\%</m> threshold at
+    <m>\theta^* \approx 0.244 \approx 14^\circ</m>.
+  </caption>
+  <video source="videos/small_angle_error.mp4" width="95%" preview="default"/>
+</figure>
 
 </solution>
 </subsubsection>
