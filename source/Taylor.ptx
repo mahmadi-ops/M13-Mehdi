@@ -870,14 +870,14 @@
   </image>
 </figure>
 
-<!-- Figure 2.14 — Pendulum Forces 
+ 
 <video source="external/videos/pendulum_forces.mp4" width="85%"/>
 <p>
   Forces on a simple pendulum: <m>m\vec{g}</m> decomposes into a radial
   component <m>mg\cos\theta</m> (balanced by tension <m>\vec{F}_T</m>)
   and a tangential restoring force <m>mg\sin\theta</m>.
 </p>
--->
+
 
 
 
