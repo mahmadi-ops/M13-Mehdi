@@ -22,11 +22,8 @@
     <xi:include href="Parametrization.ptx" />
     <xi:include href="Taylor.ptx" />
     <xi:include href="Dotproduct.ptx" />
-    <xi:include href="SampleGraphs.ptx" />
     <xi:include href="the-cross-product.ptx" />
-    <!-- <xi:include href="section-2.ptx" /> -->
-   <!-- <xi:include href="Span.ptx" /> -->
-   <!-- <xi:include href="Webwork.ptx" /> -->
+ <xi:include href="SampleGraphs.ptx" />
   </article>
 
 </pretext>
