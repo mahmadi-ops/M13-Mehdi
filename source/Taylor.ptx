@@ -558,14 +558,14 @@
           <graph at="relativistic" function="Krel" domain="(0, 0.95)"
                  stroke="blue" thickness="4.5"/>
           <!-- axis landmarks -->
-          <label at="c-label" anchor="(1, 0)" alignment="ne" offset="(9,3)"><m>c</m></label>
+          <label at="c-label" anchor="(1, 0)" alignment="s" offset="(0,-1)"><m>c</m></label>
           <label at="origin-label" anchor="(0, 0)" alignment="sw"><m>0</m></label>
           <!-- playful direct labels -->
           <label at="rel-label" anchor="(0.86, Krel(0.86))" alignment="nw" offset="(-6,8)">
-            <m>\text{Relativistic} K</m>
+            <m>\text{Relativistic}\, K</m>
           </label>
-          <label at="newt-label" anchor="(0.8, Knewt(0.8))" alignment="se" offset="(4,-6)">
-            <m>\text{Newtonian} K</m>
+          <label at="newt-label" anchor="(0.84, Knewt(0.84))" alignment="s" offset="(0,-17)">
+            <m>\text{Newtonian} \,K</m>
           </label>
           <!-- callout: the two agree when v is small -->
           <label at="agree-label" anchor="(0.28, 0.62)" alignment="n">
