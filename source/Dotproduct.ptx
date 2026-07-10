@@ -1,32 +1,621 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Dot Product</title>
-  <introduction>
-    <p>
-      In this section, we will introduce the concept of the dot product, also known as the scalar product, 
-      which is an important operation in vector algebra. We will discuss its definition, properties, 
-      and applications.
-    </p>
-  </introduction>
-  <objectives>
-      <ol>
-        <li>
-          <p>
-            Understand the definition of the dot product and how it is computed for vectors.
-          </p>
-        </li>
-        <li>
-          <p>
-            Learn the key properties of the dot product, including commutativity, distributivity, and 
-            scalar multiplication.
-          </p>
-        </li>
-        <li>
-          <p>
-            Explore applications of the dot product, such as finding the angle between vectors and 
-            determining orthogonality.
-          </p>
-        </li>
-      </ol>
-  </objectives>
+<section xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Dot Product</title>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-law-of-cosines">
+<title>Law of Cosines and the Angle between Two Vectors</title>
+
+<p>
+Consider two vectors <m>\mathbf u</m> and <m>\mathbf v</m>, and let
+<m>\mathbf w = \mathbf u - \mathbf v</m>, as shown in
+<xref ref="fig-law-of-cosines"/>. By the law of cosines,
+</p>
+
+<men xml:id="eq-1">
+|\mathbf w|^2 = |\mathbf u|^2 + |\mathbf v|^2 - 2|\mathbf u||\mathbf v|\cos\theta.
+</men>
+
+<figure xml:id="fig-law-of-cosines">
+<caption>
+The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
+<m>\mathbf w = \mathbf u - \mathbf v</m>, together with the angle
+<m>\theta</m> between <m>\mathbf u</m> and <m>\mathbf v</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-law-of-cosines">
+<diagram dimensions="(300,300)" margins="10">
+<definition>u=(1.5,4)</definition>
+<definition>v=(4,1)</definition>
+<definition>w=u-v</definition>
+<coordinates bbox="(-0.5,-0.5,4.5,4.5)">
+<vector at="vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="vec-v" v="v" tail="(0,0)" stroke="blue"/>
+<vector at="vec-w" v="w" tail="v" stroke="magenta"/>
+<label at="u-label" anchor="(0.75,2)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="v-label" anchor="(2,0.5)" alignment="se" color="blue">
+<m>\mathbf v</m>
+</label>
+<label at="w-label" anchor="(2.75,2.5)" alignment="ne" color="magenta">
+<m>\mathbf w</m>
+</label>
+<angle-marker at="angle-theta" points="(v,(0,0),u)" radius="18" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A triangle formed by the vectors u, v, and w, where w equals u minus v. The vectors u and v are drawn tail to tail from the origin, and w connects the tip of v to the tip of u. The angle theta lies between u and v at the origin.">
+  <annotation ref="vec-u" text="Vector u, drawn from the origin."/>
+  <annotation ref="vec-v" text="Vector v, drawn from the origin."/>
+  <annotation ref="vec-w" text="Vector w, equal to u minus v, drawn from the tip of v to the tip of u."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+
+<proof>
+  <p>
+    Watch the video below for a proof of the law of cosines using vectors.
+  </p>
+  <figure xml:id="fig-law-of-cosines-video">
+  <caption>Proving the law of cosines: drop a perpendicular from the tip of
+  <m>\mathbf u</m> and apply the Pythagorean theorem to the right triangle
+  whose hypotenuse is <m>\mathbf w = \mathbf u - \mathbf v</m>.</caption>
+  <video xml:id="video-law-of-cosines"
+         source="videos/law_of_cosines_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+</proof>
+<p>
+Writing <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>, note that
+<m>\mathbf w = \mathbf u - \mathbf v</m>, and hence
+</p>
+
+<men xml:id="eq-2">
+\begin{aligned}
+|\mathbf w|^2 \amp = |\mathbf u - \mathbf v|^2 = (u_1-v_1)^2 + (u_2-v_2)^2 + (u_3-v_3)^2 \\
+\amp = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2(u_1v_1+u_2v_2+u_3v_3). 
+\end{aligned}
+</men>
+
+
+<p>
+Also, from the law of cosines in <xref ref="eq-1"/> we have
+</p>
+
+<men xml:id="eq-3">
+|\mathbf w|^2 = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2|\mathbf u||\mathbf v|\cos\theta.
+</men>
+
+<p>
+From <xref ref="eq-2"/> and <xref ref="eq-3"/>, it follows that
+<m>u_1v_1+u_2v_2+u_3v_3 = |\mathbf u||\mathbf v|\cos\theta</m>, and therefore
+the angle between the two vectors <m>\mathbf u</m> and <m>\mathbf v</m>
+can be evaluated using the following equation.
+</p>
+
+<theorem xml:id="thm-angle-formula">
+<title>Angle between Two Vectors</title>
+<statement>
+<men xml:id="eq-4">
+\cos\theta = \frac{u_1v_1+u_2v_2+u_3v_3}{|\mathbf u||\mathbf v|}
+\quad\iff\quad
+\theta = \cos^{-1}\left(\frac{u_1v_1+u_2v_2+u_3v_3}{|\mathbf u||\mathbf v|}\right).
+</men>
+</statement>
+</theorem>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-dot-product">
+<title>The Dot Product</title>
+
+<introduction>
+<p>
+The term <m>u_1v_1+u_2v_2+u_3v_3</m> in the numerator of <xref ref="eq-4"/>
+is known as the <term>dot product</term> of the two vectors
+<m>\mathbf u = \langle u_1,u_2,u_3\rangle</m> and
+<m>\mathbf v = \langle v_1,v_2,v_3\rangle</m>, and is denoted
+<m>\mathbf u \cdot \mathbf v</m>.
+</p>
+
+<definition xml:id="def-dot-product">
+<title>Dot Product</title>
+<statement>
+<men xml:id="eq-5">
+\mathbf u \cdot \mathbf v = u_1v_1+u_2v_2+u_3v_3.
+</men>
+</statement>
+</definition>
+
+<remark xml:id="remark-orthogonal">
+<title>Orthogonal vectors</title>
+<p>
+If the two vectors <m>\mathbf u</m> and <m>\mathbf v</m> are orthogonal, then
+<m>\theta = \pi/2</m>, which means <m>\mathbf u \cdot \mathbf v = 0</m>.
+Conversely, if <m>\mathbf u</m> and <m>\mathbf v</m> are two vectors such that
+<m>\mathbf u \cdot \mathbf v = 0</m>, then <m>\mathbf u</m> and <m>\mathbf v</m>
+are orthogonal.
+</p>
+</remark>
+
+<fact xml:id="fact-orthogonal">
+<title>Orthogonality Criterion</title>
+<statement>
+<men xml:id="eq-6">
+\mathbf u \cdot \mathbf v = 0 \iff \mathbf u \perp \mathbf v.
+</men>
+</statement>
+</fact>
+
+<example xml:id="example-right-triangle">
+<title>A right triangle detected with the dot product</title>
+<statement>
+<p>
+Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
+<m>C(2,0)</m>. Show that this is a right triangle using the dot product.
+</p>
+</statement>
+<solution>
+<me>
+\begin{aligned}
+\vec{CA} \amp = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle \\
+\vec{CB} \amp = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle \\
+\vec{CA}\cdot\vec{CB} \amp = 1 - 1 = 0 \implies \vec{CA} \perp \vec{CB}.
+\end{aligned}
+</me>
+
+<figure xml:id="fig-right-triangle">
+<caption>
+The triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, <m>C(2,0)</m>,
+together with the vectors <m>\vec{CA}</m> and <m>\vec{CB}</m> meeting at a
+right angle at <m>C</m>.
+</caption>
+<image width="50%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-right-triangle">
+<diagram dimensions="(320,320)" margins="10">
+<definition>A=(1,-1)</definition>
+<definition>B=(1,1)</definition>
+<definition>C=(2,0)</definition>
+<coordinates bbox="(-2.5,-2.5,2.5,2.5)">
+<grid-axes at="grid" xlabel="x" ylabel="y"/>
+<triangle at="triangle" vertices="(A,B,C)" labels="A,B,C"
+          show-vertices="yes" point-fill="black" stroke="black"/>
+<vector at="vec-ca" v="A-C" tail="C" stroke="blue" thickness="4" alignment="sw">
+<m>\vec{CA}</m>
+</vector>
+<vector at="vec-cb" v="B-C" tail="C" stroke="red" thickness="4" alignment="ne">
+<m>\vec{CB}</m>
+</vector>
+<angle-marker at="right-angle" points="(B,C,A)" clear-background="yes"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid showing triangle A B C, with A at 1 comma negative 1, B at 1 comma 1, and C at 2 comma 0, together with the vectors C A and C B, which meet at a right angle at C.">
+  <annotation ref="grid" text="A coordinate grid with x and y axes."/>
+  <annotation ref="triangle" text="Triangle A B C, plotted on the grid."/>
+  <annotation ref="vec-ca" text="The vector C A, drawn in blue from C to A."/>
+  <annotation ref="vec-cb" text="The vector C B, drawn in red from C to B."/>
+  <annotation ref="right-angle" text="A right angle marker at C, confirming that C A and C B are perpendicular."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</example>
+
+<example xml:id="example-remaining-angles">
+<title>The remaining angles of the triangle</title>
+<statement>
+<p>
+For the triangle of <xref ref="example-right-triangle"/>
+(shown again in <xref ref="fig-right-triangle"/>), calculate the remaining angles.
+</p>
+</statement>
+<solution>
+<p>
+For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
+</p>
+<me>
+\begin{aligned}
+\vec{AC} \amp = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies |\vec{AC}| = \sqrt2 \\
+\vec{AB} \amp = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies |\vec{AB}| = 2 \\
+\vec{AB}\cdot\vec{AC} \amp = 0 + 2 = 2 \\
+\cos\theta \amp = \frac{\vec{AB}\cdot\vec{AC}}{|\vec{AB}||\vec{AC}|}
+= \frac{2}{2\sqrt2} = \frac{1}{\sqrt2} \implies \theta = \frac{\pi}{4}.
+\end{aligned}
+</me>
+</solution>
+</example>
+</introduction>
+
+<subsubsection xml:id="subsec-properties">
+<title>Properties of the Dot Product</title>
+
+<fact xml:id="fact-properties">
+<statement>
+<p>
+If <m>\mathbf u</m>, <m>\mathbf v</m>, and <m>\mathbf w</m> are any vectors
+and <m>c</m> is a scalar, then
+</p>
+<ol>
+<li><p><m>\mathbf u \cdot \mathbf v = \mathbf v \cdot \mathbf u</m></p></li>
+<li><p><m>(c\mathbf u)\cdot \mathbf v = \mathbf u \cdot (c\mathbf v) = c(\mathbf u \cdot \mathbf v)</m></p></li>
+<li><p><m>\mathbf u \cdot (\mathbf v + \mathbf w) = \mathbf u \cdot \mathbf v + \mathbf u \cdot \mathbf w</m></p></li>
+<li><p><m>\mathbf u \cdot \mathbf u = |\mathbf u|^2</m></p></li>
+<li><p><m>\mathbf 0 \cdot \mathbf u = 0</m></p></li>
+</ol>
+</statement>
+</fact>
+</subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-projection">
+<title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
+
+<figure xml:id="fig-projection-shadow">
+  <caption>The projection of <m>\vec{u}</m> onto <m>\vec{v}</m> as a shadow cast by light from above.</caption>
+  <video xml:id="video-projection-shadow"
+         source="videos/projection_formula_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
+<p>
+The projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m> is
+denoted <m>\text{proj}_{\mathbf v}\mathbf u</m>, and is shown in
+<xref ref="fig-projection"/>.
+</p>
+
+<figure xml:id="fig-projection">
+<caption>
+The projection <m>\text{proj}_{\mathbf v}\mathbf u</m> of <m>\mathbf u</m>
+in the direction of <m>\mathbf v</m>, together with the perpendicular
+component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-projection">
+<diagram dimensions="(340,260)" margins="10">
+<coordinates bbox="(-0.5,-1,7,6)">
+<vector at="vec-v" v="(6,0)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-u" v="(4,5)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-proj" v="(4,0)" tail="(0,0)" stroke="maroon" thickness="5"/>
+<vector at="vec-perp" v="(0,5)" tail="(4,0)" stroke="maroon" thickness="5"/>
+<label at="v-label" anchor="(6,-0.3)" alignment="s" color="blue">
+<m>\mathbf v</m>
+</label>
+<label at="u-label" anchor="(2,2.5)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="proj-label" anchor="(2,-0.3)" alignment="s" color="maroon">
+<m>\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u</m>
+</label>
+<label at="perp-label" anchor="(4,2.5)" alignment="e" color="maroon">
+<m>\mathbf u_{\perp} = \mathbf u - \mathbf u_{\parallel}</m>
+</label>
+<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+  <annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
+  <annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+  <annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
+  <annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v."/>
+  <annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The length of <m>\text{proj}_{\mathbf v}\mathbf u</m> is
+<m>\left|\text{proj}_{\mathbf v}\mathbf u\right| = |\mathbf u|\cos\theta</m>,
+and since its direction is the same as <m>\mathbf v</m>, we have
+</p>
+
+<men>
+\text{proj}_{\mathbf v}\mathbf u
+= (|\mathbf u|\cos\theta)\,\frac{\mathbf v}{|\mathbf v|}
+= \left(|\mathbf u|\,\frac{\mathbf u\cdot\mathbf v}{|\mathbf u||\mathbf v|}\right)\frac{\mathbf v}{|\mathbf v|}
+= \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v.
+</men>
+
+<fact xml:id="fact-projection-formula">
+<title>Projection Formula</title>
+<statement>
+<men xml:id="eq-proj">
+\text{proj}_{\mathbf v}\mathbf u = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v.
+</men>
+</statement>
+</fact>
+
+<paragraphs xml:id="par-decomposition">
+<title>Writing <m>\mathbf u</m> as Two Vectors, One Parallel and One Perpendicular to <m>\mathbf v</m></title>
+
+<p>
+As can be seen in <xref ref="fig-projection"/>,
+<m>\text{proj}_{\mathbf v}\mathbf u</m> is parallel to <m>\mathbf v</m>, and
+the vector <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular
+to it. Also, the sum of these two vectors equals <m>\mathbf u</m>. This means
+we can write <m>\mathbf u</m> as
+</p>
+
+<men xml:id="eq-decomposition">
+\mathbf u = \text{proj}_{\mathbf v}\mathbf u + \left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right)
+= \underbrace{\left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v}_{\text{parallel to } \mathbf v}
+\;+\; \underbrace{\left(\mathbf u - \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v\right)}_{\text{orthogonal to } \mathbf v}.
+</men>
+
+<example xml:id="example-decomposition">
+<title>Decomposing a vector into parallel and perpendicular parts</title>
+<statement>
+<p>
+Consider the two vectors <m>\mathbf v = \mathbf i + \mathbf j</m> and
+<m>\mathbf u = 2\mathbf i + 2\mathbf j + 2\mathbf k</m>. Write <m>\mathbf u</m>
+as a sum of two vectors, one of which is parallel to <m>\mathbf v</m> and the
+other perpendicular to it.
+</p>
+</statement>
+</example>
+<solution>
+<p>
+Since the projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m>
+is parallel to <m>\mathbf v</m>, we have
+</p>
+<me>
+\begin{aligned}
+\mathbf u \cdot \mathbf v \amp = (2\times1)+(2\times1)+(2\times0) = 4 \\
+|\mathbf v| \amp = \sqrt{1+1} = \sqrt2 \\
+\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u
+\amp = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v
+= \frac{4}{2}(\mathbf i+\mathbf j) = 2\mathbf i + 2\mathbf j.
+\end{aligned}
+</me>
+<p>
+For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
+</p>
+<men>
+\mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u
+= (2\mathbf i+2\mathbf j+2\mathbf k) - (2\mathbf i+2\mathbf j) = 2\mathbf k.
+</men>
+<p>
+To achieve a visual understanding of this decomposition, watch the video below.
+</p>
+<figure xml:id="fig-decompose-3d">
+  <caption>Decomposing <m>\mathbf u = 2\mathbf i + 2\mathbf j + 2\mathbf k</m> into
+  <m>\mathbf u_{\parallel} = 2\mathbf i + 2\mathbf j</m>, lying in the
+  <m>xy</m>-plane along <m>\mathbf v</m>, and <m>\mathbf u_{\perp} = 2\mathbf k</m>,
+  pointing straight up.</caption>
+  <video xml:id="video-decompose-3d"
+         source="videos/decompose_3d_v3_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+</solution>
+
+</paragraphs>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-work">
+<title>An Application of the Dot Product: Work</title>
+
+<p>
+Consider the scenario in which a force <m>\mathbf F</m> causes an object to
+move from point <m>P</m> to point <m>Q</m>, as shown in
+<xref ref="fig-work"/>. The vector <m>\vec{PQ}</m> is often denoted
+<m>\mathbf D</m> and is referred to as the <term>displacement vector</term>.
+The work done by the force is then
+</p>
+
+<definition xml:id="def-work">
+<title>Work</title>
+<statement>
+<men xml:id="eq-work">
+\text{Work} = \mathbf F \cdot \mathbf D = |\mathbf D||\mathbf F|\cos\theta,
+</men>
+<p>
+where <m>\left|\text{proj}_{\mathbf D}\mathbf F\right| = |\mathbf F|\cos\theta</m>
+is the magnitude of the force in the direction of motion.
+</p>
+</statement>
+</definition>
+
+<figure xml:id="fig-work-force">
+  <caption>A constant force <m>\mathbf F</m> acting on an object causing a displacement from <m>A</m> to <m>B</m>.</caption>
+  <video xml:id="video-work-force"
+         source="videos/work_force_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-work">
+<caption>
+A force <m>\mathbf F</m> displaces an object from <m>P</m> to <m>Q</m> along
+the displacement vector <m>\mathbf D</m>. The reference segment shows the
+magnitude of the force in the direction of motion, <m>|\mathbf F|\cos\theta</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-work">
+<diagram dimensions="(360,220)" margins="10">
+<definition>P=(0,0)</definition>
+<definition>Q=(4,0)</definition>
+<definition>Fv=(2,1.5)</definition>
+<definition>R=(6,0)</definition>
+<coordinates bbox="(-0.5,-1,7,3)">
+<point at="point-p" p="P" alignment="sw"><m>P</m></point>
+<point at="point-q" p="Q" alignment="s"><m>Q</m></point>
+<vector at="vec-d" v="Q-P" tail="P" stroke="maroon" thickness="5" alignment="s">
+<m>\mathbf D</m>
+</vector>
+<vector at="vec-f" v="Fv" tail="Q" stroke="blue" thickness="4" alignment="ne">
+<m>\mathbf F</m>
+</vector>
+<line at="ref-line" endpoints="(Q,R)" stroke="lightgray" thickness="1"/>
+<angle-marker at="angle-theta" points="(R,Q,(6,1.5))" radius="23" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<label at="label-cos" anchor="(5,-0.4)" clear-background="no">
+<m>|\mathbf F|\cos\theta</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes" >
+  <annotation ref="point-p" text="The starting point P." sonify="yes"/>
+  <annotation ref="point-q" text="The ending point Q." sonify="yes"/>
+  <annotation ref="vec-d" text="The displacement vector D, from P to Q." sonify="yes"/>
+  <annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes"/>
+  <annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta." sonify="yes"/>
+  <annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion." sonify="yes"/>
+  <annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes"/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-work">
+<title>Computing work done by a force</title>
+<statement>
+<p>
+A force is given by the vector <m>\mathbf F = 8\mathbf i - 6\mathbf j + 9\mathbf k</m>
+and moves a particle from the point <m>A(0,10,8)</m> to the point
+<m>B(6,12,20)</m>. Find the work done.
+</p>
+</statement>
+<hint>
+  <p>
+    Consider using the formula for the dot product: <m>\mathbf F \cdot \mathbf D </m>. For more help, watch the video below. </p>
+    <figure xml:id="fig-work-hint">
+  <caption>Set up the work computation: build the displacement vector first, then take the dot product. What do you get?</caption>
+  <video xml:id="video-work-hint"
+         source="videos/work_hint_v2_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+  </hint>
+<solution>
+<p>
+The displacement vector is <m>\mathbf D = \vec{AB} = \langle 6,2,12\rangle</m>,
+and the work done is
+</p>
+<me>
+\text{Work} = \mathbf F \cdot \mathbf D
+= \langle 8,-6,9\rangle \cdot \langle 6,2,12\rangle
+= 48 - 12 + 108 = 144.
+</me>
+</solution>
+</example>
+
+
+
+<example xml:id="ex-inclined-plane">
+      <statement>
+        <p>
+          Suppose a mass of <m>10\text{ kg}</m> is resting on an inclined plane. 
+          Gravity exerts a force equivalent to <m>mg</m> on the object, where <m>g = 9.8\text{ m/s}^2</m> is 
+          the gravitational acceleration. Suppose the incline is tilted at a <m>30^{\circ}</m> angle. 
+          Compute the components of the force that are parallel and perpendicular to the inclined plane.
+        </p>
+      </statement>
+      </example>
+      <solution>
+
+<figure xml:id="fig-inclined-video">
+  <caption>Decomposing gravity on a <m>30^{\circ}</m> incline: the parallel component
+  <m>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F}</m> pulls the mass down
+  the slope, and the perpendicular component
+  <m>\vec{F}_{\perp} = \vec{F} - \vec{F}_{\parallel}</m> presses it into the surface.</caption>
+  <video xml:id="video-inclined-plane"
+         source="videos/inclined_plane_1080p.mp4"
+         width="100%" aspect="16:9"/>
+</figure>
+
+        <p>
+          First, we determine the total gravitational force vector <m>\vec{F}</m> acting on the mass. 
+          Using <m>g = 9.8\text{ m/s}^2</m>:
+          <me>|\vec{F}| = (10)(9.8) = 98\text{ N}</me>
+          Acting entirely in the negative vertical direction, this gives:
+          <me>\vec{F} = \langle 0, -98 \rangle = -98\hat{j}</me>
+        </p>
+
+        <!-- Diagram inserted here -->
+        <figure xml:id="fig-inclined-forces">
+          <caption>Forces acting on a mass on a <m>30^{\circ}</m> incline[cite: 1].</caption>
+          <prefigure>
+           <canvas x-bounds="[-2, 6]" y-bounds="[-5, 4]">
+  <!-- The Inclined Plane -->
+  <line x1="0" y1="0" x2="5.196" y2="3" stroke="black" thickness="2" />
+  <line x1="0" y1="0" x2="5.196" y2="0" stroke="black" thickness="1" dash="4 4" />
+  <line x1="5.196" y1="0" x2="5.196" y2="3" stroke="black" thickness="1" dash="4 4" />
+  <label anchor="(1.2, 0.2)">30°</label>
+
+  <!-- The Object (Centered at a point on the incline) -->
+  <group transform="translate(2.598, 1.5) rotate(30)">
+    <rectangle center="(0,0.4)" width="1.2" height="0.8" fill="lightgray" stroke="black" />
+    
+    <!-- Force Vectors originating from center of mass -->
+    <!-- Gravity: straight down -->
+    <vector to="(0,-3)" stroke="blue" thickness="2" />
+    <label anchor="(0.3,-2.8)" color="blue"><m>\vec{F}</m></label>
+
+    <!-- Parallel Component: down the slope -->
+    <vector to="(-1.5,0)" stroke="red" thickness="2" />
+    <label anchor="(-1.8,0.3)" color="red"><m>\vec{F}_{\parallel}</m></label>
+
+    <!-- Perpendicular Component: into the slope -->
+    <vector to="(0,-2.598)" stroke="purple" thickness="2" />
+    <label anchor="(-0.5,-2.2)" color="purple"><m>\vec{F}_{\perp}</m></label>
+  </group>
+</canvas>
+          </prefigure>
+        </figure>
+
+        <p>
+          Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane[cite: 1]. 
+          Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal[cite: 1]:
+          <me>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+          where <m>|\vec{v}| = 1</m>[cite: 1].
+        </p>
+        <p>
+          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>[cite: 1]:
+          <me>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{|\vec{v}|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</me>
+          Computing the dot product[cite: 1]:
+          <me>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</me>
+          Thus, the parallel force vector is[cite: 1]:
+          <me>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+        </p>
+        <p>
+          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction[cite: 1]:
+          <md>
+            <mrow>\vec{F}_{\perp} \amp = \vec{F} - \vec{F}_{\parallel}</mrow>
+            <mrow>\amp = \langle 0, -98 \rangle - 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</mrow>
+            <mrow>\amp = 49 \left( \langle 0, -2 \rangle - \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle \right)</mrow>
+            <mrow>\amp = 49 \left\langle -\frac{\sqrt{3}}{2}, -\frac{3}{2} \right\rangle</mrow>
+          </md>
+        </p>
+      </solution>
+
+
+</subsection>
+
 </section>

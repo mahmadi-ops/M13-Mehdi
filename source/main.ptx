@@ -16,11 +16,14 @@
   </docinfo>
 
   <article xml:id="shorttitlelowercase">
-    <title>MATH 13: Complementary Interactive Modules</title>
+    <title>Complementary Modules For MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
+    <xi:include href="Parametrization.ptx" />
     <xi:include href="Taylor.ptx" />
     <xi:include href="Dotproduct.ptx" />
+    <xi:include href="SampleGraphs.ptx" />
+    <xi:include href="the-cross-product.ptx" />
     <!-- <xi:include href="section-2.ptx" /> -->
    <!-- <xi:include href="Span.ptx" /> -->
    <!-- <xi:include href="Webwork.ptx" /> -->
