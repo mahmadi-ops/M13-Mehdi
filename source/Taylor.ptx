@@ -1010,7 +1010,7 @@
   </image>
 </figure>
 
-<video source="external/videos/small_angle_error.mp4" width="95%"/>
+<video source="videos/small_angle_error.mp4" width="95%"/>
 <p>
   A moving pendulum alongside a live comparison table (Part 1), followed
   by the Taylor remainder bound and the relative-error plot (Part 2).
@@ -1037,6 +1037,7 @@
         Taylor polynomial increases.
       </p>
     </statement>
+  </example>
     <solution>
       <p>
         The Taylor series for <m>f(x) = \arctan(x)</m> centered at <m>a = 0</m> is
@@ -1089,8 +1090,8 @@
         <m>\tfrac{4}{10} = 0.4</m>, and to guarantee an error of at most <m>0.01</m> one needs 
         to take <m>n \ge 399</m>.
       </p>
-    </solution>
-  </example>
+   
+
 
   <figure xml:id="fig-approx-pi-taylor-video">
     <caption>
@@ -1100,6 +1101,7 @@
     </caption>
     <video xml:id="video-approx-pi-taylor-error" source="videos/approx-pi-taylor-error.mp4" width="85%"/>
   </figure>
+   </solution>
 </subsection>
 
 <p> As we saw in the previous example, Taylor series approached <m>\pi</m> very slowly. In the project below, 
