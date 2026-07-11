@@ -23,6 +23,7 @@
     <xi:include href="Taylor.ptx" />
     <xi:include href="Dotproduct.ptx" />
     <xi:include href="the-cross-product.ptx" />
+    <xi:include href="extreme-values-saddle-points.ptx" />
  <xi:include href="SampleGraphs.ptx" />
   </article>
 
