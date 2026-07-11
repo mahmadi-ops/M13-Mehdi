@@ -856,4 +856,178 @@ absolute minimum is <m>f(0,0) = f(2,2) = 0</m>.
 
 </subsection>
 
+<!-- ================================================================ -->
+<subsection xml:id="sec-equilibrium-stability">
+<title>A Physical Application: Equilibrium and Stability</title>
+
+<p>
+Consider a marble that rolls on the surface <m>z = f(x,y)</m> under the
+influence of gravity. If we measure heights from the <m>xy</m>-plane,
+the potential energy of the marble at the point <m>(x,y)</m> of the
+surface is
+</p>
+
+<men xml:id="eq-potential-energy">
+U(x,y) = mgz = mg\,f(x,y),
+</men>
+
+<p>
+where <m>m</m> is the mass of the marble and <m>g</m> is the
+acceleration due to gravity. The marble is in <term>equilibrium</term>
+at a point where the force along the surface vanishes, which happens
+exactly where both partial derivatives of the potential energy are
+zero:
+</p>
+
+<men xml:id="eq-equilibrium-condition">
+U_x = mg\,f_x = 0 \quad \text{and} \quad U_y = mg\,f_y = 0.
+</men>
+
+<p>
+In other words, the equilibrium points of the marble are precisely the
+critical points of <m>f</m>. The second derivative test then tells us
+whether the equilibrium is <term>stable</term> (a displaced marble
+rolls back) or <term>unstable</term> (a displaced marble rolls away).
+</p>
+
+<example xml:id="example-marble-stability">
+<title>Equilibrium and Stability of a Marble</title>
+<statement>
+<p>
+A marble rests at the origin on each of the following three surfaces:
+</p>
+
+<men xml:id="eq-three-surfaces">
+\text{(i)}\; z = x^2 + y^2, \qquad
+\text{(ii)}\; z = -x^2 - y^2, \qquad
+\text{(iii)}\; z = \frac{y^2}{3} - \frac{x^2}{3}.
+</men>
+
+<p>
+Show that <m>(0,0)</m> is an equilibrium point in each case, and
+determine whether the equilibrium is stable or unstable.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-marble-stability">
+<title>Solution</title>
+
+<p>
+In each case the potential energy is <m>U(x,y) = mg\,f(x,y)</m>, so by
+<xref ref="eq-equilibrium-condition"/> the equilibrium points are the
+critical points of <m>f</m>. For all three surfaces we have
+<m>f_x(0,0) = f_y(0,0) = 0</m>, so the origin is an equilibrium point
+in each case. We classify each equilibrium with the second derivative
+test, as shown in <xref ref="fig-stability-video"/>.
+</p>
+
+<p>
+<em>Case (i):</em> For <m>f(x,y) = x^2 + y^2</m> we have
+<m>f_{xx} = f_{yy} = 2</m> and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = 4 \gt 0</m> and <m>f_{xx} \gt 0</m>, and the origin is a
+local minimum of the potential energy. A marble displaced slightly in
+any direction rolls back toward the bottom: the equilibrium is
+<em>stable</em>.
+</p>
+
+<p>
+<em>Case (ii):</em> For <m>f(x,y) = -x^2 - y^2</m> we have
+<m>f_{xx} = f_{yy} = -2</m> and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = 4 \gt 0</m> and <m>f_{xx} \lt 0</m>, and the origin is a
+local maximum of the potential energy. A marble displaced slightly in
+any direction rolls away from the top: the equilibrium is
+<em>unstable</em>.
+</p>
+
+<p>
+<em>Case (iii):</em> For <m>f(x,y) = y^2/3 - x^2/3</m> we have
+<m>f_{xx} = -2/3</m>, <m>f_{yy} = 2/3</m>, and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = -4/9 \lt 0</m>, and the origin is a saddle point. Along the
+<m>y</m>-axis the potential energy rises, so a marble displaced in the
+<m>y</m>-direction rolls back; but along the <m>x</m>-axis the
+potential energy falls, so a marble displaced in the
+<m>x</m>-direction rolls away. Since some displacements grow, the
+equilibrium is <em>unstable</em>.
+</p>
+
+<p>
+The general principle illustrated by this example, shown in
+<xref ref="fig-stability-cross-sections"/>, is that an equilibrium is
+stable exactly when the potential energy has a local minimum there.
+</p>
+
+</paragraphs>
+
+<figure xml:id="fig-stability-video">
+<caption>
+A marble at an equilibrium point on each of the three surfaces. On the
+bowl <m>z = x^2 + y^2</m> a displaced marble rolls back (stable); on
+the dome <m>z = -x^2 - y^2</m> it rolls away (unstable); on the saddle
+<m>z = y^2/3 - x^2/3</m> it rolls back along the <m>y</m>-direction but
+away along the <m>x</m>-direction (unstable).
+</caption>
+<video xml:id="video-marble-stability"
+       source="videos/stability_marble_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-stability-cross-sections">
+<caption>
+Cross-sections of the potential energy near an equilibrium point. Along
+a direction where <m>U</m> has a minimum (blue), the force is
+restoring and pushes the marble back: stable. Along a direction where
+<m>U</m> has a maximum (red), the force pushes the marble away:
+unstable. For the bowl, every cross-section is the blue type; for the
+dome, every cross-section is the red type; a saddle has one of each.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-stability-cross-sections">
+<diagram dimensions="(360,280)" margins="10">
+<definition>stable(x) = 0.9*x^2</definition>
+<definition>unstable(x) = -0.9*x^2</definition>
+<coordinates bbox="(-1.7,-1.9,1.7,1.9)">
+<axes at="st-axes" decorations="no" arrows="1"/>
+<graph at="st-stable" function="stable" domain="(-1.35,1.35)"
+       stroke="blue" thickness="2.5"/>
+<graph at="st-unstable" function="unstable" domain="(-1.35,1.35)"
+       stroke="red" thickness="2.5"/>
+<vector at="st-restore-right" v="(-0.45,0)" tail="(0.95,0.35)"
+        stroke="blue" thickness="3"/>
+<vector at="st-restore-left" v="(0.45,0)" tail="(-0.95,0.35)"
+        stroke="blue" thickness="3"/>
+<vector at="st-runaway-right" v="(0.45,0)" tail="(0.45,-0.35)"
+        stroke="red" thickness="3"/>
+<vector at="st-runaway-left" v="(-0.45,0)" tail="(-0.45,-0.35)"
+        stroke="red" thickness="3"/>
+<point at="st-marble" p="(0,0)" fill="green"/>
+<label at="st-stable-label" anchor="(1.15,1.45)" alignment="e" color="blue">
+<m>\text{stable}</m>
+</label>
+<label at="st-unstable-label" anchor="(1.6,-1.45)" alignment="w" color="red">
+<m>\text{unstable}</m>
+</label>
+<label at="st-U-label" anchor="(-0.12,1.75)" alignment="w">
+<m>U</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward: the force arrows point back toward the equilibrium, so this direction is stable. The red curve opens downward: the force arrows point away from the equilibrium, so this direction is unstable.">
+  <annotation ref="st-stable" text="A cross-section where the potential energy has a minimum, shown in blue and opening upward. Displacements in this direction are pushed back: stable."/>
+  <annotation ref="st-restore-right" text="The restoring force on a marble displaced to the right along the blue cross-section, pointing back toward the equilibrium."/>
+  <annotation ref="st-restore-left" text="The restoring force on a marble displaced to the left along the blue cross-section, pointing back toward the equilibrium."/>
+  <annotation ref="st-unstable" text="A cross-section where the potential energy has a maximum, shown in red and opening downward. Displacements in this direction grow: unstable."/>
+  <annotation ref="st-runaway-right" text="The force on a marble displaced to the right along the red cross-section, pointing away from the equilibrium."/>
+  <annotation ref="st-runaway-left" text="The force on a marble displaced to the left along the red cross-section, pointing away from the equilibrium."/>
+  <annotation ref="st-marble" text="The marble at the equilibrium point, where both partial derivatives of the potential energy are zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
 </section>
