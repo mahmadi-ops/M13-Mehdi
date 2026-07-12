@@ -313,6 +313,26 @@
       This shows that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x &lt; 0</m>. Therefore, 
       we conclude that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>.
     </p>    
+
+    <p>
+  The animation below illustrates this convergence geometrically. As the
+  degree <m>n</m> increases, the Taylor polynomials
+  <m>p_n(x) = \sum_{k=0}^{n} \frac{x^k}{k!}</m> hug the graph of
+  <m>f(x) = e^x</m> over a wider and wider interval, matching the fact that
+  the remainder <m>R_n(x)\to 0</m> for every <m>x\in\mathbb{R}</m>.
+</p>
+<figure xml:id="fig-exp-taylor-video">
+  <caption>
+    The Taylor polynomials <m>p_1,\dots,p_8</m> of <m>e^x</m> about
+    <m>x=0</m> converging to <m>y=e^x</m>, followed by the
+    remainder-theorem argument.
+  </caption>
+  <video xml:id="video-exp-taylor"
+         source="videos/taylor_exp_convergence.mp4"
+         width="80%"
+         aspect="16:9"
+         preview="generic"/>
+</figure>
   </subsection>
 
   <subsection xml:id="subsection-3">

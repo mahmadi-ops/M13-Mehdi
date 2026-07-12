@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--  11.6 Conic Sections                                          -->
+<!--  Add  <xi:include href="Conics.ptx"/>  to source/main.ptx     -->
+<!--  PreFigure labels below match the standalone source files:    -->
+<!--    parabola-def, parabola-example, parabola-extra,            -->
+<!--    ellipse-def,  ellipse-example,  ellipse-extra,             -->
+<!--    hyperbola-def, hyperbola-example, hyperbola-extra          -->
+<!--  Manim videos expected in source/videos/ (7 files):            -->
+<!--    parabola_focus_directrix_1080p.mp4                          -->
+<!--    ellipse_constant_sum_1080p.mp4                              -->
+<!--    ellipse_formula_a_1080p.mp4                                 -->
+<!--    ellipse_find_a_1080p.mp4                                    -->
+<!--    hyperbola_constant_difference_1080p.mp4                     -->
+<!--    hyperbola_formula_a_1080p.mp4                               -->
+<!--    hyperbola_find_a_1080p.mp4                                  -->
+<!--  Scenes live in manim_conics.py, manim_formula_a.py,           -->
+<!--  and manim_find_a.py                                           -->
+<!-- ============================================================= -->
+<section xml:id="section-conics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Conic Sections</title>
+
+  <introduction>
+    <p>
+      <term>Conic sections</term> are the curves obtained by intersecting a double
+      cone with a plane. There are three types: <term>parabolas</term>,
+      <term>ellipses</term>, and <term>hyperbolas</term>. In this section we give the
+      focus<ndash/>directrix and focal definitions of each, read the key features off the
+      standard equations, and see a worked example together with a second example that
+      changes the orientation.
+    </p>
+  </introduction>
+
+  <!-- ===================== PARABOLA ===================== -->
+  <subsection xml:id="subsec-parabola">
+    <title>Parabola</title>
+    <p>
+      A <term>parabola</term> is the set of points in a plane that are equidistant from a
+      fixed point <m>F</m> (the <term>focus</term>) and a fixed line (the
+      <term>directrix</term>). For the standard parabola <m>x^2 = 4py</m> the vertex is at
+      the origin, the focus is at <m>(0,p)</m>, and the directrix is the line <m>y = -p</m>.
+    </p>
+
+    <figure xml:id="fig-parabola-def">
+  <caption>The parabola <m>x^2 = 4py</m>. The point <m>P</m> is equidistant from the
+  focus <m>(0,p)</m> and the directrix <m>y=-p</m>.</caption>
+  <image width="65%">
+    <prefigure xmlns="https://prefigure.org" label="parabola-def">
+      <diagram dimensions="(400,246)" margins="8">
+        <definition>pval = 0.6</definition>
+        <definition>f(x) = x^2/(4*pval)</definition>
+        <definition>xP = 1.9</definition>
+        <coordinates bbox="(-2.6, -1.15, 2.6, 2.05)">
+          <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+          <graph at="parabola" function="f" domain="(-2.25, 2.25)" stroke="blue" thickness="2.5"/>
+          <line at="axis-sym" p1="(0,-pval)" p2="(0,1.95)" dash="3 3" stroke="gray" thickness="1"/>
+          <line at="directrix" p1="(-2.45,-pval)" p2="(2.45,-pval)" stroke="red" thickness="2" dash="5 4"/>
+          <label at="dir-label" anchor="(-2.45,-pval)" alignment="ne" offset="(2,4)"><m>\text{directrix: } y=-p</m></label>
+          <point at="focus" p="(0,pval)" fill="black" size="3.5"/>
+          <label at="focus-label" anchor="(0,pval)" alignment="e" offset="(8,6)"><m>\text{Focus }(0,p)</m></label>
+          <point at="vertex" p="(0,0)" fill="orange" size="3.5"/>
+          <label at="vertex-label" anchor="(0,0)" alignment="se" offset="(6,-2)"><m>\text{vertex}</m></label>
+          <group at="equidistant">
+            <point p="(xP,f(xP))" fill="blue" size="3"/>
+            <label anchor="(xP,f(xP))" alignment="ne" offset="(4,2)"><m>P</m></label>
+            <line p1="(xP,f(xP))" p2="(0,pval)" stroke="green" thickness="2"/>
+            <line p1="(xP,f(xP))" p2="(xP,-pval)" stroke="green" thickness="2"/>
+            <point p="(xP,-pval)" fill="red" size="2.5"/>
+          </group>
+          <label at="eqlabel" anchor="(-1.15,1.5)" alignment="center"><m>x^2 = 4py</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="parabola"
+              text="A parabola opening upward with vertex at the origin, illustrating the defining property that every point is equidistant from a fixed focus and a fixed directrix">
+            <annotation ref="parabola"
+                text="The parabola x squared equals four p y, shown as a blue upward curve" sonify="yes"/>
+            <annotation ref="focus"
+                text="The focus, the fixed point at zero comma p on the axis of symmetry"/>
+            <annotation ref="directrix"
+                text="The directrix, the fixed horizontal line y equals minus p, drawn dashed in red"/>
+            <annotation ref="vertex"
+                text="The vertex at the origin, the point of the parabola halfway between the focus and the directrix"/>
+            <annotation ref="equidistant"
+                text="A point P on the parabola with two equal green segments, one to the focus and one dropped perpendicular to the directrix, showing the two distances are equal"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
+    <figure xml:id="vid-parabola-focus">
+      <caption>Animation: as <m>P</m> moves along the parabola, its distance to the focus
+      always equals its distance to the directrix.</caption>
+      <video xml:id="video-parabola-focus"
+             source="videos/parabola_focus_directrix_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-parabola-1">
+      <title>From equation to focus and directrix</title>
+      <p>Find the focus and the directrix of <m>y = -\frac{1}{2}x^2 + x - \frac{1}{2}</m>.</p>
+    </example>
+
+    <solution xml:id="sol-parabola-1">
+      <p>We begin by completing the square:</p>
+      <me>y = -\frac{1}{2}x^2 + x - \frac{1}{2} = -\frac{1}{2}(x-1)^2,
+      \qquad\text{i.e.}\qquad (x-1)^2 = -2y.</me>
+      <p>
+        Comparing with <m>x^2 = 4py</m> gives <m>4p = -2</m>, so <m>p = -\frac{1}{2}</m>.
+        The graph is the standard parabola shifted right by one unit, so the vertex is at
+        <m>(1,0)</m>. Therefore the focus is at
+      </p>
+      <me>(1,\, p) = \left(1,\, -\tfrac{1}{2}\right),</me>
+      <p>and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
+
+      <figure xml:id="fig-parabola-example">
+        <caption>The parabola <m>(x-1)^2 = -2y</m>, opening downward with focus
+        <m>\left(1,-\tfrac12\right)</m> and directrix <m>y=\tfrac12</m>.</caption>
+        <image width="65%">
+          <prefigure xmlns="https://prefigure.org" label="parabola-example">
+          <diagram dimensions="(400,320)" margins="8">
+            <definition>g(x) = -0.5*(x-1)^2</definition>
+            <coordinates bbox="(-0.35, -1.15, 2.35, 0.85)">
+              <grid-axes xlabel="x" ylabel="y"/>
+              <graph at="parabola" function="g" domain="(-0.1, 2.1)" stroke="blue" thickness="2.5"/>
+              <line at="directrix" p1="(-0.3,0.5)" p2="(2.3,0.5)" stroke="red" thickness="2" dash="5 4"/>
+              <label at="dir-label" anchor="(1.6,0.5)" alignment="n" offset="(0,6)"><m>\text{directrix } y=\tfrac12</m></label>
+              <point at="focus" p="(1,-0.5)" fill="black" size="3.5"/>
+              <label at="focus-label" anchor="(1,-0.5)" alignment="se" offset="(6,-2)"><m>\text{Focus }\left(1,-\tfrac12\right)</m></label>
+              <point at="vertex" p="(1,0)" fill="orange" size="3"/>
+              <label at="curve-label" anchor="(0.35,-0.72)" alignment="w"><m>(x-1)^2=-2y</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="parabola"
+                  text="The downward parabola of the worked example, obtained by completing the square, with a horizontal directrix above it and a focus below the vertex">
+                <annotation ref="parabola"
+                    text="The parabola x minus one squared equals minus two y, a blue curve opening downward with vertex at one comma zero" sonify="yes"/>
+                <annotation ref="vertex"
+                    text="The vertex at one comma zero, the highest point of this downward parabola"/>
+                <annotation ref="focus"
+                    text="The focus at one comma minus one half, located one half unit below the vertex"/>
+                <annotation ref="directrix"
+                    text="The directrix, the horizontal line y equals one half, one half unit above the vertex"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+
+    <example xml:id="ex-parabola-2">
+      <title>From focus and directrix to equation (a sideways parabola)</title>
+      <p>
+        Find the equation of the parabola whose focus is <m>(2,0)</m> and whose directrix
+        is the vertical line <m>x = -2</m>. In which direction does it open?
+      </p>
+    </example>
+
+    <solution xml:id="sol-parabola-2">
+      <p>
+        Here we run the definition in reverse. A point <m>(x,y)</m> lies on the parabola
+        exactly when its distance to the focus equals its distance to the directrix:
+      </p>
+      <me>\sqrt{(x-2)^2 + y^2} = |x+2|.</me>
+      <p>Squaring both sides and expanding,</p>
+      <me>(x-2)^2 + y^2 = (x+2)^2
+      \;\Longrightarrow\; x^2 - 4x + 4 + y^2 = x^2 + 4x + 4.</me>
+      <p>The <m>x^2</m> and constant terms cancel, leaving</p>
+      <me>y^2 = 8x.</me>
+      <p>
+        Because the directrix is <em>vertical</em> and the focus lies to its right, the
+        parabola opens <em>to the right</em>. Comparing with <m>y^2 = 4px</m> gives
+        <m>4p = 8</m>, so <m>p = 2</m>, consistent with the focus at <m>(2,0)</m>. This is
+        the same equidistance idea as the previous example, but with a horizontal axis of
+        symmetry.
+      </p>
+
+      <figure xml:id="fig-parabola-extra">
+        <caption>The parabola <m>y^2 = 8x</m> opens to the right; <m>P</m> is equidistant
+        from the focus <m>(2,0)</m> and the directrix <m>x=-2</m>.</caption>
+        <image width="65%">
+          <prefigure xmlns="https://prefigure.org" label="parabola-extra">
+          <diagram dimensions="(420,340)" margins="8">
+            <definition>P(x,y) = y^2 - 8*x</definition>
+            <definition>yP = 4</definition>
+            <coordinates bbox="(-2.8, -4.6, 5.2, 4.6)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <implicit-curve at="parabola" function="P" k="0" stroke="blue" thickness="2.5"/>
+              <line at="directrix" p1="(-2,-4.4)" p2="(-2,4.4)" stroke="red" thickness="2" dash="5 4"/>
+              <label at="dir-label" anchor="(-2,-3.6)" alignment="w" offset="(-2,0)"><m>x=-2</m></label>
+              <point at="focus" p="(2,0)" fill="black" size="3.5"/>
+              <label at="focus-label" anchor="(2,0)" alignment="se" offset="(6,-4)"><m>\text{Focus }(2,0)</m></label>
+              <point at="vertex" p="(0,0)" fill="orange" size="3.5"/>
+              <label at="vertex-label" anchor="(0,0)" alignment="sw" offset="(-4,-4)"><m>\text{vertex}</m></label>
+              <group at="equidistant">
+                <point p="(yP^2/8, yP)" fill="blue" size="3"/>
+                <label anchor="(yP^2/8, yP)" alignment="ne" offset="(4,2)"><m>P</m></label>
+                <line p1="(yP^2/8, yP)" p2="(2,0)" stroke="green" thickness="2"/>
+                <line p1="(yP^2/8, yP)" p2="(-2, yP)" stroke="green" thickness="2"/>
+                <point p="(-2, yP)" fill="red" size="2.5"/>
+              </group>
+              <label at="eqlabel" anchor="(3.4,-3.2)" alignment="center"><m>y^2 = 8x</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="parabola"
+                  text="A sideways parabola opening to the right, built from the definition using a focus and a vertical directrix, the twist example that reverses the usual direction">
+                <annotation ref="parabola"
+                    text="The parabola y squared equals eight x, a blue curve opening to the right with vertex at the origin" sonify="yes"/>
+                <annotation ref="focus"
+                    text="The focus at two comma zero, to the right of the vertex"/>
+                <annotation ref="directrix"
+                    text="The directrix, the vertical line x equals minus two, drawn dashed in red to the left of the vertex"/>
+                <annotation ref="vertex"
+                    text="The vertex at the origin, halfway between the focus and the directrix"/>
+                <annotation ref="equidistant"
+                    text="A point P on the parabola with two equal green segments, one to the focus and one horizontal to the directrix, confirming the equal distances"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+  </subsection>
+
+  <!-- ===================== ELLIPSE ===================== -->
+  <subsection xml:id="subsec-ellipse">
+    <title>Ellipse</title>
+    <p>
+      An <term>ellipse</term> is the set of points in a plane the sum of whose distances
+      from two fixed points <m>F_1</m> and <m>F_2</m> (the <term>foci</term>) is constant.
+      For <m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1</m> with <m>a \gt b</m>, the segment
+      joining <m>(a,0)</m> and <m>(-a,0)</m> is the <term>semi-major axis</term>, the
+      segment joining <m>(0,b)</m> and <m>(0,-b)</m> is the <term>semi-minor axis</term>,
+      and the foci satisfy <m>c^2 = a^2 - b^2 \gt 0</m>.
+    </p>
+
+    <figure xml:id="fig-ellipse-def">
+      <caption>An ellipse with foci <m>F_1(c,0)</m> and <m>F_2(-c,0)</m>. Each slanted
+      segment from <m>(0,b)</m> to a focus has length <m>a</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="ellipse-def">
+          <diagram dimensions="(420,320)" margins="8">
+            <definition>aa = 3.2</definition>
+            <definition>bb = 2.2</definition>
+            <definition>cc = sqrt(aa^2 - bb^2)</definition>
+            <definition>E(x,y) = x^2/aa^2 + y^2/bb^2</definition>
+            <coordinates bbox="(-4.1, -3.0, 4.1, 3.0)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <implicit-curve at="ellipse" function="E" k="1" stroke="blue" thickness="2.5"/>
+              <group at="focal-radii">
+                <line p1="(0,bb)" p2="(cc,0)" stroke="green" thickness="2"/>
+                <line p1="(0,bb)" p2="(-cc,0)" stroke="orange" thickness="2"/>
+              </group>
+              <label anchor="(cc/2,bb/2)" alignment="ne" offset="(4,2)"><m>a</m></label>
+              <label anchor="(-cc/2,bb/2)" alignment="nw" offset="(-4,2)"><m>a</m></label>
+              <group at="foci">
+                <point p="(cc,0)" fill="red" size="3"/>
+                <point p="(-cc,0)" fill="red" size="3"/>
+              </group>
+              <label anchor="(cc,0)" alignment="s" offset="(0,-6)"><m>F_1(c,0)</m></label>
+              <label anchor="(-cc,0)" alignment="s" offset="(0,-6)"><m>F_2(-c,0)</m></label>
+              <point at="cov-top" p="(0,bb)" fill="green" size="3"/>
+              <label anchor="(0,bb)" alignment="ne" offset="(4,2)"><m>(0,b)</m></label>
+              <label anchor="(0,-bb)" alignment="se" offset="(4,-2)"><m>(0,-b)</m></label>
+              <label anchor="(aa,0)" alignment="ne" offset="(2,4)"><m>(a,0)</m></label>
+              <label anchor="(-aa,0)" alignment="nw" offset="(-2,4)"><m>(-a,0)</m></label>
+              <label at="eqlabel" anchor="(-2.7,2.2)" alignment="center"><m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="ellipse"
+                  text="A horizontal ellipse illustrating the definition of an ellipse as the set of points whose distances to two foci have a constant sum">
+                <annotation ref="ellipse"
+                    text="The ellipse x squared over a squared plus y squared over b squared equals one, a blue oval wider than it is tall" sonify="yes"/>
+                <annotation ref="foci"
+                    text="The two foci F one at c comma zero and F two at minus c comma zero, both on the x axis inside the ellipse"/>
+                <annotation ref="focal-radii"
+                    text="Two segments drawn from the top co-vertex zero comma b to each focus; each has length a, showing that their sum equals two a"/>
+                <annotation ref="cov-top"
+                    text="The top co-vertex at zero comma b, the end of the semi-minor axis"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-ellipse-sum">
+      <caption>Animation: as <m>P</m> travels around the ellipse, the sum <m>r_1 + r_2</m>
+      of its distances to the two foci stays fixed at <m>2a = 6</m>.</caption>
+      <video xml:id="video-ellipse-sum"
+             source="videos/ellipse_constant_sum_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      Where do the formulas for <m>a</m> come from? Two facts do all the work. First,
+      evaluating the definition at the vertex <m>(a,0)</m> shows that the two focal radii
+      there are <m>a-c</m> and <m>a+c</m>, so their sum is
+    </p>
+    <me>r_1 + r_2 = (a-c) + (a+c) = 2a,</me>
+    <p>
+      which identifies the constant in the definition as <m>2a</m>; equivalently
+      <m>a = \frac{1}{2}(r_1 + r_2)</m>. Second, evaluating at the co-vertex <m>(0,b)</m>
+      forces <m>r_1 = r_2 = a</m> by symmetry, and that radius is the hypotenuse of a right
+      triangle with legs <m>b</m> and <m>c</m>. Pythagoras then gives
+    </p>
+    <me>a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</me>
+    <p>
+      So for an ellipse <m>a</m> is the <em>hypotenuse</em> of that triangle, which is why
+      <m>a</m> is the largest of the three lengths and why <m>c^2 = a^2 - b^2</m> carries a
+      minus sign.
+    </p>
+
+    <figure xml:id="vid-ellipse-formula-a">
+      <caption>Animation: deriving the formula for <m>a</m>. Sliding <m>P</m> to the vertex
+      shows the constant equals <m>2a</m>; sliding it to the co-vertex builds the right
+      triangle giving <m>a^2 = b^2 + c^2</m>.</caption>
+      <video xml:id="video-ellipse-formula-a"
+             source="videos/ellipse_formula_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <figure xml:id="vid-ellipse-find-a">
+      <caption>Animation: in practice, put the equation in standard form and read <m>a^2</m>
+      off the <em>larger</em> denominator; then <m>a</m> is the semi-major axis, measured
+      from the center to a vertex.</caption>
+      <video xml:id="video-ellipse-find-a"
+             source="videos/ellipse_find_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-ellipse-1">
+      <title>Horizontal ellipse</title>
+      <p>Sketch the graph of <m>4x^2 + 9y^2 = 36</m> and locate the foci.</p>
+    </example>
+
+    <solution xml:id="sol-ellipse-1">
+      <p>Dividing through by <m>36</m> puts the equation in standard form:</p>
+      <me>\frac{x^2}{9} + \frac{y^2}{4} = 1.</me>
+      <p>
+        The larger denominator sits under <m>x^2</m>, so the major axis is horizontal with
+        <m>a = 3</m> and <m>b = 2</m>. Then
+      </p>
+      <me>c^2 = a^2 - b^2 = 9 - 4 = 5 \;\Longrightarrow\; c = \sqrt{5},</me>
+      <p>so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
+
+      <figure xml:id="fig-ellipse-example">
+        <caption>The ellipse <m>\frac{x^2}{9}+\frac{y^2}{4}=1</m> with foci at
+        <m>\left(\pm\sqrt5,\,0\right)</m>.</caption>
+        <image width="65%">
+          <prefigure xmlns="https://prefigure.org" label="ellipse-example">
+          <diagram dimensions="(400,320)" margins="8">
+            <definition>E(x,y) = x^2/9 + y^2/4</definition>
+            <definition>cc = sqrt(5)</definition>
+            <coordinates bbox="(-3.7, -2.7, 3.7, 2.7)">
+              <grid-axes xlabel="x" ylabel="y"/>
+              <implicit-curve at="ellipse" function="E" k="1" stroke="blue" thickness="2.5"/>
+              <group at="focal-radii">
+                <line p1="(0,2)" p2="(cc,0)" stroke="darkred" thickness="2"/>
+                <line p1="(0,2)" p2="(-cc,0)" stroke="darkred" thickness="2"/>
+              </group>
+              <group at="foci">
+                <point p="(cc,0)" fill="red" size="3"/>
+                <point p="(-cc,0)" fill="red" size="3"/>
+              </group>
+              <label anchor="(cc,0)" alignment="ne" offset="(2,2)"><m>F_1(\sqrt5,0)</m></label>
+              <label anchor="(-cc,0)" alignment="nw" offset="(-2,2)"><m>F_2(-\sqrt5,0)</m></label>
+              <label at="eqlabel" anchor="(1.7,1.7)" alignment="center"><m>\frac{x^2}{9}+\frac{y^2}{4}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="ellipse"
+                  text="The worked-example ellipse with a horizontal major axis and its two foci located on the x axis">
+                <annotation ref="ellipse"
+                    text="The ellipse x squared over nine plus y squared over four equals one, a blue oval with semi-major axis three and semi-minor axis two" sonify="yes"/>
+                <annotation ref="foci"
+                    text="The foci at plus and minus the square root of five on the x axis, since c squared equals nine minus four equals five"/>
+                <annotation ref="focal-radii"
+                    text="Two segments from the top of the ellipse to the two foci, illustrating the constant-sum property"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+
+    <example xml:id="ex-ellipse-2">
+      <title>A vertical ellipse (foci on the <m>y</m>-axis)</title>
+      <p>Sketch the graph of <m>25x^2 + 16y^2 = 400</m> and locate the foci.</p>
+    </example>
+
+    <solution xml:id="sol-ellipse-2">
+      <p>Dividing by <m>400</m>,</p>
+      <me>\frac{x^2}{16} + \frac{y^2}{25} = 1.</me>
+      <p>
+        This time the larger denominator, <m>25</m>, sits under <m>y^2</m>, so the major
+        axis is <em>vertical</em>. The semi-major axis is <m>a = \sqrt{25} = 5</m> (along
+        the <m>y</m>-axis) and the semi-minor axis is <m>b = \sqrt{16} = 4</m> (along the
+        <m>x</m>-axis). Hence
+      </p>
+      <me>c^2 = a^2 - b^2 = 25 - 16 = 9 \;\Longrightarrow\; c = 3.</me>
+      <p>
+        Because the major axis is vertical, the foci lie on the <m>y</m>-axis:
+        <m>F_1(0,3)</m> and <m>F_2(0,-3)</m>. The lesson of the twist: read off the larger
+        denominator first, since it decides <em>which axis</em> carries the foci.
+      </p>
+
+      <figure xml:id="fig-ellipse-extra">
+        <caption>The vertical ellipse <m>\frac{x^2}{16}+\frac{y^2}{25}=1</m>; the foci
+        <m>(0,\pm 3)</m> sit on the major axis, and each segment from <m>(4,0)</m> to a
+        focus has length <m>a = 5</m>.</caption>
+        <image width="55%">
+          <prefigure xmlns="https://prefigure.org" label="ellipse-extra">
+          <diagram dimensions="(360,400)" margins="8">
+            <definition>E(x,y) = x^2/16 + y^2/25</definition>
+            <coordinates bbox="(-5.6, -6.2, 5.6, 6.2)">
+              <grid-axes xlabel="x" ylabel="y"/>
+              <implicit-curve at="ellipse" function="E" k="1" stroke="blue" thickness="2.5"/>
+              <group at="focal-radii">
+                <line p1="(4,0)" p2="(0,3)" stroke="darkred" thickness="2"/>
+                <line p1="(4,0)" p2="(0,-3)" stroke="darkred" thickness="2"/>
+              </group>
+              <label anchor="(2,1.5)" alignment="ne" offset="(4,2)"><m>a=5</m></label>
+              <group at="foci">
+                <point p="(0,3)" fill="red" size="3"/>
+                <point p="(0,-3)" fill="red" size="3"/>
+              </group>
+              <label anchor="(0,3)" alignment="e" offset="(6,2)"><m>F_1(0,3)</m></label>
+              <label anchor="(0,-3)" alignment="e" offset="(6,-2)"><m>F_2(0,-3)</m></label>
+              <point at="vertex-top" p="(0,5)" fill="blue" size="2.5"/>
+              <label anchor="(0,5)" alignment="ne" offset="(4,2)"><m>(0,5)</m></label>
+              <label anchor="(4,0)" alignment="se" offset="(2,-4)"><m>(4,0)</m></label>
+              <label at="eqlabel" anchor="(-3.1,4.6)" alignment="center"><m>\frac{x^2}{16}+\frac{y^2}{25}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="ellipse"
+                  text="The twist example: a vertical ellipse whose major axis runs along the y axis, so its foci lie on the y axis rather than the x axis">
+                <annotation ref="ellipse"
+                    text="The ellipse x squared over sixteen plus y squared over twenty five equals one, a blue oval taller than it is wide" sonify="yes"/>
+                <annotation ref="foci"
+                    text="The foci at zero comma three and zero comma minus three, on the vertical major axis, since c squared equals twenty five minus sixteen equals nine"/>
+                <annotation ref="vertex-top"
+                    text="The top vertex at zero comma five, the end of the semi-major axis of length five"/>
+                <annotation ref="focal-radii"
+                    text="Two segments from the co-vertex four comma zero to each focus, each of length a equals five"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+  </subsection>
+
+  <!-- ===================== HYPERBOLA ===================== -->
+  <subsection xml:id="subsec-hyperbola">
+    <title>Hyperbola</title>
+    <p>
+      A <term>hyperbola</term> is the set of points in a plane the <em>difference</em> of
+      whose distances from two fixed points <m>F_1</m> and <m>F_2</m> (the
+      <term>foci</term>) is constant. For <m>\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1</m> the
+      vertices are <m>(\pm a, 0)</m>, the foci satisfy <m>c^2 = a^2 + b^2</m>, and the
+      asymptotes are <m>y = \pm\dfrac{b}{a}\,x</m>.
+    </p>
+
+    <figure xml:id="fig-hyperbola-def">
+      <caption>A hyperbola opening left and right, with vertices <m>(\pm a,0)</m>, foci
+      <m>(\pm c,0)</m>, and asymptotes <m>y = \pm\frac{b}{a}x</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="hyperbola-def">
+          <diagram dimensions="(420,340)" margins="8">
+            <definition>aa = 2</definition>
+            <definition>bb = 1.6</definition>
+            <definition>cc = sqrt(aa^2 + bb^2)</definition>
+            <definition>H(x,y) = x^2/aa^2 - y^2/bb^2</definition>
+            <coordinates bbox="(-4.3, -3.2, 4.3, 3.2)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(aa,bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(aa,-bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <label at="asym-label-r" anchor="(3.0,3.0*bb/aa)" alignment="nw" offset="(-2,2)"><m>y=\tfrac{b}{a}x</m></label>
+              <label at="asym-label-l" anchor="(-3.0,3.0*bb/aa)" alignment="ne" offset="(2,2)"><m>y=-\tfrac{b}{a}x</m></label>
+              <group at="foci">
+                <point p="(cc,0)" fill="green" size="3"/>
+                <point p="(-cc,0)" fill="green" size="3"/>
+              </group>
+              <label anchor="(cc,0)" alignment="s" offset="(6,-6)"><m>F_1(c,0)</m></label>
+              <label anchor="(-cc,0)" alignment="s" offset="(-6,-6)"><m>F_2(-c,0)</m></label>
+              <group at="vertices">
+                <point p="(aa,0)" fill="red" size="2.5"/>
+                <point p="(-aa,0)" fill="red" size="2.5"/>
+              </group>
+              <label anchor="(aa,0)" alignment="n" offset="(-4,6)"><m>V_1(a,0)</m></label>
+              <label anchor="(-aa,0)" alignment="n" offset="(4,6)"><m>V_2(-a,0)</m></label>
+              <label at="eqlabel" anchor="(0,2.7)" alignment="center"><m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="A hyperbola opening left and right, illustrating the definition of a hyperbola as the set of points whose distances to two foci have a constant difference">
+                <annotation ref="hyperbola"
+                    text="The hyperbola x squared over a squared minus y squared over b squared equals one, two blue branches opening left and right" sonify="yes"/>
+                <annotation ref="asymptotes"
+                    text="The two dashed asymptotes through the origin, the lines y equals plus and minus b over a times x, which the branches approach"/>
+                <annotation ref="vertices"
+                    text="The vertices V one at a comma zero and V two at minus a comma zero, where each branch is closest to the center"/>
+                <annotation ref="foci"
+                    text="The foci F one at c comma zero and F two at minus c comma zero, beyond the vertices on the x axis"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-hyperbola-diff">
+      <caption>Animation: as <m>P</m> moves along a branch, the absolute difference
+      <m>|r_1 - r_2|</m> of its distances to the foci stays fixed at <m>2a = 8</m>, while
+      the branch hugs its asymptotes.</caption>
+      <video xml:id="video-hyperbola-diff"
+             source="videos/hyperbola_constant_difference_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      The formulas for <m>a</m> arise exactly as they did for the ellipse, with sums
+      replaced by differences. Evaluating the definition at the vertex <m>(a,0)</m>, the two
+      focal radii are <m>c-a</m> and <m>c+a</m>, so
+    </p>
+    <me>|r_1 - r_2| = (c+a) - (c-a) = 2a,</me>
+    <p>
+      identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. For the
+      second relation, draw the central box whose half-width is <m>a</m> and half-height is
+      <m>b</m>. Its corner <m>(a,b)</m> lies at distance <m>c</m> from the center, so the
+      right triangle with legs <m>a</m> and <m>b</m> has hypotenuse <m>c</m>, and
+    </p>
+    <me>c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</me>
+    <p>
+      Notice the contrast with the ellipse: there <m>a</m> was the <em>hypotenuse</em>, so
+      <m>c^2 = a^2 - b^2</m>; here <m>a</m> is a <em>leg</em>, so <m>c^2 = a^2 + b^2</m>.
+      That single difference is the source of the sign change between the two formulas.
+    </p>
+
+    <figure xml:id="vid-hyperbola-formula-a">
+      <caption>Animation: deriving the formula for <m>a</m>. Sliding <m>P</m> to the vertex
+      shows the constant equals <m>2a</m>; the central box then builds the right triangle
+      giving <m>c^2 = a^2 + b^2</m>.</caption>
+      <video xml:id="video-hyperbola-formula-a"
+             source="videos/hyperbola_formula_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <figure xml:id="vid-hyperbola-find-a">
+      <caption>Animation: in practice, put the equation in standard form and read <m>a^2</m>
+      off the denominator under the <em>positive</em> term; then <m>a</m> is measured along
+      the transverse axis, from the center to a vertex.</caption>
+      <video xml:id="video-hyperbola-find-a"
+             source="videos/hyperbola_find_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-hyperbola-1">
+      <title>Horizontal hyperbola</title>
+      <p>Find the foci and asymptotes of the hyperbola <m>9x^2 - 16y^2 = 144</m> and sketch
+      its graph.</p>
+    </example>
+
+    <solution xml:id="sol-hyperbola-1">
+      <p>Dividing by <m>144</m> gives standard form:</p>
+      <me>\frac{x^2}{16} - \frac{y^2}{9} = 1
+      \;\Longrightarrow\; a = \sqrt{16} = 4,\quad b = \sqrt{9} = 3.</me>
+      <p>Since the <m>x^2</m>-term is positive, the hyperbola opens left and right. Then</p>
+      <me>c^2 = a^2 + b^2 = 16 + 9 = 25 \;\Longrightarrow\; c = 5,</me>
+      <p>
+        so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
+        asymptotes are <m>y = \pm\frac{b}{a}x = \pm\frac{3}{4}x</m>.
+      </p>
+
+      <figure xml:id="fig-hyperbola-example">
+        <caption>The hyperbola <m>\frac{x^2}{16}-\frac{y^2}{9}=1</m> with foci
+        <m>(\pm5,0)</m>, vertices <m>(\pm4,0)</m>, and asymptotes <m>y=\pm\frac34 x</m>.</caption>
+        <image width="70%">
+          <prefigure xmlns="https://prefigure.org" label="hyperbola-example">
+          <diagram dimensions="(440,340)" margins="8">
+            <definition>H(x,y) = x^2/16 - y^2/9</definition>
+            <coordinates bbox="(-11.5, -9, 11.5, 9)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hticks="(-10,5,10)" vticks="(-8,4,8)" tick-size="(4,4)"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(4,3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(4,-3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <label at="asym-r" anchor="(7,5.25)" alignment="nw"><m>y=\tfrac34 x</m></label>
+              <label at="asym-l" anchor="(-7,5.25)" alignment="ne"><m>y=-\tfrac34 x</m></label>
+              <group at="foci">
+                <point p="(5,0)" fill="green" size="3"/>
+                <point p="(-5,0)" fill="green" size="3"/>
+              </group>
+              <label anchor="(5,0)" alignment="s" offset="(8,-8)"><m>F_1(5,0)</m></label>
+              <label anchor="(-5,0)" alignment="s" offset="(-8,-8)"><m>F_2(-5,0)</m></label>
+              <group at="vertices">
+                <point p="(4,0)" fill="red" size="2.5"/>
+                <point p="(-4,0)" fill="red" size="2.5"/>
+              </group>
+              <label anchor="(4,0)" alignment="n" offset="(-6,8)"><m>V_1(4,0)</m></label>
+              <label anchor="(-4,0)" alignment="n" offset="(6,8)"><m>V_2(-4,0)</m></label>
+              <label at="eqlabel" anchor="(0,7.5)" alignment="center"><m>\frac{x^2}{16}-\frac{y^2}{9}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="The worked-example hyperbola opening left and right, with vertices at plus and minus four, foci at plus and minus five, and asymptotes of slope three quarters">
+                <annotation ref="hyperbola"
+                    text="The hyperbola x squared over sixteen minus y squared over nine equals one, two blue branches opening left and right" sonify="yes"/>
+                <annotation ref="asymptotes"
+                    text="The dashed asymptotes y equals plus and minus three quarters x through the origin"/>
+                <annotation ref="vertices"
+                    text="The vertices at plus and minus four on the x axis, where a equals four"/>
+                <annotation ref="foci"
+                    text="The foci at plus and minus five on the x axis, since c squared equals sixteen plus nine equals twenty five"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+
+    <example xml:id="ex-hyperbola-2">
+      <title>A vertical hyperbola (opens up and down)</title>
+      <p>Find the vertices, foci, and asymptotes of <m>16y^2 - 9x^2 = 144</m> and sketch its
+      graph.</p>
+    </example>
+
+    <solution xml:id="sol-hyperbola-2">
+      <p>Dividing by <m>144</m> and being careful with signs,</p>
+      <me>\frac{y^2}{9} - \frac{x^2}{16} = 1.</me>
+      <p>
+        Now the <em><m>y^2</m>-term</em> is the positive one, so the hyperbola opens
+        <em>up and down</em>. In this orientation <m>a^2</m> is the denominator under
+        <m>y^2</m>, giving <m>a = 3</m> (measured along the <m>y</m>-axis) and <m>b = 4</m>.
+        Still using <m>c^2 = a^2 + b^2</m>,
+      </p>
+      <me>c^2 = 9 + 16 = 25 \;\Longrightarrow\; c = 5.</me>
+      <p>
+        So the vertices are <m>(0,\pm 3)</m> and the foci are <m>(0,\pm 5)</m>, both on the
+        <m>y</m>-axis. For a vertical hyperbola the asymptotes are
+        <m>y = \pm\dfrac{a}{b}\,x = \pm\dfrac{3}{4}x</m><mdash/>note the slope uses
+        <m>a/b</m> here, not <m>b/a</m>. The transverse axis has simply rotated from
+        horizontal to vertical.
+      </p>
+
+      <figure xml:id="fig-hyperbola-extra">
+        <caption>The vertical hyperbola <m>\frac{y^2}{9}-\frac{x^2}{16}=1</m>: it opens up
+        and down, with vertices <m>(0,\pm3)</m>, foci <m>(0,\pm5)</m>, and asymptotes
+        <m>y=\pm\frac34 x</m>.</caption>
+        <image width="60%">
+          <prefigure xmlns="https://prefigure.org" label="hyperbola-extra">
+          <diagram dimensions="(400,400)" margins="8">
+            <definition>H(x,y) = y^2/9 - x^2/16</definition>
+            <coordinates bbox="(-9.5, -8.5, 9.5, 8.5)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hticks="(-8,4,8)" vticks="(-8,4,8)" tick-size="(4,4)"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(4,3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(4,-3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <label at="asym-r" anchor="(6.2,4.65)" alignment="sw"><m>y=\tfrac34 x</m></label>
+              <label at="asym-l" anchor="(-6.2,4.65)" alignment="se"><m>y=-\tfrac34 x</m></label>
+              <group at="foci">
+                <point p="(0,5)" fill="green" size="3"/>
+                <point p="(0,-5)" fill="green" size="3"/>
+              </group>
+              <label anchor="(0,5)" alignment="e" offset="(8,2)"><m>F_1(0,5)</m></label>
+              <label anchor="(0,-5)" alignment="e" offset="(8,-2)"><m>F_2(0,-5)</m></label>
+              <group at="vertices">
+                <point p="(0,3)" fill="red" size="2.5"/>
+                <point p="(0,-3)" fill="red" size="2.5"/>
+              </group>
+              <label anchor="(0,3)" alignment="e" offset="(8,2)"><m>V_1(0,3)</m></label>
+              <label anchor="(0,-3)" alignment="e" offset="(8,-2)"><m>V_2(0,-3)</m></label>
+              <label at="eqlabel" anchor="(4.6,-6.8)" alignment="center"><m>\frac{y^2}{9}-\frac{x^2}{16}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="The twist example: a vertical hyperbola that opens up and down, so its vertices and foci lie on the y axis">
+                <annotation ref="hyperbola"
+                    text="The hyperbola y squared over nine minus x squared over sixteen equals one, two blue branches opening up and down" sonify="yes"/>
+                <annotation ref="asymptotes"
+                    text="The dashed asymptotes y equals plus and minus three quarters x, whose slope here is a over b"/>
+                <annotation ref="vertices"
+                    text="The vertices at zero comma plus and minus three on the y axis, where a equals three"/>
+                <annotation ref="foci"
+                    text="The foci at zero comma plus and minus five on the y axis, since c squared equals nine plus sixteen equals twenty five"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+  </subsection>
+
+</section>
