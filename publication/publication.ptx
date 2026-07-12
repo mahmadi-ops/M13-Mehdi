@@ -6,6 +6,8 @@
     </source>
 
     <common>
+<exercise-divisional solution="no"/>
+      <tableofcontents level="4"/>
         <!-- When writing an article for a specific journal, you can   -->
         <!-- specify the name of the journal to get appropriate latex. -->
         <!-- See the guide for a list of valid names:
