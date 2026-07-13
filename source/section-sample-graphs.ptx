@@ -6,10 +6,14 @@
   them is what we want to use.
     </p>
 
-<interactive xml:id="interactive-hyperboloid-slices" iframe="hyperboloid-slices.html" width="100%" aspect="7:6">
+<interactive xml:id="interactive-hyperboloid-slices" iframe="hyperboloid-slices.html" width="100%" aspect="8:6">
   <instructions>
+    <p>
     Use the buttons to slice the surface <m>x^2+y^2-z^2=1</m> with planes
     <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
+    The equation of each cross-section is displayed above the figure.
+    Drag the figure to view it from a different angle, or press the
+    <q>Rotate</q> button to spin it automatically.</p>
   </instructions>
 </interactive>
 
