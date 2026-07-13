@@ -8,11 +8,13 @@
     \newcommand{\real}{\Bbb R}
     \newcommand{\R}{\mathbb{R}}
   </macros>
-    <!-- ... your existing docinfo ... -->
+
 <latex-image-preamble>
   \usepackage{tikz}
   \usepackage{amsmath}
   \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+  \usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 </latex-image-preamble>
   </docinfo>
 
@@ -26,7 +28,7 @@
     <xi:include href="the-cross-product.ptx" />
     <xi:include href="Conics.ptx" />
     <xi:include href="extreme-values-saddle-points.ptx" />
- <xi:include href="SampleGraphs.ptx" />
+ <xi:include href="section-sample-graphs.ptx" />
   </article>
 
 </pretext>
