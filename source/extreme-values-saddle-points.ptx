@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Extreme Values and Saddle Points</title>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-local-extrema">
+<title>Local Maximum and Local Minimum</title>
+
+<definition xml:id="def-local-extrema">
+<title>Local Maximum and Local Minimum</title>
+<statement>
+<p>
+Let the domain of the function <m>f(x,y)</m> contain the point
+<m>(a,b)</m>. Then
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+<m>f(a,b)</m> is a <term>local minimum</term> if
+<m>f(a,b) \le f(x,y)</m> for all the points <m>(x,y)</m> in an open
+disk centered at <m>(a,b)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>f(a,b)</m> is a <term>local maximum</term> if
+<m>f(a,b) \ge f(x,y)</m> for all the points <m>(x,y)</m> in an open
+disk centered at <m>(a,b)</m>.
+</p>
+</li>
+</ul>
+</p>
+</statement>
+</definition>
+
+<p>
+As the first example, consider the function <m>f(x,y) = x^2 + y^2</m>.
+We have already studied this function and we know that it represents a
+paraboloid. Note that we can find a disk centered at the point
+<m>(0,0)</m> such that <m>f(0,0) \le f(x,y)</m> for all the points
+<m>(x,y)</m> inside the disk, as shown in
+<xref ref="fig-local-min-disk"/>, and hence by definition
+<m>f(0,0)</m> is a local minimum of <m>f(x,y) = x^2 + y^2</m>, as shown
+in <xref ref="fig-local-min-video"/>.
+</p>
+
+<figure xml:id="fig-local-min-video">
+<caption>
+The paraboloid <m>z = x^2 + y^2</m>. Over an open disk centered at
+<m>(0,0)</m>, the value <m>f(0,0) = 0</m> is smaller than every other
+value of the function, so <m>f(0,0)</m> is a local minimum.
+</caption>
+<video xml:id="video-local-min"
+       source="videos/local_min_paraboloid_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-local-min-disk">
+<caption>
+An open disk in the domain of <m>f(x,y) = x^2 + y^2</m> centered at
+<m>(0,0)</m>. For every point <m>(x,y)</m> inside the disk we have
+<m>f(0,0) \le f(x,y)</m>, so <m>f(0,0)</m> is a local minimum.
+</caption>
+<image width="50%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-local-min-disk">
+<diagram dimensions="(300,300)" margins="10">
+<coordinates bbox="(-1.6,-1.6,1.6,1.6)">
+<axes at="ld-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<circle at="ld-disk" center="(0,0)" radius="1.1" fill="lightgray"
+        stroke="red" dash="6 4" thickness="2"/>
+<point at="ld-center" p="(0,0)" fill="green" alignment="ne">
+<m>(0,0)</m>
+</point>
+<label at="ld-ineq" anchor="(0,-0.55)" alignment="c">
+<m>f(0,0)\le f(x,y)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An open disk in the x y plane, centered at the origin, drawn with a dashed red boundary and shaded gray. The center point 0 comma 0 is marked in green. Inside the disk, f of 0 comma 0 is less than or equal to f of x comma y.">
+  <annotation ref="ld-disk" text="The open disk centered at the origin, with a dashed red boundary."/>
+  <annotation ref="ld-center" text="The center of the disk, the point 0 comma 0, marked in green, where the local minimum occurs."/>
+  <annotation ref="ld-ineq" text="The inequality f of 0 comma 0 less than or equal to f of x comma y, which holds for all points x comma y inside the disk."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The next example is the function <m>f(x,y) = -x^2 - y^2</m>. Note that
+we can find a disk centered at the point <m>(0,0)</m> such that
+<m>f(0,0) \ge f(x,y)</m> for all the points <m>(x,y)</m> inside the
+disk and hence by definition <m>f(0,0)</m> is a local maximum of
+<m>f(x,y) = -x^2 - y^2</m>, as shown in
+<xref ref="fig-local-max-video"/> and <xref ref="fig-local-max-trace"/>.
+</p>
+
+<figure xml:id="fig-local-max-video">
+<caption>
+The paraboloid <m>z = -x^2 - y^2</m> opens downward. Over an open disk
+centered at <m>(0,0)</m>, the value <m>f(0,0) = 0</m> is larger than
+every other value of the function, so <m>f(0,0)</m> is a local maximum.
+</caption>
+<video xml:id="video-local-max"
+       source="videos/local_max_paraboloid_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-local-max-trace">
+<caption>
+The trace of the surface <m>z = -x^2 - y^2</m> in the plane
+<m>y = 0</m> is the parabola <m>z = -x^2</m>, which has a maximum at
+the origin. By symmetry, every vertical cross-section through the
+origin has the same shape.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-local-max-trace">
+<diagram dimensions="(340,240)" margins="10">
+<definition>g(x) = -x^2</definition>
+<coordinates bbox="(-1.5,-1.9,1.5,0.6)">
+<axes at="lm-axes" xlabel="x" ylabel="z" decorations="no" arrows="1"/>
+<graph at="lm-trace" function="g" domain="(-1.3,1.3)" stroke="blue"
+       thickness="2.5"/>
+<point at="lm-max" p="(0,0)" fill="green"/>
+<label at="lm-max-label" anchor="(0.12,0.14)" alignment="ne" color="green">
+<m>\text{Local maximum}</m>
+</label>
+<label at="lm-eq-label" anchor="(0.95,-0.55)" alignment="e" color="blue">
+<m>z=-x^2</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The highest point of the parabola is at the origin, marked in green as the local maximum.">
+  <annotation ref="lm-trace" text="The parabola z equals negative x squared, shown in blue, opening downward."/>
+  <annotation ref="lm-max" text="The local maximum at the origin, marked in green, where the parabola reaches its highest value."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<theorem xml:id="thm-first-derivative-test">
+<title>Theorem I</title>
+<statement>
+<p>
+If <m>f(x,y)</m> has a local maximum or minimum at an interior point
+<m>(a,b)</m> of its domain and if the first partial derivatives exist
+there, then
+</p>
+
+<men xml:id="eq-first-derivative-test">
+f_x(a,b) = f_y(a,b) = 0.
+</men>
+</statement>
+</theorem>
+
+<p>
+As an example, consider the function <m>f(x,y) = x^2 + y^2</m>, which
+has a local minimum at <m>(0,0)</m>. You can easily check that
+<m>f_x(0,0) = f_y(0,0) = 0</m>.
+</p>
+
+<definition xml:id="def-critical-point">
+<title>Critical Point</title>
+<statement>
+<p>
+An interior point of the domain of a function <m>f(x,y)</m> where both
+<m>f_x</m> and <m>f_y</m> are zero or where one or both of <m>f_x</m>
+and <m>f_y</m> do not exist is a <term>critical point</term> of
+<m>f</m>. Note that not every critical point is a local extremum.
+</p>
+</statement>
+</definition>
+
+<definition xml:id="def-saddle-point">
+<title>Saddle Point</title>
+<statement>
+<p>
+A differentiable function <m>f(x,y)</m> has a <term>saddle point</term>
+at a critical point <m>(a,b)</m> if in every open disk centered at
+<m>(a,b)</m> there are domain points <m>(x,y)</m> where
+<m>f(a,b) \lt f(x,y)</m> and domain points <m>(x,y)</m> where
+<m>f(a,b) \gt f(x,y)</m>. The corresponding point
+<m>(a,b,f(a,b))</m> on the surface <m>z = f(x,y)</m> is called a
+saddle point of the surface.
+</p>
+</statement>
+</definition>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-saddle-example">
+<title>A Saddle Point Example</title>
+
+<example xml:id="example-saddle-point">
+<title>Saddle Point</title>
+<statement>
+<p>
+Consider the function
+</p>
+
+<men xml:id="eq-saddle-function">
+f(x,y) = \frac{y^2}{3} - \frac{x^2}{3}.
+</men>
+
+<p>
+Show that <m>f</m> has a saddle point at <m>(0,0)</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-saddle-point">
+<title>Solution</title>
+
+<p>
+As we previously studied, this function represents a hyperbolic
+paraboloid, which is shown in <xref ref="fig-saddle-video"/>. Note that
+the first partial derivatives are
+</p>
+
+<men xml:id="eq-saddle-partials">
+f_x = -\frac{2}{3}x \quad \text{and} \quad f_y = \frac{2}{3}y.
+</men>
+
+<p>
+The partial derivatives exist everywhere, so the only point at which a
+local extremum can occur is the point <m>(0,0)</m>. Note that along the
+<m>x</m>-axis the function takes negative values,
+<m>f(x,0) = -x^2/3 \lt 0</m>, whereas along the <m>y</m>-axis the
+function takes positive values, <m>f(0,y) = y^2/3 \gt 0</m>, as shown
+in <xref ref="fig-saddle-traces"/>. Hence inside every open disk around
+<m>(0,0)</m>, there are points <m>(x,y)</m> such that
+<m>f(x,y) \gt f(0,0)</m> and also there are points such that
+<m>f(x,y) \lt f(0,0)</m>, which means <m>(0,0)</m> is a saddle point.
+Note that in this example the two partial derivatives are zero at
+<m>(0,0)</m>; however, the function does not have a local extremum at
+this point.
+</p>
+
+</paragraphs>
+
+<figure xml:id="fig-saddle-video">
+<caption>
+The hyperbolic paraboloid <m>z = y^2/3 - x^2/3</m>. Along the
+<m>x</m>-axis the surface falls below the origin, and along the
+<m>y</m>-axis it rises above the origin, so <m>(0,0)</m> is a saddle
+point.
+</caption>
+<video xml:id="video-saddle-point"
+       source="videos/saddle_point_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-saddle-traces">
+<caption>
+The traces of <m>z = y^2/3 - x^2/3</m> along the two coordinate planes.
+In the plane <m>y = 0</m> the trace <m>z = -x^2/3</m> opens downward,
+while in the plane <m>x = 0</m> the trace <m>z = y^2/3</m> opens
+upward, so <m>(0,0)</m> is a saddle point.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-saddle-traces">
+<diagram dimensions="(360,280)" margins="10">
+<definition>up(t) = t^2/3</definition>
+<definition>down(t) = -t^2/3</definition>
+<coordinates bbox="(-2.4,-1.7,2.4,1.7)">
+<axes at="sd-axes" decorations="no" arrows="1"/>
+<graph at="sd-up" function="up" domain="(-2.1,2.1)" stroke="blue"
+       thickness="2.5"/>
+<graph at="sd-down" function="down" domain="(-2.1,2.1)" stroke="red"
+       thickness="2.5"/>
+<point at="sd-saddle" p="(0,0)" fill="black"/>
+<label at="sd-up-label" anchor="(1.45,0.95)" alignment="nw" color="blue">
+<m>z=\dfrac{y^2}{3}</m>
+</label>
+<label at="sd-down-label" anchor="(1.45,-0.95)" alignment="sw" color="red">
+<m>z=-\dfrac{x^2}{3}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two parabolas through the origin showing the traces of the hyperbolic paraboloid z equals y squared over 3 minus x squared over 3. The blue parabola opens upward and is the trace along the y axis. The red parabola opens downward and is the trace along the x axis. The origin, where they meet, is the saddle point.">
+  <annotation ref="sd-up" text="The blue parabola z equals y squared over 3, the trace in the plane x equals 0, which opens upward, so the function is positive along the y axis."/>
+  <annotation ref="sd-down" text="The red parabola z equals negative x squared over 3, the trace in the plane y equals 0, which opens downward, so the function is negative along the x axis."/>
+  <annotation ref="sd-saddle" text="The origin, where the two traces meet. The function increases in one direction and decreases in the other, so this is a saddle point."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-second-derivative-test">
+<title>The Second Derivative Test</title>
+
+<theorem xml:id="thm-second-derivative-test">
+<title>Theorem II (The Second Derivative Test)</title>
+<statement>
+<p>
+Suppose that <m>f(x,y)</m> and its first and second partial derivatives
+are continuous throughout a disk centered at <m>(a,b)</m> and that
+<m>f_x(a,b) = f_y(a,b) = 0</m>. Then
+</p>
+
+<p>
+<ol marker="i.">
+<li>
+<p>
+<m>f</m> has a <term>local maximum</term> at <m>(a,b)</m> if
+<m>f_{xx} \lt 0</m> and <m>f_{xx}f_{yy} - f_{xy}^2 \gt 0</m> at
+<m>(a,b)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>f</m> has a <term>local minimum</term> at <m>(a,b)</m> if
+<m>f_{xx} \gt 0</m> and <m>f_{xx}f_{yy} - f_{xy}^2 \gt 0</m> at
+<m>(a,b)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>f</m> has a <term>saddle point</term> at <m>(a,b)</m> if
+<m>f_{xx}f_{yy} - f_{xy}^2 \lt 0</m> at <m>(a,b)</m>.
+</p>
+</li>
+<li>
+<p>
+<em>The test is inconclusive</em> at <m>(a,b)</m> if
+<m>f_{xx}f_{yy} - f_{xy}^2 = 0</m> at <m>(a,b)</m>. In this case, we
+must find some other way to determine the behavior of <m>f</m> at
+<m>(a,b)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+<p>
+Note that the expression <m>f_{xx}f_{yy} - f_{xy}^2</m> is called the
+<term>discriminant</term> or the <term>Hessian</term> of the function
+<m>f(x,y)</m> and can be easily remembered when written in the
+following form:
+</p>
+
+<men xml:id="eq-hessian">
+H(x,y) =
+\begin{vmatrix}
+f_{xx} \amp f_{xy} \\
+f_{xy} \amp f_{yy}
+\end{vmatrix}
+= f_{xx}f_{yy} - f_{xy}^2.
+</men>
+
+<example xml:id="example-quartic-extrema">
+<title>Finding Local Extrema and Saddle Points</title>
+<statement>
+<p>
+Find the local maximum and minimum values and saddle points of the
+function
+</p>
+
+<men xml:id="eq-quartic-function">
+z = f(x,y) = x^4 + y^4 - 4xy.
+</men>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-quartic-extrema">
+<title>Solution</title>
+
+<p>
+We begin by computing the partial derivatives:
+</p>
+
+<men xml:id="eq-quartic-partials">
+f_x = 4x^3 - 4y \quad \text{and} \quad f_y = 4y^3 - 4x.
+</men>
+
+<p>
+We set both partials equal to zero, which gives us:
+</p>
+
+<men xml:id="eq-quartic-critical-system">
+x^3 = y \quad \text{and} \quad y^3 = x.
+</men>
+
+<p>
+To solve these equations, we substitute the second equation into the
+first one:
+</p>
+
+<md xml:id="eq-quartic-solve">
+<mrow>
+x^3 = (y^3)^3 = y^9 = y \amp\Rightarrow y(y^8 - 1) = 0
+\Rightarrow y(y^4 - 1)(y^4 + 1) = 0
+</mrow>
+<mrow>
+\amp\Rightarrow y(y^2 - 1)(y^2 + 1)(y^4 + 1) = 0
+</mrow>
+<mrow>
+\amp\Rightarrow y(y - 1)(y + 1)(y^2 + 1)(y^4 + 1) = 0
+</mrow>
+<mrow>
+\amp\Rightarrow y = -1, 0, 1.
+</mrow>
+</md>
+
+<p>
+Therefore, the two partials are zero at the points <m>(-1,-1)</m>,
+<m>(1,1)</m>, and <m>(0,0)</m>, as shown in
+<xref ref="fig-quartic-critical-points"/>. Next we compute the Hessian
+and apply the second derivative test. We have
+<m>f_{xx} = 12x^2</m>, <m>f_{yy} = 12y^2</m>, and
+<m>f_{xy} = f_{yx} = -4</m>, so that
+</p>
+
+<men xml:id="eq-quartic-hessian">
+H(x,y) =
+\begin{vmatrix}
+f_{xx} \amp f_{xy} \\
+f_{xy} \amp f_{yy}
+\end{vmatrix}
+= f_{xx}f_{yy} - f_{xy}^2 = 144x^2y^2 - 16.
+</men>
+
+<p>
+We now evaluate the Hessian at each critical point:
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+<m>H(0,0) = -16 \lt 0 \Rightarrow</m> the origin <m>(0,0)</m> is a
+saddle point.
+</p>
+</li>
+<li>
+<p>
+<m>H(1,1) = 144 - 16 = 128 \gt 0</m> and
+<m>f_{xx}(1,1) = 12 \gt 0 \Rightarrow (1,1)</m> is a local minimum.
+</p>
+</li>
+<li>
+<p>
+<m>H(-1,-1) = 144 - 16 = 128 \gt 0</m> and
+<m>f_{xx}(-1,-1) = 12 \gt 0 \Rightarrow (-1,-1)</m> is a local
+minimum.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+Check out the surface in <xref ref="fig-quartic-video"/>.
+</p>
+
+</paragraphs>
+
+<figure xml:id="fig-quartic-video">
+<caption>
+The surface <m>z = x^4 + y^4 - 4xy</m> has a saddle point at
+<m>(0,0,0)</m> and two local minima, at <m>(1,1,-2)</m> and
+<m>(-1,-1,-2)</m>.
+</caption>
+<video xml:id="video-quartic-extrema"
+       source="videos/quartic_extrema_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-quartic-critical-points">
+<caption>
+The critical points of <m>f(x,y) = x^4 + y^4 - 4xy</m> are the
+intersections of the curves <m>y = x^3</m> and <m>x = y^3</m>: a saddle
+point at <m>(0,0)</m> and local minima at <m>(1,1)</m> and
+<m>(-1,-1)</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-quartic-critical-points">
+<diagram dimensions="(320,320)" margins="10">
+<definition>c1(t) = (t, t^3)</definition>
+<definition>c2(t) = (t^3, t)</definition>
+<coordinates bbox="(-1.9,-1.9,1.9,1.9)">
+<grid-axes at="qc-grid" xlabel="x" ylabel="y"/>
+<parametric-curve at="qc-curve1" function="c1" domain="(-1.23,1.23)"
+                  stroke="blue" thickness="2.5"/>
+<parametric-curve at="qc-curve2" function="c2" domain="(-1.23,1.23)"
+                  stroke="red" thickness="2.5"/>
+<point at="qc-saddle" p="(0,0)" fill="maroon" alignment="se">
+<m>(0,0)</m>
+</point>
+<point at="qc-min1" p="(1,1)" fill="green" alignment="nw">
+<m>(1,1)</m>
+</point>
+<point at="qc-min2" p="(-1,-1)" fill="green" alignment="sw">
+<m>(-1,-1)</m>
+</point>
+<label at="qc-c1-label" anchor="(1.3,1.55)" alignment="e" color="blue">
+<m>y=x^3</m>
+</label>
+<label at="qc-c2-label" anchor="(1.6,0.75)" alignment="s" color="red">
+<m>x=y^3</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid showing the two curves y equals x cubed, in blue, and x equals y cubed, in red. The curves intersect at three points: the origin, which is a saddle point, and the points 1 comma 1 and negative 1 comma negative 1, which are local minima.">
+  <annotation ref="qc-curve1" text="The blue curve y equals x cubed, where the partial derivative with respect to x is zero."/>
+  <annotation ref="qc-curve2" text="The red curve x equals y cubed, where the partial derivative with respect to y is zero."/>
+  <annotation ref="qc-saddle" text="The origin, an intersection of the two curves, marked in maroon. The Hessian is negative here, so it is a saddle point."/>
+  <annotation ref="qc-min1" text="The point 1 comma 1, an intersection of the two curves, marked in green. The Hessian is positive and f x x is positive, so it is a local minimum."/>
+  <annotation ref="qc-min2" text="The point negative 1 comma negative 1, an intersection of the two curves, marked in green. It is also a local minimum."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-shortest-distance">
+<title>Shortest Distance to a Plane</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-shortest-distance">
+<title>Solution</title>
+
+<p>
+We begin by writing the distance between the point <m>(1,0,-2)</m> and
+points <m>(x,y,z)</m> on the plane:
+</p>
+
+<men xml:id="eq-distance-formula">
+d = \sqrt{(x-1)^2 + y^2 + (z+2)^2}.
+</men>
+
+<p>
+Then we use the fact that the points <m>(x,y,z)</m> are on the plane,
+<m>z = 4 - x - 2y</m>, to express the distance as a function of
+<m>x</m> and <m>y</m> only:
+</p>
+
+<men xml:id="eq-distance-xy">
+d = \sqrt{(x-1)^2 + y^2 + (6 - x - 2y)^2}.
+</men>
+
+<p>
+We make the observation that to find the shortest distance we can
+minimize <m>d^2</m> rather than <m>d</m>:
+</p>
+
+<men xml:id="eq-distance-squared">
+d^2 = f(x,y) = (x-1)^2 + y^2 + (6 - x - 2y)^2.
+</men>
+
+<p>
+We calculate the partials and set them equal to zero:
+</p>
+
+<md xml:id="eq-distance-partials">
+<mrow>
+f_x \amp= 2(x-1) - 2(6 - x - 2y) = 4x + 4y - 14 = 0
+</mrow>
+<mrow>
+f_y \amp= 2y - 4(6 - x - 2y) = 4x + 10y - 24 = 0.
+</mrow>
+</md>
+
+<p>
+We subtract the first equation from the second one:
+</p>
+
+<men xml:id="eq-distance-solve">
+6y = 10 \Rightarrow y = \frac{5}{3} \Rightarrow x = \frac{11}{6}
+\Rightarrow \text{The only critical point is } \left(\frac{11}{6}, \frac{5}{3}\right).
+</men>
+
+<p>
+We compute the Hessian:
+</p>
+
+<men xml:id="eq-distance-hessian">
+H(x,y) =
+\begin{vmatrix}
+f_{xx} \amp f_{xy} \\
+f_{xy} \amp f_{yy}
+\end{vmatrix}
+= f_{xx}f_{yy} - f_{xy}^2 = (4)(10) - (4)^2 = 24 \gt 0.
+</men>
+
+<p>
+Since <m>H \gt 0</m> and <m>f_{xx} = 4 \gt 0</m>, the point
+<m>\left(\frac{11}{6}, \frac{5}{3}\right)</m> is a local minimum.
+However, we know that there is a point on the plane that has the
+shortest distance to <m>(1,0,-2)</m>, which means
+<m>\left(\frac{11}{6}, \frac{5}{3}\right)</m> is in fact where the
+absolute minimum of the distance occurs. To find the shortest distance
+we plug the point <m>\left(\frac{11}{6}, \frac{5}{3}\right)</m> into
+the distance formula, which gives
+</p>
+
+<men xml:id="eq-shortest-distance">
+d = \sqrt{\left(\frac{5}{6}\right)^2 + \left(\frac{5}{3}\right)^2
++ \left(\frac{5}{6}\right)^2} = \frac{5}{6}\sqrt{6}.
+</men>
+
+</paragraphs>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-absolute-extrema">
+<title>Absolute Maximum and Absolute Minimum</title>
+
+<p>
+In the next example, we will see how to find absolute extrema of a
+function <m>f(x,y)</m> over a closed bounded region <m>R</m>.
+</p>
+
+<example xml:id="example-absolute-extrema">
+<title>Absolute Extrema over a Rectangle</title>
+<statement>
+<p>
+Find the absolute maximum and minimum values of the function
+<m>f(x,y) = x^2 - 2xy + 2y</m> on the rectangle
+</p>
+
+<men xml:id="eq-rectangle-region">
+R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}.
+</men>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-absolute-extrema">
+<title>Solution</title>
+
+<p>
+<em>Step (I):</em> We begin by finding the critical points of
+<m>f(x,y)</m> that are also in the set <m>R</m>:
+</p>
+
+<md xml:id="eq-absolute-critical">
+<mrow>
+f_x \amp= 2x - 2y = 0 \Rightarrow x = y
+</mrow>
+<mrow>
+f_y \amp= -2x + 2 = 0 \Rightarrow x = 1.
+</mrow>
+</md>
+
+<p>
+Therefore, the only critical point is <m>(1,1)</m>, with
+<m>f(1,1) = 1</m>.
+</p>
+
+<p>
+<em>Step (II):</em> We find the extreme values of <m>f(x,y)</m> on the
+boundary of <m>R</m>, i.e. along the four edges of the rectangle
+denoted by <m>L_1</m>, <m>L_2</m>, <m>L_3</m>, and <m>L_4</m>, shown in
+<xref ref="fig-rectangle-region"/>.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+Along the first edge <m>L_1</m>, we have <m>f(x,0) = x^2</m> and since
+<m>0 \le x \le 3</m>, the minimum value is <m>f(0,0) = 0</m> and the
+maximum value is <m>f(3,0) = 9</m>.
+</p>
+</li>
+<li>
+<p>
+Along the second edge <m>L_2</m>, we have <m>f(3,y) = 9 - 4y</m> and
+since <m>0 \le y \le 2</m>, the minimum value is <m>f(3,2) = 1</m> and
+the maximum value is <m>f(3,0) = 9</m>.
+</p>
+</li>
+<li>
+<p>
+Along the third edge <m>L_3</m>, we have
+<m>f(x,2) = x^2 - 4x + 4 = (x-2)^2</m> and since <m>0 \le x \le 3</m>,
+the minimum value is <m>f(2,2) = 0</m> and the maximum value is
+<m>f(0,2) = 4</m>.
+</p>
+</li>
+<li>
+<p>
+Along the fourth edge <m>L_4</m>, we have <m>f(0,y) = 2y</m> and since
+<m>0 \le y \le 2</m>, the minimum value is <m>f(0,0) = 0</m> and the
+maximum value is <m>f(0,2) = 4</m>.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Step (III):</em> We compare the values obtained in the previous
+steps. The absolute maximum value of <m>f(x,y)</m> on the rectangle
+<m>R</m> is <m>f(3,0) = 9</m> and its absolute minimum is
+<m>f(0,0) = f(2,2) = 0</m>. The candidate points and the surface are
+shown in <xref ref="fig-absolute-extrema-surface-video"/> and
+<xref ref="fig-absolute-candidates"/>.
+</p>
+
+</paragraphs>
+
+<figure xml:id="fig-rectangle-region-video">
+<caption>
+The closed bounded rectangle
+<m>R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}</m> with its four
+edges <m>L_1</m>, <m>L_2</m>, <m>L_3</m>, and <m>L_4</m>, and the
+critical point <m>(1,1)</m> in its interior.
+</caption>
+<video xml:id="video-rectangle-region"
+       source="videos/rectangle_region_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-rectangle-region">
+<caption>
+The rectangle <m>R</m> and its four edges. To find the absolute
+extrema, we evaluate <m>f</m> at the critical points inside <m>R</m>
+and compare with the extreme values of <m>f</m> along each edge.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rectangle-region">
+<diagram dimensions="(340,260)" margins="10">
+<coordinates bbox="(-0.7,-0.7,4.0,2.9)">
+<axes at="rg-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<rectangle at="rg-region" center="(1.5,1)" dimensions="(3,2)"
+           fill="lightgray" stroke="none"/>
+<line at="rg-L1" endpoints="((0,0),(3,0))" stroke="blue" thickness="3"/>
+<line at="rg-L2" endpoints="((3,0),(3,2))" stroke="red" thickness="3"/>
+<line at="rg-L3" endpoints="((0,2),(3,2))" stroke="green" thickness="3"/>
+<line at="rg-L4" endpoints="((0,0),(0,2))" stroke="orange" thickness="3"/>
+<point at="rg-critical" p="(1,1)" fill="maroon" alignment="ne">
+<m>(1,1)</m>
+</point>
+<label at="rg-R-label" anchor="(2.2,1.3)" alignment="c">
+<m>R</m>
+</label>
+<label at="rg-L1-label" anchor="(1.5,-0.1)" alignment="s" color="blue">
+<m>L_1</m>
+</label>
+<label at="rg-L2-label" anchor="(3.1,1)" alignment="e" color="red">
+<m>L_2</m>
+</label>
+<label at="rg-L3-label" anchor="(1.5,2.1)" alignment="n" color="green">
+<m>L_3</m>
+</label>
+<label at="rg-L4-label" anchor="(-0.1,1)" alignment="w" color="orange">
+<m>L_4</m>
+</label>
+<label at="rg-x3-label" anchor="(3,-0.1)" alignment="s">
+<m>3</m>
+</label>
+<label at="rg-y2-label" anchor="(-0.1,2)" alignment="w">
+<m>2</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The rectangle R in the x y plane, with corners at the origin, 3 comma 0, 3 comma 2, and 0 comma 2, shaded gray. Its four edges are labeled L 1 along the bottom, L 2 along the right, L 3 along the top, and L 4 along the left. The critical point 1 comma 1 is marked inside the rectangle.">
+  <annotation ref="rg-region" text="The rectangle R, consisting of points with x between 0 and 3 and y between 0 and 2."/>
+  <annotation ref="rg-L1" text="The first edge L 1, along the bottom of the rectangle, where y equals 0 and x runs from 0 to 3."/>
+  <annotation ref="rg-L2" text="The second edge L 2, along the right side, where x equals 3 and y runs from 0 to 2."/>
+  <annotation ref="rg-L3" text="The third edge L 3, along the top, where y equals 2 and x runs from 0 to 3."/>
+  <annotation ref="rg-L4" text="The fourth edge L 4, along the left side, where x equals 0 and y runs from 0 to 2."/>
+  <annotation ref="rg-critical" text="The critical point 1 comma 1, in the interior of the rectangle, where both partial derivatives are zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-absolute-extrema-surface-video">
+<caption>
+The surface <m>z = x^2 - 2xy + 2y</m> over the rectangle <m>R</m>. The
+absolute maximum <m>f(3,0) = 9</m> and the absolute minimum
+<m>f(0,0) = f(2,2) = 0</m> occur on the boundary of <m>R</m>.
+</caption>
+<video xml:id="video-absolute-extrema-surface"
+       source="videos/absolute_extrema_surface_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-absolute-candidates">
+<caption>
+The candidate points for the absolute extrema of
+<m>f(x,y) = x^2 - 2xy + 2y</m> on <m>R</m>: the interior critical
+point and the extreme points found along the four edges. Comparing the
+values of <m>f</m>, the absolute maximum is <m>f(3,0) = 9</m> and the
+absolute minimum is <m>f(0,0) = f(2,2) = 0</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-absolute-candidates">
+<diagram dimensions="(340,260)" margins="10">
+<coordinates bbox="(-0.9,-0.8,4.2,3.0)">
+<axes at="ac-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<rectangle at="ac-region" center="(1.5,1)" dimensions="(3,2)"
+           fill="lightgray" stroke="black"/>
+<point at="ac-min1" p="(0,0)" fill="green" alignment="sw">
+<m>f=0</m>
+</point>
+<point at="ac-min2" p="(2,2)" fill="green" alignment="ne">
+<m>f=0</m>
+</point>
+<point at="ac-max" p="(3,0)" fill="red" alignment="se">
+<m>f=9</m>
+</point>
+<point at="ac-corner1" p="(0,2)" fill="black" alignment="nw">
+<m>f=4</m>
+</point>
+<point at="ac-corner2" p="(3,2)" fill="black" alignment="ne">
+<m>f=1</m>
+</point>
+<point at="ac-critical" p="(1,1)" fill="maroon" alignment="ne">
+<m>f=1</m>
+</point>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The rectangle R with the candidate points for the absolute extrema of f marked and labeled with their function values. The absolute maximum, 9, occurs at 3 comma 0 and is marked in red. The absolute minimum, 0, occurs at the origin and at 2 comma 2, both marked in green.">
+  <annotation ref="ac-region" text="The rectangle R, the closed bounded region on which we search for absolute extrema."/>
+  <annotation ref="ac-min1" text="The corner 0 comma 0, where f equals 0, one of the two absolute minima, marked in green."/>
+  <annotation ref="ac-min2" text="The boundary point 2 comma 2, where f equals 0, the other absolute minimum, marked in green."/>
+  <annotation ref="ac-max" text="The corner 3 comma 0, where f equals 9, the absolute maximum, marked in red."/>
+  <annotation ref="ac-corner1" text="The corner 0 comma 2, where f equals 4."/>
+  <annotation ref="ac-corner2" text="The corner 3 comma 2, where f equals 1."/>
+  <annotation ref="ac-critical" text="The interior critical point 1 comma 1, where f equals 1, marked in maroon."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-equilibrium-stability">
+<title>A Physical Application: Equilibrium and Stability</title>
+
+<p>
+Consider a marble that rolls on the surface <m>z = f(x,y)</m> under the
+influence of gravity. If we measure heights from the <m>xy</m>-plane,
+the potential energy of the marble at the point <m>(x,y)</m> of the
+surface is
+</p>
+
+<men xml:id="eq-potential-energy">
+U(x,y) = mgz = mg\,f(x,y),
+</men>
+
+<p>
+where <m>m</m> is the mass of the marble and <m>g</m> is the
+acceleration due to gravity. The marble is in <term>equilibrium</term>
+at a point where the force along the surface vanishes, which happens
+exactly where both partial derivatives of the potential energy are
+zero:
+</p>
+
+<men xml:id="eq-equilibrium-condition">
+U_x = mg\,f_x = 0 \quad \text{and} \quad U_y = mg\,f_y = 0.
+</men>
+
+<p>
+In other words, the equilibrium points of the marble are precisely the
+critical points of <m>f</m>. The second derivative test then tells us
+whether the equilibrium is <term>stable</term> (a displaced marble
+rolls back) or <term>unstable</term> (a displaced marble rolls away).
+</p>
+
+<example xml:id="example-marble-stability">
+<title>Equilibrium and Stability of a Marble</title>
+<statement>
+<p>
+A marble rests at the origin on each of the following three surfaces:
+</p>
+
+<men xml:id="eq-three-surfaces">
+\text{(i)}\; z = x^2 + y^2, \qquad
+\text{(ii)}\; z = -x^2 - y^2, \qquad
+\text{(iii)}\; z = \frac{y^2}{3} - \frac{x^2}{3}.
+</men>
+
+<p>
+Show that <m>(0,0)</m> is an equilibrium point in each case, and
+determine whether the equilibrium is stable or unstable.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-marble-stability">
+<title>Solution</title>
+
+<p>
+In each case the potential energy is <m>U(x,y) = mg\,f(x,y)</m>, so by
+<xref ref="eq-equilibrium-condition"/> the equilibrium points are the
+critical points of <m>f</m>. For all three surfaces we have
+<m>f_x(0,0) = f_y(0,0) = 0</m>, so the origin is an equilibrium point
+in each case. We classify each equilibrium with the second derivative
+test, as shown in <xref ref="fig-stability-video"/>.
+</p>
+
+<p>
+<em>Case (i):</em> For <m>f(x,y) = x^2 + y^2</m> we have
+<m>f_{xx} = f_{yy} = 2</m> and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = 4 \gt 0</m> and <m>f_{xx} \gt 0</m>, and the origin is a
+local minimum of the potential energy. A marble displaced slightly in
+any direction rolls back toward the bottom: the equilibrium is
+<em>stable</em>.
+</p>
+
+<p>
+<em>Case (ii):</em> For <m>f(x,y) = -x^2 - y^2</m> we have
+<m>f_{xx} = f_{yy} = -2</m> and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = 4 \gt 0</m> and <m>f_{xx} \lt 0</m>, and the origin is a
+local maximum of the potential energy. A marble displaced slightly in
+any direction rolls away from the top: the equilibrium is
+<em>unstable</em>.
+</p>
+
+<p>
+<em>Case (iii):</em> For <m>f(x,y) = y^2/3 - x^2/3</m> we have
+<m>f_{xx} = -2/3</m>, <m>f_{yy} = 2/3</m>, and <m>f_{xy} = 0</m>, so
+<m>H(0,0) = -4/9 \lt 0</m>, and the origin is a saddle point. Along the
+<m>y</m>-axis the potential energy rises, so a marble displaced in the
+<m>y</m>-direction rolls back; but along the <m>x</m>-axis the
+potential energy falls, so a marble displaced in the
+<m>x</m>-direction rolls away. Since some displacements grow, the
+equilibrium is <em>unstable</em>.
+</p>
+
+<p>
+The general principle illustrated by this example, shown in
+<xref ref="fig-stability-cross-sections"/>, is that an equilibrium is
+stable exactly when the potential energy has a local minimum there.
+</p>
+
+</paragraphs>
+
+<figure xml:id="fig-stability-video">
+<caption>
+A marble at an equilibrium point on each of the three surfaces. On the
+bowl <m>z = x^2 + y^2</m> a displaced marble rolls back (stable); on
+the dome <m>z = -x^2 - y^2</m> it rolls away (unstable); on the saddle
+<m>z = y^2/3 - x^2/3</m> it rolls back along the <m>y</m>-direction but
+away along the <m>x</m>-direction (unstable).
+</caption>
+<video xml:id="video-marble-stability"
+       source="videos/stability_marble_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-stability-cross-sections">
+<caption>
+Cross-sections of the potential energy near an equilibrium point. Along
+a direction where <m>U</m> has a minimum (blue), the force is
+restoring and pushes the marble back: stable. Along a direction where
+<m>U</m> has a maximum (red), the force pushes the marble away:
+unstable. For the bowl, every cross-section is the blue type; for the
+dome, every cross-section is the red type; a saddle has one of each.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-stability-cross-sections">
+<diagram dimensions="(360,280)" margins="10">
+<definition>stable(x) = 0.9*x^2</definition>
+<definition>unstable(x) = -0.9*x^2</definition>
+<coordinates bbox="(-1.7,-1.9,1.7,1.9)">
+<axes at="st-axes" decorations="no" arrows="1"/>
+<graph at="st-stable" function="stable" domain="(-1.35,1.35)"
+       stroke="blue" thickness="2.5"/>
+<graph at="st-unstable" function="unstable" domain="(-1.35,1.35)"
+       stroke="red" thickness="2.5"/>
+<vector at="st-restore-right" v="(-0.45,0)" tail="(0.95,0.35)"
+        stroke="blue" thickness="3"/>
+<vector at="st-restore-left" v="(0.45,0)" tail="(-0.95,0.35)"
+        stroke="blue" thickness="3"/>
+<vector at="st-runaway-right" v="(0.45,0)" tail="(0.45,-0.35)"
+        stroke="red" thickness="3"/>
+<vector at="st-runaway-left" v="(-0.45,0)" tail="(-0.45,-0.35)"
+        stroke="red" thickness="3"/>
+<point at="st-marble" p="(0,0)" fill="green"/>
+<label at="st-stable-label" anchor="(1.15,1.45)" alignment="e" color="blue">
+<m>\text{stable}</m>
+</label>
+<label at="st-unstable-label" anchor="(1.6,-1.45)" alignment="w" color="red">
+<m>\text{unstable}</m>
+</label>
+<label at="st-U-label" anchor="(-0.12,1.75)" alignment="w">
+<m>U</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward: the force arrows point back toward the equilibrium, so this direction is stable. The red curve opens downward: the force arrows point away from the equilibrium, so this direction is unstable.">
+  <annotation ref="st-stable" text="A cross-section where the potential energy has a minimum, shown in blue and opening upward. Displacements in this direction are pushed back: stable."/>
+  <annotation ref="st-restore-right" text="The restoring force on a marble displaced to the right along the blue cross-section, pointing back toward the equilibrium."/>
+  <annotation ref="st-restore-left" text="The restoring force on a marble displaced to the left along the blue cross-section, pointing back toward the equilibrium."/>
+  <annotation ref="st-unstable" text="A cross-section where the potential energy has a maximum, shown in red and opening downward. Displacements in this direction grow: unstable."/>
+  <annotation ref="st-runaway-right" text="The force on a marble displaced to the right along the red cross-section, pointing away from the equilibrium."/>
+  <annotation ref="st-runaway-left" text="The force on a marble displaced to the left along the red cross-section, pointing away from the equilibrium."/>
+  <annotation ref="st-marble" text="The marble at the equilibrium point, where both partial derivatives of the potential energy are zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<xi:include href="./exercises-absolute-extrema-division.ptx"/>
+
+</section>
