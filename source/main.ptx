@@ -2,25 +2,28 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
  <docinfo>
+  
   <macros>
     \newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
     \newcommand{\real}{\Bbb R}
     \newcommand{\R}{\mathbb{R}}
   </macros>
-    <!-- ... your existing docinfo ... -->
+
 <latex-image-preamble>
   \usepackage{tikz}
   \usepackage{amsmath}
   \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+  \usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 </latex-image-preamble>
   </docinfo>
 
   <article xml:id="shorttitlelowercase">
-    <title>MATH 13: Complementary Interactive Modules</title>
+    <title>Complementary Modules For MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
+    <xi:include href="Parametrization.ptx" />
     <xi:include href="Taylor.ptx" />
-    <xi:include href="QuadricSurface.ptx" />
     <!-- <xi:include href="section-2.ptx" /> -->
    <!-- <xi:include href="Span.ptx" /> -->
    <!-- <xi:include href="Webwork.ptx" /> -->

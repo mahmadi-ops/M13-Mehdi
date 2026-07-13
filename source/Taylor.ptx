@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Taylor Series and its convergence</title>
   <introduction>
     <p>
@@ -57,6 +57,17 @@
         </p>
       </statement>
     </theorem>
+  <p> 
+  To see a visual representation of Taylor's formula, watch the following animation. 
+  </p>
+
+<figure xml:id="vid-taylor-formula">
+  <caption>Taylor's Formula Animation</caption>
+  <video xml:id="video-taylor-formula"
+         source="videos/taylor_formula_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
   <figure xml:id="fig-taylor-formula">
   <caption>Taylor's Formula: <m>f(x) = p_n(x) + R_n(x)</m>. The Taylor
   polynomial <m>p_n</m> agrees with <m>f</m> at <m>x = a</m>; away from
@@ -262,8 +273,13 @@
         </coordinates>
         <annotations>
           <annotation ref="fgraph"
-              text="Schematic graph of f of x equals e to the x with its Taylor polynomials p 1 through p 4 about 0. Dashed markers show a representative positive x with an intermediate value c between 0 and x, and a representative negative x with an intermediate c between x and 0. The sample points show the size of e to the c used to bound the remainder">
-            <annotation ref="fgraph" text="The function f of x equals e to the x, a thick blue curve" sonify="yes"/>
+              text="Schematic graph of f of x equals e to the x with its Taylor polynomials
+              p1 through p 4 about 0. Dashed markers show a representative positive x with 
+              an intermediate value c between 0 and x, and a representative negative x with 
+              an intermediate c between x and 0. The sample points show the size of e to the 
+              c used to bound the remainder">
+            <annotation ref="fgraph" text="The function f of x equals e to the x, a thick 
+            blue curve"/>
             <annotation ref="p1" text="The first degree Taylor polynomial p 1"/>
             <annotation ref="p2" text="The second degree Taylor polynomial p 2"/>
             <annotation ref="p3" text="The third degree Taylor polynomial p 3"/>
@@ -297,6 +313,26 @@
       This shows that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x &lt; 0</m>. Therefore, 
       we conclude that the Taylor series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>.
     </p>    
+
+    <p>
+  The animation below illustrates this convergence geometrically. As the
+  degree <m>n</m> increases, the Taylor polynomials
+  <m>p_n(x) = \sum_{k=0}^{n} \frac{x^k}{k!}</m> hug the graph of
+  <m>f(x) = e^x</m> over a wider and wider interval, matching the fact that
+  the remainder <m>R_n(x)\to 0</m> for every <m>x\in\mathbb{R}</m>.
+</p>
+<figure xml:id="fig-exp-taylor-video">
+  <caption>
+    The Taylor polynomials <m>p_1,\dots,p_8</m> of <m>e^x</m> about
+    <m>x=0</m> converging to <m>y=e^x</m>, followed by the
+    remainder-theorem argument.
+  </caption>
+  <video xml:id="video-exp-taylor"
+         source="videos/taylor_exp_convergence.mp4"
+         width="80%"
+         aspect="16:9"
+         preview="generic"/>
+</figure>
   </subsection>
 
   <subsection xml:id="subsection-3">
@@ -558,14 +594,14 @@
           <graph at="relativistic" function="Krel" domain="(0, 0.95)"
                  stroke="blue" thickness="4.5"/>
           <!-- axis landmarks -->
-          <label at="c-label" anchor="(1, 0)" alignment="ne" offset="(9,3)"><m>c</m></label>
+          <label at="c-label" anchor="(1, 0)" alignment="s" offset="(0,-1)"><m>c</m></label>
           <label at="origin-label" anchor="(0, 0)" alignment="sw"><m>0</m></label>
           <!-- playful direct labels -->
           <label at="rel-label" anchor="(0.86, Krel(0.86))" alignment="nw" offset="(-6,8)">
-            <m>\text{Relativistic} K</m>
+            <m>\text{Relativistic}\, K</m>
           </label>
-          <label at="newt-label" anchor="(0.8, Knewt(0.8))" alignment="se" offset="(4,-6)">
-            <m>\text{Newtonian} K</m>
+          <label at="newt-label" anchor="(0.84, Knewt(0.84))" alignment="s" offset="(0,-17)">
+            <m>\text{Newtonian} \,K</m>
           </label>
           <!-- callout: the two agree when v is small -->
           <label at="agree-label" anchor="(0.28, 0.62)" alignment="n">
@@ -854,6 +890,22 @@
   </image>
 </figure>
 
+ 
+<figure xml:id="fig-pendulum-forces-video">
+  <caption>
+    Forces on a simple pendulum. The weight <m>m\vec{g}</m> resolves into a
+    radial component <m>mg\cos\theta</m> along the string, balanced by the
+    tension <m>\vec{F}_T</m>, and a tangential component <m>mg\sin\theta</m>
+    directed toward equilibrium, which acts as the restoring force. For small
+    angles, <m>\sin\theta \approx \theta</m> gives
+    <m>F \approx -\dfrac{mg}{\ell}x</m>.
+  </caption>
+  <video source="videos/pendulum_forces.mp4" width="90%" preview="default"/>
+</figure>
+
+
+
+
      <example xml:id="ex-small-angle-pendulum">
       <title>Simple Harmonic Motion of a Pendulum as an Approximation</title>
       <statement>
@@ -982,25 +1034,306 @@
     </prefigure>
   </image>
 </figure>
+
+<figure xml:id="fig-small-angle-error-video">
+  <caption>
+    A pendulum swinging through decreasing amplitudes while the relative error
+    of the approximation <m>\sin\theta \approx \theta</m> is computed at each
+    angle, followed by the Taylor remainder bound
+    <m>\dfrac{|\theta - \sin\theta|}{\theta} \le \dfrac{\theta^2}{6}</m> and
+    the graph locating the <m>1\%</m> threshold at
+    <m>\theta^* \approx 0.244 \approx 14^\circ</m>.
+  </caption>
+  <video source="videos/small_angle_error.mp4" width="95%" preview="default"/>
+</figure>
+
 </solution>
 </subsubsection>
 
-     <subsubsection>
-    <title>Approximating the value of <m>\pi</m> using Taylor series</title>
-    <p>
-      In this subsection, we will discuss how to approximate the value of <m>\pi</m> using Taylor series. 
-      We will use the Taylor series for <m>\arctan(x)</m> to approximate <m>\pi</m>. 
-    </p>
-    <example>
-      <title>Approximating <m>\pi</m> using the Taylor series for <m>\arctan(x)</m></title>
-      <p>
-        Use the Taylor series for <m>\arctan(x)</m> to approximate the value of <m>\pi</m>. 
-        Find an upper bound for the error in this approximation.
-      </p>
-    </example>
-    </subsubsection>
+   <subsection xml:id="subsec-approximating-pi-taylor">
+  <title>Approximating the value of <m>\pi</m> using Taylor series</title>
 
-   <!--  <example xml:id="ex-multi-part">
+  <p>
+    In this subsection, we will discuss how to approximate the value of <m>\pi</m> using
+    Taylor series. We will use the Taylor series for <c>arctan(x)</c> to approximate <m>\pi</m>.
+  </p>
+
+  <example xml:id="ex-approx-pi-arctan">
+    <title>Approximating <m>\pi</m> using the Taylor series for <m>\arctan(x)</m></title>
+    <statement>
+      <p>
+        Use the Taylor series for <m>\arctan(x)</m> to approximate the value of <m>\pi</m>.
+        Use Taylor's Remainder Theorem to find an upper bound for the error in this
+        approximation, and show that the error decreases as the order <m>n</m> of the
+        Taylor polynomial increases.
+      </p>
+    </statement>
+  </example>
+    <solution>
+      <p>
+        The Taylor series for <m>f(x) = \arctan(x)</m> centered at <m>a = 0</m> is
+        <md>
+  <mrow>\arctan(x) \amp = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}\, x^{2k+1}</mrow>
+  <mrow>\amp = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots, \qquad |x| \le 1.</mrow>
+</md>
+        Since <m>\arctan(1) = \dfrac{\pi}{4}</m>, evaluating the series at <m>x = 1</m> gives
+        <me>
+          \pi = 4\arctan(1) = 4\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots\right).
+        </me>
+        Therefore, if <m>T_n(x)</m> denotes the Taylor polynomial of order <m>n</m> for
+        <m>\arctan(x)</m> centered at <m>0</m>, we obtain the approximation
+        <me>
+          \pi \approx 4\,T_n(1).
+        </me>
+      </p>
+
+      <p>
+        To bound the error, we apply Taylor's Remainder Theorem: if
+        <m>\left|f^{(n+1)}(t)\right| \le M</m> for all <m>t</m> between <m>0</m> and <m>x</m>, then
+        <me>
+          |R_n(x)| = |f(x) - T_n(x)| \le \frac{M}{(n+1)!}\,|x|^{n+1}.
+        </me>
+        For <m>f(x) = \arctan(x)</m>, the derivatives satisfy the closed form
+        <me>
+          f^{(n)}(t) = (n-1)!\,\cos^n(\theta)\,\sin\!\left(n\left(\theta + \tfrac{\pi}{2}\right)\right),
+          \qquad \theta = \arctan(t),
+        </me>
+        which can be verified by induction on <m>n</m>. Since
+        <m>|\cos^{n}(\theta)| \le 1</m> and <m>|\sin\!\left(n\left(\theta + \tfrac{\pi}{2}\right)\right)| \le 1</m>, it follows that
+        <me>
+          \left|f^{(n+1)}(t)\right| \le n! \quad \text{for all } t \in \mathbb{R},
+        </me>
+        so we may take <m>M = n!</m>. With <m>x = 1</m>, Taylor's Remainder Theorem gives
+        <me>
+          |R_n(1)| = \left|\arctan(1) - T_n(1)\right| \le \frac{n!}{(n+1)!}\,(1)^{n+1} = \frac{1}{n+1}.
+        </me>
+      </p>
+
+      <p>
+        Multiplying by <m>4</m>, the error in the approximation of <m>\pi</m> satisfies
+        <me>
+          \left|\pi - 4\,T_n(1)\right| \le \frac{4}{n+1}.
+        </me>
+        Since <m>\dfrac{4}{n+1} \to 0</m> as <m>n \to \infty</m>, the error decreases to zero
+        as the order <m>n</m> of the Taylor polynomial increases. However, the convergence is 
+        very slow. For instance, with
+        <m>n = 9</m> we get <m>4\,T_9(1) \approx 3.339683</m> with guaranteed error at most
+        <m>\tfrac{4}{10} = 0.4</m>, and to guarantee an error of at most <m>0.01</m> one needs 
+        to take <m>n \ge 399</m>.
+      </p>
+   
+
+
+  <figure xml:id="fig-approx-pi-taylor-video">
+    <caption>
+      The approximation <m>4\,T_n(1)</m> converging to <m>\pi</m>, and the error
+      <m>\left|\pi - 4\,T_n(1)\right|</m> decreasing below the upper bound
+      <m>\frac{4}{n+1}</m> from Taylor's Remainder Theorem as <m>n</m> increases.
+    </caption>
+    <video xml:id="video-approx-pi-taylor-error" source="videos/approx-pi-taylor-error.mp4" width="85%"/>
+  </figure>
+   </solution>
+</subsection>
+
+<p> As we saw in the previous example, Taylor series approached <m>\pi</m> very slowly. In the project below, 
+we will see how to use the so-called Euler's formula to approximate <m>\pi</m> much faster. As you may know,
+there are many other methods to approximate <m>\pi</m>, which we will not cover here.</p>
+
+<project xml:id="proj-euler-pi">
+  <title>Computing <m>\pi</m> with Euler's identity</title>
+
+  <introduction>
+    <p>
+      In <xref ref="ex-approx-pi-arctan"/> we approximated <m>\pi</m> by evaluating the
+      Taylor series for <m>\arctan(x)</m> at <m>x = 1</m>, and Taylor's Remainder Theorem
+      gave the error bound <m>\frac{4}{n+1}</m>, which decreases very slowly. In this
+      guided problem we compute <m>\pi</m> far more efficiently using
+      <term>Euler's identity</term>
+      <me>
+        \arctan\left(\tfrac{1}{2}\right) + \arctan\left(\tfrac{1}{3}\right) = \frac{\pi}{4},
+      </me>
+      which lets us evaluate the Taylor series at the small arguments
+      <m>x = \tfrac12</m> and <m>x = \tfrac13</m>, where it converges much faster.
+    </p>
+  </introduction>
+
+  <task>
+    <title>Proving Euler's identity</title>
+    <statement>
+      <p>
+        Let <m>\alpha = \arctan\left(\tfrac12\right)</m> and
+        <m>\beta = \arctan\left(\tfrac13\right)</m>. Use the addition formula
+        <me>
+          \tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\,\tan\beta}
+        </me>
+        to prove that <m>\alpha + \beta = \dfrac{\pi}{4}</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Compute <m>\tan(\alpha+\beta)</m> first. Then explain why <m>\alpha + \beta</m>
+        must lie in the interval <m>\left(0, \tfrac{\pi}{2}\right)</m>, and why this pins
+        down its value.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Since <m>\tan\alpha = \tfrac12</m> and <m>\tan\beta = \tfrac13</m>,
+        <me>
+          \tan(\alpha+\beta)
+          = \frac{\tfrac12 + \tfrac13}{1 - \tfrac12\cdot\tfrac13}
+          = \frac{\tfrac56}{\tfrac56} = 1.
+        </me>
+        Moreover <m>0 \lt \tfrac13 \lt \tfrac12 \lt 1</m> implies
+        <m>0 \lt \beta \le \alpha \lt \tfrac{\pi}{4}</m>, so
+        <m>\alpha + \beta \in \left(0, \tfrac{\pi}{2}\right)</m>. The only angle in this
+        interval whose tangent equals <m>1</m> is <m>\tfrac{\pi}{4}</m>, so
+        <m>\alpha + \beta = \tfrac{\pi}{4}</m>. (Without the interval check we could only
+        conclude <m>\alpha + \beta = \tfrac{\pi}{4} + k\pi</m> for some integer <m>k</m>.)
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>The approximation</title>
+    <statement>
+      <p>
+        Let <m>T_n(x)</m> be the Taylor polynomial of order <m>n</m> for
+        <m>\arctan(x)</m> centered at <m>0</m>. Use Euler's identity to explain why
+        <me>
+          \pi \approx 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right].
+        </me>
+        Write out this approximation explicitly for <m>n = 3</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Multiply Euler's identity by <m>4</m> and replace each arctangent by its Taylor
+        polynomial.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        By Euler's identity,
+        <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>.
+        Replacing <m>\arctan(x)</m> by <m>T_n(x)</m> at <m>x=\tfrac12</m> and
+        <m>x=\tfrac13</m> gives the stated approximation. For <m>n = 3</m>,
+        <m>T_3(x) = x - \tfrac{x^3}{3}</m>, so
+        <md>
+          <mrow>\pi \amp\approx 4\left[\left(\tfrac12 - \tfrac{1}{24}\right)
+            + \left(\tfrac13 - \tfrac{1}{81}\right)\right]</mrow>
+          <mrow>\amp= 4\left[\tfrac{11}{24} + \tfrac{26}{81}\right]
+            \approx 3.117284.</mrow>
+        </md>
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>Bounding the error with the Remainder Theorem</title>
+    <statement>
+      <p>
+        In <xref ref="ex-approx-pi-arctan"/> we showed that the derivatives of
+        <m>f(x) = \arctan(x)</m> satisfy
+        <m>\left|f^{(n+1)}(t)\right| \le n!</m> for all <m>t</m>. Use Taylor's Remainder
+        Theorem to show that for <m>|x| \le 1</m>
+        <me>
+          \left|\arctan(x) - T_n(x)\right| \le \frac{|x|^{n+1}}{n+1},
+        </me>
+        and conclude that
+        <me>
+          \left|\pi - 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
+          \le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1} + \left(\tfrac13\right)^{n+1}\right].
+        </me>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Apply Taylor's Remainder Theorem with <m>M = n!</m> exactly as in
+        <xref ref="ex-approx-pi-arctan"/>, but keep the factor <m>|x|^{n+1}</m>. Then use
+        the triangle inequality on the two remainders.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Taylor's Remainder Theorem with <m>M = n!</m> gives
+        <me>
+          |R_n(x)| \le \frac{n!}{(n+1)!}\,|x|^{n+1} = \frac{|x|^{n+1}}{n+1}.
+        </me>
+        Writing <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>
+        and using the triangle inequality,
+        <md>
+          <mrow>\left|\pi - 4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
+            \amp\le 4\left|R_n\!\left(\tfrac12\right)\right|
+            + 4\left|R_n\!\left(\tfrac13\right)\right|</mrow>
+          <mrow>\amp\le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1}
+            + \left(\tfrac13\right)^{n+1}\right].</mrow>
+        </md>
+        Unlike the bound <m>\frac{4}{n+1}</m> at <m>x = 1</m>, this bound decays
+        <em>geometrically</em>: each increase of <m>n</m> by one cuts it by better than
+        half.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <title>How much better is it?</title>
+    <statement>
+      <p>
+        Evaluate the error bound for <m>n = 9</m> and compare it with the bound
+        <m>\tfrac{4}{10} = 0.4</m> obtained in <xref ref="ex-approx-pi-arctan"/> for the
+        same order. Then find the smallest <m>n</m> for which the bound guarantees an
+        error of at most <m>10^{-6}</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        For the second part, the term <m>\left(\tfrac12\right)^{n+1}</m> dominates; try
+        increasing odd values of <m>n</m>.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        For <m>n = 9</m>,
+        <me>
+          \frac{4}{10}\left[\left(\tfrac12\right)^{10} + \left(\tfrac13\right)^{10}\right]
+          = \frac{4}{10}\left[\frac{1}{1024} + \frac{1}{59049}\right]
+          \approx 3.97 \times 10^{-4},
+        </me>
+        roughly a thousand times smaller than the bound <m>0.4</m> at <m>x = 1</m>; the
+        approximation itself is <m>4\left[T_9\!\left(\tfrac12\right) +
+        T_9\!\left(\tfrac13\right)\right] \approx 3.141741</m>. For an error of at most
+        <m>10^{-6}</m>, testing odd values gives, at <m>n = 15</m>, a bound of about
+        <m>3.8\times10^{-6}</m>, while at <m>n = 17</m>
+        <me>
+          \frac{4}{18}\left[\left(\tfrac12\right)^{18} + \left(\tfrac13\right)^{18}\right]
+          \approx 8.5 \times 10^{-7} \lt 10^{-6},
+        </me>
+        so <m>n = 17</m> suffices. By contrast, the bound <m>\frac{4}{n+1}</m> from
+        <m>x = 1</m> would require <m>n \ge 3{,}999{,}999</m> for the same guarantee.
+      </p>
+    </solution>
+  </task>
+
+  <conclusion>
+    <p>
+      The video below shows the approximation
+      <m>4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]</m>
+      converging to <m>\pi</m>, and compares its error, together with the
+      Remainder-Theorem bound, against the much slower method at <m>x = 1</m>.
+    </p>
+    <figure xml:id="fig-euler-pi-video">
+      <caption>
+        The error of Euler's-identity approximation (with its bound
+        <m>\frac{4}{n+1}\left[\left(\frac12\right)^{n+1} + \left(\frac13\right)^{n+1}\right]</m>)
+        decreasing geometrically as <m>n</m> increases, compared with the series at <m>x=1</m>.
+      </caption>
+      <video xml:id="video-euler-pi-error" source="videos/euler-pi-error.mp4" width="85%"/>
+    </figure>
+  </conclusion>
+</project>
+
+<!-- 
     <title>Multi-Part Example Title</title>
     <statement>
         <p>A introductory paragraph for the overall example.</p>

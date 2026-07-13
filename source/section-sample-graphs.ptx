@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-sample-graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sample Graphs</title>
+    <p>
+    Here we will include some interactive graphs to decide which one of
+  them is what we want to use.
+    </p>
+
+<interactive xml:id="interactive-hyperboloid-slices" iframe="hyperboloid-slices.html" width="100%" aspect="8:6">
+  <instructions>
+    <p>
+    Use the buttons to slice the surface <m>x^2+y^2-z^2=1</m> with planes
+    <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
+    The equation of each cross-section is displayed above the figure.
+    Drag the figure to view it from a different angle, or press the
+    <q>Rotate</q> button to spin it automatically.</p>
+  </instructions>
+</interactive>
+
+<figure xml:id="fig-hyperboloid-slices-video">
+  <caption>
+    Slicing <m>x^2 + y^2 - z^2 = 1</m> with planes <m>z = c</m>,
+    <m>x = c</m>, and <m>y = c</m>.
+  </caption>
+  <video xml:id="video-hyperboloid-slices"
+         source="videos/hyperboloid_slices_manim.mp4"
+         width="100%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-hyperboloid-slices-tikz">
+  <caption>
+    The hyperboloid <m>x^2 + y^2 - z^2 = 1</m> with sample traces:
+    the circle <m>x^2 + y^2 = 2</m> in the plane <m>z = 1</m> (solid),
+    the hyperbola <m>y^2 - z^2 = 1</m> in the plane <m>x = 0</m> (dashed),
+    and the hyperbola <m>x^2 - z^2 = 1</m> in the plane <m>y = 0</m> (dotted).
+  </caption>
+  <image xml:id="image-hyperboloid-slices-tikz" width="90%">
+    <shortdescription>
+      A hyperboloid of one sheet with three labeled trace curves.
+    </shortdescription>
+    <description>
+      <p>
+        The surface <m>x^2 + y^2 - z^2 = 1</m>, a hyperboloid of one
+        sheet, drawn as a translucent hourglass-like surface opening
+        upward and downward around the <m>z</m>-axis, narrowest at the
+        unit circle in the <m>xy</m>-plane. Three trace curves are
+        highlighted and listed in a legend: the plane <m>z = 1</m>
+        meets the surface in a solid circle <m>x^2 + y^2 = 2</m>; the
+        plane <m>x = 0</m> meets it in a dashed hyperbola
+        <m>y^2 - z^2 = 1</m> opening left and right; and the plane
+        <m>y = 0</m> meets it in a dotted hyperbola
+        <m>x^2 - z^2 = 1</m>, also opening sideways.
+      </p>
+    </description>
+    <latex-image>
+      <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={115}{18},
+      width=13.5cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-2.7, xmax=2.7, ymin=-2.7, ymax=2.7, zmin=-2.3, zmax=2.3,
+      clip=false,
+      legend style={
+        at={(1.02,0.97)}, anchor=north west,
+        font=\normalsize,
+        draw=black!35, rounded corners=2pt,
+        fill=white, fill opacity=0.92, text opacity=1,
+        inner sep=6pt, row sep=3pt,
+      },
+      legend cell align=left,
+      legend image post style={line width=1.6pt, sharp plot},
+    ]
+    % ---- surface: hyperboloid of one sheet ----
+    % x = cosh(v)cos(u), y = cosh(v)sin(u), z = sinh(v)
+    \addplot3[surf, shader=interp,
+              point meta={z},
+              colormap={softz}{color=(oiblue!12!white) color=(oiblue!38!white)},
+              opacity=0.5, fill opacity=0.5,
+              domain=0:360, samples=61,
+              y domain=-1.45:1.45, samples y=29,
+              z buffer=sort, forget plot]
+      ({cosh(y)*cos(x)}, {cosh(y)*sin(x)}, {sinh(y)});
+    % light parallels (circles) for shape cues
+    \foreach \zz in {-1.45,-1.1,-0.75,-0.4,0,0.4,0.75,1.1,1.45}{
+      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:360,
+          samples=97, samples y=0, forget plot]
+        ({cosh(\zz)*cos(x)}, {cosh(\zz)*sin(x)}, {sinh(\zz)});}\tmp}
+    % light meridians for shape cues
+    \foreach \uu in {0,30,...,330}{
+      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=-1.45:1.45,
+          samples=49, samples y=0, forget plot]
+        ({cosh(x)*cos(\uu)}, {cosh(x)*sin(\uu)}, {sinh(x)});}\tmp}
+    % ---- traces ----
+    % z = 1: circle x^2 + y^2 = 2 (solid vermillion)
+    \addplot3[line width=1.7pt, oivermillion, domain=0:360, samples=121, samples y=0]
+      ({cosh(1)*cos(x)}, {cosh(1)*sin(x)}, {sinh(1)});
+    \addlegendentry{$z=1:\quad x^2+y^2=2$}
+    % x = 0: hyperbola y^2 - z^2 = 1 (dashed blue)
+    \addplot3[line width=1.7pt, oiblue, dashed, domain=-1.45:1.45,
+        samples=71, samples y=0]
+      (0, {cosh(x)}, {sinh(x)});
+    \addlegendentry{$x=0:\quad y^2-z^2=1$}
+    \addplot3[line width=1.7pt, oiblue, dashed, domain=-1.45:1.45,
+        samples=71, samples y=0, forget plot]
+      (0, {-cosh(x)}, {sinh(x)});
+    % y = 0: hyperbola x^2 - z^2 = 1 (densely dotted green)
+    \addplot3[line width=1.9pt, oigreen, densely dotted, domain=-1.45:1.45,
+        samples=71, samples y=0]
+      ({cosh(x)}, 0, {sinh(x)});
+    \addlegendentry{$y=0:\quad x^2-z^2=1$}
+    \addplot3[line width=1.9pt, oigreen, densely dotted, domain=-1.45:1.45,
+        samples=71, samples y=0, forget plot]
+      ({-cosh(x)}, 0, {sinh(x)});
+    % surface equation above the figure
+    \node[font=\large, anchor=south] at (axis cs:0,0,3.05) {$x^2+y^2-z^2=1$};
+  \end{axis}
+\end{tikzpicture}]]>
+    </latex-image>
+  </image>
+</figure>
+
+</section>
