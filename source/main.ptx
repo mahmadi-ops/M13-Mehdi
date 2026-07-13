@@ -24,9 +24,12 @@
    <!-- <xi:include href="introduction.ptx" /> -->
     <xi:include href="Parametrization.ptx" />
     <xi:include href="Taylor.ptx" />
-    <!-- <xi:include href="section-2.ptx" /> -->
-   <!-- <xi:include href="Span.ptx" /> -->
-   <!-- <xi:include href="Webwork.ptx" /> -->
+    <xi:include href="Dotproduct.ptx" />
+    <xi:include href="the-cross-product.ptx" />
+    <xi:include href="Conics.ptx" />
+    <xi:include href="QuadricSurface.ptx" />
+    <xi:include href="extreme-values-saddle-points.ptx" />
+ <xi:include href="section-sample-graphs.ptx" />
   </article>
 
 </pretext>
