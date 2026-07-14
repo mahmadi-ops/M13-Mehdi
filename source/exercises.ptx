@@ -1,0 +1,39 @@
+<section xml:id="section-exercises">
+  <title>Exercises</title>
+
+<subsection xml:id="subsection-absolute-extrema">
+    <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
+    <introduction>
+    <p>
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-extreme-values" text="title"/>.
+    </p>
+   </introduction>
+    <exercises xml:id="exercises-absolute-extrema">
+
+ 
+      <exercise xml:id="ex-extrema-triangle">
+        <statement>
+          <p>
+            Find the absolute maximum and minimum values of
+            <me>f(x,y)=x^2-xy+y^2-3y</me>
+            on the region bounded by the <m>x</m>- and
+            <m>y</m>-axes and the line <m>x+y=4</m>.
+          </p>
+
+          <interactive
+            xml:id="hints-extrema-triangle"
+            width="80%"
+            aspect="5:4"
+            iframe="iframe/hint-extrema-triangle.html"/>
+        </statement>
+
+        <solution>
+          <!-- Your solution goes here. -->
+        </solution>
+      </exercise>
+
+    </exercises>
+  </subsection>
+
+</section>
