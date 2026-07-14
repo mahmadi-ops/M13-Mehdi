@@ -29,7 +29,8 @@
       standard equations, and see a worked example together with a second example that
       changes the orientation.
     </p>
-        <interactive xml:id="interactive-conic-slicer" iframe="conic-slicer.html" width="100%" aspect="8:7">
+
+    <interactive xml:id="interactive-conic-slicer" iframe="conic-slicer.html" width="100%" aspect="8:7">
       <instructions>
         <p>
         The surface is the double cone <m>x^2 + y^2 = z^2</m>, cut by the plane
@@ -72,7 +73,7 @@
               <line at="directrix" p1="(-2.45,-pval)" p2="(2.45,-pval)" stroke="red" thickness="2" dash="5 4"/>
               <label at="dir-label" anchor="(-2.45,-pval)" alignment="ne" offset="(2,4)"><m>\text{directrix: } y=-p</m></label>
               <point at="focus" p="(0,pval)" fill="black" size="3.5"/>
-              <label at="focus-label" anchor="(0,pval)" alignment="e" offset="(8,6)"><m>\text{Focus }(0,p)</m></label>
+              <label at="focus-label" anchor="(0,pval)" alignment="w" offset="(-8,4)"><m>\text{Focus }(0,p)</m></label>
               <point at="vertex" p="(0,0)" fill="orange" size="3.5"/>
               <label at="vertex-label" anchor="(0,0)" alignment="se" offset="(6,-2)"><m>\text{vertex}</m></label>
               <group at="equidistant">
@@ -144,7 +145,7 @@
               <point at="focus" p="(1,-0.5)" fill="black" size="3.5"/>
               <label at="focus-label" anchor="(1,-0.5)" alignment="se" offset="(6,-2)"><m>\text{Focus }\left(1,-\tfrac12\right)</m></label>
               <point at="vertex" p="(1,0)" fill="orange" size="3"/>
-              <label at="curve-label" anchor="(0.35,-0.72)" alignment="w"><m>(x-1)^2=-2y</m></label>
+              <label at="curve-label" anchor="(0.5,-0.85)" alignment="e"><m>(x-1)^2=-2y</m></label>
             </coordinates>
             <annotations>
               <annotation ref="parabola"
@@ -204,14 +205,14 @@
               <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
               <implicit-curve at="parabola" function="P" k="0" stroke="blue" thickness="2.5"/>
               <line at="directrix" p1="(-2,-4.4)" p2="(-2,4.4)" stroke="red" thickness="2" dash="5 4"/>
-              <label at="dir-label" anchor="(-2,-3.6)" alignment="w" offset="(-2,0)"><m>x=-2</m></label>
+              <label at="dir-label" anchor="(-2,-3.6)" alignment="e" offset="(4,0)"><m>x=-2</m></label>
               <point at="focus" p="(2,0)" fill="black" size="3.5"/>
               <label at="focus-label" anchor="(2,0)" alignment="se" offset="(6,-4)"><m>\text{Focus }(2,0)</m></label>
               <point at="vertex" p="(0,0)" fill="orange" size="3.5"/>
               <label at="vertex-label" anchor="(0,0)" alignment="sw" offset="(-4,-4)"><m>\text{vertex}</m></label>
               <group at="equidistant">
                 <point p="(yP^2/8, yP)" fill="blue" size="3"/>
-                <label anchor="(yP^2/8, yP)" alignment="ne" offset="(4,2)"><m>P</m></label>
+                <label at="pt-P-label" anchor="(yP^2/8, yP)" alignment="nw" offset="(-4,2)"><m>P</m></label>
                 <line p1="(yP^2/8, yP)" p2="(2,0)" stroke="green" thickness="2"/>
                 <line p1="(yP^2/8, yP)" p2="(-2, yP)" stroke="green" thickness="2"/>
                 <point p="(-2, yP)" fill="red" size="2.5"/>
@@ -280,8 +281,8 @@
               <point at="cov-top" p="(0,bb)" fill="green" size="3"/>
               <label anchor="(0,bb)" alignment="ne" offset="(4,2)"><m>(0,b)</m></label>
               <label anchor="(0,-bb)" alignment="se" offset="(4,-2)"><m>(0,-b)</m></label>
-              <label anchor="(aa,0)" alignment="ne" offset="(2,4)"><m>(a,0)</m></label>
-              <label anchor="(-aa,0)" alignment="nw" offset="(-2,4)"><m>(-a,0)</m></label>
+              <label at="vx-r" anchor="(aa,0)" alignment="n" offset="(-34,6)"><m>(a,0)</m></label>
+              <label at="vx-l" anchor="(-aa,0)" alignment="n" offset="(34,6)"><m>(-a,0)</m></label>
               <label at="eqlabel" anchor="(-2.7,2.2)" alignment="center"><m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m></label>
             </coordinates>
             <annotations>
@@ -381,9 +382,9 @@
                 <point p="(cc,0)" fill="red" size="3"/>
                 <point p="(-cc,0)" fill="red" size="3"/>
               </group>
-              <label anchor="(cc,0)" alignment="ne" offset="(2,2)"><m>F_1(\sqrt5,0)</m></label>
-              <label anchor="(-cc,0)" alignment="nw" offset="(-2,2)"><m>F_2(-\sqrt5,0)</m></label>
-              <label at="eqlabel" anchor="(1.7,1.7)" alignment="center"><m>\frac{x^2}{9}+\frac{y^2}{4}=1</m></label>
+              <label at="f1-label" anchor="(cc,0)" alignment="n" offset="(2,6)"><m>F_1</m></label>
+              <label at="f2-label" anchor="(-cc,0)" alignment="n" offset="(-4,6)"><m>F_2</m></label>
+              <label at="eqlabel" anchor="(-2.35,2.1)" alignment="center"><m>\frac{x^2}{9}+\frac{y^2}{4}=1</m></label>
             </coordinates>
             <annotations>
               <annotation ref="ellipse"
@@ -448,7 +449,7 @@
               <point at="vertex-top" p="(0,5)" fill="blue" size="2.5"/>
               <label anchor="(0,5)" alignment="ne" offset="(4,2)"><m>(0,5)</m></label>
               <label anchor="(4,0)" alignment="se" offset="(2,-4)"><m>(4,0)</m></label>
-              <label at="eqlabel" anchor="(-3.1,4.6)" alignment="center"><m>\frac{x^2}{16}+\frac{y^2}{25}=1</m></label>
+              <label at="eqlabel" anchor="(-3.55,5.3)" alignment="center"><m>\frac{x^2}{16}+\frac{y^2}{25}=1</m></label>
             </coordinates>
             <annotations>
               <annotation ref="ellipse"
@@ -504,15 +505,15 @@
                 <point p="(cc,0)" fill="green" size="3"/>
                 <point p="(-cc,0)" fill="green" size="3"/>
               </group>
-              <label anchor="(cc,0)" alignment="s" offset="(6,-6)"><m>F_1(c,0)</m></label>
-              <label anchor="(-cc,0)" alignment="s" offset="(-6,-6)"><m>F_2(-c,0)</m></label>
+              <label at="f1-label" anchor="(cc,0)" alignment="s" offset="(14,-6)"><m>F_1(c,0)</m></label>
+              <label at="f2-label" anchor="(-cc,0)" alignment="s" offset="(-14,-6)"><m>F_2(-c,0)</m></label>
               <group at="vertices">
                 <point p="(aa,0)" fill="red" size="2.5"/>
                 <point p="(-aa,0)" fill="red" size="2.5"/>
               </group>
-              <label anchor="(aa,0)" alignment="n" offset="(-4,6)"><m>V_1(a,0)</m></label>
-              <label anchor="(-aa,0)" alignment="n" offset="(4,6)"><m>V_2(-a,0)</m></label>
-              <label at="eqlabel" anchor="(0,2.7)" alignment="center"><m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=1</m></label>
+              <label at="v1-label" anchor="(aa,0)" alignment="nw" offset="(-6,6)"><m>V_1</m></label>
+              <label at="v2-label" anchor="(-aa,0)" alignment="ne" offset="(6,6)"><m>V_2</m></label>
+              <label at="eqlabel" anchor="(1.9,-2.7)" alignment="center"><m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=1</m></label>
             </coordinates>
             <annotations>
               <annotation ref="hyperbola"
@@ -615,15 +616,15 @@
                 <point p="(5,0)" fill="green" size="3"/>
                 <point p="(-5,0)" fill="green" size="3"/>
               </group>
-              <label anchor="(5,0)" alignment="s" offset="(8,-8)"><m>F_1(5,0)</m></label>
-              <label anchor="(-5,0)" alignment="s" offset="(-8,-8)"><m>F_2(-5,0)</m></label>
+              <label at="f1-label" anchor="(5,0)" alignment="s" offset="(26,-8)"><m>F_1(5,0)</m></label>
+              <label at="f2-label" anchor="(-5,0)" alignment="s" offset="(-26,-8)"><m>F_2(-5,0)</m></label>
               <group at="vertices">
                 <point p="(4,0)" fill="red" size="2.5"/>
                 <point p="(-4,0)" fill="red" size="2.5"/>
               </group>
-              <label anchor="(4,0)" alignment="n" offset="(-6,8)"><m>V_1(4,0)</m></label>
-              <label anchor="(-4,0)" alignment="n" offset="(6,8)"><m>V_2(-4,0)</m></label>
-              <label at="eqlabel" anchor="(0,7.5)" alignment="center"><m>\frac{x^2}{16}-\frac{y^2}{9}=1</m></label>
+              <label at="v1-label" anchor="(4,0)" alignment="nw" offset="(-6,8)"><m>V_1</m></label>
+              <label at="v2-label" anchor="(-4,0)" alignment="ne" offset="(6,8)"><m>V_2</m></label>
+              <label at="eqlabel" anchor="(5.8,-7.6)" alignment="center"><m>\frac{x^2}{16}-\frac{y^2}{9}=1</m></label>
             </coordinates>
             <annotations>
               <annotation ref="hyperbola"
@@ -695,8 +696,8 @@
                 <point p="(0,3)" fill="red" size="2.5"/>
                 <point p="(0,-3)" fill="red" size="2.5"/>
               </group>
-              <label anchor="(0,3)" alignment="e" offset="(8,2)"><m>V_1(0,3)</m></label>
-              <label anchor="(0,-3)" alignment="e" offset="(8,-2)"><m>V_2(0,-3)</m></label>
+              <label at="v1-label" anchor="(0,3)" alignment="e" offset="(8,-12)"><m>V_1</m></label>
+              <label at="v2-label" anchor="(0,-3)" alignment="e" offset="(8,12)"><m>V_2</m></label>
               <label at="eqlabel" anchor="(4.6,-6.8)" alignment="center"><m>\frac{y^2}{9}-\frac{x^2}{16}=1</m></label>
             </coordinates>
             <annotations>
@@ -758,8 +759,8 @@
                 <line p1="(2.0, f(2.0))" p2="(0, pval)" stroke="red" thickness="1.5"/>
               </group>
               <point at="focus" p="(0,pval)" fill="black" size="4"/>
-              <label at="focus-label" anchor="(0,pval)" alignment="e" offset="(10,0)"><m>\text{focus (receiver)}</m></label>
-              <label at="ray-label" anchor="(-2.0,2.0)" alignment="e" offset="(6,-2)"><m>\text{incoming parallel rays}</m></label>
+              <label at="focus-label" anchor="(0,pval)" alignment="s" offset="(0,-10)"><m>\text{focus (receiver)}</m></label>
+              <label at="ray-label" anchor="(0,1.9)" alignment="center"><m>\text{incoming parallel rays}</m></label>
             </coordinates>
             <annotations>
               <annotation ref="dish"
@@ -867,9 +868,11 @@
                 <line p1="(Px(-0.8),Py(-0.8))" p2="(cc,0)" stroke="red" thickness="1.5"/>
               </group>
               <point at="f2" p="(-cc,0)" fill="black" size="4"/>
-              <label anchor="(-cc,0)" alignment="sw" offset="(-2,-6)"><m>F_2\ \text{(speaker)}</m></label>
+              <label at="f2-label" anchor="(-cc,0)" alignment="sw" offset="(-6,-6)"><m>F_2</m></label>
+              <label at="f2-role" anchor="(-cc,-2.45)" alignment="center"><m>\text{speaker}</m></label>
               <point at="f1" p="(cc,0)" fill="black" size="4"/>
-              <label anchor="(cc,0)" alignment="se" offset="(2,-6)"><m>F_1\ \text{(listener)}</m></label>
+              <label at="f1-label" anchor="(cc,0)" alignment="se" offset="(6,-6)"><m>F_1</m></label>
+              <label at="f1-role" anchor="(cc,-2.45)" alignment="center"><m>\text{listener}</m></label>
             </coordinates>
             <annotations>
               <annotation ref="gallery"
@@ -920,7 +923,7 @@
   </subsection>
 
     <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
-<subsection xml:id="subsec-app-loran">
+  <subsection xml:id="subsec-app-loran">
     <title>Application: Hyperbolic Navigation (LORAN)</title>
     <p>
       Progress in electrical engineering enabled navigation systems based on the transmission
@@ -941,9 +944,10 @@
       once, the vessel sits where the two curves cross.
     </p>
 
- <figure xml:id="fig-hyperbola-loran">
-      <caption>Hyperbolic navigation. The measured delay places the ship on the solid hyperbola
-      with foci at the two stations; a different delay would place it on the dashed one instead.</caption>
+<figure xml:id="fig-hyperbola-loran">
+      <caption>Hyperbolic navigation. The measured delay places the unknown position <m>A</m> on the
+      solid hyperbola with foci at the receivers <m>P_1</m> and <m>P_2</m>; a different delay
+      would place it on the dashed one instead.</caption>
       <image width="65%">
         <prefigure xmlns="https://prefigure.org" label="hyperbola-loran">
           <diagram dimensions="(400,320)" margins="8">
@@ -963,25 +967,27 @@
                 <line p1="(cc,0)" p2="(aa*cosh(sP), bb*sinh(sP))" stroke="green" thickness="2"/>
               </group>
               <point at="ship" p="(aa*cosh(sP), bb*sinh(sP))" fill="red" size="4"/>
-              <label at="ship-label" anchor="(aa*cosh(sP), bb*sinh(sP))" alignment="ne" offset="(6,2)"><m>\text{ship}</m></label>
+              <label at="ship-label" anchor="(aa*cosh(sP), bb*sinh(sP))" alignment="ne" offset="(6,2)"><m>A</m></label>
               <point at="s2" p="(-cc,0)" fill="black" size="4"/>
-              <label anchor="(-cc,0)" alignment="sw" offset="(-2,-6)"><m>F_2\ \text{(station B)}</m></label>
+              <label at="sB-label" anchor="(-cc,0)" alignment="s" offset="(-6,-8)"><m>P_2</m></label>
               <point at="s1" p="(cc,0)" fill="black" size="4"/>
-              <label anchor="(cc,0)" alignment="se" offset="(2,-6)"><m>F_1\ \text{(station A)}</m></label>
-              <label at="locus-label" anchor="(2.6,3.3)" alignment="center"><m>|r_2-r_1|=2a</m></label>
+              <label at="sA-label" anchor="(cc,0)" alignment="s" offset="(4,-8)"><m>P_1</m></label>
+              <label at="locus-label" anchor="(3.75,-2.6)" alignment="center"><m>|r_2-r_1|=2a</m></label>
+              <label at="r2-label" anchor="(-1.2,0.93)" alignment="n" offset="(0,6)"><m>r_2</m></label>
+              <label at="r1-label" anchor="(2.586,1.3)" alignment="e" offset="(6,0)"><m>r_1</m></label>
             </coordinates>
             <annotations>
               <annotation ref="locus"
-                  text="Hyperbolic navigation: a fixed difference in signal arrival times from two stations places the ship on a hyperbola whose foci are the stations">
+                  text="Hyperbolic navigation: a fixed difference in signal arrival times from two receivers places the unknown position A on a hyperbola whose foci are the receivers">
                 <annotation ref="locus"
-                    text="The hyperbola of all positions having the measured time difference from the two stations" sonify="yes"/>
+                    text="The hyperbola of all positions having the measured time difference from receivers P one and P two" sonify="yes"/>
                 <annotation ref="locus2"
                     text="A second dashed hyperbola, the locus for a different time difference, showing that each delay picks out its own curve"/>
                 <annotation ref="signals"
-                    text="Two signal paths from the stations to the ship, of lengths r two and r one"/>
-                <annotation ref="ship" text="The ship, somewhere on the locus"/>
-                <annotation ref="s1" text="Station A, one focus"/>
-                <annotation ref="s2" text="Station B, the other focus"/>
+                    text="Two signal paths, of length r one from receiver P one and length r two from receiver P two, meeting at the point A"/>
+                <annotation ref="ship" text="The unknown position A, somewhere on the locus, closer to P one"/>
+                <annotation ref="s1" text="Receiver P one, the nearer focus"/>
+                <annotation ref="s2" text="Receiver P two, the farther focus"/>
               </annotation>
             </annotations>
           </diagram>
@@ -990,8 +996,8 @@
     </figure>
 
 <figure xml:id="vid-hyperbolic-navigation">
-      <caption>Animation: the ship moves, the two signal distances both change<mdash/>but their
-      difference does not, tracing out the hyperbola.</caption>
+      <caption>Animation: the point <m>A</m> moves, and both signal distances <m>r_1</m> and
+      <m>r_2</m> change<mdash/>but their difference does not, tracing out the hyperbola.</caption>
       <video xml:id="video-hyperbolic-navigation"
              source="videos/hyperbolic_navigation_1080p.mp4"
              width="90%" aspect="16:9"/>
@@ -1001,10 +1007,10 @@
       <title>Locating a hiker from three receivers</title>
       <p>
         Three receivers <m>P_1</m>, <m>P_2</m>, and <m>P_3</m> are deployed in the landscape.
-        The figure captures the distances we know. Adam's tourist navigation device sends a
+        The figure captures the distances we know. Emma's tourist navigation device sends a
         signal to all three receivers. The signal arrives at receivers <m>P_1</m> and
         <m>P_3</m> at the same time, and at receiver <m>P_2</m> it arrives
-        <m>80</m> microseconds later. Where is Adam located? Assume the signal travels
+        <m>80</m> microseconds later. Where is Emma located? Assume the signal travels
         <m>300{,}000</m> km per second, and determine the position in a suitably chosen
         coordinate system.
       </p>
@@ -1014,8 +1020,8 @@
         <m>P_1</m>.</caption>
         <image width="75%">
           <prefigure xmlns="https://prefigure.org" label="loran-assignment">
-          <diagram dimensions="(420,268)" margins="8">
-            <coordinates bbox="(-8, -9, 72, 42)">
+          <diagram dimensions="(420,255)" margins="8">
+            <coordinates bbox="(-8, -9, 76, 42)">
               <line at="baseline" p1="(0,0)" p2="(60,0)" stroke="gray" thickness="1" dash="3 3"/>
               <line at="riser" p1="(60,0)" p2="(60,36)" stroke="gray" thickness="1" dash="3 3"/>
               <group at="right-angle">
@@ -1064,9 +1070,9 @@
     <solution xml:id="sol-app-loran">
       <p>
         We first translate the two timing facts into geometry. The signal reaches <m>P_1</m>
-        and <m>P_3</m> simultaneously, so Adam is <em>equidistant</em> from them: he lies on
+        and <m>P_3</m> simultaneously, so Emma is <em>equidistant</em> from them: he lies on
         the perpendicular bisector of the segment <m>P_1P_3</m>. The signal reaches
-        <m>P_2</m> <m>80</m> microseconds after <m>P_1</m>, so Adam is
+        <m>P_2</m> <m>80</m> microseconds after <m>P_1</m>, so Emma is
       </p>
       <me>(300{,}000\ \text{km/s})\,(80\times 10^{-6}\ \text{s}) = 24\ \text{km}</me>
       <p>
@@ -1117,7 +1123,7 @@
       </figure>
 
       <p>
-        Let <m>A</m> denote Adam's unknown position, and let <m>o</m> be the perpendicular
+        Let <m>A</m> denote Emma's unknown position, and let <m>o</m> be the perpendicular
         bisector of <m>P_1P_3</m>. The line <m>o</m> passes through the midpoint
         <m>S\left(\tfrac52, \tfrac32\right)</m> of the segment, and since
         <m>P_3 - P_1 = (1,3)</m>, the direction <m>\vec u_o = (3,-1)</m> is perpendicular to
@@ -1162,14 +1168,14 @@
         says why: <m>A_2</m> lies on the <em>left</em> branch, <m>24</m> km closer to
         <m>P_2</m> than to <m>P_1</m>, so a signal sent from <m>A_2</m> would reach
         <m>P_2</m> <em>earlier</em> than <m>P_1</m><mdash/>the opposite of what was measured.
-        Adam's position is therefore
+        Emma's position is therefore
       </p>
       <me>A\left(\tfrac{19}{13},\ \tfrac{24}{13}\right),</me>
       <p>
         about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distances come
         out exactly: <m>|AP_1| = |AP_3| = \tfrac{25}{13}</m> units and
         <m>|AP_2| = \tfrac{51}{13}</m> units, so <m>|AP_2| - |AP_1| = 2</m> units
-        <m>= 24</m> km, as required. In kilometers, Adam is
+        <m>= 24</m> km, as required. In kilometers, Emma is
         <m>\tfrac{300}{13} \approx 23.1</m> km from <m>P_1</m> and <m>P_3</m>.
       </p>
 
@@ -1192,26 +1198,26 @@
               <line at="drop-v" p1="(Ax,0)" p2="(Ax,Ay)" stroke="gray" thickness="1" dash="3 3"/>
               <line at="drop-h" p1="(0,Ay)" p2="(Ax,Ay)" stroke="gray" thickness="1" dash="3 3"/>
               <label anchor="(Ax,0)" alignment="s" offset="(4,-4)"><m>\tfrac{19}{13}</m></label>
-              <label anchor="(0,Ay)" alignment="w" offset="(-4,2)"><m>\tfrac{24}{13}</m></label>
+              <label at="lab-2413" anchor="(0,Ay)" alignment="w" offset="(-4,-9)"><m>\tfrac{24}{13}</m></label>
               <point at="ptA" p="(Ax,Ay)" fill="red" size="3.5"/>
               <label anchor="(Ax,Ay)" alignment="ne" offset="(5,3)"><m>A</m></label>
               <point at="ptA2" p="(-2,3)" fill="white" size="3"/>
-              <label anchor="(-2,3)" alignment="n" offset="(0,7)"><m>A_2\ \text{(rejected)}</m></label>
+              <label at="a2-label" anchor="(-2,3)" alignment="sw" offset="(-6,-6)"><m>A_2\ \text{(rejected)}</m></label>
               <point at="ptS" p="(2.5,1.5)" fill="black" size="2.5"/>
-              <label anchor="(2.5,1.5)" alignment="e" offset="(6,2)"><m>S</m></label>
+              <label at="s-label" anchor="(2.5,1.5)" alignment="n" offset="(6,6)"><m>S</m></label>
               <point at="p2" p="(-2,0)" fill="black" size="3"/>
-              <label anchor="(-2,0)" alignment="s" offset="(0,-7)"><m>P_2</m></label>
+              <label at="p2-label" anchor="(-2,0)" alignment="s" offset="(-16,-7)"><m>P_2</m></label>
               <point at="p1" p="(2,0)" fill="black" size="3"/>
-              <label anchor="(2,0)" alignment="s" offset="(6,-7)"><m>P_1</m></label>
+              <label at="p1-label" anchor="(2,0)" alignment="s" offset="(16,-7)"><m>P_1</m></label>
               <point at="p3" p="(3,3)" fill="black" size="3"/>
               <label anchor="(3,3)" alignment="e" offset="(6,0)"><m>P_3</m></label>
             </coordinates>
             <annotations>
               <annotation ref="hyp"
-                  text="The solution: Adam sits at the crossing of the perpendicular bisector of P one P three and the right branch of the hyperbola with foci P one and P two">
+                  text="The solution: Emma sits at the crossing of the perpendicular bisector of P one P three and the right branch of the hyperbola with foci P one and P two">
                 <annotation ref="hyp" text="The hyperbola h, x squared minus y squared over three equals one, with two branches" sonify="yes"/>
                 <annotation ref="axis-o" text="The line o, the perpendicular bisector of segment P one P three, passing through its midpoint S"/>
-                <annotation ref="ptA" text="Adam's position A at nineteen thirteenths comma twenty four thirteenths, on the right branch"/>
+                <annotation ref="ptA" text="Emma's position A at nineteen thirteenths comma twenty four thirteenths, on the right branch"/>
                 <annotation ref="ptA2" text="The rejected second intersection A two at minus two comma three, on the left branch"/>
                 <annotation ref="ptS" text="The midpoint S of segment P one P three"/>
               </annotation>
@@ -1223,7 +1229,7 @@
     </solution>
 
     <remark xml:id="rem-loran-two-hyperbolas">
-      <title>What if Adam were not equidistant from <m>P_1</m> and <m>P_3</m>?</title>
+      <title>What if Emma were not equidistant from <m>P_1</m> and <m>P_3</m>?</title>
       <p>
         The exercise was arranged so that the signal reached <m>P_1</m> and <m>P_3</m>
         simultaneously, and that is what kept the algebra easy: a distance difference of
@@ -1233,21 +1239,22 @@
       </p>
       <p>
         If the two arrival times differed, the delay would instead give a <em>nonzero</em>
-        difference <m>\bigl||AP_3| - |AP_1|\bigr| = v\,\Delta t</m>, and Adam would lie on a
+        difference <m>\bigl||AP_3| - |AP_1|\bigr| = v\,\Delta t</m>, and Emma would lie on a
         genuine second hyperbola, with foci <m>P_1</m> and <m>P_3</m><mdash/>tilted, since its
         focal axis <m>P_1P_3</m> is not parallel to a coordinate axis. Locating him would then
         mean intersecting the correct branches of <em>two</em> hyperbolas, as in the figure
         below. Conceptually nothing changes<mdash/>each measurement contributes one curve, and
         the position is their common point<mdash/>but algebraically we would be solving two
-        quadratic equations together rather than a linear one and a quadratic one, which is
-        why real navigation receivers do this step numerically.
+        quadratic equations together rather than a linear one and a quadratic one.
       </p>
     </remark>
 
 <figure xml:id="fig-hyperbola-loran-fix">
-      <caption>Two measurements fix the position. The first delay (stations <m>A</m>,
-      <m>B</m>) puts the ship on the blue branch; the second (stations <m>A</m>, <m>C</m>)
-      puts it on the purple branch. The ship is at the crossing.</caption>
+      <caption>Two measurements fix the position. The first delay (receivers <m>P_1</m>,
+      <m>P_2</m>) puts <m>A</m> on the blue branch; the second (receivers <m>P_1</m>,
+      <m>P_3</m>) puts it on the purple branch. The position <m>A</m> is at the crossing,
+      and the dashed segments show the three distances <m>r_1</m>, <m>r_2</m>,
+      <m>r_3</m>.</caption>
       <image width="65%">
         <prefigure xmlns="https://prefigure.org" label="hyperbola-loran-fix">
           <diagram dimensions="(400,324)" margins="8">
@@ -1261,28 +1268,48 @@
             <coordinates bbox="(-5.0, -3.5, 5.0, 4.6)">
               <implicit-curve at="locus1" function="H1" k="k1" stroke="blue" thickness="2.5"/>
               <implicit-curve at="locus2" function="H2" k="k2" stroke="purple" thickness="2.5"/>
+              <group at="dists">
+                <line p1="(Px,Py)" p2="(3,0)" stroke="black" thickness="1.2" dash="4 3"/>
+                <line p1="(Px,Py)" p2="(-3,0)" stroke="black" thickness="1.2" dash="4 3"/>
+                <line p1="(Px,Py)" p2="(-1,3.8)" stroke="black" thickness="1.2" dash="4 3"/>
+                <label at="r1-label" anchor="(2.586,1.3)" alignment="e" offset="(6,0)"><m>r_1</m></label>
+                <label at="r2-label" anchor="(-1.2,0.93)" alignment="n" offset="(0,6)"><m>r_2</m></label>
+                <label at="r3-label" anchor="(0.57,3.23)" alignment="n" offset="(0,5)"><m>r_3</m></label>
+              </group>
+              <group at="legend">
+                <line p1="(-4.9,3.1)" p2="(-1.6,3.1)" stroke="black" thickness="1"/>
+                <line p1="(-4.9,4.5)" p2="(-1.6,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-4.9,3.1)" p2="(-4.9,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-1.6,3.1)" p2="(-1.6,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-4.75,4.1)" p2="(-4.45,4.1)" stroke="blue" thickness="2.5"/>
+                <line p1="(-4.75,3.5)" p2="(-4.45,3.5)" stroke="purple" thickness="2.5"/>
+                <label at="leg1" anchor="(-4.35,4.1)" alignment="e" offset="(3,0)"><m>r_2-r_1=2a</m></label>
+                <label at="leg2" anchor="(-4.35,3.5)" alignment="e" offset="(4,0)"><m>r_3-r_1=2a'</m></label>
+              </group>
               <point at="ship" p="(Px,Py)" fill="red" size="4"/>
-              <label at="ship-label" anchor="(Px,Py)" alignment="e" offset="(8,0)"><m>\text{ship}</m></label>
+              <label at="ship-label" anchor="(Px,Py)" alignment="e" offset="(8,0)"><m>A</m></label>
               <point at="sA" p="(3,0)" fill="black" size="4"/>
-              <label anchor="(3,0)" alignment="se" offset="(2,-6)"><m>A</m></label>
+              <label anchor="(3,0)" alignment="se" offset="(2,-6)"><m>P_1</m></label>
               <point at="sB" p="(-3,0)" fill="black" size="4"/>
-              <label anchor="(-3,0)" alignment="sw" offset="(-2,-6)"><m>B</m></label>
+              <label anchor="(-3,0)" alignment="sw" offset="(-2,-6)"><m>P_2</m></label>
               <point at="sC" p="(-1,3.8)" fill="black" size="4"/>
-              <label anchor="(-1,3.8)" alignment="nw" offset="(-4,2)"><m>C</m></label>
-              <label at="l1" anchor="(1.9,-2.6)" alignment="e" offset="(6,0)"><m>r_B-r_A=2a</m></label>
-              <label at="l2" anchor="(-2.6,1.7)" alignment="w" offset="(-4,0)"><m>r_C-r_A=2a'</m></label>
+              <label anchor="(-1,3.8)" alignment="nw" offset="(0.5,2)"><m>P_3</m></label>
             </coordinates>
             <annotations>
               <annotation ref="locus1"
-                  text="A position fix from two time-difference measurements: the ship lies at the crossing of two hyperbola branches">
+                  text="A position fix from two time-difference measurements: the unknown position A lies at the crossing of two hyperbola branches">
                 <annotation ref="locus1"
-                    text="The blue branch of points whose distance difference to stations B and A equals the first measured constant" sonify="yes"/>
+                    text="The blue branch of points whose distance difference to receivers P two and P one equals the first measured constant" sonify="yes"/>
                 <annotation ref="locus2"
-                    text="The purple branch of points whose distance difference to stations C and A equals the second measured constant" sonify="yes"/>
-                <annotation ref="ship" text="The ship, at the single crossing of the two branches"/>
-                <annotation ref="sA" text="Station A, the master station shared by both measurements"/>
-                <annotation ref="sB" text="Station B, paired with A for the first measurement"/>
-                <annotation ref="sC" text="Station C, paired with A for the second measurement"/>
+                    text="The purple branch of points whose distance difference to receivers P three and P one equals the second measured constant" sonify="yes"/>
+                <annotation ref="dists"
+                    text="Three dashed segments from the position A to the receivers, of lengths r one, r two, and r three"/>
+                <annotation ref="legend"
+                    text="A legend box in the upper left: on the blue curve, r two minus r one equals two a; on the purple curve, r three minus r one equals two a prime"/>
+                <annotation ref="ship" text="The position A, at the single crossing of the two branches"/>
+                <annotation ref="sA" text="Receiver P one, the master receiver shared by both measurements"/>
+                <annotation ref="sB" text="Receiver P two, paired with P one for the first measurement"/>
+                <annotation ref="sC" text="Receiver P three, paired with P one for the second measurement"/>
               </annotation>
             </annotations>
           </diagram>
