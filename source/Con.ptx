@@ -29,7 +29,8 @@
       standard equations, and see a worked example together with a second example that
       changes the orientation.
     </p>
-        <interactive xml:id="interactive-conic-slicer" iframe="conic-slicer.html" width="100%" aspect="8:7">
+
+    <interactive xml:id="interactive-conic-slicer" iframe="conic-slicer.html" width="100%" aspect="8:7">
       <instructions>
         <p>
         The surface is the double cone <m>x^2 + y^2 = z^2</m>, cut by the plane

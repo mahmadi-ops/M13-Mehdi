@@ -26,7 +26,7 @@
     <xi:include href="Taylor.ptx" />
     <xi:include href="Dotproduct.ptx" />
     <xi:include href="the-cross-product.ptx" />
-    <xi:include href="Conics.ptx" />
+    <xi:include href="conics.ptx" />
     <xi:include href="QuadricSurface.ptx" />
     <xi:include href="extreme-values-saddle-points.ptx" />
  <xi:include href="section-sample-graphs.ptx" />
