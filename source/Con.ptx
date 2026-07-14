@@ -1283,7 +1283,7 @@
                 <line p1="(-1.75,3.1)" p2="(-1.75,4.5)" stroke="black" thickness="1"/>
                 <line p1="(-4.75,4.1)" p2="(-4.45,4.1)" stroke="blue" thickness="2.5"/>
                 <line p1="(-4.75,3.5)" p2="(-4.45,3.5)" stroke="purple" thickness="2.5"/>
-                <label at="leg1" anchor="(-4.35,4.1)" alignment="e" offset="(4,0)"><m>r_2-r_1=2a</m></label>
+                <label at="leg1" anchor="(-4.35,4.1)" alignment="e" offset="(3,0)"><m>r_2-r_1=2a</m></label>
                 <label at="leg2" anchor="(-4.35,3.5)" alignment="e" offset="(4,0)"><m>r_3-r_1=2a'</m></label>
               </group>
               <point at="ship" p="(Px,Py)" fill="red" size="4"/>
