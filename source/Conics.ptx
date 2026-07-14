@@ -919,39 +919,29 @@
     </solution>
   </subsection>
 
-  <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
-  <subsection xml:id="subsec-app-loran">
+    <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
+<subsection xml:id="subsec-app-loran">
     <title>Application: Hyperbolic Navigation (LORAN)</title>
     <p>
-      Of the three conics, the hyperbola's definition can look the most arbitrary: why should
-      anyone care about a constant <em>difference</em> of distances? Navigation is the answer.
-    </p>
-    <p>
-      Two radio stations at known positions transmit synchronized pulses. A ship measures the
-      <em>difference</em> in their arrival times, <m>\Delta t</m>. Since radio waves travel at a
-      known speed <m>v</m>, that time difference converts directly into a difference of distances,
+      Progress in electrical engineering enabled navigation systems based on the transmission
+      of electromagnetic waves. One example is LORAN-C marine navigation, developed in the
+      United States during World War II. A vessel receives a synchronized signal from a pair
+      of transmitters; the signal from the more distant transmitter arrives later, so the
+      measured delay <m>\Delta t</m> determines the <em>difference</em> between the vessel's
+      distances to the two transmitters,
     </p>
     <me>|r_2 - r_1| = v\,\Delta t,</me>
     <p>
-      and the set of all points with a given constant difference of distances from two fixed
-      points is precisely a hyperbola with those two points as foci. The measurement does not
-      tell the ship where it is; it tells the ship which <em>hyperbola</em> it is on, namely the
-      one with <m>2a = v\,\Delta t</m>.
-    </p>
-    <p>
-      A single reading therefore narrows the ship to a curve, not a point. To finish the job,
-      the ship takes a second reading against a different pair of stations<mdash/>in practice
-      one <em>master</em> station <m>A</m> was shared, paired first with <m>B</m> and then with
-      <m>C</m>. The second time difference places the ship on a second hyperbola, this one with
-      foci <m>A</m> and <m>C</m>. The ship's true position has to satisfy both measurements at
-      once, so it lies on both curves: the ship is at their intersection. (The sign of each
-      delay<mdash/>which station's pulse arrived first<mdash/>even tells the ship which branch
-      of each hyperbola it is on, which is why the figure below draws a single branch for each
-      measurement.) This is how LORAN worked, and the same time-difference principle underlies
-      GPS.
+      where <m>v</m> is the signal speed. The set of points with a constant difference of
+      distances from two fixed points is precisely a hyperbola with those points as foci, so
+      one measurement tells the vessel which hyperbola it is on<mdash/>the one with
+      <m>2a = v\,\Delta t</m><mdash/>and the sign of the delay (which pulse arrived first)
+      tells it which branch. A delay measured against another pair of stations places the
+      vessel on a second curve, and since its true position must satisfy both measurements at
+      once, the vessel sits where the two curves cross.
     </p>
 
-    <figure xml:id="fig-hyperbola-loran">
+ <figure xml:id="fig-hyperbola-loran">
       <caption>Hyperbolic navigation. The measured delay places the ship on the solid hyperbola
       with foci at the two stations; a different delay would place it on the dashed one instead.</caption>
       <image width="65%">
@@ -999,7 +989,262 @@
       </image>
     </figure>
 
-    <figure xml:id="fig-hyperbola-loran-fix">
+<figure xml:id="vid-hyperbolic-navigation">
+      <caption>Animation: the ship moves, the two signal distances both change<mdash/>but their
+      difference does not, tracing out the hyperbola.</caption>
+      <video xml:id="video-hyperbolic-navigation"
+             source="videos/hyperbolic_navigation_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-app-loran">
+      <title>Locating a hiker from three receivers</title>
+      <p>
+        Three receivers <m>P_1</m>, <m>P_2</m>, and <m>P_3</m> are deployed in the landscape.
+        The figure captures the distances we know. Adam's tourist navigation device sends a
+        signal to all three receivers. The signal arrives at receivers <m>P_1</m> and
+        <m>P_3</m> at the same time, and at receiver <m>P_2</m> it arrives
+        <m>80</m> microseconds later. Where is Adam located? Assume the signal travels
+        <m>300{,}000</m> km per second, and determine the position in a suitably chosen
+        coordinate system.
+      </p>
+      <figure xml:id="fig-loran-assignment">
+        <caption>The exercise data: <m>P_1</m> and <m>P_2</m> are <m>48</m> km apart, and
+        <m>P_3</m> is <m>36</m> km directly above the point <m>12</m> km beyond
+        <m>P_1</m>.</caption>
+        <image width="75%">
+          <prefigure xmlns="https://prefigure.org" label="loran-assignment">
+          <diagram dimensions="(420,268)" margins="8">
+            <coordinates bbox="(-8, -9, 72, 42)">
+              <line at="baseline" p1="(0,0)" p2="(60,0)" stroke="gray" thickness="1" dash="3 3"/>
+              <line at="riser" p1="(60,0)" p2="(60,36)" stroke="gray" thickness="1" dash="3 3"/>
+              <group at="right-angle">
+                <line p1="(57,0)" p2="(57,3)" stroke="black" thickness="1"/>
+                <line p1="(57,3)" p2="(60,3)" stroke="black" thickness="1"/>
+              </group>
+              <group at="dist-48">
+                <line p1="(0,-5)" p2="(48,-5)" stroke="black" thickness="1"/>
+                <line p1="(0,-6.5)" p2="(0,-3.5)" stroke="black" thickness="1"/>
+                <line p1="(48,-6.5)" p2="(48,-3.5)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(24,-5)" alignment="s" offset="(0,-4)"><m>48\ \text{km}</m></label>
+              <group at="dist-12">
+                <line p1="(48,-5)" p2="(60,-5)" stroke="black" thickness="1"/>
+                <line p1="(60,-6.5)" p2="(60,-3.5)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(54,-5)" alignment="s" offset="(0,-4)"><m>12\ \text{km}</m></label>
+              <group at="dist-36">
+                <line p1="(65,0)" p2="(65,36)" stroke="black" thickness="1"/>
+                <line p1="(63.5,0)" p2="(66.5,0)" stroke="black" thickness="1"/>
+                <line p1="(63.5,36)" p2="(66.5,36)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(65,18)" alignment="e" offset="(5,0)"><m>36\ \text{km}</m></label>
+              <point at="p2" p="(0,0)" fill="black" size="3"/>
+              <label anchor="(0,0)" alignment="n" offset="(0,7)"><m>P_2</m></label>
+              <point at="p1" p="(48,0)" fill="black" size="3"/>
+              <label anchor="(48,0)" alignment="n" offset="(0,7)"><m>P_1</m></label>
+              <point at="p3" p="(60,36)" fill="black" size="3"/>
+              <label anchor="(60,36)" alignment="w" offset="(-7,0)"><m>P_3</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="p1"
+                  text="The exercise data: three receivers in the landscape with the known distances between them">
+                <annotation ref="p2" text="Receiver P two, at the left end of a horizontal dotted line"/>
+                <annotation ref="p1" text="Receiver P one, on the same horizontal line, forty eight kilometers to the right of P two"/>
+                <annotation ref="p3" text="Receiver P three, thirty six kilometers directly above the point twelve kilometers to the right of P one"/>
+                <annotation ref="right-angle" text="A small square marking the right angle where the vertical dotted line meets the horizontal one"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </example>
+
+    <solution xml:id="sol-app-loran">
+      <p>
+        We first translate the two timing facts into geometry. The signal reaches <m>P_1</m>
+        and <m>P_3</m> simultaneously, so Adam is <em>equidistant</em> from them: he lies on
+        the perpendicular bisector of the segment <m>P_1P_3</m>. The signal reaches
+        <m>P_2</m> <m>80</m> microseconds after <m>P_1</m>, so Adam is
+      </p>
+      <me>(300{,}000\ \text{km/s})\,(80\times 10^{-6}\ \text{s}) = 24\ \text{km}</me>
+      <p>
+        farther from <m>P_2</m> than from <m>P_1</m>. He therefore also lies on the branch
+        nearer <m>P_1</m> of the hyperbola <m>h</m> with foci <m>P_1</m> and <m>P_2</m> whose
+        constant distance difference is <m>24</m> km.
+      </p>
+      <p>
+        Now we choose coordinates so that <m>h</m> has the simplest possible equation. Place
+        the origin <m>O</m> at the midpoint of <m>P_1P_2</m>, point the positive
+        <m>x</m>-axis along <m>OP_1</m>, and choose the positive <m>y</m>-axis so that
+        <m>P_3</m> has positive second coordinate. Since every given length is a multiple of
+        <m>12</m>, let one unit on each axis be <m>12</m> km. Then
+      </p>
+      <me>P_1(2,0), \qquad P_2(-2,0), \qquad P_3(3,3).</me>
+
+      <figure xml:id="fig-loran-coords">
+        <caption>The coordinate system: origin at the midpoint of <m>P_1P_2</m>, one unit
+        <m>= 12</m> km.</caption>
+        <image width="65%">
+          <prefigure xmlns="https://prefigure.org" label="loran-coords">
+          <diagram dimensions="(400,271)" margins="8">
+            <coordinates bbox="(-2.9, -0.9, 3.9, 3.7)">
+              <grid-axes xlabel="x" ylabel="y"/>
+              <line at="drop-v" p1="(3,0)" p2="(3,3)" stroke="gray" thickness="1" dash="3 3"/>
+              <line at="drop-h" p1="(0,3)" p2="(3,3)" stroke="gray" thickness="1" dash="3 3"/>
+              <point at="origin" p="(0,0)" fill="black" size="2"/>
+              <label anchor="(0,0)" alignment="sw" offset="(-4,-4)"><m>O</m></label>
+              <point at="p2" p="(-2,0)" fill="black" size="3"/>
+              <label anchor="(-2,0)" alignment="n" offset="(0,7)"><m>P_2</m></label>
+              <point at="p1" p="(2,0)" fill="black" size="3"/>
+              <label anchor="(2,0)" alignment="n" offset="(-6,7)"><m>P_1</m></label>
+              <point at="p3" p="(3,3)" fill="black" size="3"/>
+              <label anchor="(3,3)" alignment="se" offset="(6,-4)"><m>P_3</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="p1"
+                  text="The chosen coordinate system, in units of twelve kilometers">
+                <annotation ref="origin" text="The origin O at the midpoint of segment P one P two"/>
+                <annotation ref="p2" text="Receiver P two at minus two comma zero"/>
+                <annotation ref="p1" text="Receiver P one at two comma zero"/>
+                <annotation ref="p3" text="Receiver P three at three comma three"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+
+      <p>
+        Let <m>A</m> denote Adam's unknown position, and let <m>o</m> be the perpendicular
+        bisector of <m>P_1P_3</m>. The line <m>o</m> passes through the midpoint
+        <m>S\left(\tfrac52, \tfrac32\right)</m> of the segment, and since
+        <m>P_3 - P_1 = (1,3)</m>, the direction <m>\vec u_o = (3,-1)</m> is perpendicular to
+        the segment. Parametrically,
+      </p>
+      <me>o:\quad x = \tfrac52 + 3t, \qquad y = \tfrac32 - t, \qquad t \in \mathbb{R}.</me>
+      <p>
+        For the hyperbola, the foci are <m>P_1(2,0)</m> and <m>P_2(-2,0)</m>, so the center is
+        <m>O</m> and <m>c = |OP_1| = 2</m>. The constant difference
+        <m>|AP_2| - |AP_1| = 24\ \text{km} = 2</m> units equals <m>2a</m>, so <m>a = 1</m>,
+        and then <m>b^2 = c^2 - a^2 = 4 - 1 = 3</m>. Hence
+      </p>
+      <me>h:\quad x^2 - \frac{y^2}{3} = 1,</me>
+      <p>
+        and since <m>A</m> is closer to <m>P_1</m>, it lies on the right branch:
+        <m>x_A \gt 0</m>.
+      </p>
+      <p>
+        It remains to intersect <m>o</m> with <m>h</m>. Substituting the parametric equations
+        into <m>3x^2 - y^2 = 3</m>:
+      </p>
+      <md>
+        <mrow>3\left(\tfrac52 + 3t\right)^2 - \left(\tfrac32 - t\right)^2 \amp= 3</mrow>
+        <mrow>3\left(\tfrac{25}{4} + 15t + 9t^2\right) - \left(\tfrac94 - 3t + t^2\right) \amp= 3</mrow>
+        <mrow>26t^2 + 48t + \tfrac{27}{2} \amp= 0</mrow>
+        <mrow>52t^2 + 96t + 27 \amp= 0.</mrow>
+      </md>
+      <p>
+        The discriminant is <m>96^2 - 4\cdot 52\cdot 27 = 9216 - 5616 = 3600 = 60^2</m>, so
+      </p>
+      <me>t = \frac{-96 \pm 60}{104}, \qquad t_1 = -\frac{9}{26}, \quad t_2 = -\frac32.</me>
+      <p>Substituting <m>t_1</m> into the parametric equations gives</p>
+      <me>x_1 = \tfrac52 + 3\left(-\tfrac{9}{26}\right) = \tfrac{19}{13}, \qquad
+          y_1 = \tfrac32 - \left(-\tfrac{9}{26}\right) = \tfrac{24}{13},</me>
+      <p>
+        that is, <m>A_1\left(\tfrac{19}{13}, \tfrac{24}{13}\right)</m>. Substituting
+        <m>t_2</m> gives <m>x_2 = \tfrac52 - \tfrac92 = -2</m> and
+        <m>y_2 = \tfrac32 + \tfrac32 = 3</m>, that is, <m>A_2(-2,3)</m>.
+      </p>
+      <p>
+        The point <m>A_2</m> fails the branch condition <m>x_A \gt 0</m>, and the physics
+        says why: <m>A_2</m> lies on the <em>left</em> branch, <m>24</m> km closer to
+        <m>P_2</m> than to <m>P_1</m>, so a signal sent from <m>A_2</m> would reach
+        <m>P_2</m> <em>earlier</em> than <m>P_1</m><mdash/>the opposite of what was measured.
+        Adam's position is therefore
+      </p>
+      <me>A\left(\tfrac{19}{13},\ \tfrac{24}{13}\right),</me>
+      <p>
+        about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distances come
+        out exactly: <m>|AP_1| = |AP_3| = \tfrac{25}{13}</m> units and
+        <m>|AP_2| = \tfrac{51}{13}</m> units, so <m>|AP_2| - |AP_1| = 2</m> units
+        <m>= 24</m> km, as required. In kilometers, Adam is
+        <m>\tfrac{300}{13} \approx 23.1</m> km from <m>P_1</m> and <m>P_3</m>.
+      </p>
+
+      <figure xml:id="fig-loran-solution">
+        <caption>The solution: <m>A</m> is the intersection of the bisector <m>o</m> with the
+        right branch of <m>h</m>. The second intersection <m>A_2(-2,3)</m>, on the left
+        branch, is rejected.</caption>
+        <image width="80%">
+          <prefigure xmlns="https://prefigure.org" label="loran-solution">
+          <diagram dimensions="(440,253)" margins="8">
+            <definition>H(x,y) = x^2 - y^2/3</definition>
+            <definition>Ax = 19/13</definition>
+            <definition>Ay = 24/13</definition>
+            <coordinates bbox="(-4.4, -1.3, 4.8, 4.0)">
+              <grid-axes xlabel="x" ylabel="y"/>
+              <implicit-curve at="hyp" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <line at="axis-o" p1="(-4.1,3.7)" p2="(4.6,0.8)" stroke="black" thickness="1.5"/>
+              <label anchor="(4.6,0.8)" alignment="ne" offset="(2,4)"><m>o</m></label>
+              <label at="hyp-label" anchor="(1.85,3.4)" alignment="w" offset="(-2,0)"><m>h</m></label>
+              <line at="drop-v" p1="(Ax,0)" p2="(Ax,Ay)" stroke="gray" thickness="1" dash="3 3"/>
+              <line at="drop-h" p1="(0,Ay)" p2="(Ax,Ay)" stroke="gray" thickness="1" dash="3 3"/>
+              <label anchor="(Ax,0)" alignment="s" offset="(4,-4)"><m>\tfrac{19}{13}</m></label>
+              <label anchor="(0,Ay)" alignment="w" offset="(-4,2)"><m>\tfrac{24}{13}</m></label>
+              <point at="ptA" p="(Ax,Ay)" fill="red" size="3.5"/>
+              <label anchor="(Ax,Ay)" alignment="ne" offset="(5,3)"><m>A</m></label>
+              <point at="ptA2" p="(-2,3)" fill="white" size="3"/>
+              <label anchor="(-2,3)" alignment="n" offset="(0,7)"><m>A_2\ \text{(rejected)}</m></label>
+              <point at="ptS" p="(2.5,1.5)" fill="black" size="2.5"/>
+              <label anchor="(2.5,1.5)" alignment="e" offset="(6,2)"><m>S</m></label>
+              <point at="p2" p="(-2,0)" fill="black" size="3"/>
+              <label anchor="(-2,0)" alignment="s" offset="(0,-7)"><m>P_2</m></label>
+              <point at="p1" p="(2,0)" fill="black" size="3"/>
+              <label anchor="(2,0)" alignment="s" offset="(6,-7)"><m>P_1</m></label>
+              <point at="p3" p="(3,3)" fill="black" size="3"/>
+              <label anchor="(3,3)" alignment="e" offset="(6,0)"><m>P_3</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyp"
+                  text="The solution: Adam sits at the crossing of the perpendicular bisector of P one P three and the right branch of the hyperbola with foci P one and P two">
+                <annotation ref="hyp" text="The hyperbola h, x squared minus y squared over three equals one, with two branches" sonify="yes"/>
+                <annotation ref="axis-o" text="The line o, the perpendicular bisector of segment P one P three, passing through its midpoint S"/>
+                <annotation ref="ptA" text="Adam's position A at nineteen thirteenths comma twenty four thirteenths, on the right branch"/>
+                <annotation ref="ptA2" text="The rejected second intersection A two at minus two comma three, on the left branch"/>
+                <annotation ref="ptS" text="The midpoint S of segment P one P three"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </solution>
+
+    <remark xml:id="rem-loran-two-hyperbolas">
+      <title>What if Adam were not equidistant from <m>P_1</m> and <m>P_3</m>?</title>
+      <p>
+        The exercise was arranged so that the signal reached <m>P_1</m> and <m>P_3</m>
+        simultaneously, and that is what kept the algebra easy: a distance difference of
+        <em>zero</em> is the degenerate case of the hyperbola, and the locus collapses to a
+        straight line, the perpendicular bisector of <m>P_1P_3</m>. We then only had to
+        substitute a linear parametrization into one quadratic equation.
+      </p>
+      <p>
+        If the two arrival times differed, the delay would instead give a <em>nonzero</em>
+        difference <m>\bigl||AP_3| - |AP_1|\bigr| = v\,\Delta t</m>, and Adam would lie on a
+        genuine second hyperbola, with foci <m>P_1</m> and <m>P_3</m><mdash/>tilted, since its
+        focal axis <m>P_1P_3</m> is not parallel to a coordinate axis. Locating him would then
+        mean intersecting the correct branches of <em>two</em> hyperbolas, as in the figure
+        below. Conceptually nothing changes<mdash/>each measurement contributes one curve, and
+        the position is their common point<mdash/>but algebraically we would be solving two
+        quadratic equations together rather than a linear one and a quadratic one, which is
+        why real navigation receivers do this step numerically.
+      </p>
+    </remark>
+
+<figure xml:id="fig-hyperbola-loran-fix">
       <caption>Two measurements fix the position. The first delay (stations <m>A</m>,
       <m>B</m>) puts the ship on the blue branch; the second (stations <m>A</m>, <m>C</m>)
       puts it on the purple branch. The ship is at the crossing.</caption>
@@ -1044,46 +1289,6 @@
         </prefigure>
       </image>
     </figure>
-
-    <figure xml:id="vid-hyperbolic-navigation">
-      <caption>Animation: the ship moves, the two signal distances both change<mdash/>but their
-      difference does not, tracing out the hyperbola.</caption>
-      <video xml:id="video-hyperbolic-navigation"
-             source="videos/hyperbolic_navigation_1080p.mp4"
-             width="90%" aspect="16:9"/>
-    </figure>
-
-    <example xml:id="ex-app-loran">
-      <title>Finding the ship's locus</title>
-      <p>
-        Two stations lie <m>300</m> miles apart along a straight coastline. A ship receives the
-        pulse from station <m>A</m> <m>0.001</m> seconds before the pulse from station <m>B</m>.
-        Taking the signal speed to be <m>186{,}000</m> miles per second, find the equation of the
-        hyperbola on which the ship lies.
-      </p>
-    </example>
-
-    <solution xml:id="sol-app-loran">
-      <p>
-        Put the center of the coastline at the origin with the stations on the <m>x</m>-axis, so
-        <m>2c = 300</m> and <m>c = 150</m>. The signal from <m>A</m> arrives first, so the ship is
-        nearer <m>A</m>, and the difference of its distances to the two stations is
-      </p>
-      <me>|r_2 - r_1| = v\,\Delta t = (186{,}000)(0.001) = 186 \text{ miles}.</me>
-      <p>
-        By the definition of the hyperbola this constant difference is <m>2a</m>, so
-        <m>2a = 186</m> and <m>a = 93</m>. Then
-      </p>
-      <me>b^2 = c^2 - a^2 = 150^2 - 93^2 = 22500 - 8649 = 13851.</me>
-      <p>
-        The ship therefore lies on the branch nearer <m>A</m> of
-      </p>
-      <me>\frac{x^2}{8649} - \frac{y^2}{13851} = 1.</me>
-      <p>
-        One reading narrows the ship to a curve, not a point. A second pair of stations produces a
-        second hyperbola, and the intersection of the two fixes the position.
-      </p>
-    </solution>
   </subsection>
 
 </section>
