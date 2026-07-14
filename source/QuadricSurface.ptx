@@ -50,6 +50,12 @@ For our examples, we will consider the following simplified forms of quadric sur
  <interactive desmos="msz28ksj1b" width="70%" aspect="1:2" />
 
  </subsection>
+ <note>
+  <p>
+      Put a figure here!
+  </p>
+
+ </note>
 
  <subsection xml:id="subsec-2">
   <title>Hyperbolic Paraboloid</title>
