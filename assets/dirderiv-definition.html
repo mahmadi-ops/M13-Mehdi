@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The definition of the directional derivative</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  #app { width: 100%; box-sizing: border-box; }
+  #controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    padding: 8px 10px; box-sizing: border-box;
+  }
+  .sliderRow {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 10px 6px 10px; box-sizing: border-box;
+  }
+  .sliderRow input { flex: 1; }
+  .sliderRow .lbl { font-size: 15px; min-width: 110px; font-variant-numeric: tabular-nums; }
+  #readout { font-size: 14px; color: #333; padding: 0 10px 6px 10px; min-height: 1.2em;
+    font-variant-numeric: tabular-nums; }
+  #canvasWrap { width: 100%; position: relative; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="sliderRow">
+    <span class="lbl" id="thLabel">&theta; = 45&deg;</span>
+    <input type="range" id="thSlider" min="0" max="360" step="1" value="45">
+  </div>
+  <div class="sliderRow">
+    <span class="lbl" id="sLabel">s = 1.00</span>
+    <input type="range" id="sSlider" min="0.05" max="1.5" step="0.01" value="1">
+  </div>
+  <div id="readout"></div>
+  <div id="canvasWrap"><canvas id="cv"></canvas></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // palette (same as the sample-graphs interactive)
+  var SURF_BLUE = "#4f8fd6", DARK_BLUE = "#35659a", GOLD = "#f2c14e",
+      RED = "#d1362f", GRAY = "#999999", BTN_BLUE = "#2a6fdb";
+
+  var canvas = document.getElementById("cv"), ctx = canvas.getContext("2d");
+  var thSlider = document.getElementById("thSlider");
+  var sSlider = document.getElementById("sSlider");
+  var theta = 45 * Math.PI / 180, sVal = 1;
+
+  var BB = { xmin: -0.75, xmax: 3.05, ymin: -0.75, ymax: 3.05 };
+  function view() {
+    var w = canvas.width, h = canvas.height;
+    var k = Math.min(w / (BB.xmax - BB.xmin), h / (BB.ymax - BB.ymin));
+    return { k: k,
+      ox: w / 2 - k * (BB.xmin + BB.xmax) / 2,
+      oy: h / 2 + k * (BB.ymin + BB.ymax) / 2 };
+  }
+  function f(x, y) { return 1 + x * x + y * y; }
+
+  function arrow(v, x0, y0, x1, y1, color, lw) {
+    var ax = v.ox + v.k * x0, ay = v.oy - v.k * y0;
+    var bx = v.ox + v.k * x1, by = v.oy - v.k * y1;
+    var ang = Math.atan2(by - ay, bx - ax), hl = 10 + lw * 1.5;
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = lw;
+    ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(bx, by);
+    ctx.lineTo(bx - hl * Math.cos(ang - 0.42), by - hl * Math.sin(ang - 0.42));
+    ctx.lineTo(bx - hl * Math.cos(ang + 0.42), by - hl * Math.sin(ang + 0.42));
+    ctx.closePath(); ctx.fill();
+  }
+
+  function draw() {
+    var v = view(), w = canvas.width, h = canvas.height;
+    var dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, w, h);
+    ctx.font = (13 * dpr) + "px system-ui, sans-serif";
+
+    // level curves of f = 1 + x^2 + y^2
+    ctx.strokeStyle = SURF_BLUE; ctx.globalAlpha = 0.35; ctx.lineWidth = 1.4 * dpr;
+    [0.707, 1, 1.414, 1.732, 2, 2.449, 2.828].forEach(function (r) {
+      ctx.beginPath();
+      ctx.arc(v.ox, v.oy, v.k * r, 0, 2 * Math.PI); ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+
+    // axes
+    ctx.strokeStyle = GRAY; ctx.lineWidth = 1.2 * dpr;
+    arrow(v, BB.xmin, 0, BB.xmax - 0.05, 0, GRAY, 1.2 * dpr);
+    arrow(v, 0, BB.ymin, 0, BB.ymax - 0.05, GRAY, 1.2 * dpr);
+    ctx.fillStyle = "#666";
+    ctx.fillText("x", v.ox + v.k * (BB.xmax - 0.18), v.oy + 16 * dpr);
+    ctx.fillText("y", v.ox - 16 * dpr, v.oy - v.k * (BB.ymax - 0.18));
+
+    var c = Math.cos(theta), d = Math.sin(theta);
+    var px = 1 + sVal * c, py = 1 + sVal * d;
+
+    // components of su (dashed)
+    ctx.strokeStyle = GRAY; ctx.lineWidth = 1 * dpr; ctx.setLineDash([6 * dpr, 5 * dpr]);
+    ctx.beginPath();
+    ctx.moveTo(v.ox + v.k * 1, v.oy - v.k * 1);
+    ctx.lineTo(v.ox + v.k * px, v.oy - v.k * 1);
+    ctx.lineTo(v.ox + v.k * px, v.oy - v.k * py);
+    ctx.stroke(); ctx.setLineDash([]);
+
+    // displacement su (gold) and unit vector u (blue)
+    arrow(v, 1, 1, px, py, GOLD, 3 * dpr);
+    arrow(v, 1, 1, 1 + 0.5 * c, 1 + 0.5 * d, BTN_BLUE, 3 * dpr);
+
+    // labels for the vectors
+    ctx.fillStyle = BTN_BLUE;
+    ctx.fillText("u", v.ox + v.k * (1 + 0.62 * c) - 4 * dpr, v.oy - v.k * (1 + 0.62 * d));
+    ctx.fillStyle = "#a37414";
+    ctx.fillText("su", v.ox + v.k * ((1 + px) / 2 + 0.1),
+                 v.oy - v.k * ((1 + py) / 2) - 8 * dpr);
+
+    // points P0 and P
+    ctx.fillStyle = DARK_BLUE;
+    ctx.beginPath(); ctx.arc(v.ox + v.k * 1, v.oy - v.k * 1, 4.5 * dpr, 0, 2 * Math.PI); ctx.fill();
+    ctx.fillText("P₀(1,1)", v.ox + v.k * 1 - 58 * dpr, v.oy - v.k * 1 + 18 * dpr);
+    ctx.fillStyle = RED;
+    ctx.beginPath(); ctx.arc(v.ox + v.k * px, v.oy - v.k * py, 4.5 * dpr, 0, 2 * Math.PI); ctx.fill();
+    ctx.fillText("P(1+su₁, 1+su₂)", v.ox + v.k * px + 8 * dpr, v.oy - v.k * py - 8 * dpr);
+  }
+
+  function update() {
+    var c = Math.cos(theta), d = Math.sin(theta);
+    var quot = (f(1 + sVal * c, 1 + sVal * d) - f(1, 1)) / sVal;
+    var lim = 2 * c + 2 * d;
+    document.getElementById("readout").textContent =
+      "( f(P) − f(P₀) ) / s = " + quot.toFixed(3) +
+      "   →   Dᵤf = 2cosθ + 2sinθ = " + lim.toFixed(3) +
+      "  (as s → 0)";
+    draw();
+  }
+
+  thSlider.addEventListener("input", function () {
+    theta = parseFloat(thSlider.value) * Math.PI / 180;
+    document.getElementById("thLabel").innerHTML =
+      "&theta; = " + thSlider.value + "&deg;";
+    update();
+  });
+  sSlider.addEventListener("input", function () {
+    sVal = parseFloat(sSlider.value);
+    document.getElementById("sLabel").textContent = "s = " + sVal.toFixed(2);
+    update();
+  });
+
+  function resize() {
+    var dpr = window.devicePixelRatio || 1;
+    var w = document.getElementById("app").clientWidth;
+    var used = 0;
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".sliderRow, #readout"),
+      function (el) { used += el.offsetHeight; });
+    var h = Math.max(240, window.innerHeight - used - 4);
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.style.width = w + "px"; canvas.style.height = h + "px";
+    update();
+  }
+  window.addEventListener("resize", resize);
+  resize();
+})();
+</script>
+</body>
+</html>
