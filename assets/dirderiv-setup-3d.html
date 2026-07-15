@@ -44,7 +44,34 @@
   }
   .lbl3d b { font-weight: 700; }
   .lbl3d sub { font-size: 70%; font-style: normal; }
-  .lbl3d.word { font-style: normal; font-size: 15px; }
+  /* legend */
+  #legend {
+    position: absolute; top: 8px; right: 8px;
+    background: rgba(255,255,255,0.93);
+    border: 1px solid #bbb; border-radius: 6px;
+    padding: 6px 9px; font-size: 12.5px; color: #222;
+    line-height: 1.3; pointer-events: none;
+    max-width: 165px;
+  }
+  #legend > div {
+    padding-left: 31px; text-indent: -31px; margin: 4px 0;
+  }
+  #legend i {
+    font-family: "STIX Two Math", "STIXGeneral", "Times New Roman", serif;
+    font-style: italic;
+  }
+  #legend sub { font-size: 70%; }
+  .sw {
+    display: inline-block; width: 24px; height: 0; margin-right: 7px;
+    vertical-align: middle;
+  }
+  .solid4 { border-top: 4px solid; }
+  .solid3 { border-top: 3px solid; }
+  .dash4  { border-top: 4px dashed; }
+  .patch {
+    display: inline-block; width: 24px; height: 11px; margin-right: 7px;
+    vertical-align: middle; border-radius: 2px;
+  }
 </style>
 </head>
 <body>
@@ -62,7 +89,17 @@
     <input type="range" id="sSlider" min="0.05" max="1.6" step="0.01" value="1.4">
   </div>
   <div id="readout"></div>
-  <div id="canvasWrap"></div>
+  <div id="canvasWrap">
+    <div id="legend">
+      <div><span class="patch" style="background:rgba(79,143,214,0.55)"></span>surface <i>z</i> = <i>f</i>(<i>x</i>, <i>y</i>)</div>
+      <div><span class="patch" style="background:rgba(242,193,78,0.6)"></span>vertical plane through <i>P</i><sub>0</sub> along <i><b>u</b></i></div>
+      <div><span class="sw solid4" style="border-color:#d1362f"></span>trace of the surface in the plane</div>
+      <div><span class="sw dash4" style="border-color:#009e73"></span>secant through<br>(<i>P</i><sub>0</sub>, <i>f</i>(<i>P</i><sub>0</sub>)) and (<i>P</i>, <i>f</i>(<i>P</i>))</div>
+      <div><span class="sw dash4" style="border-color:#333333"></span>tangent at<br>(<i>P</i><sub>0</sub>, <i>f</i>(<i>P</i><sub>0</sub>)), slope (<i>D</i><sub><i><b>u</b></i></sub><i>f</i>)<sub><i>P</i>&#8320;</sub></div>
+      <div><span class="sw solid3" style="border-color:#2a6fdb"></span>unit vector <i><b>u</b></i></div>
+      <div><span class="sw solid3" style="border-color:#9c27b0"></span>displacement <i>s</i><i><b>u</b></i></div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -70,16 +107,16 @@
 (function () {
   "use strict";
 
-  // ---------- the surface and the construction ----------
-  function f(x, y) { return 1.0 + 0.3 * x * x + 0.2 * y * y; }
+  // ---------- the surface (strong curvature) and the construction ----------
+  function f(x, y) { return 0.6 + 0.45 * x * x + 0.3 * y * y; }
   var P0 = { x: 0.7, y: 0.55 };
   var U = { x: 0.8, y: 0.6 };            // unit vector
-  var DUF = 0.6 * P0.x * U.x + 0.4 * P0.y * U.y;   // (D_u f)_{P0} = 0.468
-  var XMAX = 2.6, YMAX = 2.3;
-  var TMIN = -0.5, TMAX = 2.1;           // extent along u for plane/lines
+  var DUF = 0.9 * P0.x * U.x + 0.6 * P0.y * U.y;   // (D_u f)_{P0} = 0.702
+  var XMAX = 2.4, YMAX = 2.1;
+  var TMIN = -0.5, TMAX = 2.0;           // extent along u for plane/lines
   var Z0 = f(P0.x, P0.y);
   // camera aims here; larger z pushes the scene DOWN on the screen
-  var CENTER = new THREE.Vector3(1.3, 1.05, 2.4);
+  var CENTER = new THREE.Vector3(1.2, 1.0, 2.55);
 
   // ---------- renderer / scene ----------
   var wrap = document.getElementById("canvasWrap");
@@ -93,7 +130,8 @@
   var camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.up.set(0, 0, 1); // z points up, math convention
 
-  var radius = 8.8, theta = -0.5, phiCam = 1.15;
+  var radius = 7.6, theta = -0.5, phiCam = 1.15;
+  var RMIN = 4.5, RMAX = 16;
   function placeCamera() {
     camera.position.set(
       CENTER.x + radius * Math.sin(phiCam) * Math.cos(theta),
@@ -111,14 +149,51 @@
   dir2.position.set(-4, -5, -3);
   scene.add(dir2);
 
+  var YUP = new THREE.Vector3(0, 1, 0);
+
+  // thick solid arrow built from a cylinder shaft and a cone head
+  function solidArrow(from, dirv, length, color, shaftR, group) {
+    var mat = new THREE.MeshPhongMaterial({ color: color });
+    var headL = Math.min(0.24, 0.4 * length);
+    var shaftL = Math.max(length - headL, 0.001);
+    var shaft = new THREE.Mesh(
+      new THREE.CylinderGeometry(shaftR, shaftR, shaftL, 10), mat);
+    shaft.quaternion.setFromUnitVectors(YUP, dirv);
+    shaft.position.copy(from.clone().addScaledVector(dirv, shaftL / 2));
+    var head = new THREE.Mesh(
+      new THREE.ConeGeometry(shaftR * 2.4, headL, 12), mat);
+    head.quaternion.setFromUnitVectors(YUP, dirv);
+    head.position.copy(from.clone().addScaledVector(dirv, shaftL + headL / 2));
+    (group || scene).add(shaft);
+    (group || scene).add(head);
+  }
+
+  // thick dashed line built from short cylinder segments
+  function dashedTube(a, b, rad, dash, gap, color, group) {
+    var mat = new THREE.MeshPhongMaterial({ color: color });
+    var dirv = b.clone().sub(a);
+    var L = dirv.length();
+    dirv.normalize();
+    var t = 0;
+    while (t < L) {
+      var e = Math.min(t + dash, L);
+      var seg = new THREE.Mesh(
+        new THREE.CylinderGeometry(rad, rad, e - t, 8), mat);
+      seg.quaternion.setFromUnitVectors(YUP, dirv);
+      seg.position.copy(a.clone().addScaledVector(dirv, (t + e) / 2));
+      (group || scene).add(seg);
+      t = e + gap;
+    }
+  }
+
   // ---------- axes ----------
   function axis(from, to, color) {
     var g = new THREE.BufferGeometry().setFromPoints([from, to]);
     scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: color })));
   }
-  axis(new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(3.3, 0, 0), 0x999999);
-  axis(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 3.0, 0), 0x999999);
-  axis(new THREE.Vector3(0, 0, -0.3), new THREE.Vector3(0, 0, 4.0), 0x999999);
+  axis(new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(3.0, 0, 0), 0x999999);
+  axis(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 2.7, 0), 0x999999);
+  axis(new THREE.Vector3(0, 0, -0.3), new THREE.Vector3(0, 0, 4.6), 0x999999);
 
   // ---------- surface z = f(x, y) ----------
   (function buildSurface() {
@@ -157,7 +232,7 @@
   // ---------- vertical plane through P0 in the direction u ----------
   (function () {
     var planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(TMAX - TMIN + 0.4, 3.9),
+      new THREE.PlaneGeometry(TMAX - TMIN + 0.4, 4.3),
       new THREE.MeshPhongMaterial({
         color: 0xf2c14e, transparent: true, opacity: 0.22,
         side: THREE.DoubleSide, depthWrite: false
@@ -167,7 +242,7 @@
     planeMesh.rotation.x = Math.PI / 2;
     planeMesh.rotation.z = Math.atan2(U.y, U.x);
     var tm = (TMIN + TMAX) / 2;
-    planeMesh.position.set(P0.x + tm * U.x, P0.y + tm * U.y, 1.95);
+    planeMesh.position.set(P0.x + tm * U.x, P0.y + tm * U.y, 2.15);
     scene.add(planeMesh);
   })();
 
@@ -181,36 +256,29 @@
     }
     var curve = new THREE.CatmullRomCurve3(pts);
     scene.add(new THREE.Mesh(
-      new THREE.TubeGeometry(curve, 120, 0.028, 8, false),
+      new THREE.TubeGeometry(curve, 120, 0.032, 8, false),
       new THREE.MeshPhongMaterial({ color: 0xd1362f })));
   })();
 
-  // ---------- tangent line at (P0, f(P0)): the limit of the secants ----------
-  (function () {
-    var a = new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y,
-                              Z0 + DUF * TMIN);
-    var b = new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
-                              Z0 + DUF * TMAX);
-    var g = new THREE.BufferGeometry().setFromPoints([a, b]);
-    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
-      color: 0x333333, dashSize: 0.12, gapSize: 0.08, linewidth: 2 }));
-    l.computeLineDistances();
-    scene.add(l);
-  })();
+  // ---------- tangent line at (P0, f(P0)): thick and dashed ----------
+  dashedTube(
+    new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y, Z0 + DUF * TMIN),
+    new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y, Z0 + DUF * TMAX),
+    0.035, 0.16, 0.1, 0x333333, scene);
 
   // ---------- fixed pieces: P0, u, its drop line, f(P0) ----------
   var p0Dot = new THREE.Mesh(
-    new THREE.SphereGeometry(0.055, 16, 16),
+    new THREE.SphereGeometry(0.06, 16, 16),
     new THREE.MeshPhongMaterial({ color: 0x35659a }));
   p0Dot.position.set(P0.x, P0.y, 0);
   scene.add(p0Dot);
 
-  scene.add(new THREE.ArrowHelper(
-    new THREE.Vector3(U.x, U.y, 0),
-    new THREE.Vector3(P0.x, P0.y, 0.012), 0.55, 0x2a6fdb, 0.16, 0.1));
+  // unit vector u: thick blue arrow, drawn slightly above the plane
+  solidArrow(new THREE.Vector3(P0.x, P0.y, 0.03),
+             new THREE.Vector3(U.x, U.y, 0), 0.55, 0x2a6fdb, 0.035, scene);
 
   var f0Dot = new THREE.Mesh(
-    new THREE.SphereGeometry(0.055, 16, 16),
+    new THREE.SphereGeometry(0.06, 16, 16),
     new THREE.MeshPhongMaterial({ color: 0x222222 }));
   f0Dot.position.set(P0.x, P0.y, Z0);
   scene.add(f0Dot);
@@ -228,7 +296,6 @@
   var movGroup = new THREE.Group();
   scene.add(movGroup);
   var pMat = new THREE.MeshPhongMaterial({ color: 0xd1362f });
-  var secMat = new THREE.MeshPhongMaterial({ color: 0x009e73 });
 
   var sVal = 1.4;
   function pOfS() { return { x: P0.x + sVal * U.x, y: P0.y + sVal * U.y }; }
@@ -245,17 +312,15 @@
     var P = pOfS(), zP = f(P.x, P.y);
     var m = (zP - Z0) / sVal;   // slope of the secant
 
-    // displacement su (gold arrow)
-    var len = Math.hypot(sVal * U.x, sVal * U.y);
-    movGroup.add(new THREE.ArrowHelper(
-      new THREE.Vector3(U.x, U.y, 0),
-      new THREE.Vector3(P0.x, P0.y, 0.006), len, 0x9c27b0,
-      Math.min(0.16, 0.6 * len), 0.1));
+    // displacement su: thick purple arrow in the xy-plane
+    solidArrow(new THREE.Vector3(P0.x, P0.y, 0.012),
+               new THREE.Vector3(U.x, U.y, 0), sVal, 0x9c27b0, 0.03,
+               movGroup);
 
     // point P and its dashed vertical line up to the surface
-    var pd = new THREE.Mesh(new THREE.SphereGeometry(0.055, 16, 16), pMat);
+    var pd = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), pMat);
     pd.position.set(P.x, P.y, 0); movGroup.add(pd);
-    var fpd = new THREE.Mesh(new THREE.SphereGeometry(0.055, 16, 16), pMat);
+    var fpd = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), pMat);
     fpd.position.set(P.x, P.y, zP); movGroup.add(fpd);
     var g = new THREE.BufferGeometry().setFromPoints(
       [new THREE.Vector3(P.x, P.y, 0), new THREE.Vector3(P.x, P.y, zP)]);
@@ -264,14 +329,11 @@
     l.computeLineDistances();
     movGroup.add(l);
 
-    // SECANT line through (P0, f(P0)) and (P, f(P)), extended (green tube)
-    var a = new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y,
-                              Z0 + m * TMIN);
-    var b = new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
-                              Z0 + m * TMAX);
-    movGroup.add(new THREE.Mesh(
-      new THREE.TubeGeometry(new THREE.CatmullRomCurve3([a, b]), 16,
-                             0.03, 8, false), secMat));
+    // SECANT: same thickness as the tangent, dashed, green
+    dashedTube(
+      new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y, Z0 + m * TMIN),
+      new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y, Z0 + m * TMAX),
+      0.035, 0.16, 0.1, 0x009e73, movGroup);
 
     // readout
     document.getElementById("readout").textContent =
@@ -280,53 +342,30 @@
     render();
   }
 
-  // ---------- labels in the text font (HTML overlay, projected) ----------
+  // ---------- point labels in the text font (HTML overlay, projected) ----------
   var labels = [];
-  function addLabel(html, getPos, dx, dy, color, word) {
+  function addLabel(html, getPos, dx, dy, color) {
     var el = document.createElement("div");
-    el.className = word ? "lbl3d word" : "lbl3d";
+    el.className = "lbl3d";
     el.innerHTML = html;
     if (color) el.style.color = color;
     wrap.appendChild(el);
     labels.push({ el: el, getPos: getPos, dx: dx, dy: dy });
   }
-  addLabel("z = f(x, y)",
-    function () { return new THREE.Vector3(XMAX, YMAX, f(XMAX, YMAX)); },
-    10, -6, "#35659a");
-  addLabel("x", function () { return new THREE.Vector3(3.3, 0, 0); }, 6, 2, "#666666");
-  addLabel("y", function () { return new THREE.Vector3(0, 3.0, 0); }, 6, 2, "#666666");
-  addLabel("z", function () { return new THREE.Vector3(0, 0, 4.0); }, 8, -6, "#666666");
+  addLabel("x", function () { return new THREE.Vector3(3.0, 0, 0); }, 6, 2, "#666666");
+  addLabel("y", function () { return new THREE.Vector3(0, 2.7, 0); }, 6, 2, "#666666");
+  addLabel("z", function () { return new THREE.Vector3(0, 0, 4.6); }, 8, -6, "#666666");
   addLabel("P<sub>0</sub>",
     function () { return new THREE.Vector3(P0.x, P0.y, 0); }, -24, 10, "#35659a");
-  addLabel("<b>u</b>",
-    function () {
-      return new THREE.Vector3(P0.x + 0.6 * U.x, P0.y + 0.6 * U.y, 0);
-    }, -4, 14, "#2a6fdb");
-  addLabel("s<b>u</b>",
-    function () {
-      return new THREE.Vector3(P0.x + 0.75 * sVal * U.x,
-                               P0.y + 0.75 * sVal * U.y, 0);
-    }, 4, 16, "#9c27b0");
   addLabel("P",
     function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, 0); },
-    12, 4, "#d1362f");
+    12, 6, "#d1362f");
   addLabel("f(P<sub>0</sub>)",
     function () { return new THREE.Vector3(P0.x, P0.y, Z0); },
     -48, -6, "#222222");
   addLabel("f(P)",
     function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, f(P.x, P.y)); },
     14, -10, "#d1362f");
-  addLabel("secant",
-    function () {
-      var P = pOfS(), m = (f(P.x, P.y) - Z0) / sVal;
-      return new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
-                               Z0 + m * TMAX);
-    }, 10, -12, "#009e73", true);
-  addLabel("tangent",
-    function () {
-      return new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
-                               Z0 + DUF * TMAX);
-    }, 10, 10, "#333333", true);
 
   function placeLabels() {
     var w = renderer.domElement.clientWidth,
@@ -337,8 +376,7 @@
       L.el.style.display = "block";
       var x = (v.x * 0.5 + 0.5) * w + L.dx;
       var y = (-v.y * 0.5 + 0.5) * h + L.dy;
-      // keep every label inside the canvas area
-      x = Math.max(2, Math.min(w - 60, x));
+      x = Math.max(2, Math.min(w - 50, x));
       y = Math.max(2, Math.min(h - 20, y));
       L.el.style.left = x + "px";
       L.el.style.top = y + "px";
@@ -371,6 +409,17 @@
     else if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
   });
 
+  // ---------- zoom (buttons, mouse wheel, pinch) ----------
+  function zoomBy(factor) {
+    radius = Math.min(RMAX, Math.max(RMIN, radius * factor));
+    placeCamera();
+    if (!playing) render();
+  }
+  document.getElementById("zoomInBtn").addEventListener("click",
+    function () { zoomBy(1 / 1.15); });
+  document.getElementById("zoomOutBtn").addEventListener("click",
+    function () { zoomBy(1.15); });
+
   // ---------- s -> 0 limit animation ----------
   var slider = document.getElementById("sSlider");
   var limId = null;
@@ -401,21 +450,9 @@
     updateS();
   });
 
-  // ---------- zoom (buttons, mouse wheel, pinch) ----------
-  var RMIN = 3.5, RMAX = 18;
-  function zoomBy(factor) {
-    radius = Math.min(RMAX, Math.max(RMIN, radius * factor));
-    placeCamera();
-    if (!playing) render();
-  }
-  document.getElementById("zoomInBtn").addEventListener("click",
-    function () { zoomBy(1 / 1.15); });
-  document.getElementById("zoomOutBtn").addEventListener("click",
-    function () { zoomBy(1.15); });
-
   // ---------- drag to rotate ----------
   var dragging = false, lastX = 0, lastY = 0;
-  var pinchDist = null;
+  var pinchDist = 0;
   var el = renderer.domElement;
   function startDrag(x, y) { dragging = true; lastX = x; lastY = y; }
   function moveDrag(x, y) {
@@ -433,32 +470,32 @@
     e.preventDefault();
     zoomBy(Math.exp(e.deltaY * 0.001));
   }, { passive: false });
-  function touchDist(e) {
-    var dx = e.touches[0].clientX - e.touches[1].clientX;
-    var dy = e.touches[0].clientY - e.touches[1].clientY;
-    return Math.hypot(dx, dy);
-  }
   el.addEventListener("touchstart", function (e) {
     if (e.touches.length === 1) {
-      startDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
+      startDrag(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault();
     } else if (e.touches.length === 2) {
-      dragging = false; pinchDist = touchDist(e); e.preventDefault();
+      dragging = false;
+      pinchDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY);
+      e.preventDefault();
     }
   }, { passive: false });
   el.addEventListener("touchmove", function (e) {
     if (e.touches.length === 1) {
-      moveDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
-    } else if (e.touches.length === 2 && pinchDist !== null) {
-      var d = touchDist(e);
-      if (d > 0) zoomBy(pinchDist / d);
+      moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault();
+    } else if (e.touches.length === 2) {
+      var d = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY);
+      if (d > 0 && pinchDist > 0) zoomBy(pinchDist / d);
       pinchDist = d;
       e.preventDefault();
     }
   }, { passive: false });
-  window.addEventListener("touchend", function (e) {
-    dragging = false;
-    if (!e.touches || e.touches.length < 2) pinchDist = null;
-  });
+  window.addEventListener("touchend", function () { dragging = false; pinchDist = 0; });
 
   // ---------- sizing (fills iframe) ----------
   function resize() {
@@ -469,6 +506,8 @@
     var h = Math.max(220, window.innerHeight - used - 4);
     renderer.setSize(w, h);
     camera.aspect = w / h;
+    // shift the whole scene to the LEFT so the legend does not cover it
+    camera.setViewOffset(w, h, 0.10 * w, 0.06 * h, w, h);
     camera.updateProjectionMatrix();
     render();
   }
