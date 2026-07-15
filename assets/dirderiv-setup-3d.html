@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The definition of the directional derivative: secant to tangent</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Open Sans", system-ui, -apple-system, "Segoe UI",
+      Roboto, sans-serif;
+  }
+  #app { width: 100%; box-sizing: border-box; }
+  #controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    padding: 8px 10px; box-sizing: border-box;
+  }
+  button {
+    font-size: 14px; padding: 5px 12px; border-radius: 6px;
+    border: 1px solid #888; background: #f4f4f4; cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { background: #e6e6e6; }
+  button.active { background: #2a6fdb; color: #fff; border-color: #2a6fdb; }
+  #playBtn { min-width: 92px; }
+  #sliderRow {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 10px 6px 10px; box-sizing: border-box;
+  }
+  #sSlider { flex: 1; }
+  #sLabel { font-size: 15px; min-width: 78px; font-variant-numeric: tabular-nums; }
+  #readout { font-size: 14px; color: #333; padding: 0 10px 6px 10px; min-height: 1.2em;
+    font-variant-numeric: tabular-nums; }
+  #canvasWrap { width: 100%; position: relative; overflow: hidden; }
+  canvas { display: block; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+  /* math-style labels, matching the italic serif of the rendered text */
+  .lbl3d {
+    position: absolute; pointer-events: none; white-space: nowrap;
+    font-family: "STIX Two Math", "STIXGeneral", "Times New Roman", serif;
+    font-style: italic; font-size: 17px; line-height: 1; font-weight: 600;
+    text-shadow: -1px -1px 2px #fff, 1px -1px 2px #fff,
+                 -1px 1px 2px #fff, 1px 1px 2px #fff;
+  }
+  .lbl3d b { font-weight: 700; }
+  .lbl3d sub { font-size: 70%; font-style: normal; }
+  .lbl3d.word { font-style: normal; font-size: 15px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="controls">
+    <span style="font-size:14px;">Definition of the directional derivative:</span>
+    <button id="limitBtn" title="Animate the limit">&#9654; s &rarr; 0</button>
+    <span style="flex:1"></span>
+    <button id="zoomInBtn" title="Zoom in">+</button>
+    <button id="zoomOutBtn" title="Zoom out">&minus;</button>
+    <button id="playBtn" title="Toggle automatic rotation">&#9654; Rotate</button>
+  </div>
+  <div id="sliderRow">
+    <span id="sLabel">s = 1.40</span>
+    <input type="range" id="sSlider" min="0.05" max="1.6" step="0.01" value="1.4">
+  </div>
+  <div id="readout"></div>
+  <div id="canvasWrap"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // ---------- the surface and the construction ----------
+  function f(x, y) { return 1.0 + 0.3 * x * x + 0.2 * y * y; }
+  var P0 = { x: 0.7, y: 0.55 };
+  var U = { x: 0.8, y: 0.6 };            // unit vector
+  var DUF = 0.6 * P0.x * U.x + 0.4 * P0.y * U.y;   // (D_u f)_{P0} = 0.468
+  var XMAX = 2.6, YMAX = 2.3;
+  var TMIN = -0.5, TMAX = 2.1;           // extent along u for plane/lines
+  var Z0 = f(P0.x, P0.y);
+  // camera aims here; larger z pushes the scene DOWN on the screen
+  var CENTER = new THREE.Vector3(1.3, 1.05, 2.4);
+
+  // ---------- renderer / scene ----------
+  var wrap = document.getElementById("canvasWrap");
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  wrap.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xffffff);
+
+  var camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  camera.up.set(0, 0, 1); // z points up, math convention
+
+  var radius = 8.8, theta = -0.5, phiCam = 1.15;
+  function placeCamera() {
+    camera.position.set(
+      CENTER.x + radius * Math.sin(phiCam) * Math.cos(theta),
+      CENTER.y + radius * Math.sin(phiCam) * Math.sin(theta),
+      CENTER.z + radius * Math.cos(phiCam)
+    );
+    camera.lookAt(CENTER);
+  }
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  var dir1 = new THREE.DirectionalLight(0xffffff, 0.7);
+  dir1.position.set(5, 3, 6);
+  scene.add(dir1);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.35);
+  dir2.position.set(-4, -5, -3);
+  scene.add(dir2);
+
+  // ---------- axes ----------
+  function axis(from, to, color) {
+    var g = new THREE.BufferGeometry().setFromPoints([from, to]);
+    scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: color })));
+  }
+  axis(new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(3.3, 0, 0), 0x999999);
+  axis(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 3.0, 0), 0x999999);
+  axis(new THREE.Vector3(0, 0, -0.3), new THREE.Vector3(0, 0, 4.0), 0x999999);
+
+  // ---------- surface z = f(x, y) ----------
+  (function buildSurface() {
+    var nu = 40, nv = 36;
+    var positions = [], indices = [];
+    for (var j = 0; j <= nv; j++) {
+      var y = (YMAX * j) / nv;
+      for (var i = 0; i <= nu; i++) {
+        var x = (XMAX * i) / nu;
+        positions.push(x, y, f(x, y));
+      }
+    }
+    for (var jj = 0; jj < nv; jj++) {
+      for (var ii = 0; ii < nu; ii++) {
+        var a = jj * (nu + 1) + ii, b = a + 1;
+        var c = a + (nu + 1), d = c + 1;
+        indices.push(a, b, d, a, d, c);
+      }
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    geo.setIndex(indices);
+    geo.computeVertexNormals();
+    var mat = new THREE.MeshPhongMaterial({
+      color: 0x4f8fd6, transparent: true, opacity: 0.4,
+      side: THREE.DoubleSide, depthWrite: false, shininess: 60
+    });
+    scene.add(new THREE.Mesh(geo, mat));
+    var wire = new THREE.LineSegments(
+      new THREE.WireframeGeometry(geo),
+      new THREE.LineBasicMaterial({ color: 0x35659a, transparent: true, opacity: 0.1 })
+    );
+    scene.add(wire);
+  })();
+
+  // ---------- vertical plane through P0 in the direction u ----------
+  (function () {
+    var planeMesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(TMAX - TMIN + 0.4, 3.9),
+      new THREE.MeshPhongMaterial({
+        color: 0xf2c14e, transparent: true, opacity: 0.22,
+        side: THREE.DoubleSide, depthWrite: false
+      })
+    );
+    planeMesh.rotation.order = "ZXY";
+    planeMesh.rotation.x = Math.PI / 2;
+    planeMesh.rotation.z = Math.atan2(U.y, U.x);
+    var tm = (TMIN + TMAX) / 2;
+    planeMesh.position.set(P0.x + tm * U.x, P0.y + tm * U.y, 1.95);
+    scene.add(planeMesh);
+  })();
+
+  // ---------- trace curve: the plane cuts the surface ----------
+  (function () {
+    var pts = [];
+    for (var i = 0; i <= 90; i++) {
+      var t = TMIN + ((TMAX - TMIN) * i) / 90;
+      var x = P0.x + t * U.x, y = P0.y + t * U.y;
+      pts.push(new THREE.Vector3(x, y, f(x, y)));
+    }
+    var curve = new THREE.CatmullRomCurve3(pts);
+    scene.add(new THREE.Mesh(
+      new THREE.TubeGeometry(curve, 120, 0.028, 8, false),
+      new THREE.MeshPhongMaterial({ color: 0xd1362f })));
+  })();
+
+  // ---------- tangent line at (P0, f(P0)): the limit of the secants ----------
+  (function () {
+    var a = new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y,
+                              Z0 + DUF * TMIN);
+    var b = new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
+                              Z0 + DUF * TMAX);
+    var g = new THREE.BufferGeometry().setFromPoints([a, b]);
+    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
+      color: 0x333333, dashSize: 0.12, gapSize: 0.08, linewidth: 2 }));
+    l.computeLineDistances();
+    scene.add(l);
+  })();
+
+  // ---------- fixed pieces: P0, u, its drop line, f(P0) ----------
+  var p0Dot = new THREE.Mesh(
+    new THREE.SphereGeometry(0.055, 16, 16),
+    new THREE.MeshPhongMaterial({ color: 0x35659a }));
+  p0Dot.position.set(P0.x, P0.y, 0);
+  scene.add(p0Dot);
+
+  scene.add(new THREE.ArrowHelper(
+    new THREE.Vector3(U.x, U.y, 0),
+    new THREE.Vector3(P0.x, P0.y, 0.012), 0.55, 0x2a6fdb, 0.16, 0.1));
+
+  var f0Dot = new THREE.Mesh(
+    new THREE.SphereGeometry(0.055, 16, 16),
+    new THREE.MeshPhongMaterial({ color: 0x222222 }));
+  f0Dot.position.set(P0.x, P0.y, Z0);
+  scene.add(f0Dot);
+
+  (function () {
+    var g = new THREE.BufferGeometry().setFromPoints(
+      [new THREE.Vector3(P0.x, P0.y, 0), new THREE.Vector3(P0.x, P0.y, Z0)]);
+    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
+      color: 0x777777, dashSize: 0.1, gapSize: 0.07 }));
+    l.computeLineDistances();
+    scene.add(l);
+  })();
+
+  // ---------- movable pieces: su, P, drop line, f(P), SECANT ----------
+  var movGroup = new THREE.Group();
+  scene.add(movGroup);
+  var pMat = new THREE.MeshPhongMaterial({ color: 0xd1362f });
+  var secMat = new THREE.MeshPhongMaterial({ color: 0x009e73 });
+
+  var sVal = 1.4;
+  function pOfS() { return { x: P0.x + sVal * U.x, y: P0.y + sVal * U.y }; }
+
+  function clearMov() {
+    while (movGroup.children.length) {
+      var m = movGroup.children.pop();
+      if (m.geometry) m.geometry.dispose();
+    }
+  }
+
+  function updateS() {
+    clearMov();
+    var P = pOfS(), zP = f(P.x, P.y);
+    var m = (zP - Z0) / sVal;   // slope of the secant
+
+    // displacement su (gold arrow)
+    var len = Math.hypot(sVal * U.x, sVal * U.y);
+    movGroup.add(new THREE.ArrowHelper(
+      new THREE.Vector3(U.x, U.y, 0),
+      new THREE.Vector3(P0.x, P0.y, 0.006), len, 0x9c27b0,
+      Math.min(0.16, 0.6 * len), 0.1));
+
+    // point P and its dashed vertical line up to the surface
+    var pd = new THREE.Mesh(new THREE.SphereGeometry(0.055, 16, 16), pMat);
+    pd.position.set(P.x, P.y, 0); movGroup.add(pd);
+    var fpd = new THREE.Mesh(new THREE.SphereGeometry(0.055, 16, 16), pMat);
+    fpd.position.set(P.x, P.y, zP); movGroup.add(fpd);
+    var g = new THREE.BufferGeometry().setFromPoints(
+      [new THREE.Vector3(P.x, P.y, 0), new THREE.Vector3(P.x, P.y, zP)]);
+    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
+      color: 0x777777, dashSize: 0.1, gapSize: 0.07 }));
+    l.computeLineDistances();
+    movGroup.add(l);
+
+    // SECANT line through (P0, f(P0)) and (P, f(P)), extended (green tube)
+    var a = new THREE.Vector3(P0.x + TMIN * U.x, P0.y + TMIN * U.y,
+                              Z0 + m * TMIN);
+    var b = new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
+                              Z0 + m * TMAX);
+    movGroup.add(new THREE.Mesh(
+      new THREE.TubeGeometry(new THREE.CatmullRomCurve3([a, b]), 16,
+                             0.03, 8, false), secMat));
+
+    // readout
+    document.getElementById("readout").textContent =
+      "slope of secant = ( f(P) − f(P₀) ) / s = " + m.toFixed(3) +
+      "   →   slope of tangent = ( Dᵤf )₍P₀₎ = " + DUF.toFixed(3);
+    render();
+  }
+
+  // ---------- labels in the text font (HTML overlay, projected) ----------
+  var labels = [];
+  function addLabel(html, getPos, dx, dy, color, word) {
+    var el = document.createElement("div");
+    el.className = word ? "lbl3d word" : "lbl3d";
+    el.innerHTML = html;
+    if (color) el.style.color = color;
+    wrap.appendChild(el);
+    labels.push({ el: el, getPos: getPos, dx: dx, dy: dy });
+  }
+  addLabel("z = f(x, y)",
+    function () { return new THREE.Vector3(XMAX, YMAX, f(XMAX, YMAX)); },
+    10, -6, "#35659a");
+  addLabel("x", function () { return new THREE.Vector3(3.3, 0, 0); }, 6, 2, "#666666");
+  addLabel("y", function () { return new THREE.Vector3(0, 3.0, 0); }, 6, 2, "#666666");
+  addLabel("z", function () { return new THREE.Vector3(0, 0, 4.0); }, 8, -6, "#666666");
+  addLabel("P<sub>0</sub>",
+    function () { return new THREE.Vector3(P0.x, P0.y, 0); }, -24, 10, "#35659a");
+  addLabel("<b>u</b>",
+    function () {
+      return new THREE.Vector3(P0.x + 0.6 * U.x, P0.y + 0.6 * U.y, 0);
+    }, -4, 14, "#2a6fdb");
+  addLabel("s<b>u</b>",
+    function () {
+      return new THREE.Vector3(P0.x + 0.75 * sVal * U.x,
+                               P0.y + 0.75 * sVal * U.y, 0);
+    }, 4, 16, "#9c27b0");
+  addLabel("P",
+    function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, 0); },
+    12, 4, "#d1362f");
+  addLabel("f(P<sub>0</sub>)",
+    function () { return new THREE.Vector3(P0.x, P0.y, Z0); },
+    -48, -6, "#222222");
+  addLabel("f(P)",
+    function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, f(P.x, P.y)); },
+    14, -10, "#d1362f");
+  addLabel("secant",
+    function () {
+      var P = pOfS(), m = (f(P.x, P.y) - Z0) / sVal;
+      return new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
+                               Z0 + m * TMAX);
+    }, 10, -12, "#009e73", true);
+  addLabel("tangent",
+    function () {
+      return new THREE.Vector3(P0.x + TMAX * U.x, P0.y + TMAX * U.y,
+                               Z0 + DUF * TMAX);
+    }, 10, 10, "#333333", true);
+
+  function placeLabels() {
+    var w = renderer.domElement.clientWidth,
+        h = renderer.domElement.clientHeight;
+    labels.forEach(function (L) {
+      var v = L.getPos().project(camera);
+      if (v.z > 1) { L.el.style.display = "none"; return; }
+      L.el.style.display = "block";
+      var x = (v.x * 0.5 + 0.5) * w + L.dx;
+      var y = (-v.y * 0.5 + 0.5) * h + L.dy;
+      // keep every label inside the canvas area
+      x = Math.max(2, Math.min(w - 60, x));
+      y = Math.max(2, Math.min(h - 20, y));
+      L.el.style.left = x + "px";
+      L.el.style.top = y + "px";
+    });
+  }
+
+  // ---------- rendering / animation (starts PAUSED) ----------
+  var playing = false;
+  var rafId = null;
+
+  function render() {
+    renderer.render(scene, camera);
+    placeLabels();
+  }
+
+  function animate() {
+    if (!playing) return;
+    theta += 0.006;
+    placeCamera();
+    render();
+    rafId = requestAnimationFrame(animate);
+  }
+
+  var playBtn = document.getElementById("playBtn");
+  playBtn.addEventListener("click", function () {
+    playing = !playing;
+    playBtn.innerHTML = playing ? "&#10074;&#10074; Pause" : "&#9654; Rotate";
+    playBtn.classList.toggle("active", playing);
+    if (playing) animate();
+    else if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+  });
+
+  // ---------- s -> 0 limit animation ----------
+  var slider = document.getElementById("sSlider");
+  var limId = null;
+  var limitBtn = document.getElementById("limitBtn");
+  function stopLimit() {
+    if (limId !== null) { cancelAnimationFrame(limId); limId = null; }
+    limitBtn.classList.remove("active");
+  }
+  function limitStep() {
+    sVal = Math.max(0.05, sVal - 0.011);
+    slider.value = sVal;
+    document.getElementById("sLabel").textContent = "s = " + sVal.toFixed(2);
+    updateS();
+    if (sVal > 0.05) limId = requestAnimationFrame(limitStep);
+    else stopLimit();
+  }
+  limitBtn.addEventListener("click", function () {
+    stopLimit();
+    if (sVal <= 0.06) sVal = 1.6; // restart from the right
+    limitBtn.classList.add("active");
+    limId = requestAnimationFrame(limitStep);
+  });
+
+  slider.addEventListener("input", function () {
+    stopLimit();
+    sVal = parseFloat(slider.value);
+    document.getElementById("sLabel").textContent = "s = " + sVal.toFixed(2);
+    updateS();
+  });
+
+  // ---------- zoom (buttons, mouse wheel, pinch) ----------
+  var RMIN = 3.5, RMAX = 18;
+  function zoomBy(factor) {
+    radius = Math.min(RMAX, Math.max(RMIN, radius * factor));
+    placeCamera();
+    if (!playing) render();
+  }
+  document.getElementById("zoomInBtn").addEventListener("click",
+    function () { zoomBy(1 / 1.15); });
+  document.getElementById("zoomOutBtn").addEventListener("click",
+    function () { zoomBy(1.15); });
+
+  // ---------- drag to rotate ----------
+  var dragging = false, lastX = 0, lastY = 0;
+  var pinchDist = null;
+  var el = renderer.domElement;
+  function startDrag(x, y) { dragging = true; lastX = x; lastY = y; }
+  function moveDrag(x, y) {
+    if (!dragging) return;
+    theta -= (x - lastX) * 0.008;
+    phiCam = Math.min(Math.PI - 0.05, Math.max(0.05, phiCam - (y - lastY) * 0.008));
+    lastX = x; lastY = y;
+    placeCamera();
+    if (!playing) render();
+  }
+  el.addEventListener("mousedown", function (e) { startDrag(e.clientX, e.clientY); });
+  window.addEventListener("mousemove", function (e) { moveDrag(e.clientX, e.clientY); });
+  window.addEventListener("mouseup", function () { dragging = false; });
+  el.addEventListener("wheel", function (e) {
+    e.preventDefault();
+    zoomBy(Math.exp(e.deltaY * 0.001));
+  }, { passive: false });
+  function touchDist(e) {
+    var dx = e.touches[0].clientX - e.touches[1].clientX;
+    var dy = e.touches[0].clientY - e.touches[1].clientY;
+    return Math.hypot(dx, dy);
+  }
+  el.addEventListener("touchstart", function (e) {
+    if (e.touches.length === 1) {
+      startDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
+    } else if (e.touches.length === 2) {
+      dragging = false; pinchDist = touchDist(e); e.preventDefault();
+    }
+  }, { passive: false });
+  el.addEventListener("touchmove", function (e) {
+    if (e.touches.length === 1) {
+      moveDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
+    } else if (e.touches.length === 2 && pinchDist !== null) {
+      var d = touchDist(e);
+      if (d > 0) zoomBy(pinchDist / d);
+      pinchDist = d;
+      e.preventDefault();
+    }
+  }, { passive: false });
+  window.addEventListener("touchend", function (e) {
+    dragging = false;
+    if (!e.touches || e.touches.length < 2) pinchDist = null;
+  });
+
+  // ---------- sizing (fills iframe) ----------
+  function resize() {
+    var w = document.getElementById("app").clientWidth;
+    var used = document.getElementById("controls").offsetHeight +
+               document.getElementById("sliderRow").offsetHeight +
+               document.getElementById("readout").offsetHeight;
+    var h = Math.max(220, window.innerHeight - used - 4);
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    render();
+  }
+  window.addEventListener("resize", resize);
+
+  // ---------- initial state: paused, s = 1.4 ----------
+  placeCamera();
+  resize();
+  updateS();
+})();
+</script>
+</body>
+</html>

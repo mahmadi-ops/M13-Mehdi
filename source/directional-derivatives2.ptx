@@ -37,9 +37,9 @@ provided the limit exists. It can alternatively be denoted by
 </definition>
 
 <p>
-The geometry behind this definition is shown in
-<xref ref="fig-dirderiv-setup-3d"/> and
-<xref ref="fig-dirderiv-setup-prefigure"/>, side by side, and animated in
+The geometry behind this definition can be explored in the interactive
+figure below; it is also shown in
+<xref ref="fig-dirderiv-setup-prefigure"/> and animated in
 <xref ref="fig-dirderiv-setup-video"/>. Starting at the
 point <m>P_0(x_0,y_0)</m>, we move a distance <m>s</m> in the direction
 of the unit vector <m>\mathbf u</m> to reach the point
@@ -49,115 +49,25 @@ of the unit vector <m>\mathbf u</m> to reach the point
 two points <m>P_0</m> and <m>P</m> get closer and closer to each other.
 </p>
 
-<sidebyside widths="60% 37%" valign="middle">
-
-<figure xml:id="fig-dirderiv-setup-3d">
-<caption>
-Moving from <m>P_0(x_0,y_0)</m> the distance <m>s</m> in the direction
-<m>\mathbf u</m> to reach <m>P(x_0 + su_1,\, y_0 + su_2)</m>. The
-directional derivative compares the values <m>f(x_0,y_0)</m> and
-<m>f(x_0 + su_1,\, y_0 + su_2)</m> on the surface <m>z = f(x,y)</m> as
-<m>s \to 0</m>.
-</caption>
-<image xml:id="image-dirderiv-setup-3d" width="100%">
-<shortdescription>
-The displacement from P0 to P in the xy-plane and the corresponding
-values of f on the surface above.
-</shortdescription>
-<description>
+<interactive xml:id="interactive-dirderiv-setup-3d" iframe="dirderiv-setup-3d.html" width="100%" aspect="8:6">
+<instructions>
 <p>
-A three-dimensional view. In the <m>xy</m>-plane, a short thick arrow
-at <m>P_0(x_0,y_0)</m> shows the unit vector <m>\mathbf u</m>, and a
-longer arrow from <m>P_0</m> to <m>P(x_0+su_1,\,y_0+su_2)</m> shows
-the displacement <m>s\mathbf u</m>, with dashed segments for its
-components <m>su_1\mathbf i</m> and <m>su_2\mathbf j</m>. Above the
-plane floats a translucent blue surface <m>z = f(x,y)</m>. Dashed
-vertical lines rise from <m>P_0</m> and <m>P</m> to the surface, where
-the values <m>f(x_0,y_0)</m> and <m>f(x_0+su_1,\,y_0+su_2)</m> are
-marked.
+The translucent blue surface is the graph of <m>z = f(x,y)</m>. In the
+<m>xy</m>-plane below it, the point <m>P_0(x_0,y_0)</m> is fixed, the
+short blue arrow is the unit vector <m>\mathbf u</m>, and the gold arrow
+is the displacement <m>s\mathbf u</m>, which ends at the point
+<m>P(x_0+su_1,\, y_0+su_2)</m>. The dashed vertical lines rise from
+<m>P_0</m> and <m>P</m> to the surface, where the values <m>f(P_0)</m>
+and <m>f(P)</m> are marked. Drag the slider to change the distance
+<m>s</m>, or press <q>s <m>\to</m> 0</q> to animate the limit in the
+definition of the directional derivative: as <m>s \to 0</m>, the point
+<m>P</m> slides back toward <m>P_0</m> and the difference quotient
+<m>\big(f(P) - f(P_0)\big)/s</m>, displayed above the figure,
+approaches <m>\left(D_{\mathbf u} f\right)_{P_0}</m>. Drag the figure
+to view it from a different angle, or press <q>Rotate</q> to spin it.
 </p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \begin{axis}[
-      view={125}{28},
-      width=13cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      ticks=none,
-      xmin=-0.7, xmax=3.6, ymin=-0.7, ymax=3.2, zmin=0, zmax=5.5,
-      clip=false,
-    ]
-    % ---- generic surface z = f(x,y), with grid lines for clarity ----
-    \addplot3[surf, shader=interp,
-              point meta={z},
-              colormap={softz}{color=(oiblue!15!white) color=(oiblue!60!white)},
-              opacity=0.55, fill opacity=0.55,
-              domain=0:2.6, samples=25,
-              y domain=0:2.3, samples y=19,
-              z buffer=sort, forget plot]
-      {2.9 + 0.2*x^2 + 0.12*y^2};
-    % grid lines drawn on the surface (shape cues)
-    \foreach \xx in {0,0.65,1.3,1.95,2.6}{
-      \edef\tmp{\noexpand\addplot3[black!30, line width=0.35pt, domain=0:2.3,
-          samples=25, samples y=0, forget plot]
-        (\xx, x, {2.9 + 0.2*\xx*\xx + 0.12*x^2});}\tmp}
-    \foreach \yy in {0,0.575,1.15,1.725,2.3}{
-      \edef\tmp{\noexpand\addplot3[black!30, line width=0.35pt, domain=0:2.6,
-          samples=25, samples y=0, forget plot]
-        (x, \yy, {2.9 + 0.2*x^2 + 0.12*\yy*\yy});}\tmp}
-    \node[font=\small, anchor=west] at (axis cs:2.7,2.3,4.95)
-      {$z=f(x,y)$};
-    % ---- construction in the xy-plane ----
-    \addplot3[black!60, dashed, line width=0.6pt, samples y=0, forget plot]
-      coordinates {(0.45,0.35,0) (1.85,0.35,0) (1.85,1.4,0)};
-    \node[font=\scriptsize, black!70, anchor=north] at (axis cs:1.15,0.18,0)
-      {$su_1\mathbf i$};
-    \node[font=\scriptsize, black!70, anchor=west] at (axis cs:1.93,0.85,0)
-      {$su_2\mathbf j$};
-    % displacement su
-    \draw[-{Latex}, oiblue, line width=1.4pt]
-      (axis cs:0.45,0.35,0) -- (axis cs:1.85,1.4,0);
-    \node[oiblue, font=\scriptsize, anchor=south east] at (axis cs:1.18,1.05,0)
-      {$s\mathbf u$};
-    % unit vector u (drawn on top of su, shorter)
-    \draw[-{Latex}, oivermillion, line width=1.7pt]
-      (axis cs:0.45,0.35,0) -- (axis cs:0.93,0.71,0);
-    \node[oivermillion, font=\scriptsize, anchor=north west]
-      at (axis cs:0.95,0.6,0) {$\mathbf u$};
-    % ---- vertical dashed lines up to the surface ----
-    \addplot3[black!60, dashed, line width=0.6pt, samples y=0, forget plot]
-      coordinates {(0.45,0.35,0) (0.45,0.35,2.955)};
-    \addplot3[black!60, dashed, line width=0.6pt, samples y=0, forget plot]
-      coordinates {(1.85,1.4,0) (1.85,1.4,3.820)};
-    % ---- marked points ----
-    \addplot3[only marks, mark=*, mark size=1.5pt, color=oigreen, forget plot]
-      coordinates {(0.45,0.35,0) (1.85,1.4,0)};
-    \addplot3[only marks, mark=*, mark size=1.5pt, color=black, forget plot]
-      coordinates {(0.45,0.35,2.955) (1.85,1.4,3.820)};
-    % ---- labels, kept clear of the drawing ----
-    \node[font=\scriptsize, anchor=north east] at (axis cs:0.38,0.28,-0.15)
-      {$P_0(x_0,y_0)$};
-    \node[font=\scriptsize, anchor=north] at (axis cs:1.85,1.4,-0.35)
-      {$P(x_0+su_1,\,y_0+su_2)$};
-    \draw[black!50, line width=0.4pt]
-      (axis cs:0.45,0.35,2.955) -- (axis cs:-0.05,0.35,3.35);
-    \node[font=\scriptsize, anchor=east] at (axis cs:-0.05,0.35,3.35)
-      {$f(x_0,y_0)$};
-    \draw[black!50, line width=0.4pt]
-      (axis cs:1.85,1.4,3.820) -- (axis cs:2.35,1.4,4.5);
-    \node[font=\scriptsize, anchor=west] at (axis cs:2.35,1.4,4.5)
-      {$f(x_0+su_1,\,y_0+su_2)$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
+</instructions>
+</interactive>
 
 <figure xml:id="fig-dirderiv-setup-prefigure">
 <caption>
@@ -165,7 +75,7 @@ The two points <m>P_0</m> and <m>P</m> used in the definition of the
 directional derivative. As <m>s \to 0</m>, the point <m>P</m> slides
 along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
 </caption>
-<image width="100%">
+<image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-dirderiv-setup">
 <diagram dimensions="(340,280)" margins="10">
 <coordinates bbox="(-0.4,-0.4,2.9,2.3)">
@@ -209,8 +119,6 @@ along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
 </prefigure>
 </image>
 </figure>
-
-</sidebyside>
 
 <figure xml:id="fig-dirderiv-setup-video">
 <caption>
@@ -341,7 +249,6 @@ x(s) = x_0 + su_1, \qquad y(s) = y_0 + su_2.
 <p>
 We can use the above relation between <m>x</m>, <m>y</m>, and <m>s</m>
 and the chain rule, whose dependency diagram is shown in
-<xref ref="fig-chain-rule-tree-tikz"/> and
 <xref ref="fig-chain-rule-tree-prefigure"/>, to compute the directional
 derivative as follows:
 </p>
@@ -396,48 +303,6 @@ following dot product:
 </men>
 </statement>
 </definition>
-
-<figure xml:id="fig-chain-rule-tree-tikz">
-<caption>
-The dependency diagram for computing the directional derivative with
-the chain rule: <m>z = f(x,y)</m> depends on <m>x</m> and <m>y</m>,
-each of which depends on the arc length parameter <m>s</m> along the
-line through <m>P_0</m> in the direction <m>\mathbf u</m>.
-</caption>
-<image xml:id="image-chain-rule-tree-tikz" width="45%">
-<shortdescription>
-The chain rule dependency tree from z equals f of x comma y down to s.
-</shortdescription>
-<description>
-<p>
-A tree diagram. At the top is <m>z = f(x,y)</m>. Two arrows labeled
-<m>\partial f/\partial x</m> and <m>\partial f/\partial y</m> lead
-down to the nodes <m>x</m> and <m>y</m>. From <m>x</m> and <m>y</m>,
-two arrows labeled <m>dx/ds</m> and <m>dy/ds</m> lead down to the
-single node <m>s</m>.
-</p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round, scale=1.15]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \node (z) at (0,3)    {$z=f(x,y)$};
-  \node (x) at (-1.6,1.5) {$x$};
-  \node (y) at (1.6,1.5)  {$y$};
-  \node (s) at (0,0)    {$s$};
-  \draw[-{Latex}, oiblue, line width=1.1pt] (z) -- (x)
-    node[midway, above left=-2pt] {$\dfrac{\partial f}{\partial x}$};
-  \draw[-{Latex}, oiblue, line width=1.1pt] (z) -- (y)
-    node[midway, above right=-2pt] {$\dfrac{\partial f}{\partial y}$};
-  \draw[-{Latex}, oivermillion, line width=1.1pt] (x) -- (s)
-    node[midway, below left=-2pt] {$\dfrac{dx}{ds}$};
-  \draw[-{Latex}, oivermillion, line width=1.1pt] (y) -- (s)
-    node[midway, below right=-2pt] {$\dfrac{dy}{ds}$};
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
 
 <figure xml:id="fig-chain-rule-tree-prefigure">
 <caption>
@@ -634,8 +499,8 @@ level curve <m>f = 3</m>, and its dashed projection in the
       xmin=-2.1, xmax=2.1, ymin=-2.1, ymax=2.1, zmin=0, zmax=4.9,
       clip=false,
       legend style={
-        at={(1.02,0.97)}, anchor=north west,
-        font=\normalsize,
+        at={(0.02,0.97)}, anchor=north west,
+        font=\small,
         draw=black!35, rounded corners=2pt,
         fill=white, fill opacity=0.92, text opacity=1,
         inner sep=6pt, row sep=3pt,

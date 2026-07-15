@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ================================================================ -->
+<!-- Subsection: Why the Second Derivative Test Works                 -->
+<!-- Companion text for the video second_derivative_test_1080p.mp4.   -->
+<!-- Include from extreme-values-saddle-points.ptx, after the         -->
+<!-- statement of Theorem II (thm-second-derivative-test).            -->
+<!-- ================================================================ -->
+<subsection xml:id="sec-why-second-derivative-test">
+<title>Why the Second Derivative Test Works</title>
+
+<p>
+Where do the conditions of
+<xref ref="thm-second-derivative-test"/> come from? The key idea is to
+take the directional derivative <em>twice</em>. At a critical point
+every direction looks flat to the first derivative, so we ask the
+second derivative how the surface <em>curves</em> as we walk away from
+the point in each direction. The video in
+<xref ref="fig-why-sdt-video"/> animates the argument; the equations
+that appear in it are derived in detail below.
+</p>
+
+<figure xml:id="fig-why-sdt-video">
+<caption>
+Slicing a surface through a critical point in a rotating unit
+direction <m>\mathbf{u}</m>. The second directional derivative
+<m>D^2_{\mathbf{u}}f</m> is the curvature of the slice: one sign for
+all directions gives a local extremum, both signs give a saddle point,
+and completing the square shows that the discriminant
+<m>H = f_{xx}f_{yy} - f_{xy}^2</m> decides between the two.
+</caption>
+<video xml:id="video-why-sdt"
+       source="videos/second_derivative_test_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<!-- ================================================================ -->
+<paragraphs>
+<title>Slicing the surface in a direction <m>\mathbf{u}</m></title>
+
+<p>
+Suppose <m>f(x,y)</m> has continuous first and second partial
+derivatives near a critical point <m>(a,b)</m>, so that
+<m>f_x(a,b) = f_y(a,b) = 0</m>. Fix a unit vector
+<m>\mathbf{u} = (u_1, u_2)</m> and walk away from the critical point
+along the line through <m>(a,b)</m> in the direction of
+<m>\mathbf{u}</m>. The height of the surface above this line is the
+single-variable function
+</p>
+
+<men xml:id="eq-sdt-slice">
+g(t) = f(a + t u_1,\; b + t u_2),
+</men>
+
+<p>
+which is exactly the <term>slice</term> of the surface cut by the
+vertical plane through <m>(a,b)</m> containing <m>\mathbf{u}</m>. In
+the video this slice is the highlighted curve, drawn green where it
+curves upward and red where it curves downward.
+</p>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs>
+<title>The first directional derivative</title>
+
+<p>
+By the chain rule, with <m>x = a + t u_1</m> and <m>y = b + t u_2</m>
+(so that <m>dx/dt = u_1</m> and <m>dy/dt = u_2</m>),
+</p>
+
+<men xml:id="eq-sdt-first">
+g'(t) = \frac{\partial f}{\partial x}\frac{dx}{dt}
+      + \frac{\partial f}{\partial y}\frac{dy}{dt}
+      = f_x\, u_1 + f_y\, u_2 = D_{\mathbf{u}}f .
+</men>
+
+<p>
+This is the ordinary directional derivative of <m>f</m> in the
+direction <m>\mathbf{u}</m>. At the critical point,
+<m>g'(0) = f_x(a,b)\, u_1 + f_y(a,b)\, u_2 = 0</m> for <em>every</em>
+choice of <m>\mathbf{u}</m>: each slice has a horizontal tangent line
+at <m>t = 0</m>. This is why the first derivative alone cannot
+distinguish a minimum from a maximum from a saddle, and why we must
+differentiate once more.
+</p>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs>
+<title>The second directional derivative</title>
+
+<p>
+Apply <m>D_{\mathbf{u}}</m> to the function <m>D_{\mathbf{u}}f</m>.
+Differentiating <xref ref="eq-sdt-first"/> with the chain rule again,
+and using the equality of the mixed partials
+(<m>f_{xy} = f_{yx}</m>, which holds because the second partials are
+continuous),
+</p>
+
+<md>
+<mrow>g''(t) \amp = \frac{\partial}{\partial x}\!\left(f_x u_1 + f_y u_2\right) u_1
++ \frac{\partial}{\partial y}\!\left(f_x u_1 + f_y u_2\right) u_2</mrow>
+<mrow xml:id="eq-sdt-second" number="yes">D^2_{\mathbf{u}}f
+\amp = f_{xx}\, u_1^2 + 2 f_{xy}\, u_1 u_2 + f_{yy}\, u_2^2 .</mrow>
+</md>
+
+<p>
+The number <m>g''(0) = D^2_{\mathbf{u}}f(a,b)</m> is the
+<term>curvature of the slice</term> at the critical point: if it is
+positive the slice is concave up in the direction <m>\mathbf{u}</m>,
+and if it is negative the slice is concave down. By the
+single-variable second derivative test applied to <m>g</m>, the
+critical point is
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+a local minimum if <m>D^2_{\mathbf{u}}f(a,b) \gt 0</m> for
+<em>every</em> direction <m>\mathbf{u}</m>,
+</p>
+</li>
+<li>
+<p>
+a local maximum if <m>D^2_{\mathbf{u}}f(a,b) \lt 0</m> for
+<em>every</em> direction <m>\mathbf{u}</m>,
+</p>
+</li>
+<li>
+<p>
+a saddle point if <m>D^2_{\mathbf{u}}f(a,b)</m> is positive for some
+directions and negative for others, since the surface then rises along
+some lines through <m>(a,b)</m> and falls along others.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+Writing <m>\mathbf{u} = (\cos\theta, \sin\theta)</m>, equation
+<xref ref="eq-sdt-second"/> becomes a function of the direction angle,
+</p>
+
+<men xml:id="eq-sdt-angle">
+D^2_{\mathbf{u}}f
+= f_{xx}\cos^2\theta + 2 f_{xy}\cos\theta\sin\theta
++ f_{yy}\sin^2\theta ,
+</men>
+
+<p>
+which is the curve plotted against <m>\theta</m> in the video. For
+<m>z = x^2 + y^2</m> it is the constant <m>2</m> (always positive: a
+minimum); for <m>z = -(x^2+y^2)</m> it is the constant <m>-2</m>
+(always negative: a maximum); and for <m>z = x^2 - y^2</m> it equals
+<m>2\cos 2\theta</m>, which changes sign four times as
+<m>\mathbf{u}</m> makes a full turn: a saddle point.
+</p>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs>
+<title>Completing the square: the discriminant appears</title>
+
+<p>
+Checking the sign of <xref ref="eq-sdt-second"/> one direction at a
+time is impossible; there are infinitely many directions. Instead,
+suppose <m>f_{xx} \neq 0</m>, multiply
+<xref ref="eq-sdt-second"/> by <m>f_{xx}</m>, and complete the square
+in <m>u_1</m>:
+</p>
+
+<md>
+<mrow>f_{xx}\cdot D^2_{\mathbf{u}}f
+\amp = f_{xx}^2 u_1^2 + 2 f_{xx} f_{xy}\, u_1 u_2 + f_{xx} f_{yy}\, u_2^2</mrow>
+<mrow xml:id="eq-sdt-square" number="yes">
+\amp = \left(f_{xx} u_1 + f_{xy} u_2\right)^2
++ \left(f_{xx} f_{yy} - f_{xy}^2\right) u_2^2 .</mrow>
+</md>
+
+<p>
+(Expanding the square in <xref ref="eq-sdt-square"/> reproduces the
+first line: the cross terms match, and the <m>f_{xy}^2 u_2^2</m>
+produced by the square is subtracted off again by the second term.)
+Every quantity on the right-hand side is now a perfect square except
+the coefficient
+</p>
+
+<men xml:id="eq-sdt-discriminant">
+H = f_{xx} f_{yy} - f_{xy}^2 ,
+</men>
+
+<p>
+the discriminant (the Hessian determinant of
+<xref ref="eq-quartic-hessian"/>). The sign of
+<m>D^2_{\mathbf{u}}f</m> in <em>every</em> direction at once is
+therefore controlled by just the two numbers <m>H</m> and
+<m>f_{xx}</m>, evaluated at the critical point.
+</p>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs>
+<title>Reading off the four cases</title>
+
+<p>
+<ul>
+<li>
+<p>
+<em>Case <m>H \gt 0</m>.</em> The right-hand side of
+<xref ref="eq-sdt-square"/> is a sum of two nonnegative terms, and it
+cannot vanish: if <m>u_2 = 0</m> then <m>u_1 \neq 0</m> and the first
+term is <m>f_{xx}^2 u_1^2 \gt 0</m>, while if <m>u_2 \neq 0</m> the
+second term is positive. Hence
+<m>f_{xx}\cdot D^2_{\mathbf{u}}f \gt 0</m> for every direction, so
+<m>D^2_{\mathbf{u}}f</m> has the <em>same sign as</em> <m>f_{xx}</m>
+in every direction. (Note <m>H \gt 0</m> forces
+<m>f_{xx} \neq 0</m>, since <m>f_{xx} = 0</m> would give
+<m>H = -f_{xy}^2 \le 0</m>.) If <m>f_{xx} \gt 0</m>, every slice is
+concave up and <m>f(a,b)</m> is a local minimum; if
+<m>f_{xx} \lt 0</m>, every slice is concave down and <m>f(a,b)</m> is
+a local maximum.
+</p>
+</li>
+<li>
+<p>
+<em>Case <m>H \lt 0</m>.</em> The two terms in
+<xref ref="eq-sdt-square"/> now compete. If <m>f_{xx} \neq 0</m>,
+taking <m>\mathbf{u} = (1,0)</m> gives
+<m>f_{xx}\cdot D^2_{\mathbf{u}}f = f_{xx}^2 \gt 0</m>, while choosing
+<m>\mathbf{u}</m> proportional to <m>(-f_{xy}, f_{xx})</m> kills the
+perfect square and gives
+<m>f_{xx}\cdot D^2_{\mathbf{u}}f = H\, u_2^2 \lt 0</m>. So
+<m>D^2_{\mathbf{u}}f</m> takes both signs and <m>(a,b)</m> is a saddle
+point. (If <m>f_{xx} = 0</m> and <m>f_{yy} \neq 0</m>, run the same
+argument with the roles of <m>u_1</m> and <m>u_2</m> exchanged; if
+<m>f_{xx} = f_{yy} = 0</m>, then <m>H \lt 0</m> means
+<m>f_{xy} \neq 0</m>, and <m>D^2_{\mathbf{u}}f = 2 f_{xy} u_1 u_2</m>
+visibly changes sign between the directions where <m>u_1 u_2 \gt 0</m>
+and where <m>u_1 u_2 \lt 0</m>.)
+</p>
+</li>
+<li>
+<p>
+<em>Case <m>H = 0</m>.</em> Equation <xref ref="eq-sdt-square"/>
+degenerates to a single perfect square, which vanishes along the
+direction proportional to <m>(-f_{xy}, f_{xx})</m>. In that direction
+the second derivative gives no information, and the behavior of
+<m>f</m> is decided by higher-order terms: the test is
+<em>inconclusive</em>.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+These are precisely conditions (i)<ndash/>(iv) of
+<xref ref="thm-second-derivative-test"/>. One technical remark: the
+argument above examines only straight-line slices through
+<m>(a,b)</m>, which by itself is not quite enough (a function can
+increase along every line yet fail to have a local minimum). The full
+proof replaces <m>f</m> near <m>(a,b)</m> by its second-order Taylor
+expansion; continuity of the second partials guarantees that when
+<m>H \neq 0</m> the quadratic form <m>D^2_{\mathbf{u}}f</m> keeps its
+sign uniformly on a small disk around <m>(a,b)</m>, which upgrades the
+line-by-line conclusion to a genuine local one.
+</p>
+</paragraphs>
+
+</subsection>
