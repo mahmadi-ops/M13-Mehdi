@@ -1,77 +1,7 @@
-<section xml:id="section-exercises">
-  <title>Exercises</title>
-
-<subsection xml:id="subsection-abs-extrema">
-    <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
-    <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-extreme-values" text="title"/>.
-    </p>
-   </introduction>
-  <exercises xml:id="exercises-abs-extrema">
-
- 
-      <exercise xml:id="ex-extrema-triangle">
-        <statement>
-          <p>
-            Find the absolute maximum and minimum values of
-            <me>f(x,y)=x^2-xy+y^2-3y</me>
-            on the region bounded by the <m>x</m>- and
-            <m>y</m>-axes and the line <m>x+y=4</m>.
-          </p>
-
-          <interactive
-            xml:id="hints-extrema-triangle"
-            width="80%"
-            aspect="5:4"
-            iframe="iframe/hint-extrema-triangle.html"/>
-        </statement>
-
-         <solution>
-      <p>
-        The gradient is <m>\nabla f = \langle 2x - y,\; -x + 2y - 3\rangle</m>, which
-        vanishes only at <m>(1,2)</m>, a point in the interior of the region. There
-        <m>f(1,2) = -3</m>. Since this is the only critical point on all of
-        <m>\mathbb{R}^2</m> and it is a minimum (by the second derivative test), it is a
-        global minimum. We now examine the three boundary segments to look for possible
-        maxima.
-      </p>
-      <p>
-        On the <m>x</m>-axis with <m>0 \le x \le 4</m>, we have <m>f(x,0) = x^2</m>, which
-        is maximized at <m>f(4,0) = 16</m>.
-      </p>
-      <p>
-        On the <m>y</m>-axis with <m>0 \le y \le 4</m>, we have <m>f(0,y) = y^2 - 3y</m>,
-        which is maximized at <m>f(0,4) = 4</m>.
-      </p>
-      <p>
-        Finally, on the line <m>x = 4 - y</m> with <m>0 \le y \le 4</m>, we have
-        <m>f(4-y,\,y) = 3y^2 - 15y + 16</m>, which is maximized at <m>f(4,0) = 16</m>.
-      </p>
-      <p>
-        Altogether, there is an absolute minimum <m>f(1,2) = -3</m> and an absolute maximum
-        <m>f(4,0) = 16</m>.
-      </p>
-    </solution>
-      </exercise>
-      </exercises>
-</subsection>
-
-      <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
+<!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
-<subsection xml:id="section-conics-exercises">
-    <title> Exercises for <xref ref="section-conics"  text="title"/></title>
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-conics" text="title"/>.
-    </p>
-  </introduction>
-    <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
-  <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
- <exercises xml:id="exercises-conics">
- <exercise xml:id="exer-parabolic-antenna">
+
+<exercise xml:id="exer-parabolic-antenna">
   <title>A Parabolic Antenna</title>
   <introduction>
     <p>
@@ -105,7 +35,7 @@
           F(0,p) lies on the y axis above the rim, and two segments run from
           the focus to the rim points, enclosing the opening angle two phi.
         </description>
-        <prefigure xmlns="https://prefigure.org" label="prefig-antenna-model">
+        <prefigure xmlns="https://prefigure.org">
           <diagram dimensions="(540,260)" margins="5">
             <definition>d = 120</definition>
             <definition>h = 20.3</definition>
@@ -242,7 +172,7 @@
             right rim point, and the segment from the focus to the rim point
             as hypotenuse.  The angle phi at the focus is marked.
           </description>
-          <prefigure xmlns="https://prefigure.org" label="prefig-antenna-angle-triangle">
+          <prefigure xmlns="https://prefigure.org">
             <diagram dimensions="(540,260)" margins="5">
               <definition>d = 120</definition>
               <definition>h = 20.3</definition>
@@ -304,8 +234,4 @@
       </p>
     </solution>
   </task>
- </exercise>
- </exercises>
-</subsection>
-
-</section>
+</exercise>
