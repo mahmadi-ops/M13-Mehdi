@@ -62,7 +62,7 @@ For our examples, we will consider the following simplified forms of quadric sur
 <p>
   By allowing fixed values of <m>x, y</m> and <m></m>, we can obtain traces of Conic
     Sections.  For example, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
-    we get the following traces, as shown in <xref ref="fig-elliptical-paraboloid-slices"/>:
+    we get the following traces:
 </p>
     
 <me>
@@ -71,22 +71,12 @@ For our examples, we will consider the following simplified forms of quadric sur
     1 =  \frac{x^2}{4} + \frac{y^2}{9} \;(ellipse)
 </me>
   
- <figure xml:id="fig-elliptical-paraboloid-slices">
-  <caption>
-    Slicing the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m>
-    with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
-  </caption>
-  <interactive xml:id="interactive-elliptical-paraboloid-slices" iframe="elliptical-paraboloid-slices.html" width="100%" aspect="8:6">
-    <instructions>
-      <p>
-      Use the buttons to slice the surface <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
-      <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
-      The equation of each cross-section is displayed above the figure.
-      Drag the figure to view it from a different angle, or press the
-      <q>Rotate</q> button to spin it automatically.</p>
-    </instructions>
-  </interactive>
- </figure>
+ <note>
+  <p>
+      Put a figure here of the elliptical paraboloid with the corresponding traces. 
+      Thank you!
+  </p>
+ </note>
 
  <p>
  With traces of two parabolas and one ellipse, it is natural to call this quadric
@@ -115,7 +105,7 @@ For our examples, we will consider the following simplified forms of quadric sur
   Similar to the previous example (<xref ref="subsec-elliptical-paraboloid"/>), we use 
   fixed values of <m>x, y</m> and <m></m>, we can obtain traces of conic
     sections.  Again, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
-    we get the following traces, as shown in <xref ref="fig-hyperbolic-paraboloid-slices"/>:
+    we get the following traces:
 </p>
     
 <me>
@@ -124,22 +114,12 @@ For our examples, we will consider the following simplified forms of quadric sur
     1 =  \frac{x^2}{4} - \frac{y^2}{9} \;(hyperbola)
 </me>
   
- <figure xml:id="fig-hyperbolic-paraboloid-slices">
-  <caption>
-    Slicing the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m>
-    with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
-  </caption>
-  <interactive xml:id="interactive-hyperbolic-paraboloid-slices" iframe="hyperbolic-paraboloid-slices.html" width="100%" aspect="8:6">
-    <instructions>
-      <p>
-      Use the buttons to slice the surface <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with planes
-      <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
-      The equation of each cross-section is displayed above the figure.
-      Drag the figure to view it from a different angle, or press the
-      <q>Rotate</q> button to spin it automatically.</p>
-    </instructions>
-  </interactive>
- </figure>
+ <note>
+  <p>
+      Put a figure here of the hyperbolic paraboloid with the corresponding traces. 
+      Thank you!
+  </p>
+ </note>
 
  <p>
  Similar to the elliptical paraboloid, with traces of two parabolas, but with one hyperbola, 
@@ -167,7 +147,7 @@ For our examples, we will consider the following simplified forms of quadric sur
 
 <p>
   By allowing fixed values of surface to intersect the coordinate planes (<m>x=0</m>, <m>y=0</m>, and <m>z=0</m>),
-  we find the following traces, as shown in <xref ref="fig-ellipsoid-slices"/>:
+  we find the following traces:
 </p>
     
 <me>
@@ -176,22 +156,12 @@ For our examples, we will consider the following simplified forms of quadric sur
     \frac{x^2}{4} + \frac{y^2}{9}  = 1  \;(ellipse)
 </me>
   
- <figure xml:id="fig-ellipsoid-slices">
-  <caption>
-    Slicing the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m>
-    with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
-  </caption>
-  <interactive xml:id="interactive-ellipsoid-slices" iframe="ellipsoid-slices.html" width="100%" aspect="8:6">
-    <instructions>
-      <p>
-      Use the buttons to slice the surface <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m> with planes
-      <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
-      The equation of each cross-section is displayed above the figure.
-      Drag the figure to view it from a different angle, or press the
-      <q>Rotate</q> button to spin it automatically.</p>
-    </instructions>
-  </interactive>
- </figure>
+ <note>
+  <p>
+      Put a figure here of the ellipsoid with the corresponding traces. 
+      Thank you!
+  </p>
+ </note>
 
  <p>
  
@@ -221,7 +191,7 @@ For our examples, we will consider the following simplified forms of quadric sur
   but <m>z</m> has the same degree as <m>x</m> and <m>y</m>.  Consequently, since <m>z</m> has the same degree
   as <m>x</m> and <m>y</m>, the traces would behave linearly instead of quadratically.  Structurally, from the traces,
   two hyperbolas and an ellipse.  We can see the traces through the intersection of the planes 
-  <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>, as shown in <xref ref="fig-elliptic-cone-slices"/>:
+  <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>:
 
   </p>
     
@@ -231,22 +201,12 @@ For our examples, we will consider the following simplified forms of quadric sur
     \frac{x^2}{4} + \frac{y^2}{9} = 1 \;(ellipse)
 </me>
   
- <figure xml:id="fig-elliptic-cone-slices">
-  <caption>
-    Slicing the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m>
-    with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
-  </caption>
-  <interactive xml:id="interactive-elliptic-cone-slices" iframe="elliptic-cone-slices.html" width="100%" aspect="8:6">
-    <instructions>
-      <p>
-      Use the buttons to slice the surface <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
-      <m>x=c</m>, <m>y=c</m>, or <m>z=c</m>, and drag the slider to vary <m>c</m>.
-      The equation of each cross-section is displayed above the figure.
-      Drag the figure to view it from a different angle, or press the
-      <q>Rotate</q> button to spin it automatically.</p>
-    </instructions>
-  </interactive>
- </figure>
+ <note>
+  <p>
+      Put a figure here of the elliptic cone with the corresponding traces. 
+      Thank you!
+  </p>
+ </note>
 
  <p>
  
