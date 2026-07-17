@@ -76,7 +76,7 @@ For our examples, we will consider the following simplified forms of quadric sur
     Slicing the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-elliptical-paraboloid-slices" iframe="elliptical-paraboloid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-elliptical-paraboloid-slices" iframe="elliptical-paraboloid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
@@ -129,7 +129,7 @@ For our examples, we will consider the following simplified forms of quadric sur
     Slicing the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-hyperbolic-paraboloid-slices" iframe="hyperbolic-paraboloid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-hyperbolic-paraboloid-slices" iframe="hyperbolic-paraboloid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with planes
@@ -181,7 +181,7 @@ For our examples, we will consider the following simplified forms of quadric sur
     Slicing the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-ellipsoid-slices" iframe="ellipsoid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-ellipsoid-slices" iframe="ellipsoid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m> with planes
@@ -236,7 +236,7 @@ For our examples, we will consider the following simplified forms of quadric sur
     Slicing the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-elliptic-cone-slices" iframe="elliptic-cone-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-elliptic-cone-slices" iframe="elliptic-cone-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
