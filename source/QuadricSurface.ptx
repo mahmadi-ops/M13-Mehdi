@@ -181,7 +181,7 @@ For our examples, we will consider the following simplified forms of quadric sur
     </me>  
     Under these conditions, the general equation of a quadric surface reduces to the following equation:
     <me>
-        \frac{z^2} = \frac{x^2}{4} + \frac{y^2}{9} 
+        z^2 = \frac{x^2}{4} + \frac{y^2}{9} 
 
     </me>
   </p>
@@ -196,8 +196,8 @@ For our examples, we will consider the following simplified forms of quadric sur
   </p>
     
 <me>
-    \frac{z^2} - \frac{y^2}{9} = 1  \; (hyperbola) \\\\
-    \frac{z^2} - \frac{x^2}{4} = 1  \; (hyperbola) \\\\
+    z^2 - \frac{y^2}{9} = 1  \; (hyperbola) \\\\
+    z^2 - \frac{x^2}{4} = 1  \; (hyperbola) \\\\
     \frac{x^2}{4} + \frac{y^2}{9} = 1 \;(ellipse)
 </me>
   
