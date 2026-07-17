@@ -1,7 +1,7 @@
 <section xml:id="section-exercises">
   <title>Exercises</title>
 
-<subsection xml:id="subsection-absolute-extrema">
+<subsection xml:id="subsection-abs-extrema">
     <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
     <introduction>
     <p>
@@ -9,7 +9,7 @@
       click <xref ref="section-extreme-values" text="title"/>.
     </p>
    </introduction>
-    <exercises xml:id="exercises-absolute-extrema">
+  <exercises xml:id="exercises-abs-extrema">
 
  
       <exercise xml:id="ex-extrema-triangle">
@@ -28,12 +28,284 @@
             iframe="iframe/hint-extrema-triangle.html"/>
         </statement>
 
-        <solution>
-          <!-- Your solution goes here. -->
-        </solution>
+         <solution>
+      <p>
+        The gradient is <m>\nabla f = \langle 2x - y,\; -x + 2y - 3\rangle</m>, which
+        vanishes only at <m>(1,2)</m>, a point in the interior of the region. There
+        <m>f(1,2) = -3</m>. Since this is the only critical point on all of
+        <m>\mathbb{R}^2</m> and it is a minimum (by the second derivative test), it is a
+        global minimum. We now examine the three boundary segments to look for possible
+        maxima.
+      </p>
+      <p>
+        On the <m>x</m>-axis with <m>0 \le x \le 4</m>, we have <m>f(x,0) = x^2</m>, which
+        is maximized at <m>f(4,0) = 16</m>.
+      </p>
+      <p>
+        On the <m>y</m>-axis with <m>0 \le y \le 4</m>, we have <m>f(0,y) = y^2 - 3y</m>,
+        which is maximized at <m>f(0,4) = 4</m>.
+      </p>
+      <p>
+        Finally, on the line <m>x = 4 - y</m> with <m>0 \le y \le 4</m>, we have
+        <m>f(4-y,\,y) = 3y^2 - 15y + 16</m>, which is maximized at <m>f(4,0) = 16</m>.
+      </p>
+      <p>
+        Altogether, there is an absolute minimum <m>f(1,2) = -3</m> and an absolute maximum
+        <m>f(4,0) = 16</m>.
+      </p>
+    </solution>
       </exercise>
+      </exercises>
+</subsection>
 
-    </exercises>
-  </subsection>
+      <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
+<!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
+<subsection xml:id="section-conics-exercises">
+    <title> Exercises for <xref ref="section-conics"  text="title"/></title>
+  <introduction>
+    <p>
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-conics" text="title"/>.
+    </p>
+  </introduction>
+    <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
+  <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
+ <exercises xml:id="exercises-conics">
+ <exercise xml:id="exer-parabolic-antenna">
+  <title>A Parabolic Antenna</title>
+  <introduction>
+    <p>
+      A parabolic antenna has the shape of a paraboloid of revolution: it is
+      created by rotating part of a parabola around its axis.  By the
+      reflection property, all signals arriving parallel to the axis are
+      concentrated at the focus after reflecting off the dish, so that is
+      where the receiver is mounted.  The axial cross-section of the dish is
+      described by two measurements: the <em>diameter</em> <m>d</m> of the
+      dish and its <em>depth</em> <m>h</m>.  Placing the vertex at the origin
+      with the dish opening upward, the cross-section is the parabola
+      <m>x^2 = 4py</m>, and the rim passes through the points
+      <m>\left(\pm\tfrac{d}{2},\, h\right)</m>.
+    </p>
+    <p>
+      Consider a dish antenna with diameter <m>d = 120</m> cm and depth
+      <m>h = 20.3</m> cm, suitable for the amateur radio band at
+      <m>5.76</m> GHz.
+    </p>
+    <figure xml:id="fig-antenna-model">
+      <caption>
+        Cross-section of the parabolic antenna: diameter <m>d</m>, depth
+        <m>h</m>, focus <m>F(0,p)</m>, and opening angle <m>2\varphi</m>.
+      </caption>
+      <image xml:id="prefig-antenna-model" width="75%">
+        <description>
+          A parabola opening upward with vertex at the origin.  The rim
+          points at (minus d over 2, h) and (d over 2, h) are joined by a
+          horizontal double arrow labeled d.  A vertical double arrow labeled
+          h shows the depth from the rim down to the axis level.  The focus
+          F(0,p) lies on the y axis above the rim, and two segments run from
+          the focus to the rim points, enclosing the opening angle two phi.
+        </description>
+        <prefigure xmlns="https://prefigure.org" label="prefig-antenna-model">
+          <diagram dimensions="(540,260)" margins="5">
+            <definition>d = 120</definition>
+            <definition>h = 20.3</definition>
+            <definition>p = d^2/(16*h)</definition>
+            <definition>f(x) = x^2/(4*p)</definition>
+            <coordinates bbox="[-80,-14,80,64]">
+              <axes at="axes" xlabel="x" ylabel="y"/>
+              <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
+              <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
+              <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
+              <angle-marker at="opening-angle" points="((-d/2,h),(0,p),(d/2,h))" stroke="blue">
+                <m>2\varphi</m>
+              </angle-marker>
+              <line at="diameter" endpoints="((-d/2+3,h),(d/2-3,h))" stroke="blue" arrows="2"/>
+              <label at="label-d" anchor="(-30,h)" alignment="n"><m>d</m></label>
+              <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
+              <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
+              <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
+                <m>\left(-\tfrac{d}{2},\,h\right)</m>
+              </point>
+              <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
+                <m>\left(\tfrac{d}{2},\,h\right)</m>
+              </point>
+              <point at="focus" p="(0,p)" fill="blue" alignment="ne">
+                <m>F(0,p)</m>
+              </point>
+            </coordinates>
+            <annotations>
+              <annotation ref="figure"
+                  text="Cross-section of a parabolic dish antenna, showing its diameter, depth, focus, and opening angle">
+                <annotation ref="dish" sonify="yes"
+                    text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
+                <annotation ref="left-rim"
+                    text="the left rim point, with coordinates minus d over 2, comma, h"/>
+                <annotation ref="right-rim"
+                    text="the right rim point, with coordinates d over 2, comma, h"/>
+                <annotation ref="diameter"
+                    text="the diameter d of the dish, 120 centimeters, measured between the two rim points"/>
+                <annotation ref="depth"
+                    text="the depth h of the dish, 20.3 centimeters, measured from the rim level down to the level of the vertex"/>
+                <annotation ref="focus"
+                    text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex, which is above the rim of this shallow dish"/>
+                <annotation ref="left-ray"
+                    text="a segment from the focus to the left rim point"/>
+                <annotation ref="right-ray"
+                    text="a segment from the focus to the right rim point"/>
+                <annotation ref="opening-angle"
+                    text="the opening angle, 2 phi, between the two segments meeting at the focus, about 136 degrees"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </introduction>
+  <task xml:id="task-antenna-focus">
+    <statement>
+      <p>
+        Determine the optimal location for the receiver, that is, find the
+        distance from the vertex of the dish to the focus.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The receiver must sit at the focus <m>(0,p)</m>.  The rim point
+        <m>\left(\tfrac{d}{2}, h\right) = (60,\, 20.3)</m> lies on the
+        parabola <m>x^2 = 4py</m>, so
+        <me>
+          60^2 = 4p(20.3)
+          \quad\Longrightarrow\quad
+          p = \frac{3600}{81.2} \approx 44.3.
+        </me>
+      </p>
+      <p>
+        The receiver should be mounted on the axis about <m>44.3</m> cm above
+        the vertex of the dish.  Note that <m>p \gt h</m> here, so the focus
+        sits <em>above</em> the rim of this shallow dish.
+      </p>
+    </solution>
+  </task>
+  <task xml:id="task-antenna-quadratic">
+    <statement>
+      <p>
+        Find the quadratic function <m>y = f(x)</m> (explicit form) that
+        describes the curvature of the dish, and graph it (for example, in
+        GeoGebra or Desmos).
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Solving <m>x^2 = 4py</m> for <m>y</m> with
+        <m>4p = \frac{3600}{20.3} \approx 177.3</m> gives
+        <me>
+          y = \frac{1}{4p}\,x^2 = \frac{20.3}{3600}\,x^2 \approx \frac{x^2}{177.3},
+          \qquad -60 \le x \le 60.
+        </me>
+      </p>
+      <p>
+        The graph captures the true curvature of the dish provided both axes
+        use the same scale.
+      </p>
+    </solution>
+  </task>
+  <task xml:id="task-antenna-angle">
+    <statement>
+      <p>
+        The <em>opening angle</em> <m>2\varphi</m> of the dish is the angle
+        at which the two edges of the rim are seen from the focus.  Compute
+        it.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The focus <m>F(0,p)</m>, the point <m>(0,h)</m>, and the rim point
+        <m>\left(\tfrac{d}{2}, h\right)</m> form a right triangle with legs
+        <m>p - h</m> (vertical) and <m>\tfrac{d}{2}</m> (horizontal), and
+        <m>\varphi</m> is the angle at the focus.  Hence
+        <me>
+          \tan\varphi = \frac{d/2}{p - h} = \frac{60}{44.3 - 20.3} = \frac{60}{24}
+          \quad\Longrightarrow\quad
+          \varphi \approx 68.2^\circ.
+        </me>
+      </p>
+      <figure xml:id="fig-antenna-angle-triangle">
+        <caption>
+          The right triangle used to compute the half opening angle
+          <m>\varphi</m>: legs <m>p-h</m> and <m>d/2</m>.
+        </caption>
+        <image xml:id="prefig-antenna-angle-triangle" width="75%">
+          <description>
+            The same parabola and focus as before, with a red right triangle
+            drawn from the focus: a vertical leg of length p minus h down to
+            the rim level, a horizontal leg of length d over 2 out to the
+            right rim point, and the segment from the focus to the rim point
+            as hypotenuse.  The angle phi at the focus is marked.
+          </description>
+          <prefigure xmlns="https://prefigure.org" label="prefig-antenna-angle-triangle">
+            <diagram dimensions="(540,260)" margins="5">
+              <definition>d = 120</definition>
+              <definition>h = 20.3</definition>
+              <definition>p = d^2/(16*h)</definition>
+              <definition>f(x) = x^2/(4*p)</definition>
+              <coordinates bbox="[-80,-14,80,64]">
+                <axes at="axes" xlabel="x" ylabel="y"/>
+                <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
+                <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
+                <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
+                <line at="vertical-leg" endpoints="((0,p),(0,h))" stroke="red" thickness="3"/>
+                <line at="horizontal-leg" endpoints="((0,h),(d/2,h))" stroke="red" thickness="3"/>
+                <line at="square-1" endpoints="((0,h+4),(4,h+4))" stroke="red" thickness="1"/>
+                <line at="square-2" endpoints="((4,h+4),(4,h))" stroke="red" thickness="1"/>
+                <angle-marker at="half-angle" points="((0,h),(0,p),(d/2,h))" stroke="red">
+                  <m>\varphi</m>
+                </angle-marker>
+                <label at="label-vleg" anchor="(-2,(p+h)/2)" alignment="w"><m>p-h</m></label>
+                <label at="label-hleg" anchor="(d/4,h)" alignment="s"><m>d/2</m></label>
+                <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
+                <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
+                <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
+                  <m>\left(-\tfrac{d}{2},\,h\right)</m>
+                </point>
+                <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
+                  <m>\left(\tfrac{d}{2},\,h\right)</m>
+                </point>
+                <point at="focus" p="(0,p)" fill="blue" alignment="ne">
+                  <m>F(0,p)</m>
+                </point>
+              </coordinates>
+              <annotations>
+                <annotation ref="figure"
+                    text="The right triangle used to compute the half opening angle phi of the parabolic dish">
+                  <annotation ref="dish" sonify="yes"
+                      text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
+                  <annotation ref="focus"
+                      text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex"/>
+                  <annotation ref="right-rim"
+                      text="the right rim point, with coordinates d over 2, comma, h"/>
+                  <annotation ref="vertical-leg"
+                      text="the vertical leg of the right triangle, running from the focus down to rim level, with length p minus h, about 24 centimeters"/>
+                  <annotation ref="horizontal-leg"
+                      text="the horizontal leg, running from the axis out to the right rim point, with length d over 2, which is 60 centimeters"/>
+                  <annotation ref="right-ray"
+                      text="the hypotenuse, the segment from the focus to the right rim point"/>
+                  <annotation ref="half-angle"
+                      text="the half opening angle phi at the focus, about 68.2 degrees; its tangent is d over 2, divided by p minus h"/>
+                  <annotation ref="depth"
+                      text="the depth h of the dish, 20.3 centimeters"/>
+                </annotation>
+              </annotations>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        The opening angle of the dish is <m>2\varphi \approx 136.4^\circ</m>.
+      </p>
+    </solution>
+  </task>
+ </exercise>
+ </exercises>
+</subsection>
 
 </section>
