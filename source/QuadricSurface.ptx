@@ -65,11 +65,11 @@ For our examples, we will consider the following simplified forms of quadric sur
     we get the following traces, as shown in <xref ref="fig-elliptical-paraboloid-slices"/>:
 </p>
     
-<me>
-    z =  1 + \frac{y^2}{9}  \; (parabola) \\\\
-    z =  \frac{x^2}{4} + 1  \;(parabola) \\\\
-    1 =  \frac{x^2}{4} + \frac{y^2}{9} \;(ellipse)
-</me>
+<md>
+    <mrow>z \amp=  1 + \frac{y^2}{9}  \amp\amp (parabola)</mrow>
+    <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
+    <mrow>1 \amp=  \frac{x^2}{4} + \frac{y^2}{9} \amp\amp (ellipse)</mrow>
+</md>
 
  <figure xml:id="fig-elliptical-paraboloid-traces">
   <caption>
@@ -210,11 +210,11 @@ For our examples, we will consider the following simplified forms of quadric sur
     we get the following traces, as shown in <xref ref="fig-hyperbolic-paraboloid-slices"/>:
 </p>
     
-<me>
-    z =  1 - \frac{y^2}{9}  \; (parabola) \\\\
-    z =  \frac{x^2}{4} + 1  \;(parabola) \\\\
-    1 =  \frac{x^2}{4} - \frac{y^2}{9} \;(hyperbola)
-</me>
+<md>
+    <mrow>z \amp=  1 - \frac{y^2}{9}  \amp\amp (parabola)</mrow>
+    <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
+    <mrow>1 \amp=  \frac{x^2}{4} - \frac{y^2}{9} \amp\amp (hyperbola)</mrow>
+</md>
 
  <figure xml:id="fig-hyperbolic-paraboloid-traces">
   <caption>
@@ -359,11 +359,11 @@ For our examples, we will consider the following simplified forms of quadric sur
   we find the following traces, as shown in <xref ref="fig-ellipsoid-slices"/>:
 </p>
     
-<me>
-    \frac{y^2}{9} + \frac{z^2}{16} = 1  \;(ellipse) \\\\
-    \frac{x^2}{4} + \frac{z^2}{16} = 1  \;(ellipse) \\\\
-    \frac{x^2}{4} + \frac{y^2}{9}  = 1  \;(ellipse)
-</me>
+<md>
+    <mrow>\frac{y^2}{9} + \frac{z^2}{16} \amp= 1  \amp\amp (ellipse)</mrow>
+    <mrow>\frac{x^2}{4} + \frac{z^2}{16} \amp= 1  \amp\amp (ellipse)</mrow>
+    <mrow>\frac{x^2}{4} + \frac{y^2}{9}  \amp= 1  \amp\amp (ellipse)</mrow>
+</md>
 
  <figure xml:id="fig-ellipsoid-traces">
   <caption>
@@ -506,11 +506,11 @@ For our examples, we will consider the following simplified forms of quadric sur
 
   </p>
     
-<me>
-    z^2 - \frac{y^2}{9} = 1  \; (hyperbola) \\\\
-    z^2 - \frac{x^2}{4} = 1  \; (hyperbola) \\\\
-    \frac{x^2}{4} + \frac{y^2}{9} = 1 \;(ellipse)
-</me>
+<md>
+    <mrow>z^2 - \frac{y^2}{9} \amp= 1  \amp\amp (hyperbola)</mrow>
+    <mrow>z^2 - \frac{x^2}{4} \amp= 1  \amp\amp (hyperbola)</mrow>
+    <mrow>\frac{x^2}{4} + \frac{y^2}{9} \amp= 1 \amp\amp (ellipse)</mrow>
+</md>
 
  <figure xml:id="fig-elliptic-cone-traces">
   <caption>
