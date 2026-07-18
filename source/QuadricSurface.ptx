@@ -1026,6 +1026,155 @@ We leave the student to explore the condition that would create a hyperboloid of
 
 </subsection>
 
+<subsection xml:id="subsec-quadric-applications">
+  <title>Quadric Surfaces in the World</title>
+
+  <p>
+    The surfaces of this section are more than abstract shapes.  Each one appears
+    in the physical world, and often it appears <em>because</em> of the very
+    geometric properties we have been discovering by slicing.
+  </p>
+
+  <p>
+    <term>Elliptical paraboloid.</term>  A paraboloid has a striking reflective
+    property: every ray travelling parallel to its axis bounces off the surface
+    and passes through a single point, the focus.  This is why the dishes of
+    radio telescopes and satellite receivers, and the reflectors behind car
+    headlights and solar concentrators, are shaped like paraboloids <mdash/> they
+    gather parallel incoming rays to one point, or, run in reverse, send rays out
+    in a single parallel beam.
+  </p>
+
+  <figure xml:id="fig-app-paraboloid">
+    <caption>
+      The dishes of the Very Large Array are elliptical paraboloids, focusing
+      incoming radio waves onto a single receiver.
+      (Photo: Wikimedia Commons, CC BY 3.0.)
+    </caption>
+    <image source="app-paraboloid-vla.jpg" width="70%">
+      <shortdescription>
+        A row of large white parabolic radio-telescope dishes on a desert plain.
+      </shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    <term>Hyperbolic paraboloid.</term>  The saddle is <term>doubly ruled</term>:
+    through every point pass two straight lines that lie entirely on the surface,
+    just like the flat traces that appear when we slice it.  A doubly curved roof
+    can therefore be built out of straight beams, or poured over straight
+    formwork, which makes the hyperbolic paraboloid both strong and inexpensive to
+    build.  It is the shape of many <q>saddle</q> roofs and of Félix Candela's
+    thin concrete shells <mdash/> and, on a smaller scale, of a Pringles potato
+    chip.
+  </p>
+
+  <figure xml:id="fig-app-hyperbolic-paraboloid">
+    <caption>
+      The roof of the Scotiabank Saddledome in Calgary is a hyperbolic paraboloid.
+      (Photo: Wikimedia Commons, CC BY-SA 3.0.)
+    </caption>
+    <image source="app-hyperbolic-paraboloid-saddledome.jpg" width="70%">
+      <shortdescription>
+        A large arena whose roof dips in the middle and rises at the sides like a
+        saddle.
+      </shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    <term>Ellipsoid.</term>  An ellipsoid has two focal points, and a wave leaving
+    one focus reflects off the surface straight toward the other.  In a
+    <q>whispering gallery</q> a whisper at one focus is heard clearly across the
+    room at the other; in medical <term>lithotripsy</term> a shock wave generated
+    at one focus is focused onto a kidney stone placed at the other, breaking it
+    apart without surgery.  On the largest scale, the Earth itself is modeled as a
+    slightly flattened ellipsoid <mdash/> the reference ellipsoid against which GPS
+    coordinates are measured.
+  </p>
+
+  <figure xml:id="fig-app-ellipsoid">
+    <caption>
+      The Earth is modeled as an oblate ellipsoid, the reference surface behind
+      GPS coordinates.  (Image: NASA.)
+    </caption>
+    <image source="app-ellipsoid-earth.jpg" width="55%">
+      <shortdescription>
+        A photograph of the whole Earth from space, very nearly spherical but
+        slightly flattened.
+      </shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    <term>Elliptic cone.</term>  When an aircraft flies faster than sound, the
+    pressure waves it creates pile up into a cone that trails behind it, the Mach
+    cone.  The <term>sonic boom</term> you hear is the instant this cone of
+    compressed air sweeps past you.
+  </p>
+
+  <figure xml:id="fig-app-cone">
+    <caption>
+      Schlieren photography reveals the cone of shock waves trailing a supersonic
+      T-38 jet.  (Image: NASA.)
+    </caption>
+    <image source="app-cone-sonicboom.jpg" width="70%">
+      <shortdescription>
+        A jet in flight with cone-shaped shock waves made visible streaming back
+        from its nose and tail.
+      </shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    <term>Hyperboloid of one sheet.</term>  Like the saddle, this surface is
+    <term>ruled</term> <mdash/> recall the two straight-line traces we found in the
+    planes <m>x = \pm 2</m> in <xref ref="activity-hyperboloids"/>.  Because
+    straight members can be arranged to sweep out its double curvature, it can be
+    built cheaply from straight beams or straight formwork while remaining very
+    stiff.  This is exactly why the cooling towers of power plants, and open
+    lattice towers such as Vladimir Shukhov's, are hyperboloids of one sheet.
+  </p>
+
+  <figure xml:id="fig-app-hyperboloid-one-sheet">
+    <caption>
+      A power-plant cooling tower is a hyperboloid of one sheet, assembled from
+      straight structural members.  (Photo: Wikimedia Commons, CC BY 3.0.)
+    </caption>
+    <image source="app-hyperboloid1-coolingtower.jpg" width="55%">
+      <shortdescription>
+        A tall concrete cooling tower that narrows to a waist in the middle and
+        flares out at the top and bottom.
+      </shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    <term>Hyperboloid of two sheets.</term>  Like the ellipse, a hyperbola has two
+    foci, and a ray aimed at one focus reflects toward the other.  Reflecting
+    telescopes of the Cassegrain and Ritchey<ndash/>Chrétien type <mdash/>
+    including the Hubble Space Telescope <mdash/> use mirrors ground to
+    hyperboloidal shapes to fold a long optical path into a short tube.  The same
+    two-focus idea drives <term>hyperbolic navigation</term>: comparing the
+    arrival times of two signals places a receiver on a hyperboloid, and
+    intersecting several such surfaces is how systems from LORAN to GPS pin down a
+    location.
+  </p>
+
+  <figure xml:id="fig-app-hyperboloid-two-sheets">
+    <caption>
+      The Hubble Space Telescope focuses light with hyperboloidal mirrors.
+      (Image: NASA.)
+    </caption>
+    <image source="app-hyperboloid2-hubble.jpg" width="60%">
+      <shortdescription>
+        The cylindrical Hubble Space Telescope in orbit above the Earth.
+      </shortdescription>
+    </image>
+  </figure>
+
+</subsection>
+
 <exercises xml:id="exercises-quadric-surfaces">
   <exercise xml:id="exercise-quadric-graph-match">
     <title>Matching Quadric Surfaces</title>
