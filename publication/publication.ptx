@@ -6,7 +6,11 @@
     </source>
 
     <common>
-<exercise-divisional solution="yes"/>
+
+  
+
+
+  <exercise-divisional solution="yes"/> 
       <tableofcontents level="4"/>
         <!-- When writing an article for a specific journal, you can   -->
         <!-- specify the name of the journal to get appropriate latex. -->
@@ -60,5 +64,7 @@
 <!--  <source>
   <directories external="assets" generated="generated-assets"/>
 </source> -->
-
+  <html>
+    <webwork divisional="dynamic"/>
+  </html>
 </publication>
