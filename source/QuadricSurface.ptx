@@ -70,13 +70,91 @@ For our examples, we will consider the following simplified forms of quadric sur
     z =  \frac{x^2}{4} + 1  \;(parabola) \\\\
     1 =  \frac{x^2}{4} + \frac{y^2}{9} \;(ellipse)
 </me>
-  
+
+ <figure xml:id="fig-elliptical-paraboloid-traces">
+  <caption>
+    The traces of the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m>
+    in the planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>.
+  </caption>
+  <sidebyside widths="32% 32% 32%">
+   <image xml:id="image-elliptical-paraboloid-trace-x">
+    <shortdescription>
+      The trace in the plane x = 2: a parabola opening upward.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptical-paraboloid-trace-x">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (t, 1 + t^2/9)</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-8,-2,8,9]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="y" ylabel="z"/>
+            <parametric-curve at="trace-x" function="f" domain="(-7.5,7.5)"
+                          stroke="#0072B2" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>x=2:\ \ z = 1 + \tfrac{y^2}{9}</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane x = 2: a parabola opening upward">
+            <annotation ref="trace-x" text="In the plane x equals 2, the trace z equals 1 plus y squared over 9 is a parabola opening upward with vertex at height 1"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-elliptical-paraboloid-trace-y">
+    <shortdescription>
+      The trace in the plane y = -3: a parabola opening upward.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptical-paraboloid-trace-y">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (t, t^2/4 + 1)</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-6,-2,6,9]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="z"/>
+            <parametric-curve at="trace-y" function="f" domain="(-5,5)"
+                          stroke="#009E73" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>y=-3:\ \ z = \tfrac{x^2}{4} + 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane y = -3: a parabola opening upward">
+            <annotation ref="trace-y" text="In the plane y equals negative 3, the trace z equals x squared over 4 plus 1 is a parabola opening upward with vertex at height 1"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-elliptical-paraboloid-trace-z">
+    <shortdescription>
+      The trace in the plane z = 1: an ellipse.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptical-paraboloid-trace-z">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (2*cos(t), 3*sin(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-4.5,-4.5,4.5,4.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="y"/>
+            <parametric-curve at="trace-z" function="f" domain="(0,2*pi)" closed="yes"
+                          stroke="#D55E00" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>z=1:\ \ \tfrac{x^2}{4} + \tfrac{y^2}{9} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane z = 1: an ellipse">
+            <annotation ref="trace-z" text="In the plane z equals 1, the trace x squared over 4 plus y squared over 9 equals 1 is an ellipse with semi-axes 2 and 3"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+  </sidebyside>
+ </figure>
+
  <figure xml:id="fig-elliptical-paraboloid-slices">
   <caption>
     Slicing the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-elliptical-paraboloid-slices" iframe="elliptical-paraboloid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-elliptical-paraboloid-slices" iframe="elliptical-paraboloid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
@@ -86,6 +164,20 @@ For our examples, we will consider the following simplified forms of quadric sur
       <q>Rotate</q> button to spin it automatically.</p>
     </instructions>
   </interactive>
+ </figure>
+
+ <p>
+ The animation in <xref ref="fig-elliptical-paraboloid-video"/> shows these slices being taken one at a time.
+ </p>
+
+ <figure xml:id="fig-elliptical-paraboloid-video">
+  <caption>
+    Slicing <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes <m>z = c</m>,
+    <m>x = c</m>, and <m>y = c</m>.
+  </caption>
+  <video xml:id="video-elliptical-paraboloid-slices"
+         source="videos/elliptical_paraboloid_slices_manim.mp4"
+         width="100%" aspect="16:9"/>
  </figure>
 
  <p>
@@ -123,13 +215,96 @@ For our examples, we will consider the following simplified forms of quadric sur
     z =  \frac{x^2}{4} + 1  \;(parabola) \\\\
     1 =  \frac{x^2}{4} - \frac{y^2}{9} \;(hyperbola)
 </me>
-  
+
+ <figure xml:id="fig-hyperbolic-paraboloid-traces">
+  <caption>
+    The traces of the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m>
+    in the planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>.
+  </caption>
+  <sidebyside widths="32% 32% 32%">
+   <image xml:id="image-hyperbolic-paraboloid-trace-x">
+    <shortdescription>
+      The trace in the plane x = 2: a parabola opening downward.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="hyperbolic-paraboloid-trace-x">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (t, 1 - t^2/9)</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-8,-6.5,8,3.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="y" ylabel="z"/>
+            <parametric-curve at="trace-x" function="f" domain="(-7.5,7.5)"
+                          stroke="#0072B2" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>x=2:\ \ z = 1 - \tfrac{y^2}{9}</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane x = 2: a parabola opening downward">
+            <annotation ref="trace-x" text="In the plane x equals 2, the trace z equals 1 minus y squared over 9 is a parabola opening downward with vertex at height 1"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-hyperbolic-paraboloid-trace-y">
+    <shortdescription>
+      The trace in the plane y = -3: a parabola opening upward.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="hyperbolic-paraboloid-trace-y">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (t, t^2/4 - 1)</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-6,-2.5,6,7]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="z"/>
+            <parametric-curve at="trace-y" function="f" domain="(-5,5)"
+                          stroke="#009E73" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>y=-3:\ \ z = \tfrac{x^2}{4} - 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane y = -3: a parabola opening upward">
+            <annotation ref="trace-y" text="In the plane y equals negative 3, the trace z equals x squared over 4 minus 1 is a parabola opening upward with vertex at height negative 1"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-hyperbolic-paraboloid-trace-z">
+    <shortdescription>
+      The trace in the plane z = 1: a hyperbola opening left and right.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="hyperbolic-paraboloid-trace-z">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>fa(t) = (2*cosh(t), 3*sinh(t))</definition>
+        <definition>fb(t) = (-2*cosh(t), 3*sinh(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-8,-8,8,8]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="y"/>
+            <group at="trace-z">
+              <parametric-curve function="fa" domain="(-1.7,1.7)"
+                          stroke="#D55E00" thickness="3"/>
+              <parametric-curve function="fb" domain="(-1.7,1.7)"
+                          stroke="#D55E00" thickness="3"/>
+            </group>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>z=1:\ \ \tfrac{x^2}{4} - \tfrac{y^2}{9} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane z = 1: a hyperbola opening left and right">
+            <annotation ref="trace-z" text="In the plane z equals 1, the trace x squared over 4 minus y squared over 9 equals 1 is a hyperbola opening left and right"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+  </sidebyside>
+ </figure>
+
  <figure xml:id="fig-hyperbolic-paraboloid-slices">
   <caption>
     Slicing the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-hyperbolic-paraboloid-slices" iframe="hyperbolic-paraboloid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-hyperbolic-paraboloid-slices" iframe="hyperbolic-paraboloid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with planes
@@ -139,6 +314,20 @@ For our examples, we will consider the following simplified forms of quadric sur
       <q>Rotate</q> button to spin it automatically.</p>
     </instructions>
   </interactive>
+ </figure>
+
+ <p>
+ The animation in <xref ref="fig-hyperbolic-paraboloid-video"/> shows these slices being taken one at a time.
+ </p>
+
+ <figure xml:id="fig-hyperbolic-paraboloid-video">
+  <caption>
+    Slicing <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with planes <m>z = c</m>,
+    <m>x = c</m>, and <m>y = c</m>.
+  </caption>
+  <video xml:id="video-hyperbolic-paraboloid-slices"
+         source="videos/hyperbolic_paraboloid_slices_manim.mp4"
+         width="100%" aspect="16:9"/>
  </figure>
 
  <p>
@@ -175,13 +364,91 @@ For our examples, we will consider the following simplified forms of quadric sur
     \frac{x^2}{4} + \frac{z^2}{16} = 1  \;(ellipse) \\\\
     \frac{x^2}{4} + \frac{y^2}{9}  = 1  \;(ellipse)
 </me>
-  
+
+ <figure xml:id="fig-ellipsoid-traces">
+  <caption>
+    The traces of the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m>
+    in the coordinate planes <m>x = 0</m>, <m>y = 0</m>, and <m>z = 0</m>.
+  </caption>
+  <sidebyside widths="32% 32% 32%">
+   <image xml:id="image-ellipsoid-trace-x">
+    <shortdescription>
+      The trace in the plane x = 0: an ellipse with semi-axes 3 and 4.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="ellipsoid-trace-x">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (3*cos(t), 4*sin(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-5.5,-5.5,5.5,5.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="y" ylabel="z"/>
+            <parametric-curve at="trace-x" function="f" domain="(0,2*pi)" closed="yes"
+                          stroke="#0072B2" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>x=0:\ \ \tfrac{y^2}{9} + \tfrac{z^2}{16} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane x = 0: an ellipse with semi-axes 3 and 4">
+            <annotation ref="trace-x" text="In the plane x equals 0, the trace y squared over 9 plus z squared over 16 equals 1 is an ellipse with semi-axes 3 and 4"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-ellipsoid-trace-y">
+    <shortdescription>
+      The trace in the plane y = 0: an ellipse with semi-axes 2 and 4.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="ellipsoid-trace-y">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (2*cos(t), 4*sin(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-5.5,-5.5,5.5,5.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="z"/>
+            <parametric-curve at="trace-y" function="f" domain="(0,2*pi)" closed="yes"
+                          stroke="#009E73" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>y=0:\ \ \tfrac{x^2}{4} + \tfrac{z^2}{16} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane y = 0: an ellipse with semi-axes 2 and 4">
+            <annotation ref="trace-y" text="In the plane y equals 0, the trace x squared over 4 plus z squared over 16 equals 1 is an ellipse with semi-axes 2 and 4"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-ellipsoid-trace-z">
+    <shortdescription>
+      The trace in the plane z = 0: an ellipse with semi-axes 2 and 3.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="ellipsoid-trace-z">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (2*cos(t), 3*sin(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-4.5,-4.5,4.5,4.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="y"/>
+            <parametric-curve at="trace-z" function="f" domain="(0,2*pi)" closed="yes"
+                          stroke="#D55E00" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>z=0:\ \ \tfrac{x^2}{4} + \tfrac{y^2}{9} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane z = 0: an ellipse with semi-axes 2 and 3">
+            <annotation ref="trace-z" text="In the plane z equals 0, the trace x squared over 4 plus y squared over 9 equals 1 is an ellipse with semi-axes 2 and 3"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+  </sidebyside>
+ </figure>
+
  <figure xml:id="fig-ellipsoid-slices">
   <caption>
     Slicing the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-ellipsoid-slices" iframe="ellipsoid-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-ellipsoid-slices" iframe="ellipsoid-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m> with planes
@@ -191,6 +458,20 @@ For our examples, we will consider the following simplified forms of quadric sur
       <q>Rotate</q> button to spin it automatically.</p>
     </instructions>
   </interactive>
+ </figure>
+
+ <p>
+ The animation in <xref ref="fig-ellipsoid-video"/> shows these slices being taken one at a time.
+ </p>
+
+ <figure xml:id="fig-ellipsoid-video">
+  <caption>
+    Slicing <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m> with planes <m>z = c</m>,
+    <m>x = c</m>, and <m>y = c</m>.
+  </caption>
+  <video xml:id="video-ellipsoid-slices"
+         source="videos/ellipsoid_slices_manim.mp4"
+         width="100%" aspect="16:9"/>
  </figure>
 
  <p>
@@ -230,13 +511,101 @@ For our examples, we will consider the following simplified forms of quadric sur
     z^2 - \frac{x^2}{4} = 1  \; (hyperbola) \\\\
     \frac{x^2}{4} + \frac{y^2}{9} = 1 \;(ellipse)
 </me>
-  
+
+ <figure xml:id="fig-elliptic-cone-traces">
+  <caption>
+    The traces of the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m>
+    in the planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>.
+  </caption>
+  <sidebyside widths="32% 32% 32%">
+   <image xml:id="image-elliptic-cone-trace-x">
+    <shortdescription>
+      The trace in the plane x = 2: a hyperbola opening up and down.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptic-cone-trace-x">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>fa(t) = (3*sinh(t), cosh(t))</definition>
+        <definition>fb(t) = (3*sinh(t), -cosh(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-7.5,-4,7.5,4]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="y" ylabel="z"/>
+            <group at="trace-x">
+              <parametric-curve function="fa" domain="(-1.55,1.55)"
+                          stroke="#0072B2" thickness="3"/>
+              <parametric-curve function="fb" domain="(-1.55,1.55)"
+                          stroke="#0072B2" thickness="3"/>
+            </group>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>x=2:\ \ z^2 - \tfrac{y^2}{9} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane x = 2: a hyperbola opening up and down">
+            <annotation ref="trace-x" text="In the plane x equals 2, the trace z squared minus y squared over 9 equals 1 is a hyperbola opening up and down"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-elliptic-cone-trace-y">
+    <shortdescription>
+      The trace in the plane y = -3: a hyperbola opening up and down.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptic-cone-trace-y">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>fa(t) = (2*sinh(t), cosh(t))</definition>
+        <definition>fb(t) = (2*sinh(t), -cosh(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-5.5,-4,5.5,4]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="z"/>
+            <group at="trace-y">
+              <parametric-curve function="fa" domain="(-1.6,1.6)"
+                          stroke="#009E73" thickness="3"/>
+              <parametric-curve function="fb" domain="(-1.6,1.6)"
+                          stroke="#009E73" thickness="3"/>
+            </group>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>y=-3:\ \ z^2 - \tfrac{x^2}{4} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane y = -3: a hyperbola opening up and down">
+            <annotation ref="trace-y" text="In the plane y equals negative 3, the trace z squared minus x squared over 4 equals 1 is a hyperbola opening up and down"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+   <image xml:id="image-elliptic-cone-trace-z">
+    <shortdescription>
+      The trace in the plane z = 1: an ellipse.
+    </shortdescription>
+    <prefigure xmlns="https://prefigure.org" label="elliptic-cone-trace-z">
+      <diagram dimensions="(320,345)" margins="5">
+        <definition>f(t) = (2*cos(t), 3*sin(t))</definition>
+        <coordinates bbox="[0,0,320,345]">
+          <coordinates bbox="[-4.5,-4.5,4.5,4.5]" destination="[15,10,305,300]">
+            <axes arrows="1" decorations="no" xlabel="x" ylabel="y"/>
+            <parametric-curve at="trace-z" function="f" domain="(0,2*pi)" closed="yes"
+                          stroke="#D55E00" thickness="3"/>
+          </coordinates>
+          <label anchor="(160,322)" alignment="c"><m>z=1:\ \ \tfrac{x^2}{4} + \tfrac{y^2}{9} = 1</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="figure" text="The trace in the plane z = 1: an ellipse">
+            <annotation ref="trace-z" text="In the plane z equals 1, the trace x squared over 4 plus y squared over 9 equals 1 is an ellipse with semi-axes 2 and 3"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+   </image>
+  </sidebyside>
+ </figure>
+
  <figure xml:id="fig-elliptic-cone-slices">
   <caption>
     Slicing the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m>
     with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
   </caption>
-  <interactive xml:id="interactive-elliptic-cone-slices" iframe="elliptic-cone-slices.html" width="100%" aspect="8:6">
+  <interactive xml:id="interactive-elliptic-cone-slices" iframe="elliptic-cone-slices.html" width="100%" aspect="8:7">
     <instructions>
       <p>
       Use the buttons to slice the surface <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes
@@ -246,6 +615,20 @@ For our examples, we will consider the following simplified forms of quadric sur
       <q>Rotate</q> button to spin it automatically.</p>
     </instructions>
   </interactive>
+ </figure>
+
+ <p>
+ The animation in <xref ref="fig-elliptic-cone-video"/> shows these slices being taken one at a time.
+ </p>
+
+ <figure xml:id="fig-elliptic-cone-video">
+  <caption>
+    Slicing <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes <m>z = c</m>,
+    <m>x = c</m>, and <m>y = c</m>.
+  </caption>
+  <video xml:id="video-elliptic-cone-slices"
+         source="videos/elliptic_cone_slices_manim.mp4"
+         width="100%" aspect="16:9"/>
  </figure>
 
  <p>
