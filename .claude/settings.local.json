@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node *)",
+      "Read(//usr/lib/node_modules/**)",
+      "Bash(python3 -c ' *)",
+      "mcp__ide__getDiagnostics"
+    ]
+  }
+}
