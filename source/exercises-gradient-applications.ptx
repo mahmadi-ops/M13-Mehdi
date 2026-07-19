@@ -75,6 +75,27 @@
           </li>
         </ol>
       </p>
+
+      <interactive xml:id="interactive-potential-plate"
+                   iframe="potential-plate-3d.html"
+                   width="100%" aspect="6:5">
+        <caption>
+          The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> over the plate. The highlighted
+          curve is the equipotential <m>2x^2 + 6y^2 = 14</m> through <m>P_0(2,1)</m>, on
+          which <m>D_{\mathbf u}V = 0</m>.
+        </caption>
+        <instructions>
+          <p>
+            Press <q>Ride the equipotential</q> to travel the level curve through
+            <m>P_0</m>, holding <m>86</m> V, or <q>Follow the field</q> to move along
+            <m>\mathbf E = -\nabla V</m>. The readout shows the potential, position,
+            and <m>D_{\mathbf u}V</m>; the blue arrow in the base plane points along
+            the direction of steepest decrease. Drag the figure to rotate it, use
+            <q>Speed</q> to change the pace, and <q>Play</q> or <q>Reset</q> to control
+            the animation.
+          </p>
+        </instructions>
+      </interactive>
     </answer>
   </exercise>
 
@@ -140,6 +161,28 @@
           </li>
         </ol>
       </p>
+
+      <interactive xml:id="interactive-fall-line"
+                   iframe="fall-line-3d.html"
+                   width="100%" aspect="6:5">
+        <caption>
+          The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. The highlighted
+          contour is the level of constant elevation through <m>P_0(200,100)</m>, along
+          which a traverse neither climbs nor descends.
+        </caption>
+        <instructions>
+          <p>
+            Press <q>Fall line</q> to send the skier down the path of steepest descent,
+            <q>Traverse</q> to follow the contour at constant elevation, or
+            <q>12% line</q> for the gentler heading of part (c), which runs about
+            <m>62^\circ</m> off the fall line. The readout shows elevation, position,
+            and the grade <m>D_{\mathbf u}h</m> as a percent; the arrow in the base
+            plane points along <m>-\nabla h</m>. Drag the figure to rotate it, use
+            <q>Speed</q> to change the pace, and <q>Play</q> or <q>Reset</q> to control
+            the animation.
+          </p>
+        </instructions>
+      </interactive>
     </answer>
   </exercise>
 
@@ -210,6 +253,27 @@
           </li>
         </ol>
       </p>
+
+      <interactive xml:id="interactive-isobars-low"
+                   iframe="isobars-low-3d.html"
+                   width="100%" aspect="6:5">
+        <caption>
+          The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> near the center of the
+          low. The highlighted isobar is the <m>990</m> mb circle of radius
+          <m>\sqrt{500} \approx 22.4</m> miles through <m>P_0(20,10)</m>.
+        </caption>
+        <instructions>
+          <p>
+            Press <q>Circle the low</q> to hold the barometer at <m>990</m> mb along
+            the isobar, or <q>Run for open water</q> to sail outward across the
+            isobars. The readout shows the barometer, position, and
+            <m>D_{\mathbf u}P</m>; the arrow in the base plane points along
+            <m>-\nabla P</m>, the direction of the pressure-gradient force. Drag the
+            figure to rotate it, use <q>Speed</q> to change the pace, and <q>Play</q>
+            or <q>Reset</q> to control the animation.
+          </p>
+        </instructions>
+      </interactive>
     </answer>
   </exercise>
 

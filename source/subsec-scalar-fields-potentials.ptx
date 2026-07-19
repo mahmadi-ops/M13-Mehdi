@@ -62,12 +62,6 @@
       <cell>pressure-gradient force <m>-\nabla P</m> per unit volume</cell>
       <cell>isobars</cell>
     </row>
-    <row>
-      <cell>Fluid transport</cell>
-      <cell>concentration <m>c</m></cell>
-      <cell>rate along the flow <m>(\mathbf v \cdot \nabla) c</m></cell>
-      <cell>level sets of <m>c</m></cell>
-    </row>
   </tabular>
 
   <p>
@@ -76,10 +70,7 @@
     potential, a ball rolls toward low potential energy, air accelerates toward low
     pressure. So the direction the physics actually selects is the direction of most rapid
     <em>decrease</em>, which is exactly the case <m>\theta = \pi</m> of
-    <m>D_{\mathbf u}f = |\nabla f|\cos\theta</m>. The fluid entry in the table is the one
-    exception in form: there no minus sign appears, because the flow direction is imposed
-    by the velocity <m>\mathbf v</m> rather than chosen by the field, and
-    <m>(\mathbf v \cdot \nabla)c</m> is just a directional derivative rescaled by speed.
+    <m>D_{\mathbf u}f = |\nabla f|\cos\theta</m>.
   </p>
 
   <p>
@@ -106,7 +97,8 @@
         <m>\theta = \pi/2</m>: no change at all. These directions trace the level curves of
         the field <mdash/> isotherms, equipotentials, isobars, the contour lines on a
         topographic map. Since <m>\nabla f</m> is orthogonal to the level curve through a
-        point, <em>the flow always crosses the contours at right angles</em>.
+        point, <em>the flux, the force, or the wind always crosses the
+        contours at right angles</em>.
       </p>
     </li>
   </ul>
