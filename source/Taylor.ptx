@@ -330,8 +330,7 @@
   <video xml:id="video-exp-taylor"
          source="videos/taylor_exp_convergence.mp4"
          width="80%"
-         aspect="16:9"
-         preview="generic"/>
+         aspect="16:9" />
 </figure>
   </subsection>
 

@@ -2,6 +2,54 @@
 <section xml:id="section-directional-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Directional Derivatives and Gradient Vectors</title>
 
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand the directional derivative as the rate of change of
+<m>f(x,y)</m> in an arbitrary direction, generalizing the partial
+derivatives <m>f_x</m> and <m>f_y</m>, which are the special cases in the
+<m>\mathbf i</m> and <m>\mathbf j</m> directions.
+</p>
+</li>
+<li>
+<p>
+Interpret the directional derivative geometrically as the slope of the
+tangent line to the curve in which a vertical plane through <m>P_0</m>,
+in the direction of <m>\mathbf u</m>, cuts the surface
+<m>z = f(x,y)</m>.
+</p>
+</li>
+<li>
+<p>
+Understand the gradient vector <m>\nabla f</m> and its relationship to
+the directional derivative through
+<m>\left(D_{\mathbf u} f\right)_{P_0}
+= \left(\nabla f\right)_{P_0}\cdot\mathbf u</m>.
+</p>
+</li>
+<li>
+<p>
+Interpret the directional derivative through the angle between
+<m>\nabla f</m> and <m>\mathbf u</m>, and understand why <m>f</m> changes
+most rapidly in the direction of the gradient.
+</p>
+</li>
+<li>
+<p>
+Understand why the gradient vector is perpendicular to the level curves
+of <m>f</m>.
+</p>
+</li>
+</ul>
+</objectives>
+
 <p>
 Recall that the partial derivatives <m>f_x</m> and <m>f_y</m> correspond
 to the rate of change of <m>z = f(x,y)</m> in the <m>\mathbf i</m> and
@@ -49,6 +97,10 @@ of the unit vector <m>\mathbf u</m> to reach the point
 two points <m>P_0</m> and <m>P</m> get closer and closer to each other.
 </p>
 
+<figure xml:id="fig-int-dirderiv-setup-3d">
+<caption>
+Interactive view of the definition of the directional derivative. The point <m>P</m> moves the distance <m>s</m> from <m>P_0</m> along <m>\mathbf u</m>, and the secant slope approaches <m>\left(D_{\mathbf u} f\right)_{P_0}</m> as <m>s \to 0</m>.
+</caption>
 <interactive xml:id="interactive-dirderiv-setup-3d" iframe="dirderiv-setup-3d.html" width="100%" aspect="8:6">
 <instructions>
 <p>
@@ -68,6 +120,7 @@ to view it from a different angle, or press <q>Rotate</q> to spin it.
 </p>
 </instructions>
 </interactive>
+</figure>
 
 <figure xml:id="fig-dirderiv-setup-prefigure">
 <caption>
@@ -136,6 +189,10 @@ the tangent line, whose slope is the directional derivative
        width="70%" aspect="16:9"/>
 </figure>
 
+<figure xml:id="fig-int-dirderiv-definition">
+<caption>
+The difference quotient <m>\big(f(P)-f(P_0)\big)/s</m> for <m>f(x,y)=1+x^2+y^2</m> at <m>P_0(1,1)</m>, as functions of the direction angle and the step <m>s</m>.
+</caption>
 <interactive xml:id="interactive-dirderiv-definition" iframe="dirderiv-definition.html" width="100%" aspect="7:6">
 <instructions>
 <p>
@@ -149,6 +206,7 @@ quotient <m>\big(f(P) - f(P_0)\big)/s</m> with its limit as
 </p>
 </instructions>
 </interactive>
+</figure>
 
 </subsection>
 
@@ -214,6 +272,10 @@ secant line of <m>g</m> through <m>s = 0</m> and <m>s</m>. As
 </p>
 </solution>
 
+<figure xml:id="fig-int-dirderiv-secant-3d">
+<caption>
+The secant line on the surface <m>z=1+x^2+y^2</m> rotating onto the tangent line as <m>s \to 0</m>, giving the directional derivative <m>2\sqrt2</m>.
+</caption>
 <interactive xml:id="interactive-dirderiv-secant-3d" iframe="dirderiv-secant-3d.html" width="100%" aspect="8:6">
 <instructions>
 <p>
@@ -229,6 +291,7 @@ to view it from a different angle, or press the <q>Rotate</q> button.
 </p>
 </instructions>
 </interactive>
+</figure>
 
 </subsection>
 
@@ -364,6 +427,145 @@ adding the two products gives
 </image>
 </figure>
 
+<p>
+A fundamental geometric property of the gradient is that, at every point,
+it is perpendicular to the level curve of <m>f</m> passing through that
+point, as the interactive figure below lets you verify. We state and
+prove this fact now.
+</p>
+
+<theorem xml:id="thm-gradient-perp-level-curve">
+<title>The Gradient is Perpendicular to the Level Curves</title>
+<statement>
+<p>
+Let <m>f(x,y)</m> be a differentiable function, and let <m>C</m> be the
+level curve <m>f(x,y) = c</m> for a constant <m>c</m>. At every point of
+<m>C</m> where <m>\nabla f \neq \mathbf 0</m>, the gradient vector
+<m>\nabla f</m> is perpendicular to the level curve <m>C</m>.
+</p>
+</statement>
+<proof>
+<p>
+Suppose the level curve <m>C</m> is parametrized by a differentiable
+vector function
+</p>
+
+<men xml:id="eq-level-curve-param">
+\mathbf r(t) = \langle x(t),\, y(t)\rangle,
+</men>
+
+<p>
+and let <m>\mathbf v(t) = \langle x'(t),\, y'(t)\rangle</m> denote its
+velocity vector. Because every point of <m>C</m> lies on the level curve,
+its coordinates satisfy
+</p>
+
+<men xml:id="eq-level-curve-constant">
+f\bigl(x(t),\, y(t)\bigr) = c \qquad \text{for all } t.
+</men>
+
+<p>
+The left-hand side is constant in <m>t</m>, so its derivative is zero.
+Differentiating both sides with respect to <m>t</m> and applying the
+chain rule gives
+</p>
+
+<men xml:id="eq-level-curve-chain-rule">
+\frac{d}{dt}\, f\bigl(x(t), y(t)\bigr)
+= \frac{\partial f}{\partial x}\,\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\,\frac{dy}{dt}
+= 0.
+</men>
+
+<p>
+We recognize the middle expression as the dot product of the gradient
+vector with the velocity vector:
+</p>
+
+<men xml:id="eq-level-curve-dot-product">
+\left\langle \frac{\partial f}{\partial x},\,
+             \frac{\partial f}{\partial y} \right\rangle
+\cdot
+\left\langle \frac{dx}{dt},\, \frac{dy}{dt} \right\rangle
+= \nabla f \cdot \mathbf v(t) = 0.
+</men>
+
+<p>
+Therefore, at each point of <m>C</m>, the gradient <m>\nabla f</m> is
+orthogonal to the velocity vector <m>\mathbf v(t)</m>, as shown in
+<xref ref="fig-gradient-perp-prefigure"/>. Since the velocity vector
+points in the direction of motion along the curve, it is tangent to
+<m>C</m>; hence <m>\nabla f</m> being orthogonal to <m>\mathbf v(t)</m>
+means precisely that <m>\nabla f</m> is perpendicular to the level curve
+<m>C</m>. This holds at every point where <m>\nabla f \neq \mathbf 0</m>.
+</p>
+</proof>
+</theorem>
+
+<figure xml:id="fig-gradient-perp-prefigure">
+<caption>
+The gradient <m>\nabla f</m> meets the level curve <m>C\colon f = c</m>
+at a right angle: it is perpendicular to the velocity vector
+<m>\mathbf v(t)</m>, which is tangent to <m>C</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-gradient-perp">
+<diagram dimensions="(360,320)" margins="10">
+<definition>ce(t) = (2.4*cos(t), 1.6*sin(t))</definition>
+<definition>ci(t) = (1.63*cos(t), 1.09*sin(t))</definition>
+<definition>co(t) = (3.12*cos(t), 2.08*sin(t))</definition>
+<coordinates bbox="(-3.7,-2.7,3.7,2.9)">
+<parametric-curve at="gp-inner" function="ci" domain="(0,6.2832)"
+                  stroke="gray"/>
+<parametric-curve at="gp-outer" function="co" domain="(0,6.2832)"
+                  stroke="gray"/>
+<parametric-curve at="gp-C" function="ce" domain="(0,6.2832)"
+                  stroke="green" thickness="2.5"/>
+<line at="gp-ra1" endpoints="((1.470,1.510),(1.271,1.603))"
+      stroke="black" thickness="1.5"/>
+<line at="gp-ra2" endpoints="((1.271,1.603),(1.178,1.404))"
+      stroke="black" thickness="1.5"/>
+<vector at="gp-grad" v="(0.465,0.997)" tail="(1.377,1.311)"
+        stroke="red" thickness="3"/>
+<vector at="gp-vel" v="(-0.997,0.465)" tail="(1.377,1.311)"
+        stroke="blue" thickness="3"/>
+<point at="gp-P" p="(1.377,1.311)" fill="black" alignment="se">
+<m>P</m>
+</point>
+<label at="gp-grad-label" anchor="(1.95,2.4)" alignment="ne" color="red">
+<m>\nabla f</m>
+</label>
+<label at="gp-vel-label" anchor="(0.3,1.85)" alignment="nw" color="blue">
+<m>\mathbf v(t)</m>
+</label>
+<label at="gp-C-label" anchor="(-1.6,-1.05)" alignment="w" color="green">
+<m>C\colon f=c</m>
+</label>
+<label at="gp-outer-label" anchor="(-2.3,-1.75)" alignment="w">
+<m>f=c+\Delta c</m>
+</label>
+<label at="gp-inner-label" anchor="(-0.55,-0.5)" alignment="e">
+<m>f=c-\Delta c</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three nested oval level curves of f. The middle green oval is the level curve C where f equals c. At a point P on C, a blue arrow is the velocity vector v of t, tangent to C, and a red arrow is the gradient of f, perpendicular to the velocity and pointing outward toward the larger level curve. A small square at P marks the right angle between them.">
+  <annotation ref="gp-C" text="The level curve C, where f equals c, drawn in green."/>
+  <annotation ref="gp-P" text="A point P on the level curve C."/>
+  <annotation ref="gp-vel" text="The velocity vector v of t, drawn in blue, tangent to the level curve and pointing in the direction of motion along it."/>
+  <annotation ref="gp-grad" text="The gradient vector of f, drawn in red, perpendicular to the velocity vector and pointing outward toward the level curve of larger value."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-int-gradient-level-curves">
+<caption>
+The gradient <m>\nabla f</m> of <m>f(x,y)=1+x^2+y^2</m> at a movable point, shown with the level curve through that point, illustrating that <m>\nabla f</m> is perpendicular to the level curves.
+</caption>
 <interactive xml:id="interactive-gradient-level-curves" iframe="gradient-level-curves.html" width="100%" aspect="7:6">
 <instructions>
 <p>
@@ -376,6 +578,7 @@ which <m>f</m> increases.
 </p>
 </instructions>
 </interactive>
+</figure>
 
 </subsection>
 
@@ -458,7 +661,7 @@ its tangent line at the point <m>(1,1,3)</m>. The level curve
 drawn on the surface at height <m>z = 3</m>, with its dashed projection
 in the <m>xy</m>-plane.
 </caption>
-<image xml:id="image-dirderiv-surface-tikz" width="90%">
+<image xml:id="image-dirderiv-surface-tikz" width="70%">
 <shortdescription>
 A paraboloid cut by a vertical plane, with the trace parabola and its
 tangent line at the point one comma one comma three.
@@ -490,7 +693,7 @@ level curve <m>f = 3</m>, and its dashed projection in the
   \definecolor{oipurple}{RGB}{204,121,167}
   \begin{axis}[
       view={115}{18},
-      width=13.5cm,
+      width=11.5cm,
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
@@ -499,14 +702,15 @@ level curve <m>f = 3</m>, and its dashed projection in the
       xmin=-2.1, xmax=2.1, ymin=-2.1, ymax=2.1, zmin=0, zmax=4.9,
       clip=false,
       legend style={
-        at={(0.02,0.97)}, anchor=north west,
-        font=\small,
+        at={(0.5,1.04)}, anchor=south,
+        legend columns=2,
+        font=\scriptsize,
         draw=black!35, rounded corners=2pt,
         fill=white, fill opacity=0.92, text opacity=1,
-        inner sep=6pt, row sep=3pt,
+        inner sep=4pt, row sep=2pt, column sep=10pt,
       },
       legend cell align=left,
-      legend image post style={line width=1.6pt, sharp plot},
+      legend image post style={line width=1.4pt, sharp plot},
     ]
     % ---- vertical plane x - y = 0 (drawn first, behind surface) ----
     \fill[oiyellow, opacity=0.28]
@@ -521,6 +725,9 @@ level curve <m>f = 3</m>, and its dashed projection in the
               y domain=0:1.7, samples y=25,
               z buffer=sort, forget plot]
       ({y*cos(x)}, {y*sin(x)}, {1 + y^2});
+    % surface listed in the legend (so the equation never overlaps the plot)
+    \addlegendimage{area legend, fill=oiblue!30, draw=oiblue!45}
+    \addlegendentry{surface $z=1+x^2+y^2$}
     % light parallels (circles) for shape cues
     \foreach \rr in {0.5,0.9,1.3,1.7}{
       \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:360,
@@ -530,17 +737,17 @@ level curve <m>f = 3</m>, and its dashed projection in the
     \addplot3[line width=1.7pt, oivermillion, domain=-1.2:1.2,
         samples=61, samples y=0]
       (x, x, {1 + 2*x^2});
-    \addlegendentry{trace of $z=1+x^2+y^2$ in $x-y=0$}
+    \addlegendentry{trace in the plane $x-y=0$}
     % ---- tangent line at (1,1,3) ----
     \addplot3[line width=1.7pt, oigreen, domain=-0.55:0.55,
         samples=2, samples y=0]
       ({1 + x/sqrt(2)}, {1 + x/sqrt(2)}, {3 + 2*sqrt(2)*x});
-    \addlegendentry{tangent line, slope $=2\sqrt2$}
+    \addlegendentry{tangent line, slope $2\sqrt2$}
     % ---- level curve f = 3 through (1,1): x^2 + y^2 = 2 ----
     \addplot3[line width=1.6pt, oipurple, domain=0:360, samples=121,
         samples y=0]
       ({sqrt(2)*cos(x)}, {sqrt(2)*sin(x)}, 3);
-    \addlegendentry{level curve $f=3$:\ \ $x^2+y^2=2$}
+    \addlegendentry{level curve $x^2+y^2=2$}
     \addplot3[line width=1.2pt, oipurple, dashed, domain=0:360, samples=121,
         samples y=0, forget plot]
       ({sqrt(2)*cos(x)}, {sqrt(2)*sin(x)}, 0);
@@ -556,14 +763,16 @@ level curve <m>f = 3</m>, and its dashed projection in the
     \node[oiblue, anchor=north west, font=\small] at (axis cs:1.45,1.45,0)
       {$\mathbf u=\left\langle\tfrac{1}{\sqrt2},\tfrac{1}{\sqrt2}\right\rangle$};
     \node[anchor=south east, font=\small] at (axis cs:1,1,-0.12) {$(1,1)$};
-    % surface equation above the figure
-    \node[font=\large, anchor=south] at (axis cs:0,0,5.15) {$z=1+x^2+y^2$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
 </image>
 </figure>
 
+<figure xml:id="fig-int-dirderiv-surface-slice">
+<caption>
+Rotating the direction <m>\mathbf u</m> at <m>(1,1)</m> and reading off <m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m> as the slope of the tangent line to the sliced surface <m>z=1+x^2+y^2</m>.
+</caption>
 <interactive xml:id="interactive-dirderiv-surface-slice" iframe="dirderiv-surface-slice.html" width="100%" aspect="8:6">
 <instructions>
 <p>
@@ -580,6 +789,7 @@ change. Drag the figure to view it from a different angle, or press the
 </p>
 </instructions>
 </interactive>
+</figure>
 
 </subsection>
 
@@ -681,6 +891,10 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 </image>
 </figure>
 
+<figure xml:id="fig-int-gradient-direction-angle">
+<caption>
+The directional derivative <m>D_{\mathbf u} f = |\nabla f|\cos\theta</m> as the unit vector <m>\mathbf u</m> rotates around <m>P_0</m>.
+</caption>
 <interactive xml:id="interactive-gradient-direction-angle" iframe="gradient-direction-angle.html" width="100%" aspect="7:6">
 <instructions>
 <p>
@@ -693,6 +907,7 @@ decrease), and a direction orthogonal to <m>\nabla f</m> (no change).
 </p>
 </instructions>
 </interactive>
+</figure>
 
 </subsection>
 
@@ -952,6 +1167,10 @@ At <m>P_0(1,1)</m>: fastest increase along
 </image>
 </figure>
 
+<figure xml:id="fig-int-gradient-max-directions">
+<caption>
+The value of <m>D_{\mathbf u} f = u_1 + u_2</m> for <m>f(x,y)=\frac{x^2}{2}+\frac{y^2}{2}</m> as <m>\mathbf u</m> rotates around <m>P_0(1,1)</m>, with the special directions of Example III.
+</caption>
 <interactive xml:id="interactive-gradient-max-directions" iframe="gradient-max-directions.html" width="100%" aspect="7:6">
 <instructions>
 <p>
@@ -965,7 +1184,12 @@ directions of no change.
 </p>
 </instructions>
 </interactive>
+</figure>
 
+<figure xml:id="fig-int-gradient-max-directions-3d">
+<caption>
+A 3D view of Example III: the vertical slice of <m>z=\frac{x^2}{2}+\frac{y^2}{2}</m> in the direction <m>\mathbf u</m>, its tangent slope, and the level curve <m>f=1</m>.
+</caption>
 <interactive xml:id="interactive-gradient-max-directions-3d" iframe="gradient-max-directions-3d.html" width="100%" aspect="8:6">
 <instructions>
 <p>
@@ -985,6 +1209,62 @@ press the <q>Rotate</q> button.
 </p>
 </instructions>
 </interactive>
+</figure>
+
+</subsection>
+<!-- ================================================================ -->
+<subsection xml:id="sec-gradient-summary">
+<title>Summary</title>
+
+<p>
+We collect here the main ideas of this section.
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+<em>The directional derivative.</em>
+<xref ref="def-directional-derivative"/> defines
+<m>\left(D_{\mathbf u} f\right)_{P_0}</m> as the limit in
+<xref ref="eq-dirderiv-definition"/>; it measures the rate of change of
+<m>f</m> at <m>P_0</m> in the direction of a unit vector <m>\mathbf u</m>.
+It is computed directly from this limit in
+<xref ref="example-dirderiv-definition"/>.
+</p>
+</li>
+<li>
+<p>
+<em>The gradient vector.</em> Using the chain rule we obtain
+<xref ref="def-gradient-vector"/>, which gives the shortcut
+<m>\left(D_{\mathbf u} f\right)_{P_0}
+= \left(\nabla f\right)_{P_0}\cdot\mathbf u</m> in
+<xref ref="eq-dirderiv-gradient-relation"/>. This is applied in
+<xref ref="example-dirderiv-gradient"/>.
+</p>
+</li>
+<li>
+<p>
+<em>Fastest increase, fastest decrease, and no change.</em> Writing
+<m>D_{\mathbf u} f = |\nabla f|\cos\theta</m> in
+<xref ref="eq-dirderiv-cos-theta"/> shows that <m>f</m> increases most
+rapidly in the direction of <m>\nabla f</m>, decreases most rapidly in
+the direction of <m>-\nabla f</m>, and does not change in the directions
+orthogonal to <m>\nabla f</m>. These directions are found in
+<xref ref="example-gradient-directions"/>.
+</p>
+</li>
+<li>
+<p>
+<em>The gradient is perpendicular to the level curves.</em>
+<xref ref="thm-gradient-perp-level-curve"/> proves that <m>\nabla f</m> is
+perpendicular to the level curve through each point. Equivalently, the
+directions of no change are tangent to the level curve, while the
+directions of most rapid increase and decrease are perpendicular to it.
+</p>
+</li>
+</ul>
+</p>
 
 </subsection>
 
