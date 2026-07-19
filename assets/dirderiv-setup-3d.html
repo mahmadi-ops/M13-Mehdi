@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The definition of the directional derivative: secant to tangent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; padding: 0; }
   body {
@@ -34,11 +37,12 @@
   #canvasWrap { width: 100%; position: relative; overflow: hidden; }
   canvas { display: block; cursor: grab; }
   canvas:active { cursor: grabbing; }
-  /* math-style labels, matching the italic serif of the rendered text */
+  /* math-style labels, in the same sans-serif family as the section text */
   .lbl3d {
     position: absolute; pointer-events: none; white-space: nowrap;
-    font-family: "STIX Two Math", "STIXGeneral", "Times New Roman", serif;
-    font-style: italic; font-size: 17px; line-height: 1; font-weight: 600;
+    font-family: "Open Sans", system-ui, -apple-system, "Segoe UI",
+      Roboto, sans-serif;
+    font-style: italic; font-size: 16px; line-height: 1; font-weight: 600;
     text-shadow: -1px -1px 2px #fff, 1px -1px 2px #fff,
                  -1px 1px 2px #fff, 1px 1px 2px #fff;
   }
@@ -57,7 +61,7 @@
     padding-left: 31px; text-indent: -31px; margin: 4px 0;
   }
   #legend i {
-    font-family: "STIX Two Math", "STIXGeneral", "Times New Roman", serif;
+    font-family: inherit;
     font-style: italic;
   }
   #legend sub { font-size: 70%; }
@@ -93,6 +97,7 @@
     <div id="legend">
       <div><span class="patch" style="background:rgba(79,143,214,0.55)"></span>surface <i>z</i> = <i>f</i>(<i>x</i>, <i>y</i>)</div>
       <div><span class="patch" style="background:rgba(242,193,78,0.6)"></span>vertical plane through <i>P</i><sub>0</sub> along <i><b>u</b></i></div>
+      <div><span class="sw dash4" style="border-color:#777777"></span>heights <i>f</i>(<i>P</i><sub>0</sub>), <i>f</i>(<i>P</i>) of the surface above <i>P</i><sub>0</sub>, <i>P</i></div>
       <div><span class="sw solid4" style="border-color:#d1362f"></span>trace of the surface in the plane</div>
       <div><span class="sw dash4" style="border-color:#009e73"></span>secant through<br>(<i>P</i><sub>0</sub>, <i>f</i>(<i>P</i><sub>0</sub>)) and (<i>P</i>, <i>f</i>(<i>P</i>))</div>
       <div><span class="sw dash4" style="border-color:#333333"></span>tangent at<br>(<i>P</i><sub>0</sub>, <i>f</i>(<i>P</i><sub>0</sub>)), slope (<i>D</i><sub><i><b>u</b></i></sub><i>f</i>)<sub><i>P</i>&#8320;</sub></div>
@@ -283,14 +288,10 @@
   f0Dot.position.set(P0.x, P0.y, Z0);
   scene.add(f0Dot);
 
-  (function () {
-    var g = new THREE.BufferGeometry().setFromPoints(
-      [new THREE.Vector3(P0.x, P0.y, 0), new THREE.Vector3(P0.x, P0.y, Z0)]);
-    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
-      color: 0x777777, dashSize: 0.1, gapSize: 0.07 }));
-    l.computeLineDistances();
-    scene.add(l);
-  })();
+  // dashed drop line from P0 up to the surface; its length is the height f(P0)
+  dashedTube(new THREE.Vector3(P0.x, P0.y, 0),
+             new THREE.Vector3(P0.x, P0.y, Z0),
+             0.022, 0.11, 0.08, 0x777777, scene);
 
   // ---------- movable pieces: su, P, drop line, f(P), SECANT ----------
   var movGroup = new THREE.Group();
@@ -322,12 +323,10 @@
     pd.position.set(P.x, P.y, 0); movGroup.add(pd);
     var fpd = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), pMat);
     fpd.position.set(P.x, P.y, zP); movGroup.add(fpd);
-    var g = new THREE.BufferGeometry().setFromPoints(
-      [new THREE.Vector3(P.x, P.y, 0), new THREE.Vector3(P.x, P.y, zP)]);
-    var l = new THREE.Line(g, new THREE.LineDashedMaterial({
-      color: 0x777777, dashSize: 0.1, gapSize: 0.07 }));
-    l.computeLineDistances();
-    movGroup.add(l);
+    // dashed drop line from P up to the surface; its length is the height f(P)
+    dashedTube(new THREE.Vector3(P.x, P.y, 0),
+               new THREE.Vector3(P.x, P.y, zP),
+               0.022, 0.11, 0.08, 0x777777, movGroup);
 
     // SECANT: same thickness as the tangent, dashed, green
     dashedTube(
@@ -360,12 +359,16 @@
   addLabel("P",
     function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, 0); },
     12, 6, "#d1362f");
+  // height labels sit at the MIDPOINT of each dashed drop line, so it is
+  // clear they measure the height of the surface above P0 and P; their
+  // color matches the gray dashed drop lines they annotate
   addLabel("f(P<sub>0</sub>)",
-    function () { return new THREE.Vector3(P0.x, P0.y, Z0); },
-    -48, -6, "#222222");
+    function () { return new THREE.Vector3(P0.x, P0.y, Z0 / 2); },
+    12, 0, "#777777");
   addLabel("f(P)",
-    function () { var P = pOfS(); return new THREE.Vector3(P.x, P.y, f(P.x, P.y)); },
-    14, -10, "#d1362f");
+    function () {
+      var P = pOfS(); return new THREE.Vector3(P.x, P.y, f(P.x, P.y) / 2);
+    }, 12, 0, "#777777");
 
   function placeLabels() {
     var w = renderer.domElement.clientWidth,
