@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Paste the <subsection> below into section-directional-derivatives.ptx,
+  immediately AFTER the closing tag of the summary subsection
+  (xml:id="sec-gradient-summary").
+
+  Paste the <exercises> division after it, as the last division of the section.
+
+  Two support files are needed:
+    external/interactives/isotherm-runner.html   (the animation)
+    images/isotherm-runner-preview.png           (static image for PDF/print)
+-->
+
+<subsection xml:id="subsec-scalar-fields-potentials">
+  <title>Scalar Fields, Potentials, and the Direction Nature Chooses</title>
+
+  <p>
+    A <term>scalar field</term> is a rule that assigns a single number to every point of
+    a region: the temperature <m>T(x,y)</m> in a city, the pressure <m>P(x,y)</m> over an
+    ocean, the elevation <m>h(x,y)</m> on a hillside, the concentration <m>c(x,y)</m> of a
+    pollutant in a corridor. A scalar field carries no direction of its own. It is only a
+    number at each location.
+  </p>
+
+  <p>
+    Physics, on the other hand, is full of things that move: heat drains out of a hot
+    engine block, charges accelerate across a gap, wind rushes toward a storm, water runs
+    downhill. The gradient is what connects the two. Given a scalar field <m>f</m>, the
+    vector <m>\nabla f</m> at a point supplies a direction (of steepest increase) and a
+    magnitude <m>|\nabla f|</m> (how steep that increase is), and the directional
+    derivative
+    <me>D_{\mathbf u} f = \nabla f \cdot \mathbf u = |\nabla f| \cos\theta</me>
+    reads off the rate of change along whichever direction <m>\mathbf u</m> we care about.
+  </p>
+
+  <p>
+    When a scalar field governs a physical force or flux, we call the field a
+    <term>potential</term>, and the associated vector quantity is, up to a constant, the
+    <em>negative</em> gradient of that potential.
+  </p>
+
+  <tabular halign="left" top="minor" bottom="minor">
+    <row header="yes" bottom="minor">
+      <cell>Setting</cell>
+      <cell>Scalar field</cell>
+      <cell>Vector quantity</cell>
+      <cell>Level curves are</cell>
+    </row>
+    <row>
+      <cell>Heat conduction</cell>
+      <cell>temperature <m>T</m></cell>
+      <cell>heat flux <m>\mathbf q = -k\nabla T</m> (Fourier's law)</cell>
+      <cell>isotherms</cell>
+    </row>
+    <row>
+      <cell>Electrostatics</cell>
+      <cell>potential <m>V</m></cell>
+      <cell>electric field <m>\mathbf E = -\nabla V</m></cell>
+      <cell>equipotentials</cell>
+    </row>
+    <row>
+      <cell>Mechanics</cell>
+      <cell>potential energy <m>U</m></cell>
+      <cell>conservative force <m>\mathbf F = -\nabla U</m></cell>
+      <cell>contours of constant energy</cell>
+    </row>
+    <row>
+      <cell>Meteorology</cell>
+      <cell>pressure <m>P</m></cell>
+      <cell>pressure-gradient force <m>-\nabla P</m> per unit volume</cell>
+      <cell>isobars</cell>
+    </row>
+    <row>
+      <cell>Fluid transport</cell>
+      <cell>concentration <m>c</m></cell>
+      <cell>rate along the flow <m>(\mathbf v \cdot \nabla) c</m></cell>
+      <cell>level sets of <m>c</m></cell>
+    </row>
+  </tabular>
+
+  <p>
+    The minus sign in each of these laws encodes one physical fact:
+    <em>nature moves downhill</em>. Heat drains from hot to cold, charges fall toward low
+    potential, a ball rolls toward low potential energy, air accelerates toward low
+    pressure. So the direction the physics actually selects is the direction of most rapid
+    <em>decrease</em>, which is exactly the case <m>\theta = \pi</m> of
+    <m>D_{\mathbf u}f = |\nabla f|\cos\theta</m>. The fluid entry in the table is the one
+    exception in form: there no minus sign appears, because the flow direction is imposed
+    by the velocity <m>\mathbf v</m> rather than chosen by the field, and
+    <m>(\mathbf v \cdot \nabla)c</m> is just a directional derivative rescaled by speed.
+  </p>
+
+  <p>
+    Three consequences carry over unchanged from
+    <xref ref="sec-dirderiv-properties"/>, and they are worth restating in physical
+    language.
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        <m>\theta = 0</m>: fastest increase, at the rate <m>|\nabla f|</m>. This is the
+        direction heat comes <em>from</em>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\theta = \pi</m>: fastest decrease, at the rate <m>-|\nabla f|</m>. This is the
+        direction the flux, the force, or the wind actually points.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\theta = \pi/2</m>: no change at all. These directions trace the level curves of
+        the field <mdash/> isotherms, equipotentials, isobars, the contour lines on a
+        topographic map. Since <m>\nabla f</m> is orthogonal to the level curve through a
+        point, <em>the flow always crosses the contours at right angles</em>.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    That last bullet is the geometric heart of the matter, and the example below is
+    designed to make it visible. Exercises
+    <xref ref="ex-electrostatic-plate"/>, <xref ref="ex-fall-line"/>, and
+    <xref ref="ex-isobars-low"/> at the end of this section repeat the same three
+    questions in the electrostatic, mechanical, and meteorological settings.
+  </p>
+
+  <example xml:id="ex-two-runners">
+    <title>Two Runners in a City Heat Island</title>
+    <statement>
+      <p>
+        On a still summer afternoon the pavement downtown is far hotter than the outlying
+        neighborhoods. Model the surface air temperature, in degrees Fahrenheit, by
+        <me>T(x,y) = 74 + 14\,e^{-(x^2 + 3y^2)/40},</me>
+        where <m>x</m> and <m>y</m> are measured in miles east and north of downtown. The
+        core reaches <m>88^\circ</m>F, and the outskirts settle near <m>74^\circ</m>F. Two
+        runners meet at the point <m>P_0(1,1)</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The first runner is overheating and wants cooler air as quickly as possible.
+              Which direction should she take, and how fast does the temperature fall along
+              it?
+            </p>
+          </li>
+          <li>
+            <p>
+              The second runner has settled into the temperature at <m>P_0</m> and wants a
+              route on which it never changes at all. What path should she run?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Differentiating the exponential with the chain rule,
+        <md>
+          <mrow>\nabla T \amp = -\frac{14}{40}\,e^{-(x^2+3y^2)/40}\left(2x\,\mathbf i + 6y\,\mathbf j\right),</mrow>
+          <mrow>(\nabla T)_{(1,1)} \amp = -\frac{14\,e^{-1/10}}{40}\left(2\,\mathbf i + 6\,\mathbf j\right)
+                 \approx -0.633\,\mathbf i - 1.900\,\mathbf j .</mrow>
+        </md>
+        At <m>P_0</m> the temperature itself is
+        <m>T(1,1) = 74 + 14e^{-1/10} \approx 86.7^\circ</m>F.
+      </p>
+      <p>
+        <term>Part 1.</term> Temperature falls fastest in the direction of
+        <m>-\nabla T</m>, which is a positive multiple of <m>\mathbf i + 3\mathbf j</m>.
+        Normalizing,
+        <me>\mathbf u = \frac{1}{\sqrt{10}}\,\mathbf i + \frac{3}{\sqrt{10}}\,\mathbf j
+            \qquad\text{(north-northeast)},</me>
+        and the rate of change along it is
+        <me>D_{\mathbf u} T = -|\nabla T| = -\frac{14\,e^{-1/10}}{40}\sqrt{4 + 36}
+            \approx -2.0 \ \frac{{}^\circ\text{F}}{\text{mi}} .</me>
+        Notice how modest this is. The gradient hands her the <em>best available</em>
+        direction, not a dramatic one: even running the optimal heading, she must cover a
+        full mile to shed about two degrees. Any other heading does worse.
+      </p>
+      <p>
+        <term>Part 2.</term> The second runner needs <m>D_{\mathbf u}T = 0</m>, that is,
+        <m>\mathbf u</m> orthogonal to <m>\nabla T</m>:
+        <me>\mathbf u = \pm\frac{1}{\sqrt{10}}\left(3\,\mathbf i - \mathbf j\right).</me>
+        Following that condition continuously, rather than for a single step, means never
+        leaving the level curve of <m>T</m> through <m>P_0</m>. Since <m>T</m> is constant
+        exactly when <m>x^2 + 3y^2</m> is constant, her route is
+        <me>x^2 + 3y^2 = 4,</me>
+        an ellipse with semi-axes <m>2</m> miles east-west and
+        <m>2/\sqrt{3} \approx 1.15</m> miles north-south <mdash/> a closed loop of roughly
+        ten miles, every step of it at <m>86.7^\circ</m>F.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    In the animation below, switch between the two runners. On the loop the thermometer
+    holds at <m>86.7^\circ</m>F while the blue gradient arrow stays stubbornly
+    perpendicular to her heading; on the escape route the same reading falls steadily, and
+    the path cuts across every isotherm at a right angle.
+  </p>
+
+  <interactive xml:id="interactive-isotherm-runner"
+               source="interactives/isotherm-runner.html"
+               aspect="16:10">
+    <static>
+      <image source="images/isotherm-runner-preview.png" width="92%">
+        <shortdescription>
+          A heat map of the city with elliptical isotherms, the ten-mile loop
+          through the point (1,1) highlighted, and the gradient and escape
+          directions drawn at that point.
+        </shortdescription>
+      </image>
+    </static>
+    <caption>
+      The temperature field <m>T(x,y) = 74 + 14e^{-(x^2+3y^2)/40}</m>. The highlighted
+      ellipse is the level curve <m>x^2 + 3y^2 = 4</m>, on which
+      <m>D_{\mathbf u}T = 0</m>. The escape route leaves <m>P_0(1,1)</m> along
+      <m>-\nabla T</m> and meets every isotherm at a right angle.
+    </caption>
+  </interactive>
+
+</subsection>
+
+
+<!-- ==================================================================== -->
+<!-- Place this division at the END of the section.                        -->
+<!-- ==================================================================== -->
+
+<exercises xml:id="exercises-gradient-applications">
+  <title>Exercises: Scalar Fields and Potentials</title>
+
+  <introduction>
+    <p>
+      Each exercise below repeats the three questions of
+      <xref ref="ex-two-runners"/> in a different physical setting: find the direction of
+      most rapid decrease, the rate along a prescribed direction, and the directions of no
+      change.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-electrostatic-plate">
+    <title>Electric Potential on a Coated Plate</title>
+    <statement>
+      <p>
+        The electric potential on a thin coated plate, in volts, is
+        <me>V(x,y) = 100 - 2x^2 - 6y^2,</me>
+        with <m>x</m> and <m>y</m> in centimeters. Consider the point <m>P_0(2,1)</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find <m>\nabla V</m> at <m>P_0</m> and the electric field
+              <m>\mathbf E = -\nabla V</m> there. Along which unit vector does the
+              potential drop most rapidly, and at what rate?
+            </p>
+          </li>
+          <li>
+            <p>
+              A test charge is nudged along
+              <m>\mathbf u = \tfrac{4}{5}\mathbf i - \tfrac{3}{5}\mathbf j</m>. Compute
+              <m>D_{\mathbf u}V</m> at <m>P_0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the two unit vectors along which the potential does not change, and name
+              the curve they are tangent to.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\nabla V = -4x\,\mathbf i - 12y\,\mathbf j</m>, so
+              <m>(\nabla V)_{(2,1)} = -8\,\mathbf i - 12\,\mathbf j</m> and
+              <m>\mathbf E = 8\,\mathbf i + 12\,\mathbf j</m> V/cm. The potential drops
+              fastest along <m>\mathbf u = \tfrac{1}{\sqrt{13}}(2\,\mathbf i + 3\,\mathbf j)</m>,
+              at the rate <m>-|\nabla V| = -4\sqrt{13} \approx -14.4</m> V/cm.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>D_{\mathbf u}V = (-8)\left(\tfrac{4}{5}\right) + (-12)\left(-\tfrac{3}{5}\right)
+                 = \tfrac{4}{5} = 0.8</m> V/cm. The potential rises slightly along this heading.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathbf u = \pm\tfrac{1}{\sqrt{13}}(3\,\mathbf i - 2\,\mathbf j)</m>. These are
+              tangent to the equipotential ellipse <m>2x^2 + 6y^2 = 14</m> through <m>P_0</m>,
+              and they are orthogonal to <m>\mathbf E</m>, as they must be.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="ex-fall-line">
+    <title>The Fall Line on a Ski Slope</title>
+    <statement>
+      <p>
+        A mountainside has elevation, in feet,
+        <me>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2,</me>
+        with <m>x</m> and <m>y</m> in feet. A skier stands at <m>P_0(200,100)</m>. Her
+        gravitational potential energy is <m>U = mgh</m>, so the downhill force she feels is
+        a positive multiple of <m>-\nabla h</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find the <term>fall line</term>, the unit vector of steepest descent, and the
+              grade of the slope there, expressed as a percent (feet dropped per hundred feet
+              travelled).
+            </p>
+          </li>
+          <li>
+            <p>
+              A traverse is a route on which she neither climbs nor descends. Find the two
+              unit vectors that accomplish this.
+            </p>
+          </li>
+          <li>
+            <p>
+              She wants a gentler line of exactly <m>12\%</m> grade. Using
+              <m>D_{\mathbf u}h = |\nabla h|\cos\theta</m>, find the angle <m>\theta</m>
+              between her heading and the fall line.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\nabla h = -0.0008x\,\mathbf i - 0.002y\,\mathbf j</m>, so
+              <m>(\nabla h)_{(200,100)} = -0.16\,\mathbf i - 0.20\,\mathbf j</m>. Steepest
+              descent is along
+              <m>\mathbf u = \tfrac{1}{\sqrt{41}}(4\,\mathbf i + 5\,\mathbf j)</m>, and
+              <m>|\nabla h| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
+              <m>25.6\%</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathbf u = \pm\tfrac{1}{\sqrt{41}}(5\,\mathbf i - 4\,\mathbf j)</m>, tangent
+              to the contour line of constant elevation through <m>P_0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\theta = 0.12/0.256 \approx 0.469</m>, so
+              <m>\theta \approx 62^\circ</m> off the fall line, on either side.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise xml:id="ex-isobars-low">
+    <title>Sailing the Isobars of a Low</title>
+    <statement>
+      <p>
+        Near the center of a low-pressure system the sea-level pressure, in millibars, is
+        modeled by
+        <me>P(x,y) = 988 + 0.004\left(x^2 + y^2\right),</me>
+        with <m>x</m> and <m>y</m> in miles from the center of the low. A ship sits at
+        <m>P_0(20,10)</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find the pressure at the ship and <m>\nabla P</m> there. The
+              pressure-gradient force per unit volume of air is a positive multiple of
+              <m>-\nabla P</m>; in which unit direction does it push, and what is
+              <m>|\nabla P|</m> in millibars per mile?
+            </p>
+          </li>
+          <li>
+            <p>
+              A second ship 40 miles from the center reports a stronger wind. Using this
+              model, explain why <m>|\nabla P|</m> supports that report.
+            </p>
+          </li>
+          <li>
+            <p>
+              The captain decides to hold a constant barometer reading. Give the two
+              possible unit headings at <m>P_0</m>, and describe the shape of the full route.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>P(20,10) = 988 + 0.004(500) = 990</m> mb, and
+              <m>\nabla P = 0.008x\,\mathbf i + 0.008y\,\mathbf j</m> gives
+              <m>(\nabla P)_{(20,10)} = 0.16\,\mathbf i + 0.08\,\mathbf j</m>. The force
+              points along
+              <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\mathbf i + \mathbf j)</m>, that is,
+              inward toward the low, and
+              <m>|\nabla P| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
+            </p>
+          </li>
+          <li>
+            <p>
+              Here <m>|\nabla P| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
+              the center, so at 40 miles it is <m>0.32</m> mb/mi, nearly double the value at
+              the first ship. (Real storms reverse this trend close to the eye; the model is
+              only reasonable over a limited annulus.)
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\mathbf i - 2\,\mathbf j)</m>. Since the
+              level curves of <m>P</m> are the circles <m>x^2+y^2 = \text{constant}</m>,
+              holding the barometer steady means circling the storm at a fixed radius of
+              <m>\sqrt{500} \approx 22.4</m> miles.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+</exercises>
