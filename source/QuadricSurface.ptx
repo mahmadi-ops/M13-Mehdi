@@ -1061,7 +1061,9 @@ We leave the student to explore the condition that would create a hyperboloid of
   <p>
     <term>Hyperbolic paraboloid.</term>  The saddle is <term>doubly ruled</term>:
     through every point pass two straight lines that lie entirely on the surface,
-    just like the flat traces that appear when we slice it.  A doubly curved roof
+    just like the flat traces <mdash/> the two crossing lines in the plane
+    <m>z = 0</m> <mdash/> that appear when we slice it in
+    <xref ref="fig-hyperbolic-paraboloid-slices"/>.  A doubly curved roof
     can therefore be built out of straight beams, or poured over straight
     formwork, which makes the hyperbolic paraboloid both strong and inexpensive to
     build.  It is the shape of many <q>saddle</q> roofs and of Félix Candela's
