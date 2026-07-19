@@ -4,35 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Two runners, one heat map</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --edge:#1F2740; --ink:#EAEDF7; --muted:#8A96B2;
     --cool:#4FC3F7; --ember:#FFC14D;
-    --sans:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:transparent;color:#22262E;
+  html,body{margin:0;height:100%;background:transparent;color:#22262E;
     font-family:var(--sans);font-size:16px;-webkit-font-smoothing:antialiased}
-  .stage{position:relative;border:1px solid #C9CFDC;border-radius:3px;overflow:hidden;background:#0B0F1C}
-  canvas{display:block;width:100%;height:auto}
+  /* Column layout: the controls always claim their space first, and the
+     canvas takes whatever height is left, so the buttons can never be
+     pushed below the fold of the iframe. */
+  body{display:flex;flex-direction:column}
+  .stage{position:relative;flex:1 1 auto;min-height:0;
+    border:1px solid #C9CFDC;border-radius:3px;overflow:hidden;background:#0B0F1C}
+  canvas{display:block;width:100%;height:100%;object-fit:contain}
   .hud{position:absolute;top:0;left:0;padding:16px 20px;pointer-events:none;
-       color:var(--ink);font-size:16px;line-height:1.8;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+       color:var(--ink);font-size:clamp(15px,2.15vw,24px);line-height:1.75;
+       text-shadow:0 2px 10px rgba(0,0,0,.95)}
   .hud .k{color:var(--muted);font-weight:600}
-  .hud .big{font-weight:700;font-size:42px;line-height:1.1;display:block;margin:3px 0 8px}
+  .hud .big{font-weight:700;font-size:clamp(30px,5.2vw,58px);line-height:1.08;
+            display:block;margin:4px 0 10px}
   .falling{color:var(--cool)} .steady{color:var(--ember)}
-  .controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
-  button{font-family:var(--sans);font-size:15px;font-weight:600;color:#22262E;background:#fff;
-    border:1px solid #B9C1D2;border-radius:3px;padding:11px 18px;cursor:pointer;
+  .controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center;
+    flex:0 0 auto}
+  button{font-family:var(--sans);font-size:clamp(15px,1.55vw,19px);font-weight:600;
+    color:#22262E;background:#fff;
+    border:1px solid #B9C1D2;border-radius:3px;padding:12px 20px;cursor:pointer;
     transition:border-color .16s,background .16s,color .16s}
   button:hover{border-color:#6C778F}
   button:focus-visible{outline:2px solid #B8860B;outline-offset:2px}
   button[aria-pressed="true"]{background:#1F2740;border-color:#1F2740;color:#fff}
   .spacer{flex:1}
-  label.speed{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#4A5265}
-  input[type=range]{accent-color:#1F2740;width:120px}
+  label.speed{display:flex;align-items:center;gap:9px;
+    font-size:clamp(15px,1.55vw,19px);font-weight:600;color:#4A5265}
+  input[type=range]{accent-color:#1F2740;width:clamp(120px,12vw,180px)}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -62,7 +69,7 @@
 (function(){
 const cv=document.getElementById('c'), ctx=cv.getContext('2d');
 const W=cv.width, H=cv.height;
-const FONT=w=>w+' 30px "Open Sans",system-ui,sans-serif';
+const FONT=w=>w+' 44px system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
 
 /* ---------- world: miles ---------- */
 const XMIN=-3.6, XMAX=3.6, YMIN=-2.21, YMAX=2.21;
@@ -99,13 +106,13 @@ function paintBg(){
   b.strokeStyle='rgba(255,255,255,.22)'; b.lineWidth=1.5;
   b.beginPath(); b.moveTo(0,sy(0)); b.lineTo(W,sy(0)); b.moveTo(sx(0),0); b.lineTo(sx(0),H); b.stroke();
   b.font=FONT(600); b.fillStyle='rgba(255,255,255,.45)';
-  b.fillText('x  (miles east)',W-262,sy(0)-20); b.fillText('y',sx(0)+18,42);
+  b.fillText('x  (miles east)',W-400,sy(0)-26); b.fillText('y',sx(0)+22,54);
   b.strokeStyle='#FFC14D'; b.lineWidth=5; b.beginPath();
   b.ellipse(sx(0),sy(0),2*unit,(2/Math.sqrt(3))*unit,0,0,2*Math.PI); b.stroke();
   b.font=FONT(600); b.fillStyle='#FFC14D';
-  b.fillText('x\u00B2 + 3y\u00B2 = 4   \u00B7   86.7 \u00B0F',sx(-3.4),sy(-1.80));
+  b.fillText('x\u00B2 + 3y\u00B2 = 4   \u00B7   86.7 \u00B0F',sx(-3.42),sy(-1.72));
   b.fillStyle='rgba(255,236,190,.75)';
-  b.fillText('downtown  88 \u00B0F',sx(0)+22,sy(0)+46);
+  b.fillText('downtown  88 \u00B0F',sx(0)+26,sy(0)+62);
 }
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(paintBg);}
 paintBg();
@@ -230,8 +237,8 @@ function frame(now){
     ctx.stroke();
   }
 
-  ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(sx(1),sy(1),8,0,2*Math.PI); ctx.fill();
-  ctx.font=FONT(600); ctx.fillText('P\u2080(1, 1)',sx(1)+18,sy(1)-18);
+  ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(sx(1),sy(1),10,0,2*Math.PI); ctx.fill();
+  ctx.font=FONT(600); ctx.fillText('P\u2080(1, 1)',sx(1)+24,sy(1)-24);
 
   topRunner(ctx,sx(px),sy(py),ang,gait,tint);
 
