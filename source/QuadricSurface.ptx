@@ -1026,6 +1026,106 @@ We leave the student to explore the condition that would create a hyperboloid of
 
 </subsection>
 
+<subsection xml:id="subsec-quadric-summary">
+  <title>Summary of the Quadric Surfaces</title>
+  <p>
+    We collect the six surfaces of this section in
+    <xref ref="fig-quadric-summary"/>.  For each one the table gives its
+    equation, a picture of the surface, and the equation and type of the
+    cross-section cut by the planes <m>x = c</m>, <m>y = c</m>, and
+    <m>z = c</m>; a cell also notes any value of <m>c</m> for which that slice is
+    just a point or a pair of lines.  Each trace is worked out in the subsections
+    above, beginning with <xref ref="subsec-elliptical-paraboloid"/> and continued
+    in the hyperboloid activity, <xref ref="activity-hyperboloids"/>.  A printable
+    copy of the whole table is available as a
+    <dataurl source="quadric-summary-table.pdf" visual="quadric-summary-table.pdf">PDF</dataurl>.
+  </p>
+  <figure xml:id="fig-quadric-summary">
+    <caption>
+      The six parent quadric surfaces, with the equation and type of the slice
+      cut by each family of coordinate planes <m>x = c</m>, <m>y = c</m>, and
+      <m>z = c</m>.
+    </caption>
+    <image xml:id="image-quadric-summary" width="100%">
+      <shortdescription>
+        A table of the six quadric surfaces.  Each row gives the equation, a
+        three-dimensional picture of the surface, and, for the x-equals-c,
+        y-equals-c, and z-equals-c planes, the equation of the cross-section, its
+        type (parabola, ellipse, or hyperbola with its opening direction), and
+        any value of c for which the slice is only a point or a pair of lines.
+      </shortdescription>
+      <latex-image>
+        <![CDATA[\scalebox{0.55}{
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \pgfplotsset{
+    icon/.style={ width=4.1cm, view={120}{18},
+      axis lines=center, axis line style={black!55, line width=0.3pt},
+      ticks=none, xlabel={}, ylabel={}, zlabel={}, clip=false, },
+    surfacestyle/.style={ surf, shader=faceted,
+      colormap={soft}{color=(oiblue!14!white) color=(oiblue!48!white)},
+      faceted color=black!45, line width=0.12pt,
+      z buffer=sort, },
+  }
+  \fill[oiblue!10] (0,0) rectangle (19.1,-1.1);
+  \foreach \yy in {0,-1.1,-5.1,-9.1,-13.1,-17.1,-21.1,-25.1}
+    \draw[black!45, line width=0.4pt] (0,\yy) -- (19.1,\yy);
+  \foreach \xx in {0,3,5.9,10.3,14.7,19.1}
+    \draw[black!45, line width=0.4pt] (\xx,0) -- (\xx,-25.1);
+  \node[font=\bfseries\large] at (1.5,-0.55) {Equation};
+  \node[font=\bfseries\large] at (4.45,-0.55) {Shape};
+  \node[font=\bfseries\large, align=center] at (8.1,-0.55) {$x=c$ slices};
+  \node[font=\bfseries\large, align=center] at (12.5,-0.55) {$y=c$ slices};
+  \node[font=\bfseries\large, align=center] at (16.9,-0.55) {$z=c$ slices};
+  \node[align=center, text width=2.7cm] at (1.5,-3.1) {\itshape elliptical\\ paraboloid\\[3pt]\upshape\small $\displaystyle z=\frac{x^2}{4}+\frac{y^2}{9}$};
+  \begin{axis}[icon, at={(4.45cm,-3.1cm)}, anchor=center, xmin=-3.5,xmax=3.5,ymin=-5,ymax=5,zmin=-0.4,zmax=3]
+    \addplot3[surfacestyle, domain=0:360, samples=19, y domain=0:1.6, samples y=12] ({2*y*cos(x)},{3*y*sin(x)},{y*y});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-3.1) {\normalsize $z=\frac{c^2}{4}+\frac{y^2}{9}$\\[3pt]\itshape parabola\\[3pt]{\small\normalfont\color{black!55} opens up}};
+  \node[align=center, text width=4.1cm] at (12.5,-3.1) {\normalsize $z=\frac{x^2}{4}+\frac{c^2}{9}$\\[3pt]\itshape parabola\\[3pt]{\small\normalfont\color{black!55} opens up}};
+  \node[align=center, text width=4.1cm] at (16.9,-3.1) {\normalsize $\frac{x^2}{4}+\frac{y^2}{9}=c$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point $(0,0,0)$ if $c=0$}};
+  \node[align=center, text width=2.7cm] at (1.5,-7.1) {\itshape hyperbolic\\ paraboloid\\[3pt]\upshape\small $\displaystyle z=\frac{x^2}{4}-\frac{y^2}{9}$};
+  \begin{axis}[icon, at={(4.45cm,-7.1cm)}, anchor=center, xmin=-3.5,xmax=3.5,ymin=-5,ymax=5,zmin=-2.6,zmax=2.6]
+    \addplot3[surfacestyle, domain=-3:3, samples=17, y domain=-4.5:4.5, samples y=19] ({x},{y},{x*x/4 - y*y/9});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-7.1) {\normalsize $z=\frac{c^2}{4}-\frac{y^2}{9}$\\[3pt]\itshape parabola\\[3pt]{\small\normalfont\color{black!55} opens down}};
+  \node[align=center, text width=4.1cm] at (12.5,-7.1) {\normalsize $z=\frac{x^2}{4}-\frac{c^2}{9}$\\[3pt]\itshape parabola\\[3pt]{\small\normalfont\color{black!55} opens up}};
+  \node[align=center, text width=4.1cm] at (16.9,-7.1) {\normalsize $\frac{x^2}{4}-\frac{y^2}{9}=c$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens left--right;\\ two lines if $c=0$}};
+  \node[align=center, text width=2.7cm] at (1.5,-11.1) {\itshape ellipsoid\\[3pt]\upshape\small $\displaystyle \frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{16}=1$};
+  \begin{axis}[icon, at={(4.45cm,-11.1cm)}, anchor=center, xmin=-2.6,xmax=2.6,ymin=-3.6,ymax=3.6,zmin=-4.6,zmax=4.6]
+    \addplot3[surfacestyle, domain=0:360, samples=19, y domain=0:180, samples y=16] ({2*sin(y)*cos(x)},{3*sin(y)*sin(x)},{4*cos(y)});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-11.1) {\normalsize $\frac{y^2}{9}+\frac{z^2}{16}=1-\frac{c^2}{4}$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point if $c=\pm2$}};
+  \node[align=center, text width=4.1cm] at (12.5,-11.1) {\normalsize $\frac{x^2}{4}+\frac{z^2}{16}=1-\frac{c^2}{9}$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point if $c=\pm3$}};
+  \node[align=center, text width=4.1cm] at (16.9,-11.1) {\normalsize $\frac{x^2}{4}+\frac{y^2}{9}=1-\frac{c^2}{16}$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point if $c=\pm4$}};
+  \node[align=center, text width=2.7cm] at (1.5,-15.1) {\itshape elliptic cone\\[3pt]\upshape\small $\displaystyle z^2=\frac{x^2}{4}+\frac{y^2}{9}$};
+  \begin{axis}[icon, at={(4.45cm,-15.1cm)}, anchor=center, xmin=-3.5,xmax=3.5,ymin=-5,ymax=5,zmin=-1.8,zmax=1.8]
+    \addplot3[surfacestyle, domain=0:360, samples=19, y domain=-1.6:1.6, samples y=14] ({2*y*cos(x)},{3*y*sin(x)},{y});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-15.1) {\normalsize $z^2-\frac{y^2}{9}=\frac{c^2}{4}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens up--down;\\ two lines if $c=0$}};
+  \node[align=center, text width=4.1cm] at (12.5,-15.1) {\normalsize $z^2-\frac{x^2}{4}=\frac{c^2}{9}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens up--down;\\ two lines if $c=0$}};
+  \node[align=center, text width=4.1cm] at (16.9,-15.1) {\normalsize $\frac{x^2}{4}+\frac{y^2}{9}=c^2$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point $(0,0,0)$ if $c=0$}};
+  \node[align=center, text width=2.7cm] at (1.5,-19.1) {\itshape hyperboloid\\ of one sheet\\[3pt]\upshape\small $\displaystyle \frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{16}=1$};
+  \begin{axis}[icon, at={(4.45cm,-19.1cm)}, anchor=center, xmin=-3,xmax=3,ymin=-4.4,ymax=4.4,zmin=-3.8,zmax=3.8]
+    \addplot3[surfacestyle, domain=0:360, samples=19, y domain=-0.85:0.85, samples y=13] ({2*cosh(y)*cos(x)},{3*cosh(y)*sin(x)},{4*sinh(y)});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-19.1) {\normalsize $\frac{y^2}{9}-\frac{z^2}{16}=1-\frac{c^2}{4}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens left--right;\\ two lines if $c=\pm2$}};
+  \node[align=center, text width=4.1cm] at (12.5,-19.1) {\normalsize $\frac{x^2}{4}-\frac{z^2}{16}=1-\frac{c^2}{9}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens left--right;\\ two lines if $c=\pm3$}};
+  \node[align=center, text width=4.1cm] at (16.9,-19.1) {\normalsize $\frac{x^2}{4}+\frac{y^2}{9}=1+\frac{c^2}{16}$\\[3pt]\itshape ellipse};
+  \node[align=center, text width=2.7cm] at (1.5,-23.1) {\itshape hyperboloid\\ of two sheets\\[3pt]\upshape\small $\displaystyle \frac{z^2}{16}-\frac{x^2}{4}-\frac{y^2}{9}=1$};
+  \begin{axis}[icon, at={(4.45cm,-23.1cm)}, anchor=center, xmin=-2.6,xmax=2.6,ymin=-3.6,ymax=3.6,zmin=-5.6,zmax=5.6]
+    \addplot3[surfacestyle, domain=0:360, samples=19, y domain=0:0.85, samples y=10] ({2*sinh(y)*cos(x)},{3*sinh(y)*sin(x)},{4*cosh(y)}); \addplot3[surfacestyle, domain=0:360, samples=19, y domain=0:0.85, samples y=10] ({2*sinh(y)*cos(x)},{3*sinh(y)*sin(x)},{-4*cosh(y)});
+  \end{axis}
+  \node[align=center, text width=4.1cm] at (8.1,-23.1) {\normalsize $\frac{z^2}{16}-\frac{y^2}{9}=1+\frac{c^2}{4}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens up--down}};
+  \node[align=center, text width=4.1cm] at (12.5,-23.1) {\normalsize $\frac{z^2}{16}-\frac{x^2}{4}=1+\frac{c^2}{9}$\\[3pt]\itshape hyperbola\\[3pt]{\small\normalfont\color{black!55} opens up--down}};
+  \node[align=center, text width=4.1cm] at (16.9,-23.1) {\normalsize $\frac{x^2}{4}+\frac{y^2}{9}=\frac{c^2}{16}-1$\\[3pt]\itshape ellipse\\[3pt]{\small\normalfont\color{black!55} point if $c=\pm4$;\\ empty if $|c|<4$}};
+\end{tikzpicture}
+}]]>
+      </latex-image>
+    </image>
+  </figure>
+</subsection>
+
 <subsection xml:id="subsec-quadric-applications">
   <title>Quadric Surfaces in the World</title>
 
@@ -1042,7 +1142,12 @@ We leave the student to explore the condition that would create a hyperboloid of
     radio telescopes and satellite receivers, and the reflectors behind car
     headlights and solar concentrators, are shaped like paraboloids <mdash/> they
     gather parallel incoming rays to one point, or, run in reverse, send rays out
-    in a single parallel beam.
+    in a single parallel beam.  The benefit is sensitivity: because parallel
+    rays converge on the focus no matter where they strike the surface, enlarging
+    the dish simply gathers more of a faint signal onto the same receiver,
+    letting a radio telescope detect fainter and more distant objects.  The
+    National Radio Astronomy Observatory explains how
+    <url href="https://public.nrao.edu/telescopes/radio-telescopes/" visual="public.nrao.edu">a parabolic dish bounces incoming radio waves to a focus</url>.
   </p>
 
   <figure xml:id="fig-app-paraboloid">
@@ -1068,7 +1173,12 @@ We leave the student to explore the condition that would create a hyperboloid of
     formwork, which makes the hyperbolic paraboloid both strong and inexpensive to
     build.  It is the shape of many <q>saddle</q> roofs and of Félix Candela's
     thin concrete shells <mdash/> and, on a smaller scale, of a Pringles potato
-    chip.
+    chip.  The benefit is efficiency: a thin shell of this shape carries its load
+    by compression and tension acting within the surface rather than by bending,
+    so it can roof a very wide span with only a few inches of material.
+    Encyclopaedia Britannica's article on
+    <url href="https://www.britannica.com/technology/shell-structure-building-construction" visual="britannica.com/technology/shell-structure-building-construction">shell structures</url>
+    describes how such curved roofs are engineered from straight lines.
   </p>
 
   <figure xml:id="fig-app-hyperbolic-paraboloid">
@@ -1092,7 +1202,14 @@ We leave the student to explore the condition that would create a hyperboloid of
     at one focus is focused onto a kidney stone placed at the other, breaking it
     apart without surgery.  On the largest scale, the Earth itself is modeled as a
     slightly flattened ellipsoid <mdash/> the reference ellipsoid against which GPS
-    coordinates are measured.
+    coordinates are measured.  The benefit of this two-focus focusing is
+    precision without contact: a lithotripter can concentrate its energy on a
+    stone deep inside the body while sparing the surrounding tissue.  Modeling
+    the Earth as an ellipsoid brings a different benefit <mdash/> a single smooth
+    equation captures its slight flattening, giving GPS a far more accurate
+    reference than a sphere would.  NOAA's National Geodetic Survey describes the
+    <url href="https://geodesy.noaa.gov/datums/faq.shtml" visual="geodesy.noaa.gov">reference ellipsoids</url>
+    that anchor those coordinates.
   </p>
 
   <figure xml:id="fig-app-ellipsoid">
@@ -1112,7 +1229,12 @@ We leave the student to explore the condition that would create a hyperboloid of
     <term>Elliptic cone.</term>  When an aircraft flies faster than sound, the
     pressure waves it creates pile up into a cone that trails behind it, the Mach
     cone.  The <term>sonic boom</term> you hear is the instant this cone of
-    compressed air sweeps past you.
+    compressed air sweeps past you.  This cone is not a design choice but an
+    unavoidable consequence of the motion; even so, its geometry is informative:
+    the sine of its half-angle equals <m>1/M</m>, where <m>M</m> is the Mach
+    number, so a narrower cone means a faster aircraft.  NASA's Glenn Research
+    Center describes how supersonic disturbances stay
+    <url href="https://www.grc.nasa.gov/www/k-12/airplane/mach.html" visual="grc.nasa.gov">confined within this cone</url>.
   </p>
 
   <figure xml:id="fig-app-cone">
@@ -1136,6 +1258,12 @@ We leave the student to explore the condition that would create a hyperboloid of
     built cheaply from straight beams or straight formwork while remaining very
     stiff.  This is exactly why the cooling towers of power plants, and open
     lattice towers such as Vladimir Shukhov's, are hyperboloids of one sheet.
+    The benefit is that stiffness and wind resistance come almost for free:
+    because the surface is ruled, the whole tower is assembled from straight,
+    easily fabricated members, so it reaches great height with remarkably little
+    material.  The University of Houston's
+    <url href="https://engines.egr.uh.edu/episode/2937" visual="engines.egr.uh.edu">Engines of Our Ingenuity</url>
+    tells the story of Shukhov and these ruled towers.
   </p>
 
   <figure xml:id="fig-app-hyperboloid-one-sheet">
@@ -1160,7 +1288,12 @@ We leave the student to explore the condition that would create a hyperboloid of
     two-focus idea drives <term>hyperbolic navigation</term>: comparing the
     arrival times of two signals places a receiver on a hyperboloid, and
     intersecting several such surfaces is how systems from LORAN to GPS pin down a
-    location.
+    location.  The benefit is sharpness in a compact instrument: the paired
+    hyperboloidal mirrors fold a long focal length into a short tube and cancel
+    the aberrations that would blur a simpler design, keeping Hubble's images
+    crisp across its whole field of view.  NASA explains how these curved mirrors
+    gather starlight in its overview of the
+    <url href="https://science.nasa.gov/mission/hubble/observatory/design/optics/" visual="science.nasa.gov">Hubble Space Telescope's optics</url>.
   </p>
 
   <figure xml:id="fig-app-hyperboloid-two-sheets">
@@ -1189,7 +1322,8 @@ We leave the student to explore the condition that would create a hyperboloid of
           bowl-shaped pieces meeting at the origin.
         </shortdescription>
         <latex-image>
-          <![CDATA[\begin{tikzpicture}
+          <![CDATA[\scalebox{0.62}{
+\begin{tikzpicture}
   \definecolor{oiblue}{RGB}{0,114,178}
   \pgfplotsset{
     quadric/.style={
@@ -1207,7 +1341,6 @@ We leave the student to explore the condition that would create a hyperboloid of
       surf, shader=faceted,
       colormap={soft#1}{color=(#2!14!white) color=(#2!48!white)},
       faceted color=black!45, line width=0.15pt,
-      opacity=0.7, fill opacity=0.7,
       z buffer=sort,
     },
   }
@@ -1262,7 +1395,8 @@ We leave the student to explore the condition that would create a hyperboloid of
       ({y*cos(x)}, {-y*y}, {y*sin(x)});
   \end{axis}
   \node[font=\Large\bfseries] at (14.8cm, -11.7cm) {F};
-\end{tikzpicture}]]>
+\end{tikzpicture}
+}]]>
         </latex-image>
       </image>
     </introduction>
