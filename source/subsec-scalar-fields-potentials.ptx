@@ -136,8 +136,8 @@
         Differentiating the exponential with the chain rule,
         <md>
           <mrow>\nabla T \amp = -\frac{14}{40}\,e^{-(x^2+3y^2)/40}\left(2x\,\mathbf i + 6y\,\mathbf j\right),</mrow>
-          <mrow>(\nabla T)_{(1,1)} \amp = -\frac{14\,e^{-1/10}}{40}\left(2\,\mathbf i + 6\,\mathbf j\right)
-                 \approx -0.633\,\mathbf i - 1.900\,\mathbf j .</mrow>
+          <mrow>(\nabla T)_{(1,1)} \amp = -\frac{14\,e^{-1/10}}{40}\left(2\,\mathbf i + 6\,\mathbf j\right)</mrow>
+          <mrow>\amp \approx -0.633\,\mathbf i - 1.900\,\mathbf j .</mrow>
         </md>
         At <m>P_0</m> the temperature itself is
         <m>T(1,1) = 74 + 14e^{-1/10} \approx 86.7^\circ</m>F.
@@ -145,12 +145,14 @@
       <p>
         <term>Part 1.</term> Temperature falls fastest in the direction of
         <m>-\nabla T</m>, which is a positive multiple of <m>\mathbf i + 3\mathbf j</m>.
-        Normalizing,
-        <md>\mathbf u = \frac{1}{\sqrt{10}}\,\mathbf i + \frac{3}{\sqrt{10}}\,\mathbf j
-            \qquad\text{(north-northeast)},</md>
+        Normalizing, the heading is north-northeast:
+        <md>\mathbf u = \frac{1}{\sqrt{10}}\,\mathbf i + \frac{3}{\sqrt{10}}\,\mathbf j,</md>
         and the rate of change along it is
-        <md>D_{\mathbf u} T = -|\nabla T| = -\frac{14\,e^{-1/10}}{40}\sqrt{4 + 36}
-            \approx -2.0 \ \frac{{}^\circ\text{F}}{\text{mi}} .</md>
+        <md>
+          <mrow>D_{\mathbf u} T \amp = -|\nabla T|
+                = -\frac{14\,e^{-1/10}}{40}\sqrt{4 + 36}</mrow>
+          <mrow>\amp \approx -2.0 \ \frac{{}^\circ\text{F}}{\text{mi}} .</mrow>
+        </md>
         Notice how modest this is. The gradient hands her the <em>best available</em>
         direction, not a dramatic one: even running the optimal heading, she must cover a
         full mile to shed about two degrees. Any other heading does worse.
@@ -167,37 +169,42 @@
         <m>2/\sqrt{3} \approx 1.15</m> miles north-south <mdash/> a closed loop of roughly
         ten miles, every step of it at <m>86.7^\circ</m>F.
       </p>
+
+    <p>
+      In the animation below, switch between the two runners. On the loop the thermometer
+      holds at <m>86.7^\circ</m>F while the blue gradient arrow stays stubbornly
+      perpendicular to her heading; on the escape route the same reading falls steadily, and
+      the path cuts across every isotherm at a right angle.
+    </p>
+      <p>
+        Use the interactive figure to explore the problem further geometrically,
+        switching between the two routes and watching how the readings respond as the
+        runner moves.
+      </p>
+    <figure xml:id="figure-isotherm-runner">
+      <caption>
+        Two routes from <m>P_0(1,1)</m> in the field
+        <m>T(x,y) = 74 + 14e^{-(x^2+3y^2)/40}</m>. The highlighted ellipse is the
+        level curve <m>x^2+3y^2=4</m>, on which <m>D_{\mathbf u}T = 0</m>.
+      </caption>
+      <interactive xml:id="interactive-isotherm-runner"
+                   iframe="isotherm-runner.html"
+                   width="100%" aspect="6:5">
+        <instructions>
+          <p>
+            Press <q>Run the isotherm</q> to send the runner around the level
+            curve <m>x^2+3y^2=4</m>, or <q>Dash for cool air</q> to send her
+            along the path of steepest cooling. The readout shows her
+            temperature, position, directional derivative
+            <m>D_{\mathbf u}T</m>, and distance travelled; the blue arrow is
+            <m>\nabla T</m> at her position. Use <q>Pace</q> to change her
+            speed, and <q>Pause</q> or <q>Reset</q> to control the animation.
+          </p>
+        </instructions>
+      </interactive>
+    </figure>
     </solution>
   </example>
 
-  <p>
-    In the animation below, switch between the two runners. On the loop the thermometer
-    holds at <m>86.7^\circ</m>F while the blue gradient arrow stays stubbornly
-    perpendicular to her heading; on the escape route the same reading falls steadily, and
-    the path cuts across every isotherm at a right angle.
-  </p>
-
-  <figure xml:id="figure-isotherm-runner">
-    <caption>
-      Two routes from <m>P_0(1,1)</m> in the field
-      <m>T(x,y) = 74 + 14e^{-(x^2+3y^2)/40}</m>. The highlighted ellipse is the
-      level curve <m>x^2+3y^2=4</m>, on which <m>D_{\mathbf u}T = 0</m>.
-    </caption>
-    <interactive xml:id="interactive-isotherm-runner"
-                 iframe="isotherm-runner.html"
-                 width="100%" aspect="6:5">
-      <instructions>
-        <p>
-          Press <q>Run the isotherm</q> to send the runner around the level
-          curve <m>x^2+3y^2=4</m>, or <q>Dash for cool air</q> to send her
-          along the path of steepest cooling. The readout shows her
-          temperature, position, directional derivative
-          <m>D_{\mathbf u}T</m>, and distance travelled; the blue arrow is
-          <m>\nabla T</m> at her position. Use <q>Pace</q> to change her
-          speed, and <q>Pause</q> or <q>Reset</q> to control the animation.
-        </p>
-      </instructions>
-    </interactive>
-  </figure>
 
 </subsection>
