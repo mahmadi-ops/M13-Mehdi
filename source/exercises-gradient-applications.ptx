@@ -47,6 +47,13 @@
           </li>
         </ol>
       </p>
+    
+      <figure xml:id="figure-potential-plate">
+        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\mathbf u}V = -|\nabla V|</m> at every point.</caption>
+        <interactive xml:id="interactive-potential-plate"
+                     iframe="potential-plate-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
     </statement>
     <answer>
       <p>
@@ -75,27 +82,6 @@
           </li>
         </ol>
       </p>
-
-      <interactive xml:id="interactive-potential-plate"
-                   iframe="potential-plate-3d.html"
-                   width="100%" aspect="6:5">
-        <caption>
-          The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> over the plate. The highlighted
-          curve is the equipotential <m>2x^2 + 6y^2 = 14</m> through <m>P_0(2,1)</m>, on
-          which <m>D_{\mathbf u}V = 0</m>.
-        </caption>
-        <instructions>
-          <p>
-            Press <q>Ride the equipotential</q> to travel the level curve through
-            <m>P_0</m>, holding <m>86</m> V, or <q>Follow the field</q> to move along
-            <m>\mathbf E = -\nabla V</m>. The readout shows the potential, position,
-            and <m>D_{\mathbf u}V</m>; the blue arrow in the base plane points along
-            the direction of steepest decrease. Drag the figure to rotate it, use
-            <q>Speed</q> to change the pace, and <q>Play</q> or <q>Reset</q> to control
-            the animation.
-          </p>
-        </instructions>
-      </interactive>
     </answer>
   </exercise>
 
@@ -133,6 +119,13 @@
           </li>
         </ol>
       </p>
+    
+      <figure xml:id="figure-fall-line">
+        <caption>The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. Compare the fall line, the level traverse, and the <m>12\%</m> line. Watch the grade readout drift away from <m>12\%</m> as the skier leaves <m>P_0</m>, since the angle in part (c) is computed at <m>P_0</m> only.</caption>
+        <interactive xml:id="interactive-fall-line"
+                     iframe="fall-line-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
     </statement>
     <answer>
       <p>
@@ -161,28 +154,23 @@
           </li>
         </ol>
       </p>
-
-      <interactive xml:id="interactive-fall-line"
-                   iframe="fall-line-3d.html"
-                   width="100%" aspect="6:5">
+    
+      <figure xml:id="figure-alpha-tangent">
         <caption>
-          The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. The highlighted
-          contour is the level of constant elevation through <m>P_0(200,100)</m>, along
-          which a traverse neither climbs nor descends.
+          Part (a) says the grade is <m>|\nabla h| = 0.2561</m>. Here is what that
+          number is, on the hill itself. The vertical plane through <m>P_0</m> in the
+          direction <m>\mathbf u</m> cuts the surface in the gold curve; the red line
+          is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
+          makes with the horizontal. Since <m>\tan\alpha = D_{\mathbf u}h</m>, the
+          grade <em>is</em> the tangent of that angle. Swing <m>\mathbf u</m> with the
+          slider: <m>\alpha</m> is largest along the fall line, where
+          <m>\tan\alpha = 0.2561</m> and <m>\alpha = 14.4^\circ</m>, and it closes to
+          nothing along the contour, where the tangent line lies flat.
         </caption>
-        <instructions>
-          <p>
-            Press <q>Fall line</q> to send the skier down the path of steepest descent,
-            <q>Traverse</q> to follow the contour at constant elevation, or
-            <q>12% line</q> for the gentler heading of part (c), which runs about
-            <m>62^\circ</m> off the fall line. The readout shows elevation, position,
-            and the grade <m>D_{\mathbf u}h</m> as a percent; the arrow in the base
-            plane points along <m>-\nabla h</m>. Drag the figure to rotate it, use
-            <q>Speed</q> to change the pace, and <q>Play</q> or <q>Reset</q> to control
-            the animation.
-          </p>
-        </instructions>
-      </interactive>
+        <interactive xml:id="interactive-alpha-tangent"
+                     iframe="alpha-tangent.html"
+                     width="100%" aspect="1:1"/>
+      </figure>
     </answer>
   </exercise>
 
@@ -220,6 +208,13 @@
           </li>
         </ol>
       </p>
+    
+      <figure xml:id="figure-isobars-low">
+        <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>|\nabla P| = 0.008r</m> grows with radius.</caption>
+        <interactive xml:id="interactive-isobars-low"
+                     iframe="isobars-low-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
     </statement>
     <answer>
       <p>
@@ -253,28 +248,6 @@
           </li>
         </ol>
       </p>
-
-      <interactive xml:id="interactive-isobars-low"
-                   iframe="isobars-low-3d.html"
-                   width="100%" aspect="6:5">
-        <caption>
-          The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> near the center of the
-          low. The highlighted isobar is the <m>990</m> mb circle of radius
-          <m>\sqrt{500} \approx 22.4</m> miles through <m>P_0(20,10)</m>.
-        </caption>
-        <instructions>
-          <p>
-            Press <q>Circle the low</q> to hold the barometer at <m>990</m> mb along
-            the isobar, or <q>Run for open water</q> to sail outward across the
-            isobars. The readout shows the barometer, position, and
-            <m>D_{\mathbf u}P</m>; the arrow in the base plane points along
-            <m>-\nabla P</m>, the direction of the pressure-gradient force. Drag the
-            figure to rotate it, use <q>Speed</q> to change the pace, and <q>Play</q>
-            or <q>Reset</q> to control the animation.
-          </p>
-        </instructions>
-      </interactive>
     </answer>
   </exercise>
-
 </exercises>

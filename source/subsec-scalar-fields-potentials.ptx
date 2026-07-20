@@ -13,16 +13,15 @@
     pollutant in a corridor. A scalar field carries no direction of its own. It is only a
     number at each location.
   </p>
-
+  
   <p>
-    Physics, on the other hand, is full of things that move: heat drains out of a hot
-    engine block, charges accelerate across a gap, wind rushes toward a storm, water runs
-    downhill. The gradient is what connects the two. Given a scalar field <m>f</m>, the
-    vector <m>\nabla f</m> at a point supplies a direction (of steepest increase) and a
-    magnitude <m>|\nabla f|</m> (how steep that increase is), and the directional
-    derivative
-    <md>D_{\mathbf u} f = \nabla f \cdot \mathbf u = |\nabla f| \cos\theta</md>
-    reads off the rate of change along whichever direction <m>\mathbf u</m> we care about.
+  Physics, by contrast, is full of quantities that point somewhere: heat flows,
+   forces push, wind blows. These are <term>vector fields</term>. The gradient is
+   what ties them back to scalar fields <mdash/> at least for the
+   <term>conservative</term> fields taken up in MATH 14 at SCU, where the whole
+   vector field is recovered from a single scalar potential by differentiation.
+   Because such fields are so common in nature, the pattern in the table below
+   appears again and again across physics.
   </p>
 
   <p>
@@ -66,9 +65,9 @@
 
   <p>
     The minus sign in each of these laws encodes one physical fact:
-    <em>nature moves downhill</em>. Heat drains from hot to cold, charges fall toward low
-    potential, a ball rolls toward low potential energy, air accelerates toward low
-    pressure. So the direction the physics actually selects is the direction of most rapid
+    <em>nature moves downhill</em>. Heat drains from hot to cold, charges move toward low
+    electric potential, a ball rolls toward low gravitational potential energy, air accelerates 
+    toward low pressure. So the direction the physics actually selects is the direction of most rapid
     <em>decrease</em>, which is exactly the case <m>\theta = \pi</m> of
     <m>D_{\mathbf u}f = |\nabla f|\cos\theta</m>.
   </p>
@@ -101,15 +100,7 @@
         contours at right angles</em>.
       </p>
     </li>
-  </ul>
-
-  <p>
-    That last bullet is the geometric heart of the matter, and the example below is
-    designed to make it visible.
-    <xref ref="ex-electrostatic-plate"/>, <xref ref="ex-fall-line"/>, and
-    <xref ref="ex-isobars-low"/> at the end of this section repeat the same three
-    questions in the electrostatic, mechanical, and meteorological settings.
-  </p>
+  </ul>1
 
   <example xml:id="ex-two-runners">
     <title>Two Runners in a City Heat Island</title>
