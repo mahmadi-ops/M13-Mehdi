@@ -12,9 +12,10 @@
     <titlepage-items/>
   </titlepage>
 
-  <abstract>
+  <preface>
+    <title>Preface</title>
     <p>
-      These pages aim to design and implement a series of interactive, accessible web-based 
+      These pages aim to design and implement a series of interactive, accessible web-based
       modules that strengthen students’ conceptual understanding of foundational mathematical 
       ideas through explicit connections to physical phenomena. The project responds to a 
       persistent challenge observed across STEM disciplines at SCU: students often demonstrate 
@@ -37,6 +38,6 @@
         </li>
       </ol>
     </p>
-  </abstract>
+  </preface>
 
 </frontmatter>

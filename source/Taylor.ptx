@@ -395,7 +395,7 @@
       is indeed less than the upper bound we calculated.
       </p>
        
-  <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11">
+  <interactive geogebra="xzdc5jpq" width="95%" aspect="16:11">
   <description>
 <p>
 The red curve is the graph of <m>f(x) = e^x</m> and
@@ -470,8 +470,7 @@ The red curve is the graph of <m>f(x) = e^x</m> and
         at <m>x=0</m> with an error of magnitude no greater than 
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
-    <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
-    shift-drag-zoom="no" aspect="16:10">
+    <interactive geogebra="ptgj7hpk" width="95%" aspect="16:10">
     <description>
 <p>
 The red curve is the graph of <m>f(x) = \sin(x)</m> 
@@ -482,7 +481,7 @@ The red curve is the graph of <m>f(x) = \sin(x)</m>
 </description>
     </interactive>
 
-    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9">
+    <interactive geogebra="z854nrgd" width="95%" aspect="16:9">
     <description>
 <p>
 Use the slider to change the value of <m>x_0</m> and see how the error changes. 

@@ -465,7 +465,7 @@ magnitude of the force in the direction of motion, <m>|\mathbf F|\cos\theta</m>.
 <coordinates bbox="(-0.5,-1,7,3)">
 <point at="point-p" p="P" alignment="sw"><m>P</m></point>
 <point at="point-q" p="Q" alignment="s"><m>Q</m></point>
-<vector at="vec-d" v="Q-P" tail="P" stroke="maroon" thickness="5" alignment="s">
+<vector at="vec-d" v="Q-P" tail="P" stroke="maroon" thickness="5" alignment="s" label-location="0.5">
 <m>\mathbf D</m>
 </vector>
 <vector at="vec-f" v="Fv" tail="Q" stroke="blue" thickness="4" alignment="ne">
@@ -562,34 +562,47 @@ and the work done is
 
         <!-- Diagram inserted here -->
         <figure xml:id="fig-inclined-forces">
-          <caption>Forces acting on a mass on a <m>30^{\circ}</m> incline[cite: 1].</caption>
-          <prefigure>
-           <canvas x-bounds="[-2, 6]" y-bounds="[-5, 4]">
-  <!-- The Inclined Plane -->
-  <line x1="0" y1="0" x2="5.196" y2="3" stroke="black" thickness="2" />
-  <line x1="0" y1="0" x2="5.196" y2="0" stroke="black" thickness="1" dash="4 4" />
-  <line x1="5.196" y1="0" x2="5.196" y2="3" stroke="black" thickness="1" dash="4 4" />
-  <label anchor="(1.2, 0.2)">30°</label>
+          <caption>Forces acting on a mass on a <m>30^{\circ}</m> incline: the weight
+          <m>\vec{F}</m> resolves into a component <m>\vec{F}_{\parallel}</m> down the
+          slope and a component <m>\vec{F}_{\perp}</m> into the surface, with
+          <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>.</caption>
+          <image width="60%">
+            <prefigure xmlns="https://prefigure.org" label="prefigure-inclined-forces">
+              <diagram dimensions="(350,300)" margins="5">
+                <coordinates bbox="(-1,-2,6,4)">
+                  <!-- Inclined plane: 30-degree ramp with its right-triangle base -->
+                  <line at="incline-surface" p1="(0,0)" p2="(5.196,3)" stroke="black" thickness="2"/>
+                  <line at="incline-base" p1="(0,0)" p2="(5.196,0)" stroke="black" thickness="1" dash="4 4"/>
+                  <line at="incline-vertical" p1="(5.196,0)" p2="(5.196,3)" stroke="black" thickness="1" dash="4 4"/>
+                  <label at="angle-label" anchor="(1.3,0.25)" alignment="ne"><m>30^{\circ}</m></label>
 
-  <!-- The Object (Centered at a point on the incline) -->
-  <group transform="translate(2.598, 1.5) rotate(30)">
-    <rectangle center="(0,0.4)" width="1.2" height="0.8" fill="lightgray" stroke="black" />
-    
-    <!-- Force Vectors originating from center of mass -->
-    <!-- Gravity: straight down -->
-    <vector to="(0,-3)" stroke="blue" thickness="2" />
-    <label anchor="(0.3,-2.8)" color="blue"><m>\vec{F}</m></label>
+                  <!-- Block resting on the incline (rotated to match the slope) -->
+                  <rectangle at="block" center="(2.398,1.846)" dimensions="(1.2,0.8)"
+                             rotate="30" fill="lightgray" stroke="black"/>
 
-    <!-- Parallel Component: down the slope -->
-    <vector to="(-1.5,0)" stroke="red" thickness="2" />
-    <label anchor="(-1.8,0.3)" color="red"><m>\vec{F}_{\parallel}</m></label>
+                  <!-- Force vectors from the center of mass; scaled so they add to the weight -->
+                  <vector at="vec-weight" v="(0,-3)" tail="(2.398,1.846)" stroke="blue" thickness="2"/>
+                  <label at="weight-label" anchor="(2.75,-1.05)" alignment="e" color="blue"><m>\vec{F}</m></label>
 
-    <!-- Perpendicular Component: into the slope -->
-    <vector to="(0,-2.598)" stroke="purple" thickness="2" />
-    <label anchor="(-0.5,-2.2)" color="purple"><m>\vec{F}_{\perp}</m></label>
-  </group>
-</canvas>
-          </prefigure>
+                  <vector at="vec-parallel" v="(-1.299,-0.75)" tail="(2.398,1.846)" stroke="red" thickness="2"/>
+                  <label at="parallel-label" anchor="(0.75,1.05)" alignment="w" color="red"><m>\vec{F}_{\parallel}</m></label>
+
+                  <vector at="vec-perp" v="(1.299,-2.25)" tail="(2.398,1.846)" stroke="purple" thickness="2"/>
+                  <label at="perp-label" anchor="(3.95,-0.4)" alignment="e" color="purple"><m>\vec{F}_{\perp}</m></label>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure" text="A block resting on a thirty degree inclined plane, with the weight vector and its two components drawn from the block's center of mass.">
+                    <annotation ref="incline-surface" text="The sloped surface of the incline, rising at thirty degrees from the horizontal."/>
+                    <annotation ref="block" text="A rectangular block resting on the incline, tilted to lie flush with the slope."/>
+                    <annotation ref="vec-weight" text="The weight vector F, pointing straight down from the center of mass."/>
+                    <annotation ref="vec-parallel" text="The component of the weight parallel to the incline, pointing down the slope."/>
+                    <annotation ref="vec-perp" text="The component of the weight perpendicular to the incline, pointing into the surface."/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
         </figure>
 
         <p>
