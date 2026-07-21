@@ -45,13 +45,9 @@ derivatives near a critical point <m>(a,b)</m>, so that
 along the line through <m>(a,b)</m> in the direction of
 <m>\mathbf{u}</m>. The height of the surface above this line is the
 single-variable function
-</p>
-
-<men xml:id="eq-sdt-slice">
+<md xml:id="eq-sdt-slice" number="yes">
 g(t) = f(a + t u_1,\; b + t u_2),
-</men>
-
-<p>
+</md>
 which is exactly the <term>slice</term> of the surface cut by the
 vertical plane through <m>(a,b)</m> containing <m>\mathbf{u}</m>. In
 the video this slice is the highlighted curve, drawn green where it
@@ -66,13 +62,12 @@ curves upward and red where it curves downward.
 <p>
 By the chain rule, with <m>x = a + t u_1</m> and <m>y = b + t u_2</m>
 (so that <m>dx/dt = u_1</m> and <m>dy/dt = u_2</m>),
-</p>
-
-<men xml:id="eq-sdt-first">
+<md xml:id="eq-sdt-first" number="yes">
 g'(t) = \frac{\partial f}{\partial x}\frac{dx}{dt}
       + \frac{\partial f}{\partial y}\frac{dy}{dt}
       = f_x\, u_1 + f_y\, u_2 = D_{\mathbf{u}}f .
-</men>
+</md>
+</p>
 
 <p>
 This is the ordinary directional derivative of <m>f</m> in the
@@ -140,15 +135,11 @@ some lines through <m>(a,b)</m> and falls along others.
 <p>
 Writing <m>\mathbf{u} = (\cos\theta, \sin\theta)</m>, equation
 <xref ref="eq-sdt-second"/> becomes a function of the direction angle,
-</p>
-
-<men xml:id="eq-sdt-angle">
+<md xml:id="eq-sdt-angle" number="yes">
 D^2_{\mathbf{u}}f
 = f_{xx}\cos^2\theta + 2 f_{xy}\cos\theta\sin\theta
 + f_{yy}\sin^2\theta ,
-</men>
-
-<p>
+</md>
 which is the curve plotted against <m>\theta</m> in the video. For
 <m>z = x^2 + y^2</m> it is the constant <m>2</m> (always positive: a
 minimum); for <m>z = -(x^2+y^2)</m> it is the constant <m>-2</m>
@@ -184,13 +175,9 @@ first line: the cross terms match, and the <m>f_{xy}^2 u_2^2</m>
 produced by the square is subtracted off again by the second term.)
 Every quantity on the right-hand side is now a perfect square except
 the coefficient
-</p>
-
-<men xml:id="eq-sdt-discriminant">
+<md xml:id="eq-sdt-discriminant" number="yes">
 H = f_{xx} f_{yy} - f_{xy}^2 ,
-</men>
-
-<p>
+</md>
 the discriminant (the Hessian determinant of
 <xref ref="eq-quartic-hessian"/>). The sign of
 <m>D^2_{\mathbf{u}}f</m> in <em>every</em> direction at once is
