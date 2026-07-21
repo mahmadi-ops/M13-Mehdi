@@ -23,11 +23,9 @@ will need two equations to demonstrate how the <m>x</m>- and
 <p>
 If <m>x</m> and <m>y</m> are given as functions of a third variable
 <m>t</m>, called a <term>parameter</term>, by
-</p>
-<men xml:id="eq-parametric-equations">
+<md xml:id="eq-parametric-equations" number="yes">
 x = f(t), \qquad y = g(t),
-</men>
-<p>
+</md>
 then the points <m>(x,y) = (f(t),\,g(t))</m> trace out a curve in the
 plane, called a <term>parametric curve</term>. The equations
 <m>x=f(t)</m> and <m>y=g(t)</m> are the parametric equations of the
@@ -177,21 +175,19 @@ direction of increasing <m>t</m>.
 <p>
 As our second example, consider the equation of the circle centered at
 <m>(0,0)</m> with unit radius,
-</p>
-<men xml:id="eq-unit-circle">
+<md xml:id="eq-unit-circle" number="yes">
 x^2 + y^2 = 1.
-</men>
+</md>
+</p>
 <p>
 Here, we would like to parametrize <m>x</m> and <m>y</m> in terms of a
 single parameter <m>t</m> in such a way that by varying the value of
 <m>t</m>, we can reconstruct the circle <m>x^2+y^2=1</m>. Remember that
 <m>\cos^2(t) + \sin^2(t) = 1</m>, so one way to achieve our goal is to
 write
-</p>
-<men xml:id="eq-unit-circle-param">
+<md xml:id="eq-unit-circle-param" number="yes">
 x = \cos(t), \qquad y = \sin(t),
-</men>
-<p>
+</md>
 where <m>t \in [0, 2\pi)</m>. The parametrization is illustrated in
 <xref ref="fig-unit-circle-param-video"/> and
 <xref ref="fig-unit-circle-param"/>.
@@ -306,10 +302,10 @@ Find the parametric equations corresponding to the following curves.
 <p>
 <em>Part A.</em> The segment lies on the line <m>y = 1 - x</m>, so we
 may take
-</p>
-<men xml:id="eq-segment-param">
+<md xml:id="eq-segment-param" number="yes">
 x = t, \qquad y = 1 - t, \qquad 0 \le t \le 1.
-</men>
+</md>
+</p>
 <p>
 At <m>t = 0</m> we are at the point <m>(0,1)</m>, and at <m>t = 1</m>
 we arrive at the point <m>(1,0)</m>. See
@@ -365,17 +361,17 @@ ends at <m>(1,0)</m> when <m>t=1</m>.
 
 <p>
 <em>Part B.</em> Guided by the unit circle, we take
-</p>
-<men xml:id="eq-ellipse-param">
+<md xml:id="eq-ellipse-param" number="yes">
 x = 2\cos(t), \qquad y = 3\sin(t), \qquad 0 \le t \lt 2\pi.
-</men>
+</md>
+</p>
 <p>
 To verify, note that
-</p>
-<me>
+<md>
 \frac{(2\cos t)^2}{4} + \frac{(3\sin t)^2}{9}
 = \cos^2 t + \sin^2 t = 1.
-</me>
+</md>
+</p>
 <p>
 See <xref ref="fig-ellipse-param-video"/> and
 <xref ref="fig-ellipse-param"/>.
@@ -444,17 +440,17 @@ Part B: the ellipse <m>x = 2\cos(t)</m>, <m>y = 3\sin(t)</m>,
 is <m>(x-2)^2 + y^2 = 4</m>, so we shift the standard parametrization
 of a circle of radius <m>2</m> by <m>2</m> units in the
 <m>x</m>-direction:
-</p>
-<men xml:id="eq-shifted-circle-param">
+<md xml:id="eq-shifted-circle-param" number="yes">
 x = 2\cos(t) + 2, \qquad y = 2\sin(t), \qquad 0 \le t \lt 2\pi.
-</men>
+</md>
+</p>
 <p>
 To verify, note that
-</p>
-<me>
+<md>
 \bigl((2\cos t + 2) - 2\bigr)^2 + (2\sin t)^2
 = 4\cos^2 t + 4\sin^2 t = 4.
-</me>
+</md>
+</p>
 <p>
 See <xref ref="fig-shifted-circle-param-video"/> and
 <xref ref="fig-shifted-circle-param"/>.
@@ -523,10 +519,10 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
     records <em>when</em> the moving point visits each place on the curve. Because
     of this, there are two different questions we can ask about two parametric
     curves
-    <me>
+    <md>
       \mathbf r_1(t) = \bigl(f_1(t),\, g_1(t)\bigr), \qquad
       \mathbf r_2(t) = \bigl(f_2(t),\, g_2(t)\bigr),
-    </me>
+    </md>
     thought of as the trajectories of two particles.
   </p>
 
@@ -537,17 +533,17 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
         A point <m>P</m> is an <term>intersection point</term> of the two curves if
         <m>P</m> lies on both curves; that is, if there are parameter values
         <m>t</m> and <m>s</m>, <em>not necessarily equal</em>, with
-        <me>
+        <md>
           \mathbf r_1(t) = \mathbf{OP} = \mathbf r_2(s).
-        </me>
+        </md>
       </p>
       <p>
         A point <m>P</m> is a <term>collision point</term> of the two particles if
         both particles are at <m>P</m> at the <em>same</em> time; that is, if there
         is a single value of <m>t</m> with
-        <me>
+        <md>
           \mathbf r_1(t) = \mathbf r_2(t) = \mathbf{OP}.
-        </me>
+        </md>
       </p>
     </statement>
   </definition>
@@ -587,9 +583,9 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
     parabola <m>y = x^2</m> and the line <m>y = x+2</m>. Setting
     <m>x^2 = x+2</m> gives <m>x^2 - x - 2 = (x-2)(x+1) = 0</m>, so the paths meet
     at the two points
-    <me>
+    <md>
       (-1,1) \qquad \text{and} \qquad (2,4).
-    </me>
+    </md>
     Only the <em>schedule</em> of the second particle will change.
   </p>
 
@@ -598,10 +594,10 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
     <statement>
       <p>
         Two particles move in the plane with position vectors
-        <me>
+        <md>
           \mathbf r_1(t) = \bigl(t,\; t^2\bigr), \qquad
           \mathbf r_2(t) = \bigl(-t,\; 2-t\bigr), \qquad t \in \mathbb R .
-        </me>
+        </md>
         Find all intersection points of their paths, and all collision points of
         the particles.
       </p>
@@ -615,9 +611,9 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
       </p>
       <p>
         <alert>Collisions.</alert> A collision requires a single <m>t</m> with
-        <me>
+        <md>
           t = -t \qquad \text{and} \qquad t^2 = 2 - t .
-        </me>
+        </md>
         The first equation forces <m>t = 0</m>, but then <m>t^2 = 0</m> while
         <m>2 - t = 2</m>. There is no solution, so <em>the particles never
         collide</em>.
@@ -729,10 +725,10 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
     <statement>
       <p>
         Keep the first particle, but re-schedule the second one:
-        <me>
+        <md>
           \mathbf r_1(t) = \bigl(t,\; t^2\bigr), \qquad
           \mathbf r_2(t) = \bigl(2t-2,\; 2t\bigr), \qquad t \in \mathbb R .
-        </me>
+        </md>
         Find the intersection points of the paths and the collision points of the
         particles.
       </p>
@@ -747,15 +743,15 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
       </p>
       <p>
         <alert>Collisions.</alert> Now a collision requires a single <m>t</m> with
-        <me>
+        <md>
           t = 2t - 2 \qquad \text{and} \qquad t^2 = 2t .
-        </me>
+        </md>
         The first equation gives <m>t = 2</m>, and this value does satisfy the
         second equation, since <m>2^2 = 4 = 2\cdot 2</m>. Hence the particles
         <em>do</em> collide, at
-        <me>
+        <md>
           \mathbf r_1(2) = \mathbf r_2(2) = (2,4), \qquad \text{at time } t = 2 .
-        </me>
+        </md>
       </p>
       <p>
         The other intersection point is <em>not</em> a collision point: the first
