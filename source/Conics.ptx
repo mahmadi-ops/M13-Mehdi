@@ -119,16 +119,16 @@
     </example>
 
     <solution xml:id="sol-parabola-1">
-      <p>We begin by completing the square:</p>
-      <me>y = -\frac{1}{2}x^2 + x - \frac{1}{2} = -\frac{1}{2}(x-1)^2,
-      \qquad\text{i.e.}\qquad (x-1)^2 = -2y.</me>
+      <p>We begin by completing the square:
+<md>y = -\frac{1}{2}x^2 + x - \frac{1}{2} = -\frac{1}{2}(x-1)^2,
+      \qquad\text{i.e.}\qquad (x-1)^2 = -2y.</md>
+</p>
       <p>
         Comparing with <m>x^2 = 4py</m> gives <m>4p = -2</m>, so <m>p = -\frac{1}{2}</m>.
         The graph is the standard parabola shifted right by one unit, so the vertex is at
         <m>(1,0)</m>. Therefore the focus is at
-      </p>
-      <me>(1,\, p) = \left(1,\, -\tfrac{1}{2}\right),</me>
-      <p>and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
+<md>(1,\, p) = \left(1,\, -\tfrac{1}{2}\right),</md>
+and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
 
       <figure xml:id="fig-parabola-example">
         <caption>The parabola <m>(x-1)^2 = -2y</m>, opening downward with focus
@@ -178,13 +178,15 @@
       <p>
         Here we run the definition in reverse. A point <m>(x,y)</m> lies on the parabola
         exactly when its distance to the focus equals its distance to the directrix:
-      </p>
-      <me>\sqrt{(x-2)^2 + y^2} = |x+2|.</me>
-      <p>Squaring both sides and expanding,</p>
-      <me>(x-2)^2 + y^2 = (x+2)^2
-      \;\Longrightarrow\; x^2 - 4x + 4 + y^2 = x^2 + 4x + 4.</me>
-      <p>The <m>x^2</m> and constant terms cancel, leaving</p>
-      <me>y^2 = 8x.</me>
+<md>\sqrt{(x-2)^2 + y^2} = |x+2|.</md>
+</p>
+      <p>Squaring both sides and expanding,
+<md>(x-2)^2 + y^2 = (x+2)^2
+      \;\Longrightarrow\; x^2 - 4x + 4 + y^2 = x^2 + 4x + 4.</md>
+</p>
+      <p>The <m>x^2</m> and constant terms cancel, leaving
+<md>y^2 = 8x.</md>
+</p>
       <p>
         Because the directrix is <em>vertical</em> and the focus lies to its right, the
         parabola opens <em>to the right</em>. Comparing with <m>y^2 = 4px</m> gives
@@ -315,15 +317,13 @@
       Where do the formulas for <m>a</m> come from? Two facts do all the work. First,
       evaluating the definition at the vertex <m>(a,0)</m> shows that the two focal radii
       there are <m>a-c</m> and <m>a+c</m>, so their sum is
-    </p>
-    <me>r_1 + r_2 = (a-c) + (a+c) = 2a,</me>
-    <p>
-      which identifies the constant in the definition as <m>2a</m>; equivalently
+<md>r_1 + r_2 = (a-c) + (a+c) = 2a,</md>
+which identifies the constant in the definition as <m>2a</m>; equivalently
       <m>a = \frac{1}{2}(r_1 + r_2)</m>. Second, evaluating at the co-vertex <m>(0,b)</m>
       forces <m>r_1 = r_2 = a</m> by symmetry, and that radius is the hypotenuse of a right
       triangle with legs <m>b</m> and <m>c</m>. Pythagoras then gives
-    </p>
-    <me>a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</me>
+<md>a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</md>
+</p>
     <p>
       So for an ellipse <m>a</m> is the <em>hypotenuse</em> of that triangle, which is why
       <m>a</m> is the largest of the three lengths and why <m>c^2 = a^2 - b^2</m> carries a
@@ -354,14 +354,14 @@
     </example>
 
     <solution xml:id="sol-ellipse-1">
-      <p>Dividing through by <m>36</m> puts the equation in standard form:</p>
-      <me>\frac{x^2}{9} + \frac{y^2}{4} = 1.</me>
+      <p>Dividing through by <m>36</m> puts the equation in standard form:
+<md>\frac{x^2}{9} + \frac{y^2}{4} = 1.</md>
+</p>
       <p>
         The larger denominator sits under <m>x^2</m>, so the major axis is horizontal with
         <m>a = 3</m> and <m>b = 2</m>. Then
-      </p>
-      <me>c^2 = a^2 - b^2 = 9 - 4 = 5 \;\Longrightarrow\; c = \sqrt{5},</me>
-      <p>so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
+<md>c^2 = a^2 - b^2 = 9 - 4 = 5 \;\Longrightarrow\; c = \sqrt{5},</md>
+so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
 
       <figure xml:id="fig-ellipse-example">
         <caption>The ellipse <m>\frac{x^2}{9}+\frac{y^2}{4}=1</m> with foci at
@@ -409,15 +409,16 @@
     </example>
 
     <solution xml:id="sol-ellipse-2">
-      <p>Dividing by <m>400</m>,</p>
-      <me>\frac{x^2}{16} + \frac{y^2}{25} = 1.</me>
+      <p>Dividing by <m>400</m>,
+<md>\frac{x^2}{16} + \frac{y^2}{25} = 1.</md>
+</p>
       <p>
         This time the larger denominator, <m>25</m>, sits under <m>y^2</m>, so the major
         axis is <em>vertical</em>. The semi-major axis is <m>a = \sqrt{25} = 5</m> (along
         the <m>y</m>-axis) and the semi-minor axis is <m>b = \sqrt{16} = 4</m> (along the
         <m>x</m>-axis). Hence
-      </p>
-      <me>c^2 = a^2 - b^2 = 25 - 16 = 9 \;\Longrightarrow\; c = 3.</me>
+<md>c^2 = a^2 - b^2 = 25 - 16 = 9 \;\Longrightarrow\; c = 3.</md>
+</p>
       <p>
         Because the major axis is vertical, the foci lie on the <m>y</m>-axis:
         <m>F_1(0,3)</m> and <m>F_2(0,-3)</m>. The lesson of the twist: read off the larger
@@ -546,15 +547,13 @@
       The formulas for <m>a</m> arise exactly as they did for the ellipse, with sums
       replaced by differences. Evaluating the definition at the vertex <m>(a,0)</m>, the two
       focal radii are <m>c-a</m> and <m>c+a</m>, so
-    </p>
-    <me>|r_1 - r_2| = (c+a) - (c-a) = 2a,</me>
-    <p>
-      identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. For the
+<md>|r_1 - r_2| = (c+a) - (c-a) = 2a,</md>
+identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. For the
       second relation, draw the central box whose half-width is <m>a</m> and half-height is
       <m>b</m>. Its corner <m>(a,b)</m> lies at distance <m>c</m> from the center, so the
       right triangle with legs <m>a</m> and <m>b</m> has hypotenuse <m>c</m>, and
-    </p>
-    <me>c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</me>
+<md>c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</md>
+</p>
     <p>
       Notice the contrast with the ellipse: there <m>a</m> was the <em>hypotenuse</em>, so
       <m>c^2 = a^2 - b^2</m>; here <m>a</m> is a <em>leg</em>, so <m>c^2 = a^2 + b^2</m>.
@@ -586,13 +585,13 @@
     </example>
 
     <solution xml:id="sol-hyperbola-1">
-      <p>Dividing by <m>144</m> gives standard form:</p>
-      <me>\frac{x^2}{16} - \frac{y^2}{9} = 1
-      \;\Longrightarrow\; a = \sqrt{16} = 4,\quad b = \sqrt{9} = 3.</me>
-      <p>Since the <m>x^2</m>-term is positive, the hyperbola opens left and right. Then</p>
-      <me>c^2 = a^2 + b^2 = 16 + 9 = 25 \;\Longrightarrow\; c = 5,</me>
-      <p>
-        so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
+      <p>Dividing by <m>144</m> gives standard form:
+<md>\frac{x^2}{16} - \frac{y^2}{9} = 1
+      \;\Longrightarrow\; a = \sqrt{16} = 4,\quad b = \sqrt{9} = 3.</md>
+</p>
+      <p>Since the <m>x^2</m>-term is positive, the hyperbola opens left and right. Then
+<md>c^2 = a^2 + b^2 = 16 + 9 = 25 \;\Longrightarrow\; c = 5,</md>
+so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         asymptotes are <m>y = \pm\frac{b}{a}x = \pm\frac{3}{4}x</m>.
       </p>
 
@@ -652,15 +651,16 @@
     </example>
 
     <solution xml:id="sol-hyperbola-2">
-      <p>Dividing by <m>144</m> and being careful with signs,</p>
-      <me>\frac{y^2}{9} - \frac{x^2}{16} = 1.</me>
+      <p>Dividing by <m>144</m> and being careful with signs,
+<md>\frac{y^2}{9} - \frac{x^2}{16} = 1.</md>
+</p>
       <p>
         Now the <em><m>y^2</m>-term</em> is the positive one, so the hyperbola opens
         <em>up and down</em>. In this orientation <m>a^2</m> is the denominator under
         <m>y^2</m>, giving <m>a = 3</m> (measured along the <m>y</m>-axis) and <m>b = 4</m>.
         Still using <m>c^2 = a^2 + b^2</m>,
-      </p>
-      <me>c^2 = 9 + 16 = 25 \;\Longrightarrow\; c = 5.</me>
+<md>c^2 = 9 + 16 = 25 \;\Longrightarrow\; c = 5.</md>
+</p>
       <p>
         So the vertices are <m>(0,\pm 3)</m> and the foci are <m>(0,\pm 5)</m>, both on the
         <m>y</m>-axis. For a vertical hyperbola the asymptotes are
@@ -799,8 +799,8 @@
         Put the vertex at the origin with the dish opening upward, so the cross-section is
         <m>x^2 = 4py</m>. The dish is <m>4</m> feet wide and <m>1</m> foot deep, so the rim
         passes through the point <m>(2,1)</m>. Substituting,
-      </p>
-      <me>2^2 = 4p(1) \;\Longrightarrow\; 4 = 4p \;\Longrightarrow\; p = 1.</me>
+<md>2^2 = 4p(1) \;\Longrightarrow\; 4 = 4p \;\Longrightarrow\; p = 1.</md>
+</p>
       <p>
         The receiver belongs at the focus <m>(0,p) = (0,1)</m>, that is, <m>1</m> foot above the
         vertex<mdash/>which here happens to be exactly level with the rim.
@@ -911,8 +911,8 @@
         Model the room as <m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1</m> with center at the
         origin. The room is <m>100</m> feet long and <m>60</m> feet wide, so <m>2a = 100</m> and
         <m>2b = 60</m>, giving <m>a = 50</m> and <m>b = 30</m>. Then
-      </p>
-      <me>c^2 = a^2 - b^2 = 2500 - 900 = 1600 \;\Longrightarrow\; c = 40.</me>
+<md>c^2 = a^2 - b^2 = 2500 - 900 = 1600 \;\Longrightarrow\; c = 40.</md>
+</p>
       <p>
         The two people should stand at the foci <m>(\pm 40, 0)</m>, that is, <m>40</m> feet from
         the center along the long axis, or <m>80</m> feet apart. Whatever point of the wall the
@@ -932,10 +932,8 @@
       of transmitters; the signal from the more distant transmitter arrives later, so the
       measured delay <m>\Delta t</m> determines the <em>difference</em> between the vessel's
       distances to the two transmitters,
-    </p>
-    <me>|r_2 - r_1| = v\,\Delta t,</me>
-    <p>
-      where <m>v</m> is the signal speed. The set of points with a constant difference of
+<md>|r_2 - r_1| = v\,\Delta t,</md>
+where <m>v</m> is the signal speed. The set of points with a constant difference of
       distances from two fixed points is precisely a hyperbola with those points as foci, so
       one measurement tells the vessel which hyperbola it is on<mdash/>the one with
       <m>2a = v\,\Delta t</m><mdash/>and the sign of the delay (which pulse arrived first)
@@ -1073,10 +1071,8 @@
         and <m>P_3</m> simultaneously, so Emma is <em>equidistant</em> from them: he lies on
         the perpendicular bisector of the segment <m>P_1P_3</m>. The signal reaches
         <m>P_2</m> <m>80</m> microseconds after <m>P_1</m>, so Emma is
-      </p>
-      <me>(300{,}000\ \text{km/s})\,(80\times 10^{-6}\ \text{s}) = 24\ \text{km}</me>
-      <p>
-        farther from <m>P_2</m> than from <m>P_1</m>. He therefore also lies on the branch
+<md>(300{,}000\ \text{km/s})\,(80\times 10^{-6}\ \text{s}) = 24\ \text{km}</md>
+farther from <m>P_2</m> than from <m>P_1</m>. He therefore also lies on the branch
         nearer <m>P_1</m> of the hyperbola <m>h</m> with foci <m>P_1</m> and <m>P_2</m> whose
         constant distance difference is <m>24</m> km.
       </p>
@@ -1086,9 +1082,8 @@
         <m>x</m>-axis along <m>OP_1</m>, and choose the positive <m>y</m>-axis so that
         <m>P_3</m> has positive second coordinate. Since every given length is a multiple of
         <m>12</m>, let one unit on each axis be <m>12</m> km. Then
-      </p>
-      <me>P_1(2,0), \qquad P_2(-2,0), \qquad P_3(3,3).</me>
-
+<md>P_1(2,0), \qquad P_2(-2,0), \qquad P_3(3,3).</md>
+</p>
       <figure xml:id="fig-loran-coords">
         <caption>The coordinate system: origin at the midpoint of <m>P_1P_2</m>, one unit
         <m>= 12</m> km.</caption>
@@ -1128,17 +1123,15 @@
         <m>S\left(\tfrac52, \tfrac32\right)</m> of the segment, and since
         <m>P_3 - P_1 = (1,3)</m>, the direction <m>\vec u_o = (3,-1)</m> is perpendicular to
         the segment. Parametrically,
-      </p>
-      <me>o:\quad x = \tfrac52 + 3t, \qquad y = \tfrac32 - t, \qquad t \in \mathbb{R}.</me>
+<md>o:\quad x = \tfrac52 + 3t, \qquad y = \tfrac32 - t, \qquad t \in \mathbb{R}.</md>
+</p>
       <p>
         For the hyperbola, the foci are <m>P_1(2,0)</m> and <m>P_2(-2,0)</m>, so the center is
         <m>O</m> and <m>c = |OP_1| = 2</m>. The constant difference
         <m>|AP_2| - |AP_1| = 24\ \text{km} = 2</m> units equals <m>2a</m>, so <m>a = 1</m>,
         and then <m>b^2 = c^2 - a^2 = 4 - 1 = 3</m>. Hence
-      </p>
-      <me>h:\quad x^2 - \frac{y^2}{3} = 1,</me>
-      <p>
-        and since <m>A</m> is closer to <m>P_1</m>, it lies on the right branch:
+<md>h:\quad x^2 - \frac{y^2}{3} = 1,</md>
+and since <m>A</m> is closer to <m>P_1</m>, it lies on the right branch:
         <m>x_A \gt 0</m>.
       </p>
       <p>
@@ -1153,13 +1146,12 @@
       </md>
       <p>
         The discriminant is <m>96^2 - 4\cdot 52\cdot 27 = 9216 - 5616 = 3600 = 60^2</m>, so
-      </p>
-      <me>t = \frac{-96 \pm 60}{104}, \qquad t_1 = -\frac{9}{26}, \quad t_2 = -\frac32.</me>
-      <p>Substituting <m>t_1</m> into the parametric equations gives</p>
-      <me>x_1 = \tfrac52 + 3\left(-\tfrac{9}{26}\right) = \tfrac{19}{13}, \qquad
-          y_1 = \tfrac32 - \left(-\tfrac{9}{26}\right) = \tfrac{24}{13},</me>
-      <p>
-        that is, <m>A_1\left(\tfrac{19}{13}, \tfrac{24}{13}\right)</m>. Substituting
+<md>t = \frac{-96 \pm 60}{104}, \qquad t_1 = -\frac{9}{26}, \quad t_2 = -\frac32.</md>
+</p>
+      <p>Substituting <m>t_1</m> into the parametric equations gives
+<md>x_1 = \tfrac52 + 3\left(-\tfrac{9}{26}\right) = \tfrac{19}{13}, \qquad
+          y_1 = \tfrac32 - \left(-\tfrac{9}{26}\right) = \tfrac{24}{13},</md>
+that is, <m>A_1\left(\tfrac{19}{13}, \tfrac{24}{13}\right)</m>. Substituting
         <m>t_2</m> gives <m>x_2 = \tfrac52 - \tfrac92 = -2</m> and
         <m>y_2 = \tfrac32 + \tfrac32 = 3</m>, that is, <m>A_2(-2,3)</m>.
       </p>
@@ -1169,10 +1161,8 @@
         <m>P_2</m> than to <m>P_1</m>, so a signal sent from <m>A_2</m> would reach
         <m>P_2</m> <em>earlier</em> than <m>P_1</m><mdash/>the opposite of what was measured.
         Emma's position is therefore
-      </p>
-      <me>A\left(\tfrac{19}{13},\ \tfrac{24}{13}\right),</me>
-      <p>
-        about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distances come
+<md>A\left(\tfrac{19}{13},\ \tfrac{24}{13}\right),</md>
+about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distances come
         out exactly: <m>|AP_1| = |AP_3| = \tfrac{25}{13}</m> units and
         <m>|AP_2| = \tfrac{51}{13}</m> units, so <m>|AP_2| - |AP_1| = 2</m> units
         <m>= 24</m> km, as required. In kilometers, Emma is
