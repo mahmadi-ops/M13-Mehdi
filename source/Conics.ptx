@@ -622,7 +622,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
           <diagram dimensions="(434,340)" margins="8">
             <definition>H(x,y) = x^2/16 - y^2/9</definition>
             <coordinates bbox="(-11.5, -9, 11.5, 9)">
-              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hticks="(-10,5,10)" vticks="(-8,4,8)" tick-size="(4,4)"/>
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hlabels="(-10,5,10)" vlabels="(-8,4,8)" tick-size="(4,4)"/>
               <group at="asymptotes">
                 <line p1="(0,0)" p2="(4,3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
                 <line p1="(0,0)" p2="(4,-3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
@@ -701,7 +701,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
           <diagram dimensions="(400,358)" margins="8">
             <definition>H(x,y) = y^2/9 - x^2/16</definition>
             <coordinates bbox="(-9.5, -8.5, 9.5, 8.5)">
-              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hticks="(-8,4,8)" vticks="(-8,4,8)" tick-size="(4,4)"/>
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1" hlabels="(-8,4,8)" vlabels="(-8,4,8)" tick-size="(4,4)"/>
               <group at="asymptotes">
                 <line p1="(0,0)" p2="(4,3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
                 <line p1="(0,0)" p2="(4,-3)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
