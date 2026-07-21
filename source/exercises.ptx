@@ -16,7 +16,7 @@
         <statement>
           <p>
             Find the absolute maximum and minimum values of
-            <me>f(x,y)=x^2-xy+y^2-3y</me>
+            <md>f(x,y)=x^2-xy+y^2-3y</md>
             on the region bounded by the <m>x</m>- and
             <m>y</m>-axes and the line <m>x+y=4</m>.
           </p>
@@ -173,11 +173,11 @@
         The receiver must sit at the focus <m>(0,p)</m>.  The rim point
         <m>\left(\tfrac{d}{2}, h\right) = (60,\, 20.3)</m> lies on the
         parabola <m>x^2 = 4py</m>, so
-        <me>
+        <md>
           60^2 = 4p(20.3)
           \quad\Longrightarrow\quad
           p = \frac{3600}{81.2} \approx 44.3.
-        </me>
+        </md>
       </p>
       <p>
         The receiver should be mounted on the axis about <m>44.3</m> cm above
@@ -198,10 +198,10 @@
       <p>
         Solving <m>x^2 = 4py</m> for <m>y</m> with
         <m>4p = \frac{3600}{20.3} \approx 177.3</m> gives
-        <me>
+        <md>
           y = \frac{1}{4p}\,x^2 = \frac{20.3}{3600}\,x^2 \approx \frac{x^2}{177.3},
           \qquad -60 \le x \le 60.
-        </me>
+        </md>
       </p>
       <p>
         The graph captures the true curvature of the dish provided both axes
@@ -223,11 +223,11 @@
         <m>\left(\tfrac{d}{2}, h\right)</m> form a right triangle with legs
         <m>p - h</m> (vertical) and <m>\tfrac{d}{2}</m> (horizontal), and
         <m>\varphi</m> is the angle at the focus.  Hence
-        <me>
+        <md>
           \tan\varphi = \frac{d/2}{p - h} = \frac{60}{44.3 - 20.3} = \frac{60}{24}
           \quad\Longrightarrow\quad
           \varphi \approx 68.2^\circ.
-        </me>
+        </md>
       </p>
       <figure xml:id="fig-antenna-angle-triangle">
         <caption>
