@@ -29,7 +29,8 @@
       </ol>
   </objectives>
 
- <p>
+ <introduction>
+<p>
 Much like the conic sections, quadric surfaces are defined by second-degree equations in three variables. 
 The general form of a quadric surface is given by the equation: 
 <md>
@@ -45,8 +46,8 @@ For our examples, we will consider the following simplified forms of quadric sur
 </md>  
 
  </p>
-
- <subsection xml:id="subsec-elliptical-paraboloid">
+</introduction>
+<subsection xml:id="subsec-elliptical-paraboloid">
     <title>Elliptical Paraboloid</title>
   <p>
     Consider the case where from equation <xref ref="quad-simplified"/> where
