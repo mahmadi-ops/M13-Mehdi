@@ -452,7 +452,6 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 </ol>
 </p>
 </statement>
-</example>
 
 <solution xml:id="solution-true-false">
 
@@ -498,6 +497,7 @@ have <m>|\vec u| = |\vec v| = 1</m>, which means:
 </md>
 </p>
 </solution>
+</example>
 
 </subsection>
 
@@ -597,9 +597,6 @@ the torque about the elbow when
 <li><p>the forearm makes a <m>30^\circ</m> angle below the horizontal.</p></li>
 </ol>
 </p>
-</statement>
-</example>
-
 <figure xml:id="fig-biceps-torque-video">
 <caption>
 The torque <m>\vec\tau = \vec r \times \vec F</m> of the biceps force
@@ -619,6 +616,7 @@ shortens, and the torque decreases from <m>35</m> to <m>30</m>
     <description>Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N biceps force acts 5.0 cm from the elbow axis. In (b), the forearm is angled 30 degrees below horizontal, making a 60 degree angle with the vertical, with lever arm R.</description>
   </image>
 </figure>
+</statement>
 
 <solution>
 
@@ -700,6 +698,8 @@ variation.
 </p>
 
 </solution>
+</example>
+
 
 </subsection>
 

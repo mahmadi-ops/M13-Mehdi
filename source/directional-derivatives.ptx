@@ -233,7 +233,7 @@ Use the definition of directional derivative to compute
 <m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
 </p>
 </statement>
-</example>
+
 
 <solution>
 <p>
@@ -293,6 +293,7 @@ to view it from a different angle, or press the <q>Rotate</q> button.
 </interactive>
 </figure>
 </solution>
+</example>
 
 
 <activity xml:id="activity-dirderiv-partials">
@@ -834,7 +835,7 @@ Evaluate the directional derivative
 <m>\left(D_{\mathbf u} f\right)_{P_0}</m> and interpret your result.
 </p>
 </statement>
-</example>
+
 
 <solution>
 <p>
@@ -1015,6 +1016,7 @@ change. Drag the figure to view it from a different angle, or press the
 </interactive>
 </figure>
 </solution>
+</example>
 
 </subsection>
 
@@ -1280,7 +1282,7 @@ there is no change in <m>f</m>.
 </ol>
 </p>
 </statement>
-</example>
+
 
 <solution>
 <p>
@@ -1528,6 +1530,7 @@ press the <q>Rotate</q> button.
 </interactive>
 </figure>
 </solution>
+</example>
 
 </subsection>
 

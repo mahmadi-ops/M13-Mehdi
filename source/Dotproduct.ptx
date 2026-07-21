@@ -374,7 +374,7 @@ as a sum of two vectors, one of which is parallel to <m>\mathbf v</m> and the
 other perpendicular to it.
 </p>
 </statement>
-</example>
+
 <solution>
 <p>
 Since the projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m>
@@ -409,6 +409,7 @@ To achieve a visual understanding of this decomposition, watch the video below.
          width="90%" aspect="16:9"/>
 </figure>
 </solution>
+</example>
 
 </paragraphs>
 
@@ -536,7 +537,7 @@ and the work done is
           Compute the components of the force that are parallel and perpendicular to the inclined plane.
         </p>
       </statement>
-      </example>
+      
       <solution>
 
 <figure xml:id="fig-inclined-video">
@@ -613,6 +614,7 @@ and the work done is
           </md>
         </p>
       </solution>
+</example>
 
 
 </subsection>
