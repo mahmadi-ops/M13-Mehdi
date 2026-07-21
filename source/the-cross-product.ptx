@@ -246,6 +246,7 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 <paragraphs xml:id="solution-cross-compute">
 <title>Solution</title>
 
+<p>
 <md xml:id="eq-example-cross-compute">
 <mrow>
 \mathbf u \times \mathbf v \amp=
@@ -265,6 +266,7 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 = \langle 3,5,1\rangle.
 </mrow>
 </md>
+</p>
 
 </paragraphs>
 

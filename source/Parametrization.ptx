@@ -857,15 +857,13 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
 
   <insight xml:id="insight-collision-vs-intersection">
     <title>Every Collision Is an Intersection, but Not Conversely</title>
-    <statement>
-      <p>
+          <p>
         If two particles collide at <m>P</m>, then certainly <m>P</m> lies on both
         paths, so every collision point is an intersection point. The converse
         fails: the paths may cross at a point that the two particles visit at
         different times. Changing the parametrization of a curve does not move the
         curve, but it can create or destroy collisions.
       </p>
-    </statement>
   </insight>
 
   <exercise xml:id="checkpoint-collision">

@@ -78,6 +78,7 @@
     language.
   </p>
 
+  <p>
   <ul>
     <li>
       <p>
@@ -100,7 +101,8 @@
         contours at right angles</em>.
       </p>
     </li>
-  </ul>1
+  </ul>
+  </p>
 
   <example xml:id="ex-two-runners">
     <title>Two Runners in a City Heat Island</title>

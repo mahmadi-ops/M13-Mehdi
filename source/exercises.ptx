@@ -3,12 +3,10 @@
 
 <subsection xml:id="subsection-abs-extrema">
     <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
-    <introduction>
     <p>
       If you would like to review this topic before attempting the exercises,
       click <xref ref="section-extreme-values" text="title"/>.
     </p>
-   </introduction>
   <exercises xml:id="exercises-abs-extrema">
 
  
@@ -62,19 +60,17 @@
 <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
 <subsection xml:id="section-conics-exercises">
     <title> Exercises for <xref ref="section-conics"  text="title"/></title>
-  <introduction>
     <p>
       If you would like to review this topic before attempting the exercises,
       click <xref ref="section-conics" text="title"/>.
     </p>
-  </introduction>
     <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
   <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
  <exercises xml:id="exercises-conics">
  <exercise xml:id="exer-parabolic-antenna">
   <title>A Parabolic Antenna</title>
-  <introduction>
-    <p>
+    <introduction>
+<p>
       A parabolic antenna has the shape of a paraboloid of revolution: it is
       created by rotating part of a parabola around its axis.  By the
       reflection property, all signals arriving parallel to the axis are
@@ -162,7 +158,7 @@ A parabola opening upward with vertex at the origin.  The rim
         </prefigure>
       </image>
     </figure>
-  </introduction>
+</introduction>
   <task xml:id="task-antenna-focus">
     <statement>
       <p>
