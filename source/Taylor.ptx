@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Taylor Series and its convergence</title>
-  <introduction>
+  <objectives>
     <p>
       The main objectives of this section are to answer the following questions:
     </p>
-  </introduction>
-  <objectives>
       <ol>
         <li>
           <p>
@@ -26,14 +24,16 @@
       </ol>
 
   </objectives>
-  <p>
+  <introduction>
+<p>
     <xref ref="Taylor-Formula"/> and <xref ref="thm-remainder-theorem"/> will enable us to answer these questions.
     We will begin by stating Taylor's formula and the remainder estimation theorem, and then we will discuss some applications of these theorems.
     The proof of the remainder theorem is postponed to the end of this section because it requires some technical details that are not necessary 
     for understanding the main ideas of this section. 
   </p>
+  </introduction>
 
-   <subsection xml:id="subsection-1">
+<subsection xml:id="subsection-1">
     <title> Taylor's Formula and The Remainder Estimation Theorem </title>
     <theorem xml:id="Taylor-Formula">
       <title>Taylor's Formula</title>
@@ -555,7 +555,8 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
   
   <subsection>
     <title>Applications of Taylor Series and Remainder Theorem</title>
-    <p>
+<introduction>
+<p>
       Physicists often use Taylor series to approximate functions in order to 
       simplify calculations. The first example is the kinetic energy of an object 
       in relativistic mechanics. The second example is the approximation 
@@ -563,8 +564,9 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
       when it is valid to use them. Additionally, we will discuss how to use the taylor series to 
       estimate value of <m>\pi</m> in the last example.
     </p>
+</introduction>
 
-    <subsubsection>
+<subsubsection>
       <title>Approximating Relativistic Kinetic Energy</title>
       <p>
         In relativistic mechanics, the mass of an object moving with velocity <m>v</m> is given by: 
@@ -1067,7 +1069,7 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
 </example>
 </subsubsection>
 
-   <subsection xml:id="subsec-approximating-pi-taylor">
+   <subsubsection xml:id="subsec-approximating-pi-taylor">
   <title>Approximating the value of <m>\pi</m> using Taylor series</title>
 
   <p>
@@ -1151,8 +1153,9 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
   </figure>
    </solution>
 </example>
-</subsection>
+</subsubsection>
 
+<conclusion>
 <p> As we saw in the previous example, Taylor series approached <m>\pi</m> very slowly. In the project below, 
 we will see how to use the so-called Euler's formula to approximate <m>\pi</m> much faster. As you may know,
 there are many other methods to approximate <m>\pi</m>, which we will not cover here.</p>
@@ -1371,8 +1374,8 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
         <p>The detailed step-by-step resolution.</p>
     </solution>
 </example> -->
-
-  </subsection>
+</conclusion>
+</subsection>
 
   <worksheet xml:id="activity-01-intro-activity">
   <title>In-Class Activity</title>
