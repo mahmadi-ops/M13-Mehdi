@@ -3,6 +3,7 @@
 
  <docinfo>
   
+  <document-id edition="1">MATH13</document-id> 
   <macros>
     \newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
     \newcommand{\real}{\Bbb R}
