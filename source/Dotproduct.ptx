@@ -10,12 +10,10 @@
 Consider two vectors <m>\mathbf u</m> and <m>\mathbf v</m>, and let
 <m>\mathbf w = \mathbf u - \mathbf v</m>, as shown in
 <xref ref="fig-law-of-cosines"/>. By the law of cosines,
-</p>
-
-<men xml:id="eq-1">
+<md xml:id="eq-1" number="yes">
 |\mathbf w|^2 = |\mathbf u|^2 + |\mathbf v|^2 - 2|\mathbf u||\mathbf v|\cos\theta.
-</men>
-
+</md>
+</p>
 <figure xml:id="fig-law-of-cosines">
 <caption>
 The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
@@ -77,24 +75,19 @@ The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
 Writing <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
 <m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>, note that
 <m>\mathbf w = \mathbf u - \mathbf v</m>, and hence
-</p>
-
-<men xml:id="eq-2">
+<md xml:id="eq-2" number="yes">
 \begin{aligned}
 |\mathbf w|^2 \amp = |\mathbf u - \mathbf v|^2 = (u_1-v_1)^2 + (u_2-v_2)^2 + (u_3-v_3)^2 \\
 \amp = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2(u_1v_1+u_2v_2+u_3v_3). 
 \end{aligned}
-</men>
-
-
+</md>
+</p>
 <p>
 Also, from the law of cosines in <xref ref="eq-1"/> we have
-</p>
-
-<men xml:id="eq-3">
+<md xml:id="eq-3" number="yes">
 |\mathbf w|^2 = (u_1^2+u_2^2+u_3^2) + (v_1^2+v_2^2+v_3^2) - 2|\mathbf u||\mathbf v|\cos\theta.
-</men>
-
+</md>
+</p>
 <p>
 From <xref ref="eq-2"/> and <xref ref="eq-3"/>, it follows that
 <m>u_1v_1+u_2v_2+u_3v_3 = |\mathbf u||\mathbf v|\cos\theta</m>, and therefore
@@ -105,11 +98,13 @@ can be evaluated using the following equation.
 <theorem xml:id="thm-angle-formula">
 <title>Angle between Two Vectors</title>
 <statement>
-<men xml:id="eq-4">
+<p>
+<md xml:id="eq-4" number="yes">
 \cos\theta = \frac{u_1v_1+u_2v_2+u_3v_3}{|\mathbf u||\mathbf v|}
 \quad\iff\quad
 \theta = \cos^{-1}\left(\frac{u_1v_1+u_2v_2+u_3v_3}{|\mathbf u||\mathbf v|}\right).
-</men>
+</md>
+</p>
 </statement>
 </theorem>
 
@@ -131,9 +126,11 @@ is known as the <term>dot product</term> of the two vectors
 <definition xml:id="def-dot-product">
 <title>Dot Product</title>
 <statement>
-<men xml:id="eq-5">
+<p>
+<md xml:id="eq-5" number="yes">
 \mathbf u \cdot \mathbf v = u_1v_1+u_2v_2+u_3v_3.
-</men>
+</md>
+</p>
 </statement>
 </definition>
 
@@ -151,9 +148,11 @@ are orthogonal.
 <fact xml:id="fact-orthogonal">
 <title>Orthogonality Criterion</title>
 <statement>
-<men xml:id="eq-6">
+<p>
+<md xml:id="eq-6" number="yes">
 \mathbf u \cdot \mathbf v = 0 \iff \mathbf u \perp \mathbf v.
-</men>
+</md>
+</p>
 </statement>
 </fact>
 
@@ -166,13 +165,15 @@ Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
 </p>
 </statement>
 <solution>
-<me>
+<p>
+<md>
 \begin{aligned}
 \vec{CA} \amp = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle \\
 \vec{CB} \amp = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle \\
 \vec{CA}\cdot\vec{CB} \amp = 1 - 1 = 0 \implies \vec{CA} \perp \vec{CB}.
 \end{aligned}
-</me>
+</md>
+</p>
 
 <figure xml:id="fig-right-triangle">
 <caption>
@@ -226,8 +227,7 @@ For the triangle of <xref ref="example-right-triangle"/>
 <solution>
 <p>
 For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
-</p>
-<me>
+<md>
 \begin{aligned}
 \vec{AC} \amp = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies |\vec{AC}| = \sqrt2 \\
 \vec{AB} \amp = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies |\vec{AB}| = 2 \\
@@ -235,7 +235,8 @@ For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
 \cos\theta \amp = \frac{\vec{AB}\cdot\vec{AC}}{|\vec{AB}||\vec{AC}|}
 = \frac{2}{2\sqrt2} = \frac{1}{\sqrt2} \implies \theta = \frac{\pi}{4}.
 \end{aligned}
-</me>
+</md>
+</p>
 </solution>
 </example>
 </introduction>
@@ -330,21 +331,21 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 The length of <m>\text{proj}_{\mathbf v}\mathbf u</m> is
 <m>\left|\text{proj}_{\mathbf v}\mathbf u\right| = |\mathbf u|\cos\theta</m>,
 and since its direction is the same as <m>\mathbf v</m>, we have
-</p>
-
-<men>
+<md number="yes">
 \text{proj}_{\mathbf v}\mathbf u
 = (|\mathbf u|\cos\theta)\,\frac{\mathbf v}{|\mathbf v|}
 = \left(|\mathbf u|\,\frac{\mathbf u\cdot\mathbf v}{|\mathbf u||\mathbf v|}\right)\frac{\mathbf v}{|\mathbf v|}
 = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v.
-</men>
-
+</md>
+</p>
 <fact xml:id="fact-projection-formula">
 <title>Projection Formula</title>
 <statement>
-<men xml:id="eq-proj">
+<p>
+<md xml:id="eq-proj" number="yes">
 \text{proj}_{\mathbf v}\mathbf u = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v.
-</men>
+</md>
+</p>
 </statement>
 </fact>
 
@@ -357,14 +358,12 @@ As can be seen in <xref ref="fig-projection"/>,
 the vector <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular
 to it. Also, the sum of these two vectors equals <m>\mathbf u</m>. This means
 we can write <m>\mathbf u</m> as
-</p>
-
-<men xml:id="eq-decomposition">
+<md xml:id="eq-decomposition" number="yes">
 \mathbf u = \text{proj}_{\mathbf v}\mathbf u + \left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right)
 = \underbrace{\left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v}_{\text{parallel to } \mathbf v}
 \;+\; \underbrace{\left(\mathbf u - \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v\right)}_{\text{orthogonal to } \mathbf v}.
-</men>
-
+</md>
+</p>
 <example xml:id="example-decomposition">
 <title>Decomposing a vector into parallel and perpendicular parts</title>
 <statement>
@@ -380,8 +379,7 @@ other perpendicular to it.
 <p>
 Since the projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m>
 is parallel to <m>\mathbf v</m>, we have
-</p>
-<me>
+<md>
 \begin{aligned}
 \mathbf u \cdot \mathbf v \amp = (2\times1)+(2\times1)+(2\times0) = 4 \\
 |\mathbf v| \amp = \sqrt{1+1} = \sqrt2 \\
@@ -389,14 +387,15 @@ is parallel to <m>\mathbf v</m>, we have
 \amp = \left(\frac{\mathbf u\cdot\mathbf v}{|\mathbf v|^2}\right)\mathbf v
 = \frac{4}{2}(\mathbf i+\mathbf j) = 2\mathbf i + 2\mathbf j.
 \end{aligned}
-</me>
+</md>
+</p>
 <p>
 For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
-</p>
-<men>
+<md number="yes">
 \mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u
 = (2\mathbf i+2\mathbf j+2\mathbf k) - (2\mathbf i+2\mathbf j) = 2\mathbf k.
-</men>
+</md>
+</p>
 <p>
 To achieve a visual understanding of this decomposition, watch the video below.
 </p>
@@ -430,10 +429,10 @@ The work done by the force is then
 <definition xml:id="def-work">
 <title>Work</title>
 <statement>
-<men xml:id="eq-work">
-\text{Work} = \mathbf F \cdot \mathbf D = |\mathbf D||\mathbf F|\cos\theta,
-</men>
 <p>
+<md xml:id="eq-work" number="yes">
+\text{Work} = \mathbf F \cdot \mathbf D = |\mathbf D||\mathbf F|\cos\theta,
+</md>
 where <m>\left|\text{proj}_{\mathbf D}\mathbf F\right| = |\mathbf F|\cos\theta</m>
 is the magnitude of the force in the direction of motion.
 </p>
@@ -517,12 +516,12 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
 <p>
 The displacement vector is <m>\mathbf D = \vec{AB} = \langle 6,2,12\rangle</m>,
 and the work done is
-</p>
-<me>
+<md>
 \text{Work} = \mathbf F \cdot \mathbf D
 = \langle 8,-6,9\rangle \cdot \langle 6,2,12\rangle
 = 48 - 12 + 108 = 144.
-</me>
+</md>
+</p>
 </solution>
 </example>
 
@@ -553,9 +552,9 @@ and the work done is
         <p>
           First, we determine the total gravitational force vector <m>\vec{F}</m> acting on the mass. 
           Using <m>g = 9.8\text{ m/s}^2</m>:
-          <me>|\vec{F}| = (10)(9.8) = 98\text{ N}</me>
+          <md>|\vec{F}| = (10)(9.8) = 98\text{ N}</md>
           Acting entirely in the negative vertical direction, this gives:
-          <me>\vec{F} = \langle 0, -98 \rangle = -98\hat{j}</me>
+          <md>\vec{F} = \langle 0, -98 \rangle = -98\hat{j}</md>
         </p>
 
         <!-- Diagram inserted here -->
@@ -593,16 +592,16 @@ and the work done is
         <p>
           Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane[cite: 1]. 
           Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal[cite: 1]:
-          <me>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+          <md>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
           where <m>|\vec{v}| = 1</m>[cite: 1].
         </p>
         <p>
           The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>[cite: 1]:
-          <me>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{|\vec{v}|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</me>
+          <md>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{|\vec{v}|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</md>
           Computing the dot product[cite: 1]:
-          <me>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</me>
+          <md>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</md>
           Thus, the parallel force vector is[cite: 1]:
-          <me>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</me>
+          <md>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
         </p>
         <p>
           Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction[cite: 1]:
