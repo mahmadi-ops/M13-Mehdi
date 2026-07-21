@@ -25,7 +25,19 @@
       "Bash(cp isobars-low-3d.html ../output/web/external/)",
       "Bash(sed -i 's|pages=\\\\[.*\\\\]|pages=[\\(\"isobars-low\",\"external/isobars-low-3d.html\"\\)]|' /claude-0/-workspaces-MATH-13/fd374e72-38df-429d-8fa4-58320abea42d/scratchpad/shot.py)",
       "Bash(sed -i 's|pages=\\\\[.*\\\\]|pages=[\\(\"fall-line\",\"external/fall-line-3d.html\"\\)]|' /claude-0/-workspaces-MATH-13/fd374e72-38df-429d-8fa4-58320abea42d/scratchpad/shot.py)",
-      "Bash(python3 /claude-0/-workspaces-MATH-13/fd374e72-38df-429d-8fa4-58320abea42d/scratchpad/check.py)"
+      "Bash(python3 /claude-0/-workspaces-MATH-13/fd374e72-38df-429d-8fa4-58320abea42d/scratchpad/check.py)",
+      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('project.ptx'\\); print\\('XML OK'\\)\")",
+      "Bash(pretext info *)",
+      "Bash(pretext *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(apt-cache policy *)",
+      "Bash(apt-get install *)",
+      "Bash(jing)",
+      "Bash(python3 /root/.ptx/2.44.0/core/pretext/pretext -V local-dev -p publication/publication.ptx source/main.ptx)",
+      "Bash(python3 /root/.ptx/2.44.0/core/pretext/pretext -V -M local-dev -p publication/publication.ptx source/main.ptx)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
