@@ -32,9 +32,9 @@
     <xi:include href="QuadricSurface.ptx" />
     <xi:include href="directional-derivatives.ptx" />
     <xi:include href="extreme-values-saddle-points.ptx" />
-    <xi:include href="section-sample-graphs.ptx" />
-    <xi:include href="Webwork.ptx" />
-    <xi:include href="exercises.ptx" />
+    <!-- <xi:include href="section-sample-graphs.ptx" />
+    <xi:include href="Webwork.ptx" /> -->
+    <xi:include href="exercises.ptx" /> 
   </book>
 
 </pretext>
