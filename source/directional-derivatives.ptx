@@ -239,8 +239,6 @@ Use the definition of directional derivative to compute
 <p>
 We substitute <m>x_0 = y_0 = 1</m> and <m>u_1 = u_2 = \dfrac{1}{\sqrt 2}</m>
 in the definition:
-</p>
-
 <md xml:id="eq-dirderiv-example-limit">
 <mrow>
 \left(\frac{df}{ds}\right)_{\mathbf u,P_0}
@@ -258,20 +256,16 @@ in the definition:
 <mrow>\amp= \lim_{s\to 0}\frac{\tfrac{4s}{\sqrt 2} + s^2}{s} = \lim_{s\to 0}\left(\tfrac{4}{\sqrt 2} + s\right)</mrow>
 <mrow>\amp= 2\sqrt 2.</mrow>
 </md>
-
+</p>
 <p>
 The computation has a useful geometric picture, illustrated in the
 interactive 3D figure below. Along the ray through
 <m>P_0(1,1)</m> in the direction <m>\mathbf u</m>, the values of <m>f</m>
 are the single-variable function
-</p>
-
 <md>
 <mrow>g(s) \amp= f\!\left(1 + \tfrac{s}{\sqrt 2},\, 1 + \tfrac{s}{\sqrt 2}\right)</mrow>
 <mrow xml:id="eq-dirderiv-along-ray" number="yes">\amp= 3 + 2\sqrt 2\, s + s^2,</mrow>
 </md>
-
-<p>
 and the difference quotient in the limit above is the slope of the
 secant line of <m>g</m> through <m>s = 0</m> and <m>s</m>. As
 <m>s \to 0</m> the secant lines approach the tangent line at
@@ -332,8 +326,6 @@ Ask yourself which of the two inputs of <m>f</m> actually changes as <m>s</m> va
 <p>
 Substituting <m>u_1 = 1</m> and <m>u_2 = 0</m> leaves the second slot of <m>f</m>
 fixed at <m>y_0</m>:
-</p>
-
 <md>
 <mrow>
 \left(\frac{df}{ds}\right)_{\mathbf i,\,P_0}
@@ -344,7 +336,7 @@ fixed at <m>y_0</m>:
 = f_x(x_0,y_0).
 </mrow>
 </md>
-
+</p>
 <p>
 Only the first variable moves, so this is precisely the limit that defines the partial
 derivative with respect to <m>x</m>. That is,
@@ -362,8 +354,6 @@ Repeat the computation with <m>\mathbf u = \mathbf j</m>, and state the conclusi
 <answer>
 <p>
 Now <m>u_1 = 0</m> and <m>u_2 = 1</m>, so the first slot is held at <m>x_0</m>:
-</p>
-
 <md>
 <mrow>
 \left(\frac{df}{ds}\right)_{\mathbf j,\,P_0}
@@ -371,8 +361,6 @@ Now <m>u_1 = 0</m> and <m>u_2 = 1</m>, so the first slot is held at <m>x_0</m>:
 = f_y(x_0,y_0),
 </mrow>
 </md>
-
-<p>
 so <m>\left(D_{\mathbf j} f\right)_{P_0} = f_y(x_0,y_0)</m>. The partial derivatives
 are the directional derivatives in the two coordinate directions, and
 <m>D_{\mathbf u} f</m> is the common generalization of both.
@@ -392,8 +380,6 @@ Test this on the function of <xref ref="example-dirderiv-definition"/>. With
 <answer>
 <p>
 From the definition,
-</p>
-
 <md>
 <mrow>
 \left(D_{\mathbf i} f\right)_{P_0}
@@ -403,7 +389,7 @@ From the definition,
 <mrow>\amp= \lim_{s\to 0}\frac{2s + s^2}{s} = \lim_{s\to 0}\,(2 + s)</mrow>
 <mrow>\amp= 2 .</mrow>
 </md>
-
+</p>
 <p>
 Differentiating instead, <m>f_x = 2x</m>, so <m>f_x(1,1) = 2</m>. The two agree. By
 symmetry <m>\left(D_{\mathbf j} f\right)_{P_0} = f_y(1,1) = 2</m> as well. Note that
@@ -425,15 +411,13 @@ this is what you should expect.
 <answer>
 <p>
 Here <m>u_1 = -1</m> and <m>u_2 = 0</m>, so
-</p>
-
 <md>
 <mrow>
 \left(D_{-\mathbf i} f\right)_{P_0}
 \amp= \lim_{s\to 0}\frac{f(x_0 - s,\; y_0) - f(x_0,y_0)}{s} .
 </mrow>
 </md>
-
+</p>
 <p>
 Putting <m>h = -s</m> turns this into
 <m>-\lim_{h\to 0}\dfrac{f(x_0+h,\,y_0) - f(x_0,y_0)}{h} = -f_x(x_0,y_0)</m>.
@@ -476,8 +460,6 @@ We can use the above relation between <m>x</m>, <m>y</m>, and <m>s</m>
 and the chain rule, whose dependency diagram is shown in
 <xref ref="fig-chain-rule-tree-prefigure"/>, to compute the directional
 derivative as follows:
-</p>
-
 <md xml:id="eq-dirderiv-chain-rule">
 <mrow>\left(D_{\mathbf u} f\right)_{P_0} = \left(\frac{df}{ds}\right)_{\mathbf u,P_0} \amp= \left(\frac{\partial f}{\partial x}\right)_{P_0}\frac{dx}{ds}</mrow>
 <mrow>\amp\quad + \left(\frac{\partial f}{\partial y}\right)_{P_0}\frac{dy}{ds}</mrow>
@@ -489,7 +471,7 @@ derivative as follows:
 \cdot \left(u_1\mathbf i + u_2\mathbf j\right).
 </mrow>
 </md>
-
+</p>
 <p>
 The vector in the first set of parentheses is known as the
 <term>gradient vector</term>.
@@ -617,23 +599,19 @@ f\bigl(x(t),\, y(t)\bigr) = c \qquad \text{for all } t.
 The left-hand side is constant in <m>t</m>, so its derivative is zero.
 Differentiating both sides with respect to <m>t</m> and applying the
 chain rule gives
-</p>
-
 <md>
 <mrow>\frac{d}{dt}\, f\bigl(x(t), y(t)\bigr) \amp= \frac{\partial f}{\partial x}\,\frac{dx}{dt} + \frac{\partial f}{\partial y}\,\frac{dy}{dt}</mrow>
 <mrow xml:id="eq-level-curve-chain-rule" number="yes">\amp= 0.</mrow>
 </md>
-
+</p>
 <p>
 We recognize the middle expression as the dot product of the gradient
 vector with the velocity vector:
-</p>
-
 <md>
 <mrow>\left\langle \frac{\partial f}{\partial x},\, \frac{\partial f}{\partial y} \right\rangle \cdot \left\langle \frac{dx}{dt},\, \frac{dy}{dt} \right\rangle \amp= \nabla f \cdot \mathbf v(t)</mrow>
 <mrow xml:id="eq-level-curve-dot-product" number="yes">\amp= 0.</mrow>
 </md>
-
+</p>
 <p>
 Therefore, at each point of <m>C</m>, the gradient <m>\nabla f</m> is
 orthogonal to the velocity vector <m>\mathbf v(t)</m>, as shown in
@@ -752,15 +730,13 @@ gradient with your tangent vector. What does the result say?
 <p>
 <m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m> gives
 <m>\left(\nabla f\right)_{(1,1)} = 2\,\mathbf i + 2\,\mathbf j</m>, and
-</p>
-
 <md>
 <mrow>
 \left(\nabla f\right)_{(1,1)} \cdot \mathbf T
 \amp= (2)(-1) + (2)(1) = 0 .
 </mrow>
 </md>
-
+</p>
 <p>
 A zero dot product between non-zero vectors means the two are orthogonal, so
 <m>\nabla f</m> meets the level curve at a right angle at <m>P_0</m>, exactly as
@@ -781,16 +757,12 @@ angle is not a coincidence of the point <m>(1,1)</m>.
 The level curve through <m>(a,b)</m> is the circle <m>x^2 + y^2 = a^2 + b^2</m>,
 whose tangent there is <m>\mathbf T = -b\,\mathbf i + a\,\mathbf j</m>. Since
 <m>\left(\nabla f\right)_{(a,b)} = 2a\,\mathbf i + 2b\,\mathbf j</m>,
-</p>
-
 <md>
 <mrow>
 \left(\nabla f\right)_{(a,b)} \cdot \mathbf T
 \amp= 2a(-b) + 2b(a) = 0 ,
 </mrow>
 </md>
-
-<p>
 so the gradient is perpendicular to the level curve at every point other than the
 origin, where <m>\nabla f = \mathbf 0</m> and no direction is singled out.
 </p>
@@ -870,8 +842,6 @@ We use
 <m>\left(\dfrac{df}{ds}\right)_{\mathbf u,P_0}
 = \left(\nabla f\right)_{P_0}\cdot\mathbf u</m>.
 First we compute the gradient vector:
-</p>
-
 <md xml:id="eq-gradient-example-computation">
 <mrow>\nabla f \amp= \frac{\partial f}{\partial x}\,\mathbf i
         + \frac{\partial f}{\partial y}\,\mathbf j</mrow>
@@ -881,11 +851,9 @@ First we compute the gradient vector:
         + \left(\frac{\partial f}{\partial y}\right)_{(1,1)}\mathbf j</mrow>
 <mrow>\amp= 2\,\mathbf i + 2\,\mathbf j.</mrow>
 </md>
-
+</p>
 <p>
 Then we take the dot product with <m>\mathbf u</m>:
-</p>
-
 <md>
 <mrow>\left(\frac{df}{ds}\right)_{\mathbf u,P_0} \amp= \left(\nabla f\right)_{P_0}\cdot\mathbf u</mrow>
 <mrow>\amp= \left(2\,\mathbf i + 2\,\mathbf j\right)\cdot
@@ -893,8 +861,6 @@ Then we take the dot product with <m>\mathbf u</m>:
 <mrow>\amp= \frac{4}{\sqrt 2}</mrow>
 <mrow xml:id="eq-gradient-example-dot" number="yes">\amp= 2\sqrt 2,</mrow>
 </md>
-
-<p>
 which agrees with the limit computation in
 <xref ref="example-dirderiv-definition"/>. See
 <xref ref="fig-dirderiv-surface-tikz"/> for a geometrical interpretation
@@ -1058,15 +1024,11 @@ change. Drag the figure to view it from a different angle, or press the
 
 <p>
 The directional derivative can be expressed as
-</p>
-
 <md>
 <mrow>D_{\mathbf u} f \amp= \nabla f\cdot\mathbf u</mrow>
 <mrow>\amp= |\nabla f|\,|\mathbf u|\cos\theta</mrow>
 <mrow xml:id="eq-dirderiv-cos-theta" number="yes">\amp= |\nabla f|\cos\theta,</mrow>
 </md>
-
-<p>
 where <m>\theta</m> is the angle between <m>\nabla f</m> and the unit
 vector <m>\mathbf u</m>. This formula has three important consequences:
 </p>
@@ -1177,15 +1139,11 @@ product can be rewritten as <m>|\nabla f|\cos\theta</m>. Where is the assumption
 For any two vectors, <m>\mathbf a \cdot \mathbf b = |\mathbf a||\mathbf b|\cos\theta</m>
 with <m>\theta</m> the angle between them. Applying this to <m>\nabla f</m> and
 <m>\mathbf u</m>,
-</p>
-
 <md>
 <mrow>D_{\mathbf u} f = \nabla f \cdot \mathbf u</mrow>
 <mrow>\amp= |\nabla f|\,|\mathbf u|\cos\theta</mrow>
 <mrow>\amp= |\nabla f|\cos\theta ,</mrow>
 </md>
-
-<p>
 where the last step uses <m>|\mathbf u| = 1</m>. Without that assumption the factor
 <m>|\mathbf u|</m> would survive, and rescaling <m>\mathbf u</m> would change
 <m>D_{\mathbf u} f</m> without changing the direction being measured.
@@ -1229,14 +1187,12 @@ Now take <m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>, the function of
 Here <m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m>, so
 <m>(\nabla f)_{(1,1)} = 2\,\mathbf i + 2\,\mathbf j</m> and
 <m>|\nabla f| = 2\sqrt 2</m>. Therefore
-</p>
-
 <md>
 <mrow>
 D_{\mathbf u} f = 2\sqrt 2 \,\cos\theta .
 </mrow>
 </md>
-
+</p>
 <p>
 The fastest increase happens along
 <m>\mathbf u = \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j</m>, giving
@@ -1330,13 +1286,11 @@ there is no change in <m>f</m>.
 <p>
 <em>A.</em> As explained above, <m>f</m> increases most rapidly in the
 direction of <m>\nabla f</m>. We have
-</p>
-
 <md>
 <mrow>\nabla f \amp= x\,\mathbf i + y\,\mathbf j \quad\Rightarrow\quad \left(\nabla f\right)_{(1,1)}</mrow>
 <mrow xml:id="eq-directions-gradient" number="yes">\amp= \mathbf i + \mathbf j.</mrow>
 </md>
-
+</p>
 <p>
 Note that we need to divide
 <m>\left(\nabla f\right)_{(1,1)} = \mathbf i + \mathbf j</m> by its
@@ -1359,16 +1313,12 @@ opposite direction:
 
 <p>
 <em>C.</em> To find the directions of zero change in <m>f</m>, we require
-</p>
-
 <md>
 <mrow>\left(\nabla f\right)_{(1,1)}\cdot\mathbf u \amp= (\mathbf i + \mathbf j)\cdot(u_1\mathbf i + u_2\mathbf j)</mrow>
 <mrow>\amp= u_1 + u_2</mrow>
 <mrow>\amp= 0 \quad\text{or}\quad u_1</mrow>
 <mrow xml:id="eq-directions-zero-dot" number="yes">\amp= -u_2,</mrow>
 </md>
-
-<p>
 and since <m>\mathbf u</m> is a unit vector, we have
 <md xml:id="eq-directions-unit-length" number="yes">
 |\mathbf u|^2 = u_1^2 + u_2^2 = 1.
@@ -1385,13 +1335,11 @@ After substituting <xref ref="eq-directions-zero-dot"/> in
 
 <p>
 Hence, the directions of zero change in <m>f</m> at <m>P_0(1,1)</m> are
-</p>
-
 <md>
 <mrow>\mathbf u \amp= \frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j \qquad\text{and}\qquad \tilde{\mathbf u}</mrow>
 <mrow xml:id="eq-directions-zero-answer" number="yes">\amp= -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.</mrow>
 </md>
-
+</p>
 <p>
 Note that <m>\tilde{\mathbf u} = -\mathbf u</m>. All four directions are
 shown in <xref ref="fig-gradient-directions-tikz"/> and
