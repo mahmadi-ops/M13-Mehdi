@@ -50,6 +50,7 @@ of <m>f</m>.
 </ul>
 </objectives>
 
+<introduction>
 <p>
 Recall that the partial derivatives <m>f_x</m> and <m>f_y</m> correspond
 to the rate of change of <m>z = f(x,y)</m> in the <m>\mathbf i</m> and
@@ -59,8 +60,9 @@ to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 <m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m>.
 </p>
 
-<!-- ================================================================ -->
-<subsection xml:id="sec-dirderiv-definition">
+</introduction>
+
+<!-- ================================================================ --><subsection xml:id="sec-dirderiv-definition">
 <title>The Definition of the Directional Derivative</title>
 
 <definition xml:id="def-directional-derivative">
