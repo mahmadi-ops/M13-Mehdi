@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Cross Product</title>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-cross-definition">
+<section xml:id="sec-cross-definition">
 <title>Definition and Properties of the Cross Product</title>
 
 <p>
@@ -124,10 +124,10 @@ the fact that <m>\sin(-\theta) = -\sin(\theta)</m>.
 </p>
 </remark>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-cross-components">
+<section xml:id="sec-cross-components">
 <title>Second Definition of the Cross Product</title>
 
 <p>
@@ -279,10 +279,10 @@ Show that
 </statement>
 </exercise>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-perpendicular-vector">
+<section xml:id="sec-perpendicular-vector">
 <title>Computing a Vector Perpendicular to Two Other Vectors</title>
 
 <example xml:id="example-perpendicular-vector">
@@ -353,10 +353,10 @@ points <m>A</m>, <m>B</m>, and <m>C</m>.
        width="70%" aspect="16:9"/>
 </figure>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-triangle-area">
+<section xml:id="sec-triangle-area">
 <title>Computing the Area of a Triangle</title>
 
 <example xml:id="example-triangle-area">
@@ -426,10 +426,10 @@ is half of the corresponding parallelogram.
 </image>
 </figure>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-true-false">
+<section xml:id="sec-true-false">
 <title>True or False?</title>
 
 <example xml:id="example-true-false">
@@ -501,11 +501,11 @@ have <m>|\vec u| = |\vec v| = 1</m>, which means:
 </solution>
 </example>
 
-</subsection>
+</section>
 
 <!-- Insert into the-cross-product.ptx (e.g. after sec-triangle-area) -->
 <!-- ================================================================ -->
-<subsection xml:id="sec-torque">
+<section xml:id="sec-torque">
 <title>Application: Torque</title>
 
 <p>
@@ -707,6 +707,6 @@ variation.
 </example>
 
 
-</subsection>
-
 </section>
+
+</chapter>

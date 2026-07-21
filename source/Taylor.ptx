@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Taylor Series and its convergence</title>
   <objectives>
     <introduction>
@@ -35,7 +35,7 @@
   </p>
   </introduction>
 
-<subsection xml:id="subsection-1">
+<section xml:id="subsection-1">
     <title> Taylor's Formula and The Remainder Estimation Theorem </title>
     <theorem xml:id="Taylor-Formula">
       <title>Taylor's Formula</title>
@@ -180,9 +180,9 @@
       
 
 
-  </subsection>
+  </section>
  
-    <subsection xml:id="subsection-2">
+    <section xml:id="subsection-2">
     <title>An example of a Taylor series that converges</title>
     <p>
       Consider the function <m>f(x) = e^x</m>. We know that <m>f^{(n)}(x) = e^x</m> for all <m>n\geq 0</m>. 
@@ -335,9 +335,9 @@
          width="80%"
          aspect="16:9" />
 </figure>
-  </subsection>
+  </section>
 
-  <subsection xml:id="subsection-3">
+  <section xml:id="subsection-3">
     <title> The error in using a Taylor polynomial</title>
     <p>
       In this subsection, we will discuss how to approximate the error in using a Taylor polynomial to approximate a function. 
@@ -554,10 +554,10 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 </example> 
   
       
-</subsection>
+</section>
 
   
-  <subsection>
+  <section>
     <title>Applications of Taylor Series and Remainder Theorem</title>
 <introduction>
 <p>
@@ -570,7 +570,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
     </p>
 </introduction>
 
-<subsubsection>
+<subsection>
       <title>Approximating Relativistic Kinetic Energy</title>
       <p>
         In relativistic mechanics, the mass of an object moving with velocity <m>v</m> is given by: 
@@ -809,9 +809,9 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
         </solution>
 </example>
    
-      </subsubsection>
+      </subsection>
 
-      <subsubsection xml:id="subsubsec-pendulum-small-angle">
+      <subsection xml:id="subsubsec-pendulum-small-angle">
         <title>Small-Angle Approximation for a Pendulum</title>
 <p>
   We begin this section by briefly reviewing the forces acting on a simple pendulum and how
@@ -1071,9 +1071,9 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
 
 </solution>
 </example>
-</subsubsection>
+</subsection>
 
-   <subsubsection xml:id="subsec-approximating-pi-taylor">
+   <subsection xml:id="subsec-approximating-pi-taylor">
   <title>Approximating the value of <m>\pi</m> using Taylor series</title>
 
   <p>
@@ -1157,7 +1157,7 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
   </figure>
    </solution>
 </example>
-</subsubsection>
+</subsection>
 
 <conclusion>
 <p> As we saw in the previous example, Taylor series approached <m>\pi</m> very slowly. In the project below, 
@@ -1379,7 +1379,7 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
     </solution>
 </example> -->
 </conclusion>
-</subsection>
+</section>
 
   <worksheet xml:id="activity-01-intro-activity">
   <title>In-Class Activity</title>
@@ -1630,7 +1630,7 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
 </exercise>
 </worksheet>
 
-  <subsection xml:id="subsection-5">
+  <section xml:id="subsection-5">
     <title> Proof of the remainder theorem</title>
     <p>
       In this subsection, we will provide a proof of the remainder theorem.
@@ -1718,7 +1718,7 @@ and
       <m>R_n^{(n+1)}(c) - \frac{R_n(x)}{(x-a)^{n+1}} (n+1)! = 0</m>. Since <m>R_n^{(n+1)}(c) = f^{(n+1)}(c)</m>, we have
       <m>R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}</m>. This completes the proof of the remainder theorem.
     </p>
-    </subsection>
+    </section>
     
 
   
@@ -1790,4 +1790,4 @@ and
 
   
 
-</section>
+</chapter>

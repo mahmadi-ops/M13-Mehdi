@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-directional-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-directional-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Directional Derivatives and Gradient Vectors</title>
 
 <objectives>
@@ -62,7 +62,7 @@ to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 
 </introduction>
 
-<!-- ================================================================ --><subsection xml:id="sec-dirderiv-definition">
+<!-- ================================================================ --><section xml:id="sec-dirderiv-definition">
 <title>The Definition of the Directional Derivative</title>
 
 <definition xml:id="def-directional-derivative">
@@ -212,10 +212,10 @@ quotient <m>\big(f(P) - f(P_0)\big)/s</m> with its limit as
 </interactive>
 </figure>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-dirderiv-example-definition">
+<section xml:id="sec-dirderiv-example-definition">
 <title>Computing a Directional Derivative Using the Definition</title>
 
 <p>
@@ -443,10 +443,10 @@ Every partial derivative is a directional derivative, so nothing already known a
 
 </activity>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-gradient-vector">
+<section xml:id="sec-gradient-vector">
 <title>The Gradient Vector</title>
 
 <p>
@@ -814,10 +814,10 @@ curve degenerates to a single point and there is no direction of steepest ascent
 </activity>
 
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-dirderiv-gradient-example">
+<section xml:id="sec-dirderiv-gradient-example">
 <title>Evaluating a Directional Derivative Using the Gradient</title>
 
 <p>
@@ -1020,10 +1020,10 @@ change. Drag the figure to view it from a different angle, or press the
 </solution>
 </example>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-dirderiv-properties">
+<section xml:id="sec-dirderiv-properties">
 <title>Directions of Fastest Increase, Fastest Decrease, and No Change</title>
 
 <p>
@@ -1534,12 +1534,12 @@ press the <q>Rotate</q> button.
 </solution>
 </example>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-gradient-summary">
+<section xml:id="sec-gradient-summary">
 <title>Summary</title>
 
 <p>
@@ -1592,9 +1592,9 @@ directions of most rapid increase and decrease are perpendicular to it.
 </ul>
 </p>
 
-</subsection>
+</section>
 
 <xi:include href="subsec-scalar-fields-potentials.ptx"/>
 <xi:include href="exercises-gradient-applications.ptx"/>
 
-</section>
+</chapter>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Webwork</title>
   <p>
     In this section, we will include samples of Webwork problems.
@@ -110,4 +110,4 @@ and <m>y=\sqrt{\frac{[$c]}{[$LM2]}}</m> and the maximum area is
 </webwork>
 </exercise>
 
-</section>
+</chapter>
