@@ -41,7 +41,8 @@
       "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/the-cross-product.ptx'\\); print\\('XML: OK'\\)\")",
       "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/directional-derivatives.ptx'\\); print\\('XML: OK'\\)\")",
       "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/Taylor.ptx'\\); print\\('XML: OK'\\)\")",
-      "Bash(cd *)"
+      "Bash(cd *)",
+      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/Taylor.ptx'\\); print\\('OK'\\)\")"
     ]
   }
 }
