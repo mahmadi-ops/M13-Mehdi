@@ -1137,13 +1137,13 @@ and since <m>A</m> is closer to <m>P_1</m>, it lies on the right branch:
       <p>
         It remains to intersect <m>o</m> with <m>h</m>. Substituting the parametric equations
         into <m>3x^2 - y^2 = 3</m>:
-      </p>
-      <md>
+<md>
         <mrow>3\left(\tfrac52 + 3t\right)^2 - \left(\tfrac32 - t\right)^2 \amp= 3</mrow>
         <mrow>3\left(\tfrac{25}{4} + 15t + 9t^2\right) - \left(\tfrac94 - 3t + t^2\right) \amp= 3</mrow>
         <mrow>26t^2 + 48t + \tfrac{27}{2} \amp= 0</mrow>
         <mrow>52t^2 + 96t + 27 \amp= 0.</mrow>
       </md>
+</p>
       <p>
         The discriminant is <m>96^2 - 4\cdot 52\cdot 27 = 9216 - 5616 = 3600 = 60^2</m>, so
 <md>t = \frac{-96 \pm 60}{104}, \qquad t_1 = -\frac{9}{26}, \quad t_2 = -\frac32.</md>

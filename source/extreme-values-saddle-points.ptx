@@ -387,8 +387,6 @@ x^3 = y \quad \text{and} \quad y^3 = x.
 <p>
 To solve these equations, we substitute the second equation into the
 first one:
-</p>
-
 <md xml:id="eq-quartic-solve">
 <mrow>
 x^3 = (y^3)^3 = y^9 = y \amp\Rightarrow y(y^8 - 1) = 0
@@ -404,7 +402,7 @@ x^3 = (y^3)^3 = y^9 = y \amp\Rightarrow y(y^8 - 1) = 0
 \amp\Rightarrow y = -1, 0, 1.
 </mrow>
 </md>
-
+</p>
 <p>
 Therefore, the two partials are zero at the points <m>(-1,-1)</m>,
 <m>(1,1)</m>, and <m>(0,0)</m>, as shown in
@@ -552,8 +550,6 @@ d^2 = f(x,y) = (x-1)^2 + y^2 + (6 - x - 2y)^2.
 </p>
 <p>
 We calculate the partials and set them equal to zero:
-</p>
-
 <md xml:id="eq-distance-partials">
 <mrow>
 f_x \amp= 2(x-1) - 2(6 - x - 2y) = 4x + 4y - 14 = 0
@@ -562,7 +558,7 @@ f_x \amp= 2(x-1) - 2(6 - x - 2y) = 4x + 4y - 14 = 0
 f_y \amp= 2y - 4(6 - x - 2y) = 4x + 10y - 24 = 0.
 </mrow>
 </md>
-
+</p>
 <p>
 We subtract the first equation from the second one:
 <md xml:id="eq-distance-solve" number="yes">
@@ -627,8 +623,6 @@ R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}.
 <p>
 <em>Step (I):</em> We begin by finding the critical points of
 <m>f(x,y)</m> that are also in the set <m>R</m>:
-</p>
-
 <md xml:id="eq-absolute-critical">
 <mrow>
 f_x \amp= 2x - 2y = 0 \Rightarrow x = y
@@ -637,7 +631,7 @@ f_x \amp= 2x - 2y = 0 \Rightarrow x = y
 f_y \amp= -2x + 2 = 0 \Rightarrow x = 1.
 </mrow>
 </md>
-
+</p>
 <p>
 Therefore, the only critical point is <m>(1,1)</m>, with
 <m>f(1,1) = 1</m>.

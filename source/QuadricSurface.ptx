@@ -63,14 +63,12 @@ For our examples, we will consider the following simplified forms of quadric sur
   By allowing fixed values of <m>x, y</m> and <m></m>, we can obtain traces of Conic
     Sections.  For example, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
     we get the following traces, as shown in <xref ref="fig-elliptical-paraboloid-slices"/>:
-</p>
-    
 <md>
     <mrow>z \amp=  1 + \frac{y^2}{9}  \amp\amp (parabola)</mrow>
     <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
     <mrow>1 \amp=  \frac{x^2}{4} + \frac{y^2}{9} \amp\amp (ellipse)</mrow>
 </md>
-
+</p>
  <figure xml:id="fig-elliptical-paraboloid-traces">
   <caption>
     The traces of the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m>
@@ -208,14 +206,12 @@ For our examples, we will consider the following simplified forms of quadric sur
   fixed values of <m>x, y</m> and <m></m>, we can obtain traces of conic
     sections.  Again, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
     we get the following traces, as shown in <xref ref="fig-hyperbolic-paraboloid-slices"/>:
-</p>
-    
 <md>
     <mrow>z \amp=  1 - \frac{y^2}{9}  \amp\amp (parabola)</mrow>
     <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
     <mrow>1 \amp=  \frac{x^2}{4} - \frac{y^2}{9} \amp\amp (hyperbola)</mrow>
 </md>
-
+</p>
  <figure xml:id="fig-hyperbolic-paraboloid-traces">
   <caption>
     The traces of the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m>
@@ -357,14 +353,12 @@ For our examples, we will consider the following simplified forms of quadric sur
 <p>
   By allowing fixed values of surface to intersect the coordinate planes (<m>x=0</m>, <m>y=0</m>, and <m>z=0</m>),
   we find the following traces, as shown in <xref ref="fig-ellipsoid-slices"/>:
-</p>
-    
 <md>
     <mrow>\frac{y^2}{9} + \frac{z^2}{16} \amp= 1  \amp\amp (ellipse)</mrow>
     <mrow>\frac{x^2}{4} + \frac{z^2}{16} \amp= 1  \amp\amp (ellipse)</mrow>
     <mrow>\frac{x^2}{4} + \frac{y^2}{9}  \amp= 1  \amp\amp (ellipse)</mrow>
 </md>
-
+</p>
  <figure xml:id="fig-ellipsoid-traces">
   <caption>
     The traces of the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m>
@@ -503,15 +497,12 @@ For our examples, we will consider the following simplified forms of quadric sur
   as <m>x</m> and <m>y</m>, the traces would behave linearly instead of quadratically.  Structurally, from the traces,
   two hyperbolas and an ellipse.  We can see the traces through the intersection of the planes 
   <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>, as shown in <xref ref="fig-elliptic-cone-slices"/>:
-
-  </p>
-    
 <md>
     <mrow>z^2 - \frac{y^2}{9} \amp= 1  \amp\amp (hyperbola)</mrow>
     <mrow>z^2 - \frac{x^2}{4} \amp= 1  \amp\amp (hyperbola)</mrow>
     <mrow>\frac{x^2}{4} + \frac{y^2}{9} \amp= 1 \amp\amp (ellipse)</mrow>
 </md>
-
+</p>
  <figure xml:id="fig-elliptic-cone-traces">
   <caption>
     The traces of the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m>
