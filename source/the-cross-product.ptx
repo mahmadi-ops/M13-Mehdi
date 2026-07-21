@@ -299,18 +299,14 @@ Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
 
 <p>
 We first compute the two vectors:
-</p>
-
 <md xml:id="eq-perpendicular-setup">
 <mrow>\vec{AB} \amp= \langle 1,1,-3\rangle</mrow>
 <mrow>\vec{AC} \amp= \langle -1,-1,1\rangle.</mrow>
 </md>
-
+</p>
 <p>
 The cross product <m>\vec{AB} \times \vec{AC}</m> is orthogonal to both
 vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
-</p>
-
 <md xml:id="eq-perpendicular-cross">
 <mrow>
 \vec{AB} \times \vec{AC} \amp=
@@ -330,7 +326,7 @@ vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
 = \langle -2,2,0\rangle.
 </mrow>
 </md>
-
+</p>
 <p>
 The unit vector in question is then computed as follows:
 <md xml:id="eq-perpendicular-unit">
@@ -379,8 +375,6 @@ points that we had in the previous example.
 To find the area of the triangle, we first compute the area of the
 parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
 <xref ref="fig-triangle-area"/>, and then divide by <m>2</m>:
-</p>
-
 <md xml:id="eq-triangle-area">
 <mrow>
 \text{Area of the parallelogram} \amp=
@@ -391,7 +385,7 @@ parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
 \frac12 \left|\vec{AB} \times \vec{AC}\right| = \sqrt 2.
 </mrow>
 </md>
-
+</p>
 </paragraphs>
 
 <figure xml:id="fig-triangle-area">
@@ -484,8 +478,6 @@ perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 
 <p>
 <em>Statement II</em> is true. Note that:
-</p>
-
 <md xml:id="eq-true-false-2">
 <mrow>
 \left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
@@ -496,7 +488,7 @@ perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 = |\vec u|^2|\vec v|^2.
 </mrow>
 </md>
-
+</p>
 <p>
 Now, since <m>\vec u</m> and <m>\vec v</m> are standard unit vectors, we
 have <m>|\vec u| = |\vec v| = 1</m>, which means:
@@ -558,8 +550,6 @@ meter-newtons (<m>\text{m}\cdot\text{N}</m>) in SI.
 <p>
 The quantity in <xref ref="eq-torque-magnitude"/> can be grouped in two
 useful ways:
-</p>
-
 <md xml:id="eq-torque-groupings">
 <mrow>
 |\vec\tau| \amp= \underbrace{\left(|\vec r|\sin\theta\right)}_{r_\perp}|\vec F|
@@ -570,7 +560,7 @@ useful ways:
  = |\vec r|\, F_\perp.
 </mrow>
 </md>
-
+</p>
 <p>
 The first grouping says the torque is the force times the
 <term>lever arm</term> <m>r_\perp</m>, the perpendicular distance from
@@ -642,8 +632,6 @@ straight up.
 <em>Part 1.</em> The forearm is horizontal, so
 <m>\vec r = \langle 0.050, 0, 0\rangle</m> and the angle between
 <m>\vec r</m> and <m>\vec F</m> is <m>\theta = 90^\circ</m>. Then
-</p>
-
 <md xml:id="eq-biceps-part-a">
 <mrow>
 \vec\tau = \vec r \times \vec F \amp=
@@ -656,8 +644,6 @@ straight up.
 = \langle 0, 0, 35 \rangle,
 </mrow>
 </md>
-
-<p>
 so <m>|\vec\tau| = 35\ \text{m}\cdot\text{N}</m>. Equivalently,
 <m>|\vec\tau| = |\vec r||\vec F|\sin 90^\circ = (0.050)(700)(1) = 35\
 \text{m}\cdot\text{N}</m>. The torque points in the direction
@@ -676,8 +662,6 @@ horizontal, so
 
 while <m>\vec F = \langle 0, 700, 0\rangle</m> is unchanged. The cross
 product gives
-</p>
-
 <md xml:id="eq-biceps-part-b">
 <mrow>
 \vec\tau = \vec r \times \vec F \amp=
@@ -692,7 +676,7 @@ product gives
 \amp= \langle 0, 0, 30.3 \rangle \approx \langle 0, 0, 30 \rangle.
 </mrow>
 </md>
-
+</p>
 <p>
 So <m>|\vec\tau| \approx 30\ \text{m}\cdot\text{N}</m>, again
 counterclockwise. To check with <xref ref="eq-torque-magnitude"/>: the

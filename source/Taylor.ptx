@@ -718,11 +718,11 @@
 </p>
           <p>
             Substituting <m>x = \frac{v^2}{c^2}</m>, we get:
-          </p>
-          <md>
+<md>
             <mrow> K \amp  = m_0c^2 \left( \frac{1}{2}\frac{v^2}{c^2} + \frac{3}{8}\frac{v^4}{c^4} + \frac{5}{16}\frac{v^6}{c^6} + \cdots \right) </mrow>
             <mrow> \amp  = \frac{1}{2} m_0v^2 + \frac{3}{8} m_0\frac{v^4}{c^2} + \frac{5}{16} m_0\frac{v^6}{c^4} + \cdots </mrow>
           </md>
+</p>
           <p>
             When <m>v \ll c</m>, the higher order terms in the series become negligible, and we can approximate the kinetic energy as:
 <md>
@@ -1456,10 +1456,10 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
 <md>
           f(d) = \frac{1}{(r+d)^2} = \frac{1}{r^2} \left( 1 - 2\frac{d}{r} + 3\frac{d^2}{r^2} - 4\frac{d^3}{r^3} + \cdots \right)
         </md>
-</p>
-        <md>
+<md>
           f(0) = \frac{1}{r^2}
         </md>
+</p>
         <p>Now, we can write the electric field <m>E</m> as:
 <md>
           E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right) = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r^2} - \frac{1}{(r+d)^2} \right)
