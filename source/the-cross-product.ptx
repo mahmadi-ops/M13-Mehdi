@@ -333,17 +333,15 @@ vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
 
 <p>
 The unit vector in question is then computed as follows:
-</p>
-
-<me xml:id="eq-perpendicular-unit">
+<md xml:id="eq-perpendicular-unit">
        \begin{aligned}
 \mathbf n \amp = \frac{\vec{AB} \times \vec{AC}}{\left|\vec{AB} \times \vec{AC}\right|}\\
 \amp = \frac{1}{\sqrt 8}\langle -2,2,0\rangle
 = \left\langle -\frac{1}{\sqrt 2},\frac{1}{\sqrt 2},0\right\rangle
 = -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
 \end{aligned}
-</me>
-
+</md>
+</p>
 </paragraphs>
 
 <figure xml:id="fig-normal-vector-video">
@@ -468,9 +466,7 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 <em>Statement I</em> is true. Note that
 <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
 <m>\vec u</m> and <m>\text{proj}_{\vec v}\vec u</m>, which gives:
-</p>
-
-<me xml:id="eq-true-false-1">
+<md xml:id="eq-true-false-1">
        \begin{aligned}
 \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot
 \left(\vec u - \text{proj}_{\vec v}\vec u\right)
@@ -479,8 +475,8 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 - \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \text{proj}_{\vec v}\vec u\\
 = 0 - 0 = 0,
 \end{aligned}
-</me>
-
+</md>
+</p>
 <p>
 and therefore <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is
 perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
@@ -504,13 +500,11 @@ perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 <p>
 Now, since <m>\vec u</m> and <m>\vec v</m> are standard unit vectors, we
 have <m>|\vec u| = |\vec v| = 1</m>, which means:
-</p>
-
-<me xml:id="eq-true-false-3">
+<md xml:id="eq-true-false-3">
 \left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
 = |\vec u|^2|\vec v|^2 = 1.
-</me>
-
+</md>
+</p>
 </solution>
 
 </subsection>

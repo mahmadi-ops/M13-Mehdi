@@ -32,17 +32,17 @@
  <p>
 Much like the conic sections, quadric surfaces are defined by second-degree equations in three variables. 
 The general form of a quadric surface is given by the equation: 
-<me>
+<md>
   Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0
-</me>  
+</md>  
 where <m>A, B, C, D, E, F, G, H, I,</m> and <m>J</m> are constants.
 For our purposes, we will focus on the simpler forms of quadric surfaces 
 that can be obtained by setting some of the coefficients to zero. 
 For our examples, we will consider the following simplified forms of quadric surfaces:
 
-<men xml:id="quad-simplified">
+<md xml:id="quad-simplified" number="yes">
   Ax^2 + By^2 + Cz^2 + Dz = E
-</men>  
+</md>  
 
  </p>
 
@@ -50,13 +50,13 @@ For our examples, we will consider the following simplified forms of quadric sur
     <title>Elliptical Paraboloid</title>
   <p>
     Consider the case where from equation <xref ref="quad-simplified"/> where
-    <me>
+    <md>
     A = 1/4, B= 1/9, C= 0, D= -1, E= 0
-    </me>  
+    </md>  
     Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <me>
+    <md>
      z =  \frac{x^2}{4} + \frac{y^2}{9}  
-    </me>
+    </md>
   </p>
 
 <p>
@@ -194,13 +194,13 @@ For our examples, we will consider the following simplified forms of quadric sur
 
 <p>
     We now consider the case where from equation <xref ref="quad-simplified"/> where
-    <me>
+    <md>
     A = 1/4, B= -1/9, C= 0, D= -1, E= 0
-    </me>  
+    </md>  
     Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <me>
+    <md>
      z =  \frac{x^2}{4} - \frac{y^2}{9}  
-    </me>
+    </md>
   </p>
 
 <p>
@@ -345,13 +345,13 @@ For our examples, we will consider the following simplified forms of quadric sur
 
 <p>
     We now consider the case where from equation <xref ref="quad-simplified"/> where
-    <me>
+    <md>
     A = 1/4, B= 1/9, C= 1/16, D= 0, E= 1
-    </me>  
+    </md>  
     Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <me>
+    <md>
        \frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1
-    </me>
+    </md>
   </p>
 
 <p>
@@ -487,14 +487,14 @@ For our examples, we will consider the following simplified forms of quadric sur
 
 <p>
     We now consider the case where from equation <xref ref="quad-simplified"/> where
-    <me>
+    <md>
     A = 1/4, B= 1/9, C= -1, D= 0, E= 0
-    </me>  
+    </md>  
     Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <me>
+    <md>
         z^2 = \frac{x^2}{4} + \frac{y^2}{9} 
 
-    </me>
+    </md>
   </p>
 
 <p>
@@ -650,11 +650,11 @@ We leave the student to explore the condition that would create a hyperboloid of
   <introduction>
     <p>
       Use the same slicing method as in the previous subsections to study the two surfaces
-      <me>
+      <md>
         \frac{x^2}{4} + \frac{y^2}{9} - \frac{z^2}{16} = 1
         \qquad \text{and} \qquad
         \frac{z^2}{16} - \frac{x^2}{4} - \frac{y^2}{9} = 1
-      </me>
+      </md>
       and discover why the first is called a <term>hyperboloid of one sheet</term>
       while the second is called a <term>hyperboloid of two sheets</term>.
       Pay particular attention to the traces in the horizontal planes <m>z = c</m>:
@@ -696,19 +696,19 @@ We leave the student to explore the condition that would create a hyperboloid of
     <solution>
       <p>
         Slicing with the plane <m>z = c</m> gives
-        <me>
+        <md>
           \frac{x^2}{4} + \frac{y^2}{9} = 1 + \frac{c^2}{16}
-        </me>
+        </md>
         Since the right-hand side is positive for <em>every</em> value of <m>c</m>,
         every horizontal plane meets the surface in an ellipse.  The smallest one,
         <m>\frac{x^2}{4} + \frac{y^2}{9} = 1</m> in the plane <m>z = 0</m>, is the
         <q>waist</q> of the surface, and the ellipses grow as <m>|c|</m> increases.
         In the coordinate planes we find hyperbolas:
-        <me>
+        <md>
           \frac{y^2}{9} - \frac{z^2}{16} = 1 \; (x = 0)
           \qquad
           \frac{x^2}{4} - \frac{z^2}{16} = 1 \; (y = 0)
-        </me>
+        </md>
         The traces are shown in <xref ref="fig-hyperboloid-one-sheet-traces"/>,
         and <xref ref="fig-hyperboloid-one-sheet-slices"/> lets you slice the
         surface yourself.
@@ -848,20 +848,20 @@ We leave the student to explore the condition that would create a hyperboloid of
     <solution>
       <p>
         Slicing with the plane <m>z = c</m> now gives
-        <me>
+        <md>
           \frac{x^2}{4} + \frac{y^2}{9} = \frac{c^2}{16} - 1
-        </me>
+        </md>
         and this time the sign of the right-hand side matters.  For
         <m>|c| \lt 4</m> the right-hand side is negative, so the plane misses the
         surface entirely; there is <em>no trace at all</em>.  For <m>c = \pm 4</m>
         the trace is the single point <m>(0, 0, \pm 4)</m>, and only for
         <m>|c| \gt 4</m> do we get ellipses, which grow as <m>|c|</m> increases.
         In the coordinate planes we again find hyperbolas, both opening up and down:
-        <me>
+        <md>
           \frac{z^2}{16} - \frac{y^2}{9} = 1 \; (x = 0)
           \qquad
           \frac{z^2}{16} - \frac{x^2}{4} = 1 \; (y = 0)
-        </me>
+        </md>
         The traces are shown in <xref ref="fig-hyperboloid-two-sheets-traces"/>,
         and <xref ref="fig-hyperboloid-two-sheets-slices"/> lets you watch the
         plane <m>z = c</m> pass through the gap without touching the surface.
