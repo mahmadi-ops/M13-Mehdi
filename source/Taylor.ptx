@@ -2,9 +2,11 @@
 <section xml:id="section-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Taylor Series and its convergence</title>
   <objectives>
+    <introduction>
     <p>
       The main objectives of this section are to answer the following questions:
     </p>
+    </introduction>
       <ol>
         <li>
           <p>
@@ -469,7 +471,7 @@ The red curve is the graph of <m>f(x) = e^x</m> and
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
     <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
-    shift-drag-zoom="no" aspect="16:10"/>
+    shift-drag-zoom="no" aspect="16:10">
     <description>
 <p>
 The red curve is the graph of <m>f(x) = \sin(x)</m> 
@@ -478,14 +480,16 @@ The red curve is the graph of <m>f(x) = \sin(x)</m>
      values of <m>x</m>. Note that for the slider values have been limited to fit the page.
 </p>
 </description>
+    </interactive>
 
-    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9"/>
+    <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9">
     <description>
 <p>
 Use the slider to change the value of <m>x_0</m> and see how the error changes. 
      Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
 </p>
 </description>
+    </interactive>
     </solution>
 </example>
   

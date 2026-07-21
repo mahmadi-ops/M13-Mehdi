@@ -250,6 +250,7 @@ For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
 If <m>\mathbf u</m>, <m>\mathbf v</m>, and <m>\mathbf w</m> are any vectors
 and <m>c</m> is a scalar, then
 </p>
+<p>
 <ol>
 <li><p><m>\mathbf u \cdot \mathbf v = \mathbf v \cdot \mathbf u</m></p></li>
 <li><p><m>(c\mathbf u)\cdot \mathbf v = \mathbf u \cdot (c\mathbf v) = c(\mathbf u \cdot \mathbf v)</m></p></li>
@@ -257,6 +258,7 @@ and <m>c</m> is a scalar, then
 <li><p><m>\mathbf u \cdot \mathbf u = |\mathbf u|^2</m></p></li>
 <li><p><m>\mathbf 0 \cdot \mathbf u = 0</m></p></li>
 </ol>
+</p>
 </statement>
 </fact>
 </subsubsection>
