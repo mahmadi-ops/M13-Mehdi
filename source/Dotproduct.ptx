@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-law-of-cosines">
+<section xml:id="sec-law-of-cosines">
 <title>Law of Cosines and the Angle between Two Vectors</title>
 
 <p>
@@ -108,10 +108,10 @@ can be evaluated using the following equation.
 </statement>
 </theorem>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-dot-product">
+<section xml:id="sec-dot-product">
 <title>The Dot Product</title>
 
 <introduction>
@@ -241,7 +241,7 @@ For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
 </example>
 </introduction>
 
-<subsubsection xml:id="subsec-properties">
+<subsection xml:id="subsec-properties">
 <title>Properties of the Dot Product</title>
 
 <fact xml:id="fact-properties">
@@ -261,12 +261,12 @@ and <m>c</m> is a scalar, then
 </p>
 </statement>
 </fact>
-</subsubsection>
-
 </subsection>
 
+</section>
+
 <!-- ================================================================ -->
-<subsection xml:id="sec-projection">
+<section xml:id="sec-projection">
 <title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
 
 <figure xml:id="fig-projection-shadow">
@@ -415,10 +415,10 @@ To achieve a visual understanding of this decomposition, watch the video below.
 
 </paragraphs>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-work">
+<section xml:id="sec-work">
 <title>An Application of the Dot Product: Work</title>
 
 <p>
@@ -619,6 +619,6 @@ and the work done is
 </example>
 
 
-</subsection>
-
 </section>
+
+</chapter>

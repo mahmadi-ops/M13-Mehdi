@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="section-parametrization" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-parametrization" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Parametrization of Plane Curves</title>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-parametric-equations">
+<section xml:id="sec-parametric-equations">
 <title>Parametric Equations</title>
 
 <p>
@@ -273,10 +273,10 @@ Can you think of another way to write a parametric form of the circle
 </statement>
 </exercise>
 
-</subsection>
+</section>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-parametrizing-examples">
+<section xml:id="sec-parametrizing-examples">
 <title>Some Examples of Parametrizing Curves</title>
 
 <example xml:id="ex-parametrizing-curves">
@@ -509,9 +509,9 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
 
 
 
-</subsection>
+</section>
 
-<subsection xml:id="sec-intersection-collision">
+<section xml:id="sec-intersection-collision">
   <title>Intersection Points versus Collision Points</title>
 
   <p>
@@ -896,8 +896,8 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
     </solution>
   </exercise>
 
-</subsection>
-
-
-
 </section>
+
+
+
+</chapter>

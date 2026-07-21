@@ -17,7 +17,7 @@
 <!--  Scenes live in manim_conics.py, manim_formula_a.py,           -->
 <!--  and manim_find_a.py                                           -->
 <!-- ============================================================= -->
-<section xml:id="section-conics" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="section-conics" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Conic Sections</title>
 
   <introduction>
@@ -48,7 +48,7 @@
   </introduction>
 
   <!-- ===================== PARABOLA ===================== -->
-  <subsection xml:id="subsec-parabola">
+  <section xml:id="subsec-parabola">
     <title>Parabola</title>
     <p>
       A <term>parabola</term> is the set of points in a plane that are equidistant from a
@@ -249,10 +249,10 @@ and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
       </figure>
     </solution>
 </example>
-  </subsection>
+  </section>
 
   <!-- ===================== ELLIPSE ===================== -->
-  <subsection xml:id="subsec-ellipse">
+  <section xml:id="subsec-ellipse">
     <title>Ellipse</title>
     <p>
       An <term>ellipse</term> is the set of points in a plane the sum of whose distances
@@ -486,10 +486,10 @@ so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
       </figure>
     </solution>
 </example>
-  </subsection>
+  </section>
 
   <!-- ===================== HYPERBOLA ===================== -->
-  <subsection xml:id="subsec-hyperbola">
+  <section xml:id="subsec-hyperbola">
     <title>Hyperbola</title>
     <p>
       A <term>hyperbola</term> is the set of points in a plane the <em>difference</em> of
@@ -742,10 +742,10 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
       </figure>
     </solution>
 </example>
-  </subsection>
+  </section>
 
   <!-- ============== APPLICATION: PARABOLIC REFLECTOR ============== -->
-  <subsection xml:id="subsec-app-reflector">
+  <section xml:id="subsec-app-reflector">
     <title>Application: Parabolic Reflectors</title>
     <p>
       Satellite dishes, radio telescopes, headlights, and solar cookers are all parabolic in
@@ -834,10 +834,10 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
       </p>
     </solution>
 </example>
-  </subsection>
+  </section>
 
   <!-- ============== APPLICATION: WHISPERING GALLERY ============== -->
-  <subsection xml:id="subsec-app-whisper">
+  <section xml:id="subsec-app-whisper">
     <title>Application: Whispering Galleries</title>
     <p>
       An ellipse has a reflection property of its own: a ray leaving one focus reflects off the
@@ -956,10 +956,10 @@ A hand-coloured aquatint from 1809 showing the interior of Saint
       </p>
     </solution>
 </example>
-  </subsection>
+  </section>
 
     <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
-  <subsection xml:id="subsec-app-loran">
+  <section xml:id="subsec-app-loran">
     <title>Application: Hyperbolic Navigation (LORAN)</title>
     <p>
       Progress in electrical engineering enabled navigation systems based on the transmission
@@ -1346,6 +1346,6 @@ about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distance
         </prefigure>
       </image>
     </figure>
-  </subsection>
+  </section>
 
-</section>
+</chapter>

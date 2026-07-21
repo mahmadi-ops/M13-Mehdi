@@ -3,7 +3,8 @@
 
  <docinfo>
   
-  <document-id edition="1">MATH13</document-id> 
+  <document-id edition="1">math13</document-id>
+  <blurb shelf="Mathematics">Interactive, accessible web-based modules for multivariable calculus (Santa Clara University's MATH 13). The materials strengthen conceptual understanding of foundational ideas—parametrization, Taylor approximation, dot and cross products, conic sections, quadric surfaces, directional derivatives and the gradient, and extreme values—through explicit connections to physical phenomena, with support for diverse learners including screen-reader and tactile-graphics users.</blurb>
   <macros>
     \newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
     \newcommand{\real}{\Bbb R}
@@ -19,7 +20,7 @@
 </latex-image-preamble>
   </docinfo>
 
-  <article xml:id="shorttitlelowercase">
+  <book xml:id="shorttitlelowercase">
     <title>Complementary Modules For MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
@@ -34,6 +35,6 @@
     <xi:include href="section-sample-graphs.ptx" />
     <xi:include href="Webwork.ptx" />
     <xi:include href="exercises.ptx" />
-  </article>
+  </book>
 
 </pretext>

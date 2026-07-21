@@ -42,7 +42,11 @@
       "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/directional-derivatives.ptx'\\); print\\('XML: OK'\\)\")",
       "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/Taylor.ptx'\\); print\\('XML: OK'\\)\")",
       "Bash(cd *)",
-      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/Taylor.ptx'\\); print\\('OK'\\)\")"
+      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/Taylor.ptx'\\); print\\('OK'\\)\")",
+      "WebFetch(domain:pretextbook.org)",
+      "Bash(python3 *)",
+      "Bash(touch MEMORY.md)",
+      "Bash(printf -- '- [Runestone publishing setup]\\(runestone-publishing-setup.md\\) — document-id, blurb/shelf, book conversion for hosting on Runestone Academy\\\\n- [PreTeXt validate: use --dev schema]\\(pretext-validate-use-dev-schema.md\\) — stable schema false-flags document-id/blurb/interactive\\\\n')"
     ]
   }
 }

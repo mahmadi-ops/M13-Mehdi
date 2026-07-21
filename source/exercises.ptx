@@ -1,7 +1,7 @@
-<section xml:id="section-exercises">
+<chapter xml:id="section-exercises">
   <title>Exercises</title>
 
-<subsection xml:id="subsection-abs-extrema">
+<section xml:id="subsection-abs-extrema">
     <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
     <p>
       If you would like to review this topic before attempting the exercises,
@@ -54,11 +54,11 @@
     </solution>
       </exercise>
       </exercises>
-</subsection>
+</section>
 
       <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
-<subsection xml:id="section-conics-exercises">
+<section xml:id="section-conics-exercises">
     <title> Exercises for <xref ref="section-conics"  text="title"/></title>
     <p>
       If you would like to review this topic before attempting the exercises,
@@ -306,6 +306,6 @@ The same parabola and focus as before, with a red right triangle
   </task>
  </exercise>
  </exercises>
-</subsection>
-
 </section>
+
+</chapter>
