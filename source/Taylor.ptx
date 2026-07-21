@@ -395,13 +395,15 @@
        
   <interactive geogebra="xzdc5jpq" width="95%" shift-drag-zoom="no" aspect="16:11">
   <description>
-    The red curve is the graph of <m>f(x) = e^x</m> and
+<p>
+The red curve is the graph of <m>f(x) = e^x</m> and
     the blue curve is the graph of the Taylor polynomial <m>p_2(x)</m>.
     The exact value of <m>e^{0.5}</m> is represented by the red point and
     the approximation given by <m>p_2(0.5)</m> is represented by the blue point.
     The vertical distance between the two points represents the error in the approximation.
     Note that the error is less than the upper bound we calculated, i.e., <m>0.03435</m>.
-  </description>
+</p>
+</description>
   </interactive>
   <p>
   The red curve is the graph of <m>f(x) = e^x</m> and
@@ -469,17 +471,21 @@
     <interactive geogebra="ptgj7hpk" material-width="790" material-height="500" 
     shift-drag-zoom="no" aspect="16:10"/>
     <description>
-     The red curve is the graph of <m>f(x) = \sin(x)</m> 
+<p>
+The red curve is the graph of <m>f(x) = \sin(x)</m> 
      and the blue curve is the graph of the Taylor polynomial <m>p_3(x)= x - \frac{x^3}{6}</m>. 
      Use the slider to change the value of <m>x</m> and see how the error changes for different 
-     values of <m>x</m>. Note that for the slider values have been limited to fit the page. 
-     </description>
+     values of <m>x</m>. Note that for the slider values have been limited to fit the page.
+</p>
+</description>
 
     <interactive geogebra="z854nrgd" material-width="736" material-height="423" shift-drag-zoom="no" aspect="16:9"/>
     <description>
-     Use the slider to change the value of <m>x_0</m> and see how the error changes. 
+<p>
+Use the slider to change the value of <m>x_0</m> and see how the error changes. 
      Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
-    </description>
+</p>
+</description>
     </solution>
 </example>
   
