@@ -115,8 +115,11 @@
 
     <example xml:id="ex-parabola-1">
       <title>From equation to focus and directrix</title>
-      <p>Find the focus and the directrix of <m>y = -\frac{1}{2}x^2 + x - \frac{1}{2}</m>.</p>
-    </example>
+      <statement>
+<p>Find the focus and the directrix of <m>y = -\frac{1}{2}x^2 + x - \frac{1}{2}</m>.</p>
+    
+</statement>
+
 
     <solution xml:id="sol-parabola-1">
       <p>We begin by completing the square:
@@ -165,14 +168,18 @@ and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
         </image>
       </figure>
     </solution>
+</example>
 
     <example xml:id="ex-parabola-2">
       <title>From focus and directrix to equation (a sideways parabola)</title>
-      <p>
+      <statement>
+<p>
         Find the equation of the parabola whose focus is <m>(2,0)</m> and whose directrix
         is the vertical line <m>x = -2</m>. In which direction does it open?
       </p>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-parabola-2">
       <p>
@@ -241,6 +248,7 @@ and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
         </image>
       </figure>
     </solution>
+</example>
   </subsection>
 
   <!-- ===================== ELLIPSE ===================== -->
@@ -350,8 +358,11 @@ which identifies the constant in the definition as <m>2a</m>; equivalently
 
     <example xml:id="ex-ellipse-1">
       <title>Horizontal ellipse</title>
-      <p>Sketch the graph of <m>4x^2 + 9y^2 = 36</m> and locate the foci.</p>
-    </example>
+      <statement>
+<p>Sketch the graph of <m>4x^2 + 9y^2 = 36</m> and locate the foci.</p>
+    
+</statement>
+
 
     <solution xml:id="sol-ellipse-1">
       <p>Dividing through by <m>36</m> puts the equation in standard form:
@@ -402,11 +413,15 @@ so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
         </image>
       </figure>
     </solution>
+</example>
 
     <example xml:id="ex-ellipse-2">
       <title>A vertical ellipse (foci on the <m>y</m>-axis)</title>
-      <p>Sketch the graph of <m>25x^2 + 16y^2 = 400</m> and locate the foci.</p>
-    </example>
+      <statement>
+<p>Sketch the graph of <m>25x^2 + 16y^2 = 400</m> and locate the foci.</p>
+    
+</statement>
+
 
     <solution xml:id="sol-ellipse-2">
       <p>Dividing by <m>400</m>,
@@ -470,6 +485,7 @@ so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
         </image>
       </figure>
     </solution>
+</example>
   </subsection>
 
   <!-- ===================== HYPERBOLA ===================== -->
@@ -580,9 +596,12 @@ identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. F
 
     <example xml:id="ex-hyperbola-1">
       <title>Horizontal hyperbola</title>
-      <p>Find the foci and asymptotes of the hyperbola <m>9x^2 - 16y^2 = 144</m> and sketch
+      <statement>
+<p>Find the foci and asymptotes of the hyperbola <m>9x^2 - 16y^2 = 144</m> and sketch
       its graph.</p>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-hyperbola-1">
       <p>Dividing by <m>144</m> gives standard form:
@@ -643,12 +662,16 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         </image>
       </figure>
     </solution>
+</example>
 
     <example xml:id="ex-hyperbola-2">
       <title>A vertical hyperbola (opens up and down)</title>
-      <p>Find the vertices, foci, and asymptotes of <m>16y^2 - 9x^2 = 144</m> and sketch its
+      <statement>
+<p>Find the vertices, foci, and asymptotes of <m>16y^2 - 9x^2 = 144</m> and sketch its
       graph.</p>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-hyperbola-2">
       <p>Dividing by <m>144</m> and being careful with signs,
@@ -718,6 +741,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         </image>
       </figure>
     </solution>
+</example>
   </subsection>
 
   <!-- ============== APPLICATION: PARABOLIC REFLECTOR ============== -->
@@ -788,11 +812,14 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
 
     <example xml:id="ex-app-reflector">
       <title>Placing the receiver</title>
-      <p>
+      <statement>
+<p>
         A satellite dish has a parabolic cross-section that is <m>4</m> feet wide and <m>1</m>
         foot deep at its center. How far from the vertex should the receiver be mounted?
       </p>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-app-reflector">
       <p>
@@ -806,6 +833,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         vertex<mdash/>which here happens to be exactly level with the rim.
       </p>
     </solution>
+</example>
   </subsection>
 
   <!-- ============== APPLICATION: WHISPERING GALLERY ============== -->
@@ -900,11 +928,14 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
 
     <example xml:id="ex-app-whisper">
       <title>Where should the listener stand?</title>
-      <p>
+      <statement>
+<p>
         A whispering gallery is <m>100</m> feet long and <m>60</m> feet wide. Where should the
         speaker and the listener stand, and how far does the whisper travel on its way across?
       </p>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-app-whisper">
       <p>
@@ -920,6 +951,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         distance every way round, which is exactly why it arrives in phase.
       </p>
     </solution>
+</example>
   </subsection>
 
     <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
@@ -1003,7 +1035,8 @@ where <m>v</m> is the signal speed. The set of points with a constant difference
 
     <example xml:id="ex-app-loran">
       <title>Locating a hiker from three receivers</title>
-      <p>
+      <statement>
+<p>
         Three receivers <m>P_1</m>, <m>P_2</m>, and <m>P_3</m> are deployed in the landscape.
         The figure captures the distances we know. Emma's tourist navigation device sends a
         signal to all three receivers. The signal arrives at receivers <m>P_1</m> and
@@ -1063,7 +1096,9 @@ where <m>v</m> is the signal speed. The set of points with a constant difference
           </prefigure>
         </image>
       </figure>
-    </example>
+    
+</statement>
+
 
     <solution xml:id="sol-app-loran">
       <p>
@@ -1217,6 +1252,7 @@ about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distance
         </image>
       </figure>
     </solution>
+</example>
 
     <remark xml:id="rem-loran-two-hyperbolas">
       <title>What if Emma were not equidistant from <m>P_1</m> and <m>P_3</m>?</title>
