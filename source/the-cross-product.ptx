@@ -15,9 +15,11 @@ Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
 <definition xml:id="def-cross-product">
 <title>The Cross Product (First Definition)</title>
 <statement>
-<men xml:id="eq-cross-geometric">
+<p>
+<md xml:id="eq-cross-geometric" number="yes">
 \mathbf u \times \mathbf v = \left(|\mathbf u||\mathbf v|\sin\theta\right)\mathbf n.
-</men>
+</md>
+</p>
 </statement>
 </definition>
 
@@ -86,10 +88,12 @@ of two parallel vectors is zero.
 <fact xml:id="fact-parallel-vectors">
 <title>Parallel Vectors</title>
 <statement>
-<men xml:id="eq-parallel-vectors">
+<p>
+<md xml:id="eq-parallel-vectors" number="yes">
 \mathbf u \parallel \mathbf v \iff \mathbf u \times \mathbf v = \mathbf 0,
 \qquad \mathbf u, \mathbf v \neq \mathbf 0.
-</men>
+</md>
+</p>
 </statement>
 </fact>
 
@@ -137,21 +141,18 @@ product.
 <p>
 If <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
 <m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>, then
-</p>
-
-<men xml:id="eq-cross-components">
+<md xml:id="eq-cross-components" number="yes">
 \mathbf u \times \mathbf v =
 \langle u_2v_3 - u_3v_2,\; u_3v_1 - u_1v_3,\; u_1v_2 - u_2v_1\rangle.
-</men>
+</md>
+</p>
 </statement>
 </definition>
 
 <p>
 One way to remember the second definition of the cross product is to
 write it as a determinant:
-</p>
-
-<men xml:id="eq-cross-determinant">
+<md xml:id="eq-cross-determinant" number="yes">
 \mathbf u \times \mathbf v =
 \begin{vmatrix}
 \mathbf i \amp \mathbf j \amp \mathbf k \\
@@ -162,15 +163,12 @@ v_1 \amp v_2 \amp v_3
 \begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\mathbf i
 - \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\mathbf j
 + \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\mathbf k,
-</men>
-
-<p>
+</md>
 where
-</p>
-
-<men xml:id="eq-two-by-two-determinant">
+<md xml:id="eq-two-by-two-determinant" number="yes">
 \begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = ad - bc.
-</men>
+</md>
+</p>
 
 <p>
 The magnitude of <m>\mathbf u \times \mathbf v</m> is equal to the area
@@ -224,11 +222,13 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <fact xml:id="fact-parallelogram-area">
 <title>Area of the Parallelogram</title>
 <statement>
-<men xml:id="eq-parallelogram-area">
+<p>
+<md xml:id="eq-parallelogram-area" number="yes">
 \text{Area of the parallelogram}
 = |\mathbf u||\mathbf v||\sin\theta|
 = |\mathbf u \times \mathbf v|.
-</men>
+</md>
+</p>
 </statement>
 </fact>
 
@@ -539,23 +539,20 @@ product captures all three effects at once.
 Suppose a force <m>\vec F</m> is applied at a point whose position
 vector relative to the axis of rotation is <m>\vec r</m>. The
 <term>torque</term> produced by <m>\vec F</m> is the vector
-</p>
-<men xml:id="eq-torque-def">
+<md xml:id="eq-torque-def" number="yes">
 \vec\tau = \vec r \times \vec F.
-</men>
+</md>
+</p>
 </statement>
 </definition>
 
 <p>
 Everything we know about the cross product now translates into physics.
 By <xref ref="eq-cross-geometric"/>, the magnitude of the torque is
-</p>
-
-<men xml:id="eq-torque-magnitude">
+<md xml:id="eq-torque-magnitude" number="yes">
 |\vec\tau| = |\vec r||\vec F||\sin\theta|,
-</men>
+</md>
 
-<p>
 where <m>\theta</m> is the angle between <m>\vec r</m> and
 <m>\vec F</m>, and the direction of <m>\vec\tau</m> is given by the
 right-hand rule: <m>\vec\tau</m> points along the axis of rotation, and
@@ -678,14 +675,11 @@ elbow.
 <p>
 <em>Part 2.</em> Now the forearm points <m>30^\circ</m> below the
 horizontal, so
-</p>
-
-<men xml:id="eq-biceps-r-vector">
+<md xml:id="eq-biceps-r-vector" number="yes">
 \vec r = 0.050\,\langle \cos(-30^\circ), \sin(-30^\circ), 0\rangle
        = \langle 0.0433, -0.025, 0\rangle,
-</men>
+</md>
 
-<p>
 while <m>\vec F = \langle 0, 700, 0\rangle</m> is unchanged. The cross
 product gives
 </p>
@@ -711,13 +705,12 @@ counterclockwise. To check with <xref ref="eq-torque-magnitude"/>: the
 vector <m>\vec r</m> sits at <m>-30^\circ</m> and <m>\vec F</m> at
 <m>90^\circ</m>, so the angle between them is <m>\theta = 120^\circ</m>,
 and
-</p>
-
-<men xml:id="eq-biceps-check">
+<md xml:id="eq-biceps-check" number="yes">
 |\vec\tau| = |\vec r||\vec F|\sin 120^\circ
 = (0.050)(700)\left(\tfrac{\sqrt 3}{2}\right)
 \approx 30\ \text{m}\cdot\text{N}.
-</men>
+</md>
+</p>
 
 <p>
 Note that <m>\sin 120^\circ = \sin 60^\circ</m>, so this agrees with

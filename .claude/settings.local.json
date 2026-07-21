@@ -37,7 +37,8 @@
       "Bash(python3 /root/.ptx/2.44.0/core/pretext/pretext -V -M local-dev -p publication/publication.ptx source/main.ptx)",
       "Bash(git checkout *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('source/the-cross-product.ptx'\\); print\\('XML: OK'\\)\")"
     ]
   }
 }
