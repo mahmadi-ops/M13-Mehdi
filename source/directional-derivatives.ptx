@@ -70,14 +70,10 @@ to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 The <term>derivative of <m>f</m> at <m>P_0(x_0,y_0)</m> in the direction
 of the unit vector <m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m></term>
 is the number
-</p>
-
-<men xml:id="eq-dirderiv-definition">
+<md xml:id="eq-dirderiv-definition" number="yes">
 \left(\frac{df}{ds}\right)_{\mathbf u,\,P_0}
 = \lim_{s\to 0}\frac{f(x_0 + su_1,\; y_0 + su_2) - f(x_0,y_0)}{s},
-</men>
-
-<p>
+</md>
 provided the limit exists. It can alternatively be denoted by
 <m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
 </p>
@@ -470,11 +466,10 @@ Every partial derivative is a directional derivative, so nothing already known a
 Note that we can write the equation of the line through the point
 <m>P_0(x_0,y_0)</m> with the direction
 <m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m> as
-</p>
-
-<men xml:id="eq-line-through-P0">
+<md xml:id="eq-line-through-P0" number="yes">
 x(s) = x_0 + su_1, \qquad y(s) = y_0 + su_2.
-</men>
+</md>
+</p>
 
 <p>
 We can use the above relation between <m>x</m>, <m>y</m>, and <m>s</m>
@@ -506,25 +501,23 @@ The vector in the first set of parentheses is known as the
 <p>
 The <term>gradient vector</term> of the function <m>f(x,y)</m> at
 <m>P_0(x_0,y_0)</m> is the vector
-</p>
-
-<men xml:id="eq-gradient-definition">
+<md xml:id="eq-gradient-definition" number="yes">
 \left(\nabla f\right)_{P_0}
 = \left(\frac{\partial f}{\partial x}\right)_{P_0}\mathbf i
 + \left(\frac{\partial f}{\partial y}\right)_{P_0}\mathbf j.
-</men>
+</md>
+</p>
 
 <p>
 The gradient vector and the directional derivative of <m>f(x,y)</m> at
 <m>P_0(x_0,y_0)</m> in the direction
 <m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m> are related via the
 following dot product:
-</p>
-
-<men xml:id="eq-dirderiv-gradient-relation">
+<md xml:id="eq-dirderiv-gradient-relation" number="yes">
 \left(\frac{df}{ds}\right)_{\mathbf u,\,P_0}
 = \left(\nabla f\right)_{P_0}\cdot\mathbf u.
-</men>
+</md>
+</p>
 </statement>
 </definition>
 
@@ -609,21 +602,16 @@ level curve <m>f(x,y) = c</m> for a constant <m>c</m>. At every point of
 <p>
 Suppose the level curve <m>C</m> is parametrized by a differentiable
 vector function
-</p>
-
-<men xml:id="eq-level-curve-param">
+<md xml:id="eq-level-curve-param" number="yes">
 \mathbf r(t) = \langle x(t),\, y(t)\rangle,
-</men>
-
-<p>
+</md>
 and let <m>\mathbf v(t) = \langle x'(t),\, y'(t)\rangle</m> denote its
 velocity vector. Because every point of <m>C</m> lies on the level curve,
 its coordinates satisfy
-</p>
-
-<men xml:id="eq-level-curve-constant">
+<md xml:id="eq-level-curve-constant" number="yes">
 f\bigl(x(t),\, y(t)\bigr) = c \qquad \text{for all } t.
-</men>
+</md>
+</p>
 
 <p>
 The left-hand side is constant in <m>t</m>, so its derivative is zero.
@@ -1354,22 +1342,20 @@ Note that we need to divide
 <m>\left(\nabla f\right)_{(1,1)} = \mathbf i + \mathbf j</m> by its
 length to find the unit vector corresponding to the direction of most
 rapid increase:
-</p>
-
-<men xml:id="eq-directions-increase">
+<md xml:id="eq-directions-increase" number="yes">
 \frac{\left(\nabla f\right)_{(1,1)}}{\left|\left(\nabla f\right)_{(1,1)}\right|}
 = \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
-</men>
+</md>
+</p>
 
 <p>
 <em>B.</em> For the direction of most rapid decrease, we take the
 opposite direction:
-</p>
-
-<men xml:id="eq-directions-decrease">
+<md xml:id="eq-directions-decrease" number="yes">
 -\frac{\left(\nabla f\right)_{(1,1)}}{\left|\left(\nabla f\right)_{(1,1)}\right|}
 = -\frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j.
-</men>
+</md>
+</p>
 
 <p>
 <em>C.</em> To find the directions of zero change in <m>f</m>, we require
@@ -1384,20 +1370,18 @@ opposite direction:
 
 <p>
 and since <m>\mathbf u</m> is a unit vector, we have
-</p>
-
-<men xml:id="eq-directions-unit-length">
+<md xml:id="eq-directions-unit-length" number="yes">
 |\mathbf u|^2 = u_1^2 + u_2^2 = 1.
-</men>
+</md>
+</p>
 
 <p>
 After substituting <xref ref="eq-directions-zero-dot"/> in
 <xref ref="eq-directions-unit-length"/>, we conclude
-</p>
-
-<men xml:id="eq-directions-zero-solve">
+<md xml:id="eq-directions-zero-solve" number="yes">
 2u_1^2 = 1 \quad\Rightarrow\quad u_1 = \pm\frac{1}{\sqrt 2}.
-</men>
+</md>
+</p>
 
 <p>
 Hence, the directions of zero change in <m>f</m> at <m>P_0(1,1)</m> are
