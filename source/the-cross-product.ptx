@@ -613,7 +613,11 @@ shortens, and the torque decreases from <m>35</m> to <m>30</m>
 <figure xml:id="fig-biceps-torque">
   <caption>The biceps exerts a 700 N force on the forearm: (a) forearm horizontal, with the muscle attached 5.0 cm from the elbow axis; (b) forearm at 30&#xb0; below horizontal, with lever arm <m>R</m>.</caption>
   <image source="images/biceps-side-by-side.png" width="100%">
-    <description>Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N biceps force acts 5.0 cm from the elbow axis. In (b), the forearm is angled 30 degrees below horizontal, making a 60 degree angle with the vertical, with lever arm R.</description>
+    <description>
+<p>
+Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N biceps force acts 5.0 cm from the elbow axis. In (b), the forearm is angled 30 degrees below horizontal, making a 60 degree angle with the vertical, with lever arm R.
+</p>
+</description>
   </image>
 </figure>
 </statement>

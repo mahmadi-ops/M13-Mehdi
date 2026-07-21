@@ -98,13 +98,15 @@
       </caption>
       <image xml:id="prefig-antenna-model" width="75%">
         <description>
-          A parabola opening upward with vertex at the origin.  The rim
+<p>
+A parabola opening upward with vertex at the origin.  The rim
           points at (minus d over 2, h) and (d over 2, h) are joined by a
           horizontal double arrow labeled d.  A vertical double arrow labeled
           h shows the depth from the rim down to the axis level.  The focus
           F(0,p) lies on the y axis above the rim, and two segments run from
           the focus to the rim points, enclosing the opening angle two phi.
-        </description>
+</p>
+</description>
         <prefigure xmlns="https://prefigure.org" label="prefig-antenna-model">
           <diagram dimensions="(540,260)" margins="5">
             <definition>d = 120</definition>
@@ -236,12 +238,14 @@
         </caption>
         <image xml:id="prefig-antenna-angle-triangle" width="75%">
           <description>
-            The same parabola and focus as before, with a red right triangle
+<p>
+The same parabola and focus as before, with a red right triangle
             drawn from the focus: a vertical leg of length p minus h down to
             the rim level, a horizontal leg of length d over 2 out to the
             right rim point, and the segment from the focus to the rim point
             as hypotenuse.  The angle phi at the focus is marked.
-          </description>
+</p>
+</description>
           <prefigure xmlns="https://prefigure.org" label="prefig-antenna-angle-triangle">
             <diagram dimensions="(540,260)" margins="5">
               <definition>d = 120</definition>
