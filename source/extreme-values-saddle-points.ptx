@@ -152,11 +152,10 @@ origin has the same shape.
 If <m>f(x,y)</m> has a local maximum or minimum at an interior point
 <m>(a,b)</m> of its domain and if the first partial derivatives exist
 there, then
-</p>
-
-<men xml:id="eq-first-derivative-test">
+<md xml:id="eq-first-derivative-test" number="yes">
 f_x(a,b) = f_y(a,b) = 0.
-</men>
+</md>
+</p>
 </statement>
 </theorem>
 
@@ -204,12 +203,10 @@ saddle point of the surface.
 <statement>
 <p>
 Consider the function
-</p>
-
-<men xml:id="eq-saddle-function">
+<md xml:id="eq-saddle-function" number="yes">
 f(x,y) = \frac{y^2}{3} - \frac{x^2}{3}.
-</men>
-
+</md>
+</p>
 <p>
 Show that <m>f</m> has a saddle point at <m>(0,0)</m>.
 </p>
@@ -223,12 +220,10 @@ Show that <m>f</m> has a saddle point at <m>(0,0)</m>.
 As we previously studied, this function represents a hyperbolic
 paraboloid, which is shown in <xref ref="fig-saddle-video"/>. Note that
 the first partial derivatives are
-</p>
-
-<men xml:id="eq-saddle-partials">
+<md xml:id="eq-saddle-partials" number="yes">
 f_x = -\frac{2}{3}x \quad \text{and} \quad f_y = \frac{2}{3}y.
-</men>
-
+</md>
+</p>
 <p>
 The partial derivatives exist everywhere, so the only point at which a
 local extremum can occur is the point <m>(0,0)</m>. Note that along the
@@ -352,28 +347,25 @@ Note that the expression <m>f_{xx}f_{yy} - f_{xy}^2</m> is called the
 <term>discriminant</term> or the <term>Hessian</term> of the function
 <m>f(x,y)</m> and can be easily remembered when written in the
 following form:
-</p>
-
-<men xml:id="eq-hessian">
+<md xml:id="eq-hessian" number="yes">
 H(x,y) =
 \begin{vmatrix}
 f_{xx} \amp f_{xy} \\
 f_{xy} \amp f_{yy}
 \end{vmatrix}
 = f_{xx}f_{yy} - f_{xy}^2.
-</men>
-
+</md>
+</p>
 <example xml:id="example-quartic-extrema">
 <title>Finding Local Extrema and Saddle Points</title>
 <statement>
 <p>
 Find the local maximum and minimum values and saddle points of the
 function
-</p>
-
-<men xml:id="eq-quartic-function">
+<md xml:id="eq-quartic-function" number="yes">
 z = f(x,y) = x^4 + y^4 - 4xy.
-</men>
+</md>
+</p>
 </statement>
 </example>
 
@@ -382,20 +374,16 @@ z = f(x,y) = x^4 + y^4 - 4xy.
 
 <p>
 We begin by computing the partial derivatives:
-</p>
-
-<men xml:id="eq-quartic-partials">
+<md xml:id="eq-quartic-partials" number="yes">
 f_x = 4x^3 - 4y \quad \text{and} \quad f_y = 4y^3 - 4x.
-</men>
-
+</md>
+</p>
 <p>
 We set both partials equal to zero, which gives us:
-</p>
-
-<men xml:id="eq-quartic-critical-system">
+<md xml:id="eq-quartic-critical-system" number="yes">
 x^3 = y \quad \text{and} \quad y^3 = x.
-</men>
-
+</md>
+</p>
 <p>
 To solve these equations, we substitute the second equation into the
 first one:
@@ -424,17 +412,15 @@ Therefore, the two partials are zero at the points <m>(-1,-1)</m>,
 and apply the second derivative test. We have
 <m>f_{xx} = 12x^2</m>, <m>f_{yy} = 12y^2</m>, and
 <m>f_{xy} = f_{yx} = -4</m>, so that
-</p>
-
-<men xml:id="eq-quartic-hessian">
+<md xml:id="eq-quartic-hessian" number="yes">
 H(x,y) =
 \begin{vmatrix}
 f_{xx} \amp f_{xy} \\
 f_{xy} \amp f_{yy}
 \end{vmatrix}
 = f_{xx}f_{yy} - f_{xy}^2 = 144x^2y^2 - 16.
-</men>
-
+</md>
+</p>
 <p>
 We now evaluate the Hessian at each critical point:
 </p>
@@ -545,31 +531,25 @@ Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
 <p>
 We begin by writing the distance between the point <m>(1,0,-2)</m> and
 points <m>(x,y,z)</m> on the plane:
-</p>
-
-<men xml:id="eq-distance-formula">
+<md xml:id="eq-distance-formula" number="yes">
 d = \sqrt{(x-1)^2 + y^2 + (z+2)^2}.
-</men>
-
+</md>
+</p>
 <p>
 Then we use the fact that the points <m>(x,y,z)</m> are on the plane,
 <m>z = 4 - x - 2y</m>, to express the distance as a function of
 <m>x</m> and <m>y</m> only:
-</p>
-
-<men xml:id="eq-distance-xy">
+<md xml:id="eq-distance-xy" number="yes">
 d = \sqrt{(x-1)^2 + y^2 + (6 - x - 2y)^2}.
-</men>
-
+</md>
+</p>
 <p>
 We make the observation that to find the shortest distance we can
 minimize <m>d^2</m> rather than <m>d</m>:
-</p>
-
-<men xml:id="eq-distance-squared">
+<md xml:id="eq-distance-squared" number="yes">
 d^2 = f(x,y) = (x-1)^2 + y^2 + (6 - x - 2y)^2.
-</men>
-
+</md>
+</p>
 <p>
 We calculate the partials and set them equal to zero:
 </p>
@@ -585,26 +565,22 @@ f_y \amp= 2y - 4(6 - x - 2y) = 4x + 10y - 24 = 0.
 
 <p>
 We subtract the first equation from the second one:
-</p>
-
-<men xml:id="eq-distance-solve">
+<md xml:id="eq-distance-solve" number="yes">
 6y = 10 \Rightarrow y = \frac{5}{3} \Rightarrow x = \frac{11}{6}
 \Rightarrow \text{The only critical point is } \left(\frac{11}{6}, \frac{5}{3}\right).
-</men>
-
+</md>
+</p>
 <p>
 We compute the Hessian:
-</p>
-
-<men xml:id="eq-distance-hessian">
+<md xml:id="eq-distance-hessian" number="yes">
 H(x,y) =
 \begin{vmatrix}
 f_{xx} \amp f_{xy} \\
 f_{xy} \amp f_{yy}
 \end{vmatrix}
 = f_{xx}f_{yy} - f_{xy}^2 = (4)(10) - (4)^2 = 24 \gt 0.
-</men>
-
+</md>
+</p>
 <p>
 Since <m>H \gt 0</m> and <m>f_{xx} = 4 \gt 0</m>, the point
 <m>\left(\frac{11}{6}, \frac{5}{3}\right)</m> is a local minimum.
@@ -614,13 +590,11 @@ shortest distance to <m>(1,0,-2)</m>, which means
 absolute minimum of the distance occurs. To find the shortest distance
 we plug the point <m>\left(\frac{11}{6}, \frac{5}{3}\right)</m> into
 the distance formula, which gives
-</p>
-
-<men xml:id="eq-shortest-distance">
+<md xml:id="eq-shortest-distance" number="yes">
 d = \sqrt{\left(\frac{5}{6}\right)^2 + \left(\frac{5}{3}\right)^2
 + \left(\frac{5}{6}\right)^2} = \frac{5}{6}\sqrt{6}.
-</men>
-
+</md>
+</p>
 </paragraphs>
 
 </subsection>
@@ -640,11 +614,10 @@ function <m>f(x,y)</m> over a closed bounded region <m>R</m>.
 <p>
 Find the absolute maximum and minimum values of the function
 <m>f(x,y) = x^2 - 2xy + 2y</m> on the rectangle
-</p>
-
-<men xml:id="eq-rectangle-region">
+<md xml:id="eq-rectangle-region" number="yes">
 R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}.
-</men>
+</md>
+</p>
 </statement>
 </example>
 
@@ -865,24 +838,18 @@ Consider a marble that rolls on the surface <m>z = f(x,y)</m> under the
 influence of gravity. If we measure heights from the <m>xy</m>-plane,
 the potential energy of the marble at the point <m>(x,y)</m> of the
 surface is
-</p>
-
-<men xml:id="eq-potential-energy">
+<md xml:id="eq-potential-energy" number="yes">
 U(x,y) = mgz = mg\,f(x,y),
-</men>
-
-<p>
+</md>
 where <m>m</m> is the mass of the marble and <m>g</m> is the
 acceleration due to gravity. The marble is in <term>equilibrium</term>
 at a point where the force along the surface vanishes, which happens
 exactly where both partial derivatives of the potential energy are
 zero:
-</p>
-
-<men xml:id="eq-equilibrium-condition">
+<md xml:id="eq-equilibrium-condition" number="yes">
 U_x = mg\,f_x = 0 \quad \text{and} \quad U_y = mg\,f_y = 0.
-</men>
-
+</md>
+</p>
 <p>
 In other words, the equilibrium points of the marble are precisely the
 critical points of <m>f</m>. The second derivative test then tells us
@@ -895,14 +862,12 @@ rolls back) or <term>unstable</term> (a displaced marble rolls away).
 <statement>
 <p>
 A marble rests at the origin on each of the following three surfaces:
-</p>
-
-<men xml:id="eq-three-surfaces">
+<md xml:id="eq-three-surfaces" number="yes">
 \text{(i)}\; z = x^2 + y^2, \qquad
 \text{(ii)}\; z = -x^2 - y^2, \qquad
 \text{(iii)}\; z = \frac{y^2}{3} - \frac{x^2}{3}.
-</men>
-
+</md>
+</p>
 <p>
 Show that <m>(0,0)</m> is an equilibrium point in each case, and
 determine whether the equilibrium is stable or unstable.
