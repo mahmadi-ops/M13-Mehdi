@@ -9,8 +9,12 @@
 output
 published
 
-# don't track assets generated from source
-generated-assets
+# Generated assets ARE tracked here, deliberately. Runestone and CI build the
+# book on their own machines, and a prefigure that isn't `prefig init`-ed emits
+# no -diagcess SVGs, which are the ones the HTML references -- so the figures
+# silently vanish. Committing the assets makes every build serve the diagrams
+# we verified locally. Re-run `pretext build` and commit the diff when the
+# source diagrams change.
 .cache
 
 # don't track the executables.ptx file
