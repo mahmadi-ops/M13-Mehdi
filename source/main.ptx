@@ -4,7 +4,7 @@
  <docinfo>
   
   <document-id edition="1">math13</document-id>
-  <blurb shelf="Mathematics">Interactive, accessible web-based modules for multivariable calculus (Santa Clara University's MATH 13). The materials strengthen conceptual understanding of foundational ideas—parametrization, Taylor approximation, dot and cross products, conic sections, quadric surfaces, directional derivatives and the gradient, and extreme values—through explicit connections to physical phenomena, with support for diverse learners including screen-reader and tactile-graphics users.</blurb>
+  <blurb shelf="Mathematics">Interactive, accessible web-based modules for multivariable calculus (Santa Clara University's MATH 13). The materials strengthen conceptual understanding of foundational ideas (parametrization, Taylor approximation, dot and cross products, conic sections, quadric surfaces, directional derivatives and the gradient, and extreme values) through explicit connections to physical phenomena, with support for diverse learners including screen-reader and tactile-graphics users.</blurb>
   <macros>
     \newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
     \newcommand{\real}{\Bbb R}
