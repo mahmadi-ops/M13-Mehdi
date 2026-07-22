@@ -46,7 +46,7 @@
       "WebFetch(domain:pretextbook.org)",
       "Bash(python3 *)",
       "Bash(touch MEMORY.md)",
-      "Bash(printf -- '- [Runestone publishing setup]\\(runestone-publishing-setup.md\\) — document-id, blurb/shelf, book conversion for hosting on Runestone Academy\\\\n- [PreTeXt validate: use --dev schema]\\(pretext-validate-use-dev-schema.md\\) — stable schema false-flags document-id/blurb/interactive\\\\n')",
+      "Bash(printf -- '- [Runestone publishing setup]\\(runestone-publishing-setup.md\\) \u2014 document-id, blurb/shelf, book conversion for hosting on Runestone Academy\\\\n- [PreTeXt validate: use --dev schema]\\(pretext-validate-use-dev-schema.md\\) \u2014 stable schema false-flags document-id/blurb/interactive\\\\n')",
       "WebFetch(domain:prefigure.org)",
       "Bash(pip show *)",
       "Bash(git check-ignore *)",
@@ -57,7 +57,9 @@
       "Bash(set -e)",
       "Bash(git stash *)",
       "WebFetch(domain:github.com)",
-      "Bash(gh search *)"
+      "Bash(gh search *)",
+      "WebFetch(domain:mahmadi-ops.github.io)",
+      "Bash(git ls-tree *)"
     ]
   }
 }
