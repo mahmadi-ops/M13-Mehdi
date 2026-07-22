@@ -29,7 +29,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    container: oscarlevin/pretext-full
+    # Same image as .devcontainer/devcontainer.json, so a local build and a CI
+    # build use the same pretext, prefigure, latex and sagemath.
+    container: pretextbook/pretext-full:1.9
 
     steps:
       - name: Checkout source
