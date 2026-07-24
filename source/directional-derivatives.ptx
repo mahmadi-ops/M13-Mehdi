@@ -1546,6 +1546,18 @@ press the <q>Rotate</q> button.
 We collect here the main ideas of this section.
 </p>
 
+<figure xml:id="video-dirderiv-2d-3d">
+<caption>
+A directional derivative viewed together in the plane and in space: the unit
+vector <m>\mathbf u</m> at <m>P_0</m> in the <m>xy</m>-plane selects a slice of
+the surface <m>z=f(x,y)</m>, and <m>\left(D_{\mathbf u} f\right)_{P_0}</m> is the
+slope of the resulting tangent line to that slice.
+</caption>
+<video xml:id="video-dirderiv-definition-2d-3d"
+       source="videos/dirderiv_definition_2D_3D.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
 <p>
 <ul>
 <li>
@@ -1556,7 +1568,9 @@ We collect here the main ideas of this section.
 <xref ref="eq-dirderiv-definition"/>; it measures the rate of change of
 <m>f</m> at <m>P_0</m> in the direction of a unit vector <m>\mathbf u</m>.
 It is computed directly from this limit in
-<xref ref="example-dirderiv-definition"/>.
+<xref ref="example-dirderiv-definition"/>, and
+<xref ref="video-dirderiv-2d-3d"/> shows how the plane and space pictures fit
+together.
 </p>
 </li>
 <li>
