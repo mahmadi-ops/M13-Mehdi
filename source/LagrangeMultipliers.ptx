@@ -377,10 +377,7 @@ Find the greatest and smallest values that the function
 </md>
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-lagrange-ellipse">
-<title>Solution</title>
+<solution>
 
 <p>
 If we picture the graph of <m>f(x,y) = xy</m>, a saddle-shaped surface,
@@ -401,30 +398,22 @@ We begin by computing the gradients of both functions:
 </p>
 <p>
 The Lagrange multiplier equation gives
-<md xml:id="eq-lagrange-ellipse-system" number="yes">
-\nabla f = \lambda\,\nabla g
-\;\Rightarrow\;
-y\,\mathbf i + x\,\mathbf j
-= \lambda\frac{x}{4}\,\mathbf i + \lambda y\,\mathbf j
-\;\Rightarrow\;
-y = \lambda\frac{x}{4}, \quad x = \lambda y.
+<md xml:id="eq-lagrange-ellipse-system">
+<mrow>\nabla f \amp= \lambda\,\nabla g</mrow>
+<mrow>\amp\;\Rightarrow\; y\,\mathbf i + x\,\mathbf j = \lambda\frac{x}{4}\,\mathbf i + \lambda y\,\mathbf j</mrow>
+<mrow>\amp\;\Rightarrow\; y = \lambda\frac{x}{4}, \quad x = \lambda y.</mrow>
 </md>
 After substituting <m>x = \lambda y</m> into
 <m>y = \lambda\frac{x}{4}</m>, we get
-<md xml:id="eq-lagrange-ellipse-lambda" number="yes">
-y = \frac{\lambda^2}{4}\, y
-\;\Rightarrow\;
-\lambda = \pm 2
-\;\Rightarrow\;
-x = \pm 2y.
+<md xml:id="eq-lagrange-ellipse-lambda">
+<mrow>y = \frac{\lambda^2}{4}\, y \amp\;\Rightarrow\; \lambda = \pm 2
+\;\Rightarrow\; x = \pm 2y.</mrow>
 </md>
 After plugging <m>x = \pm 2y</m> into the constraint equation we get
-<md xml:id="eq-lagrange-ellipse-points" number="yes">
-g(\pm 2y, y) = \frac{y^2}{2} + \frac{y^2}{2} - 1 = 0
-\;\Rightarrow\;
-y^2 = 1
-\;\Rightarrow\;
-y = \pm 1.
+<md xml:id="eq-lagrange-ellipse-points">
+<mrow>g(\pm 2y, y) \amp= \frac{y^2}{2} + \frac{y^2}{2} - 1 = 0</mrow>
+<mrow>\amp\;\Rightarrow\; y^2 = 1
+\;\Rightarrow\; y = \pm 1.</mrow>
 </md>
 Note that <m>y = 0</m> is another solution of
 <m>y = \frac{\lambda^2}{4}y</m>; however, when <m>y = 0</m>, from
@@ -459,7 +448,8 @@ For instance, at <m>(2,1)</m> we have
 <m>\nabla f = 2\,\nabla g</m>, matching the multiplier
 <m>\lambda = 2</m>.
 </p>
-</paragraphs>
+</solution>
+</example>
 
 <figure xml:id="fig-lagrange-ellipse-prefigure">
 <caption>
@@ -573,10 +563,7 @@ Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
 <m>x + 2y + z = 4</m>.
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-lagrange-distance">
-<title>Solution</title>
+<solution>
 
 <p>
 We find the closest point on the plane <m>x + 2y + z = 4</m> to the
@@ -599,11 +586,10 @@ We compute the gradients:
 <mrow>\nabla g \amp= \mathbf i + 2\,\mathbf j + \mathbf k.</mrow>
 </md>
 The Lagrange multiplier equation gives
-<md xml:id="eq-lagrange-distance-system" number="yes">
-\nabla f = \lambda\,\nabla g
-\;\Rightarrow\;
-2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k
-= \lambda\,\mathbf i + 2\lambda\,\mathbf j + \lambda\,\mathbf k,
+<md xml:id="eq-lagrange-distance-system">
+<mrow>\nabla f = \lambda\,\nabla g \amp\;\Rightarrow\;
+2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k</mrow>
+<mrow>\amp= \lambda\,\mathbf i + 2\lambda\,\mathbf j + \lambda\,\mathbf k.</mrow>
 </md>
 so that
 <md xml:id="eq-lagrange-distance-xyz" number="yes">
@@ -613,12 +599,10 @@ z = \frac{\lambda}{2} - 2.
 </md>
 We substitute these into the equation of the constraint to find
 <m>\lambda</m>:
-<md xml:id="eq-lagrange-distance-lambda" number="yes">
-g(x,y,z) = x + 2y + z - 4 = 0
-\;\Rightarrow\;
-3\lambda - 5 = 0
-\;\Rightarrow\;
-\lambda = \frac{5}{3}.
+<md xml:id="eq-lagrange-distance-lambda">
+<mrow>g(x,y,z) = x + 2y + z - 4 \amp= 0</mrow>
+<mrow>\amp\;\Rightarrow\; 3\lambda - 5 = 0
+\;\Rightarrow\; \lambda = \frac{5}{3}.</mrow>
 </md>
 </p>
 <p>
@@ -636,9 +620,9 @@ d = \sqrt{\left(\frac{11}{6} - 1\right)^2
 </md>
 in agreement with <xref ref="example-shortest-distance"/>.
 </p>
-</paragraphs>
+</solution>
 
-<paragraphs xml:id="solution-lagrange-distance-normal">
+<solution>
 <title>Another Solution, Using the Normal to the Plane</title>
 
 <p>
@@ -649,19 +633,15 @@ the plane is the closest point to <m>P_0</m>. As
 the shortest distance meets the plane perpendicularly, so the vector
 <m>\vec{P_0 P}</m> must be parallel to the normal vector
 <m>\mathbf n = \mathbf i + 2\,\mathbf j + \mathbf k</m> of the plane:
-<md xml:id="eq-lagrange-normal-parallel" number="yes">
-\vec{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle
-= \lambda\,\langle 1, 2, 1\rangle
-\;\Rightarrow\;
-x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.
+<md xml:id="eq-lagrange-normal-parallel">
+<mrow>\vec{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
+<mrow>\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
 </md>
 We then substitute the above equations into the equation of the plane:
-<md xml:id="eq-lagrange-normal-solve" number="yes">
-(\lambda + 1) + 2(2\lambda) + (\lambda - 2) = 4
-\;\Rightarrow\;
-\lambda = \frac{5}{6}
-\;\Rightarrow\;
-x = \frac{11}{6}, \quad y = \frac{5}{3}, \quad z = -\frac{7}{6},
+<md xml:id="eq-lagrange-normal-solve">
+<mrow>(\lambda + 1) + 2(2\lambda) + (\lambda - 2) \amp= 4
+\;\Rightarrow\; \lambda = \frac{5}{6}</mrow>
+<mrow>\amp\;\Rightarrow\; x = \frac{11}{6}, \quad y = \frac{5}{3}, \quad z = -\frac{7}{6},</mrow>
 </md>
 and therefore the minimum distance is again
 <m>d = \frac{5}{6}\sqrt{6}</m>.
@@ -674,7 +654,8 @@ Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> says precisely
 that <m>\vec{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
 method of Lagrange multipliers rediscovers the geometry on its own.
 </p>
-</paragraphs>
+</solution>
+</example>
 
 <figure xml:id="fig-lagrange-plane-prefigure">
 <caption>
@@ -749,10 +730,7 @@ Find the absolute maximum and minimum of
 <m>x^2 + y^2 = 4</m>.
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-lagrange-circle">
-<title>Solution</title>
+<solution>
 
 <p>
 Completing the squares shows that
@@ -780,13 +758,10 @@ We compute the gradients:
 <mrow>\nabla g \amp= 2x\,\mathbf i + 2y\,\mathbf j.</mrow>
 </md>
 The Lagrange multiplier equation gives
-<md xml:id="eq-lagrange-circle-system" number="yes">
-\nabla f = \lambda\,\nabla g
-\;\Rightarrow\;
-(2x-2)\,\mathbf i + (2y+2)\,\mathbf j
-= 2\lambda x\,\mathbf i + 2\lambda y\,\mathbf j
-\;\Rightarrow\;
-x - 1 = \lambda x, \quad y + 1 = \lambda y.
+<md xml:id="eq-lagrange-circle-system">
+<mrow>\nabla f \amp= \lambda\,\nabla g</mrow>
+<mrow>\amp\;\Rightarrow\; (2x-2)\,\mathbf i + (2y+2)\,\mathbf j = 2\lambda x\,\mathbf i + 2\lambda y\,\mathbf j</mrow>
+<mrow>\amp\;\Rightarrow\; x - 1 = \lambda x, \quad y + 1 = \lambda y.</mrow>
 </md>
 Adding the two equations yields
 <md xml:id="eq-lagrange-circle-add" number="yes">
@@ -796,12 +771,9 @@ This equation is satisfied if <m>\lambda = 1</m> or if
 <m>x + y = 0</m>. The case <m>\lambda = 1</m> is impossible, since
 substituting it into <m>x - 1 = \lambda x</m> gives <m>-1 = 0</m>.
 Hence <m>y = -x</m>, which we substitute into the constraint:
-<md xml:id="eq-lagrange-circle-points" number="yes">
-x^2 + y^2 = 4
-\;\Rightarrow\;
-2x^2 = 4
-\;\Rightarrow\;
-x = -y = \pm\sqrt{2}.
+<md xml:id="eq-lagrange-circle-points">
+<mrow>x^2 + y^2 = 4 \amp\;\Rightarrow\; 2x^2 = 4
+\;\Rightarrow\; x = -y = \pm\sqrt{2}.</mrow>
 </md>
 </p>
 <p>
@@ -833,7 +805,35 @@ extrema, but with different multipliers: from
 at the minimum and <m>\lambda = 1 + \frac{1}{\sqrt 2}</m> at the
 maximum.
 </p>
-</paragraphs>
+
+<p>
+The video below animates this picture. The completed-square form
+<xref ref="eq-lagrange-circle-square"/> shows that, with no constraint,
+<m>f</m> would take its least possible value <m>3</m> at the vertex
+<m>(1,-1)</m>&#8212;the bottom of the paraboloid. But that vertex lies
+<em>inside</em> the constraint circle (a distance <m>\sqrt 2 \lt 2</m>
+from the origin), so it is not available to us here: the method of
+Lagrange multipliers instead locates the highest and lowest points of
+<m>f</m> <em>along</em> the circle. As the level circles of <m>f</m>
+expand outward from <m>(1,-1)</m>, the first one to reach the constraint
+circle gives the constrained minimum <m>9 - 4\sqrt 2</m> and the last
+gives the maximum <m>9 + 4\sqrt 2</m>; at each of these contacts the two
+circles are tangent and <m>\nabla f</m> is parallel to <m>\nabla g</m>.
+</p>
+
+<figure xml:id="fig-lagrange-circle-video">
+<caption>
+The extrema of <m>f</m> on the constraint circle <m>x^2 + y^2 = 4</m>.
+The level circles of <m>f</m>, centered at the vertex <m>(1,-1)</m> where
+<m>f = 3</m>, expand until they touch the constraint circle; the points
+of tangency are the constrained minimum and maximum.
+</caption>
+<video xml:id="video-lagrange-example3"
+       source="videos/lagrange_example3_1080p_1.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+</solution>
+</example>
 
 <figure xml:id="fig-lagrange-circle-prefigure">
 <caption>
