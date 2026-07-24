@@ -1,31 +1,22 @@
 <chapter xml:id="section-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exercises</title>
 
-<!-- ================= 9.1 Projectile Motion ================= -->
-<section xml:id="section-projectile-exercises">
-    <title> Exercises for <xref ref="section-parametrization" text="title"/></title>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-parametrization" text="title"/>.
-    </p>
-  <xi:include href="art11-projectile-velocity.ptx"/>
-</section>
+<!-- ================= Projectile Motion / Parametrization ================= -->
+<xi:include href="art11-projectile-velocity.ptx"/>
 
 <!-- ================= Taylor Series (In-Class Activity) ================= -->
 <xi:include href="activity-taylor-intro.ptx"/>
 
 <!-- ================= Conic Sections ================= -->
-      <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
-<!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
-<section xml:id="section-conics-exercises">
+<!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
+<worksheet xml:id="section-conics-exercises">
     <title> Exercises for <xref ref="section-conics"  text="title"/></title>
+    <introduction>
     <p>
       If you would like to review this topic before attempting the exercises,
       click <xref ref="section-conics" text="title"/>.
     </p>
-    <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
-  <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
- <exercises xml:id="exercises-conics">
+    </introduction>
  <exercise xml:id="exer-parabolic-antenna">
   <title>A Parabolic Antenna</title>
     <introduction>
@@ -264,28 +255,20 @@ The same parabola and focus as before, with a red right triangle
     </solution>
   </task>
  </exercise>
- </exercises>
-</section>
+</worksheet>
 
-<!-- ================= 9.3 Quadric Surfaces ================= -->
-<section xml:id="section-quadric-exercises">
-    <title> Exercises for <xref ref="section-quadric-surfaces"  text="title"/></title>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-quadric-surfaces" text="title"/>.
-    </p>
-  <xi:include href="exercises-quadric-surfaces.ptx"/>
-</section>
+<!-- ================= Quadric Surfaces ================= -->
+<xi:include href="exercises-quadric-surfaces.ptx"/>
 
-<!-- ================= 9.4 Extreme Values and Saddle Points ================= -->
-<section xml:id="subsection-abs-extrema">
+<!-- ================= Extreme Values and Saddle Points ================= -->
+<worksheet xml:id="subsection-abs-extrema">
     <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
+    <introduction>
     <p>
       If you would like to review this topic before attempting the exercises,
       click <xref ref="section-extreme-values" text="title"/>.
     </p>
-  <exercises xml:id="exercises-abs-extrema">
-
+    </introduction>
 
       <exercise xml:id="ex-extrema-triangle">
         <statement>
@@ -330,7 +313,6 @@ The same parabola and focus as before, with a red right triangle
       </p>
     </solution>
       </exercise>
-      </exercises>
-</section>
+</worksheet>
 
 </chapter>

@@ -7,12 +7,12 @@
   <worksheet xml:id="activity-01-intro-activity">
   <title> Exercises for <xref ref="section-taylor" text="title"/></title>
 
-  <!-- Optional introduction 
   <introduction>
     <p>
-      This is the introduction to the activity.
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-taylor" text="title"/>.
     </p>
-  </introduction> -->
+  </introduction>
 
   <!-- Exercises start here.  --> 
   <exercise xml:id="ex-tf-1">

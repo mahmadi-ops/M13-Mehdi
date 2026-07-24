@@ -1,51 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-triangle-area-figure" viewBox="0 0 360 220">
   <defs>
-    <clipPath id="prefigure-triangle-area-__clipPath-0">
+    <clipPath id="prefigure-triangle-area-clipPath-0">
       <rect x="10.0" y="10.0" width="340.0" height="200.0"/>
     </clipPath>
-    <clipPath id="prefigure-triangle-area-__clipPath-1">
+    <clipPath id="prefigure-triangle-area-clipPath-1">
       <rect x="10.0" y="10.0" width="340.0" height="200.0"/>
     </clipPath>
-    <marker id="prefigure-triangle-area-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
-      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
+    <marker id="prefigure-triangle-area-arrow-head-end-4_None_24_60-blue" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="13.1" refY="8.0">
+      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="blue" stroke="none"/>
     </marker>
-    <marker id="prefigure-triangle-area-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
-      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    <marker id="prefigure-triangle-area-arrow-head-end-4_None_24_60-blue-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="15.1" refY="10.0">
+      <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-triangle-area-arrow-head-end-3_None_24_60-red" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
-      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="red" stroke="none"/>
+    <marker id="prefigure-triangle-area-arrow-head-end-4_None_24_60-red" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="13.1" refY="8.0">
+      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="red" stroke="none"/>
     </marker>
-    <marker id="prefigure-triangle-area-arrow-head-end-3_None_24_60-red-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
-      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-    </marker>
-    <marker id="prefigure-triangle-area-arrow-head-start-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
-      <g transform="rotate(180, 6.75, 6.0)">
-        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-triangle-area-arrow-head-start-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
-      <g transform="rotate(180, 8.75, 8.0)">
-        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-triangle-area-arrow-head-start-3_None_24_60-red" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
-      <g transform="rotate(180, 6.75, 6.0)">
-        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="red" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-triangle-area-arrow-head-start-3_None_24_60-red-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
-      <g transform="rotate(180, 8.75, 8.0)">
-        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-      </g>
+    <marker id="prefigure-triangle-area-arrow-head-end-4_None_24_60-red-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="15.1" refY="10.0">
+      <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
   <line id="prefigure-triangle-area-tri-side-bc" x1="114.6" y1="38.6" x2="245.4" y2="181.4" stroke="black" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
   <line id="prefigure-triangle-area-tri-side-top" x1="114.6" y1="38.6" x2="323.8" y2="38.6" stroke="red" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
   <line id="prefigure-triangle-area-tri-side-right" x1="245.4" y1="181.4" x2="323.8" y2="38.6" stroke="blue" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <path id="prefigure-triangle-area-tri-vec-ac" stroke="blue" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-blue)" d="M 36.2 181.4 L 112.8 41.8"/>
-  <path id="prefigure-triangle-area-tri-vec-ab" stroke="red" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-red)" d="M 36.2 181.4 L 241.7 181.4"/>
+  <path id="prefigure-triangle-area-tri-vec-ac" stroke="blue" stroke-width="4" fill="none" d="M 36.2 181.4 L 114.6 38.6" marker-end="url(#prefigure-triangle-area-arrow-head-end-4_None_24_60-blue)"/>
+  <path id="prefigure-triangle-area-tri-vec-ab" stroke="red" stroke-width="4" fill="none" d="M 36.2 181.4 L 245.4 181.4" marker-end="url(#prefigure-triangle-area-arrow-head-end-4_None_24_60-red)"/>
   <g id="prefigure-triangle-area-tri-ac-label" transform="translate(71.4,106.0) translate(-27.3,-20.6)">
-    <g id="prefigure-triangle-area-__g-0">
+    <g id="prefigure-triangle-area-g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px; color:blue" width="27.328px" height="20.648px" role="img" focusable="false" viewBox="0 -1119 1510 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-triangle-area-MJX-2-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
@@ -79,7 +59,7 @@
     </g>
   </g>
   <g id="prefigure-triangle-area-tri-ab-label" transform="translate(140.8,185.4) translate(-13.7,-0.0)">
-    <g id="prefigure-triangle-area-__g-1">
+    <g id="prefigure-triangle-area-g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:red" width="27.312px" height="20.256px" role="img" focusable="false" viewBox="0 -1119 1509 1119" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-triangle-area-MJX-3-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>

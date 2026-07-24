@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="parabola-example-figure" viewBox="0 0 416 312">
   <defs>
-    <clipPath id="parabola-example-__clipPath-0">
+    <clipPath id="parabola-example-clipPath-0">
       <rect x="8.0" y="8.0" width="400.0" height="296.0"/>
     </clipPath>
-    <clipPath id="parabola-example-__clipPath-1">
+    <clipPath id="parabola-example-clipPath-1">
       <rect x="8.0" y="8.0" width="400.0" height="296.0"/>
     </clipPath>
   </defs>
@@ -24,20 +24,20 @@
       <line x1="8.0" y1="22.8" x2="408.0" y2="22.8"/>
     </g>
     <g id="parabola-example-axes" stroke="black" stroke-width="2">
-      <line id="parabola-example-__line-13" x1="8.0" y1="133.8" x2="408.0" y2="133.8" stroke="black" stroke-width="2"/>
+      <line id="parabola-example-line-13" x1="8.0" y1="133.8" x2="408.0" y2="133.8" stroke="black" stroke-width="2"/>
       <g>
-        <line id="parabola-example-__line-14" x1="208.0" y1="136.8" x2="208.0" y2="130.8"/>
-        <line id="parabola-example-__line-15" x1="356.1" y1="136.8" x2="356.1" y2="130.8"/>
+        <line id="parabola-example-line-14" x1="208.0" y1="136.8" x2="208.0" y2="130.8"/>
+        <line id="parabola-example-line-15" x1="356.1" y1="136.8" x2="356.1" y2="130.8"/>
       </g>
-      <line id="parabola-example-__line-16" x1="59.9" y1="304.0" x2="59.9" y2="8.0" stroke="black" stroke-width="2"/>
+      <line id="parabola-example-line-16" x1="59.9" y1="304.0" x2="59.9" y2="8.0" stroke="black" stroke-width="2"/>
       <g>
-        <line id="parabola-example-__line-17" x1="56.9" y1="281.8" x2="62.9" y2="281.8"/>
-        <line id="parabola-example-__line-18" x1="56.9" y1="207.8" x2="62.9" y2="207.8"/>
-        <line id="parabola-example-__line-19" x1="56.9" y1="59.8" x2="62.9" y2="59.8"/>
+        <line id="parabola-example-line-17" x1="56.9" y1="281.8" x2="62.9" y2="281.8"/>
+        <line id="parabola-example-line-18" x1="56.9" y1="207.8" x2="62.9" y2="207.8"/>
+        <line id="parabola-example-line-19" x1="56.9" y1="59.8" x2="62.9" y2="59.8"/>
       </g>
     </g>
-    <g id="parabola-example-__label-0" transform="translate(404.0,129.8) translate(-10.4,-8.2)">
-      <g id="parabola-example-__g-0">
+    <g id="parabola-example-label-0" transform="translate(404.0,129.8) translate(-10.4,-8.2)">
+      <g id="parabola-example-g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -52,8 +52,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-1" transform="translate(63.9,12.0) translate(0.0,-0.0)">
-      <g id="parabola-example-__g-1">
+    <g id="parabola-example-label-1" transform="translate(63.9,12.0) translate(0.0,-0.0)">
+      <g id="parabola-example-g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -68,8 +68,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-2" transform="translate(208.0,144.8) translate(-4.5,-0.0)">
-      <g id="parabola-example-__g-2">
+    <g id="parabola-example-label-2" transform="translate(208.0,144.8) translate(-4.5,-0.0)">
+      <g id="parabola-example-g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-4-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
@@ -84,8 +84,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-3" transform="translate(356.1,144.8) translate(-4.5,-0.0)">
-      <g id="parabola-example-__g-3">
+    <g id="parabola-example-label-3" transform="translate(356.1,144.8) translate(-4.5,-0.0)">
+      <g id="parabola-example-g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
@@ -100,8 +100,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-4" transform="translate(48.9,281.8) translate(-15.1,-6.0)">
-      <g id="parabola-example-__g-4">
+    <g id="parabola-example-label-4" transform="translate(48.9,281.8) translate(-15.1,-6.0)">
+      <g id="parabola-example-g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="15.080px" height="12.056px" role="img" focusable="false" viewBox="0 -666 833 666" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-6-TEX-N-2D" d="M11 179V252H277V179H11Z"/>
@@ -118,8 +118,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-5" transform="translate(48.9,207.8) translate(-29.2,-6.2)">
-      <g id="parabola-example-__g-5">
+    <g id="parabola-example-label-5" transform="translate(48.9,207.8) translate(-29.2,-6.2)">
+      <g id="parabola-example-g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="29.160px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1611 688" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-7-TEX-N-2D" d="M11 179V252H277V179H11Z"/>
@@ -140,8 +140,8 @@
         </svg>
       </g>
     </g>
-    <g id="parabola-example-__label-6" transform="translate(48.9,59.8) translate(-23.1,-6.2)">
-      <g id="parabola-example-__g-6">
+    <g id="parabola-example-label-6" transform="translate(48.9,59.8) translate(-23.1,-6.2)">
+      <g id="parabola-example-g-6">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="23.128px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1278 688" x="0.0" y="0.0">
           <defs>
             <path id="parabola-example-MJX-8-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -161,10 +161,10 @@
       </g>
     </g>
   </g>
-  <path id="parabola-example-parabola" stroke="blue" stroke-width="2.5" fill="none" d="M 45.0 223.3 L 48.3 219.8 L 51.6 216.3 L 54.8 212.9 L 58.1 209.6 L 61.3 206.3 L 64.6 203.1 L 67.9 200.0 L 71.1 197.0 L 74.4 194.0 L 77.6 191.1 L 80.9 188.3 L 84.1 185.5 L 87.4 182.8 L 90.7 180.2 L 93.9 177.7 L 97.2 175.2 L 100.4 172.8 L 103.7 170.5 L 107.0 168.2 L 110.2 166.0 L 113.5 163.9 L 116.7 161.9 L 120.0 159.9 L 123.3 158.0 L 126.5 156.2 L 129.8 154.4 L 133.0 152.7 L 136.3 151.1 L 139.6 149.6 L 142.8 148.1 L 146.1 146.7 L 149.3 145.4 L 152.6 144.2 L 155.9 143.0 L 159.1 141.9 L 162.4 140.8 L 165.6 139.9 L 168.9 139.0 L 172.1 138.1 L 175.4 137.4 L 178.7 136.7 L 181.9 136.1 L 185.2 135.6 L 188.4 135.1 L 191.7 134.7 L 195.0 134.4 L 198.2 134.1 L 201.5 133.9 L 204.7 133.8 L 208.0 133.8 L 211.3 133.8 L 214.5 133.9 L 217.8 134.1 L 221.0 134.4 L 224.3 134.7 L 227.6 135.1 L 230.8 135.6 L 234.1 136.1 L 237.3 136.7 L 240.6 137.4 L 243.9 138.1 L 247.1 139.0 L 250.4 139.9 L 253.6 140.8 L 256.9 141.9 L 260.1 143.0 L 263.4 144.2 L 266.7 145.4 L 269.9 146.7 L 273.2 148.1 L 276.4 149.6 L 279.7 151.1 L 283.0 152.7 L 286.2 154.4 L 289.5 156.2 L 292.7 158.0 L 296.0 159.9 L 299.3 161.9 L 302.5 163.9 L 305.8 166.0 L 309.0 168.2 L 312.3 170.5 L 315.6 172.8 L 318.8 175.2 L 322.1 177.7 L 325.3 180.2 L 328.6 182.8 L 331.9 185.5 L 335.1 188.3 L 338.4 191.1 L 341.6 194.0 L 344.9 197.0 L 348.1 200.0 L 351.4 203.1 L 354.7 206.3 L 357.9 209.6 L 361.2 212.9 L 364.4 216.3 L 367.7 219.8 L 371.0 223.3" clip-path="url(#parabola-example-__clipPath-1)"/>
+  <path id="parabola-example-parabola" stroke="blue" stroke-width="2.5" fill="none" d="M 45.0 223.3 L 48.3 219.8 L 51.6 216.3 L 54.8 212.9 L 58.1 209.6 L 61.3 206.3 L 64.6 203.1 L 67.9 200.0 L 71.1 197.0 L 74.4 194.0 L 77.6 191.1 L 80.9 188.3 L 84.1 185.5 L 87.4 182.8 L 90.7 180.2 L 93.9 177.7 L 97.2 175.2 L 100.4 172.8 L 103.7 170.5 L 107.0 168.2 L 110.2 166.0 L 113.5 163.9 L 116.7 161.9 L 120.0 159.9 L 123.3 158.0 L 126.5 156.2 L 129.8 154.4 L 133.0 152.7 L 136.3 151.1 L 139.6 149.6 L 142.8 148.1 L 146.1 146.7 L 149.3 145.4 L 152.6 144.2 L 155.9 143.0 L 159.1 141.9 L 162.4 140.8 L 165.6 139.9 L 168.9 139.0 L 172.1 138.1 L 175.4 137.4 L 178.7 136.7 L 181.9 136.1 L 185.2 135.6 L 188.4 135.1 L 191.7 134.7 L 195.0 134.4 L 198.2 134.1 L 201.5 133.9 L 204.7 133.8 L 208.0 133.8 L 211.3 133.8 L 214.5 133.9 L 217.8 134.1 L 221.0 134.4 L 224.3 134.7 L 227.6 135.1 L 230.8 135.6 L 234.1 136.1 L 237.3 136.7 L 240.6 137.4 L 243.9 138.1 L 247.1 139.0 L 250.4 139.9 L 253.6 140.8 L 256.9 141.9 L 260.1 143.0 L 263.4 144.2 L 266.7 145.4 L 269.9 146.7 L 273.2 148.1 L 276.4 149.6 L 279.7 151.1 L 283.0 152.7 L 286.2 154.4 L 289.5 156.2 L 292.7 158.0 L 296.0 159.9 L 299.3 161.9 L 302.5 163.9 L 305.8 166.0 L 309.0 168.2 L 312.3 170.5 L 315.6 172.8 L 318.8 175.2 L 322.1 177.7 L 325.3 180.2 L 328.6 182.8 L 331.9 185.5 L 335.1 188.3 L 338.4 191.1 L 341.6 194.0 L 344.9 197.0 L 348.1 200.0 L 351.4 203.1 L 354.7 206.3 L 357.9 209.6 L 361.2 212.9 L 364.4 216.3 L 367.7 219.8 L 371.0 223.3" clip-path="url(#parabola-example-clipPath-1)"/>
   <line id="parabola-example-directrix" x1="15.4" y1="59.8" x2="400.6" y2="59.8" stroke="red" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
   <g id="parabola-example-dir-label" transform="translate(296.9,49.8) translate(-59.4,-21.9)">
-    <g id="parabola-example-__g-7">
+    <g id="parabola-example-g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.248px" width="118.880px" height="21.896px" role="img" focusable="false" viewBox="0 -864.9 6568.1 1209.9" x="0.0" y="0.0">
         <defs>
           <path id="parabola-example-MJX-9-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/>
@@ -220,7 +220,7 @@
   </g>
   <circle id="parabola-example-focus" cx="208.0" cy="207.8" r="3.5" stroke="black" stroke-width="2" fill="black"/>
   <g id="parabola-example-focus-label" transform="translate(218.0,213.8) translate(0.0,-0.0)">
-    <g id="parabola-example-__g-8">
+    <g id="parabola-example-g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.328px" width="115.760px" height="21.984px" role="img" focusable="false" viewBox="0 -864.9 6395.9 1214.4" x="0.0" y="0.0">
         <defs>
           <path id="parabola-example-MJX-10-TEX-N-46" d="M128 619Q121 626 117 628T101 631T58 634H25V680H582V676Q584 670 596 560T610 444V440H570V444Q563 493 561 501Q555 538 543 563T516 601T477 622T431 631T374 633H334H286Q252 633 244 631T233 621Q232 619 232 490V363H284Q287 363 303 363T327 364T349 367T372 373T389 385Q407 403 410 459V480H450V200H410V221Q407 276 389 296Q381 303 371 307T348 313T327 316T303 317T284 317H232V189L233 61Q240 54 245 52T270 48T333 46H360V0H348Q324 3 182 3Q51 3 36 0H25V46H58Q100 47 109 49T128 61V619Z"/>
@@ -285,7 +285,7 @@
   </g>
   <circle id="parabola-example-vertex" cx="208.0" cy="133.8" r="3" stroke="black" stroke-width="2" fill="orange"/>
   <g id="parabola-example-curve-label" transform="translate(137.9,259.6) translate(0.0,-9.8)">
-    <g id="parabola-example-__g-9">
+    <g id="parabola-example-g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="119.648px" height="19.616px" role="img" focusable="false" viewBox="0 -833.9 6610.6 1083.9" x="0.0" y="0.0">
         <defs>
           <path id="parabola-example-MJX-11-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>

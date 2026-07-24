@@ -2,16 +2,21 @@
 
 <!--
   Velocity and direction of a projectile after a given time.
-  Section-level <exercises> for the Projectile Motion section (1.3).
+  Worksheet for the Exercises chapter (Projectile Motion / Parametrization).
   The figure is a PreFigure <diagram> embedded directly inside <image>.
 -->
 
-<exercises xml:id="exercises-projectile-velocity">
-  <title>Velocity and direction after a given time</title>
+<worksheet xml:id="exercises-projectile-velocity">
+  <title> Exercises for <xref ref="section-parametrization" text="title"/></title>
 
   <introduction>
     <p>
-      The exercises below use the figure of a projectile at a general instant.
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-parametrization" text="title"/>.
+    </p>
+    <p>
+      The exercises below on the velocity and direction of a projectile after a
+      given time use the figure of a projectile at a general instant.
     </p>
 
     <figure xml:id="fig-velocity-at-P">
@@ -157,4 +162,4 @@
       </p>
     </solution>
   </exercise>
-</exercises>
+</worksheet>

@@ -2,6 +2,50 @@
 <chapter xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Cross Product</title>
 
+<objectives>
+<introduction>
+<p>
+After completing this chapter, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand the cross product as an operation that produces a vector
+perpendicular to two given vectors, with its direction fixed by the
+right-hand rule.
+</p>
+</li>
+<li>
+<p>
+Interpret the magnitude of the cross product as the area of the parallelogram
+spanned by the two vectors, and recognize that the cross product is zero
+exactly when the vectors are parallel.
+</p>
+</li>
+<li>
+<p>
+Understand why the geometric and component definitions of the cross product
+describe one and the same object.
+</p>
+</li>
+<li>
+<p>
+Contrast the cross product with the dot product: one returns a vector and
+detects parallelism, while the other returns a scalar and detects
+perpendicularity.
+</p>
+</li>
+<li>
+<p>
+Understand torque as a measure of the turning effect of a force, and
+appreciate the role of cross product in determining torque.
+</p>
+</li>
+</ul>
+</objectives>
+
 <!-- ================================================================ -->
 <section xml:id="sec-cross-definition">
 <title>Definition and Properties of the Cross Product</title>
