@@ -22,6 +22,18 @@
           at which the tangent plane is parallel to the plane
           <m>-x - 5y - 2z = -3</m>.
         </p>
+      </statement>
+
+      <solution>
+        <p>
+          Multiplying by <m>-1</m>, the given plane is
+          <m>x + 5y + 2z = 3</m>, with normal vector
+          <m>\mathbf{n} = \langle 1, 5, 2\rangle</m>.
+          The tangent plane to the ellipsoid is parallel to this plane exactly
+          at the points of the ellipsoid that are closest to and farthest from
+          it, so we minimize and maximize the distance to the plane subject to
+          the constraint of lying on the ellipsoid.
+        </p>
 
         <figure xml:id="fig-lagrange-schematic">
           <caption>
@@ -124,18 +136,6 @@
             </prefigure>
           </image>
         </figure>
-      </statement>
-
-      <solution>
-        <p>
-          Multiplying by <m>-1</m>, the given plane is
-          <m>x + 5y + 2z = 3</m>, with normal vector
-          <m>\mathbf{n} = \langle 1, 5, 2\rangle</m>.
-          The tangent plane to the ellipsoid is parallel to this plane exactly
-          at the points of the ellipsoid that are closest to and farthest from
-          it, so we minimize and maximize the distance to the plane subject to
-          the constraint of lying on the ellipsoid.
-        </p>
 
         <p>
           Choose a point on the plane, say <m>P(3,0,0)</m>.
