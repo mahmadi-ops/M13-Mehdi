@@ -544,8 +544,84 @@ t = \frac{x}{v_0 \cos(\theta)}.
 </p>
 
 <p>
-As expected, the trajectory of a projectile is a parabolic.  
+As expected, the trajectory of a projectile is a parabola, as shown in
+<xref ref="fig-projectile-velocity"/>.
 </p>
+
+<figure xml:id="fig-projectile-velocity">
+<caption>
+The velocity of a projectile at five instants along its parabolic path.
+The horizontal component <m>\vec v_x</m> stays constant while the vertical
+component <m>\vec v_y</m> changes under the constant downward acceleration
+<m>\vec g</m>; at the apex the vertical component is zero.
+</caption>
+<image width="90%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-projectile-velocity">
+<diagram dimensions="(680,360)" margins="5">
+  <definition>f(x) = 0.14*x*(10 - x)</definition>
+  <coordinates bbox="(-1.8, -2.7, 13.0, 5.1)">
+    <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+    <label anchor="(0,0)" alignment="sw" offset="(-3,-3)"><m>0</m></label>
+
+    <!-- ================= trajectory (dashed parabola) ================= -->
+    <graph domain="(0,10.9)" function="f" stroke="black" thickness="1.5" dash="5"/>
+
+    <!-- ================= acceleration a = g ================= -->
+    <line p1="(4.2,0.55)" p2="(4.2,-0.55)" stroke="#f5a623" thickness="3" arrows="1"/>
+    <label anchor="(4.55,-0.5)" alignment="e"><m>\vec{a} = \vec{g} = -g\hat{\jmath}</m></label>
+
+    <!-- ================= LAUNCH  P0 = (0,0), slope 1.4 ================= -->
+    <line p1="(1.5,0)" p2="(1.5,2.1)" stroke="gray" thickness="1" dash="3"/>
+    <line p1="(0,2.1)" p2="(1.5,2.1)" stroke="gray" thickness="1" dash="3"/>
+    <line p1="(0,0)" p2="(1.5,0)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(0,0)" p2="(0,2.1)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(0,0)" p2="(1.5,2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <angle-marker points="((1,0),(0,0),(1.5,2.1))" radius="34" stroke="black"><m>\theta</m></angle-marker>
+    <label anchor="(0.9,1.5)" alignment="nw"><m>\vec{v}_0</m></label>
+    <label anchor="(0.75,0)" alignment="s" offset="(0,-2)"><m>\vec{v}_{x0}</m></label>
+    <label anchor="(0,1.05)" alignment="w"><m>\vec{v}_{y0}</m></label>
+
+    <!-- ================= ASCENDING  P1 = (2.5,2.625), slope 0.7 ========= -->
+    <line p1="(2.5,2.625)" p2="(4.0,2.625)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(2.5,2.625)" p2="(2.5,3.675)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(2.5,2.625)" p2="(4.0,3.675)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <label anchor="(3.3,3.3)" alignment="n"><m>\vec{v}</m></label>
+    <label anchor="(3.25,2.625)" alignment="s" offset="(0,-2)"><m>\vec{v}_x</m></label>
+    <label anchor="(2.5,3.2)" alignment="w"><m>\vec{v}_y</m></label>
+
+    <!-- ================= APEX  P2 = (5,3.5), slope 0 ================= -->
+    <line p1="(5,3.5)" p2="(6.5,3.5)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <label anchor="(6.0,3.5)" alignment="n"><m>\vec{v}</m></label>
+    <line p1="(5.9,4.15)" p2="(5.05,3.6)" stroke="black" thickness="0.8"/>
+    <label anchor="(6.0,4.2)" alignment="e"><m>\vec{v}_y = 0 \text{ at this point}</m></label>
+
+    <!-- ================= DESCENDING  P3 = (7.5,2.625), slope -0.7 ======= -->
+    <line p1="(7.5,2.625)" p2="(9.0,2.625)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(7.5,2.625)" p2="(7.5,1.575)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(7.5,2.625)" p2="(9.0,1.575)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <label anchor="(8.25,2.625)" alignment="n"><m>\vec{v}_x</m></label>
+    <label anchor="(7.5,2.1)" alignment="w"><m>\vec{v}_y</m></label>
+    <label anchor="(9.15,1.5)" alignment="se"><m>\vec{v}</m></label>
+
+    <!-- ================= LANDING  P4 = (10,0), slope -1.4 ================= -->
+    <line p1="(10,0)" p2="(11.5,0)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(10,0)" p2="(10,-2.1)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
+    <line p1="(10,0)" p2="(11.5,-2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <label anchor="(10.75,0)" alignment="n"><m>\vec{v}_x</m></label>
+    <label anchor="(10,-1.05)" alignment="w"><m>\vec{v}_y</m></label>
+    <label anchor="(11.55,-2.1)" alignment="e"><m>\vec{v}</m></label>
+
+    <!-- ================= points ================= -->
+    <point p="(0,0)" size="3.5" stroke="red" fill="red"/>
+    <point p="(2.5,2.625)" size="3.5" stroke="red" fill="red"/>
+    <point p="(5,3.5)" size="3.5" stroke="red" fill="red"/>
+    <point p="(7.5,2.625)" size="3.5" stroke="red" fill="red"/>
+    <point p="(10,0)" size="3.5" stroke="red" fill="red"/>
+  </coordinates>
+</diagram>
+</prefigure>
+</image>
+</figure>
 
 </section>
 
