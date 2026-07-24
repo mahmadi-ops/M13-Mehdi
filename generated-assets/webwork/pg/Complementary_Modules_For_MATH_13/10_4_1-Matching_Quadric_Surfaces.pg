@@ -1,46 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
-<webwork-representations>
-  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-1" ww-id="webwork-1">
-    <static seed="1">
-      <statement><p>Match the equations of the surfaces with the graphs A<ndash/>F shown above by entering a letter from A to F in each blank.</p>
-<p><m>y = 2x^2 + z^2</m> matches graph <fillin characters="4" name="AnSwEr0001"/>.</p>
-<p><m>y^2 = x^2 + 2z^2</m> matches graph <fillin characters="4" name="AnSwEr0002"/>.</p>
-<p><m>x^2 + 2z^2 = 1</m> matches graph <fillin characters="4" name="AnSwEr0003"/>.</p>
-<p><m>y = x^2 - z^2</m> matches graph <fillin characters="4" name="AnSwEr0004"/>.</p>
-</statement>
-      <answer>
-        <p>
-          <m>\text{E}</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>\text{B}</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>\text{D}</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>\text{C}</m>
-        </p>
-      </answer>
-      <solution><p>We identify each surface by slicing, just as in this section.  Here the special axis is the <m>y</m>-axis, so we slice with the planes <m>y = c\text{,}</m> <m>x = c\text{,}</m> and <m>z = c\text{.}</m></p>
-<p>For <m>y = 2x^2 + z^2\text{,}</m> the plane <m>y = c</m> gives <m>2x^2 + z^2 = c\text{:}</m> no trace for <m>c \lt 0\text{,}</m> a single point when <m>c = 0\text{,}</m> and ellipses that grow as <m>c</m> increases.  The planes <m>x = c</m> and <m>z = c</m> give the parabolas <m>y = z^2 + 2c^2</m> and <m>y = 2x^2 + c^2\text{,}</m> both opening in the positive <m>y</m> direction.  Ellipses on one side only together with parabolas: an elliptical paraboloid opening along the positive <m>y</m>-axis, graph E.</p>
-<p>For <m>y^2 = x^2 + 2z^2\text{,}</m> the plane <m>y = c</m> gives <m>x^2 + 2z^2 = c^2\text{:}</m> an ellipse for every <m>c \neq 0\text{,}</m> on both sides of the origin, shrinking to a single point when <m>c = 0\text{.}</m>  The plane <m>z = 0</m> gives <m>y^2 = x^2\text{,}</m> the two crossing lines <m>y = \pm x\text{.}</m>  Ellipses collapsing to a point, together with crossing lines: an elliptic cone along the <m>y</m>-axis, graph B.</p>
-<p>For <m>x^2 + 2z^2 = 1\text{,}</m> the variable <m>y</m> is missing, so the plane <m>y = c</m> gives the <em>same</em> ellipse <m>x^2 + 2z^2 = 1</m> for every value of <m>c\text{.}</m>  Identical elliptical slices at every station: a cylinder parallel to the <m>y</m>-axis, graph D.</p>
-<p>For <m>y = x^2 - z^2\text{,}</m> the plane <m>z = c</m> gives the parabola <m>y = x^2 - c^2</m> opening in the positive <m>y</m> direction, while the plane <m>x = c</m> gives the parabola <m>y = c^2 - z^2</m> opening in the negative <m>y</m> direction, and the plane <m>y = 0</m> gives the crossing lines <m>z = \pm x\text{.}</m>  Parabolas opening in opposite directions: a hyperbolic paraboloid, a saddle, graph C.</p>
-<p>Graphs A and F match none of the equations.  Slicing the ellipsoid in A gives bounded ellipses in every direction, which none of the equations produce.  Slicing the two bowls in F with planes <m>y = c</m> gives ellipses whose size grows like <m>\sqrt{|c|}\text{,}</m> unlike the straight-sided linear growth of the cone in B.</p>
-</solution>
-    </static>
-    <rendering-data problemSource="Complementary_Modules_For_MATH_13/10_4_1-Matching_Quadric_Surfaces.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
-    <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2026-07-24T23:01:06Z       
+###       on 2026-07-24T23:01:08Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -132,6 +92,3 @@ END_PGML_SOLUTION
 ############################################################
 
 ENDDOCUMENT();
-]]></pg>
-  </webwork-reps>
-</webwork-representations>

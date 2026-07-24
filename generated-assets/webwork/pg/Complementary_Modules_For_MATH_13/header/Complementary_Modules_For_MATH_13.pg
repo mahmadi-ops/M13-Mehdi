@@ -33,7 +33,7 @@ TEXT(MODES(
     HTML=>"<span style='font-variant: small-caps; font-size:large;'>WeBWorK Assignment ".protect_underbar($setNumber)." is due: $formattedDueDate. </span>$PAR",
 ));
 
-TEXT("This assignment contains exercises from Article  of Complementary Modules For MATH 13.");
+TEXT("This assignment contains exercises from Book  of Complementary Modules For MATH 13.");
 
 TEXT($END_ONE_COLUMN);
 
