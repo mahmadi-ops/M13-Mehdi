@@ -538,7 +538,7 @@ t = \frac{x}{v_0 \cos(\theta)}.
   Substituting into the <m>y(t)</m> equation gives
 <md>
   <mrow> \amp y(t) = - \frac{1}{2} g {\frac{x}{v_0 \cos(\theta)}}^2 + v_0 \sin(\theta) {\frac{x}{v_0 \cos(\theta)}} </mrow>
-  <mrow> \amp y(t) = - \frac{g}{2 v_0^2 \cos^2(\theta)} x^2 + \tan(\theta) x </mrow>
+  <mrow> \amp y(t) = - \frac{g}{2 v_0^2 \cos^2(\theta)} x^2 + x \tan(\theta)  </mrow>
   <mrow> \amp y(t) \propto -x^2 </mrow>
 </md>
 </p>
@@ -547,9 +547,6 @@ t = \frac{x}{v_0 \cos(\theta)}.
 As expected, the trajectory of a projectile is a parabolic.  
 </p>
 
-<p>
-  figure of parabolic trajectory needed here that begins at the origin.
-</p>
 </section>
 
 <xi:include href="art11-projectile-incline.ptx"/>
