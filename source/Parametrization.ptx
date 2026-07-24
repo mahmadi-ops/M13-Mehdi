@@ -645,6 +645,24 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
 </image>
 </figure>
 
+<p>
+<xref ref="fig-projectile-motion-video"/> animates this motion: the projectile
+follows the parabolic path while its horizontal velocity stays constant and its
+vertical velocity is steadily turned around by gravity.
+</p>
+
+<figure xml:id="fig-projectile-motion-video">
+<caption>
+A projectile launched from the origin traces out its parabolic trajectory. The
+horizontal velocity component <m>v_x</m> is constant, while the vertical
+component <m>v_y</m> shrinks to zero at the apex and then grows in the downward
+direction as the projectile falls.
+</caption>
+<video xml:id="video-projectile-motion"
+       source="videos/projectile_motion_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
 </section>
 
 <xi:include href="art11-projectile-incline.ptx"/>
