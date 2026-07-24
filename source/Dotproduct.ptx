@@ -143,6 +143,10 @@ can be evaluated using the following equation.
 <title>Angle between Two Vectors</title>
 <statement>
 <p>
+Let <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m> be two nonzero vectors, and let
+<m>\theta</m>, with <m>0 \le \theta \le \pi</m>, be the angle between them.
+Then
 <md xml:id="eq-4" number="yes">
 \cos\theta = \frac{u_1v_1+u_2v_2+u_3v_3}{|\mathbf u||\mathbf v|}
 \quad\iff\quad

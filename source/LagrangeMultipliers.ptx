@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="section-lagrange-multipliers" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Lagrange Multipliers</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Recognize a constrained optimization problem: finding the maximum and
+minimum values of a function <m>f</m> when its inputs are restricted by a
+constraint of the form <m>g = 0</m>, such as a curve in the plane or a
+surface in space.
+</p>
+</li>
+<li>
+<p>
+Explain geometrically why, at a constrained extremum, the gradient
+vectors <m>\nabla f</m> and <m>\nabla g</m> must be collinear, and why
+the level curve of <m>f</m> through the extremum is tangent to the
+constraint curve there.
+</p>
+</li>
+<li>
+<p>
+State the method of Lagrange multipliers and use it to find the extrema
+of a function subject to a constraint.
+</p>
+</li>
+<li>
+<p>
+Solve shortest-distance problems with Lagrange multipliers, and compare
+the method with the direct approach that uses the normal vector.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+Constrained optimizations are everywhere. A robot tracing a surface must
+keep its hand on that surface, so its coordinates must satisfy the
+equation of the surface at all times; planning the robot's motion is then
+a problem of optimizing time, distance, or energy expense subject to that
+constraint. Fitting a line to data points in an image can also be posed
+as a constrained optimization problem. In
+<xref ref="section-extreme-values"/> we found the extreme values of a
+function <m>f(x,y)</m> over regions of the plane. In this chapter we
+learn how to find the extrema of a function whose domain is restricted to
+a subset of the plane such as a curve, namely the problem
+<md xml:id="eq-lagrange-problem" number="yes">
+\text{maximize or minimize } f(x,y) \quad
+\text{subject to the constraint } g(x,y) = 0.
+</md>
+More generally, one can impose several constraints on a function of many
+variables; here we work with a single constraint on a function of two or
+three variables.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lagrange-collinear">
+<title>Why the Gradients Must Be Collinear</title>
+
+<p>
+The set of points satisfying the constraint <m>g(x,y) = 0</m> is a curve
+<m>C</m> in the plane: it is precisely the level curve of <m>g</m> of
+value <m>0</m>. We showed in
+<xref ref="thm-gradient-perp-level-curve"/> that the gradient of a
+function is perpendicular to its level curves, so at every point of
+<m>C</m> where <m>\nabla g \neq \mathbf 0</m>,
+<md xml:id="eq-lagrange-gradg-perp" number="yes">
+\nabla g \cdot \mathbf T = 0,
+</md>
+where <m>\mathbf T</m> is a vector tangent to <m>C</m> at that point.
+To stay on the curve, any small motion away from the point must be along
+the tangent direction <m>\mathbf T</m>.
+</p>
+
+<p>
+How does <m>f</m> change as we move along <m>C</m>? By
+<xref ref="eq-dirderiv-gradient-relation"/>, the rate of change of
+<m>f</m> in the direction of the unit tangent vector <m>\mathbf T</m> is
+the directional derivative
+<md xml:id="eq-lagrange-rate-along-C" number="yes">
+D_{\mathbf T} f = \nabla f \cdot \mathbf T.
+</md>
+If <m>\nabla f \cdot \mathbf T \neq 0</m> at a point of <m>C</m>, as in
+<xref ref="fig-lagrange-tangent"/>, then the motion along the curve has a
+component along <m>\nabla f</m>: the value of <m>f</m> increases as we
+move along <m>C</m> in the direction of <m>\mathbf T</m> and decreases as
+we move in the direction of <m>-\mathbf T</m>. Such a point cannot be a
+constrained maximum or minimum.
+</p>
+
+<figure xml:id="fig-lagrange-tangent">
+<caption>
+A point of the constraint curve <m>g(x,y)=0</m> that is not a constrained
+extremum. The gradient <m>\nabla g</m> is perpendicular to the curve by
+<xref ref="thm-gradient-perp-level-curve"/>, but <m>\nabla f</m> is not:
+it has a nonzero component (dashed) along the tangent direction
+<m>\mathbf T</m>, so <m>f</m> is still changing as we move along the
+curve.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-tangent">
+<diagram dimensions="(440,250)" margins="10">
+<definition>c(t) = (1.4*t, 1.1*sin(t))</definition>
+<coordinates bbox="(-3.7,-1.7,3.7,2.3)">
+<parametric-curve at="lt-C" function="c" domain="(-2.4,2.4)"
+                  stroke="#009E73" thickness="2.5"/>
+<line at="lt-ra1" endpoints="((1.100,0.781),(1.028,0.901))"
+      stroke="black" thickness="1.5"/>
+<line at="lt-ra2" endpoints="((1.028,0.901),(0.908,0.829))"
+      stroke="black" thickness="1.5"/>
+<line at="lt-proj" endpoints="((0.980,0.709),(1.623,1.095))"
+      stroke="#D55E00" dash="5 4" thickness="2"/>
+<line at="lt-drop" endpoints="((1.185,1.823),(1.623,1.095))"
+      stroke="#7F7F7F" dash="3 4" thickness="1"/>
+<vector at="lt-T" v="(0.943,0.567)" tail="(0.980,0.709)"
+        stroke="#0072B2" thickness="3"/>
+<vector at="lt-gradg" v="(-0.515,0.857)" tail="(0.980,0.709)"
+        stroke="#009E73" thickness="3"/>
+<vector at="lt-gradf" v="(0.205,1.114)" tail="(0.980,0.709)"
+        stroke="#D55E00" thickness="3"/>
+<point at="lt-P" p="(0.980,0.709)" fill="black" alignment="se">
+<m>P</m>
+</point>
+<label at="lt-C-label" anchor="(-2.3,-1.35)" alignment="e" color="#009E73">
+<m>g(x,y)=0</m>
+</label>
+<label at="lt-T-label" anchor="(2.05,1.28)" alignment="e" color="#0072B2">
+<m>\mathbf T</m>
+</label>
+<label at="lt-gradg-label" anchor="(0.35,1.66)" alignment="nw" color="#009E73">
+<m>\nabla g</m>
+</label>
+<label at="lt-gradf-label" anchor="(1.24,1.95)" alignment="n" color="#D55E00">
+<m>\nabla f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wavy green curve represents the constraint g of x y equals 0. At a point P on the curve, a blue arrow T is tangent to the curve, a green arrow, the gradient of g, is perpendicular to the curve, and a red arrow, the gradient of f, points in a different direction. A dashed red segment along the tangent shows the component of the gradient of f in the tangent direction. A small square marks the right angle between T and the gradient of g.">
+  <annotation ref="lt-C" text="The constraint curve, where g of x y equals 0, drawn in green."/>
+  <annotation ref="lt-P" text="A point P on the constraint curve that is not a constrained extremum."/>
+  <annotation ref="lt-T" text="The tangent vector T, drawn in blue: any motion that stays on the curve must be along T."/>
+  <annotation ref="lt-gradg" text="The gradient of g, drawn in green, perpendicular to the constraint curve because the curve is a level curve of g."/>
+  <annotation ref="lt-gradf" text="The gradient of f, drawn in red. It is not perpendicular to the curve at P."/>
+  <annotation ref="lt-proj" text="The component of the gradient of f along the tangent direction, drawn as a dashed red segment. Because it is nonzero, f changes as we move along the curve, so P is not an extremum."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+At a constrained local maximum or minimum, then, a small motion along the
+curve must not produce any change in <m>f</m>: the rate of change
+<xref ref="eq-lagrange-rate-along-C"/> must vanish, so
+<md xml:id="eq-lagrange-gradf-perp" number="yes">
+\nabla f \cdot \mathbf T = 0.
+</md>
+Now compare <xref ref="eq-lagrange-gradg-perp"/> and
+<xref ref="eq-lagrange-gradf-perp"/>: at a constrained extremum, the
+tangent vector <m>\mathbf T</m> is perpendicular to both gradients
+<m>\nabla f</m> and <m>\nabla g</m>. In the plane, all vectors
+perpendicular to the nonzero vector <m>\mathbf T</m> lie on a single
+line, so <m>\nabla f</m> and <m>\nabla g</m> must be collinear (parallel).
+Phrased differently, there exists some number <m>\lambda \in \R</m> such
+that
+<md xml:id="eq-lagrange-collinear" number="yes">
+\nabla f = \lambda\, \nabla g.
+</md>
+</p>
+
+<p>
+<xref ref="fig-lagrange-level-curves"/> explains the condition
+<xref ref="eq-lagrange-collinear"/> by superposing the constraint curve
+<m>g(x,y) = 0</m> onto the family of level curves of <m>f(x,y)</m>, that
+is, the collection of curves <m>f(x,y) = c</m>, where <m>c</m> is a real
+number in the range of <m>f</m>. In the figure,
+<m>c_1 \lt c^* \lt c_3 \lt c_4 \lt c_5</m>. Imagine a point moving along
+the constraint curve from <m>(x_1,y_1)</m> to <m>(x_2,y_2)</m>.
+Initially, the motion has a component along the negative gradient
+direction <m>-\nabla f</m>, so the value of <m>f</m> decreases. This
+component becomes smaller and smaller. When the moving point reaches
+<m>(x^*,y^*)</m>, the motion is perpendicular to <m>\nabla f</m>. From
+that point on, the motion has a component along the gradient direction
+<m>\nabla f</m>, so the value of <m>f</m> increases. Thus at
+<m>(x^*,y^*)</m> the function <m>f</m> achieves a local minimum on the
+constraint curve, namely the value <m>c^*</m>. The motion is in the
+tangential direction of the constraint curve, which is perpendicular to
+<m>\nabla g</m>; therefore at <m>(x^*,y^*)</m> the two gradients
+<m>\nabla f</m> and <m>\nabla g</m> are collinear, which is what
+<xref ref="eq-lagrange-collinear"/> says. Since both curves are
+perpendicular to the same line at <m>(x^*,y^*)</m>, the level curve
+<m>f(x,y) = c^*</m> and the constraint curve <m>g(x,y) = 0</m> are
+tangent at <m>(x^*,y^*)</m>.
+</p>
+
+<figure xml:id="fig-lagrange-level-curves">
+<caption>
+The constraint curve <m>g(x,y)=0</m> superposed on the family of level
+curves of <m>f</m>, with <m>c_1 \lt c^* \lt c_3 \lt c_4 \lt c_5</m>. At
+the constrained minimum <m>(x^*,y^*)</m>, the level curve
+<m>f = c^*</m> is tangent to the constraint curve and the two gradients
+are collinear: <m>\nabla f = \lambda\,\nabla g</m>. Here they point in
+opposite directions, so <m>\lambda \lt 0</m>; it is only the
+collinearity that matters.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-level-curves">
+<diagram dimensions="(365,365)" margins="10">
+<definition>c1(t) = (1.0*cos(t), 1.0*sin(t))</definition>
+<definition>cs(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+<definition>c3(t) = (2.0*cos(t), 2.0*sin(t))</definition>
+<definition>c4(t) = (2.5*cos(t), 2.5*sin(t))</definition>
+<definition>c5(t) = (3.0*cos(t), 3.0*sin(t))</definition>
+<definition>gc(t) = (t, -1.5 - 0.25*t^2)</definition>
+<coordinates bbox="(-3.6,-3.7,3.6,3.5)">
+<parametric-curve at="lc-c1" function="c1" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c3" function="c3" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c4" function="c4" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c5" function="c5" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-cstar" function="cs" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="lc-g" function="gc" domain="(-2.55,2.55)"
+                  stroke="#009E73" thickness="2.5"/>
+<vector at="lc-gradf" v="(0,-0.95)" tail="(0,-1.5)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="lc-gradg" v="(0,0.8)" tail="(0,-1.5)"
+        stroke="#009E73" thickness="3"/>
+<point at="lc-P1" p="(-2.3,-2.823)" fill="black" alignment="w">
+<m>(x_1,y_1)</m>
+</point>
+<point at="lc-P2" p="(2.3,-2.823)" fill="black" alignment="e">
+<m>(x_2,y_2)</m>
+</point>
+<point at="lc-Pstar" p="(0,-1.5)" fill="black" alignment="se">
+<m>(x^*,y^*)</m>
+</point>
+<label at="lc-c1-label" anchor="(0,1.12)" alignment="c">
+<m>f=c_1</m>
+</label>
+<label at="lc-cstar-label" anchor="(-1.28,1.28)" alignment="c" color="#D55E00">
+<m>f=c^*</m>
+</label>
+<label at="lc-c3-label" anchor="(0,2.12)" alignment="c">
+<m>f=c_3</m>
+</label>
+<label at="lc-c4-label" anchor="(-1.88,1.88)" alignment="c">
+<m>f=c_4</m>
+</label>
+<label at="lc-c5-label" anchor="(0,3.12)" alignment="c">
+<m>f=c_5</m>
+</label>
+<label at="lc-g-label" anchor="(-2.5,-3.45)" alignment="e" color="#009E73">
+<m>g(x,y)=0</m>
+</label>
+<label at="lc-gradf-label" anchor="(0.14,-2.42)" alignment="e" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="lc-gradg-label" anchor="(0.14,-0.72)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Five concentric circles are level curves of f, with values c 1, c star, c 3, c 4, c 5 increasing outward. A green parabola-shaped constraint curve, g of x y equals 0, opens downward and touches the circle f equals c star, drawn in red, at its highest point, labeled x star y star. At that point a red arrow, the gradient of f, points down and a green arrow, the gradient of g, points up: the two gradients are collinear. Two other marked points, x 1 y 1 and x 2 y 2, lie on the constraint curve on either side.">
+  <annotation ref="lc-g" text="The constraint curve, where g of x y equals 0, drawn in green. It crosses the outer level curves of f and is tangent to the level curve f equals c star."/>
+  <annotation ref="lc-cstar" text="The level curve f equals c star, drawn in red, tangent to the constraint curve at the point x star y star."/>
+  <annotation ref="lc-c1" text="The level curve f equals c 1, with c 1 less than c star. The constraint curve never reaches it, so the value c 1 is not attained subject to the constraint."/>
+  <annotation ref="lc-Pstar" text="The constrained minimum, the point x star y star, where the constraint curve is tangent to the level curve f equals c star."/>
+  <annotation ref="lc-gradf" text="The gradient of f at the constrained minimum, drawn in red, perpendicular to the level curve f equals c star."/>
+  <annotation ref="lc-gradg" text="The gradient of g at the constrained minimum, drawn in green, perpendicular to the constraint curve. It is collinear with the gradient of f, here pointing in the opposite direction, so lambda is negative."/>
+  <annotation ref="lc-P1" text="The point x 1 y 1 on the constraint curve. Moving from it toward x star y star, the motion has a component opposite the gradient of f, so the value of f decreases."/>
+  <annotation ref="lc-P2" text="The point x 2 y 2 on the constraint curve. Moving from x star y star toward it, the motion has a component along the gradient of f, so the value of f increases."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Suppose we find the set <m>S</m> of points <m>(x,y)</m> satisfying the
+two equations
+<md>
+<mrow>g(x,y) \amp= 0,</mrow>
+<mrow>\nabla f \amp= \lambda\, \nabla g \quad \text{for some } \lambda.</mrow>
+</md>
+Then <m>S</m> contains the local extrema of <m>f</m> subject to the
+constraint <m>g(x,y) = 0</m>. The same reasoning applies to functions of
+three variables: there the constraint <m>g(x,y,z) = 0</m> defines a level
+surface of <m>g</m>, the gradient <m>\nabla g</m> is perpendicular to
+that surface, and at a constrained extremum <m>\nabla f</m> can have no
+component tangent to the surface, so once again <m>\nabla f</m> and
+<m>\nabla g</m> must be collinear.
+</p>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lagrange-method">
+<title>The Method of Lagrange Multipliers</title>
+
+<theorem xml:id="thm-lagrange-multipliers">
+<title>The Method of Lagrange Multipliers</title>
+<statement>
+<p>
+Let <m>f(x,y,z)</m> and <m>g(x,y,z)</m> be differentiable functions. To
+find the local maximum and minimum values of <m>f</m> subject to the
+constraint <m>g(x,y,z) = 0</m>, find the values of <m>x</m>, <m>y</m>,
+<m>z</m>, and <m>\lambda</m> that simultaneously satisfy the equations
+<md xml:id="eq-lagrange-method" number="yes">
+\nabla f = \lambda\, \nabla g
+\qquad \text{and} \qquad
+g(x,y,z) = 0.
+</md>
+For functions of two variables <m>f(x,y)</m> and <m>g(x,y)</m>, the same
+equations apply, with the variable <m>z</m> omitted.
+</p>
+</statement>
+</theorem>
+
+<p>
+The number <m>\lambda</m> is called a <term>Lagrange multiplier</term>.
+The equation <m>\nabla f = \lambda\,\nabla g</m> is a vector equation,
+so it holds component by component; together with the constraint it
+gives four equations in the four unknowns <m>x</m>, <m>y</m>, <m>z</m>,
+<m>\lambda</m> (three equations in <m>x</m>, <m>y</m>, <m>\lambda</m>
+for functions of two variables). Notice that we are usually not
+interested in the value of <m>\lambda</m> itself: it is an auxiliary
+unknown that we eliminate along the way while solving for the
+coordinates of the candidate points.
+</p>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lagrange-example-ellipse">
+<title>Extrema on an Ellipse</title>
+
+<p>
+In the first example, we find the greatest and smallest values of a
+function whose domain is restricted to a curve in the plane, namely an
+ellipse.
+</p>
+
+<example xml:id="example-lagrange-ellipse">
+<title>Extrema of <m>f(x,y) = xy</m> on an Ellipse</title>
+<statement>
+<p>
+Find the greatest and smallest values that the function
+<m>f(x,y) = xy</m> takes over the ellipse
+<md xml:id="eq-lagrange-ellipse" number="yes">
+\frac{x^2}{8} + \frac{y^2}{2} = 1.
+</md>
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-lagrange-ellipse">
+<title>Solution</title>
+
+<p>
+If we picture the graph of <m>f(x,y) = xy</m>, a saddle-shaped surface,
+then restricting the inputs <m>(x,y)</m> to the ellipse traces a curve on
+that surface, and we are after the highest and lowest points of this
+curve. We wish to find the extrema of <m>f(x,y) = xy</m> subject to the
+constraint
+<md xml:id="eq-lagrange-ellipse-constraint" number="yes">
+g(x,y) = \frac{x^2}{8} + \frac{y^2}{2} - 1 = 0.
+</md>
+</p>
+<p>
+We begin by computing the gradients of both functions:
+<md>
+<mrow>\nabla f \amp= y\,\mathbf i + x\,\mathbf j</mrow>
+<mrow>\nabla g \amp= \frac{x}{4}\,\mathbf i + y\,\mathbf j.</mrow>
+</md>
+</p>
+<p>
+The Lagrange multiplier equation gives
+<md xml:id="eq-lagrange-ellipse-system" number="yes">
+\nabla f = \lambda\,\nabla g
+\;\Rightarrow\;
+y\,\mathbf i + x\,\mathbf j
+= \lambda\frac{x}{4}\,\mathbf i + \lambda y\,\mathbf j
+\;\Rightarrow\;
+y = \lambda\frac{x}{4}, \quad x = \lambda y.
+</md>
+After substituting <m>x = \lambda y</m> into
+<m>y = \lambda\frac{x}{4}</m>, we get
+<md xml:id="eq-lagrange-ellipse-lambda" number="yes">
+y = \frac{\lambda^2}{4}\, y
+\;\Rightarrow\;
+\lambda = \pm 2
+\;\Rightarrow\;
+x = \pm 2y.
+</md>
+After plugging <m>x = \pm 2y</m> into the constraint equation we get
+<md xml:id="eq-lagrange-ellipse-points" number="yes">
+g(\pm 2y, y) = \frac{y^2}{2} + \frac{y^2}{2} - 1 = 0
+\;\Rightarrow\;
+y^2 = 1
+\;\Rightarrow\;
+y = \pm 1.
+</md>
+Note that <m>y = 0</m> is another solution of
+<m>y = \frac{\lambda^2}{4}y</m>; however, when <m>y = 0</m>, from
+<m>x = \lambda y</m> we know that <m>x = 0</m>, and the point
+<m>(0,0)</m> does not satisfy the constraint equation, i.e.
+<m>g(0,0) = -1 \neq 0</m>.
+</p>
+<p>
+Therefore there are four local extrema:
+<md>
+<mrow>(\pm 2, 1)\colon \amp\quad f(2,1) = 2, \quad f(-2,1) = -2</mrow>
+<mrow>(\pm 2, -1)\colon \amp\quad f(2,-1) = -2, \quad f(-2,-1) = 2.</mrow>
+</md>
+Since the ellipse is a closed and bounded curve and <m>f</m> is
+continuous, <m>f</m> attains its absolute extrema over the ellipse, and
+they are among these four values. The absolute maximum of
+<m>f(x,y) = xy</m> over the ellipse
+<m>\frac{x^2}{8} + \frac{y^2}{2} = 1</m> is <m>2</m> and its absolute
+minimum is <m>-2</m>.
+</p>
+<p>
+<xref ref="fig-lagrange-ellipse-prefigure"/> shows the constraint
+ellipse together with several level curves of <m>f</m>: the hyperbolas
+<m>xy = c</m>, with <m>|c|</m> increasing as the curves move away from
+the origin. Exactly as promised by
+<xref ref="eq-lagrange-collinear"/>, the level curves <m>xy = 2</m> and
+<m>xy = -2</m> are tangent to the ellipse at the four extremal points,
+and at each of them <m>\nabla f</m> and <m>\nabla g</m> are collinear.
+For instance, at <m>(2,1)</m> we have
+<m>\nabla f = \mathbf i + 2\,\mathbf j</m> and
+<m>\nabla g = \frac{1}{2}\,\mathbf i + \mathbf j</m>, so
+<m>\nabla f = 2\,\nabla g</m>, matching the multiplier
+<m>\lambda = 2</m>.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-lagrange-ellipse-prefigure">
+<caption>
+The ellipse <m>\frac{x^2}{8} + \frac{y^2}{2} = 1</m> and the level
+curves of <m>f(x,y) = xy</m>. The hyperbolas <m>xy = \pm 2</m> are
+tangent to the ellipse at the four extremal points, where
+<m>\nabla f = \lambda\,\nabla g</m>.
+</caption>
+<image width="85%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-ellipse">
+<diagram dimensions="(460,300)" margins="10">
+<definition>el(t) = (2.8284*cos(t), 1.4142*sin(t))</definition>
+<definition>h2a(t) = (t, 2/t)</definition>
+<definition>h2b(t) = (t, -2/t)</definition>
+<definition>h1a(t) = (t, 1/t)</definition>
+<definition>h1b(t) = (t, -1/t)</definition>
+<coordinates bbox="(-4.3,-2.75,4.3,2.75)">
+<axes at="ee-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="ee-h1-q1" function="h1a" domain="(0.42,4.2)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-h1-q3" function="h1a" domain="(-4.2,-0.42)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-hm1-q2" function="h1b" domain="(-4.2,-0.42)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-hm1-q4" function="h1b" domain="(0.42,4.2)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-h2-q1" function="h2a" domain="(0.8,4.2)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-h2-q3" function="h2a" domain="(-4.2,-0.8)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-hm2-q2" function="h2b" domain="(-4.2,-0.8)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-hm2-q4" function="h2b" domain="(0.8,4.2)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-ellipse" function="el" domain="(0,6.2832)"
+                  stroke="#009E73" thickness="2.5"/>
+<vector at="ee-gradf" v="(0.55,1.10)" tail="(2,1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg" v="(0.275,0.55)" tail="(2.063,0.969)"
+        stroke="#009E73" thickness="3"/>
+<point at="ee-max1" p="(2,1)" fill="black" alignment="w">
+<m>(2,1)</m>
+</point>
+<point at="ee-max2" p="(-2,-1)" fill="black" alignment="e">
+<m>(-2,-1)</m>
+</point>
+<point at="ee-min1" p="(-2,1)" fill="black" alignment="e">
+<m>(-2,1)</m>
+</point>
+<point at="ee-min2" p="(2,-1)" fill="black" alignment="w">
+<m>(2,-1)</m>
+</point>
+<label at="ee-h2-label" anchor="(3.75,0.85)" alignment="w" color="#D55E00">
+<m>xy=2</m>
+</label>
+<label at="ee-hm2-label" anchor="(-3.6,1.35)" alignment="e" color="#D55E00">
+<m>xy=-2</m>
+</label>
+<label at="ee-h1-label" anchor="(-4.2,-0.5)" alignment="e">
+<m>xy=1</m>
+</label>
+<label at="ee-ellipse-label" anchor="(-4.2,1.9)" alignment="e" color="#009E73">
+<m>\frac{x^2}{8}+\frac{y^2}{2}=1</m>
+</label>
+<label at="ee-gradf-label" anchor="(2.62,2.14)" alignment="ne" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="ee-gradg-label" anchor="(2.45,1.48)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The x y plane with a green ellipse centered at the origin and several hyperbolas that are level curves of f equals x y. The red hyperbolas x y equals 2 and x y equals negative 2 are tangent to the ellipse at the four points 2 comma 1, negative 2 comma negative 1, negative 2 comma 1, and 2 comma negative 1. At the point 2 comma 1, a red arrow shows the gradient of f and a green arrow shows the gradient of g, pointing in the same direction.">
+  <annotation ref="ee-ellipse" text="The constraint ellipse, x squared over 8 plus y squared over 2 equals 1, drawn in green."/>
+  <annotation ref="ee-h2-q1" text="The branch of the level curve x y equals 2 in the first quadrant, drawn in red, tangent to the ellipse at the point 2 comma 1, where f attains its maximum value 2."/>
+  <annotation ref="ee-h2-q3" text="The branch of the level curve x y equals 2 in the third quadrant, drawn in red, tangent to the ellipse at the point negative 2 comma negative 1, where f also attains its maximum value 2."/>
+  <annotation ref="ee-hm2-q2" text="The branch of the level curve x y equals negative 2 in the second quadrant, drawn in red, tangent to the ellipse at negative 2 comma 1, where f attains its minimum value negative 2."/>
+  <annotation ref="ee-hm2-q4" text="The branch of the level curve x y equals negative 2 in the fourth quadrant, drawn in red, tangent to the ellipse at 2 comma negative 1, where f also attains its minimum value negative 2."/>
+  <annotation ref="ee-h1-q1" text="The level curves x y equals 1 and x y equals negative 1, drawn in gray, which cross the ellipse instead of being tangent to it: the values 1 and negative 1 are attained but are not extreme values."/>
+  <annotation ref="ee-max1" text="The point 2 comma 1, where the absolute maximum value 2 is attained."/>
+  <annotation ref="ee-gradf" text="The gradient of f at the point 2 comma 1, drawn in red: it equals i plus 2 j."/>
+  <annotation ref="ee-gradg" text="The gradient of g at the point 2 comma 1, drawn in green: it equals one half i plus j, so the gradient of f is exactly twice the gradient of g, and lambda equals 2. The two arrows are drawn slightly apart so both are visible."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lagrange-example-distance">
+<title>Shortest Distance to a Plane</title>
+
+<p>
+In <xref ref="example-shortest-distance"/> we found the shortest
+distance from a point to a plane by substituting the equation of the
+plane into the distance function and minimizing the resulting function
+of two variables with the second derivative test. In the next example we
+solve the same problem with Lagrange multipliers, and then once more
+using the normal vector to the plane.
+</p>
+
+<example xml:id="example-lagrange-distance">
+<title>Shortest Distance to a Plane, Revisited</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-lagrange-distance">
+<title>Solution</title>
+
+<p>
+We find the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>(1,0,-2)</m>. The distance from a point <m>(x,y,z)</m> to
+<m>(1,0,-2)</m> is
+<m>\sqrt{(x-1)^2 + y^2 + (z+2)^2}</m>, and, as before, minimizing the
+distance is the same as minimizing its square. So we minimize
+<md xml:id="eq-lagrange-distance-f" number="yes">
+f(x,y,z) = (x-1)^2 + y^2 + (z+2)^2
+</md>
+subject to the constraint
+<md xml:id="eq-lagrange-distance-g" number="yes">
+g(x,y,z) = x + 2y + z - 4 = 0.
+</md>
+</p>
+<p>
+We compute the gradients:
+<md>
+<mrow>\nabla f \amp= 2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k</mrow>
+<mrow>\nabla g \amp= \mathbf i + 2\,\mathbf j + \mathbf k.</mrow>
+</md>
+The Lagrange multiplier equation gives
+<md xml:id="eq-lagrange-distance-system" number="yes">
+\nabla f = \lambda\,\nabla g
+\;\Rightarrow\;
+2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k
+= \lambda\,\mathbf i + 2\lambda\,\mathbf j + \lambda\,\mathbf k,
+</md>
+so that
+<md xml:id="eq-lagrange-distance-xyz" number="yes">
+x = \frac{\lambda}{2} + 1, \qquad
+y = \lambda, \qquad
+z = \frac{\lambda}{2} - 2.
+</md>
+We substitute these into the equation of the constraint to find
+<m>\lambda</m>:
+<md xml:id="eq-lagrange-distance-lambda" number="yes">
+g(x,y,z) = x + 2y + z - 4 = 0
+\;\Rightarrow\;
+3\lambda - 5 = 0
+\;\Rightarrow\;
+\lambda = \frac{5}{3}.
+</md>
+</p>
+<p>
+Therefore the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>(1,0,-2)</m> is
+<md xml:id="eq-lagrange-distance-point" number="yes">
+\left(\frac{11}{6},\; \frac{5}{3},\; -\frac{7}{6}\right)
+</md>
+and their distance is
+<md xml:id="eq-lagrange-distance-value" number="yes">
+d = \sqrt{\left(\frac{11}{6} - 1\right)^2
++ \left(\frac{5}{3}\right)^2
++ \left(-\frac{7}{6} + 2\right)^2}
+= \frac{5}{6}\sqrt{6},
+</md>
+in agreement with <xref ref="example-shortest-distance"/>.
+</p>
+</paragraphs>
+
+<paragraphs xml:id="solution-lagrange-distance-normal">
+<title>Another Solution, Using the Normal to the Plane</title>
+
+<p>
+To find the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>P_0(1,0,-2)</m>, we assume that the point <m>P(x,y,z)</m> on
+the plane is the closest point to <m>P_0</m>. As
+<xref ref="fig-lagrange-plane-prefigure"/> shows, the segment realizing
+the shortest distance meets the plane perpendicularly, so the vector
+<m>\vec{P_0 P}</m> must be parallel to the normal vector
+<m>\mathbf n = \mathbf i + 2\,\mathbf j + \mathbf k</m> of the plane:
+<md xml:id="eq-lagrange-normal-parallel" number="yes">
+\vec{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle
+= \lambda\,\langle 1, 2, 1\rangle
+\;\Rightarrow\;
+x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.
+</md>
+We then substitute the above equations into the equation of the plane:
+<md xml:id="eq-lagrange-normal-solve" number="yes">
+(\lambda + 1) + 2(2\lambda) + (\lambda - 2) = 4
+\;\Rightarrow\;
+\lambda = \frac{5}{6}
+\;\Rightarrow\;
+x = \frac{11}{6}, \quad y = \frac{5}{3}, \quad z = -\frac{7}{6},
+</md>
+and therefore the minimum distance is again
+<m>d = \frac{5}{6}\sqrt{6}</m>.
+</p>
+<p>
+The two solutions are closely related. At the closest point,
+<m>\nabla f = 2\langle x-1,\, y,\, z+2\rangle = 2\,\vec{P_0 P}</m>,
+while <m>\nabla g = \langle 1,2,1\rangle = \mathbf n</m>. So the
+Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> says precisely
+that <m>\vec{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
+method of Lagrange multipliers rediscovers the geometry on its own.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-lagrange-plane-prefigure">
+<caption>
+A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
+point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
+plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
+which reach the plane in any other direction, are longer.
+</caption>
+<image width="75%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-plane">
+<diagram dimensions="(450,290)" margins="10">
+<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
+<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
+      stroke="#009E73" thickness="2.5"/>
+<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
+      stroke="black" thickness="1.5"/>
+<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
+      stroke="black" thickness="1.5"/>
+<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
+        stroke="#0072B2" thickness="3"/>
+<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
+<m>P_0(1,0,-2)</m>
+</point>
+<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
+<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
+</point>
+<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
+<m>x+2y+z=4</m>
+</label>
+<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
+<m>d=\frac{5}{6}\sqrt{6}</m>
+</label>
+<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
+<m>\mathbf n=\mathbf i+2\,\mathbf j+\mathbf k</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
+  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
+  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
+  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
+  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
+  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
+  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
+  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lagrange-example-circle">
+<title>Absolute Extrema on a Circle</title>
+
+<example xml:id="example-lagrange-circle">
+<title>Absolute Extrema on a Circle</title>
+<statement>
+<p>
+Find the absolute maximum and minimum of
+<m>f(x,y) = x^2 + y^2 - 2x + 2y + 5</m>, given the constraint
+<m>x^2 + y^2 = 4</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-lagrange-circle">
+<title>Solution</title>
+
+<p>
+Completing the squares shows that
+<md xml:id="eq-lagrange-circle-square" number="yes">
+f(x,y) = (x-1)^2 + (y+1)^2 + 3,
+</md>
+so the graph of <m>f</m> is a paraboloid with vertex at
+<m>(1,-1,3)</m>. The constraint can be thought of as
+<m>g(x,y) = x^2 + y^2 - 4 = 0</m>, which is a circle of radius <m>2</m>
+centered at the origin in the <m>xy</m>-plane. Restricting <m>f</m> to
+this circle traces a curve on the paraboloid, and the goal is to find
+the highest and lowest points of that curve. By
+<xref ref="eq-lagrange-circle-square"/>, the level curves of <m>f</m>
+are the circles <m>(x-1)^2 + (y+1)^2 = c - 3</m> centered at
+<m>(1,-1)</m>, and we are looking for the smallest and largest values of
+<m>c</m> for which the level curve still meets the constraint circle; as
+<xref ref="fig-lagrange-circle-prefigure"/> shows, at those values the
+two circles are tangent and the gradients are collinear,
+<m>\nabla f = \lambda\,\nabla g</m>.
+</p>
+<p>
+We compute the gradients:
+<md>
+<mrow>\nabla f \amp= (2x-2)\,\mathbf i + (2y+2)\,\mathbf j</mrow>
+<mrow>\nabla g \amp= 2x\,\mathbf i + 2y\,\mathbf j.</mrow>
+</md>
+The Lagrange multiplier equation gives
+<md xml:id="eq-lagrange-circle-system" number="yes">
+\nabla f = \lambda\,\nabla g
+\;\Rightarrow\;
+(2x-2)\,\mathbf i + (2y+2)\,\mathbf j
+= 2\lambda x\,\mathbf i + 2\lambda y\,\mathbf j
+\;\Rightarrow\;
+x - 1 = \lambda x, \quad y + 1 = \lambda y.
+</md>
+Adding the two equations yields
+<md xml:id="eq-lagrange-circle-add" number="yes">
+x + y = \lambda(x + y).
+</md>
+This equation is satisfied if <m>\lambda = 1</m> or if
+<m>x + y = 0</m>. The case <m>\lambda = 1</m> is impossible, since
+substituting it into <m>x - 1 = \lambda x</m> gives <m>-1 = 0</m>.
+Hence <m>y = -x</m>, which we substitute into the constraint:
+<md xml:id="eq-lagrange-circle-points" number="yes">
+x^2 + y^2 = 4
+\;\Rightarrow\;
+2x^2 = 4
+\;\Rightarrow\;
+x = -y = \pm\sqrt{2}.
+</md>
+</p>
+<p>
+Therefore the solutions are <m>(x,y) = (\sqrt 2, -\sqrt 2)</m> and
+<m>(x,y) = (-\sqrt 2, \sqrt 2)</m>. Using
+<xref ref="eq-lagrange-circle-square"/>,
+<md>
+<mrow>f(\sqrt 2, -\sqrt 2) \amp= 2(\sqrt 2 - 1)^2 + 3 = 9 - 4\sqrt 2</mrow>
+<mrow>f(-\sqrt 2, \sqrt 2) \amp= 2(\sqrt 2 + 1)^2 + 3 = 9 + 4\sqrt 2.</mrow>
+</md>
+Since the circle is closed and bounded and <m>f</m> is continuous, these
+are the absolute extrema: <m>f(\sqrt 2, -\sqrt 2) = 9 - 4\sqrt 2</m> is
+the absolute minimum and <m>f(-\sqrt 2, \sqrt 2) = 9 + 4\sqrt 2</m> is
+the absolute maximum.
+</p>
+<p>
+The answer agrees with the geometry of
+<xref ref="eq-lagrange-circle-square"/>: on the constraint circle,
+<m>f</m> equals <m>3</m> plus the square of the distance to the point
+<m>(1,-1)</m>. The point of the circle farthest from <m>(1,-1)</m> is
+<m>(-\sqrt 2, \sqrt 2)</m>, at distance <m>2 + \sqrt 2</m>, giving
+<m>f = 3 + (2+\sqrt 2)^2 = 9 + 4\sqrt 2</m>, and the nearest point is
+<m>(\sqrt 2, -\sqrt 2)</m>, at distance <m>2 - \sqrt 2</m>, giving
+<m>f = 3 + (2-\sqrt 2)^2 = 9 - 4\sqrt 2</m>. Note also that in
+<xref ref="fig-lagrange-circle-prefigure"/> the gradients
+<m>\nabla f</m> and <m>\nabla g</m> point in the same direction at both
+extrema, but with different multipliers: from
+<m>x - 1 = \lambda x</m>, we get <m>\lambda = 1 - \frac{1}{\sqrt 2}</m>
+at the minimum and <m>\lambda = 1 + \frac{1}{\sqrt 2}</m> at the
+maximum.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-lagrange-circle-prefigure">
+<caption>
+The constraint circle <m>x^2 + y^2 = 4</m> and three level curves of
+<m>f(x,y) = x^2+y^2-2x+2y+5</m>, which are circles centered at
+<m>(1,-1)</m>. The extreme level curves <m>f = 9 \pm 4\sqrt 2</m> are
+tangent to the constraint circle, while an intermediate level curve
+(dashed) crosses it. At each point of tangency
+<m>\nabla f = \lambda\,\nabla g</m>.
+</caption>
+<image width="80%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-circle">
+<diagram dimensions="(430,395)" margins="10">
+<definition>cc(t) = (2*cos(t), 2*sin(t))</definition>
+<definition>lmin(t) = (1 + 0.5858*cos(t), -1 + 0.5858*sin(t))</definition>
+<definition>lmax(t) = (1 + 3.4142*cos(t), -1 + 3.4142*sin(t))</definition>
+<definition>lmid(t) = (1 + 2*cos(t), -1 + 2*sin(t))</definition>
+<coordinates bbox="(-4.0,-4.7,4.9,3.4)">
+<axes at="cl-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="cl-lmid" function="lmid" domain="(0,6.2832)"
+                  stroke="#7F7F7F" dash="6 4" thickness="1.5"/>
+<parametric-curve at="cl-lmin" function="lmin" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="cl-lmax" function="lmax" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="cl-constraint" function="cc" domain="(0,6.2832)"
+                  stroke="#009E73" thickness="2.5"/>
+<line at="cl-leader" endpoints="((0.55,-1.5),(-1.45,-2.42))"
+      stroke="#7F7F7F" thickness="1"/>
+<vector at="cl-gradf-max" v="(-1.448,1.448)" tail="(-1.414,1.414)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="cl-gradg-max" v="(-0.848,0.848)" tail="(-1.357,1.471)"
+        stroke="#009E73" thickness="3"/>
+<vector at="cl-gradf-min" v="(0.248,-0.248)" tail="(1.456,-1.372)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="cl-gradg-min" v="(0.848,-0.848)" tail="(1.372,-1.456)"
+        stroke="#009E73" thickness="3"/>
+<point at="cl-center" p="(1,-1)" fill="black"/>
+<line at="cl-center-leader" endpoints="((0.80,-1.55),(0.70,-1.83))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="cl-center-label" anchor="(0.66,-1.95)" alignment="s">
+<m>(1,-1)</m>
+</label>
+<point at="cl-max" p="(-1.414,1.414)" fill="black" alignment="sw">
+<m>(-\sqrt 2,\sqrt 2)</m>
+</point>
+<point at="cl-min" p="(1.414,-1.414)" fill="black"/>
+<line at="cl-min-leader" endpoints="((1.45,-1.55),(1.8,-2.9))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="cl-min-label" anchor="(1.8,-3.0)" alignment="s">
+<m>(\sqrt 2,-\sqrt 2)</m>
+</label>
+<label at="cl-constraint-label" anchor="(2.15,0.95)" alignment="e" color="#009E73">
+<m>x^2+y^2=4</m>
+</label>
+<label at="cl-lmax-label" anchor="(1.05,2.5)" alignment="n" color="#D55E00">
+<m>f=9+4\sqrt 2</m>
+</label>
+<label at="cl-lmin-label" anchor="(-1.55,-2.5)" alignment="w" color="#D55E00">
+<m>f=9-4\sqrt 2</m>
+</label>
+<label at="cl-lmid-label" anchor="(3.02,-1.62)" alignment="e" color="#7F7F7F">
+<m>f=7</m>
+</label>
+<label at="cl-gradf-max-label" anchor="(-2.9,2.9)" alignment="nw" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="cl-gradg-max-label" anchor="(-2.15,2.32)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+<label at="cl-gradf-min-label" anchor="(1.78,-1.58)" alignment="e" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="cl-gradg-min-label" anchor="(2.3,-2.42)" alignment="se" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The x y plane with a green circle of radius 2 centered at the origin, the constraint, and three circles centered at the point 1 comma negative 1, which are level curves of f. A small red circle, f equals 9 minus 4 root 2, is tangent to the constraint circle from inside at the point root 2 comma negative root 2. A large red circle, f equals 9 plus 4 root 2, is tangent to the constraint circle from outside at the point negative root 2 comma root 2. A dashed gray circle, f equals 7, crosses the constraint circle at two points. At each tangency point, red and green arrows show the gradients of f and g pointing in the same direction.">
+  <annotation ref="cl-constraint" text="The constraint circle, x squared plus y squared equals 4, drawn in green, centered at the origin with radius 2."/>
+  <annotation ref="cl-lmax" text="The level curve f equals 9 plus 4 root 2, drawn in red: the largest circle centered at 1 comma negative 1 that still meets the constraint circle. It is tangent to it at negative root 2 comma root 2, where the absolute maximum is attained."/>
+  <annotation ref="cl-lmin" text="The level curve f equals 9 minus 4 root 2, drawn in red: the smallest circle centered at 1 comma negative 1 that meets the constraint circle. It is tangent to it at root 2 comma negative root 2, where the absolute minimum is attained."/>
+  <annotation ref="cl-lmid" text="The intermediate level curve f equals 7, drawn dashed in gray. It crosses the constraint circle at two points instead of being tangent, so the value 7 is attained but is not an extreme value."/>
+  <annotation ref="cl-center" text="The point 1 comma negative 1, the common center of the level curves of f and the location of the minimum of the unconstrained paraboloid."/>
+  <annotation ref="cl-max" text="The point negative root 2 comma root 2, where f attains its absolute maximum 9 plus 4 root 2 on the circle."/>
+  <annotation ref="cl-min" text="The point root 2 comma negative root 2, where f attains its absolute minimum 9 minus 4 root 2 on the circle."/>
+  <annotation ref="cl-gradf-max" text="The gradient of f at the maximum point, drawn in red, pointing away from the constraint circle in the same direction as the gradient of g. Here lambda equals 1 plus 1 over root 2."/>
+  <annotation ref="cl-gradg-max" text="The gradient of g at the maximum point, drawn in green, drawn slightly apart from the gradient of f so both are visible."/>
+  <annotation ref="cl-gradf-min" text="The gradient of f at the minimum point, drawn in red. It is shorter than the gradient of g, since lambda equals 1 minus 1 over root 2 is less than 1."/>
+  <annotation ref="cl-gradg-min" text="The gradient of g at the minimum point, drawn in green, collinear with the gradient of f."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</section>
+
+</chapter>
