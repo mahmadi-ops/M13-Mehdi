@@ -2,6 +2,51 @@
 <chapter xml:id="section-parametrization" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Parametrization of Plane Curves</title>
 
+<objectives>
+<introduction>
+<p>
+After completing this chapter, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Describe the motion of a point in the plane with a pair of parametric
+equations <m>x = f(t)</m> and <m>y = g(t)</m>, and understand the
+parameter <m>t</m> as recording <em>when</em> the point visits each place
+on the curve.
+</p>
+</li>
+<li>
+<p>
+Sketch a parametric curve from a table of values, and indicate the
+direction of increasing <m>t</m> in which the curve is traced.
+</p>
+</li>
+<li>
+<p>
+Find parametric equations for common curves, such as lines, circles, and
+ellipses, and eliminate the parameter to recover a Cartesian equation
+when possible.
+</p>
+</li>
+<li>
+<p>
+Model the motion of a projectile with parametric equations, and derive
+the equation of its parabolic trajectory.
+</p>
+</li>
+<li>
+<p>
+Distinguish the <term>intersection points</term> of two parametric curves
+from their <term>collision points</term>, where two moving objects reach
+the same place at the same time.
+</p>
+</li>
+</ul>
+</objectives>
+
 <!-- ================================================================ -->
 <section xml:id="sec-parametric-equations">
 <title>Parametric Equations</title>

@@ -3,15 +3,18 @@
 
 <!-- ================= 9.1 Projectile Motion ================= -->
 <section xml:id="section-projectile-exercises">
-    <title> Exercises for <xref ref="sec-projectile-motion" text="title"/></title>
+    <title> Exercises for <xref ref="section-parametrization" text="title"/></title>
     <p>
       If you would like to review this topic before attempting the exercises,
-      click <xref ref="sec-projectile-motion" text="title"/>.
+      click <xref ref="section-parametrization" text="title"/>.
     </p>
   <xi:include href="art11-projectile-velocity.ptx"/>
 </section>
 
-<!-- ================= 9.2 Conic Sections ================= -->
+<!-- ================= Taylor Series (In-Class Activity) ================= -->
+<xi:include href="activity-taylor-intro.ptx"/>
+
+<!-- ================= Conic Sections ================= -->
       <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <!-- Place inside subsec-app-reflector, after Example ex-app-reflector -->
 <section xml:id="section-conics-exercises">
