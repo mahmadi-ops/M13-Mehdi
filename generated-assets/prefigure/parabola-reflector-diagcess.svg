@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="parabola-reflector-figure" viewBox="0 0 416 220">
   <defs>
-    <clipPath id="parabola-reflector-__clipPath-0">
+    <clipPath id="parabola-reflector-clipPath-0">
       <rect x="8.0" y="8.0" width="400.0" height="204.0"/>
     </clipPath>
-    <clipPath id="parabola-reflector-__clipPath-1">
+    <clipPath id="parabola-reflector-clipPath-1">
       <rect x="8.0" y="8.0" width="400.0" height="204.0"/>
     </clipPath>
   </defs>
-  <path id="parabola-reflector-dish" stroke="blue" stroke-width="3" fill="none" d="M 38.8 10.6 L 42.2 16.7 L 45.5 22.7 L 48.9 28.6 L 52.3 34.4 L 55.7 40.1 L 59.1 45.6 L 62.5 51.0 L 65.8 56.3 L 69.2 61.4 L 72.6 66.5 L 76.0 71.4 L 79.4 76.1 L 82.8 80.8 L 86.2 85.3 L 89.5 89.7 L 92.9 94.0 L 96.3 98.2 L 99.7 102.2 L 103.1 106.1 L 106.5 109.9 L 109.8 113.6 L 113.2 117.1 L 116.6 120.5 L 120.0 123.8 L 123.4 127.0 L 126.8 130.0 L 130.2 133.0 L 133.5 135.8 L 136.9 138.4 L 140.3 141.0 L 143.7 143.4 L 147.1 145.7 L 150.5 147.9 L 153.8 149.9 L 157.2 151.8 L 160.6 153.6 L 164.0 155.3 L 167.4 156.9 L 170.8 158.3 L 174.2 159.6 L 177.5 160.8 L 180.9 161.8 L 184.3 162.8 L 187.7 163.6 L 191.1 164.3 L 194.5 164.8 L 197.8 165.3 L 201.2 165.6 L 204.6 165.7 L 208.0 165.8 L 211.4 165.7 L 214.8 165.6 L 218.2 165.3 L 221.5 164.8 L 224.9 164.3 L 228.3 163.6 L 231.7 162.8 L 235.1 161.8 L 238.5 160.8 L 241.8 159.6 L 245.2 158.3 L 248.6 156.9 L 252.0 155.3 L 255.4 153.6 L 258.8 151.8 L 262.2 149.9 L 265.5 147.9 L 268.9 145.7 L 272.3 143.4 L 275.7 141.0 L 279.1 138.4 L 282.5 135.8 L 285.8 133.0 L 289.2 130.0 L 292.6 127.0 L 296.0 123.8 L 299.4 120.5 L 302.8 117.1 L 306.2 113.6 L 309.5 109.9 L 312.9 106.1 L 316.3 102.2 L 319.7 98.2 L 323.1 94.0 L 326.5 89.7 L 329.8 85.3 L 333.2 80.8 L 336.6 76.1 L 340.0 71.4 L 343.4 66.5 L 346.8 61.4 L 350.2 56.3 L 353.5 51.0 L 356.9 45.6 L 360.3 40.1 L 363.7 34.4 L 367.1 28.6 L 370.5 22.7 L 373.8 16.7 L 377.2 10.6" clip-path="url(#parabola-reflector-__clipPath-1)"/>
+  <path id="parabola-reflector-dish" stroke="blue" stroke-width="3" fill="none" d="M 38.8 10.6 L 42.2 16.7 L 45.5 22.7 L 48.9 28.6 L 52.3 34.4 L 55.7 40.1 L 59.1 45.6 L 62.5 51.0 L 65.8 56.3 L 69.2 61.4 L 72.6 66.5 L 76.0 71.4 L 79.4 76.1 L 82.8 80.8 L 86.2 85.3 L 89.5 89.7 L 92.9 94.0 L 96.3 98.2 L 99.7 102.2 L 103.1 106.1 L 106.5 109.9 L 109.8 113.6 L 113.2 117.1 L 116.6 120.5 L 120.0 123.8 L 123.4 127.0 L 126.8 130.0 L 130.2 133.0 L 133.5 135.8 L 136.9 138.4 L 140.3 141.0 L 143.7 143.4 L 147.1 145.7 L 150.5 147.9 L 153.8 149.9 L 157.2 151.8 L 160.6 153.6 L 164.0 155.3 L 167.4 156.9 L 170.8 158.3 L 174.2 159.6 L 177.5 160.8 L 180.9 161.8 L 184.3 162.8 L 187.7 163.6 L 191.1 164.3 L 194.5 164.8 L 197.8 165.3 L 201.2 165.6 L 204.6 165.7 L 208.0 165.8 L 211.4 165.7 L 214.8 165.6 L 218.2 165.3 L 221.5 164.8 L 224.9 164.3 L 228.3 163.6 L 231.7 162.8 L 235.1 161.8 L 238.5 160.8 L 241.8 159.6 L 245.2 158.3 L 248.6 156.9 L 252.0 155.3 L 255.4 153.6 L 258.8 151.8 L 262.2 149.9 L 265.5 147.9 L 268.9 145.7 L 272.3 143.4 L 275.7 141.0 L 279.1 138.4 L 282.5 135.8 L 285.8 133.0 L 289.2 130.0 L 292.6 127.0 L 296.0 123.8 L 299.4 120.5 L 302.8 117.1 L 306.2 113.6 L 309.5 109.9 L 312.9 106.1 L 316.3 102.2 L 319.7 98.2 L 323.1 94.0 L 326.5 89.7 L 329.8 85.3 L 333.2 80.8 L 336.6 76.1 L 340.0 71.4 L 343.4 66.5 L 346.8 61.4 L 350.2 56.3 L 353.5 51.0 L 356.9 45.6 L 360.3 40.1 L 363.7 34.4 L 367.1 28.6 L 370.5 22.7 L 373.8 16.7 L 377.2 10.6" clip-path="url(#parabola-reflector-clipPath-1)"/>
   <g id="parabola-reflector-rays">
-    <line id="parabola-reflector-__line-0" x1="54.2" y1="11.8" x2="54.2" y2="37.5" stroke="orange" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-1" x1="54.2" y1="37.5" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-2" x1="115.7" y1="11.8" x2="115.7" y2="119.6" stroke="orange" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-3" x1="115.7" y1="119.6" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-4" x1="300.3" y1="11.8" x2="300.3" y2="119.6" stroke="orange" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-5" x1="300.3" y1="119.6" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-6" x1="361.8" y1="11.8" x2="361.8" y2="37.5" stroke="orange" stroke-width="1.5" fill="none"/>
-    <line id="parabola-reflector-__line-7" x1="361.8" y1="37.5" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-0" x1="54.2" y1="11.8" x2="54.2" y2="37.5" stroke="orange" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-1" x1="54.2" y1="37.5" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-2" x1="115.7" y1="11.8" x2="115.7" y2="119.6" stroke="orange" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-3" x1="115.7" y1="119.6" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-4" x1="300.3" y1="11.8" x2="300.3" y2="119.6" stroke="orange" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-5" x1="300.3" y1="119.6" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-6" x1="361.8" y1="11.8" x2="361.8" y2="37.5" stroke="orange" stroke-width="1.5" fill="none"/>
+    <line id="parabola-reflector-line-7" x1="361.8" y1="37.5" x2="208.0" y2="119.6" stroke="red" stroke-width="1.5" fill="none"/>
   </g>
   <circle id="parabola-reflector-focus" cx="208.0" cy="119.6" r="4" stroke="black" stroke-width="2" fill="black"/>
   <g id="parabola-reflector-focus-label" transform="translate(208.0,133.6) translate(-59.7,-0.0)">
-    <g id="parabola-reflector-__g-0">
+    <g id="parabola-reflector-g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="119.352px" height="18.096px" role="img" focusable="false" viewBox="0 -750 6594 1000" x="0.0" y="0.0">
         <defs>
           <path id="parabola-reflector-MJX-2-TEX-N-66" d="M273 0Q255 3 146 3Q43 3 34 0H26V46H42Q70 46 91 49Q99 52 103 60Q104 62 104 224V385H33V431H104V497L105 564L107 574Q126 639 171 668T266 704Q267 704 275 704T289 705Q330 702 351 679T372 627Q372 604 358 590T321 576T284 590T270 627Q270 647 288 667H284Q280 668 273 668Q245 668 223 647T189 592Q183 572 182 497V431H293V385H185V225Q185 63 186 61T189 57T194 54T199 51T206 49T213 48T222 47T231 47T241 46T251 46H282V0H273Z"/>
@@ -62,7 +62,7 @@
     </g>
   </g>
   <g id="parabola-reflector-ray-label" transform="translate(208.0,19.5) translate(-85.8,-8.1)">
-    <g id="parabola-reflector-__g-1">
+    <g id="parabola-reflector-g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.728px" width="171.672px" height="16.288px" role="img" focusable="false" viewBox="0 -694 9485 900" x="0.0" y="0.0">
         <defs>
           <path id="parabola-reflector-MJX-3-TEX-N-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"/>

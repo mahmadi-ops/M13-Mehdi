@@ -4,7 +4,16 @@
   Exercises for the Quadric Surfaces chapter, collected in the Exercises chapter.
 -->
 
-<exercises xml:id="exercises-quadric-surfaces">
+<worksheet xml:id="exercises-quadric-surfaces">
+  <title> Exercises for <xref ref="section-quadric-surfaces" text="title"/></title>
+
+  <introduction>
+    <p>
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-quadric-surfaces" text="title"/>.
+    </p>
+  </introduction>
+
   <exercise xml:id="exercise-quadric-graph-match">
     <title>Matching Quadric Surfaces</title>
     <introduction>
@@ -175,4 +184,4 @@
       </solution>
     </webwork>
   </exercise>
-</exercises>
+</worksheet>

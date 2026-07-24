@@ -20,6 +20,48 @@
 <chapter xml:id="section-conics" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Conic Sections</title>
 
+  <objectives>
+  <introduction>
+  <p>
+  After completing this chapter, you should be able to:
+  </p>
+  </introduction>
+
+  <ul>
+  <li>
+  <p>
+  Understand the parabola, ellipse, and hyperbola as curves defined by
+  distance conditions relative to foci and a directrix, rather than merely as
+  graphs of particular equations.
+  </p>
+  </li>
+  <li>
+  <p>
+  Recognize how a single geometric idea&#8212;a locus of points satisfying a
+  distance condition&#8212;unifies the three conic sections.
+  </p>
+  </li>
+  <li>
+  <p>
+  Interpret the roles of the focus, directrix, vertices, and axes in
+  determining the shape and orientation of each conic.
+  </p>
+  </li>
+  <li>
+  <p>
+  Understand the reflection properties of the conics and why they explain
+  applications such as parabolic reflectors and whispering galleries.
+  </p>
+  </li>
+  <li>
+  <p>
+  Appreciate how the defining property of the hyperbola underlies
+  position-finding methods such as hyperbolic navigation.
+  </p>
+  </li>
+  </ul>
+  </objectives>
+
   <introduction>
     <p>
       <term>Conic sections</term> are the curves obtained by intersecting a double

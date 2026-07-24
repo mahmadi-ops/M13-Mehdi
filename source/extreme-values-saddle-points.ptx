@@ -2,6 +2,49 @@
 <chapter xml:id="section-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Extreme Values and Saddle Points</title>
 
+<objectives>
+<introduction>
+<p>
+After completing this chapter, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand what it means for a function of two variables to have a local
+maximum, a local minimum, or a saddle point, and visualize each on the
+surface <m>z = f(x,y)</m>.
+</p>
+</li>
+<li>
+<p>
+Recognize critical points as the candidates for local extrema, and understand
+why a vanishing gradient is necessary but not sufficient for an extremum.
+</p>
+</li>
+<li>
+<p>
+Understand the idea behind the Second Derivative Test and what it reveals
+about the local shape of a surface near a critical point.
+</p>
+</li>
+<li>
+<p>
+Distinguish local extrema from absolute extrema, and understand why the
+absolute extrema of a function on a closed, bounded region may occur on the
+boundary.
+</p>
+</li>
+<li>
+<p>
+Interpret extreme values in a physical setting, such as the equilibrium and
+stability of a system.
+</p>
+</li>
+</ul>
+</objectives>
+
 <!-- ================================================================ -->
 <section xml:id="sec-local-extrema">
 <title>Local Maximum and Local Minimum</title>

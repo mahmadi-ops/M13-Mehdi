@@ -2,6 +2,50 @@
 <chapter xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
 
+<objectives>
+<introduction>
+<p>
+After completing this chapter, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand the dot product as a way of combining two vectors into a single
+number that measures the extent to which they point in the same direction.
+</p>
+</li>
+<li>
+<p>
+Interpret the sign of the dot product geometrically&#8212;positive for an
+acute angle, negative for an obtuse angle, and zero for perpendicular
+vectors&#8212;and recognize orthogonality as the vanishing of the dot product.
+</p>
+</li>
+<li>
+<p>
+Understand how the dot product encodes the angle between two vectors,
+connecting the algebra of vectors to the Law of Cosines.
+</p>
+</li>
+<li>
+<p>
+Interpret the projection of one vector onto another as the component of one
+vector in the direction of the other, and understand the decomposition of a
+vector into parts parallel and perpendicular to a given direction.
+</p>
+</li>
+<li>
+<p>
+Understand work as a physical measure of the effect of a force along a
+direction of motion, and appreciate why the dot product is the natural tool
+for expressing it.
+</p>
+</li>
+</ul>
+</objectives>
+
 <!-- ================================================================ -->
 <section xml:id="sec-law-of-cosines">
 <title>Law of Cosines and the Angle between Two Vectors</title>

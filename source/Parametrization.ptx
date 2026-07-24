@@ -565,7 +565,7 @@ one dimension.  For motion along a straight line with constant speed, the positi
 <md>x(t) = v\, t + x_0,</md>
 while for motion with uniform acceleration <m>a</m>, the position is
 <md>x(t) = \frac{1}{2} a t^2 + v_0 t + x_0.</md>
-Now consider an object under the influence of gravity alone, ignoring air resistance.  In the
+Now consider an object under the influence of grav1ity alone, ignoring air resistance.  In the
 horizontal direction there is no force acting on the object, so it moves with constant speed;
 in the vertical direction it moves with constant acceleration, namely <m>g</m>, directed downward.
 Taking these two facts into account, and resolving the initial velocity into its horizontal

@@ -64,7 +64,12 @@
       "Bash(command -v prefig)",
       "Bash(prefig --help)",
       "Bash(prefig init *)",
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(grep -oE '\\(ChemAccess-element|getElementsByClassName|querySelectorAll|data-src|getAttribute\\\\\\(\"data-src\"\\\\\\)|\\\\.open\\\\\\(\"GET|responseText|onload|DOMContentLoaded\\)[^;]{0,60}' output/web/_static/pretext/js/diagcess/diagcess.js)",
+      "Bash(grep -io \"ChemAccess[^{]*{[^}]*}\\\\|diagcess[^{]*{[^}]*}\\\\|\\\\.image[^{]*{[^}]*}\\\\|svg[^{,]*{[^}]*}\" output/web/_static/pretext/css/print-worksheet.css)",
+      "Bash(grep -n 'theme.css\\\\|ol-markers.css\\\\|css/@custom\\\\|html/css\\\\|$html-css-\\\\|_static.*css\\\\|css-additions\\\\|additional.*css\\\\|custom-css-file' /root/.ptx/2.37.1/core/xsl/pretext-html.xsl)",
+      "Bash(awk '{print $NF, $5\"b\"}')",
+      "Bash(awk '{print $6, $7}')"
     ]
   }
 }

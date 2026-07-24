@@ -1,82 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-projectile-velocity-figure" viewBox="0 0 510 275">
   <defs>
-    <clipPath id="prefigure-projectile-velocity-__clipPath-0">
+    <clipPath id="prefigure-projectile-velocity-clipPath-0">
       <rect x="5.0" y="5.0" width="500.0" height="265.0"/>
     </clipPath>
-    <clipPath id="prefigure-projectile-velocity-__clipPath-1">
+    <clipPath id="prefigure-projectile-velocity-clipPath-1">
       <rect x="5.0" y="5.0" width="500.0" height="265.0"/>
     </clipPath>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#f5a623" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#1a9e3a" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#1a9e3a" stroke="none"/>
     </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+    <marker id="prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
-      <g transform="rotate(180, 4.5, 4.0)">
-        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
-      <g transform="rotate(180, 6.5, 6.0)">
-        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-3_None_24_60-hf5a623" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
-      <g transform="rotate(180, 6.75, 6.0)">
-        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#f5a623" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-3_None_24_60-hf5a623-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
-      <g transform="rotate(180, 8.75, 8.0)">
-        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-2_None_24_60-h1a9e3a" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
-      <g transform="rotate(180, 4.5, 4.0)">
-        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#1a9e3a" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-2_None_24_60-h1a9e3a-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
-      <g transform="rotate(180, 6.5, 6.0)">
-        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-3_None_24_60-h1a9e3a" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
-      <g transform="rotate(180, 6.75, 6.0)">
-        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#1a9e3a" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-projectile-velocity-arrow-head-start-3_None_24_60-h1a9e3a-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
-      <g transform="rotate(180, 8.75, 8.0)">
-        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
-      </g>
     </marker>
   </defs>
   <g id="prefigure-projectile-velocity-axes" stroke="black" stroke-width="2">
-    <line id="prefigure-projectile-velocity-__line-0" x1="5.0" y1="178.3" x2="505.0" y2="178.3" stroke="black" stroke-width="2" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black)"/>
-    <line id="prefigure-projectile-velocity-__line-1" x1="65.8" y1="270.0" x2="65.8" y2="5.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black)"/>
+    <line id="prefigure-projectile-velocity-line-0" x1="5.0" y1="178.3" x2="505.0" y2="178.3" stroke="black" stroke-width="2" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black)"/>
+    <line id="prefigure-projectile-velocity-line-1" x1="65.8" y1="270.0" x2="65.8" y2="5.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="prefigure-projectile-velocity-__label-0" transform="translate(499.0,172.3) translate(-10.4,-8.2)">
-    <g id="prefigure-projectile-velocity-__g-1">
+  <g id="prefigure-projectile-velocity-label-0" transform="translate(499.0,172.3) translate(-10.4,-8.2)">
+    <g id="prefigure-projectile-velocity-g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -91,8 +51,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-1" transform="translate(71.8,11.0) translate(0.0,-0.0)">
-    <g id="prefigure-projectile-velocity-__g-2">
+  <g id="prefigure-projectile-velocity-label-1" transform="translate(71.8,11.0) translate(0.0,-0.0)">
+    <g id="prefigure-projectile-velocity-g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -107,8 +67,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-2" transform="translate(58.8,185.3) translate(-9.0,-0.0)">
-    <g id="prefigure-projectile-velocity-__g-3">
+  <g id="prefigure-projectile-velocity-label-2" transform="translate(58.8,185.3) translate(-9.0,-0.0)">
+    <g id="prefigure-projectile-velocity-g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="9.048px" height="12.456px" role="img" focusable="false" viewBox="0 -666 500 688" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-4-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -123,10 +83,10 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-projectile-velocity-pv-path" stroke="black" stroke-width="1.5" stroke-dasharray="5" fill="none" d="M 65.8 178.3 L 69.5 173.1 L 73.2 168.1 L 76.9 163.2 L 80.5 158.4 L 84.2 153.8 L 87.9 149.2 L 91.6 144.7 L 95.3 140.4 L 99.0 136.2 L 102.6 132.1 L 106.3 128.1 L 110.0 124.2 L 113.7 120.4 L 117.4 116.8 L 121.0 113.2 L 124.7 109.8 L 128.4 106.5 L 132.1 103.3 L 135.8 100.2 L 139.5 97.2 L 143.1 94.3 L 146.8 91.6 L 150.5 88.9 L 154.2 86.4 L 157.9 84.0 L 161.6 81.7 L 165.2 79.5 L 168.9 77.4 L 172.6 75.4 L 176.3 73.6 L 180.0 71.9 L 183.6 70.2 L 187.3 68.7 L 191.0 67.3 L 194.7 66.0 L 198.4 64.9 L 202.1 63.8 L 205.7 62.9 L 209.4 62.0 L 213.1 61.3 L 216.8 60.7 L 220.5 60.2 L 224.2 59.8 L 227.8 59.6 L 231.5 59.4 L 235.2 59.4 L 238.9 59.4 L 242.6 59.6 L 246.2 59.9 L 249.9 60.3 L 253.6 60.8 L 257.3 61.5 L 261.0 62.2 L 264.7 63.1 L 268.3 64.1 L 272.0 65.2 L 275.7 66.4 L 279.4 67.7 L 283.1 69.1 L 286.8 70.6 L 290.4 72.3 L 294.1 74.1 L 297.8 75.9 L 301.5 77.9 L 305.2 80.0 L 308.9 82.3 L 312.5 84.6 L 316.2 87.0 L 319.9 89.6 L 323.6 92.3 L 327.3 95.0 L 330.9 97.9 L 334.6 100.9 L 338.3 104.1 L 342.0 107.3 L 345.7 110.7 L 349.4 114.1 L 353.0 117.7 L 356.7 121.4 L 360.4 125.2 L 364.1 129.1 L 367.8 133.1 L 371.5 137.3 L 375.1 141.5 L 378.8 145.9 L 382.5 150.4 L 386.2 154.9 L 389.9 159.7 L 393.5 164.5 L 397.2 169.4 L 400.9 174.4 L 404.6 179.6 L 408.3 184.9 L 412.0 190.3 L 415.6 195.8 L 419.3 201.4 L 423.0 207.1 L 426.7 212.9 L 430.4 218.9 L 434.1 224.9" clip-path="url(#prefigure-projectile-velocity-__clipPath-1)"/>
-  <line id="prefigure-projectile-velocity-pv-accel" x1="207.7" y1="159.6" x2="207.7" y2="193.3" stroke="#f5a623" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623)"/>
-  <g id="prefigure-projectile-velocity-__label-3" transform="translate(223.5,195.3) translate(0.0,-9.5)">
-    <g id="prefigure-projectile-velocity-__g-4">
+  <path id="prefigure-projectile-velocity-pv-path" stroke="black" stroke-width="1.5" stroke-dasharray="5" fill="none" d="M 65.8 178.3 L 69.5 173.1 L 73.2 168.1 L 76.9 163.2 L 80.5 158.4 L 84.2 153.8 L 87.9 149.2 L 91.6 144.7 L 95.3 140.4 L 99.0 136.2 L 102.6 132.1 L 106.3 128.1 L 110.0 124.2 L 113.7 120.4 L 117.4 116.8 L 121.0 113.2 L 124.7 109.8 L 128.4 106.5 L 132.1 103.3 L 135.8 100.2 L 139.5 97.2 L 143.1 94.3 L 146.8 91.6 L 150.5 88.9 L 154.2 86.4 L 157.9 84.0 L 161.6 81.7 L 165.2 79.5 L 168.9 77.4 L 172.6 75.4 L 176.3 73.6 L 180.0 71.9 L 183.6 70.2 L 187.3 68.7 L 191.0 67.3 L 194.7 66.0 L 198.4 64.9 L 202.1 63.8 L 205.7 62.9 L 209.4 62.0 L 213.1 61.3 L 216.8 60.7 L 220.5 60.2 L 224.2 59.8 L 227.8 59.6 L 231.5 59.4 L 235.2 59.4 L 238.9 59.4 L 242.6 59.6 L 246.2 59.9 L 249.9 60.3 L 253.6 60.8 L 257.3 61.5 L 261.0 62.2 L 264.7 63.1 L 268.3 64.1 L 272.0 65.2 L 275.7 66.4 L 279.4 67.7 L 283.1 69.1 L 286.8 70.6 L 290.4 72.3 L 294.1 74.1 L 297.8 75.9 L 301.5 77.9 L 305.2 80.0 L 308.9 82.3 L 312.5 84.6 L 316.2 87.0 L 319.9 89.6 L 323.6 92.3 L 327.3 95.0 L 330.9 97.9 L 334.6 100.9 L 338.3 104.1 L 342.0 107.3 L 345.7 110.7 L 349.4 114.1 L 353.0 117.7 L 356.7 121.4 L 360.4 125.2 L 364.1 129.1 L 367.8 133.1 L 371.5 137.3 L 375.1 141.5 L 378.8 145.9 L 382.5 150.4 L 386.2 154.9 L 389.9 159.7 L 393.5 164.5 L 397.2 169.4 L 400.9 174.4 L 404.6 179.6 L 408.3 184.9 L 412.0 190.3 L 415.6 195.8 L 419.3 201.4 L 423.0 207.1 L 426.7 212.9 L 430.4 218.9 L 434.1 224.9" clip-path="url(#prefigure-projectile-velocity-clipPath-1)"/>
+  <line id="prefigure-projectile-velocity-pv-accel" x1="207.7" y1="159.6" x2="207.7" y2="197.0" stroke="#f5a623" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-hf5a623)"/>
+  <g id="prefigure-projectile-velocity-label-3" transform="translate(223.5,195.3) translate(0.0,-9.5)">
+    <g id="prefigure-projectile-velocity-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="95.208px" height="19.008px" role="img" focusable="false" viewBox="0 -845 5260.1 1050" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-5-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
@@ -194,14 +154,14 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-__line-2" x1="116.5" y1="178.3" x2="116.5" y2="106.9" stroke="#777" stroke-width="1" stroke-dasharray="3" fill="none"/>
-  <line id="prefigure-projectile-velocity-__line-3" x1="65.8" y1="106.9" x2="116.5" y2="106.9" stroke="#777" stroke-width="1" stroke-dasharray="3" fill="none"/>
-  <line id="prefigure-projectile-velocity-__line-4" x1="65.8" y1="178.3" x2="114.1" y2="178.3" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-__line-5" x1="65.8" y1="178.3" x2="65.8" y2="109.3" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-pv-v0" x1="65.8" y1="178.3" x2="114.4" y2="109.9" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
-  <g id="prefigure-projectile-velocity-__g-0">
+  <line id="prefigure-projectile-velocity-line-2" x1="116.5" y1="178.3" x2="116.5" y2="106.9" stroke="#777" stroke-width="1" stroke-dasharray="3" fill="none"/>
+  <line id="prefigure-projectile-velocity-line-3" x1="65.8" y1="106.9" x2="116.5" y2="106.9" stroke="#777" stroke-width="1" stroke-dasharray="3" fill="none"/>
+  <line id="prefigure-projectile-velocity-line-4" x1="65.8" y1="178.3" x2="116.5" y2="178.3" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-line-5" x1="65.8" y1="178.3" x2="65.8" y2="106.9" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-pv-v0" x1="65.8" y1="178.3" x2="116.5" y2="106.9" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
+  <g id="prefigure-projectile-velocity-g-0">
     <g transform="translate(100.0,158.7) translate(0.0,-12.9)">
-      <g id="prefigure-projectile-velocity-__g-5">
+      <g id="prefigure-projectile-velocity-g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="12.944px" role="img" focusable="false" viewBox="0 -705 469 715" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-projectile-velocity-MJX-6-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
@@ -216,10 +176,10 @@
         </svg>
       </g>
     </g>
-    <path stroke="black" stroke-width="2" fill="none" d="M 85.5 150.5 L 85.8 150.7 L 86.0 150.9 L 86.3 151.1 L 86.5 151.3 L 86.8 151.5 L 87.1 151.7 L 87.3 151.9 L 87.6 152.1 L 87.8 152.3 L 88.0 152.5 L 88.3 152.8 L 88.5 153.0 L 88.8 153.2 L 89.0 153.4 L 89.2 153.6 L 89.5 153.9 L 89.7 154.1 L 89.9 154.3 L 90.2 154.5 L 90.4 154.8 L 90.6 155.0 L 90.8 155.3 L 91.1 155.5 L 91.3 155.7 L 91.5 156.0 L 91.7 156.2 L 91.9 156.5 L 92.1 156.7 L 92.3 157.0 L 92.5 157.2 L 92.7 157.5 L 92.9 157.7 L 93.1 158.0 L 93.3 158.3 L 93.5 158.5 L 93.7 158.8 L 93.9 159.1 L 94.0 159.3 L 94.2 159.6 L 94.4 159.9 L 94.6 160.1 L 94.7 160.4 L 94.9 160.7 L 95.1 161.0 L 95.2 161.2 L 95.4 161.5 L 95.6 161.8 L 95.7 162.1 L 95.9 162.4 L 96.0 162.7 L 96.2 163.0 L 96.3 163.3 L 96.5 163.5 L 96.6 163.8 L 96.7 164.1 L 96.9 164.4 L 97.0 164.7 L 97.1 165.0 L 97.2 165.3 L 97.4 165.6 L 97.5 165.9 L 97.6 166.2 L 97.7 166.5 L 97.8 166.8 L 97.9 167.1 L 98.0 167.4 L 98.1 167.7 L 98.2 168.1 L 98.3 168.4 L 98.4 168.7 L 98.5 169.0 L 98.6 169.3 L 98.7 169.6 L 98.8 169.9 L 98.8 170.2 L 98.9 170.6 L 99.0 170.9 L 99.1 171.2 L 99.1 171.5 L 99.2 171.8 L 99.3 172.1 L 99.3 172.5 L 99.4 172.8 L 99.4 173.1 L 99.5 173.4 L 99.5 173.7 L 99.6 174.1 L 99.6 174.4 L 99.6 174.7 L 99.7 175.0 L 99.7 175.4 L 99.7 175.7 L 99.7 176.0 L 99.8 176.3 L 99.8 176.6 L 99.8 177.0 L 99.8 177.3 L 99.8 177.6 L 99.8 177.9 L 99.8 178.3"/>
+    <path d="M 99.8 178.3 A 34.0 34.0 0 0 0 85.5 150.5" stroke="black" stroke-width="2" fill="none"/>
   </g>
-  <g id="prefigure-projectile-velocity-__label-5" transform="translate(92.2,123.3) translate(-16.7,-18.3)">
-    <g id="prefigure-projectile-velocity-__g-6">
+  <g id="prefigure-projectile-velocity-label-5" transform="translate(92.2,123.3) translate(-16.7,-18.3)">
+    <g id="prefigure-projectile-velocity-g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.000px" width="16.680px" height="18.312px" role="img" focusable="false" viewBox="0 -846 921.6 1011.6" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-7-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -248,8 +208,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-6" transform="translate(91.1,184.3) translate(-12.0,-0.0)">
-    <g id="prefigure-projectile-velocity-__g-7">
+  <g id="prefigure-projectile-velocity-label-6" transform="translate(91.1,184.3) translate(-12.0,-0.0)">
+    <g id="prefigure-projectile-velocity-g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.000px" width="24.000px" height="18.312px" role="img" focusable="false" viewBox="0 -846 1326 1011.6" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-8-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -288,8 +248,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-7" transform="translate(61.8,142.6) translate(-23.0,-10.3)">
-    <g id="prefigure-projectile-velocity-__g-8">
+  <g id="prefigure-projectile-velocity-label-7" transform="translate(61.8,142.6) translate(-23.0,-10.3)">
+    <g id="prefigure-projectile-velocity-g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -5.336px" width="22.952px" height="20.648px" role="img" focusable="false" viewBox="0 -846 1268 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-9-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -328,11 +288,11 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-__line-6" x1="150.3" y1="89.1" x2="198.5" y2="89.1" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-__line-7" x1="150.3" y1="89.1" x2="150.3" y2="55.8" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-pv-v1" x1="150.3" y1="89.1" x2="197.9" y2="55.5" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
-  <g id="prefigure-projectile-velocity-__label-8" transform="translate(177.3,62.2) translate(-4.4,-15.5)">
-    <g id="prefigure-projectile-velocity-__g-9">
+  <line id="prefigure-projectile-velocity-line-6" x1="150.3" y1="89.1" x2="200.9" y2="89.1" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-line-7" x1="150.3" y1="89.1" x2="150.3" y2="53.4" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-pv-v1" x1="150.3" y1="89.1" x2="200.9" y2="53.4" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
+  <g id="prefigure-projectile-velocity-label-8" transform="translate(177.3,62.2) translate(-4.4,-15.5)">
+    <g id="prefigure-projectile-velocity-g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="8.776px" height="15.512px" role="img" focusable="false" viewBox="0 -846 485 857" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-10-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -355,8 +315,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-9" transform="translate(175.6,95.1) translate(-8.8,-0.0)">
-    <g id="prefigure-projectile-velocity-__g-10">
+  <g id="prefigure-projectile-velocity-label-9" transform="translate(175.6,95.1) translate(-8.8,-0.0)">
+    <g id="prefigure-projectile-velocity-g-10">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.856px" width="17.600px" height="18.168px" role="img" focusable="false" viewBox="0 -846 972.5 1003.8" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-11-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -385,8 +345,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-10" transform="translate(146.3,69.6) translate(-16.6,-10.3)">
-    <g id="prefigure-projectile-velocity-__g-11">
+  <g id="prefigure-projectile-velocity-label-10" transform="translate(146.3,69.6) translate(-16.6,-10.3)">
+    <g id="prefigure-projectile-velocity-g-11">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -5.336px" width="16.552px" height="20.648px" role="img" focusable="false" viewBox="0 -846 914.5 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-12-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -415,9 +375,9 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-pv-v2" x1="234.7" y1="59.4" x2="281.7" y2="59.4" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
-  <g id="prefigure-projectile-velocity-__label-11" transform="translate(268.5,55.4) translate(-4.4,-15.5)">
-    <g id="prefigure-projectile-velocity-__g-12">
+  <line id="prefigure-projectile-velocity-pv-v2" x1="234.7" y1="59.4" x2="285.4" y2="59.4" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
+  <g id="prefigure-projectile-velocity-label-11" transform="translate(268.5,55.4) translate(-4.4,-15.5)">
+    <g id="prefigure-projectile-velocity-g-12">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="8.776px" height="15.512px" role="img" focusable="false" viewBox="0 -846 485 857" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-13-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -440,9 +400,9 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-__line-8" x1="265.1" y1="37.3" x2="236.4" y2="56.0" stroke="black" stroke-width="0.8" fill="none"/>
-  <g id="prefigure-projectile-velocity-__label-12" transform="translate(272.5,35.6) translate(0.0,-10.3)">
-    <g id="prefigure-projectile-velocity-__g-13">
+  <line id="prefigure-projectile-velocity-line-8" x1="265.1" y1="37.3" x2="236.4" y2="56.0" stroke="black" stroke-width="0.8" fill="none"/>
+  <g id="prefigure-projectile-velocity-label-12" transform="translate(272.5,35.6) translate(0.0,-10.3)">
+    <g id="prefigure-projectile-velocity-g-13">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -5.336px" width="149.920px" height="20.648px" role="img" focusable="false" viewBox="0 -846 8283 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-14-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -507,11 +467,11 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-__line-9" x1="319.2" y1="89.1" x2="367.5" y2="89.1" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-__line-10" x1="319.2" y1="89.1" x2="319.2" y2="122.4" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-pv-v3" x1="319.2" y1="89.1" x2="366.9" y2="122.7" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
-  <g id="prefigure-projectile-velocity-__label-13" transform="translate(344.5,85.1) translate(-8.8,-18.2)">
-    <g id="prefigure-projectile-velocity-__g-14">
+  <line id="prefigure-projectile-velocity-line-9" x1="319.2" y1="89.1" x2="369.9" y2="89.1" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-line-10" x1="319.2" y1="89.1" x2="319.2" y2="124.8" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-pv-v3" x1="319.2" y1="89.1" x2="369.9" y2="124.8" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
+  <g id="prefigure-projectile-velocity-label-13" transform="translate(344.5,85.1) translate(-8.8,-18.2)">
+    <g id="prefigure-projectile-velocity-g-14">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.856px" width="17.600px" height="18.168px" role="img" focusable="false" viewBox="0 -846 972.5 1003.8" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-15-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -540,8 +500,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-14" transform="translate(315.2,106.9) translate(-16.6,-10.3)">
-    <g id="prefigure-projectile-velocity-__g-15">
+  <g id="prefigure-projectile-velocity-label-14" transform="translate(315.2,106.9) translate(-16.6,-10.3)">
+    <g id="prefigure-projectile-velocity-g-15">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -5.336px" width="16.552px" height="20.648px" role="img" focusable="false" viewBox="0 -846 914.5 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-16-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -570,8 +530,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-15" transform="translate(378.9,131.3) translate(0.0,-0.0)">
-    <g id="prefigure-projectile-velocity-__g-16">
+  <g id="prefigure-projectile-velocity-label-15" transform="translate(378.9,131.3) translate(0.0,-0.0)">
+    <g id="prefigure-projectile-velocity-g-16">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="8.776px" height="15.512px" role="img" focusable="false" viewBox="0 -846 485 857" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-17-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -594,11 +554,11 @@
       </svg>
     </g>
   </g>
-  <line id="prefigure-projectile-velocity-__line-11" x1="403.6" y1="178.3" x2="451.9" y2="178.3" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-__line-12" x1="403.6" y1="178.3" x2="403.6" y2="247.2" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
-  <line id="prefigure-projectile-velocity-pv-v4" x1="403.6" y1="178.3" x2="452.2" y2="246.6" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
-  <g id="prefigure-projectile-velocity-__label-16" transform="translate(429.0,174.3) translate(-8.8,-18.2)">
-    <g id="prefigure-projectile-velocity-__g-17">
+  <line id="prefigure-projectile-velocity-line-11" x1="403.6" y1="178.3" x2="454.3" y2="178.3" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-line-12" x1="403.6" y1="178.3" x2="403.6" y2="249.6" stroke="#1a9e3a" stroke-width="2" stroke-dasharray="4" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-2_None_24_60-h1a9e3a)"/>
+  <line id="prefigure-projectile-velocity-pv-v4" x1="403.6" y1="178.3" x2="454.3" y2="249.6" stroke="#1a9e3a" stroke-width="3" fill="none" marker-end="url(#prefigure-projectile-velocity-arrow-head-end-3_None_24_60-h1a9e3a)"/>
+  <g id="prefigure-projectile-velocity-label-16" transform="translate(429.0,174.3) translate(-8.8,-18.2)">
+    <g id="prefigure-projectile-velocity-g-17">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.856px" width="17.600px" height="18.168px" role="img" focusable="false" viewBox="0 -846 972.5 1003.8" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-18-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -627,8 +587,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-17" transform="translate(399.6,213.9) translate(-16.6,-10.3)">
-    <g id="prefigure-projectile-velocity-__g-18">
+  <g id="prefigure-projectile-velocity-label-17" transform="translate(399.6,213.9) translate(-16.6,-10.3)">
+    <g id="prefigure-projectile-velocity-g-18">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -5.336px" width="16.552px" height="20.648px" role="img" focusable="false" viewBox="0 -846 914.5 1141" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-19-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
@@ -657,8 +617,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-projectile-velocity-__label-18" transform="translate(460.0,249.6) translate(0.0,-7.8)">
-    <g id="prefigure-projectile-velocity-__g-19">
+  <g id="prefigure-projectile-velocity-label-18" transform="translate(460.0,249.6) translate(0.0,-7.8)">
+    <g id="prefigure-projectile-velocity-g-19">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="8.776px" height="15.512px" role="img" focusable="false" viewBox="0 -846 485 857" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-projectile-velocity-MJX-20-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
