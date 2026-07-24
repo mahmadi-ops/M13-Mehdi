@@ -203,4 +203,407 @@
         </p>
       </solution>
     </exercise>
+
+    <!-- ================================================================ -->
+    <exercise xml:id="exer-xy-on-circle">
+      <title>A product on a circle</title>
+
+      <statement>
+        <p>
+          Find the maximum and minimum values of the function
+          <m>f(x,y) = 4xy</m> subject to the constraint
+          <m>x^2 + y^2 = 8</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Write the constraint as
+          <me>
+            g(x,y) = x^2 + y^2 - 8 = 0,
+          </me>
+          so that <m>g_x = 2x</m> and <m>g_y = 2y</m>, while
+          <m>f_x = 4y</m> and <m>f_y = 4x</m>.
+          The Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> gives
+          <me>
+            4y = 2\lambda x, \qquad 4x = 2\lambda y.
+          </me>
+        </p>
+
+        <p>
+          Solving each equation for <m>\lambda</m>,
+          <me>
+            \lambda = \frac{2y}{x} = \frac{2x}{y}
+            \qquad\Longrightarrow\qquad
+            x^2 = y^2.
+          </me>
+          Substituting into the constraint <m>x^2 + y^2 - 8 = 0</m> gives
+          <m>2x^2 = 8</m>, so
+          <me>
+            x = \pm 2, \qquad y = \pm 2.
+          </me>
+          Hence there are four extrema:
+          <m>(2,2)</m>, <m>(2,-2)</m>, <m>(-2,2)</m>, <m>(-2,-2)</m>.
+        </p>
+
+        <p>
+          Evaluating <m>f</m> at the four candidates:
+        </p>
+
+        <tabular halign="center">
+          <col width="30%"/>
+          <col width="30%"/>
+          <row header="yes" bottom="minor">
+            <cell><m>(x,y)</m></cell>
+            <cell><m>f(x,y)</m></cell>
+          </row>
+          <row>
+            <cell><m>(2,2)</m></cell>
+            <cell><m>16</m></cell>
+          </row>
+          <row>
+            <cell><m>(-2,-2)</m></cell>
+            <cell><m>16</m></cell>
+          </row>
+          <row>
+            <cell><m>(2,-2)</m></cell>
+            <cell><m>-16</m></cell>
+          </row>
+          <row>
+            <cell><m>(-2,2)</m></cell>
+            <cell><m>-16</m></cell>
+          </row>
+        </tabular>
+
+        <p>
+          The maximum value is <m>16</m>, attained at <m>(2,2)</m> and
+          <m>(-2,-2)</m>; the minimum value is <m>-16</m>, attained at
+          <m>(2,-2)</m> and <m>(-2,2)</m>.
+        </p>
+
+        <p>
+          <em>Geometric interpretation.</em>  A rectangle with corners
+          <m>(\pm x, \pm y)</m> inscribed in the circle <m>x^2+y^2=8</m>
+          has area exactly <m>4xy = f(x,y)</m>.  As the corner
+          <m>(x,y)</m> moves along the circle, we obtain rectangles of
+          different areas.
+        </p>
+
+        <figure xml:id="fig-inscribed-rects">
+          <caption>
+            Some of the possible rectangles inscribed in the circle
+            <m>x^2+y^2=8</m>.  Each has corners <m>(\pm x, \pm y)</m> for a
+            point <m>(x,y)</m> on the circle, and therefore area
+            <m>4xy = f(x,y)</m>.
+          </caption>
+          <image xml:id="img-inscribed-rects" width="55%">
+            <prefigure label="inscribed-rects" xmlns="https://prefigure.org">
+              <diagram dimensions="(400,360)" margins="5">
+                <definition>r = sqrt(8)</definition>
+                <definition>A = (r*cos(pi/9), r*sin(pi/9))</definition>
+                <definition>B = (r*cos(11*pi/36), r*sin(11*pi/36))</definition>
+                <definition>C = (r*cos(7*pi/18), r*sin(7*pi/18))</definition>
+                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
+
+                  <axes at="axes" xlabel="x" ylabel="y"/>
+
+                  <group at="constraint">
+                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
+                            stroke="blue" thickness="3"/>
+                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
+                      <m>x^2+y^2=8</m>
+                    </label>
+                  </group>
+
+                  <group at="candidates">
+                    <polygon at="rect-A" points="(A, (-A[0],A[1]), -A, (A[0],-A[1]))"
+                             closed="yes" stroke="gray" thickness="2" dash="7 4"/>
+                    <polygon at="rect-B" points="(B, (-B[0],B[1]), -B, (B[0],-B[1]))"
+                             closed="yes" stroke="orange" thickness="2" dash="7 4"/>
+                    <polygon at="rect-C" points="(C, (-C[0],C[1]), -C, (C[0],-C[1]))"
+                             closed="yes" stroke="red" thickness="2" dash="7 4"/>
+                    <point at="corner-generic" p="B" fill="orange" alignment="northeast">
+                      <m>(x,y)</m>
+                    </point>
+                  </group>
+
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The circle x squared plus y squared equals 8 with several inscribed rectangles of different proportions">
+                    <annotation ref="constraint"
+                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
+                    <annotation ref="candidates"
+                                text="Three of the possible inscribed rectangles, each with corners plus or minus x comma plus or minus y and area 4 x y">
+                      <annotation ref="rect-A"
+                                  text="A wide and short inscribed rectangle"/>
+                      <annotation ref="rect-B"
+                                  text="An inscribed rectangle of intermediate proportions, with the generic corner x comma y marked on the circle"/>
+                      <annotation ref="rect-C"
+                                  text="A tall and narrow inscribed rectangle"/>
+                    </annotation>
+                  </annotation>
+                </annotations>
+
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          The values of <m>(x,y)</m> that maximize <m>f</m> are exactly the
+          values that maximize the area of the inscribed rectangle.
+        </p>
+
+        <figure xml:id="fig-xy-on-circle">
+          <caption>
+            The optimal solution: the inscribed rectangle with corners
+            <m>(\pm 2, \pm 2)</m>, whose area
+            <m>4xy = f(2,2) = 16</m> is the largest possible.
+          </caption>
+          <image xml:id="img-xy-on-circle" width="55%">
+            <prefigure label="xy-on-circle" xmlns="https://prefigure.org">
+              <diagram dimensions="(400,360)" margins="5">
+                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
+
+                  <axes at="axes" xlabel="x" ylabel="y"/>
+
+                  <group at="constraint">
+                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
+                            stroke="blue" thickness="3"/>
+                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
+                      <m>x^2+y^2=8</m>
+                    </label>
+                  </group>
+
+                  <group at="rectangle">
+                    <polygon at="rect" points="((2,2),(-2,2),(-2,-2),(2,-2))"
+                             closed="yes" stroke="red" thickness="2.5"/>
+                    <label at="area-label" anchor="(0,-1.1)" alignment="center"
+                           clear-background="yes">
+                      <m>\text{Area} = 4xy</m>
+                    </label>
+                  </group>
+
+                  <group at="corners">
+                    <point at="corner-pp" p="(2,2)" fill="red" alignment="northeast">
+                      <m>(2,2)</m>
+                    </point>
+                    <point at="corner-mp" p="(-2,2)" fill="red" alignment="northwest">
+                      <m>(-2,2)</m>
+                    </point>
+                    <point at="corner-mm" p="(-2,-2)" fill="red" alignment="southwest">
+                      <m>(-2,-2)</m>
+                    </point>
+                    <point at="corner-pm" p="(2,-2)" fill="red" alignment="southeast">
+                      <m>(2,-2)</m>
+                    </point>
+                  </group>
+
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The circle x squared plus y squared equals 8 with an inscribed rectangle whose corners are the four constrained extrema">
+                    <annotation ref="constraint"
+                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
+                    <annotation ref="rectangle"
+                                text="The inscribed rectangle with corners plus or minus 2 comma plus or minus 2, whose area is 4 x y"/>
+                    <annotation ref="corners"
+                                text="The four constrained extrema of f">
+                      <annotation ref="corner-pp"
+                                  text="The point 2 comma 2, where f attains its maximum value 16"/>
+                      <annotation ref="corner-mm"
+                                  text="The point minus 2 comma minus 2, where f also attains its maximum value 16"/>
+                      <annotation ref="corner-pm"
+                                  text="The point 2 comma minus 2, where f attains its minimum value minus 16"/>
+                      <annotation ref="corner-mp"
+                                  text="The point minus 2 comma 2, where f also attains its minimum value minus 16"/>
+                    </annotation>
+                  </annotation>
+                </annotations>
+
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </solution>
+    </exercise>
+
+    <!-- ================================================================ -->
+    <exercise xml:id="exer-cobb-douglas">
+      <title>Maximizing a Cobb-Douglas utility</title>
+
+      <statement>
+        <p>
+          A consumer has <dollar/>600 to spend on two commodities, the first
+          of which costs <dollar/>20 per unit and the second <dollar/>30 per
+          unit.  Suppose that the utility derived by the consumer from
+          <m>x</m> units of the first commodity and <m>y</m> units of the
+          second commodity is given by the Cobb-Douglas utility function
+          <me>
+            U(x,y) = 10\,x^{0.6}y^{0.4}.
+          </me>
+          How many units of each commodity should the consumer buy to
+          maximize utility?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The budget constraint is <m>20x + 30y = 600</m>, so we take
+          <me>
+            g(x,y) = 20x + 30y - 600 = 0,
+          </me>
+          with <m>g_x = 20</m> and <m>g_y = 30</m>, and maximize
+          <m>U(x,y) = 10\,x^{0.6}y^{0.4}</m>, whose partial derivatives are
+          <me>
+            U_x = 6\,x^{-0.4}y^{0.4}, \qquad
+            U_y = 4\,x^{0.6}y^{-0.6}.
+          </me>
+        </p>
+
+        <p>
+          The Lagrange condition <m>\nabla U = \lambda\,\nabla g</m> gives
+          the system
+          <me>
+            6\,x^{-0.4}y^{0.4} = 20\lambda, \qquad
+            4\,x^{0.6}y^{-0.6} = 30\lambda.
+          </me>
+          Dividing the first equation by the second eliminates
+          <m>\lambda</m>:
+          <me>
+            \frac{3}{2}\cdot\frac{y}{x} = \frac{2}{3}
+            \qquad\Longrightarrow\qquad
+            y = \frac{4}{9}\,x.
+          </me>
+        </p>
+
+        <p>
+          Substituting into the budget constraint,
+          <md>
+            <mrow>20x + 30\left(\frac{4}{9}x\right) \amp= 600</mrow>
+            <mrow>20x + \frac{40}{3}x \amp= 600</mrow>
+            <mrow>\frac{100}{3}x \amp= 600,</mrow>
+          </md>
+          so <m>x = 18</m> and <m>y = 18\cdot\frac{4}{9} = 8</m>.
+          The consumer should buy <m>18</m> units of the first commodity and
+          <m>8</m> units of the second.
+        </p>
+      </solution>
+    </exercise>
+
+    <!-- ================================================================ -->
+    <exercise xml:id="exer-jewelry-box">
+      <title>Minimizing the cost of a box</title>
+
+      <statement>
+        <p>
+          A jewelry box is to be constructed of material that costs
+          <dollar/>1 per square inch for the bottom, <dollar/>2 per square
+          inch for the sides, and <dollar/>5 per square inch for the top.
+          If the total volume is to be <m>96 \text{ in}^3</m>, what
+          dimensions will minimize the total cost of construction?
+        </p>
+
+        <figure xml:id="fig-jewelry-box">
+          <caption>
+            The box with dimensions <m>x</m>, <m>y</m>, <m>z</m>: bottom and
+            top of area <m>xy</m>, and sides of areas <m>xz</m> and
+            <m>yz</m>.
+          </caption>
+          <image xml:id="img-jewelry-box" width="45%">
+            <description>
+              A rectangular box drawn in three dimensions, with the
+              horizontal edges of the base labeled x and y and the vertical
+              edge labeled z.
+            </description>
+            <latex-image label="jewelry-box">
+              \begin{tikzpicture}[line join=round, scale=1.0]
+                \def\W{4}   % x : front width
+                \def\H{2.5} % z : height
+                \def\OX{1.5}\def\OY{0.85} % oblique offsets for the y depth
+                % faces
+                \fill[orange!30] (0,0) rectangle (\W,\H);
+                \fill[orange!50]
+                  (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+                \fill[orange!40]
+                  (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+                % hidden edges
+                \draw[orange!60!black, dashed]
+                  (0,0) -- (\OX,\OY) -- (\W+\OX,\OY);
+                \draw[orange!60!black, dashed] (\OX,\OY) -- (\OX,\H+\OY);
+                % visible edges
+                \draw[orange!60!black, thick] (0,0) rectangle (\W,\H);
+                \draw[orange!60!black, thick]
+                  (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H);
+                \draw[orange!60!black, thick]
+                  (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY);
+                % dimension labels
+                \node[below] at (\W/2, 0) {$x$};
+                \node[below right] at (\W + 0.5*\OX, 0.5*\OY) {$y$};
+                \node[right] at (\W+\OX, \OY + 0.5*\H) {$z$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+
+      <solution>
+        <p>
+          Let <m>x</m> and <m>y</m> be the dimensions of the base and
+          <m>z</m> the height.  The bottom costs <m>1\cdot xy</m>, the top
+          costs <m>5\cdot xy</m>, and the four sides cost
+          <m>2(2xz) + 2(2yz)</m>, so the total cost of construction is
+          <me>
+            C(x,y,z) = 6xy + 4xz + 4yz,
+          </me>
+          with partial derivatives
+          <me>
+            C_x = 6y + 4z, \qquad
+            C_y = 6x + 4z, \qquad
+            C_z = 4x + 4y.
+          </me>
+          The volume requirement gives the constraint
+          <me>
+            g(x,y,z) = xyz - 96 = 0,
+          </me>
+          with <m>g_x = yz</m>, <m>g_y = xz</m>, <m>g_z = xy</m>.
+        </p>
+
+        <p>
+          The Lagrange condition <m>\nabla C = \lambda\,\nabla g</m> gives
+          the system
+          <me>
+            6y + 4z = \lambda yz, \qquad
+            6x + 4z = \lambda xz, \qquad
+            4x + 4y = \lambda xy.
+          </me>
+          Multiplying the equations by <m>x</m>, <m>y</m>, <m>z</m>
+          respectively makes each right-hand side equal to
+          <m>\lambda xyz</m>:
+          <me>
+            6xy + 4xz = 6xy + 4yz = 4xz + 4yz.
+          </me>
+          The first equality gives <m>4xz = 4yz</m>, so <m>x = y</m>.
+          The second gives <m>6xy = 4xz</m>, so <m>z = \frac{3}{2}y</m>.
+        </p>
+
+        <p>
+          Substituting <m>y = x</m> and <m>z = \frac{3}{2}x</m> into the
+          constraint <m>xyz = 96</m>,
+          <me>
+            (x)(x)\left(\tfrac{3}{2}x\right) = 96
+            \qquad\Longrightarrow\qquad
+            x^3 = 64,
+          </me>
+          so <m>x = 4</m>.  The cost is minimized by the dimensions
+          <me>
+            x = 4, \qquad y = 4, \qquad z = 6.
+          </me>
+        </p>
+      </solution>
+    </exercise>
+
 </worksheet>
