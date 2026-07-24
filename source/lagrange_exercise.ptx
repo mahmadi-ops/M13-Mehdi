@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Exercise for the Lagrange Multipliers chapter, collected in the Exercises chapter.
+-->
+<worksheet xml:id="exercises-lagrange">
+  <title> Exercises for <xref ref="section-lagrange-multipliers" text="title"/></title>
+
+  <introduction>
+    <p>
+      If you would like to review this topic before attempting the exercises,
+      click <xref ref="section-lagrange-multipliers" text="title"/>.
+    </p>
+  </introduction>
+
+    <exercise xml:id="exer-parallel-tangent-plane">
+      <title>Tangent Planes Parallel to a Given Plane</title>
+
+      <statement>
+        <p>
+          Find the points on the surface
+          <me>x^2 + y^2 + 3z^2 = 1</me>
+          at which the tangent plane is parallel to the plane
+          <m>-x - 5y - 2z = -3</m>.
+        </p>
+
+        <figure xml:id="fig-lagrange-schematic">
+          <caption>
+            A schematic cross-section.  The tangent plane to the ellipsoid is
+            parallel to the given plane exactly at the closest point <m>S_1</m>
+            and the farthest point <m>S_2</m>, where <m>\nabla g</m> is
+            parallel to the plane's normal <m>\mathbf{n}</m>.
+          </caption>
+          <image xml:id="img-lagrange-schematic" width="75%">
+            <prefigure label="lagrange-schematic" xmlns="https://prefigure.org">
+              <diagram dimensions="(500,330)" margins="5">
+                <definition>S1 = (sqrt(2), sqrt(2)/2)</definition>
+                <definition>S2 = (-sqrt(2), -sqrt(2)/2)</definition>
+                <definition>P = (2.5, 1)</definition>
+                <coordinates bbox="[-3.6,-2.3,5.6,3.3]">
+
+                  <group at="constraint">
+                    <ellipse at="ellipse" center="(0,0)" axes="(2,1)"
+                             stroke="blue" thickness="3"/>
+                    <label at="constraint-label" anchor="(0.4,-1.12)" alignment="southeast">
+                      <m>g(x,y,z)=0</m>
+                    </label>
+                  </group>
+
+                  <group at="plane">
+                    <line at="plane-line" p1="(4.9,-0.2)" p2="(-0.1,2.3)"
+                          stroke="black" thickness="3"/>
+                    <label at="plane-label" anchor="(0.8,2.35)" alignment="north">
+                      <m>x+5y+2z=3</m>
+                    </label>
+                  </group>
+
+                  <group at="tangencies">
+                    <group at="tangency-S1">
+                      <line at="tangent-S1" p1="S1" p2="S1+(2,-1)" infinite="yes"
+                            stroke="gray" dash="9 5"/>
+                      <vector at="gradg-S1" v="(0.65,1.3)" tail="S1"
+                              stroke="orange" thickness="3"/>
+                      <label at="gradg-S1-label" anchor="S1+(0.65,1.3)" alignment="west">
+                        <m>\nabla g</m>
+                      </label>
+                      <point at="S1-point" p="S1" fill="red" alignment="southwest">
+                        <m>S_1</m>
+                      </point>
+                    </group>
+                    <group at="tangency-S2">
+                      <line at="tangent-S2" p1="S2" p2="S2+(2,-1)" infinite="yes"
+                            stroke="gray" dash="9 5"/>
+                      <vector at="gradg-S2" v="(-0.65,-1.3)" tail="S2"
+                              stroke="orange" thickness="3"/>
+                      <label at="gradg-S2-label" anchor="S2+(-0.65,-1.3)" alignment="southeast">
+                        <m>\nabla g</m>
+                      </label>
+                      <point at="S2-point" p="S2" fill="red" alignment="northeast">
+                        <m>S_2</m>
+                      </point>
+                    </group>
+                  </group>
+
+                  <group at="distance">
+                    <line at="distance-segment" p1="S1" p2="P"
+                          stroke="red" dash="4 4" thickness="2"/>
+                  </group>
+
+                  <group at="normal">
+                    <vector at="n-vector" v="(0.55,1.1)" tail="P"
+                            stroke="blue" thickness="3"/>
+                    <label at="n-label" anchor="P+(0.55,1.1)" alignment="northeast">
+                      <m>\mathbf{n}=\langle 1,5,2\rangle</m>
+                    </label>
+                    <point at="P-point" p="P" fill="black" alignment="east">
+                      <m>P(3,0,0)</m>
+                    </point>
+                  </group>
+
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="A schematic cross-section of the ellipsoid together with the given plane, the two tangency points, and the gradient vectors">
+                    <annotation ref="constraint"
+                                text="The constraint curve g equals 0, a cross-section of the ellipsoid x squared plus y squared plus 3 z squared equals 1"/>
+                    <annotation ref="plane"
+                                text="The given plane x plus 5 y plus 2 z equals 3, which does not meet the ellipsoid"/>
+                    <annotation ref="tangencies"
+                                text="The two points on the ellipsoid where the tangent plane is parallel to the given plane">
+                      <annotation ref="tangency-S1"
+                                  text="At S 1, the point of the ellipsoid closest to the plane, the tangent plane is parallel to the given plane and the gradient of g is parallel to n"/>
+                      <annotation ref="tangency-S2"
+                                  text="At S 2, the point of the ellipsoid farthest from the plane, the tangent plane is again parallel to the given plane and the gradient of g points opposite to n"/>
+                    </annotation>
+                    <annotation ref="distance"
+                                text="The distance from S 1 to the plane, the quantity minimized in the Lagrange multiplier method"/>
+                    <annotation ref="normal"
+                                text="The point P equals 3 comma 0 comma 0 chosen on the plane, with the normal vector n equals 1 comma 5 comma 2"/>
+                  </annotation>
+                </annotations>
+
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </statement>
+
+      <solution>
+        <p>
+          Multiplying by <m>-1</m>, the given plane is
+          <m>x + 5y + 2z = 3</m>, with normal vector
+          <m>\mathbf{n} = \langle 1, 5, 2\rangle</m>.
+          The tangent plane to the ellipsoid is parallel to this plane exactly
+          at the points of the ellipsoid that are closest to and farthest from
+          it, so we minimize and maximize the distance to the plane subject to
+          the constraint of lying on the ellipsoid.
+        </p>
+
+        <p>
+          Choose a point on the plane, say <m>P(3,0,0)</m>.
+          For a point <m>S(x,y,z)</m> on the ellipsoid, the distance from
+          <m>S</m> to the plane is
+          <me>
+            \frac{\overrightarrow{PS}\cdot\mathbf{n}}{\lvert\mathbf{n}\rvert}
+            = \frac{\langle x-3,\, y,\, z\rangle\cdot\langle 1,5,2\rangle}
+                   {\lvert\mathbf{n}\rvert}.
+          </me>
+          Since <m>\lvert\mathbf{n}\rvert</m> is constant, it suffices to
+          optimize the numerator
+          <me>
+            f(x,y,z) = x - 3 + 5y + 2z
+          </me>
+          subject to the constraint
+          <me>
+            g(x,y,z) = x^2 + y^2 + 3z^2 - 1 = 0.
+          </me>
+        </p>
+
+        <p>
+          The Lagrange condition <m>\nabla f = \lambda\, \nabla g</m> gives
+          <me>
+            \langle 1, 5, 2\rangle = \lambda \langle 2x,\, 2y,\, 6z\rangle,
+          </me>
+          so
+          <me>
+            x = \frac{1}{2\lambda}, \qquad
+            y = \frac{5}{2\lambda}, \qquad
+            z = \frac{1}{3\lambda}.
+          </me>
+        </p>
+
+        <p>
+          Substituting into the constraint <m>x^2 + y^2 + 3z^2 = 1</m>,
+          <md>
+            <mrow>\frac{1}{4\lambda^2} + \frac{25}{4\lambda^2} + \frac{3}{9\lambda^2} \amp= 1</mrow>
+            <mrow>\frac{3 + 75 + 4}{12\lambda^2} \amp= 1</mrow>
+            <mrow>\frac{1}{\lambda^2} \amp= \frac{12}{82},</mrow>
+          </md>
+          so that
+          <me>
+            \frac{1}{\lambda} = \pm 2\sqrt{\frac{3}{82}}.
+          </me>
+        </p>
+
+        <p>
+          Therefore
+          <me>
+            x = \pm\sqrt{\frac{3}{82}}, \qquad
+            y = \pm 5\sqrt{\frac{3}{82}}, \qquad
+            z = \pm\sqrt{\frac{2}{123}},
+          </me>
+          and the two points are
+          <me>
+            S_1\!\left(\sqrt{\tfrac{3}{82}},\; 5\sqrt{\tfrac{3}{82}},\; \sqrt{\tfrac{2}{123}}\right)
+            \qquad\text{and}\qquad
+            S_2\!\left(-\sqrt{\tfrac{3}{82}},\; -5\sqrt{\tfrac{3}{82}},\; -\sqrt{\tfrac{2}{123}}\right).
+          </me>
+          The positive signs give <m>S_1</m>, the point closest to the plane,
+          and the negative signs give <m>S_2</m>, the farthest.  At both
+          points the tangent plane is parallel to the plane
+          <m>x + 5y + 2z = 3</m>.
+        </p>
+      </solution>
+    </exercise>
+</worksheet>
