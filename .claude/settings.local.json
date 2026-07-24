@@ -69,7 +69,12 @@
       "Bash(grep -io \"ChemAccess[^{]*{[^}]*}\\\\|diagcess[^{]*{[^}]*}\\\\|\\\\.image[^{]*{[^}]*}\\\\|svg[^{,]*{[^}]*}\" output/web/_static/pretext/css/print-worksheet.css)",
       "Bash(grep -n 'theme.css\\\\|ol-markers.css\\\\|css/@custom\\\\|html/css\\\\|$html-css-\\\\|_static.*css\\\\|css-additions\\\\|additional.*css\\\\|custom-css-file' /root/.ptx/2.37.1/core/xsl/pretext-html.xsl)",
       "Bash(awk '{print $NF, $5\"b\"}')",
-      "Bash(awk '{print $6, $7}')"
+      "Bash(awk '{print $6, $7}')",
+      "Bash(git credential *)",
+      "Bash(git branch *)",
+      "Bash(awk '{print $5, $NF}')",
+      "Bash(grep -nA1 \"<section xml:id\" source/LagrangeMultipliers.ptx)",
+      "Bash(awk 'length>85 && /\\\\\\\\|\\\\^|_|\\\\\\\\Rightarrow|\\\\\\\\amp|nabla|sqrt|frac|lambda/ {print NR\": \\(\"length\"\\) \"$0}' source/LagrangeMultipliers.ptx)"
     ]
   }
 }
