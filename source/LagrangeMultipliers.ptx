@@ -64,7 +64,10 @@ three variables.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lagrange-collinear">
+<section xml:id="sec-lagrange-method">
+<title>The Method of Lagrange Multipliers</title>
+
+<subsection xml:id="sec-lagrange-collinear">
 <title>Why the Gradients Must Be Collinear</title>
 
 <p>
@@ -309,11 +312,11 @@ component tangent to the surface, so once again <m>\nabla f</m> and
 <m>\nabla g</m> must be collinear.
 </p>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lagrange-method">
-<title>The Method of Lagrange Multipliers</title>
+<subsection xml:id="subsec-lagrange-statement">
+<title>Stating the Method</title>
 
 <theorem xml:id="thm-lagrange-multipliers">
 <title>The Method of Lagrange Multipliers</title>
@@ -346,10 +349,15 @@ unknown that we eliminate along the way while solving for the
 coordinates of the candidate points.
 </p>
 
+</subsection>
+
 </section>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lagrange-example-ellipse">
+<section xml:id="sec-lagrange-examples">
+<title>Examples</title>
+
+<subsection xml:id="sec-lagrange-example-ellipse">
 <title>Extrema on an Ellipse</title>
 
 <p>
@@ -542,10 +550,10 @@ tangent to the ellipse at the four extremal points, where
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lagrange-example-distance">
+<subsection xml:id="sec-lagrange-example-distance">
 <title>Shortest Distance to a Plane</title>
 
 <p>
@@ -726,10 +734,10 @@ which reach the plane in any other direction, are longer.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lagrange-example-circle">
+<subsection xml:id="sec-lagrange-example-circle">
 <title>Absolute Extrema on a Circle</title>
 
 <example xml:id="example-lagrange-circle">
@@ -923,6 +931,8 @@ tangent to the constraint circle, while an intermediate level curve
 </prefigure>
 </image>
 </figure>
+
+</subsection>
 
 </section>
 
