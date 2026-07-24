@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Article 11 - Projectiles on an Inclined Plane, written as a PreTeXt <activity>.
+  Notation follows the Section 1.3 webpage:
+      v_0   initial speed          (book's  u)
+      theta launch/elevation angle (book's  alpha)
+      beta  inclination of plane
+      g     acceleration of gravity
+  The figure is a PreFigure <diagram> embedded directly inside <image>.
+-->
+
+<section xml:id="sec-projectile-incline">
+  <title>Projectiles on an Inclined Plane</title>
+
+  <activity xml:id="activity-projectile-incline">
+    <title>Range up (and down) an inclined plane</title>
+
+    <introduction>
+      <p>
+        A particle is launched from a point <m>O</m> on an inclined plane and
+        travels in the vertical plane that contains the line of greatest slope
+        through <m>O</m>. The plane makes an angle <m>\beta</m> with the
+        horizontal, and the particle leaves <m>O</m> with initial speed
+        <m>v_0</m> at an elevation <m>\theta</m> to the horizontal. Taking the
+        origin at <m>O</m> with horizontal and vertical axes and neglecting air
+        resistance, the trajectory is the projectile parabola
+        <md>
+          y = x\tan\theta - \frac{g\,x^2}{2\,v_0^2\cos^2\theta}\text{.}
+        </md>
+        Let <m>P</m> be the point where the particle meets the plane again, and
+        let <m>R = OP</m> be the range measured <em>along the plane</em>, so that
+        <m>P = \bigl(R\cos\beta,\ R\sin\beta\bigr)</m>. Work through the tasks
+        below to find the range on the plane, the maximum range for a given
+        <m>v_0</m>, and the time of flight, and then to read off the
+        corresponding results when the particle is fired <em>down</em> the plane.
+      </p>
+
+      <figure xml:id="fig-projectile-incline">
+        <caption>
+          A particle projected up the plane with speed <m>v_0</m> at elevation
+          <m>\theta</m>, striking the incline (angle <m>\beta</m>) at <m>P</m>
+          after travelling a range <m>R=OP</m> along the slope.
+        </caption>
+        <image width="85%" xml:id="image-projectile-incline">
+          <!-- PreFigure source embedded inline -->
+          <prefigure xmlns="https://prefigure.org" label="prefigure-projectile-incline">
+          <diagram dimensions="(420,280)" margins="5">
+            <definition>f(x) = 1.2*x - 0.1*x^2</definition>
+            <coordinates bbox="(-1.2, -1, 10.5, 5)">
+              <axes xlabel="x" ylabel="y" decorations="no"/>
+              <!-- the inclined plane (line of greatest slope) -->
+              <line p1="(0,0)" p2="(9.6,3.84)" stroke="black" thickness="2"/>
+              <!-- the parabolic trajectory -->
+              <graph domain="(0,8)" function="f" stroke="blue" thickness="2"/>
+              <!-- range R along the plane from O to P -->
+              <line p1="(0,0)" p2="(8,3.2)" stroke="black" thickness="1"/>
+              <!-- vertical projection R sin(beta) from foot M up to P -->
+              <line p1="(8,0)" p2="(8,3.2)" stroke="gray" dash="4"/>
+              <!-- initial velocity direction -->
+              <line p1="(0,0)" p2="(1.6,1.92)" stroke="red" thickness="2" arrows="1"/>
+              <!-- key points -->
+              <!-- angle markers: beta from horizontal to incline, theta from horizontal to velocity -->
+              <angle-marker points="((1,0),(0,0),(2,0.8))" radius="26" stroke="black"><m>\beta</m></angle-marker>
+              <angle-marker points="((1,0),(0,0),(1.6,1.92))" radius="46" stroke="black" offset="(0,10)"><m>\theta</m></angle-marker>
+              <point p="(0,0)" size="3"/>
+              <point p="(8,3.2)" size="3"/>
+              <!-- labels -->
+              <label anchor="(0,0)" alignment="sw"><m>O</m></label>
+              <label anchor="(8,3.2)" alignment="ne" offset="(0,10)"><m>P</m></label>
+              <label anchor="(8,0)" alignment="s"><m>M</m></label>
+              <label anchor="(1.6,1.92)" alignment="nw"><m>v_0</m></label>
+              <label anchor="(4.2,1.9)" alignment="nw" offset="(0,-16)"><m>R</m></label>
+              <label anchor="(8,1.6)" alignment="e"><m>R\sin\beta</m></label>
+              <label anchor="(4,0)" alignment="s"><m>R\cos\beta</m></label>
+            </coordinates>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+    </introduction>
+
+    <task xml:id="task-incline-onpath">
+      <statement>
+        <p>
+          Since <m>P=\bigl(R\cos\beta,\ R\sin\beta\bigr)</m> lies on the
+          trajectory, substitute these coordinates into the parabola and cancel a
+          factor of <m>R</m> to show that
+          <md>
+            \sin\beta = \cos\beta\,\tan\theta
+              - \frac{g\,R\,\cos^2\beta}{2\,v_0^2\cos^2\theta}\text{.}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Putting <m>x=R\cos\beta</m> and <m>y=R\sin\beta</m> into
+          <m>y = x\tan\theta - \dfrac{g x^2}{2 v_0^2\cos^2\theta}</m> gives
+          <md>
+            R\sin\beta = R\cos\beta\,\tan\theta
+              - \frac{g\,R^2\cos^2\beta}{2\,v_0^2\cos^2\theta}\text{.}
+          </md>
+          Dividing through by <m>R</m> (the particle is not at <m>O</m>) yields the
+          stated relation.
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-incline-range">
+      <statement>
+        <p>
+          Rearrange the relation from the previous task to isolate <m>R</m>, and
+          use <m>\sin\theta\cos\beta - \cos\theta\sin\beta = \sin(\theta-\beta)</m>
+          to obtain the <term>range up the plane</term>
+          <md>
+            R = \frac{2\,v_0^2\,\sin(\theta-\beta)\cos\theta}{g\cos^2\beta}\text{.}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Collect the <m>R</m>-term:
+          <md>
+            \frac{g\,R\,\cos^2\beta}{2\,v_0^2\cos^2\theta}
+              = \cos\beta\,\tan\theta - \sin\beta
+              = \frac{\sin\theta\cos\beta - \cos\theta\sin\beta}{\cos\theta}
+              = \frac{\sin(\theta-\beta)}{\cos\theta}\text{.}
+          </md>
+          Solving for <m>R</m>,
+          <md>
+            R = \frac{2\,v_0^2\cos^2\theta}{g\cos^2\beta}\cdot
+                \frac{\sin(\theta-\beta)}{\cos\theta}
+              = \frac{2\,v_0^2\,\sin(\theta-\beta)\cos\theta}{g\cos^2\beta}\text{.}
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-incline-maxrange">
+      <statement>
+        <p>
+          Using the identity
+          <m>2\sin(\theta-\beta)\cos\theta = \sin(2\theta-\beta) - \sin\beta</m>,
+          rewrite the range as
+          <md>
+            R = \frac{v_0^2}{g\cos^2\beta}
+                \bigl[\sin(2\theta-\beta) - \sin\beta\bigr]\text{.}
+          </md>
+          For a fixed launch speed <m>v_0</m>, deduce the elevation <m>\theta</m>
+          that maximizes <m>R</m>, and show that the maximum range up the plane is
+          <md>
+            R_{\max} = \frac{v_0^2}{g\,(1+\sin\beta)}\text{.}
+          </md>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          With <m>v_0</m>, <m>g</m>, and <m>\beta</m> held constant, only
+          <m>\sin(2\theta-\beta)</m> varies, and it is largest when it equals
+          <m>1</m>. Afterwards use <m>\cos^2\beta = (1-\sin\beta)(1+\sin\beta)</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>R</m> is greatest when <m>\sin(2\theta-\beta)=1</m>, i.e. when
+          <m>2\theta-\beta = \dfrac{\pi}{2}</m>, giving the optimal elevation
+          <md>
+            \theta = \frac{\pi}{4} + \frac{\beta}{2}\text{.}
+          </md>
+          At this value,
+          <md>
+            R_{\max} = \frac{v_0^2}{g\cos^2\beta}\,(1-\sin\beta)
+              = \frac{v_0^2\,(1-\sin\beta)}{g\,(1-\sin\beta)(1+\sin\beta)}
+              = \frac{v_0^2}{g\,(1+\sin\beta)}\text{.}
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-incline-tof">
+      <statement>
+        <p>
+          The horizontal distance <m>OM</m> to the foot of <m>P</m> is covered at
+          the constant horizontal speed <m>v_0\cos\theta</m>. Using
+          <m>OM = R\cos\beta</m>, show that the <term>time of flight</term> is
+          <md>
+            T = \frac{2\,v_0\,\sin(\theta-\beta)}{g\cos\beta}\text{.}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From <m>R\cos\beta = v_0\cos\theta\cdot T</m>,
+          <md>
+            T = \frac{R\cos\beta}{v_0\cos\theta}
+              = \frac{\cos\beta}{v_0\cos\theta}\cdot
+                \frac{2\,v_0^2\,\sin(\theta-\beta)\cos\theta}{g\cos^2\beta}
+              = \frac{2\,v_0\,\sin(\theta-\beta)}{g\cos\beta}\text{.}
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-incline-down">
+      <statement>
+        <p>
+          When the particle is projected <em>down</em> the plane, the geometry is
+          the same with <m>\beta</m> replaced by <m>-\beta</m>. Write down the
+          range, maximum range, and time of flight down the inclined plane.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Replacing <m>\beta \to -\beta</m>:
+          <md>
+            R_{\text{down}} =
+              \frac{2\,v_0^2\,\sin(\theta+\beta)\cos\theta}{g\cos^2\beta}\text{,}
+            \qquad
+            R_{\max,\text{down}} = \frac{v_0^2}{g\,(1-\sin\beta)}\text{,}
+          </md>
+          <md>
+            T_{\text{down}} = \frac{2\,v_0\,\sin(\theta+\beta)}{g\cos\beta}\text{.}
+          </md>
+        </p>
+      </answer>
+    </task>
+
+    <conclusion>
+      <p>
+        The maximum range up the plane occurs when
+        <m>2\theta - \beta = \dfrac{\pi}{2}</m>, which rearranges to
+        <m>\theta - \beta = \dfrac{\pi}{2} - \theta</m>. The left side is the angle
+        the launch direction makes <em>above the incline</em>, and the right side
+        is the angle it makes <em>below the vertical</em>. Since they are equal,
+        the direction of projection for maximum range up an inclined plane
+        bisects the angle between the upward vertical through <m>O</m> and the
+        line of greatest slope.
+      </p>
+    </conclusion>
+  </activity>
+
+  <figure xml:id="fig-velocity-at-P">
+    <caption>
+      A particle projected from <m>O</m> with speed <m>v_0</m> at elevation
+      <m>\theta</m>. At the point <m>P</m> reached after time <m>t</m>, the
+      velocity <m>v</m> is tangent to the path and makes an angle <m>\phi</m>
+      with the horizontal; <m>h</m> is the depth of <m>P</m> below the directrix.
+    </caption>
+    <image width="85%" xml:id="image-velocity-at-P">
+      <!-- PreFigure source embedded inline -->
+      <prefigure xmlns="https://prefigure.org" label="prefigure-velocity-at-P">
+      <diagram dimensions="(420,300)" margins="5">
+        <definition>f(x) = 0.2*x*(8 - x)</definition>
+        <coordinates bbox="(-1.2, -1, 9.6, 5.4)">
+          <axes xlabel="x" ylabel="y" decorations="no"/>
+          <!-- directrix (for the corollary) -->
+          <line p1="(-0.5,4.45)" p2="(8.8,4.45)" stroke="gray" dash="4"/>
+          <label anchor="(3.3,4.45)" alignment="n">directrix</label>
+          <!-- parabolic trajectory -->
+          <graph domain="(0,8)" function="f" stroke="blue" thickness="2"/>
+          <!-- vertical fall from the directrix down to P -->
+          <line p1="(6,2.4)" p2="(6,4.45)" stroke="gray" dash="4"/>
+          <label anchor="(6,3.42)" alignment="w"><m>h</m></label>
+          <!-- initial velocity at O -->
+          <line p1="(0,0)" p2="(1.06,1.70)" stroke="red" thickness="2" arrows="1"/>
+          <angle-marker points="((1,0),(0,0),(1.06,1.70))" radius="30" stroke="black"><m>\theta</m></angle-marker>
+          <label anchor="(1.06,1.70)" alignment="nw"><m>v_0</m></label>
+          <!-- velocity components triangle at P -->
+          <line p1="(6,2.4)" p2="(7.64,2.4)" stroke="gray" dash="3"/>
+          <line p1="(7.64,2.4)" p2="(7.64,1.09)" stroke="gray" dash="3"/>
+          <!-- velocity vector at P (tangent to path) -->
+          <line p1="(6,2.4)" p2="(7.64,1.09)" stroke="red" thickness="2" arrows="1"/>
+          <angle-marker points="((7.64,1.09),(6,2.4),(7.64,2.4))" radius="26" stroke="black"><m>\phi</m></angle-marker>
+          <label anchor="(7.0,1.66)" alignment="ne"><m>v</m></label>
+          <!-- key points -->
+          <point p="(0,0)" size="3"/>
+          <point p="(6,2.4)" size="3"/>
+          <label anchor="(0,0)" alignment="sw"><m>O</m></label>
+          <label anchor="(6,2.4)" alignment="nw" offset="(-9,13)"><m>P</m></label>
+        </coordinates>
+      </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <exercises xml:id="exercises-projectile-velocity">
+    <title>Velocity and direction after a given time</title>
+
+    <exercise xml:id="exercise-velocity-direction">
+      <statement>
+        <p>
+          A particle is projected from <m>O</m> with speed <m>v_0</m> at an
+          elevation <m>\theta</m> to the horizontal, as in
+          <xref ref="fig-velocity-at-P"/>. At time <m>t</m> it is at the point
+          <m>P</m>, moving with speed <m>v</m> in a direction making an angle
+          <m>\phi</m> with the horizontal. Show that
+          <md>
+            v = \sqrt{\,v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2\,}
+          </md>
+          and
+          <md>
+            \tan\phi = \frac{v_0\sin\theta - g\,t}{v_0\cos\theta}\text{.}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Take the origin at <m>O</m> with horizontal and vertical axes. The
+          coordinates of <m>P</m> at time <m>t</m> are
+          <md>
+            x = v_0\cos\theta\;t\text{,} \qquad
+            y = v_0\sin\theta\;t - \tfrac{1}{2}g\,t^2\text{.}
+          </md>
+          The horizontal and vertical components of the velocity are the time
+          derivatives of these, so
+          <md>
+            v\cos\phi = \frac{dx}{dt} = v_0\cos\theta\text{,} \qquad
+            v\sin\phi = \frac{dy}{dt} = v_0\sin\theta - g\,t\text{.}
+          </md>
+          Squaring and adding eliminates <m>\phi</m>:
+          <md>
+            v^2 = v_0^2\cos^2\theta + \bigl(v_0\sin\theta - g\,t\bigr)^2
+                = v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2\text{,}
+          </md>
+          which gives the speed at time <m>t</m>. Dividing the vertical component
+          by the horizontal component gives the direction,
+          <md>
+            \tan\phi = \frac{v_0\sin\theta - g\,t}{v_0\cos\theta}\text{,}
+          </md>
+          that is, <m>\phi = \arctan\!\left(\dfrac{v_0\sin\theta - g\,t}{v_0\cos\theta}\right)</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="exercise-directrix-freefall">
+      <statement>
+        <p>
+          The <term>directrix</term> of the parabolic path is the horizontal line
+          at height <m>\dfrac{v_0^2}{2g}</m> above <m>O</m>. Using the previous
+          exercise, show that the speed of the particle at <m>P</m> is equal to the
+          speed it would acquire by falling freely from the level of the directrix
+          down to <m>P</m>. That is, if <m>h</m> denotes the depth of <m>P</m>
+          below the directrix (see <xref ref="fig-velocity-at-P"/>), then
+          <m>v^2 = 2\,g\,h</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From the previous exercise,
+          <md>
+            v^2 = v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2
+                = v_0^2 - 2g\!\left(v_0\,t\sin\theta - \tfrac{1}{2}g\,t^2\right)
+                = v_0^2 - 2 g y\text{,}
+          </md>
+          since <m>y = v_0\,t\sin\theta - \tfrac{1}{2}g\,t^2</m> is the height of
+          <m>P</m>. Writing this as
+          <md>
+            v^2 = 2g\!\left(\frac{v_0^2}{2g} - y\right)
+          </md>
+          and recognizing <m>\dfrac{v_0^2}{2g}</m> as the height of the directrix
+          above <m>O</m>, the quantity <m>h = \dfrac{v_0^2}{2g} - y</m> is exactly
+          the depth of <m>P</m> below the directrix. Hence <m>v^2 = 2\,g\,h</m>,
+          the square of the speed gained by falling freely through the height
+          <m>h</m>.
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

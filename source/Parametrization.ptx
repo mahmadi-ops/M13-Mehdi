@@ -552,6 +552,8 @@ As expected, the trajectory of a projectile is a parabolic.
 </p>
 </section>
 
+<xi:include href="art11-projectile-incline.ptx"/>
+
 <section xml:id="sec-intersection-collision">
   <title>Intersection Points versus Collision Points</title>
 
