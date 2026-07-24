@@ -516,11 +516,11 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
 A type of parametric equation that may have already seen is the equation of motion
 for a projectile.  In this case, the parameter is time, and <m>(x(t), y(t))</m> 
 position of the projectile.  You may recall from your introductory physics course 
-that an object under the influence alone will follow the following equations of 
+that an object under the influence of gravitational force alone will follow the following equations of 
 motion:
-<md>
-x(t) = v_0 \cos(\theta) t + x_0, \qquad
-y(t) = - \frac{1}{2} g t^2 + v_0 \sin(\theta) t + y_0,
+<md number="yes">
+  <mrow xml:id="eq-projectile-x">x(t) \amp = v_0 \cos(\theta)\, t + x_0,</mrow>
+  <mrow xml:id="eq-projectile-y">y(t) \amp = - \frac{1}{2} g t^2 + v_0 \sin(\theta)\, t + y_0,</mrow>
 </md>
 where <m>v_0</m> is the initial speed, <m>\theta</m> is the angle of launch, and <m>g</m> is the acceleration
 due to gravity.  For brevity, the initial position is denoted by <m>(x_0, y_0)</m> will be the origin <m>(0,0)</m>.
@@ -537,15 +537,20 @@ t = \frac{x}{v_0 \cos(\theta)}.
 <p>
   Substituting into the <m>y(t)</m> equation gives
 <md>
-  <mrow> \amp y(t) = - \frac{1}{2} g {\frac{x}{v_0 \cos(\theta)}}^2 + v_0 \sin(\theta) {\frac{x}{v_0 \cos(\theta)}} </mrow>
-  <mrow> \amp y(t) = - \frac{g}{2 v_0^2 \cos^2(\theta)} x^2 + x \tan(\theta)  </mrow>
-  <mrow> \amp y(t) \propto -x^2 </mrow>
+  <mrow number="no"> \amp y = - \frac{1}{2} g \frac{x^2}{v_0^2 \cos^2(\theta)} + v_0 \sin(\theta) \frac{x}{v_0 \cos(\theta)} </mrow>
+  <mrow xml:id="eq-projectile-trajectory" number="yes"> \amp y = - \frac{g}{2 v_0^2 \cos^2(\theta)} x^2 + x \tan(\theta)  </mrow>
 </md>
 </p>
 
 <p>
-As expected, the trajectory of a projectile is a parabola, as shown in
-<xref ref="fig-projectile-velocity"/>.
+As expected, the trajectory of a projectile is a parabola. Differentiating the
+equations of motion gives the velocity of the projectile: the horizontal
+component <m>v_x = v_0\cos(\theta)</m> stays constant, since nothing accelerates
+the projectile horizontally, while the vertical component
+<m>v_y = v_0\sin(\theta) - g t</m> decreases steadily under gravity, so it is
+positive while the projectile rises, zero at the apex, and negative as it falls.
+<xref ref="fig-projectile-velocity"/> shows these components at five instants
+along the path.
 </p>
 
 <figure xml:id="fig-projectile-velocity">
@@ -557,17 +562,17 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
 </caption>
 <image width="90%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-projectile-velocity">
-<diagram dimensions="(680,360)" margins="5">
+<diagram dimensions="(500,265)" margins="5">
   <definition>f(x) = 0.14*x*(10 - x)</definition>
   <coordinates bbox="(-1.8, -2.7, 13.0, 5.1)">
     <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
     <label anchor="(0,0)" alignment="sw" offset="(-3,-3)"><m>0</m></label>
 
     <!-- ================= trajectory (dashed parabola) ================= -->
-    <graph domain="(0,10.9)" function="f" stroke="black" thickness="1.5" dash="5"/>
+    <graph at="pv-path" domain="(0,10.9)" function="f" stroke="black" thickness="1.5" dash="5"/>
 
     <!-- ================= acceleration a = g ================= -->
-    <line p1="(4.2,0.55)" p2="(4.2,-0.55)" stroke="#f5a623" thickness="3" arrows="1"/>
+    <line at="pv-accel" p1="(4.2,0.55)" p2="(4.2,-0.55)" stroke="#f5a623" thickness="3" arrows="1"/>
     <label anchor="(4.55,-0.5)" alignment="e"><m>\vec{a} = \vec{g} = -g\hat{\jmath}</m></label>
 
     <!-- ================= LAUNCH  P0 = (0,0), slope 1.4 ================= -->
@@ -575,7 +580,7 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
     <line p1="(0,2.1)" p2="(1.5,2.1)" stroke="gray" thickness="1" dash="3"/>
     <line p1="(0,0)" p2="(1.5,0)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
     <line p1="(0,0)" p2="(0,2.1)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
-    <line p1="(0,0)" p2="(1.5,2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <line at="pv-v0" p1="(0,0)" p2="(1.5,2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
     <angle-marker points="((1,0),(0,0),(1.5,2.1))" radius="34" stroke="black"><m>\theta</m></angle-marker>
     <label anchor="(0.9,1.5)" alignment="nw"><m>\vec{v}_0</m></label>
     <label anchor="(0.75,0)" alignment="s" offset="(0,-2)"><m>\vec{v}_{x0}</m></label>
@@ -584,13 +589,13 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
     <!-- ================= ASCENDING  P1 = (2.5,2.625), slope 0.7 ========= -->
     <line p1="(2.5,2.625)" p2="(4.0,2.625)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
     <line p1="(2.5,2.625)" p2="(2.5,3.675)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
-    <line p1="(2.5,2.625)" p2="(4.0,3.675)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <line at="pv-v1" p1="(2.5,2.625)" p2="(4.0,3.675)" stroke="#1a9e3a" thickness="3" arrows="1"/>
     <label anchor="(3.3,3.3)" alignment="n"><m>\vec{v}</m></label>
     <label anchor="(3.25,2.625)" alignment="s" offset="(0,-2)"><m>\vec{v}_x</m></label>
     <label anchor="(2.5,3.2)" alignment="w"><m>\vec{v}_y</m></label>
 
     <!-- ================= APEX  P2 = (5,3.5), slope 0 ================= -->
-    <line p1="(5,3.5)" p2="(6.5,3.5)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <line at="pv-v2" p1="(5,3.5)" p2="(6.5,3.5)" stroke="#1a9e3a" thickness="3" arrows="1"/>
     <label anchor="(6.0,3.5)" alignment="n"><m>\vec{v}</m></label>
     <line p1="(5.9,4.15)" p2="(5.05,3.6)" stroke="black" thickness="0.8"/>
     <label anchor="(6.0,4.2)" alignment="e"><m>\vec{v}_y = 0 \text{ at this point}</m></label>
@@ -598,7 +603,7 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
     <!-- ================= DESCENDING  P3 = (7.5,2.625), slope -0.7 ======= -->
     <line p1="(7.5,2.625)" p2="(9.0,2.625)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
     <line p1="(7.5,2.625)" p2="(7.5,1.575)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
-    <line p1="(7.5,2.625)" p2="(9.0,1.575)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <line at="pv-v3" p1="(7.5,2.625)" p2="(9.0,1.575)" stroke="#1a9e3a" thickness="3" arrows="1"/>
     <label anchor="(8.25,2.625)" alignment="n"><m>\vec{v}_x</m></label>
     <label anchor="(7.5,2.1)" alignment="w"><m>\vec{v}_y</m></label>
     <label anchor="(9.15,1.5)" alignment="se"><m>\vec{v}</m></label>
@@ -606,18 +611,35 @@ component <m>\vec v_y</m> changes under the constant downward acceleration
     <!-- ================= LANDING  P4 = (10,0), slope -1.4 ================= -->
     <line p1="(10,0)" p2="(11.5,0)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
     <line p1="(10,0)" p2="(10,-2.1)" stroke="#1a9e3a" thickness="2" dash="4" arrows="1"/>
-    <line p1="(10,0)" p2="(11.5,-2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
+    <line at="pv-v4" p1="(10,0)" p2="(11.5,-2.1)" stroke="#1a9e3a" thickness="3" arrows="1"/>
     <label anchor="(10.75,0)" alignment="n"><m>\vec{v}_x</m></label>
     <label anchor="(10,-1.05)" alignment="w"><m>\vec{v}_y</m></label>
     <label anchor="(11.55,-2.1)" alignment="e"><m>\vec{v}</m></label>
 
     <!-- ================= points ================= -->
-    <point p="(0,0)" size="3.5" stroke="red" fill="red"/>
-    <point p="(2.5,2.625)" size="3.5" stroke="red" fill="red"/>
-    <point p="(5,3.5)" size="3.5" stroke="red" fill="red"/>
-    <point p="(7.5,2.625)" size="3.5" stroke="red" fill="red"/>
-    <point p="(10,0)" size="3.5" stroke="red" fill="red"/>
+    <point at="pv-P0" p="(0,0)" size="3.5" stroke="red" fill="red"/>
+    <point at="pv-P1" p="(2.5,2.625)" size="3.5" stroke="red" fill="red"/>
+    <point at="pv-P2" p="(5,3.5)" size="3.5" stroke="red" fill="red"/>
+    <point at="pv-P3" p="(7.5,2.625)" size="3.5" stroke="red" fill="red"/>
+    <point at="pv-P4" p="(10,0)" size="3.5" stroke="red" fill="red"/>
   </coordinates>
+
+  <annotations>
+  <annotation ref="figure" text="A dashed parabola shows the path of a projectile launched from the origin. The velocity is drawn as a green arrow at five instants along the path — launch, ascending, apex, descending, and landing — and decomposed into a constant horizontal component and a vertical component that reverses under the constant downward acceleration g. At the apex the vertical component is zero.">
+    <annotation ref="pv-path" text="The dashed parabolic trajectory of the projectile."/>
+    <annotation ref="pv-accel" text="The constant downward acceleration, equal to the gravitational acceleration g."/>
+    <annotation ref="pv-v0" text="The launch velocity at the origin, at elevation angle theta, shown with its horizontal and vertical components."/>
+    <annotation ref="pv-v1" text="The velocity while ascending, tilted above the horizontal, with its horizontal and vertical components."/>
+    <annotation ref="pv-v2" text="The velocity at the apex, horizontal, where the vertical component is zero."/>
+    <annotation ref="pv-v3" text="The velocity while descending, tilted below the horizontal, with its horizontal and vertical components."/>
+    <annotation ref="pv-v4" text="The velocity at landing, with horizontal and downward vertical components."/>
+    <annotation ref="pv-P0" text="The launch point at the origin."/>
+    <annotation ref="pv-P1" text="The sampled point while ascending."/>
+    <annotation ref="pv-P2" text="The apex of the trajectory."/>
+    <annotation ref="pv-P3" text="The sampled point while descending."/>
+    <annotation ref="pv-P4" text="The landing point."/>
+  </annotation>
+  </annotations>
 </diagram>
 </prefigure>
 </image>
