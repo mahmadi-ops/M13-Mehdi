@@ -112,89 +112,9 @@ which is the equation of the tangent line at <m>P_0</m> in the plane
 <m>z - z_0 = -\frac{B}{C}(y - y_0)</m>, which is the equation of the
 tangent line at <m>P_0</m> in the plane <m>x = x_0</m>, and therefore its
 slope <m>-\frac{B}{C}</m> is <m>f_y(x_0,y_0)</m>.
-<xref ref="fig-tp-two-tangent-lines"/> shows the two tangent lines inside
+<xref ref="fig-tp-plane-normal"/> shows the two tangent lines inside
 the planes <m>y = y_0</m> and <m>x = x_0</m>.
 </p>
-
-<figure xml:id="fig-tp-two-tangent-lines">
-<caption>
-The two vertical planes <m>y = y_0</m> (blue) and <m>x = x_0</m> (red)
-cut the surface <m>z = f(x,y)</m> along the orange and black curves. The
-tangent lines to these curves at <m>P_0</m> have slopes
-<m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m>. The tangent plane contains
-these two tangent lines.
-</caption>
-<image width="85%">
-<description>
-<p>
-A gray dome-shaped surface, the graph of z equals f of x y, is cut by two
-vertical planes: a blue plane where y equals y 0 and a red plane where x
-equals x 0. The planes intersect the surface along an orange curve and a
-black curve, which cross at the red point P 0. A blue line is tangent to
-the orange curve at P 0 inside the plane y equals y 0, and a dark red
-line is tangent to the black curve at P 0 inside the plane x equals x 0.
-</p>
-</description>
-<latex-image>
-\begin{tikzpicture}
-\begin{axis}[
-  width=12cm, height=9.5cm,
-  view={-35}{22},
-  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=4.6,
-  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-  ticks=none,
-  clip=false,
-]
-% the surface z = f(x,y)
-\addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
-          fill opacity=0.35, draw opacity=0.45,
-          domain=-2:2, y domain=-2:2, samples=21]
-  {3 - 0.25*x^2 - 0.45*y^2};
-% vertical plane y = y0 (blue)
-\addplot3[surf, shader=flat, samples=2, domain=-2:2, y domain=0:3.7,
-          fill=blue!25, fill opacity=0.30, draw=blue!40, draw opacity=0.5]
-  ({x},{0.5},{y});
-% vertical plane x = x0 (red)
-\addplot3[surf, shader=flat, samples=2, domain=-2:2, y domain=0:3.7,
-          fill=red!25, fill opacity=0.30, draw=red!40, draw opacity=0.5]
-  ({0.5},{x},{y});
-% intersection curve with y = y0 (orange); samples y=0 keeps this a single
-% curve -- without it pgfplots closes the parabola with a straight chord
-\addplot3[very thick, orange, domain=-2:2, samples=41, samples y=0]
-  ({x},{0.5},{2.8875 - 0.25*x^2});
-% intersection curve with x = x0 (black)
-\addplot3[very thick, black, domain=-2:2, samples=41, samples y=0]
-  ({0.5},{x},{2.9375 - 0.45*x^2});
-% tangent line at P0 in the plane y = y0 (blue)
-\addplot3[very thick, blue!70!black, domain=-1.5:1.5, samples=2, samples y=0]
-  ({0.5+x},{0.5},{2.825 - 0.25*x});
-% tangent line at P0 in the plane x = x0 (dark red)
-\addplot3[very thick, purple!70!black, domain=-1.8:1.8, samples=2, samples y=0]
-  ({0.5},{0.5+x},{2.825 - 0.45*x});
-% the point P0
-\addplot3[only marks, mark=*, mark size=1.8, color=red]
-  coordinates {(0.5,0.5,2.825)};
-\node[red, anchor=south] at (axis cs:0.5,0.75,3.0) {$P_0$};
-% labels with leaders
-\node[blue!70!black, align=center, anchor=south]
-  at (axis description cs:0.24,1.0)
-  {Tangent line at $P_0$\\ in the plane $y=y_0$};
-\draw[gray!60, thin] (axis description cs:0.24,1.0)
-  -- (axis cs:-1.0,0.5,3.2);
-\node[purple!70!black, align=center, anchor=west]
-  at (axis description cs:1.0,0.78)
-  {Tangent line at $P_0$\\ in the plane $x=x_0$};
-\draw[gray!60, thin] (axis description cs:1.0,0.78)
-  -- (axis cs:0.5,-0.8,3.41);
-\node[gray!30!black, anchor=east] at (axis description cs:0.0,0.42)
-  {$z=f(x,y)$};
-\draw[gray!60, thin] (axis description cs:0.0,0.42)
-  -- (axis cs:-1.9,1.4,1.21);
-\end{axis}
-\end{tikzpicture}
-</latex-image>
-</image>
-</figure>
 
 <p>
 Therefore the equation of the <term>tangent plane to the surface</term>
@@ -223,6 +143,9 @@ tangent plane</term> is
 
 <figure xml:id="fig-tp-plane-normal">
 <caption>
+The two vertical planes <m>y = y_0</m> and <m>x = x_0</m> cut the surface
+<m>z = f(x,y)</m> along the orange and black curves, whose tangent lines
+at <m>P_0</m> have slopes <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m>.
 The tangent plane at <m>P_0</m> contains both tangent lines, and its
 normal vector is <m>\mathbf n = \nabla w \Big|_{P_0}</m>. Equivalently,
 <m>\mathbf n</m> is given (up to sign) by the cross product of the
@@ -232,11 +155,13 @@ direction vectors <m>\mathbf i + f_x(x_0,y_0)\,\mathbf k</m> and
 <image width="85%">
 <description>
 <p>
-The same gray dome-shaped surface with the pink tangent plane touching it
+A gray dome-shaped surface, the graph of z equals f of x y, with the pink
+tangent plane touching it
 at the red point P 0. The orange curve cut by the plane y equals y 0 and
 the black curve cut by the plane x equals x 0 run across the surface
-through P 0. The blue and dark red tangent lines from the
-previous figure lie inside the tangent plane, and a magenta arrow,
+through P 0. The blue tangent line to the orange curve at P 0 and the
+dark red tangent line to the black curve at P 0
+lie inside the tangent plane, and a magenta arrow,
 the normal vector n, points away from the plane at P 0, perpendicular to
 both tangent lines. A legend below the figure names each of these seven
 elements.
@@ -315,7 +240,7 @@ elements.
 </figure>
 
 <p>
-Everything in the last two figures can also be explored interactively in
+Everything in the figure above can also be explored interactively in
 the <dataurl source="tangent-plane-explorer.html">Tangent Plane
 Explorer</dataurl>, which opens in a new tab. It builds the picture up one
 layer at a time <mdash/> the surface, the point <m>P_0</m>, the two
