@@ -6,17 +6,37 @@
     <clipPath id="lagrange-schematic-__clipPath-1">
       <rect x="5.0" y="5.0" width="500.0" height="330.0"/>
     </clipPath>
-    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-orange" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-orange" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="orange" stroke="none"/>
     </marker>
-    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-orange-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-orange-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
     </marker>
-    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="lagrange-schematic-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="lagrange-schematic-arrow-head-start-3_None_24_60-orange" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="orange" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="lagrange-schematic-arrow-head-start-3_None_24_60-orange-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="lagrange-schematic-arrow-head-start-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="lagrange-schematic-arrow-head-start-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
     </marker>
   </defs>
   <g id="lagrange-schematic-constraint">

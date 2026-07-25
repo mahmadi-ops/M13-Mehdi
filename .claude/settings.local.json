@@ -74,7 +74,20 @@
       "Bash(git branch *)",
       "Bash(awk '{print $5, $NF}')",
       "Bash(grep -nA1 \"<section xml:id\" source/LagrangeMultipliers.ptx)",
-      "Bash(awk 'length>85 && /\\\\\\\\|\\\\^|_|\\\\\\\\Rightarrow|\\\\\\\\amp|nabla|sqrt|frac|lambda/ {print NR\": \\(\"length\"\\) \"$0}' source/LagrangeMultipliers.ptx)"
+      "Bash(awk 'length>85 && /\\\\\\\\|\\\\^|_|\\\\\\\\Rightarrow|\\\\\\\\amp|nabla|sqrt|frac|lambda/ {print NR\": \\(\"length\"\\) \"$0}' source/LagrangeMultipliers.ptx)",
+      "Bash(xmllint --noout source/TangentPlanesDifferentials.ptx)",
+      "Bash(rsvg-convert -w 1400 -b white generated-assets/latex-image/fig-tp-plane-normal-2.svg -o /claude-0/-workspaces-MATH-13/fde7016a-098d-491e-ac2d-4259c18ae094/scratchpad/fig82.png)",
+      "Bash(rsvg-convert -w 1200 -b white generated-assets/latex-image/fig-tp-two-tangent-lines-2-1.svg -o /claude-0/-workspaces-MATH-13/fde7016a-098d-491e-ac2d-4259c18ae094/scratchpad/fig81.png)",
+      "Bash(rsvg-convert -w 1400 -b white generated-assets/latex-image/fig-tp-plane-normal-2.svg -o /claude-0/-workspaces-MATH-13/fde7016a-098d-491e-ac2d-4259c18ae094/scratchpad/fig82b.png)",
+      "Bash(awk 'NR>1 && /^<\\\\/script>/{print NR\": \"$0; exit}' assets/tangent-plane-explorer.html)",
+      "Bash(awk '{print NR\": \"length\\($0\\)}' assets/tangent-plane-explorer.html)",
+      "Bash(awk -F': ' '$2>500{print $1\" \\(len \"$2\"\\)\"}')",
+      "Bash(awk 'NR>=2196 && NR<=2703' assets/tangent-plane-explorer.html)",
+      "Bash(awk -F: '$1>2300')",
+      "Bash(awk -F: '$1>1980')",
+      "Bash(awk -F: '$1>2460 && $1<2560')",
+      "Bash(rsvg-convert -w 1000 -b white output/web/generated/latex-image/fig-tp-two-tangent-lines-2.svg -o /claude-0/-workspaces-MATH-13/fde7016a-098d-491e-ac2d-4259c18ae094/scratchpad/fig81final.png)",
+      "Bash(git restore *)"
     ]
   }
 }

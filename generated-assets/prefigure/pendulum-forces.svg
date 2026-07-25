@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="pendulum-forces-figure" width="376" height="416" viewBox="0 0 376 416">
   <defs>
-    <clipPath id="pendulum-forces-clipPath-0">
+    <clipPath id="pendulum-forces-__clipPath-0">
       <rect x="8.0" y="8.0" width="360.0" height="400.0"/>
     </clipPath>
-    <clipPath id="pendulum-forces-clipPath-1">
+    <clipPath id="pendulum-forces-__clipPath-1">
       <rect x="8.0" y="8.0" width="360.0" height="400.0"/>
     </clipPath>
     <marker id="pendulum-forces-arrow-head-end-3_None_24_60-magenta" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
@@ -19,22 +19,22 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <line id="pendulum-forces-line-0" x1="41.1" y1="50.2" x2="217.8" y2="50.2" stroke="black" stroke-width="2" fill="none"/>
-  <g id="pendulum-forces-g-0">
-    <line id="pendulum-forces-line-1-k_0" x1="45.5" y1="50.2" x2="58.8" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-2-k_1" x1="69.8" y1="50.2" x2="83.1" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-3-k_2" x1="94.1" y1="50.2" x2="107.4" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-4-k_3" x1="118.4" y1="50.2" x2="131.7" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-5-k_4" x1="142.7" y1="50.2" x2="156.0" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-6-k_5" x1="167.0" y1="50.2" x2="180.3" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-7-k_6" x1="191.3" y1="50.2" x2="204.6" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
-    <line id="pendulum-forces-line-8-k_7" x1="215.6" y1="50.2" x2="228.9" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pendulum-forces-__line-0" x1="41.1" y1="50.2" x2="217.8" y2="50.2" stroke="black" stroke-width="2" fill="none"/>
+  <g id="pendulum-forces-__group-0">
+    <line id="pendulum-forces-__line-1-k_0" x1="45.5" y1="50.2" x2="58.8" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-2-k_1" x1="69.8" y1="50.2" x2="83.1" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-3-k_2" x1="94.1" y1="50.2" x2="107.4" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-4-k_3" x1="118.4" y1="50.2" x2="131.7" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-5-k_4" x1="142.7" y1="50.2" x2="156.0" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-6-k_5" x1="167.0" y1="50.2" x2="180.3" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-7-k_6" x1="191.3" y1="50.2" x2="204.6" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
+    <line id="pendulum-forces-__line-8-k_7" x1="215.6" y1="50.2" x2="228.9" y2="34.7" stroke="black" stroke-width="1" fill="none"/>
   </g>
-  <line id="pendulum-forces-line-9" x1="129.5" y1="50.2" x2="129.5" y2="310.8" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
-  <path id="pendulum-forces-path-0" d="M 6.0 233.3 L 8.2 234.8 L 10.4 236.2 L 12.6 237.6 L 14.8 239.0 L 17.0 240.3 L 19.3 241.6 L 21.6 242.9 L 23.9 244.2 L 26.2 245.4 L 28.5 246.6 L 30.9 247.8 L 33.2 249.0 L 35.6 250.1 L 38.0 251.2 L 40.3 252.3 L 42.8 253.3 L 45.2 254.3 L 47.6 255.3 L 50.0 256.3 L 52.5 257.2 L 54.9 258.1 L 57.4 259.0 L 59.9 259.8 L 62.4 260.6 L 64.9 261.4 L 67.4 262.2 L 69.9 262.9 L 72.5 263.6 L 75.0 264.2 L 77.5 264.9 L 80.1 265.5 L 82.6 266.0 L 85.2 266.6 L 87.8 267.1 L 90.4 267.6 L 92.9 268.0 L 95.5 268.4 L 98.1 268.8 L 100.7 269.2 L 103.3 269.5 L 105.9 269.8 L 108.5 270.1 L 111.1 270.3 L 113.8 270.5 L 116.4 270.7 L 119.0 270.8 L 121.6 270.9 L 124.2 271.0 L 126.9 271.1 L 129.5 271.1 L 132.1 271.1 L 134.7 271.0 L 137.3 270.9 L 140.0 270.8 L 142.6 270.7 L 145.2 270.5 L 147.8 270.3 L 150.4 270.1 L 153.0 269.8 L 155.6 269.5 L 158.2 269.2 L 160.8 268.8 L 163.4 268.4 L 166.0 268.0 L 168.6 267.6 L 171.2 267.1 L 173.7 266.6 L 176.3 266.0 L 178.9 265.5 L 181.4 264.9 L 183.9 264.2 L 186.5 263.6 L 189.0 262.9 L 191.5 262.2 L 194.0 261.4 L 196.5 260.6 L 199.0 259.8 L 201.5 259.0 L 204.0 258.1 L 206.5 257.2 L 208.9 256.3 L 211.3 255.3 L 213.8 254.3 L 216.2 253.3 L 218.6 252.3 L 221.0 251.2 L 223.4 250.1 L 225.7 249.0 L 228.1 247.8 L 230.4 246.6 L 232.8 245.4 L 235.1 244.2 L 237.4 242.9 L 239.6 241.6 L 241.9 240.3 L 244.1 239.0 L 246.4 237.6 L 248.6 236.2 L 250.8 234.8" stroke="#777" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+  <line id="pendulum-forces-__line-9" x1="129.5" y1="50.2" x2="129.5" y2="310.8" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+  <path id="pendulum-forces-__path-0" d="M 6.0 233.3 L 8.2 234.8 L 10.4 236.2 L 12.6 237.6 L 14.8 239.0 L 17.0 240.3 L 19.3 241.6 L 21.6 242.9 L 23.9 244.2 L 26.2 245.4 L 28.5 246.6 L 30.9 247.8 L 33.2 249.0 L 35.6 250.1 L 38.0 251.2 L 40.3 252.3 L 42.8 253.3 L 45.2 254.3 L 47.6 255.3 L 50.0 256.3 L 52.5 257.2 L 54.9 258.1 L 57.4 259.0 L 59.9 259.8 L 62.4 260.6 L 64.9 261.4 L 67.4 262.2 L 69.9 262.9 L 72.5 263.6 L 75.0 264.2 L 77.5 264.9 L 80.1 265.5 L 82.6 266.0 L 85.2 266.6 L 87.8 267.1 L 90.4 267.6 L 92.9 268.0 L 95.5 268.4 L 98.1 268.8 L 100.7 269.2 L 103.3 269.5 L 105.9 269.8 L 108.5 270.1 L 111.1 270.3 L 113.8 270.5 L 116.4 270.7 L 119.0 270.8 L 121.6 270.9 L 124.2 271.0 L 126.9 271.1 L 129.5 271.1 L 132.1 271.1 L 134.7 271.0 L 137.3 270.9 L 140.0 270.8 L 142.6 270.7 L 145.2 270.5 L 147.8 270.3 L 150.4 270.1 L 153.0 269.8 L 155.6 269.5 L 158.2 269.2 L 160.8 268.8 L 163.4 268.4 L 166.0 268.0 L 168.6 267.6 L 171.2 267.1 L 173.7 266.6 L 176.3 266.0 L 178.9 265.5 L 181.4 264.9 L 183.9 264.2 L 186.5 263.6 L 189.0 262.9 L 191.5 262.2 L 194.0 261.4 L 196.5 260.6 L 199.0 259.8 L 201.5 259.0 L 204.0 258.1 L 206.5 257.2 L 208.9 256.3 L 211.3 255.3 L 213.8 254.3 L 216.2 253.3 L 218.6 252.3 L 221.0 251.2 L 223.4 250.1 L 225.7 249.0 L 228.1 247.8 L 230.4 246.6 L 232.8 245.4 L 235.1 244.2 L 237.4 242.9 L 239.6 241.6 L 241.9 240.3 L 244.1 239.0 L 246.4 237.6 L 248.6 236.2 L 250.8 234.8" stroke="#777" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
   <line id="pendulum-forces-string" x1="129.5" y1="50.2" x2="249.8" y2="235.4" stroke="black" stroke-width="2" fill="none"/>
-  <g id="pendulum-forces-label-0" transform="translate(193.6,142.8) translate(0.0,-6.6)">
-    <g id="pendulum-forces-g-2">
+  <g id="pendulum-forces-__label-0" transform="translate(193.6,142.8) translate(0.0,-6.6)">
+    <g id="pendulum-forces-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.360px" width="7.544px" height="13.120px" role="img" focusable="false" viewBox="0 -705 417 725" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-2-TEX-I-2113" d="M345 104T349 104T361 95T369 80T352 59Q268 -20 206 -20Q170 -20 146 3T113 53T99 104L94 129Q94 130 79 116T48 86T28 70Q22 70 15 79T7 94Q7 98 12 103T58 147L91 179V185Q91 186 91 191T92 200Q92 282 128 400T223 612T336 705Q397 705 397 636V627Q397 453 194 233Q185 223 180 218T174 211T171 208T165 201L163 186Q159 142 159 123Q159 17 208 17Q228 17 253 30T293 56T335 94Q345 104 349 104ZM360 634Q360 655 354 661T336 668Q328 668 322 666T302 645T272 592Q252 547 229 467T192 330L179 273Q179 272 186 280T204 300T221 322Q327 453 355 590Q360 612 360 634Z"/>
@@ -49,9 +49,9 @@
       </svg>
     </g>
   </g>
-  <g id="pendulum-forces-g-1">
+  <g id="pendulum-forces-__g-0">
     <g transform="translate(141.4,94.5) translate(-4.2,-0.0)">
-      <g id="pendulum-forces-g-3">
+      <g id="pendulum-forces-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="12.944px" role="img" focusable="false" viewBox="0 -705 469 715" x="0.0" y="0.0">
           <defs>
             <path id="pendulum-forces-MJX-3-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
@@ -66,11 +66,11 @@
         </svg>
       </g>
     </g>
-    <path d="M 129.5 92.2 A 42.0 42.0 0 0 0 152.3 85.4" stroke="black" stroke-width="2" fill="none"/>
+    <path stroke="black" stroke-width="2" fill="none" d="M 152.3 85.4 L 152.1 85.6 L 151.9 85.7 L 151.7 85.8 L 151.5 86.0 L 151.3 86.1 L 151.1 86.2 L 150.9 86.3 L 150.7 86.4 L 150.5 86.6 L 150.3 86.7 L 150.1 86.8 L 149.9 86.9 L 149.6 87.0 L 149.4 87.2 L 149.2 87.3 L 149.0 87.4 L 148.8 87.5 L 148.6 87.6 L 148.4 87.7 L 148.1 87.8 L 147.9 87.9 L 147.7 88.0 L 147.5 88.1 L 147.3 88.2 L 147.1 88.4 L 146.8 88.5 L 146.6 88.6 L 146.4 88.6 L 146.2 88.7 L 146.0 88.8 L 145.7 88.9 L 145.5 89.0 L 145.3 89.1 L 145.1 89.2 L 144.8 89.3 L 144.6 89.4 L 144.4 89.5 L 144.2 89.6 L 143.9 89.6 L 143.7 89.7 L 143.5 89.8 L 143.2 89.9 L 143.0 90.0 L 142.8 90.0 L 142.6 90.1 L 142.3 90.2 L 142.1 90.3 L 141.9 90.3 L 141.6 90.4 L 141.4 90.5 L 141.2 90.5 L 140.9 90.6 L 140.7 90.7 L 140.5 90.7 L 140.2 90.8 L 140.0 90.9 L 139.8 90.9 L 139.5 91.0 L 139.3 91.0 L 139.1 91.1 L 138.8 91.2 L 138.6 91.2 L 138.4 91.3 L 138.1 91.3 L 137.9 91.4 L 137.6 91.4 L 137.4 91.5 L 137.2 91.5 L 136.9 91.5 L 136.7 91.6 L 136.5 91.6 L 136.2 91.7 L 136.0 91.7 L 135.7 91.7 L 135.5 91.8 L 135.3 91.8 L 135.0 91.8 L 134.8 91.9 L 134.5 91.9 L 134.3 91.9 L 134.1 92.0 L 133.8 92.0 L 133.6 92.0 L 133.3 92.0 L 133.1 92.1 L 132.9 92.1 L 132.6 92.1 L 132.4 92.1 L 132.1 92.1 L 131.9 92.1 L 131.6 92.2 L 131.4 92.2 L 131.2 92.2 L 130.9 92.2 L 130.7 92.2 L 130.4 92.2 L 130.2 92.2 L 130.0 92.2 L 129.7 92.2 L 129.5 92.2"/>
   </g>
-  <line id="pendulum-forces-line-10" x1="129.5" y1="235.4" x2="249.8" y2="235.4" stroke="#777" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
-  <g id="pendulum-forces-label-2" transform="translate(189.6,228.4) translate(-22.1,-13.1)">
-    <g id="pendulum-forces-g-4">
+  <line id="pendulum-forces-__line-10" x1="129.5" y1="235.4" x2="249.8" y2="235.4" stroke="#777" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+  <g id="pendulum-forces-__label-2" transform="translate(189.6,228.4) translate(-22.1,-13.1)">
+    <g id="pendulum-forces-__g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.360px" width="44.296px" height="13.120px" role="img" focusable="false" viewBox="0 -705 2447.3 725" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-4-TEX-I-2113" d="M345 104T349 104T361 95T369 80T352 59Q268 -20 206 -20Q170 -20 146 3T113 53T99 104L94 129Q94 130 79 116T48 86T28 70Q22 70 15 79T7 94Q7 98 12 103T58 147L91 179V185Q91 186 91 191T92 200Q92 282 128 400T223 612T336 705Q397 705 397 636V627Q397 453 194 233Q185 223 180 218T174 211T171 208T165 201L163 186Q159 142 159 123Q159 17 208 17Q228 17 253 30T293 56T335 94Q345 104 349 104ZM360 634Q360 655 354 661T336 668Q328 668 322 666T302 645T272 592Q252 547 229 467T192 330L179 273Q179 272 186 280T204 300T221 322Q327 453 355 590Q360 612 360 634Z"/>
@@ -107,8 +107,8 @@
       </svg>
     </g>
   </g>
-  <g id="pendulum-forces-label-3" transform="translate(184.7,253.0) translate(-5.2,-0.0)">
-    <g id="pendulum-forces-g-5">
+  <g id="pendulum-forces-__label-3" transform="translate(184.7,253.0) translate(-5.2,-0.0)">
+    <g id="pendulum-forces-__g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-5-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -123,9 +123,9 @@
       </svg>
     </g>
   </g>
-  <line id="pendulum-forces-FT" x1="249.8" y1="235.4" x2="175.2" y2="120.6" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
-  <g id="pendulum-forces-label-4" transform="translate(182.2,113.6) translate(0.0,-22.3)">
-    <g id="pendulum-forces-g-6">
+  <line id="pendulum-forces-FT" x1="249.8" y1="235.4" x2="177.2" y2="123.7" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
+  <g id="pendulum-forces-__label-4" transform="translate(182.2,113.6) translate(0.0,-22.3)">
+    <g id="pendulum-forces-__g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px; color:magenta" width="23.616px" height="22.320px" role="img" focusable="false" viewBox="0 -1083 1304.8 1233" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-6-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
@@ -156,9 +156,9 @@
       </svg>
     </g>
   </g>
-  <line id="pendulum-forces-mgvec" x1="249.8" y1="235.4" x2="249.8" y2="368.0" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
-  <g id="pendulum-forces-label-5" transform="translate(249.8,375.0) translate(-13.1,-0.0)">
-    <g id="pendulum-forces-g-7">
+  <line id="pendulum-forces-mgvec" x1="249.8" y1="235.4" x2="249.8" y2="364.3" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
+  <g id="pendulum-forces-__label-5" transform="translate(249.8,375.0) translate(-13.1,-0.0)">
+    <g id="pendulum-forces-__g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.640px; color:magenta" width="26.296px" height="19.168px" role="img" focusable="false" viewBox="0 -858 1453 1059" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-7-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -191,9 +191,9 @@
       </svg>
     </g>
   </g>
-  <line id="pendulum-forces-mgsin" x1="249.8" y1="235.4" x2="189.2" y2="274.7" stroke="magenta" stroke-width="2" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-2_None_24_60-magenta)"/>
-  <g id="pendulum-forces-label-6" transform="translate(181.2,280.7) translate(-61.3,-0.0)">
-    <g id="pendulum-forces-g-8">
+  <line id="pendulum-forces-mgsin" x1="249.8" y1="235.4" x2="191.3" y2="273.4" stroke="magenta" stroke-width="2" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-2_None_24_60-magenta)"/>
+  <g id="pendulum-forces-__label-6" transform="translate(181.2,280.7) translate(-61.3,-0.0)">
+    <g id="pendulum-forces-__g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="61.272px" height="16.472px" role="img" focusable="false" viewBox="0 -705 3385.3 910" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-8-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -237,9 +237,9 @@
       </svg>
     </g>
   </g>
-  <line id="pendulum-forces-mgcos" x1="249.8" y1="235.4" x2="310.3" y2="328.6" stroke="magenta" stroke-width="2" stroke-dasharray="4 3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-2_None_24_60-magenta)"/>
-  <g id="pendulum-forces-label-7" transform="translate(319.0,334.6) translate(0.0,-0.0)">
-    <g id="pendulum-forces-g-9">
+  <line id="pendulum-forces-mgcos" x1="249.8" y1="235.4" x2="309.0" y2="326.5" stroke="magenta" stroke-width="2" stroke-dasharray="4 3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-2_None_24_60-magenta)"/>
+  <g id="pendulum-forces-__label-7" transform="translate(319.0,334.6) translate(0.0,-0.0)">
+    <g id="pendulum-forces-__g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="63.264px" height="16.472px" role="img" focusable="false" viewBox="0 -705 3495.3 910" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-9-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -283,9 +283,9 @@
       </svg>
     </g>
   </g>
-  <circle id="pendulum-forces-circle-0" cx="249.8" cy="235.4" r="9" stroke="black" stroke-width="2" fill="green"/>
-  <g id="pendulum-forces-label-8" transform="translate(262.8,233.4) translate(0.0,-4.1)">
-    <g id="pendulum-forces-g-10">
+  <circle id="pendulum-forces-__circle-0" cx="249.8" cy="235.4" r="9" stroke="black" stroke-width="2" fill="green"/>
+  <g id="pendulum-forces-__label-8" transform="translate(262.8,233.4) translate(0.0,-4.1)">
+    <g id="pendulum-forces-__g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="15.888px" height="8.200px" role="img" focusable="false" viewBox="0 -442 878 453" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-10-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>

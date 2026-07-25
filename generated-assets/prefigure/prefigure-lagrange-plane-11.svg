@@ -6,17 +6,37 @@
     <clipPath id="prefigure-lagrange-plane-__clipPath-1">
       <rect x="10.0" y="10.0" width="450.0" height="290.0"/>
     </clipPath>
-    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
     </marker>
-    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#0072B2" stroke="none"/>
     </marker>
-    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-lagrange-plane-arrow-head-start-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-lagrange-plane-arrow-head-start-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-lagrange-plane-arrow-head-start-3_None_24_60-h0072B2" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#0072B2" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-lagrange-plane-arrow-head-start-3_None_24_60-h0072B2-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
     </marker>
   </defs>
   <line id="prefigure-lagrange-plane-pd-plane" x1="44.0" y1="32.0" x2="400.6" y2="216.5" stroke="#009E73" stroke-width="2.5" fill="none"/>
