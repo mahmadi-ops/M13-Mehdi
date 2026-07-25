@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="loran-assignment-figure" viewBox="0 0 436 271">
   <defs>
-    <clipPath id="loran-assignment-clipPath-0">
+    <clipPath id="loran-assignment-__clipPath-0">
       <rect x="8.0" y="8.0" width="420.0" height="255.0"/>
     </clipPath>
-    <clipPath id="loran-assignment-clipPath-1">
+    <clipPath id="loran-assignment-__clipPath-1">
       <rect x="8.0" y="8.0" width="420.0" height="255.0"/>
     </clipPath>
   </defs>
   <line id="loran-assignment-baseline" x1="48.0" y1="218.0" x2="348.0" y2="218.0" stroke="#777" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
   <line id="loran-assignment-riser" x1="348.0" y1="218.0" x2="348.0" y2="38.0" stroke="#777" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
   <g id="loran-assignment-right-angle">
-    <line id="loran-assignment-line-0" x1="333.0" y1="218.0" x2="333.0" y2="203.0" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-1" x1="333.0" y1="203.0" x2="348.0" y2="203.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-0" x1="333.0" y1="218.0" x2="333.0" y2="203.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-1" x1="333.0" y1="203.0" x2="348.0" y2="203.0" stroke="black" stroke-width="1" fill="none"/>
   </g>
   <g id="loran-assignment-dist-48">
-    <line id="loran-assignment-line-2" x1="48.0" y1="243.0" x2="288.0" y2="243.0" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-3" x1="48.0" y1="250.5" x2="48.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-4" x1="288.0" y1="250.5" x2="288.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-2" x1="48.0" y1="243.0" x2="288.0" y2="243.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-3" x1="48.0" y1="250.5" x2="48.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-4" x1="288.0" y1="250.5" x2="288.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
   </g>
-  <g id="loran-assignment-label-0" transform="translate(168.0,251.0) translate(-23.6,-0.0)">
-    <g id="loran-assignment-g-0">
+  <g id="loran-assignment-__label-0" transform="translate(168.0,251.0) translate(-23.6,-0.0)">
+    <g id="loran-assignment-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="47.256px" height="12.960px" role="img" focusable="false" viewBox="0 -694 2611 716" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-2-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"/>
@@ -47,11 +47,11 @@
     </g>
   </g>
   <g id="loran-assignment-dist-12">
-    <line id="loran-assignment-line-5" x1="288.0" y1="243.0" x2="348.0" y2="243.0" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-6" x1="348.0" y1="250.5" x2="348.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-5" x1="288.0" y1="243.0" x2="348.0" y2="243.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-6" x1="348.0" y1="250.5" x2="348.0" y2="235.5" stroke="black" stroke-width="1" fill="none"/>
   </g>
-  <g id="loran-assignment-label-1" transform="translate(318.0,251.0) translate(-23.6,-0.0)">
-    <g id="loran-assignment-g-1">
+  <g id="loran-assignment-__label-1" transform="translate(318.0,251.0) translate(-23.6,-0.0)">
+    <g id="loran-assignment-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="47.256px" height="12.560px" role="img" focusable="false" viewBox="0 -694 2611 694" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-3-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
@@ -79,12 +79,12 @@
     </g>
   </g>
   <g id="loran-assignment-dist-36">
-    <line id="loran-assignment-line-7" x1="373.0" y1="218.0" x2="373.0" y2="38.0" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-8" x1="365.5" y1="218.0" x2="380.5" y2="218.0" stroke="black" stroke-width="1" fill="none"/>
-    <line id="loran-assignment-line-9" x1="365.5" y1="38.0" x2="380.5" y2="38.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-7" x1="373.0" y1="218.0" x2="373.0" y2="38.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-8" x1="365.5" y1="218.0" x2="380.5" y2="218.0" stroke="black" stroke-width="1" fill="none"/>
+    <line id="loran-assignment-__line-9" x1="365.5" y1="38.0" x2="380.5" y2="38.0" stroke="black" stroke-width="1" fill="none"/>
   </g>
-  <g id="loran-assignment-label-2" transform="translate(382.0,128.0) translate(0.0,-6.5)">
-    <g id="loran-assignment-g-2">
+  <g id="loran-assignment-__label-2" transform="translate(382.0,128.0) translate(0.0,-6.5)">
+    <g id="loran-assignment-__g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="47.256px" height="12.960px" role="img" focusable="false" viewBox="0 -694 2611 716" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-4-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/>
@@ -112,8 +112,8 @@
     </g>
   </g>
   <circle id="loran-assignment-p2" cx="48.0" cy="218.0" r="3" stroke="black" stroke-width="2" fill="black"/>
-  <g id="loran-assignment-label-3" transform="translate(48.0,207.0) translate(-9.8,-15.1)">
-    <g id="loran-assignment-g-3">
+  <g id="loran-assignment-__label-3" transform="translate(48.0,207.0) translate(-9.8,-15.1)">
+    <g id="loran-assignment-__g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="19.520px" height="15.080px" role="img" focusable="false" viewBox="0 -683 1078.6 833" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-5-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"/>
@@ -135,8 +135,8 @@
     </g>
   </g>
   <circle id="loran-assignment-p1" cx="288.0" cy="218.0" r="3" stroke="black" stroke-width="2" fill="black"/>
-  <g id="loran-assignment-label-4" transform="translate(288.0,207.0) translate(-9.8,-15.1)">
-    <g id="loran-assignment-g-4">
+  <g id="loran-assignment-__label-4" transform="translate(288.0,207.0) translate(-9.8,-15.1)">
+    <g id="loran-assignment-__g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="19.520px" height="15.080px" role="img" focusable="false" viewBox="0 -683 1078.6 833" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-6-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"/>
@@ -158,8 +158,8 @@
     </g>
   </g>
   <circle id="loran-assignment-p3" cx="348.0" cy="38.0" r="3" stroke="black" stroke-width="2" fill="black"/>
-  <g id="loran-assignment-label-5" transform="translate(337.0,38.0) translate(-19.5,-7.7)">
-    <g id="loran-assignment-g-5">
+  <g id="loran-assignment-__label-5" transform="translate(337.0,38.0) translate(-19.5,-7.7)">
+    <g id="loran-assignment-__g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.000px" width="19.520px" height="15.360px" role="img" focusable="false" viewBox="0 -683 1078.6 848.6" x="0.0" y="0.0">
         <defs>
           <path id="loran-assignment-MJX-7-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"/>

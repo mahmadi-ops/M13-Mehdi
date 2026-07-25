@@ -107,7 +107,8 @@
       "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r140 -sOutputFile=lin3.png showlin.pdf)",
       "Bash(rsvg-convert -w 700 -b white /workspaces/MATH-13/generated-assets/latex-image/fig-tp-example-linearization-2.svg -o linfinal.png)",
       "Bash(rsvg-convert -w 700 -b white /workspaces/MATH-13/generated-assets/latex-image/fig-tp-plane-normal-2.svg -o f81.png)",
-      "Bash(gh run *)"
+      "Bash(gh run *)",
+      "Bash(perl -0pi -e 's/ arrows=\"1\"\\\\n\\\\s*labels=\"no\"\\\\/>/ arrows=\"1\"\\\\/>/g' source/ch-12-2.ptx source/ch-14-2.ptx)"
     ]
   }
 }
