@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tangent Planes and Differentials (14.6)
+
+  The <latex-image> figures require the following in the <docinfo> of the
+  main book file:
+
+  <latex-image-preamble>
+  \usepackage{pgfplots}
+  \pgfplotsset{compat=1.18}
+  </latex-image-preamble>
+
+  External cross-references used (adjust to the xml:ids of your book):
+    - section-partial-derivatives     (the section on partial derivatives)
+    - eq-dirderiv-gradient-relation   (the directional derivative formula
+                                       D_u f = grad f . u)
+
+  Files to place in the book's "external" directory:
+    - tangent-plane-explorer.html        (interactive first figure; the file
+                                          is self-contained, no CDN needed)
+    - ComputingNormalVector.mp4          (video for Example I)
+    - ComputingNormalVector-preview.png  (poster frame for that video)
+
+  In HTML output the first figure is the interactive explorer; in PDF it
+  falls back to the TikZ picture kept in the <static> element, so print is
+  unchanged.  The video renders inline in HTML and as the poster image with
+  a QR code in print.
+-->
+<chapter xml:id="section-tangent-planes-differentials" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Tangent Planes and Differentials</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Derive the equation of the tangent plane to the surface <m>z = f(x,y)</m>
+at a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> from the slopes
+<m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> of the two tangent lines in
+the planes <m>y = y_0</m> and <m>x = x_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the normal vector <m>\mathbf n = \nabla w \Big|_{P_0}</m> of the
+tangent plane, where <m>w(x,y,z) = f(x,y) - z</m>, and write the
+parametric equations of the normal line to the surface at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate the change <m>\Delta f</m> in the value of <m>f</m> produced by
+moving a small distance <m>ds</m> away from <m>P_0</m> in the direction
+of a unit vector <m>\mathbf u</m>, using the differential
+<m>df = \left(\nabla f \Big|_{P_0} \cdot \mathbf u\right) ds</m>.
+</p>
+</li>
+<li>
+<p>
+Find the linearization <m>L(x,y)</m> of a differentiable function at a
+point and use the tangent plane as a linear approximation of the surface.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+Recall that the partial
+derivative <m>f_x(x_0,y_0)</m> is the slope of the tangent line to the
+curve cut from the surface <m>z = f(x,y)</m> by the plane <m>y = y_0</m>,
+and that <m>f_y(x_0,y_0)</m> is the slope of the tangent line to the
+curve cut by the plane <m>x = x_0</m>. In this chapter we put these two
+tangent lines together: the plane containing both of them is the tangent
+plane to the surface at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. We find its
+equation, use its normal vector to write the equation of the normal line
+to the surface, estimate the change in <m>f</m> caused by moving a small
+distance away from <m>P_0</m> in a given direction, and finally use the
+tangent plane to linearize <m>f</m> near a point.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-tp-equation">
+<title>Equation of the Tangent Plane</title>
+
+<p>
+We use what we learned about the partial derivatives and slopes of
+tangent lines to calculate the equation of the tangent plane to the
+surface <m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m>.
+</p>
+
+<p>
+Let us consider the equation of the tangent plane
+<m>A(x - x_0) + B(y - y_0) + C(z - z_0) = 0</m>, where
+<m>z_0 = f(x_0,y_0)</m>. We then rewrite the equation as
+<md xml:id="eq-tp-plane-rewrite" number="yes">
+z - z_0 = -\frac{A}{C}(x - x_0) - \frac{B}{C}(y - y_0).
+</md>
+</p>
+
+<p>
+When <m>y = y_0</m>, we have <m>z - z_0 = -\frac{A}{C}(x - x_0)</m>,
+which is the equation of the tangent line at <m>P_0</m> in the plane
+<m>y = y_0</m>, and therefore its slope <m>-\frac{A}{C}</m> is
+<m>f_x(x_0,y_0)</m>. Similarly, when <m>x = x_0</m>, we have
+<m>z - z_0 = -\frac{B}{C}(y - y_0)</m>, which is the equation of the
+tangent line at <m>P_0</m> in the plane <m>x = x_0</m>, and therefore its
+slope <m>-\frac{B}{C}</m> is <m>f_y(x_0,y_0)</m>.
+<xref ref="fig-tp-two-tangent-lines"/> shows the two tangent lines inside
+the planes <m>y = y_0</m> and <m>x = x_0</m>.
+</p>
+
+<figure xml:id="fig-tp-two-tangent-lines">
+<caption>
+The two vertical planes <m>y = y_0</m> (blue) and <m>x = x_0</m> (red)
+cut the surface <m>z = f(x,y)</m> along the orange and black curves. The
+tangent lines to these curves at <m>P_0</m> have slopes
+<m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m>. The tangent plane contains
+these two tangent lines.
+</caption>
+<image width="85%">
+<description>
+<p>
+A gray dome-shaped surface, the graph of z equals f of x y, is cut by two
+vertical planes: a blue plane where y equals y 0 and a red plane where x
+equals x 0. The planes intersect the surface along an orange curve and a
+black curve, which cross at the red point P 0. A blue line is tangent to
+the orange curve at P 0 inside the plane y equals y 0, and a dark red
+line is tangent to the black curve at P 0 inside the plane x equals x 0.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=12cm, height=9.5cm,
+  view={-35}{22},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=4.6,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none,
+  clip=false,
+]
+% the surface z = f(x,y)
+\addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
+          fill opacity=0.35, draw opacity=0.45,
+          domain=-2:2, y domain=-2:2, samples=21]
+  {3 - 0.25*x^2 - 0.45*y^2};
+% vertical plane y = y0 (blue)
+\addplot3[surf, shader=flat, samples=2, domain=-2:2, y domain=0:3.7,
+          fill=blue!25, fill opacity=0.30, draw=blue!40, draw opacity=0.5]
+  ({x},{0.5},{y});
+% vertical plane x = x0 (red)
+\addplot3[surf, shader=flat, samples=2, domain=-2:2, y domain=0:3.7,
+          fill=red!25, fill opacity=0.30, draw=red!40, draw opacity=0.5]
+  ({0.5},{x},{y});
+% intersection curve with y = y0 (orange); samples y=0 keeps this a single
+% curve -- without it pgfplots closes the parabola with a straight chord
+\addplot3[very thick, orange, domain=-2:2, samples=41, samples y=0]
+  ({x},{0.5},{2.8875 - 0.25*x^2});
+% intersection curve with x = x0 (black)
+\addplot3[very thick, black, domain=-2:2, samples=41, samples y=0]
+  ({0.5},{x},{2.9375 - 0.45*x^2});
+% tangent line at P0 in the plane y = y0 (blue)
+\addplot3[very thick, blue!70!black, domain=-1.5:1.5, samples=2, samples y=0]
+  ({0.5+x},{0.5},{2.825 - 0.25*x});
+% tangent line at P0 in the plane x = x0 (dark red)
+\addplot3[very thick, purple!70!black, domain=-1.8:1.8, samples=2, samples y=0]
+  ({0.5},{0.5+x},{2.825 - 0.45*x});
+% the point P0
+\addplot3[only marks, mark=*, mark size=1.8, color=red]
+  coordinates {(0.5,0.5,2.825)};
+\node[red, anchor=south] at (axis cs:0.5,0.75,3.0) {$P_0$};
+% labels with leaders
+\node[blue!70!black, align=center, anchor=south]
+  at (axis description cs:0.24,1.0)
+  {Tangent line at $P_0$\\ in the plane $y=y_0$};
+\draw[gray!60, thin] (axis description cs:0.24,1.0)
+  -- (axis cs:-1.0,0.5,3.2);
+\node[purple!70!black, align=center, anchor=west]
+  at (axis description cs:1.0,0.78)
+  {Tangent line at $P_0$\\ in the plane $x=x_0$};
+\draw[gray!60, thin] (axis description cs:1.0,0.78)
+  -- (axis cs:0.5,-0.8,3.41);
+\node[gray!30!black, anchor=east] at (axis description cs:0.0,0.42)
+  {$z=f(x,y)$};
+\draw[gray!60, thin] (axis description cs:0.0,0.42)
+  -- (axis cs:-1.9,1.4,1.21);
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+<p>
+Therefore the equation of the <term>tangent plane to the surface</term>
+<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> is
+<md xml:id="eq-tp-tangent-plane" number="yes">
+f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0) - (z - z_0) = 0.
+</md>
+</p>
+
+<p>
+Note that we can write the equation of the surface as
+<m>w(x,y,z) = f(x,y) - z = 0</m> and define the gradient of <m>w</m> as
+<md>
+\nabla w = \left(\frac{\partial w}{\partial x}\right)\mathbf i
++ \left(\frac{\partial w}{\partial y}\right)\mathbf j
++ \left(\frac{\partial w}{\partial z}\right)\mathbf k.
+</md>
+Then, reading off the coefficients in
+<xref ref="eq-tp-tangent-plane"/>, the <term>normal vector to the
+tangent plane</term> is
+<md xml:id="eq-tp-normal-vector" number="yes">
+\mathbf n = \nabla w \Big|_{P_0}
+= f_x(x_0,y_0)\,\mathbf i + f_y(x_0,y_0)\,\mathbf j - \mathbf k.
+</md>
+</p>
+
+<figure xml:id="fig-tp-plane-normal">
+<caption>
+The tangent plane at <m>P_0</m> contains both tangent lines, and its
+normal vector is <m>\mathbf n = \nabla w \Big|_{P_0}</m>. Equivalently,
+<m>\mathbf n</m> is given (up to sign) by the cross product of the
+direction vectors <m>\mathbf i + f_x(x_0,y_0)\,\mathbf k</m> and
+<m>\mathbf j + f_y(x_0,y_0)\,\mathbf k</m> of the two tangent lines.
+</caption>
+<image width="85%">
+<description>
+<p>
+The same gray dome-shaped surface with the pink tangent plane touching it
+at the red point P 0. The orange curve cut by the plane y equals y 0 and
+the black curve cut by the plane x equals x 0 run across the surface
+through P 0. The blue and dark red tangent lines from the
+previous figure lie inside the tangent plane, and a magenta arrow,
+the normal vector n, points away from the plane at P 0, perpendicular to
+both tangent lines. A legend below the figure names each of these seven
+elements.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\large]
+\begin{axis}[
+  width=12cm, height=9.5cm,
+  view={-35}{22},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=4.6,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none,
+  clip=false,
+  legend style={
+    at={(0.5,-0.04)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=8pt,
+  },
+]
+% the surface z = f(x,y)
+\addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
+          fill opacity=0.35, draw opacity=0.45,
+          domain=-2:2, y domain=-2:2, samples=21, forget plot]
+  {3 - 0.25*x^2 - 0.45*y^2};
+% the tangent plane at P0 (pink)
+\addplot3[surf, shader=flat, samples=2, domain=-1:2, y domain=-1:2,
+          fill=red!30, fill opacity=0.45, draw=red!50!black, draw opacity=0.6,
+          forget plot]
+  {2.825 - 0.25*(x-0.5) - 0.45*(y-0.5)};
+% intersection curve with y = y0 (orange); samples y=0 keeps this a single
+% curve -- without it pgfplots closes the parabola with a straight chord
+\addplot3[very thick, orange, domain=-2:2, samples=41, samples y=0,
+          forget plot]
+  ({x},{0.5},{2.8875 - 0.25*x^2});
+% intersection curve with x = x0 (black)
+\addplot3[very thick, black, domain=-2:2, samples=41, samples y=0,
+          forget plot]
+  ({0.5},{x},{2.9375 - 0.45*x^2});
+% tangent line at P0 in the plane y = y0 (blue)
+\addplot3[very thick, blue!70!black, domain=-1.4:1.4, samples=2, samples y=0,
+          forget plot]
+  ({0.5+x},{0.5},{2.825 - 0.25*x});
+% tangent line at P0 in the plane x = x0 (dark red)
+\addplot3[very thick, purple!70!black, domain=-1.4:1.4, samples=2, samples y=0,
+          forget plot]
+  ({0.5},{0.5+x},{2.825 - 0.45*x});
+% the normal vector n (magenta)
+\draw[-stealth, magenta, very thick]
+  (axis cs:0.5,0.5,2.825) -- (axis cs:0.75,0.95,3.83);
+% the point P0
+\addplot3[only marks, mark=*, mark size=1.8, color=red, forget plot]
+  coordinates {(0.5,0.5,2.825)};
+\node[red, anchor=north] at (axis cs:0.5,0.3,2.66) {$P_0$};
+% legend
+\addlegendimage{area legend, fill=gray!30, fill opacity=0.35, draw=gray!55}
+\addlegendentry{$z=f(x,y)$}
+\addlegendimage{area legend, fill=red!30, fill opacity=0.45,
+                draw=red!50!black}
+\addlegendentry{tangent plane at $P_0$}
+\addlegendimage{very thick, orange}
+\addlegendentry{curve cut by $y=y_0$}
+\addlegendimage{very thick, black}
+\addlegendentry{curve cut by $x=x_0$}
+\addlegendimage{very thick, blue!70!black}
+\addlegendentry{tangent line in $y=y_0$}
+\addlegendimage{very thick, purple!70!black}
+\addlegendentry{tangent line in $x=x_0$}
+\addlegendimage{-stealth, magenta, very thick}
+\addlegendentry{$\mathbf n$: normal at $P_0$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+<p>
+Everything in the last two figures can also be explored interactively in
+the <dataurl source="tangent-plane-explorer.html">Tangent Plane
+Explorer</dataurl>, which opens in a new tab. It builds the picture up one
+layer at a time <mdash/> the surface, the point <m>P_0</m>, the two
+cutting planes and the curves they cut, the two tangent lines, the tangent
+plane, and finally <m>\mathbf n</m> <mdash/> for any of several surfaces.
+Drag <m>P_0</m> around and rotate the figure to see for yourself that the
+tangent plane always contains both tangent lines and that <m>\mathbf n</m>
+always stands at a right angle to it.
+</p>
+
+<p>
+Also, note that <m>\mathbf n = \nabla w \Big|_{P_0}</m> is the direction
+vector of the line normal to the surface at
+<m>P_0(x_0, y_0, f(x_0,y_0))</m>, which means the parametric equations of
+the <term>normal line to the surface</term> at <m>P_0</m> are
+<md number="yes">
+<mrow>x(t) \amp= x_0 + f_x(x_0,y_0)\,t</mrow>
+<mrow>y(t) \amp= y_0 + f_y(x_0,y_0)\,t</mrow>
+<mrow>z(t) \amp= f(x_0,y_0) - t</mrow>
+<mrow>t \amp\in \R.</mrow>
+</md>
+</p>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-tp-example-paraboloid">
+<title>Tangent Plane and Normal Line to a Surface</title>
+
+<p>
+In the first example, we find the normal line and the tangent plane to a
+paraboloid at a given point.
+</p>
+
+<example xml:id="example-tp-paraboloid">
+<title>Tangent Plane and Normal Line to a Paraboloid</title>
+<statement>
+<p>
+Consider the surface <m>z = f(x,y) = -x^2 - y^2</m> and the point
+<m>P_0(1, 1, -2)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the equation of the normal line to the surface at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the tangent plane to the surface at <m>P_0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-tp-paraboloid">
+<title>Solution</title>
+
+<p>
+<alert>A.</alert> We begin by computing the normal vector to the surface
+at <m>P_0(1,1,-2)</m>, which is given by
+<m>\mathbf n = \nabla w \Big|_{P_0}</m>, where
+<m>w(x,y,z) = -x^2 - y^2 - z</m>:
+<md>
+<mrow>\nabla w \amp= \left(\frac{\partial w}{\partial x}\right)\mathbf i
++ \left(\frac{\partial w}{\partial y}\right)\mathbf j
++ \left(\frac{\partial w}{\partial z}\right)\mathbf k</mrow>
+<mrow>\amp= (-2x)\,\mathbf i + (-2y)\,\mathbf j + (-1)\,\mathbf k</mrow>
+<mrow>\mathbf n \amp= \nabla w \Big|_{P_0}
+= -2\,\mathbf i - 2\,\mathbf j - \mathbf k.</mrow>
+</md>
+Hence the parametric equations of the normal line are
+<md number="yes">
+<mrow>x(t) \amp= x_0 + f_x(x_0,y_0)\,t = 1 - 2t</mrow>
+<mrow>y(t) \amp= y_0 + f_y(x_0,y_0)\,t = 1 - 2t</mrow>
+<mrow>z(t) \amp= f(x_0,y_0) - t = -2 - t</mrow>
+<mrow>t \amp\in \R.</mrow>
+</md>
+</p>
+
+<p>
+<alert>B.</alert> Note that we have already calculated the normal vector
+<m>\mathbf n = \langle -2, -2, -1 \rangle</m> to the surface at
+<m>P_0(1,1,-2)</m>, and we are ready to write down the equation of the
+tangent plane:
+<md number="yes">
+<mrow xml:id="eq-tp-ex1-plane">-2x - 2y - z \amp= D,</mrow>
+<mrow number="no">\text{where}\quad D \amp= \mathbf n \cdot \vec{OP_0}
+= \langle -2, -2, -1 \rangle \cdot \langle 1, 1, -2 \rangle = -2.</mrow>
+</md>
+Therefore the tangent plane is
+<md xml:id="eq-tp-ex1-plane-final" number="yes">
+-2x - 2y - z = -2.
+</md>
+<xref ref="fig-tp-example-paraboloid"/> shows the surface, the tangent
+plane, and the normal line at <m>P_0(1,1,-2)</m>.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-tp-example-paraboloid">
+<caption>
+The graph of <m>z = -x^2 - y^2</m>, the tangent plane
+<m>-2x - 2y - z = -2</m> (green), and the normal line
+<m>x = 1-2t</m>, <m>y = 1-2t</m>, <m>z = -2-t</m> (black) at the point
+<m>P_0(1,1,-2)</m>.
+</caption>
+<image width="80%">
+<description>
+<p>
+A downward-opening paraboloid drawn as a blue mesh, the graph of z equals
+negative x squared minus y squared. A green tangent plane patch touches
+the surface at the red point P 0 with coordinates 1, 1, negative 2, on
+the side of the dome. A black line passes through P 0 perpendicular to
+the plane: the normal line to the surface.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=11.5cm, height=10cm,
+  view={-40}{25},
+  xmin=-2.3, xmax=2.9, ymin=-2.3, ymax=2.9, zmin=-8.3, zmax=2.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-2,0,2}, ztick={2,0,-2,-4,-6,-8},
+  clip=false,
+]
+% the surface z = -x^2 - y^2 (blue mesh)
+\addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
+          fill opacity=0.85, draw opacity=0.9,
+          domain=-2:2, y domain=-2:2, samples=17, z buffer=sort]
+  {-x^2 - y^2};
+% the tangent plane -2x - 2y - z = -2 (green)
+\addplot3[surf, shader=flat, samples=2, domain=0.2:1.8, y domain=0.2:1.8,
+          fill=green!45!gray, fill opacity=0.50, draw=green!25!black,
+          draw opacity=0.7]
+  {2 - 2*x - 2*y};
+% the normal line (1-2t, 1-2t, -2-t) (black)
+\addplot3[very thick, black, samples=2, domain=-0.55:0.4]
+  ({1-2*x},{1-2*x},{-2-x});
+% the point P0
+\addplot3[only marks, mark=*, mark size=1.9, color=red]
+  coordinates {(1,1,-2)};
+\node[red, anchor=west] at (axis cs:1.8,0.85,-3.9) {$P_0(1,1,-2)$};
+% labels
+\node[green!35!black, anchor=south] at (axis description cs:0.34,0.985)
+  {Tangent Plane at $P_0(1,1,-2)$};
+\draw[gray!60, thin] (axis description cs:0.34,0.985)
+  -- (axis cs:0.4,1.6,-1.2);
+\node[black, anchor=south] at (axis description cs:0.80,0.90)
+  {Normal Line at $P_0(1,1,-2)$};
+\draw[gray!60, thin] (axis description cs:0.80,0.90)
+  -- (axis cs:2.1,2.1,-1.45);
+\node[blue!60!black, anchor=east] at (axis description cs:0.09,0.72)
+  {$z=-x^2-y^2$};
+\draw[gray!60, thin] (axis description cs:0.09,0.72)
+  -- (axis cs:-1.6,1.0,-3.56);
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+<p>
+<xref ref="video-tp-normal-vector"/> works through this computation from
+the start: it builds the gradient <m>\nabla w</m>, evaluates it at
+<m>P_0</m> to get the normal vector, and then draws the normal line and
+the tangent plane on the surface. Note that the video takes the normal
+vector in the outward direction,
+<m>\mathbf n = -\nabla w \big|_{P_0} = \langle 2, 2, 1\rangle</m>, which
+is the opposite of the <m>\nabla w \big|_{P_0}</m> used above; either
+choice gives the same normal line and the same tangent plane, since the
+two vectors differ only by the factor <m>-1</m>.
+</p>
+
+<figure xml:id="video-tp-normal-vector">
+<caption>
+Computing the normal vector for <xref ref="example-tp-paraboloid"/>. The
+surface, the point <m>P_0(1,1,-2)</m>, the gradient computation, the
+normal vector, the normal line, and the tangent plane are built up in
+turn, followed by a slow rotation of the finished figure.
+</caption>
+<video xml:id="video-computing-normal-vector"
+       source="videos/ComputingNormalVector.mp4"
+       preview="default"
+       width="90%"/>
+</figure>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-tp-change">
+<title>Estimating the Change in a Particular Direction</title>
+
+<p>
+Consider the function <m>z = f(x,y)</m>, a point <m>P_0(x_0,y_0)</m> in
+its domain, and a unit vector
+<m>\mathbf u = u_1\,\mathbf i + u_2\,\mathbf j</m>. The question is:
+</p>
+
+<blockquote>
+<p>
+<em>How can we estimate the change in <m>f</m> (<m>\Delta f</m>) as a
+result of moving a small distance (<m>ds</m>) away from <m>P_0</m> in the
+direction <m>\mathbf u</m>?</em>
+</p>
+</blockquote>
+
+<p>
+Moving away from <m>P_0(x_0,y_0)</m> by the distance <m>ds</m> in the
+direction <m>\mathbf u</m> is the displacement
+<m>\mathbf u\,ds = u_1\,ds\,\mathbf i + u_2\,ds\,\mathbf j</m>, with
+<m>|\mathbf u\,ds| = ds</m>, and it takes us to the point
+<m>P(x_0 + u_1\,ds,\; y_0 + u_2\,ds)</m>. As
+<xref ref="fig-tp-change-schematic"/> shows, this causes the change
+<md xml:id="eq-tp-delta-f" number="yes">
+\Delta f = f(x_0 + u_1\,ds,\; y_0 + u_2\,ds) - f(x_0, y_0)
+</md>
+in the value of the function.
+</p>
+
+<figure xml:id="fig-tp-change-schematic">
+<caption>
+Moving away from <m>P_0(x_0,y_0)</m> by the distance <m>ds</m> in the
+direction <m>\mathbf u = \langle u_1, u_2 \rangle</m> causes the change
+<m>\Delta f = f(x_0 + u_1\,ds,\; y_0 + u_2\,ds) - f(x_0,y_0)</m> in the
+value of the function.
+</caption>
+<image width="95%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-tp-change">
+<diagram dimensions="(575,235)" margins="10">
+<definition>beztop(t) = ((1-t)^2*1.5 + 2*t*(1-t)*4.4 + t^2*7.6, (1-t)^2*1.55 + 2*t*(1-t)*3.35 + t^2*1.18)</definition>
+<definition>bezbot(t) = ((1-t)^2*0.7 + 2*t*(1-t)*3.6 + t^2*6.45, (1-t)^2*0.82 + 2*t*(1-t)*(-0.75) + t^2*0.78)</definition>
+<coordinates bbox="(-0.9,-1.0,10.45,3.6)">
+<vector at="cs-xaxis" v="(4.0,0)" tail="(-0.5,0)" stroke="black" thickness="2"/>
+<vector at="cs-yaxis" v="(0,3.0)" tail="(0,-0.5)" stroke="black" thickness="2"/>
+<vector at="cs-zaxis" v="(4.3,0)" tail="(5.1,1.0)" stroke="black" thickness="2"/>
+<parametric-curve at="cs-ftop" function="beztop" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="cs-ftop-arrow" v="(0.248,-0.168)" tail="(7.281,1.387)"
+        stroke="#7F7F7F" thickness="2"/>
+<parametric-curve at="cs-fbot" function="bezbot" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="cs-fbot-arrow" v="(0.264,0.142)" tail="(6.165,0.635)"
+        stroke="#7F7F7F" thickness="2"/>
+<vector at="cs-u1" v="(0.651,0)" tail="(0.7,0.9)" stroke="#E69F00" thickness="3"/>
+<vector at="cs-u2" v="(0,0.546)" tail="(1.351,0.9)" stroke="#009E73" thickness="3"/>
+<vector at="cs-uds" v="(0.651,0.546)" tail="(0.7,0.9)" stroke="black" thickness="3"/>
+<point at="cs-P0" p="(0.7,0.9)" fill="#0072B2" alignment="w">
+<m>P_0(x_0,y_0)</m>
+</point>
+<point at="cs-P" p="(1.351,1.446)" fill="#D55E00" alignment="ne">
+<m>P(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
+</point>
+<point at="cs-fP0" p="(6.6,1.0)" fill="#0072B2"/>
+<point at="cs-fP" p="(7.75,1.0)" fill="#D55E00"/>
+<label at="cs-x-label" anchor="(3.62,0.1)" alignment="e">
+<m>x</m>
+</label>
+<label at="cs-y-label" anchor="(-0.18,2.3)" alignment="w">
+<m>y</m>
+</label>
+<label at="cs-z-label" anchor="(9.5,1.0)" alignment="e">
+<m>z</m>
+</label>
+<label at="cs-header1" anchor="(-0.6,3.35)" alignment="e">
+<m>\mathbf u = u_1\,\mathbf i + u_2\,\mathbf j</m>
+</label>
+<label at="cs-header2" anchor="(-0.6,2.9)" alignment="e">
+<m>\mathbf u\,ds = u_1\,ds\,\mathbf i + u_2\,ds\,\mathbf j,\quad |\mathbf u\,ds| = ds</m>
+</label>
+<label at="cs-u1-label" anchor="(1.0,0.8)" alignment="s" color="#E69F00">
+<m>u_1\,ds\,\mathbf i</m>
+</label>
+<label at="cs-u2-label" anchor="(1.43,1.12)" alignment="e" color="#009E73">
+<m>u_2\,ds\,\mathbf j</m>
+</label>
+<label at="cs-uds-label" anchor="(0.72,1.42)" alignment="nw" color="black">
+<m>\mathbf u\,ds</m>
+</label>
+<label at="cs-fP0-label" anchor="(6.55,1.18)" alignment="n" color="#0072B2">
+<m>f(x_0,y_0)</m>
+</label>
+<label at="cs-fP-label" anchor="(7.95,0.68)" alignment="s" color="#D55E00">
+<m>f(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
+</label>
+<label at="cs-deltaf-label" anchor="(3.55,-0.62)" alignment="e">
+<m>\Delta f = f(x_0+u_1\,ds,\; y_0+u_2\,ds) - f(x_0,y_0)</m>
+</label>
+<label at="cs-ftop-label" anchor="(5.4,2.35)" alignment="n" color="#7F7F7F">
+<m>f</m>
+</label>
+<label at="cs-fbot-label" anchor="(3.0,-0.2)" alignment="s" color="#7F7F7F">
+<m>f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="On the left, the x y plane shows a point P 0 with coordinates x 0 y 0. A black arrow u d s leaves P 0 in the direction of the unit vector u, ending at the point P with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s. Its horizontal component u 1 d s i is drawn in orange and its vertical component u 2 d s j in green. On the right, a horizontal z axis carries the two output values: f of x 0 y 0 in blue and f of the moved point in red. Two dashed gray arrows labeled f map P 0 and P to their output values, and the difference of the outputs is the change delta f.">
+  <annotation ref="cs-P0" text="The starting point P 0 with coordinates x 0, y 0."/>
+  <annotation ref="cs-uds" text="The displacement u d s: moving away from P 0 a small distance d s in the direction of the unit vector u."/>
+  <annotation ref="cs-u1" text="The horizontal component of the displacement, u 1 d s times i, drawn in orange."/>
+  <annotation ref="cs-u2" text="The vertical component of the displacement, u 2 d s times j, drawn in green."/>
+  <annotation ref="cs-P" text="The point P reached after the displacement, with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s."/>
+  <annotation ref="cs-fbot" text="The function f maps the starting point P 0 to the output value f of x 0 y 0, marked in blue on the z axis."/>
+  <annotation ref="cs-ftop" text="The function f maps the moved point P to the output value f of x 0 plus u 1 d s, y 0 plus u 2 d s, marked in red on the z axis."/>
+  <annotation ref="cs-deltaf-label" text="The change in f, delta f, is the difference between the two output values on the z axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+We know from <xref ref="eq-dirderiv-gradient-relation"/> that the rate of
+change of <m>f</m> at a point <m>P_0</m> in the direction of
+<m>\mathbf u</m> is given by the directional derivative
+<md xml:id="eq-tp-dirderiv" number="yes">
+\left(\frac{df}{ds}\right)_{\mathbf u, P_0}
+= \nabla f \Big|_{P_0} \cdot \mathbf u.
+</md>
+Hence, we can estimate the change in <m>f</m> as
+<md xml:id="eq-tp-df" number="yes">
+\Delta f \approx df
+= \left(\nabla f \Big|_{P_0} \cdot \mathbf u\right) ds.
+</md>
+The quantity <m>df</m> is called the <term>differential</term> of
+<m>f</m>.
+</p>
+
+<example xml:id="example-tp-change">
+<title>Estimating the Change in a Given Direction</title>
+<statement>
+<p>
+Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
+<m>P_0(1,1)</m>, and the unit vector
+<m>\mathbf u = \frac{1}{\sqrt 2}\,\mathbf i +
+\frac{1}{\sqrt 2}\,\mathbf j</m>. Estimate the change in the value of
+<m>f</m> as a result of moving away from <m>P_0(1,1)</m> in the
+direction of <m>\mathbf u</m> by <m>0.1</m> units.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-tp-change">
+<title>Solution</title>
+
+<p>
+Note that from the question we know <m>ds = 0.1</m> units. Our goal is to
+estimate the change in <m>f</m>. We compute the gradient of <m>f</m> and
+evaluate it at <m>P_0</m>:
+<md>
+<mrow>\nabla f \amp= 2x\,\mathbf i + 2y\,\mathbf j</mrow>
+<mrow>\nabla f \Big|_{(1,1)} \amp= 2\,\mathbf i + 2\,\mathbf j.</mrow>
+</md>
+By <xref ref="eq-tp-df"/>,
+<md number="yes">
+<mrow number="no">df \amp= \left(\nabla f \Big|_{P_0} \cdot \mathbf u\right) ds</mrow>
+<mrow number="no">\amp= \left(\langle 2, 2 \rangle \cdot
+\Bigl\langle \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2} \Bigr\rangle\right)(0.1)</mrow>
+<mrow xml:id="eq-tp-ex2-df">\amp= 0.2\sqrt 2 \approx 0.28 \text{ units}.</mrow>
+</md>
+This means the change in <m>f</m> is approximately <m>0.28</m> units.
+See <xref ref="fig-tp-example-change"/>.
+</p>
+
+<p>
+For comparison, the exact change is
+<md>
+<mrow>\Delta f \amp= f\left(1 + \frac{0.1}{\sqrt 2},\,
+1 + \frac{0.1}{\sqrt 2}\right) - f(1,1)</mrow>
+<mrow>\amp= \left(3 + 0.2\sqrt 2 + 0.01\right) - 3
+= 0.2\sqrt 2 + 0.01,</mrow>
+</md>
+so the estimate <m>df</m> is off by only <m>0.01</m> units.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-tp-example-change">
+<caption>
+The graph of <m>z = 1 + x^2 + y^2</m> and the vertical plane
+<m>x - y = 0</m> that contains the direction <m>\mathbf u</m>. Moving
+from <m>(1,1,0)</m> by <m>ds = 0.1</m> along <m>\mathbf u</m> moves the
+input point (blue), and the value of <m>f</m> climbs along the black
+intersection curve from <m>f(1,1) = 3</m> (green) to the orange point.
+</caption>
+<image width="98%">
+<description>
+<p>
+An upward-opening gray paraboloid, the graph of z equals 1 plus x squared
+plus y squared, cut by a green vertical plane through the line y equals
+x. The plane meets the surface along a black parabola. On the base plane,
+a black arrow shows the unit vector u leaving the point 1, 1, 0. Four
+points are marked: the input point 1, 1, 0 in dark red, the moved input
+point in light blue, the output point 1, 1, 3 in green on the curve, and
+the moved output point in orange on the curve. A legend on the right
+lists the surface, the plane, and the four points.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=10.5cm, height=10.5cm,
+  view={-65}{20},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=6.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-2,0,2}, ztick={1,2,3,4,5,6},
+  clip=false,
+]
+% the paraboloid z = 1 + x^2 + y^2 (gray, drawn over a disk)
+\addplot3[surf, shader=flat, fill=gray!40, draw=gray!55,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:2.1, y domain=0:360, samples=18, samples y=37,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{1+x^2});
+% the vertical plane x - y = 0 (green)
+\addplot3[surf, shader=flat, samples=2, domain=-1.7:1.7, y domain=0:6.2,
+          fill=green!50, fill opacity=0.30, draw=green!40!black,
+          draw opacity=0.5]
+  ({x},{x},{y});
+% the intersection curve z = 1 + 2t^2 over the line y = x (black)
+\addplot3[very thick, black, domain=-1.6:1.6, samples=41]
+  ({x},{x},{1+2*x^2});
+% the unit vector u at (1,1,0)
+\draw[-stealth, black, very thick]
+  (axis cs:1,1,0) -- (axis cs:1.5,1.5,0);
+\node[black, anchor=north] at (axis cs:1.2,1.2,-0.15) {$\mathbf u$};
+% the points
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(1,1,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=green!55!black]
+  coordinates {(1,1,3)};
+\addplot3[only marks, mark=*, mark size=1.7, color=cyan!70!black]
+  coordinates {(1.0707,1.0707,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=orange]
+  coordinates {(1.0707,1.0707,3.2929)};
+% side legend
+\node[black, anchor=west] at (axis description cs:1.04,0.95)
+  {$\mathbf u = \frac{1}{\sqrt 2}\,\mathbf i + \frac{1}{\sqrt 2}\,\mathbf j$};
+\node[gray!30!black, anchor=west, align=left]
+  at (axis description cs:1.04,0.85)
+  {Surface:\\ $z = 1 + x^2 + y^2$};
+\node[green!40!black, anchor=west] at (axis description cs:1.04,0.74)
+  {Plane: $x - y = 0$};
+\node[purple!70!black, anchor=west] at (axis description cs:1.04,0.66)
+  {Point: $(1,1,0)$};
+\node[green!55!black, anchor=west] at (axis description cs:1.04,0.58)
+  {Point: $(1,1,3)$};
+\node[cyan!70!black, anchor=west] at (axis description cs:1.04,0.46)
+  {Point: $\left(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2},\, 0\right)$};
+\node[orange, anchor=west, align=left] at (axis description cs:1.04,0.30)
+  {Point: $\Bigl(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2},$\\
+   $\qquad f\bigl(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2}\bigr)\Bigr)$};
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-tp-linearization">
+<title>Linearizing <m>z = f(x,y)</m></title>
+
+<p>
+We can estimate the behavior of a function of two variables
+<m>z = f(x,y)</m> around a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> by
+making the observation that the tangent plane to the surface
+<m>z = f(x,y)</m> at <m>P_0</m> can be used as such an approximation.
+Below is the formal definition.
+</p>
+
+<definition xml:id="def-tp-linearization">
+<statement>
+<p>
+The <term>linearization</term> of a differentiable function
+<m>f(x,y)</m> at a point <m>(x_0,y_0)</m> is the function
+<md xml:id="eq-tp-linearization" number="yes">
+L(x,y) = f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0) + f(x_0,y_0).
+</md>
+The linearized function <m>L(x,y)</m> can be used as an approximation for
+<m>f(x,y)</m> near <m>(x_0,y_0)</m>.
+</p>
+</statement>
+</definition>
+
+<p>
+Note that solving <xref ref="eq-tp-tangent-plane"/> for <m>z</m> gives
+exactly <m>z = L(x,y)</m>: the graph of the linearization is the tangent
+plane to the surface at <m>P_0</m>.
+</p>
+
+<example xml:id="example-tp-linearization">
+<title>Linear Approximation of a Function</title>
+<statement>
+<p>
+Consider the function <m>f(x,y) = -2x^2 - 2xy^3 - 2x</m>. Approximate
+<m>f(x,y)</m> near the point
+<m>P_0\left(-0.5,\, -0.5,\, f(-0.5,-0.5)\right)</m> with a linear
+function <m>L(x,y)</m>.
+</p>
+</statement>
+</example>
+
+<paragraphs xml:id="solution-tp-linearization">
+<title>Solution</title>
+
+<p>
+We use the equation of the tangent plane at
+<m>P_0\left(-0.5, -0.5, f(-0.5,-0.5)\right)</m> as a linear approximation
+for the surface, as follows. First we evaluate <m>f</m> and its partial
+derivatives at the point:
+<md>
+<mrow>f(-0.5,-0.5) \amp= \frac{3}{8}</mrow>
+<mrow>f_x(x,y) \amp= -4x - 2y^3 - 2
+\;\Rightarrow\;
+f_x(-0.5,-0.5) = 2 + \frac{1}{4} - 2 = \frac{1}{4}</mrow>
+<mrow>f_y(x,y) \amp= -6xy^2
+\;\Rightarrow\;
+f_y(-0.5,-0.5) = \frac{3}{4}.</mrow>
+</md>
+Then, by <xref ref="eq-tp-linearization"/>,
+<md number="yes">
+<mrow number="no">f(x,y) \amp\approx L(x,y)</mrow>
+<mrow number="no">\amp= f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0)
++ f(x_0,y_0)</mrow>
+<mrow xml:id="eq-tp-ex3-L">\amp= \frac{1}{4}\left(x + \frac{1}{2}\right)
++ \frac{3}{4}\left(y + \frac{1}{2}\right) + \frac{3}{8}.</mrow>
+</md>
+<xref ref="fig-tp-example-linearization"/> shows the graph of <m>f</m>
+together with the graph of <m>L</m>, which is the tangent plane patch at
+<m>P_0</m>.
+</p>
+</paragraphs>
+
+<figure xml:id="fig-tp-example-linearization">
+<caption>
+The graph of <m>z = -2x^2 - 2xy^3 - 2x</m> and the tangent plane at
+<m>P_0\left(-\frac12, -\frac12, \frac38\right)</m>, whose equation is
+<m>z = L(x,y) = \frac14\left(x+\frac12\right) +
+\frac34\left(y+\frac12\right) + \frac38</m>. Near <m>P_0</m> the plane
+hugs the surface, so <m>L(x,y)</m> approximates <m>f(x,y)</m>.
+</caption>
+<image width="80%">
+<description>
+<p>
+A blue mesh surface, the graph of z equals negative 2 x squared minus 2 x
+y cubed minus 2 x, shaped like a curving ridge. A small dark red
+rectangular patch of the tangent plane sits on the surface at the green
+point P 0 with coordinates negative one half, negative one half, three
+eighths, and a short black arrow at P 0 shows the normal direction. Near
+P 0 the patch is indistinguishable from the surface.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=11.5cm, height=10cm,
+  view={-40}{25},
+  xmin=-0.85, xmax=0.45, ymin=-0.85, ymax=0.85, zmin=-1.4, zmax=1.3,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-0.8,-0.4,0,0.4}, ytick={-0.8,-0.4,0,0.4,0.8},
+  ztick={-1,-0.5,0,0.5,1},
+  clip=false,
+]
+% the surface z = -2x^2 - 2xy^3 - 2x (blue mesh)
+\addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
+          fill opacity=0.85, draw opacity=0.9,
+          domain=-0.8:0.4, y domain=-0.8:0.8, samples=17, samples y=21,
+          z buffer=sort]
+  {-2*x^2 - 2*x*y^3 - 2*x};
+% the tangent plane patch z = L(x,y) at P0 (dark red)
+\addplot3[surf, shader=flat, samples=2, domain=-0.7:-0.3, y domain=-0.7:-0.3,
+          fill=red!50!black, fill opacity=0.55, draw=red!30!black]
+  {0.25*(x+0.5) + 0.75*(y+0.5) + 0.375};
+% short normal arrow at P0
+\draw[-stealth, black, line width=1.1pt]
+  (axis cs:-0.5,-0.5,0.375) -- (axis cs:-0.605,-0.815,0.795);
+% the point P0
+\addplot3[only marks, mark=*, mark size=1.9, color=green!60!black]
+  coordinates {(-0.5,-0.5,0.375)};
+% labels
+\node[blue!60!black, anchor=south] at (axis description cs:0.28,1.0)
+  {$z = -2x^2 - 2xy^3 - 2x$};
+\node[green!45!black, anchor=south] at (axis description cs:0.82,1.0)
+  {$P_0\left(-\frac12, -\frac12, \frac38\right)$};
+\draw[gray!60, thin] (axis description cs:0.82,1.0)
+  -- (axis cs:-0.5,-0.5,0.42);
+\node[red!50!black, anchor=east] at (axis description cs:0.04,0.80)
+  {Tangent Plane at $P_0$};
+\draw[gray!60, thin] (axis description cs:0.04,0.80)
+  -- (axis cs:-0.7,-0.45,0.3625);
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+</section>
+
+</chapter>
