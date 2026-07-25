@@ -19,10 +19,11 @@
   
 
   // The pretext-full image above includes pretext, prefigure, and enough parts of latex and sagemath for most cases.  Here we install additional dependencies
-"postCreateCommand": [
-  "bash ./.devcontainer/installPandoc.sh",
-  "git config --global --add safe.directory $(pwd)"
-],
+  // Written as one shell string rather than an array: the array form of
+  // postCreateCommand is argv (no shell), so the steps would not run in
+  // sequence and $(pwd) would not expand.  installTools.sh must follow
+  // installPandoc.sh because both use apt.
+"postCreateCommand": "bash ./.devcontainer/installPandoc.sh && bash ./.devcontainer/installTools.sh && git config --global --add safe.directory $(pwd)",
 
   // Port forwarding
   // ---------------
