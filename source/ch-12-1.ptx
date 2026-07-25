@@ -334,54 +334,99 @@ The distance between <m>P_1(x_1,y_1,z_1)</m> and
 <m>P_2(x_2,y_2,z_2)</m> is the length of the diagonal of a box with edges
 parallel to the axes. The helper corners are <m>A(x_2,y_1,z_1)</m> and
 <m>B(x_2,y_2,z_1)</m>; applying the Pythagorean theorem first in the
-triangle <m>P_1AB</m> and then in the vertical triangle <m>P_1BP_2</m>
-gives <xref ref="eq-3d-distance"/>.
+triangle <m>P_1AB</m>, with its right angle at <m>A</m>, and then in the
+vertical triangle <m>P_1BP_2</m>, with its right angle at <m>B</m>, gives
+<xref ref="eq-3d-distance"/>.
 </caption>
 <image width="70%">
 <description>
 <p>
 A rectangular box with edges parallel to the coordinate axes. The point P
-one sits at one corner and P two at the opposite corner, joined by a
-dashed diagonal. Two intermediate corners A and B are marked, showing the
-right triangles used in the Pythagorean theorem.
+one sits at the near lower corner and P two at the opposite upper corner,
+joined by a violet diagonal. Two intermediate corners are marked: A,
+reached from P one along a blue edge of length the absolute value of x two
+minus x one, and B, reached from A along an orange edge of length the
+absolute value of y two minus y one. A green vertical edge of length the
+absolute value of z two minus z one rises from B to P two. A red segment
+joins P one to B across the base, and small squares mark the right angles
+at A and at B.
 </p>
 </description>
 <latex-image><![CDATA[
-\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
-                    scale=0.95, >=stealth]
-\draw[->, thick] (0,-0.6,0) -- (4.4,0,0) node[below left] {$x$};
-\draw[->, thick] (0,-0.6,0) -- (0,5.0,0) node[right] {$y$};
-\draw[->, thick] (0,-0.6,0) -- (0,-0.6,3.6) node[above] {$z$};
-\node[above left] at (0,-0.6,0) {$0$};
-% box corners: P1 = (2.6,1.3,1.0), P2 = (0.9,3.6,2.2)
-\coordinate (P1) at (2.6,1.3,1.0);
-\coordinate (P2) at (0.9,3.6,2.2);
-\coordinate (A)  at (0.9,1.3,1.0);
-\coordinate (B)  at (0.9,3.6,1.0);
-% box
-\draw[cyan!60!black, fill=cyan!12, opacity=0.85]
-  (2.6,1.3,1.0) -- (0.9,1.3,1.0) -- (0.9,3.6,1.0) -- (2.6,3.6,1.0) -- cycle;
-\draw[cyan!60!black, fill=cyan!12, opacity=0.6]
-  (2.6,1.3,2.2) -- (0.9,1.3,2.2) -- (0.9,3.6,2.2) -- (2.6,3.6,2.2) -- cycle;
-\draw[cyan!60!black] (2.6,1.3,1.0) -- (2.6,1.3,2.2);
-\draw[cyan!60!black] (0.9,1.3,1.0) -- (0.9,1.3,2.2);
-\draw[cyan!60!black] (0.9,3.6,1.0) -- (0.9,3.6,2.2);
-\draw[cyan!60!black] (2.6,3.6,1.0) -- (2.6,3.6,2.2);
-% diagonal
-\draw[magenta, very thick, dashed] (P1) -- (P2);
-\fill[magenta] (P1) circle (1.8pt);
-\fill[magenta] (P2) circle (1.8pt);
-\fill[cyan!60!black] (A) circle (1.6pt);
-\fill[cyan!60!black] (B) circle (1.6pt);
-% labels are kept short and pushed well clear of one another;
-% the coordinates of each corner are given in the caption
-\node[magenta, above left=0pt]  at (P1) {$P_1$};
-\node[magenta, above right=1pt] at (P2) {$P_2$};
-\node[cyan!60!black, below left=1pt]  at (A) {$A$};
-\node[cyan!60!black, below right=1pt] at (B) {$B$};
+% Orientation, colors and labels deliberately match the video in
+% fig-video-distance-formula: x to the right, y back, z up; the edge
+% lengths are blue, orange and green, the base diagonal P1B is red and
+% the main diagonal P1P2 is violet.
+\begin{tikzpicture}[x={(0.98cm,-0.16cm)}, y={(0.45cm,0.56cm)}, z={(0cm,1cm)},
+                    scale=1.05, >=stealth,
+                    edge/.style={line width=1.6pt},
+                    lbl/.style={font=\small}]
+\draw[->, thick] (0,0,0) -- (5.4,0,0) node[below right] {$x$};
+\draw[->, thick] (0,0,0) -- (0,2.6,0) node[above left] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,4.2) node[left] {$z$};
+% box corners; the box is set out along x so the axes stay clear of it
+\coordinate (P1) at (1.6,0.5,0.9);
+\coordinate (A)  at (4.0,0.5,0.9);
+\coordinate (B)  at (4.0,2.6,0.9);
+\coordinate (P2) at (4.0,2.6,2.9);
+% box, drawn first so the colored edges sit on top of it
+\draw[cyan!65!blue, thin]
+  (1.6,0.5,0.9) -- (4.0,0.5,0.9) -- (4.0,2.6,0.9) -- (1.6,2.6,0.9) -- cycle;
+\draw[cyan!65!blue, thin]
+  (1.6,0.5,2.9) -- (4.0,0.5,2.9) -- (4.0,2.6,2.9) -- (1.6,2.6,2.9) -- cycle;
+\draw[cyan!65!blue, thin] (1.6,0.5,0.9) -- (1.6,0.5,2.9);
+\draw[cyan!65!blue, thin] (4.0,0.5,0.9) -- (4.0,0.5,2.9);
+\draw[cyan!65!blue, thin] (4.0,2.6,0.9) -- (4.0,2.6,2.9);
+\draw[cyan!65!blue, thin] (1.6,2.6,0.9) -- (1.6,2.6,2.9);
+% the three edge lengths
+\draw[edge, blue!70!cyan] (P1) -- (A)
+  node[lbl, blue!70!cyan, pos=0.68, above=2pt] {$|x_2-x_1|$};
+\draw[edge, orange!90!black] (A) -- (B)
+  node[lbl, orange!90!black, midway, right=1pt] {$|y_2-y_1|$};
+\draw[edge, green!60!black] (B) -- (P2)
+  node[lbl, green!60!black, midway, right=1pt] {$|z_2-z_1|$};
+% base diagonal and full diagonal
+\draw[edge, red!80!black] (P1) -- (B);
+\draw[edge, violet] (P1) -- (P2);
+% right angles at A (in the base) and at B (vertical)
+\draw[yellow!65!black, line width=0.9pt]
+  (3.72,0.5,0.9) -- (3.72,0.72,0.9) -- (4.0,0.72,0.9);
+\draw[yellow!65!black, line width=0.9pt]
+  (3.737,2.37,0.9) -- (3.737,2.37,1.2) -- (4.0,2.6,1.2);
+% corners
+\fill[red] (P1) circle (2.2pt);
+\fill[red] (P2) circle (2.2pt);
+\fill[black] (A) circle (2.0pt);
+\fill[black] (B) circle (2.0pt);
+\node[lbl, red, below left]   at (P1) {$P_1(x_1,y_1,z_1)$};
+\node[lbl, red, above right]  at (P2) {$P_2(x_2,y_2,z_2)$};
+\node[lbl, below right] at (A) {$A(x_2,y_1,z_1)$};
+\node[lbl, right=2pt]   at (B) {$B(x_2,y_2,z_1)$};
 \end{tikzpicture}
 ]]></latex-image>
 </image>
+</figure>
+
+<p>
+The video in <xref ref="fig-video-distance-formula"/> builds this box one
+edge at a time and applies the Pythagorean theorem twice, in the same two
+steps and with the same colors as <xref ref="fig-3d-distance"/>. Step 1
+works in the base, where the right angle at <m>A</m> gives
+<m>\left|P_1B\right|^2 = \left|x_2-x_1\right|^2 +
+\left|y_2-y_1\right|^2</m>; step 2 goes up the vertical edge, where the
+right angle at <m>B</m> gives <m>\left|P_1P_2\right|^2 =
+\left|P_1B\right|^2 + \left|z_2-z_1\right|^2</m>. Substituting the first
+equation into the second gives <xref ref="eq-3d-distance"/>.
+</p>
+
+<figure xml:id="fig-video-distance-formula">
+<caption>
+Deriving the distance formula in space by applying the Pythagorean
+theorem twice: first in the base triangle <m>P_1AB</m>, then in the
+vertical triangle <m>P_1BP_2</m>.
+</caption>
+<video xml:id="video-distance-formula"
+       source="videos/DistanceFormulaProof.mp4" width="85%"/>
 </figure>
 
 </section>
