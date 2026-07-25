@@ -12,7 +12,14 @@ on:
   # pull_request:
   #     branches: ["*"]
 
-  # Runs on pushes to main
+  # Runs on pushes to main.  If a push to main does not start a run, GitHub is
+  # not creating an Actions check suite for the push (visible via the API as
+  # `commits/{sha}/check-suites` returning only a Pages suite).  This repository
+  # arrived as an import, which leaves that auto-triggering suppressed.  Neither
+  # editing this file nor disabling/enabling the workflow clears it; turning
+  # Actions off and back on for the whole repository does:
+  #   gh api --method PUT repos/OWNER/REPO/actions/permissions -F enabled=false
+  #   gh api --method PUT repos/OWNER/REPO/actions/permissions -F enabled=true -f allowed_actions=all
   push:
       branches: ["main"]
 
