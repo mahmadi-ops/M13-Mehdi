@@ -22,6 +22,13 @@ on:
   #   gh api --method PUT repos/OWNER/REPO/actions/permissions -F enabled=true -f allowed_actions=all
   push:
       branches: ["main"]
+      # Claude Code's settings do not affect the built book, so a push that
+      # touches nothing else should not spend ~4 minutes rebuilding and
+      # republishing the site.  A push that changes these files alongside
+      # anything else still builds, as paths-ignore only skips a push whose
+      # every changed file matches.  Use `workflow_dispatch` to force a build.
+      paths-ignore:
+        - '.claude/**'
 
   # # Runs every day at 00:00 UTC
   # schedule:
