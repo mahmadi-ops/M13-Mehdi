@@ -617,8 +617,9 @@ For comparison, the exact change is
 = 0.2\sqrt 2 + 0.01,</mrow>
 </md>
 so the estimate <m>df</m> is off by only <m>0.01</m> units. The right
-panel of <xref ref="fig-tp-example-change"/> zooms in on <m>P_0</m> and
-shows this gap between the tangent line and the surface.
+panel of <xref ref="fig-tp-example-change"/> zooms in on the stretch just
+past <m>P_0</m> and shows this gap between the tangent line and the
+surface.
 </p>
 </paragraphs>
 
@@ -629,13 +630,15 @@ plane <m>x - y = 0</m> that contains the direction <m>\mathbf u</m>.
 Moving from <m>P_0(1,1,0)</m> by <m>ds = 0.1</m> along <m>\mathbf u</m>
 moves the input point (light blue), and the value of <m>f</m> climbs
 along the black intersection curve from <m>f(1,1) = 3</m> (green) to the
-orange point. <term>Right:</term> the same curve near <m>P_0</m>, plotted
-against the distance <m>s</m> travelled along <m>\mathbf u</m> and zoomed
-in far enough to separate the tangent line from the surface. Over
-<m>ds = 0.1</m> the tangent line rises by <m>df \approx 0.283</m> while
-the curve itself rises by <m>\Delta f \approx 0.293</m>.
+orange point. <term>Right:</term> the same curve plotted against the
+distance <m>s</m> travelled along <m>\mathbf u</m>, together with its
+tangent line at <m>P_0</m>. The window starts at <m>s = 0.05</m>, past
+the stretch where the two are indistinguishable, so that the gap between
+them can be seen: at <m>s = ds = 0.1</m> the tangent line has risen by
+<m>df \approx 0.283</m> to <m>3.283</m>, while the curve itself has risen
+by <m>\Delta f \approx 0.293</m> to <m>3.293</m>.
 </caption>
-<sidebyside widths="50% 46%" margins="0% 4%" valign="middle">
+<sidebyside widths="48% 48%" margins="2%" valign="middle">
 <image xml:id="image-tp-change-3d">
 <description>
 <p>
@@ -730,85 +733,72 @@ the four points.
 <image xml:id="image-tp-change-zoom">
 <description>
 <p>
-A two dimensional graph zoomed into the neighborhood of P 0. The
-horizontal axis is the distance s travelled from P 0 in the direction of
-u, from 0 to about 0.16; the vertical axis is z, from just below 3 to
-about 3.33. A black curve is the value of f along u, and a blue dashed
-line is its tangent line at s equals 0; the two are indistinguishable
-near s equals 0 and pull apart as s grows. At s equals ds equals 0.1 the
-tangent line reaches the blue point 3.283 and the curve reaches the
-orange point 3.293. A blue double arrow marks the rise d f of 0.283 and
-an orange double arrow marks the true rise delta f of 0.293, and a
-callout labels the gap between them as 0.01. A legend below the picture
-names the curve, the tangent line, and the three marked values.
+A two dimensional graph zoomed into the neighborhood of the moved point.
+The horizontal axis is the distance s travelled from P 0 in the direction
+of u, running from 0.05 to 0.15 rather than from 0, so that the two
+graphs are far enough apart to be told apart; the vertical axis is z,
+running from about 3.13 to about 3.46. A black curve is the value of f
+along u, and a blue dashed line is its tangent line at P 0. The line
+stays just below the curve and the gap between them widens to the right.
+At s equals d s equals 0.1, dashed guide lines pick out the two heights:
+the tangent line reaches the blue point at 3.283, the estimate 3 plus d
+f, and the curve reaches the orange point at 3.293, the exact value of f
+at the moved point. A callout labels the gap between the two points as
+delta f minus d f equals 0.01. A legend below the picture names the
+curve, the tangent line, and the two marked values.
 </p>
 </description>
 <latex-image>
 \begin{tikzpicture}[font=\large]
 \begin{axis}[
-  width=12.5cm, height=13cm,
-  xmin=-0.018, xmax=0.192, ymin=2.982, ymax=3.328,
-  xlabel={$s$: distance from $P_0$ in the direction of $\mathbf u$},
+  width=10.667cm, height=11.078cm,
+  xmin=0.048, xmax=0.153, ymin=3.128, ymax=3.462,
+  xlabel={$s$: distance from $P_0$ along $\mathbf u$},
   ylabel={$z$},
-  xtick={0,0.05,0.1,0.15},
-  xticklabels={$0$,$0.05$,$ds=0.1$,$0.15$},
-  ytick={3,3.05,3.1,3.15,3.2,3.25,3.3},
+  xtick={0.05,0.075,0.1,0.125,0.15},
+  xticklabels={$0.05$,,$ds=0.1$,,$0.15$},
+  ytick={3.15,3.2,3.25,3.3,3.35,3.4,3.45},
   yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
   axis lines=left,
   clip=false,
   legend style={
-    at={(0.5,-0.12)}, anchor=north, font=\normalsize,
+    at={(0.5,-0.145)}, anchor=north, font=\normalsize,
     draw=gray!50, fill=white,
-    cells={anchor=west}, legend columns=1,
-    row sep=1pt,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=6pt,
   },
 ]
-% guide lines
-\draw[gray!60, dashed] (axis cs:0,3) -- (axis cs:0.155,3);
-\draw[gray!60, dashed] (axis cs:0.1,2.982) -- (axis cs:0.1,3.29284);
-\draw[gray!60, dashed] (axis cs:0,3.28284) -- (axis cs:0.122,3.28284);
-\draw[gray!60, dashed] (axis cs:0,3.29284) -- (axis cs:0.155,3.29284);
+% guide lines at the two heights reached over ds = 0.1
+\draw[gray!60, dashed] (axis cs:0.048,3.28284) -- (axis cs:0.1115,3.28284);
+\draw[gray!60, dashed] (axis cs:0.048,3.29284) -- (axis cs:0.1115,3.29284);
+\draw[gray!60, dashed] (axis cs:0.1,3.128) -- (axis cs:0.1,3.29284);
 % f along u: z = 3 + 2 sqrt2 s + s^2
-\addplot[very thick, black, domain=-0.018:0.16, samples=61, forget plot]
+\addplot[very thick, black, domain=0.048:0.152, samples=61, forget plot]
   {3 + 2*sqrt(2)*x + x^2};
 % the tangent line at s = 0
-\addplot[very thick, blue!70!black, dashed, domain=-0.018:0.16, samples=2,
+\addplot[very thick, blue!70!black, dashed, domain=0.048:0.152, samples=2,
          forget plot]
   {3 + 2*sqrt(2)*x};
-% df and Delta f
-\draw[{Stealth}-{Stealth}, blue!70!black, thick]
-  (axis cs:0.122,3) -- (axis cs:0.122,3.28284);
-\node[blue!70!black, anchor=east, font=\normalsize] at (axis cs:0.1185,3.09)
-  {$df=0.283$};
-\draw[{Stealth}-{Stealth}, orange!80!black, thick]
-  (axis cs:0.152,3) -- (axis cs:0.152,3.29284);
-\node[orange!80!black, anchor=west, font=\normalsize] at (axis cs:0.1555,3.09)
-  {$\Delta f=0.293$};
-% the error callout
-\node[purple!70!black, anchor=west, font=\normalsize, align=left]
-  at (axis cs:0.004,3.313) {$\Delta f-df=0.01$};
+% the gap between the two at s = ds
+\node[purple!70!black, anchor=west, font=\normalsize]
+  at (axis cs:0.1095,3.2465) {$\Delta f-df=0.01$};
 \draw[purple!70!black, thin, -stealth]
-  (axis cs:0.056,3.310) -- (axis cs:0.0955,3.2895);
+  (axis cs:0.1155,3.2525) -- (axis cs:0.1105,3.2865);
 % the points
-\addplot[only marks, mark=*, mark size=1.8, color=green!55!black,
-         forget plot]
-  coordinates {(0,3)};
-\addplot[only marks, mark=*, mark size=1.8, color=blue!70!black,
+\addplot[only marks, mark=*, mark size=1.6, color=blue!70!black,
          forget plot]
   coordinates {(0.1,3.28284)};
-\addplot[only marks, mark=*, mark size=1.8, color=orange, forget plot]
+\addplot[only marks, mark=*, mark size=1.6, color=orange, forget plot]
   coordinates {(0.1,3.29284)};
 % legend
 \addlegendimage{very thick, black}
-\addlegendentry{$f$ along $\mathbf u$: $3+2\sqrt2\,s+s^2$}
+\addlegendentry{$f$ along $\mathbf u$}
 \addlegendimage{very thick, blue!70!black, dashed}
-\addlegendentry{tangent line: $3+2\sqrt2\,s$}
-\addlegendimage{only marks, mark=*, mark size=1.8, color=green!55!black}
-\addlegendentry{$f(P_0)=3$}
-\addlegendimage{only marks, mark=*, mark size=1.8, color=blue!70!black}
-\addlegendentry{estimate $3+df\approx3.283$}
-\addlegendimage{only marks, mark=*, mark size=1.8, color=orange}
-\addlegendentry{exact $f(P)\approx3.293$}
+\addlegendentry{tangent line at $P_0$}
+\addlegendimage{only marks, mark=*, mark size=1.6, color=blue!70!black}
+\addlegendentry{estimate $3+df=3.283$}
+\addlegendimage{only marks, mark=*, mark size=1.6, color=orange}
+\addlegendentry{exact $f(P)=3.293$}
 \end{axis}
 \end{tikzpicture}
 </latex-image>
@@ -898,58 +888,72 @@ together with the graph of <m>L</m>, which is the tangent plane patch at
 The graph of <m>z = -2x^2 - 2xy^3 - 2x</m> and the tangent plane at
 <m>P_0\left(-\frac12, -\frac12, \frac38\right)</m>, whose equation is
 <m>z = L(x,y) = \frac14\left(x+\frac12\right) +
-\frac34\left(y+\frac12\right) + \frac38</m>. Near <m>P_0</m> the plane
-hugs the surface, so <m>L(x,y)</m> approximates <m>f(x,y)</m>.
+\frac34\left(y+\frac12\right) + \frac38</m>. The view is close in on
+<m>P_0</m>, where the plane hugs the surface, so that <m>L(x,y)</m>
+approximates <m>f(x,y)</m>; farther out the surface curves away from the
+plane. The arrow at <m>P_0</m> is the normal direction to the surface.
 </caption>
-<image width="80%">
+<image width="85%">
 <description>
 <p>
 A blue mesh surface, the graph of z equals negative 2 x squared minus 2 x
-y cubed minus 2 x, shaped like a curving ridge. A small dark red
-rectangular patch of the tangent plane sits on the surface at the green
-point P 0 with coordinates negative one half, negative one half, three
-eighths, and a short black arrow at P 0 shows the normal direction. Near
-P 0 the patch is indistinguishable from the surface.
+y cubed minus 2 x, seen close up around the point P 0. A flat dark red
+patch of the tangent plane z equals L of x y cuts through the mesh,
+touching it at the green point P 0 with coordinates negative one half,
+negative one half, three eighths: near P 0 the patch and the surface are
+indistinguishable, while away from P 0 the surface curves down and away
+from the flat patch. A long black arrow leaves P 0 at right angles to the
+patch, showing the normal direction to the surface there. A legend below
+the picture names the surface, the tangent plane, the point P 0, and the
+normal direction.
 </p>
 </description>
 <latex-image>
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\large]
 \begin{axis}[
-  width=11.5cm, height=10cm,
-  view={-40}{25},
-  xmin=-0.85, xmax=0.45, ymin=-0.85, ymax=0.85, zmin=-1.4, zmax=1.3,
+  width=10.26cm, height=10.01cm,
+  view={-125}{25},
+  xmin=-0.96, xmax=-0.04, ymin=-0.96, ymax=-0.04, zmin=-0.46, zmax=0.66,
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-  xtick={-0.8,-0.4,0,0.4}, ytick={-0.8,-0.4,0,0.4,0.8},
-  ztick={-1,-0.5,0,0.5,1},
+  xtick={-0.8,-0.6,-0.4,-0.2}, ytick={-0.8,-0.6,-0.4,-0.2},
+  ztick={-0.4,-0.2,0,0.2,0.4,0.6},
   clip=false,
+  legend style={
+    at={(0.5,-0.08)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=8pt,
+  },
 ]
 % the surface z = -2x^2 - 2xy^3 - 2x (blue mesh)
 \addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
           fill opacity=0.85, draw opacity=0.9,
-          domain=-0.8:0.4, y domain=-0.8:0.8, samples=17, samples y=21,
-          z buffer=sort]
+          domain=-0.8:-0.2, y domain=-0.8:-0.2, samples=19,
+          z buffer=sort, forget plot]
   {-2*x^2 - 2*x*y^3 - 2*x};
 % the tangent plane patch z = L(x,y) at P0 (dark red)
-\addplot3[surf, shader=flat, samples=2, domain=-0.7:-0.3, y domain=-0.7:-0.3,
-          fill=red!50!black, fill opacity=0.55, draw=red!30!black]
+\addplot3[surf, shader=flat, samples=2, domain=-0.72:-0.28,
+          y domain=-0.72:-0.28,
+          fill=red!50!black, fill opacity=0.55, draw=red!30!black,
+          forget plot]
   {0.25*(x+0.5) + 0.75*(y+0.5) + 0.375};
-% short normal arrow at P0
+% the normal direction at P0
 \draw[-stealth, black, line width=1.1pt]
-  (axis cs:-0.5,-0.5,0.375) -- (axis cs:-0.605,-0.815,0.795);
+  (axis cs:-0.5,-0.5,0.375) -- (axis cs:-0.567,-0.702,0.644);
 % the point P0
-\addplot3[only marks, mark=*, mark size=1.9, color=green!60!black]
+\addplot3[only marks, mark=*, mark size=1.9, color=green!60!black,
+          forget plot]
   coordinates {(-0.5,-0.5,0.375)};
-% labels
-\node[blue!60!black, anchor=south] at (axis description cs:0.28,1.0)
-  {$z = -2x^2 - 2xy^3 - 2x$};
-\node[green!45!black, anchor=south] at (axis description cs:0.82,1.0)
-  {$P_0\left(-\frac12, -\frac12, \frac38\right)$};
-\draw[gray!60, thin] (axis description cs:0.82,1.0)
-  -- (axis cs:-0.5,-0.5,0.42);
-\node[red!50!black, anchor=east] at (axis description cs:0.04,0.80)
-  {Tangent Plane at $P_0$};
-\draw[gray!60, thin] (axis description cs:0.04,0.80)
-  -- (axis cs:-0.7,-0.45,0.3625);
+% legend
+\addlegendimage{area legend, fill=blue!8, draw=blue!60}
+\addlegendentry{$z=-2x^2-2xy^3-2x$}
+\addlegendimage{area legend, fill=red!50!black, fill opacity=0.55,
+                draw=red!30!black}
+\addlegendentry{tangent plane $z=L(x,y)$}
+\addlegendimage{only marks, mark=*, mark size=1.9, color=green!60!black}
+\addlegendentry{$P_0\left(-\frac12,-\frac12,\frac38\right)$}
+\addlegendimage{-stealth, black, line width=1.1pt}
+\addlegendentry{normal direction at $P_0$}
 \end{axis}
 \end{tikzpicture}
 </latex-image>
