@@ -87,7 +87,27 @@
       "Bash(awk -F: '$1>1980')",
       "Bash(awk -F: '$1>2460 && $1<2560')",
       "Bash(rsvg-convert -w 1000 -b white output/web/generated/latex-image/fig-tp-two-tangent-lines-2.svg -o /claude-0/-workspaces-MATH-13/fde7016a-098d-491e-ac2d-4259c18ae094/scratchpad/fig81final.png)",
-      "Bash(git restore *)"
+      "Bash(git restore *)",
+      "Bash(git rm *)",
+      "Bash(rsvg-convert -w 1100 -b white generated-assets/latex-image/fig-tp-example-change-2.svg -o /claude-0/-workspaces-MATH-13/2182bf9f-1ab5-45c5-9f71-4c600d0da091/scratchpad/change-before.png)",
+      "Bash(pdflatex -interaction=nonstopmode test.tex)",
+      "Bash(kpsewhich *)",
+      "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r110 -sOutputFile=test-%d.png test.pdf)",
+      "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r110 -sOutputFile=t-%d.png test.pdf)",
+      "Bash(rsvg-convert -w 620 -b white /workspaces/MATH-13/generated-assets/latex-image/image-tp-change-3d.svg -o p3d.png)",
+      "Bash(rsvg-convert -w 570 -b white /workspaces/MATH-13/generated-assets/latex-image/image-tp-change-zoom.svg -o pzoom.png)",
+      "Bash(pdflatex -interaction=nonstopmode show.tex)",
+      "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r120 -sOutputFile=zoom3.png show.pdf)",
+      "Bash(rsvg-convert -w 600 -b white /workspaces/MATH-13/generated-assets/latex-image/image-tp-change-3d.svg -o q3d.png)",
+      "Bash(rsvg-convert -w 600 -b white /workspaces/MATH-13/generated-assets/latex-image/image-tp-change-zoom.svg -o qzoom.png)",
+      "Bash(rsvg-convert -w 900 -b white /workspaces/MATH-13/generated-assets/latex-image/fig-tp-example-linearization-2.svg -o lin-before.png)",
+      "Bash(pdflatex -interaction=nonstopmode showlin.tex)",
+      "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r140 -sOutputFile=lin2.png showlin.pdf)",
+      "Bash(sed -e 's/xmin=-0.88, xmax=-0.12, ymin=-0.88, ymax=-0.12, zmin=-0.58, zmax=0.78,/xmin=-0.96, xmax=-0.04, ymin=-0.96, ymax=-0.04, zmin=-0.46, zmax=0.66,/' lin2.tex)",
+      "Bash(gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r140 -sOutputFile=lin3.png showlin.pdf)",
+      "Bash(rsvg-convert -w 700 -b white /workspaces/MATH-13/generated-assets/latex-image/fig-tp-example-linearization-2.svg -o linfinal.png)",
+      "Bash(rsvg-convert -w 700 -b white /workspaces/MATH-13/generated-assets/latex-image/fig-tp-plane-normal-2.svg -o f81.png)",
+      "Bash(gh run *)"
     ]
   }
 }
