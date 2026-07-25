@@ -1,17 +1,17 @@
 <diagram>
   <annotations>
-    <annotation id="no-collision-figure" speech2="Two parametrized paths that intersect in two points, although the two particles never collide">
-      <grouped>no-collision-figure</grouped>
+    <annotation id="no-collision-paths" speech2="The two paths">
+      <grouped>no-collision-paths</grouped>
       <position>1</position>
       <children>
         <active>no-collision-grid-axes</active>
-        <active>no-collision-paths</active>
-        <active>no-collision-intersections</active>
+        <active>no-collision-path1</active>
+        <active>no-collision-path2</active>
       </children>
       <components>
         <active>no-collision-grid-axes</active>
-        <active>no-collision-paths</active>
-        <active>no-collision-intersections</active>
+        <active>no-collision-path1</active>
+        <active>no-collision-path2</active>
       </components>
     </annotation>
     <annotation id="no-collision-grid-axes" speech2="The coordinate grid and axes">
@@ -26,7 +26,7 @@
         <active>no-collision-axes</active>
       </components>
       <parents>
-        <grouped>no-collision-figure</grouped>
+        <grouped>no-collision-paths</grouped>
       </parents>
     </annotation>
     <annotation id="no-collision-grid" speech2="The coordinate grid">
@@ -43,24 +43,9 @@
         <grouped>no-collision-grid-axes</grouped>
       </parents>
     </annotation>
-    <annotation id="no-collision-paths" speech2="The two paths">
-      <grouped>no-collision-paths</grouped>
-      <position>2</position>
-      <children>
-        <active>no-collision-path1</active>
-        <active>no-collision-path2</active>
-      </children>
-      <components>
-        <active>no-collision-path1</active>
-        <active>no-collision-path2</active>
-      </components>
-      <parents>
-        <grouped>no-collision-figure</grouped>
-      </parents>
-    </annotation>
     <annotation id="no-collision-path1" sonify="yes" speech2="The path of the first particle, the parabola y equals x squared" speech="The first particle moves along the parabola y equals x squared, with position r one of t equals t comma t squared">
       <active>no-collision-path1</active>
-      <position>1</position>
+      <position>2</position>
       <parents>
         <grouped>no-collision-paths</grouped>
       </parents>
@@ -70,7 +55,7 @@
     </annotation>
     <annotation id="no-collision-path2" sonify="yes" speech2="The path of the second particle, the line y equals x plus 2" speech="The second particle moves along the line y equals x plus 2, with position r two of t equals negative t comma 2 minus t">
       <active>no-collision-path2</active>
-      <position>2</position>
+      <position>3</position>
       <parents>
         <grouped>no-collision-paths</grouped>
       </parents>
@@ -80,7 +65,7 @@
     </annotation>
     <annotation id="no-collision-intersections" speech2="The two intersection points of the paths">
       <grouped>no-collision-intersections</grouped>
-      <position>3</position>
+      <position>7</position>
       <children>
         <active>no-collision-pointA</active>
         <active>no-collision-pointB</active>
@@ -89,9 +74,6 @@
         <active>no-collision-pointA</active>
         <active>no-collision-pointB</active>
       </components>
-      <parents>
-        <grouped>no-collision-figure</grouped>
-      </parents>
     </annotation>
     <annotation id="no-collision-pointA" speech2="The intersection point negative 1 comma 1" speech="The first particle is at the point negative 1 comma 1 when t equals negative 1, while the second particle is there when t equals 1. Since the times differ, this is not a collision.">
       <active>no-collision-pointA</active>

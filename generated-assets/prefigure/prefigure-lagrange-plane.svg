@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-lagrange-plane-figure" width="470" height="310" viewBox="0 0 470 310">
   <defs>
-    <clipPath id="prefigure-lagrange-plane-__clipPath-0">
+    <clipPath id="prefigure-lagrange-plane-clipPath-0">
       <rect x="10.0" y="10.0" width="450.0" height="290.0"/>
     </clipPath>
-    <clipPath id="prefigure-lagrange-plane-__clipPath-1">
+    <clipPath id="prefigure-lagrange-plane-clipPath-1">
       <rect x="10.0" y="10.0" width="450.0" height="290.0"/>
     </clipPath>
     <marker id="prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
@@ -24,11 +24,11 @@
   <line id="prefigure-lagrange-plane-pd-far2" x1="162.8" y1="264.8" x2="341.1" y2="185.8" stroke="#7F7F7F" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
   <line id="prefigure-lagrange-plane-pd-ra1" x1="240.4" y1="133.6" x2="234.7" y2="145.4" stroke="black" stroke-width="1.5" fill="none"/>
   <line id="prefigure-lagrange-plane-pd-ra2" x1="234.7" y1="145.4" x2="223.4" y2="139.5" stroke="black" stroke-width="1.5" fill="none"/>
-  <path id="prefigure-lagrange-plane-pd-seg" stroke="#D55E00" stroke-width="3" fill="none" marker-end="url(#prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00)" d="M 162.8 264.8 L 227.5 131.1"/>
-  <path id="prefigure-lagrange-plane-pd-n" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2)" d="M 358.1 194.5 L 385.0 138.9"/>
+  <path id="prefigure-lagrange-plane-pd-seg" stroke="#D55E00" stroke-width="3" fill="none" d="M 162.8 264.8 L 229.1 127.8" marker-end="url(#prefigure-lagrange-plane-arrow-head-end-3_None_24_60-hD55E00)"/>
+  <path id="prefigure-lagrange-plane-pd-n" stroke="#0072B2" stroke-width="3" fill="none" d="M 358.1 194.5 L 386.6 135.6" marker-end="url(#prefigure-lagrange-plane-arrow-head-end-3_None_24_60-h0072B2)"/>
   <g id="prefigure-lagrange-plane-pd-P0">
     <g transform="translate(162.8,272.8) translate(-45.5,-0.0)">
-      <g id="prefigure-lagrange-plane-__g-0">
+      <g id="prefigure-lagrange-plane-g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="90.928px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5023.9 1000" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-lagrange-plane-MJX-2-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"/>
@@ -93,7 +93,7 @@
   </g>
   <g id="prefigure-lagrange-plane-pd-P">
     <g transform="translate(221.1,127.8) translate(-112.9,-11.2)">
-      <g id="prefigure-lagrange-plane-__g-1">
+      <g id="prefigure-lagrange-plane-g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.528px" width="112.856px" height="22.312px" role="img" focusable="false" viewBox="0 -872 6235.2 1232.6" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-lagrange-plane-MJX-3-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"/>
@@ -173,7 +173,7 @@
     <circle cx="229.1" cy="127.8" r="4" stroke="black" stroke-width="2" fill="black"/>
   </g>
   <g id="prefigure-lagrange-plane-pd-plane-label" transform="translate(56.5,25.8) translate(0.0,-8.0)">
-    <g id="prefigure-lagrange-plane-__g-2">
+    <g id="prefigure-lagrange-plane-g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px; color:#009E73" width="114.128px" height="15.960px" role="img" focusable="false" viewBox="0 -677 6305.4 882" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-lagrange-plane-MJX-4-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -224,7 +224,7 @@
     </g>
   </g>
   <g id="prefigure-lagrange-plane-pd-d-label" transform="translate(211.0,196.3) translate(0.0,-11.9)">
-    <g id="prefigure-lagrange-plane-__g-3">
+    <g id="prefigure-lagrange-plane-g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.528px; color:#D55E00" width="72.400px" height="23.712px" role="img" focusable="false" viewBox="0 -949.5 4000.1 1310.1" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-lagrange-plane-MJX-5-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/>
@@ -273,7 +273,7 @@
     </g>
   </g>
   <g id="prefigure-lagrange-plane-pd-n-label" transform="translate(451.8,102.3) translate(-115.1,-8.1)">
-    <g id="prefigure-lagrange-plane-__g-4">
+    <g id="prefigure-lagrange-plane-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.616px; color:#0072B2" width="115.136px" height="16.200px" role="img" focusable="false" viewBox="0 -695 6361.4 895" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-lagrange-plane-MJX-6-TEX-B-1D427" d="M40 442Q217 450 218 450H224V407L225 365Q233 378 245 391T289 422T362 448Q374 450 398 450Q428 450 448 447T491 434T529 402T551 346Q553 335 554 198V62H623V0H614Q596 3 489 3Q374 3 365 0H356V62H425V194V275Q425 348 416 373T371 399Q326 399 288 370T238 290Q236 281 235 171V62H304V0H295Q277 3 171 3Q64 3 46 0H37V62H106V210V303Q106 353 104 363T91 376Q77 380 50 380H37V442H40Z"/>
