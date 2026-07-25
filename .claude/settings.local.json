@@ -129,7 +129,9 @@
       "Bash(env)",
       "Bash(sed 's/=.\\\\{6,\\\\}/=<redacted>/')",
       "Bash(gh auth *)",
-      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm2.html -w \"http=%{http_code}\\\\n\")"
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm2.html -w \"http=%{http_code}\\\\n\")",
+      "Bash(bash -n .devcontainer/installTools.sh)",
+      "Bash(chmod +x .devcontainer/installTools.sh)"
     ]
   }
 }
