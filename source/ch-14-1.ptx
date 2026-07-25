@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  14.1 Functions of Several Variables
+       (including the level-surfaces material)
+-->
+<chapter xml:id="chapter-functions-several-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Functions of Several Variables</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Evaluate a function <m>z = f(x,y)</m> of two variables, describe its
+domain as a region of the plane, and recognize its graph as a surface in
+space.
+</p>
+</li>
+<li>
+<p>
+Find and sketch the level curves <m>f(x,y) = c</m> of a function of two
+variables, and read a contour map.
+</p>
+</li>
+<li>
+<p>
+Explain the relationship between the level curves drawn on the surface
+and the contour map drawn in the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+Describe the level surfaces <m>f(x,y,z) = c</m> of a function of three
+variables.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+So far we have studied functions that take one real number as input and
+return one real number as output. Many quantities, however, depend on
+more than one input: the temperature at a point of a metal plate depends
+on two coordinates, and the temperature in a room depends on three. In
+this chapter we study functions of two variables, whose graphs are
+surfaces in space, and we develop two ways of visualizing them, namely
+level curves and contour maps. At the end we look at functions of three
+variables, which we visualize by their level surfaces.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-fsv-functions-two-variables">
+<title>Functions of Two Variables</title>
+
+<p>
+As an example consider <m>z = f(x,y) = 1 - x^2 - y^2</m>. This function
+takes a pair of real numbers <m>x, y \in \R</m> as its input and as an
+output gives a real number <m>z \in \R</m>. For instance, consider the
+point <m>P_0(0.5, 0.5)</m>, which is inside the disk
+<m>x^2 + y^2 \le 1</m>. For <m>P_0(0.5,0.5)</m> as an input, the output
+is
+<md>
+z = f(0.5, 0.5) = 1 - (0.5)^2 - (0.5)^2 = 0.5.
+</md>
+<xref ref="fig-fsv-mapping"/> shows this as a mapping: each point of the
+disk is sent to a number on the <m>z</m>-axis.
+</p>
+
+<figure xml:id="fig-fsv-mapping">
+<caption>
+The function <m>f</m> takes a point <m>(x,y)</m> of the disk
+<m>x^2+y^2 \le 1</m> and returns the single number <m>z = f(x,y)</m>. The
+point <m>P_0(0.5,0.5)</m> is sent to <m>f(0.5,0.5) = 0.5</m>.
+</caption>
+<image width="92%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-fsv-mapping">
+<diagram dimensions="(600,270)" margins="12">
+<definition>bt(t) = ((1-t)^2*1.05 + 2*t*(1-t)*4.0 + t^2*7.0, (1-t)^2*1.25 + 2*t*(1-t)*3.15 + t^2*0.42)</definition>
+<definition>bb(t) = ((1-t)^2*0.28 + 2*t*(1-t)*3.3 + t^2*6.55, (1-t)^2*(-0.62) + 2*t*(1-t)*(-2.05) + t^2*0.05)</definition>
+<coordinates bbox="(-2.3,-2.6,9.4,3.1)">
+<circle at="fm-disk" center="(0,0)" radius="1.55"
+        fill="#7F7F7F" fill-opacity="0.28" stroke="#0072B2" thickness="2.5"/>
+<vector at="fm-xaxis" v="(3.5,0)" tail="(-2.1,0)" stroke="black" thickness="2"/>
+<vector at="fm-yaxis" v="(0,2.7)" tail="(0,-2.2)" stroke="black" thickness="2"/>
+<vector at="fm-zaxis" v="(4.0,0)" tail="(5.0,0.25)" stroke="black" thickness="2"/>
+<parametric-curve at="fm-top" function="bt" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="fm-top-arrow" v="(0.30,-0.16)" tail="(6.66,0.60)"
+        stroke="#7F7F7F" thickness="2"/>
+<parametric-curve at="fm-bot" function="bb" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="fm-bot-arrow" v="(0.31,0.14)" tail="(6.25,-0.12)"
+        stroke="#7F7F7F" thickness="2"/>
+<point at="fm-P0" p="(0.78,0.78)" fill="#8B1A4A"/>
+<point at="fm-P" p="(-0.55,-0.95)" fill="#0072B2"/>
+<point at="fm-fP0" p="(7.35,0.25)" fill="#8B1A4A"/>
+<point at="fm-fP" p="(6.55,0.25)" fill="#0072B2"/>
+<label at="fm-disk-lab" anchor="(-1.55,2.35)" alignment="e">
+<m>x^2+y^2\le 1</m>
+</label>
+<label at="fm-x" anchor="(1.5,-0.1)" alignment="se"><m>x</m></label>
+<label at="fm-y" anchor="(-0.1,2.55)" alignment="nw"><m>y</m></label>
+<label at="fm-z" anchor="(9.15,0.25)" alignment="e"><m>z</m></label>
+<label at="fm-P0-lab" anchor="(0.72,0.9)" alignment="nw" color="#8B1A4A">
+<m>P_0(0.5,0.5)</m>
+</label>
+<label at="fm-P-lab" anchor="(-0.62,-1.05)" alignment="sw" color="#0072B2">
+<m>P(x,y)</m>
+</label>
+<label at="fm-fP0-lab" anchor="(7.45,-0.05)" alignment="se" color="#8B1A4A">
+<m>f(0.5,0.5)=0.5</m>
+</label>
+<label at="fm-fP-lab" anchor="(6.4,0.5)" alignment="nw" color="#0072B2">
+<m>z=f(x,y)</m>
+</label>
+<label at="fm-f1" anchor="(4.0,2.5)" alignment="n" color="#7F7F7F">
+<m>f</m>
+</label>
+<label at="fm-f2" anchor="(3.3,-2.2)" alignment="s" color="#7F7F7F">
+<m>f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="On the left, a shaded disk in the x y plane represents the domain, the set of points with x squared plus y squared at most one. Two points are marked in it: P nought at zero point five, zero point five, and a general point P. On the right is a horizontal z axis carrying the two output values. Dashed grey arrows labelled f run from each input point to its output value.">
+  <annotation ref="fm-disk" text="The domain of f: the disk of radius one, consisting of all points with x squared plus y squared at most one."/>
+  <annotation ref="fm-P0" text="The sample input point P nought with coordinates zero point five, zero point five."/>
+  <annotation ref="fm-fP0" text="Its output, f of zero point five and zero point five, which equals zero point five, marked on the z axis."/>
+  <annotation ref="fm-P" text="A general input point P with coordinates x and y."/>
+  <annotation ref="fm-fP" text="Its output z equals f of x y on the z axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+If we repeat this process for all the points inside the disk, we have a
+set of points in 3D of the form <m>P(x, y, f(x,y))</m>, which represent a
+surface known as a <term>paraboloid</term>. The surface is the
+<term>graph</term> of the function, and it is drawn in
+<xref ref="fig-fsv-paraboloid"/>. Notice that the point
+<m>P_0(0.5,0.5)</m> of the domain sits in the <m>xy</m>-plane, while the
+corresponding point of the graph is <m>(0.5, 0.5, 0.5)</m>, directly
+above it.
+</p>
+
+<figure xml:id="fig-fsv-paraboloid">
+<caption>
+The graph of <m>z = f(x,y) = 1 - x^2 - y^2</m> over the disk
+<m>x^2+y^2 \le 1</m>. The point <m>P_0(0.5,0.5,0)</m> of the domain lies
+in the <m>xy</m>-plane and the corresponding point
+<m>P(0.5,0.5,0.5)</m> lies on the surface directly above it.
+</caption>
+<image width="72%">
+<description>
+<p>
+A dome shaped surface, the graph of z equals one minus x squared minus y
+squared, sitting above a shaded disk in the x y plane. A dashed vertical
+segment joins the point P nought in the disk to the point P on the
+surface directly above it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=8.5cm,
+  view={-35}{20},
+  xmin=-1.35, xmax=1.35, ymin=-1.35, ymax=1.35, zmin=0, zmax=1.15,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-1,0,1}, ztick={0,0.5,1},
+  clip=false,
+]
+% the disk in the xy-plane
+\addplot3[surf, shader=flat, fill=gray!35, draw=gray!45,
+          fill opacity=0.35, draw opacity=0.3,
+          domain=0:1, y domain=0:360, samples=12, samples y=37]
+  ({x*cos(y)},{x*sin(y)},{0});
+% the paraboloid z = 1 - x^2 - y^2 over the disk
+\addplot3[surf, shader=flat, fill=gray!55, draw=gray!60,
+          fill opacity=0.55, draw opacity=0.4,
+          domain=0:1, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{1-x^2});
+% the rim of the disk
+\addplot3[very thick, blue!65!black, domain=0:360, samples=90]
+  ({cos(x)},{sin(x)},{0});
+% P0 in the plane and P on the surface
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(0.5,0.5,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(0.5,0.5,0.5)};
+\draw[gray, dashed, thick] (axis cs:0.5,0.5,0) -- (axis cs:0.5,0.5,0.5);
+\node[purple!70!black, below] at (axis cs:0.5,0.52,-0.02) {$P_0$};
+\node[purple!70!black, above right] at (axis cs:0.5,0.5,0.5) {$P$};
+\node[blue!65!black, anchor=west] at (axis description cs:1.02,0.16)
+  {$x^2+y^2=1$};
+\node[gray!30!black, anchor=west] at (axis description cs:1.02,0.62)
+  {$z=1-x^2-y^2$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-fsv-level-curves">
+<title>Level Curves and Contour Maps</title>
+
+<p>
+Functions of two variables can be visualized by means of
+<term>level curves</term>. These are curves that connect points where the
+function <m>z = f(x,y)</m> takes on a given value <m>c</m>. As an
+example, consider our previous example of
+<m>z = f(x,y) = 1 - x^2 - y^2</m>. Setting <m>f(x,y) = c</m> gives
+<md xml:id="eq-fsv-level-curves" number="yes">
+1 - x^2 - y^2 = c
+\quad\Longleftrightarrow\quad
+x^2 + y^2 = 1 - c,
+</md>
+so each level curve is a circle centered at the origin, of radius
+<m>\sqrt{1-c}</m>. Taking
+<m>c = -2, -1, 0, \tfrac14, \tfrac12</m> gives
+<md>
+<mrow>c = -2 \amp\;\Rightarrow\; x^2+y^2 = 3
+      \amp\qquad c = \tfrac12 \amp\;\Rightarrow\; x^2+y^2 = \tfrac12</mrow>
+<mrow>c = -1 \amp\;\Rightarrow\; x^2+y^2 = 2
+      \amp\qquad c = \tfrac34 \amp\;\Rightarrow\; x^2+y^2 = \tfrac14</mrow>
+<mrow>c = 0 \amp\;\Rightarrow\; x^2+y^2 = 1 \amp \amp</mrow>
+</md>
+<xref ref="fig-fsv-level-curves-3d"/> shows these curves drawn on the
+surface itself: each one is the intersection of the graph with a
+horizontal plane <m>z = c</m>.
+</p>
+
+<figure xml:id="fig-fsv-level-curves-3d">
+<caption>
+Level curves of <m>f(x,y) = 1 - x^2 - y^2</m> drawn on the surface. The
+curve at height <m>c</m> is the intersection of the graph with the
+horizontal plane <m>z = c</m>; higher values of <m>c</m> give smaller
+circles.
+</caption>
+<image width="76%">
+<description>
+<p>
+A dome shaped surface with several horizontal circles drawn on it at
+different heights, each in a different colour. The circles are small near
+the top of the dome and grow larger further down.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11.5cm, height=9.5cm,
+  view={-35}{18},
+  xmin=-1.9, xmax=1.9, ymin=-1.9, ymax=1.9, zmin=-2.4, zmax=1.3,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-1,0,1}, ztick={1,0,-1,-2},
+  clip=false,
+]
+% the surface, drawn down to z = -2.2
+\addplot3[surf, shader=flat, fill=gray!45, draw=gray!55,
+          fill opacity=0.42, draw opacity=0.3,
+          domain=0:1.79, y domain=0:360, samples=13, samples y=31,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{1-x^2});
+% level curves at c = 3/4, 1/2, 0, -1, -2  (radii sqrt(1-c))
+\addplot3[very thick, orange, domain=0:360, samples=48]
+  ({0.5*cos(x)},{0.5*sin(x)},{0.75});
+\addplot3[very thick, purple!70!black, domain=0:360, samples=48]
+  ({0.7071*cos(x)},{0.7071*sin(x)},{0.5});
+\addplot3[very thick, cyan!60!black, domain=0:360, samples=48]
+  ({cos(x)},{sin(x)},{0});
+\addplot3[very thick, green!50!black, domain=0:360, samples=48]
+  ({1.4142*cos(x)},{1.4142*sin(x)},{-1});
+\addplot3[very thick, black, domain=0:360, samples=48]
+  ({1.7321*cos(x)},{1.7321*sin(x)},{-2});
+% labels
+\node[orange, anchor=west] at (axis description cs:1.02,0.86)
+  {$z=3/4$};
+\node[purple!70!black, anchor=west] at (axis description cs:1.02,0.76)
+  {$z=1/2$};
+\node[cyan!60!black, anchor=west] at (axis description cs:1.02,0.66)
+  {$z=0$};
+\node[green!50!black, anchor=west] at (axis description cs:1.02,0.44)
+  {$z=-1$};
+\node[black, anchor=west] at (axis description cs:1.02,0.22)
+  {$z=-2$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+From the projection of the level curves into the <m>xy</m>-plane we
+derive the so-called <term>contour map</term> (or
+<term>contour plot</term>) of the function, as shown in
+<xref ref="fig-fsv-contour-map"/>. A contour map is a flat picture that
+still records the shape of the surface: where the contours are close
+together the surface is steep, and where they are far apart it is
+gentle.
+</p>
+
+<figure xml:id="fig-fsv-contour-map">
+<caption>
+The contour map of <m>f(x,y) = 1 - x^2 - y^2</m>, obtained by projecting
+the level curves of <xref ref="fig-fsv-level-curves-3d"/> down into the
+<m>xy</m>-plane. Each circle is labelled with the value <m>c</m> of the
+function along it.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-fsv-contour">
+<diagram dimensions="(360,360)" margins="12">
+<definition>c1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>c2(t) = (0.7071*cos(t), 0.7071*sin(t))</definition>
+<definition>c3(t) = (1*cos(t), 1*sin(t))</definition>
+<definition>c4(t) = (1.4142*cos(t), 1.4142*sin(t))</definition>
+<definition>c5(t) = (1.7321*cos(t), 1.7321*sin(t))</definition>
+<coordinates bbox="(-2.1,-2.1,2.1,2.1)">
+<axes at="ct-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="ct-c1" function="c1" domain="(0,6.2832)"
+                  stroke="#E69F00" thickness="2.5"/>
+<parametric-curve at="ct-c2" function="c2" domain="(0,6.2832)"
+                  stroke="#8B1A4A" thickness="2.5"/>
+<parametric-curve at="ct-c3" function="c3" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="2.5"/>
+<parametric-curve at="ct-c4" function="c4" domain="(0,6.2832)"
+                  stroke="#009E73" thickness="2.5"/>
+<parametric-curve at="ct-c5" function="c5" domain="(0,6.2832)"
+                  stroke="black" thickness="2.5"/>
+<label at="ct-l1" anchor="(0.36,0.36)" alignment="ne" color="#E69F00">
+<m>c=\tfrac34</m>
+</label>
+<label at="ct-l2" anchor="(0.50,-0.50)" alignment="se" color="#8B1A4A">
+<m>c=\tfrac12</m>
+</label>
+<label at="ct-l3" anchor="(-0.707,0.707)" alignment="nw" color="#0072B2">
+<m>c=0</m>
+</label>
+<label at="ct-l4" anchor="(-1.0,-1.0)" alignment="sw" color="#009E73">
+<m>c=-1</m>
+</label>
+<label at="ct-l5" anchor="(0,1.7321)" alignment="n">
+<m>c=-2</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Five concentric circles centred at the origin in the x y plane, each drawn in a different colour and labelled with a value of c. The smallest, in amber, is c equals three quarters; going outwards they are c equals one half, c equals zero, c equals negative one, and the largest, in black, is c equals negative two.">
+  <annotation ref="ct-c1" text="The level curve where f equals three quarters, a circle of radius one half. It is the innermost circle, so the largest values of f occur near the origin."/>
+  <annotation ref="ct-c2" text="The level curve where f equals one half, a circle of radius one over root two."/>
+  <annotation ref="ct-c3" text="The level curve where f equals zero, the unit circle."/>
+  <annotation ref="ct-c4" text="The level curve where f equals negative one, a circle of radius root two."/>
+  <annotation ref="ct-c5" text="The level curve where f equals negative two, a circle of radius root three. The circles spread further apart as c decreases, which tells us the surface is steepest near the rim."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-fsv-level-curves">
+<title>Sketching Level Curves</title>
+<statement>
+<p>
+Sketch some level curves of the function
+<m>g(x,y) = x^2 + \dfrac{y^2}{4}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Setting <m>g(x,y) = c</m> gives
+<md>
+x^2 + \frac{y^2}{4} = c,
+</md>
+which for <m>c \gt 0</m> is an ellipse centered at the origin. For
+instance, for <m>c = 1</m> we have <m>x^2 + \frac{y^2}{4} = 1</m>, which
+is an ellipse with <m>a = 1</m> and <m>b = 2</m>: it meets the
+<m>x</m>-axis at <m>\pm 1</m> and the <m>y</m>-axis at <m>\pm 2</m>. In
+general the level curve <m>g = c</m> is the ellipse with semi-axes
+<m>\sqrt c</m> in the <m>x</m>-direction and <m>2\sqrt c</m> in the
+<m>y</m>-direction, so the curves are stretched twice as far along the
+<m>y</m>-axis as along the <m>x</m>-axis.
+<xref ref="fig-fsv-elliptic-contour"/> shows the level curves for
+several values of <m>c</m>.
+</p>
+<p>
+The surface <m>z = g(x,y) = x^2 + \frac{y^2}{4}</m> itself is shown in
+<xref ref="fig-fsv-elliptic-paraboloid"/>. It is known as an
+<term>elliptic paraboloid</term>, since its intersections with the
+planes <m>x = c</m> and <m>y = c</m> are parabolas, whereas its
+intersections with the planes <m>z = c</m> are ellipses.
+</p>
+
+<figure xml:id="fig-fsv-elliptic-contour">
+<caption>
+Level curves of <m>g(x,y) = x^2 + \frac{y^2}{4}</m> for
+<m>c = 0.1, 0.2, \ldots, 1</m>. Each is an ellipse twice as long in the
+<m>y</m>-direction as in the <m>x</m>-direction.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-fsv-elliptic">
+<diagram dimensions="(330,420)" margins="12">
+<definition>e1(t) = (0.3162*cos(t), 0.6325*sin(t))</definition>
+<definition>e2(t) = (0.4472*cos(t), 0.8944*sin(t))</definition>
+<definition>e3(t) = (0.5477*cos(t), 1.0954*sin(t))</definition>
+<definition>e4(t) = (0.6325*cos(t), 1.2649*sin(t))</definition>
+<definition>e5(t) = (0.7071*cos(t), 1.4142*sin(t))</definition>
+<definition>e6(t) = (0.8367*cos(t), 1.6733*sin(t))</definition>
+<definition>e7(t) = (1*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-1.45,-2.35,1.45,2.35)">
+<axes at="el-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="el-e1" function="e1" domain="(0,6.2832)"
+                  stroke="#00441B" thickness="2"/>
+<parametric-curve at="el-e2" function="e2" domain="(0,6.2832)"
+                  stroke="#0B6B3A" thickness="2"/>
+<parametric-curve at="el-e3" function="e3" domain="(0,6.2832)"
+                  stroke="#2C9153" thickness="2"/>
+<parametric-curve at="el-e4" function="e4" domain="(0,6.2832)"
+                  stroke="#57B36B" thickness="2"/>
+<parametric-curve at="el-e5" function="e5" domain="(0,6.2832)"
+                  stroke="#8ACE88" thickness="2"/>
+<parametric-curve at="el-e6" function="e6" domain="(0,6.2832)"
+                  stroke="#BFE3A6" thickness="2"/>
+<parametric-curve at="el-e7" function="e7" domain="(0,6.2832)"
+                  stroke="#E5D93C" thickness="2.5"/>
+<label at="el-lab" anchor="(1.05,2.05)" alignment="ne" color="#B8AE20">
+<m>c=1</m>
+</label>
+<label at="el-lab2" anchor="(0.34,0.68)" alignment="ne" color="#00441B">
+<m>c=0.1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A family of nested ellipses centred at the origin, all twice as tall as they are wide. They are shaded from dark green for the innermost, where c equals nought point one, out to yellow for the outermost, where c equals one.">
+  <annotation ref="el-e1" text="The innermost level curve, where g equals nought point one."/>
+  <annotation ref="el-e7" text="The outermost level curve, where g equals one. It is the ellipse x squared plus y squared over four equals one, crossing the x axis at plus and minus one and the y axis at plus and minus two."/>
+  <annotation ref="el-axes" text="The ellipses are stretched along the y axis because the y term is divided by four, so reaching a given height takes twice the distance in y that it does in x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-fsv-elliptic-paraboloid">
+<caption>
+The elliptic paraboloid <m>z = g(x,y) = x^2 + \frac{y^2}{4}</m>. Slicing
+it with a horizontal plane <m>z = c</m> produces the ellipses of
+<xref ref="fig-fsv-elliptic-contour"/>.
+</caption>
+<image width="72%">
+<description>
+<p>
+A bowl shaped surface opening upwards, wider in the y direction than in
+the x direction, with several horizontal elliptical rings drawn on it at
+different heights.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=8.5cm,
+  view={-40}{18},
+  xmin=-1.25, xmax=1.25, ymin=-2.5, ymax=2.5, zmin=0, zmax=1.2,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-2,0,2}, ztick={0,0.5,1},
+  clip=false,
+]
+% surface z = x^2 + y^2/4, drawn in "elliptic polar" coordinates so the
+% domain is exactly the region where z <= 1
+\addplot3[surf, shader=flat, fill=green!45!black, draw=green!35!black,
+          fill opacity=0.35, draw opacity=0.35,
+          domain=0:1, y domain=0:360, samples=13, samples y=31,
+          z buffer=sort]
+  ({x*cos(y)},{2*x*sin(y)},{x^2});
+% a few level ellipses on the surface
+\addplot3[very thick, green!25!black, domain=0:360, samples=48]
+  ({0.4472*cos(x)},{0.8944*sin(x)},{0.2});
+\addplot3[very thick, green!45!black, domain=0:360, samples=48]
+  ({0.6325*cos(x)},{1.2649*sin(x)},{0.4});
+\addplot3[very thick, green!60!black, domain=0:360, samples=48]
+  ({0.7746*cos(x)},{1.5492*sin(x)},{0.6});
+\addplot3[very thick, yellow!70!black, domain=0:360, samples=48]
+  ({cos(x)},{2*sin(x)},{1});
+\node[green!35!black, anchor=west] at (axis description cs:1.02,0.72)
+  {$z=x^2+y^2/4$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</example>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-fsv-level-surfaces">
+<title>More Than Two Variables: Level Surfaces</title>
+
+<p>
+It is not possible to draw the graph of a function of more than two
+variables. The graph of a function <m>f(x,y,z)</m> would consist of the
+set of points <m>(x, y, z, f(x,y,z))</m> in four-dimensional space
+<m>\R^4</m>. However, it is possible to draw the
+<term>level surfaces</term> of a function of three variables
+<m>f(x,y,z)</m>. These are the surfaces with equation
+<md xml:id="eq-fsv-level-surface" number="yes">
+f(x,y,z) = c.
+</md>
+</p>
+
+<p>
+For example, the level surfaces of
+<md>
+f(x,y,z) = x^2 + y^2 + z^2
+</md>
+are the spheres with equation <m>x^2+y^2+z^2 = c</m>, drawn in
+<xref ref="fig-fsv-level-spheres"/> for <m>c = 1, 4, 9</m>. Each sphere
+collects the points at which <m>f</m> takes one fixed value; as <m>c</m>
+grows the spheres grow with it. For functions of four or more variables
+we can no longer visualize the graph or the level surfaces, and we must
+rely on intuition developed through the study of functions of two and
+three variables.
+</p>
+
+<figure xml:id="fig-fsv-level-spheres">
+<caption>
+The level surfaces of <m>f(x,y,z) = x^2+y^2+z^2</m> are spheres. Shown
+here are <m>x^2+y^2+z^2 = 1</m>, <m>x^2+y^2+z^2 = 4</m>, and
+<m>x^2+y^2+z^2 = 9</m>, cut away so the inner ones are visible.
+</caption>
+<image width="66%">
+<description>
+<p>
+Three concentric spheres of radii one, two and three, drawn cut away so
+that the smaller spheres inside can be seen. Each sphere is a level
+surface on which the function x squared plus y squared plus z squared is
+constant.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+% three cut-away hemispheres, drawn in the picture plane
+\begin{scope}
+  % outer, radius 3 -> drawn at 2.4cm
+  \fill[cyan!30, opacity=0.55] (-2.4,0) arc (180:360:2.4cm) arc (0:180:2.4cm and 0.62cm);
+  \draw[cyan!55!black] (-2.4,0) arc (180:360:2.4cm);
+  \draw[cyan!55!black] (-2.4,0) arc (180:0:2.4cm and 0.62cm);
+  % middle, radius 2 -> 1.6cm
+  \fill[orange!35, opacity=0.6] (-1.6,0) arc (180:360:1.6cm) arc (0:180:1.6cm and 0.42cm);
+  \draw[orange!60!black] (-1.6,0) arc (180:360:1.6cm);
+  \draw[orange!60!black] (-1.6,0) arc (180:0:1.6cm and 0.42cm);
+  % inner, radius 1 -> 0.8cm
+  \fill[green!45, opacity=0.75] (-0.8,0) arc (180:360:0.8cm) arc (0:180:0.8cm and 0.2cm);
+  \draw[green!45!black] (-0.8,0) arc (180:360:0.8cm);
+  \draw[green!45!black] (-0.8,0) arc (180:0:0.8cm and 0.2cm);
+\end{scope}
+% axes
+\draw[->, thick] (0,0) -- (0,3.1) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.3,-0.85) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.9,-1.3) node[below left] {$x$};
+% labels
+\node[green!35!black, anchor=west]  at (2.6,1.9) {$x^2+y^2+z^2=1$};
+\node[orange!60!black, anchor=west] at (2.6,1.35) {$x^2+y^2+z^2=4$};
+\node[cyan!55!black, anchor=west]   at (2.6,0.8) {$x^2+y^2+z^2=9$};
+\draw[gray, thin] (2.55,1.9) -- (0.42,0.42);
+\draw[gray, thin] (2.55,1.35) -- (1.05,0.95);
+\draw[gray, thin] (2.55,0.8) -- (1.75,1.5);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<example xml:id="example-fsv-level-surfaces">
+<title>Level Surfaces of a Function of Three Variables</title>
+<statement>
+<p>
+Describe the level surfaces of <m>g(x,y,z) = x^2 + y^2 - z^2</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+The level surface for <m>c = 0</m> is
+<md>
+x^2 + y^2 - z^2 = 0,
+</md>
+which is a cone: solving for <m>z</m> gives
+<m>z = \pm\sqrt{x^2+y^2}</m>, a double cone with vertex at the origin.
+</p>
+<p>
+For <m>c \neq 0</m>, the level surfaces are the hyperboloids
+<md>
+x^2 + y^2 - z^2 = c.
+</md>
+The hyperboloid has <em>one sheet</em> if <m>c \gt 0</m>, since then
+<m>x^2+y^2 = c + z^2 \ge c \gt 0</m> is satisfied for every value of
+<m>z</m>, and the surface is connected. It has <em>two sheets</em> if
+<m>c \lt 0</m>, since then <m>z^2 = x^2+y^2-c \ge -c \gt 0</m> forces
+<m>|z| \ge \sqrt{-c}</m>, so no point of the surface lies in the slab
+between the two sheets. The three cases are drawn in
+<xref ref="fig-fsv-hyperboloids"/>.
+</p>
+
+<figure xml:id="fig-fsv-hyperboloids">
+<caption>
+Level surfaces of <m>g(x,y,z) = x^2+y^2-z^2</m>. For <m>c \gt 0</m> the
+surface is a hyperboloid of one sheet, for <m>c = 0</m> it is a cone, and
+for <m>c \lt 0</m> it is a hyperboloid of two sheets.
+</caption>
+<image width="98%">
+<description>
+<p>
+Three surfaces side by side. On the left a hyperboloid of one sheet, a
+connected surface pinched in at the middle like a cooling tower. In the
+middle a double cone meeting at a point at the origin. On the right a
+hyperboloid of two sheets, consisting of two separate bowls, one opening
+upwards above the origin and one opening downwards below it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+% ============ left: one sheet, c > 0 ============
+\begin{axis}[
+  name=one,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 - z^2 = 1  ->  r = sqrt(1 + z^2)
+\addplot3[surf, shader=flat, fill=cyan!35, draw=cyan!55!black,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.5:1.5, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({sqrt(1+x^2)*cos(y)},{sqrt(1+x^2)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=c\;\;(c>0)$};
+\end{axis}
+% ============ middle: the cone, c = 0 ============
+\begin{axis}[
+  name=cone, at={(one.east)}, anchor=west, xshift=2mm,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 = z^2  ->  r = |z|
+\addplot3[surf, shader=flat, fill=orange!30, draw=orange!60!black,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.7:1.7, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({abs(x)*cos(y)},{abs(x)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=0$};
+\end{axis}
+% ============ right: two sheets, c < 0 ============
+\begin{axis}[
+  name=two, at={(cone.east)}, anchor=west, xshift=2mm,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 - z^2 = -1  ->  r = sqrt(z^2 - 1),  |z| >= 1
+\addplot3[surf, shader=flat, fill=green!35, draw=green!45!black,
+          fill opacity=0.6, draw opacity=0.45,
+          domain=1:1.75, y domain=0:360, samples=12, samples y=41,
+          z buffer=sort]
+  ({sqrt(x^2-1)*cos(y)},{sqrt(x^2-1)*sin(y)},{x});
+\addplot3[surf, shader=flat, fill=green!35, draw=green!45!black,
+          fill opacity=0.6, draw opacity=0.45,
+          domain=-1.75:-1, y domain=0:360, samples=12, samples y=41,
+          z buffer=sort]
+  ({sqrt(x^2-1)*cos(y)},{sqrt(x^2-1)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=c\;\;(c<0)$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</example>
+
+</section>
+
+</chapter>

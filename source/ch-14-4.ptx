@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  14.4 The Chain Rule
+-->
+<chapter xml:id="chapter-chain-rule" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Chain Rule</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+State and apply the chain rule for a function <m>w = f(x,y)</m> whose
+intermediate variables <m>x</m> and <m>y</m> are functions of a single
+independent variable <m>t</m>.
+</p>
+</li>
+<li>
+<p>
+Extend the chain rule to three intermediate variables, and to two
+independent variables <m>r</m> and <m>s</m>.
+</p>
+</li>
+<li>
+<p>
+Draw a tree diagram for a composition and read the corresponding chain
+rule formula off the diagram.
+</p>
+</li>
+<li>
+<p>
+Use the chain rule in applied settings, for instance to find the rate of
+change of temperature experienced by an object moving along a path.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+The chain rule for functions of one variable tells us how to
+differentiate a composition. When a function of several variables has
+inputs that themselves depend on other variables, there is a
+corresponding rule, and it has one term for each intermediate variable.
+Tree diagrams give a reliable way of writing these formulas down without
+memorizing them.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-cr-one-independent">
+<title>One Independent Variable</title>
+
+<theorem xml:id="thm-chain-rule-two-intermediate">
+<title>Chain Rule for Functions of Two Independent Variables</title>
+<statement>
+<p>
+Consider the two-variable function <m>w = f(x,y)</m>. If the following
+conditions are satisfied:
+</p>
+<p>
+<alert>1.</alert> <m>w = f(x,y)</m> has continuous partial derivatives
+<m>f_x</m> and <m>f_y</m>,
+</p>
+<p>
+<alert>2.</alert> <m>x = x(t)</m> and <m>y = y(t)</m> are differentiable
+functions of <m>t</m>,
+</p>
+<p>
+then the function <m>w = f(x(t), y(t))</m> is a differentiable function
+of <m>t</m> and
+<md xml:id="eq-chain-rule-two" number="yes">
+\frac{dw}{dt}
+= \frac{\partial f}{\partial x}\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\frac{dy}{dt}.
+</md>
+</p>
+</statement>
+</theorem>
+
+<p>
+<xref ref="fig-cr-tree-two"/> provides an easy way to remember the chain
+rule. Note that <m>w</m> is the <term>dependent variable</term> since it
+depends on <m>x</m> and <m>y</m>, and <m>x</m> and <m>y</m> are known as
+the <term>intermediate variables</term>, whereas <m>t</m> is the
+<term>independent variable</term>. To use the diagram, read every path
+from <m>w</m> down to <m>t</m>, multiply the derivatives along each path,
+and add the results.
+</p>
+
+<figure xml:id="fig-cr-tree-two">
+<caption>
+Tree diagram for <m>w = f(x(t), y(t))</m>. There are two paths from
+<m>w</m> down to <m>t</m>, one through <m>x</m> and one through <m>y</m>,
+and the chain rule adds one term for each.
+</caption>
+<image width="46%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cr-tree-two">
+<diagram dimensions="(280,300)" margins="14">
+<coordinates bbox="(-1.7,-0.5,1.7,3.5)">
+<line at="t2-wx" endpoints="((0,3),(-1.2,1.5))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t2-wy" endpoints="((0,3),(1.2,1.5))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t2-xt" endpoints="((-1.2,1.5),(0,0))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t2-yt" endpoints="((1.2,1.5),(0,0))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<point at="t2-w" p="(0,3)" fill="black"/>
+<point at="t2-x" p="(-1.2,1.5)" fill="#D55E00"/>
+<point at="t2-y" p="(1.2,1.5)" fill="#D55E00"/>
+<point at="t2-t" p="(0,0)" fill="#009E73"/>
+<label at="t2-w-lab" anchor="(0,3.1)" alignment="n">
+<m>w=f(x,y)</m>
+</label>
+<label at="t2-x-lab" anchor="(-1.3,1.5)" alignment="w" color="#D55E00">
+<m>x</m>
+</label>
+<label at="t2-y-lab" anchor="(1.3,1.5)" alignment="e" color="#D55E00">
+<m>y</m>
+</label>
+<label at="t2-t-lab" anchor="(0,-0.12)" alignment="s" color="#009E73">
+<m>t</m>
+</label>
+<label at="t2-wx-lab" anchor="(-0.72,2.4)" alignment="w" color="#0072B2">
+<m>\frac{\partial f}{\partial x}</m>
+</label>
+<label at="t2-wy-lab" anchor="(0.72,2.4)" alignment="e" color="#0072B2">
+<m>\frac{\partial f}{\partial y}</m>
+</label>
+<label at="t2-xt-lab" anchor="(-0.72,0.6)" alignment="w" color="#0072B2">
+<m>\frac{dx}{dt}</m>
+</label>
+<label at="t2-yt-lab" anchor="(0.72,0.6)" alignment="e" color="#0072B2">
+<m>\frac{dy}{dt}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A diamond shaped tree diagram. At the top is w equals f of x y. Two dashed blue branches descend from it, the left labelled partial f partial x leading to a node x, and the right labelled partial f partial y leading to a node y. From x and y two further branches, labelled d x d t and d y d t, descend and meet at the bottom node t.">
+  <annotation ref="t2-w" text="The dependent variable w at the top of the tree."/>
+  <annotation ref="t2-x" text="The intermediate variable x."/>
+  <annotation ref="t2-y" text="The intermediate variable y."/>
+  <annotation ref="t2-t" text="The independent variable t at the bottom."/>
+  <annotation ref="t2-wx" text="The branch from w to x contributes the factor partial f partial x."/>
+  <annotation ref="t2-xt" text="The branch from x to t contributes the factor d x d t. Multiplying along this path gives the first term of the chain rule."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<theorem xml:id="thm-chain-rule-three-intermediate">
+<title>Chain Rule for Functions of Three Independent Variables</title>
+<statement>
+<p>
+Consider the three-variable function <m>w = f(x,y,z)</m>. If the
+following conditions are satisfied:
+</p>
+<p>
+<alert>1.</alert> <m>w = f(x,y,z)</m> has continuous partial derivatives
+<m>f_x</m>, <m>f_y</m>, and <m>f_z</m>,
+</p>
+<p>
+<alert>2.</alert> <m>x = x(t)</m>, <m>y = y(t)</m>, and <m>z = z(t)</m>
+are differentiable functions of <m>t</m>,
+</p>
+<p>
+then the function <m>w = f(x(t), y(t), z(t))</m> is a differentiable
+function of <m>t</m> and
+<md xml:id="eq-chain-rule-three" number="yes">
+\frac{dw}{dt}
+= \frac{\partial f}{\partial x}\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\frac{dy}{dt}
++ \frac{\partial f}{\partial z}\frac{dz}{dt}.
+</md>
+</p>
+</statement>
+</theorem>
+
+<p>
+Again the tree diagram of <xref ref="fig-cr-tree-three"/> provides an
+easy way to remember the chain rule: now there are three paths from
+<m>w</m> down to <m>t</m>, so the formula has three terms.
+</p>
+
+<figure xml:id="fig-cr-tree-three">
+<caption>
+Tree diagram for <m>w = f(x(t), y(t), z(t))</m>. Each of the three
+intermediate variables contributes one term to
+<xref ref="eq-chain-rule-three"/>.
+</caption>
+<image width="52%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cr-tree-three">
+<diagram dimensions="(320,300)" margins="14">
+<coordinates bbox="(-2.1,-0.5,2.1,3.5)">
+<line at="t3-wx" endpoints="((0,3),(-1.5,1.5))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t3-wy" endpoints="((0,3),(0,1.5))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t3-wz" endpoints="((0,3),(1.5,1.5))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t3-xt" endpoints="((-1.5,1.5),(0,0))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t3-yt" endpoints="((0,1.5),(0,0))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<line at="t3-zt" endpoints="((1.5,1.5),(0,0))" stroke="#0072B2"
+      dash="5 4" thickness="2"/>
+<point at="t3-w" p="(0,3)" fill="black"/>
+<point at="t3-x" p="(-1.5,1.5)" fill="#D55E00"/>
+<point at="t3-y" p="(0,1.5)" fill="#D55E00"/>
+<point at="t3-z" p="(1.5,1.5)" fill="#D55E00"/>
+<point at="t3-t" p="(0,0)" fill="#009E73"/>
+<label at="t3-w-lab" anchor="(0,3.1)" alignment="n">
+<m>w=f(x,y,z)</m>
+</label>
+<label at="t3-x-lab" anchor="(-1.6,1.5)" alignment="w" color="#D55E00">
+<m>x</m>
+</label>
+<label at="t3-y-lab" anchor="(0.12,1.58)" alignment="e" color="#D55E00">
+<m>y</m>
+</label>
+<label at="t3-z-lab" anchor="(1.6,1.5)" alignment="e" color="#D55E00">
+<m>z</m>
+</label>
+<label at="t3-t-lab" anchor="(0,-0.12)" alignment="s" color="#009E73">
+<m>t</m>
+</label>
+<label at="t3-wx-lab" anchor="(-0.95,2.4)" alignment="w" color="#0072B2">
+<m>\frac{\partial f}{\partial x}</m>
+</label>
+<label at="t3-wy-lab" anchor="(-0.08,2.35)" alignment="w" color="#0072B2">
+<m>\frac{\partial f}{\partial y}</m>
+</label>
+<label at="t3-wz-lab" anchor="(0.95,2.4)" alignment="e" color="#0072B2">
+<m>\frac{\partial f}{\partial z}</m>
+</label>
+<label at="t3-xt-lab" anchor="(-0.95,0.6)" alignment="w" color="#0072B2">
+<m>\frac{dx}{dt}</m>
+</label>
+<label at="t3-yt-lab" anchor="(0.1,0.72)" alignment="e" color="#0072B2">
+<m>\frac{dy}{dt}</m>
+</label>
+<label at="t3-zt-lab" anchor="(0.95,0.6)" alignment="e" color="#0072B2">
+<m>\frac{dz}{dt}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A tree diagram with w equals f of x y z at the top, three intermediate nodes x, y and z in a row below it, and the single node t at the bottom. Dashed blue branches connect w to each of the three intermediate variables and each of those down to t, giving three complete paths.">
+  <annotation ref="t3-w" text="The dependent variable w at the top."/>
+  <annotation ref="t3-y" text="The middle intermediate variable y, on the vertical branch."/>
+  <annotation ref="t3-t" text="The independent variable t at the bottom. Because three separate paths lead from w to t, the chain rule has three terms."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-cr-xy-circle">
+<title>Differentiating Along a Circle</title>
+<statement>
+<p>
+Consider the function <m>w = f(x,y) = xy</m>, where <m>x = \cos t</m> and
+<m>y = \sin t</m>. Evaluate
+<m>\left.\dfrac{dw}{dt}\right|_{t=\pi/2}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>Method 1: using the chain rule.</alert> By
+<xref ref="eq-chain-rule-two"/>,
+<md>
+<mrow>\frac{dw}{dt} \amp= \frac{\partial f}{\partial x}\frac{dx}{dt}
+      + \frac{\partial f}{\partial y}\frac{dy}{dt}
+      = (y)(-\sin t) + (x)(\cos t)</mrow>
+<mrow>\amp= (\sin t)(-\sin t) + (\cos t)(\cos t)</mrow>
+<mrow>\amp= \cos^2 t - \sin^2 t = \cos(2t),</mrow>
+</md>
+and therefore
+<md>
+\left.\frac{dw}{dt}\right|_{t=\pi/2} = \cos(\pi) = -1.
+</md>
+</p>
+<p>
+<alert>Method 2: without using the chain rule.</alert> We can substitute
+first and then differentiate:
+<md>
+w = f(x,y) = xy \;\Rightarrow\; w(t) = \cos t \sin t
+= \frac{1}{2}\sin(2t) \;\Rightarrow\; \frac{dw}{dt} = \cos(2t),
+</md>
+so again
+<md>
+\left.\frac{dw}{dt}\right|_{t=\pi/2} = \cos(\pi) = -1.
+</md>
+Note that the two results agree with each other.
+</p>
+<p>
+Geometrically, the constraint <m>x = \cos t</m>, <m>y = \sin t</m>
+confines the point <m>(x,y)</m> to the unit circle
+<m>x^2+y^2 = 1</m>, so the composition traces a curve on the saddle
+<m>z = xy</m>, as shown in <xref ref="fig-cr-saddle"/>. The derivative
+<m>\frac{dw}{dt}</m> is the rate at which the height of that curve
+changes.
+</p>
+
+<figure xml:id="fig-cr-saddle">
+<caption>
+The curve traced on the surface <m>z = xy</m> as <m>(x,y)</m> runs around
+the unit circle <m>x^2+y^2=1</m>. Marked are the points at <m>t = 0</m>,
+<m>t = \pi/4</m>, and <m>t = \pi/2</m>.
+</caption>
+<image width="76%">
+<description>
+<p>
+A saddle shaped surface, the graph of z equals x y, with a closed curve
+drawn on it. The curve lies above the unit circle in the x y plane, which
+is drawn in dark red. Three points on the curve are marked in magenta,
+green and black, corresponding to t equals zero, t equals pi over four,
+and t equals pi over two.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=8.5cm,
+  view={-40}{20},
+  xmin=-1.45, xmax=1.45, ymin=-1.45, ymax=1.45, zmin=-0.75, zmax=0.75,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-1,0,1}, ztick={-0.5,0,0.5},
+  clip=false,
+]
+% the saddle z = xy
+\addplot3[surf, shader=flat, fill=gray!45, draw=gray!55,
+          fill opacity=0.32, draw opacity=0.32,
+          domain=-1.3:1.3, y domain=-1.3:1.3, samples=11]
+  {x*y};
+% the unit circle in the xy-plane
+\addplot3[very thick, purple!60!black, domain=0:360, samples=40]
+  ({cos(x)},{sin(x)},{0});
+% the curve on the surface: (cos t, sin t, cos t sin t)
+\addplot3[very thick, green!55!black, domain=0:360, samples=56]
+  ({cos(x)},{sin(x)},{cos(x)*sin(x)});
+% marked points
+\addplot3[only marks, mark=*, mark size=1.9, color=magenta]
+  coordinates {(1,0,0)};
+\addplot3[only marks, mark=*, mark size=1.9, color=green!45!black]
+  coordinates {(0.7071,0.7071,0.5)};
+\addplot3[only marks, mark=*, mark size=1.9, color=black]
+  coordinates {(0,1,0)};
+\node[magenta, anchor=north] at (axis description cs:0.13,1.06)
+  {$t=0:\;(1,0,0)$};
+\node[green!45!black, anchor=north] at (axis description cs:0.52,1.06)
+  {$t=\frac{\pi}{4}:\;\left(\frac{1}{\sqrt2},\frac{1}{\sqrt2},\frac12\right)$};
+\node[black, anchor=north] at (axis description cs:0.92,1.06)
+  {$t=\frac{\pi}{2}:\;(0,1,0)$};
+\node[green!55!black, anchor=west] at (axis description cs:1.0,0.62)
+  {$z=xy$};
+\node[purple!60!black, anchor=west] at (axis description cs:1.0,0.30)
+  {$x^2+y^2=1$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</example>
+
+<example xml:id="example-cr-second">
+<title>A Second Application of the Chain Rule</title>
+<statement>
+<p>
+Consider the function <m>w = f(x,y) = xy + y^2</m>, where
+<m>x = \cos t</m> and <m>y = 1 + 2\sin t</m>. Evaluate
+<m>\left.\dfrac{dw}{dt}\right|_{t=\pi}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+By <xref ref="eq-chain-rule-two"/>, with
+<m>\frac{\partial f}{\partial x} = y</m> and
+<m>\frac{\partial f}{\partial y} = x + 2y</m>,
+<md>
+<mrow>\frac{dw}{dt} \amp= \frac{\partial f}{\partial x}\frac{dx}{dt}
+      + \frac{\partial f}{\partial y}\frac{dy}{dt}
+      = (y)(-\sin t) + (x+2y)(2\cos t)</mrow>
+<mrow>\amp= (1+2\sin t)(-\sin t)
+      + \bigl(\cos t + 2(1+2\sin t)\bigr)(2\cos t)</mrow>
+<mrow>\amp= -\sin t - 2\sin^2 t + 2\cos^2 t + 4\cos t
+      + 8 \sin t \cos t.</mrow>
+</md>
+At <m>t = \pi</m> we have <m>\sin \pi = 0</m> and
+<m>\cos \pi = -1</m>, so the surviving terms are
+<m>2\cos^2 \pi = 2</m> and <m>4\cos \pi = -4</m>, giving
+<md>
+\left.\frac{dw}{dt}\right|_{t=\pi} = 2 - 4 = -2.
+</md>
+</p>
+</solution>
+</example>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-cr-two-independent">
+<title>Two Independent Variables</title>
+
+<theorem xml:id="thm-chain-rule-rs">
+<title>Chain Rule for Two Independent and Two Intermediate Variables</title>
+<statement>
+<p>
+Consider the two-variable function <m>w = f(x,y)</m>. If
+<m>w = f(x,y)</m>, <m>x = x(r,s)</m>, and <m>y = y(r,s)</m> are
+differentiable functions, then the partial derivatives of the function
+<m>w(r,s) = f(x(r,s), y(r,s))</m> are given by
+<md xml:id="eq-chain-rule-rs" number="yes">
+\frac{\partial w}{\partial r}
+= \frac{\partial f}{\partial x}\frac{\partial x}{\partial r}
++ \frac{\partial f}{\partial y}\frac{\partial y}{\partial r}
+\qquad \text{and} \qquad
+\frac{\partial w}{\partial s}
+= \frac{\partial f}{\partial x}\frac{\partial x}{\partial s}
++ \frac{\partial f}{\partial y}\frac{\partial y}{\partial s}.
+</md>
+</p>
+</statement>
+</theorem>
+
+<p>
+The tree diagram now has two variables at the bottom, so we read it once
+for <m>r</m> and once for <m>s</m>, as shown in
+<xref ref="fig-cr-tree-rs"/>. In each case we follow only the branches
+leading down to the variable we are differentiating with respect to.
+</p>
+
+<figure xml:id="fig-cr-tree-rs">
+<caption>
+Two readings of the same tree for two independent variables. On the left,
+the branches leading to <m>r</m> give
+<m>\frac{\partial w}{\partial r}</m>; on the right, the branches leading
+to <m>s</m> give <m>\frac{\partial w}{\partial s}</m>.
+</caption>
+<image width="92%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cr-tree-rs">
+<diagram dimensions="(600,300)" margins="14">
+<coordinates bbox="(-1.9,-0.9,7.9,3.6)">
+<!-- left tree: highlight branches to r -->
+<line at="rs-l-wx" endpoints="((0,3),(-1.2,1.6))" stroke="#D55E00"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-l-wy" endpoints="((0,3),(1.2,1.6))" stroke="#D55E00"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-l-xr" endpoints="((-1.2,1.6),(-0.8,0))" stroke="#D55E00"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-l-yr" endpoints="((1.2,1.6),(-0.8,0))" stroke="#D55E00"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-l-xs" endpoints="((-1.2,1.6),(0.8,0))" stroke="#CCCCCC"
+      dash="3 3" thickness="1.5"/>
+<line at="rs-l-ys" endpoints="((1.2,1.6),(0.8,0))" stroke="#CCCCCC"
+      dash="3 3" thickness="1.5"/>
+<point at="rs-l-w" p="(0,3)" fill="black"/>
+<point at="rs-l-x" p="(-1.2,1.6)" fill="#D55E00"/>
+<point at="rs-l-y" p="(1.2,1.6)" fill="#D55E00"/>
+<point at="rs-l-r" p="(-0.8,0)" fill="#009E73"/>
+<point at="rs-l-s" p="(0.8,0)" fill="#009E73"/>
+<label at="rs-l-w-lab" anchor="(0,3.1)" alignment="n"><m>w=f(x,y)</m></label>
+<label at="rs-l-x-lab" anchor="(-1.3,1.6)" alignment="w" color="#D55E00"><m>x</m></label>
+<label at="rs-l-y-lab" anchor="(1.3,1.6)" alignment="e" color="#D55E00"><m>y</m></label>
+<label at="rs-l-r-lab" anchor="(-0.8,-0.12)" alignment="s" color="#009E73"><m>r</m></label>
+<label at="rs-l-s-lab" anchor="(0.8,-0.12)" alignment="s" color="#999999"><m>s</m></label>
+<label at="rs-l-eq" anchor="(0,-0.62)" alignment="c" color="#D55E00">
+<m>\frac{\partial w}{\partial r}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial r}</m>
+</label>
+<!-- right tree: highlight branches to s -->
+<line at="rs-r-wx" endpoints="((6,3),(4.8,1.6))" stroke="#0072B2"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-r-wy" endpoints="((6,3),(7.2,1.6))" stroke="#0072B2"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-r-xs" endpoints="((4.8,1.6),(6.8,0))" stroke="#0072B2"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-r-ys" endpoints="((7.2,1.6),(6.8,0))" stroke="#0072B2"
+      dash="5 4" thickness="2.5"/>
+<line at="rs-r-xr" endpoints="((4.8,1.6),(5.2,0))" stroke="#CCCCCC"
+      dash="3 3" thickness="1.5"/>
+<line at="rs-r-yr" endpoints="((7.2,1.6),(5.2,0))" stroke="#CCCCCC"
+      dash="3 3" thickness="1.5"/>
+<point at="rs-r-w" p="(6,3)" fill="black"/>
+<point at="rs-r-x" p="(4.8,1.6)" fill="#D55E00"/>
+<point at="rs-r-y" p="(7.2,1.6)" fill="#D55E00"/>
+<point at="rs-r-r" p="(5.2,0)" fill="#009E73"/>
+<point at="rs-r-s" p="(6.8,0)" fill="#009E73"/>
+<label at="rs-r-w-lab" anchor="(6,3.1)" alignment="n"><m>w=f(x,y)</m></label>
+<label at="rs-r-x-lab" anchor="(4.7,1.6)" alignment="w" color="#D55E00"><m>x</m></label>
+<label at="rs-r-y-lab" anchor="(7.3,1.6)" alignment="e" color="#D55E00"><m>y</m></label>
+<label at="rs-r-r-lab" anchor="(5.2,-0.12)" alignment="s" color="#999999"><m>r</m></label>
+<label at="rs-r-s-lab" anchor="(6.8,-0.12)" alignment="s" color="#009E73"><m>s</m></label>
+<label at="rs-r-eq" anchor="(6,-0.62)" alignment="c" color="#0072B2">
+<m>\frac{\partial w}{\partial s}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial s}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two copies of the same tree diagram side by side. Each has w equals f of x y at the top, the intermediate variables x and y below it, and the two independent variables r and s at the bottom. In the left copy the branches leading down to r are highlighted in orange and the branches to s are faint grey; in the right copy the branches leading to s are highlighted in blue instead. Under each tree is the corresponding chain rule formula.">
+  <annotation ref="rs-l-xr" text="In the left tree, the highlighted branches are those running from w through x and through y down to r, giving the formula for the partial derivative of w with respect to r."/>
+  <annotation ref="rs-r-xs" text="In the right tree, the highlighted branches run down to s instead, giving the formula for the partial derivative of w with respect to s."/>
+  <annotation ref="rs-l-s" text="The faint grey branches are the ones not used for this particular derivative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-cr-exp-sin">
+<title>Two Independent Variables</title>
+<statement>
+<p>
+Consider the function <m>z = f(x,y) = e^x \sin y</m>, where
+<m>x = st^2</m> and <m>y = s^2 t</m>, and evaluate
+<m>\dfrac{\partial z}{\partial s}</m> and
+<m>\dfrac{\partial z}{\partial t}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Here the independent variables are <m>s</m> and <m>t</m>. We have
+<m>\frac{\partial f}{\partial x} = e^x \sin y</m> and
+<m>\frac{\partial f}{\partial y} = e^x \cos y</m>, together with
+<m>\frac{\partial x}{\partial s} = t^2</m>,
+<m>\frac{\partial y}{\partial s} = 2st</m>,
+<m>\frac{\partial x}{\partial t} = 2st</m>, and
+<m>\frac{\partial y}{\partial t} = s^2</m>. By
+<xref ref="eq-chain-rule-rs"/>,
+<md>
+<mrow>\frac{\partial z}{\partial s}
+      \amp= \frac{\partial f}{\partial x}\frac{\partial x}{\partial s}
+      + \frac{\partial f}{\partial y}\frac{\partial y}{\partial s}
+      = (e^x \sin y)(t^2) + (e^x \cos y)(2st)</mrow>
+<mrow>\amp= t^2 e^{st^2}\sin(s^2 t) + 2st\,e^{st^2}\cos(s^2 t),</mrow>
+</md>
+and
+<md>
+<mrow>\frac{\partial z}{\partial t}
+      \amp= \frac{\partial f}{\partial x}\frac{\partial x}{\partial t}
+      + \frac{\partial f}{\partial y}\frac{\partial y}{\partial t}
+      = (e^x \sin y)(2st) + (e^x \cos y)(s^2)</mrow>
+<mrow>\amp= 2st\,e^{st^2}\sin(s^2 t) + s^2 e^{st^2}\cos(s^2 t).</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-cr-applications">
+<title>Applications</title>
+
+<example xml:id="example-cr-ant">
+<title>The Temperature Experienced by a Moving Ant</title>
+<statement>
+<p>
+Suppose that the temperature on a metal plate is given by the function
+<m>T</m> with
+<md>
+T(x,y) = 100 - (x^2 + 4y^2),
+</md>
+where the temperature is measured in degrees Fahrenheit and <m>x</m> and
+<m>y</m> are each measured in feet. Now suppose that an ant is walking on
+the metal plate in such a way that it walks in a straight line from the
+point <m>(1,4)</m> to the point <m>(5,6)</m>.
+<ol marker="a.">
+<li>
+<p>
+Find parametric equations <m>(x(t), y(t))</m> for the ant's coordinates
+as it walks the line from <m>(1,4)</m> to <m>(5,6)</m>.
+</p>
+</li>
+<li>
+<p>
+What can you say about <m>\frac{dx}{dt}</m> and <m>\frac{dy}{dt}</m> for
+every value of <m>t</m>?
+</p>
+</li>
+<li>
+<p>
+Determine the instantaneous rate of change in temperature with respect to
+<m>t</m> that the ant is experiencing at the moment it is halfway from
+<m>(1,4)</m> to <m>(5,6)</m>, using your parametric equations for
+<m>x</m> and <m>y</m>. Include units on your answer.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>a.</alert> The slope of the line is
+<md>
+\text{slope} = \frac{6-4}{5-1} = \frac{1}{2},
+</md>
+so the line is <m>y - 4 = \frac12 (x-1)</m>. Choosing
+<m>x - 1 = t</m>, that is <m>x = t+1</m>, gives
+<md xml:id="eq-cr-ant-param" number="yes">
+x(t) = t+1, \qquad y(t) = \frac{t}{2} + 4, \qquad 0 \le t \le 4.
+</md>
+At <m>t = 0</m> the ant is at <m>(1,4)</m> and at <m>t = 4</m> it is at
+<m>(5,6)</m>, as required.
+</p>
+<p>
+<alert>b.</alert> Differentiating <xref ref="eq-cr-ant-param"/>,
+<md>
+\frac{dx}{dt} = 1 \qquad \text{and} \qquad \frac{dy}{dt} = \frac{1}{2}
+</md>
+for every value of <m>t</m>. Both are constant, which reflects the fact
+that the ant walks along a straight line at a steady rate.
+</p>
+<p>
+<alert>c.</alert> The tree diagram for this composition is the one in
+<xref ref="fig-cr-tree-two"/>, with <m>T</m> in place of <m>w</m>. By
+<xref ref="eq-chain-rule-two"/>,
+<md>
+\frac{dT}{dt}
+= \frac{\partial T}{\partial x}\frac{dx}{dt}
++ \frac{\partial T}{\partial y}\frac{dy}{dt}
+= (-2x)(1) + (-8y)\left(\frac12\right)
+= -2x - 4y.
+</md>
+The halfway point is
+<md>
+\left(\frac{5+1}{2},\; \frac{6+4}{2}\right) = (3,5),
+</md>
+and therefore
+<md>
+\left.\frac{dT}{dt}\right|_{(3,5)} = (-2)(3) - (4)(5) = -26
+\text{ degrees Fahrenheit per unit time}.
+</md>
+</p>
+<p>
+Alternatively, <m>\frac{dT}{dt}</m> can be written in terms of <m>t</m>:
+<md>
+\frac{dT}{dt} = -2(t+1) - 4\left(\frac{t}{2}+4\right) = -4t - 18.
+</md>
+Also notice that at <m>t = 2</m> the ant is at <m>(3,5)</m>, and hence
+<md>
+\left.\frac{dT}{dt}\right|_{t=2} = (-4)(2) - 18 = -26
+\text{ degrees Fahrenheit per unit time},
+</md>
+in agreement with the first computation. The temperature is falling as
+the ant walks, which makes sense: it is moving away from the origin,
+where <m>T</m> is largest.
+</p>
+</solution>
+</example>
+
+<example xml:id="example-cr-identity">
+<title>Proving an Identity with the Chain Rule</title>
+<statement>
+<p>
+Suppose that <m>w = f(xz, yz)</m>, where <m>f</m> is a differentiable
+function. Show that
+<md>
+x\frac{\partial w}{\partial x} + y\frac{\partial w}{\partial y}
+= z\frac{\partial w}{\partial z}.
+</md>
+</p>
+</statement>
+
+<solution>
+<p>
+Let us name the intermediate variables
+<md>
+u = xz \qquad \text{and} \qquad v = yz,
+</md>
+so that <m>w = f(u,v)</m> with <m>u</m> and <m>v</m> each depending on
+<m>x</m>, <m>y</m>, and <m>z</m>. The tree diagram is shown in
+<xref ref="fig-cr-tree-identity"/>.
+</p>
+
+<figure xml:id="fig-cr-tree-identity">
+<caption>
+Tree diagram for <m>w = f(u,v)</m> with <m>u = xz</m> and
+<m>v = yz</m>. Note that <m>z</m> appears under both intermediate
+variables, which is why <m>\frac{\partial w}{\partial z}</m> collects two
+terms while <m>\frac{\partial w}{\partial x}</m> and
+<m>\frac{\partial w}{\partial y}</m> collect one each.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cr-tree-identity">
+<diagram dimensions="(340,290)" margins="14">
+<coordinates bbox="(-2.3,-0.5,2.3,3.4)">
+<line at="ti-wu" endpoints="((0,3),(-1.2,1.6))" stroke="#8B1A4A"
+      thickness="2"/>
+<line at="ti-wv" endpoints="((0,3),(1.2,1.6))" stroke="#8B1A4A"
+      thickness="2"/>
+<line at="ti-ux" endpoints="((-1.2,1.6),(-1.9,0))" stroke="#0072B2"
+      thickness="2"/>
+<line at="ti-uz" endpoints="((-1.2,1.6),(0,0))" stroke="#009E73"
+      thickness="2"/>
+<line at="ti-vz" endpoints="((1.2,1.6),(0,0))" stroke="#009E73"
+      thickness="2"/>
+<line at="ti-vy" endpoints="((1.2,1.6),(1.9,0))" stroke="#0072B2"
+      thickness="2"/>
+<point at="ti-w" p="(0,3)" fill="black"/>
+<point at="ti-u" p="(-1.2,1.6)" fill="#D55E00"/>
+<point at="ti-v" p="(1.2,1.6)" fill="#D55E00"/>
+<point at="ti-x" p="(-1.9,0)" fill="black"/>
+<point at="ti-z" p="(0,0)" fill="black"/>
+<point at="ti-y" p="(1.9,0)" fill="black"/>
+<label at="ti-w-lab" anchor="(0,3.1)" alignment="n"><m>w</m></label>
+<label at="ti-u-lab" anchor="(-1.28,1.68)" alignment="nw" color="#D55E00">
+<m>u=xz</m>
+</label>
+<label at="ti-v-lab" anchor="(1.28,1.68)" alignment="ne" color="#D55E00">
+<m>v=yz</m>
+</label>
+<label at="ti-x-lab" anchor="(-1.9,-0.12)" alignment="s"><m>x</m></label>
+<label at="ti-z-lab" anchor="(0,-0.12)" alignment="s"><m>z</m></label>
+<label at="ti-y-lab" anchor="(1.9,-0.12)" alignment="s"><m>y</m></label>
+<label at="ti-wu-lab" anchor="(-0.75,2.42)" alignment="w" color="#8B1A4A">
+<m>\frac{\partial w}{\partial u}</m>
+</label>
+<label at="ti-wv-lab" anchor="(0.75,2.42)" alignment="e" color="#8B1A4A">
+<m>\frac{\partial w}{\partial v}</m>
+</label>
+<label at="ti-ux-lab" anchor="(-1.72,0.85)" alignment="w" color="#0072B2">
+<m>z</m>
+</label>
+<label at="ti-uz-lab" anchor="(-0.48,0.72)" alignment="e" color="#009E73">
+<m>x</m>
+</label>
+<label at="ti-vz-lab" anchor="(0.48,0.72)" alignment="w" color="#009E73">
+<m>y</m>
+</label>
+<label at="ti-vy-lab" anchor="(1.72,0.85)" alignment="e" color="#0072B2">
+<m>z</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A tree diagram with w at the top, the two intermediate variables u equals x z and v equals y z below it, and the three variables x, z and y along the bottom. The variable u connects down to both x and z, and v connects down to both z and y, so the middle node z is reached from both sides. The branches are labelled with the corresponding partial derivatives.">
+  <annotation ref="ti-u" text="The intermediate variable u equals x z."/>
+  <annotation ref="ti-v" text="The intermediate variable v equals y z."/>
+  <annotation ref="ti-z" text="The variable z sits under both u and v, so two paths lead from w down to z and the derivative with respect to z has two terms."/>
+  <annotation ref="ti-ux" text="The branch from u to x carries the factor z, since the partial derivative of x z with respect to x is z."/>
+  <annotation ref="ti-uz" text="The branch from u to z carries the factor x, since the partial derivative of x z with respect to z is x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Reading the branches that lead down to <m>z</m>, and using
+<m>\frac{\partial u}{\partial z} = x</m> and
+<m>\frac{\partial v}{\partial z} = y</m>, we get
+<md xml:id="eq-cr-identity-z" number="yes">
+\frac{\partial w}{\partial z}
+= \frac{\partial w}{\partial u}\frac{\partial u}{\partial z}
++ \frac{\partial w}{\partial v}\frac{\partial v}{\partial z}
+= \frac{\partial w}{\partial u}\,x
++ \frac{\partial w}{\partial v}\,y.
+</md>
+</p>
+<p>
+Only one branch leads down to <m>x</m>, namely the one through <m>u</m>,
+and <m>\frac{\partial u}{\partial x} = z</m>, so
+<md xml:id="eq-cr-identity-x" number="yes">
+\frac{\partial w}{\partial x}
+= \frac{\partial w}{\partial u}\frac{\partial u}{\partial x}
+= \frac{\partial w}{\partial u}\,z
+\qquad\Longrightarrow\qquad
+\frac{\partial w}{\partial u} = \frac{1}{z}\frac{\partial w}{\partial x}.
+</md>
+Similarly, only one branch leads down to <m>y</m>, through <m>v</m>, and
+<m>\frac{\partial v}{\partial y} = z</m>, so
+<md xml:id="eq-cr-identity-y" number="yes">
+\frac{\partial w}{\partial y}
+= \frac{\partial w}{\partial v}\frac{\partial v}{\partial y}
+= \frac{\partial w}{\partial v}\,z
+\qquad\Longrightarrow\qquad
+\frac{\partial w}{\partial v} = \frac{1}{z}\frac{\partial w}{\partial y}.
+</md>
+</p>
+<p>
+Substituting <xref ref="eq-cr-identity-x"/> and
+<xref ref="eq-cr-identity-y"/> into
+<xref ref="eq-cr-identity-z"/> gives
+<md>
+\frac{\partial w}{\partial z}
+= \frac{1}{z}\frac{\partial w}{\partial x}\,x
++ \frac{1}{z}\frac{\partial w}{\partial y}\,y,
+</md>
+and multiplying both sides by <m>z</m> yields
+<md>
+z\frac{\partial w}{\partial z}
+= x\frac{\partial w}{\partial x} + y\frac{\partial w}{\partial y},
+</md>
+which is the identity we wanted to prove.
+</p>
+</solution>
+</example>
+
+</section>
+
+</chapter>

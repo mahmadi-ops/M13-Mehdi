@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  12.2 Vectors
+
+  Requires in <docinfo>:
+    <latex-image-preamble>
+      \usepackage{tikz, pgfplots}
+      \pgfplotsset{compat=1.18}
+    </latex-image-preamble>
+-->
+<chapter xml:id="chapter-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Vectors</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Explain the difference between a scalar quantity and a vector quantity,
+and describe a vector by its initial and terminal points.
+</p>
+</li>
+<li>
+<p>
+Write a vector in component form, find the standard position vector of
+<m>\vec{PQ}</m>, and compute the length <m>\|\mathbf v\|</m> of a vector.
+</p>
+</li>
+<li>
+<p>
+Add vectors and multiply them by scalars, both algebraically and
+geometrically using the parallelogram law.
+</p>
+</li>
+<li>
+<p>
+Write a vector as a linear combination of the standard unit vectors
+<m>\mathbf i</m>, <m>\mathbf j</m>, and <m>\mathbf k</m>, and find the
+unit vector in the direction of a given vector.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+Some quantities can be described using real numbers alone, such as time
+or temperature. To describe other quantities we need a direction as well
+as a magnitude. Consider the velocity of a car: we need to know both the
+speed of the car and its direction of motion to specify its velocity
+completely. For instance, we might say that the car is moving with speed
+<m>65</m> miles per hour in the direction of north. Such quantities are
+referred to as <term>vector quantities</term>, and they are the subject
+of this chapter.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-vec-definitions">
+<title>Definitions, Terminology, and Notation</title>
+
+<p>
+A <term>vector</term> is a directed line segment from an
+<term>initial point</term> <m>A</m> to a <term>terminal point</term>
+<m>B</m>, and is denoted by <m>\vec{AB}</m>. We denote the length of a
+vector by <m>\|\vec{AB}\|</m>. See <xref ref="fig-vec-directed-segment"/>.
+</p>
+
+<figure xml:id="fig-vec-directed-segment">
+<caption>
+A vector is a directed line segment. It carries two pieces of
+information: a direction, shown by the arrowhead, and a magnitude, which
+is its length <m>\|\vec{AB}\|</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-segment">
+<diagram dimensions="(360,190)" margins="12">
+<coordinates bbox="(-0.4,-0.4,4.4,2.4)">
+<vector at="ds-v" v="(3.1,1.55)" tail="(0.55,0.35)"
+        stroke="#0072B2" thickness="3"/>
+<point at="ds-A" p="(0.55,0.35)" fill="#0072B2"/>
+<point at="ds-B" p="(3.65,1.90)" fill="#0072B2"/>
+<label at="ds-A-lab" anchor="(0.5,0.28)" alignment="sw" color="#0072B2">
+<m>A</m>
+</label>
+<label at="ds-B-lab" anchor="(3.72,1.94)" alignment="ne" color="#0072B2">
+<m>B</m>
+</label>
+<label at="ds-init" anchor="(0.42,0.72)" alignment="nw">
+<m>\text{initial point}</m>
+</label>
+<label at="ds-term" anchor="(3.55,1.55)" alignment="se">
+<m>\text{terminal point}</m>
+</label>
+<label at="ds-name" anchor="(2.0,1.28)" alignment="nw" color="#0072B2">
+<m>\vec{AB}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A single blue arrow points up and to the right from a dot labelled A, the initial point, to a dot labelled B, the terminal point. The arrow is labelled vector A B.">
+  <annotation ref="ds-A" text="The initial point A, where the vector begins."/>
+  <annotation ref="ds-B" text="The terminal point B, where the vector ends and the arrowhead is drawn."/>
+  <annotation ref="ds-v" text="The vector from A to B, written vector A B. Its length is the magnitude of the vector."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Two vectors are <term>equal</term> if they have the same direction and
+the same magnitude. Notice that this definition says nothing about where
+a vector is located: a vector may be moved around the plane freely, and
+as long as its direction and length are unchanged it is the same vector.
+The vectors shown in <xref ref="fig-vec-equal"/> are all equal to each
+other, <m>\vec{AB} = \vec{CD} = \vec{OP} = \vec{EF}</m>.
+</p>
+
+<figure xml:id="fig-vec-equal">
+<caption>
+Four equal vectors. They have different initial points, but the same
+direction and the same length, so
+<m>\vec{AB} = \vec{CD} = \vec{OP} = \vec{EF}</m>. Only <m>\vec{OP}</m>
+begins at the origin.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-equal">
+<diagram dimensions="(390,300)" margins="12">
+<coordinates bbox="(-3.1,-2.6,3.6,3.4)">
+<axes at="eq-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector at="eq-AB" v="(1.9,0.95)" tail="(-2.3,1.55)"
+        stroke="#0072B2" thickness="3"/>
+<vector at="eq-CD" v="(1.9,0.95)" tail="(-0.55,0.35)"
+        stroke="#0072B2" thickness="3"/>
+<vector at="eq-OP" v="(1.9,0.95)" tail="(0,0)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="eq-EF" v="(1.9,0.95)" tail="(-2.5,-1.75)"
+        stroke="#0072B2" thickness="3"/>
+<label at="eq-A" anchor="(-2.38,1.5)" alignment="w" color="#0072B2">
+<m>A</m>
+</label>
+<label at="eq-B" anchor="(-0.32,2.56)" alignment="e" color="#0072B2">
+<m>B</m>
+</label>
+<label at="eq-C" anchor="(-0.63,0.3)" alignment="w" color="#0072B2">
+<m>C</m>
+</label>
+<label at="eq-D" anchor="(1.42,1.36)" alignment="e" color="#0072B2">
+<m>D</m>
+</label>
+<label at="eq-O" anchor="(-0.08,-0.05)" alignment="sw">
+<m>O</m>
+</label>
+<label at="eq-P" anchor="(1.97,1.02)" alignment="e" color="#D55E00">
+<m>P</m>
+</label>
+<label at="eq-E" anchor="(-2.58,-1.8)" alignment="w" color="#0072B2">
+<m>E</m>
+</label>
+<label at="eq-F" anchor="(-0.52,-0.74)" alignment="e" color="#0072B2">
+<m>F</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four arrows of the same length all pointing up and to the right at the same angle, placed at four different positions in the coordinate plane. Three are blue, from A to B, from C to D, and from E to F. The fourth, drawn in orange from the origin O to the point P, is the one in standard position.">
+  <annotation ref="eq-AB" text="The vector from A to B."/>
+  <annotation ref="eq-CD" text="The vector from C to D, equal to vector A B because it has the same direction and length."/>
+  <annotation ref="eq-OP" text="The vector from the origin O to the point P, drawn in orange. This is the one in standard position."/>
+  <annotation ref="eq-EF" text="The vector from E to F, also equal to the others."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Only one of the vectors in <xref ref="fig-vec-equal"/> starts from the
+origin. We say that <m>\vec{OP}</m> is in <term>standard position</term>,
+and we denote it by a bold letter such as
+<m>\mathbf v = \vec{OP}</m>, which is also referred to as the
+<term>standard position vector</term>.
+</p>
+
+<p>
+In 2D, if the initial point of a vector is the origin, i.e. <m>(0,0)</m>,
+and its final point is <m>(v_1,v_2)</m>, then the
+<term>component form</term> of the vector is
+<m>\mathbf v = \langle v_1, v_2 \rangle</m>. In 3D, if the initial point
+of a vector is the origin, i.e. <m>(0,0,0)</m>, and its final point is
+<m>(v_1,v_2,v_3)</m>, then the component form of the vector is
+<m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>.
+</p>
+
+<p>
+In <xref ref="fig-vec-components"/> we have <m>\mathbf v = \vec{PQ}</m>.
+Also <m>x_1 + v_1 = x_2</m>, <m>y_1 + v_2 = y_2</m>, and
+<m>z_1 + v_3 = z_2</m>. This means we have
+<md xml:id="eq-vec-components" number="yes">
+\mathbf v = \langle v_1, v_2, v_3 \rangle
+= \langle x_2 - x_1,\; y_2 - y_1,\; z_2 - z_1 \rangle.
+</md>
+</p>
+
+<figure xml:id="fig-vec-components">
+<caption>
+The vector <m>\vec{PQ}</m> and its standard position vector
+<m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>. The two arrows are
+equal as vectors; only the second one begins at the origin.
+</caption>
+<image width="70%">
+<description>
+<p>
+A three dimensional coordinate system. A blue arrow runs from the point P
+to the point Q. A second arrow of the same length and direction, drawn in
+magenta, runs from the origin to the point with coordinates v one, v two,
+v three. Dashed lines drop from the tip of the magenta arrow to show its
+three components along the axes.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.92, >=stealth]
+\draw[->, thick] (0,0,0) -- (4.0,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,5.0,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,3.8) node[above] {$z$};
+\node[above left] at (0,0,0) {$0$};
+% PQ
+\coordinate (P) at (2.6,1.0,1.1);
+\coordinate (Q) at (0.9,3.4,2.6);
+\draw[->, cyan!60!black, very thick] (P) -- (Q);
+\fill[cyan!60!black] (P) circle (1.6pt);
+\fill[cyan!60!black] (Q) circle (1.6pt);
+\node[cyan!60!black, left=2pt]  at (P) {$P(x_1,y_1,z_1)$};
+\node[cyan!60!black, above right=1pt] at (Q) {$Q(x_2,y_2,z_2)$};
+% standard position vector v = Q - P = (-1.7, 2.4, 1.5)
+\coordinate (V) at (-1.7,2.4,1.5);
+\draw[->, magenta, very thick] (0,0,0) -- (V);
+\fill[magenta] (V) circle (1.6pt);
+\node[magenta, right=1pt] at (V) {$(v_1,v_2,v_3)$};
+\node[magenta] at (-1.15,1.05,0.95) {$\mathbf v$};
+% components, dashed
+\draw[magenta, dashed] (0,0,0) -- (-1.7,0,0) -- (-1.7,2.4,0) -- (V);
+\draw[magenta, dashed] (-1.7,2.4,0) -- (0,2.4,0);
+\node[magenta, below] at (-0.85,0,0) {$v_1$};
+\node[magenta, below] at (-1.7,1.2,0) {$v_2$};
+\node[magenta, right] at (-1.7,2.4,0.75) {$v_3$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+The magnitude of <m>\mathbf v = \vec{PQ}</m> is the same as the distance
+between the two points <m>P(x_1,y_1,z_1)</m> and <m>Q(x_2,y_2,z_2)</m>,
+that is
+<md xml:id="eq-vec-length" number="yes">
+\|\mathbf v\| = \|\vec{PQ}\| = \sqrt{v_1^2 + v_2^2 + v_3^2}
+= \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.
+</md>
+</p>
+
+<example xml:id="example-vec-length">
+<title>Length and Standard Position Vector</title>
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Compute the length of the vector with the initial point <m>P(-1,0,1)</m>
+and the final point <m>Q(1,1,-1)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the standard position vector corresponding to this vector.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>A.</alert> By <xref ref="eq-vec-length"/>, the length of the
+vector <m>\vec{PQ}</m> is
+<md>
+\|\vec{PQ}\| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}
+= \sqrt{(-1-1)^2 + (0-1)^2 + (1+1)^2} = 3.
+</md>
+</p>
+<p>
+<alert>B.</alert> By <xref ref="eq-vec-components"/>, the standard
+position vector is
+<md>
+\mathbf v = \langle x_2 - x_1,\; y_2 - y_1,\; z_2 - z_1 \rangle
+= \langle 1-(-1),\; 1-0,\; -1-1 \rangle
+= \langle 2, 1, -2 \rangle.
+</md>
+As a check, <m>\|\mathbf v\| = \sqrt{2^2 + 1^2 + (-2)^2} = 3</m>, which
+agrees with part <alert>A</alert>, as it must, since <m>\mathbf v</m> and
+<m>\vec{PQ}</m> are the same vector.
+</p>
+</solution>
+</example>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-vec-algebra">
+<title>Vector Algebra Operations</title>
+
+<p>
+<term>Vector addition.</term> Let
+<m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>, then
+<md xml:id="eq-vec-addition" number="yes">
+\mathbf u + \mathbf v
+= \langle u_1+v_1,\; u_2+v_2,\; u_3+v_3 \rangle.
+</md>
+</p>
+
+<p>
+<term>Scalar multiplication.</term> Let
+<m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and
+<m>k \in \R</m>, then
+<md xml:id="eq-vec-scalar" number="yes">
+k\,\mathbf u = \langle k u_1,\; k u_2,\; k u_3 \rangle.
+</md>
+Note that the above definitions can be reduced to the 2D case simply by
+removing the last components of the vectors.
+</p>
+
+<p>
+<term>Parallelogram law.</term> The parallelogram law tells us how to add
+two vectors geometrically, and is described in
+<xref ref="fig-vec-parallelogram"/>. Placing the tail of <m>\mathbf v</m>
+at the head of <m>\mathbf u</m> produces the sum as the third side of a
+triangle; equivalently, drawing both vectors from a common initial point
+makes the sum the diagonal of the parallelogram they span.
+</p>
+
+<figure xml:id="fig-vec-parallelogram">
+<caption>
+The parallelogram law. On the left, the components add head to tail. On
+the right, <m>\mathbf u + \mathbf v</m> is the diagonal of the
+parallelogram spanned by <m>\mathbf u</m> and <m>\mathbf v</m>.
+</caption>
+<image width="92%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-parallelogram">
+<diagram dimensions="(620,270)" margins="12">
+<coordinates bbox="(-0.55,-0.55,9.9,3.9)">
+<!-- = left panel: head to tail = -->
+<vector at="pl-xaxis" v="(4.2,0)" tail="(-0.2,0)" stroke="black" thickness="2"/>
+<vector at="pl-yaxis" v="(0,3.5)" tail="(0,-0.2)" stroke="black" thickness="2"/>
+<vector at="pl-u" v="(2.1,0.85)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<vector at="pl-v" v="(1.15,1.75)" tail="(2.1,0.85)" stroke="#0072B2" thickness="3"/>
+<vector at="pl-sum" v="(3.25,2.6)" tail="(0,0)" stroke="#D55E00" thickness="3"/>
+<line at="pl-d1" endpoints="((2.1,0.85),(3.25,0.85))" stroke="#D55E00"
+      dash="4 3" thickness="1.5"/>
+<line at="pl-d2" endpoints="((3.25,0.85),(3.25,2.6))" stroke="#D55E00"
+      dash="4 3" thickness="1.5"/>
+<line at="pl-d3" endpoints="((2.1,0),(2.1,0.85))" stroke="#D55E00"
+      dash="4 3" thickness="1.5"/>
+<label at="pl-x" anchor="(4.0,-0.06)" alignment="se"><m>x</m></label>
+<label at="pl-y" anchor="(-0.06,3.35)" alignment="nw"><m>y</m></label>
+<label at="pl-u-lab" anchor="(1.0,0.5)" alignment="se" color="#0072B2">
+<m>\mathbf u</m>
+</label>
+<label at="pl-v-lab" anchor="(2.75,1.65)" alignment="e" color="#0072B2">
+<m>\mathbf v</m>
+</label>
+<label at="pl-sum-lab" anchor="(1.35,1.72)" alignment="nw" color="#D55E00">
+<m>\mathbf u+\mathbf v</m>
+</label>
+<label at="pl-u1" anchor="(1.05,-0.08)" alignment="s"><m>u_1</m></label>
+<label at="pl-v1" anchor="(2.68,0.78)" alignment="s"><m>v_1</m></label>
+<label at="pl-v2" anchor="(3.32,1.72)" alignment="e"><m>v_2</m></label>
+<label at="pl-top" anchor="(3.3,2.68)" alignment="ne">
+<m>\langle u_1+v_1,\; u_2+v_2\rangle</m>
+</label>
+<!-- = right panel: the parallelogram = -->
+<vector at="pr-xaxis" v="(4.2,0)" tail="(5.4,0)" stroke="black" thickness="2"/>
+<vector at="pr-yaxis" v="(0,3.5)" tail="(5.6,-0.2)" stroke="black" thickness="2"/>
+<vector at="pr-u" v="(2.1,0.85)" tail="(5.6,0)" stroke="#0072B2" thickness="3"/>
+<vector at="pr-v" v="(1.15,1.75)" tail="(5.6,0)" stroke="#0072B2" thickness="3"/>
+<vector at="pr-sum" v="(3.25,2.6)" tail="(5.6,0)" stroke="#D55E00" thickness="3"/>
+<line at="pr-p1" endpoints="((7.7,0.85),(8.85,2.6))" stroke="#D55E00"
+      dash="4 3" thickness="1.5"/>
+<line at="pr-p2" endpoints="((6.75,1.75),(8.85,2.6))" stroke="#D55E00"
+      dash="4 3" thickness="1.5"/>
+<label at="pr-x" anchor="(9.4,-0.06)" alignment="se"><m>x</m></label>
+<label at="pr-y" anchor="(5.54,3.35)" alignment="nw"><m>y</m></label>
+<label at="pr-u-lab" anchor="(6.75,0.35)" alignment="se" color="#0072B2">
+<m>\mathbf u</m>
+</label>
+<label at="pr-v-lab" anchor="(6.05,1.35)" alignment="nw" color="#0072B2">
+<m>\mathbf v</m>
+</label>
+<label at="pr-sum-lab" anchor="(7.15,1.8)" alignment="nw" color="#D55E00">
+<m>\mathbf u+\mathbf v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two coordinate pictures side by side. On the left, the blue vector u is drawn from the origin and the blue vector v is drawn starting at the head of u; the orange sum vector u plus v runs from the origin to the head of v, and dashed lines show how the components add. On the right, u and v are both drawn from the origin and dashed lines complete a parallelogram whose diagonal is the orange vector u plus v.">
+  <annotation ref="pl-u" text="The vector u, drawn from the origin."/>
+  <annotation ref="pl-v" text="The vector v, drawn with its tail at the head of u, head to tail."/>
+  <annotation ref="pl-sum" text="The sum u plus v, reaching from the origin to the head of v. Its components are the sums of the components of u and v."/>
+  <annotation ref="pr-u" text="The vector u drawn from the origin."/>
+  <annotation ref="pr-v" text="The vector v drawn from the same origin."/>
+  <annotation ref="pr-sum" text="The sum u plus v is the diagonal of the parallelogram spanned by u and v."/>
+  <annotation ref="pr-p1" text="Dashed sides completing the parallelogram."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-vec-add">
+<title>Adding Two Vectors</title>
+<statement>
+<p>
+Add the following two vectors geometrically and algebraically.
+<md>
+\mathbf u = \langle 1,1 \rangle \quad \text{and} \quad
+\mathbf v = \langle -2,1 \rangle
+</md>
+</p>
+</statement>
+
+<solution>
+<p>
+Algebraically, by <xref ref="eq-vec-addition"/> we have
+<md>
+\mathbf u + \mathbf v = \langle 1,1 \rangle + \langle -2,1 \rangle
+= \langle -1, 2 \rangle.
+</md>
+For the geometrical part we use the parallelogram law, as shown in
+<xref ref="fig-vec-add-example"/>.
+</p>
+
+<figure xml:id="fig-vec-add-example">
+<caption>
+Adding <m>\mathbf u = \langle 1,1\rangle</m> and
+<m>\mathbf v = \langle -2,1\rangle</m> with the parallelogram law. The
+diagonal of the parallelogram is
+<m>\mathbf u + \mathbf v = \langle -1,2 \rangle</m>.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-add-example">
+<diagram dimensions="(430,300)" margins="12">
+<coordinates bbox="(-3.5,-0.7,2.1,2.9)">
+<grid-axes at="ae-axes" xlabel="x" ylabel="y"/>
+<vector at="ae-u" v="(1,1)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<vector at="ae-v" v="(-2,1)" tail="(0,0)" stroke="#8B1A4A" thickness="3"/>
+<vector at="ae-sum" v="(-1,2)" tail="(0,0)" stroke="black" thickness="3"/>
+<line at="ae-d1" endpoints="((1,1),(-1,2))" stroke="#8B1A4A"
+      dash="5 4" thickness="1.5"/>
+<line at="ae-d2" endpoints="((-2,1),(-1,2))" stroke="#0072B2"
+      dash="5 4" thickness="1.5"/>
+<label at="ae-u-lab" anchor="(1.05,0.86)" alignment="e" color="#0072B2">
+<m>\mathbf u=\langle 1,1\rangle</m>
+</label>
+<label at="ae-v-lab" anchor="(-2.05,0.92)" alignment="w" color="#8B1A4A">
+<m>\mathbf v=\langle -2,1\rangle</m>
+</label>
+<label at="ae-sum-lab" anchor="(-1.06,2.08)" alignment="nw">
+<m>\mathbf u+\mathbf v=\langle -1,2\rangle</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid. The blue vector u goes from the origin to the point 1 comma 1. The dark red vector v goes from the origin to negative 2 comma 1. Dashed lines parallel to each vector complete a parallelogram, and the black vector from the origin to negative 1 comma 2 is its diagonal, the sum u plus v.">
+  <annotation ref="ae-u" text="The vector u equals 1 comma 1, drawn in blue from the origin."/>
+  <annotation ref="ae-v" text="The vector v equals negative 2 comma 1, drawn in dark red from the origin."/>
+  <annotation ref="ae-sum" text="The sum u plus v equals negative 1 comma 2, the diagonal of the parallelogram, drawn in black."/>
+  <annotation ref="ae-d1" text="A dashed copy of v, drawn from the head of u, showing the head to tail construction."/>
+  <annotation ref="ae-d2" text="A dashed copy of u, drawn from the head of v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</example>
+
+<p>
+Let <m>k \in \R</m> and <m>\mathbf u = \langle u_1,u_2,u_3\rangle</m>.
+Then the length of the vector
+<m>k\mathbf u = \langle ku_1, ku_2, ku_3 \rangle</m> is
+<m>|k|\,\|\mathbf u\|</m>, where <m>|k|</m> is the absolute value of
+<m>k</m> and <m>\|\mathbf u\|</m> is the length of <m>\mathbf u</m>. It
+is easy to see why this is the case:
+<md>
+<mrow>\|k\mathbf u\| \amp = \sqrt{k^2\left(u_1^2+u_2^2+u_3^2\right)}</mrow>
+<mrow xml:id="eq-vec-scalar-length" number="yes">\amp = |k|\sqrt{u_1^2+u_2^2+u_3^2} = |k|\,\|\mathbf u\|.</mrow>
+</md>
+</p>
+
+<p>
+The vector <m>-\mathbf u</m> has the same length as <m>\mathbf u</m>;
+however, the two vectors point in opposite directions. In general the
+length of <m>k\mathbf u</m> is <m>|k|</m> times the length of
+<m>\mathbf u</m>, and if <m>k \gt 0</m> the two vectors point in the same
+direction, whereas if <m>k \lt 0</m> they point in opposite directions.
+<xref ref="fig-vec-scalar"/> shows several examples.
+</p>
+
+<figure xml:id="fig-vec-scalar">
+<caption>
+Scalar multiples of <m>\mathbf u</m>. Multiplying by <m>1.5</m> or
+<m>2</m> stretches the vector without turning it; multiplying by
+<m>-2</m> stretches it and reverses its direction.
+</caption>
+<image width="80%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-scalar">
+<diagram dimensions="(500,210)" margins="12">
+<coordinates bbox="(-0.5,-1.7,9.5,2.3)">
+<vector at="sc-u" v="(1.0,0.75)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<vector at="sc-15u" v="(1.5,1.125)" tail="(2.3,0)" stroke="#D55E00" thickness="3"/>
+<vector at="sc-2u" v="(2.0,1.5)" tail="(4.7,0)" stroke="#D55E00" thickness="3"/>
+<vector at="sc-m2u" v="(-2.0,-1.5)" tail="(9.2,0.9)" stroke="#D55E00" thickness="3"/>
+<label at="sc-u-lab" anchor="(0.45,0.42)" alignment="nw" color="#0072B2">
+<m>\mathbf u</m>
+</label>
+<label at="sc-15u-lab" anchor="(2.95,0.65)" alignment="nw" color="#D55E00">
+<m>1.5\,\mathbf u</m>
+</label>
+<label at="sc-2u-lab" anchor="(5.6,0.85)" alignment="nw" color="#D55E00">
+<m>2\,\mathbf u</m>
+</label>
+<label at="sc-m2u-lab" anchor="(8.3,0.05)" alignment="se" color="#D55E00">
+<m>-2\,\mathbf u</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four arrows in a row. The first, in blue, is the vector u. The next two, in orange, are one and a half u and two u; they point the same way as u but are longer. The last, also orange, is negative two u; it has the same length as two u but points the opposite way, down and to the left.">
+  <annotation ref="sc-u" text="The original vector u, drawn in blue."/>
+  <annotation ref="sc-15u" text="One and a half times u: same direction, one and a half times as long."/>
+  <annotation ref="sc-2u" text="Two times u: same direction, twice as long."/>
+  <annotation ref="sc-m2u" text="Negative two times u: twice as long as u but pointing in the opposite direction, because the scalar is negative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Subtraction is handled with the same idea:
+<m>\mathbf u - \mathbf v</m> means
+<m>\mathbf u + (-\mathbf v)</m>, so we reverse <m>\mathbf v</m> and then
+add. Geometrically, <m>\mathbf u - \mathbf v</m> is the vector that
+points from the head of <m>\mathbf v</m> to the head of <m>\mathbf u</m>
+when both are drawn from a common initial point.
+</p>
+
+<example xml:id="example-vec-add-subtract">
+<title>Adding and Subtracting Geometrically</title>
+<statement>
+<p>
+Given the two vectors <m>\mathbf u = \langle 1,1 \rangle</m> and
+<m>\mathbf v = \langle -1,2 \rangle</m>, find
+<m>\mathbf u + \mathbf v</m> and <m>\mathbf u - \mathbf v</m>
+geometrically.
+</p>
+</statement>
+
+<solution>
+<p>
+For the sum we complete the parallelogram spanned by <m>\mathbf u</m> and
+<m>\mathbf v</m>. For the difference we first draw
+<m>-\mathbf v = \langle 1,-2 \rangle</m> and then add it to
+<m>\mathbf u</m>, which gives
+<m>\mathbf u - \mathbf v = \langle 2,-1 \rangle</m>. Both constructions
+are shown in <xref ref="fig-vec-add-sub-example"/>.
+</p>
+
+<figure xml:id="fig-vec-add-sub-example">
+<caption>
+The sum <m>\mathbf u + \mathbf v = \langle 0,3 \rangle</m> is the
+diagonal of the parallelogram spanned by <m>\mathbf u</m> and
+<m>\mathbf v</m>. The difference
+<m>\mathbf u - \mathbf v = \langle 2,-1 \rangle</m> is obtained by adding
+<m>-\mathbf v</m> to <m>\mathbf u</m>; equivalently, it points from the
+head of <m>\mathbf v</m> to the head of <m>\mathbf u</m>.
+</caption>
+<image width="76%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-vec-add-sub">
+<diagram dimensions="(420,360)" margins="12">
+<coordinates bbox="(-2.2,-2.6,3.2,3.5)">
+<grid-axes at="as-axes" xlabel="x" ylabel="y"/>
+<vector at="as-u" v="(1,1)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<vector at="as-v" v="(-1,2)" tail="(0,0)" stroke="#8B1A4A" thickness="3"/>
+<vector at="as-mv" v="(1,-2)" tail="(0,0)" stroke="#009E73" thickness="3"/>
+<vector at="as-sum" v="(0,3)" tail="(0,0)" stroke="#E69F00" thickness="3"/>
+<vector at="as-diff" v="(2,-1)" tail="(0,0)" stroke="black" thickness="3"/>
+<line at="as-d1" endpoints="((1,1),(0,3))" stroke="#8B1A4A"
+      dash="5 4" thickness="1.5"/>
+<line at="as-d2" endpoints="((-1,2),(0,3))" stroke="#0072B2"
+      dash="5 4" thickness="1.5"/>
+<line at="as-d3" endpoints="((1,1),(2,-1))" stroke="#009E73"
+      dash="5 4" thickness="1.5"/>
+<line at="as-d4" endpoints="((1,-2),(2,-1))" stroke="#0072B2"
+      dash="5 4" thickness="1.5"/>
+<label at="as-u-lab" anchor="(0.72,0.62)" alignment="se" color="#0072B2">
+<m>\mathbf u</m>
+</label>
+<label at="as-v-lab" anchor="(-0.85,1.42)" alignment="w" color="#8B1A4A">
+<m>\mathbf v</m>
+</label>
+<label at="as-mv-lab" anchor="(0.62,-1.55)" alignment="w" color="#009E73">
+<m>-\mathbf v</m>
+</label>
+<label at="as-sum-lab" anchor="(0.08,2.35)" alignment="e" color="#E69F00">
+<m>\mathbf u+\mathbf v</m>
+</label>
+<label at="as-diff-lab" anchor="(1.3,-0.72)" alignment="s">
+<m>\mathbf u-\mathbf v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid with several vectors from the origin. Blue u goes to 1 comma 1, dark red v goes to negative 1 comma 2, and green negative v goes to 1 comma negative 2. The amber vector u plus v goes straight up to 0 comma 3 and is the diagonal of the parallelogram formed by u and v. The black vector u minus v goes to 2 comma negative 1 and is the diagonal of the parallelogram formed by u and negative v.">
+  <annotation ref="as-u" text="The vector u equals 1 comma 1."/>
+  <annotation ref="as-v" text="The vector v equals negative 1 comma 2."/>
+  <annotation ref="as-mv" text="The vector negative v equals 1 comma negative 2, the same length as v but reversed."/>
+  <annotation ref="as-sum" text="The sum u plus v equals 0 comma 3, drawn in amber."/>
+  <annotation ref="as-diff" text="The difference u minus v equals 2 comma negative 1, found by adding negative v to u."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</example>
+
+<p>
+The operations satisfy the familiar algebraic rules collected in
+<xref ref="thm-vec-properties"/>.
+</p>
+
+<theorem xml:id="thm-vec-properties">
+<title>Properties of Vector Operations</title>
+<statement>
+<p>
+Let <m>\mathbf u</m>, <m>\mathbf v</m>, <m>\mathbf w</m> be vectors and
+<m>a</m>, <m>b</m> be scalars. Then
+<md>
+<mrow>1.\;\; \mathbf u + \mathbf v \amp= \mathbf v + \mathbf u
+       \amp\qquad 2.\;\; (\mathbf u + \mathbf v) + \mathbf w
+       \amp= \mathbf u + (\mathbf v + \mathbf w)</mrow>
+<mrow>3.\;\; \mathbf u + \mathbf 0 \amp= \mathbf u
+       \amp\qquad 4.\;\; \mathbf u + (-\mathbf u) \amp= \mathbf 0</mrow>
+<mrow>5.\;\; 0\,\mathbf u \amp= \mathbf 0
+       \amp\qquad 6.\;\; 1\,\mathbf u \amp= \mathbf u</mrow>
+<mrow>7.\;\; a(b\mathbf u) \amp= (ab)\mathbf u
+       \amp\qquad 8.\;\; a(\mathbf u + \mathbf v)
+       \amp= a\mathbf u + a\mathbf v</mrow>
+<mrow>9.\;\; (a+b)\mathbf u \amp= a\mathbf u + b\mathbf u \amp \amp</mrow>
+</md>
+</p>
+</statement>
+</theorem>
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-vec-unit">
+<title>Unit Vectors</title>
+
+<p>
+Vectors of length one are referred to as <term>unit vectors</term>. The
+<term>standard unit vectors</term> are the ones pointing in the positive
+direction of <m>x</m>, <m>y</m>, and <m>z</m>, and they are denoted by
+<m>\mathbf i</m>, <m>\mathbf j</m>, and <m>\mathbf k</m> respectively, as
+in <xref ref="fig-vec-ijk"/>.
+</p>
+
+<figure xml:id="fig-vec-ijk">
+<caption>
+The standard unit vectors <m>\mathbf i</m>, <m>\mathbf j</m>, and
+<m>\mathbf k</m>, and the decomposition
+<m>\mathbf a = a_1\mathbf i + a_2\mathbf j + a_3\mathbf k</m> of a vector
+into components along the axes.
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional coordinate system showing three short magenta arrows
+of length one along the positive x, y and z axes, labelled i, j and k. A
+longer magenta arrow a runs from the origin to the point with coordinates
+a one, a two, a three, and blue arrows along the axes show its three
+components a one i, a two j and a three k.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.95, >=stealth]
+\draw[->, thick] (0,0,0) -- (4.2,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,4.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,3.6) node[above] {$z$};
+% standard unit vectors
+\draw[->, magenta, very thick] (0,0,0) -- (1,0,0) node[below left] {$\mathbf i$};
+\draw[->, magenta, very thick] (0,0,0) -- (0,1,0) node[right] {$\mathbf j$};
+\draw[->, magenta, very thick] (0,0,0) -- (0,0,1) node[left] {$\mathbf k$};
+% a general vector a = (2.4, 3.2, 2.2)
+\coordinate (A) at (2.4,3.2,2.2);
+\draw[->, magenta, very thick] (0,0,0) -- (A);
+\fill[magenta] (A) circle (1.6pt);
+\node[magenta, above right=1pt] at (A) {$(a_1,a_2,a_3)$};
+\node[magenta] at (1.1,1.5,1.35) {$\mathbf a$};
+% components
+\draw[->, cyan!60!black, very thick] (0,0,0) -- (2.4,0,0)
+      node[midway, below left] {$a_1\mathbf i$};
+\draw[->, cyan!60!black, very thick] (2.4,0,0) -- (2.4,3.2,0)
+      node[midway, below] {$a_2\mathbf j$};
+\draw[->, cyan!60!black, very thick] (2.4,3.2,0) -- (A)
+      node[midway, right] {$a_3\mathbf k$};
+\draw[gray, dashed] (0,0,0) -- (2.4,3.2,0);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Any vector <m>\mathbf a = \langle a_1,a_2,a_3\rangle</m> can be written
+as a linear combination of <m>\mathbf i</m>, <m>\mathbf j</m>, and
+<m>\mathbf k</m> as
+<md xml:id="eq-vec-ijk" number="yes">
+\mathbf a = \langle a_1,a_2,a_3\rangle
+= a_1\mathbf i + a_2\mathbf j + a_3\mathbf k.
+</md>
+</p>
+
+<p>
+To find a unit vector pointing in the same direction as a nonzero vector
+<m>\mathbf a</m>, we divide <m>\mathbf a</m> by its own length:
+<md xml:id="eq-vec-unit" number="yes">
+\text{unit vector in the direction of } \mathbf a
+= \frac{\mathbf a}{\|\mathbf a\|}.
+</md>
+By <xref ref="eq-vec-scalar-length"/> this vector has length
+<m>\frac{1}{\|\mathbf a\|}\|\mathbf a\| = 1</m>, as required.
+</p>
+
+<example xml:id="example-vec-unit">
+<title>Standard Unit Vectors and a Unit Direction</title>
+<statement>
+<p>
+Consider the two vectors
+<m>\mathbf v = \langle 1,0,1 \rangle = \mathbf i + \mathbf k</m> and
+<m>\mathbf u = \langle -1,1,0 \rangle = -\mathbf i + \mathbf j</m>.
+<ol marker="A.">
+<li>
+<p>
+Express <m>\mathbf u + \mathbf v</m> in terms of the standard unit
+vectors.
+</p>
+</li>
+<li>
+<p>
+Find the unit vector in the direction of <m>\mathbf u + \mathbf v</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>A.</alert> We have <m>\mathbf v = \langle 1,0,1 \rangle</m> and
+<m>\mathbf u = \langle -1,1,0 \rangle</m>, and hence
+<md>
+<mrow>\mathbf u + \mathbf v \amp= \langle 1,0,1 \rangle
+      + \langle -1,1,0 \rangle = \langle 0,1,1 \rangle</mrow>
+<mrow>\amp= (-\mathbf i + \mathbf j) + (\mathbf i + \mathbf k)
+      = \mathbf j + \mathbf k.</mrow>
+</md>
+</p>
+<p>
+<alert>B.</alert> The length of <m>\mathbf u + \mathbf v</m> is
+<m>\|\mathbf u + \mathbf v\| = \sqrt{0 + 1 + 1} = \sqrt 2</m>, and hence
+by <xref ref="eq-vec-unit"/> we find the unit vector by dividing
+<m>\mathbf u + \mathbf v</m> by its length:
+<md>
+\text{unit vector in the } \mathbf u + \mathbf v \text{ direction}
+= \frac{\mathbf u + \mathbf v}{\|\mathbf u + \mathbf v\|}
+= \frac{1}{\sqrt 2}(\mathbf j + \mathbf k)
+= \left\langle 0,\; \frac{1}{\sqrt 2},\; \frac{1}{\sqrt 2}
+\right\rangle.
+</md>
+</p>
+</solution>
+</example>
+
+</section>
+
+</chapter>
