@@ -110,7 +110,26 @@
       "Bash(gh run *)",
       "Bash(perl -0pi -e 's/ arrows=\"1\"\\\\n\\\\s*labels=\"no\"\\\\/>/ arrows=\"1\"\\\\/>/g' source/ch-12-2.ptx source/ch-14-2.ptx)",
       "Bash(pip list *)",
-      "Bash(timeout 300 pip install -r requirements.txt --break-system-packages)"
+      "Bash(timeout 300 pip install -r requirements.txt --break-system-packages)",
+      "Bash(git config *)",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=3\")",
+      "Bash(curl -s -o /claude-0/-workspaces-M13-Mehdi/a3a8a44e-8037-4339-8233-812d4344082b/scratchpad/runs.json -w \"http=%{http_code}\\\\n\" \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=3\")",
+      "Bash(mkdir -p /claude-0/-workspaces-M13-Mehdi/a3a8a44e-8037-4339-8233-812d4344082b/scratchpad)",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=3\" -o /claude-0/-workspaces-M13-Mehdi/a3a8a44e-8037-4339-8233-812d4344082b/scratchpad/runs.json -w \"http=%{http_code} size=%{size_download}\\\\n\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/workflows\" -o wf.json -w \"wf=%{http_code}\\\\n\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/branches/gh-pages\" -o ghp.json -w \"ghp=%{http_code}\\\\n\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/pages\" -o pages.json -w \"pages=%{http_code}\\\\n\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=5\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/branches/gh-pages\")",
+      "Bash(curl -s \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/commits/gh-pages\")",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/\" -o live.html -w \"http=%{http_code} size=%{size_download}\\\\n\")",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm.html -w \"http=%{http_code}\\\\n\")",
+      "Bash(timeout 400 apt-get update -qq)",
+      "Bash(gh --version)",
+      "Bash(env)",
+      "Bash(sed 's/=.\\\\{6,\\\\}/=<redacted>/')",
+      "Bash(gh auth *)",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm2.html -w \"http=%{http_code}\\\\n\")"
     ]
   }
 }
