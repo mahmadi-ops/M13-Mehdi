@@ -616,89 +616,204 @@ For comparison, the exact change is
 <mrow>\amp= \left(3 + 0.2\sqrt 2 + 0.01\right) - 3
 = 0.2\sqrt 2 + 0.01,</mrow>
 </md>
-so the estimate <m>df</m> is off by only <m>0.01</m> units.
+so the estimate <m>df</m> is off by only <m>0.01</m> units. The right
+panel of <xref ref="fig-tp-example-change"/> zooms in on <m>P_0</m> and
+shows this gap between the tangent line and the surface.
 </p>
 </paragraphs>
 
 <figure xml:id="fig-tp-example-change">
 <caption>
-The graph of <m>z = 1 + x^2 + y^2</m> and the vertical plane
-<m>x - y = 0</m> that contains the direction <m>\mathbf u</m>. Moving
-from <m>(1,1,0)</m> by <m>ds = 0.1</m> along <m>\mathbf u</m> moves the
-input point (blue), and the value of <m>f</m> climbs along the black
-intersection curve from <m>f(1,1) = 3</m> (green) to the orange point.
+<term>Left:</term> the graph of <m>z = 1 + x^2 + y^2</m> and the vertical
+plane <m>x - y = 0</m> that contains the direction <m>\mathbf u</m>.
+Moving from <m>P_0(1,1,0)</m> by <m>ds = 0.1</m> along <m>\mathbf u</m>
+moves the input point (light blue), and the value of <m>f</m> climbs
+along the black intersection curve from <m>f(1,1) = 3</m> (green) to the
+orange point. <term>Right:</term> the same curve near <m>P_0</m>, plotted
+against the distance <m>s</m> travelled along <m>\mathbf u</m> and zoomed
+in far enough to separate the tangent line from the surface. Over
+<m>ds = 0.1</m> the tangent line rises by <m>df \approx 0.283</m> while
+the curve itself rises by <m>\Delta f \approx 0.293</m>.
 </caption>
-<image width="98%">
+<sidebyside widths="50% 46%" margins="0% 4%" valign="middle">
+<image xml:id="image-tp-change-3d">
 <description>
 <p>
 An upward-opening gray paraboloid, the graph of z equals 1 plus x squared
 plus y squared, cut by a green vertical plane through the line y equals
-x. The plane meets the surface along a black parabola. On the base plane,
+x. The plane meets the surface along a black parabola, and the branch of
+that parabola through the point 1, 1 faces the viewer. On the base plane,
 a black arrow shows the unit vector u leaving the point 1, 1, 0. Four
 points are marked: the input point 1, 1, 0 in dark red, the moved input
-point in light blue, the output point 1, 1, 3 in green on the curve, and
-the moved output point in orange on the curve. A legend on the right
-lists the surface, the plane, and the four points.
+point in light blue just beyond it, the output point 1, 1, 3 in green on
+the curve, and the moved output point in orange on the curve; a dashed
+gray segment joins each input point to its output point. A legend below
+the picture names the surface, the plane, the curve, the vector u, and
+the four points.
 </p>
 </description>
 <latex-image>
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\large]
 \begin{axis}[
-  width=10.5cm, height=10.5cm,
-  view={-65}{20},
-  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=6.4,
+  width=11cm, height=10.5cm,
+  view={115}{26},
+  xmin=-2.4, xmax=2.7, ymin=-2.4, ymax=2.7, zmin=0, zmax=6.4,
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   xtick={-2,0,2}, ytick={-2,0,2}, ztick={1,2,3,4,5,6},
   clip=false,
+  legend style={
+    at={(0.5,-0.10)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=8pt,
+  },
 ]
 % the paraboloid z = 1 + x^2 + y^2 (gray, drawn over a disk)
 \addplot3[surf, shader=flat, fill=gray!40, draw=gray!55,
           fill opacity=0.30, draw opacity=0.35,
           domain=0:2.1, y domain=0:360, samples=18, samples y=37,
-          z buffer=sort]
+          z buffer=sort, forget plot]
   ({x*cos(y)},{x*sin(y)},{1+x^2});
 % the vertical plane x - y = 0 (green)
 \addplot3[surf, shader=flat, samples=2, domain=-1.7:1.7, y domain=0:6.2,
           fill=green!50, fill opacity=0.30, draw=green!40!black,
-          draw opacity=0.5]
+          draw opacity=0.5, forget plot]
   ({x},{x},{y});
-% the intersection curve z = 1 + 2t^2 over the line y = x (black)
-\addplot3[very thick, black, domain=-1.6:1.6, samples=41]
+% the intersection curve z = 1 + 2t^2 over the line y = x (black); samples
+% y=0 keeps this a single curve -- without it pgfplots closes the parabola
+% with a straight chord across the top
+\addplot3[very thick, black, domain=-1.6:1.6, samples=41, samples y=0,
+          forget plot]
   ({x},{x},{1+2*x^2});
 % the unit vector u at (1,1,0)
 \draw[-stealth, black, very thick]
-  (axis cs:1,1,0) -- (axis cs:1.5,1.5,0);
-\node[black, anchor=north] at (axis cs:1.2,1.2,-0.15) {$\mathbf u$};
+  (axis cs:1,1,0) -- (axis cs:1.45,1.45,0);
+\node[black, anchor=south west] at (axis cs:1.25,1.25,0.05) {$\mathbf u$};
+% dashed connectors from each input point up to its output value
+\draw[gray!55, dashed] (axis cs:1,1,0) -- (axis cs:1,1,3);
+\draw[gray!55, dashed]
+  (axis cs:1.0707,1.0707,0) -- (axis cs:1.0707,1.0707,3.2929);
 % the points
-\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black,
+          forget plot]
   coordinates {(1,1,0)};
-\addplot3[only marks, mark=*, mark size=1.7, color=green!55!black]
-  coordinates {(1,1,3)};
-\addplot3[only marks, mark=*, mark size=1.7, color=cyan!70!black]
+\addplot3[only marks, mark=*, mark size=1.7, color=cyan!70!black,
+          forget plot]
   coordinates {(1.0707,1.0707,0)};
-\addplot3[only marks, mark=*, mark size=1.7, color=orange]
+\addplot3[only marks, mark=*, mark size=1.7, color=green!55!black,
+          forget plot]
+  coordinates {(1,1,3)};
+\addplot3[only marks, mark=*, mark size=1.7, color=orange, forget plot]
   coordinates {(1.0707,1.0707,3.2929)};
-% side legend
-\node[black, anchor=west] at (axis description cs:1.04,0.95)
-  {$\mathbf u = \frac{1}{\sqrt 2}\,\mathbf i + \frac{1}{\sqrt 2}\,\mathbf j$};
-\node[gray!30!black, anchor=west, align=left]
-  at (axis description cs:1.04,0.85)
-  {Surface:\\ $z = 1 + x^2 + y^2$};
-\node[green!40!black, anchor=west] at (axis description cs:1.04,0.74)
-  {Plane: $x - y = 0$};
-\node[purple!70!black, anchor=west] at (axis description cs:1.04,0.66)
-  {Point: $(1,1,0)$};
-\node[green!55!black, anchor=west] at (axis description cs:1.04,0.58)
-  {Point: $(1,1,3)$};
-\node[cyan!70!black, anchor=west] at (axis description cs:1.04,0.46)
-  {Point: $\left(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2},\, 0\right)$};
-\node[orange, anchor=west, align=left] at (axis description cs:1.04,0.30)
-  {Point: $\Bigl(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2},$\\
-   $\qquad f\bigl(1+\frac{0.1}{\sqrt 2},\, 1+\frac{0.1}{\sqrt 2}\bigr)\Bigr)$};
+% legend
+\addlegendimage{area legend, fill=gray!40, fill opacity=0.30, draw=gray!55}
+\addlegendentry{$z=1+x^2+y^2$}
+\addlegendimage{area legend, fill=green!50, fill opacity=0.30,
+                draw=green!40!black}
+\addlegendentry{plane $x-y=0$}
+\addlegendimage{very thick, black}
+\addlegendentry{curve cut by the plane}
+\addlegendimage{-stealth, black, very thick}
+\addlegendentry{$\mathbf u=\frac{1}{\sqrt2}\mathbf i+\frac{1}{\sqrt2}\mathbf j$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=purple!70!black}
+\addlegendentry{$P_0=(1,1,0)$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=cyan!70!black}
+\addlegendentry{$P=P_0+\mathbf u\,ds$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=green!55!black}
+\addlegendentry{$f(P_0)=3$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=orange}
+\addlegendentry{$f(P)\approx3.29$}
 \end{axis}
 \end{tikzpicture}
 </latex-image>
 </image>
+<image xml:id="image-tp-change-zoom">
+<description>
+<p>
+A two dimensional graph zoomed into the neighborhood of P 0. The
+horizontal axis is the distance s travelled from P 0 in the direction of
+u, from 0 to about 0.16; the vertical axis is z, from just below 3 to
+about 3.33. A black curve is the value of f along u, and a blue dashed
+line is its tangent line at s equals 0; the two are indistinguishable
+near s equals 0 and pull apart as s grows. At s equals ds equals 0.1 the
+tangent line reaches the blue point 3.283 and the curve reaches the
+orange point 3.293. A blue double arrow marks the rise d f of 0.283 and
+an orange double arrow marks the true rise delta f of 0.293, and a
+callout labels the gap between them as 0.01. A legend below the picture
+names the curve, the tangent line, and the three marked values.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\large]
+\begin{axis}[
+  width=12.5cm, height=13cm,
+  xmin=-0.018, xmax=0.192, ymin=2.982, ymax=3.328,
+  xlabel={$s$: distance from $P_0$ in the direction of $\mathbf u$},
+  ylabel={$z$},
+  xtick={0,0.05,0.1,0.15},
+  xticklabels={$0$,$0.05$,$ds=0.1$,$0.15$},
+  ytick={3,3.05,3.1,3.15,3.2,3.25,3.3},
+  yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
+  axis lines=left,
+  clip=false,
+  legend style={
+    at={(0.5,-0.12)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=1,
+    row sep=1pt,
+  },
+]
+% guide lines
+\draw[gray!60, dashed] (axis cs:0,3) -- (axis cs:0.155,3);
+\draw[gray!60, dashed] (axis cs:0.1,2.982) -- (axis cs:0.1,3.29284);
+\draw[gray!60, dashed] (axis cs:0,3.28284) -- (axis cs:0.122,3.28284);
+\draw[gray!60, dashed] (axis cs:0,3.29284) -- (axis cs:0.155,3.29284);
+% f along u: z = 3 + 2 sqrt2 s + s^2
+\addplot[very thick, black, domain=-0.018:0.16, samples=61, forget plot]
+  {3 + 2*sqrt(2)*x + x^2};
+% the tangent line at s = 0
+\addplot[very thick, blue!70!black, dashed, domain=-0.018:0.16, samples=2,
+         forget plot]
+  {3 + 2*sqrt(2)*x};
+% df and Delta f
+\draw[{Stealth}-{Stealth}, blue!70!black, thick]
+  (axis cs:0.122,3) -- (axis cs:0.122,3.28284);
+\node[blue!70!black, anchor=east, font=\normalsize] at (axis cs:0.1185,3.09)
+  {$df=0.283$};
+\draw[{Stealth}-{Stealth}, orange!80!black, thick]
+  (axis cs:0.152,3) -- (axis cs:0.152,3.29284);
+\node[orange!80!black, anchor=west, font=\normalsize] at (axis cs:0.1555,3.09)
+  {$\Delta f=0.293$};
+% the error callout
+\node[purple!70!black, anchor=west, font=\normalsize, align=left]
+  at (axis cs:0.004,3.313) {$\Delta f-df=0.01$};
+\draw[purple!70!black, thin, -stealth]
+  (axis cs:0.056,3.310) -- (axis cs:0.0955,3.2895);
+% the points
+\addplot[only marks, mark=*, mark size=1.8, color=green!55!black,
+         forget plot]
+  coordinates {(0,3)};
+\addplot[only marks, mark=*, mark size=1.8, color=blue!70!black,
+         forget plot]
+  coordinates {(0.1,3.28284)};
+\addplot[only marks, mark=*, mark size=1.8, color=orange, forget plot]
+  coordinates {(0.1,3.29284)};
+% legend
+\addlegendimage{very thick, black}
+\addlegendentry{$f$ along $\mathbf u$: $3+2\sqrt2\,s+s^2$}
+\addlegendimage{very thick, blue!70!black, dashed}
+\addlegendentry{tangent line: $3+2\sqrt2\,s$}
+\addlegendimage{only marks, mark=*, mark size=1.8, color=green!55!black}
+\addlegendentry{$f(P_0)=3$}
+\addlegendimage{only marks, mark=*, mark size=1.8, color=blue!70!black}
+\addlegendentry{estimate $3+df\approx3.283$}
+\addlegendimage{only marks, mark=*, mark size=1.8, color=orange}
+\addlegendentry{exact $f(P)\approx3.293$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</sidebyside>
 </figure>
 
 </section>
