@@ -21,7 +21,7 @@
   </docinfo>
 
   <book xml:id="shorttitlelowercase">
-    <title>Complementary Modules For MATH 13</title>
+    <title>MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
     <xi:include href="Parametrization.ptx" />
