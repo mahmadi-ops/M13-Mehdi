@@ -131,7 +131,11 @@
       "Bash(gh auth *)",
       "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm2.html -w \"http=%{http_code}\\\\n\")",
       "Bash(bash -n .devcontainer/installTools.sh)",
-      "Bash(chmod +x .devcontainer/installTools.sh)"
+      "Bash(chmod +x .devcontainer/installTools.sh)",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm3.html -w \"http=%{http_code}\\\\n\")",
+      "Bash(git reset *)",
+      "Bash(pip install *)",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/frontmatter.html\" -o fm4.html -w \"http=%{http_code}\\\\n\")"
     ]
   }
 }
