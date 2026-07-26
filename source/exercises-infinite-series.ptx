@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review problems on convergence and sums of infinite series
+-->
+<worksheet xml:id="worksheet-exercises-infinite-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-infinite-series" text="title"/></title>
+
+<introduction>
+<p>
+These problems ask whether a series converges and, when it does, what it sums to. If you would like to review this topic before attempting them, see <xref ref="chapter-infinite-series" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rev-ser-4">
+<statement>
+<p>
+What can we conclude by applying the <m>n</m>th term test in the
+following series?
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{3n}{\sqrt{6n^2 + 4n + 5}}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{(5n+3)^{2n}}{(7n^2+2)^{n}}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{2\ln(n)}{3n}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<md>
+\lim_{n\to\infty} \frac{3n}{\sqrt{6n^2+4n+5}}
+= \lim_{n\to\infty} \frac{3n}{\sqrt6\, n}
+= \sqrt{\frac32} \ne 0
+\;\Rightarrow\; \text{the series diverges.}
+</md>
+</p>
+</li>
+<li>
+<p>
+<md>
+<mrow>\lim_{n\to\infty} \frac{(5n+3)^{2n}}{(7n^2+2)^{n}}
+\amp = \lim_{n\to\infty} \left(\frac{(5n+3)^2}{7n^2+2}\right)^{n}
+= \lim_{n\to\infty} \left(\frac{25n^2 + 30n + 9}{7n^2+2}\right)^{n}</mrow>
+<mrow>\amp = \lim_{n\to\infty} \left(\frac{25}{7}\right)^{n} = \infty
+\;\Rightarrow\; \text{the series diverges.}</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+<md>
+\lim_{n\to\infty} \frac{2\ln(n)}{3n}
+\;\overset{\text{H}}{=}\;
+\frac23 \lim_{n\to\infty} \frac{1/n}{1} = 0
+\;\Rightarrow\; \text{the } n\text{th Term Test is inconclusive.}
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-5">
+<statement>
+<p>
+Evaluate the following sums or show that they diverge.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} e^{-2n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{10} e^{-2n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} e^{2n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{6}{(2n-1)(2n+1)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{2n+1}{n^2(n+1)^2}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \ln\!\left(\frac{n}{2n+1}\right)</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \left(1 + \frac4n\right)^{n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=2}^{\infty} \frac{2}{3^n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=3}^{\infty} \frac{2^n}{3^n}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We use partial fractions:
+<md>
+\frac{1}{n(n+1)(n+2)}
+= \frac{A}{n} + \frac{B}{n+1} + \frac{C}{n+2}
+= \frac{A(n+1)(n+2) + Bn(n+2) + Cn(n+1)}{n(n+1)(n+2)}.
+</md>
+Setting <m>n = 0</m> gives <m>2A = 1</m>, so <m>A = \frac12</m>;
+setting <m>n = -1</m> gives <m>-B = 1</m>, so <m>B = -1</m>; and
+setting <m>n = -2</m> gives <m>2C = 1</m>, so <m>C = \frac12</m>.
+Hence
+<md>
+<mrow>\sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}
+\amp = \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
++ \frac{1}{n+2}\right)</mrow>
+<mrow>\amp = \frac12 \sum_{n=1}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=1}^{\infty}
+\left(\frac{1}{n+1} - \frac{1}{n+2}\right)</mrow>
+<mrow>\amp = \frac12 \sum_{n=1}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)</mrow>
+<mrow>\amp = \frac12\left(1 - \frac12\right)
++ \underbrace{\frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)}_{\text{zero}}
+= \frac14.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+This is a geometric series with <m>a = 1</m> and
+<m>r = \frac{1}{e^2}</m>:
+<md>
+\sum_{n=0}^{\infty} e^{-2n}
+= \sum_{n=0}^{\infty} \left(\frac{1}{e^2}\right)^{n}
+= \sum_{n=1}^{\infty} \left(\frac{1}{e^2}\right)^{n-1}
+= \frac{1}{1 - \frac{1}{e^2}}
+= \frac{e^2}{e^2 - 1}.
+</md>
+</p>
+</li>
+<li>
+<p>
+This is a finite geometric sum. Using
+<m>\displaystyle\sum_{n=1}^{N} ar^{n-1} = a\,\frac{1-r^{N}}{1-r}</m>,
+which was proved when we first studied geometric sums,
+<md>
+\sum_{n=0}^{10} e^{-2n}
+= \sum_{n=1}^{11} \left(\frac{1}{e^2}\right)^{n-1}
+= \frac{1 - \left(e^{-2}\right)^{11}}{1 - e^{-2}}
+= \frac{1 - e^{-22}}{1 - e^{-2}}.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} a_n = \lim\limits_{n\to\infty} e^{2n}
+= \infty</m>, so by the <m>n</m>th Term Test the series diverges.
+</p>
+</li>
+<li>
+<p>
+Partial fractions give
+<md>
+\frac{6}{(2n-1)(2n+1)} = \frac{A}{2n-1} + \frac{B}{2n+1}
+= \frac{A(2n+1) + B(2n-1)}{(2n-1)(2n+1)},
+</md>
+and setting <m>n = \frac12</m> gives <m>2A = 6</m>, <m>A = 3</m>,
+while <m>n = -\frac12</m> gives <m>-2B = 6</m>, <m>B = -3</m>. The sum
+telescopes:
+<md>
+<mrow>s_k \amp = \left(\frac11 - \frac13\right)
++ \left(\frac13 - \frac15\right)
++ \left(\frac15 - \frac17\right)
++ \cdots
++ \left(\frac{1}{2k-1} - \frac{1}{2k+1}\right)
+= 1 - \frac{1}{2k+1},</mrow>
+<mrow>\amp \phantom{=} \text{so} \quad
+3\sum_{n=1}^{\infty} \left(\frac{1}{2n-1} - \frac{1}{2n+1}\right)
+= 3\lim_{k\to\infty} s_k
+= 3\lim_{k\to\infty}\left(1 - \frac{1}{2k+1}\right) = 3.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+Partial fractions (or direct observation) give
+<md>
+\frac{2n+1}{n^2(n+1)^2} = \frac{1}{n^2} - \frac{1}{(n+1)^2},
+</md>
+so the sum telescopes:
+<md>
+<mrow>s_k \amp = \sum_{n=1}^{k}
+\left(\frac{1}{n^2} - \frac{1}{(n+1)^2}\right)
+= \left(1 - \frac14\right) + \left(\frac14 - \frac19\right)
++ \left(\frac19 - \frac{1}{16}\right) + \cdots
++ \left(\frac{1}{k^2} - \frac{1}{(k+1)^2}\right)</mrow>
+<mrow>\amp = 1 - \frac{1}{(k+1)^2}
+\quad\Rightarrow\quad
+\sum_{n=1}^{\infty} \frac{2n+1}{n^2(n+1)^2}
+= \lim_{k\to\infty} \left(1 - \frac{1}{(k+1)^2}\right) = 1.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} \ln\!\left(\dfrac{n}{2n+1}\right)
+= \ln\!\left(\dfrac12\right) \ne 0</m>, so by the <m>n</m>th Term Test
+the series diverges.
+</p>
+</li>
+<li>
+<p>
+Let <m>L = \lim\limits_{n\to\infty} \left(1 + \frac4n\right)^{n}</m>.
+Then
+<md>
+\ln L = \lim_{n\to\infty} n \ln\!\left(1 + \frac4n\right)
+= \lim_{n\to\infty}
+\frac{\ln\!\left(1 + \frac4n\right)}{\frac1n}
+\;\overset{\text{H}}{=}\;
+\lim_{n\to\infty}
+\frac{\dfrac{-4/n^2}{1 + 4/n}}{-\dfrac{1}{n^2}}
+= \lim_{n\to\infty} \frac{4}{1 + \frac4n} = 4.
+</md>
+Hence <m>L = e^4 \ne 0</m>, so by the <m>n</m>th Term Test the series
+diverges.
+</p>
+</li>
+<li>
+<p>
+<md>
+\sum_{n=2}^{\infty} \frac{2}{3^n}
+= \sum_{n=2}^{\infty} 2\left(\frac13\right)^{n}
+= \frac{2}{1-\frac13} - \left(2 + \frac23\right)
+= 3 - \frac83 = \frac13,
+</md>
+where the terms for <m>n = 0</m> and <m>n = 1</m> need to be
+subtracted.
+</p>
+</li>
+<li>
+<p>
+<md>
+\sum_{n=3}^{\infty} \frac{2^n}{3^n}
+= \sum_{n=4}^{\infty} \left(\frac23\right)^{n-1}
+= \frac{1}{1-\frac23}
+- \left(\frac49 + \frac23 + 1\right)
+= 3 - \frac{4+6+9}{9}
+= 3 - \frac{19}{9}
+= \frac{27-19}{9} = \frac89,
+</md>
+where the subtracted terms correspond to <m>n = 3</m>, <m>n = 2</m>,
+and <m>n = 1</m> of the shifted series.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-3">
+<statement>
+<p>
+The government has decided to give a $1,000 tax rebate to each
+household in order to stimulate the economy. The government statistics
+say that each household will spend 80% of the rebate in goods and
+services. The businesses and individuals who benefited from that 80%
+will then spend 80% of what they received and so on. The result is
+called the multiplier effect. What is the total effect of the rebate on
+the economy?
+</p>
+</statement>
+<solution>
+<p>
+The rounds of spending form a geometric series with <m>a = 1000</m> and
+<m>r = 0.8</m>:
+<md>
+1000 + 0.8(1000) + (0.8)^2(1000) + \cdots
+= \sum_{n=1}^{\infty} 1000\,(0.8)^{n-1}
+= \frac{1000}{1 - 0.8}
+= \frac{1000}{0.2} = 5000 \text{ dollars}.
+</md>
+The successive rounds of spending are shown in
+<xref ref="fig-rev-multiplier"/>.
+</p>
+
+<figure xml:id="fig-rev-multiplier">
+<caption>
+The multiplier effect. Each round of spending is 80% of the previous
+one, and the total of all the bars is
+<m>\frac{1000}{1-0.8} = 5000</m> dollars.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-multiplier">
+<diagram dimensions="(380,240)" margins="12">
+<coordinates bbox="(-1.4,-160,11.0,1150)">
+<line at="mult-xaxis" endpoints="((-0.5,0),(10.6,0))"
+      stroke="black" thickness="2"/>
+<rectangle at="mult-b1" lower-left="(0.25,0)" dimensions="(0.7,1000)"
+           fill="#0072B2" stroke="none"/>
+<rectangle at="mult-b2" lower-left="(1.25,0)" dimensions="(0.7,800)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b3" lower-left="(2.25,0)" dimensions="(0.7,640)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b4" lower-left="(3.25,0)" dimensions="(0.7,512)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b5" lower-left="(4.25,0)" dimensions="(0.7,409.6)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b6" lower-left="(5.25,0)" dimensions="(0.7,327.68)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b7" lower-left="(6.25,0)" dimensions="(0.7,262.14)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b8" lower-left="(7.25,0)" dimensions="(0.7,209.72)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b9" lower-left="(8.25,0)" dimensions="(0.7,167.77)"
+           fill="#56B4E9" stroke="none"/>
+<rectangle at="mult-b10" lower-left="(9.25,0)" dimensions="(0.7,134.22)"
+           fill="#56B4E9" stroke="none"/>
+<label at="mult-l1" anchor="(0.6,1030)" alignment="n">
+<m>1000</m>
+</label>
+<label at="mult-l2" anchor="(1.6,830)" alignment="n">
+<m>800</m>
+</label>
+<label at="mult-l3" anchor="(2.6,670)" alignment="n">
+<m>640</m>
+</label>
+<label at="mult-l4" anchor="(3.6,542)" alignment="n">
+<m>512</m>
+</label>
+<label at="mult-dots" anchor="(10.35,180)" alignment="n">
+<m>\cdots</m>
+</label>
+<label at="mult-round" anchor="(5.2,-140)" alignment="n">
+<m>\text{round of spending}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A bar chart of the successive rounds of spending. The first bar has height one thousand dollars, and each following bar is eighty percent as tall as the one before: eight hundred, six hundred forty, five hundred twelve, and so on, shrinking geometrically toward zero.">
+  <annotation ref="mult-b1" text="The initial rebate of one thousand dollars."/>
+  <annotation ref="mult-b2" text="The first round of respending, eighty percent of one thousand, which is eight hundred dollars."/>
+  <annotation ref="mult-b3" text="The second round, eighty percent of eight hundred, which is six hundred forty dollars. The rounds continue forever, but their total is five thousand dollars."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+</worksheet>
