@@ -112,18 +112,6 @@ its length is <m>|\mathbf u||\mathbf v||\sin\theta|</m>.
   </sidebyside>
 </figure>
 
-<figure xml:id="fig-right-hand-rule">
-<caption>
-The right-hand rule: the fingers of the right hand curl from
-<m>\mathbf u</m> toward <m>\mathbf v</m>, and the thumb points in the
-direction of the unit vector <m>\mathbf n</m>, along
-<m>\mathbf u \times \mathbf v</m>. Drag to rotate the picture.
-</caption>
-<interactive xml:id="interactive-right-hand-rule"
-             iframe="right-hand-rule.html"
-             width="100%" aspect="16:9"/>
-</figure>
-
 <p>
 From <xref ref="eq-cross-geometric"/>, it follows that the cross product
 of two parallel vectors is zero.
