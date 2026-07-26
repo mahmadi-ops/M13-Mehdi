@@ -111,7 +111,7 @@ point <m>P_0(0.5,0.5)</m> is sent to <m>f(0.5,0.5) = 0.5</m>.
 <label at="fm-P0-lab" anchor="(0.883,1.103)" alignment="nw" color="#8B1A4A">
 <m>P_0(0.5,0.5)</m>
 </label>
-<label at="fm-P-lab" anchor="(-0.76,-1.287)" alignment="sw" color="#0072B2">
+<label at="fm-P-lab" anchor="(-0.674,-1.03)" alignment="n" color="#0072B2">
 <m>P(x,y)</m>
 </label>
 <label at="fm-fP0-lab" anchor="(7.45,-0.05)" alignment="se" color="#8B1A4A">
