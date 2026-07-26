@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  10.2 Infinite Series
+-->
+<chapter xml:id="chapter-infinite-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Infinite Series</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Define an infinite sequence, an infinite series, and the sequence of
+partial sums, and decide convergence of a series from its partial sums.
+</p>
+</li>
+<li>
+<p>
+Recognize a geometric series, and determine whether it converges and
+what it converges to.
+</p>
+</li>
+<li>
+<p>
+Apply the <m>n</m>th Term Test for divergence, and understand what the
+test can and cannot conclude.
+</p>
+</li>
+<li>
+<p>
+Combine convergent series using the sum, difference, and constant
+multiple rules, and evaluate telescoping series from their partial
+sums.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+This chapter is about infinite series and we will focus on studying its
+definitions, providing some examples such as the geometric series.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-series-definitions">
+<title>Definitions</title>
+
+<p>
+<ul>
+<li>
+<p>
+A <term>sequence</term> is a list of numbers,
+<m>a_1, a_2, a_3, \cdots</m>.
+</p>
+</li>
+<li>
+<p>
+An <term>infinite sequence</term> of numbers is a function whose domain
+is the set of positive integers.
+</p>
+</li>
+<li>
+<p>
+As an example, consider the infinite sequence of numbers
+<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m>.
+</p>
+</li>
+<li>
+<p>
+The sum of the numbers in an infinite sequence <m>\{a_n\}</m>, i.e.
+<m>a_1 + a_2 + a_3 + \cdots = \displaystyle\sum_{n=1}^{\infty} a_n</m>,
+is called an <term>infinite series</term>. Here <m>a_n</m> is the
+<m>n</m>th term of the series.
+</p>
+</li>
+<li>
+<p>
+Infinite sequences can have finite sums. Consider the sum of the
+previous sequence, i.e.
+<m>\dfrac12 + \dfrac14 + \dfrac18 + \dfrac{1}{16} + \cdots = 1</m>.
+</p>
+</li>
+<li>
+<p>
+It is most convenient to evaluate the result of this sum geometrically.
+The above sum corresponds to the area of a square of side one. See
+<xref ref="fig-series-square"/>.
+</p>
+</li>
+</ul>
+</p>
+
+<figure xml:id="fig-series-square">
+<caption>
+The sum <m>\frac12 + \frac14 + \frac18 + \frac{1}{16} + \cdots</m>
+fills up a square of side one, so the sum is <m>1</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-series-square">
+<diagram dimensions="(300,300)" margins="12">
+<coordinates bbox="(-0.06,-0.06,1.06,1.06)">
+<rectangle at="sq-half" lower-left="(0,0)" dimensions="(0.5,1)"
+           fill="#BDE3EC" stroke="black" thickness="1.5"/>
+<rectangle at="sq-quarter" lower-left="(0.5,0)" dimensions="(0.5,0.5)"
+           fill="#BDE3EC" stroke="black" thickness="1.5"/>
+<rectangle at="sq-eighth" lower-left="(0.5,0.5)" dimensions="(0.25,0.5)"
+           fill="#BDE3EC" stroke="black" thickness="1.5"/>
+<rectangle at="sq-sixteenth" lower-left="(0.75,0.5)" dimensions="(0.25,0.25)"
+           fill="#BDE3EC" stroke="black" thickness="1.5"/>
+<rectangle at="sq-32" lower-left="(0.75,0.75)" dimensions="(0.125,0.25)"
+           fill="#BDE3EC" stroke="black" thickness="1"/>
+<rectangle at="sq-64" lower-left="(0.875,0.75)" dimensions="(0.125,0.125)"
+           fill="#BDE3EC" stroke="black" thickness="1"/>
+<rectangle at="sq-128" lower-left="(0.875,0.875)" dimensions="(0.0625,0.125)"
+           fill="#BDE3EC" stroke="black" thickness="1"/>
+<rectangle at="sq-outline" lower-left="(0,0)" dimensions="(1,1)"
+           fill="none" stroke="black" thickness="2"/>
+<label at="sq-l2" anchor="(0.25,0.5)" alignment="c">
+<m>1/2</m>
+</label>
+<label at="sq-l4" anchor="(0.75,0.25)" alignment="c">
+<m>1/4</m>
+</label>
+<label at="sq-l8" anchor="(0.625,0.75)" alignment="c">
+<m>1/8</m>
+</label>
+<label at="sq-l16" anchor="(0.875,0.625)" alignment="c">
+<m>1/16</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A unit square subdivided into smaller and smaller rectangles. The left half is labelled one half, the lower right quarter is labelled one fourth, above it a rectangle labelled one eighth, then one sixteenth, and the remaining pieces continue shrinking into the top right corner.">
+  <annotation ref="sq-half" text="The left half of the square, with area one half."/>
+  <annotation ref="sq-quarter" text="The lower right quarter, with area one fourth."/>
+  <annotation ref="sq-eighth" text="A rectangle of area one eighth."/>
+  <annotation ref="sq-sixteenth" text="A square of area one sixteenth. The remaining terms fill the rest of the unit square."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-series-partial-sums">
+<title>Partial Sums</title>
+
+<p>
+Consider the infinite sequence
+<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m>. Let us
+denote the sum of the first <m>n</m> terms in this sequence by
+<m>s_n</m>, which are known as <term>partial sums</term>. Can we find a
+pattern in the sequence of partial sums?
+
+<md>
+<mrow>s_1 \amp = \frac12 = 1 - \frac12</mrow>
+<mrow>s_2 \amp = \frac12 + \frac14 = 1 - \frac14</mrow>
+<mrow>s_3 \amp = \frac12 + \frac14 + \frac18 = 1 - \frac18</mrow>
+<mrow>\amp \;\;\vdots</mrow>
+<mrow>s_n \amp = \sum_{k=1}^{n} \left(\frac12\right)^{k} = 1 - \frac{1}{2^{n}}</mrow>
+</md>
+</p>
+
+<p>
+From the above pattern, we can compute the result of the infinite
+series by taking the limit of the partial sum <m>s_n</m> as
+<m>n \to \infty</m>.
+
+<md>
+\frac12 + \frac14 + \frac18 + \frac{1}{16} + \cdots
+= \sum_{k=1}^{\infty} \left(\frac12\right)^{k}
+= \lim_{n\to\infty} s_n
+= \lim_{n\to\infty} 1 - \frac{1}{2^{n}}
+= 1
+</md>
+</p>
+
+<p>
+Note that this is the same answer that we found using our geometric
+analysis (using the square).
+</p>
+
+<p>
+Note that in the above example, the sequence of the partial sums
+converged to <m>1</m>. In general, if the sequence of the partial sums
+converges to a number, we say that the series <term>converges</term>,
+otherwise we say that the series <term>diverges</term>.
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-series-geometric">
+<title>Geometric Series</title>
+
+<p>
+An important example of infinite series is the geometric series. The
+<term>geometric series</term> is of the form
+<md>
+a + ar + ar^2 + \cdots + ar^{n-1} + \cdots
+= \sum_{n=1}^{\infty} ar^{n-1},
+</md>
+where <m>a, r</m> are real numbers and <m>a \ne 0</m>. Note that we can
+re-write the series as <m>\displaystyle\sum_{n=0}^{\infty} ar^{n}</m>.
+</p>
+
+<p>
+Let us compute the partial sum <m>s_n</m> for the geometric series. The
+partial sum is
+
+<md xml:id="eq-series-geo-sn" number="yes">
+s_n = a + ar + ar^2 + \cdots + ar^{n-1}.
+</md>
+</p>
+
+<p>
+If we multiply equation <xref ref="eq-series-geo-sn"/> by <m>r</m>, we
+get a similar expression.
+
+<md xml:id="eq-series-geo-rsn" number="yes">
+r s_n = ar + ar^2 + ar^3 + \cdots + ar^{n}.
+</md>
+</p>
+
+<p>
+Then deducting <xref ref="eq-series-geo-rsn"/> from
+<xref ref="eq-series-geo-sn"/> we get
+
+<md>
+<mrow>s_n - r s_n \amp = a - ar^{n}</mrow>
+<mrow>s_n \amp = a\,\frac{1-r^{n}}{1-r}.</mrow>
+</md>
+</p>
+
+<p>
+Next, to compute the result of the geometric series, we take the limit
+of the partial sum as in the previous example.
+
+<md>
+\lim_{n\to\infty} s_n
+= \lim_{n\to\infty} \frac{a(1-r^{n})}{1-r}
+= \frac{a}{1-r} - \frac{a}{1-r}\lim_{n\to\infty} r^{n}
+</md>
+</p>
+
+<p>
+Note that if <m>|r| \lt 1</m>, we have
+<m>\lim\limits_{n\to\infty} r^{n} = 0</m> and hence
+<m>\lim\limits_{n\to\infty} s_n = \dfrac{a}{1-r}</m>, whereas if
+<m>|r| \gt 1</m>, <m>\lim\limits_{n\to\infty} r^{n}</m> diverges and
+therefore the geometric series diverges. The only case left to consider
+is <m>r = 1</m>, which gives the following partial sum
+
+<md>
+s_n = a + a + a + \cdots + a = na,
+</md>
+</p>
+
+<p>
+limit of which diverges. We can say that if <m>|r| \ge 1</m>, the
+geometric series is divergent.
+</p>
+
+<assemblage xml:id="summary-geometric-series">
+<title>Summary</title>
+<p>
+The geometric series
+<m>a + ar + ar^2 + \cdots + ar^{n-1} + \cdots
+= \displaystyle\sum_{n=1}^{\infty} ar^{n-1}</m>
+converges to <m>\dfrac{a}{1-r}</m> if <m>|r| \lt 1</m>, i.e.
+<md>
+\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r}
+\qquad \text{for} \quad |r| \lt 1,
+</md>
+and diverges if <m>|r| \ge 1</m>.
+</p>
+</assemblage>
+
+<p>
+Next, as an application of the geometric series, we will go through the
+following example, which is from our textbook.
+</p>
+
+<example xml:id="example-series-ball">
+<title>A bouncing ball</title>
+<statement>
+<p>
+You drop a ball from <m>a</m> meters above a flat surface. Each time
+the ball hits the surface after falling a distance <m>h</m>, it
+rebounds a distance <m>rh</m>, where <m>r</m> is positive but less than
+1. Find the total distance the ball travels up and down.
+</p>
+</statement>
+<solution>
+<p>
+As can be seen in <xref ref="fig-series-ball"/>, the total vertical
+distance travelled by the ball can be written as the infinite series
+
+<md>
+a + 2ar + 2ar^2 + \cdots + 2ar^{n-1} + \cdots
+</md>
+</p>
+
+<p>
+which can be re-written as
+
+<md>
+<mrow>-a + 2a \amp + 2ar + 2ar^2 + \cdots + 2ar^{n-1} + \cdots</mrow>
+<mrow>\amp = -a + 2\sum_{n=1}^{\infty} ar^{n-1}
+\;\overset{|r| \lt 1}{=}\; -a + 2\,\frac{a}{1-r}</mrow>
+<mrow>\amp = \frac{-a + ar + 2a}{1-r} = \frac{a(1+r)}{1-r}.</mrow>
+</md>
+</p>
+
+<figure xml:id="fig-series-ball">
+<caption>
+The ball falls a distance <m>a</m>, then rises and falls a distance
+<m>ar</m>, then <m>ar^2</m>, and so on, so the total distance travelled
+is <m>a + 2ar + 2ar^2 + \cdots</m>.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-series-ball">
+<diagram dimensions="(340,280)" margins="12">
+<definition>b0(t) = (0.55 + 0.55*t, 4.0*(1 - t^2))</definition>
+<definition>b1(t) = (1.10 + 0.9*t, 2.4*(4*t*(1 - t)))</definition>
+<definition>b2(t) = (2.00 + 0.7*t, 1.44*(4*t*(1 - t)))</definition>
+<definition>b3(t) = (2.70 + 0.55*t, 0.864*(4*t*(1 - t)))</definition>
+<definition>b4(t) = (3.25 + 0.42*t, 0.5184*(4*t*(1 - t)))</definition>
+<coordinates bbox="(-0.7,-0.5,4.4,4.6)">
+<line at="ball-ground" endpoints="((-0.35,0),(4.2,0))"
+      stroke="black" thickness="2"/>
+<line at="ball-wall" endpoints="((-0.35,0),(-0.35,4.4))"
+      stroke="black" thickness="2"/>
+<line at="ball-lev1" endpoints="((-0.35,2.4),(2.0,2.4))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<line at="ball-lev2" endpoints="((-0.35,1.44),(2.7,1.44))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<line at="ball-lev3" endpoints="((-0.35,0.864),(3.25,0.864))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<parametric-curve at="ball-c0" function="b0" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c1" function="b1" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c2" function="b2" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c3" function="b3" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c4" function="b4" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<point at="ball-start" p="(0.55,4.0)" fill="#56B4E9"/>
+<label at="ball-a" anchor="(-0.45,4.0)" alignment="w">
+<m>a</m>
+</label>
+<label at="ball-ar" anchor="(-0.45,2.4)" alignment="w">
+<m>ar</m>
+</label>
+<label at="ball-ar2" anchor="(-0.45,1.44)" alignment="w">
+<m>ar^2</m>
+</label>
+<label at="ball-ar3" anchor="(-0.45,0.864)" alignment="w">
+<m>ar^3</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A ball dropped from height a follows a sequence of bounces that decay geometrically. Dashed horizontal lines mark the rebound heights a r, a r squared, and a r cubed, each a fixed fraction of the previous height.">
+  <annotation ref="ball-c0" text="The initial drop from height a to the ground."/>
+  <annotation ref="ball-c1" text="The first bounce, rising to height a r and falling back."/>
+  <annotation ref="ball-c2" text="The second bounce, rising to height a r squared."/>
+  <annotation ref="ball-c3" text="The third bounce, rising to height a r cubed. The bounces continue forever, but the total distance is finite."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-series-nth-term">
+<title>The <m>n</m>th Term Test</title>
+
+<theorem xml:id="thm-series-nth-term">
+<statement>
+<p>
+If <m>\displaystyle\sum_{n=1}^{\infty} a_n</m> converges, then
+<m>\lim\limits_{n\to\infty} a_n = 0</m>.
+</p>
+</statement>
+</theorem>
+
+<p>
+<term>Important note:</term> If <m>\lim\limits_{n\to\infty} a_n = 0</m>,
+we <em>cannot</em> conclude that
+<m>\displaystyle\sum_{n=1}^{\infty} a_n</m> converges. See parts D and E
+in the example below.
+</p>
+
+<p>
+The following test is a consequence of the above theorem.
+</p>
+
+<assemblage xml:id="test-nth-term">
+<title>The <m>n</m>th Term Test</title>
+<p>
+If <m>\lim\limits_{n\to\infty} a_n</m> does not exist or
+<m>\lim\limits_{n\to\infty} a_n \ne 0</m>, then
+<m>\displaystyle\sum_{n=1}^{\infty} a_n</m> diverges.
+</p>
+</assemblage>
+
+<example xml:id="example-series-convergence">
+<title>Testing series for convergence</title>
+<statement>
+<p>
+Determine whether the series is convergent or divergent. If it is
+convergent, find its sum.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} n</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} (-1)^n</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{n^3+1}{n^2+n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{1}{n(n+1)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac49 - \dfrac{8}{27} + \dfrac{16}{81} - \dfrac{32}{243} + \cdots</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} a_n = \lim\limits_{n\to\infty} n = \infty</m>,
+so by the <m>n</m>th Term Test,
+<m>\displaystyle\sum_{n=1}^{\infty} n</m> is divergent.
+</p>
+</li>
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} a_n = \lim\limits_{n\to\infty} (-1)^n</m>
+does not exist, so by the <m>n</m>th Term Test,
+<m>\displaystyle\sum_{n=1}^{\infty} (-1)^n</m> is divergent.
+</p>
+</li>
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} a_n
+= \lim\limits_{n\to\infty} \dfrac{n^3+1}{n^2+n}
+= \lim\limits_{n\to\infty} \dfrac{n^3}{n^2}
+= \lim\limits_{n\to\infty} n = \infty</m>,
+so by the <m>n</m>th Term Test,
+<m>\displaystyle\sum_{n=1}^{\infty} \dfrac{n^3+1}{n^2+n}</m> is
+divergent.
+</p>
+</li>
+<li>
+<p>
+Note that in this case
+<m>\lim\limits_{n\to\infty} a_n
+= \lim\limits_{n\to\infty} \dfrac{1}{n(n+1)} = 0</m>, which means
+<em>we cannot use the <m>n</m>th term test</em>. Instead let us write
+the partial sum.
+<md>
+<mrow>s_n \amp = \sum_{k=1}^{n} \frac{1}{k(k+1)}
+= \sum_{k=1}^{n} \frac1k - \frac{1}{k+1}</mrow>
+<mrow>\amp = \left(\frac11 - \frac12\right)
++ \left(\frac12 - \frac13\right)
++ \left(\frac13 - \frac14\right)
++ \cdots
++ \left(\frac{1}{n-1} - \frac1n\right)
++ \left(\frac1n - \frac{1}{n+1}\right)</mrow>
+<mrow>\amp = 1 - \frac{1}{n+1}</mrow>
+</md>
+<md>
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+= \lim_{n\to\infty}\left(1 - \frac{1}{n+1}\right) = 1
+</md>
+</p>
+</li>
+<li>
+<p>
+We begin by writing the infinite series in the sigma notation.
+<md>
+\frac49 - \frac{8}{27} + \frac{16}{81} - \frac{32}{243} + \cdots
+= \sum_{n=1}^{\infty} \frac49\left(-\frac23\right)^{n-1}
+</md>
+Note that <em>the <m>n</m>th Term Test is not conclusive</em> for this
+one, since <m>\lim\limits_{n\to\infty} a_n = 0</m>. However, we know
+that in a geometric series when <m>|r| \lt 1</m>, the series converges
+to <m>\dfrac{a}{1-r}</m>, hence
+<md>
+\frac49 - \frac{8}{27} + \frac{16}{81} - \frac{32}{243} + \cdots
+= \sum_{n=1}^{\infty} \frac49\left(-\frac23\right)^{n-1}
+= \frac{\frac49}{1-\left(-\frac23\right)}
+= \frac{4}{15}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-series-combining">
+<title>Combining Series</title>
+
+<theorem xml:id="thm-series-combining">
+<statement>
+<p>
+If <m>\sum a_n = A</m> and <m>\sum b_n = B</m> are convergent series,
+then
+
+<ol>
+<li>
+<p>
+<em>Sum Rule:</em>
+<m>\sum (a_n + b_n) = \sum a_n + \sum b_n = A + B</m>
+</p>
+</li>
+<li>
+<p>
+<em>Difference Rule:</em>
+<m>\sum (a_n - b_n) = \sum a_n - \sum b_n = A - B</m>
+</p>
+</li>
+<li>
+<p>
+<em>Constant Multiple Rule:</em>
+<m>\sum k a_n = k \sum a_n = kA</m> (Any number <m>k</m>).
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+<example xml:id="example-series-difference">
+<title>Using the difference rule</title>
+<statement>
+<p>
+Evaluate <m>\displaystyle\sum_{n=1}^{\infty}
+\frac{1}{n(n+1)} - \frac{1}{2^n}</m>.
+</p>
+</statement>
+<solution>
+<p>
+Note that in our previous examples, we found that
+
+<md>
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1
+\quad\text{and}\quad
+\sum_{n=1}^{\infty} \frac{1}{2^n} = 1.
+</md>
+</p>
+
+<p>
+Hence, we can simply use the difference rule to conclude that
+
+<md>
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)} - \frac{1}{2^n}
+= \sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+- \sum_{n=1}^{\infty} \frac{1}{2^n}
+= 1 - 1 = 0.
+</md>
+</p>
+</solution>
+</example>
+
+<example xml:id="example-series-telescoping-ln">
+<title>A telescoping series with logarithms</title>
+<statement>
+<p>
+Evaluate <m>\displaystyle\sum_{k=0}^{\infty}
+\ln\!\left(\frac{k+2}{k+1}\right)</m>, if it converges and if it
+diverges, show that it does.
+</p>
+</statement>
+<solution>
+<p>
+We begin by writing the partial sum <m>s_n</m>.
+
+<md>
+<mrow>s_n \amp = \sum_{k=0}^{n} \ln\!\left(\frac{k+2}{k+1}\right)
+= \sum_{k=0}^{n} \ln(k+2) - \ln(k+1)</mrow>
+<mrow>\amp = \left(\ln 2 - \ln 1\right)
++ \left(\ln 3 - \ln 2\right)
++ \left(\ln 4 - \ln 3\right)
++ \left(\ln 5 - \ln 4\right)</mrow>
+<mrow>\amp \quad + \cdots
++ \left(\ln(n+1) - \ln(n)\right)
++ \left(\ln(n+2) - \ln(n+1)\right)
+= -\ln(1) + \ln(n+2)</mrow>
+<mrow>\amp = \ln(n+2)</mrow>
+</md>
+</p>
+
+<p>
+Note that <m>\lim\limits_{n\to\infty} s_n
+= \lim\limits_{n\to\infty} \ln(n+2) = \infty</m>, and hence the series
+diverges.
+</p>
+</solution>
+</example>
+</section>
+
+</chapter>

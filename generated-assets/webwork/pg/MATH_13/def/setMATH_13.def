@@ -6,6 +6,6 @@ screenHeaderFile  = MATH_13/header/MATH_13.pg
 description       = MATH 13
 problemListV2
 problem_start
-source_file = MATH_13/17_4_1-Matching_Quadric_Surfaces.pg
+source_file = MATH_13/22_4_1-Matching_Quadric_Surfaces.pg
 problem_id = 1
 problem_end
