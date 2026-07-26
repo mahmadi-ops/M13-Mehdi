@@ -605,10 +605,14 @@ hemisphere hollowed out of it, is the sphere of radius one.
 % colored; the excluded cavity r < 1 is left blank
 \begin{scope}
   % shell region: outer hemisphere (radius 2) minus inner hemisphere
-  % (radius 1), via the even-odd fill rule
+  % (radius 1), via the even-odd fill rule. Each hemisphere's dome is
+  % combined with its own full rim ellipse, so the flat annular lid at
+  % z = 0 is colored too, not just the curved dome underneath it.
   \fill[cyan!30, opacity=0.9, even odd rule]
     (-2,0) arc (180:360:2cm and 0.55cm) arc (0:-180:2cm)
-    (-1,0) arc (180:360:1cm and 0.28cm) arc (0:-180:1cm);
+    (0,0) ellipse (2cm and 0.55cm)
+    (-1,0) arc (180:360:1cm and 0.28cm) arc (0:-180:1cm)
+    (0,0) ellipse (1cm and 0.28cm);
   \draw[cyan!55!black] (-2,0) arc (180:360:2cm and 0.55cm);
   \draw[cyan!55!black, dashed] (-2,0) arc (180:0:2cm and 0.55cm);
   \draw[cyan!55!black] (-2,0) arc (180:360:2cm);
