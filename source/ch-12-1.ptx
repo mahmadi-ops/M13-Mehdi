@@ -678,8 +678,10 @@ meeting it in a circle.
   \fill[purple!22, opacity=0.85]
     (-1.4,-1) -- (-1.4,1) arc (180:360:1.4cm and 0.4cm)
     -- (1.4,-1) arc (360:180:1.4cm and 0.4cm);
-  % sliver of the inside back wall, visible through the open top rim
-  \fill[purple!22, opacity=0.85] (-1.4,1) arc (180:0:1.4cm and 0.4cm) -- cycle;
+  % inside back wall, visible through the open top rim: fills the top
+  % ellipse's disk exactly, sharing the front arc as its boundary with
+  % the body fill above, so the two meet with no gap or overlap
+  \fill[purple!22, opacity=0.85] (0,1) ellipse (1.4cm and 0.4cm);
   \draw[purple!60!black] (-1.4,-1) -- (-1.4,1);
   \draw[purple!60!black] (1.4,-1) -- (1.4,1);
   % top and bottom rims: outlines only, since x^2+y^2=1 is just the
