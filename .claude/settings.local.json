@@ -151,7 +151,9 @@
       "Bash(grep -oE '\\\\bm[a-z]{2,10}\\\\b' source/ch-12-5.ptx)",
       "Bash(grep -iE 'PTX:ERROR|^.{0,10}error|Success|Finished build')",
       "Bash(git pull *)",
-      "Bash(grep -iE 'PTX:ERROR|^.{0,10}error|Success')"
+      "Bash(grep -iE 'PTX:ERROR|^.{0,10}error|Success')",
+      "Bash(rsvg-convert -w 560 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-planes-intercepts-2.svg -o intercepts-fixed.png)",
+      "Bash(rsvg-convert -w 560 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-planes-intercepts-2.svg -o intercepts-fixed2.png)"
     ]
   }
 }
