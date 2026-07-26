@@ -69,6 +69,68 @@ whose direction is given by the right-hand rule.
 </definition>
 
 <p>
+The magnitude of <m>\mathbf u \times \mathbf v</m> is equal to the area
+of the parallelogram built on the two vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, as shown in <xref ref="fig-parallelogram-area"/>.
+</p>
+
+<figure xml:id="fig-parallelogram-area">
+<caption>
+The parallelogram built on the vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, with base <m>|\mathbf v|</m> and height
+<m>|\mathbf u||\sin(\theta)|</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-area">
+<diagram dimensions="(340,200)" margins="10">
+<definition>u=(2,3)</definition>
+<definition>v=(5,0)</definition>
+<coordinates bbox="(-0.5,-0.6,7.5,3.6)">
+<line at="par-side-top" endpoints="(u, u+v)" stroke="red" thickness="2"/>
+<line at="par-side-right" endpoints="(v, u+v)" stroke="blue" thickness="2"/>
+<line at="par-height" endpoints="(u, (2,0))" stroke="black" dash="4 4"/>
+<vector at="par-vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="par-vec-v" v="v" tail="(0,0)" stroke="red"/>
+<label at="par-u-label" anchor="(1,1.5)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="par-v-label" anchor="(2.3,-0.2)" alignment="s" color="red">
+<m>\mathbf v</m>
+</label>
+<label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
+<m>|\mathbf u|\sin(\theta)</m>
+</label>
+<angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+</coordinates>
+<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
+<annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+<annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>
+<annotation ref="par-side-top" text="The side of the parallelogram parallel to v, starting at the tip of u."/>
+<annotation ref="par-side-right" text="The side of the parallelogram parallel to u, starting at the tip of v."/>
+<annotation ref="par-height" text="The dashed height of the parallelogram, with length equal to the length of u times the sine of theta."/>
+<annotation ref="par-angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<fact xml:id="fact-parallelogram-area">
+<title>Area of the Parallelogram</title>
+<statement>
+<p>
+<md xml:id="eq-parallelogram-area" number="yes">
+\text{Area of the parallelogram}
+= |\mathbf u||\mathbf v||\sin\theta|
+= |\mathbf u \times \mathbf v|.
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
 Note that <m>|\mathbf u||\mathbf v||\sin\theta|</m> is the length of the
 cross product <m>\mathbf u \times \mathbf v</m>. Since
 <m>\sin(\theta)</m> can be negative, we need to include its absolute
@@ -258,68 +320,6 @@ where
 \begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = ad - bc.
 </md>
 </p>
-
-<p>
-The magnitude of <m>\mathbf u \times \mathbf v</m> is equal to the area
-of the parallelogram built on the two vectors <m>\mathbf u</m> and
-<m>\mathbf v</m>, as shown in <xref ref="fig-parallelogram-area"/>.
-</p>
-
-<figure xml:id="fig-parallelogram-area">
-<caption>
-The parallelogram built on the vectors <m>\mathbf u</m> and
-<m>\mathbf v</m>, with base <m>|\mathbf v|</m> and height
-<m>|\mathbf u||\sin(\theta)|</m>.
-</caption>
-<image width="55%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-area">
-<diagram dimensions="(340,200)" margins="10">
-<definition>u=(2,3)</definition>
-<definition>v=(5,0)</definition>
-<coordinates bbox="(-0.5,-0.6,7.5,3.6)">
-<line at="par-side-top" endpoints="(u, u+v)" stroke="red" thickness="2"/>
-<line at="par-side-right" endpoints="(v, u+v)" stroke="blue" thickness="2"/>
-<line at="par-height" endpoints="(u, (2,0))" stroke="black" dash="4 4"/>
-<vector at="par-vec-u" v="u" tail="(0,0)" stroke="blue"/>
-<vector at="par-vec-v" v="v" tail="(0,0)" stroke="red"/>
-<label at="par-u-label" anchor="(1,1.5)" alignment="nw" color="blue">
-<m>\mathbf u</m>
-</label>
-<label at="par-v-label" anchor="(2.3,-0.2)" alignment="s" color="red">
-<m>\mathbf v</m>
-</label>
-<label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
-<m>|\mathbf u|\sin(\theta)</m>
-</label>
-<angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
-<m>\theta</m>
-</angle-marker>
-</coordinates>
-<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
-<annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
-<annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>
-<annotation ref="par-side-top" text="The side of the parallelogram parallel to v, starting at the tip of u."/>
-<annotation ref="par-side-right" text="The side of the parallelogram parallel to u, starting at the tip of v."/>
-<annotation ref="par-height" text="The dashed height of the parallelogram, with length equal to the length of u times the sine of theta."/>
-<annotation ref="par-angle-theta" text="The angle theta between u and v, located at the origin."/>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<fact xml:id="fact-parallelogram-area">
-<title>Area of the Parallelogram</title>
-<statement>
-<p>
-<md xml:id="eq-parallelogram-area" number="yes">
-\text{Area of the parallelogram}
-= |\mathbf u||\mathbf v||\sin\theta|
-= |\mathbf u \times \mathbf v|.
-</md>
-</p>
-</statement>
-</fact>
 
 <example xml:id="example-cross-compute">
 <title>Computing a cross product</title>
