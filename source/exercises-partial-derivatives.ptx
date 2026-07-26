@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review problems on partial derivatives
+-->
+<worksheet xml:id="worksheet-exercises-partial-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-partial-derivatives" text="title"/></title>
+
+<introduction>
+<p>
+These problems compute higher order partial derivatives. If you would like to review this topic before
+attempting them, see <xref ref="chapter-partial-derivatives" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rm2-pd-1">
+<title>Higher order computation</title>
+<statement>
+<p>
+Prove that <m>c(x,t) = \dfrac{1}{\sqrt{Dt}}\,e^{-\frac{x^2}{4Dt}}</m>
+is a solution of the diffusion equation
+<md>
+\frac{\partial c}{\partial t} = D\,\frac{\partial^2 c}{\partial x^2}.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+We compute the needed derivatives:
+<md>
+<mrow>\frac{\partial c}{\partial t}
+\amp = -\frac{1}{2\sqrt{D}\,t^{3/2}}\,e^{-x^2/4Dt}
++ \frac{1}{\sqrt{Dt}}\,\frac{x^2}{4Dt^2}\,e^{-x^2/4Dt}</mrow>
+<mrow>\frac{\partial c}{\partial x}
+\amp = -\frac{x}{2Dt}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
+<mrow>\frac{\partial^2 c}{\partial x^2}
+\amp = -\frac{1}{2Dt\sqrt{Dt}}\,e^{-x^2/4Dt}
++ \frac{x^2}{4D^2t^2}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
+</md>
+</p>
+
+<p>
+We see that the right hand side of the third equation is
+<m>\dfrac{1}{D}</m> times the right hand side of the first, i.e.
+multiplying <m>\dfrac{\partial^2 c}{\partial x^2}</m> by <m>D</m>
+gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
+<m>c</m> satisfies the diffusion equation.
+</p>
+</solution>
+</exercise>
+
+</worksheet>

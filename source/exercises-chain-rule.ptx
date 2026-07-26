@@ -1,50 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Midterm 2 review problems on partial derivatives and the chain rule
+  Review problems on the chain rule
 -->
-<worksheet xml:id="worksheet-exercises-partials-chain" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises on Partial Derivatives and the Chain Rule</title>
+<worksheet xml:id="worksheet-exercises-chain-rule" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-chain-rule" text="title"/></title>
 
 <introduction>
 <p>
-These problems compute higher order partial derivatives and apply the chain rule, so they draw on <xref ref="chapter-partial-derivatives" text="title"/> and <xref ref="chapter-chain-rule" text="title"/>.
+These problems apply the chain rule to functions of several variables. If you would like to review this topic before
+attempting them, see <xref ref="chapter-chain-rule" text="title"/>.
 </p>
 </introduction>
 
-<exercise xml:id="rm2-pd-1">
-<title>Higher order computation</title>
+<exercise xml:id="rev-tp-4">
 <statement>
 <p>
-Prove that <m>c(x,t) = \dfrac{1}{\sqrt{Dt}}\,e^{-\frac{x^2}{4Dt}}</m>
-is a solution of the diffusion equation
+Compute the partial derivatives of <m>f</m> with respect to
+<m>x, y</m> for
 <md>
-\frac{\partial c}{\partial t} = D\,\frac{\partial^2 c}{\partial x^2}.
+f(s,t) = s^2 - t^2, \qquad
+s = \frac{x+y}{2}, \qquad
+t = \frac{x-y}{2},
 </md>
+using both the chain rule and by plugging in <m>s</m> and <m>t</m>.
 </p>
 </statement>
 <solution>
 <p>
-We compute the needed derivatives:
+Using the chain rule:
 <md>
-<mrow>\frac{\partial c}{\partial t}
-\amp = -\frac{1}{2\sqrt{D}\,t^{3/2}}\,e^{-x^2/4Dt}
-+ \frac{1}{\sqrt{Dt}}\,\frac{x^2}{4Dt^2}\,e^{-x^2/4Dt}</mrow>
-<mrow>\frac{\partial c}{\partial x}
-\amp = -\frac{x}{2Dt}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
-<mrow>\frac{\partial^2 c}{\partial x^2}
-\amp = -\frac{1}{2Dt\sqrt{Dt}}\,e^{-x^2/4Dt}
-+ \frac{x^2}{4D^2t^2}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
+<mrow>\frac{\partial f}{\partial x}
+\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial x}
++ \frac{\partial f}{\partial t}\frac{\partial t}{\partial x}</mrow>
+<mrow>\amp = 2s\cdot\frac12 - 2t\cdot\frac12 = s - t = y</mrow>
+<mrow>\frac{\partial f}{\partial y}
+\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial y}
++ \frac{\partial f}{\partial t}\frac{\partial t}{\partial y}</mrow>
+<mrow>\amp = 2s\cdot\frac12 + 2t\cdot\frac12 = s + t = x</mrow>
 </md>
 </p>
 
 <p>
-We see that the right hand side of the third equation is
-<m>\dfrac{1}{D}</m> times the right hand side of the first, i.e.
-multiplying <m>\dfrac{\partial^2 c}{\partial x^2}</m> by <m>D</m>
-gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
-<m>c</m> satisfies the diffusion equation.
+Plugging in, we see
+<md>
+f(s(x,y), t(x,y))
+= \frac14\left((x+y)^2 - (x-y)^2\right) = xy,
+</md>
+and easily obtain the same partial derivatives.
 </p>
 </solution>
+</exercise>
+
+<exercise xml:id="rev-tp-5">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+Consider <m>f(x,y) = \left(\cos x + (1+x)\tan y\right)e^{x^2-1+y}</m>.
+Then <m>\dfrac{d}{dt}f(t^2, t^3) = 0</m> at <m>t = 0</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Writing <m>x(t) = t^2</m> and <m>y(t) = t^3</m>, we
+see that
+<md>
+\frac{dx}{dt} = 2t = 0
+\quad\text{and}\quad
+\frac{dy}{dt} = 3t^2 = 0
+\quad\text{at } t = 0.
+</md>
+Now we see from the chain rule that
+<md>
+\frac{d}{dt}f(x(t), y(t))
+= \frac{\partial f}{\partial x}\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\frac{dy}{dt}
+= 0 \quad\text{at } t = 0.
+</md>
+</p>
+</feedback>
 </exercise>
 
 <exercise xml:id="rm2-cr-1">
