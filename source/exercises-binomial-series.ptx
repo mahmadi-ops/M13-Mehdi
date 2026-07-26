@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Final exam problems on the binomial series
+-->
+<worksheet xml:id="worksheet-exercises-binomial-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-binomial-series" text="title"/></title>
+
+<introduction>
+<p>
+A final exam problem that represents a function as a series. If you would like to review this topic first, see <xref ref="chapter-binomial-series" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rf-1">
+<statement>
+<p>
+Use a <term>binomial series</term> to represent the function
+<m>f(x) = \dfrac{2x}{1-x}</m> as a series. Write your final answer in
+sigma notation.
+</p>
+</statement>
+<solution>
+<p>
+We start from the binomial series with <m>m = -1</m>:
+<md>
+\frac{1}{1-x} = (1-x)^{-1}
+= \sum_{k=0}^{\infty} \binom{-1}{k} (-x)^k.
+</md>
+The binomial coefficients are
+<md>
+<mrow>\binom{-1}{0} \amp = 1 = (-1)^0, \qquad
+\binom{-1}{1} = -1 = (-1)^1,</mrow>
+<mrow>\binom{-1}{2} \amp = \frac{(-1)(-2)}{2!} = (-1)^2, \qquad
+\binom{-1}{3} = \frac{(-1)(-2)(-3)}{3!} = (-1)^3,</mrow>
+</md>
+and in general <m>\dbinom{-1}{k} = (-1)^k</m>. Hence
+<md>
+\frac{1}{1-x}
+= \sum_{k=0}^{\infty} (-1)^k (-x)^k
+= \sum_{k=0}^{\infty} x^k.
+</md>
+</p>
+
+<p>
+Therefore,
+<md>
+f(x) = 2x\,\frac{1}{1-x}
+= 2x \sum_{k=0}^{\infty} x^k
+= \sum_{k=0}^{\infty} 2x^{k+1}.
+</md>
+</p>
+</solution>
+</exercise>
+
+</worksheet>

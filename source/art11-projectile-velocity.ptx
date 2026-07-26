@@ -162,4 +162,152 @@
       </p>
     </solution>
   </exercise>
+<exercise xml:id="rf-2">
+<statement>
+<p>
+Find the Cartesian equation <m>f(x,y) = 0</m> for the curve
+represented by the following parametric equations, then graph it:
+<md>
+<mrow>x(t) \amp = e^{2t},</mrow>
+<mrow>y(t) \amp = e^{t} - 1,</mrow>
+<mrow>0 \amp \le t \le \ln(2).</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+From the second equation, <m>y + 1 = e^t</m>, and hence
+<md>
+x = e^{2t} = \left(e^{t}\right)^2 = (y+1)^2
+\;\Rightarrow\;
+y + 1 = \sqrt{x}
+\;\Rightarrow\;
+y = \sqrt{x} - 1.
+</md>
+For the range, note that <m>0 \le t \le \ln(2)</m> gives
+<md>
+e^0 \le e^t \le e^{\ln(2)}
+\;\Rightarrow\; 1 \le e^t \le 2
+\;\Rightarrow\; 0 \le e^t - 1 \le 1
+\;\Rightarrow\; 0 \le y \le 1,
+</md>
+and correspondingly <m>1 \le x \le 4</m>. The curve is the portion of
+<m>y = \sqrt{x} - 1</m> from <m>(1,0)</m> to <m>(4,1)</m>, shown in
+<xref ref="fig-rf-parametric"/>.
+</p>
+
+<figure xml:id="fig-rf-parametric">
+<caption>
+The curve <m>y = \sqrt{x} - 1</m> traced by the parametric equations
+for <m>0 \le t \le \ln(2)</m>, from <m>(1,0)</m> to <m>(4,1)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rf-parametric">
+<diagram dimensions="(360,220)" margins="12">
+<definition>c(t) = (t, t^(1/2) - 1)</definition>
+<coordinates bbox="(-0.6,-0.7,4.9,1.7)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="rf2-curve" function="c" domain="(1,4)"
+                  stroke="#8B1A4A" thickness="3"/>
+<point at="rf2-start" p="(1,0)" fill="#8B1A4A"/>
+<point at="rf2-end" p="(4,1)" fill="#8B1A4A"/>
+<label at="rf2-lab" anchor="(2.15,0.85)" alignment="nw" color="#8B1A4A">
+<m>y=\sqrt{x}-1</m>
+</label>
+<label at="rf2-start-lab" anchor="(1.05,-0.18)" alignment="se">
+<m>(1,0)</m>
+</label>
+<label at="rf2-end-lab" anchor="(4.05,0.95)" alignment="se">
+<m>(4,1)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A short dark red curve rises from the point one comma zero to the point four comma one, following the graph of y equals the square root of x minus one. Both endpoints are marked with dots.">
+  <annotation ref="rf2-curve" text="The curve y equals square root of x minus one, for x between one and four."/>
+  <annotation ref="rf2-start" text="The starting point one comma zero, corresponding to t equals zero."/>
+  <annotation ref="rf2-end" text="The ending point four comma one, corresponding to t equals natural log of two."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-8">
+<statement>
+<p>
+Provide a parametrized form of the curve given by
+<md>
+x^2 + 4y^2 + 8y - 2\sqrt{21}\,x = 0.
+</md>
+Assume that the curve is traced <term>counter-clockwise</term> as the
+parameter increases.
+</p>
+</statement>
+<solution>
+<p>
+We complete the squares:
+<md>
+<mrow>\left(x - \sqrt{21}\right)^2 - 21
++ 4(y+1)^2 - 4 \amp = 0</mrow>
+<mrow>\left(x - \sqrt{21}\right)^2 + 4(y+1)^2 \amp = 25.</mrow>
+</md>
+This is an ellipse centered at <m>\left(\sqrt{21}, -1\right)</m>.
+Setting
+<md>
+x - \sqrt{21} = 5\cos t
+\quad\text{and}\quad
+2(y+1) = 5\sin t
+</md>
+gives the counter-clockwise parametrization
+<md>
+<mrow>x(t) \amp = 5\cos t + \sqrt{21}</mrow>
+<mrow>y(t) \amp = \frac52 \sin t - 1</mrow>
+<mrow>0 \amp \le t \le 2\pi.</mrow>
+</md>
+See <xref ref="fig-rw23-ellipse"/>.
+</p>
+
+<figure xml:id="fig-rw23-ellipse">
+<caption>
+The ellipse <m>\left(x - \sqrt{21}\right)^2 + 4(y+1)^2 = 25</m>,
+centered at <m>\left(\sqrt{21}, -1\right)</m> with semi-axes <m>5</m>
+and <m>\frac52</m>, traced counter-clockwise.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw23-ellipse">
+<diagram dimensions="(380,240)" margins="12">
+<definition>ell(t) = (5*cos(t) + 4.5826, 2.5*sin(t) - 1)</definition>
+<coordinates bbox="(-1.3,-4.4,10.6,2.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="el-curve" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<vector at="el-dir" v="(-0.45,0.70)" tail="(9.35,-0.25)"
+        stroke="#D55E00" thickness="3"/>
+<point at="el-center" p="(4.5826,-1)" fill="#8B1A4A"/>
+<label at="el-center-lab" anchor="(4.62,-1.35)" alignment="se" color="#8B1A4A">
+<m>\left(\sqrt{21},-1\right)</m>
+</label>
+<label at="el-dir-lab" anchor="(9.05,0.65)" alignment="ne" color="#D55E00">
+<m>t</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wide blue ellipse centered at the point square root of twenty one comma negative one, with horizontal semi axis five and vertical semi axis five halves. A short vermillion arrow on the right side of the ellipse points up and to the left, showing the counter clockwise direction of increasing parameter t.">
+  <annotation ref="el-curve" text="The ellipse traced by the parametrization, counter clockwise."/>
+  <annotation ref="el-center" text="The center of the ellipse at square root of twenty one comma negative one."/>
+  <annotation ref="el-dir" text="The direction of increasing t, counter clockwise."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

@@ -722,4 +722,226 @@ curves are tangent to the parabola.
 </solution>
 </exercise>
 
+<exercise xml:id="rf-7">
+<statement>
+<p>
+You have 24 square inches of cardboard and want to build a box in the
+shape of a rectangular prism. Find the dimensions of the box, if you
+would like it to have the largest possible volume. See
+<xref ref="fig-rf-box"/>.
+</p>
+
+<figure xml:id="fig-rf-box">
+<caption>
+A rectangular prism with dimensions <m>x</m>, <m>y</m>, and <m>z</m>.
+</caption>
+<image width="46%">
+<description>
+<p>
+A rectangular box drawn in perspective, with the width labelled x on
+the front left edge, the depth labelled y along the top front edge,
+and the height labelled z on the left face.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % back edges
+  \draw[gray!70] (0,0,0) -- (0,3.4,0);
+  \draw[gray!70] (0,0,0) -- (1.8,0,0);
+  \draw[gray!70] (0,0,0) -- (0,0,1.6);
+  % visible edges
+  \draw[thick] (1.8,0,0) -- (1.8,3.4,0) -- (0,3.4,0) -- (0,3.4,1.6) -- (0,0,1.6) -- (1.8,0,1.6) -- cycle;
+  \draw[thick] (1.8,3.4,0) -- (1.8,3.4,1.6);
+  \draw[thick] (1.8,0,1.6) -- (1.8,3.4,1.6) -- (0,3.4,1.6);
+  % labels
+  \node[below left=1pt] at (0.9,0,0) {$x$};
+  \node[above=1pt] at (1.8,1.7,1.6) {$y$};
+  \node[left=2pt] at (0,0,0.8) {$z$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+The surface area of the box is
+<md>
+2xy + 2xz + 2yz = 24,
+</md>
+so the constraint is <m>g(x,y,z) = xy + xz + yz - 12 = 0</m>, and the
+function to be maximized is <m>f(x,y,z) = xyz</m>. We compute
+<md>
+<mrow>\nabla f \amp = \langle f_x, f_y, f_z\rangle
+= \langle yz, xz, xy\rangle,</mrow>
+<mrow>\nabla g \amp = \langle y+z, x+z, x+y\rangle.</mrow>
+</md>
+The Lagrange system <m>\nabla f = \lambda \nabla g</m> is
+<md>
+<mrow>yz \amp = \lambda(y+z)</mrow>
+<mrow>xz \amp = \lambda(x+z)</mrow>
+<mrow>xy \amp = \lambda(x+y)</mrow>
+</md>
+Multiplying the equations by <m>x</m>, <m>y</m>, and <m>z</m>
+respectively gives
+<md>
+xyz = \lambda x(y+z), \qquad
+xyz = \lambda y(x+z), \qquad
+xyz = \lambda z(x+y).
+</md>
+Equating the first two, <m>x(y+z) = y(x+z)</m>, which simplifies to
+<m>xz = yz</m>, i.e. <m>x = y</m>. Equating the last two,
+<m>y(x+z) = z(x+y)</m>, which simplifies to <m>xy = xz</m>, i.e.
+<m>y = z</m>.
+</p>
+
+<p>
+So <m>x = y = z</m>, and substituting into the constraint
+<m>xy + xz + yz - 12 = 0</m> gives <m>3x^2 = 12</m>, or
+<m>x^2 = 4</m>. Hence
+<md>
+x = y = z = 2 \text{ inches}
+</md>
+and these dimensions (a cube) will maximize the volume.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-5">
+<statement>
+<p>
+Find the point(s) on the surface <m>xyz = 1</m> closest to the origin.
+</p>
+</statement>
+<solution>
+<p>
+The distance of a point from the origin is
+<m>\sqrt{x^2 + y^2 + z^2}</m>, so it suffices to minimize
+<m>f(x,y,z) = x^2 + y^2 + z^2</m> with the constraint
+<m>g(x,y,z) = xyz - 1 = 0</m>. The Lagrange system
+<m>\nabla f = \lambda \nabla g</m> is
+<md>
+\langle 2x, 2y, 2z\rangle
+= \langle \lambda yz, \lambda xz, \lambda xy\rangle.
+</md>
+Multiplying the first equation by <m>x</m> and using
+<m>xyz = 1</m>,
+<md>
+2x = \lambda yz
+\;\Rightarrow\; 2x^2 = \lambda xyz
+\;\overset{xyz=1}{\Rightarrow}\; 2x^2 = \lambda
+\;\Rightarrow\; x^2 = \frac{\lambda}{2},
+</md>
+and similarly <m>y^2 = \dfrac{\lambda}{2}</m> and
+<m>z^2 = \dfrac{\lambda}{2}</m>, hence <m>x^2 = y^2 = z^2</m>.
+</p>
+
+<p>
+Substituting into the constraint,
+<md>
+x^2 y^2 z^2 = 1
+\;\Rightarrow\; x^6 = 1
+\;\Rightarrow\; x^2 = 1.
+</md>
+Since <m>xyz = 1</m>, we know that <m>x</m>, <m>y</m>, and <m>z</m>
+are either all positive or two are negative and the third one is
+positive. Hence, the closest points are
+<md>
+(1,1,1), \quad (1,-1,-1), \quad (-1,1,-1), \quad (-1,-1,1).
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-10">
+<statement>
+<p>
+Use the method of Lagrange Multipliers to find the maximum and
+minimum values of <m>f(x,y) = \sqrt2\,x - \sqrt2\,y</m> subject to the
+constraint <m>x^2 + y^2 = 4</m>.
+</p>
+</statement>
+<solution>
+<p>
+With <m>g(x,y) = x^2 + y^2 - 4 = 0</m>, we have
+<md>
+\nabla f = \sqrt2\,\mathbf i - \sqrt2\,\mathbf j,
+\qquad
+\nabla g = (2x)\,\mathbf i + (2y)\,\mathbf j.
+</md>
+The system <m>\nabla f = \lambda \nabla g</m> is
+<md>
+<mrow>\sqrt2 \amp = 2\lambda x
+\;\Rightarrow\; x = \frac{1}{\sqrt2\,\lambda},</mrow>
+<mrow>-\sqrt2 \amp = 2\lambda y
+\;\Rightarrow\; y = -\frac{1}{\sqrt2\,\lambda}.</mrow>
+</md>
+Substituting into the constraint,
+<md>
+\left(\frac{1}{\sqrt2\,\lambda}\right)^{2}
++ \left(-\frac{1}{\sqrt2\,\lambda}\right)^{2} = 4
+\;\Rightarrow\; \frac{1}{\lambda^2} = 4
+\;\Rightarrow\; \lambda = \pm\frac12.
+</md>
+For <m>\lambda_1 = \frac12</m>: <m>x = \sqrt2</m>,
+<m>y = -\sqrt2</m>. For <m>\lambda_2 = -\frac12</m>:
+<m>x = -\sqrt2</m>, <m>y = \sqrt2</m>. Evaluating <m>f</m>,
+<md>
+<mrow>f\left(\sqrt2, -\sqrt2\right) \amp = 2 + 2 = 4
+\qquad \text{absolute maximum,}</mrow>
+<mrow>f\left(-\sqrt2, \sqrt2\right) \amp = -2 - 2 = -4
+\qquad \text{absolute minimum.}</mrow>
+</md>
+See <xref ref="fig-rs19-lagrange"/>.
+</p>
+
+<figure xml:id="fig-rs19-lagrange">
+<caption>
+The constraint circle <m>x^2 + y^2 = 4</m> and the level lines
+<m>\sqrt2\,x - \sqrt2\,y = \pm 4</m> of <m>f</m>, which are tangent to
+the circle at the extrema
+<m>\left(\sqrt2, -\sqrt2\right)</m> and
+<m>\left(-\sqrt2, \sqrt2\right)</m>.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rs19-lagrange">
+<diagram dimensions="(320,300)" margins="12">
+<definition>circ(t) = (2*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-3.6,-3.6,3.6,3.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="lg-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<line at="lg-max" endpoints="((-0.4,-3.25),(3.25,0.4))"
+      stroke="#D55E00" dash="6 4" thickness="2"/>
+<line at="lg-min" endpoints="((-3.25,-0.4),(0.4,3.25))"
+      stroke="#009E73" dash="6 4" thickness="2"/>
+<point at="lg-pmax" p="(1.4142,-1.4142)" fill="#D55E00"/>
+<point at="lg-pmin" p="(-1.4142,1.4142)" fill="#009E73"/>
+<label at="lg-pmax-lab" anchor="(1.55,-1.6)" alignment="se" color="#D55E00">
+<m>\left(\sqrt2,-\sqrt2\right)</m>
+</label>
+<label at="lg-pmin-lab" anchor="(-1.55,1.6)" alignment="nw" color="#009E73">
+<m>\left(-\sqrt2,\sqrt2\right)</m>
+</label>
+<label at="lg-max-lab" anchor="(2.65,-0.05)" alignment="ne" color="#D55E00">
+<m>f=4</m>
+</label>
+<label at="lg-min-lab" anchor="(-2.65,0.05)" alignment="sw" color="#009E73">
+<m>f=-4</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue circle of radius two centered at the origin. A dashed vermillion line of slope one touches the circle at the point square root of two comma negative square root of two, where f equals four, and a dashed green line of slope one touches it at negative square root of two comma square root of two, where f equals negative four.">
+  <annotation ref="lg-circle" text="The constraint circle x squared plus y squared equals four."/>
+  <annotation ref="lg-pmax" text="The absolute maximum at square root of two comma negative square root of two, where f equals four."/>
+  <annotation ref="lg-pmin" text="The absolute minimum at negative square root of two comma square root of two, where f equals negative four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

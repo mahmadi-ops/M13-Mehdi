@@ -393,4 +393,274 @@ one, and the total of all the bars is
 </solution>
 </exercise>
 
+<exercise xml:id="rw23-1">
+<statement>
+<p>
+Answer questions A and B below for the following infinite series:
+<md>
+\sum_{k=1}^{\infty} \left(\frac{6}{k^2} - \frac{6}{(k+1)^2}\right).
+</md>
+<ol marker="A.">
+<li>
+<p>
+Does the <m>n</m>th-term test apply? Remember to fully justify your
+answer.
+</p>
+</li>
+<li>
+<p>
+Evaluate the series or show that it diverges.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We compute the limit of the terms:
+<md>
+<mrow>\lim_{n\to\infty} a_n
+\amp = \lim_{n\to\infty} \frac{6}{n^2} - \frac{6}{(n+1)^2}
+= \lim_{n\to\infty} \frac{6(n+1)^2 - 6n^2}{n^2(n+1)^2}</mrow>
+<mrow>\amp = \lim_{n\to\infty} \frac{12n + 6}{n^2(n+1)^2}
+= \lim_{n\to\infty} \frac{12n}{n^4} = 0.</mrow>
+</md>
+Hence the <m>n</m>th-term test does <em>not</em> apply: since the
+limit of the terms is <m>0</m>, the test is inconclusive.
+</p>
+</li>
+<li>
+<p>
+The series telescopes. The partial sum is
+<md>
+<mrow>s_n \amp = \left(\frac{6}{1^2} - \frac{6}{2^2}\right)
++ \left(\frac{6}{2^2} - \frac{6}{3^2}\right)
++ \cdots</mrow>
+<mrow>\amp \quad + \left(\frac{6}{(n-1)^2} - \frac{6}{n^2}\right)
++ \left(\frac{6}{n^2} - \frac{6}{(n+1)^2}\right)</mrow>
+<mrow>\amp = 6 - \frac{6}{(n+1)^2},</mrow>
+</md>
+and therefore
+<md>
+\sum_{k=1}^{\infty} \left(\frac{6}{k^2} - \frac{6}{(k+1)^2}\right)
+= \lim_{n\to\infty} s_n
+= \lim_{n\to\infty} 6 - \frac{6}{(n+1)^2}
+= 6 - 0 = 6.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-1">
+<statement>
+<p>
+Determine whether the series is convergent or divergent and if it is
+convergent calculate its sum.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty}
+\sin\!\left(\frac{1}{n+1}\right) - \sin\!\left(\frac{1}{n+2}\right)</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} \frac{1 + 5^n}{3^n}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The series telescopes. The partial sum is
+<md>
+<mrow>s_k \amp = \sum_{n=0}^{k}
+\sin\!\left(\frac{1}{n+1}\right) - \sin\!\left(\frac{1}{n+2}\right)</mrow>
+<mrow>\amp = \sin(1) - \sin\!\left(\frac12\right)
++ \sin\!\left(\frac12\right) - \sin\!\left(\frac13\right)</mrow>
+<mrow>\amp \quad + \sin\!\left(\frac13\right) - \sin\!\left(\frac14\right)
++ \cdots</mrow>
+<mrow>\amp \quad + \sin\!\left(\frac{1}{k+1}\right)
+- \sin\!\left(\frac{1}{k+2}\right)</mrow>
+<mrow>\amp = \sin(1) - \sin\!\left(\frac{1}{k+2}\right).</mrow>
+</md>
+Hence the series converges and
+<md>
+<mrow>\sum_{n=0}^{\infty}
+\sin\!\left(\frac{1}{n+1}\right) - \sin\!\left(\frac{1}{n+2}\right)
+\amp = \lim_{k\to\infty} s_k</mrow>
+<mrow>\amp = \sin(1) - \sin(0) = \sin(1).</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+We split the series into two geometric series:
+<md>
+\sum_{n=0}^{\infty} \frac{1 + 5^n}{3^n}
+= \sum_{n=0}^{\infty} \left(\frac13\right)^{n}
++ \sum_{n=0}^{\infty} \left(\frac53\right)^{n}.
+</md>
+Since <m>\lim\limits_{n\to\infty} \left(\frac53\right)^{n} = \infty</m>,
+by the <m>n</m>th term test we can conclude that the series diverges.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-2">
+<statement>
+<p>
+Determine whether the series converges, and if so find its sum:
+<md>
+\sum_{n=1}^{\infty} \left(\frac{n}{n+5}\right)^{n}.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Note that
+<md>
+\lim_{n\to\infty} a_n
+= \lim_{n\to\infty} \left(1 + \frac5n\right)^{-n}
+= \lim_{n\to\infty}
+\left[\left(1 + \frac5n\right)^{\frac{n}{5}}\right]^{-5}
+= e^{-5} \ne 0,
+</md>
+since <m>\left(1 + \frac5n\right)^{n/5} \to e</m>. Indeed, setting
+<m>x = \frac{n}{5}</m> and
+<m>L = \lim\limits_{x\to\infty}\left(1 + \frac1x\right)^{x}</m>,
+<md>
+<mrow>\ln L \amp = \lim_{x\to\infty} x \ln\!\left(1 + \frac1x\right)
+= \lim_{x\to\infty}
+\frac{\ln\!\left(1 + \frac1x\right)}{\frac1x}</mrow>
+<mrow>\amp \;\overset{\text{H}}{=}\;
+\lim_{x\to\infty}
+\frac{\dfrac{-1/x^2}{1 + 1/x}}{-\dfrac{1}{x^2}}
+= \lim_{x\to\infty} \frac{1}{1 + \frac1x} = 1</mrow>
+<mrow>\amp \;\Rightarrow\; L = e.</mrow>
+</md>
+Therefore, the series diverges by the <m>n</m>th Term Test.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-3">
+<statement>
+<p>
+Consider the following series. Answer the following questions.
+<md>
+\sum_{n=0}^{\infty} \frac{(x+4)^n}{2^n}
+</md>
+<ol marker="A.">
+<li>
+<p>
+Find the values of <m>x</m> for which the series converges.
+</p>
+</li>
+<li>
+<p>
+Find the sum of the series for those values of <m>x</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We can write the series as a geometric series:
+<md>
+\sum_{n=0}^{\infty} \frac{(x+4)^n}{2^n}
+= \sum_{n=0}^{\infty} \left(\frac{x+4}{2}\right)^{n}
+= \sum_{n=0}^{\infty} \left(\frac{x}{2}+2\right)^{n},
+</md>
+which converges when
+<m>\left|\frac{x}{2} + 2\right| \lt 1</m>:
+<md>
+-1 \lt \frac{x}{2} + 2 \lt 1
+\;\Rightarrow\; -3 \lt \frac{x}{2} \lt -1
+\;\Rightarrow\; -6 \lt x \lt -2,
+</md>
+i.e. the series converges on the interval <m>(-6, -2)</m>.
+</p>
+</li>
+<li>
+<p>
+When <m>x \in (-6,-2)</m>, the geometric series with
+<m>a = 1</m> and <m>r = \frac{x+4}{2}</m> gives
+<md>
+\sum_{n=0}^{\infty} \left(\frac{x+4}{2}\right)^{n}
+= \frac{1}{1 - \frac{x+4}{2}}
+= \frac{2}{2 - x - 4}
+= -\frac{2}{x+2}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-4">
+<statement>
+<p>
+Express <m>8.81818181818\ldots</m> as a rational number, i.e. in the
+form <m>\dfrac{p}{q}</m>, where <m>p</m> and <m>q</m> are positive
+integers with no common factors.
+</p>
+</statement>
+<solution>
+<p>
+We write the repeating decimal as a geometric series:
+<md>
+8.81818181818\ldots
+= 8 + \frac{81}{100} + \frac{81}{10000} + \cdots
+= 8 + 81 \sum_{n=1}^{\infty} \left(\frac{1}{100}\right)^{n}.
+</md>
+Using the geometric series with <m>a = \frac{1}{100}</m> and
+<m>r = \frac{1}{100}</m>,
+<md>
+8 + 81\left(\frac{\frac{1}{100}}{1 - \frac{1}{100}}\right)
+= 8 + \frac{81}{99}
+= 8 + \frac{9}{11}
+= \frac{97}{11}.
+</md>
+Hence <m>p = 97</m> and <m>q = 11</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rf-8-b">
+<title>True or False</title>
+<statement correct="no">
+<p>
+A geometric series <m>\displaystyle\sum_{n=1}^{\infty} ar^{n-1}</m>
+converges if and only if <m>|r| \le 1</m>.
+</p>
+</statement>
+<feedback>
+<p>
+As a counterexample consider
+<m>\displaystyle\sum_{n=1}^{\infty} 1^{n-1}</m>, which clearly
+diverges even though <m>|r| = 1</m>. The correct condition is
+<m>|r| \lt 1</m>.
+</p>
+</feedback>
+</exercise>
+
 </worksheet>

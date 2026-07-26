@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Final exam problems on vectors and their products
+-->
+<worksheet xml:id="worksheet-exercises-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises on Vectors and Their Products</title>
+
+<introduction>
+<p>
+These final exam problems add and decompose vectors and use the dot and cross products, so they draw on <xref ref="chapter-vectors" text="title"/>, <xref ref="section-dot-product" text="title"/> and <xref ref="section-cross-product" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rs19-2">
+<statement>
+<p>
+Write each combination of vectors as a single vector. See
+<xref ref="fig-rs19-quad"/>.
+<ol marker="A.">
+<li>
+<p>
+<m>\vec{PQ} + \vec{QR}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec{QS} - \vec{PS}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec{RS} + \vec{SP} + \vec{PQ}</m>
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rs19-quad">
+<caption>
+The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
+<m>S</m>, with its diagonals.
+</caption>
+<image width="52%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rs19-quad">
+<diagram dimensions="(300,240)" margins="12">
+<coordinates bbox="(-0.6,-0.55,3.9,3.5)">
+<line at="qd-QP" endpoints="((0.8,2.9),(2.9,2.2))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-PS" endpoints="((2.9,2.2),(3.3,0.3))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-RS" endpoints="((0,0),(3.3,0.3))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-RQ" endpoints="((0,0),(0.8,2.9))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-QS" endpoints="((0.8,2.9),(3.3,0.3))"
+      stroke="#56B4E9" thickness="1.5"/>
+<line at="qd-RP" endpoints="((0,0),(2.9,2.2))"
+      stroke="#56B4E9" thickness="1.5"/>
+<point at="qd-P" p="(2.9,2.2)" fill="black"/>
+<point at="qd-Q" p="(0.8,2.9)" fill="black"/>
+<point at="qd-R" p="(0,0)" fill="black"/>
+<point at="qd-S" p="(3.3,0.3)" fill="black"/>
+<label at="qd-P-lab" anchor="(3.0,2.32)" alignment="ne">
+<m>P</m>
+</label>
+<label at="qd-Q-lab" anchor="(0.72,3.02)" alignment="nw">
+<m>Q</m>
+</label>
+<label at="qd-R-lab" anchor="(-0.12,-0.12)" alignment="sw">
+<m>R</m>
+</label>
+<label at="qd-S-lab" anchor="(3.42,0.22)" alignment="e">
+<m>S</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A quadrilateral with vertices labelled Q at the top left, P at the top right, R at the bottom left, and S at the bottom right, drawn in light blue together with its two diagonals Q S and R P.">
+  <annotation ref="qd-P" text="The vertex P at the top right."/>
+  <annotation ref="qd-Q" text="The vertex Q at the top left."/>
+  <annotation ref="qd-R" text="The vertex R at the bottom left."/>
+  <annotation ref="qd-S" text="The vertex S at the bottom right."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+By the triangle law, placing <m>\vec{QR}</m> at the tip of
+<m>\vec{PQ}</m>,
+<md>
+\vec{PQ} + \vec{QR} = \vec{PR}.
+</md>
+</p>
+</li>
+<li>
+<p>
+Since <m>-\vec{PS} = \vec{SP}</m>,
+<md>
+\vec{QS} - \vec{PS} = \vec{QS} + \vec{SP} = \vec{QP}.
+</md>
+</p>
+</li>
+<li>
+<p>
+Chaining the three vectors tip to tail,
+<md>
+\vec{RS} + \vec{SP} + \vec{PQ} = \vec{RQ}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-4">
+<statement>
+<p>
+Consider the two vectors
+<m>\mathbf u = 3\,\mathbf j + 4\,\mathbf k</m> and
+<m>\mathbf v = \mathbf i + \mathbf j</m>. Write <m>\mathbf u</m> as
+the sum of a vector parallel to <m>\mathbf v</m> and a vector
+orthogonal to <m>\mathbf v</m>.
+</p>
+</statement>
+<solution>
+<p>
+We have <m>\vec u \cdot \vec v = 3</m> and
+<m>|\vec v| = \sqrt{1+1} = \sqrt2</m>. The component of
+<m>\vec u</m> parallel to <m>\vec v</m> is
+<md>
+\vec u_{\parallel}
+= \operatorname{proj}_{\vec v} \vec u
+= \left(\frac{\vec u \cdot \vec v}{|\vec v|^2}\right)\vec v
+= \frac32\,(\mathbf i + \mathbf j)
+= \frac32\,\mathbf i + \frac32\,\mathbf j,
+</md>
+and the component orthogonal to <m>\vec v</m> is
+<md>
+\vec u_{\perp}
+= \vec u - \vec u_{\parallel}
+= \left(3\,\mathbf j + 4\,\mathbf k\right)
+- \left(\frac32\,\mathbf i + \frac32\,\mathbf j\right)
+= -\frac32\,\mathbf i + \frac32\,\mathbf j + 4\,\mathbf k.
+</md>
+Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
+<m>\vec u_{\perp}</m> is orthogonal to <m>\vec v</m>. Note that
+<m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-9-a">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
+<m>\R^3</m>, then
+<m>\vec u \cdot (\vec u \times \vec v)
+= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Counterexample: take
+<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
+<md>
+\mathbf i \cdot
+\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
+\quad\text{whereas}\quad
+\|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
+</md>
+and <m>0 \ne 2</m>.
+</p>
+</feedback>
+</exercise>
+
+</worksheet>

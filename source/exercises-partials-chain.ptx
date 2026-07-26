@@ -139,4 +139,103 @@ equation.
 </solution>
 </exercise>
 
+<exercise xml:id="rw21-1">
+<statement>
+<p>
+Let
+<md>
+w = 5xy + 2yz - 3xz, \qquad
+x = st, \qquad y = e^{st}, \qquad z = t^2.
+</md>
+Compute <m>\dfrac{\partial w}{\partial s}(-4,-4)</m> and
+<m>\dfrac{\partial w}{\partial t}(-4,-4)</m>.
+</p>
+</statement>
+<solution>
+<p>
+The dependency tree is shown in <xref ref="fig-rw21-tree"/>. We first
+compute
+<md>
+\frac{\partial w}{\partial x} = 5y - 3z, \qquad
+\frac{\partial w}{\partial y} = 5x + 2z, \qquad
+\frac{\partial w}{\partial z} = 2y - 3x,
+</md>
+and at <m>(s,t) = (-4,-4)</m> we have
+<md>
+x(-4,-4) = 16, \qquad
+y(-4,-4) = e^{16}, \qquad
+z(-4,-4) = 16.
+</md>
+</p>
+
+<figure xml:id="fig-rw21-tree">
+<caption>
+The tree diagram for <m>w = w(x,y,z)</m> with
+<m>x = x(s,t)</m>, <m>y = y(s,t)</m>, and <m>z = z(t)</m>.
+</caption>
+<image width="42%">
+<description>
+<p>
+A tree diagram with w at the top. Three branches lead down from w to
+x, y, and z. From x, two branches lead to s and t; from y, two
+branches lead to s and t; from z, a single branch leads to t.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  \node (w) at (0,2.4) {$w$};
+  \node (x) at (-1.8,1.2) {$x$};
+  \node (y) at (0,1.2) {$y$};
+  \node (z) at (1.8,1.2) {$z$};
+  \node (s1) at (-2.4,0) {$s$};
+  \node (t1) at (-1.2,0) {$t$};
+  \node (s2) at (-0.6,0) {$s$};
+  \node (t2) at (0.6,0) {$t$};
+  \node (t3) at (1.8,0) {$t$};
+  \draw[mblue, thick] (w) -- (x);
+  \draw[mblue, thick] (w) -- (y);
+  \draw[mblue, thick] (w) -- (z);
+  \draw[mblue, thick] (x) -- (s1);
+  \draw[mblue, thick] (x) -- (t1);
+  \draw[mblue, thick] (y) -- (s2);
+  \draw[mblue, thick] (y) -- (t2);
+  \draw[mblue, thick] (z) -- (t3);
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+By the chain rule, since
+<m>\dfrac{\partial z}{\partial s} = 0</m>,
+<md>
+<mrow>\frac{\partial w}{\partial s}
+\amp = \frac{\partial w}{\partial x}\frac{\partial x}{\partial s}
++ \frac{\partial w}{\partial y}\frac{\partial y}{\partial s}
++ \frac{\partial w}{\partial z}\frac{\partial z}{\partial s}</mrow>
+<mrow>\amp = (5y - 3z)(t) + (5x + 2z)\left(t e^{st}\right)
++ (2y - 3x)(0)</mrow>
+<mrow>\amp = \left(5e^{16} - 48\right)(-4)
++ (80 + 32)\left(-4e^{16}\right)</mrow>
+<mrow>\amp = -20e^{16} + 192 - 448e^{16}
+= -468e^{16} + 192.</mrow>
+</md>
+Similarly,
+<md>
+<mrow>\frac{\partial w}{\partial t}
+\amp = \frac{\partial w}{\partial x}\frac{\partial x}{\partial t}
++ \frac{\partial w}{\partial y}\frac{\partial y}{\partial t}
++ \frac{\partial w}{\partial z}\frac{\partial z}{\partial t}</mrow>
+<mrow>\amp = (5y - 3z)(s) + (5x + 2z)\left(s e^{st}\right)
++ (2y - 3x)(2t)</mrow>
+<mrow>\amp = \left(5e^{16} - 48\right)(-4)
++ (112)\left(-4e^{16}\right)
++ \left(2e^{16} - 48\right)(-8)</mrow>
+<mrow>\amp = -20e^{16} + 192 - 448e^{16} - 16e^{16} + 384
+= -484e^{16} + 576.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>
