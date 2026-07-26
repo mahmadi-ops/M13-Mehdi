@@ -41,10 +41,10 @@ following series?
 <li>
 <p>
 <md>
-\lim_{n\to\infty} \frac{3n}{\sqrt{6n^2+4n+5}}
-= \lim_{n\to\infty} \frac{3n}{\sqrt6\, n}
-= \sqrt{\frac32} \ne 0
-\;\Rightarrow\; \text{the series diverges.}
+<mrow>\lim_{n\to\infty} \frac{3n}{\sqrt{6n^2+4n+5}}
+\amp = \lim_{n\to\infty} \frac{3n}{\sqrt6\, n}
+= \sqrt{\frac32} \ne 0</mrow>
+<mrow>\amp \;\Rightarrow\; \text{the series diverges.}</mrow>
 </md>
 </p>
 </li>
@@ -62,10 +62,10 @@ following series?
 <li>
 <p>
 <md>
-\lim_{n\to\infty} \frac{2\ln(n)}{3n}
-\;\overset{\text{H}}{=}\;
-\frac23 \lim_{n\to\infty} \frac{1/n}{1} = 0
-\;\Rightarrow\; \text{the } n\text{th Term Test is inconclusive.}
+<mrow>\lim_{n\to\infty} \frac{2\ln(n)}{3n}
+\amp \;\overset{\text{H}}{=}\;
+\frac23 \lim_{n\to\infty} \frac{1/n}{1} = 0</mrow>
+<mrow>\amp \;\Rightarrow\; \text{the } n\text{th Term Test is inconclusive.}</mrow>
 </md>
 </p>
 </li>
@@ -148,8 +148,8 @@ setting <m>n = -1</m> gives <m>-B = 1</m>, so <m>B = -1</m>; and
 setting <m>n = -2</m> gives <m>2C = 1</m>, so <m>C = \frac12</m>.
 Hence
 <md>
-<mrow>\sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}
-\amp = \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
+<mrow>\amp \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}
+= \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
 + \frac{1}{n+2}\right)</mrow>
 <mrow>\amp = \frac12 \sum_{n=1}^{\infty}
 \left(\frac1n - \frac{1}{n+1}\right)
@@ -163,8 +163,8 @@ Hence
 + \underbrace{\frac12 \sum_{n=2}^{\infty}
 \left(\frac1n - \frac{1}{n+1}\right)
 - \frac12 \sum_{n=2}^{\infty}
-\left(\frac1n - \frac{1}{n+1}\right)}_{\text{zero}}
-= \frac14.</mrow>
+\left(\frac1n - \frac{1}{n+1}\right)}_{\text{zero}}</mrow>
+<mrow>\amp = \frac14.</mrow>
 </md>
 </p>
 </li>
@@ -214,12 +214,13 @@ telescopes:
 <mrow>s_k \amp = \left(\frac11 - \frac13\right)
 + \left(\frac13 - \frac15\right)
 + \left(\frac15 - \frac17\right)
-+ \cdots
-+ \left(\frac{1}{2k-1} - \frac{1}{2k+1}\right)</mrow>
-<mrow>\amp = 1 - \frac{1}{2k+1},</mrow>
++ \cdots</mrow>
+<mrow>\amp \quad + \left(\frac{1}{2k-1} - \frac{1}{2k+1}\right)
+= 1 - \frac{1}{2k+1},</mrow>
 <mrow>\amp \phantom{=} \text{so} \quad
 3\sum_{n=1}^{\infty} \left(\frac{1}{2n-1} - \frac{1}{2n+1}\right)
-= 3\lim_{k\to\infty} s_k
+= 3\lim_{k\to\infty} s_k</mrow>
+<mrow>\amp \phantom{=} \qquad
 = 3\lim_{k\to\infty}\left(1 - \frac{1}{2k+1}\right) = 3.</mrow>
 </md>
 </p>
@@ -235,10 +236,10 @@ so the sum telescopes:
 <mrow>s_k \amp = \sum_{n=1}^{k}
 \left(\frac{1}{n^2} - \frac{1}{(n+1)^2}\right)</mrow>
 <mrow>\amp = \left(1 - \frac14\right) + \left(\frac14 - \frac19\right)
-+ \left(\frac19 - \frac{1}{16}\right) + \cdots
-+ \left(\frac{1}{k^2} - \frac{1}{(k+1)^2}\right)</mrow>
-<mrow>\amp = 1 - \frac{1}{(k+1)^2}
-\quad\Rightarrow\quad
++ \left(\frac19 - \frac{1}{16}\right) + \cdots</mrow>
+<mrow>\amp \quad + \left(\frac{1}{k^2} - \frac{1}{(k+1)^2}\right)
+= 1 - \frac{1}{(k+1)^2}</mrow>
+<mrow>\amp \Rightarrow \quad
 \sum_{n=1}^{\infty} \frac{2n+1}{n^2(n+1)^2}
 = \lim_{k\to\infty} \left(1 - \frac{1}{(k+1)^2}\right) = 1.</mrow>
 </md>
@@ -256,13 +257,13 @@ the series diverges.
 Let <m>L = \lim\limits_{n\to\infty} \left(1 + \frac4n\right)^{n}</m>.
 Then
 <md>
-\ln L = \lim_{n\to\infty} n \ln\!\left(1 + \frac4n\right)
+<mrow>\ln L \amp = \lim_{n\to\infty} n \ln\!\left(1 + \frac4n\right)
 = \lim_{n\to\infty}
-\frac{\ln\!\left(1 + \frac4n\right)}{\frac1n}
-\;\overset{\text{H}}{=}\;
+\frac{\ln\!\left(1 + \frac4n\right)}{\frac1n}</mrow>
+<mrow>\amp \;\overset{\text{H}}{=}\;
 \lim_{n\to\infty}
 \frac{\dfrac{-4/n^2}{1 + 4/n}}{-\dfrac{1}{n^2}}
-= \lim_{n\to\infty} \frac{4}{1 + \frac4n} = 4.
+= \lim_{n\to\infty} \frac{4}{1 + \frac4n} = 4.</mrow>
 </md>
 Hence <m>L = e^4 \ne 0</m>, so by the <m>n</m>th Term Test the series
 diverges.
@@ -317,8 +318,8 @@ the economy?
 The rounds of spending form a geometric series with <m>a = 1000</m> and
 <m>r = 0.8</m>:
 <md>
-<mrow>1000 + 0.8(1000) + (0.8)^2(1000) + \cdots
-\amp = \sum_{n=1}^{\infty} 1000\,(0.8)^{n-1}</mrow>
+<mrow>\amp 1000 + 0.8(1000) + (0.8)^2(1000) + \cdots
+= \sum_{n=1}^{\infty} 1000\,(0.8)^{n-1}</mrow>
 <mrow>\amp = \frac{1000}{1 - 0.8}
 = \frac{1000}{0.2} = 5000 \text{ dollars}.</mrow>
 </md>

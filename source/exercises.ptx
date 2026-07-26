@@ -266,6 +266,12 @@ The same parabola and focus as before, with a red right triangle
 <!-- ================= Quadric Surfaces ================= -->
 <xi:include href="exercises-quadric-surfaces.ptx"/>
 
+<!-- ================= Gradients and Directional Derivatives ================= -->
+<xi:include href="exercises-gradients.ptx"/>
+
+<!-- ================= Tangent Planes and the Chain Rule ================= -->
+<xi:include href="exercises-tangent-chain.ptx"/>
+
 <!-- ================= Extreme Values and Saddle Points ================= -->
 <worksheet xml:id="subsection-abs-extrema">
     <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>

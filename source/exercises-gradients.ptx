@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review problems on gradients and directional derivatives
+-->
+<worksheet xml:id="worksheet-exercises-gradients" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises on Gradients and Directional Derivatives</title>
+
+<introduction>
+<p>
+These problems use the gradient to compute directional derivatives and directions of fastest change. If you would like to review this topic first, see <xref ref="section-directional-derivatives" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rev-gr-1">
+<statement>
+<p>
+Consider <m>f(x,y) = e^{-r^4}</m> where <m>r = \sqrt{x^2+y^2}</m>.
+Compute its directional derivative at <m>(0,0)</m> with respect to the
+unit vectors in (polar) directions
+<m>\theta = 0, \dfrac{\pi}{4}, \dfrac{\pi}{2}</m>. What about any
+other angle?
+</p>
+</statement>
+<solution>
+<p>
+The function is symmetric with respect to rotations around the origin,
+so all the directional derivatives will be equal. Therefore it is
+sufficient to compute the derivative for <m>\theta = 0</m>, i.e.
+<m>\dfrac{\partial f}{\partial x}</m>:
+<md>
+\frac{\partial f}{\partial x}
+= \frac{\partial}{\partial x} e^{-(x^2+y^2)^2}
+= -2(x^2+y^2)\cdot 2x\, e^{-(x^2+y^2)^2}.
+</md>
+Plugging in <m>x = y = 0</m> we see that this is zero. Hence the
+directional derivative at <m>(0,0)</m> is <m>0</m> in the directions
+<m>\theta = 0, \dfrac{\pi}{4}, \dfrac{\pi}{2}</m>, and by the same
+symmetry it is <m>0</m> for every other angle as well.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-gr-2">
+<statement>
+<p>
+Find all points at which the direction of fastest change of the
+function <m>f(x,y) = x^2 + y^2 - 2x - 4y</m> is
+<m>\langle 1, 1\rangle</m>.
+</p>
+</statement>
+<solution>
+<p>
+The direction of fastest change is
+<m>\nabla f(x,y) = \langle 2x-2,\, 2y-4\rangle</m>, so we need to
+find all points <m>(x,y)</m> such that
+<m>\nabla f(x,y) = k\langle 1,1\rangle</m>. Then
+<md>
+2x - 2 = k \quad\text{and}\quad 2y - 4 = k,
+</md>
+so
+<md>
+2x - 2 = 2y - 4 \;\Rightarrow\; y = x + 1.
+</md>
+Hence, the direction of fastest change is <m>\langle 1,1\rangle</m>
+at all points on the line <m>y = x + 1</m>. See
+<xref ref="fig-rev-gr-line"/>.
+</p>
+
+<figure xml:id="fig-rev-gr-line">
+<caption>
+Level curves of <m>f(x,y) = x^2+y^2-2x-4y</m>, which are circles
+centered at <m>(1,2)</m>. Along the line <m>y = x+1</m> the gradient
+<m>\nabla f</m> points in the direction <m>\langle 1,1\rangle</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-gr-line">
+<diagram dimensions="(340,320)" margins="12">
+<definition>c1(t) = (1 + 0.8*cos(t), 2 + 0.8*sin(t))</definition>
+<definition>c2(t) = (1 + 1.6*cos(t), 2 + 1.6*sin(t))</definition>
+<definition>c3(t) = (1 + 2.4*cos(t), 2 + 2.4*sin(t))</definition>
+<coordinates bbox="(-2.1,-1.1,4.3,5.1)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="gr-c1" function="c1" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="gr-c2" function="c2" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="gr-c3" function="c3" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<line at="gr-line" endpoints="((-1.9,-0.9),(3.9,4.9))"
+      stroke="#8B1A4A" thickness="3"/>
+<point at="gr-center" p="(1,2)" fill="#7F7F7F"/>
+<vector at="gr-v1" v="(0.75,0.75)" tail="(1.566,2.566)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="gr-v2" v="(0.75,0.75)" tail="(2.131,3.131)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="gr-v3" v="(0.75,0.75)" tail="(2.697,3.697)"
+        stroke="#D55E00" thickness="3"/>
+<label at="gr-line-lab" anchor="(-1.05,-0.95)" alignment="e" color="#8B1A4A">
+<m>y=x+1</m>
+</label>
+<label at="gr-grad-lab" anchor="(2.30,-0.78)" alignment="e" color="#D55E00">
+<m>\nabla f \parallel \langle 1,1\rangle</m>
+</label>
+<label at="gr-center-lab" anchor="(1.12,1.82)" alignment="se" color="#7F7F7F">
+<m>(1,2)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three concentric blue circles centered at the point one comma two are level curves of f. A dark red line with slope one, y equals x plus one, passes through the center. At three points on this line outside the smallest circle, orange arrows of equal length point up and to the right in the direction one comma one, perpendicular to the circles.">
+  <annotation ref="gr-c1" text="A level curve of f: a circle centered at one comma two."/>
+  <annotation ref="gr-line" text="The line y equals x plus one, through the center of the circles, where the gradient points in the direction one comma one."/>
+  <annotation ref="gr-v1" text="The gradient direction one comma one at a point on the line, perpendicular to the level curves."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-gr-3">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+If <m>\vec u = \langle a, b\rangle</m> is a unit vector and <m>f</m>
+has continuous second partials, then
+<md>
+D^2_{\vec u} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
+</md>
+where <m>D^2_{\vec u} f = D_{\vec u}\left[D_{\vec u} f(x,y)\right]</m>.
+</p>
+</statement>
+<feedback>
+<p>
+We have that
+<md>
+D^2_{\vec u} f
+= D_{\vec u}\left[D_{\vec u} f(x,y)\right]
+= D_{\vec u}\left[a f_x + b f_y\right].
+</md>
+This simplifies to
+<md>
+\langle a f_{xx} + b f_{xy},\; a f_{xy} + b f_{yy}\rangle
+\cdot \langle a, b\rangle
+= f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2.
+</md>
+Note we needed <m>f</m> to have continuous second partials to invoke
+Clairaut's Theorem.
+</p>
+</feedback>
+</exercise>
+
+</worksheet>

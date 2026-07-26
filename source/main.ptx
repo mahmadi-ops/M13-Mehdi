@@ -14,7 +14,7 @@
 <latex-image-preamble>
   \usepackage{tikz}
   \usepackage{amsmath}
-  \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+  \usetikzlibrary{decorations.pathmorphing, arrows.meta, calc}
   \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
   <!-- Palette used by the figures in ch-12-5.ptx, matching the colors of
@@ -25,6 +25,7 @@
   \definecolor{mred}{HTML}{E04B4B}
   \definecolor{mpink}{HTML}{D147BD}
   \definecolor{mgreen}{HTML}{4FA84F}
+  \definecolor{morange}{HTML}{E08A2B}
 </latex-image-preamble>
   </docinfo>
 

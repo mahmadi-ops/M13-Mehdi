@@ -30,10 +30,10 @@ no greater than <m>4 \times 10^{-3}</m>?
 Here <m>a = 0</m>, since <m>T_3(x) = x - \dfrac{x^3}{3!}</m>. The
 derivatives of <m>f(x) = \sin(x)</m> are
 <md>
-f'(x) = \cos x, \quad
-f''(x) = -\sin(x), \quad
-f^{(3)}(x) = -\cos(x), \quad
-f^{(4)}(x) = \sin(x),
+<mrow>f'(x) \amp = \cos x, \amp
+f''(x) \amp = -\sin(x),</mrow>
+<mrow>f^{(3)}(x) \amp = -\cos(x), \amp
+f^{(4)}(x) \amp = \sin(x),</mrow>
 </md>
 and therefore
 <m>\left|f^{(4)}(c)\right| = |\sin(c)| \le 1</m>, so we can take
