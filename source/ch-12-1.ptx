@@ -274,14 +274,19 @@ of the planes <m>x = 1</m>, <m>y = 1</m>, and <m>z = 1</m>.
 <figure xml:id="fig-3d-three-planes">
 <caption>
 A point as the intersection of three planes. The planes <m>x=1</m>,
-<m>y=1</m>, and <m>z=1</m> meet in the single point <m>P(1,1,1)</m>.
+<m>y=1</m>, and <m>z=1</m> meet pairwise in three lines, and all three
+lines meet in the single point <m>P(1,1,1)</m>.
 </caption>
 <image width="66%">
 <description>
 <p>
 Three shaded planes, one for x equals 1, one for y equals 1, and one for z
-equals 1, intersect one another at right angles. Their single common point
-is marked in green and labelled P with coordinates 1, 1, 1.
+equals 1, intersect one another at right angles. Each pair of planes meets
+in a red line: the planes x equals 1 and y equals 1 meet in a vertical
+line, the planes x equals 1 and z equals 1 meet in a line running in the y
+direction, and the planes y equals 1 and z equals 1 meet in a line running
+in the x direction. All three red lines cross at the single common point,
+marked in green and labelled P with coordinates 1, 1, 1.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -299,6 +304,10 @@ is marked in green and labelled P with coordinates 1, 1, 1.
 \draw[->, thick] (0,0,0) -- (2.5,0,0) node[below left] {$x$};
 \draw[->, thick] (0,0,0) -- (0,2.5,0) node[right] {$y$};
 \draw[->, thick] (0,0,0) -- (0,0,2.3) node[above] {$z$};
+% lines of intersection of each pair of planes
+\draw[red!70!black, thick] (1,1,-1.7) -- (1,1,1.7);
+\draw[red!70!black, thick] (1,-1.7,1) -- (1,1.7,1);
+\draw[red!70!black, thick] (-1.7,1,1) -- (1.7,1,1);
 \fill[green!50!black] (1,1,1) circle (2pt);
 \node[green!50!black, above right] at (1,1,1) {$P(1,1,1)$};
 \node[purple!70!black] at (-1.5,-1.2,1) {$z=1$};
