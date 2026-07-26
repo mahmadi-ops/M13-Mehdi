@@ -216,4 +216,151 @@ pointing the same way:
 </solution>
 </exercise>
 
+<exercise xml:id="vec-parallelogram-space">
+<title>A parallelogram in space</title>
+<statement>
+<p>
+Consider the four points
+<md>
+A(1,2,5), \qquad B(4,3,3), \qquad C(6,7,4), \qquad D(3,6,6).
+</md>
+<ol marker="A.">
+<li>
+<p>
+Show that <m>ABCD</m> is a parallelogram.
+</p>
+</li>
+<li>
+<p>
+Find the point <m>M</m> at which the two diagonals of <m>ABCD</m> meet.
+</p>
+</li>
+<li>
+<p>
+Find the perimeter of <m>ABCD</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+A quadrilateral is a parallelogram exactly when one pair of opposite
+sides is given by the <em>same</em> vector, since equal vectors have both
+the same direction and the same length. Along the sides <m>AB</m> and
+<m>DC</m>,
+<md>
+<mrow>\vec{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
+= \langle 3,\; 1,\; -2 \rangle,</mrow>
+<mrow>\vec{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
+= \langle 3,\; 1,\; -2 \rangle.</mrow>
+</md>
+Since <m>\vec{AB} = \vec{DC}</m>, these two sides are parallel and have
+equal length, so <m>ABCD</m> is a parallelogram. The other pair of sides
+matches as well:
+<md>
+\vec{AD} = \langle 2,\; 4,\; 1 \rangle = \vec{BC}.
+</md>
+See <xref ref="fig-vec-parallelogram-space"/>.
+</p>
+</li>
+<li>
+<p>
+The diagonals of a parallelogram bisect each other, so <m>M</m> is the
+midpoint of <m>AC</m>. Using position vectors and
+<m>\vec{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
+<md>
+<mrow>\vec{OM} \amp = \vec{OA} + \tfrac12 \vec{AC}
+= \langle 1,\; 2,\; 5 \rangle
++ \tfrac12\langle 5,\; 5,\; -1 \rangle</mrow>
+<mrow>\amp = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92
+\right\rangle.</mrow>
+</md>
+Travelling along the other diagonal instead, with
+<m>\vec{BD} = \langle -1,\; 3,\; 3\rangle</m>,
+<md>
+\vec{OB} + \tfrac12 \vec{BD}
+= \langle 4,\; 3,\; 3 \rangle + \tfrac12\langle -1,\; 3,\; 3 \rangle
+= \left\langle \tfrac72,\; \tfrac92,\; \tfrac92 \right\rangle,
+</md>
+the same point, which confirms both the answer and part A. Hence
+<m>M\left(\frac72,\, \frac92,\, \frac92\right)</m>.
+</p>
+</li>
+<li>
+<p>
+Opposite sides have equal length, so the perimeter is
+<m>2\left(\left|\vec{AB}\right| + \left|\vec{AD}\right|\right)</m>, where
+<md>
+<mrow>\left|\vec{AB}\right| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
+= \sqrt{14},</mrow>
+<mrow>\left|\vec{AD}\right| \amp = \sqrt{2^2 + 4^2 + 1^2}
+= \sqrt{21}.</mrow>
+</md>
+The perimeter is therefore
+<m>2\left(\sqrt{14} + \sqrt{21}\right) \approx 16.65</m>. Since
+<m>\sqrt{14} \ne \sqrt{21}</m>, this parallelogram is not a rhombus.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-vec-parallelogram-space">
+<caption>
+The parallelogram <m>ABCD</m>, with
+<m>\vec{AB} = \vec{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
+<m>\vec{AD} = \vec{BC} = \langle 2,4,1\rangle</m> in magenta. The
+diagonals <m>AC</m> and <m>BD</m> cross at their common midpoint
+<m>M\left(\frac72,\frac92,\frac92\right)</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+Three coordinate axes labelled x, y and z. Four points A, B, C and D in
+space are joined into a slanted parallelogram. The two sides from A to B
+and from D to C are drawn as blue arrows of the same length and
+direction, and the two sides from A to D and from B to C are drawn as
+magenta arrows, also equal to each other. The two diagonals, from A to C
+and from B to D, are dashed grey segments that cross at a marked red
+point M in the middle of the parallelogram.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.78, >=stealth]
+\draw[->, thick] (0,0,0) -- (5.0,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,8.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,7.2) node[above] {$z$};
+\node[above left] at (0,0,0) {$0$};
+\coordinate (A) at (1,2,5);
+\coordinate (B) at (4,3,3);
+\coordinate (C) at (6,7,4);
+\coordinate (D) at (3,6,6);
+\coordinate (M) at (3.5,4.5,4.5);
+% the diagonals, drawn first so the sides sit on top of them
+\draw[gray, thick, dashed] (A) -- (C);
+\draw[gray, thick, dashed] (B) -- (D);
+% the two pairs of equal sides
+\draw[->, cyan!60!black, very thick] (A) -- (B);
+\draw[->, cyan!60!black, very thick] (D) -- (C);
+\draw[->, magenta, very thick] (A) -- (D);
+\draw[->, magenta, very thick] (B) -- (C);
+% vertices
+\foreach \p in {A,B,C,D} \fill[black] (\p) circle (1.7pt);
+\fill[red] (M) circle (2.0pt);
+\node[left=3pt]         at (A) {$A(1,2,5)$};
+\node[below left=1pt]   at (B) {$B(4,3,3)$};
+\node[below right=1pt]  at (C) {$C(6,7,4)$};
+\node[above right=1pt]  at (D) {$D(3,6,6)$};
+\node[red, right=2pt]   at (M) {$M$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

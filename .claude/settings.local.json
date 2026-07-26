@@ -159,7 +159,8 @@
       "Bash(grep -iE 'PTX:ERROR|^.{0,12}error|Success')",
       "Bash(awk '{print $6, $7, $8}')",
       "Bash(grep *)",
-      "Bash(awk 'NR>=270 && /<\\\\/worksheet>/ {print NR\": \"$0}' source/exercises.ptx)"
+      "Bash(awk 'NR>=270 && /<\\\\/worksheet>/ {print NR\": \"$0}' source/exercises.ptx)",
+      "Bash(rsvg-convert -w 720 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-vec-parallelogram-space-2.svg -o para.png)"
     ]
   }
 }
