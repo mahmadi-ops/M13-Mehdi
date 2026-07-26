@@ -323,11 +323,7 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 <m>\mathbf v = \langle 3,-2,1\rangle</m>.
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-cross-compute">
-<title>Solution</title>
-
+<solution>
 <p>
 <md>
 <mrow>
@@ -349,45 +345,8 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 </mrow>
 </md>
 </p>
-
-</paragraphs>
-
-<exercise xml:id="exercise-cross-identity">
-<statement>
-<p>
-Show that
-<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
-</p>
-</statement>
-<solution>
-<p>
-Using the distributive properties of the cross product from
-<xref ref="thm-cross-properties"/>,
-<md>
-(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
-= \mathbf u \times \mathbf u + \mathbf u \times \mathbf v
-- \mathbf v \times \mathbf u - \mathbf v \times \mathbf v.
-</md>
-Since a vector is parallel to itself,
-<m>\mathbf u \times \mathbf u = \mathbf 0</m> and
-<m>\mathbf v \times \mathbf v = \mathbf 0</m> by
-<xref ref="fact-parallel-vectors"/>. Also
-<m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m> by
-<xref ref="thm-cross-properties"/>, so
-<md>
-(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
-= \mathbf 0 + \mathbf u \times \mathbf v - \bigl(-(\mathbf u \times \mathbf v)\bigr) - \mathbf 0
-= 2(\mathbf u \times \mathbf v).
-</md>
-</p>
 </solution>
-</exercise>
-
-</section>
-
-<!-- ================================================================ -->
-<section xml:id="sec-perpendicular-vector">
-<title>Computing a Vector Perpendicular to Two Other Vectors</title>
+</example>
 
 <example xml:id="example-perpendicular-vector">
 <title>Computing a vector perpendicular to two other vectors</title>
@@ -398,11 +357,7 @@ Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
 <m>\vec{AB}</m> and <m>\vec{AC}</m>.
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-perpendicular-vector">
-<title>Solution</title>
-
+<solution>
 <p>
 We first compute the two vectors:
 <md>
@@ -444,8 +399,6 @@ The unit vector in question is then computed as follows:
 \end{aligned}
 </md>
 </p>
-</paragraphs>
-
 <figure xml:id="fig-normal-vector-video">
 <caption>
 The unit vector <m>\mathbf n</m> is orthogonal to both
@@ -456,12 +409,8 @@ points <m>A</m>, <m>B</m>, and <m>C</m>.
        source="videos/normal_vector_3d_1080p.mp4"
        width="70%" aspect="16:9"/>
 </figure>
-
-</section>
-
-<!-- ================================================================ -->
-<section xml:id="sec-triangle-area">
-<title>Computing the Area of a Triangle</title>
+</solution>
+</example>
 
 <example xml:id="example-triangle-area">
 <title>Computing the area of a triangle</title>
@@ -472,11 +421,7 @@ Find the area of the triangle with the vertices <m>A(1,-1,2)</m>,
 points that we had in the previous example.
 </p>
 </statement>
-</example>
-
-<paragraphs xml:id="solution-triangle-area">
-<title>Solution</title>
-
+<solution>
 <p>
 To find the area of the triangle, we first compute the area of the
 parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
@@ -492,8 +437,6 @@ parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
 </mrow>
 </md>
 </p>
-</paragraphs>
-
 <figure xml:id="fig-triangle-area">
 <caption>
 The triangle built on the vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>
@@ -529,6 +472,39 @@ is half of the corresponding parallelogram.
 </prefigure>
 </image>
 </figure>
+</solution>
+</example>
+
+<exercise xml:id="exercise-cross-identity">
+<statement>
+<p>
+Show that
+<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Using the distributive properties of the cross product from
+<xref ref="thm-cross-properties"/>,
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf u \times \mathbf u + \mathbf u \times \mathbf v
+- \mathbf v \times \mathbf u - \mathbf v \times \mathbf v.
+</md>
+Since a vector is parallel to itself,
+<m>\mathbf u \times \mathbf u = \mathbf 0</m> and
+<m>\mathbf v \times \mathbf v = \mathbf 0</m> by
+<xref ref="fact-parallel-vectors"/>. Also
+<m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m> by
+<xref ref="thm-cross-properties"/>, so
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf 0 + \mathbf u \times \mathbf v - \bigl(-(\mathbf u \times \mathbf v)\bigr) - \mathbf 0
+= 2(\mathbf u \times \mathbf v).
+</md>
+</p>
+</solution>
+</exercise>
 
 </section>
 
@@ -607,7 +583,6 @@ have <m>|\vec u| = |\vec v| = 1</m>, which means:
 
 </section>
 
-<!-- Insert into the-cross-product.ptx (e.g. after sec-triangle-area) -->
 <!-- ================================================================ -->
 <section xml:id="sec-torque">
 <title>Application: Torque</title>
