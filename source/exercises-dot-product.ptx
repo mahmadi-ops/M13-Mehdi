@@ -209,4 +209,356 @@ matching part A.
 </solution>
 </exercise>
 
+<exercise xml:id="m2a-1">
+<statement>
+<p>
+Let <m>\vec v</m> be the vector from <m>(-4,3,-1)</m> to
+<m>(-2,-1,3)</m>.
+<ol marker="(a)">
+<li>
+<p>
+Find a non-zero unit vector that is orthogonal to <m>\vec v</m>.
+</p>
+</li>
+<li>
+<p>
+Find the angle between <m>\vec v</m> and
+<m>\vec w = 3\mathbf i - \mathbf k</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+First,
+<md>
+<mrow>\vec v \amp = \left\langle -2-(-4),\ -1-3,\ 3-(-1) \right\rangle
+= \left\langle 2,\ -4,\ 4 \right\rangle ,</mrow>
+<mrow>\|\vec v\| \amp = \sqrt{4+16+16} = \sqrt{36} = 6 .</mrow>
+</md>
+</p>
+
+<p>
+<term>(a)</term> We need any non-zero <m>\vec u</m> with
+<m>\vec u \cdot \vec v = 0</m>. Writing
+<m>\vec u = \left\langle a,b,c\right\rangle</m>, the condition is
+<md>
+2a - 4b + 4c = 0 .
+</md>
+This is one equation in three unknowns, so there are infinitely many
+answers; we just pick a convenient one. Taking <m>c = 0</m> gives
+<m>2a = 4b</m>, so <m>a = 2</m>, <m>b = 1</m> works:
+<md>
+\vec u = \left\langle 2,\ 1,\ 0 \right\rangle ,
+\qquad \vec u \cdot \vec v = 4 - 4 + 0 = 0 . 
+</md>
+Finally we normalize:
+<md>
+\hat u = \frac{\vec u}{\|\vec u\|}
+       = \frac{1}{\sqrt5}\left\langle 2,\ 1,\ 0 \right\rangle
+       = \left\langle \frac{2}{\sqrt5},\ \frac{1}{\sqrt5},\ 0
+         \right\rangle .
+</md>
+</p>
+
+<p>
+<term>(b)</term> With
+<m>\vec w = \left\langle 3, 0, -1 \right\rangle</m> we have
+<md>
+<mrow>\vec v \cdot \vec w \amp = (2)(3) + (-4)(0) + (4)(-1) = 6 - 4 = 2 ,</mrow>
+<mrow>\|\vec w\| \amp = \sqrt{9+0+1} = \sqrt{10} .</mrow>
+</md>
+Therefore
+<md>
+\cos\theta = \frac{\vec v \cdot \vec w}{\|\vec v\|\,\|\vec w\|}
+           = \frac{2}{6\sqrt{10}} = \frac{1}{3\sqrt{10}}
+           \approx 0.1054 ,
+</md>
+so
+<md>
+\theta = \cos^{-1}\!\left(\frac{1}{3\sqrt{10}}\right)
+       \approx 1.465 \text{ radians} \approx 83.9^{\circ} .
+</md>
+The angle is slightly less than a right angle, which matches the fact
+that the dot product is positive but small.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-3">
+<statement>
+<p>
+Let <m>A = (0,0,1)</m> and <m>B = (0,2,3)</m>. Find an equation for the
+set of all points <m>P = (x,y,z)</m> such that <m>\vec{AP}</m> is
+orthogonal to <m>\vec{BP}</m>. Then sketch the resulting surface in
+three dimensions.
+</p>
+</statement>
+<solution>
+<p>
+The two vectors are
+<md>
+<mrow>\vec{AP} \amp = \left\langle x-0,\ y-0,\ z-1 \right\rangle
+= \left\langle x,\ y,\ z-1 \right\rangle ,</mrow>
+<mrow>\vec{BP} \amp = \left\langle x,\ y-2,\ z-3 \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Orthogonality means the dot product vanishes:
+<md>
+<mrow>\vec{AP}\cdot\vec{BP} \amp = 0</mrow>
+<mrow>x^2 + y(y-2) + (z-1)(z-3) \amp = 0</mrow>
+<mrow>x^2 + y^2 - 2y + z^2 - 4z + 3 \amp = 0 .</mrow>
+</md>
+</p>
+
+<p>
+Now complete the square in <m>y</m> and in <m>z</m>:
+<md>
+<mrow>x^2 + \left(y^2 - 2y + 1\right) + \left(z^2 - 4z + 4\right)
+  \amp = -3 + 1 + 4</mrow>
+<mrow>x^2 + (y-1)^2 + (z-2)^2 \amp = 2 .</mrow>
+</md>
+</p>
+
+<p>
+This is the sphere of radius <m>\sqrt2</m> centred at
+<m>(0,1,2)</m>. That centre is exactly the midpoint of <m>A</m> and
+<m>B</m>, and the radius is exactly half of
+<m>\|\vec{AB}\| = \|\langle 0,2,2\rangle\| = 2\sqrt2</m>. This is the
+three-dimensional version of the familiar fact from plane geometry: the
+points from which a given segment subtends a right angle form the
+circle having that segment as a diameter. See
+<xref ref="fig-m2a-sphere"/>.
+</p>
+
+<figure xml:id="fig-m2a-sphere">
+<caption>
+The set of points <m>P</m> with <m>\vec{AP} \perp \vec{BP}</m> is the
+sphere having <m>\overline{AB}</m> as a diameter, namely
+<m>x^2+(y-1)^2+(z-2)^2 = 2</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+A sphere in three dimensional space with the segment from A at zero,
+zero, one to B at zero, two, three drawn as a diameter. A point P is
+marked on the sphere and the two segments from P to A and from P to B
+meet at a right angle.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
+% axes
+\draw[->, thick] (-1.6,0,0) -- (2.2,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1.2,0) -- (0,4.0,0) node[right] {$y$};
+\draw[->, thick] (0,0,-0.8) -- (0,0,4.6) node[above] {$z$};
+% the sphere: centre (0,1,2), radius sqrt(2)
+\shade[ball color=mblue, opacity=0.30] (0,1,2) circle (1.4142cm);
+% the diameter AB
+\coordinate (A) at (0,0,1);
+\coordinate (B) at (0,2,3);
+\coordinate (P) at (0,2.1,1.15);
+\draw[very thick, mred] (A) -- (B);
+\draw[very thick, mgreen] (A) -- (P);
+\draw[very thick, morange] (B) -- (P);
+\fill[mred] (A) circle (1.7pt);
+\fill[mred] (B) circle (1.7pt);
+\fill[black] (0,1,2) circle (1.4pt);
+\fill[mverm] (P) circle (1.7pt);
+\node[mred, anchor=east] at (A) {$A(0,0,1)$\;};
+\node[mred, anchor=south] at (B) {$B(0,2,3)$};
+\node[anchor=south east] at (0,1,2) {$(0,1,2)$\;};
+\node[mverm, anchor=west] at (P) {\;$P$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-1">
+<statement>
+<p>
+Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
+tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label diagrams for the following:
+<ol marker="(a)">
+<li>
+<p>
+<m>\vec A</m>, <m>\vec B</m>, and <m>\vec B - \vec A</m>.
+</p>
+</li>
+<li>
+<p>
+<m>\vec A</m>, <m>\vec B</m>, and <m>\operatorname{proj}_{\vec A}
+\vec B</m>.
+</p>
+</li>
+<li>
+<p>
+<m>\vec A</m>, <m>\vec B</m>, and <m>\vec A \times \vec B</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions shown on the exam. Everything below is a statement about
+the <em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+
+<p>
+<term>(a)</term> The difference <m>\vec B - \vec A</m> is the vector
+that, added to <m>\vec A</m>, gives <m>\vec B</m>. So when
+<m>\vec A</m> and <m>\vec B</m> are drawn from a common tail,
+<m>\vec B - \vec A</m> is the arrow that runs
+<em>from the tip of</em> <m>\vec A</m> <em>to the tip of</em>
+<m>\vec B</m>. (Here it is
+<m>\left\langle -7, 3 \right\rangle</m>.) It is easy to get this
+backwards; the check is that
+<m>\vec A + (\vec B - \vec A) = \vec B</m>.
+</p>
+
+<p>
+<term>(b)</term> The projection of <m>\vec B</m> onto <m>\vec A</m> is
+the shadow that <m>\vec B</m> casts on the line through
+<m>\vec A</m>, obtained by dropping a perpendicular from the tip of
+<m>\vec B</m> to that line. Algebraically,
+<md>
+<mrow>\operatorname{proj}_{\vec A}\vec B
+\amp = \left(\frac{\vec A\cdot\vec B}{\|\vec A\|^2}\right)\vec A
+= \left(\frac{-12+10}{20}\right)\left\langle 4,2\right\rangle</mrow>
+<mrow>\amp = -\frac{1}{10}\left\langle 4,2\right\rangle
+= \left\langle -0.4,\ -0.2 \right\rangle .</mrow>
+</md>
+Because the angle between <m>\vec A</m> and <m>\vec B</m> is
+<em>obtuse</em>, the dot product is negative and the projection points
+in the direction <em>opposite</em> to <m>\vec A</m>. This is the
+feature of the picture the problem is testing.
+</p>
+
+<p>
+<term>(c)</term> The cross product <m>\vec A\times\vec B</m> is
+perpendicular to both, hence perpendicular to the page. The right-hand
+rule (curl the fingers of the right hand from <m>\vec A</m> towards
+<m>\vec B</m> through the smaller angle) shows that it points
+<em>out of the page</em>, which we draw as a circle with a dot in it.
+Indeed, treating the vectors as lying in the <m>xy</m>-plane,
+<md>
+\vec A\times\vec B
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+4 \amp 2 \amp 0 \\
+-3 \amp 5 \amp 0
+\end{vmatrix}
+= \left\langle 0,\ 0,\ (4)(5)-(2)(-3) \right\rangle
+= 26\,\mathbf k ,
+</md>
+and the <m>\mathbf k</m>-component is positive. Its length,
+<m>26</m>, is the area of the parallelogram spanned by <m>\vec A</m>
+and <m>\vec B</m>. All three pictures are shown in
+<xref ref="fig-m2b-vectors"/>.
+</p>
+
+<figure xml:id="fig-m2b-vectors">
+<caption>
+The three sketches. Left: <m>\vec B-\vec A</m> runs from the tip of
+<m>\vec A</m> to the tip of <m>\vec B</m>. Centre: since the angle is
+obtuse, <m>\operatorname{proj}_{\vec A}\vec B</m> points opposite to
+<m>\vec A</m>. Right: <m>\vec A\times\vec B</m> points out of the page.
+</caption>
+<image width="100%">
+<description>
+<p>
+Three side by side panels. In each, a blue arrow A points up and to the
+right and a green arrow B points up and to the left from a common tail.
+In the first panel an orange arrow runs from the tip of A to the tip of
+B. In the second panel a short dark red arrow along the line of A
+points backwards, away from A, with a dashed perpendicular from the tip
+of B. In the third panel a circle with a dot in its centre represents a
+vector coming out of the page.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-vectors">
+<diagram dimensions="(760,290)" margins="16">
+<coordinates bbox="(-6.0,-4.4,30.5,9.0)">
+<!-- panel (a) -->
+<vector at="pa-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pa-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="pa-D" v="(-7,3)" tail="(4,2)" stroke="#D55E00" thickness="2"/>
+<label at="pa-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec A</m>
+</label>
+<label at="pa-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec B</m>
+</label>
+<label at="pa-Dl" anchor="(0.5,3.9)" alignment="n" color="#D55E00">
+<m>\vec B-\vec A</m>
+</label>
+<label at="pa-t" anchor="(-1.0,-3.6)" alignment="e">
+<m>\text{(a)}</m>
+</label>
+<!-- panel (b), origin shifted to (13,0) -->
+<line at="pb-axis" p1="(9.5,-1.75)" p2="(18.5,2.75)"
+      stroke="#7F7F7F" thickness="1.5" dash="5 4"/>
+<vector at="pb-A" v="(4,2)" tail="(13,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pb-B" v="(-3,5)" tail="(13,0)" stroke="#009E73" thickness="2"/>
+<vector at="pb-P" v="(-0.4,-0.2)" tail="(13,0)" stroke="#8B1A4A" thickness="3"/>
+<line at="pb-drop" p1="(10,5)" p2="(12.6,-0.2)"
+      stroke="#7F7F7F" thickness="1.5" dash="4 3"/>
+<label at="pb-Al" anchor="(17.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec A</m>
+</label>
+<label at="pb-Bl" anchor="(9.9,5.1)" alignment="nw" color="#009E73">
+<m>\vec B</m>
+</label>
+<label at="pb-Pl" anchor="(12.45,-1.35)" alignment="w" color="#8B1A4A">
+<m>\operatorname{proj}_{\vec A}\vec B</m>
+</label>
+<label at="pb-t" anchor="(12.0,-3.6)" alignment="e">
+<m>\text{(b)}</m>
+</label>
+<!-- panel (c), origin shifted to (26,0) -->
+<vector at="pc-A" v="(4,2)" tail="(26,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pc-B" v="(-3,5)" tail="(26,0)" stroke="#009E73" thickness="2"/>
+<circle at="pc-out" center="(24.6,7.0)" radius="0.62"
+        stroke="#8B1A4A" thickness="2.5" fill="none"/>
+<point at="pc-dot" p="(24.6,7.0)" fill="#8B1A4A"/>
+<label at="pc-Al" anchor="(30.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec A</m>
+</label>
+<label at="pc-Bl" anchor="(22.9,5.1)" alignment="nw" color="#009E73">
+<m>\vec B</m>
+</label>
+<label at="pc-Xl" anchor="(25.4,7.0)" alignment="e" color="#8B1A4A">
+<m>\vec A\times\vec B</m>
+</label>
+<label at="pc-t" anchor="(25.0,-3.6)" alignment="e">
+<m>\text{(c)}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three panels labelled a, b and c. Each shows a blue vector A pointing up and to the right and a green vector B pointing up and to the left from a common tail. Panel a adds an orange vector from the tip of A to the tip of B, labelled B minus A. Panel b adds a short dark red vector pointing backwards along the line of A, labelled the projection of B onto A, together with dashed construction lines. Panel c adds a small circle with a dot at its centre, labelled A cross B out of the page.">
+  <annotation ref="pa-D" text="The vector B minus A, drawn from the tip of A to the tip of B."/>
+  <annotation ref="pb-P" text="The projection of B onto A, which points opposite to A because the angle between A and B is obtuse."/>
+  <annotation ref="pc-out" text="A circle with a dot at its centre, the standard symbol for a vector pointing out of the page, representing A cross B."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

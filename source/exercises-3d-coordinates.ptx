@@ -179,4 +179,99 @@ Setting <m>z = 0</m> on the sphere gives <m>x^2 + y^2 = 4</m>: the
 </solution>
 </exercise>
 
+<exercise xml:id="m1-3">
+<statement>
+<p>
+Consider the point <m>(3,7,-5)</m>.
+<ol marker="(a)">
+<li>
+<p>
+What is its distance to the <m>yz</m>-plane?
+</p>
+</li>
+<li>
+<p>
+What is its distance to the <m>y</m>-axis?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> The <m>yz</m>-plane is the plane <m>x = 0</m>. The
+closest point of that plane to <m>(3,7,-5)</m> is obtained by simply
+setting the <m>x</m>-coordinate to zero, giving <m>(0,7,-5)</m>. Hence
+the distance is
+<md>
+\sqrt{(3-0)^2 + (7-7)^2 + (-5+5)^2} = |3| = 3 .
+</md>
+In general the distance from <m>(x_0,y_0,z_0)</m> to the
+<m>yz</m>-plane is <m>|x_0|</m>.
+</p>
+
+<p>
+<term>(b)</term> The <m>y</m>-axis consists of the points
+<m>(0,y,0)</m>. The closest such point to <m>(3,7,-5)</m> is the one
+with the same <m>y</m>-coordinate, namely <m>(0,7,0)</m>, so the
+distance is
+<md>
+\sqrt{(3-0)^2 + (7-7)^2 + (-5-0)^2} = \sqrt{9+25} = \sqrt{34} .
+</md>
+In general the distance from <m>(x_0,y_0,z_0)</m> to the
+<m>y</m>-axis is <m>\sqrt{x_0^2+z_0^2}</m>: we drop the coordinate
+along the axis and keep the other two.
+See <xref ref="fig-m1-distances"/>.
+</p>
+
+<figure xml:id="fig-m1-distances">
+<caption>
+The point <m>P(3,7,-5)</m>, its distance <m>3</m> to the
+<m>yz</m>-plane (measured horizontally, parallel to the
+<m>x</m>-axis), and its distance <m>\sqrt{34}</m> to the
+<m>y</m>-axis (measured perpendicular to that axis).
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional coordinate system with the point P at three, seven,
+negative five. A segment runs from P horizontally to the point zero,
+seven, negative five in the y z plane, and a second segment runs from P
+to the point zero, seven, zero on the y axis.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
+% axes
+\draw[->, thick] (-1,0,0) -- (5,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1,0) -- (0,9,0) node[right] {$y$};
+\draw[->, thick] (0,0,-7) -- (0,0,3) node[above] {$z$};
+% a patch of the yz-plane
+\fill[mblue, opacity=0.14] (0,3.4,-6.8) -- (0,9.2,-6.8) -- (0,9.2,1.6)
+      -- (0,3.4,1.6) -- cycle;
+\node[mblue, anchor=south] at (0,6.3,1.7) {$yz$-plane};
+% the point and its shadows
+\coordinate (P) at (3,7,-5);
+\coordinate (F) at (0,7,-5);
+\coordinate (A) at (0,7,0);
+\draw[dashed, mgray] (0,7,0) -- (F);
+\draw[dashed, mgray] (3,0,0) -- (3,7,0) -- (P);
+\draw[dashed, mgray] (3,7,0) -- (A);
+\draw[very thick, mverm] (P) -- (F)
+      node[midway, anchor=north west, inner sep=1pt] {$3$};
+\draw[very thick, mgreen] (P) -- (A)
+      node[midway, anchor=east] {$\sqrt{34}$\;};
+\fill[mred] (P) circle (1.6pt);
+\fill[mverm] (F) circle (1.6pt);
+\fill[mgreen] (A) circle (1.6pt);
+\node[mred, anchor=north east] at (P) {$P(3,7,-5)$\;};
+\node[mverm, anchor=west] at (F) {\;$(0,7,-5)$};
+\node[mgreen, anchor=south west] at (A) {\;$(0,7,0)$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

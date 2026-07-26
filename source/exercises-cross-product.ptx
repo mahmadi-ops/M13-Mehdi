@@ -161,4 +161,63 @@ The cross product is normal to the plane, so the plane has the form
 </solution>
 </exercise>
 
+<exercise xml:id="m2b-4">
+<statement>
+<p>
+Suppose <m>\|\vec A\| = 3</m>, <m>\|\vec B\| = 4</m> and
+<m>\|\vec A\times\vec B\| = 6</m>. Find
+<ol marker="(a)">
+<li>
+<p>
+<m>\left|\vec A\cdot\vec B\right|</m>;
+</p>
+</li>
+<li>
+<p>
+<m>\left\|\operatorname{proj}_{\vec A}\vec B\right\|</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Let <m>\theta</m> be the angle between the two
+vectors, <m>0 \le \theta \le \pi</m>. From
+<m>\|\vec A\times\vec B\| = \|\vec A\|\,\|\vec B\|\sin\theta</m>,
+<md>
+6 = (3)(4)\sin\theta \quad\Longrightarrow\quad
+\sin\theta = \frac{6}{12} = \frac12 .
+</md>
+Since <m>\sin^2\theta + \cos^2\theta = 1</m>,
+<md>
+|\cos\theta| = \sqrt{1 - \tfrac14} = \frac{\sqrt3}{2} .
+</md>
+(We cannot determine the <em>sign</em> of <m>\cos\theta</m>, since
+<m>\theta</m> could be <m>30^\circ</m> or <m>150^\circ</m>; this is
+exactly why the problem asks for the absolute value.) Therefore
+<md>
+\left|\vec A\cdot\vec B\right|
+ = \|\vec A\|\,\|\vec B\|\,|\cos\theta|
+ = (3)(4)\frac{\sqrt3}{2} = 6\sqrt3 .
+</md>
+</p>
+
+<p>
+<term>(b)</term> The projection is
+<m>\operatorname{proj}_{\vec A}\vec B
+= \left(\dfrac{\vec A\cdot\vec B}{\|\vec A\|^2}\right)\vec A</m>, so
+its length is
+<md>
+\left\|\operatorname{proj}_{\vec A}\vec B\right\|
+ = \frac{\left|\vec A\cdot\vec B\right|}{\|\vec A\|^2}\,\|\vec A\|
+ = \frac{\left|\vec A\cdot\vec B\right|}{\|\vec A\|}
+ = \frac{6\sqrt3}{3} = 2\sqrt3 .
+</md>
+As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
+<m>\|\vec B\| = 4</m>, as a shadow must be.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

@@ -570,4 +570,153 @@ corresponding points.
 </solution>
 </exercise>
 
+<exercise xml:id="m2b-2">
+<statement>
+<p>
+Given the surface <m>4x^2 - y^2 = -4 - z^2</m>:
+<ol marker="(a)">
+<li>
+<p>
+Sketch the surface in three dimensions. Label any points where the
+surface crosses the coordinate axes.
+</p>
+</li>
+<li>
+<p>
+Let <m>C</m> be the curve given by the intersection of this surface
+with the plane <m>y = \sqrt6</m>. Parametrize the entire curve <m>C</m>
+using one parametrization.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Collect everything on the left and divide by
+<m>-4</m>:
+<md>
+<mrow>4x^2 - y^2 + z^2 \amp = -4</mrow>
+<mrow>-x^2 + \frac{y^2}{4} - \frac{z^2}{4} \amp = 1</mrow>
+<mrow>\frac{y^2}{4} - x^2 - \frac{z^2}{4} \amp = 1 .</mrow>
+</md>
+Two minus signs and one plus sign, with the constant <m>1</m> on the
+right, identify this as a <term>hyperboloid of two sheets</term>. The
+axis is the one belonging to the positive term, so the axis is the
+<m>y</m>-axis.
+</p>
+
+<p>
+The traces confirm this.
+<ul>
+<li>
+<p>
+Setting <m>y = k</m> gives <m>4x^2 + z^2 = k^2-4</m>, which is an
+ellipse when <m>|k| \gt 2</m>, a single point when <m>|k| = 2</m>, and
+empty when <m>|k| \lt 2</m>. So there is nothing at all in the slab
+<m>-2 \lt y \lt 2</m>: this is why there are two separate sheets.
+</p>
+</li>
+<li>
+<p>
+Setting <m>z = 0</m> gives <m>y^2/4 - x^2 = 1</m>, a hyperbola opening
+along the <m>y</m>-axis, and setting <m>x = 0</m> gives
+<m>y^2/4 - z^2/4 = 1</m>, likewise.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+<term>Axis crossings.</term> Setting <m>y = z = 0</m> gives
+<m>4x^2 = -4</m>, impossible; setting <m>x = y = 0</m> gives
+<m>z^2 = -4</m>, impossible. Setting <m>x = z = 0</m> gives
+<m>y^2 = 4</m>, so the surface meets the axes only at the two vertices
+<md>
+(0,\ 2,\ 0) \qquad\text{and}\qquad (0,\ -2,\ 0) .
+</md>
+See <xref ref="fig-m2b-hyperboloid"/>.
+</p>
+
+<figure xml:id="fig-m2b-hyperboloid">
+<caption>
+The hyperboloid of two sheets
+<m>\tfrac{y^2}{4} - x^2 - \tfrac{z^2}{4} = 1</m>, with vertices at
+<m>(0,\pm2,0)</m>. The curve <m>C</m>, the trace in the plane
+<m>y=\sqrt6</m>, is drawn on the right-hand sheet.
+</caption>
+<image width="74%">
+<description>
+<p>
+Two bowl shaped sheets opening away from each other along the y axis,
+with vertices at y equals two and y equals negative two. An ellipse is
+drawn on the sheet in the positive y direction, at the height y equals
+the square root of six.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=12cm, height=9cm,
+  view={-72}{16},
+  xmin=-2.4, xmax=2.4, ymin=-5.4, ymax=5.4, zmin=-4.4, zmax=4.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-4,-2,0,2,4}, ztick={-4,0,4},
+  clip=false,
+]
+% right-hand sheet: x = sinh(u)cos(v), y = 2cosh(u), z = 2 sinh(u) sin(v)
+\addplot3[surf, shader=flat, fill=mblue, draw=mblue,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:1.45, y domain=0:360, samples=11, samples y=37,
+          z buffer=sort]
+  ({sinh(x)*cos(y)},{2*cosh(x)},{2*sinh(x)*sin(y)});
+% left-hand sheet
+\addplot3[surf, shader=flat, fill=mgreen, draw=mgreen,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:1.45, y domain=0:360, samples=11, samples y=37,
+          z buffer=sort]
+  ({sinh(x)*cos(y)},{-2*cosh(x)},{2*sinh(x)*sin(y)});
+% the trace curve C in the plane y = sqrt(6)
+\addplot3[very thick, mverm, domain=0:360, samples=60]
+  ({0.7071*cos(x)},{2.4495},{1.4142*sin(x)});
+% vertices
+\addplot3[only marks, mark=*, mark size=2pt, mred]
+  coordinates {(0,2,0) (0,-2,0)};
+\node[mred, anchor=north east, inner sep=2pt, fill=white,
+      fill opacity=0.75, text opacity=1] at (axis cs:0,2,0) {$(0,2,0)$};
+\node[mred, anchor=north west, inner sep=2pt, fill=white,
+      fill opacity=0.75, text opacity=1] at (axis cs:0,-2,0) {$(0,-2,0)$};
+\node[mverm, anchor=south, fill=white, fill opacity=0.75, text opacity=1,
+      inner sep=1pt] at (axis cs:0,2.4495,1.6) {$C$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> Substituting <m>y = \sqrt6</m> into
+<m>4x^2 - y^2 + z^2 = -4</m>:
+<md>
+<mrow>4x^2 - 6 + z^2 \amp = -4</mrow>
+<mrow>4x^2 + z^2 \amp = 2</mrow>
+<mrow>\frac{x^2}{\tfrac12} + \frac{z^2}{2} \amp = 1 .</mrow>
+</md>
+This is an ellipse in the plane <m>y=\sqrt6</m>, with semi-axis
+<m>1/\sqrt2</m> in the <m>x</m>-direction and <m>\sqrt2</m> in the
+<m>z</m>-direction. Exactly as in the previous problem we set
+<m>x/\left(1/\sqrt2\right) = \cos t</m> and
+<m>z/\sqrt2 = \sin t</m>, giving
+<md>
+x = \frac{1}{\sqrt2}\cos t, \qquad
+y = \sqrt6, \qquad
+z = \sqrt2\,\sin t, \qquad 0 \le t \le 2\pi .
+</md>
+The <m>y</m>-coordinate is constant because the curve lies in a plane
+perpendicular to the <m>y</m>-axis, and letting <m>t</m> run through
+one full period traces all of <m>C</m> exactly once.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

@@ -78,4 +78,330 @@ and then with respect to <m>y</m>:
 </solution>
 </exercise>
 
+<exercise xml:id="q1-3">
+<statement>
+<p>
+A metal plate occupies the square <m>0 \le x \le 5</m>,
+<m>0 \le y \le 5</m>, and is heated so that the temperature at the
+point <m>(x,y)</m> is <m>T(x,y)</m>, measured in degrees Fahrenheit.
+Distances are measured in feet. The table below records some measured
+values of <m>T</m>.
+</p>
+
+<table xml:id="tab-q1-temps">
+<title>Measured temperatures <m>T(x,y)</m> in <m>{}^{\circ}\text{F}</m></title>
+<tabular halign="center" top="medium" left="medium">
+<row bottom="medium">
+<cell></cell><cell right="medium"><m>y=1</m></cell><cell><m>y=1.5</m></cell><cell><m>y=2</m></cell>
+</row>
+<row>
+<cell><m>x=1</m></cell><cell right="medium"><m>70</m></cell><cell><m>65</m></cell><cell><m>58</m></cell>
+</row>
+<row>
+<cell><m>x=1.5</m></cell><cell right="medium"><m>74</m></cell><cell><m>68</m></cell><cell><m>59</m></cell>
+</row>
+<row>
+<cell><m>x=2</m></cell><cell right="medium"><m>79</m></cell><cell><m>75</m></cell><cell><m>65</m></cell>
+</row>
+</tabular>
+</table>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+Approximate <m>T_x(1,1)</m> and interpret your answer, with units, in
+the context of the problem.
+</p>
+</li>
+<li>
+<p>
+Approximate <m>T_{xy}(1,1)</m>, and give its units.
+</p>
+</li>
+<li>
+<p>
+An ant walks across the plate along the path
+<md>
+x = 1 - \frac{\ln(2t-3)}{8}, \qquad y = \frac{2^t}{4},
+\qquad 1.5 \lt t \lt 4 .
+</md>
+Approximate the rate at which the temperature the ant feels is
+changing at the moment it is at the point <m>(x,y) = (1,1)</m>, and
+give the units.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> A partial derivative is a limit of difference
+quotients, so with the data we have we approximate it by a difference
+quotient. Holding <m>y=1</m> fixed and stepping forward in <m>x</m>
+from <m>x=1</m> to <m>x=1.5</m>,
+<md>
+T_x(1,1) \approx \frac{T(1.5,1) - T(1,1)}{1.5-1}
+         = \frac{74-70}{0.5}
+         = 8 .
+</md>
+The units are degrees Fahrenheit per foot. The interpretation: at the
+point <m>(1,1)</m>, if the ant moves in the positive <m>x</m>-direction
+while its <m>y</m>-coordinate stays fixed, the temperature increases at
+a rate of about <m>8\,{}^{\circ}\text{F}</m> per foot.
+</p>
+
+<p>
+<term>(b)</term> By definition <m>T_{xy} = (T_x)_y</m>, so we compute
+<m>T_x</m> at two different values of <m>y</m> and then take a
+difference quotient in <m>y</m>. We already have
+<m>T_x(1,1) \approx 8</m>, and in the same way
+<md>
+T_x(1,1.5) \approx \frac{T(1.5,1.5) - T(1,1.5)}{0.5}
+           = \frac{68-65}{0.5} = 6 .
+</md>
+Therefore
+<md>
+T_{xy}(1,1) \approx \frac{T_x(1,1.5) - T_x(1,1)}{1.5-1}
+            = \frac{6-8}{0.5} = -4 .
+</md>
+The units are degrees Fahrenheit per foot per foot, i.e.
+<m>{}^{\circ}\text{F}/\text{ft}^2</m>. This says that as we move in the
+<m>y</m>-direction, the rate at which the temperature rises in the
+<m>x</m>-direction is itself decreasing.
+</p>
+
+<p>
+<term>(c)</term> First we find the value of <m>t</m> at which the ant
+is at <m>(1,1)</m>. We need
+<md>
+<mrow>1 - \frac{\ln(2t-3)}{8} = 1
+\amp \quad\Longrightarrow\quad \ln(2t-3) = 0</mrow>
+<mrow>\amp \quad\Longrightarrow\quad 2t-3 = 1
+\quad\Longrightarrow\quad t = 2 ,</mrow>
+</md>
+and indeed <m>y = 2^2/4 = 1</m> at <m>t=2</m>, as required. Note that
+<m>t=2</m> lies in the given interval <m>1.5 \lt t \lt 4</m>.
+</p>
+
+<p>
+Next we differentiate the path:
+<md>
+<mrow>\frac{dx}{dt} \amp = -\frac{1}{8}\cdot\frac{2}{2t-3}
+              = -\frac{1}{4(2t-3)},
+\amp \frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{4} ,</mrow>
+<mrow>\frac{dy}{dt} \amp = \frac{2^t \ln 2}{4},
+\amp \frac{dy}{dt}\bigg|_{t=2} \amp = \frac{4\ln 2}{4} = \ln 2 .</mrow>
+</md>
+</p>
+
+<p>
+We also need <m>T_y(1,1)</m>, which we approximate from the table just
+as before, stepping forward in <m>y</m>:
+<md>
+T_y(1,1) \approx \frac{T(1,1.5) - T(1,1)}{0.5} = \frac{65-70}{0.5}
+         = -10 .
+</md>
+</p>
+
+<p>
+Now the chain rule gives
+<md>
+<mrow>\frac{dT}{dt} \amp = T_x\,\frac{dx}{dt} + T_y\,\frac{dy}{dt}</mrow>
+<mrow>\amp \approx (8)\left(-\frac14\right) + (-10)(\ln 2)</mrow>
+<mrow>\amp = -2 - 10\ln 2 \approx -8.93 .</mrow>
+</md>
+The units are degrees Fahrenheit per unit of <m>t</m> (per minute, if
+<m>t</m> is measured in minutes). So the ant is cooling off at about
+<m>8.9\,{}^{\circ}\text{F}</m> per unit of time. This makes sense: the
+ant is moving slightly in the <m>-x</m> direction, which cools it a
+little, and it is moving in the <m>+y</m> direction, which cools it a
+lot. <xref ref="fig-q1-ant"/> shows the situation.
+</p>
+
+<figure xml:id="fig-q1-ant">
+<caption>
+The nine data points of <xref ref="tab-q1-temps"/> and the ant's path.
+At <m>t = 2</m> the ant is at <m>(1,1)</m> and its velocity is
+<m>\left\langle -\tfrac14,\ \ln 2\right\rangle</m>. Temperatures fall
+as we move up and to the left, so the ant is cooling.
+</caption>
+<image width="80%">
+<description>
+<p>
+A grid of nine labelled temperature readings on the x y plane, together
+with the ant's curved path passing through the point one comma one, and
+the velocity vector of the ant drawn at that point pointing up and
+slightly to the left.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-q1-ant">
+<diagram dimensions="(430,430)" margins="34">
+<definition>ant(t) = (1 - log(2*t-3)/8, 2^t/4)</definition>
+<coordinates bbox="(0.5,0.5,2.5,2.5)">
+<grid-axes at="q1a-axes" xlabel="x" ylabel="y"/>
+<parametric-curve at="q1a-path" function="ant" domain="(1.55,2.85)"
+                  stroke="#D55E00" thickness="2.5"/>
+<vector at="q1a-vel" v="(-0.25,0.69)" tail="(1,1)"
+        stroke="#8B1A4A" thickness="2"/>
+<point at="q1a-p11" p="(1,1)" fill="#8B1A4A"/>
+<point at="q1a-a" p="(1,1.5)" fill="#0072B2"/>
+<point at="q1a-b" p="(1,2)" fill="#0072B2"/>
+<point at="q1a-c" p="(1.5,1)" fill="#0072B2"/>
+<point at="q1a-d" p="(1.5,1.5)" fill="#0072B2"/>
+<point at="q1a-e" p="(1.5,2)" fill="#0072B2"/>
+<point at="q1a-f" p="(2,1)" fill="#0072B2"/>
+<point at="q1a-g" p="(2,1.5)" fill="#0072B2"/>
+<point at="q1a-h" p="(2,2)" fill="#0072B2"/>
+<label at="q1a-l11" anchor="(0.97,1.0)" alignment="w" color="#8B1A4A">
+<m>70</m>
+</label>
+<label at="q1a-la" anchor="(0.97,1.5)" alignment="w" color="#0072B2"><m>65</m></label>
+<label at="q1a-lb" anchor="(0.97,2)" alignment="w" color="#0072B2"><m>58</m></label>
+<label at="q1a-lc" anchor="(1.5,1)" alignment="sw" color="#0072B2"><m>74</m></label>
+<label at="q1a-ld" anchor="(1.5,1.5)" alignment="sw" color="#0072B2"><m>68</m></label>
+<label at="q1a-le" anchor="(1.5,2)" alignment="sw" color="#0072B2"><m>59</m></label>
+<label at="q1a-lf" anchor="(2,1)" alignment="sw" color="#0072B2"><m>79</m></label>
+<label at="q1a-lg" anchor="(2,1.5)" alignment="sw" color="#0072B2"><m>75</m></label>
+<label at="q1a-lh" anchor="(2,2)" alignment="sw" color="#0072B2"><m>65</m></label>
+<label at="q1a-vlab" anchor="(0.78,1.74)" alignment="ne" color="#8B1A4A">
+<m>\left\langle x'(2), y'(2)\right\rangle</m>
+</label>
+<label at="q1a-plab" anchor="(1.55,2.30)" alignment="e" color="#D55E00">
+<m>\text{ant's path}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A portion of the x y plane between x equals zero point five five and two point four five. Nine data points are marked at the corners of a grid with x and y each equal to one, one point five and two, each labelled with its temperature. An orange curve, the ant's path, rises steeply through the point one comma one, and a dark red velocity arrow at that point points up and slightly to the left.">
+  <annotation ref="q1a-path" text="The ant's path, given parametrically by x equals one minus one eighth of the natural log of two t minus three, and y equals two to the t over four."/>
+  <annotation ref="q1a-vel" text="The velocity vector of the ant at t equals two, with components negative one quarter and natural log of two."/>
+  <annotation ref="q1a-p11" text="The point one comma one, where the temperature is seventy degrees."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="q2-3">
+<statement>
+<p>
+A metal plate occupies the square <m>0 \le x \le 5</m>,
+<m>0 \le y \le 5</m>, and is heated so that the temperature at the
+point <m>(x,y)</m> is <m>T(x,y)</m>, measured in degrees Fahrenheit.
+Distances are measured in feet. The table below records some measured
+values of <m>T</m>.
+</p>
+
+<table xml:id="tab-q2-temps">
+<title>Measured temperatures <m>T(x,y)</m> in <m>{}^{\circ}\text{F}</m></title>
+<tabular halign="center" top="medium" left="medium">
+<row bottom="medium">
+<cell></cell><cell right="medium"><m>y=1</m></cell><cell><m>y=1.5</m></cell><cell><m>y=2</m></cell>
+</row>
+<row>
+<cell><m>x=1</m></cell><cell right="medium"><m>70</m></cell><cell><m>73</m></cell><cell><m>79</m></cell>
+</row>
+<row>
+<cell><m>x=1.5</m></cell><cell right="medium"><m>65</m></cell><cell><m>69</m></cell><cell><m>75</m></cell>
+</row>
+<row>
+<cell><m>x=2</m></cell><cell right="medium"><m>58</m></cell><cell><m>60</m></cell><cell><m>65</m></cell>
+</row>
+</tabular>
+</table>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+Approximate <m>T_x(1,1)</m> and interpret your answer, with units, in
+the context of the problem.
+</p>
+</li>
+<li>
+<p>
+Approximate <m>T_{xy}(1,1)</m>, and give its units.
+</p>
+</li>
+<li>
+<p>
+An ant walks across the plate along the path
+<md>
+x = 1 - \frac{\ln(2t-3)}{4}, \qquad y = \frac{2^t}{4},
+\qquad 1.5 \lt t \lt 4 .
+</md>
+Approximate the rate at which the temperature the ant feels is
+changing at the moment it is at the point <m>(x,y) = (1,1)</m>, and
+give the units.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Holding <m>y=1</m> and stepping forward in <m>x</m>,
+<md>
+T_x(1,1) \approx \frac{T(1.5,1) - T(1,1)}{0.5} = \frac{65-70}{0.5}
+         = -10 \quad {}^{\circ}\text{F}/\text{ft} .
+</md>
+So at <m>(1,1)</m>, moving in the positive <m>x</m>-direction with
+<m>y</m> held fixed, the temperature <em>drops</em> at a rate of about
+<m>10\,{}^{\circ}\text{F}</m> per foot.
+</p>
+
+<p>
+<term>(b)</term> We need <m>T_x</m> at a second value of <m>y</m>:
+<md>
+T_x(1,1.5) \approx \frac{T(1.5,1.5) - T(1,1.5)}{0.5}
+           = \frac{69-73}{0.5} = -8 .
+</md>
+Then
+<md>
+T_{xy}(1,1) \approx \frac{T_x(1,1.5) - T_x(1,1)}{0.5}
+            = \frac{-8-(-10)}{0.5} = 4
+            \quad {}^{\circ}\text{F}/\text{ft}^2 .
+</md>
+</p>
+
+<p>
+<term>(c)</term> As in <xref ref="q1-3"/>, the ant is at
+<m>(1,1)</m> when <m>\ln(2t-3) = 0</m>, that is at <m>t = 2</m>, and
+then <m>y = 2^2/4 = 1</m> as required. Differentiating the path,
+<md>
+<mrow>\frac{dx}{dt} \amp = -\frac{1}{4}\cdot\frac{2}{2t-3}
+              = -\frac{1}{2(2t-3)},
+\amp \frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{2} ,</mrow>
+<mrow>\frac{dy}{dt} \amp = \frac{2^t\ln 2}{4},
+\amp \frac{dy}{dt}\bigg|_{t=2} \amp = \ln 2 .</mrow>
+</md>
+</p>
+
+<p>
+From the table,
+<md>
+T_y(1,1) \approx \frac{T(1,1.5)-T(1,1)}{0.5} = \frac{73-70}{0.5} = 6 .
+</md>
+</p>
+
+<p>
+By the chain rule,
+<md>
+<mrow>\frac{dT}{dt} \amp = T_x\,\frac{dx}{dt} + T_y\,\frac{dy}{dt}</mrow>
+<mrow>\amp \approx (-10)\left(-\frac12\right) + (6)(\ln 2)</mrow>
+<mrow>\amp = 5 + 6\ln 2 \approx 9.16 ,</mrow>
+</md>
+in degrees Fahrenheit per unit of <m>t</m>. Here the ant is
+<em>warming up</em>: it moves in the <m>-x</m> direction, where the
+plate is hotter, and in the <m>+y</m> direction, where the plate is
+also hotter, so both contributions are positive. Compare this with
+<xref ref="q1-3"/>, where the same computation gave a negative rate.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

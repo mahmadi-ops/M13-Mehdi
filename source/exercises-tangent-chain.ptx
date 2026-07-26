@@ -407,4 +407,98 @@ So the error in the value <m>A = 2</m> is at most about
 </solution>
 </exercise>
 
+<exercise xml:id="q1-2">
+<statement>
+<p>
+Let
+<md>
+g(x,y) = \frac{\sqrt{x}}{\sqrt[3]{y}} ,
+</md>
+and note that <m>g(36,8) = 3</m>. Use an appropriate partial derivative
+to approximate <m>g(36,6)</m>.
+</p>
+</statement>
+<solution>
+<p>
+We move from <m>(36,8)</m> to <m>(36,6)</m>. Only <m>y</m> changes, and
+it changes by
+<md>
+\Delta y = 6 - 8 = -2 ,
+</md>
+so the partial derivative we need is <m>g_y</m>. Writing
+<m>g(x,y) = x^{1/2} y^{-1/3}</m>,
+<md>
+g_y(x,y) = -\frac{1}{3}\, x^{1/2} y^{-4/3}
+         = -\frac{\sqrt{x}}{3\, y^{4/3}} .
+</md>
+</p>
+
+<p>
+At <m>(36,8)</m> we have <m>\sqrt{36} = 6</m> and
+<m>8^{4/3} = \left(8^{1/3}\right)^4 = 2^4 = 16</m>, so
+<md>
+g_y(36,8) = -\frac{6}{3 \cdot 16} = -\frac{6}{48} = -\frac{1}{8} .
+</md>
+</p>
+
+<p>
+The linear approximation is
+<md>
+<mrow>g(36,6) \amp \approx g(36,8) + g_y(36,8)\,\Delta y</mrow>
+<mrow>\amp = 3 + \left(-\frac{1}{8}\right)(-2)</mrow>
+<mrow>\amp = 3 + \frac14 = \frac{13}{4} = 3.25 .</mrow>
+</md>
+</p>
+
+<p>
+As a check, the exact value is
+<m>g(36,6) = 6/\sqrt[3]{6} \approx 3.302</m>, so the approximation is
+good to about <m>1.6\%</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="q2-2">
+<statement>
+<p>
+Let <m>g(x,y) = \sin(xy)</m>, and note that
+<m>g\!\left(\pi, \tfrac13\right) = \tfrac{\sqrt3}{2}</m>. Use an
+appropriate partial derivative to approximate
+<m>g\!\left(\pi, \tfrac13 + \tfrac1{20}\right)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Only <m>y</m> changes, by <m>\Delta y = \tfrac1{20}</m>, so we need
+<m>g_y</m>. Treating <m>x</m> as a constant and using the chain rule,
+<md>
+g_y(x,y) = x\cos(xy) .
+</md>
+</p>
+
+<p>
+At the point <m>\left(\pi, \tfrac13\right)</m> we have
+<m>xy = \tfrac{\pi}{3}</m> and <m>\cos\!\left(\tfrac{\pi}{3}\right)
+= \tfrac12</m>, so
+<md>
+g_y\!\left(\pi, \tfrac13\right) = \pi \cdot \frac12 = \frac{\pi}{2} .
+</md>
+</p>
+
+<p>
+Therefore
+<md>
+<mrow>g\!\left(\pi, \tfrac13 + \tfrac1{20}\right)
+  \amp \approx g\!\left(\pi, \tfrac13\right)
+       + g_y\!\left(\pi, \tfrac13\right)\cdot \frac{1}{20}</mrow>
+<mrow>\amp = \frac{\sqrt3}{2} + \frac{\pi}{2}\cdot\frac{1}{20}</mrow>
+<mrow>\amp = \frac{\sqrt3}{2} + \frac{\pi}{40} \approx 0.944 .</mrow>
+</md>
+The exact value is
+<m>\sin\!\left(\tfrac{23\pi}{60}\right) \approx 0.933</m>, so again the
+approximation is quite good.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

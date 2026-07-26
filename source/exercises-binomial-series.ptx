@@ -52,4 +52,125 @@ f(x) = 2x\,\frac{1}{1-x}
 </solution>
 </exercise>
 
+<exercise xml:id="m1-4">
+<statement>
+<p>
+Let
+<md>
+f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
+</md>
+Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
+</p>
+</statement>
+<solution>
+<p>
+First we identify <m>f</m>. Its general term is <m>(n+1)x^n</m>, so
+<md>
+f(x) = \sum_{n=0}^{\infty} (n+1)x^n .
+</md>
+This is exactly what you get by differentiating the geometric series
+term by term:
+<md>
+<mrow>\frac{1}{1-x} \amp = \sum_{n=0}^{\infty} x^n
+  = 1 + x + x^2 + x^3 + \cdots , \qquad |x| \lt 1,</mrow>
+<mrow>\frac{d}{dx}\left(\frac{1}{1-x}\right)
+  \amp = \frac{1}{(1-x)^2}
+  = \sum_{n=1}^{\infty} n x^{n-1}
+  = 1 + 2x + 3x^2 + \cdots</mrow>
+</md>
+So <m>f(x) = \dfrac{1}{(1-x)^2}</m> for <m>|x| \lt 1</m>. Since
+<m>\tfrac1{13} \lt 1</m>, the whole interval of integration lies inside
+the interval of convergence.
+</p>
+
+<p>
+Now we integrate. An antiderivative of <m>(1-x)^{-2}</m> is
+<m>(1-x)^{-1}</m>, so
+<md>
+<mrow>\int_0^{1/13} \frac{dx}{(1-x)^2}
+  \amp = \left[\frac{1}{1-x}\right]_0^{1/13}</mrow>
+<mrow>\amp = \frac{1}{1-\frac{1}{13}} - \frac{1}{1-0}</mrow>
+<mrow>\amp = \frac{1}{\frac{12}{13}} - 1
+   = \frac{13}{12} - 1 = \frac{1}{12} .</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m1-6">
+<statement>
+<p>
+The gravitational force exerted by the Earth on an object of mass
+<m>m</m> at height <m>h</m> above the surface is
+<md>
+F = \frac{mgR^2}{(R+h)^2} ,
+</md>
+where <m>R</m> is the radius of the Earth and <m>g</m> is the
+acceleration due to gravity at the surface.
+<ol marker="(a)">
+<li>
+<p>
+Express <m>F</m> as a Maclaurin series in the variable <m>h/R</m>,
+writing out the first four non-zero terms.
+</p>
+</li>
+<li>
+<p>
+What approximation to <m>F</m> do you get by keeping only the first
+term? When is it reasonable?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> The point of the problem is to get the expression into
+the form <m>(1+u)^{p}</m> with <m>u = h/R</m>. Factor <m>R</m> out of
+the denominator:
+<md>
+F = \frac{mgR^2}{(R+h)^2}
+  = \frac{mgR^2}{R^2\left(1+\frac{h}{R}\right)^2}
+  = mg\left(1+\frac{h}{R}\right)^{-2} .
+</md>
+</p>
+
+<p>
+Now use the binomial series
+<m>\displaystyle (1+u)^{p} = \sum_{n=0}^{\infty}\binom{p}{n}u^n</m>
+with <m>p = -2</m>. The coefficients are
+<md>
+<mrow>\binom{-2}{0} \amp = 1,</mrow>
+<mrow>\binom{-2}{1} \amp = -2,</mrow>
+<mrow>\binom{-2}{2} \amp = \frac{(-2)(-3)}{2!} = 3,</mrow>
+<mrow>\binom{-2}{3} \amp = \frac{(-2)(-3)(-4)}{3!} = -4 ,</mrow>
+</md>
+and in general <m>\binom{-2}{n} = (-1)^n (n+1)</m>. Hence
+<md>
+(1+u)^{-2} = 1 - 2u + 3u^2 - 4u^3 + \cdots , \qquad |u| \lt 1,
+</md>
+and so
+<md>
+F = mg\left[1 - 2\left(\frac{h}{R}\right)
+    + 3\left(\frac{h}{R}\right)^2
+    - 4\left(\frac{h}{R}\right)^3 + \cdots\right] .
+</md>
+This is valid for <m>0 \le h \lt R</m>.
+</p>
+
+<p>
+<term>(b)</term> Keeping only the first term gives
+<md>
+F \approx mg ,
+</md>
+the familiar constant weight of an object near the surface of the
+Earth. It is reasonable when <m>h/R</m> is very small, that is when the
+object stays close to the surface: the first term we discard is
+<m>-2mgh/R</m>, so the relative error is about <m>2h/R</m>. With
+<m>R \approx 6371</m> km, even at <m>h = 10</m> km the relative error is
+only about <m>0.3\%</m>.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

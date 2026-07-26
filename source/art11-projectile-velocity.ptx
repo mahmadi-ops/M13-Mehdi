@@ -468,4 +468,128 @@ x = 2\cos(t), \qquad y = 4\sin(t), \qquad z = 4\sin(t),
 </solution>
 </exercise>
 
+<exercise xml:id="m2a-2">
+<statement>
+<p>
+Consider the curve <m>25(y+4)^2 + 400(x-1)^2 = 100</m>.
+<ol marker="(a)">
+<li>
+<p>
+Sketch the curve and label its important points.
+</p>
+</li>
+<li>
+<p>
+Parametrize the entire curve using one parametrization.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Divide both sides by <m>100</m> to put the equation in
+standard form:
+<md>
+<mrow>\frac{25(y+4)^2}{100} + \frac{400(x-1)^2}{100} \amp = 1</mrow>
+<mrow>\frac{(y+4)^2}{4} + 4(x-1)^2 \amp = 1</mrow>
+<mrow>\frac{(x-1)^2}{\left(\frac12\right)^2} + \frac{(y+4)^2}{2^2}
+  \amp = 1 .</mrow>
+</md>
+</p>
+
+<p>
+This is an ellipse with centre <m>(1,-4)</m>, semi-axis
+<m>a = \tfrac12</m> in the <m>x</m>-direction and semi-axis
+<m>b = 2</m> in the <m>y</m>-direction. Since <m>b \gt a</m>, the major
+axis is vertical. The four vertices are
+<md>
+\left(\tfrac12, -4\right), \quad \left(\tfrac32, -4\right), \quad
+(1,-2), \quad (1,-6),
+</md>
+and the foci lie on the vertical axis at distance
+<m>c = \sqrt{b^2-a^2} = \sqrt{4-\tfrac14} = \tfrac{\sqrt{15}}{2}
+\approx 1.94</m>
+from the centre. See <xref ref="fig-m2a-ellipse"/>.
+</p>
+
+<figure xml:id="fig-m2a-ellipse">
+<caption>
+The ellipse <m>25(y+4)^2 + 400(x-1)^2 = 100</m>, with centre
+<m>(1,-4)</m>, horizontal semi-axis <m>\tfrac12</m> and vertical
+semi-axis <m>2</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+A tall narrow ellipse centred at the point one comma negative four. Its
+topmost and bottommost points are one comma negative two and one comma
+negative six, and its leftmost and rightmost points are one half comma
+negative four and three halves comma negative four.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2a-ellipse">
+<diagram dimensions="(330,470)" margins="30">
+<definition>ell(t) = (1 + 0.5*cos(t), -4 + 2*sin(t))</definition>
+<coordinates bbox="(-0.85,-7.4,2.8,-0.6)">
+<grid-axes at="m2ae-axes" xlabel="x" ylabel="y"/>
+<parametric-curve at="m2ae-e" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="2.5"/>
+<point at="m2ae-c" p="(1,-4)" fill="#8B1A4A"/>
+<point at="m2ae-t" p="(1,-2)" fill="#D55E00"/>
+<point at="m2ae-b" p="(1,-6)" fill="#D55E00"/>
+<point at="m2ae-l" p="(0.5,-4)" fill="#009E73"/>
+<point at="m2ae-r" p="(1.5,-4)" fill="#009E73"/>
+<label at="m2ae-clab" anchor="(0.42,-3.72)" alignment="w" color="#8B1A4A">
+<m>(1,-4)</m>
+</label>
+<label at="m2ae-tlab" anchor="(1.1,-1.95)" alignment="ne" color="#D55E00">
+<m>(1,-2)</m>
+</label>
+<label at="m2ae-blab" anchor="(1.1,-6.05)" alignment="se" color="#D55E00">
+<m>(1,-6)</m>
+</label>
+<label at="m2ae-llab" anchor="(0.44,-4.28)" alignment="sw" color="#009E73">
+<m>\left(\tfrac12,-4\right)</m>
+</label>
+<label at="m2ae-rlab" anchor="(1.56,-4.0)" alignment="e" color="#009E73">
+<m>\left(\tfrac32,-4\right)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A tall narrow blue ellipse in the fourth quadrant region below the x axis, centred at one comma negative four. Five points are marked and labelled: the centre, the top vertex at one comma negative two, the bottom vertex at one comma negative six, and the left and right vertices at one half and three halves, each with y equal to negative four.">
+  <annotation ref="m2ae-e" text="The ellipse twenty five times the square of y plus four, plus four hundred times the square of x minus one, equals one hundred."/>
+  <annotation ref="m2ae-c" text="The centre of the ellipse, at one comma negative four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> For a circle <m>x^2+y^2=r^2</m> we would use
+<m>x = r\cos t</m>, <m>y = r\sin t</m>. Here the standard form tells us
+that
+<md>
+\frac{x-1}{\frac12} \quad\text{and}\quad \frac{y+4}{2}
+</md>
+play the roles of <m>\cos t</m> and <m>\sin t</m>, since their squares
+add to <m>1</m>. So we set
+<md>
+\frac{x-1}{\frac12} = \cos t, \qquad \frac{y+4}{2} = \sin t ,
+</md>
+which gives
+<md>
+x = 1 + \frac12\cos t, \qquad y = -4 + 2\sin t,
+\qquad 0 \le t \le 2\pi .
+</md>
+Letting <m>t</m> run over a full period of length <m>2\pi</m> traces
+the entire ellipse exactly once, counterclockwise, starting at the
+right vertex <m>\left(\tfrac32,-4\right)</m>.
+</p>
+</solution>
+</exercise>
+
 </worksheet>

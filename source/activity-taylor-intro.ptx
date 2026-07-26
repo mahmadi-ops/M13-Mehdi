@@ -872,4 +872,200 @@ terms through <m>-\frac{1}{60}</m>:
 </solution>
 </exercise>
 
+<exercise xml:id="m1-1">
+<statement>
+<p>
+Find the sum of the series
+<md>
+5 + 5^2 + \frac{5^3}{2!} + \frac{5^4}{3!} + \cdots
+  + \frac{5^{n+1}}{n!} + \cdots
+</md>
+</p>
+</statement>
+<solution>
+<p>
+The general term is <m>\dfrac{5^{n+1}}{n!}</m> starting at
+<m>n = 0</m>. Let us check the first few: at <m>n=0</m> we get
+<m>5^1/0! = 5</m>; at <m>n=1</m> we get <m>5^2/1! = 5^2</m>; at
+<m>n = 2</m> we get <m>5^3/2!</m>. These match, so the series is
+<md>
+\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!} .
+</md>
+</p>
+
+<p>
+Now pull out one factor of <m>5</m>, which does not depend on
+<m>n</m>:
+<md>
+\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!}
+ = \sum_{n=0}^{\infty} \frac{5\cdot 5^{n}}{n!}
+ = 5\sum_{n=0}^{\infty} \frac{5^{n}}{n!} .
+</md>
+</p>
+
+<p>
+The remaining series is the Maclaurin series
+<m>\displaystyle e^{x} = \sum_{n=0}^{\infty}\frac{x^n}{n!}</m>
+evaluated at <m>x = 5</m>, which converges for every <m>x</m>.
+Therefore
+<md>
+5 + 5^2 + \frac{5^3}{2!} + \cdots = 5e^5 .
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m1-5">
+<statement>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+Give an example of a function whose Taylor series converges for all
+<m>x</m>.
+</p>
+</li>
+<li>
+<p>
+Find a Taylor polynomial <m>P(x)</m> with the property that
+<md>
+|\ln x - P(x)| \lt 0.1 \qquad \text{for all } x \in [0.5, 1.5].
+</md>
+Use the smallest order you can, and justify your answer.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Take <m>f(x) = e^x</m>. Its Maclaurin series is
+<m>\sum_{n\ge 0} x^n/n!</m>, and by the ratio test
+<md>
+\lim_{n\to\infty}\left|\frac{x^{n+1}/(n+1)!}{x^n/n!}\right|
+= \lim_{n\to\infty}\frac{|x|}{n+1} = 0 \lt 1
+</md>
+for every <m>x</m>, so the radius of convergence is <m>\infty</m>.
+(The functions <m>\sin x</m> and <m>\cos x</m> would work equally
+well.)
+</p>
+
+<p>
+<term>(b)</term> Since the interval <m>[0.5,1.5]</m> is centred at
+<m>x = 1</m>, we expand about <m>a = 1</m>. Using
+<m>f(x) = \ln x</m>, <m>f'(x) = 1/x</m>, <m>f''(x) = -1/x^2</m>, we get
+<m>f(1) = 0</m>, <m>f'(1) = 1</m>, <m>f''(1) = -1</m>, so the Taylor
+polynomials of order <m>1</m> and <m>2</m> are
+<md>
+P_1(x) = x-1, \qquad
+P_2(x) = (x-1) - \frac{(x-1)^2}{2} .
+</md>
+</p>
+
+<p>
+<term>Order 1 is not enough.</term> At the endpoint <m>x = 0.5</m>,
+<md>
+|\ln(0.5) - P_1(0.5)| = |-0.6931 - (-0.5)| = 0.1931 \gt 0.1 .
+</md>
+So <m>P_1</m> fails.
+</p>
+
+<p>
+<term>Order 2 works.</term> We check the two halves of the interval
+separately. Recall the Taylor series
+<md>
+<mrow>\ln x \amp = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3}
+- \frac{(x-1)^4}{4} + \cdots ,</mrow>
+<mrow>\amp \qquad 0 \lt x \le 2 .</mrow>
+</md>
+</p>
+
+<p>
+For <m>1 \le x \le 1.5</m> we have <m>0 \le x - 1 \le 0.5</m>, so the
+series is alternating with terms decreasing in absolute value. By the
+alternating series estimate the error is smaller than the first omitted
+term:
+<md>
+|\ln x - P_2(x)| \lt \frac{|x-1|^3}{3} \le \frac{(0.5)^3}{3}
+= \frac{0.125}{3} \approx 0.0417 \lt 0.1 .
+</md>
+</p>
+
+<p>
+For <m>0.5 \le x \lt 1</m> write <m>u = 1-x</m>, so
+<m>0 \lt u \le 0.5</m>. Then every term is negative and
+<md>
+<mrow>|\ln x - P_2(x)| \amp = \sum_{k=3}^{\infty}\frac{u^k}{k}
+  \le \frac13 \sum_{k=3}^{\infty} u^k
+  = \frac{u^3}{3(1-u)}</mrow>
+<mrow>\amp \le \frac{(0.5)^3}{3(0.5)} = \frac{0.125}{1.5}
+  \approx 0.0833 \lt 0.1 .</mrow>
+</md>
+</p>
+
+<p>
+So on the whole interval <m>[0.5,1.5]</m> the second-order Taylor
+polynomial
+<md>
+P(x) = (x-1) - \frac{(x-1)^2}{2}
+</md>
+satisfies <m>|\ln x - P(x)| \lt 0.1</m>, and no first-order polynomial
+does. <xref ref="fig-m1-taylor"/> shows the two graphs.
+</p>
+
+<figure xml:id="fig-m1-taylor">
+<caption>
+The graphs of <m>y = \ln x</m> and of the second-order Taylor
+polynomial <m>P(x) = (x-1) - \tfrac{(x-1)^2}{2}</m> on
+<m>[0.5,1.5]</m>. The largest gap occurs at the left endpoint, where it
+is about <m>0.068</m>, comfortably below <m>0.1</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+Two nearly coincident increasing curves on the interval from zero point
+five to one point five: the natural logarithm and its second degree
+Taylor polynomial about x equals one. They touch at x equals one and
+separate slightly toward the endpoints, most visibly at the left end.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m1-taylor">
+<diagram dimensions="(430,330)" margins="52">
+<definition>lncurve(t) = (t, log(t))</definition>
+<definition>pcurve(t) = (t, (t-1) - (t-1)^2/2)</definition>
+<coordinates bbox="(0.35,-0.95,1.65,0.62)">
+<grid-axes at="m1t-axes" xlabel="x" ylabel="y"/>
+<parametric-curve at="m1t-ln" function="lncurve" domain="(0.5,1.5)"
+                  stroke="#0072B2" thickness="2.5"/>
+<parametric-curve at="m1t-p" function="pcurve" domain="(0.5,1.5)"
+                  stroke="#D55E00" thickness="2.5" dash="6 4"/>
+<line at="m1t-gap" p1="(0.5,-0.6931)" p2="(0.5,-0.625)"
+      stroke="#8B1A4A" thickness="3"/>
+<point at="m1t-a" p="(0.5,-0.6931)" fill="#0072B2"/>
+<point at="m1t-b" p="(0.5,-0.625)" fill="#D55E00"/>
+<label at="m1t-lnlab" anchor="(1.5,0.405)" alignment="nw" color="#0072B2">
+<m>y=\ln x</m>
+</label>
+<label at="m1t-plab" anchor="(1.42,0.30)" alignment="se" color="#D55E00">
+<m>y=P(x)</m>
+</label>
+<label at="m1t-gaplab" anchor="(0.53,-0.68)" alignment="e" color="#8B1A4A">
+<m>\text{gap}\approx 0.068</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two increasing curves on the interval from x equals zero point five to one point five. The solid blue curve is the natural logarithm and the dashed orange curve is its second degree Taylor polynomial about one. The curves agree closely, touching at x equals one, and the largest visible separation is at the left endpoint where a short dark red segment marks the gap.">
+  <annotation ref="m1t-ln" text="The graph of y equals the natural log of x."/>
+  <annotation ref="m1t-p" text="The graph of the Taylor polynomial P of x equals x minus one, minus one half of the square of x minus one."/>
+  <annotation ref="m1t-gap" text="The vertical gap between the two graphs at the left endpoint x equals zero point five, of size about zero point zero six eight."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>
