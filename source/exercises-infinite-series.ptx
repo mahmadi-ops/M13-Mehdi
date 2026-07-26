@@ -7,9 +7,177 @@
 
 <introduction>
 <p>
-These problems ask whether a series converges and, when it does, what it sums to. If you would like to review this topic before attempting them, see <xref ref="chapter-infinite-series" text="title"/>.
+These problems work with sequences and finite sums, and ask whether a series
+converges and, when it does, what it sums to. If you would like to review this topic before attempting them, see <xref ref="chapter-infinite-series" text="title"/>.
 </p>
 </introduction>
+
+<exercise xml:id="rev-ser-1">
+<statement>
+<p>
+If <m>a, b, a+b</m> and <m>ab</m> are positive numbers that form 4
+consecutive terms in a geometric sequence, find <m>a</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since consecutive ratios in a geometric sequence are equal,
+<md>
+\frac{a}{b} = \frac{b}{a+b} = \frac{a+b}{ab}.
+</md>
+</p>
+
+<p>
+From the first equality,
+<md>
+<mrow>\frac{a}{b} = \frac{b}{a+b}
+\;\Rightarrow\; a^2 + ab = b^2
+\;\Rightarrow\; b^2 - ab - a^2 = 0</mrow>
+<mrow>\;\overset{\div\, a^2}{\Rightarrow}\;
+\left(\frac{b}{a}\right)^{2} - \left(\frac{b}{a}\right) - 1 = 0</mrow>
+<mrow>\frac{b}{a} = \frac{1 \pm \sqrt{1+4}}{2}
+\;\overset{\text{since } b/a \gt 0}{\Rightarrow}\;
+\frac{b}{a} = \frac{1 + \sqrt5}{2}. \quad (\ast)</mrow>
+</md>
+</p>
+
+<p>
+From the equality of the first and third fractions,
+<md>
+<mrow>\frac{a}{b} = \frac{a+b}{ab}
+\;\Rightarrow\; a^2 = a + b
+\;\overset{\div\, a}{\Rightarrow}\;
+a \amp = 1 + \frac{b}{a}</mrow>
+<mrow>\amp \;\overset{(\ast)}{=}\; 1 + \frac{1+\sqrt5}{2}
+= \frac{3 + \sqrt5}{2}.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-10">
+<statement>
+<p>
+The terms of a geometric series
+<m>a + ar + ar^2 + \cdots + ar^{n-1} + \cdots</m> satisfy
+<md>
+a_5 + a_7 = 1500
+\quad\text{and}\quad
+a_{11} + a_{13} = 187500,
+</md>
+where <m>a_n = ar^{n-1}</m> denotes the <m>n</m>th term. Find
+<m>a_1 + a_2 + a_3</m>.
+</p>
+</statement>
+<solution>
+<p>
+Using <m>a_n = ar^{n-1}</m>,
+<md>
+<mrow>a_5 + a_7 \amp = ar^4 + ar^6 = ar^4(1 + r^2) = 1500,</mrow>
+<mrow>a_{11} + a_{13} \amp = ar^{10} + ar^{12} = ar^{10}(1 + r^2)
+= 187500.</mrow>
+</md>
+Dividing the two equations,
+<md>
+\frac{a_{11} + a_{13}}{a_5 + a_7}
+= \frac{ar^{10}(1+r^2)}{ar^{4}(1+r^2)}
+= \frac{187500}{1500}
+\;\Rightarrow\; r^6 = 125 = 5^3
+\;\Rightarrow\; r^2 = 5.
+</md>
+</p>
+
+<p>
+Substituting back,
+<md>
+ar^4(1 + r^2) = 1500
+\;\Rightarrow\; a(25)(1+5) = 1500
+\;\Rightarrow\; a = \frac{1500}{150} = 10.
+</md>
+Since <m>r^2 = 5</m>, we have <m>r = \pm\sqrt5</m>, and therefore
+<md>
+<mrow>a_1 + a_2 + a_3 \amp = a + ar + ar^2 = a(1 + r + r^2)</mrow>
+<mrow>\amp = 10\left(1 \pm \sqrt5 + 5\right)
+= 10\left(6 \pm \sqrt5\right).</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-9">
+<statement>
+<p>
+Consider the sequence defined by <m>a_1 = 1</m> and
+<m>a_{n+1} = a_n + 3n^2 + 3n + 1</m>. Find a formula for <m>a_n</m> and
+use it to compute <m>a_{200}</m>.
+</p>
+</statement>
+<solution>
+<p>
+We compute the first few terms:
+<md>
+<mrow>n = 1: \quad a_2 \amp = a_1 + (3 + 3 + 1) = 1 + 7 = 8
+\;\Rightarrow\; a_2 = 2^3</mrow>
+<mrow>n = 2: \quad a_3 \amp = a_2 + (12 + 6 + 1) = 8 + 19 = 27
+\;\Rightarrow\; a_3 = 3^3</mrow>
+</md>
+We notice that <m>a_1 = 1^3</m>, <m>a_2 = 2^3</m>, and
+<m>a_3 = 3^3</m>, hence it seems that <m>a_n = n^3</m>.
+</p>
+
+<p>
+Let us verify by computing <m>a_{n+1} - a_n</m> using
+<m>a_n = n^3</m>:
+<md>
+<mrow>a_{n+1} - a_n \amp = (n+1)^3 - n^3</mrow>
+<mrow>\amp = n^3 + 3n^2 + 3n + 1 - n^3
+= 3n^2 + 3n + 1,</mrow>
+</md>
+which confirms that when <m>a_n = n^3</m>, then
+<m>a_{n+1} = a_n + 3n^2 + 3n + 1</m>. Hence,
+<md>
+a_{200} = (200)^3 = 8 \times 10^{6}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-2">
+<statement>
+<p>
+What is the sum of all multiples of 7 or 11 less than 1000?
+</p>
+</statement>
+<solution>
+<p>
+Note that we need to subtract the multiples of <m>77</m>, since they
+have been added twice:
+<md>
+<mrow>\amp \underbrace{(7 + 14 + 21 + \cdots + 77 + \cdots + 994)}_{\text{multiples of } 7}</mrow>
+<mrow>\amp \quad + \underbrace{(11 + 22 + \cdots + 77 + \cdots + 990)}_{\text{multiples of } 11}</mrow>
+<mrow>\amp \quad - \underbrace{(77 + 154 + \cdots + 924)}_{\text{multiples of } 77}</mrow>
+<mrow>\amp = 7(1 + 2 + 3 + \cdots + 142)
++ 11(1 + 2 + 3 + \cdots + 90)</mrow>
+<mrow>\amp \quad - 77(1 + 2 + \cdots + 12)</mrow>
+</md>
+</p>
+
+<p>
+Using <m>\displaystyle\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</m>:
+<md>
+<mrow>\amp = 7\,\frac{(142)(143)}{2}
++ 11\,\frac{(90)(91)}{2}
+- 77\,\frac{(12)(13)}{2}</mrow>
+<mrow>\amp = 7(71)(143) + 11(45)(91) - 77(6)(13)</mrow>
+<mrow>\amp = (7)(71)(13)(11) + (11)(13)(7)(45) - (7)(11)(6)(13)</mrow>
+<mrow>\amp = (7)(11)(13)(71 + 45 - 6)
+= (7)(11)(13)(110)
+= 110110,</mrow>
+</md>
+where we used <m>143 = (13)(11)</m> and <m>91 = (13)(7)</m>.
+</p>
+</solution>
+</exercise>
 
 <exercise xml:id="rev-ser-4">
 <statement>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Review problems on tangent planes and the chain rule
+  Review problems on tangent planes and differentials
 -->
 <worksheet xml:id="worksheet-exercises-tangent-chain" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises on Tangent Planes and the Chain Rule</title>
+<title>Exercises for <xref ref="section-tangent-planes-differentials" text="title"/></title>
 
 <introduction>
 <p>
-These problems ask for the tangent plane to a graph, for lines lying in a tangent plane, and for the chain rule applied to functions of several variables, so they draw on <xref ref="chapter-chain-rule" text="title"/> and <xref ref="section-tangent-planes-differentials" text="title"/>.
+These problems find the tangent plane to a graph and lines lying in it. If you would like to review this topic before
+attempting them, see <xref ref="section-tangent-planes-differentials" text="title"/>.
 </p>
 </introduction>
 
@@ -121,70 +122,53 @@ line r of t.
 </solution>
 </exercise>
 
-<exercise xml:id="rev-tp-4">
+<exercise xml:id="rs19-9">
 <statement>
 <p>
-Compute the partial derivatives of <m>f</m> with respect to
-<m>x, y</m> for
-<md>
-f(s,t) = s^2 - t^2, \qquad
-s = \frac{x+y}{2}, \qquad
-t = \frac{x-y}{2},
-</md>
-using both the chain rule and by plugging in <m>s</m> and <m>t</m>.
+Find the equation of the tangent plane at the point <m>P_0(2,0,2)</m>
+on the surface <m>2z - x^2 = 0</m>.
 </p>
 </statement>
 <solution>
 <p>
-Using the chain rule:
+Let <m>w(x,y,z) = 2z - x^2 = 0</m>. Then
 <md>
-<mrow>\frac{\partial f}{\partial x}
-\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial x}
-+ \frac{\partial f}{\partial t}\frac{\partial t}{\partial x}</mrow>
-<mrow>\amp = 2s\cdot\frac12 - 2t\cdot\frac12 = s - t = y</mrow>
-<mrow>\frac{\partial f}{\partial y}
-\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial y}
-+ \frac{\partial f}{\partial t}\frac{\partial t}{\partial y}</mrow>
-<mrow>\amp = 2s\cdot\frac12 + 2t\cdot\frac12 = s + t = x</mrow>
+\nabla w = (-2x)\,\mathbf i + 2\,\mathbf k,
 </md>
-</p>
-
-<p>
-Plugging in, we see
+and the normal to the tangent plane is
 <md>
-f(s(x,y), t(x,y))
-= \frac14\left((x+y)^2 - (x-y)^2\right) = xy,
+\vec n = \nabla w\big|_{P_0} = -4\,\mathbf i + 2\,\mathbf k.
 </md>
-and easily obtain the same partial derivatives.
+The constant is
+<md>
+D = \vec n \cdot \vec{OP_0}
+= \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
+= -8 + 4 = -4,
+</md>
+so from <m>Ax + By + Cz = D</m>, the tangent plane at
+<m>P_0(2,0,2)</m> is
+<md>
+-4x + 2z = -4
+\qquad\text{or}\qquad
+2x - z = 2.
+</md>
 </p>
 </solution>
 </exercise>
 
-<exercise xml:id="rev-tp-5">
+<exercise xml:id="rf-8-a">
 <title>True or False</title>
-<statement correct="yes">
+<statement correct="no">
 <p>
-Consider <m>f(x,y) = \left(\cos x + (1+x)\tan y\right)e^{x^2-1+y}</m>.
-Then <m>\dfrac{d}{dt}f(t^2, t^3) = 0</m> at <m>t = 0</m>.
+Any tangent plane to a graph must meet that graph at exactly one
+point.
 </p>
 </statement>
 <feedback>
 <p>
-Writing <m>x(t) = t^2</m> and <m>y(t) = t^3</m>, we
-see that
-<md>
-\frac{dx}{dt} = 2t = 0
-\quad\text{and}\quad
-\frac{dy}{dt} = 3t^2 = 0
-\quad\text{at } t = 0.
-</md>
-Now we see from the chain rule that
-<md>
-\frac{d}{dt}f(x(t), y(t))
-= \frac{\partial f}{\partial x}\frac{dx}{dt}
-+ \frac{\partial f}{\partial y}\frac{dy}{dt}
-= 0 \quad\text{at } t = 0.
-</md>
+Consider the plane <m>z = c</m>. The tangent
+plane to this graph at any point is the same as <m>z = c</m>, so it
+meets the graph at infinitely many points.
 </p>
 </feedback>
 </exercise>
@@ -293,57 +277,6 @@ tangent plane.
 </image>
 </figure>
 </solution>
-</exercise>
-
-<exercise xml:id="rs19-9">
-<statement>
-<p>
-Find the equation of the tangent plane at the point <m>P_0(2,0,2)</m>
-on the surface <m>2z - x^2 = 0</m>.
-</p>
-</statement>
-<solution>
-<p>
-Let <m>w(x,y,z) = 2z - x^2 = 0</m>. Then
-<md>
-\nabla w = (-2x)\,\mathbf i + 2\,\mathbf k,
-</md>
-and the normal to the tangent plane is
-<md>
-\vec n = \nabla w\big|_{P_0} = -4\,\mathbf i + 2\,\mathbf k.
-</md>
-The constant is
-<md>
-D = \vec n \cdot \vec{OP_0}
-= \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
-= -8 + 4 = -4,
-</md>
-so from <m>Ax + By + Cz = D</m>, the tangent plane at
-<m>P_0(2,0,2)</m> is
-<md>
--4x + 2z = -4
-\qquad\text{or}\qquad
-2x - z = 2.
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rf-8-a">
-<title>True or False</title>
-<statement correct="no">
-<p>
-Any tangent plane to a graph must meet that graph at exactly one
-point.
-</p>
-</statement>
-<feedback>
-<p>
-Consider the plane <m>z = c</m>. The tangent
-plane to this graph at any point is the same as <m>z = c</m>, so it
-meets the graph at infinitely many points.
-</p>
-</feedback>
 </exercise>
 
 </worksheet>
