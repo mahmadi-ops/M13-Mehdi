@@ -512,8 +512,7 @@ Since a vector is parallel to itself,
 <section xml:id="sec-true-false">
 <title>True or False?</title>
 
-<example xml:id="example-true-false">
-<title>True or False?</title>
+<exercise xml:id="exercise-true-false">
 <statement>
 <p>
 <ol marker="I.">
@@ -579,7 +578,7 @@ have <m>|\vec u| = |\vec v| = 1</m>, which means:
 </md>
 </p>
 </solution>
-</example>
+</exercise>
 
 </section>
 
