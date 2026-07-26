@@ -671,8 +671,12 @@ meeting it in a circle.
   \draw[->, thick] (0,-2.5) -- (0,2.6) node[above] {$z$};
   \draw[->, thick] (0,0) -- (2.5,-0.7) node[right] {$y$};
   \draw[->, thick] (0,0) -- (-2.1,-0.95) node[below left] {$x$};
-  % cylinder body between z = -1 and z = 1
-  \fill[purple!22, opacity=0.85] (-1.4,-1) -- (-1.4,1) -- (1.4,1) -- (1.4,-1) -- cycle;
+  % cylinder body between z = -1 and z = 1: filled out to the near
+  % (front) rim curves rather than a flat rectangle, so it reads as a
+  % curved tube surface rather than a plane
+  \fill[purple!22, opacity=0.85]
+    (-1.4,-1) -- (-1.4,1) arc (180:360:1.4cm and 0.4cm)
+    -- (1.4,-1) arc (360:180:1.4cm and 0.4cm);
   \draw[purple!60!black] (-1.4,-1) -- (-1.4,1);
   \draw[purple!60!black] (1.4,-1) -- (1.4,1);
   % top and bottom rims: outlines only, since x^2+y^2=1 is just the
@@ -690,7 +694,9 @@ meeting it in a circle.
   \draw[->, thick] (0,0) -- (-2.1,-0.95) node[below left] {$x$};
   % tall cylinder, shown faintly: it is only context for part F, whose
   % actual solution is the circle where it meets the plane below
-  \fill[blue!10, opacity=0.5] (-1.2,-1.8) -- (-1.2,2.6) -- (1.2,2.6) -- (1.2,-1.8) -- cycle;
+  \fill[blue!10, opacity=0.5]
+    (-1.2,-1.8) -- (-1.2,2.6) arc (180:360:1.2cm and 0.34cm)
+    -- (1.2,-1.8) arc (360:180:1.2cm and 0.34cm);
   \draw[blue!55!black] (-1.2,-1.8) -- (-1.2,2.6);
   \draw[blue!55!black] (1.2,-1.8) -- (1.2,2.6);
   \draw[blue!55!black, thick] (0,2.6) ellipse (1.2cm and 0.34cm);
