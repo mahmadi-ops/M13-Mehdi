@@ -464,7 +464,8 @@ coordinate planes.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.80]
   % axes
-  \draw[-stealth, thick] (0,0,0) -- (7.2,0,0) node[below left] {$x$};
+  % the axis label sits above the axis, opposite the (6,0,0) label below it
+  \draw[-stealth, thick] (0,0,0) -- (7.8,0,0) node[above left=1pt] {$x$};
   \draw[-stealth, thick] (0,0,0) -- (0,5.4,0) node[right] {$y$};
   \draw[-stealth, thick] (0,0,0) -- (0,0,4.2) node[above] {$z$};
   % intercept triangle
@@ -473,7 +474,7 @@ coordinate planes.
   \draw[msky!60!black, thick, dashed] (0,4,0) -- (0,0,3);
   \draw[msky!60!black, thick, dashed] (0,0,3) -- (6,0,0);
   % intercept labels
-  \fill (6,0,0) circle (1.6pt) node[below=2pt] {$(6,0,0)$};
+  \fill (6,0,0) circle (1.6pt) node[below right=2pt] {$(6,0,0)$};
   \fill (0,4,0) circle (1.6pt) node[below=4pt] {$(0,4,0)$};
   \fill (0,0,3) circle (1.6pt) node[above right=1pt] {$(0,0,3)$};
 \end{tikzpicture}]]>
