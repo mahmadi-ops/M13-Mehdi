@@ -675,8 +675,8 @@ meeting it in a circle.
   \fill[purple!22, opacity=0.85] (-1.4,-1) -- (-1.4,1) -- (1.4,1) -- (1.4,-1) -- cycle;
   \draw[purple!60!black] (-1.4,-1) -- (-1.4,1);
   \draw[purple!60!black] (1.4,-1) -- (1.4,1);
-  % top and bottom ellipses
-  \fill[purple!30, opacity=0.9] (0,1) ellipse (1.4cm and 0.4cm);
+  % top and bottom rims: outlines only, since x^2+y^2=1 is just the
+  % tube's lateral surface and has no top or bottom cap
   \draw[purple!60!black, thick] (0,1) ellipse (1.4cm and 0.4cm);
   \draw[purple!60!black, thick] (0,-1) ellipse (1.4cm and 0.4cm);
   \node[right] at (1.45,1.05) {$z=1$};
