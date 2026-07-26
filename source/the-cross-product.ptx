@@ -512,33 +512,18 @@ Since a vector is parallel to itself,
 <section xml:id="sec-true-false">
 <title>True or False?</title>
 
-<exercise xml:id="exercise-true-false">
-<statement>
-<p>
-<ol marker="I.">
-<li>
+<exercise xml:id="exercise-true-false-1">
+<title>True or False</title>
+<statement correct="yes">
 <p>
 Let <m>\vec u</m> and <m>\vec v</m> be two vectors in
 <m>\mathbb R^3</m>. Then, <m>\vec u \times \text{proj}_{\vec v}\vec u</m>
 is perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 </p>
-</li>
-<li>
-<p>
-Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
-<m>\mathbb R^3</m>. Then,
-<m>\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2 = 1</m>.
-</p>
-</li>
-</ol>
-</p>
 </statement>
-
-<solution xml:id="solution-true-false">
-
+<feedback>
 <p>
-<em>Statement I</em> is true. Note that
-<m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
+Note that <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
 <m>\vec u</m> and <m>\text{proj}_{\vec v}\vec u</m>, which gives:
 <md xml:id="eq-true-false-1">
        \begin{aligned}
@@ -550,14 +535,24 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 = 0 - 0 = 0,
 \end{aligned}
 </md>
-</p>
-<p>
 and therefore <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is
 perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 </p>
+</feedback>
+</exercise>
 
+<exercise xml:id="exercise-true-false-2">
+<title>True or False</title>
+<statement correct="yes">
 <p>
-<em>Statement II</em> is true. Note that:
+Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
+<m>\mathbb R^3</m>. Then,
+<m>\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2 = 1</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Note that:
 <md>
 <mrow>
 \left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
@@ -577,7 +572,7 @@ have <m>|\vec u| = |\vec v| = 1</m>, which means:
 = |\vec u|^2|\vec v|^2 = 1.
 </md>
 </p>
-</solution>
+</feedback>
 </exercise>
 
 </section>
