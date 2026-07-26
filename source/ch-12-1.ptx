@@ -677,6 +677,8 @@ meeting it in a circle.
   \fill[purple!22, opacity=0.85]
     (-1.4,-1) -- (-1.4,1) arc (180:360:1.4cm and 0.4cm)
     -- (1.4,-1) arc (360:180:1.4cm and 0.4cm);
+  % sliver of the inside back wall, visible through the open top rim
+  \fill[purple!22, opacity=0.85] (-1.4,1) arc (180:0:1.4cm and 0.4cm) -- cycle;
   \draw[purple!60!black] (-1.4,-1) -- (-1.4,1);
   \draw[purple!60!black] (1.4,-1) -- (1.4,1);
   % top and bottom rims: outlines only, since x^2+y^2=1 is just the
@@ -697,6 +699,8 @@ meeting it in a circle.
   \fill[blue!10, opacity=0.5]
     (-1.2,-1.8) -- (-1.2,2.6) arc (180:360:1.2cm and 0.34cm)
     -- (1.2,-1.8) arc (360:180:1.2cm and 0.34cm);
+  % sliver of the inside back wall, visible through the open top rim
+  \fill[blue!10, opacity=0.5] (-1.2,2.6) arc (180:0:1.2cm and 0.34cm) -- cycle;
   \draw[blue!55!black] (-1.2,-1.8) -- (-1.2,2.6);
   \draw[blue!55!black] (1.2,-1.8) -- (1.2,2.6);
   \draw[blue!55!black, thick] (0,2.6) ellipse (1.2cm and 0.34cm);
