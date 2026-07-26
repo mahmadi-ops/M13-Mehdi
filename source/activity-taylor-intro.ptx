@@ -553,4 +553,323 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
     </p>
   </solution>
 </exercise>
+<exercise xml:id="rw17-1">
+<statement>
+<p>
+For the following functions, give the Taylor <em>series</em> generated
+by the function at <m>x = 0</m> AND give the values of <m>x</m> for
+which the Taylor series converges to the given function.
+<ol marker="A.">
+<li>
+<p>
+<m>f(x) = \cos(x)</m>
+</p>
+</li>
+<li>
+<p>
+<m>g(x) = \dfrac{1}{1-x}</m>
+</p>
+</li>
+<li>
+<p>
+<m>h(x) = x^2 e^{x^2}</m>
+</p>
+</li>
+<li>
+<p>
+Using the Taylor series you found for <m>h(x)</m> in part C, find
+<m>h^{(12)}(0)</m>, i.e. the 12th order derivative of <m>h(x)</m> at
+<m>0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The derivatives of <m>\cos(x)</m> at <m>0</m> cycle through
+<m>1, 0, -1, 0</m>, so only even powers survive and
+<md>
+\cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}x^{2n}
+= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots,
+</md>
+which converges to <m>\cos(x)</m> for all <m>x \in \R</m>.
+</p>
+</li>
+<li>
+<p>
+This is the geometric series with <m>a = 1</m> and <m>r = x</m>:
+<md>
+\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n
+= 1 + x + x^2 + x^3 + \cdots,
+</md>
+which converges to <m>\dfrac{1}{1-x}</m> exactly when
+<m>|x| \lt 1</m>, i.e. for <m>-1 \lt x \lt 1</m>.
+</p>
+</li>
+<li>
+<p>
+We start from <m>e^{u} = \displaystyle\sum_{n=0}^{\infty}
+\frac{u^n}{n!}</m>, valid for all <m>u</m>, and substitute
+<m>u = x^2</m>:
+<md>
+e^{x^2} = \sum_{n=0}^{\infty} \frac{x^{2n}}{n!}.
+</md>
+Multiplying by <m>x^2</m>,
+<md>
+h(x) = x^2 e^{x^2}
+= \sum_{n=0}^{\infty} \frac{x^{2n+2}}{n!}
+= x^2 + x^4 + \frac{x^6}{2!} + \frac{x^8}{3!} + \cdots,
+</md>
+which converges to <m>h(x)</m> for all <m>x \in \R</m>.
+</p>
+</li>
+<li>
+<p>
+In the Taylor series
+<m>h(x) = \displaystyle\sum_{k=0}^{\infty}
+\frac{h^{(k)}(0)}{k!}x^{k}</m>, the coefficient of <m>x^{12}</m> is
+<m>\dfrac{h^{(12)}(0)}{12!}</m>. From part C, the term with
+<m>x^{12}</m> occurs when <m>2n + 2 = 12</m>, i.e. <m>n = 5</m>, and
+its coefficient is <m>\dfrac{1}{5!}</m>. Equating the two,
+<md>
+\frac{h^{(12)}(0)}{12!} = \frac{1}{5!}
+\;\Rightarrow\;
+h^{(12)}(0) = \frac{12!}{5!}
+= \frac{479001600}{120}
+= 3991680.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-3">
+<statement>
+<p>
+Given <m>f(x) = \ln(1 - 2x)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the 2nd order Maclaurin polynomial for <m>f(x)</m>.
+</p>
+</li>
+<li>
+<p>
+Use Taylor's Remainder Theorem to find an upper bound on the magnitude
+of the error if the 2nd order Maclaurin polynomial is used to
+approximate <m>f(x)</m> for <m>|x| \le \frac14</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We compute the derivatives at <m>0</m>:
+<md>
+<mrow>f(x) \amp = \ln(1-2x), \amp f(0) \amp = 0,</mrow>
+<mrow>f'(x) \amp = \frac{-2}{1-2x} = -2(1-2x)^{-1},
+\amp f'(0) \amp = -2,</mrow>
+<mrow>f''(x) \amp = -4(1-2x)^{-2}, \amp f''(0) \amp = -4.</mrow>
+</md>
+Hence
+<md>
+P_2(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2
+= -2x - 2x^2.
+</md>
+</p>
+</li>
+<li>
+<p>
+By Taylor's Remainder Theorem,
+<md>
+<mrow>|R_2(x)| \amp \le M\,\frac{|x|^3}{3!},</mrow>
+<mrow>\amp \text{where } M \ge \left|f^{(3)}(c)\right|
+\text{ for all } c \text{ between } 0 \text{ and } x.</mrow>
+</md>
+Here <m>f^{(3)}(x) = -16(1-2x)^{-3}</m>, so
+<m>\left|f^{(3)}(c)\right| = \dfrac{16}{|1-2c|^{3}}</m>. For
+<m>|c| \le \frac14</m> we have
+<m>\frac12 \le 1 - 2c \le \frac32</m>, and the fraction is largest
+when the denominator is smallest, i.e. at <m>c = \frac14</m>:
+<md>
+\left|f^{(3)}(c)\right| \le \frac{16}{\left(\frac12\right)^{3}}
+= 16 \cdot 8 = 128 = M.
+</md>
+Therefore, for <m>|x| \le \frac14</m>,
+<md>
+|R_2(x)| \le 128 \cdot \frac{\left(\frac14\right)^3}{3!}
+= \frac{128}{64 \cdot 6}
+= \frac13.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-3">
+<statement>
+<p>
+Find the sum of the series
+<m>\displaystyle\sum_{n=0}^{\infty} \frac{1}{n!}</m>.
+</p>
+</statement>
+<solution>
+<p>
+The Maclaurin series of the exponential function is
+<md>
+e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!},
+\qquad \text{valid for all } x \in \R.
+</md>
+Setting <m>x = 1</m> gives
+<md>
+\sum_{n=0}^{\infty} \frac{1}{n!} = e^{1} = e.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-5">
+<statement>
+<p>
+What function has Maclaurin series
+<m>x - \dfrac{x^3}{2!} + \dfrac{x^5}{4!} - \dfrac{x^7}{6!}
++ \dfrac{x^9}{8!} - \cdots</m>?
+</p>
+</statement>
+<solution>
+<p>
+Factoring <m>x</m> out of every term,
+<md>
+x - \frac{x^3}{2!} + \frac{x^5}{4!} - \frac{x^7}{6!} + \cdots
+= x\left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}
++ \cdots\right),
+</md>
+and the bracket is exactly the Maclaurin series of <m>\cos(x)</m>.
+Hence the function is
+<md>
+x\cos(x).
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-6">
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Use a third Taylor polynomial at <m>x = 100</m> to approximate
+<m>\sqrt{102}</m>.
+</p>
+</li>
+<li>
+<p>
+Give an upper bound for the error in using this approximation.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Let <m>f(x) = \sqrt{x} = x^{1/2}</m> and <m>a = 100</m>. Then
+<md>
+<mrow>f(x) \amp = x^{1/2}, \amp f(100) \amp = 10,</mrow>
+<mrow>f'(x) \amp = \frac12 x^{-1/2}, \amp f'(100) \amp = \frac{1}{20},</mrow>
+<mrow>f''(x) \amp = -\frac14 x^{-3/2}, \amp f''(100) \amp = -\frac{1}{4000},</mrow>
+<mrow>f'''(x) \amp = \frac38 x^{-5/2}, \amp f'''(100) \amp = \frac{3}{800000}.</mrow>
+</md>
+Hence
+<md>
+T_3(x) = 10 + \frac{x-100}{20} - \frac{(x-100)^2}{8000}
++ \frac{(x-100)^3}{1600000},
+</md>
+and evaluating at <m>x = 102</m> (so <m>x - 100 = 2</m>),
+<md>
+<mrow>\sqrt{102} \amp \approx 10 + \frac{2}{20} - \frac{4}{8000}
++ \frac{8}{1600000}</mrow>
+<mrow>\amp = 10 + \frac{1}{10} - \frac{1}{2000} + \frac{1}{200000}.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+By Taylor's Remainder Theorem,
+<m>|R_3(x)| \le M\dfrac{|x-100|^4}{4!}</m>, where <m>M</m> bounds
+<m>\left|f^{(4)}\right|</m> on <m>[100, 102]</m>. Since
+<m>f^{(4)}(x) = -\frac{15}{16}x^{-7/2}</m> and
+<m>x^{-7/2}</m> is decreasing, the largest value occurs at
+<m>x = 100</m>:
+<md>
+M = \frac{15}{16}\cdot 100^{-7/2} = \frac{15}{16 \cdot 10^{7}}.
+</md>
+Therefore
+<md>
+|R_3(102)| \le \frac{15}{16\cdot 10^{7}} \cdot \frac{2^4}{24}
+= \frac{15}{24 \cdot 10^{7}}
+= \frac{1}{16000000}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-7">
+<statement>
+<p>
+Use a Maclaurin series to approximate
+<m>\displaystyle\int_0^1 e^{-x^3}\,dx</m> with error less than
+<m>\frac{1}{100}</m>. Leave your answer as a fraction.
+</p>
+</statement>
+<solution>
+<p>
+Starting from <m>e^{u} = \displaystyle\sum_{n=0}^{\infty}
+\frac{u^n}{n!}</m> with <m>u = -x^3</m>,
+<md>
+e^{-x^3} = \sum_{n=0}^{\infty} \frac{(-1)^n x^{3n}}{n!},
+</md>
+and integrating term by term from <m>0</m> to <m>1</m>,
+<md>
+\int_0^1 e^{-x^3}\,dx
+= \sum_{n=0}^{\infty} \frac{(-1)^n}{n!\,(3n+1)}
+= 1 - \frac14 + \frac{1}{14} - \frac{1}{60} + \frac{1}{312}
+- \cdots
+</md>
+</p>
+
+<p>
+This is an alternating series with terms decreasing to <m>0</m>, so
+the error made by stopping is smaller than the first omitted term.
+Since <m>\frac{1}{312} \lt \frac{1}{100}</m>, it is enough to keep the
+terms through <m>-\frac{1}{60}</m>:
+<md>
+<mrow>\int_0^1 e^{-x^3}\,dx
+\amp \approx 1 - \frac14 + \frac{1}{14} - \frac{1}{60}
+= \frac{420 - 105 + 30 - 7}{420}</mrow>
+<mrow>\amp = \frac{338}{420}
+= \frac{169}{210}.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>
