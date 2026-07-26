@@ -191,18 +191,12 @@ Conversely, if <m>\mathbf u</m> and <m>\mathbf v</m> are two vectors such that
 <m>\mathbf u \cdot \mathbf v = 0</m>, then <m>\mathbf u</m> and <m>\mathbf v</m>
 are orthogonal.
 </p>
-</remark>
-
-<fact xml:id="fact-orthogonal">
-<title>Orthogonality Criterion</title>
-<statement>
 <p>
 <md xml:id="eq-6" number="yes">
 \mathbf u \cdot \mathbf v = 0 \iff \mathbf u \perp \mathbf v.
 </md>
 </p>
-</statement>
-</fact>
+</remark>
 
 <example xml:id="example-right-triangle">
 <title>A right triangle detected with the dot product</title>
