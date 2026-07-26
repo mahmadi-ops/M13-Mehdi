@@ -317,11 +317,11 @@ negative y direction, representing the plane y equals negative two.
 \begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
 \fill[cyan!25, opacity=0.75] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
 \draw[cyan!55!black] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
-\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (-2.2,0,0);
 \draw[->, thick] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
 \draw[thick] (0,-2.8,0) -- (0,0,0);
 \draw[->, thick] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
-\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,-2.2);
 \draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
 \node[cyan!70!black] at (-1.8,-2,1.5) {$y=-2$};
 \end{tikzpicture}
