@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Midterm 2 review problems on partial derivatives and the chain rule
+-->
+<worksheet xml:id="worksheet-exercises-partials-chain" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises on Partial Derivatives and the Chain Rule</title>
+
+<introduction>
+<p>
+These problems compute higher order partial derivatives and apply the chain rule, so they draw on <xref ref="chapter-partial-derivatives" text="title"/> and <xref ref="chapter-chain-rule" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rm2-pd-1">
+<title>Higher order computation</title>
+<statement>
+<p>
+Prove that <m>c(x,t) = \dfrac{1}{\sqrt{Dt}}\,e^{-\frac{x^2}{4Dt}}</m>
+is a solution of the diffusion equation
+<md>
+\frac{\partial c}{\partial t} = D\,\frac{\partial^2 c}{\partial x^2}.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+We compute the needed derivatives:
+<md>
+<mrow>\frac{\partial c}{\partial t}
+\amp = -\frac{1}{2\sqrt{D}\,t^{3/2}}\,e^{-x^2/4Dt}
++ \frac{1}{\sqrt{Dt}}\,\frac{x^2}{4Dt^2}\,e^{-x^2/4Dt}</mrow>
+<mrow>\frac{\partial c}{\partial x}
+\amp = -\frac{x}{2Dt}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
+<mrow>\frac{\partial^2 c}{\partial x^2}
+\amp = -\frac{1}{2Dt\sqrt{Dt}}\,e^{-x^2/4Dt}
++ \frac{x^2}{4D^2t^2}\,\frac{1}{\sqrt{Dt}}\,e^{-x^2/4Dt}</mrow>
+</md>
+</p>
+
+<p>
+We see that the right hand side of the third equation is
+<m>\dfrac{1}{D}</m> times the right hand side of the first, i.e.
+multiplying <m>\dfrac{\partial^2 c}{\partial x^2}</m> by <m>D</m>
+gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
+<m>c</m> satisfies the diffusion equation.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rm2-cr-1">
+<title>Homogeneous functions</title>
+<statement>
+<p>
+A function <m>f</m> is called <term>homogeneous of degree
+<m>n</m></term> if it satisfies the equation
+<md xml:id="eq-rm2-homogeneous" number="yes">
+f(tx, ty) = t^n f(x,y)
+</md>
+for all <m>t</m>, where <m>n</m> is a positive integer and <m>f</m>
+has continuous second order derivatives.
+<ol marker="A.">
+<li>
+<p>
+Verify that <m>f(x,y) = x^2y + 2xy^2 + 5y^3</m> is homogeneous of
+degree 3.
+</p>
+</li>
+<li>
+<p>
+Show that if <m>f</m> is homogeneous of degree <m>n</m> then
+<md>
+x\,\frac{\partial f}{\partial x} + y\,\frac{\partial f}{\partial y}
+= n f(x,y).
+</md>
+(Hint: use the Chain Rule to differentiate <m>f(tx,ty)</m> with
+respect to <m>t</m>.)
+</p>
+</li>
+<li>
+<p>
+If <m>f</m> is homogeneous of degree <m>n</m>, show that
+<m>f_x(tx, ty) = t^{n-1} f_x(x,y)</m> for <m>t \gt 0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<md>
+<mrow>f(tx, ty) \amp = t^2x^2\,ty + 2tx\,t^2y^2 + 5t^3y^3</mrow>
+<mrow>\amp = t^3\left(x^2y + 2xy^2 + 5y^3\right) = t^3 f(x,y).</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+Using the chain rule we obtain
+<md>
+<mrow>\frac{d}{dt}f(tx,ty)
+\amp = \frac{\partial f}{\partial x}(tx,ty)\,\frac{d}{dt}tx
++ \frac{\partial f}{\partial y}(tx,ty)\,\frac{d}{dt}ty</mrow>
+<mrow xml:id="eq-rm2-hom-chain" number="yes">\amp = x\,\frac{\partial f}{\partial x}(tx,ty)
++ y\,\frac{\partial f}{\partial y}(tx,ty).</mrow>
+</md>
+On the other hand, the homogeneity condition
+<xref ref="eq-rm2-homogeneous"/> shows that
+<md xml:id="eq-rm2-hom-power" number="yes">
+\frac{d}{dt}f(tx,ty) = \frac{d}{dt}\,t^n f(x,y)
+= n t^{n-1} f(x,y).
+</md>
+Now we can equate the right hand sides of equations
+<xref ref="eq-rm2-hom-chain"/> and <xref ref="eq-rm2-hom-power"/> and
+set <m>t = 1</m> to obtain the desired equation.
+</p>
+</li>
+<li>
+<p>
+We take the partial <m>u</m>-derivative of both sides of the equation
+<m>f(tu, tv) = t^n f(u,v)</m> (this is just
+<xref ref="eq-rm2-homogeneous"/> plugging in <m>u</m> and <m>v</m>
+instead of <m>x</m> and <m>y</m>):
+<md>
+<mrow>\frac{\partial}{\partial u}\,t^n f(u,v)
+\amp = t^n f_x(u,v)</mrow>
+<mrow>\frac{\partial}{\partial u}\,f(tu, tv)
+\amp = t\,f_x(tu, tv)</mrow>
+</md>
+Hence <m>t^{n-1} f_x(u,v) = f_x(tu, tv)</m> after canceling one
+<m>t</m>, and plugging in <m>u = x</m>, <m>v = y</m> shows the desired
+equation.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+</worksheet>

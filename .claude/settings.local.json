@@ -158,7 +158,8 @@
       "Bash(grep -iE 'PTX:ERROR|^.{0,12}error|Success|WARNING.*xref')",
       "Bash(grep -iE 'PTX:ERROR|^.{0,12}error|Success')",
       "Bash(awk '{print $6, $7, $8}')",
-      "Bash(grep *)"
+      "Bash(grep *)",
+      "Bash(awk 'NR>=270 && /<\\\\/worksheet>/ {print NR\": \"$0}' source/exercises.ptx)"
     ]
   }
 }
