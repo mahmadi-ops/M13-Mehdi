@@ -366,6 +366,28 @@ Show that
 <m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
 </p>
 </statement>
+<solution>
+<p>
+Using the distributive properties of the cross product from
+<xref ref="thm-cross-properties"/>,
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf u \times \mathbf u + \mathbf u \times \mathbf v
+- \mathbf v \times \mathbf u - \mathbf v \times \mathbf v.
+</md>
+Since a vector is parallel to itself,
+<m>\mathbf u \times \mathbf u = \mathbf 0</m> and
+<m>\mathbf v \times \mathbf v = \mathbf 0</m> by
+<xref ref="fact-parallel-vectors"/>. Also
+<m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m> by
+<xref ref="thm-cross-properties"/>, so
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf 0 + \mathbf u \times \mathbf v - \bigl(-(\mathbf u \times \mathbf v)\bigr) - \mathbf 0
+= 2(\mathbf u \times \mathbf v).
+</md>
+</p>
+</solution>
 </exercise>
 
 </section>
