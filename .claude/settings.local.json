@@ -141,7 +141,13 @@
       "Bash(ffmpeg -loglevel error -ss 22 -i assets/videos/DistanceFormulaProof.mp4 -frames:v 1 -vf crop=780:620:940:260,scale=1100:-1 /claude-0/-workspaces-M13-Mehdi/a3a8a44e-8037-4339-8233-812d4344082b/scratchpad/frames/axes.png -y)",
       "Bash(rsvg-convert -w 900 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg -o distfig.png)",
       "Bash(rsvg-convert -w 900 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg -o distfig2.png)",
-      "Bash(rsvg-convert -w 900 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg -o distfig3.png)"
+      "Bash(rsvg-convert -w 900 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg -o distfig3.png)",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/sec-3d-distance.html\" -o live-dist.html -w \"page=%{http_code}\\\\n\")",
+      "Bash(curl -sL -o /dev/null -w \"video=%{http_code} bytes=%{size_download}\\\\n\" \"https://mahmadi-ops.github.io/M13-Mehdi/external/videos/DistanceFormulaProof.mp4\")",
+      "Bash(curl -sL -o /dev/null -w \"figure=%{http_code}\\\\n\" \"https://mahmadi-ops.github.io/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg\")",
+      "Bash(curl -sL \"https://mahmadi-ops.github.io/M13-Mehdi/generated/latex-image/fig-3d-distance-2.svg\" -o live-fig.svg -w \"figure=%{http_code} bytes=%{size_download}\\\\n\")",
+      "Bash(rsvg-convert -w 820 -b white live-fig.svg -o live-fig.png)",
+      "Bash(rsvg-convert -w 900 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-3d-distance-2.svg -o distfig4.png)"
     ]
   }
 }
