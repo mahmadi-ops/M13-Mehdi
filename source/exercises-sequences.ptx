@@ -31,8 +31,8 @@ From the first equality,
 <md>
 <mrow>\frac{a}{b} = \frac{b}{a+b}
 \;\Rightarrow\; a^2 + ab = b^2
-\;\Rightarrow\; b^2 - ab - a^2 = 0
-\;\overset{\div\, a^2}{\Rightarrow}\;
+\;\Rightarrow\; b^2 - ab - a^2 = 0</mrow>
+<mrow>\;\overset{\div\, a^2}{\Rightarrow}\;
 \left(\frac{b}{a}\right)^{2} - \left(\frac{b}{a}\right) - 1 = 0</mrow>
 <mrow>\frac{b}{a} = \frac{1 \pm \sqrt{1+4}}{2}
 \;\overset{\text{since } b/a \gt 0}{\Rightarrow}\;
@@ -95,9 +95,9 @@ ar^4(1 + r^2) = 1500
 </md>
 Since <m>r^2 = 5</m>, we have <m>r = \pm\sqrt5</m>, and therefore
 <md>
-a_1 + a_2 + a_3 = a + ar + ar^2 = a(1 + r + r^2)
-= 10\left(1 \pm \sqrt5 + 5\right)
-= 10\left(6 \pm \sqrt5\right).
+<mrow>a_1 + a_2 + a_3 \amp = a + ar + ar^2 = a(1 + r + r^2)</mrow>
+<mrow>\amp = 10\left(1 \pm \sqrt5 + 5\right)
+= 10\left(6 \pm \sqrt5\right).</mrow>
 </md>
 </p>
 </solution>
@@ -152,12 +152,12 @@ What is the sum of all multiples of 7 or 11 less than 1000?
 Note that we need to subtract the multiples of <m>77</m>, since they
 have been added twice:
 <md>
-<mrow>\amp \underbrace{(7 + 14 + 21 + \cdots + 77 + \cdots + 994)}_{\text{multiples of } 7 \text{ smaller than } 1000}
-+ \underbrace{(11 + 22 + \cdots + 77 + \cdots + 990)}_{\text{multiples of } 11 \text{ smaller than } 1000}</mrow>
-<mrow>\amp \quad - \underbrace{(77 + 154 + \cdots + 924)}_{\text{multiples of } 77 \text{ smaller than } 1000}</mrow>
+<mrow>\amp \underbrace{(7 + 14 + 21 + \cdots + 77 + \cdots + 994)}_{\text{multiples of } 7}</mrow>
+<mrow>\amp \quad + \underbrace{(11 + 22 + \cdots + 77 + \cdots + 990)}_{\text{multiples of } 11}</mrow>
+<mrow>\amp \quad - \underbrace{(77 + 154 + \cdots + 924)}_{\text{multiples of } 77}</mrow>
 <mrow>\amp = 7(1 + 2 + 3 + \cdots + 142)
-+ 11(1 + 2 + 3 + \cdots + 90)
-- 77(1 + 2 + \cdots + 12)</mrow>
++ 11(1 + 2 + 3 + \cdots + 90)</mrow>
+<mrow>\amp \quad - 77(1 + 2 + \cdots + 12)</mrow>
 </md>
 </p>
 

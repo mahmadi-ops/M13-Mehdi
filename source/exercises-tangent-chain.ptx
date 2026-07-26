@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review problems on tangent planes and the chain rule
+-->
+<worksheet xml:id="worksheet-exercises-tangent-chain" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises on Tangent Planes and the Chain Rule</title>
+
+<introduction>
+<p>
+These problems ask for the tangent plane to a graph, for lines lying in a tangent plane, and for the chain rule applied to functions of several variables, so they draw on <xref ref="chapter-chain-rule" text="title"/> and <xref ref="section-tangent-planes-differentials" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rev-tp-1">
+<statement>
+<p>
+Find an equation for the tangent plane to the graph of
+<m>f(x,y) = \cos(xy)</m> passing through the point
+<m>\left(\dfrac{\pi}{2}, 1, 0\right)</m>.
+</p>
+</statement>
+<solution>
+<p>
+We have <m>f_x = -y\sin(xy)</m> and <m>f_y = -x\sin(xy)</m>, so the
+tangent plane at a general point <m>(x_0, y_0)</m> is given by
+<md>
+z - \cos(x_0 y_0)
+= -y_0 \sin(x_0 y_0)(x - x_0)
+- x_0 \sin(x_0 y_0)(y - y_0).
+</md>
+</p>
+
+<p>
+Plugging in our point <m>\left(\dfrac{\pi}{2}, 1, 0\right)</m>, this
+becomes
+<md>
+z = -1\cdot\left(x - \frac{\pi}{2}\right)
+- \frac{\pi}{2}\cdot(y - 1),
+</md>
+or equivalently
+<md>
+x + \frac{\pi}{2}\,y + z = \pi.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-tp-2">
+<statement>
+<p>
+Find a parametric equation for a line contained in the tangent plane
+you found in the previous problem. (Any line will suffice.)
+</p>
+</statement>
+<solution>
+<p>
+Note that the point <m>\left(\dfrac{\pi}{2}, 1, 0\right)</m> lies on
+this plane, and the plane has normal vector
+<m>\vec n = \left\langle 1, \dfrac{\pi}{2}, 1\right\rangle</m>. Any
+vector orthogonal to the normal vector will point along this plane. By
+inspection, we see that
+<md>
+\langle 1, 0, -1\rangle \cdot
+\left\langle 1, \frac{\pi}{2}, 1\right\rangle = 0,
+</md>
+so the vector <m>\langle 1, 0, -1\rangle</m> points along the plane.
+Thus <m>\langle 1, 0, -1\rangle</m> is the direction vector of a line
+pointing along this plane. Combining this with the point on the plane
+that we have already found, we see that the line
+<md>
+\mathbf r(t) = \left\langle t + \frac{\pi}{2},\; 1,\; -t\right\rangle
+</md>
+is contained in the tangent plane. We could find other lines contained
+in the plane by making different choices of direction vector. See
+<xref ref="fig-rev-tp-line"/>.
+</p>
+
+<figure xml:id="fig-rev-tp-line">
+<caption>
+The tangent plane <m>x + \frac{\pi}{2}y + z = \pi</m> to the graph of
+<m>f(x,y) = \cos(xy)</m> at <m>P_0\left(\frac{\pi}{2},1,0\right)</m>,
+its normal vector <m>\vec n = \langle 1, \frac{\pi}{2}, 1\rangle</m>,
+and the line <m>\mathbf r(t) = \langle t + \frac{\pi}{2}, 1, -t\rangle</m>
+contained in the plane.
+</caption>
+<image width="70%">
+<description>
+<p>
+A three dimensional coordinate system showing a tilted shaded
+parallelogram that represents the tangent plane. A red point P zero at
+pi over two comma one comma zero lies in the middle of the plane. A
+blue arrow perpendicular to the plane at P zero is the normal vector
+n, and a dark red line through P zero lying inside the plane is the
+line r of t.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,2.9,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,3.2) node[above] {$z$};
+  % tangent plane patch: z = pi - x - (pi/2) y over x in [0.6,2.4], y in [0.3,1.7]
+  \fill[msky, opacity=0.30]
+    (0.6,0.3,2.0705) -- (2.4,0.3,0.2705) -- (2.4,1.7,-1.9285) -- (0.6,1.7,-0.1285) -- cycle;
+  \draw[msky!70!black]
+    (0.6,0.3,2.0705) -- (2.4,0.3,0.2705) -- (2.4,1.7,-1.9285) -- (0.6,1.7,-0.1285) -- cycle;
+  % the line r(t) = (t + pi/2, 1, -t) for t in [-0.95, 0.82]
+  \draw[mred, very thick] (0.6208,1,0.95) -- (2.3908,1,-0.82);
+  % the point P0
+  \fill[red] (1.5708,1,0) circle (2pt) node[below left=2pt, red] {$P_0\!\left(\frac{\pi}{2},1,0\right)$};
+  % the normal vector at P0, direction (1, pi/2, 1)/|.| * 0.95
+  \draw[-stealth, mblue, very thick] (1.5708,1,0) -- (2.0146,1.6971,0.4438)
+        node[below right=3pt] {$\vec n=\left\langle 1,\frac{\pi}{2},1\right\rangle$};
+  % label for the line
+  \node[mred, below right=0pt] at (2.25,1.05,-0.72) {$\mathbf r(t)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-tp-4">
+<statement>
+<p>
+Compute the partial derivatives of <m>f</m> with respect to
+<m>x, y</m> for
+<md>
+f(s,t) = s^2 - t^2, \qquad
+s = \frac{x+y}{2}, \qquad
+t = \frac{x-y}{2},
+</md>
+using both the chain rule and by plugging in <m>s</m> and <m>t</m>.
+</p>
+</statement>
+<solution>
+<p>
+Using the chain rule:
+<md>
+<mrow>\frac{\partial f}{\partial x}
+\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial x}
++ \frac{\partial f}{\partial t}\frac{\partial t}{\partial x}</mrow>
+<mrow>\amp = 2s\cdot\frac12 - 2t\cdot\frac12 = s - t = y</mrow>
+<mrow>\frac{\partial f}{\partial y}
+\amp = \frac{\partial f}{\partial s}\frac{\partial s}{\partial y}
++ \frac{\partial f}{\partial t}\frac{\partial t}{\partial y}</mrow>
+<mrow>\amp = 2s\cdot\frac12 + 2t\cdot\frac12 = s + t = x</mrow>
+</md>
+</p>
+
+<p>
+Plugging in, we see
+<md>
+f(s(x,y), t(x,y))
+= \frac14\left((x+y)^2 - (x-y)^2\right) = xy,
+</md>
+and easily obtain the same partial derivatives.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-tp-5">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+Consider <m>f(x,y) = \left(\cos x + (1+x)\tan y\right)e^{x^2-1+y}</m>.
+Then <m>\dfrac{d}{dt}f(t^2, t^3) = 0</m> at <m>t = 0</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Writing <m>x(t) = t^2</m> and <m>y(t) = t^3</m>, we
+see that
+<md>
+\frac{dx}{dt} = 2t = 0
+\quad\text{and}\quad
+\frac{dy}{dt} = 3t^2 = 0
+\quad\text{at } t = 0.
+</md>
+Now we see from the chain rule that
+<md>
+\frac{d}{dt}f(x(t), y(t))
+= \frac{\partial f}{\partial x}\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\frac{dy}{dt}
+= 0 \quad\text{at } t = 0.
+</md>
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rev-tp-3">
+<title>Challenge</title>
+<statement>
+<p>
+Let <m>S</m> be a sphere centered at the origin in <m>\R^3</m>, and
+consider any point <m>P</m> on <m>S</m>. Show that the vector
+<m>\vec{OP}</m> is orthogonal to the tangent plane to <m>S</m> at
+<m>P</m>.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>R</m> be the radius of the sphere, and write
+<m>P = (x_0, y_0, z_0)</m>. Assume for the moment that <m>P</m> lies on
+the top half of the sphere (i.e. <m>z_0 \gt 0</m>). Note that the top
+half of the sphere is the same as the graph of the function
+<m>f(x,y) = \sqrt{R^2 - x^2 - y^2}</m>. We can compute
+<md>
+<mrow>\frac{\partial f}{\partial x}(x_0, y_0)
+\amp = -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}},</mrow>
+<mrow>\frac{\partial f}{\partial y}(x_0, y_0)
+\amp = -\frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}},</mrow>
+</md>
+so that the tangent plane to the graph at <m>P</m> (which is the same
+as the tangent plane to <m>S</m> at <m>P</m>) is given by
+<md>
+z - z_0
+= -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(x - x_0)
+- \frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(y - y_0).
+</md>
+</p>
+
+<p>
+We can rewrite this as
+<md>
+x_0(x - x_0) + y_0(y - y_0) + z_0(z - z_0) = 0,
+</md>
+where we use the fact that <m>z_0 = \sqrt{R^2 - x_0^2 - y_0^2}</m> to
+simplify things. From this we see that
+<m>\langle x_0, y_0, z_0\rangle</m> is a normal vector to the tangent
+plane. But <m>\langle x_0, y_0, z_0\rangle = \vec{OP}</m>, so this is
+exactly what we needed to show. See <xref ref="fig-rev-tp-sphere"/>.
+</p>
+
+<p>
+A similar argument (with <m>-\sqrt{R^2 - x^2 - y^2}</m> in place of
+<m>\sqrt{R^2 - x^2 - y^2}</m>) works when <m>P</m> is on the bottom
+half of the sphere (i.e. <m>z_0 \lt 0</m>). When <m>z_0 = 0</m>, we
+have to use a <q>sideways graph</q> of some function like
+<m>f(y,z) = \sqrt{R^2 - y^2 - z^2}</m>, but other than that, pretty
+much everything is the same.
+</p>
+
+<figure xml:id="fig-rev-tp-sphere">
+<caption>
+The vector <m>\vec{OP} = \langle x_0, y_0, z_0\rangle</m> from the
+center of the sphere to the point <m>P</m> is a normal vector to the
+tangent plane to <m>S</m> at <m>P</m>.
+</caption>
+<image width="58%">
+<description>
+<p>
+A sphere centered at the origin O, drawn with a dashed equator. A
+point P sits on the upper right of the sphere. An arrow from O through
+P continues past the surface, and a small shaded parallelogram at P,
+perpendicular to the arrow, represents the tangent plane. A right
+angle marker at P shows that the vector O P is orthogonal to the
+tangent plane.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % the sphere
+  \draw[thick, mblue] (0,0) circle (2);
+  \draw[mblue, dashed] (-2,0) arc (180:360:2 and 0.55);
+  \draw[mblue] (-2,0) arc (180:0:2 and -0.55);
+  % center
+  \fill (0,0) circle (1.6pt) node[below left=1pt] {$O$};
+  % the point P at 40 degrees
+  \coordinate (P) at (40:2);
+  % OP vector, extended past the sphere
+  \draw[-stealth, mred, very thick] (0,0) -- (40:2.9)
+        node[above right=-1pt] {$\vec{OP}$};
+  \fill[red] (P) circle (2pt) node[below right=2pt] {$P$};
+  % tangent plane at P: parallelogram perpendicular to OP
+  % direction along the page perpendicular to OP: (-sin40, cos40)
+  % slanted second direction to fake 3D
+  \begin{scope}[shift={(P)}]
+    \coordinate (u) at (-0.766,0.643);   % perpendicular to OP, unit
+    \coordinate (v) at (0.30,0.42);      % skewed depth direction
+    \fill[morange, opacity=0.30]
+      ($-1.3*(u) - 0.9*(v)$) -- ($1.3*(u) - 0.9*(v)$)
+      -- ($1.3*(u) + 0.9*(v)$) -- ($-1.3*(u) + 0.9*(v)$) -- cycle;
+    \draw[morange!70!black]
+      ($-1.3*(u) - 0.9*(v)$) -- ($1.3*(u) - 0.9*(v)$)
+      -- ($1.3*(u) + 0.9*(v)$) -- ($-1.3*(u) + 0.9*(v)$) -- cycle;
+    % right-angle marker between OP direction and the plane direction u
+    \draw ($0.34*(u)$) -- ($0.34*(u) + (0.26,0.218)$) -- (0.26,0.218);
+  \end{scope}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+</worksheet>
