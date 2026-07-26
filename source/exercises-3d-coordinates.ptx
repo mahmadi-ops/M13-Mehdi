@@ -366,12 +366,11 @@ piece of length five with open ends.
 \begin{tikzpicture}[scale=0.82, >=stealth]
 % ------------- left: the infinite cylinder y^2+z^2=4 -------------
 \begin{scope}
-  % far rim disk: filled with the body color so its outer crescent
-  % (outside the rectangle) doesn't show as a white gap
-  \fill[cyan!22, opacity=0.8] (-1.4,0) ellipse (0.42cm and 1.5cm);
   % tube wall between the two drawn rims
   \fill[cyan!22, opacity=0.8] (-1.4,-1.5) rectangle (3.4,1.5);
-  % near rim disk, left lighter: the tube is open, not capped
+  % both rim disks lighter than the wall: the tube is open, not capped,
+  % so only the side wall gets the solid body color
+  \fill[cyan!10, opacity=0.9] (-1.4,0) ellipse (0.42cm and 1.5cm);
   \fill[cyan!10, opacity=0.9] (3.4,0) ellipse (0.42cm and 1.5cm);
   \draw[cyan!55!black, thick] (-1.4,0) ellipse (0.42cm and 1.5cm);
   \draw[cyan!55!black, thick] (3.4,0) ellipse (0.42cm and 1.5cm);
@@ -393,10 +392,10 @@ piece of length five with open ends.
   \draw[->, thick] (0,0) -- (0,2.5) node[above] {$z$};
   \draw[->, thick] (0,0) -- (-1.5,-1.05) node[below left] {$y$};
   \draw[->, thick] (-1.3,0) -- (4.6,0) node[right] {$x$};
-  % far rim disk: filled with the body color so its outer crescent
-  % (outside the rectangle) doesn't show as a white gap
-  \fill[purple!20, opacity=0.8] (0,0) ellipse (0.42cm and 1.5cm);
   \fill[purple!20, opacity=0.8] (0,-1.5) rectangle (3.6,1.5);
+  % both rim disks lighter than the wall: the tube is open, not capped,
+  % so only the side wall gets the solid body color
+  \fill[purple!8, opacity=0.9] (0,0) ellipse (0.42cm and 1.5cm);
   \fill[purple!8, opacity=0.9] (3.6,0) ellipse (0.42cm and 1.5cm);
   \draw[purple!60!black, thick] (0,0) ellipse (0.42cm and 1.5cm);
   \draw[purple!60!black, thick] (3.6,0) ellipse (0.42cm and 1.5cm);
