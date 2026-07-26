@@ -268,13 +268,6 @@ products each containing a factor of <m>0</m>, so
 </p>
 </proof>
 
-<remark xml:id="remark-anticommutative">
-<p>
-Note that property (4) follows from <xref ref="eq-cross-geometric"/> and
-the fact that <m>\sin(-\theta) = -\sin(\theta)</m>.
-</p>
-</remark>
-
 </section>
 
 <!-- ================================================================ -->
