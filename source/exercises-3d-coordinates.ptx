@@ -274,4 +274,187 @@ to the point zero, seven, zero on the y axis.
 </solution>
 </exercise>
 
+<exercise xml:id="ex-3d-describe-more">
+<title>Describing More Equations and Inequalities Geometrically</title>
+<statement>
+<p>
+Describe the geometrical meaning of the following equalities and
+inequalities.
+<ol marker="A.">
+<li><p><m>y = -2</m></p></li>
+<li><p><m>y = -2,\; z = 1</m></p></li>
+<li><p><m>(x-2)^2 + (y+1)^2 + z^2 = 9</m></p></li>
+<li><p><m>(x-2)^2 + (y+1)^2 + z^2 \le 9,\; y \ge -1</m></p></li>
+<li><p><m>y^2 + z^2 = 4</m></p></li>
+<li><p><m>y^2 + z^2 = 4,\; 0 \le x \le 5</m></p></li>
+<li><p><m>x = y</m></p></li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>A.</alert> This is the set of all points whose <m>y</m>-coordinate
+equals <m>-2</m>, that is <m>\{(x,y,z) \in \R^3 : y = -2\}</m>. Both
+<m>x</m> and <m>z</m> are unrestricted, so it is a plane parallel to the
+<m>xz</m>-plane, sitting two units to the negative side of it.
+</p>
+
+<p>
+<alert>B.</alert> This is the intersection of the two planes
+<m>y = -2</m> and <m>z = 1</m>, which is a line. Only <m>x</m> is
+unrestricted, so the line is parallel to the <m>x</m>-axis and passes
+through the point <m>(0,-2,1)</m>.
+</p>
+
+<p>
+<alert>C.</alert> Comparing with the standard equation of a sphere, this
+is the sphere of radius <m>3</m> centered at <m>(2,-1,0)</m>. Note the
+center lies in the <m>xy</m>-plane, and since the radius is <m>3</m> the
+sphere reaches from <m>z = -3</m> up to <m>z = 3</m>.
+</p>
+
+<p>
+<alert>D.</alert> Replacing the equality by <m>\le</m> gives the solid
+ball: every point whose distance from <m>(2,-1,0)</m> is at most
+<m>3</m>. The extra condition <m>y \ge -1</m> keeps only the points on
+one side of the plane <m>y = -1</m>. That plane passes through the
+<em>center</em> of the ball, so exactly half of the ball survives: the
+region is a solid half-ball of radius <m>3</m>, whose flat face is the
+disk of radius <m>3</m> cut out of the plane <m>y = -1</m>.
+</p>
+
+<p>
+<alert>E.</alert> In the <m>yz</m>-plane, <m>y^2 + z^2 = 4</m> is a
+circle of radius <m>2</m> centered at the origin. In space <m>x</m> is
+unrestricted, so the equation represents an infinitely long cylinder of
+radius <m>2</m> whose axis is the <m>x</m>-axis. Compare this with
+<xref ref="example-3d-describe"/>, where the missing variable was
+<m>z</m> and the axis was therefore the <m>z</m>-axis: the axis of the
+cylinder is always the axis of the variable that does not appear. The
+left half of <xref ref="fig-ex3d-cylinder-x"/> shows this cylinder.
+</p>
+
+<p>
+<alert>F.</alert> The extra condition <m>0 \le x \le 5</m> cuts the
+cylinder of part <alert>E</alert> down to a piece of length <m>5</m>,
+running from the circle in the plane <m>x = 0</m> to the circle in the
+plane <m>x = 5</m>, as on the right of
+<xref ref="fig-ex3d-cylinder-x"/>. It is a tube, not a solid: the two
+end disks are not included, since the equation forces
+<m>y^2 + z^2 = 4</m> exactly.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-x">
+<caption>
+Parts <alert>E</alert> and <alert>F</alert>. On the left, the infinite
+cylinder <m>y^2+z^2=4</m>, whose axis is the <m>x</m>-axis; the dashed
+lines indicate that it continues without bound in both directions. On
+the right, the same cylinder cut down to <m>0 \le x \le 5</m>.
+</caption>
+<image width="92%">
+<description>
+<p>
+Two pictures side by side. On the left, a tube of radius two lying along
+the x axis, with dashed lines continuing past both ends to show that it
+is unbounded. On the right, the same tube cut off by the plane x equals
+zero at one end and the plane x equals five at the other, leaving a
+piece of length five with open ends.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.82, >=stealth]
+% ------------- left: the infinite cylinder y^2+z^2=4 -------------
+\begin{scope}
+  % tube wall between the two drawn rims
+  \fill[cyan!22, opacity=0.8] (-1.4,-1.5) rectangle (3.4,1.5);
+  % near rim disk, left lighter: the tube is open, not capped
+  \fill[cyan!10, opacity=0.9] (3.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black, thick] (-1.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black, thick] (3.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black] (-1.4,1.5) -- (3.4,1.5);
+  \draw[cyan!55!black] (-1.4,-1.5) -- (3.4,-1.5);
+  % dashed continuations: the cylinder is unbounded in both directions
+  \draw[cyan!55!black, dashed] (-1.4,1.5) -- (-2.1,1.5);
+  \draw[cyan!55!black, dashed] (-1.4,-1.5) -- (-2.1,-1.5);
+  \draw[cyan!55!black, dashed] (3.4,1.5) -- (4.1,1.5);
+  \draw[cyan!55!black, dashed] (3.4,-1.5) -- (4.1,-1.5);
+  % axes last, so they stay visible where they pass through the tube
+  \draw[->, thick] (0,0) -- (0,2.5) node[above] {$z$};
+  \draw[->, thick] (0,0) -- (-1.5,-1.05) node[below left] {$y$};
+  \draw[->, thick] (-2.2,0) -- (4.3,0) node[right] {$x$};
+  \node[below] at (1.0,-2.2) {$y^2+z^2=4$};
+\end{scope}
+% ------------- right: the piece with 0 <= x <= 5 -------------
+\begin{scope}[xshift=8.2cm]
+  \draw[->, thick] (0,0) -- (0,2.5) node[above] {$z$};
+  \draw[->, thick] (0,0) -- (-1.5,-1.05) node[below left] {$y$};
+  \draw[->, thick] (-1.3,0) -- (4.6,0) node[right] {$x$};
+  \fill[purple!20, opacity=0.8] (0,-1.5) rectangle (3.6,1.5);
+  \fill[purple!8, opacity=0.9] (3.6,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black, thick] (0,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black, thick] (3.6,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black] (0,1.5) -- (3.6,1.5);
+  \draw[purple!60!black] (0,-1.5) -- (3.6,-1.5);
+  \node[purple!60!black, above] at (0,1.6) {$x=0$};
+  \node[purple!60!black, above] at (3.6,1.6) {$x=5$};
+  \node[below] at (1.8,-2.2) {$y^2+z^2=4,\; 0\le x\le 5$};
+\end{scope}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>G.</alert> The condition <m>x = y</m> says nothing about
+<m>z</m>, so whenever a point satisfies it, so does the whole vertical
+line through that point. In the <m>xy</m>-plane the equation
+<m>x = y</m> describes a line through the origin, and sweeping that line
+vertically gives a plane: the plane containing the <m>z</m>-axis that
+cuts the <m>xy</m>-plane along the line <m>y = x</m>, shown in
+<xref ref="fig-ex3d-plane-xy"/>. It is <em>not</em> parallel to any
+coordinate plane, unlike part <alert>A</alert>.
+</p>
+
+<figure xml:id="fig-ex3d-plane-xy">
+<caption>
+Part <alert>G</alert>: the plane <m>x = y</m>. It contains the
+<m>z</m>-axis and meets the <m>xy</m>-plane in the line <m>y = x</m>,
+drawn in red.
+</caption>
+<image width="58%">
+<description>
+<p>
+A shaded plane standing vertically and cutting diagonally through the
+first and third octants. It contains the z axis, and the red line where
+it meets the horizontal x y plane runs diagonally between the x and y
+axes.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.95, >=stealth]
+% the plane x = y is spanned by the directions (1,1,0) and (0,0,1)
+\fill[cyan!25, opacity=0.7]
+  (-2.0,-2.0,-1.4) -- (3.6,3.6,-1.4) -- (3.6,3.6,1.9) -- (-2.0,-2.0,1.9) -- cycle;
+\draw[cyan!55!black]
+  (-2.0,-2.0,-1.4) -- (3.6,3.6,-1.4) -- (3.6,3.6,1.9) -- (-2.0,-2.0,1.9) -- cycle;
+% axes, negative parts drawn thin so the plane reads as passing through the origin
+\draw[thick] (-1.8,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-1.4,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,4.2,0) node[right] {$y$};
+\draw[thick] (0,0,-1.7) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.4) node[above] {$z$};
+% the trace in the xy-plane
+\draw[red!70!black, very thick] (-2.0,-2.0,0) -- (3.6,3.6,0);
+\node[red!70!black, below right=1pt] at (3.6,3.6,0) {$y=x$};
+\node[cyan!70!black] at (0.9,0.9,1.55) {$x=y$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>
