@@ -560,19 +560,108 @@ inequalities.
 <alert>A.</alert> This is the equation of the set of all points whose
 <m>x</m>-coordinate equals <m>1</m>, that is
 <m>\{(x,y,z) \in \R^3 : x = 1\}</m>. Geometrically it is a plane parallel
-to the <m>yz</m>-plane.
+to the <m>yz</m>-plane, shown in <xref ref="fig-3d-plane-x1"/>.
 </p>
+
+<figure xml:id="fig-3d-plane-x1">
+<caption>
+Part <alert>A</alert>: the plane <m>x=1</m>, parallel to the
+<m>yz</m>-plane.
+</caption>
+<image width="55%">
+<description>
+<p>
+A shaded rectangle parallel to the y z plane, offset from it in the
+positive x direction, representing the plane x equals 1.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.75] (1,-1.8,-1.8) -- (1,1.8,-1.8) -- (1,1.8,1.8) -- (1,-1.8,1.8) -- cycle;
+\draw[cyan!55!black] (1,-1.8,-1.8) -- (1,1.8,-1.8) -- (1,1.8,1.8) -- (1,-1.8,1.8) -- cycle;
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.4,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.4,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.4) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.4) node[above] {$z$};
+\node[cyan!70!black] at (1,1.4,1.6) {$x=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>B.</alert> This is the intersection of the two planes <m>x = 1</m>
 and <m>y = 2</m>, which is a line. The line is parallel to the
-<m>z</m>-axis, since <m>z</m> is unrestricted.
+<m>z</m>-axis, since <m>z</m> is unrestricted, as shown in
+<xref ref="fig-3d-line-x1y2"/>.
 </p>
+
+<figure xml:id="fig-3d-line-x1y2">
+<caption>
+Part <alert>B</alert>: the planes <m>x=1</m> and <m>y=2</m> meet in a
+line parallel to the <m>z</m>-axis, highlighted in red.
+</caption>
+<image width="60%">
+<description>
+<p>
+Two shaded planes, one for x equals 1 and one for y equals 2, crossing
+each other. Their intersection is a vertical red line parallel to the z
+axis.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.6] (1,-1,-1.8) -- (1,3,-1.8) -- (1,3,1.8) -- (1,-1,1.8) -- cycle;
+\fill[orange!25, opacity=0.6] (-1,2,-1.8) -- (3,2,-1.8) -- (3,2,1.8) -- (-1,2,1.8) -- cycle;
+\draw[cyan!55!black] (1,-1,-1.8) -- (1,3,-1.8) -- (1,3,1.8) -- (1,-1,1.8) -- cycle;
+\draw[orange!70!black] (-1,2,-1.8) -- (3,2,-1.8) -- (3,2,1.8) -- (-1,2,1.8) -- cycle;
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.2,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,3.4,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\draw[red!70!black, very thick] (1,2,-1.8) -- (1,2,1.8);
+\node[cyan!70!black] at (1,-0.7,1.6) {$x=1$};
+\node[orange!80!black] at (2.7,2,1.6) {$y=2$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>C.</alert> By <xref ref="eq-3d-sphere"/> this is a sphere of
-radius one centered at the origin <m>(0,0,0)</m>.
+radius one centered at the origin <m>(0,0,0)</m>, shown in
+<xref ref="fig-3d-sphere-unit"/>.
 </p>
+
+<figure xml:id="fig-3d-sphere-unit">
+<caption>
+Part <alert>C</alert>: the sphere <m>x^2+y^2+z^2=1</m>, of radius one
+centered at the origin.
+</caption>
+<image width="45%">
+<description>
+<p>
+A shaded sphere of radius one centered at the origin, with a dashed
+ellipse marking its equator.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+\draw[->, thick] (0,0) -- (0,2.4) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.8,-0.75) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.0,-0.9) node[below left] {$x$};
+\node[above left] at (0,0) {$0$};
+\shade[ball color=cyan!30, opacity=0.92] (0,0) circle (1.3cm);
+\draw[cyan!55!black, dashed, opacity=0.8] (0,0) ellipse (1.3cm and 0.36cm);
+\node[below] at (0,-1.9) {$x^2+y^2+z^2=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>D.</alert> You can think of <m>1 \le x^2 + y^2 + z^2 \le 4</m> as
@@ -639,8 +728,44 @@ hemisphere hollowed out of it, is the sphere of radius one.
 <p>
 <alert>E.</alert> In the plane, <m>x^2+y^2=1</m> is a circle. In space
 the variable <m>z</m> is unrestricted, so the equation represents an
-infinitely long cylinder of radius one whose axis is the <m>z</m>-axis.
+infinitely long cylinder of radius one whose axis is the <m>z</m>-axis,
+as in <xref ref="fig-3d-cylinder-infinite"/>.
 </p>
+
+<figure xml:id="fig-3d-cylinder-infinite">
+<caption>
+Part <alert>E</alert>: the infinite cylinder <m>x^2+y^2=1</m>. The
+dashed lines indicate that it extends without bound in both directions
+along the <m>z</m>-axis.
+</caption>
+<image width="45%">
+<description>
+<p>
+A cylinder of radius one centered on the z axis, with dashed lines
+extending past its top and bottom rims to indicate it continues
+indefinitely in both directions.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.9, >=stealth]
+\draw[->, thick] (0,-2.6) -- (0,2.8) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.3,-0.65) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.0,-0.9) node[below left] {$x$};
+\fill[cyan!22, opacity=0.85] (-1.3,-1.6) -- (-1.3,1.6) arc (180:360:1.3cm and 0.36cm) -- (1.3,-1.6) arc (360:180:1.3cm and 0.36cm);
+\fill[cyan!10, opacity=0.9] (0,1.6) ellipse (1.3cm and 0.36cm);
+\draw[cyan!55!black] (-1.3,-1.6) -- (-1.3,1.6);
+\draw[cyan!55!black] (1.3,-1.6) -- (1.3,1.6);
+\draw[cyan!55!black, thick] (0,1.6) ellipse (1.3cm and 0.36cm);
+\draw[cyan!55!black, thick] (0,-1.6) ellipse (1.3cm and 0.36cm);
+\draw[cyan!55!black, dashed] (-1.3,1.6) -- (-1.3,2.2);
+\draw[cyan!55!black, dashed] (1.3,1.6) -- (1.3,2.2);
+\draw[cyan!55!black, dashed] (-1.3,-1.6) -- (-1.3,-2.2);
+\draw[cyan!55!black, dashed] (1.3,-1.6) -- (1.3,-2.2);
+\node[below] at (0,-2.6) {$x^2+y^2=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>F.</alert> This is the intersection of the plane <m>z = 3</m> and
