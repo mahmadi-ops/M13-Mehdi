@@ -297,22 +297,119 @@ inequalities.
 <alert>A.</alert> This is the set of all points whose <m>y</m>-coordinate
 equals <m>-2</m>, that is <m>\{(x,y,z) \in \R^3 : y = -2\}</m>. Both
 <m>x</m> and <m>z</m> are unrestricted, so it is a plane parallel to the
-<m>xz</m>-plane, sitting two units to the negative side of it.
+<m>xz</m>-plane, sitting two units to the negative side of it, shown in
+<xref ref="fig-ex3d-plane-y"/>.
 </p>
+
+<figure xml:id="fig-ex3d-plane-y">
+<caption>
+Part <alert>A</alert>: the plane <m>y=-2</m>, parallel to the
+<m>xz</m>-plane.
+</caption>
+<image width="55%">
+<description>
+<p>
+A shaded rectangle parallel to the x z plane, offset from it in the
+negative y direction, representing the plane y equals negative two.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.75] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[cyan!55!black] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\node[cyan!70!black] at (-1.8,-2,1.5) {$y=-2$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>B.</alert> This is the intersection of the two planes
 <m>y = -2</m> and <m>z = 1</m>, which is a line. Only <m>x</m> is
 unrestricted, so the line is parallel to the <m>x</m>-axis and passes
-through the point <m>(0,-2,1)</m>.
+through the point <m>(0,-2,1)</m>, as shown in
+<xref ref="fig-ex3d-line-y-z"/>.
 </p>
+
+<figure xml:id="fig-ex3d-line-y-z">
+<caption>
+Part <alert>B</alert>: the planes <m>y=-2</m> and <m>z=1</m> meet in a
+line parallel to the <m>x</m>-axis, highlighted in red.
+</caption>
+<image width="60%">
+<description>
+<p>
+Two shaded planes, one for y equals negative two and one for z equals
+one, crossing each other. Their intersection is a red line parallel to
+the x axis.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.55] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\fill[orange!25, opacity=0.55] (-1.8,-2.6,1) -- (1.8,-2.6,1) -- (1.8,2.2,1) -- (-1.8,2.2,1) -- cycle;
+\draw[cyan!55!black] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[orange!70!black] (-1.8,-2.6,1) -- (1.8,-2.6,1) -- (1.8,2.2,1) -- (-1.8,2.2,1) -- cycle;
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\draw[red!70!black, very thick] (-1.8,-2,1) -- (1.8,-2,1);
+\node[cyan!70!black, anchor=east] at (-1.9,-2,-1.85) {$y=-2$};
+\node[orange!80!black, anchor=west] at (1.9,2.2,1) {$z=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>C.</alert> Comparing with the standard equation of a sphere, this
 is the sphere of radius <m>3</m> centered at <m>(2,-1,0)</m>. Note the
 center lies in the <m>xy</m>-plane, and since the radius is <m>3</m> the
-sphere reaches from <m>z = -3</m> up to <m>z = 3</m>.
+sphere reaches from <m>z = -3</m> up to <m>z = 3</m>, as shown in
+<xref ref="fig-ex3d-sphere-off"/>.
 </p>
+
+<figure xml:id="fig-ex3d-sphere-off">
+<caption>
+Part <alert>C</alert>: the sphere <m>(x-2)^2+(y+1)^2+z^2=9</m>, of
+radius <m>3</m> centered at <m>(2,-1,0)</m>.
+</caption>
+<image width="45%">
+<description>
+<p>
+A shaded sphere of radius three, offset from the origin toward the
+point two, negative one, zero, with a dotted segment from the origin
+to its center and a dashed ellipse marking its equator.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+\draw[gray, densely dotted] (0,0) -- (-2.78,-0.58);
+\fill[gray] (-2.78,-0.58) circle (1pt);
+\shade[ball color=cyan!30, opacity=0.92] (-2.78,-0.58) circle (1.55cm);
+\draw[cyan!55!black, dashed, opacity=0.8] (-2.78,-0.58) ellipse (1.55cm and 0.43cm);
+\node[gray!70!black, below=2pt] at (-2.78,-0.58) {$(2,-1,0)$};
+% axes drawn last, so they stay visible where they cross the sphere;
+% the x axis is shortened so its arrowhead and label sit in front of
+% the sphere rather than buried in its middle
+\draw[->, thick] (0,0) -- (0,2.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.4,-0.9) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-1.5,-0.69) node[below left=1pt] {$x$};
+\node[above right] at (0,0.05) {$0$};
+\node[below] at (-2.78,-2.5) {$(x-2)^2+(y+1)^2+z^2=9$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>D.</alert> Replacing the equality by <m>\le</m> gives the solid
@@ -321,8 +418,50 @@ ball: every point whose distance from <m>(2,-1,0)</m> is at most
 one side of the plane <m>y = -1</m>. That plane passes through the
 <em>center</em> of the ball, so exactly half of the ball survives: the
 region is a solid half-ball of radius <m>3</m>, whose flat face is the
-disk of radius <m>3</m> cut out of the plane <m>y = -1</m>.
+disk of radius <m>3</m> cut out of the plane <m>y = -1</m>, shown in
+<xref ref="fig-ex3d-halfball-off"/>.
 </p>
+
+<figure xml:id="fig-ex3d-halfball-off">
+<caption>
+Part <alert>D</alert>: the half-ball of radius <m>3</m> centered at
+<m>(2,-1,0)</m>, cut by the condition <m>y \ge -1</m>, a plane through
+its center.
+</caption>
+<image width="45%">
+<description>
+<p>
+A hemisphere sitting above a flat disk face, offset from the origin
+toward the point two, negative one, zero. A wireframe outline below the
+disk shows where the missing half of the ball would be.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+% drawn directly in the picture plane, in the same style as fig-3d-shell:
+% the flat cut face is the disk where y = -1, shaded solid, with a
+% wireframe outline showing where the discarded half would sit
+\begin{scope}[shift={(-2.78,-0.58)}]
+  \fill[cyan!30, opacity=0.9]
+    (-1.55,0) arc (180:360:1.55cm and 0.43cm) arc (0:180:1.55cm);
+  \draw[cyan!55!black] (-1.55,0) arc (180:360:1.55cm and 0.43cm);
+  \draw[cyan!55!black] (-1.55,0) arc (180:0:1.55cm and 0.43cm);
+  \draw[cyan!55!black] (-1.55,0) arc (180:360:1.55cm);
+  \fill[gray] (0,0) circle (1pt);
+\end{scope}
+\draw[gray, densely dotted] (0,0) -- (-2.78,-0.58);
+% axes drawn last, so they stay visible where they cross the ball
+\draw[->, thick] (0,0) -- (0,2.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.4,-0.9) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-1.5,-0.69) node[below left=1pt] {$x$};
+\node[above right] at (0,0.05) {$0$};
+\node[gray!70!black] at (-2.78,-2.1) {$(2,-1,0)$};
+\node[below, align=center] at (-2.78,-2.85)
+  {$(x-2)^2+(y+1)^2+z^2 \le 9,$\\[2pt] $y \ge -1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 <alert>E.</alert> In the <m>yz</m>-plane, <m>y^2 + z^2 = 4</m> is a
