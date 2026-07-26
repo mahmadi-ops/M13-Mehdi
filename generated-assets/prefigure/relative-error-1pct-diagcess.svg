@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="relative-error-1pct-figure" viewBox="0 0 436 336">
   <defs>
-    <clipPath id="relative-error-1pct-clipPath-0">
+    <clipPath id="relative-error-1pct-__clipPath-0">
       <rect x="8.0" y="8.0" width="420.0" height="320.0"/>
     </clipPath>
-    <clipPath id="relative-error-1pct-clipPath-1">
+    <clipPath id="relative-error-1pct-__clipPath-1">
       <rect x="8.0" y="8.0" width="420.0" height="320.0"/>
     </clipPath>
   </defs>
@@ -27,22 +27,22 @@
       <line x1="8.0" y1="17.4" x2="428.0" y2="17.4"/>
     </g>
     <g id="relative-error-1pct-axes" stroke="black" stroke-width="2">
-      <line id="relative-error-1pct-line-16" x1="8.0" y1="299.8" x2="428.0" y2="299.8" stroke="black" stroke-width="2"/>
+      <line id="relative-error-1pct-__line-16" x1="8.0" y1="299.8" x2="428.0" y2="299.8" stroke="black" stroke-width="2"/>
       <g>
-        <line id="relative-error-1pct-line-17" x1="129.3" y1="302.8" x2="129.3" y2="296.8"/>
-        <line id="relative-error-1pct-line-18" x1="222.7" y1="302.8" x2="222.7" y2="296.8"/>
-        <line id="relative-error-1pct-line-19" x1="316.0" y1="302.8" x2="316.0" y2="296.8"/>
-        <line id="relative-error-1pct-line-20" x1="409.3" y1="302.8" x2="409.3" y2="296.8"/>
+        <line id="relative-error-1pct-__line-17" x1="129.3" y1="302.8" x2="129.3" y2="296.8"/>
+        <line id="relative-error-1pct-__line-18" x1="222.7" y1="302.8" x2="222.7" y2="296.8"/>
+        <line id="relative-error-1pct-__line-19" x1="316.0" y1="302.8" x2="316.0" y2="296.8"/>
+        <line id="relative-error-1pct-__line-20" x1="409.3" y1="302.8" x2="409.3" y2="296.8"/>
       </g>
-      <line id="relative-error-1pct-line-21" x1="36.0" y1="328.0" x2="36.0" y2="8.0" stroke="black" stroke-width="2"/>
+      <line id="relative-error-1pct-__line-21" x1="36.0" y1="328.0" x2="36.0" y2="8.0" stroke="black" stroke-width="2"/>
       <g>
-        <line id="relative-error-1pct-line-22" x1="33.0" y1="205.6" x2="39.0" y2="205.6"/>
-        <line id="relative-error-1pct-line-23" x1="33.0" y1="111.5" x2="39.0" y2="111.5"/>
-        <line id="relative-error-1pct-line-24" x1="33.0" y1="17.4" x2="39.0" y2="17.4"/>
+        <line id="relative-error-1pct-__line-22" x1="33.0" y1="205.6" x2="39.0" y2="205.6"/>
+        <line id="relative-error-1pct-__line-23" x1="33.0" y1="111.5" x2="39.0" y2="111.5"/>
+        <line id="relative-error-1pct-__line-24" x1="33.0" y1="17.4" x2="39.0" y2="17.4"/>
       </g>
     </g>
-    <g id="relative-error-1pct-label-0" transform="translate(424.0,295.8) translate(-8.5,-12.9)">
-      <g id="relative-error-1pct-g-0">
+    <g id="relative-error-1pct-__label-0" transform="translate(424.0,295.8) translate(-8.5,-12.9)">
+      <g id="relative-error-1pct-__g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="12.944px" role="img" focusable="false" viewBox="0 -705 469 715" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-2-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
@@ -57,8 +57,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-1" transform="translate(129.3,310.8) translate(-11.6,-0.0)">
-      <g id="relative-error-1pct-g-1">
+    <g id="relative-error-1pct-__label-1" transform="translate(129.3,310.8) translate(-11.6,-0.0)">
+      <g id="relative-error-1pct-__g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="23.128px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1278 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-3-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -77,8 +77,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-2" transform="translate(222.7,310.8) translate(-11.6,-0.0)">
-      <g id="relative-error-1pct-g-2">
+    <g id="relative-error-1pct-__label-2" transform="translate(222.7,310.8) translate(-11.6,-0.0)">
+      <g id="relative-error-1pct-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="23.128px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1278 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-4-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -97,8 +97,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-3" transform="translate(316.0,310.8) translate(-11.6,-0.0)">
-      <g id="relative-error-1pct-g-3">
+    <g id="relative-error-1pct-__label-3" transform="translate(316.0,310.8) translate(-11.6,-0.0)">
+      <g id="relative-error-1pct-__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="23.128px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1278 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-5-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -117,8 +117,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-4" transform="translate(409.3,310.8) translate(-11.6,-0.0)">
-      <g id="relative-error-1pct-g-4">
+    <g id="relative-error-1pct-__label-4" transform="translate(409.3,310.8) translate(-11.6,-0.0)">
+      <g id="relative-error-1pct-__g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="23.128px" height="12.648px" role="img" focusable="false" viewBox="0 -677 1278 699" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-6-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -137,8 +137,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-5" transform="translate(25.0,205.6) translate(-32.2,-6.2)">
-      <g id="relative-error-1pct-g-5">
+    <g id="relative-error-1pct-__label-5" transform="translate(25.0,205.6) translate(-32.2,-6.2)">
+      <g id="relative-error-1pct-__g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="32.184px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1778 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-7-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -158,8 +158,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-6" transform="translate(25.0,111.5) translate(-32.2,-6.2)">
-      <g id="relative-error-1pct-g-6">
+    <g id="relative-error-1pct-__label-6" transform="translate(25.0,111.5) translate(-32.2,-6.2)">
+      <g id="relative-error-1pct-__g-6">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="32.184px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1778 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-8-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -179,8 +179,8 @@
         </svg>
       </g>
     </g>
-    <g id="relative-error-1pct-label-7" transform="translate(25.0,17.4) translate(-32.2,-6.2)">
-      <g id="relative-error-1pct-g-7">
+    <g id="relative-error-1pct-__label-7" transform="translate(25.0,17.4) translate(-32.2,-6.2)">
+      <g id="relative-error-1pct-__g-7">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="32.184px" height="12.456px" role="img" focusable="false" viewBox="0 -666 1778 688" x="0.0" y="0.0">
           <defs>
             <path id="relative-error-1pct-MJX-9-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
@@ -203,7 +203,7 @@
   </g>
   <line id="relative-error-1pct-onepct" x1="17.3" y1="205.6" x2="428.0" y2="205.6" stroke="red" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
   <g id="relative-error-1pct-pctlabel" transform="translate(54.7,197.6) translate(-54.0,-18.1)">
-    <g id="relative-error-1pct-g-8">
+    <g id="relative-error-1pct-__g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:red" width="107.920px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5962.6 1000" x="0.0" y="0.0">
         <defs>
           <path id="relative-error-1pct-MJX-10-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -256,9 +256,9 @@
       </svg>
     </g>
   </g>
-  <path id="relative-error-1pct-gcurve" stroke="blue" stroke-width="2.5" fill="none" d="M 39.7 299.7 L 43.4 299.7 L 47.1 299.5 L 50.8 299.4 L 54.5 299.1 L 58.2 298.9 L 61.9 298.6 L 65.6 298.2 L 69.3 297.8 L 73.0 297.3 L 76.7 296.8 L 80.4 296.2 L 84.1 295.6 L 87.8 294.9 L 91.5 294.2 L 95.2 293.5 L 98.9 292.6 L 102.6 291.8 L 106.3 290.9 L 110.0 289.9 L 113.7 288.9 L 117.3 287.8 L 121.0 286.7 L 124.7 285.6 L 128.4 284.4 L 132.1 283.1 L 135.8 281.8 L 139.5 280.4 L 143.2 279.0 L 146.9 277.6 L 150.6 276.1 L 154.3 274.5 L 158.0 272.9 L 161.7 271.3 L 165.4 269.5 L 169.1 267.8 L 172.8 266.0 L 176.5 264.1 L 180.2 262.2 L 183.9 260.3 L 187.6 258.3 L 191.3 256.2 L 195.0 254.1 L 198.7 252.0 L 202.4 249.7 L 206.1 247.5 L 209.7 245.2 L 213.4 242.8 L 217.1 240.4 L 220.8 238.0 L 224.5 235.5 L 228.2 232.9 L 231.9 230.3 L 235.6 227.6 L 239.3 224.9 L 243.0 222.2 L 246.7 219.3 L 250.4 216.5 L 254.1 213.6 L 257.8 210.6 L 261.5 207.6 L 265.2 204.5 L 268.9 201.4 L 272.6 198.2 L 276.3 195.0 L 280.0 191.7 L 283.7 188.4 L 287.4 185.0 L 291.1 181.6 L 294.8 178.1 L 298.5 174.6 L 302.1 171.0 L 305.8 167.4 L 309.5 163.7 L 313.2 159.9 L 316.9 156.1 L 320.6 152.3 L 324.3 148.4 L 328.0 144.4 L 331.7 140.4 L 335.4 136.4 L 339.1 132.3 L 342.8 128.1 L 346.5 123.9 L 350.2 119.6 L 353.9 115.3 L 357.6 110.9 L 361.3 106.5 L 365.0 102.0 L 368.7 97.5 L 372.4 92.9 L 376.1 88.2 L 379.8 83.5 L 383.5 78.8 L 387.2 74.0 L 390.9 69.1 L 394.5 64.2 L 398.2 59.3 L 401.9 54.2 L 405.6 49.2 L 409.3 44.0" clip-path="url(#relative-error-1pct-clipPath-1)"/>
+  <path id="relative-error-1pct-gcurve" stroke="blue" stroke-width="2.5" fill="none" d="M 39.7 299.7 L 43.4 299.7 L 47.1 299.5 L 50.8 299.4 L 54.5 299.1 L 58.2 298.9 L 61.9 298.6 L 65.6 298.2 L 69.3 297.8 L 73.0 297.3 L 76.7 296.8 L 80.4 296.2 L 84.1 295.6 L 87.8 294.9 L 91.5 294.2 L 95.2 293.5 L 98.9 292.6 L 102.6 291.8 L 106.3 290.9 L 110.0 289.9 L 113.7 288.9 L 117.3 287.8 L 121.0 286.7 L 124.7 285.6 L 128.4 284.4 L 132.1 283.1 L 135.8 281.8 L 139.5 280.4 L 143.2 279.0 L 146.9 277.6 L 150.6 276.1 L 154.3 274.5 L 158.0 272.9 L 161.7 271.3 L 165.4 269.5 L 169.1 267.8 L 172.8 266.0 L 176.5 264.1 L 180.2 262.2 L 183.9 260.3 L 187.6 258.3 L 191.3 256.2 L 195.0 254.1 L 198.7 252.0 L 202.4 249.7 L 206.1 247.5 L 209.7 245.2 L 213.4 242.8 L 217.1 240.4 L 220.8 238.0 L 224.5 235.5 L 228.2 232.9 L 231.9 230.3 L 235.6 227.6 L 239.3 224.9 L 243.0 222.2 L 246.7 219.3 L 250.4 216.5 L 254.1 213.6 L 257.8 210.6 L 261.5 207.6 L 265.2 204.5 L 268.9 201.4 L 272.6 198.2 L 276.3 195.0 L 280.0 191.7 L 283.7 188.4 L 287.4 185.0 L 291.1 181.6 L 294.8 178.1 L 298.5 174.6 L 302.1 171.0 L 305.8 167.4 L 309.5 163.7 L 313.2 159.9 L 316.9 156.1 L 320.6 152.3 L 324.3 148.4 L 328.0 144.4 L 331.7 140.4 L 335.4 136.4 L 339.1 132.3 L 342.8 128.1 L 346.5 123.9 L 350.2 119.6 L 353.9 115.3 L 357.6 110.9 L 361.3 106.5 L 365.0 102.0 L 368.7 97.5 L 372.4 92.9 L 376.1 88.2 L 379.8 83.5 L 383.5 78.8 L 387.2 74.0 L 390.9 69.1 L 394.5 64.2 L 398.2 59.3 L 401.9 54.2 L 405.6 49.2 L 409.3 44.0" clip-path="url(#relative-error-1pct-__clipPath-1)"/>
   <g id="relative-error-1pct-glabel" transform="translate(366.0,85.6) translate(-82.4,-39.0)">
-    <g id="relative-error-1pct-g-9">
+    <g id="relative-error-1pct-__g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -12.616px; color:blue" width="82.376px" height="39.024px" role="img" focusable="false" viewBox="0 -1459 4551.1 2156" x="0.0" y="0.0">
         <defs>
           <path id="relative-error-1pct-MJX-11-TEX-N-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"/>
@@ -326,7 +326,7 @@
   <line id="relative-error-1pct-drop" x1="263.8" y1="299.8" x2="263.8" y2="205.6" stroke="#777" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
   <circle id="relative-error-1pct-xpoint" cx="263.8" cy="205.6" r="4" stroke="black" stroke-width="2" fill="black"/>
   <g id="relative-error-1pct-xlabel" transform="translate(273.8,211.6) translate(0.0,-0.0)">
-    <g id="relative-error-1pct-g-10">
+    <g id="relative-error-1pct-__g-10">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="81.760px" height="13.160px" role="img" focusable="false" viewBox="0 -705 4517.1 727" x="0.0" y="0.0">
         <defs>
           <path id="relative-error-1pct-MJX-12-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
