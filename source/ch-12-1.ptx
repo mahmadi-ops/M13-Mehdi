@@ -601,18 +601,17 @@ hemisphere hollowed out of it, is the sphere of radius one.
 </description>
 <latex-image><![CDATA[
 \begin{tikzpicture}[scale=1.0, >=stealth]
-% drawn directly in the picture plane: outer and inner lower hemispheres
+% drawn directly in the picture plane: only the shell 1 <= r <= 2 is
+% colored; the excluded cavity r < 1 is left blank
 \begin{scope}
-  % outer hemisphere (radius 2)
-  \fill[cyan!30, opacity=0.9]
-    (-2,0) arc (180:360:2cm and 0.55cm) arc (0:-180:2cm);
+  % shell region: outer hemisphere (radius 2) minus inner hemisphere
+  % (radius 1), via the even-odd fill rule
+  \fill[cyan!30, opacity=0.9, even odd rule]
+    (-2,0) arc (180:360:2cm and 0.55cm) arc (0:-180:2cm)
+    (-1,0) arc (180:360:1cm and 0.28cm) arc (0:-180:1cm);
   \draw[cyan!55!black] (-2,0) arc (180:360:2cm and 0.55cm);
   \draw[cyan!55!black, dashed] (-2,0) arc (180:0:2cm and 0.55cm);
   \draw[cyan!55!black] (-2,0) arc (180:360:2cm);
-  % inner hemisphere (radius 1), hollowed out
-  \fill[white] (-1,0) arc (180:360:1cm and 0.28cm) arc (0:-180:1cm);
-  \fill[cyan!12, opacity=0.9]
-    (-1,0) arc (180:360:1cm and 0.28cm) arc (0:-180:1cm);
   \draw[cyan!55!black] (-1,0) arc (180:360:1cm and 0.28cm);
   \draw[cyan!55!black, dashed] (-1,0) arc (180:0:1cm and 0.28cm);
   \draw[cyan!55!black] (-1,0) arc (180:360:1cm);
@@ -689,16 +688,20 @@ meeting it in a circle.
   \draw[->, thick] (0,-2.5) -- (0,3.4) node[above] {$z$};
   \draw[->, thick] (0,0) -- (2.5,-0.7) node[right] {$y$};
   \draw[->, thick] (0,0) -- (-2.1,-0.95) node[below left] {$x$};
-  % tall cylinder
-  \fill[blue!18, opacity=0.8] (-1.2,-1.8) -- (-1.2,2.6) -- (1.2,2.6) -- (1.2,-1.8) -- cycle;
+  % tall cylinder, shown faintly: it is only context for part F, whose
+  % actual solution is the circle where it meets the plane below
+  \fill[blue!10, opacity=0.5] (-1.2,-1.8) -- (-1.2,2.6) -- (1.2,2.6) -- (1.2,-1.8) -- cycle;
   \draw[blue!55!black] (-1.2,-1.8) -- (-1.2,2.6);
   \draw[blue!55!black] (1.2,-1.8) -- (1.2,2.6);
   \draw[blue!55!black, thick] (0,2.6) ellipse (1.2cm and 0.34cm);
   \draw[blue!55!black, thick] (0,-1.8) ellipse (1.2cm and 0.34cm);
-  % the plane z = 3 shown as a slab, and the circle of intersection
-  \fill[red!25, opacity=0.6] (-2.0,1.35) -- (2.0,1.05) -- (2.0,1.45) -- (-2.0,1.75) -- cycle;
+  % the plane z = 3, drawn as a wide bordered slab so it reads clearly
+  % as a plane slicing through the cylinder
+  \fill[red!18, opacity=0.85] (-2.6,1.1) -- (2.6,0.8) -- (2.6,1.6) -- (-2.6,1.9) -- cycle;
+  \draw[red!45!black] (-2.6,1.1) -- (2.6,0.8) -- (2.6,1.6) -- (-2.6,1.9) -- cycle;
+  % the circle of intersection: the actual solution to part F
   \draw[red!60!black, very thick] (0,1.4) ellipse (1.2cm and 0.34cm);
-  \node[red!60!black, right] at (2.0,1.3) {$z=3$};
+  \node[red!60!black, right] at (2.6,0.95) {$z=3$};
   \node[below] at (0,-2.5) {$x^2+y^2=1,\; z=3$};
 \end{scope}
 \end{tikzpicture}
