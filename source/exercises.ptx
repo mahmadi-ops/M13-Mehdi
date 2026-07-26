@@ -272,8 +272,14 @@ The same parabola and focus as before, with a red right triangle
 <!-- ================= Quadric Surfaces ================= -->
 <xi:include href="exercises-quadric-surfaces.ptx"/>
 
-<!-- ================= Vectors and Their Products ================= -->
+<!-- ================= Vectors ================= -->
 <xi:include href="exercises-vectors.ptx"/>
+
+<!-- ================= The Dot Product ================= -->
+<xi:include href="exercises-dot-product.ptx"/>
+
+<!-- ================= The Cross Product ================= -->
+<xi:include href="exercises-cross-product.ptx"/>
 
 <!-- ================= Lines and Planes in Space ================= -->
 <xi:include href="exercises-lines-planes.ptx"/>
