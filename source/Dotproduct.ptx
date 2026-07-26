@@ -162,7 +162,9 @@ Then
 <section xml:id="sec-dot-product">
 <title>The Dot Product</title>
 
-<introduction>
+<definition xml:id="def-dot-product">
+<title>Dot Product</title>
+<statement>
 <p>
 The term <m>u_1v_1+u_2v_2+u_3v_3</m> in the numerator of <xref ref="eq-4"/>
 is known as the <term>dot product</term> of the two vectors
@@ -170,10 +172,6 @@ is known as the <term>dot product</term> of the two vectors
 <m>\mathbf v = \langle v_1,v_2,v_3\rangle</m>, and is denoted
 <m>\mathbf u \cdot \mathbf v</m>.
 </p>
-
-<definition xml:id="def-dot-product">
-<title>Dot Product</title>
-<statement>
 <p>
 <md xml:id="eq-5" number="yes">
 \mathbf u \cdot \mathbf v = u_1v_1+u_2v_2+u_3v_3.
@@ -281,7 +279,6 @@ For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
 </p>
 </solution>
 </example>
-</introduction>
 
 <subsection xml:id="subsec-properties">
 <title>Properties of the Dot Product</title>
