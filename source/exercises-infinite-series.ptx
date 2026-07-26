@@ -139,9 +139,9 @@ Evaluate the following sums or show that they diverge.
 <p>
 We use partial fractions:
 <md>
-\frac{1}{n(n+1)(n+2)}
-= \frac{A}{n} + \frac{B}{n+1} + \frac{C}{n+2}
-= \frac{A(n+1)(n+2) + Bn(n+2) + Cn(n+1)}{n(n+1)(n+2)}.
+<mrow>\frac{1}{n(n+1)(n+2)}
+\amp = \frac{A}{n} + \frac{B}{n+1} + \frac{C}{n+2}</mrow>
+<mrow>\amp = \frac{A(n+1)(n+2) + Bn(n+2) + Cn(n+1)}{n(n+1)(n+2)}.</mrow>
 </md>
 Setting <m>n = 0</m> gives <m>2A = 1</m>, so <m>A = \frac12</m>;
 setting <m>n = -1</m> gives <m>-B = 1</m>, so <m>B = -1</m>; and
@@ -215,8 +215,8 @@ telescopes:
 + \left(\frac13 - \frac15\right)
 + \left(\frac15 - \frac17\right)
 + \cdots
-+ \left(\frac{1}{2k-1} - \frac{1}{2k+1}\right)
-= 1 - \frac{1}{2k+1},</mrow>
++ \left(\frac{1}{2k-1} - \frac{1}{2k+1}\right)</mrow>
+<mrow>\amp = 1 - \frac{1}{2k+1},</mrow>
 <mrow>\amp \phantom{=} \text{so} \quad
 3\sum_{n=1}^{\infty} \left(\frac{1}{2n-1} - \frac{1}{2n+1}\right)
 = 3\lim_{k\to\infty} s_k
@@ -233,8 +233,8 @@ Partial fractions (or direct observation) give
 so the sum telescopes:
 <md>
 <mrow>s_k \amp = \sum_{n=1}^{k}
-\left(\frac{1}{n^2} - \frac{1}{(n+1)^2}\right)
-= \left(1 - \frac14\right) + \left(\frac14 - \frac19\right)
+\left(\frac{1}{n^2} - \frac{1}{(n+1)^2}\right)</mrow>
+<mrow>\amp = \left(1 - \frac14\right) + \left(\frac14 - \frac19\right)
 + \left(\frac19 - \frac{1}{16}\right) + \cdots
 + \left(\frac{1}{k^2} - \frac{1}{(k+1)^2}\right)</mrow>
 <mrow>\amp = 1 - \frac{1}{(k+1)^2}
@@ -283,13 +283,13 @@ subtracted.
 <li>
 <p>
 <md>
-\sum_{n=3}^{\infty} \frac{2^n}{3^n}
-= \sum_{n=4}^{\infty} \left(\frac23\right)^{n-1}
+<mrow>\sum_{n=3}^{\infty} \frac{2^n}{3^n}
+\amp = \sum_{n=4}^{\infty} \left(\frac23\right)^{n-1}
 = \frac{1}{1-\frac23}
-- \left(\frac49 + \frac23 + 1\right)
-= 3 - \frac{4+6+9}{9}
+- \left(\frac49 + \frac23 + 1\right)</mrow>
+<mrow>\amp = 3 - \frac{4+6+9}{9}
 = 3 - \frac{19}{9}
-= \frac{27-19}{9} = \frac89,
+= \frac{27-19}{9} = \frac89,</mrow>
 </md>
 where the subtracted terms correspond to <m>n = 3</m>, <m>n = 2</m>,
 and <m>n = 1</m> of the shifted series.
@@ -317,10 +317,10 @@ the economy?
 The rounds of spending form a geometric series with <m>a = 1000</m> and
 <m>r = 0.8</m>:
 <md>
-1000 + 0.8(1000) + (0.8)^2(1000) + \cdots
-= \sum_{n=1}^{\infty} 1000\,(0.8)^{n-1}
-= \frac{1000}{1 - 0.8}
-= \frac{1000}{0.2} = 5000 \text{ dollars}.
+<mrow>1000 + 0.8(1000) + (0.8)^2(1000) + \cdots
+\amp = \sum_{n=1}^{\infty} 1000\,(0.8)^{n-1}</mrow>
+<mrow>\amp = \frac{1000}{1 - 0.8}
+= \frac{1000}{0.2} = 5000 \text{ dollars}.</mrow>
 </md>
 The successive rounds of spending are shown in
 <xref ref="fig-rev-multiplier"/>.
