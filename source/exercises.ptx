@@ -1,16 +1,13 @@
 <chapter xml:id="section-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exercises</title>
 
-<!-- ================= Projectile Motion / Parametrization ================= -->
-<xi:include href="art11-projectile-velocity.ptx"/>
-
 <!-- ================= Hyperbolic Functions ================= -->
 <xi:include href="exercises-hyperbolic.ptx"/>
 
 <!-- ================= Infinite Series ================= -->
 <xi:include href="exercises-infinite-series.ptx"/>
 
-<!-- ================= Taylor Series (In-Class Activity) ================= -->
+<!-- ================= Taylor Series and its convergence ================= -->
 <xi:include href="activity-taylor-intro.ptx"/>
 
 <!-- ================= The Binomial Series ================= -->
@@ -18,6 +15,21 @@
 
 <!-- ================= Three-Dimensional Coordinate Systems ================= -->
 <xi:include href="exercises-3d-coordinates.ptx"/>
+
+<!-- ================= Vectors ================= -->
+<xi:include href="exercises-vectors.ptx"/>
+
+<!-- ================= The Dot Product ================= -->
+<xi:include href="exercises-dot-product.ptx"/>
+
+<!-- ================= The Cross Product ================= -->
+<xi:include href="exercises-cross-product.ptx"/>
+
+<!-- ================= Parametrization of Plane Curves ================= -->
+<xi:include href="art11-projectile-velocity.ptx"/>
+
+<!-- ================= Lines and Planes in Space ================= -->
+<xi:include href="exercises-lines-planes.ptx"/>
 
 <!-- ================= Conic Sections ================= -->
 <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
@@ -380,22 +392,10 @@ containing the two trees.
 <!-- ================= Quadric Surfaces ================= -->
 <xi:include href="exercises-quadric-surfaces.ptx"/>
 
-<!-- ================= Vectors ================= -->
-<xi:include href="exercises-vectors.ptx"/>
-
-<!-- ================= The Dot Product ================= -->
-<xi:include href="exercises-dot-product.ptx"/>
-
-<!-- ================= The Cross Product ================= -->
-<xi:include href="exercises-cross-product.ptx"/>
-
-<!-- ================= Lines and Planes in Space ================= -->
-<xi:include href="exercises-lines-planes.ptx"/>
-
 <!-- ================= Functions of Several Variables ================= -->
 <xi:include href="exercises-functions-several-variables.ptx"/>
 
-<!-- ================= Limits and Continuity ================= -->
+<!-- ================= Limits and Continuity in Higher Dimensions ================= -->
 <xi:include href="exercises-limits.ptx"/>
 
 <!-- ================= Partial Derivatives ================= -->
@@ -404,10 +404,10 @@ containing the two trees.
 <!-- ================= The Chain Rule ================= -->
 <xi:include href="exercises-chain-rule.ptx"/>
 
-<!-- ================= Gradients and Directional Derivatives ================= -->
+<!-- ================= Directional Derivatives and Gradient Vectors ================= -->
 <xi:include href="exercises-gradients.ptx"/>
 
-<!-- ================= Tangent Planes and the Chain Rule ================= -->
+<!-- ================= Tangent Planes and Differentials ================= -->
 <xi:include href="exercises-tangent-chain.ptx"/>
 
 <!-- ================= Extreme Values and Saddle Points ================= -->
