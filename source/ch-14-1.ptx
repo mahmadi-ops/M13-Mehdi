@@ -84,34 +84,34 @@ point <m>P_0(0.5,0.5)</m> is sent to <m>f(0.5,0.5) = 0.5</m>.
 <diagram dimensions="(600,270)" margins="12">
 <definition>bt(t) = ((1-t)^2*1.05 + 2*t*(1-t)*4.0 + t^2*7.0, (1-t)^2*1.25 + 2*t*(1-t)*3.15 + t^2*0.42)</definition>
 <definition>bb(t) = ((1-t)^2*0.28 + 2*t*(1-t)*3.3 + t^2*6.55, (1-t)^2*(-0.62) + 2*t*(1-t)*(-2.05) + t^2*0.05)</definition>
-<coordinates bbox="(-2.3,-2.6,9.4,3.1)">
-<circle at="fm-disk" center="(0,0)" radius="1.55"
+<coordinates bbox="(-2.6,-2.6,9.4,3.5)">
+<circle at="fm-disk" center="(0,0)" radius="1.9"
         fill="#7F7F7F" fill-opacity="0.28" stroke="#0072B2" thickness="2.5"/>
-<vector at="fm-xaxis" v="(3.5,0)" tail="(-2.1,0)" stroke="black" thickness="2"/>
-<vector at="fm-yaxis" v="(0,2.7)" tail="(0,-2.2)" stroke="black" thickness="2"/>
+<vector at="fm-xaxis" v="(3.85,0)" tail="(-2.1,0)" stroke="black" thickness="2"/>
+<vector at="fm-yaxis" v="(0,5.0)" tail="(0,-2.2)" stroke="black" thickness="2"/>
 <vector at="fm-zaxis" v="(4.0,0)" tail="(5.0,0.25)" stroke="black" thickness="2"/>
 <parametric-curve at="fm-top" function="bt" domain="(0,0.95)"
                   stroke="#7F7F7F" dash="5 4" thickness="2"/>
-<vector at="fm-top-arrow" v="(0.30,-0.16)" tail="(6.66,0.60)"
+<vector at="fm-top-arrow" v="(0.300,-0.261)" tail="(6.700,0.681)"
         stroke="#7F7F7F" thickness="2"/>
 <parametric-curve at="fm-bot" function="bb" domain="(0,0.95)"
                   stroke="#7F7F7F" dash="5 4" thickness="2"/>
-<vector at="fm-bot-arrow" v="(0.31,0.14)" tail="(6.25,-0.12)"
+<vector at="fm-bot-arrow" v="(0.324,0.201)" tail="(6.226,-0.151)"
         stroke="#7F7F7F" thickness="2"/>
-<point at="fm-P0" p="(0.78,0.78)" fill="#8B1A4A"/>
-<point at="fm-P" p="(-0.55,-0.95)" fill="#0072B2"/>
+<point at="fm-P0" p="(0.956,0.956)" fill="#8B1A4A"/>
+<point at="fm-P" p="(-0.674,-1.165)" fill="#0072B2"/>
 <point at="fm-fP0" p="(7.35,0.25)" fill="#8B1A4A"/>
 <point at="fm-fP" p="(6.55,0.25)" fill="#0072B2"/>
-<label at="fm-disk-lab" anchor="(-1.55,2.35)" alignment="e">
+<label at="fm-disk-lab" anchor="(-1.0,2.0)" alignment="n">
 <m>x^2+y^2\le 1</m>
 </label>
-<label at="fm-x" anchor="(1.5,-0.1)" alignment="se"><m>x</m></label>
-<label at="fm-y" anchor="(-0.1,2.55)" alignment="nw"><m>y</m></label>
+<label at="fm-x" anchor="(1.85,-0.1)" alignment="se"><m>x</m></label>
+<label at="fm-y" anchor="(0.15,2.8)" alignment="e"><m>y</m></label>
 <label at="fm-z" anchor="(9.15,0.25)" alignment="e"><m>z</m></label>
-<label at="fm-P0-lab" anchor="(0.72,0.9)" alignment="nw" color="#8B1A4A">
+<label at="fm-P0-lab" anchor="(0.883,1.103)" alignment="nw" color="#8B1A4A">
 <m>P_0(0.5,0.5)</m>
 </label>
-<label at="fm-P-lab" anchor="(-0.62,-1.05)" alignment="sw" color="#0072B2">
+<label at="fm-P-lab" anchor="(-0.76,-1.287)" alignment="sw" color="#0072B2">
 <m>P(x,y)</m>
 </label>
 <label at="fm-fP0-lab" anchor="(7.45,-0.05)" alignment="se" color="#8B1A4A">
@@ -120,10 +120,10 @@ point <m>P_0(0.5,0.5)</m> is sent to <m>f(0.5,0.5) = 0.5</m>.
 <label at="fm-fP-lab" anchor="(6.4,0.5)" alignment="nw" color="#0072B2">
 <m>z=f(x,y)</m>
 </label>
-<label at="fm-f1" anchor="(4.0,2.5)" alignment="n" color="#7F7F7F">
+<label at="fm-f1" anchor="(6.85,0.55)" alignment="n" color="#7F7F7F">
 <m>f</m>
 </label>
-<label at="fm-f2" anchor="(3.3,-2.2)" alignment="s" color="#7F7F7F">
+<label at="fm-f2" anchor="(6.35,-0.25)" alignment="s" color="#7F7F7F">
 <m>f</m>
 </label>
 </coordinates>
