@@ -407,7 +407,7 @@ at A and at B.
 \fill[red] (P2) circle (2.2pt);
 \fill[black] (A) circle (2.0pt);
 \fill[black] (B) circle (2.0pt);
-\node[lbl, red, below left]   at (P1) {$P_1(x_1,y_1,z_1)$};
+\node[lbl, red, below left, xshift=16pt, yshift=-5pt] at (P1) {$P_1(x_1,y_1,z_1)$};
 \node[lbl, red, above right]  at (P2) {$P_2(x_2,y_2,z_2)$};
 \node[lbl, below right] at (A) {$A(x_2,y_1,z_1)$};
 \node[lbl, right=2pt]   at (B) {$B(x_2,y_2,z_1)$};
