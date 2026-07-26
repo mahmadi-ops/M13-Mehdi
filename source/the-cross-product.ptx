@@ -113,14 +113,13 @@ its length is <m>|\mathbf u||\mathbf v||\sin\theta|</m>.
   </sidebyside>
 </figure>
 
+<fact xml:id="fact-parallel-vectors">
+<title>Parallel Vectors</title>
+<statement>
 <p>
 From <xref ref="eq-cross-geometric"/>, it follows that the cross product
 of two parallel vectors is zero.
 </p>
-
-<fact xml:id="fact-parallel-vectors">
-<title>Parallel Vectors</title>
-<statement>
 <p>
 <md xml:id="eq-parallel-vectors" number="yes">
 \mathbf u \parallel \mathbf v \iff \mathbf u \times \mathbf v = \mathbf 0,
