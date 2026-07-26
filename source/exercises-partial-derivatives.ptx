@@ -48,4 +48,34 @@ gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
 </solution>
 </exercise>
 
+<exercise xml:id="pp-28">
+<statement>
+<p>
+Let <m>f(x,y,z) = xy + 3y^2z^3 + \ln(xz)</m>. Compute
+<m>\dfrac{\partial^2 f}{\partial x^2}</m> and
+<m>\dfrac{\partial^2 f}{\partial y \partial z}</m>.
+</p>
+</statement>
+<solution>
+<p>
+Note first that <m>\ln(xz) = \ln x + \ln z</m>, which makes the
+differentiation easier. Treating the other variables as constants,
+<md>
+\frac{\partial f}{\partial x} = y + \frac1x
+\;\Rightarrow\;
+\frac{\partial^2 f}{\partial x^2} = -\frac{1}{x^2}.
+</md>
+For the mixed partial, differentiate first with respect to <m>z</m>
+and then with respect to <m>y</m>:
+<md>
+\frac{\partial f}{\partial z} = 9y^2z^2 + \frac1z
+\;\Rightarrow\;
+\frac{\partial^2 f}{\partial y \partial z}
+= \frac{\partial}{\partial y}\left(9y^2z^2 + \frac1z\right)
+= 18yz^2.
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

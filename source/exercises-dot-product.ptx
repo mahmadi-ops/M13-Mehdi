@@ -49,4 +49,164 @@ Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
 </solution>
 </exercise>
 
+<exercise xml:id="rw22-4">
+<statement>
+<p>
+Determine whether the following pairs of vectors are orthogonal,
+parallel, or neither.
+<ol marker="A.">
+<li>
+<p>
+<m>\vec u_1 = -3\,\mathbf i + 9\,\mathbf j + 6\,\mathbf k</m> and
+<m>\vec u_2 = 4\,\mathbf i - 12\,\mathbf j - 8\,\mathbf k</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec v_1 = \mathbf i + \mathbf j - 2\,\mathbf k</m> and
+<m>\vec v_2 = \mathbf i + \mathbf j + \mathbf k</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec w_1 = a\,\mathbf i + b\,\mathbf j</m> and
+<m>\vec w_2 = c\,\mathbf k</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
+are non-zero real numbers.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<term>Parallel</term>, since <m>\vec u_2 = -\frac43\,\vec u_1</m>:
+indeed
+<m>-\frac43\langle -3, 9, 6\rangle = \langle 4, -12, -8\rangle</m>.
+(Two vectors are parallel exactly when one is a scalar multiple of the
+other.)
+</p>
+</li>
+<li>
+<p>
+<term>Orthogonal</term>, since
+<m>\vec v_1 \cdot \vec v_2 = 1 + 1 - 2 = 0</m>.
+</p>
+</li>
+<li>
+<p>
+<term>Orthogonal</term>, since
+<m>\vec w_1 \cdot \vec w_2
+= \langle a, b, 0\rangle \cdot \langle 0, 0, c\rangle = 0</m>. They
+are not parallel, because <m>\vec w_2</m> has a non-zero
+<m>\mathbf k</m> component while <m>\vec w_1</m> does not.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-11">
+<statement>
+<p>
+Find the projection of
+<m>-\mathbf i + 5\,\mathbf j - 2\,\mathbf k</m> on
+<m>3\,\mathbf i - \mathbf j</m>.
+</p>
+</statement>
+<solution>
+<p>
+With <m>\vec u = \langle -1, 5, -2\rangle</m> and
+<m>\vec v = \langle 3, -1, 0\rangle</m>,
+<md>
+\vec u \cdot \vec v = -3 - 5 + 0 = -8,
+\qquad
+|\vec v|^2 = 9 + 1 + 0 = 10,
+</md>
+so
+<md>
+\operatorname{proj}_{\vec v}\vec u
+= \left(\frac{\vec u \cdot \vec v}{|\vec v|^2}\right)\vec v
+= -\frac{8}{10}\langle 3, -1, 0\rangle
+= \left\langle -\frac{12}{5}, \frac45, 0\right\rangle
+= -\frac{12}{5}\,\mathbf i + \frac45\,\mathbf j.
+</md>
+The negative scalar tells us the projection points opposite to
+<m>\vec v</m>, i.e. the angle between <m>\vec u</m> and
+<m>\vec v</m> is obtuse.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-4">
+<statement>
+<p>
+A 100-meter dash is run on a track in the direction of the vector
+<m>2\,\mathbf i + 6\,\mathbf j</m>. The wind velocity is
+<m>\mathbf v = 5\,\mathbf i + 2\,\mathbf j</m> km/hr. The rules say
+that a legal wind speed measured in the direction of the dash must not
+exceed 5 km/hr.
+<ol marker="A.">
+<li>
+<p>
+Will the race results be disqualified due to an illegal wind? Justify
+your answer.
+</p>
+</li>
+<li>
+<p>
+Find the velocity vector of the wind in the direction of the dash.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
+and <m>\vec v = \langle 5, 2\rangle</m> the wind velocity. Then
+<md>
+\vec v \cdot \vec d = 10 + 12 = 22,
+\qquad
+|\vec d| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
+</md>
+<ol marker="A.">
+<li>
+<p>
+The wind speed measured in the direction of the dash is the scalar
+component of <m>\vec v</m> along <m>\vec d</m>:
+<md>
+\operatorname{comp}_{\vec d}\vec v
+= \frac{\vec v \cdot \vec d}{|\vec d|}
+= \frac{22}{2\sqrt{10}}
+= \frac{11}{\sqrt{10}} \approx 3.48 \text{ km/hr}.
+</md>
+Since <m>3.48 \lt 5</m>, the wind is legal and the race results will
+<em>not</em> be disqualified.
+</p>
+</li>
+<li>
+<p>
+The velocity vector of the wind in the direction of the dash is the
+vector projection
+<md>
+\operatorname{proj}_{\vec d}\vec v
+= \left(\frac{\vec v \cdot \vec d}{|\vec d|^2}\right)\vec d
+= \frac{22}{40}\langle 2, 6\rangle
+= \left\langle \frac{11}{10}, \frac{33}{10}\right\rangle
+= 1.1\,\mathbf i + 3.3\,\mathbf j \text{ km/hr}.
+</md>
+As a check, its length is
+<m>\sqrt{1.1^2 + 3.3^2} = 1.1\sqrt{10} = \frac{11}{\sqrt{10}}</m>,
+matching part A.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

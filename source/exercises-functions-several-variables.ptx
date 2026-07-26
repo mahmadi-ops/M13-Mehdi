@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Exam problems on functions of several variables
+-->
+<worksheet xml:id="worksheet-exercises-functions-several-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-functions-several-variables" text="title"/></title>
+
+<introduction>
+<p>
+These problems find domains, level curves and level surfaces. If you would like to review this topic before
+attempting them, see <xref ref="chapter-functions-several-variables" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="pp-26">
+<statement>
+<p>
+Sketch the domain of <m>f(x,y) = \sqrt{y - 3x}</m>.
+</p>
+</statement>
+<solution>
+<p>
+The square root is defined exactly when its argument is non-negative,
+so the domain is
+<md>
+\{(x,y) : y - 3x \ge 0\} = \{(x,y) : y \ge 3x\},
+</md>
+the closed half-plane on and above the line <m>y = 3x</m>. See
+<xref ref="fig-pp-domain"/>.
+</p>
+
+<figure xml:id="fig-pp-domain">
+<caption>
+The domain of <m>f(x,y) = \sqrt{y-3x}</m> is the shaded closed
+half-plane <m>y \ge 3x</m>, including the boundary line itself.
+</caption>
+<image width="58%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-domain">
+<diagram dimensions="(280,280)" margins="12">
+<coordinates bbox="(-3.4,-6.6,3.4,6.6)">
+<polygon at="dm-region" points="((-2,-6),(-3.2,-6),(-3.2,6.4),(2.13,6.4))"
+         fill="#56B4E9" fill-opacity="0.35" stroke="none"/>
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="dm-line" endpoints="((-2.13,-6.4),(2.13,6.4))"
+      stroke="#0072B2" thickness="3"/>
+<label at="dm-line-lab" anchor="(2.05,5.4)" alignment="e" color="#0072B2">
+<m>y=3x</m>
+</label>
+<label at="dm-reg-lab" anchor="(-1.9,2.0)" alignment="w">
+<m>y\ge 3x</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A steep blue line of slope three through the origin, y equals three x. Everything on and above and to the left of the line is shaded light blue; this shaded closed half plane is the domain.">
+  <annotation ref="dm-line" text="The boundary line y equals three x, which belongs to the domain."/>
+  <annotation ref="dm-region" text="The shaded closed half plane y greater than or equal to three x, the domain of the function."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-27">
+<statement>
+<p>
+In <xref ref="fig-pp-bad-contours"/> are level curves of
+<m>g(x,y) = 2</m> and <m>g(x,y) = 3</m> for some function
+<m>g(x,y)</m>. What's wrong?
+</p>
+
+<figure xml:id="fig-pp-bad-contours">
+<caption>
+Two curves labelled <m>g = 2</m> and <m>g = 3</m> that cross each
+other.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-bad-contours">
+<diagram dimensions="(300,190)" margins="12">
+<definition>d1(t) = (t, 0.55*t + 0.15*sin(2*t))</definition>
+<definition>d2(t) = (t, 2.2 - 0.55*t - 0.15*sin(2*t))</definition>
+<coordinates bbox="(-0.3,-0.35,4.3,2.6)">
+<parametric-curve at="bc-1" function="d1" domain="(0,4)"
+                  stroke="#0072B2" thickness="2.5"/>
+<parametric-curve at="bc-2" function="d2" domain="(0,4)"
+                  stroke="#0072B2" thickness="2.5"/>
+<point at="bc-P" p="(2,1.1)" fill="#D55E00"/>
+<label at="bc-P-lab" anchor="(2.05,1.0)" alignment="se" color="#D55E00">
+<m>P</m>
+</label>
+<label at="bc-l1" anchor="(-0.25,0.05)" alignment="e">
+<m>g=2</m>
+</label>
+<label at="bc-l2" anchor="(-0.25,2.15)" alignment="e">
+<m>g=3</m>
+</label>
+<label at="bc-r1" anchor="(4.1,2.15)" alignment="w">
+<m>g=2</m>
+</label>
+<label at="bc-r2" anchor="(4.1,0.05)" alignment="w">
+<m>g=3</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two curves cross in the middle of the picture at a point P. Reading the labels, one curve is marked g equals two at its left end and g equals two at its right end after crossing, while the other is marked g equals three at both of its ends, so the two different level curves intersect.">
+  <annotation ref="bc-P" text="The point P where the two level curves cross."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+Two level curves belonging to <em>different</em> values can never
+intersect. At the point <m>P</m> where the drawn curves cross, the
+first curve says <m>g(P) = 2</m> while the second says
+<m>g(P) = 3</m>. Since <m>g</m> is a function, it assigns exactly one
+output to the point <m>P</m>, so <m>2 = 3</m> — which is impossible.
+Hence no function <m>g</m> can have the level curves shown.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-6">
+<statement>
+<p>
+Let <m>g</m> be a function of 3 variables defined by
+<md>
+g(x,y,z) = \sqrt{4x^2 + y^2 + 9z^2}.
+</md>
+<ol marker="A.">
+<li>
+<p>
+Find the equation for the level surface of <m>g</m> through the point
+<m>\left(2, \sqrt{11}, 1\right)</m> and sketch this level surface.
+Label any points where the surface crosses a coordinate axis AND label
+the value of <m>g</m> on the surface.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the normal line to the level surface you found in
+part A at the point <m>\left(2, \sqrt{11}, 1\right)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Evaluating <m>g</m> at the given point,
+<md>
+g\left(2, \sqrt{11}, 1\right)
+= \sqrt{4(4) + 11 + 9(1)}
+= \sqrt{36} = 6,
+</md>
+so the level surface is <m>g(x,y,z) = 6</m>, i.e.
+<md>
+<mrow>\sqrt{4x^2 + y^2 + 9z^2} = 6
+\amp \;\Rightarrow\;
+4x^2 + y^2 + 9z^2 = 36</mrow>
+<mrow>\amp \;\Rightarrow\;
+\frac{x^2}{9} + \frac{y^2}{36} + \frac{z^2}{4} = 1.</mrow>
+</md>
+This is an <term>ellipsoid</term> with semi-axes <m>3</m>, <m>6</m>,
+and <m>2</m>. It crosses the axes at <m>(\pm 3, 0, 0)</m>,
+<m>(0, \pm 6, 0)</m>, and <m>(0, 0, \pm 2)</m>. See
+<xref ref="fig-rw17-ellipsoid"/>.
+</p>
+</li>
+<li>
+<p>
+A normal vector to the level surface at a point is
+<m>\nabla g</m> there; since <m>g = \sqrt{F}</m> with
+<m>F = 4x^2 + y^2 + 9z^2</m>, the gradients <m>\nabla g</m> and
+<m>\nabla F</m> are parallel, so we may use the simpler one:
+<md>
+\nabla F = \langle 8x, 2y, 18z\rangle,
+\qquad
+\nabla F\big|_{\left(2,\sqrt{11},1\right)}
+= \left\langle 16, 2\sqrt{11}, 18\right\rangle
+= 2\left\langle 8, \sqrt{11}, 9\right\rangle.
+</md>
+Hence the normal line through <m>\left(2, \sqrt{11}, 1\right)</m> is
+<md>
+\mathbf r(t)
+= \left\langle 2, \sqrt{11}, 1\right\rangle
++ t\left\langle 8, \sqrt{11}, 9\right\rangle,
+</md>
+i.e. <m>x = 2 + 8t</m>, <m>y = \sqrt{11}\,(1 + t)</m>,
+<m>z = 1 + 9t</m>, <m>t \in \R</m>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rw17-ellipsoid">
+<caption>
+The level surface <m>g = 6</m>, i.e. the ellipsoid
+<m>\frac{x^2}{9} + \frac{y^2}{36} + \frac{z^2}{4} = 1</m>, with its
+axis intercepts.
+</caption>
+<image width="62%">
+<description>
+<p>
+An ellipsoid centered at the origin, elongated along the y axis. It
+meets the x axis at plus and minus three, the y axis at plus and minus
+six, and the z axis at plus and minus two. Three dashed ellipses show
+its cross sections in the coordinate planes.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-1.9) -- (0,2.2) node[above] {$z$};
+  \draw[-stealth, thick] (-3.6,0) -- (3.9,0) node[right] {$y$};
+  \draw[-stealth, thick] (1.15,0.82) -- (-1.5,-1.07) node[below left] {$x$};
+  % the ellipsoid outline: semi-axis 3 along y (drawn), 1 along z (drawn)
+  \draw[mblue, thick] (0,0) ellipse (3cm and 1cm);
+  % cross-section ellipses
+  \draw[mblue, dashed] (0,0) ellipse (0.55cm and 1cm);
+  \draw[mblue, dashed] (0,0) ellipse (3cm and 0.28cm);
+  % intercepts
+  \fill (3,0) circle (1.6pt) node[below right=1pt] {$(0,6,0)$};
+  \fill (-3,0) circle (1.6pt) node[below left=1pt] {$(0,-6,0)$};
+  \fill (0,1) circle (1.6pt) node[above right=1pt] {$(0,0,2)$};
+  \fill (0,-1) circle (1.6pt) node[below right=1pt] {$(0,0,-2)$};
+  \fill (0.55,0.39) circle (1.6pt) node[above right=0pt] {$(3,0,0)$};
+  \fill (-0.55,-0.39) circle (1.6pt);
+  % label the level value
+  \node[mblue] at (2.1,1.35) {$g=6$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-25">
+<statement>
+<p>
+Sketch the level surface <m>f(x,y,z) = z^2 - x^2 - y^2</m> for
+<m>f(x,y,z) = 4</m>.
+</p>
+</statement>
+<solution>
+<p>
+The level surface is <m>z^2 - x^2 - y^2 = 4</m>, i.e.
+<md>
+\frac{z^2}{4} - \frac{x^2}{4} - \frac{y^2}{4} = 1.
+</md>
+Rewriting as <m>z^2 = 4 + x^2 + y^2</m> shows that
+<m>z^2 \ge 4</m>, so <m>z \ge 2</m> or <m>z \le -2</m>: no part of the
+surface lies between the two horizontal planes <m>z = \pm 2</m>. The
+traces are
+<ul>
+<li>
+<p>
+<m>z = c</m> with <m>|c| \gt 2</m>: <m>x^2 + y^2 = c^2 - 4</m>,
+circles;
+</p>
+</li>
+<li>
+<p>
+<m>x = c</m>: <m>z^2 - y^2 = 4 + c^2</m>, hyperbolas;
+</p>
+</li>
+<li>
+<p>
+<m>y = c</m>: <m>z^2 - x^2 = 4 + c^2</m>, hyperbolas.
+</p>
+</li>
+</ul>
+Hence the level surface is a <term>hyperboloid of two sheets</term>,
+symmetric about the <m>z</m>-axis, with vertices <m>(0,0,\pm 2)</m>.
+See <xref ref="fig-pp-level-surface"/>.
+</p>
+
+<figure xml:id="fig-pp-level-surface">
+<caption>
+The level surface <m>z^2 - x^2 - y^2 = 4</m>: a hyperboloid of two
+sheets about the <m>z</m>-axis with vertices <m>(0,0,\pm 2)</m>.
+</caption>
+<image width="56%">
+<description>
+<p>
+Two bowl shaped sheets in a three dimensional coordinate system, one
+opening upward with its lowest point at zero comma zero comma two, and
+its mirror image opening downward with highest point at zero comma
+zero comma negative two. Each sheet is capped by an ellipse.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-3.7) -- (0,3.9) node[above] {$z$};
+  \draw[-stealth, thick] (-2.6,0) -- (2.8,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  % upper sheet: x = +-0.85*sqrt(z^2-4) for z from 2 to 3.4
+  \draw[mblue, thick] plot[domain=2:3.4, samples=31]
+    ({0.85*sqrt(\x*\x - 4)}, \x);
+  \draw[mblue, thick] plot[domain=2:3.4, samples=31]
+    ({-0.85*sqrt(\x*\x - 4)}, \x);
+  \draw[mblue, thick] (0,3.4) ellipse (2.25cm and 0.33cm);
+  % lower sheet
+  \draw[mblue, thick] plot[domain=2:3.4, samples=31]
+    ({0.85*sqrt(\x*\x - 4)}, -\x);
+  \draw[mblue, thick] plot[domain=2:3.4, samples=31]
+    ({-0.85*sqrt(\x*\x - 4)}, -\x);
+  \draw[mblue, thick] (0,-3.4) ellipse (2.25cm and 0.33cm);
+  % vertices
+  \fill (0,2) circle (1.6pt) node[right=3pt] {$(0,0,2)$};
+  \fill (0,-2) circle (1.6pt) node[right=3pt] {$(0,0,-2)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+</worksheet>

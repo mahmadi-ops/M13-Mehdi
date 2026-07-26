@@ -37,4 +37,128 @@ and <m>0 \ne 2</m>.
 </feedback>
 </exercise>
 
+<exercise xml:id="pp-8">
+<statement>
+<p>
+Let <m>\mathbf v</m> be the vector
+<m>3\,\mathbf i - 4\,\mathbf j + 5\,\mathbf k</m>.
+<ol marker="A.">
+<li>
+<p>
+Find a non-zero vector <m>\mathbf v'</m> orthogonal to
+<m>\mathbf v</m>.
+</p>
+</li>
+<li>
+<p>
+Find a vector orthogonal to both <m>\mathbf v</m> and
+<m>\mathbf v'</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We need <m>\langle a,b,c\rangle</m> with
+<m>3a - 4b + 5c = 0</m>. Any solution will do; taking <m>c = 0</m>
+leaves <m>3a = 4b</m>, so <m>a = 4</m>, <m>b = 3</m> works:
+<md>
+\mathbf v' = 4\,\mathbf i + 3\,\mathbf j,
+\qquad
+\mathbf v \cdot \mathbf v' = 12 - 12 + 0 = 0.
+</md>
+(There are infinitely many correct answers.)
+</p>
+</li>
+<li>
+<p>
+The cross product is orthogonal to both:
+<md>
+<mrow>\mathbf v \times \mathbf v' \amp =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 5 \\
+4 \amp 3 \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp = (0 - 15)\mathbf i - (0 - 20)\mathbf j + (9 + 16)\mathbf k</mrow>
+<mrow>\amp = -15\,\mathbf i + 20\,\mathbf j + 25\,\mathbf k.</mrow>
+</md>
+Dividing by <m>5</m> gives the simpler answer
+<m>-3\,\mathbf i + 4\,\mathbf j + 5\,\mathbf k</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-13">
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Find the area of the triangle with vertices <m>(0,1,1)</m>,
+<m>(-1,2,4)</m>, <m>(3,0,1)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the plane containing the triangle.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Take <m>A(0,1,1)</m> as the base vertex and form two edge vectors:
+<md>
+\vec a = \vec{AB} = \langle -1, 1, 3\rangle,
+\qquad
+\vec b = \vec{AC} = \langle 3, -1, 0\rangle.
+</md>
+Their cross product is
+<md>
+\vec a \times \vec b =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+-1 \amp 1 \amp 3 \\
+3 \amp -1 \amp 0
+\end{vmatrix}
+= (0+3)\mathbf i - (0-9)\mathbf j + (1-3)\mathbf k
+= \langle 3, 9, -2\rangle.
+</md>
+<ol marker="A.">
+<li>
+<p>
+The magnitude of the cross product is the area of the parallelogram
+spanned by <m>\vec a</m> and <m>\vec b</m>, so the triangle has half
+that area:
+<md>
+\text{Area} = \frac12\left|\vec a \times \vec b\right|
+= \frac12\sqrt{9 + 81 + 4}
+= \frac{\sqrt{94}}{2}.
+</md>
+</p>
+</li>
+<li>
+<p>
+The cross product is normal to the plane, so the plane has the form
+<m>3x + 9y - 2z = D</m>. Substituting the point <m>(0,1,1)</m> gives
+<m>D = 0 + 9 - 2 = 7</m>, hence
+<md>
+3x + 9y - 2z = 7.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

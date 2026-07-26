@@ -502,4 +502,563 @@ D_{\hat u} f
 </solution>
 </exercise>
 
+<exercise xml:id="rw22-7">
+<statement>
+<p>
+Consider the function <m>f(x,y) = x^2 + xy + y^2</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the directions in which <m>f(x,y)</m> increases and decreases
+most rapidly at <m>P_0(-1,1)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the derivatives of <m>f(x,y)</m> in these directions at
+<m>P_0(-1,1)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The gradient is
+<md>
+<mrow>\nabla f \amp = (2x + y)\,\mathbf i + (x + 2y)\,\mathbf j,</mrow>
+<mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
+\qquad
+\left|\left(\nabla f\right)_{(-1,1)}\right| = \sqrt2.</mrow>
+</md>
+The function increases most rapidly in the direction of the gradient,
+<md>
+\hat u_1 = \frac{\left(\nabla f\right)_{(-1,1)}}
+{\left|\left(\nabla f\right)_{(-1,1)}\right|}
+= \left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle,
+</md>
+and decreases most rapidly in the opposite direction,
+<md>
+\hat u_2 = -\frac{\left(\nabla f\right)_{(-1,1)}}
+{\left|\left(\nabla f\right)_{(-1,1)}\right|}
+= \left\langle \frac{1}{\sqrt2}, -\frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The directional derivatives are
+<md>
+<mrow>\left(D_{\hat u_1} f\right)_{P_0}
+\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_1
+= \frac{1}{\sqrt2} + \frac{1}{\sqrt2}
+= \sqrt2
+= \left|\left(\nabla f\right)_{(-1,1)}\right|,</mrow>
+<mrow>\left(D_{\hat u_2} f\right)_{P_0}
+\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_2
+= -\frac{1}{\sqrt2} - \frac{1}{\sqrt2}
+= -\sqrt2
+= -\left|\left(\nabla f\right)_{(-1,1)}\right|.</mrow>
+</md>
+As expected, the largest possible rate of change is
+<m>|\nabla f|</m> and the smallest is <m>-|\nabla f|</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-8">
+<statement>
+<p>
+Suppose the temperature (in degrees Celsius) at a point
+<m>(x,y,z)</m> is given by <m>T(x,y,z)</m>, where <m>T</m> is a
+continuous function that has continuous partial derivatives, and
+distances in <m>xyz</m>-space are measured in meters. We are given the
+following information about <m>T</m> at the point
+<m>(x,y,z) = (1,1,1)</m>:
+<ul>
+<li>
+<p>
+<m>T(1,1,1) = 20</m> <degree/>C,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1,1)</m> obtains its smallest
+(i.e. most negative) value in the direction toward the <em>point</em>
+<m>(-1, 2, -3)</m>,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1,1)</m> in the direction of the
+<em>vector</em> <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+<m>2</m> <degree/>C/m.
+</p>
+</li>
+</ul>
+<ol marker="A.">
+<li>
+<p>
+Find the derivative of <m>T</m> at <m>(1,1,1)</m> in the direction
+toward the <em>point</em> <m>(-2, 1, 5)</m>.
+</p>
+</li>
+<li>
+<p>
+If you start at <m>(1,1,1)</m> and move along a straight path toward
+the point <m>(-2,1,5)</m>, <em>approximately</em> how far will you
+have to go in this direction until the temperature reaches
+<m>24</m> <degree/>C?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+First we determine <m>\nabla T</m> at <m>(1,1,1)</m>. The derivative
+is most negative in the direction of <m>-\nabla T</m>, and the
+direction from <m>(1,1,1)</m> toward <m>(-1,2,-3)</m> is
+<md>
+\langle -1-1,\; 2-1,\; -3-1\rangle = \langle -2, 1, -4\rangle.
+</md>
+Hence <m>-\nabla T</m> is a positive multiple of
+<m>\langle -2, 1, -4\rangle</m>, i.e.
+<m>\nabla T = c\,\langle 2, -1, 4\rangle</m> for some <m>c \gt 0</m>.
+</p>
+
+<p>
+The third piece of information fixes <m>c</m>. The unit vector in the
+direction of <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+<m>\frac13\langle -1, 2, 2\rangle</m>, since
+<m>|\langle -1,2,2\rangle| = 3</m>, so
+<md>
+2 = \nabla T \cdot \frac13\langle -1, 2, 2\rangle
+= \frac{c}{3}\Big(-2 - 2 + 8\Big)
+= \frac{4c}{3}
+\;\Rightarrow\; c = \frac32.
+</md>
+Therefore
+<md>
+\nabla T\big|_{(1,1,1)}
+= \frac32\langle 2, -1, 4\rangle
+= \left\langle 3, -\frac32, 6\right\rangle.
+</md>
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+The direction from <m>(1,1,1)</m> toward <m>(-2,1,5)</m> is
+<m>\langle -3, 0, 4\rangle</m>, whose length is <m>5</m>, so the unit
+vector is <m>\hat u = \left\langle -\frac35, 0, \frac45\right\rangle</m>
+and
+<md>
+\left(D_{\hat u} T\right)_{(1,1,1)}
+= \left\langle 3, -\frac32, 6\right\rangle \cdot
+\left\langle -\frac35, 0, \frac45\right\rangle
+= -\frac95 + \frac{24}{5}
+= 3 \; {}^{\circ}\text{C}/\text{m}.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature must rise from <m>20</m> <degree/>C to <m>24</m>
+<degree/>C, i.e. <m>\Delta T = 4</m> <degree/>C, and along this
+direction it rises at approximately <m>3</m> <degree/>C per meter.
+Using the linear approximation
+<m>\Delta T \approx \left(D_{\hat u}T\right) \cdot s</m>, where
+<m>s</m> is the distance travelled,
+<md>
+s \approx \frac{\Delta T}{D_{\hat u}T} = \frac43 \approx 1.33
+\text{ meters}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-30">
+<statement>
+<p>
+In <m>xyz</m>-space, the temperature at the point <m>(x,y,z)</m> is
+given by <m>T(x,y,z) = 4xy + 3z^2</m>. You're at <m>(2,0,1)</m> where
+the temperature is <m>3^{\circ}</m>. Brrrr!
+<ol marker="A.">
+<li>
+<p>
+In what direction should you go, from <m>(2,0,1)</m>, in order to warm
+up the fastest?
+</p>
+</li>
+<li>
+<p>
+What is the directional derivative in that direction at the point
+<m>(2,0,1)</m>?
+</p>
+</li>
+<li>
+<p>
+If you walk <m>0.2</m> units in that direction, by about how many
+degrees will you warm up?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+A function increases fastest in the direction of its gradient:
+<md>
+\nabla T = \langle 4y, 4x, 6z\rangle,
+\qquad
+\nabla T\big|_{(2,0,1)} = \langle 0, 8, 6\rangle
+= 8\,\mathbf j + 6\,\mathbf k.
+</md>
+So head in the direction <m>8\,\mathbf j + 6\,\mathbf k</m>
+(equivalently, the unit vector
+<m>\left\langle 0, \frac45, \frac35\right\rangle</m>).
+</p>
+</li>
+<li>
+<p>
+In the direction of the gradient, the directional derivative equals
+the length of the gradient:
+<md>
+\left(D_{\hat u}T\right)_{(2,0,1)}
+= \left|\nabla T\big|_{(2,0,1)}\right|
+= \sqrt{64 + 36} = 10.
+</md>
+</p>
+</li>
+<li>
+<p>
+The directional derivative is the rate of change of temperature per
+unit of distance travelled, so by the linear approximation
+<md>
+\Delta T \approx \left(D_{\hat u}T\right) \cdot s
+= 10 \times 0.2 = 2^{\circ}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-31">
+<statement>
+<p>
+<m>f</m> is a <q>nice</q> function of <m>x</m> and <m>y</m> (i.e.
+<m>f</m> is continuous and its partials exist). In
+<xref ref="fig-pp-contours"/> are shown the level curves
+<m>f(x,y) = 0, 2, 4, 6, 8, 10, 12</m>.
+<ol marker="A.">
+<li>
+<p>
+Let <m>u_1 = \frac{1}{\sqrt2}\mathbf i + \frac{1}{\sqrt2}\mathbf j</m>.
+Estimate <m>D_{u_1}f(4,3)</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>D_{u_1}f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+Draw on the diagram a unit vector pointing in the same direction as
+<m>\nabla f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+At <m>P</m>, draw a unit vector and label it <m>u_2</m>, such that
+<m>D_{u_2}f(P) \lt 0</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>\dfrac{\partial f}{\partial x}(P)</m>.
+</p>
+</li>
+<li>
+<p>
+Which appears bigger, <m>\dfrac{\partial f}{\partial y}(Q)</m> or
+<m>\dfrac{\partial f}{\partial y}(R)</m>?
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours">
+<caption>
+Level curves of <m>f</m> at the values
+<m>0, 2, 4, 6, 8, 10, 12</m>, with the three marked points <m>P</m>,
+<m>Q</m>, and <m>R</m>.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ct-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<point at="ct-P" p="(2.4,5.70)" fill="#D55E00"/>
+<point at="ct-Q" p="(5.2,0.60)" fill="#D55E00"/>
+<point at="ct-R" p="(4.6,4.35)" fill="#D55E00"/>
+<label at="ct-P-lab" anchor="(2.35,5.8)" alignment="nw" color="#D55E00">
+<m>P</m>
+</label>
+<label at="ct-Q-lab" anchor="(5.2,-0.95)" alignment="s" color="#D55E00">
+<m>Q</m>
+</label>
+<label at="ct-R-lab" anchor="(4.5,4.45)" alignment="nw" color="#D55E00">
+<m>R</m>
+</label>
+<label at="ct-l12" anchor="(6.45,4.06)" alignment="e">
+<m>f=12</m>
+</label>
+<label at="ct-l10" anchor="(6.45,3.14)" alignment="e">
+<m>f=10</m>
+</label>
+<label at="ct-l8" anchor="(6.45,2.04)" alignment="e">
+<m>f=8</m>
+</label>
+<label at="ct-l6" anchor="(6.45,0.91)" alignment="e">
+<m>f=6</m>
+</label>
+<label at="ct-l4" anchor="(6.45,0.50)" alignment="e">
+<m>f=4</m>
+</label>
+<label at="ct-l2" anchor="(6.45,-0.27)" alignment="e">
+<m>f=2</m>
+</label>
+<label at="ct-l0" anchor="(6.45,-0.85)" alignment="e">
+<m>f=0</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Seven level curves of f, labelled zero through twelve from the bottom up. Each curve rises steeply from the left, reaches a hump near x equals two point four, and then descends gently to the right. The low valued curves are bunched tightly together near the x axis on the right, where the point Q sits, while the high valued curves are widely spaced near the top right, where the point R sits. The point P sits at the very top of the f equals twelve curve, where that curve is horizontal.">
+  <annotation ref="ct-P" text="The point P, at the peak of the f equals twelve level curve, where the level curve is horizontal."/>
+  <annotation ref="ct-Q" text="The point Q, in the region at the lower right where the level curves are packed closely together."/>
+  <annotation ref="ct-R" text="The point R, at the upper right where the level curves are far apart."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The directional derivative <m>D_{u_1}f(4,3)</m> tells us roughly how
+much <m>f</m> increases if we move <em>one unit</em> from
+<m>(4,3)</m> in the direction <m>u_1</m>, i.e. diagonally up and to
+the right at <m>45^{\circ}</m>. Starting at <m>(4,3)</m> and moving
+one unit that way lands us near <m>(4.7, 3.7)</m>, which is about two
+contours further along, and each contour step is <m>\Delta f = 2</m>
+spread over roughly one unit of travel. Reading the map,
+<md>
+D_{u_1}f(4,3) \approx 2.
+</md>
+</p>
+</li>
+<li>
+<p>
+At <m>(1,2)</m> the level curve through that point is climbing at
+roughly <m>45^{\circ}</m>, i.e. the level curve is
+<em>parallel</em> to <m>u_1</m>. Moving along a level curve does not
+change the value of <m>f</m>, so
+<md>
+D_{u_1}f(1,2) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+The gradient is perpendicular to the level curve and points in the
+direction of <em>increase</em>. At <m>(1,2)</m> the level curve runs
+up and to the right at about <m>45^{\circ}</m>, and <m>f</m>
+increases as we move upward, so <m>\nabla f(1,2)</m> points up and to
+the <em>left</em>, i.e. in the direction
+<m>\frac{1}{\sqrt2}\langle -1, 1\rangle</m>. See
+<xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+We need any direction of <em>decrease</em> at <m>P</m>, i.e. any
+direction pointing toward the lower-valued level curves (toward
+<m>f = 10</m>, not away from it). Since the level curves below
+<m>P</m> have smaller values, <m>u_2 = \langle 0, -1\rangle</m>
+(straight down) works. See <xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+<m>P</m> sits at the very top of its level curve, where the curve is
+<em>horizontal</em>. Walking in the <m>+x</m> direction from
+<m>P</m> therefore keeps us on the same level curve for a while, so
+<m>f</m> does not change to first order:
+<md>
+\frac{\partial f}{\partial x}(P) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac{\partial f}{\partial y}</m> measures how fast <m>f</m>
+changes as we move straight up, which is large where the contours are
+close together and small where they are far apart. At <m>Q</m> we only
+have to go up about <m>0.25</m> units to move from one contour to the
+next, so
+<m>\dfrac{\partial f}{\partial y}(Q) \approx \dfrac{2}{0.25} = 8</m>.
+At <m>R</m> we must go up about <m>1</m> unit for the same change, so
+<m>\dfrac{\partial f}{\partial y}(R) \approx \dfrac{2}{1} = 2</m>.
+Hence <m>\dfrac{\partial f}{\partial y}(Q)</m> is bigger.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours-answer">
+<caption>
+The vectors asked for in parts C and D: <m>\nabla f(1,2)</m> points
+perpendicular to the level curve toward increasing <m>f</m>, while
+<m>u_2</m> at <m>P</m> points toward decreasing <m>f</m>.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours-answer">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ca-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<vector at="ca-grad" v="(-0.71,0.71)" tail="(1,2)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ca-u2" v="(0,-1)" tail="(2.4,5.70)"
+        stroke="#D55E00" thickness="3"/>
+<point at="ca-pt12" p="(1,2)" fill="#009E73"/>
+<point at="ca-P" p="(2.4,5.70)" fill="#D55E00"/>
+<label at="ca-grad-lab" anchor="(0.34,2.84)" alignment="ne" color="#009E73">
+<m>\nabla f(1,2)</m>
+</label>
+<label at="ca-u2-lab" anchor="(2.5,4.75)" alignment="e" color="#D55E00">
+<m>u_2</m>
+</label>
+<label at="ca-P-lab" anchor="(2.3,5.8)" alignment="nw" color="#D55E00">
+<m>P</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The same seven level curves, drawn in gray. A green arrow at the point one comma two points up and to the left, perpendicular to the level curve there; it is labelled gradient of f at one comma two. A vermillion arrow at P points straight down and is labelled u two.">
+  <annotation ref="ca-grad" text="The gradient at one comma two, perpendicular to the level curve and pointing toward larger values of f."/>
+  <annotation ref="ca-u2" text="The vector u two at P, pointing straight down toward smaller values of f, so the directional derivative there is negative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-32">
+<statement>
+<p>
+A sheet of metal of varying density occupies the <m>xy</m>-plane. At
+the point <m>(x,y)</m>, the density is
+<m>100 + 0.1xy + 0.1y^2</m>. We move away from the point
+<m>(10,10)</m> in the direction
+<m>\frac35\mathbf i + \frac45\mathbf j</m>. Use the directional
+derivative to estimate about how far we'll have to go for the density
+to increase by <m>6</m>.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>\rho(x,y) = 100 + 0.1xy + 0.1y^2</m>. Then
+<md>
+\nabla \rho = \langle 0.1y,\; 0.1x + 0.2y\rangle,
+\qquad
+\nabla \rho\big|_{(10,10)} = \langle 1,\; 1 + 2\rangle
+= \langle 1, 3\rangle.
+</md>
+The given direction is already a unit vector, since
+<m>\left(\frac35\right)^2 + \left(\frac45\right)^2 = 1</m>, so
+<md>
+D_{\hat u}\rho(10,10)
+= \langle 1, 3\rangle \cdot \left\langle \frac35, \frac45\right\rangle
+= \frac35 + \frac{12}{5} = 3.
+</md>
+</p>
+
+<p>
+So the density increases at about <m>3</m> units of density per unit
+of distance. To gain <m>6</m> units of density we therefore need to
+travel approximately
+<md>
+s \approx \frac{6}{3} = 2 \text{ units}.
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

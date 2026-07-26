@@ -16,6 +16,9 @@
 <!-- ================= The Binomial Series ================= -->
 <xi:include href="exercises-binomial-series.ptx"/>
 
+<!-- ================= Three-Dimensional Coordinate Systems ================= -->
+<xi:include href="exercises-3d-coordinates.ptx"/>
+
 <!-- ================= Conic Sections ================= -->
 <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <worksheet xml:id="section-conics-exercises">
@@ -264,6 +267,114 @@ The same parabola and focus as before, with a red right triangle
     </solution>
   </task>
  </exercise>
+
+<exercise xml:id="pp-20">
+<statement>
+<p>
+Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
+<m>y = -3x</m> passing through the point <m>(0,2)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
+up and down, so it has the form
+<md>
+\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1,
+</md>
+whose asymptotes are <m>y = \pm\dfrac{a}{b}x</m>. Setting
+<m>x = 0</m>, <m>y = 2</m> gives <m>a = 2</m>, and matching the
+asymptote slopes,
+<md>
+\frac{a}{b} = 3 \;\Rightarrow\; b = \frac{a}{3} = \frac23.
+</md>
+Therefore
+<md>
+\frac{y^2}{4} - \frac{x^2}{\frac49} = 1
+\;\Rightarrow\;
+\frac{y^2}{4} - \frac{9x^2}{4} = 1
+\;\Rightarrow\;
+y^2 - 9x^2 = 4.
+</md>
+See <xref ref="fig-pp-hyperbola"/>.
+</p>
+
+<figure xml:id="fig-pp-hyperbola">
+<caption>
+The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
+<m>y = \pm 3x</m>, passing through <m>(0,2)</m> and <m>(0,-2)</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-hyperbola">
+<diagram dimensions="(300,280)" margins="12">
+<definition>hup(t) = (t, 2*(1 + 9*t^2/4)^(1/2))</definition>
+<definition>hdn(t) = (t, -2*(1 + 9*t^2/4)^(1/2))</definition>
+<coordinates bbox="(-2.4,-6.2,2.4,6.2)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="hy-a1" endpoints="((-1.95,-5.85),(1.95,5.85))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<line at="hy-a2" endpoints="((-1.95,5.85),(1.95,-5.85))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="hy-up" function="hup" domain="(-1.85,1.85)"
+                  stroke="#0072B2" thickness="3"/>
+<parametric-curve at="hy-dn" function="hdn" domain="(-1.85,1.85)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="hy-v1" p="(0,2)" fill="#D55E00"/>
+<point at="hy-v2" p="(0,-2)" fill="#D55E00"/>
+<label at="hy-v1-lab" anchor="(0.15,2.1)" alignment="ne" color="#D55E00">
+<m>(0,2)</m>
+</label>
+<label at="hy-a-lab" anchor="(1.6,4.2)" alignment="se" color="#7F7F7F">
+<m>y=3x</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hyperbola with two branches opening up and down, passing through zero comma two and zero comma negative two. Two dashed gray lines of slope three and negative three through the origin are its asymptotes.">
+  <annotation ref="hy-up" text="The upper branch, with vertex at zero comma two."/>
+  <annotation ref="hy-dn" text="The lower branch, with vertex at zero comma negative two."/>
+  <annotation ref="hy-a1" text="The asymptote y equals three x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-21">
+<statement>
+<p>
+Two trees grow 100 feet apart. A 120 foot rope is attached to the
+first tree at a height of 100 feet and to the second tree at a height
+of 50 feet. A child folds an empty plastic water bottle over the rope
+and rappels from the high end of the rope to the low end. At each
+moment, the rope is taut. The point where the water bottle is folded
+over the rope traces a path. Ignoring the numbers, state what kind of
+curve the path makes: line, ellipse, parabola or hyperbola.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
+the point where the bottle folds over the taut rope. Because the rope
+is taut and has fixed total length, the two straight segments
+<m>\overline{AP}</m> and <m>\overline{PB}</m> together always use up
+the whole rope:
+<md>
+|AP| + |PB| = 120 \text{ feet} \qquad\text{(constant).}
+</md>
+This is precisely the defining property of an <term>ellipse</term>
+with foci <m>A</m> and <m>B</m>. (The curve exists because
+<m>120 \gt |AB|</m>: the distance between the attachment points is
+<m>\sqrt{100^2 + 50^2} \approx 111.8 \lt 120</m> feet.) So the path is
+an arc of an <term>ellipse</term>, lying in the vertical plane
+containing the two trees.
+</p>
+</solution>
+</exercise>
+
 </worksheet>
 
 <!-- ================= Quadric Surfaces ================= -->
@@ -280,6 +391,9 @@ The same parabola and focus as before, with a red right triangle
 
 <!-- ================= Lines and Planes in Space ================= -->
 <xi:include href="exercises-lines-planes.ptx"/>
+
+<!-- ================= Functions of Several Variables ================= -->
+<xi:include href="exercises-functions-several-variables.ptx"/>
 
 <!-- ================= Limits and Continuity ================= -->
 <xi:include href="exercises-limits.ptx"/>
@@ -774,6 +888,184 @@ the sum of the squares of the distances.
 </prefigure>
 </image>
 </figure>
+</solution>
+</exercise>
+
+
+<exercise xml:id="rw17-7">
+<statement>
+<p>
+The porosity of the soil beneath an elliptical section of a field,
+<m>x^2 + 4y^2 \le 25</m>, is given by
+<md>
+f(x,y) = 2x^2 - 9x + 2y^2 + 20.
+</md>
+Find the <m>(x,y)</m> location(s) in this section of the field where
+water will drain the fastest and slowest, i.e. the locations where
+porosity is an absolute maximum or absolute minimum.
+</p>
+</statement>
+<solution>
+<p>
+The region is closed and bounded and <m>f</m> is a polynomial, hence
+continuous, so by the Extreme Value Theorem absolute extrema exist. We
+check the interior and the boundary.
+</p>
+
+<p>
+<em>Interior critical points:</em>
+<md>
+f_x = 4x - 9 = 0 \;\Rightarrow\; x = \frac94,
+\qquad
+f_y = 4y = 0 \;\Rightarrow\; y = 0.
+</md>
+The point <m>\left(\frac94, 0\right)</m> satisfies
+<m>\left(\frac94\right)^2 = \frac{81}{16} \approx 5.06 \lt 25</m>, so
+it lies inside the region, and
+<md>
+<mrow>f\left(\frac94, 0\right)
+\amp = 2\left(\frac{81}{16}\right) - 9\left(\frac94\right) + 20</mrow>
+<mrow>\amp = \frac{81}{8} - \frac{81}{4} + 20
+= -\frac{81}{8} + 20
+= \frac{79}{8} = 9.875.</mrow>
+</md>
+</p>
+
+<p>
+<em>The boundary:</em> on <m>x^2 + 4y^2 = 25</m> we have
+<m>y^2 = \dfrac{25 - x^2}{4}</m> with <m>-5 \le x \le 5</m>, so
+<md>
+f = 2x^2 - 9x + 2\cdot\frac{25-x^2}{4} + 20
+= \frac32 x^2 - 9x + \frac{65}{2},
+</md>
+a function of the single variable <m>x</m>. Setting its derivative to
+zero,
+<md>
+3x - 9 = 0 \;\Rightarrow\; x = 3
+\;\Rightarrow\; y^2 = \frac{25-9}{4} = 4
+\;\Rightarrow\; y = \pm 2,
+</md>
+with <m>f(3, \pm 2) = \frac{27}{2} - 27 + \frac{65}{2} = 19</m>. At
+the endpoints of the interval,
+<md>
+f(5, 0) = \frac{75}{2} - 45 + \frac{65}{2} = 25,
+\qquad
+f(-5, 0) = \frac{75}{2} + 45 + \frac{65}{2} = 115.
+</md>
+</p>
+
+<p>
+Comparing all the values <m>\left\{\frac{79}{8}, 19, 25, 115\right\}</m>,
+the porosity is an absolute <em>maximum</em> of <m>115</m> at
+<m>(-5, 0)</m> — where water drains the fastest — and an absolute
+<em>minimum</em> of <m>\frac{79}{8}</m> at
+<m>\left(\frac94, 0\right)</m> — where water drains the slowest. See
+<xref ref="fig-rw17-porosity"/>.
+</p>
+
+<figure xml:id="fig-rw17-porosity">
+<caption>
+The elliptical section <m>x^2 + 4y^2 \le 25</m>. The porosity is
+largest at the boundary point <m>(-5,0)</m> and smallest at the
+interior critical point <m>\left(\frac94, 0\right)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw17-porosity">
+<diagram dimensions="(360,220)" margins="12">
+<definition>ell(t) = (5*cos(t), 2.5*sin(t))</definition>
+<coordinates bbox="(-6.6,-3.6,6.6,3.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="po-ell" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="po-max" p="(-5,0)" fill="#D55E00"/>
+<point at="po-min" p="(2.25,0)" fill="#009E73"/>
+<point at="po-b1" p="(3,2)" fill="#7F7F7F"/>
+<point at="po-b2" p="(3,-2)" fill="#7F7F7F"/>
+<label at="po-max-lab" anchor="(-5,0.25)" alignment="n" color="#D55E00">
+<m>(-5,0),\ f=115</m>
+</label>
+<label at="po-min-lab" anchor="(2.25,-0.3)" alignment="s" color="#009E73">
+<m>\left(\frac94,0\right),\ f=\frac{79}{8}</m>
+</label>
+<label at="po-b1-lab" anchor="(2.85,2.2)" alignment="nw" color="#7F7F7F">
+<m>f=19</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wide blue ellipse with semi axes five in x and two point five in y. A vermillion point at negative five comma zero on the left end marks the maximum porosity of one hundred fifteen. A green point inside at nine fourths comma zero marks the minimum porosity of seventy nine eighths. Two gray points on the boundary at three comma plus and minus two are the boundary critical points where f equals nineteen.">
+  <annotation ref="po-ell" text="The boundary ellipse x squared plus four y squared equals twenty five."/>
+  <annotation ref="po-max" text="The absolute maximum of the porosity, at negative five comma zero."/>
+  <annotation ref="po-min" text="The absolute minimum of the porosity, at the interior critical point nine fourths comma zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-35">
+<statement>
+<p>
+Find all local maxima, minima and saddle points for
+<m>f(x,y) = \frac13 x^3 - x + xy^2</m>.
+</p>
+</statement>
+<solution>
+<p>
+The first partials are
+<md>
+f_x = x^2 - 1 + y^2,
+\qquad
+f_y = 2xy.
+</md>
+Setting <m>f_y = 0</m> forces <m>x = 0</m> or <m>y = 0</m>.
+<ul>
+<li>
+<p>
+If <m>x = 0</m>: <m>f_x = -1 + y^2 = 0</m> gives <m>y = \pm 1</m>, so
+the critical points are <m>(0,1)</m> and <m>(0,-1)</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>y = 0</m>: <m>f_x = x^2 - 1 = 0</m> gives <m>x = \pm 1</m>, so
+the critical points are <m>(1,0)</m> and <m>(-1,0)</m>.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+The second partials are <m>f_{xx} = 2x</m>, <m>f_{yy} = 2x</m>, and
+<m>f_{xy} = 2y</m>, so the discriminant is
+<md>
+D = f_{xx}f_{yy} - f_{xy}^{2} = 4x^2 - 4y^2.
+</md>
+Applying the second derivative test:
+<ul>
+<li>
+<p>
+<m>(0, \pm 1)</m>: <m>D = -4 \lt 0</m>, so both are
+<term>saddle points</term>.
+</p>
+</li>
+<li>
+<p>
+<m>(1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = 2 \gt 0</m>, so this
+is a <term>local minimum</term>.
+</p>
+</li>
+<li>
+<p>
+<m>(-1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = -2 \lt 0</m>, so
+this is a <term>local maximum</term>.
+</p>
+</li>
+</ul>
+</p>
 </solution>
 </exercise>
 

@@ -831,4 +831,123 @@ diverges even though <m>|r| = 1</m>. The correct condition is
 </feedback>
 </exercise>
 
+<exercise xml:id="rw22-2">
+<statement>
+<p>
+Consider the series <m>\displaystyle\sum_{k=0}^{\infty}
+\frac{3^{k-1}}{5^k}</m>. Does the series converge? If so, what is the
+result?
+</p>
+</statement>
+<solution>
+<p>
+We first factor out <m>\frac13</m> so that the powers match:
+<md>
+\sum_{k=0}^{\infty} \frac{3^{k-1}}{5^k}
+= \frac13 \sum_{k=0}^{\infty} \frac{3^{k}}{5^k}
+= \frac13 \sum_{k=0}^{\infty} \left(\frac35\right)^{k}.
+</md>
+Splitting off the <m>k = 0</m> term so that the sum starts at
+<m>k = 1</m>,
+<md>
+\frac13 \sum_{k=0}^{\infty} \left(\frac35\right)^{k}
+= \frac13\left[1 + \sum_{k=1}^{\infty}
+\left(\frac35\right)\left(\frac35\right)^{k-1}\right].
+</md>
+</p>
+
+<p>
+The remaining sum is a geometric series with <m>a = \frac35</m> and
+<m>r = \frac35</m>. Since <m>|r| = \frac35 \lt 1</m>, it converges and
+<m>\displaystyle\sum_{k=1}^{\infty} ar^{k-1} = \frac{a}{1-r}</m>, so
+<md>
+\frac13\left[1 + \frac{\frac35}{1 - \frac35}\right]
+= \frac13\left[1 + \frac32\right]
+= \frac13 \cdot \frac52
+= \frac56.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-4">
+<statement>
+<p>
+Find the sum of all of the convergent series.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty}
+\frac{\sin\!\left(\frac{\pi}{2}n\right)}{3^{n+1}}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{-2}{n(n+1)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} \frac{(-25)^n}{(2n)!}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The factor <m>\sin\!\left(\frac{\pi}{2}n\right)</m> cycles through
+<m>0, 1, 0, -1</m> as <m>n = 0, 1, 2, 3, \ldots</m>, so only the odd
+<m>n</m> contribute, with alternating signs. Writing
+<m>n = 2k+1</m>,
+<md>
+\sum_{n=0}^{\infty} \frac{\sin\!\left(\frac{\pi}{2}n\right)}{3^{n+1}}
+= \frac{1}{3^2} - \frac{1}{3^4} + \frac{1}{3^6} - \cdots
+= \sum_{k=0}^{\infty} \frac{(-1)^k}{3^{2k+2}}
+= \frac19 \sum_{k=0}^{\infty}\left(-\frac19\right)^{k}.
+</md>
+This is a geometric series with <m>a = 1</m> and
+<m>r = -\frac19</m>, and <m>|r| \lt 1</m>, so
+<md>
+\frac19 \cdot \frac{1}{1 - \left(-\frac19\right)}
+= \frac19 \cdot \frac{1}{\frac{10}{9}}
+= \frac{1}{10}.
+</md>
+</p>
+</li>
+<li>
+<p>
+By the constant multiple rule,
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{-2}{n(n+1)}
+= -2\sum_{n=1}^{\infty} \frac{1}{n(n+1)}</m>. The remaining series
+telescopes: since
+<m>\dfrac{1}{n(n+1)} = \dfrac1n - \dfrac{1}{n+1}</m>,
+<md>
+s_n = \left(1 - \frac12\right) + \left(\frac12 - \frac13\right)
++ \cdots + \left(\frac1n - \frac{1}{n+1}\right)
+= 1 - \frac{1}{n+1} \;\longrightarrow\; 1.
+</md>
+Hence the sum is <m>-2(1) = -2</m>.
+</p>
+</li>
+<li>
+<p>
+Recall <m>\cos x = \displaystyle\sum_{n=0}^{\infty}
+\frac{(-1)^n x^{2n}}{(2n)!}</m>. With <m>x = 5</m>,
+<md>
+\cos(5) = \sum_{n=0}^{\infty} \frac{(-1)^n 5^{2n}}{(2n)!}
+= \sum_{n=0}^{\infty} \frac{(-1)^n 25^{n}}{(2n)!}
+= \sum_{n=0}^{\infty} \frac{(-25)^{n}}{(2n)!},
+</md>
+so the sum is <m>\cos(5)</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

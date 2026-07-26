@@ -30,7 +30,7 @@
   </docinfo>
 
   <book xml:id="shorttitlelowercase">
-    <title>MATH 13</title>
+    <title>MATH 13-Calculus and Analytic Geometry III</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
     <xi:include href="ch-7-3.ptx" />

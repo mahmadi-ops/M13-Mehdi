@@ -271,4 +271,40 @@ Similarly,
 </solution>
 </exercise>
 
+<exercise xml:id="pp-29">
+<statement>
+<p>
+Let <m>f(x,z) = x^2z + e^{xz + z^2}</m> and
+<m>x = r\cos(\theta)</m>, <m>z = r\sin(\theta)</m>. Use the chain rule
+to compute <m>\dfrac{\partial f}{\partial \theta}</m> at
+<m>(r,\theta) = \left(3, \frac{\pi}{2}\right)</m>.
+</p>
+</statement>
+<solution>
+<p>
+The chain rule gives
+<md>
+<mrow>\frac{\partial f}{\partial \theta}
+\amp = \frac{\partial f}{\partial x}\frac{\partial x}{\partial \theta}
++ \frac{\partial f}{\partial z}\frac{\partial z}{\partial \theta}</mrow>
+<mrow>\amp = \left[2xz + z\,e^{xz+z^2}\right](-r\sin\theta)</mrow>
+<mrow>\amp \quad + \left[x^2 + (x + 2z)e^{xz+z^2}\right](r\cos\theta).</mrow>
+</md>
+</p>
+
+<p>
+At <m>(r,\theta) = \left(3, \frac{\pi}{2}\right)</m> we have
+<m>x = 3\cos\frac{\pi}{2} = 0</m> and
+<m>z = 3\sin\frac{\pi}{2} = 3</m>, so <m>(x,z) = (0,3)</m> and
+<m>xz + z^2 = 0 + 9 = 9</m>. Also
+<m>-r\sin\theta = -3</m> and <m>r\cos\theta = 0</m>. Hence
+<md>
+\frac{\partial f}{\partial \theta}
+= \left[0 + 3e^{9}\right](-3) + \left[0 + 6e^{9}\right](0)
+= -9e^{9}.
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

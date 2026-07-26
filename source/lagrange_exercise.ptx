@@ -944,4 +944,297 @@ the circle at the extrema
 </solution>
 </exercise>
 
+<exercise xml:id="rw22-5">
+<statement>
+<p>
+Find the point <m>P(x,y,z)</m> closest to the origin on the plane
+<m>2x + y - z - 5 = 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+The distance from the origin is <m>\sqrt{x^2+y^2+z^2}</m>, so it
+suffices to minimize the function
+<m>f(x,y,z) = x^2 + y^2 + z^2</m> subject to the constraint
+<m>g(x,y,z) = 2x + y - z - 5 = 0</m>. We compute
+<md>
+\nabla f = \langle 2x, 2y, 2z\rangle,
+\qquad
+\nabla g = \langle 2, 1, -1\rangle.
+</md>
+</p>
+
+<p>
+The Lagrange system <m>\nabla f = \lambda \nabla g</m> is
+<md>
+<mrow>2x \amp = 2\lambda \amp \;\Rightarrow\; x \amp = \lambda,</mrow>
+<mrow>2y \amp = \lambda \amp \;\Rightarrow\; y \amp = \frac{\lambda}{2},</mrow>
+<mrow>2z \amp = -\lambda \amp \;\Rightarrow\; z \amp = -\frac{\lambda}{2}.</mrow>
+</md>
+Substituting into the equation of the plane,
+<md>
+2\lambda + \frac{\lambda}{2} + \frac{\lambda}{2} - 5 = 0
+\;\Rightarrow\; 3\lambda = 5
+\;\Rightarrow\; \lambda = \frac53.
+</md>
+Hence the closest point is
+<md>
+P\left(\frac53,\; \frac56,\; -\frac56\right).
+</md>
+</p>
+
+<p>
+(Only one critical point arises, and the distance certainly has a
+minimum on the plane but no maximum, so this point must be the
+minimizer.)
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-37">
+<statement>
+<p>
+Given <m>f(x,y) = -x^2 + 4x - y^2 - 4y</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the maximum and minimum values of <m>f(x,y)</m> on the circle
+<m>x^2 + y^2 = 9</m>, first using Lagrange multipliers, then again by
+parametrizing the circle.
+</p>
+</li>
+<li>
+<p>
+Find the maximum and minimum values of <m>f(x,y)</m> over the disk
+<m>x^2 + y^2 \le 9</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<em>Lagrange multipliers.</em> With
+<m>g(x,y) = x^2 + y^2 - 9 = 0</m>, the system
+<m>\nabla f = \lambda\nabla g</m> reads
+<md>
+<mrow>-2x + 4 \amp = 2\lambda x \amp \;\Rightarrow\;
+x \amp = \frac{2}{1+\lambda},</mrow>
+<mrow>-2y - 4 \amp = 2\lambda y \amp \;\Rightarrow\;
+y \amp = \frac{-2}{1+\lambda}.</mrow>
+</md>
+Hence <m>y = -x</m>, and substituting into the constraint,
+<m>2x^2 = 9</m>, so <m>x = \pm\frac{3}{\sqrt2}</m> and
+<m>y = \mp\frac{3}{\sqrt2}</m>. Evaluating <m>f</m> at these two
+points, and noting that <m>-x^2 - y^2 = -9</m> on the circle,
+<md>
+f = -9 + 4x - 4y = -9 + 4(x - y) = -9 \pm \frac{24}{\sqrt2}.
+</md>
+So the maximum on the circle is
+<m>-9 + \frac{24}{\sqrt2}</m> at
+<m>\left(\frac{3}{\sqrt2}, -\frac{3}{\sqrt2}\right)</m> and the
+minimum is <m>-9 - \frac{24}{\sqrt2}</m> at
+<m>\left(-\frac{3}{\sqrt2}, \frac{3}{\sqrt2}\right)</m>.
+</p>
+<p>
+<em>By parametrizing.</em> On the circle,
+<m>x = 3\cos t</m>, <m>y = 3\sin t</m>, so
+<md>
+<mrow>f \amp = -9\cos^2 t + 12\cos t - 9\sin^2 t - 12\sin t</mrow>
+<mrow>\amp = -9 + 12(\cos t - \sin t)
+= -9 + 12\sqrt2 \cos\!\left(t + \frac{\pi}{4}\right).</mrow>
+</md>
+Since <m>\cos</m> ranges over <m>[-1,1]</m>, this ranges over
+<m>-9 \pm 12\sqrt2 = -9 \pm \frac{24}{\sqrt2}</m>, agreeing with the
+Lagrange computation.
+</p>
+</li>
+<li>
+<p>
+Over the disk we must also check the interior. Setting
+<md>
+f_x = -2x + 4 = 0 \;\Rightarrow\; x = 2,
+\qquad
+f_y = -2y - 4 = 0 \;\Rightarrow\; y = -2,
+</md>
+gives the critical point <m>(2,-2)</m>, which does lie inside the disk
+since <m>4 + 4 = 8 \lt 9</m>. There
+<m>f(2,-2) = -4 + 8 - 4 + 8 = 8</m>. (It is a local maximum:
+<m>f_{xx} = -2 \lt 0</m>, <m>f_{yy} = -2</m>, <m>f_{xy} = 0</m>, so
+<m>D = 4 \gt 0</m>.)
+</p>
+<p>
+Comparing with the boundary values from part A, the maximum over the
+disk is <m>8</m> at <m>(2,-2)</m>, and the minimum is
+<m>-9 - \frac{24}{\sqrt2} \approx -25.97</m> at
+<m>\left(-\frac{3}{\sqrt2}, \frac{3}{\sqrt2}\right)</m>. See
+<xref ref="fig-pp-disk"/>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-disk">
+<caption>
+The disk <m>x^2 + y^2 \le 9</m>. The maximum of <m>f</m> occurs at the
+interior critical point <m>(2,-2)</m>, and the minimum at the boundary
+point <m>\left(-\frac{3}{\sqrt2}, \frac{3}{\sqrt2}\right)</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-disk">
+<diagram dimensions="(300,290)" margins="12">
+<definition>circ(t) = (3*cos(t), 3*sin(t))</definition>
+<coordinates bbox="(-5.4,-5.0,5.4,5.0)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="dk2-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="dk2-max" p="(2,-2)" fill="#D55E00"/>
+<point at="dk2-min" p="(-2.1213,2.1213)" fill="#009E73"/>
+<label at="dk2-max-lab" anchor="(2.2,-2.2)" alignment="se" color="#D55E00">
+<m>(2,-2),\ f=8</m>
+</label>
+<label at="dk2-min-lab" anchor="(-2.3,2.35)" alignment="nw" color="#009E73">
+<m>f=-9-\frac{24}{\sqrt2}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue circle of radius three centered at the origin. A vermillion point inside the circle at two comma negative two marks the maximum, f equals eight. A green point on the circle in the second quadrant marks the minimum.">
+  <annotation ref="dk2-circle" text="The boundary circle x squared plus y squared equals nine."/>
+  <annotation ref="dk2-max" text="The interior critical point two comma negative two, where the maximum eight occurs."/>
+  <annotation ref="dk2-min" text="The boundary point where the minimum occurs."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-38">
+<statement>
+<p>
+Find the minimum value of <m>x + y^2 + z^3</m> along the part of the
+plane <m>x + y + z = 2</m> in the first octant
+(<m>x, y, z \ge 0</m>). The solution found by Lagrange multipliers
+gives the minimum. Use common sense for the maximum value.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>f(x,y,z) = x + y^2 + z^3</m> and
+<m>g(x,y,z) = x + y + z - 2 = 0</m>. Then
+<md>
+\nabla f = \left\langle 1, 2y, 3z^2\right\rangle,
+\qquad
+\nabla g = \langle 1, 1, 1\rangle,
+</md>
+and <m>\nabla f = \lambda \nabla g</m> gives
+<md>
+1 = \lambda, \qquad 2y = \lambda, \qquad 3z^2 = \lambda.
+</md>
+Hence <m>\lambda = 1</m>, <m>y = \frac12</m>, and
+<m>z = \frac{1}{\sqrt3}</m> (taking the positive root, since
+<m>z \ge 0</m>). From the constraint,
+<m>x = 2 - \frac12 - \frac{1}{\sqrt3} = \frac32 - \frac{1}{\sqrt3}</m>,
+which is positive, so the point is in the first octant.
+</p>
+
+<p>
+The minimum value is therefore
+<md>
+<mrow>f \amp = \left(\frac32 - \frac{1}{\sqrt3}\right)
++ \frac14 + \frac{1}{3\sqrt3}</mrow>
+<mrow>\amp = \frac74 - \frac{1}{\sqrt3} + \frac{1}{3\sqrt3}
+= \frac74 - \frac{3}{3\sqrt3} + \frac{1}{3\sqrt3}</mrow>
+<mrow>\amp = \frac74 - \frac{2}{3\sqrt3}
+= \frac74 - \frac23\sqrt{\frac13}.</mrow>
+</md>
+</p>
+
+<p>
+For the maximum, note that the region is a triangle with vertices
+<m>(2,0,0)</m>, <m>(0,2,0)</m>, and <m>(0,0,2)</m>. Since the largest
+power dominates, the largest value should occur at the vertex where
+all the <q>weight</q> is on <m>z</m>. Checking the three vertices,
+<md>
+f(2,0,0) = 2, \qquad f(0,2,0) = 4, \qquad f(0,0,2) = 8,
+</md>
+so the maximum value is <m>8</m>, attained at <m>(0,0,2)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-39">
+<statement>
+<p>
+You are in charge of erecting a radio telescope on a newly discovered
+planet. To minimize interference, you want to place it where the
+magnetic field of the planet is weakest. The planet is spherical, with
+a radius of 6 units. Based on a coordinate system whose origin is at
+the center of the planet, the strength of the magnetic field is given
+by
+<md>
+M(x,y,z) = 6x - y^2 + xz + 60.
+</md>
+Where should you locate the radio telescope?
+</p>
+</statement>
+<solution>
+<p>
+We must minimize <m>M</m> subject to the constraint that we stay on
+the surface of the planet, <m>g(x,y,z) = x^2 + y^2 + z^2 = 36</m>. The
+Lagrange system <m>\nabla M = \lambda \nabla g</m> is
+<md>
+<mrow>6 + z \amp = 2\lambda x,</mrow>
+<mrow>-2y \amp = 2\lambda y,</mrow>
+<mrow>x \amp = 2\lambda z.</mrow>
+</md>
+The second equation factors as <m>2y(\lambda + 1) = 0</m>, so either
+<m>\lambda = -1</m> or <m>y = 0</m>.
+</p>
+
+<p>
+<em>Case <m>\lambda = -1</m>.</em> The first and third equations
+become <m>6 + z = -2x</m> and <m>x = -2z</m>. Substituting,
+<m>6 + z = 4z</m>, so <m>z = 2</m> and <m>x = -4</m>. The constraint
+then gives <m>16 + y^2 + 4 = 36</m>, i.e. <m>y = \pm 4</m>. At these
+points
+<md>
+M(-4, \pm 4, 2) = -24 - 16 - 8 + 60 = 12.
+</md>
+</p>
+
+<p>
+<em>Case <m>y = 0</m>.</em> From the third equation
+<m>\lambda = \dfrac{x}{2z}</m> (with <m>z \ne 0</m>; if <m>z = 0</m>
+then <m>x = 0</m> and the first equation gives <m>6 = 0</m>, which is
+impossible). Substituting into the first,
+<m>6 + z = \dfrac{x^2}{z}</m>, i.e. <m>x^2 = 6z + z^2</m>. Combined
+with <m>x^2 + z^2 = 36</m> this gives
+<md>
+6z + z^2 = 36 - z^2
+\;\Rightarrow\; 2z^2 + 6z - 36 = 0
+\;\Rightarrow\; (z+6)(z-3) = 0,
+</md>
+so <m>z = -6</m> (giving <m>x = 0</m>, with <m>M = 60</m>) or
+<m>z = 3</m> (giving <m>x = \pm 3\sqrt3</m>, with
+<m>M = 60 \pm 27\sqrt3 \approx 13.2</m> or <m>106.8</m>).
+</p>
+
+<p>
+Comparing all the candidate values
+<m>\{12,\; 60,\; 13.2,\; 106.8\}</m>, the magnetic field is weakest
+where <m>M = 12</m>. So the radio telescope should be located at
+<md>
+(-4, 4, 2) \qquad\text{or}\qquad (-4, -4, 2).
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

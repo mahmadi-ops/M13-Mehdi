@@ -121,4 +121,54 @@ Chaining the three vectors tip to tail,
 </solution>
 </exercise>
 
+<exercise xml:id="pp-9">
+<statement>
+<p>
+Find a vector of length 3 pointing in the opposite direction from the
+vector <m>2\,\mathbf i - 4\,\mathbf j + 4\,\mathbf k</m>.
+</p>
+</statement>
+<solution>
+<p>
+The given vector has length
+<m>\sqrt{4 + 16 + 16} = \sqrt{36} = 6</m>, so the unit vector in its
+direction is <m>\frac16\langle 2, -4, 4\rangle
+= \left\langle \frac13, -\frac23, \frac23\right\rangle</m>.
+Multiplying by <m>-3</m> reverses the direction and gives length
+<m>3</m>:
+<md>
+-3\left\langle \frac13, -\frac23, \frac23\right\rangle
+= \langle -1, 2, -2\rangle
+= -\mathbf i + 2\,\mathbf j - 2\,\mathbf k.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-10">
+<statement>
+<p>
+The vectors <m>2\,\mathbf i + 3\,\mathbf j</m>,
+<m>4\,\mathbf i + \mathbf j</m> and <m>5\,\mathbf i + y\,\mathbf j</m>
+have their tails at the origin. Find the value of <m>y</m> that will
+make their heads collinear.
+</p>
+</statement>
+<solution>
+<p>
+The heads are the points <m>(2,3)</m>, <m>(4,1)</m>, and
+<m>(5,y)</m>. The line through the first two has slope
+<md>
+m = \frac{1-3}{4-2} = -1.
+</md>
+For <m>(5,y)</m> to lie on that same line, the slope from
+<m>(4,1)</m> to <m>(5,y)</m> must also be <m>-1</m>:
+<md>
+\frac{y-1}{5-4} = -1 \;\Rightarrow\; y - 1 = -1
+\;\Rightarrow\; y = 0.
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

@@ -150,4 +150,114 @@ d = \frac{\left|\vec{PS} \times \mathbf v\right|}{|\mathbf v|}
 </solution>
 </exercise>
 
+<exercise xml:id="rw17-5">
+<statement>
+<p>
+Find the distance between the two planes
+<md>
+x + 2y + z = 1
+\qquad\text{and}\qquad
+2x + 4y + 2z = 7.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Dividing the second equation by <m>2</m> gives
+<m>x + 2y + z = \frac72</m>, so both planes have the same normal
+vector <m>\vec n = \langle 1, 2, 1\rangle</m> and are therefore
+<em>parallel</em>. (They are distinct, since <m>1 \ne \frac72</m>.)
+</p>
+
+<p>
+Pick any point on the first plane, say <m>P(1,0,0)</m>, and any point
+on the second, say <m>S\left(\frac72, 0, 0\right)</m>. Then
+<m>\vec{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
+distance between the planes is the length of the projection of
+<m>\vec{PS}</m> onto <m>\vec n</m>:
+<md>
+d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
+= \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
+= \frac{5}{2\sqrt6}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-12">
+<statement>
+<p>
+Find the angle between the planes <m>2x + 2y = 7</m> and
+<m>y + z = -1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The angle between two planes equals the angle between their normal
+vectors, <m>\vec n_1 = \langle 2, 2, 0\rangle</m> and
+<m>\vec n_2 = \langle 0, 1, 1\rangle</m>:
+<md>
+\cos\theta
+= \frac{\vec n_1 \cdot \vec n_2}{|\vec n_1|\,|\vec n_2|}
+= \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
+= \frac{2}{4}
+= \frac12,
+</md>
+so <m>\theta = \dfrac{\pi}{3}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-14">
+<statement>
+<p>
+There is a line <m>L</m> parametrized by <m>x = 1 + 2t</m>,
+<m>y = 3 + 4t</m>, <m>z = 5 + 6t</m>. The line passes through some
+point <m>P</m> whose <m>z</m>-coordinate is <m>-7</m>. Find an
+equation for the plane through <m>P</m> normal to <m>L</m>.
+</p>
+</statement>
+<solution>
+<p>
+First locate <m>P</m>. Setting <m>z = -7</m>,
+<md>
+5 + 6t = -7 \;\Rightarrow\; t = -2,
+</md>
+so <m>x = 1 + 2(-2) = -3</m> and <m>y = 3 + 4(-2) = -5</m>, i.e.
+<m>P(-3, -5, -7)</m>.
+</p>
+
+<p>
+A plane normal to <m>L</m> has the direction vector of <m>L</m> as its
+normal vector, <m>\vec n = \langle 2, 4, 6\rangle</m>. Therefore the
+plane is
+<md>
+2(x+3) + 4(y+5) + 6(z+7) = 0.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-17">
+<statement>
+<p>
+Find parametric equations for the line through <m>(2,1,1)</m> which is
+normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
+<m>(3,0,1)</m>.
+</p>
+</statement>
+<solution>
+<p>
+From <xref ref="pp-13"/>, the plane through those three points has
+normal vector <m>\vec n = \langle 3, 9, -2\rangle</m>. A line normal
+to the plane has <m>\vec n</m> as its direction vector, so through
+<m>(2,1,1)</m>,
+<md>
+x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
+\qquad t \in \R.
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>
