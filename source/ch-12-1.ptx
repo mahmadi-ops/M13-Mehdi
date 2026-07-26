@@ -652,8 +652,9 @@ cut down to a piece of height two.
 <caption>
 Parts <alert>F</alert> and <alert>G</alert>. On the left, the finite
 cylinder <m>x^2+y^2=1</m> with <m>-1 \le z \le 1</m>. On the right, the
-same cylinder extended, cut by the plane <m>z = 3</m> in the circle of
-part <alert>F</alert>.
+same cylinder extended, cut by the plane <m>z = 3</m>; the solution to
+part <alert>F</alert>, the circle where they meet, is highlighted in
+red.
 </caption>
 <image width="92%">
 <description>
@@ -694,20 +695,13 @@ meeting it in a circle.
   \draw[->, thick] (0,-2.5) -- (0,3.4) node[above] {$z$};
   \draw[->, thick] (0,0) -- (2.5,-0.7) node[right] {$y$};
   \draw[->, thick] (0,0) -- (-2.1,-0.95) node[below left] {$x$};
-  % tall cylinder, shown faintly: it is only context for part F, whose
-  % actual solution is the circle where it meets the plane below
-  \fill[blue!10, opacity=0.5]
-    (-1.2,-1.8) -- (-1.2,2.6) arc (180:360:1.2cm and 0.34cm)
-    -- (1.2,-1.8) arc (360:180:1.2cm and 0.34cm);
-  % sliver of the inside back wall, visible through the open top rim
-  \fill[blue!10, opacity=0.5] (-1.2,2.6) arc (180:0:1.2cm and 0.34cm) -- cycle;
+  % tall cylinder and plane: outlines only, uncolored, since they are
+  % only context for part F, whose actual solution is the circle
+  % where they meet, highlighted in red below
   \draw[blue!55!black] (-1.2,-1.8) -- (-1.2,2.6);
   \draw[blue!55!black] (1.2,-1.8) -- (1.2,2.6);
   \draw[blue!55!black, thick] (0,2.6) ellipse (1.2cm and 0.34cm);
   \draw[blue!55!black, thick] (0,-1.8) ellipse (1.2cm and 0.34cm);
-  % the plane z = 3, drawn as a wide bordered slab so it reads clearly
-  % as a plane slicing through the cylinder
-  \fill[red!18, opacity=0.85] (-2.6,1.1) -- (2.6,0.8) -- (2.6,1.6) -- (-2.6,1.9) -- cycle;
   \draw[red!45!black] (-2.6,1.1) -- (2.6,0.8) -- (2.6,1.6) -- (-2.6,1.9) -- cycle;
   % the circle of intersection: the actual solution to part F
   \draw[red!60!black, very thick] (0,1.4) ellipse (1.2cm and 0.34cm);
