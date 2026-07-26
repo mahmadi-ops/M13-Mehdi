@@ -191,11 +191,11 @@
             z = \pm\sqrt{\frac{2}{123}},
           </me>
           and the two points are
-          <me>
-            S_1\!\left(\sqrt{\tfrac{3}{82}},\; 5\sqrt{\tfrac{3}{82}},\; \sqrt{\tfrac{2}{123}}\right)
-            \qquad\text{and}\qquad
-            S_2\!\left(-\sqrt{\tfrac{3}{82}},\; -5\sqrt{\tfrac{3}{82}},\; -\sqrt{\tfrac{2}{123}}\right).
-          </me>
+          <md>
+            <mrow>S_1\!\left(\sqrt{\tfrac{3}{82}},\; 5\sqrt{\tfrac{3}{82}},\; \sqrt{\tfrac{2}{123}}\right)
+            \amp \qquad\text{and}</mrow>
+            <mrow>S_2\!\left(-\sqrt{\tfrac{3}{82}},\; -5\sqrt{\tfrac{3}{82}},\; -\sqrt{\tfrac{2}{123}}\right). \amp</mrow>
+          </md>
           The positive signs give <m>S_1</m>, the point closest to the plane,
           and the negative signs give <m>S_2</m>, the farthest.  At both
           points the tangent plane is parallel to the plane
@@ -605,5 +605,121 @@
         </p>
       </solution>
     </exercise>
+
+<exercise xml:id="rm2-lm-1">
+<statement>
+<p>
+Consider <m>f(x,y) = xy</m> and <m>x^2 - y = 12</m>. We assume
+<m>y \le 0</m>.
+<ol marker="A.">
+<li>
+<p>
+Why do we need <m>y \le 0</m> here?
+</p>
+</li>
+<li>
+<p>
+Find the extreme values of <m>f</m> subject to the above constraints.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Else a minimum and maximum would not exist, since we could just pick
+<m>y</m> very large and <m>x = \pm\sqrt{y + 12}</m> would also have a
+very large magnitude, resulting in a very large or very negative value
+of <m>f(x,y)</m>.
+</p>
+</li>
+<li>
+<p>
+The constraint describes the portion of the parabola
+<m>y = x^2 - 12</m> in the third and fourth quadrant. This shape is
+closed and bounded so we are guaranteed the existence of global
+maxima and minima. The two boundary points, which occur at
+<m>y = 0</m>, need to be handled separately; this part is not very
+hard, since we immediately see that <m>f</m> has value <m>0</m> on
+them.
+</p>
+<p>
+Now we proceed to find the critical points of <m>f</m> on the
+parabola <m>g(x,y) = x^2 - y - 12 = 0</m>. The system of equations we
+need to solve is obtained from
+<m>\nabla f(x,y) = \langle y, x\rangle</m> and
+<m>\nabla g(x,y) = \langle 2x, -1\rangle</m>. It is
+<md>
+<mrow>y \amp = 2\lambda x</mrow>
+<mrow>x \amp = -\lambda</mrow>
+<mrow>x^2 - y \amp = 12</mrow>
+</md>
+Combining the first two equations we see that <m>y = -2x^2</m>, and
+using the third, <m>3x^2 = 12</m>, so <m>x = \pm 2</m> and
+<m>y = -8</m>. Computing the value of <m>f</m> at these points, we
+see that the global maximum of <m>f</m> is at <m>(-2, -8)</m> with a
+value of <m>16</m>, while the global minimum with value <m>-16</m> is
+at <m>(2, -8)</m>. See <xref ref="fig-rm2-lagrange"/>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rm2-lagrange">
+<caption>
+The constraint curve <m>y = x^2 - 12</m> with <m>y \le 0</m>, and the
+level curves <m>xy = 16</m> and <m>xy = -16</m> of <m>f</m>. The
+extrema occur at <m>(-2,-8)</m> and <m>(2,-8)</m>, where the level
+curves are tangent to the parabola.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rm2-lagrange">
+<diagram dimensions="(360,300)" margins="12">
+<definition>par(t) = (t, t^2 - 12)</definition>
+<definition>hypp(t) = (t, 16/t)</definition>
+<definition>hypm(t) = (t, -16/t)</definition>
+<coordinates bbox="(-5.2,-13.5,5.2,1.8)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="lm-par" function="par" domain="(-3.4641,3.4641)"
+                  stroke="#0072B2" thickness="3"/>
+<parametric-curve at="lm-hm" function="hypm" domain="(1.25,5.0)"
+                  stroke="#009E73" dash="6 4" thickness="2"/>
+<parametric-curve at="lm-hp" function="hypp" domain="(-5.0,-1.25)"
+                  stroke="#D55E00" dash="6 4" thickness="2"/>
+<point at="lm-max" p="(-2,-8)" fill="#D55E00"/>
+<point at="lm-min" p="(2,-8)" fill="#009E73"/>
+<label at="lm-par-lab" anchor="(3.0,-11.9)" alignment="w" color="#0072B2">
+<m>y=x^2-12</m>
+</label>
+<label at="lm-max-lab" anchor="(-2.15,-8.2)" alignment="sw" color="#D55E00">
+<m>(-2,-8)</m>
+</label>
+<label at="lm-min-lab" anchor="(2.15,-8.2)" alignment="se" color="#009E73">
+<m>(2,-8)</m>
+</label>
+<label at="lm-hp-lab" anchor="(-4.95,-2.6)" alignment="se" color="#D55E00">
+<m>xy=16</m>
+</label>
+<label at="lm-hm-lab" anchor="(5.0,-2.3)" alignment="sw" color="#009E73">
+<m>xy=-16</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue parabola y equals x squared minus twelve, drawn for y less than or equal to zero, opens upward with vertex at zero comma negative twelve. A dashed vermillion hyperbola branch x y equals sixteen in the third quadrant touches the parabola at negative two comma negative eight, and a dashed green hyperbola branch x y equals negative sixteen in the fourth quadrant touches it at two comma negative eight.">
+  <annotation ref="lm-par" text="The constraint curve, the portion of the parabola y equals x squared minus twelve with y at most zero."/>
+  <annotation ref="lm-hp" text="The level curve x y equals sixteen, tangent to the parabola at the maximum point negative two comma negative eight."/>
+  <annotation ref="lm-hm" text="The level curve x y equals negative sixteen, tangent to the parabola at the minimum point two comma negative eight."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
 
 </worksheet>

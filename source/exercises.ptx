@@ -266,6 +266,12 @@ The same parabola and focus as before, with a red right triangle
 <!-- ================= Quadric Surfaces ================= -->
 <xi:include href="exercises-quadric-surfaces.ptx"/>
 
+<!-- ================= Limits and Continuity ================= -->
+<xi:include href="exercises-limits.ptx"/>
+
+<!-- ================= Partial Derivatives and the Chain Rule ================= -->
+<xi:include href="exercises-partials-chain.ptx"/>
+
 <!-- ================= Gradients and Directional Derivatives ================= -->
 <xi:include href="exercises-gradients.ptx"/>
 
@@ -325,6 +331,103 @@ The same parabola and focus as before, with a red right triangle
       </p>
     </solution>
       </exercise>
+
+<exercise xml:id="rm2-ex-1">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>f(x,y)</m> has two local maxima, then it must have a local
+minimum too.
+</p>
+</statement>
+<feedback>
+<p>
+This is true for single-variable functions but no
+longer holds in two dimensions. For example, the function
+<m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>, shown in
+<xref ref="fig-rm2-two-maxima"/>, has two local maxima at
+<m>\left(\pm\frac{1}{\sqrt2}, 0\right)</m> with a saddle point at the
+origin lying between them, and no local minimum.
+</p>
+
+<figure xml:id="fig-rm2-two-maxima">
+<caption>
+The graph of <m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>: two local
+maxima with a saddle point between them, and no local minimum.
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional surface with two rounded peaks of equal height,
+one on the left and one on the right, separated by a saddle shaped
+dip in the middle. Away from the peaks the surface falls off in every
+direction, so there is no lowest point.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}
+\begin{axis}[
+  width=10.5cm, height=7.5cm,
+  view={-40}{28},
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none,
+  clip=false,
+]
+\addplot3[surf, shader=flat, fill=gray!45, draw=gray!60,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.15:1.15, y domain=-1.05:1.05,
+          samples=17, samples y=13]
+  {-x^4 + x^2 - 0.5*y^2};
+% the two maxima
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(-0.7071,0,0.25) (0.7071,0,0.25)};
+% the saddle point
+\addplot3[only marks, mark=*, mark size=1.7, color=blue!60!black]
+  coordinates {(0,0,0)};
+\node[above, purple!70!black] at (axis cs:-0.7071,0,0.30) {max};
+\node[above, purple!70!black] at (axis cs:0.7071,0,0.30) {max};
+\node[above right, blue!60!black] at (axis cs:0,0,0.02) {saddle};
+\end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-ex-2">
+<statement>
+<p>
+Find and classify all the critical points of
+<m>f(x,y) = xy\,e^{x^2+y^2}</m>.
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+\nabla f(x,y) = \left\langle
+\left(1 + 2x^2\right) y\, e^{x^2+y^2},\;
+x \left(1 + 2y^2\right) e^{x^2+y^2}
+\right\rangle.
+</md>
+Since the exponential factors, as well as <m>1 + 2x^2</m> and
+<m>1 + 2y^2</m>, are always positive, we might as well ignore them
+when finding the zeros. So we are left with
+<m>\langle x, y\rangle = \langle 0, 0\rangle</m>, i.e. the only
+critical point is <m>(0,0)</m>. The second derivatives of <m>f</m> are
+<md>
+<mrow>f_{xx} \amp = \left(6x + 4x^3\right) y\, e^{x^2+y^2}</mrow>
+<mrow>f_{xy} \amp = \left(1 + 2x^2\right)\left(1 + 2y^2\right)
+e^{x^2+y^2}</mrow>
+<mrow>f_{yy} \amp = x\left(6y + 4y^3\right) e^{x^2+y^2}</mrow>
+</md>
+Hence <m>D(0,0) = f_{xx}f_{yy} - f_{xy}^2 = -1</m>, so <m>(0,0)</m> is
+a saddle point.
+</p>
+</solution>
+</exercise>
+
 </worksheet>
 
 <!-- ================= Lagrange Multipliers ================= -->

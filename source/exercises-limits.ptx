@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Midterm 2 review problems on limits and continuity
+-->
+<worksheet xml:id="worksheet-exercises-limits" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-limits-continuity" text="title"/></title>
+
+<introduction>
+<p>
+These problems ask when a limit of a function of two variables exists and how to show that one does not. If you would like to review this topic first, see <xref ref="chapter-limits-continuity" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rm2-lim-1-a">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>\lim\limits_{(x,y)\to(a,b)} f(x,y)</m> exists, the function
+<m>f(x,y)</m> must be defined or continuous at <m>(a,b)</m>.
+</p>
+</statement>
+<feedback>
+<p>
+We can for example define <m>f(x,y)</m> to be zero
+when <m>(x,y) \ne (0,0)</m> and to be <m>1</m> when
+<m>(x,y) = (0,0)</m>. If we then pick <m>(a,b) = (0,0)</m>, the limit
+of <m>f(x,y)</m> for <m>(x,y) \to (a,b)</m> exists but it is not equal
+to <m>f(a,b)</m>. We could also leave <m>f(x,y)</m> undefined at the
+origin to give another counterexample.
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-lim-1-b">
+<title>True or False</title>
+<statement correct="no">
+<p>
+To show that the limit at a point <m>(a,b)</m> exists, it suffices to
+find two paths to the point <m>(a,b)</m> where the limits of
+<m>f(x,y)</m> agree.
+</p>
+</statement>
+<feedback>
+<p>
+We would have to show the limit agrees on
+<em>every</em> path, but this is not feasible.
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-lim-1-c">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>f(x,y) \to L</m> as <m>(x,y) \to (a,b)</m> along any line
+through <m>(a,b)</m>, then
+<m>\lim\limits_{(x,y)\to(a,b)} f(x,y) = L</m>.
+</p>
+</statement>
+<feedback>
+<p>
+One counterexample is
+<md>
+f(x,y) =
+\begin{cases}
+0 \amp \text{if } y \le 0 \text{ or } y \ge 2x^2 \\
+1 \amp \text{if } 0 \lt y \lt 2x^2
+\end{cases}
+</md>
+Along every straight line passing through the origin this will be
+constant <m>0</m> near the origin, but the limit approaching via the
+parabola <m>y = x^2</m> is <m>1</m>. See
+<xref ref="fig-rm2-lines-counterexample"/>.
+</p>
+<figure xml:id="fig-rm2-lines-counterexample">
+<caption>
+The counterexample in part C. The function is <m>1</m> on the shaded
+region <m>0 \lt y \lt 2x^2</m> and <m>0</m> everywhere else. Every
+line through the origin leaves the shaded region near the origin, but
+the parabola <m>y = x^2</m> stays inside it.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rm2-lines">
+<diagram dimensions="(380,260)" margins="12">
+<definition>ptop(t) = (t, 2*t^2)</definition>
+<definition>pmid(t) = (t, t^2)</definition>
+<definition>ftop(t) = 2*t^2</definition>
+<definition>fzero(t) = 0</definition>
+<coordinates bbox="(-1.5,-0.5,1.5,1.9)">
+<grid-axes xlabel="x" ylabel="y"/>
+<area-between-curves at="rm2-region" domain="(-0.95,0.95)"
+      function1="ftop" function2="fzero"
+      fill="#E69F00" fill-opacity="0.30" stroke="none"/>
+<parametric-curve at="rm2-ptop" function="ptop" domain="(-0.95,0.95)"
+                  stroke="#D55E00" thickness="3"/>
+<parametric-curve at="rm2-pmid" function="pmid" domain="(-1.3,1.3)"
+                  stroke="#8B1A4A" dash="6 4" thickness="2"/>
+<line at="rm2-line" endpoints="((-1.45,-0.44),(1.45,0.44))"
+      stroke="#0072B2" thickness="2"/>
+<point at="rm2-origin" p="(0,0)" fill="black"/>
+<label at="rm2-ptop-lab" anchor="(0.72,1.55)" alignment="w" color="#D55E00">
+<m>y=2x^2</m>
+</label>
+<label at="rm2-pmid-lab" anchor="(-1.28,1.55)" alignment="e" color="#8B1A4A">
+<m>y=x^2</m>
+</label>
+<label at="rm2-line-lab" anchor="(-1.42,-0.30)" alignment="ne" color="#0072B2">
+<m>y=mx</m>
+</label>
+<label at="rm2-one-lab" anchor="(0.62,0.35)" alignment="w" color="#D55E00">
+<m>f=1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The region between the x axis and the parabola y equals two x squared is shaded orange; the function equals one there and zero everywhere else. A dashed dark red parabola y equals x squared runs through the middle of the shaded region. A straight blue line through the origin with small positive slope lies above the shaded region near the origin.">
+  <annotation ref="rm2-region" text="The region zero less than y less than two x squared, where the function equals one."/>
+  <annotation ref="rm2-pmid" text="The parabola y equals x squared, which approaches the origin inside the region, so the limit along it is one."/>
+  <annotation ref="rm2-line" text="A typical line through the origin. Near the origin it lies outside the region, so the function is zero along it."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-lim-2">
+<statement>
+<p>
+Show that the limit does not exist:
+<md>
+\lim_{(x,y)\to(1,0)} \frac{x + y^2}{(x-1)^3 + y^4}.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Approaching the limit along the <m>x</m>-axis, i.e. <m>y = 0</m>, we
+need to consider
+<md>
+\lim_{x\to 1} \frac{x}{(x-1)^3},
+</md>
+which does not exist since the numerator has limit <m>1</m> but the
+denominator has limit <m>0</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rm2-lim-3">
+<statement>
+<p>
+Discuss continuity of the following functions:
+<ol marker="A.">
+<li>
+<p>
+<m>\dfrac{2x^4 y}{x^8 + y^2}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac{x^2\cos^2 x}{x^2 + (y-1)^2}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+This is obviously continuous whenever the denominator is nonzero,
+i.e. everywhere except at the origin. But at the origin it is not
+continuous (or rather we can't extend the function to the origin in a
+way which makes it continuous): if we approach the origin via any of
+the coordinate axes we get a limit of <m>0</m>, but if we approach it
+via the path <m>y = x^4</m> we get a limit
+<md>
+\lim_{x\to 0} \frac{2x^4 x^4}{x^8 + x^8} = 1.
+</md>
+Hence the limit <m>\lim\limits_{(x,y)\to(0,0)} f(x,y)</m> does not
+exist.
+</p>
+</li>
+<li>
+<p>
+This is continuous when the denominator is nonzero, so everywhere
+except at <m>(0,1)</m>. At <m>(0,1)</m> it can't be defined in a way
+which makes the function continuous: approaching <m>(0,1)</m> via the
+<m>y</m>-axis, we get the limit
+<md>
+\lim_{y\to 1} \frac{0\cdot\cos^2(0)}{(y-1)^2} = 0.
+</md>
+On the other hand, if we approach <m>(0,1)</m> on the line
+<m>y = 1</m> we get the limit
+<md>
+\lim_{x\to 0} \frac{x^2\cos^2 x}{x^2} = \cos^2(0) = 1.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+</worksheet>

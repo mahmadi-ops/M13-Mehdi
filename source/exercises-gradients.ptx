@@ -152,4 +152,98 @@ Clairaut's Theorem.
 </feedback>
 </exercise>
 
+<exercise xml:id="rm2-gr-1">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+<m>D_{\vec i + \vec j}\,f(x,y) = f_x + f_y</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Since
+<m>\vec i + \vec j = \langle 1, 1\rangle</m>,
+<md>
+D_{\vec i + \vec j}\,f(x,y)
+= \nabla f(x,y) \cdot \langle 1, 1\rangle
+= f_x + f_y.
+</md>
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-gr-2">
+<title>A mountain lion on a mountain</title>
+<statement>
+<p>
+A mountain lion runs on a mountain whose height above the point
+<m>(x,y)</m> is <m>z = x^2 + \sin^2(xy)</m>.
+<ol marker="A.">
+<li>
+<p>
+In which direction(s) should the mountain lion run from point
+<m>(1, 0, 1)</m> so that the height is increasing at the fastest
+possible rate? What is this fastest rate?
+</p>
+</li>
+<li>
+<p>
+In which direction(s) should the mountain lion run from point
+<m>(1, 0, 1)</m> so that the height is increasing at <em>half</em> of
+the fastest possible rate?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The fastest possible rate of increase is attained in the direction of
+the gradient:
+<md>
+\nabla z = \left\langle \frac{\partial z}{\partial x},
+\frac{\partial z}{\partial y}\right\rangle
+= \left\langle 2x + 2\sin(xy)\cos(xy)\,y,\;
+2\sin(xy)\cos(xy)\,x\right\rangle.
+</md>
+At <m>(1, 0, 1)</m>, this gradient is simply
+<m>\nabla z(1,0) = \langle 2, 0\rangle</m>, and the fastest possible
+rate of change is the length of the gradient, i.e.
+<m>|\nabla z(1,0)| = |\langle 2,0\rangle| = 2</m>.
+</p>
+</li>
+<li>
+<p>
+Half of the fastest possible rate of height increase at point
+<m>(1,0,1)</m> is <m>\frac12 \cdot 2 = 1</m>. Let
+<m>\vec u = \langle a, b\rangle</m> be a unit vector in the desired
+direction. Then the directional derivative
+<m>D_{\vec u}(1,0) = 1</m> is the desired rate of change of height at
+<m>(1,0,1)</m> in the direction of <m>\vec u</m>; it can be calculated
+using the dot product with the gradient:
+<md>
+1 = D_{\vec u}(1,0)
+= \vec u \cdot \nabla z(1,0)
+= \langle a, b\rangle \cdot \langle 2, 0\rangle
+= 2a + 0b = 2a.
+</md>
+Thus, <m>a = \frac12</m> and <m>b</m> must be such that
+<m>\vec u = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
+<m>\left(\frac12\right)^2 + b^2 = 1</m>, from which
+<m>b^2 = \frac34</m> and <m>b = \pm\frac{\sqrt3}{2}</m>. Therefore,
+the desired directions in which the height is increasing at a rate
+equal to half of the fastest possible rate are
+<m>\vec u_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
+and
+<m>\vec u_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
 </worksheet>
