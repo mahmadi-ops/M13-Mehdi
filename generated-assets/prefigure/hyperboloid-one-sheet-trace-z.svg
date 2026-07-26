@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="hyperboloid-one-sheet-trace-z-figure" width="220" height="242" viewBox="0 0 220 242">
   <defs>
-    <clipPath id="hyperboloid-one-sheet-trace-z-clipPath-0">
+    <clipPath id="hyperboloid-one-sheet-trace-z-__clipPath-0">
       <rect x="5.0" y="5.0" width="210.0" height="232.0"/>
     </clipPath>
-    <clipPath id="hyperboloid-one-sheet-trace-z-clipPath-1">
+    <clipPath id="hyperboloid-one-sheet-trace-z-__clipPath-1">
       <rect x="5.0" y="5.0" width="210.0" height="232.0"/>
     </clipPath>
-    <clipPath id="hyperboloid-one-sheet-trace-z-clipPath-2">
+    <clipPath id="hyperboloid-one-sheet-trace-z-__clipPath-2">
       <rect x="17.0" y="41.0" width="190.0" height="190.0"/>
     </clipPath>
     <marker id="hyperboloid-one-sheet-trace-z-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
@@ -17,11 +17,11 @@
     </marker>
   </defs>
   <g id="hyperboloid-one-sheet-trace-z-axes" stroke="black" stroke-width="2">
-    <line id="hyperboloid-one-sheet-trace-z-line-0" x1="17.0" y1="136.0" x2="207.0" y2="136.0" stroke="black" stroke-width="2" marker-end="url(#hyperboloid-one-sheet-trace-z-arrow-head-end-2_None_24_60-black)"/>
-    <line id="hyperboloid-one-sheet-trace-z-line-1" x1="112.0" y1="231.0" x2="112.0" y2="41.0" stroke="black" stroke-width="2" marker-end="url(#hyperboloid-one-sheet-trace-z-arrow-head-end-2_None_24_60-black)"/>
+    <line id="hyperboloid-one-sheet-trace-z-__line-0" x1="17.0" y1="136.0" x2="207.0" y2="136.0" stroke="black" stroke-width="2" marker-end="url(#hyperboloid-one-sheet-trace-z-arrow-head-end-2_None_24_60-black)"/>
+    <line id="hyperboloid-one-sheet-trace-z-__line-1" x1="112.0" y1="231.0" x2="112.0" y2="41.0" stroke="black" stroke-width="2" marker-end="url(#hyperboloid-one-sheet-trace-z-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="hyperboloid-one-sheet-trace-z-label-0" transform="translate(201.0,130.0) translate(-10.4,-8.2)">
-    <g id="hyperboloid-one-sheet-trace-z-g-0">
+  <g id="hyperboloid-one-sheet-trace-z-__label-0" transform="translate(201.0,130.0) translate(-10.4,-8.2)">
+    <g id="hyperboloid-one-sheet-trace-z-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
           <path id="hyperboloid-one-sheet-trace-z-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -36,8 +36,8 @@
       </svg>
     </g>
   </g>
-  <g id="hyperboloid-one-sheet-trace-z-label-1" transform="translate(118.0,47.0) translate(0.0,-0.0)">
-    <g id="hyperboloid-one-sheet-trace-z-g-1">
+  <g id="hyperboloid-one-sheet-trace-z-__label-1" transform="translate(118.0,47.0) translate(0.0,-0.0)">
+    <g id="hyperboloid-one-sheet-trace-z-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
         <defs>
           <path id="hyperboloid-one-sheet-trace-z-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -52,9 +52,9 @@
       </svg>
     </g>
   </g>
-  <path id="hyperboloid-one-sheet-trace-z-trace-z" d="M 159.5 136.0 L 159.4 131.5 L 159.1 127.1 L 158.7 122.6 L 158.0 118.3 L 157.2 114.0 L 156.2 109.8 L 155.0 105.7 L 153.6 101.7 L 152.1 97.8 L 150.4 94.1 L 148.6 90.6 L 146.6 87.2 L 144.5 84.1 L 142.3 81.1 L 139.9 78.4 L 137.5 75.8 L 134.9 73.6 L 132.2 71.5 L 129.5 69.8 L 126.7 68.2 L 123.8 67.0 L 120.9 66.0 L 118.0 65.3 L 115.0 64.9 L 112.0 64.8 L 109.0 64.9 L 106.0 65.3 L 103.1 66.0 L 100.2 67.0 L 97.3 68.2 L 94.5 69.8 L 91.8 71.5 L 89.1 73.6 L 86.5 75.8 L 84.1 78.4 L 81.7 81.1 L 79.5 84.1 L 77.4 87.2 L 75.4 90.6 L 73.6 94.1 L 71.9 97.8 L 70.4 101.7 L 69.0 105.7 L 67.8 109.8 L 66.8 114.0 L 66.0 118.3 L 65.3 122.6 L 64.9 127.1 L 64.6 131.5 L 64.5 136.0 L 64.6 140.5 L 64.9 144.9 L 65.3 149.4 L 66.0 153.7 L 66.8 158.0 L 67.8 162.2 L 69.0 166.3 L 70.4 170.3 L 71.9 174.2 L 73.6 177.9 L 75.4 181.4 L 77.4 184.8 L 79.5 187.9 L 81.7 190.9 L 84.1 193.6 L 86.5 196.2 L 89.1 198.4 L 91.8 200.5 L 94.5 202.2 L 97.3 203.8 L 100.2 205.0 L 103.1 206.0 L 106.0 206.7 L 109.0 207.1 L 112.0 207.2 L 115.0 207.1 L 118.0 206.7 L 120.9 206.0 L 123.8 205.0 L 126.7 203.8 L 129.5 202.2 L 132.2 200.5 L 134.9 198.4 L 137.5 196.2 L 139.9 193.6 L 142.3 190.9 L 144.5 187.9 L 146.6 184.8 L 148.6 181.4 L 150.4 177.9 L 152.1 174.2 L 153.6 170.3 L 155.0 166.3 L 156.2 162.2 L 157.2 158.0 L 158.0 153.7 L 158.7 149.4 L 159.1 144.9 L 159.4 140.5 L 159.5 136.0 Z" stroke="#D55E00" stroke-width="3" fill="none" clip-path="url(#hyperboloid-one-sheet-trace-z-clipPath-2)"/>
-  <g id="hyperboloid-one-sheet-trace-z-label-2" transform="translate(110.0,23.0) translate(-80.9,-13.0)">
-    <g id="hyperboloid-one-sheet-trace-z-g-2">
+  <path id="hyperboloid-one-sheet-trace-z-trace-z" d="M 159.5 136.0 L 159.4 131.5 L 159.1 127.1 L 158.7 122.6 L 158.0 118.3 L 157.2 114.0 L 156.2 109.8 L 155.0 105.7 L 153.6 101.7 L 152.1 97.8 L 150.4 94.1 L 148.6 90.6 L 146.6 87.2 L 144.5 84.1 L 142.3 81.1 L 139.9 78.4 L 137.5 75.8 L 134.9 73.6 L 132.2 71.5 L 129.5 69.8 L 126.7 68.2 L 123.8 67.0 L 120.9 66.0 L 118.0 65.3 L 115.0 64.9 L 112.0 64.8 L 109.0 64.9 L 106.0 65.3 L 103.1 66.0 L 100.2 67.0 L 97.3 68.2 L 94.5 69.8 L 91.8 71.5 L 89.1 73.6 L 86.5 75.8 L 84.1 78.4 L 81.7 81.1 L 79.5 84.1 L 77.4 87.2 L 75.4 90.6 L 73.6 94.1 L 71.9 97.8 L 70.4 101.7 L 69.0 105.7 L 67.8 109.8 L 66.8 114.0 L 66.0 118.3 L 65.3 122.6 L 64.9 127.1 L 64.6 131.5 L 64.5 136.0 L 64.6 140.5 L 64.9 144.9 L 65.3 149.4 L 66.0 153.7 L 66.8 158.0 L 67.8 162.2 L 69.0 166.3 L 70.4 170.3 L 71.9 174.2 L 73.6 177.9 L 75.4 181.4 L 77.4 184.8 L 79.5 187.9 L 81.7 190.9 L 84.1 193.6 L 86.5 196.2 L 89.1 198.4 L 91.8 200.5 L 94.5 202.2 L 97.3 203.8 L 100.2 205.0 L 103.1 206.0 L 106.0 206.7 L 109.0 207.1 L 112.0 207.2 L 115.0 207.1 L 118.0 206.7 L 120.9 206.0 L 123.8 205.0 L 126.7 203.8 L 129.5 202.2 L 132.2 200.5 L 134.9 198.4 L 137.5 196.2 L 139.9 193.6 L 142.3 190.9 L 144.5 187.9 L 146.6 184.8 L 148.6 181.4 L 150.4 177.9 L 152.1 174.2 L 153.6 170.3 L 155.0 166.3 L 156.2 162.2 L 157.2 158.0 L 158.0 153.7 L 158.7 149.4 L 159.1 144.9 L 159.4 140.5 L 159.5 136.0 Z" stroke="#D55E00" stroke-width="3" fill="none" clip-path="url(#hyperboloid-one-sheet-trace-z-__clipPath-2)"/>
+  <g id="hyperboloid-one-sheet-trace-z-__label-2" transform="translate(110.0,23.0) translate(-80.9,-13.0)">
+    <g id="hyperboloid-one-sheet-trace-z-__g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.528px" width="161.744px" height="25.976px" role="img" focusable="false" viewBox="0 -1074.6 8936.4 1435.2" x="0.0" y="0.0">
         <defs>
           <path id="hyperboloid-one-sheet-trace-z-MJX-4-TEX-I-1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"/>
