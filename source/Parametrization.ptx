@@ -558,25 +558,33 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
 <title>Projectile Motion</title>
 
 <p>
-A type of parametric equation that you may have already seen is the equation of motion
-for a projectile.  In this case, the parameter is time, and <m>(x(t), y(t))</m> is the
-position of the projectile.  You may recall from your introductory physics course two basic facts about motion in
-one dimension.  For motion along a straight line with constant speed, the position is
-<md>x(t) = v\, t + x_0,</md>
-while for motion with uniform acceleration <m>a</m>, the position is
+A type of parametric equation you may have already seen is the equation of motion for a
+projectile. Here the parameter is time, and <m>(x(t), y(t))</m> gives the position of the
+projectile at time <m>t</m>.
+</p>
+
+<p>
+Recall two basic facts about motion in one dimension from your introductory physics course.
+For motion along a straight line at constant speed <m>v</m>, the position is
+<md>x(t) = v\, t + x_0.</md>
+For motion with uniform acceleration <m>a</m>, the position is
 <md>x(t) = \frac{1}{2} a t^2 + v_0 t + x_0.</md>
-Now consider an object under the influence of grav1ity alone, ignoring air resistance.  In the
-horizontal direction there is no force acting on the object, so it moves with constant speed;
-in the vertical direction it moves with constant acceleration, namely <m>g</m>, directed downward.
-Taking these two facts into account, and resolving the initial velocity into its horizontal
-component <m>v_0 \cos(\theta)</m> and vertical component <m>v_0 \sin(\theta)</m>, we obtain the
-equations of motion for a projectile:
+</p>
+
+<p>
+Now consider an object moving under the influence of gravity alone, ignoring air resistance.
+No horizontal force acts on it, so it moves at constant speed in the <m>x</m>-direction; in the
+<m>y</m>-direction it moves with constant acceleration <m>g</m>, directed downward. Resolving
+the initial velocity into its horizontal component <m>v_0 \cos(\theta)</m> and vertical
+component <m>v_0 \sin(\theta)</m>, and applying the two facts above, gives the equations of
+motion for a projectile:
 <md number="yes">
   <mrow xml:id="eq-projectile-x">x(t) \amp = v_0 \cos(\theta)\, t + x_0,</mrow>
   <mrow xml:id="eq-projectile-y">y(t) \amp = - \frac{1}{2} g t^2 + v_0 \sin(\theta)\, t + y_0,</mrow>
 </md>
-where <m>v_0</m> is the initial speed, <m>\theta</m> is the angle of launch, and <m>g</m> is the acceleration
-due to gravity.  For brevity, the initial position <m>(x_0, y_0)</m> will be taken to be the origin <m>(0,0)</m>.
+where <m>v_0</m> is the initial speed, <m>\theta</m> is the launch angle, and <m>g</m> is the
+acceleration due to gravity. For simplicity, we take the initial position <m>(x_0, y_0)</m> to
+be the origin <m>(0,0)</m>.
 </p>
 
 <p>
