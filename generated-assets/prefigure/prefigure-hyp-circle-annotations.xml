@@ -1,0 +1,61 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-hyp-circle-figure" speech2="The unit circle centered at the origin with a point P on it in the first quadrant labelled P of cosine t comma sine t. Segments from the origin to P and from the origin to the point Q directly below P on the x axis are drawn from the origin.">
+      <grouped>prefigure-hyp-circle-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-hyp-circle-grid-axes</active>
+        <active>prefigure-hyp-circle-hc-circle</active>
+        <active>prefigure-hyp-circle-hc-P</active>
+      </children>
+      <components>
+        <active>prefigure-hyp-circle-grid-axes</active>
+        <active>prefigure-hyp-circle-hc-circle</active>
+        <active>prefigure-hyp-circle-hc-P</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-hyp-circle-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>prefigure-hyp-circle-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-hyp-circle-grid</active>
+        <active>prefigure-hyp-circle-axes</active>
+      </children>
+      <components>
+        <active>prefigure-hyp-circle-grid</active>
+        <active>prefigure-hyp-circle-axes</active>
+      </components>
+      <parents>
+        <grouped>prefigure-hyp-circle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-hyp-circle-grid" speech2="The coordinate grid">
+      <active>prefigure-hyp-circle-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-hyp-circle-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-hyp-circle-axes" speech2="The coordinate axes">
+      <active>prefigure-hyp-circle-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-hyp-circle-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-hyp-circle-hc-circle" speech2="The unit circle x squared plus y squared equals one.">
+      <active>prefigure-hyp-circle-hc-circle</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-hyp-circle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-hyp-circle-hc-P" speech2="The point P with coordinates cosine t comma sine t.">
+      <active>prefigure-hyp-circle-hc-P</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-hyp-circle-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
