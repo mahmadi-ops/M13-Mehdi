@@ -171,4 +171,49 @@ For <m>(5,y)</m> to lie on that same line, the slope from
 </solution>
 </exercise>
 
+<exercise xml:id="m1-2">
+<statement>
+<p>
+Let <m>\vec v</m> be the vector that goes from the point
+<m>\left(5,-4,\sqrt3\right)</m> to the point <m>(3,-1,0)</m>. Find a
+vector of length <m>\tfrac13</m> that points in the same direction as
+<m>\vec v</m>.
+</p>
+</statement>
+<solution>
+<p>
+The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
+by subtracting the tail from the head:
+<md>
+\vec v = \vec{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
+\right\rangle = \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
+</md>
+</p>
+
+<p>
+Its length is
+<md>
+\|\vec v\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
+           = \sqrt{4+9+3} = \sqrt{16} = 4 .
+</md>
+</p>
+
+<p>
+The unit vector in the direction of <m>\vec v</m> is therefore
+<md>
+\hat u = \frac{\vec v}{\|\vec v\|}
+       = \frac14 \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
+</md>
+Scaling by <m>\tfrac13</m> gives a vector of length <m>\tfrac13</m>
+pointing the same way:
+<md>
+\frac13\,\hat u = \frac{1}{12}\left\langle -2,\ 3,\ -\sqrt3
+\right\rangle
+= \left\langle -\frac16,\ \frac14,\ -\frac{\sqrt3}{12}
+\right\rangle .
+</md>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

@@ -327,4 +327,213 @@ zero comma negative two. Each sheet is capped by an ellipse.
 </solution>
 </exercise>
 
+<exercise xml:id="q1-1">
+<statement>
+<p>
+Consider the function
+<md>
+h(x,y,z) = z + \sqrt{x^2+y^2} + 1 .
+</md>
+Sketch the level surface of <m>h</m> that passes through the point
+<m>(3,4,-5)</m>. Clearly label the value of <m>h</m> on that surface,
+and label the coordinate axes.
+</p>
+</statement>
+<solution>
+<p>
+The level surfaces of <m>h</m> are the surfaces <m>h(x,y,z) = c</m>.
+To find which one passes through <m>(3,4,-5)</m> we simply evaluate:
+<md>
+<mrow>h(3,4,-5) \amp = -5 + \sqrt{3^2+4^2} + 1</mrow>
+<mrow>\amp = -5 + \sqrt{25} + 1</mrow>
+<mrow>\amp = -5 + 5 + 1 = 1 .</mrow>
+</md>
+So the level surface we want is <m>h(x,y,z) = 1</m>.
+</p>
+
+<p>
+Now we simplify the equation of that level surface:
+<md>
+<mrow>z + \sqrt{x^2+y^2} + 1 \amp = 1</mrow>
+<mrow>z + \sqrt{x^2+y^2} \amp = 0</mrow>
+<mrow>z \amp = -\sqrt{x^2+y^2} .</mrow>
+</md>
+</p>
+
+<p>
+This is a cone. Indeed, squaring gives <m>z^2 = x^2+y^2</m>, which is
+the full double cone; but the equation <m>z = -\sqrt{x^2+y^2}</m>
+forces <m>z \le 0</m>, so we keep only the <em>lower</em> nappe. The
+vertex is at the origin, and the horizontal trace at height
+<m>z = -k</m> (with <m>k \gt 0</m>) is the circle
+<m>x^2+y^2 = k^2</m> of radius <m>k</m>. In other words the cone opens
+downwards, and the slope of every straight line drawn on it from the
+vertex is <m>-1</m>. The point <m>(3,4,-5)</m> lies on it, since
+<m>-\sqrt{3^2+4^2} = -5</m>. See <xref ref="fig-q1-cone"/>.
+</p>
+
+<figure xml:id="fig-q1-cone">
+<caption>
+The level surface <m>h(x,y,z) = 1</m>, that is the downward cone
+<m>z = -\sqrt{x^2+y^2}</m>. It passes through <m>(3,4,-5)</m>,
+which lies on the circle <m>x^2+y^2=25</m> in the plane <m>z=-5</m>.
+</caption>
+<image width="70%">
+<description>
+<p>
+A cone with its vertex at the origin opening downwards around the
+negative z axis. The horizontal circle of radius five is drawn on it in
+the plane z equals negative five, and the point three, four, negative
+five is marked on that circle.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=9.5cm,
+  view={-35}{18},
+  xmin=-6.5, xmax=6.5, ymin=-6.5, ymax=6.5, zmin=-6.5, zmax=2.2,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-5,0,5}, ytick={-5,0,5}, ztick={-5,0},
+  clip=false,
+]
+% the cone z = -sqrt(x^2+y^2), drawn in polar form
+\addplot3[surf, shader=flat, fill=mblue, draw=mblue,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:5.6, y domain=0:360, samples=12, samples y=41,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{-x});
+% the trace circle at z = -5
+\addplot3[very thick, mverm, domain=0:360, samples=60]
+  ({5*cos(x)},{5*sin(x)},{-5});
+% the marked point (3,4,-5)
+\addplot3[only marks, mark=*, mark size=2pt, mred] coordinates {(3,4,-5)};
+\node[mred, anchor=west, fill=white, fill opacity=0.75, text opacity=1,
+      inner sep=1pt] at (axis cs:3,4,-5) {$(3,4,-5)$};
+\node[mverm, anchor=north] at (axis cs:0,-5.6,-5.6)
+  {$x^2+y^2=25$};
+\node[mblue, anchor=west] at (axis description cs:0.72,0.86)
+  {$h=1$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="q2-1">
+<statement>
+<p>
+Sketch three level curves of
+<md>
+h(x,y) = \frac{y^2}{x} ,
+</md>
+including the one that passes through the point <m>(-1,2)</m>. Clearly
+label the value of <m>h</m> on each curve.
+</p>
+</statement>
+<solution>
+<p>
+First we find the level through <m>(-1,2)</m>:
+<md>
+h(-1,2) = \frac{2^2}{-1} = -4 .
+</md>
+So one of the three curves must be <m>h(x,y) = -4</m>.
+</p>
+
+<p>
+In general the level curve <m>h(x,y) = c</m> is
+<md>
+\frac{y^2}{x} = c \quad\Longleftrightarrow\quad y^2 = c\,x
+\quad\Longleftrightarrow\quad x = \frac{y^2}{c}
+\qquad (c \ne 0) .
+</md>
+Each of these is a <em>parabola opening along the</em> <m>x</m><em>-axis</em>,
+with vertex at the origin. If <m>c \gt 0</m> it opens to the right, and
+if <m>c \lt 0</m> it opens to the left. Note that the domain of
+<m>h</m> excludes <m>x = 0</m>, so the vertex itself, the origin, must
+be removed from every level curve.
+</p>
+
+<p>
+Let us take the three levels <m>c = -4</m>, <m>c = 1</m> and
+<m>c = 4</m>:
+<md>
+<mrow>h \amp = -4: \amp\qquad x \amp = -\frac{y^2}{4}
+  \amp\amp \text{(opens left)},</mrow>
+<mrow>h \amp = 1: \amp\qquad x \amp = y^2
+  \amp\amp \text{(opens right, narrow)},</mrow>
+<mrow>h \amp = 4: \amp\qquad x \amp = \frac{y^2}{4}
+  \amp\amp \text{(opens right, wide)}.</mrow>
+</md>
+The larger <m>|c|</m> is, the wider the parabola. These are drawn in
+<xref ref="fig-q2-levels"/>.
+</p>
+
+<p>
+One more remark: the level <m>c = 0</m> is special. There
+<m>y^2 = 0</m>, so the level curve <m>h = 0</m> is not a parabola at
+all but the <m>x</m>-axis with the origin removed.
+</p>
+
+<figure xml:id="fig-q2-levels">
+<caption>
+Three level curves of <m>h(x,y) = y^2/x</m>. The curve through
+<m>(-1,2)</m> is the level <m>h = -4</m>, which opens to the left. The
+origin is excluded from every level curve, since <m>h</m> is undefined
+when <m>x = 0</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+Three parabolas with vertices at the origin and axes along the x axis.
+One opens to the left and is labelled h equals negative four; two open
+to the right and are labelled h equals one and h equals four. The point
+negative one comma two is marked on the leftward parabola.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-q2-levels">
+<diagram dimensions="(430,380)" margins="30">
+<definition>cm4(t) = (-t^2/4, t)</definition>
+<definition>c1(t) = (t^2, t)</definition>
+<definition>c4(t) = (t^2/4, t)</definition>
+<coordinates bbox="(-4.6,-3.4,4.6,3.9)">
+<grid-axes at="q2l-axes" xlabel="x" ylabel="y"/>
+<parametric-curve at="q2l-m4" function="cm4" domain="(-3.2,3.2)"
+                  stroke="#D55E00" thickness="2.5"/>
+<parametric-curve at="q2l-1" function="c1" domain="(-2.0,2.0)"
+                  stroke="#0072B2" thickness="2.5"/>
+<parametric-curve at="q2l-4" function="c4" domain="(-3.2,3.2)"
+                  stroke="#009E73" thickness="2.5"/>
+<point at="q2l-P" p="(-1,2)" fill="#8B1A4A"/>
+<label at="q2l-Plab" anchor="(-1.20,2.18)" alignment="nw" color="#8B1A4A">
+<m>(-1,2)</m>
+</label>
+<label at="q2l-m4lab" anchor="(-2.9,3.45)" alignment="e" color="#D55E00">
+<m>h=-4</m>
+</label>
+<label at="q2l-1lab" anchor="(4.45,1.60)" alignment="nw" color="#0072B2">
+<m>h=1</m>
+</label>
+<label at="q2l-4lab" anchor="(3.35,3.45)" alignment="w" color="#009E73">
+<m>h=4</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three parabolas sharing the origin as vertex and the x axis as axis of symmetry. An orange one opens to the left, labelled h equals negative four. A blue narrow one and a green wide one open to the right, labelled h equals one and h equals four. A dark red dot marks the point negative one comma two on the orange curve.">
+  <annotation ref="q2l-m4" text="The level curve h equals negative four, the parabola x equals minus y squared over four, opening to the left."/>
+  <annotation ref="q2l-1" text="The level curve h equals one, the parabola x equals y squared, opening to the right."/>
+  <annotation ref="q2l-4" text="The level curve h equals four, the parabola x equals y squared over four, opening to the right and wider than the previous one."/>
+  <annotation ref="q2l-P" text="The point negative one comma two, which lies on the level curve h equals negative four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

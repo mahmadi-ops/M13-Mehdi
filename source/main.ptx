@@ -26,6 +26,8 @@
   \definecolor{mpink}{HTML}{D147BD}
   \definecolor{mgreen}{HTML}{4FA84F}
   \definecolor{morange}{HTML}{E08A2B}
+  \definecolor{mverm}{HTML}{D55E00}
+  \definecolor{mgray}{HTML}{7F7F7F}
 </latex-image-preamble>
   </docinfo>
 

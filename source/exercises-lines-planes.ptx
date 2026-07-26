@@ -260,4 +260,329 @@ x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
 </solution>
 </exercise>
 
+<exercise xml:id="m2a-4">
+<statement>
+<p>
+A surveyor determines that the three points
+<md>
+A = (-1,2,16), \qquad B = (2,-2,17), \qquad C = (2,0,16)
+</md>
+all lie on a flat surface <m>W</m>.
+<ol marker="(a)">
+<li>
+<p>
+Find the point of <m>W</m> that is closest to the point
+<m>(4,4,-3)</m>.
+</p>
+</li>
+<li>
+<p>
+Find parametric equations for a line that passes through
+<m>(4,4,-3)</m>, never crosses <m>W</m>, and satisfies
+<m>x(t) = y(t)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>Finding the plane.</term> Two vectors lying in <m>W</m> are
+<md>
+\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
+\qquad
+\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
+</md>
+A normal vector is their cross product:
+<md>
+<mrow>\vec n \amp = \vec{AB}\times\vec{AC}
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 1 \\
+3 \amp -2 \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp = \left\langle (-4)(0)-(1)(-2),\ (1)(3)-(3)(0),\ (3)(-2)-(-4)(3)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 2,\ 3,\ 6 \right\rangle .</mrow>
+</md>
+Note <m>\|\vec n\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
+Using the point <m>A</m>, the plane is
+<md>
+<mrow>2(x+1) + 3(y-2) + 6(z-16) \amp = 0</mrow>
+<mrow>2x + 3y + 6z \amp = 100 .</mrow>
+</md>
+(Check: <m>B</m> gives <m>4-6+102 = 100</m> and <m>C</m> gives
+<m>4+0+96 = 100</m>.)
+</p>
+
+<p>
+<term>(a)</term> The closest point of a plane to a given point
+<m>Q = (4,4,-3)</m> is the foot of the perpendicular from <m>Q</m>,
+which we reach by moving from <m>Q</m> in the direction of the normal.
+So consider
+<md>
+\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
+</md>
+and find the value of <m>t</m> for which this point lies on <m>W</m>:
+<md>
+<mrow>2(4+2t) + 3(4+3t) + 6(-3+6t) \amp = 100</mrow>
+<mrow>8 + 4t + 12 + 9t - 18 + 36t \amp = 100</mrow>
+<mrow>2 + 49t \amp = 100</mrow>
+<mrow>t \amp = 2 .</mrow>
+</md>
+Therefore the closest point is
+<md>
+\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
+</md>
+(Check: <m>16 + 30 + 54 = 100</m>.) Incidentally, the
+distance from <m>Q</m> to <m>W</m> is
+<m>|t|\,\|\vec n\| = 2\cdot 7 = 14</m>.
+See <xref ref="fig-m2a-plane"/>.
+</p>
+
+<figure xml:id="fig-m2a-plane">
+<caption>
+Schematic picture of <xref ref="m2a-4"/>. From <m>Q(4,4,-3)</m> we
+travel along the normal direction <m>\vec n = \langle 2,3,6\rangle</m>
+until we hit <m>W</m>, arriving at <m>(8,10,9)</m>. Any line through
+<m>Q</m> whose direction is perpendicular to <m>\vec n</m> stays
+parallel to <m>W</m> and never meets it.
+</caption>
+<image width="72%">
+<description>
+<p>
+A tilted plane W drawn as a parallelogram, with the point Q below it.
+A normal arrow runs from Q up to the foot of the perpendicular on the
+plane, and a second line through Q is drawn parallel to the plane,
+never meeting it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0]
+% the plane W as a parallelogram
+\fill[mblue, opacity=0.20] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\draw[mblue, thick] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\node[mblue] at (-2.75,1.45) {$W$};
+% the point Q and the foot F
+\coordinate (Q) at (0.2,-2.5);
+\coordinate (F) at (1.15,0.85);
+\draw[->, very thick, mverm] (Q) -- (F)
+      node[midway, right] {$\vec n=\langle 2,3,6\rangle$};
+\fill[mred] (Q) circle (2pt);
+\fill[mverm] (F) circle (2pt);
+\node[mred, anchor=north] at (Q) {$Q(4,4,-3)$};
+\node[mverm, anchor=south west] at (F) {$(8,10,9)$};
+% the parallel line through Q
+\draw[very thick, mgreen] (-3.0,-2.94) -- (3.6,-2.06);
+\node[mgreen, anchor=north east] at (-1.3,-2.98)
+      {$\ell:\ \vec d=\langle 6,6,-5\rangle$};
+% right angle mark at F
+\draw[mgray] ($(F)+(-0.20,-0.18)$) -- ($(F)+(-0.02,-0.30)$)
+             -- ($(F)+(0.10,-0.12)$);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> A line never crosses the plane <m>W</m> exactly when
+it is parallel to <m>W</m> and does not lie in it. Since
+<m>Q = (4,4,-3)</m> is not on <m>W</m> (we saw
+<m>2(4)+3(4)+6(-3) = 2 \ne 100</m>), we only need the direction vector
+<m>\vec d = \left\langle a, b, c\right\rangle</m> to be perpendicular
+to the normal:
+<md>
+\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
+</md>
+</p>
+
+<p>
+The extra requirement <m>x(t) = y(t)</m> forces the two lines
+<m>x = 4 + at</m> and <m>y = 4 + bt</m> to agree for all <m>t</m>,
+which happens exactly when <m>a = b</m>. Substituting <m>b = a</m>,
+<md>
+2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
+</md>
+Choosing <m>a = 6</m> and <m>c = -5</m> gives
+<m>\vec d = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
+<md>
+x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
+</md>
+Indeed <m>x(t) = y(t)</m> for every <m>t</m>, and
+<m>\vec d\cdot\vec n = 12+18-30 = 0</m>, so the line is parallel to
+<m>W</m> and, starting from a point off <m>W</m>, never reaches it.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-3">
+<statement>
+<p>
+The parametric equations
+<md>
+<mrow>x \amp = t+1,</mrow>
+<mrow>y \amp = 2t, \qquad -\infty \lt t \lt \infty</mrow>
+<mrow>z \amp = 2 + 3t - t^2,</mrow>
+</md>
+sweep out a parabola lying in some plane in <m>xyz</m>-space. Find the
+equation of that plane.
+</p>
+</statement>
+<solution>
+<p>
+The cleanest way to see the plane is to write the position vector as a
+constant vector plus multiples of two fixed vectors:
+<md>
+\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2 \right\rangle
+= \left\langle 1,0,2 \right\rangle
++ t\left\langle 1,\ 2,\ 3 \right\rangle
++ t^2\left\langle 0,\ 0,\ -1 \right\rangle .
+</md>
+Whatever <m>t</m> is, the point <m>\vec r(t)</m> is the fixed point
+<m>(1,0,2)</m> plus a combination of the two fixed vectors
+<m>\vec u = \left\langle 1,2,3\right\rangle</m> and
+<m>\vec w = \left\langle 0,0,-1\right\rangle</m>. So the whole curve
+lies in the plane through <m>(1,0,2)</m> spanned by <m>\vec u</m> and
+<m>\vec w</m>.
+</p>
+
+<p>
+A normal vector to that plane is
+<md>
+<mrow>\vec n \amp = \vec u \times \vec w
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 2 \amp 3 \\
+0 \amp 0 \amp -1
+\end{vmatrix}</mrow>
+<mrow>\amp = \left\langle (2)(-1)-(3)(0),\ (3)(0)-(1)(-1),\ 0-0 \right\rangle</mrow>
+<mrow>\amp = \left\langle -2,\ 1,\ 0 \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Using the point <m>(1,0,2)</m>, the plane is
+<md>
+<mrow>-2(x-1) + 1(y-0) + 0(z-2) \amp = 0</mrow>
+<mrow>-2x + y + 2 \amp = 0</mrow>
+<mrow>2x - y \amp = 2 .</mrow>
+</md>
+</p>
+
+<p>
+There is a quicker route to the same answer once you notice that the
+normal has no <m>\mathbf k</m>-component: the plane is vertical, so its
+equation involves only <m>x</m> and <m>y</m>. Eliminating <m>t</m> from
+the first two equations, <m>t = x - 1</m> and <m>t = y/2</m>, gives
+<md>
+x - 1 = \frac{y}{2} \quad\Longleftrightarrow\quad 2x - y = 2 ,
+</md>
+and this relation holds for every <m>t</m> regardless of the value of
+<m>z</m>. The curve is a parabola drawn on this vertical wall; see
+<xref ref="fig-m2b-parabola"/>.
+</p>
+
+<figure xml:id="fig-m2b-parabola">
+<caption>
+The curve <m>\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2
+\right\rangle</m> is a parabola lying in the vertical plane
+<m>2x - y = 2</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+A vertical plane drawn as a tilted rectangle in three dimensional
+space, with a downward opening parabola drawn on it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(0.62cm,0cm)}, z={(0cm,0.62cm)}]
+% axes
+\draw[->, thick] (-1.2,0,0) -- (5.2,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-4.5,0) -- (0,8.5,0) node[right] {$y$};
+\draw[->, thick] (0,0,-6.5) -- (0,0,6.5) node[above] {$z$};
+% the plane 2x - y = 2, parametrized as (1+s, 2s, w)
+\fill[mblue, opacity=0.16]
+   (-0.6,-3.2,-6.0) -- (3.4,4.8,-6.0) -- (3.4,4.8,5.8)
+   -- (-0.6,-3.2,5.8) -- cycle;
+\draw[mblue, thick]
+   (-0.6,-3.2,-6.0) -- (3.4,4.8,-6.0) -- (3.4,4.8,5.8)
+   -- (-0.6,-3.2,5.8) -- cycle;
+\node[mblue, anchor=north east] at (-0.6,-3.2,-5.6) {$2x-y=2$\;};
+% the parabola
+\draw[very thick, mverm, smooth, samples=70, domain=-1.6:3.6,
+      variable=\t]
+   plot ({\t+1},{2*\t},{2+3*\t-\t*\t});
+% vertex of the parabola at t = 1.5
+\fill[mred] (2.5,3,4.25) circle (1.7pt);
+\node[mred, anchor=south west, fill=white, fill opacity=0.8,
+      text opacity=1, inner sep=1pt] at (2.5,3,4.35)
+  {$\left(\tfrac52,3,\tfrac{17}{4}\right)$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-5">
+<statement>
+<p>
+Let <m>L</m> be the line given by
+<md>
+x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
+</md>
+Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Write <m>Q = (-2,2,-1)</m> and let
+<m>P(t) = (4+t,\ -1-2t,\ 5+t)</m> be the general point of <m>L</m>. The
+direction vector of the line is
+<m>\vec d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
+</p>
+
+<p>
+The closest point is the foot of the perpendicular from <m>Q</m>, so we
+want the value of <m>t</m> for which <m>\vec{QP}</m> is orthogonal to
+<m>\vec d</m>. First,
+<md>
+<mrow>\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Now impose <m>\vec{QP}\cdot\vec d = 0</m>:
+<md>
+<mrow>(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0</mrow>
+<mrow>6 + t + 6 + 4t + 6 + t \amp = 0</mrow>
+<mrow>18 + 6t \amp = 0</mrow>
+<mrow>t \amp = -3 .</mrow>
+</md>
+</p>
+
+<p>
+Substituting <m>t = -3</m> into the parametric equations gives the
+closest point
+<md>
+P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
+</md>
+As a check, at <m>t=-3</m> we get
+<m>\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
+<md>
+\vec{QP}\cdot\vec d
+ = \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
+ = 3 - 6 + 3 = 0 ,
+</md>
+as required. The distance from <m>Q</m> to the line is
+<m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
+</p>
+</solution>
+</exercise>
+
 </worksheet>
