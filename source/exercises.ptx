@@ -13,9 +13,6 @@
 <!-- ================= Taylor Series (In-Class Activity) ================= -->
 <xi:include href="activity-taylor-intro.ptx"/>
 
-<!-- ================= Taylor Polynomials and Their Error ================= -->
-<xi:include href="exercises-taylor-error.ptx"/>
-
 <!-- ================= Conic Sections ================= -->
 <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <worksheet xml:id="section-conics-exercises">

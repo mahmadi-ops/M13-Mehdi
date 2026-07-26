@@ -15,6 +15,308 @@
   </introduction>
 
   <!-- Exercises start here.  --> 
+
+  <!-- Review problems on Taylor polynomials and their error. -->
+<exercise xml:id="rev-ser-6">
+<statement>
+<p>
+For approximately what values of <m>x</m> can we replace
+<m>\sin(x)</m> by <m>x - \dfrac{x^3}{6}</m> with an error of magnitude
+no greater than <m>4 \times 10^{-3}</m>?
+</p>
+</statement>
+<solution>
+<p>
+Here <m>a = 0</m>, since <m>T_3(x) = x - \dfrac{x^3}{3!}</m>. The
+derivatives of <m>f(x) = \sin(x)</m> are
+<md>
+f'(x) = \cos x, \quad
+f''(x) = -\sin(x), \quad
+f^{(3)}(x) = -\cos(x), \quad
+f^{(4)}(x) = \sin(x),
+</md>
+and therefore
+<m>\left|f^{(4)}(c)\right| = |\sin(c)| \le 1</m>, so we can take
+<m>M = 1</m>.
+</p>
+
+<p>
+By the Remainder Theorem,
+<md>
+\text{Error} = |R_3(x)| \le M\,\frac{|x-a|^4}{4!}
+= \frac{|x|^4}{4!} \le 4\times 10^{-3},
+</md>
+which gives
+<md>
+|x| \le \sqrt[4]{(4!)(0.004)} \approx 0.556
+\quad\Rightarrow\quad
+x \in [-0.556,\; 0.556].
+</md>
+See <xref ref="fig-rev-sin-approx"/>.
+</p>
+
+<figure xml:id="fig-rev-sin-approx">
+<caption>
+The function <m>y = \sin x</m> and the cubic <m>y = x - \frac{x^3}{6}</m>.
+Between the dashed lines <m>x = \pm 0.556</m> the two graphs differ by
+at most <m>4\times 10^{-3}</m>.
+</caption>
+<image width="78%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-sin-approx">
+<diagram dimensions="(400,270)" margins="12">
+<definition>f(t) = (t, sin(t))</definition>
+<definition>p(t) = (t, t - t^3/6)</definition>
+<coordinates bbox="(-2.7,-1.7,2.7,1.9)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="sa-left" endpoints="((-0.556,-1.45),(-0.556,1.45))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<line at="sa-right" endpoints="((0.556,-1.45),(0.556,1.45))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="sa-p" function="p" domain="(-2.6,2.6)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="sa-f" function="f" domain="(-2.6,2.6)"
+                  stroke="#0072B2" thickness="3" dash="7 4"/>
+<label at="sa-f-lab" anchor="(-2.6,1.65)" alignment="e" color="#0072B2">
+<m>y=\sin x</m>
+</label>
+<label at="sa-p-lab" anchor="(-2.6,1.25)" alignment="e" color="#D55E00">
+<m>y=x-\frac{x^3}{6}</m>
+</label>
+<label at="sa-l-lab" anchor="(-0.62,-1.62)" alignment="w">
+<m>-0.556</m>
+</label>
+<label at="sa-r-lab" anchor="(0.62,-1.62)" alignment="e">
+<m>0.556</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The sine curve, dashed blue, and the cubic x minus x cubed over six, solid vermillion, plotted together. Two dashed gray vertical lines at x equals plus and minus zero point five five six mark the interval on which the two curves are visually indistinguishable; outside it the cubic pulls away from the sine curve.">
+  <annotation ref="sa-f" text="The function y equals sine x."/>
+  <annotation ref="sa-p" text="The cubic Taylor polynomial x minus x cubed over six."/>
+  <annotation ref="sa-left" text="The left endpoint of the interval, x equals negative zero point five five six."/>
+  <annotation ref="sa-right" text="The right endpoint of the interval, x equals zero point five five six. Inside the interval the error is at most four thousandths."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-7">
+<statement>
+<p>
+Use the remainder estimation theorem to estimate the maximum error when
+approximating <m>f(x) = e^x</m> by <m>T_2(x) = 1 + x + x^2</m> on the
+interval <m>\left[-\dfrac56, \dfrac56\right]</m>.
+</p>
+</statement>
+<solution>
+<p>
+From the remainder theorem, we know that
+<md>
+\text{Error} = |R_2(x)|
+= \left|\frac{f^{(3)}(c)}{3!}\,x^3\right|
+\le \frac{e^c}{3!}\,|x|^3.
+</md>
+</p>
+
+<p>
+Also, since <m>c \in \left[-\frac56, \frac56\right]</m>, we have
+<m>|c| \le \frac56</m> and hence <m>e^c \le e^{5/6}</m>:
+<md>
+\text{Error} = |R_2(x)|
+\le \frac{e^{5/6}}{3!}\left(\frac56\right)^{3}.
+</md>
+</p>
+
+<p>
+We know that <m>e^{5/6} \lt e^1 \lt 3</m>, hence
+<md>
+\text{Error} = |R_2(x)|
+\le \frac{e^{5/6}}{3!}\left(\frac56\right)^{3}
+\lt \frac{3}{3!}\left(\frac56\right)^{3} \approx 0.289.
+</md>
+Hence, an estimate for the upper bound of the error is
+<m>\dfrac{3}{3!}\left(\dfrac56\right)^{3} \approx 0.289</m>. See
+<xref ref="fig-rev-exp-approx"/>.
+</p>
+
+<figure xml:id="fig-rev-exp-approx">
+<caption>
+The function <m>y = e^x</m> and <m>y = T_2(x) = 1 + x + x^2</m> on the
+interval <m>\left[-\frac56, \frac56\right]</m>, marked by the dashed
+lines.
+</caption>
+<image width="76%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-exp-approx">
+<diagram dimensions="(390,270)" margins="12">
+<definition>f(t) = (t, exp(t))</definition>
+<definition>p(t) = (t, 1 + t + t^2)</definition>
+<coordinates bbox="(-1.6,-0.5,1.6,3.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="ea-left" endpoints="((-0.8333,-0.25),(-0.8333,3.1))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<line at="ea-right" endpoints="((0.8333,-0.25),(0.8333,3.1))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="ea-p" function="p" domain="(-1.5,1.25)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ea-f" function="f" domain="(-1.5,1.2)"
+                  stroke="#0072B2" thickness="3" dash="7 4"/>
+<label at="ea-f-lab" anchor="(-1.5,3.2)" alignment="e" color="#0072B2">
+<m>y=e^{x}</m>
+</label>
+<label at="ea-p-lab" anchor="(-1.5,2.75)" alignment="e" color="#D55E00">
+<m>y=1+x+x^2</m>
+</label>
+<label at="ea-l-lab" anchor="(-0.88,-0.42)" alignment="w">
+<m>-\frac56</m>
+</label>
+<label at="ea-r-lab" anchor="(0.88,-0.42)" alignment="e">
+<m>\frac56</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The exponential curve, dashed blue, and the quadratic one plus x plus x squared, solid vermillion, plotted together. Dashed gray vertical lines at plus and minus five sixths mark the interval of the approximation; on that interval the two curves stay within about zero point three of each other.">
+  <annotation ref="ea-f" text="The function y equals e to the x."/>
+  <annotation ref="ea-p" text="The quadratic approximation one plus x plus x squared."/>
+  <annotation ref="ea-left" text="The left endpoint, x equals negative five sixths."/>
+  <annotation ref="ea-right" text="The right endpoint, x equals five sixths. The error on the interval is at most about zero point two eight nine."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-8">
+<statement>
+<p>
+Consider the function <m>f(x) = \ln(1 + 2x)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the second order Taylor polynomial <m>T_2(x)</m> centered at 0.
+</p>
+</li>
+<li>
+<p>
+Estimate the maximum error when approximating
+<m>f(x) = \ln(1+2x)</m> with the second order Taylor polynomial
+<m>T_2(x)</m> centered at 0, on the interval <m>[-0.25, 0.25]</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We compute the derivatives at 0:
+<md>
+<mrow>f'(x) \amp = \frac{2}{1+2x} = 2(1+2x)^{-1},
+\amp f'(0) \amp = 2,</mrow>
+<mrow>f''(x) \amp = -4(1+2x)^{-2},
+\amp f''(0) \amp = -4.</mrow>
+</md>
+Hence
+<md>
+T_2(x) = f(0) + f'(0)(x-0) + \frac{f''(0)}{2!}(x-0)^2
+= 0 + 2x - 2x^2,
+</md>
+i.e. <m>T_2(x) = 2x - 2x^2</m>.
+</p>
+</li>
+<li>
+<p>
+We have <m>f^{(3)}(x) = 8(1+2x)^{-3}</m> and
+<m>-\frac14 \le x \le \frac14</m>. Note that
+<m>f^{(4)}(x) = -24(1+2x)^{-4}</m> is negative, which means
+<m>f^{(3)}</m> is a decreasing function, hence at <m>x = -\frac14</m>
+the value <m>f^{(3)}(c)</m> is maximized, i.e.,
+<md>
+f^{(3)}(c) \le f^{(3)}(-0.25)
+= 8\left(1 - \frac12\right)^{-3} = 64.
+</md>
+Also
+<md>
+-\frac14 \le x \le \frac14
+\;\Rightarrow\;
+|x^3| \le \left(\frac14\right)^{3} = \frac{1}{4^3} = \frac{1}{64},
+</md>
+and therefore
+<md>
+\text{Error} = |R_2(x)|
+\le \left|\frac{f^{(3)}(c)}{3!}\,x^3\right|
+\le \frac{1}{3!}\cdot\frac{1}{64}\cdot 64 = \frac16.
+</md>
+This means that the error in estimating <m>f(x) = \ln(1+2x)</m> for
+<m>-\frac14 \le x \le \frac14</m> by <m>T_2(x) = 2x - 2x^2</m> is
+definitely smaller than <m>\frac16</m>. See
+<xref ref="fig-rev-ln-approx"/>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rev-ln-approx">
+<caption>
+The function <m>y = \ln(1+2x)</m> and <m>y = T_2(x) = 2x - 2x^2</m>. On
+the interval <m>[-0.25, 0.25]</m>, marked by the dashed lines, the two
+graphs are nearly identical.
+</caption>
+<image width="76%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-ln-approx">
+<diagram dimensions="(390,260)" margins="12">
+<definition>f(t) = (t, log(1 + 2*t))</definition>
+<definition>p(t) = (t, 2*t - 2*t^2)</definition>
+<coordinates bbox="(-0.52,-1.5,0.75,1.1)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="la-left" endpoints="((-0.25,-1.3),(-0.25,0.9))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<line at="la-right" endpoints="((0.25,-1.3),(0.25,0.9))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="la-p" function="p" domain="(-0.45,0.72)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="la-f" function="f" domain="(-0.44,0.72)"
+                  stroke="#0072B2" thickness="3" dash="7 4"/>
+<label at="la-f-lab" anchor="(0.30,0.98)" alignment="e" color="#0072B2">
+<m>y=\ln(1+2x)</m>
+</label>
+<label at="la-p-lab" anchor="(0.30,0.70)" alignment="e" color="#D55E00">
+<m>y=2x-2x^2</m>
+</label>
+<label at="la-l-lab" anchor="(-0.27,-1.44)" alignment="w">
+<m>-0.25</m>
+</label>
+<label at="la-r-lab" anchor="(0.27,-1.44)" alignment="e">
+<m>0.25</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The curve y equals natural log of one plus two x, dashed blue, and the quadratic two x minus two x squared, solid vermillion. Dashed gray vertical lines at plus and minus one quarter mark the interval of the approximation, where the two curves nearly coincide; outside it they separate, and the logarithm drops steeply near x equals negative one half.">
+  <annotation ref="la-f" text="The function y equals natural log of one plus two x."/>
+  <annotation ref="la-p" text="The second order Taylor polynomial two x minus two x squared."/>
+  <annotation ref="la-left" text="The left endpoint, x equals negative one quarter."/>
+  <annotation ref="la-right" text="The right endpoint, x equals one quarter. The error on the interval is smaller than one sixth."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+
   <exercise xml:id="ex-tf-1">
     <title>True or False</title>
     <statement correct="no">
