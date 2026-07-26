@@ -295,4 +295,55 @@ tangent plane.
 </solution>
 </exercise>
 
+<exercise xml:id="rs19-9">
+<statement>
+<p>
+Find the equation of the tangent plane at the point <m>P_0(2,0,2)</m>
+on the surface <m>2z - x^2 = 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>w(x,y,z) = 2z - x^2 = 0</m>. Then
+<md>
+\nabla w = (-2x)\,\mathbf i + 2\,\mathbf k,
+</md>
+and the normal to the tangent plane is
+<md>
+\vec n = \nabla w\big|_{P_0} = -4\,\mathbf i + 2\,\mathbf k.
+</md>
+The constant is
+<md>
+D = \vec n \cdot \vec{OP_0}
+= \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
+= -8 + 4 = -4,
+</md>
+so from <m>Ax + By + Cz = D</m>, the tangent plane at
+<m>P_0(2,0,2)</m> is
+<md>
+-4x + 2z = -4
+\qquad\text{or}\qquad
+2x - z = 2.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rf-8-a">
+<title>True or False</title>
+<statement correct="no">
+<p>
+Any tangent plane to a graph must meet that graph at exactly one
+point.
+</p>
+</statement>
+<feedback>
+<p>
+Consider the plane <m>z = c</m>. The tangent
+plane to this graph at any point is the same as <m>z = c</m>, so it
+meets the graph at infinitely many points.
+</p>
+</feedback>
+</exercise>
+
 </worksheet>

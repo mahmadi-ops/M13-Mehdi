@@ -4,6 +4,9 @@
 <!-- ================= Projectile Motion / Parametrization ================= -->
 <xi:include href="art11-projectile-velocity.ptx"/>
 
+<!-- ================= Hyperbolic Functions ================= -->
+<xi:include href="exercises-hyperbolic.ptx"/>
+
 <!-- ================= Sequences and Finite Sums ================= -->
 <xi:include href="exercises-sequences.ptx"/>
 
@@ -12,6 +15,9 @@
 
 <!-- ================= Taylor Series (In-Class Activity) ================= -->
 <xi:include href="activity-taylor-intro.ptx"/>
+
+<!-- ================= The Binomial Series ================= -->
+<xi:include href="exercises-binomial-series.ptx"/>
 
 <!-- ================= Conic Sections ================= -->
 <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
@@ -266,6 +272,12 @@ The same parabola and focus as before, with a red right triangle
 <!-- ================= Quadric Surfaces ================= -->
 <xi:include href="exercises-quadric-surfaces.ptx"/>
 
+<!-- ================= Vectors and Their Products ================= -->
+<xi:include href="exercises-vectors.ptx"/>
+
+<!-- ================= Lines and Planes in Space ================= -->
+<xi:include href="exercises-lines-planes.ptx"/>
+
 <!-- ================= Limits and Continuity ================= -->
 <xi:include href="exercises-limits.ptx"/>
 
@@ -425,6 +437,337 @@ e^{x^2+y^2}</mrow>
 Hence <m>D(0,0) = f_{xx}f_{yy} - f_{xy}^2 = -1</m>, so <m>(0,0)</m> is
 a saddle point.
 </p>
+</solution>
+</exercise>
+
+
+<exercise xml:id="rs19-8">
+<statement>
+<p>
+Let <m>f(x,y) = x^2 - y^2 - 2x + 4y + 6</m>. Find all the critical
+points and classify them as local maxima, local minima, and saddle
+points.
+</p>
+</statement>
+<solution>
+<p>
+The first and second partial derivatives are
+<md>
+<mrow>f_x \amp = 2x - 2, \amp f_{xx} \amp = 2,
+\amp f_{xy} \amp = f_{yx} = 0,</mrow>
+<mrow>f_y \amp = -2y + 4, \amp f_{yy} \amp = -2.</mrow>
+</md>
+Setting <m>f_x = 0</m> gives <m>x = 1</m> and <m>f_y = 0</m> gives
+<m>y = 2</m>, so the only critical point is <m>(1,2)</m>. The Hessian
+is
+<md>
+H(x,y) =
+\begin{vmatrix}
+f_{xx} \amp f_{xy} \\
+f_{xy} \amp f_{yy}
+\end{vmatrix}
+=
+\begin{vmatrix}
+2 \amp 0 \\
+0 \amp -2
+\end{vmatrix}
+= -4 \lt 0,
+</md>
+so <m>(1,2)</m> is a saddle point since the Hessian is negative.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-7">
+<statement>
+<p>
+Find the maximum and minimum values of the function
+<m>f(x,y) = 2x^2 + 3y^2 - 4x - 5</m> on the domain
+<m>x^2 + y^2 \le 121</m>.
+</p>
+</statement>
+<solution>
+<p>
+<em>Critical points in the interior:</em>
+<md>
+f_x = 4x - 4 = 0 \;\Rightarrow\; x = 1,
+\qquad
+f_y = 6y = 0 \;\Rightarrow\; y = 0,
+</md>
+so <m>(1,0)</m> is the only critical point, with
+<m>f(1,0) = -7</m>.
+</p>
+
+<p>
+<em>The boundary:</em> on the circle <m>x^2 + y^2 = 121</m> we have
+<m>y^2 = 121 - x^2</m> with <m>-11 \le x \le 11</m>, so
+<md>
+f = 2x^2 + 3\left(121 - x^2\right) - 4x - 5
+= 358 - 4x - x^2,
+</md>
+and
+<md>
+\frac{d}{dx}\left(358 - 4x - x^2\right) = -4 - 2x = 0
+\;\Rightarrow\; x = -2,
+</md>
+giving <m>y^2 = 117</m>, i.e. <m>y = \pm\sqrt{117}</m>, with
+<md>
+f\left(-2, \pm\sqrt{117}\right) = 358 + 8 - 4 = 362.
+</md>
+At the endpoints <m>x = \pm 11</m> (where <m>y = 0</m>),
+<m>f(11,0) = 193</m> and <m>f(-11,0) = 281</m>.
+</p>
+
+<p>
+Comparing all the values, the maximum value of <m>f</m> is
+<m>362</m>, attained at <m>\left(-2, \sqrt{117}\right)</m> and
+<m>\left(-2, -\sqrt{117}\right)</m>, and the minimum value is
+<m>-7</m>, attained at <m>(1,0)</m>. See
+<xref ref="fig-rw21-disk"/>.
+</p>
+
+<figure xml:id="fig-rw21-disk">
+<caption>
+The disk <m>x^2 + y^2 \le 121</m>, the interior minimum at
+<m>(1,0)</m>, and the boundary maxima at
+<m>\left(-2, \pm\sqrt{117}\right)</m>.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-disk">
+<diagram dimensions="(300,290)" margins="12">
+<definition>circ(t) = (11*cos(t), 11*sin(t))</definition>
+<coordinates bbox="(-15.5,-14.5,15.5,14.5)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="dk-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="dk-min" p="(1,0)" fill="#009E73"/>
+<point at="dk-max1" p="(-2,10.8167)" fill="#D55E00"/>
+<point at="dk-max2" p="(-2,-10.8167)" fill="#D55E00"/>
+<label at="dk-min-lab" anchor="(1.6,-2.6)" alignment="se" color="#009E73">
+<m>(1,0),\ f=-7</m>
+</label>
+<label at="dk-max1-lab" anchor="(-14.8,12.1)" alignment="e" color="#D55E00">
+<m>\left(-2,\sqrt{117}\right),\ f=362</m>
+</label>
+<label at="dk-max2-lab" anchor="(-14.8,-13.2)" alignment="e" color="#D55E00">
+<m>\left(-2,-\sqrt{117}\right),\ f=362</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue circle of radius eleven centered at the origin. A green point just right of the center at one comma zero marks the minimum, f equals negative seven. Two vermillion points on the circle at negative two comma plus and minus the square root of one hundred seventeen mark the maxima, f equals three hundred sixty two.">
+  <annotation ref="dk-circle" text="The boundary circle x squared plus y squared equals one hundred twenty one."/>
+  <annotation ref="dk-min" text="The interior critical point one comma zero, where the minimum negative seven occurs."/>
+  <annotation ref="dk-max1" text="A boundary maximum at negative two comma square root of one hundred seventeen."/>
+  <annotation ref="dk-max2" text="A boundary maximum at negative two comma negative square root of one hundred seventeen."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-9">
+<statement>
+<p>
+Find the absolute maximum and absolute minimum of
+<m>f(x,y) = 2 + xy - 2x - \frac14 y^2</m> in the closed triangular
+region with vertices given by <m>(0,0)</m>, <m>(1,0)</m>, and
+<m>(0,2)</m>.
+</p>
+</statement>
+<solution>
+<p>
+<em>Critical points:</em>
+<md>
+f_x = y - 2 = 0 \;\Rightarrow\; y = 2,
+\qquad
+f_y = x - \frac{y}{2} = 0 \;\Rightarrow\; x = 1,
+</md>
+so the only critical point is <m>(1,2)</m>. Note that this point is
+NOT in the closed region <m>R</m>, so we only need to check the
+boundary.
+</p>
+
+<p>
+<em>The boundary:</em> we check the three sides of the triangle.
+<ul>
+<li>
+<p>
+<m>L_1</m>: <m>x = 0</m>, <m>0 \le y \le 2</m>. Here
+<m>f(0,y) = 2 - \frac{y^2}{4}</m>, with maximum <m>2</m> at
+<m>(0,0)</m> and minimum <m>1</m> at <m>(0,2)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>L_2</m>: <m>y = 0</m>, <m>0 \le x \le 1</m>. Here
+<m>f(x,0) = 2 - 2x</m>, with maximum <m>2</m> at <m>(0,0)</m> and
+minimum <m>0</m> at <m>(1,0)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>L_3</m>: <m>y = -2x + 2</m>, <m>0 \le x \le 1</m>. Here
+<md>
+g(x) = f(x, -2x+2) = 2 - 2x^2 - (x-1)^2 = 1 - 3x^2 + 2x,
+</md>
+and <m>g'(x) = -6x + 2 = 0</m> gives <m>x = \frac13</m>,
+<m>y = \frac43</m>, with
+<m>f\left(\frac13, \frac43\right)
+= 2 + \frac49 - \frac23 - \frac49 = \frac43</m>. The endpoints of
+<m>L_3</m> give the previously found values <m>1</m> and <m>0</m>.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+Comparing all the values, the absolute maximum of <m>f</m> is
+<m>2</m>, attained at <m>(0,0)</m>, and the absolute minimum is
+<m>0</m>, attained at <m>(1,0)</m>. See
+<xref ref="fig-rw21-triangle"/>.
+</p>
+
+<figure xml:id="fig-rw21-triangle">
+<caption>
+The triangular region <m>R</m> with vertices <m>(0,0)</m>,
+<m>(1,0)</m>, and <m>(0,2)</m>. The critical point <m>(1,2)</m> lies
+outside <m>R</m>; the absolute maximum <m>2</m> occurs at
+<m>(0,0)</m> and the absolute minimum <m>0</m> at <m>(1,0)</m>.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-triangle">
+<diagram dimensions="(300,280)" margins="12">
+<coordinates bbox="(-1.6,-0.7,2.6,2.7)">
+<grid-axes xlabel="x" ylabel="y"/>
+<polygon at="tr-region" points="((0,0),(1,0),(0,2))"
+         fill="#56B4E9" fill-opacity="0.35"
+         stroke="#0072B2" thickness="3"/>
+<point at="tr-max" p="(0,0)" fill="#D55E00"/>
+<point at="tr-min" p="(1,0)" fill="#009E73"/>
+<point at="tr-crit" p="(1,2)" fill="#8B1A4A"/>
+<label at="tr-max-lab" anchor="(-0.1,-0.15)" alignment="sw" color="#D55E00">
+<m>(0,0),\ f=2</m>
+</label>
+<label at="tr-min-lab" anchor="(1.1,-0.15)" alignment="se" color="#009E73">
+<m>(1,0),\ f=0</m>
+</label>
+<label at="tr-crit-lab" anchor="(1.08,2.1)" alignment="ne" color="#8B1A4A">
+<m>(1,2)\notin R</m>
+</label>
+<label at="tr-R-lab" anchor="(0.28,0.55)" alignment="ne" color="#0072B2">
+<m>R</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A light blue right triangle with vertices at the origin, one comma zero, and zero comma two. The vertex at the origin is marked in vermillion as the absolute maximum, f equals two; the vertex at one comma zero is marked in green as the absolute minimum, f equals zero. A dark red point at one comma two, outside the triangle, marks the critical point that does not belong to the region.">
+  <annotation ref="tr-region" text="The closed triangular region R."/>
+  <annotation ref="tr-max" text="The absolute maximum at the origin, where f equals two."/>
+  <annotation ref="tr-min" text="The absolute minimum at one comma zero, where f equals zero."/>
+  <annotation ref="tr-crit" text="The critical point one comma two, which lies outside the region."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-4">
+<statement>
+<p>
+The business manager for Acme Corporation plots a grid on a map of the
+region Acme serves and determines that the company's three most
+important customers are located at points <m>A(1,5)</m>,
+<m>B(0,0)</m>, and <m>C(8,0)</m>, where units are in miles. At what
+point <m>W(x,y)</m> should a warehouse be located in order to minimize
+<em>the sum of the squares of the distances</em> (NOT the square of
+the sum) from <m>W</m> to <m>A</m>, <m>B</m>, and <m>C</m>?
+</p>
+</statement>
+<solution>
+<p>
+The sum of the squares of the distances is
+<md>
+<mrow>f(x,y) \amp = (x-1)^2 + (y-5)^2 + x^2 + y^2 + (x-8)^2 + y^2</mrow>
+<mrow>\amp = 3x^2 - 18x + 3y^2 - 10y + 90.</mrow>
+</md>
+Setting the partial derivatives equal to zero,
+<md>
+<mrow>f_x \amp = 6x - 18 = 0 \;\Rightarrow\; x = 3,</mrow>
+<mrow>f_y \amp = 6y - 10 = 0 \;\Rightarrow\; y = \frac53,</mrow>
+</md>
+so <m>\left(3, \frac53\right)</m> is the only critical point. The
+second derivatives are <m>f_{xx} = 6 \gt 0</m>, <m>f_{yy} = 6</m>,
+<m>f_{xy} = 0</m>, so
+<m>D = f_{xx}f_{yy} - f_{xy}^2 = 36 \gt 0</m>. Since <m>D \gt 0</m>
+and <m>f_{xx} \gt 0</m>, the point <m>\left(3, \frac53\right)</m> is a
+local minimum.
+</p>
+
+<p>
+Also, if we complete the squares we can see that this point is where
+the absolute minimum happens:
+<md>
+f(x,y) = 3\left(y - \frac53\right)^2 + 3(x-3)^2
++ \underbrace{90 - \frac{25}{3} - 27}_{\gt 0},
+</md>
+where the first two terms are non-negative and vanish exactly at
+<m>\left(3, \frac53\right)</m>. See <xref ref="fig-rw23-warehouse"/>.
+</p>
+
+<figure xml:id="fig-rw23-warehouse">
+<caption>
+The three customers <m>A(1,5)</m>, <m>B(0,0)</m>, <m>C(8,0)</m>, and
+the warehouse location <m>W\left(3, \frac53\right)</m> that minimizes
+the sum of the squares of the distances.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw23-warehouse">
+<diagram dimensions="(360,260)" margins="12">
+<coordinates bbox="(-1.2,-1.2,9.2,6.2)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="wh-wa" endpoints="((3,1.6667),(1,5))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<line at="wh-wb" endpoints="((3,1.6667),(0,0))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<line at="wh-wc" endpoints="((3,1.6667),(8,0))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<point at="wh-A" p="(1,5)" fill="#0072B2"/>
+<point at="wh-B" p="(0,0)" fill="#0072B2"/>
+<point at="wh-C" p="(8,0)" fill="#0072B2"/>
+<point at="wh-W" p="(3,1.6667)" fill="#D55E00"/>
+<label at="wh-A-lab" anchor="(1.15,5.15)" alignment="ne" color="#0072B2">
+<m>A(1,5)</m>
+</label>
+<label at="wh-B-lab" anchor="(0.15,-0.35)" alignment="se" color="#0072B2">
+<m>B(0,0)</m>
+</label>
+<label at="wh-C-lab" anchor="(7.9,-0.35)" alignment="sw" color="#0072B2">
+<m>C(8,0)</m>
+</label>
+<label at="wh-W-lab" anchor="(3.25,1.85)" alignment="ne" color="#D55E00">
+<m>W\!\left(3,\frac53\right)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three blue points mark the customers: A at one comma five, B at the origin, and C at eight comma zero. A vermillion point W at three comma five thirds sits between them, joined to each customer by a dashed green segment.">
+  <annotation ref="wh-W" text="The warehouse location W at three comma five thirds, the point minimizing the sum of the squares of the distances."/>
+  <annotation ref="wh-A" text="Customer A at one comma five."/>
+  <annotation ref="wh-B" text="Customer B at the origin."/>
+  <annotation ref="wh-C" text="Customer C at eight comma zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 </solution>
 </exercise>
 

@@ -246,4 +246,260 @@ and
 </solution>
 </exercise>
 
+<exercise xml:id="rf-6">
+<statement>
+<p>
+A metal plate is placed on the <m>xy</m>-plane in such a way that the
+temperature <m>T</m> at any point <m>(x,y)</m> is given by
+<m>T = e^x(\sin x + \sin y)</m> <degree/>C.
+<ol marker="A.">
+<li>
+<p>
+What is the rate of change in temperature at <m>(0,0)</m> in the
+direction of <m>3\,\mathbf i - 4\,\mathbf j</m>?
+</p>
+</li>
+<li>
+<p>
+At <m>(0,0)</m>, in what direction is the temperature increasing most
+rapidly?
+</p>
+</li>
+<li>
+<p>
+At <m>(0,0)</m>, in what direction is the temperature decreasing most
+rapidly?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We first compute the gradient:
+<md>
+<mrow>T_x \amp = e^x(\sin x + \sin y) + e^x\cos x</mrow>
+<mrow>\amp = e^x(\sin x + \cos x + \sin y),
+\qquad T_x(0,0) = 1,</mrow>
+<mrow>T_y \amp = e^x \cos y,
+\qquad T_y(0,0) = 1,</mrow>
+</md>
+so <m>\nabla T\big|_{(0,0)} = \langle 1, 1\rangle</m>. The direction
+vector is <m>\vec u = \langle 3, -4\rangle</m> with
+<m>\|\vec u\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
+<m>\hat u = \dfrac{\vec u}{\|\vec u\|}
+= \left\langle \dfrac35, -\dfrac45\right\rangle</m>. Hence
+<md>
+\left(D_{\hat u} T\right)_{(0,0)}
+= \nabla T\big|_{(0,0)} \cdot \hat u
+= \langle 1, 1\rangle \cdot
+\left\langle \frac35, -\frac45\right\rangle
+= -\frac15.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature increases most rapidly in the direction of the
+gradient:
+<md>
+\hat u = \frac{\nabla T\big|_{(0,0)}}{\left\|\nabla T\big|_{(0,0)}\right\|}
+= \left\langle \frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature decreases most rapidly in the direction opposite to
+the gradient:
+<md>
+\hat u = -\frac{\nabla T\big|_{(0,0)}}{\left\|\nabla T\big|_{(0,0)}\right\|}
+= \left\langle -\frac{1}{\sqrt2}, -\frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-3">
+<statement>
+<p>
+Suppose that <m>f(x,y,z)</m> is a function of three variables and let
+<md>
+\hat u = \frac{1}{\sqrt2}\langle 1, -1, 0\rangle, \qquad
+\hat v = \frac{1}{\sqrt2}\langle 1, 0, -1\rangle, \qquad
+\hat w = \langle 0, 0, 1\rangle.
+</md>
+Suppose that at a point <m>P_0(a,b,c)</m>,
+<md>
+<mrow>\left(D_{\hat u} f\right)_{P_0} \amp = 0,</mrow>
+<mrow>\left(D_{\hat v} f\right)_{P_0} \amp = 0,</mrow>
+<mrow>\left(D_{\hat w} f\right)_{P_0} \amp = 1.</mrow>
+</md>
+<ol marker="A.">
+<li>
+<p>
+Find <em>the direction</em> of the maximum rate of change at
+<m>P_0(a,b,c)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the maximum rate of change at <m>P_0(a,b,c)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Using
+<m>\left(D_{\hat u} f\right)_{P_0}
+= \nabla f\big|_{P_0}\cdot\hat u</m>, the three conditions become
+<md>
+<mrow>\left(D_{\hat u} f\right)_{P_0} = 0
+\;\Rightarrow\;
+\langle f_x, f_y, f_z\rangle \cdot
+\frac{1}{\sqrt2}\langle 1, -1, 0\rangle
+= \frac{1}{\sqrt2}\left(f_x - f_y\right) = 0</mrow>
+<mrow>\qquad \Rightarrow\; f_x = f_y,</mrow>
+<mrow>\left(D_{\hat v} f\right)_{P_0} = 0
+\;\Rightarrow\;
+\langle f_x, f_y, f_z\rangle \cdot
+\frac{1}{\sqrt2}\langle 1, 0, -1\rangle
+= \frac{1}{\sqrt2}\left(f_x - f_z\right) = 0</mrow>
+<mrow>\qquad \Rightarrow\; f_x = f_z,</mrow>
+<mrow>\left(D_{\hat w} f\right)_{P_0} = 1
+\;\Rightarrow\;
+\langle f_x, f_y, f_z\rangle \cdot \langle 0, 0, 1\rangle
+= f_z = 1.</mrow>
+</md>
+Hence <m>\nabla f\big|_{P_0} = \langle 1, 1, 1\rangle</m>, and the
+direction of the maximum rate of change at <m>P_0</m> is given by
+<md>
+\hat u = \frac{\nabla f\big|_{P_0}}{\left\|\nabla f\big|_{P_0}\right\|}
+= \frac{1}{\sqrt3}\langle 1, 1, 1\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\left\|\nabla f\big|_{P_0}\right\| = \sqrt{1 + 1 + 1} = \sqrt3</m>
+is the maximum rate of change.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-7">
+<statement>
+<p>
+Calculate the maximum rate of change of <m>f(x,y) = \ln(x^2+y^2)</m>
+at the point <m>(-4, 3)</m> and determine the direction in which it
+occurs.
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+\nabla f = \left(\frac{2x}{x^2+y^2}\right)\mathbf i
++ \left(\frac{2y}{x^2+y^2}\right)\mathbf j,
+</md>
+so at <m>(-4,3)</m>,
+<md>
+<mrow>\nabla f(-4,3)
+\amp = \left(-\frac{8}{25}\right)\mathbf i
++ \left(\frac{6}{25}\right)\mathbf j,</mrow>
+<mrow>|\nabla f(-4,3)|
+\amp = \sqrt{\frac{100}{(25)^2}} = \frac{10}{25}
+= \frac25.</mrow>
+</md>
+The direction of maximum increase is
+<md>
+\hat u = \frac{\nabla f(-4,3)}{|\nabla f(-4,3)|}
+= \left(-\frac45\right)\mathbf i + \left(\frac35\right)\mathbf j,
+</md>
+and the maximum rate of increase is
+<md>
+\left(D_{\hat u} f\right)_{P_0} = |\nabla f(-4,3)| = \frac25.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-8">
+<statement>
+<p>
+Consider the function <m>f(x,y) = x^2 e^{3y}</m> and the point
+<m>P_0 = (-1, 0)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the direction in which <m>f(x,y)</m> decreases the most rapidly
+at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the directional derivative of <m>f(x,y)</m> at <m>P_0</m> in the
+direction given by <m>\vec v = \langle -1, 1\rangle</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+<mrow>\nabla f \amp = \left(2x e^{3y}\right)\mathbf i
++ \left(3x^2 e^{3y}\right)\mathbf j,</mrow>
+<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\mathbf i + 3\,\mathbf j,
+\qquad
+\left\|\nabla f\big|_{(-1,0)}\right\| = \sqrt{13}.</mrow>
+</md>
+<ol marker="A.">
+<li>
+<p>
+The direction of most rapid decrease is opposite to the gradient:
+<md>
+-\frac{\nabla f}{\|\nabla f\|}
+= \left(\frac{2}{\sqrt{13}}\right)\mathbf i
+- \left(\frac{3}{\sqrt{13}}\right)\mathbf j
+= \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}}
+\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The unit vector in the direction of <m>\vec v</m> is
+<m>\hat u = \dfrac{\vec v}{\|\vec v\|}
+= \left\langle -\dfrac{1}{\sqrt2}, \dfrac{1}{\sqrt2}\right\rangle</m>,
+so
+<md>
+D_{\hat u} f
+= \nabla f \cdot \hat u
+= \langle -2, 3\rangle \cdot
+\left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle
+= \frac{5}{\sqrt2}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
 </worksheet>

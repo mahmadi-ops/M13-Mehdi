@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Final exam problems on lines and planes in space
+-->
+<worksheet xml:id="worksheet-exercises-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="chapter-lines-planes" text="title"/></title>
+
+<introduction>
+<p>
+These final exam problems intersect lines with planes, build a plane from a line, and measure the distance between two lines. If you would like to review this topic first, see <xref ref="chapter-lines-planes" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rf-4">
+<statement>
+<p>
+Find the vector equation of the line of intersection of the following
+planes:
+<md>
+<mrow>2x + y - z \amp = 6,</mrow>
+<mrow>x - y + 3z \amp = 4.</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
+<m>\vec n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
+the line of intersection is
+<md>
+\mathbf v = \vec n_1 \times \vec n_2 =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp 1 \amp -1 \\
+1 \amp -1 \amp 3
+\end{vmatrix}
+= \langle 2, -7, -3\rangle.
+</md>
+</p>
+
+<p>
+Next we need a point on the line. Setting <m>x = 0</m> in the
+equations of the planes gives
+<md>
+<mrow>y - z \amp = 6</mrow>
+<mrow>-y + 3z \amp = 4</mrow>
+</md>
+Adding the two equations gives <m>2z = 10</m>, so <m>z = 5</m> and
+<m>y = 11</m>. Hence the point <m>(0, 11, 5)</m> is on the line, and
+the vector equation of the line of intersection is
+<md>
+\mathbf r(t) = \langle 0, 11, 5\rangle + t\,\langle 2, -7, -3\rangle.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-6">
+<statement>
+<p>
+Find the intersection of the line
+<m>\mathbf r(t) = \langle 1, 0, 1\rangle + t\langle -1, 1, 1\rangle</m>
+and the plane <m>2x - y + z = 1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The parametric equations of the line are
+<md>
+x(t) = 1 - t, \qquad y(t) = t, \qquad z(t) = 1 + t.
+</md>
+Substituting into the equation of the plane,
+<md>
+2x - y + z = 2(1-t) - t + (1+t) = 3 - 2t = 1
+\;\Rightarrow\; t = 1,
+</md>
+and <m>x(1) = 0</m>, <m>y(1) = 1</m>, <m>z(1) = 2</m>. The
+intersection is the point <m>(0, 1, 2)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-5">
+<statement>
+<p>
+Find an equation of a plane containing the line
+<m>\mathbf r = \langle -4, 5, -1\rangle + t\langle -4, 6, -3\rangle</m>
+and parallel to the plane <m>-3x - y + 2z = 0</m>, in which the
+coefficient of <m>x</m> is <m>-3</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
+the same normal vector
+<md>
+\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+</md>
+(Note that <m>\vec n \cdot \langle -4, 6, -3\rangle
+= 12 - 6 - 6 = 0</m>, so the line is indeed parallel to such a plane.)
+When <m>t = 0</m>, the point <m>(-4, 5, -1)</m> is on the plane, so
+from the point-normal form,
+<md>
+<mrow>A(x - x_0) + B(y - y_0) + C(z - z_0) \amp = 0</mrow>
+<mrow>\Rightarrow\quad -3(x+4) - (y-5) + 2(z+1) \amp = 0.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-5">
+<statement>
+<p>
+Calculate the distance between the following two lines:
+<md>
+<mrow>L_1: \amp \quad x = 4 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+<mrow>L_2: \amp \quad x = 5 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+We notice that the two lines are parallel (both have direction vector
+<m>\mathbf v = \langle -1, 2, 3\rangle</m>) and therefore we can find
+the distance between a point on <m>L_2</m> and the line <m>L_1</m>.
+Taking <m>S(5, 3, -5)</m> on <m>L_2</m> and <m>P(4, 3, -5)</m> on
+<m>L_1</m>, we get <m>\vec{PS} = \langle 1, 0, 0\rangle</m>, and
+<m>|\mathbf v| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
+</p>
+
+<p>
+Using the cross product,
+<md>
+\vec{PS} \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 0 \amp 0 \\
+-1 \amp 2 \amp 3
+\end{vmatrix}
+= -3\,\mathbf j + 2\,\mathbf k,
+\qquad
+\left|\vec{PS} \times \mathbf v\right| = \sqrt{9 + 4} = \sqrt{13},
+</md>
+and the distance is
+<md>
+d = \frac{\left|\vec{PS} \times \mathbf v\right|}{|\mathbf v|}
+= \frac{\sqrt{13}}{\sqrt{14}}.
+</md>
+</p>
+</solution>
+</exercise>
+
+</worksheet>
