@@ -50,19 +50,20 @@ appreciate the role of cross product in determining torque.
 <section xml:id="sec-cross-definition">
 <title>Definition and Properties of the Cross Product</title>
 
-<p>
-Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
-<m>\mathbb R^3</m>, the <term>cross product</term>
-<m>\mathbf u \times \mathbf v</m> is a <em>vector</em> defined as follows.
-</p>
-
 <definition xml:id="def-cross-product">
 <title>The Cross Product (First Definition)</title>
 <statement>
 <p>
+Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
+<m>\mathbb R^3</m>, the <term>cross product</term>
+<m>\mathbf u \times \mathbf v</m> is the <em>vector</em> defined by
 <md xml:id="eq-cross-geometric" number="yes">
-\mathbf u \times \mathbf v = \left(|\mathbf u||\mathbf v|\sin\theta\right)\mathbf n.
+\mathbf u \times \mathbf v = \left(|\mathbf u||\mathbf v|\sin\theta\right)\mathbf n,
 </md>
+where <m>\theta</m>, with <m>0 \le \theta \le \pi</m>, is the angle
+between <m>\mathbf u</m> and <m>\mathbf v</m>, and <m>\mathbf n</m> is
+the unit vector orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>
+whose direction is given by the right-hand rule.
 </p>
 </statement>
 </definition>
