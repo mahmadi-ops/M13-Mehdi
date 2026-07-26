@@ -17,6 +17,14 @@
   \usetikzlibrary{decorations.pathmorphing, arrows.meta}
   \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
+  <!-- Palette used by the figures in ch-12-5.ptx, matching the colors of
+       the animations they were drawn from.  msky is the light fill for
+       planes; the others are used for lines, vectors and points. -->
+  \definecolor{mblue}{HTML}{2B6CB0}
+  \definecolor{msky}{HTML}{58C4DD}
+  \definecolor{mred}{HTML}{E04B4B}
+  \definecolor{mpink}{HTML}{D147BD}
+  \definecolor{mgreen}{HTML}{4FA84F}
 </latex-image-preamble>
   </docinfo>
 
@@ -24,12 +32,17 @@
     <title>MATH 13</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
+    <xi:include href="ch-7-3.ptx" />
     <xi:include href="Parametrization.ptx" />
+    <xi:include href="ch-10-2.ptx" />
+    <xi:include href="ch-10-8.ptx" />
     <xi:include href="Taylor.ptx" />
+    <xi:include href="ch-10-10.ptx" />
     <xi:include href="ch-12-1.ptx" />
     <xi:include href="ch-12-2.ptx" />
     <xi:include href="Dotproduct.ptx" />
     <xi:include href="the-cross-product.ptx" />
+    <xi:include href="ch-12-5.ptx" />
     <xi:include href="Conics.ptx" />
     <xi:include href="QuadricSurface.ptx" />
     <xi:include href="ch-14-1.ptx" />

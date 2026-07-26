@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  12.5 Lines and Planes in Space
+-->
+<chapter xml:id="chapter-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Lines and Planes in Space</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Write the vector equation and the parametric equations of a line in
+space from a point on the line and a vector parallel to it.
+</p>
+</li>
+<li>
+<p>
+Compute the distance from a point to a line using the cross product.
+</p>
+</li>
+<li>
+<p>
+Find the equation of a plane from a point on the plane and a normal
+vector, and find the line of intersection of two planes.
+</p>
+</li>
+<li>
+<p>
+Compute the distance from a point to a plane using the projection onto
+the normal vector.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+In this chapter we use vectors, together with the dot and cross
+products, to describe lines and planes in space and to measure
+distances from points to them.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lines-vector-eq">
+<title>Vector Equation for a Line in Space</title>
+
+<p>
+Consider a line that passes through the point <m>P_0(x_0,y_0,z_0)</m>
+and is parallel to the vector <m>\mathbf v</m>. Then any arbitrary
+point on the line can be obtained by adding a scalar multiple of
+<m>\mathbf v</m> to the position vector of <m>P_0(x_0,y_0,z_0)</m>
+that we will denote by <m>\mathbf r_0</m>. This way we can write the
+vector equation of the line as
+
+<md xml:id="eq-lines-vector" number="yes">
+\mathbf r(t) = \mathbf r_0 + t\,\mathbf v, \quad t \in \R,
+</md>
+</p>
+
+<p>
+where <m>\mathbf r(t)</m> is the position vector of an arbitrary point
+on the line. See <xref ref="fig-lines-vector-eq"/>.
+</p>
+
+<figure xml:id="fig-lines-vector-eq">
+<caption>
+The line through <m>P_0</m> parallel to <m>\mathbf v</m>. For any point
+<m>P</m> on the line, the vector <m>\vec{P_0P}</m> is parallel to
+<m>\mathbf v</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional coordinate system with a blue line passing through
+two labelled points. The point P zero equals x zero comma y zero comma
+z zero sits higher on the line, and the point P equals x comma y comma
+z sits lower. A magenta vector from P zero to P lies along the line,
+and a separate magenta vector v below the line points in the same
+direction, illustrating that the vector P zero P is parallel to v.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.85]
+  % axes
+  \draw[-stealth, thick] (0,0,0) -- (4.6,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,5.2,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,4.2) node[above] {$z$};
+  % the line through P0 with direction v = (1.1, 1.5, -1.05)
+  \draw[mblue, very thick] (0.35,-0.75,3.55) -- (3.65,3.75,0.40);
+  % points
+  \fill (1.45,0.75,2.50) circle (2pt) node[above right=1pt] {$P_0=(x_0,y_0,z_0)$};
+  \fill (2.55,2.25,1.45) circle (2pt) node[right=2pt] {$P=(x,y,z)$};
+  % vector P0P along the line
+  \draw[-stealth, magenta, very thick] (1.45,0.75,2.50) -- (2.55,2.25,1.45);
+  \node[magenta] at (1.60,1.95,2.35) {$\vec{P_0P}$};
+  % vector v below the line
+  \draw[-stealth, magenta, very thick] (2.0,1.2,-0.4) -- (3.1,2.7,-1.45);
+  \node[magenta, below] at (3.1,2.7,-1.45) {$\mathbf v$};
+  % boxed remark
+  \node[draw, fill=white, inner sep=3pt] at (0.7,4.3,-1.3) {$\vec{P_0P} \parallel \mathbf v$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lines-parametric">
+<title>Parametric Equations for a Line</title>
+
+<p>
+The vector equation above can be interpreted as the following
+parametric equations.
+
+<md>
+<mrow>x \amp = x_0 + t\,v_1</mrow>
+<mrow>y \amp = y_0 + t\,v_2</mrow>
+<mrow>z \amp = z_0 + t\,v_3</mrow>
+<mrow>\mathbf v \amp = \langle v_1, v_2, v_3\rangle</mrow>
+<mrow>t \amp \in \R</mrow>
+</md>
+</p>
+
+<example xml:id="example-lines-two-points">
+<title>The line through two points</title>
+<statement>
+<p>
+Find the vector equation and the parametric equations of the line that
+passes through the points <m>P(2,0,0)</m> and <m>P(1,-1,1)</m>.
+</p>
+</statement>
+<solution>
+<p>
+We begin by finding a vector parallel to the line by using the two
+given points:
+
+<md>
+<mrow>\mathbf v = \vec{P_0P} \amp = \langle 1-2,\, -1-0,\, 1-0\rangle</mrow>
+<mrow>\amp = \langle -1, -1, 1\rangle</mrow>
+</md>
+</p>
+
+<p>
+The vector equation of the line is
+
+<md>
+\mathbf r(t) = \mathbf r_0 + t\,\mathbf v, \quad t \in \R
+</md>
+</p>
+
+<p>
+where <m>\mathbf v = \langle -1,-1,1\rangle</m> and
+<m>\mathbf r_0 = \langle 2,0,0\rangle</m>, hence
+
+<md>
+<mrow>\mathbf r(t) \amp = \langle 2,0,0\rangle
++ t\langle -1,-1,1\rangle</mrow>
+<mrow>\amp = \langle 2-t,\, -t,\, t\rangle.</mrow>
+</md>
+</p>
+
+<p>
+Equivalently,
+<m>\mathbf r(t) = (2-t)\,\mathbf i - t\,\mathbf j + t\,\mathbf k</m>.
+The parametric equations of the line are
+
+<md>
+<mrow>x \amp = 2 - t,</mrow>
+<mrow>y \amp = -t,</mrow>
+<mrow>z \amp = t,</mrow>
+<mrow>t \amp \in \R.</mrow>
+</md>
+</p>
+
+<figure xml:id="fig-lines-two-points">
+<caption>
+The line through <m>P_0(2,0,0)</m> and <m>P(1,-1,1)</m>. The vector
+<m>\vec{P_0P} = \langle -1,-1,1\rangle</m> is parallel to the line.
+</caption>
+<image width="62%">
+<description>
+<p>
+A three dimensional coordinate system with a blue line passing through
+the point P zero at two comma zero comma zero on the x axis and
+climbing toward the upper left. A short green vector from P zero along
+the line represents the direction vector P zero P equals negative one
+comma negative one comma one.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.05]
+  % axes
+  \draw[-stealth, thick] (0,0,0) -- (3.6,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,2.6,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,2.8) node[above] {$z$};
+  % ticks
+  \node[below left=1pt] at (2,0,0) {$2$};
+  \node[right] at (0,1,0) {$1$};
+  % the line r(t) = (2-t, -t, t) from t=-1.2 to t=2.2
+  \draw[mblue, very thick] (3.2,1.2,-1.2) -- (-0.2,-2.2,2.2);
+  % P0 and P
+  \fill[red] (2,0,0) circle (2pt) node[below right=3pt, red] {$P_0$};
+  \fill[red] (1,-1,1) circle (2pt) node[above right=1pt, red] {$P$};
+  % direction vector
+  \draw[-stealth, olive, very thick] (2,0,0) -- (1,-1,1);
+  \node[olive, above=2pt] at (1.5,-0.5,0.5) {$\vec{P_0P}$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-lines-distance">
+<title>The Distance from a Point to a Line</title>
+
+<p>
+Our goal is to find the distance <m>d</m> of the point <m>S</m> from
+the line <m>L</m>. As shown in <xref ref="fig-lines-dist-line"/>, if
+<m>P</m> is any point on the line and <m>\theta</m> is the angle
+between <m>\vec{PS}</m> and the direction vector <m>\mathbf v</m>,
+then
+
+<md>
+d = |\vec{PS}|\sin\theta,
+</md>
+</p>
+
+<p>
+which can be written in terms of the cross product as
+
+<md xml:id="eq-lines-distance" number="yes">
+d = \frac{|\vec{PS} \times \mathbf v|}{|\mathbf v|}
+= \frac{|\vec{PS}|\,|\mathbf v|\sin\theta}{|\mathbf v|}.
+</md>
+</p>
+
+<figure xml:id="fig-lines-dist-line">
+<caption>
+The distance of the point <m>S</m> from the line <m>L</m> is
+<m>d = |\vec{PS}|\sin\theta</m>, where <m>P</m> is any point on the
+line.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lines-dist">
+<diagram dimensions="(380,240)" margins="12">
+<coordinates bbox="(-0.6,-1.1,5.4,3.2)">
+<line at="dl-line" endpoints="((-0.35,-0.55),(5.1,1.63))"
+      stroke="black" thickness="3"/>
+<line at="dl-ps" endpoints="((0.9,-0.05),(2.4,2.5))"
+      stroke="#009E73" dash="6 4" thickness="2"/>
+<line at="dl-drop" endpoints="((2.4,2.5),(3.42,0.958))"
+      stroke="#8B1A4A" dash="6 4" thickness="2"/>
+<vector at="dl-v" v="(1.35,0.54)" tail="(2.6,-0.75)"
+        stroke="magenta" thickness="3"/>
+<point at="dl-S" p="(2.4,2.5)" fill="black"/>
+<point at="dl-P" p="(0.9,-0.05)" fill="black"/>
+<label at="dl-S-lab" anchor="(2.4,2.62)" alignment="n">
+<m>S</m>
+</label>
+<label at="dl-P-lab" anchor="(0.85,-0.22)" alignment="s">
+<m>P</m>
+</label>
+<label at="dl-L-lab" anchor="(5.15,1.75)" alignment="ne">
+<m>L</m>
+</label>
+<label at="dl-theta" anchor="(1.42,0.28)" alignment="ne">
+<m>\theta</m>
+</label>
+<label at="dl-d-lab" anchor="(3.15,1.95)" alignment="ne" color="#8B1A4A">
+<m>|\vec{PS}|\sin\theta</m>
+</label>
+<label at="dl-v-lab" anchor="(3.3,-0.6)" alignment="s" color="magenta">
+<m>\mathbf v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A solid black line L runs up and to the right. A point S floats above the line. A dashed green segment joins a point P on the line to S, making an angle theta with the line. A dashed dark red segment drops from S perpendicularly to the line; its length is the magnitude of P S times sine theta. A magenta vector v below the line shows the line's direction.">
+  <annotation ref="dl-line" text="The line L."/>
+  <annotation ref="dl-S" text="The point S whose distance from the line we want."/>
+  <annotation ref="dl-ps" text="The segment from P to S, which makes an angle theta with the line."/>
+  <annotation ref="dl-drop" text="The perpendicular distance d, equal to the magnitude of P S times sine theta."/>
+  <annotation ref="dl-v" text="The direction vector v of the line."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-lines-distance">
+<title>Distance from a point to a line</title>
+<statement>
+<p>
+Calculate the distance between the point <m>S(1,1,0)</m> and the line
+with the vector equation
+<m>\mathbf r(t) = (2-t)\,\mathbf i - t\,\mathbf j + t\,\mathbf k</m>,
+<m>t \in \R</m>.
+</p>
+</statement>
+<solution>
+<p>
+The vector parallel to the line is
+<m>\mathbf v = \langle -1,-1,1\rangle</m> which has length
+<m>|\mathbf v| = \sqrt3</m>. We also need a point on the line. For
+<m>t = 0</m>, we have <m>P(2,0,0)</m> and hence
+<m>\vec{PS} = \langle -1,1,0\rangle</m>.
+
+<md>
+\vec{PS} \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+-1 \amp 1 \amp 0 \\
+-1 \amp -1 \amp 1
+\end{vmatrix}
+=
+\begin{vmatrix} 1 \amp 0 \\ -1 \amp 1 \end{vmatrix}\mathbf i
+- \begin{vmatrix} -1 \amp 0 \\ -1 \amp 1 \end{vmatrix}\mathbf j
++ \begin{vmatrix} -1 \amp 1 \\ -1 \amp -1 \end{vmatrix}\mathbf k
+= \mathbf i + \mathbf j + 2\mathbf k
+</md>
+
+<md>
+|\vec{PS} \times \mathbf v| = \sqrt{1 + 1 + 4} = \sqrt6
+</md>
+
+<md>
+d = \frac{|\vec{PS} \times \mathbf v|}{|\mathbf v|}
+= \frac{\sqrt6}{\sqrt3} = \sqrt2.
+</md>
+</p>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-planes-equation">
+<title>Equation of a Plane in Space</title>
+
+<p>
+In the past, we learned how to compute the normal vector
+<m>\vec n</m> to a plane. Let us assume that we have computed this
+vector and that we have a point <m>P_0</m> on the plane. We know that a
+normal vector is perpendicular to the plane and hence it is
+perpendicular to any vector in the plane. Let us denote an arbitrary
+point on the plane by <m>P</m>, then
+
+<md xml:id="eq-planes-normal" number="yes">
+\vec n \cdot \vec{P_0P} = 0.
+</md>
+</p>
+
+<figure xml:id="fig-planes-normal">
+<caption>
+The normal vector to a plane is perpendicular to all the vectors in the
+plane.
+</caption>
+<image width="60%">
+<description>
+<p>
+A parallelogram represents a plane seen in perspective. A red vector n
+points straight up from a point P zero on the plane, and a blue vector
+lies in the plane from P zero to another point P. A small right angle
+marker at P zero shows that the two vectors are perpendicular.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % the plane
+  \fill[msky, opacity=0.25] (-1.2,-1.6,0) -- (2.6,-1.6,0) -- (2.6,3.0,0) -- (-1.2,3.0,0) -- cycle;
+  \draw[msky!70!black] (-1.2,-1.6,0) -- (2.6,-1.6,0) -- (2.6,3.0,0) -- (-1.2,3.0,0) -- cycle;
+  % points
+  \fill (0.7,0.3,0) circle (2pt) node[below left=1pt] {$P_0$};
+  \fill (1.3,1.9,0) circle (2pt) node[below right=1pt] {$P$};
+  % in-plane vector
+  \draw[-stealth, mblue, very thick] (0.7,0.3,0) -- (1.3,1.9,0);
+  % normal vector
+  \draw[-stealth, red, very thick] (0.7,0.3,0) -- (0.7,0.3,2.3)
+        node[above] {$\vec n$};
+  % right-angle marker
+  \draw (0.7,0.62,0) -- (0.7,0.62,0.30) -- (0.7,0.3,0.30);
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+If <m>P_0(x_0,y_0,z_0)</m>, <m>P(x,y,z)</m> and
+<m>\vec n = \langle A, B, C\rangle</m>, then the above equation gives
+us
+
+<md xml:id="eq-planes-point-normal" number="yes">
+A(x - x_0) + B(y - y_0) + C(z - z_0) = 0,
+</md>
+</p>
+
+<p>
+which can also be re-written in the form
+
+<md xml:id="eq-planes-standard" number="yes">
+Ax + By + Cz = D,
+</md>
+</p>
+
+<p>
+where <m>D = Ax_0 + By_0 + Cz_0</m>.
+</p>
+
+<example xml:id="example-planes-equation">
+<title>Finding the equation of a plane</title>
+<statement>
+<p>
+Find an equation of the plane through the point <m>P_0(2,4,-1)</m>
+with normal vector <m>\vec n = \langle 2,3,4\rangle</m>. Find the
+intercepts and sketch the plane.
+</p>
+</statement>
+<solution>
+<p>
+Substituting into the point-normal form:
+
+<md>
+<mrow>A(x-x_0) + B(y-y_0) + C(z-z_0) \amp = 0</mrow>
+<mrow>2(x-2) + 3(y-4) + 4(z+1) \amp = 0</mrow>
+<mrow>2x + 3y + 4z \amp = 12</mrow>
+</md>
+</p>
+
+<p>
+Setting two of the variables equal to zero at a time gives the
+intercepts: the <m>x</m>-intercept is <m>(6,0,0)</m>, the
+<m>y</m>-intercept is <m>(0,4,0)</m>, and the <m>z</m>-intercept is
+<m>(0,0,3)</m>. The portion of the plane in the first octant is
+sketched in <xref ref="fig-planes-intercepts"/>.
+</p>
+
+<figure xml:id="fig-planes-intercepts">
+<caption>
+The plane <m>2x + 3y + 4z = 12</m> meets the coordinate axes at
+<m>(6,0,0)</m>, <m>(0,4,0)</m>, and <m>(0,0,3)</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+A three dimensional coordinate system in which a shaded triangle
+represents the portion of the plane two x plus three y plus four z
+equals twelve in the first octant. The triangle's vertices are the
+intercepts six comma zero comma zero on the x axis, zero comma four
+comma zero on the y axis, and zero comma zero comma three on the z
+axis, with dashed lines marking the triangle's edges along the
+coordinate planes.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.80]
+  % axes
+  \draw[-stealth, thick] (0,0,0) -- (7.2,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,5.4,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,4.2) node[above] {$z$};
+  % intercept triangle
+  \fill[msky, opacity=0.35] (6,0,0) -- (0,4,0) -- (0,0,3) -- cycle;
+  \draw[msky!60!black, thick, dashed] (6,0,0) -- (0,4,0);
+  \draw[msky!60!black, thick, dashed] (0,4,0) -- (0,0,3);
+  \draw[msky!60!black, thick, dashed] (0,0,3) -- (6,0,0);
+  % intercept labels
+  \fill (6,0,0) circle (1.6pt) node[below=2pt] {$(6,0,0)$};
+  \fill (0,4,0) circle (1.6pt) node[below=4pt] {$(0,4,0)$};
+  \fill (0,0,3) circle (1.6pt) node[above right=1pt] {$(0,0,3)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-planes-intersection">
+<title>Lines of Intersection</title>
+
+<p>
+Suppose we would like to find the line of intersection of two planes.
+To do so, we can use the normal vectors of the two planes, i.e.
+<m>\vec n_1</m> and <m>\vec n_2</m>, to compute the direction vector
+for the line of intersection as
+
+<md>
+\mathbf v = \vec n_1 \times \vec n_2.
+</md>
+</p>
+
+<p>
+Then, we can use it together with any common point to the two planes
+to find the equation of the line of intersection. See
+<xref ref="fig-planes-intersection"/>.
+</p>
+
+<figure xml:id="fig-planes-intersection">
+<caption>
+The cross product of the normal vectors gives the direction vector of
+the line of intersection.
+</caption>
+<image width="66%">
+<description>
+<p>
+Two planes intersect inside a three dimensional box: a vertical blue
+plane and a horizontal pink plane. A red vector n one points up from
+the horizontal plane and a blue vector n two points sideways from the
+vertical plane. A black vector along the crease where the planes meet
+is labelled n one cross n two equals v.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.85]
+  % box
+  \draw[gray!60] (0,0,0) -- (4,0,0) -- (4,5,0) -- (0,5,0) -- cycle;
+  \draw[gray!60] (0,0,4) -- (4,0,4) -- (4,5,4) -- (0,5,4) -- cycle;
+  \draw[gray!60] (0,0,0) -- (0,0,4);
+  \draw[gray!60] (4,0,0) -- (4,0,4);
+  \draw[gray!60] (4,5,0) -- (4,5,4);
+  \draw[gray!60] (0,5,0) -- (0,5,4);
+  % horizontal (pink) plane at z = 1.9
+  \fill[mpink, opacity=0.18] (0.3,0.3,1.9) -- (3.7,0.3,1.9) -- (3.7,4.7,1.9) -- (0.3,4.7,1.9) -- cycle;
+  \draw[mpink!70!black] (0.3,0.3,1.9) -- (3.7,0.3,1.9) -- (3.7,4.7,1.9) -- (0.3,4.7,1.9) -- cycle;
+  % vertical (blue) plane at y = 2.4
+  \fill[msky, opacity=0.30] (0.3,2.4,0.3) -- (3.7,2.4,0.3) -- (3.7,2.4,3.7) -- (0.3,2.4,3.7) -- cycle;
+  \draw[msky!70!black] (0.3,2.4,0.3) -- (3.7,2.4,0.3) -- (3.7,2.4,3.7) -- (0.3,2.4,3.7) -- cycle;
+  % line of intersection
+  \draw[black, very thick] (0.3,2.4,1.9) -- (3.7,2.4,1.9);
+  % normals from a common point on the crease
+  \draw[-stealth, red, very thick] (1.6,2.4,1.9) -- (1.6,2.4,3.3)
+        node[above] {$\vec n_1$};
+  \draw[-stealth, mblue, very thick] (1.6,2.4,1.9) -- (1.6,3.8,1.9)
+        node[right] {$\vec n_2$};
+  % direction vector v along the crease
+  \draw[-stealth, black, very thick] (1.6,2.4,1.9) -- (3.1,2.4,1.9);
+  \node[below left=1pt] at (3.1,2.4,1.75) {$\mathbf v = \vec n_1 \times \vec n_2$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<example xml:id="example-planes-intersection">
+<title>The line of intersection of two planes</title>
+<statement>
+<p>
+Find the parametric equations of the line of intersection of the two
+planes <m>3x - 6y - 2z = 15</m> and <m>2x + y - 2z = 5</m>.
+</p>
+</statement>
+<solution>
+<p>
+The two normal vectors are <m>\vec n_1 = \langle 3,-6,-2\rangle</m>
+and <m>\vec n_2 = \langle 2,1,-2\rangle</m>.
+
+<md>
+\mathbf v = \vec n_1 \times \vec n_2 =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -6 \amp -2 \\
+2 \amp 1 \amp -2
+\end{vmatrix}
+= 14\,\mathbf i + 2\,\mathbf j + 15\,\mathbf k
+</md>
+</p>
+
+<p>
+We have found the direction of the line so far and now we need to find
+a common point between the two planes. After substituting <m>z = 0</m>
+into the equations of the planes we get
+
+<md>
+<mrow>3x - 6y \amp = 15 \amp
+x - 2y \amp = 5 \amp
+-2x + 4y \amp = -10</mrow>
+<mrow>2x + y \amp = 5 \amp
+2x + y \amp = 5 \amp
+2x + y \amp = 5</mrow>
+</md>
+</p>
+
+<p>
+Adding the last pair of equations gives <m>5y = -5</m>, hence
+
+<md>
+\begin{cases}
+y = -1 \\
+x = 3
+\end{cases}
+</md>
+</p>
+
+<p>
+Hence, the point <m>P_0(3,-1,0)</m> is in common between the two
+planes. Finally the parametric equations of the line of intersection
+are
+
+<md>
+<mrow>x \amp = 3 + 14t,</mrow>
+<mrow>y \amp = -1 + 2t,</mrow>
+<mrow>z \amp = 15t,</mrow>
+<mrow>t \amp \in \R.</mrow>
+</md>
+</p>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-planes-distance">
+<title>Distance of a Point from a Plane</title>
+
+<p>
+Our goal here is to find the distance <m>d</m> of the point <m>S</m>
+from the plane. To do so we need a point <m>P</m> on the plane and the
+normal vector to the plane <m>\vec n</m>. As shown in
+<xref ref="fig-planes-distance"/>, the distance can be found by
+projecting the vector <m>\vec{PS}</m> in the direction of
+<m>\vec n</m> and then finding its magnitude:
+
+<md>
+<mrow>d = \left|\operatorname{proj}_{\vec n}\vec{PS}\right|
+\amp = \left|\left(\frac{\vec{PS}\cdot\vec n}{|\vec n|^2}\right)
+\vec n\right|
+= \frac{|\vec{PS}\cdot\vec n|}{|\vec n|^2}\,|\vec n|</mrow>
+<mrow>\amp = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|</mrow>
+</md>
+</p>
+
+<assemblage xml:id="summary-plane-distance">
+<title>Distance from a point to a plane</title>
+<p>
+<md>
+d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
+</md>
+</p>
+</assemblage>
+
+<figure xml:id="fig-planes-distance">
+<caption>
+The distance of the point <m>S</m> from the plane is the magnitude of
+the projection of <m>\vec{PS}</m> onto the normal vector
+<m>\vec n</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+A parallelogram represents a plane seen in perspective. From a point P
+on the plane, a blue normal vector n points straight up and a green
+vector points up and to the right to a point S above the plane. A
+dashed dark red segment drops vertically from S to the plane; its
+length d is the distance from S to the plane, which equals the
+magnitude of the projection of P S onto n.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % the plane
+  \fill[msky, opacity=0.20] (-1.4,-1.8,0) -- (2.8,-1.8,0) -- (2.8,3.2,0) -- (-1.4,3.2,0) -- cycle;
+  \draw[msky!70!black] (-1.4,-1.8,0) -- (2.8,-1.8,0) -- (2.8,3.2,0) -- (-1.4,3.2,0) -- cycle;
+  % points
+  \fill (0.4,-0.4,0) circle (2pt) node[below left=1pt] {$P$};
+  \fill (1.4,1.8,2.4) circle (2pt) node[above=2pt] {$S$};
+  \fill (1.4,1.8,0) circle (1.6pt);
+  % normal vector at P
+  \draw[-stealth, mblue, very thick] (0.4,-0.4,0) -- (0.4,-0.4,1.9)
+        node[above] {$\vec n$};
+  % PS vector
+  \draw[-stealth, mgreen, very thick] (0.4,-0.4,0) -- (1.4,1.8,2.4);
+  % vertical distance
+  \draw[mred, dashed, thick] (1.4,1.8,2.4) -- (1.4,1.8,0);
+  \node[mred, right=2pt] at (1.4,1.9,1.2)
+        {$d = \left|\operatorname{proj}_{\vec n}\vec{PS}\right|$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<example xml:id="example-planes-distance">
+<title>Distance from a point to a plane</title>
+<statement>
+<p>
+Find the distance from the point <m>S(2,3,0)</m> to the plane with
+equation <m>5x + y + z = -1</m>.
+</p>
+</statement>
+<solution>
+<p>
+We need a point <m>P</m> on the plane. We choose <m>x = y = 0</m>,
+which when substituted into the equation of the plane
+<m>5x + y + z = -1</m>, gives <m>z = -1</m>. Hence, we have a point
+<m>P(0,0,-1)</m> on the plane. We then compute the vector
+<m>\vec{PS} = \langle 2,3,1\rangle</m>. Note that we also can extract
+the normal vector <m>\vec n = \langle 5,1,1\rangle</m>,
+<m>|\vec n| = \sqrt{27}</m> from the equation of the plane.
+
+<md>
+\vec{PS}\cdot\vec n = 10 + 3 + 1 = 14
+</md>
+
+<md>
+d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
+= \frac{14}{\sqrt{27}}
+</md>
+</p>
+</solution>
+</example>
+</section>
+
+</chapter>

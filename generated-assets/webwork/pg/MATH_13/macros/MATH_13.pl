@@ -15,6 +15,12 @@ return <<'END_LATEX_IMAGE_PREAMBLE'
   \usetikzlibrary{decorations.pathmorphing, arrows.meta}
   \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
+  
+  \definecolor{mblue}{HTML}{2B6CB0}
+  \definecolor{msky}{HTML}{58C4DD}
+  \definecolor{mred}{HTML}{E04B4B}
+  \definecolor{mpink}{HTML}{D147BD}
+  \definecolor{mgreen}{HTML}{4FA84F}
 
 END_LATEX_IMAGE_PREAMBLE
 }

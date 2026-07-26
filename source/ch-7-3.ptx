@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  7.3 Hyperbolic Functions
+-->
+<chapter xml:id="chapter-hyperbolic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Hyperbolic Functions</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Define the hyperbolic sine and cosine in terms of <m>e^x</m> and
+<m>e^{-x}</m>, and differentiate them.
+</p>
+</li>
+<li>
+<p>
+Sketch the graphs of <m>\sinh x</m> and <m>\cosh x</m>, and state their
+domains and ranges.
+</p>
+</li>
+<li>
+<p>
+Use the identity <m>\cosh^2 x - \sinh^2 x = 1</m> and relate it to the
+parametrization of the hyperbola <m>x^2 - y^2 = 1</m>.
+</p>
+</li>
+<li>
+<p>
+Work with the remaining hyperbolic functions <m>\tanh x</m>,
+<m>\coth x</m>, <m>\operatorname{sech} x</m>, and
+<m>\operatorname{csch} x</m>, and apply hyperbolic identities to
+integrals and equations.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+This chapter is about certain combinations of <m>e^x</m> and
+<m>e^{-x}</m> which appear in multiple branches of science and
+engineering. In many ways they are analogous to the trigonometric
+functions, and they have a similar relationship to the hyperbola that
+the trigonometric functions have to the circle, which is why they are
+known as <term>hyperbolic functions</term>. We will study these
+relationships gradually during this chapter.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-definitions">
+<title>Definitions and Derivatives</title>
+
+<p>
+The <term>hyperbolic cosine</term> is defined as
+
+<md xml:id="eq-hyp-cosh-def" number="yes">
+\cosh x = \frac{e^x + e^{-x}}{2},
+</md>
+</p>
+
+<p>
+and the <term>hyperbolic sine</term> is defined as
+
+<md xml:id="eq-hyp-sinh-def" number="yes">
+\sinh x = \frac{e^x - e^{-x}}{2}.
+</md>
+</p>
+
+<p>
+The derivatives are given as follows.
+
+<md>
+<mrow xml:id="eq-hyp-dcosh">\frac{d}{dx}(\cosh x) \amp = \sinh x</mrow>
+<mrow xml:id="eq-hyp-dsinh">\frac{d}{dx}(\sinh x) \amp = \cosh x</mrow>
+</md>
+</p>
+
+<p>
+Both formulas follow directly from the definitions, since
+<m>\frac{d}{dx}e^x = e^x</m> and <m>\frac{d}{dx}e^{-x} = -e^{-x}</m>.
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-graphs">
+<title>Graph, Domain, and Range of <m>\cosh x</m> and <m>\sinh x</m></title>
+
+<p>
+Since <m>\sinh x</m> and <m>\cosh x</m> are built from the two
+exponentials <m>\tfrac12 e^x</m> and <m>\tfrac12 e^{-x}</m>, their
+graphs are easiest to understand by sketching those exponentials first.
+See <xref ref="fig-hyp-sinh-graph"/> and <xref ref="fig-hyp-cosh-graph"/>.
+</p>
+
+<figure xml:id="fig-hyp-sinh-graph">
+<caption>
+The graph of <m>y = \sinh x</m>. The curve is squeezed between the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = -\tfrac12 e^{-x}</m>,
+approaching the first as <m>x \to \infty</m> and the second as
+<m>x \to -\infty</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-sinh">
+<diagram dimensions="(360,300)" margins="12">
+<definition>s(t) = (t, (exp(t) - exp(-t))/2)</definition>
+<definition>ep(t) = (t, exp(t)/2)</definition>
+<definition>em(t) = (t, -exp(-t)/2)</definition>
+<coordinates bbox="(-2.6,-3.4,2.6,3.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="sh-ep" function="ep" domain="(-2.5,1.85)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="sh-em" function="em" domain="(-1.85,2.5)"
+                  stroke="#E69F00" thickness="2"/>
+<parametric-curve at="sh-s" function="s" domain="(-1.92,1.92)"
+                  stroke="#8B1A4A" thickness="3"/>
+<label at="sh-s-lab" anchor="(1.25,2.35)" alignment="w" color="#8B1A4A">
+<m>y=\sinh x</m>
+</label>
+<label at="sh-ep-lab" anchor="(-2.4,0.55)" alignment="ne" color="#56B4E9">
+<m>y=\frac12 e^{x}</m>
+</label>
+<label at="sh-em-lab" anchor="(1.05,-0.85)" alignment="se" color="#E69F00">
+<m>y=-\frac12 e^{-x}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three curves on a coordinate grid. A dark red curve, y equals hyperbolic sine of x, rises from the lower left through the origin to the upper right. A light blue curve, y equals one half e to the x, lies just above it on the right, and an orange curve, y equals negative one half e to the negative x, lies just below it on the left.">
+  <annotation ref="sh-s" text="The graph of hyperbolic sine: an increasing curve through the origin, odd about the origin."/>
+  <annotation ref="sh-ep" text="The exponential one half e to the x, which hyperbolic sine approaches as x grows."/>
+  <annotation ref="sh-em" text="The exponential negative one half e to the negative x, which hyperbolic sine approaches as x decreases."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-hyp-cosh-graph">
+<caption>
+The graph of <m>y = \cosh x</m>. The curve is the sum of the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = \tfrac12 e^{-x}</m>, so
+it lies above both and has its minimum value <m>1</m> at <m>x = 0</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-cosh">
+<diagram dimensions="(360,300)" margins="12">
+<definition>c(t) = (t, (exp(t) + exp(-t))/2)</definition>
+<definition>ep(t) = (t, exp(t)/2)</definition>
+<definition>em(t) = (t, exp(-t)/2)</definition>
+<coordinates bbox="(-2.6,-0.8,2.6,4.0)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ch-ep" function="ep" domain="(-2.5,2.05)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="ch-em" function="em" domain="(-2.05,2.5)"
+                  stroke="#E69F00" thickness="2"/>
+<parametric-curve at="ch-c" function="c" domain="(-2.0,2.0)"
+                  stroke="#8B1A4A" thickness="3"/>
+<point at="ch-min" p="(0,1)" fill="#8B1A4A"/>
+<label at="ch-c-lab" anchor="(1.05,3.35)" alignment="w" color="#8B1A4A">
+<m>y=\cosh x</m>
+</label>
+<label at="ch-ep-lab" anchor="(1.30,0.85)" alignment="se" color="#56B4E9">
+<m>y=\frac12 e^{x}</m>
+</label>
+<label at="ch-em-lab" anchor="(-1.30,0.85)" alignment="sw" color="#E69F00">
+<m>y=\frac12 e^{-x}</m>
+</label>
+<label at="ch-min-lab" anchor="(0.12,1.02)" alignment="se">
+<m>1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three curves on a coordinate grid. A dark red U shaped curve, y equals hyperbolic cosine of x, has its lowest point at zero comma one. A light blue exponential one half e to the x rises to the right below it, and an orange exponential one half e to the negative x rises to the left below it.">
+  <annotation ref="ch-c" text="The graph of hyperbolic cosine: a U shaped curve, even about the y axis, with minimum value one at x equals zero."/>
+  <annotation ref="ch-ep" text="The exponential one half e to the x, which hyperbolic cosine approaches as x grows."/>
+  <annotation ref="ch-em" text="The exponential one half e to the negative x, which hyperbolic cosine approaches as x decreases."/>
+  <annotation ref="ch-min" text="The minimum point zero comma one."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+From the graphs we can read off the following facts.
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+The domain of <m>\cosh x</m> and <m>\sinh x</m> is <m>\R</m>.
+</p>
+</li>
+<li>
+<p>
+The range of <m>\sinh x</m> is <m>\R</m>, whereas the range of
+<m>\cosh x</m> is <m>[1,\infty)</m>.
+</p>
+</li>
+<li>
+<p>
+Notice that <m>\sinh x</m> is an odd function, i.e.
+<m>\sinh(-x) = -\sinh(x)</m>, whereas <m>\cosh x</m> is an even
+function, i.e. <m>\cosh(-x) = \cosh(x)</m>.
+</p>
+</li>
+</ul>
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-identities">
+<title>Identities and Other Hyperbolic Functions</title>
+
+<p>
+A similar identity to the trigonometric identity
+<m>\cos^2 x + \sin^2 x = 1</m> holds for the hyperbolic functions:
+
+<md xml:id="eq-hyp-main-identity" number="yes">
+\cosh^2 x - \sinh^2 x = 1.
+</md>
+</p>
+
+<p>
+As you already know, any point <m>P(x,y)</m> on the circumference of
+the unit circle <m>(x^2 + y^2 = 1)</m> can be described in terms of sine
+and cosine of an angle <m>t \in [0, 2\pi)</m>, i.e. <m>x = \cos t</m>
+and <m>y = \sin t</m>, which results in the trigonometric identity
+<m>\cos^2 t + \sin^2 t = 1</m>. See <xref ref="fig-hyp-circle"/>.
+</p>
+
+<figure xml:id="fig-hyp-circle">
+<caption>
+Any point on the unit circle <m>x^2+y^2=1</m> can be written as
+<m>P(\cos t, \sin t)</m>.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-circle">
+<diagram dimensions="(320,300)" margins="12">
+<definition>circ(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-1.7,-1.6,1.7,1.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="hc-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="3"/>
+<line at="hc-op" endpoints="((0,0),(0.6216,0.7833))"
+      stroke="#8B1A4A" thickness="2"/>
+<line at="hc-oq" endpoints="((0,0),(0.6216,0))"
+      stroke="#8B1A4A" thickness="2"/>
+<point at="hc-P" p="(0.6216,0.7833)" fill="black"/>
+<point at="hc-Q" p="(0.6216,0)" fill="black"/>
+<label at="hc-P-lab" anchor="(0.68,0.86)" alignment="ne">
+<m>P(\cos t, \sin t)</m>
+</label>
+<label at="hc-Q-lab" anchor="(0.65,-0.08)" alignment="se">
+<m>Q</m>
+</label>
+<label at="hc-O-lab" anchor="(-0.08,-0.08)" alignment="sw">
+<m>O</m>
+</label>
+<label at="hc-eq" anchor="(0.35,-1.22)" alignment="se" color="#56B4E9">
+<m>x^2+y^2=1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The unit circle centered at the origin with a point P on it in the first quadrant labelled P of cosine t comma sine t. Segments from the origin to P and from the origin to the point Q directly below P on the x axis are drawn from the origin.">
+  <annotation ref="hc-circle" text="The unit circle x squared plus y squared equals one."/>
+  <annotation ref="hc-P" text="The point P with coordinates cosine t comma sine t."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Similarly, any point <m>P(x,y)</m> on the right branch of the hyperbola
+<m>x^2 - y^2 = 1</m> can be represented as <m>x = \cosh t</m> and
+<m>y = \sinh t</m>, where <m>t \in \R</m>. This follows directly from
+identity <xref ref="eq-hyp-main-identity"/>, i.e.
+<m>\cosh^2 t - \sinh^2 t = 1</m>. See <xref ref="fig-hyp-hyperbola"/>.
+</p>
+
+<figure xml:id="fig-hyp-hyperbola">
+<caption>
+Any point on the right branch of the hyperbola <m>x^2-y^2=1</m> can be
+written as <m>P(\cosh t, \sinh t)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-hyperbola">
+<diagram dimensions="(340,300)" margins="12">
+<definition>hr(t) = ((exp(t) + exp(-t))/2, (exp(t) - exp(-t))/2)</definition>
+<definition>hl(t) = (-(exp(t) + exp(-t))/2, (exp(t) - exp(-t))/2)</definition>
+<coordinates bbox="(-3.4,-2.9,3.4,2.9)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="hh-right" function="hr" domain="(-1.65,1.65)"
+                  stroke="#56B4E9" thickness="3"/>
+<parametric-curve at="hh-left" function="hl" domain="(-1.65,1.65)"
+                  stroke="#56B4E9" thickness="3"/>
+<line at="hh-op" endpoints="((0,0),(1.8107,1.5095))"
+      stroke="#8B1A4A" thickness="2"/>
+<line at="hh-base" endpoints="((0,0),(1,0))"
+      stroke="#8B1A4A" thickness="2"/>
+<point at="hh-P" p="(1.8107,1.5095)" fill="black"/>
+<label at="hh-P-lab" anchor="(2.2,1.80)" alignment="n">
+<m>P(\cosh t, \sinh t)</m>
+</label>
+<label at="hh-O-lab" anchor="(-0.10,-0.10)" alignment="sw">
+<m>0</m>
+</label>
+<label at="hh-eq" anchor="(0.35,-2.6)" alignment="e" color="#56B4E9">
+<m>x^2-y^2=1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hyperbola with two branches opening left and right, x squared minus y squared equals one. A point P on the right branch in the first quadrant is labelled P of hyperbolic cosine t comma hyperbolic sine t. A segment from the origin to P and a segment along the x axis to the vertex are drawn from the origin.">
+  <annotation ref="hh-right" text="The right branch of the hyperbola, traced by the point hyperbolic cosine t comma hyperbolic sine t."/>
+  <annotation ref="hh-P" text="The point P with coordinates hyperbolic cosine t comma hyperbolic sine t."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+As you might have guessed, the rest of the hyperbolic functions are
+defined as follows.
+
+<md>
+<mrow xml:id="eq-hyp-tanh">\tanh x \amp = \frac{\sinh x}{\cosh x}
+\amp \operatorname{sech} x \amp = \frac{1}{\cosh x}</mrow>
+<mrow xml:id="eq-hyp-coth">\coth x \amp = \frac{\cosh x}{\sinh x}
+\amp \operatorname{csch} x \amp = \frac{1}{\sinh x}</mrow>
+</md>
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-identity-list">
+<title>Hyperbolic Identities</title>
+
+<p>
+Below are some identities that you may find useful in some problems,
+however, you are not expected to memorize them. We will prove some of
+them as an exercise later.
+
+<md>
+<mrow>\cosh^2 x - \sinh^2 x \amp = 1</mrow>
+<mrow>1 - \tanh^2 x \amp = \operatorname{sech}^2 x</mrow>
+<mrow>\sinh 2x \amp = 2 \sinh x \cosh x</mrow>
+<mrow>\cosh 2x \amp = \cosh^2 x + \sinh^2 x</mrow>
+<mrow>\cosh^2 x \amp = \frac{\cosh 2x + 1}{2}</mrow>
+<mrow>\sinh^2 x \amp = \frac{\cosh 2x - 1}{2}</mrow>
+</md>
+</p>
+
+<example xml:id="example-hyp-integral">
+<title>An integral via a hyperbolic substitution</title>
+<statement>
+<p>
+Use hyperbolic functions to calculate the integral
+<md>
+\int \frac{\sqrt{x^2-1}}{x^2}\,dx, \qquad x \ge 1.
+</md>
+<em>Hint:</em> Similar to <m>\int \sec^2(x)\,dx = \tan(x) + C</m>, we
+have <m>\int \operatorname{sech}^2(x)\,dx = \tanh(x) + C</m>.
+</p>
+</statement>
+<solution>
+<p>
+We substitute <m>x = \cosh(t)</m>, <m>dx = \sinh(t)\,dt</m>:
+
+<md>
+<mrow>\int \frac{\sqrt{x^2-1}}{x^2}\,dx
+\amp = \int \frac{\sqrt{\cosh^2(t)-1}}{\cosh^2(t)}\,\sinh(t)\,dt
+= \int \frac{\sinh^2(t)}{\cosh^2(t)}\,dt
+= \int \tanh^2(t)\,dt</mrow>
+<mrow>\amp = \int \left(1 - \operatorname{sech}^2(t)\right)dt
+= t - \tanh t + C
+= \cosh^{-1}(x) - \frac{\sqrt{x^2-1}}{x} + C.</mrow>
+</md>
+</p>
+
+<p>
+In the last step, we have used the following:
+
+<md>
+\tanh^2(t) = 1 - \operatorname{sech}^2(t)
+= 1 - \frac{1}{\cosh^2(t)}
+= \frac{\cosh^2(t) - 1}{\cosh^2(t)}
+= \frac{x^2-1}{x^2}.
+</md>
+</p>
+</solution>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-real-life">
+<title>Hyperbolic Functions in Real Life</title>
+
+<p>
+<ul>
+<li>
+<p>
+<term>Celestial mechanics:</term> If a comet has enough speed, it can
+escape the gravitational pull of the sun, in which case, one possible
+trajectory is a hyperbolic trajectory.
+</p>
+</li>
+<li>
+<p>
+If a heavy flexible cable (such as a telephone or power line) is
+suspended between two points at the same height, then it takes the
+shape of a curve with equation <m>y = c + a\cosh(x/a)</m> called a
+<term>catenary</term>.
+</p>
+</li>
+<li>
+<p>
+<term>The Gateway Arch in St. Louis, Missouri</term> (Designed in 1963
+and Completed in 1965): The geometric form of the gateway was set by
+Hannskari Bandel (Structural engineer) and was expressed in the
+blueprints by the equation
+<md>
+y = A\left(\cosh\frac{Cx}{L} - 1\right),
+</md>
+where <m>A</m>, <m>C</m>, and <m>L</m> are constants.
+</p>
+</li>
+</ul>
+</p>
+
+<example xml:id="example-hyp-catenary">
+<title>A hanging telephone line</title>
+<statement>
+<p>
+A telephone line hangs between two poles <m>14</m> m apart in the shape
+of the catenary <m>y = 20\cosh(x/20) - 15</m>, where <m>x</m> and
+<m>y</m> are measured in meters.
+<ol marker="A.">
+<li>
+<p>
+Find the slope of this curve where it meets the right pole.
+</p>
+</li>
+<li>
+<p>
+Find the angle <m>\theta</m> between the line and the pole.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The function <m>y = 20\cosh(x/20) - 15</m> is plotted in
+<xref ref="fig-hyp-catenary"/>. To find the slope at the right pole, we
+differentiate the function with respect to <m>x</m> and evaluate it at
+<m>x = 7</m>:
+<md>
+\left.\frac{df}{dx}\right|_{x=7}
+= \left.\sinh(x/20)\right|_{x=7}
+= \sinh(7/20) \approx 0.357.
+</md>
+</p>
+</li>
+<li>
+<p>
+We know that <m>\tan\!\left(\frac{\pi}{2} - \theta\right)
+= \cot(\theta) = 0.357</m> and hence
+<m>\theta = \cot^{-1}(0.357) \approx 1.23</m> radians.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-hyp-catenary">
+<caption>
+The telephone line <m>y = 20\cosh(x/20) - 15</m> between the two poles
+at <m>x = -7</m> and <m>x = 7</m>. The angle <m>\theta</m> is measured
+between the line and the right pole.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-catenary">
+<diagram dimensions="(380,240)" margins="12">
+<definition>cat(t) = (t, 20*(exp(t/20) + exp(-t/20))/2 - 15)</definition>
+<coordinates bbox="(-9.5,-1.2,9.5,9.0)">
+<grid-axes xlabel="x" ylabel="y"/>
+<rectangle at="cat-pole-l" lower-left="(-7.18,0)" dimensions="(0.36,7.4)"
+           fill="#C8A165" stroke="none"/>
+<rectangle at="cat-pole-r" lower-left="(6.82,0)" dimensions="(0.36,7.4)"
+           fill="#C8A165" stroke="none"/>
+<parametric-curve at="cat-curve" function="cat" domain="(-7,7)"
+                  stroke="#8B1A4A" thickness="3"/>
+<line at="cat-tangent" endpoints="((4.6,5.29),(7,6.28))"
+      stroke="black" thickness="2"/>
+<label at="cat-theta" anchor="(6.35,7.2)" alignment="w">
+<m>\theta</m>
+</label>
+<label at="cat-5" anchor="(-0.25,5.15)" alignment="ne">
+<m>5</m>
+</label>
+<label at="cat-m7" anchor="(-7,-0.35)" alignment="s">
+<m>-7</m>
+</label>
+<label at="cat-7" anchor="(7,-0.35)" alignment="s">
+<m>7</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A shallow dark red curve hangs between two vertical poles at x equals negative seven and x equals seven, dipping to a height of five meters at the center. A short tangent segment at the right end makes an angle theta with the right pole.">
+  <annotation ref="cat-curve" text="The catenary y equals twenty hyperbolic cosine of x over twenty, minus fifteen. Its lowest point is at height five above the origin."/>
+  <annotation ref="cat-pole-r" text="The right pole at x equals seven. The angle theta is measured between the hanging line and this pole."/>
+  <annotation ref="cat-tangent" text="The tangent line to the catenary at the right pole, whose slope is hyperbolic sine of seven twentieths, about zero point three five seven."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</example>
+
+<example xml:id="example-hyp-sinh-ln">
+<title>Rewriting <m>\sinh(\ln(x))</m></title>
+<statement>
+<p>
+Consider the function <m>f(x) = \sinh(\ln(x))</m>.
+<ol marker="A.">
+<li>
+<p>
+Express <m>f(x)</m> as a fraction of two polynomials.
+</p>
+</li>
+<li>
+<p>
+Calculate <m>\dfrac{df}{dx}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We note that <m>e^{\ln(x)} = x</m> and
+<m>e^{-\ln(x)} = \dfrac{1}{x}</m> and hence
+<md>
+f(x) = \sinh(\ln(x))
+= \frac{e^{\ln(x)} - e^{-\ln(x)}}{2}
+= \frac{x - \frac{1}{x}}{2}
+= \frac{x^2-1}{2x}.
+</md>
+</p>
+</li>
+<li>
+<p>
+<em>First Method:</em> We can use the fraction derived in part A
+together with the quotient rule as follows.
+<md>
+f(x) = \frac{x^2-1}{2x}
+\;\Rightarrow\;
+\frac{df}{dx} = \frac{4x^2 - 2(x^2-1)}{4x^2} = \frac{x^2+1}{2x^2}.
+</md>
+</p>
+<p>
+<em>Second Method:</em> We can use the chain rule as follows.
+<md>
+f(x) = \sinh(\ln(x))
+\;\Rightarrow\;
+\frac{df}{dx} = \frac{1}{x}\left(\cosh(\ln(x))\right)
+= \frac{1}{x}\left(\frac{e^{\ln(x)} + e^{-\ln(x)}}{2}\right)
+= \frac{x + \frac1x}{2x}
+= \frac{x^2+1}{2x^2}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</example>
+
+<example xml:id="example-hyp-double-angle">
+<title>A double-angle identity</title>
+<statement>
+<p>
+Prove that <m>\sinh(2x) = 2\sinh(x)\cosh(x)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Starting from the definition,
+
+<md>
+\sinh(2x) = \frac{e^{2x} - e^{-2x}}{2}
+= \frac12\left(e^x - e^{-x}\right)\left(e^x + e^{-x}\right)
+= 2\sinh(x)\cosh(x).
+</md>
+</p>
+
+<p>
+For the last equality, we have used
+<m>2\sinh x = e^x - e^{-x}</m> and <m>2\cosh x = e^x + e^{-x}</m>.
+</p>
+</solution>
+</example>
+
+<example xml:id="example-hyp-equation">
+<title>Solving a hyperbolic equation</title>
+<statement>
+<p>
+Consider the equation <m>2\cosh(2x) + 10\sinh(2x) = 5</m> and solve for
+<m>x</m>.
+</p>
+</statement>
+<solution>
+<p>
+We begin by substituting the definitions of hyperbolic functions.
+
+<md>
+<mrow>2\cosh(2x) + 10\sinh(2x) = 5
+\amp \Rightarrow
+2\left(\frac{e^{2x}+e^{-2x}}{2}\right)
++ 10\left(\frac{e^{2x}-e^{-2x}}{2}\right) = 5</mrow>
+<mrow>\amp \Rightarrow 6e^{2x} - 4e^{-2x} - 5 = 0
+\;\Rightarrow\; 6e^{4x} - 5e^{2x} - 4 = 0</mrow>
+<mrow>\amp \Rightarrow \left(3e^{2x} - 4\right)\left(2e^{2x} + 1\right) = 0
+\;\Rightarrow\; e^{2x} = \frac43 \text{ or } e^{2x} = -\frac12</mrow>
+</md>
+</p>
+
+<p>
+Since the exponential function can only be positive, the only solution
+is
+
+<md>
+e^{2x} = \frac43 \;\Rightarrow\; x = \frac12\ln\!\left(\frac43\right).
+</md>
+</p>
+</solution>
+</example>
+</section>
+
+</chapter>
