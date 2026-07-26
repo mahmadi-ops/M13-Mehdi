@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Final exam problems on vectors and their products
+  Final exam problems on vectors
 -->
 <worksheet xml:id="worksheet-exercises-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises on Vectors and Their Products</title>
+<title>Exercises for <xref ref="chapter-vectors" text="title"/></title>
 
 <introduction>
 <p>
-These final exam problems add and decompose vectors and use the dot and cross products, so they draw on <xref ref="chapter-vectors" text="title"/>, <xref ref="section-dot-product" text="title"/> and <xref ref="section-cross-product" text="title"/>.
+These problems add and subtract vectors given by their endpoints. If you would like to review this topic before
+attempting them, see <xref ref="chapter-vectors" text="title"/>.
 </p>
 </introduction>
 
@@ -118,68 +119,6 @@ Chaining the three vectors tip to tail,
 </ol>
 </p>
 </solution>
-</exercise>
-
-<exercise xml:id="rs19-4">
-<statement>
-<p>
-Consider the two vectors
-<m>\mathbf u = 3\,\mathbf j + 4\,\mathbf k</m> and
-<m>\mathbf v = \mathbf i + \mathbf j</m>. Write <m>\mathbf u</m> as
-the sum of a vector parallel to <m>\mathbf v</m> and a vector
-orthogonal to <m>\mathbf v</m>.
-</p>
-</statement>
-<solution>
-<p>
-We have <m>\vec u \cdot \vec v = 3</m> and
-<m>|\vec v| = \sqrt{1+1} = \sqrt2</m>. The component of
-<m>\vec u</m> parallel to <m>\vec v</m> is
-<md>
-\vec u_{\parallel}
-= \operatorname{proj}_{\vec v} \vec u
-= \left(\frac{\vec u \cdot \vec v}{|\vec v|^2}\right)\vec v
-= \frac32\,(\mathbf i + \mathbf j)
-= \frac32\,\mathbf i + \frac32\,\mathbf j,
-</md>
-and the component orthogonal to <m>\vec v</m> is
-<md>
-\vec u_{\perp}
-= \vec u - \vec u_{\parallel}
-= \left(3\,\mathbf j + 4\,\mathbf k\right)
-- \left(\frac32\,\mathbf i + \frac32\,\mathbf j\right)
-= -\frac32\,\mathbf i + \frac32\,\mathbf j + 4\,\mathbf k.
-</md>
-Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
-<m>\vec u_{\perp}</m> is orthogonal to <m>\vec v</m>. Note that
-<m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rw23-9-a">
-<title>True or False</title>
-<statement correct="no">
-<p>
-If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
-<m>\R^3</m>, then
-<m>\vec u \cdot (\vec u \times \vec v)
-= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
-</p>
-</statement>
-<feedback>
-<p>
-Counterexample: take
-<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
-<md>
-\mathbf i \cdot
-\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
-\quad\text{whereas}\quad
-\|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
-</md>
-and <m>0 \ne 2</m>.
-</p>
-</feedback>
 </exercise>
 
 </worksheet>

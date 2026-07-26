@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Final exam problems on the cross product
+-->
+<worksheet xml:id="worksheet-exercises-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exercises for <xref ref="section-cross-product" text="title"/></title>
+
+<introduction>
+<p>
+These problems use the cross product and the triple product. If you would like to review this topic before
+attempting them, see <xref ref="section-cross-product" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rw23-9-a">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
+<m>\R^3</m>, then
+<m>\vec u \cdot (\vec u \times \vec v)
+= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
+</p>
+</statement>
+<feedback>
+<p>
+Counterexample: take
+<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
+<md>
+\mathbf i \cdot
+\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
+\quad\text{whereas}\quad
+\|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
+</md>
+and <m>0 \ne 2</m>.
+</p>
+</feedback>
+</exercise>
+
+</worksheet>
