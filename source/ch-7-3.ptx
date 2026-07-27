@@ -598,6 +598,55 @@ f(x) = \sinh(\ln(x))
 </li>
 </ol>
 </p>
+
+<figure xml:id="fig-hyp-sinh-ln">
+<caption>
+The function <m>f(x) = \sinh(\ln x) = \dfrac{x^2-1}{2x}</m> (for
+<m>x \gt 0</m>) and its derivative <m>f'(x) = \dfrac{x^2+1}{2x^2}</m>.
+The graph of <m>f</m> crosses the <m>x</m>-axis at <m>(1,0)</m>, while
+<m>f'</m> stays positive and decreases toward its horizontal asymptote
+<m>y = \frac12</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-sinh-ln">
+<diagram dimensions="(380,300)" margins="12">
+<definition>f(t) = (t, (t^2 - 1)/(2*t))</definition>
+<definition>fp(t) = (t, (t^2 + 1)/(2*t^2))</definition>
+<coordinates bbox="(-0.4,-2.2,4.3,4.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="sl-asymptote" endpoints="((0,0.5),(4.2,0.5))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<parametric-curve at="sl-fp" function="fp" domain="(0.4,4)"
+                  stroke="#2B6CB0" thickness="2.5"/>
+<parametric-curve at="sl-f" function="f" domain="(0.4,4)"
+                  stroke="#8B1A4A" thickness="3"/>
+<point at="sl-root" p="(1,0)" fill="#8B1A4A"/>
+<label at="sl-f-label" anchor="(3.15,1.3)" alignment="ne" color="#8B1A4A">
+<m>f(x)=\sinh(\ln x)</m>
+</label>
+<label at="sl-fp-label" anchor="(2.7,0.75)" alignment="nw" color="#2B6CB0">
+<m>f'(x)</m>
+</label>
+<label at="sl-asy-label" anchor="(0.15,0.5)" alignment="ne" color="#7F7F7F">
+<m>y=\frac12</m>
+</label>
+<label at="sl-root-label" anchor="(1.08,-0.12)" alignment="se" color="#8B1A4A">
+<m>(1,0)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Two curves drawn for x greater than zero. A dark red curve, f of x equals hyperbolic sine of the natural log of x, rises from below the axis, crosses the x-axis at the point one comma zero, and keeps increasing. A blue curve, its derivative, stays positive and decreases toward a dashed gray horizontal line at y equals one half, which is its asymptote.">
+  <annotation ref="sl-f" text="The function f of x equals hyperbolic sine of the natural log of x, which equals x squared minus one over two x. It is negative for x between zero and one, zero at x equals one, and positive and increasing for x greater than one."/>
+  <annotation ref="sl-fp" text="The derivative f prime of x equals x squared plus one over two x squared. It is always positive, large near zero, and decreases toward one half as x grows."/>
+  <annotation ref="sl-asymptote" text="The dashed horizontal asymptote y equals one half of the derivative."/>
+  <annotation ref="sl-root" text="The point one comma zero, where f crosses the x-axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 </solution>
 </example>
 
