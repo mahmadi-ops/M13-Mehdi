@@ -574,13 +574,73 @@ running from the lowest point to a point where the cable makes an angle
 that piece. Three forces act on it: the tension <m>T_0</m> at the lowest
 point, which is horizontal; the tension <m>T</m> along the cable at the
 other end; and the weight <m>\lambda g s</m> of the piece, where
-<m>\lambda</m> is the mass per unit length. Balancing the horizontal and
-the vertical components gives
+<m>\lambda</m> is the mass per unit length; see
+<xref ref="fig-hyp-catenary-forces"/>. Balancing the horizontal and the
+vertical components gives
 <md>
 <mrow>T\cos\theta \amp = T_0</mrow>
 <mrow>T\sin\theta \amp = \lambda g s.</mrow>
 </md>
 </p>
+
+<figure xml:id="fig-hyp-catenary-forces">
+<caption>
+The three forces on the piece of cable of arc length <m>s</m> running
+from the lowest point of the cable to a point where the cable makes an
+angle <m>\theta</m> with the horizontal. The lowest point sits at height
+<m>a = T_0/(\lambda g)</m>, and the supports are a distance <m>2b</m>
+apart. (After Fig. 1 of Behroozi, cited below.)
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-catenary-forces">
+<diagram dimensions="(400,300)" margins="12">
+<definition>c(x) = (exp(x) + exp(-x))/2</definition>
+<definition>P = (1.1, 1.6685)</definition>
+<coordinates bbox="(-2.5,-0.5,2.9,3.3)">
+<axes xlabel="x" ylabel="y" decorations="no"/>
+<graph at="cf-curve" function="c" domain="(-1.75,1.75)"
+       stroke="#56B4E9" thickness="2"/>
+<graph at="cf-arc" function="c" domain="(0,1.1)"
+       stroke="#8B1A4A" thickness="4"/>
+<line at="cf-horiz" endpoints="(P,(1.85,1.6685))" stroke="gray" thickness="1"/>
+<angle-marker at="cf-theta" points="((1.85,1.6685),P,(1.4,2.0685))" radius="24"
+              clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<vector at="cf-T" v="(0.36,0.48)" tail="P" stroke="black" thickness="2"
+        alignment="ne"><m>T</m></vector>
+<vector at="cf-W" v="(0,-0.6)" tail="P" stroke="black" thickness="2"
+        alignment="e"><m>\lambda g s</m></vector>
+<vector at="cf-T0" v="(-0.6,0)" tail="(0,1)" stroke="black" thickness="2"
+        alignment="nw"><m>T_0</m></vector>
+<point at="cf-vertex" p="(0,1)" fill="black"/>
+<point at="cf-P" p="P" fill="black"/>
+<line at="cf-a" endpoints="((0,0),(0,1))" stroke="gray" thickness="2"
+      arrows="2"/>
+<label at="cf-a-lab" anchor="(-0.06,0.5)" alignment="w"><m>a</m></label>
+<label at="cf-s-lab" anchor="(0.62,1.02)" alignment="se" color="#8B1A4A">
+<m>s</m>
+</label>
+<line at="cf-b" endpoints="((0,3.05),(1.75,3.05))" stroke="gray" thickness="1"
+      arrows="2"/>
+<label at="cf-b-lab" anchor="(0.87,3.08)" alignment="n"><m>b</m></label>
+<line at="cf-support" endpoints="((1.75,2.925),(1.75,3.15))" stroke="gray"
+      thickness="1"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hanging cable in the shape of a catenary. The piece of the cable from its lowest point up to a point P is drawn in dark red and labelled s. Three force arrows are shown: the horizontal tension T naught at the lowest point, the tension T along the cable at P, and the weight lambda g s pointing straight down at P. The angle theta is marked between the cable at P and the horizontal. The height of the lowest point above the x axis is labelled a, and the horizontal distance from the y axis to the support is labelled b.">
+  <annotation ref="cf-curve" text="The catenary y equals a hyperbolic cosine of x over a."/>
+  <annotation ref="cf-arc" text="The section of cable of arc length s, from the vertex to the point P."/>
+  <annotation ref="cf-T0" text="The horizontal tension T naught at the lowest point of the cable."/>
+  <annotation ref="cf-T" text="The tension T at P, directed along the cable."/>
+  <annotation ref="cf-W" text="The weight lambda g s of the section, pointing straight down."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 
 <p>
 The quantity <m>a = T_0/(\lambda g)</m> has units of length, and
@@ -616,7 +676,7 @@ Two things are worth noticing. First, <m>a</m> is a pure scale factor:
 written as <m>y/a = \cosh(x/a)</m>, the equation shows that every
 catenary is a scaled copy of the single curve <m>y = \cosh x</m>, in
 exactly the same way that every circle is a scaled copy of the unit
-circle. Second, <m>a</m> is fixed by the cable itself. If the cable has
+circle; <xref ref="fig-hyp-catenary-family"/> shows four of them. Second, <m>a</m> is fixed by the cable itself. If the cable has
 half-length <m>l</m> and its two supports are a distance <m>2b</m>
 apart, then putting <m>s = l</m> at <m>x = b</m> in
 <m>s = a\sinh(x/a)</m> gives
@@ -628,6 +688,61 @@ which determines <m>a</m> (numerically) from the two lengths. Since
 and hangs almost flat, while a slack one has a small <m>a</m> and sags
 sharply.
 </p>
+
+<figure xml:id="fig-hyp-catenary-family">
+<caption>
+The catenaries <m>y = a\cosh(x/a)</m> for
+<m>a = 0.5,\ 1,\ 2,\ 4</m>. Each curve meets the <m>y</m>-axis at its
+own value of <m>a</m>, and all four are scaled copies of the single
+curve <m>y = \cosh x</m>. (After Fig. 2 of Behroozi, cited below.)
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-catenary-family">
+<diagram dimensions="(420,320)" margins="12">
+<definition>ca(x) = 0.5*(exp(x/0.5) + exp(-x/0.5))/2</definition>
+<definition>cb(x) = (exp(x) + exp(-x))/2</definition>
+<definition>cc(x) = 2*(exp(x/2) + exp(-x/2))/2</definition>
+<definition>cd(x) = 4*(exp(x/4) + exp(-x/4))/2</definition>
+<coordinates bbox="(-6.9,-1.1,6.9,9.6)">
+<axes at="cfam-axes" xlabel="x" ylabel="y" hlabels="(-6,2,6)" vlabels="(0,2,8)"/>
+<graph at="cfam-a" function="ca" domain="(-1.6,1.6)"
+       stroke="#8B1A4A" thickness="2"/>
+<graph at="cfam-b" function="cb" domain="(-2.6,2.6)"
+       stroke="#56B4E9" thickness="3"/>
+<graph at="cfam-c" function="cc" domain="(-3.9,3.9)"
+       stroke="#E69F00" thickness="2"/>
+<graph at="cfam-d" function="cd" domain="(-5.6,5.6)"
+       stroke="#009E73" thickness="2"/>
+<point at="cfam-ia" p="(0,0.5)" fill="#8B1A4A"/>
+<point at="cfam-ib" p="(0,1)" fill="#56B4E9"/>
+<point at="cfam-ic" p="(0,2)" fill="#E69F00"/>
+<point at="cfam-id" p="(0,4)" fill="#009E73"/>
+<label at="cfam-la" anchor="(1.6,6.28)" alignment="n" color="#8B1A4A">
+<m>a=0.5</m>
+</label>
+<label at="cfam-lb" anchor="(-2.6,6.9)" alignment="n" color="#56B4E9">
+<m>a=1</m>
+</label>
+<label at="cfam-lc" anchor="(3.9,7.19)" alignment="n" color="#E69F00">
+<m>a=2</m>
+</label>
+<label at="cfam-ld" anchor="(5.6,8.73)" alignment="n" color="#009E73">
+<m>a=4</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four catenaries y equals a hyperbolic cosine of x over a, drawn on the same axes for a equal to one half, one, two, and four. Each curve is a U shape whose lowest point sits on the y axis at height a; the larger the value of a, the wider and flatter the curve.">
+  <annotation ref="cfam-a" text="The catenary with scale factor one half, the narrowest of the four."/>
+  <annotation ref="cfam-b" text="The unit catenary y equals hyperbolic cosine of x, with lowest point at height one."/>
+  <annotation ref="cfam-c" text="The catenary with scale factor two."/>
+  <annotation ref="cfam-d" text="The catenary with scale factor four, the widest and flattest of the four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 
 <p>
 The derivation above follows F. Behroozi,
@@ -779,11 +894,33 @@ y = A\left(\cosh\frac{Cx}{L} - 1\right),
 </md>
 where <m>A</m>, <m>C</m>, and <m>L</m> are constants. The arch is
 slightly flattened compared with a uniform hanging chain, because it is
-thicker at the base than at the top.
+thicker at the base than at the top. It stands 630 feet tall and 630
+feet wide at the base; the National Park Service describes its
+construction and its geometry at
+<url href="https://www.nps.gov/jeff/index.htm" visual="nps.gov">Gateway Arch National Park</url>.
+See <xref ref="fig-hyp-gateway-arch"/>.
 </p>
-</subsection>
 
-<subsection xml:id="subsec-hyp-more-examples">
+<figure xml:id="fig-hyp-gateway-arch">
+<caption>
+The Gateway Arch in St. Louis, Missouri. Its centerline follows the
+curve <m>y = A\left(\cosh(Cx/L) - 1\right)</m>, an upside-down catenary.
+(Photograph by John Margolies, 1988; John Margolies Roadside America
+photograph archive, Library of Congress, Prints and Photographs
+Division.)
+</caption>
+<image source="app-catenary-gateway-arch.jpg" width="48%">
+<shortdescription>
+The stainless steel Gateway Arch rising from a line of trees against a
+clear blue sky, curving up to a rounded peak and back down.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-more-examples">
 <title>Further Examples</title>
 
 <example xml:id="example-hyp-sinh-ln">
@@ -906,7 +1043,6 @@ e^{2x} = \frac43 \;\Rightarrow\; x = \frac12\ln\!\left(\frac43\right).
 </p>
 </solution>
 </example>
-</subsection>
 </section>
 
 </chapter>
