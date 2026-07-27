@@ -164,7 +164,8 @@
       "Bash(rsvg-convert -w 820 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-cylinder-x-2.svg -o cylx.png)",
       "Bash(rsvg-convert -w 520 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy.png)",
       "Bash(rsvg-convert -w 820 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-cylinder-x-2.svg -o cylx2.png)",
-      "Bash(rsvg-convert -w 540 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy2.png)"
+      "Bash(rsvg-convert -w 540 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy2.png)",
+      "mcp__bf7c680d-5fdc-5ef4-b4a0-abadb619bf0a__list_repos"
     ]
   }
 }
