@@ -363,4 +363,81 @@ point M in the middle of the parallelogram.
 </solution>
 </exercise>
 
+<exercise xml:id="m2b-1a">
+<statement>
+<p>
+Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
+tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
+<m>\vec B</m>, and <m>\vec B - \vec A</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions described. Everything below is a statement about the
+<em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+<p>
+The difference <m>\vec B - \vec A</m> is the vector that, added to
+<m>\vec A</m>, gives <m>\vec B</m>. So when
+<m>\vec A</m> and <m>\vec B</m> are drawn from a common tail,
+<m>\vec B - \vec A</m> is the arrow that runs
+<em>from the tip of</em> <m>\vec A</m> <em>to the tip of</em>
+<m>\vec B</m>. (Here it is
+<m>\left\langle -7, 3 \right\rangle</m>.) It is easy to get this
+backwards; the check is that
+<m>\vec A + (\vec B - \vec A) = \vec B</m>. See
+<xref ref="fig-m2b-1a"/>.
+</p>
+
+<figure xml:id="fig-m2b-1a">
+<caption>
+<m>\vec B-\vec A</m> runs from the tip of <m>\vec A</m> to the tip of
+<m>\vec B</m>.
+</caption>
+<image width="55%">
+<description>
+<p>
+A blue arrow A points up and to the right and a green arrow B points
+up and to the left from a common tail. An orange arrow runs from the
+tip of A to the tip of B, representing B minus A.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1a">
+<diagram dimensions="(300,230)" margins="16">
+<coordinates bbox="(-4.0,-0.8,5.0,6.0)">
+<vector at="pa-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pa-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="pa-D" v="(-7,3)" tail="(4,2)" stroke="#D55E00" thickness="2"/>
+<label at="pa-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec A</m>
+</label>
+<label at="pa-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec B</m>
+</label>
+<label at="pa-Dl" anchor="(0.5,3.9)" alignment="n" color="#D55E00">
+<m>\vec B-\vec A</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Vectors A and B drawn from a common tail, with the vector B minus A drawn from the tip of A to the tip of B.">
+  <annotation ref="pa-A" text="The vector A."/>
+  <annotation ref="pa-B" text="The vector B."/>
+  <annotation ref="pa-D" text="The vector B minus A, drawn from the tip of A to the tip of B."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>

@@ -379,31 +379,14 @@ meet at a right angle.
 </solution>
 </exercise>
 
-<exercise xml:id="m2b-1">
+<exercise xml:id="m2b-1b">
 <statement>
 <p>
 Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
 tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
 and to the left, and the angle between them is slightly larger than a
-right angle. Sketch and clearly label diagrams for the following:
-<ol marker="(a)">
-<li>
-<p>
-<m>\vec A</m>, <m>\vec B</m>, and <m>\vec B - \vec A</m>.
-</p>
-</li>
-<li>
-<p>
-<m>\vec A</m>, <m>\vec B</m>, and <m>\operatorname{proj}_{\vec A}
-\vec B</m>.
-</p>
-</li>
-<li>
-<p>
-<m>\vec A</m>, <m>\vec B</m>, and <m>\vec A \times \vec B</m>.
-</p>
-</li>
-</ol>
+right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
+<m>\vec B</m>, and <m>\operatorname{proj}_{\vec A}\vec B</m>.
 </p>
 </statement>
 <solution>
@@ -411,25 +394,13 @@ right angle. Sketch and clearly label diagrams for the following:
 To make the picture concrete let us take
 <m>\vec A = \left\langle 4, 2 \right\rangle</m> and
 <m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
-the directions shown on the exam. Everything below is a statement about
+the directions described. Everything below is a statement about
 the <em>geometry</em>, so the same picture is correct for any pair of
 vectors in that configuration.
 </p>
 
 <p>
-<term>(a)</term> The difference <m>\vec B - \vec A</m> is the vector
-that, added to <m>\vec A</m>, gives <m>\vec B</m>. So when
-<m>\vec A</m> and <m>\vec B</m> are drawn from a common tail,
-<m>\vec B - \vec A</m> is the arrow that runs
-<em>from the tip of</em> <m>\vec A</m> <em>to the tip of</em>
-<m>\vec B</m>. (Here it is
-<m>\left\langle -7, 3 \right\rangle</m>.) It is easy to get this
-backwards; the check is that
-<m>\vec A + (\vec B - \vec A) = \vec B</m>.
-</p>
-
-<p>
-<term>(b)</term> The projection of <m>\vec B</m> onto <m>\vec A</m> is
+The projection of <m>\vec B</m> onto <m>\vec A</m> is
 the shadow that <m>\vec B</m> casts on the line through
 <m>\vec A</m>, obtained by dropping a perpendicular from the tip of
 <m>\vec B</m> to that line. Algebraically,
@@ -443,115 +414,52 @@ the shadow that <m>\vec B</m> casts on the line through
 Because the angle between <m>\vec A</m> and <m>\vec B</m> is
 <em>obtuse</em>, the dot product is negative and the projection points
 in the direction <em>opposite</em> to <m>\vec A</m>. This is the
-feature of the picture the problem is testing.
+feature of the picture the problem is testing. See
+<xref ref="fig-m2b-1b"/>.
 </p>
 
-<p>
-<term>(c)</term> The cross product <m>\vec A\times\vec B</m> is
-perpendicular to both, hence perpendicular to the page. The right-hand
-rule (curl the fingers of the right hand from <m>\vec A</m> towards
-<m>\vec B</m> through the smaller angle) shows that it points
-<em>out of the page</em>, which we draw as a circle with a dot in it.
-Indeed, treating the vectors as lying in the <m>xy</m>-plane,
-<md>
-\vec A\times\vec B
-= \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
-4 \amp 2 \amp 0 \\
--3 \amp 5 \amp 0
-\end{vmatrix}
-= \left\langle 0,\ 0,\ (4)(5)-(2)(-3) \right\rangle
-= 26\,\mathbf k ,
-</md>
-and the <m>\mathbf k</m>-component is positive. Its length,
-<m>26</m>, is the area of the parallelogram spanned by <m>\vec A</m>
-and <m>\vec B</m>. All three pictures are shown in
-<xref ref="fig-m2b-vectors"/>.
-</p>
-
-<figure xml:id="fig-m2b-vectors">
+<figure xml:id="fig-m2b-1b">
 <caption>
-The three sketches. Left: <m>\vec B-\vec A</m> runs from the tip of
-<m>\vec A</m> to the tip of <m>\vec B</m>. Centre: since the angle is
-obtuse, <m>\operatorname{proj}_{\vec A}\vec B</m> points opposite to
-<m>\vec A</m>. Right: <m>\vec A\times\vec B</m> points out of the page.
+Since the angle between <m>\vec A</m> and <m>\vec B</m> is obtuse,
+<m>\operatorname{proj}_{\vec A}\vec B</m> points opposite to
+<m>\vec A</m>.
 </caption>
-<image width="100%">
+<image width="55%">
 <description>
 <p>
-Three side by side panels. In each, a blue arrow A points up and to the
-right and a green arrow B points up and to the left from a common tail.
-In the first panel an orange arrow runs from the tip of A to the tip of
-B. In the second panel a short dark red arrow along the line of A
-points backwards, away from A, with a dashed perpendicular from the tip
-of B. In the third panel a circle with a dot in its centre represents a
-vector coming out of the page.
+A blue arrow A points up and to the right and a green arrow B points
+up and to the left from a common tail. A short dark red arrow along
+the line of A points backwards, away from A, with a dashed
+perpendicular from the tip of B, representing the projection of B
+onto A.
 </p>
 </description>
-<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-vectors">
-<diagram dimensions="(760,290)" margins="16">
-<coordinates bbox="(-6.0,-4.4,30.5,9.0)">
-<!-- panel (a) -->
-<vector at="pa-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
-<vector at="pa-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
-<vector at="pa-D" v="(-7,3)" tail="(4,2)" stroke="#D55E00" thickness="2"/>
-<label at="pa-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
-<m>\vec A</m>
-</label>
-<label at="pa-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
-<m>\vec B</m>
-</label>
-<label at="pa-Dl" anchor="(0.5,3.9)" alignment="n" color="#D55E00">
-<m>\vec B-\vec A</m>
-</label>
-<label at="pa-t" anchor="(-1.0,-3.6)" alignment="e">
-<m>\text{(a)}</m>
-</label>
-<!-- panel (b), origin shifted to (13,0) -->
-<line at="pb-axis" p1="(9.5,-1.75)" p2="(18.5,2.75)"
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1b">
+<diagram dimensions="(300,240)" margins="16">
+<coordinates bbox="(-4.5,-2.0,5.5,6.0)">
+<line at="pb-axis" p1="(-3.5,-1.75)" p2="(5.5,2.75)"
       stroke="#7F7F7F" thickness="1.5" dash="5 4"/>
-<vector at="pb-A" v="(4,2)" tail="(13,0)" stroke="#0072B2" thickness="2"/>
-<vector at="pb-B" v="(-3,5)" tail="(13,0)" stroke="#009E73" thickness="2"/>
-<vector at="pb-P" v="(-0.4,-0.2)" tail="(13,0)" stroke="#8B1A4A" thickness="3"/>
-<line at="pb-drop" p1="(10,5)" p2="(12.6,-0.2)"
+<vector at="pb-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pb-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="pb-P" v="(-0.4,-0.2)" tail="(0,0)" stroke="#8B1A4A" thickness="3"/>
+<line at="pb-drop" p1="(-3,5)" p2="(-0.4,-0.2)"
       stroke="#7F7F7F" thickness="1.5" dash="4 3"/>
-<label at="pb-Al" anchor="(17.1,1.9)" alignment="e" color="#0072B2">
+<label at="pb-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
 <m>\vec A</m>
 </label>
-<label at="pb-Bl" anchor="(9.9,5.1)" alignment="nw" color="#009E73">
+<label at="pb-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
 <m>\vec B</m>
 </label>
-<label at="pb-Pl" anchor="(12.45,-1.35)" alignment="w" color="#8B1A4A">
+<label at="pb-Pl" anchor="(-0.55,-1.35)" alignment="w" color="#8B1A4A">
 <m>\operatorname{proj}_{\vec A}\vec B</m>
-</label>
-<label at="pb-t" anchor="(12.0,-3.6)" alignment="e">
-<m>\text{(b)}</m>
-</label>
-<!-- panel (c), origin shifted to (26,0) -->
-<vector at="pc-A" v="(4,2)" tail="(26,0)" stroke="#0072B2" thickness="2"/>
-<vector at="pc-B" v="(-3,5)" tail="(26,0)" stroke="#009E73" thickness="2"/>
-<circle at="pc-out" center="(24.6,7.0)" radius="0.62"
-        stroke="#8B1A4A" thickness="2.5" fill="none"/>
-<point at="pc-dot" p="(24.6,7.0)" fill="#8B1A4A"/>
-<label at="pc-Al" anchor="(30.1,1.9)" alignment="e" color="#0072B2">
-<m>\vec A</m>
-</label>
-<label at="pc-Bl" anchor="(22.9,5.1)" alignment="nw" color="#009E73">
-<m>\vec B</m>
-</label>
-<label at="pc-Xl" anchor="(25.4,7.0)" alignment="e" color="#8B1A4A">
-<m>\vec A\times\vec B</m>
-</label>
-<label at="pc-t" anchor="(25.0,-3.6)" alignment="e">
-<m>\text{(c)}</m>
 </label>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="Three panels labelled a, b and c. Each shows a blue vector A pointing up and to the right and a green vector B pointing up and to the left from a common tail. Panel a adds an orange vector from the tip of A to the tip of B, labelled B minus A. Panel b adds a short dark red vector pointing backwards along the line of A, labelled the projection of B onto A, together with dashed construction lines. Panel c adds a small circle with a dot at its centre, labelled A cross B out of the page.">
-  <annotation ref="pa-D" text="The vector B minus A, drawn from the tip of A to the tip of B."/>
+<annotation ref="figure" text="Vectors A and B drawn from a common tail, with the projection of B onto A drawn along the line through A, pointing opposite to A since the angle between A and B is obtuse.">
+  <annotation ref="pb-A" text="The vector A."/>
+  <annotation ref="pb-B" text="The vector B."/>
   <annotation ref="pb-P" text="The projection of B onto A, which points opposite to A because the angle between A and B is obtuse."/>
-  <annotation ref="pc-out" text="A circle with a dot at its centre, the standard symbol for a vector pointing out of the page, representing A cross B."/>
 </annotation>
 </annotations>
 </diagram>
