@@ -928,11 +928,81 @@ curve, the tangent line, and the two marked values.
 <title>Linearizing <m>z = f(x,y)</m></title>
 
 <p>
-We can estimate the behavior of a function of two variables
-<m>z = f(x,y)</m> around a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> by
-making the observation that the tangent plane to the surface
-<m>z = f(x,y)</m> at <m>P_0</m> can be used as such an approximation.
-Below is the formal definition.
+Before generalizing to two variables, recall how a differentiable
+function <m>y = f(x)</m> is approximated near a point <m>x_0</m> by its
+tangent line. This line passes through <m>\bigl(x_0, f(x_0)\bigr)</m>
+with slope <m>f'(x_0)</m>, so it is the graph of the linear function
+<md xml:id="eq-tp-linearization-1d" number="yes">
+L(x) = f(x_0) + f'(x_0)(x - x_0).
+</md>
+As <xref ref="fig-tp-linearization-1d"/> shows, <m>L(x)</m> matches both
+the value and the slope of <m>f</m> at <m>x_0</m>, so its graph hugs the
+curve nearby.
+</p>
+
+<figure xml:id="fig-tp-linearization-1d">
+<caption>
+The tangent line <m>L(x) = f(x_0) + f'(x_0)(x-x_0)</m> approximates
+<m>y = f(x)</m> near <m>x_0</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+The graph of a curve y equals f of x and its tangent line at the point
+x0. The tangent line passes through the point P0 with coordinates x0,
+f of x0, matching both the height and the slope of the curve there.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-tp-linearization-1d">
+<diagram dimensions="(500,340)" margins="14">
+<definition>x0 = 2.5</definition>
+<definition>fx(x) = exp(0.35*x)</definition>
+<coordinates bbox="(-1.3,-0.5,6.2,4.9)">
+<vector at="lz-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
+<vector at="lz-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
+<graph at="lz-curve" function="fx" domain="(0,4.3)"
+       arrows="1" stroke="#D55E00" thickness="2"/>
+<tangent-line at="lz-tangent" function="fx" point="x0" infinite="yes"
+              stroke="#0072B2" thickness="2"/>
+<line at="lz-guidex" p1="(2.5,0)" p2="(2.5,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="lz-guidey" p1="(2.5,2.398875)" p2="(0,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<point at="lz-P0" p="(2.5,2.398875)" fill="black" radius="3"/>
+<label at="lz-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
+<label at="lz-ylabel" anchor="(-0.05,4.8)" alignment="w"><m>y</m></label>
+<label at="lz-curvelabel" anchor="(0.6,1.55)" alignment="n" color="#D55E00">
+<m>y=f(x)</m>
+</label>
+<label at="lz-tangentlabel" anchor="(4.6,4.162)" alignment="n" color="#0072B2">
+<m>L(x)</m>
+</label>
+<label at="lz-x0-tick" anchor="(2.5,-0.1)" alignment="s"><m>x_0</m></label>
+<label at="lz-fx0-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x_0)</m></label>
+<label at="lz-P0-label" anchor="(2.6,2.498875)" alignment="ne"><m>P_0</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The graph of a function y equals f of x and its tangent line at the point x0.">
+  <annotation ref="lz-curve" text="The graph of the function y equals f of x."/>
+  <annotation ref="lz-tangent" text="The tangent line to the graph at the point P0, given by L of x equals f of x0 plus f prime of x0 times x minus x0."/>
+  <annotation ref="lz-P0" text="The point P0 with coordinates x0, f of x0, where the tangent line touches the curve."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The same idea extends to a function of two variables <m>z = f(x,y)</m>.
+Near a point <m>P_0(x_0,y_0,f(x_0,y_0))</m> on the surface, the
+<term>tangent plane</term> plays the role that the tangent line played
+above, and the single slope <m>f'(x_0)</m> is replaced by the two
+partial derivatives <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> — one
+for the rate of change in each coordinate direction. The resulting
+linear approximation is called the <term>linearization</term> of
+<m>f</m>, defined as follows.
 </p>
 
 <definition xml:id="def-tp-linearization">
