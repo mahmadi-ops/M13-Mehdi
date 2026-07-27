@@ -164,7 +164,16 @@
       "Bash(rsvg-convert -w 820 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-cylinder-x-2.svg -o cylx.png)",
       "Bash(rsvg-convert -w 520 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy.png)",
       "Bash(rsvg-convert -w 820 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-cylinder-x-2.svg -o cylx2.png)",
-      "Bash(rsvg-convert -w 540 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy2.png)"
+      "Bash(rsvg-convert -w 540 -b white /workspaces/M13-Mehdi/generated-assets/latex-image/fig-ex3d-plane-xy-2.svg -o planexy2.png)",
+      "Bash(python -c \"import prefig,os;print\\(os.path.dirname\\(prefig.__file__\\)\\)\")",
+      "Bash(prefig build *)",
+      "Bash(rsvg-convert -w 800 output/hypcircle.svg -o hypcircle.png)",
+      "Bash(curl -sI -m 15 https://science.nasa.gov/)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/2i-borisov/\" -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/borisov.html -w \"%{http_code} %{url_effective}\\\\n\")",
+      "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/oumuamua/\" -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/oumuamua.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s -m 60 -L \"https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/07/borisov.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg\" -o borisov.jpg -w \"%{http_code} %{content_type} %{size_download}\\\\n\")",
+      "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/2i-borisov/\")"
     ]
   }
 }
