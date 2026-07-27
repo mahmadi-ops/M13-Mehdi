@@ -26,12 +26,13 @@ First,
 \cosh(2x) = \frac12\left(e^{2x} + e^{-2x}\right).
 </md>
 Second,
-<md xml:id="eq-rw23-sum" number="yes">
-\cosh^2(x) + \sinh^2(x)
-= \frac14\left(e^x + e^{-x}\right)^2
-+ \frac14\left(e^x - e^{-x}\right)^2
-= \frac14\left(2e^{2x} + 2e^{-2x}\right)
-= \frac12\left(e^{2x} + e^{-2x}\right).
+<md>
+<mrow>\cosh^2(x) + \sinh^2(x)
+\amp = \frac14\left(e^x + e^{-x}\right)^2
++ \frac14\left(e^x - e^{-x}\right)^2</mrow>
+<mrow>\amp = \frac14\left(2e^{2x} + 2e^{-2x}\right)</mrow>
+<mrow xml:id="eq-rw23-sum" number="yes">\amp
+= \frac12\left(e^{2x} + e^{-2x}\right).</mrow>
 </md>
 Comparing <xref ref="eq-rw23-cosh2x"/> and
 <xref ref="eq-rw23-sum"/> gives
@@ -102,6 +103,126 @@ with <m>e^{\ln 2} = 2</m> and
 = \frac{\frac52}{2}
 = \frac54.
 </md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-hyp-solve-equation">
+<statement>
+<p>
+Solve the equation <m>5\sinh(x) - 3\cosh(x) = 3</m> for <m>x</m>.
+</p>
+</statement>
+<solution>
+<p>
+We first replace the hyperbolic functions by their definitions:
+<md>
+<mrow>5\sinh(x) - 3\cosh(x) \amp = 3</mrow>
+<mrow>\Rightarrow\quad
+\frac{5\left(e^x - e^{-x}\right)}{2}
+- \frac{3\left(e^x + e^{-x}\right)}{2} \amp = 3</mrow>
+<mrow>\Rightarrow\quad e^x - 4e^{-x} \amp = 3.</mrow>
+</md>
+</p>
+<p>
+Multiplying through by <m>e^x</m> and writing <m>u = e^x</m> turns this
+into a quadratic equation:
+<md>
+<mrow>u^2 - 3u - 4 \amp = 0</mrow>
+<mrow>\Rightarrow\quad (u-4)(u+1) \amp = 0.</mrow>
+</md>
+</p>
+<p>
+Since <m>u = e^x</m> is positive, the root <m>u = -1</m> is impossible,
+and only <m>u = 4</m> survives. Therefore
+<md>
+e^x = 4 \quad\Longrightarrow\quad x = \ln 4 = 2\ln 2.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-hyp-arctanh">
+<statement>
+<p>
+Following the method of <xref ref="example-hyp-arccosh"/>, show that the
+inverse hyperbolic tangent is given by
+<md>
+\tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right),
+\qquad -1 \lt x \lt 1.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Unlike <m>\cosh</m>, the function <m>\tanh</m> is increasing on all of
+<m>\R</m>, so no restriction of its domain is needed. Set
+<m>y = \tanh(x)</m> and solve for <m>x</m>. Multiplying the numerator and
+the denominator by <m>e^{x}</m> gives
+<md>
+y = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}\cdot\frac{e^{x}}{e^{x}}
+= \frac{e^{2x} - 1}{e^{2x} + 1}.
+</md>
+</p>
+<p>
+Writing <m>u = e^{2x}</m> and clearing the denominator,
+<md>
+<mrow>y(u+1) \amp = u - 1</mrow>
+<mrow>\Rightarrow\quad y + 1 \amp = u - yu = u(1-y)</mrow>
+<mrow>\Rightarrow\quad u \amp = \frac{1+y}{1-y}.</mrow>
+</md>
+</p>
+<p>
+Therefore <m>e^{2x} = \dfrac{1+y}{1-y}</m>, and taking the natural
+logarithm gives <m>2x = \ln\left(\frac{1+y}{1-y}\right)</m>.
+Interchanging the names of the two variables, so that
+<m>y = \tanh^{-1}(x)</m> is the inverse function,
+<md>
+y = \tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right).
+</md>
+The range of <m>\tanh</m> is the interval <m>(-1,1)</m>, which is exactly
+the set of <m>x</m> for which <m>\frac{1+x}{1-x}</m> is positive, so this
+is the domain of <m>\tanh^{-1}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-hyp-arctanh-integral">
+<statement>
+<p>
+Use the substitution <m>x = \tanh(t)</m> to calculate
+<md>
+\int \frac{dx}{1-x^2}, \qquad -1 \lt x \lt 1,
+</md>
+and then use <xref ref="ex-hyp-arctanh"/> to write your answer with a
+logarithm. <em>Hint:</em>
+<m>\frac{d}{dt}\tanh(t) = \operatorname{sech}^2(t)</m>, and
+<m>1 - \tanh^2(t) = \operatorname{sech}^2(t)</m>.
+</p>
+</statement>
+<solution>
+<p>
+With <m>x = \tanh(t)</m> we have
+<m>dx = \operatorname{sech}^2(t)\,dt</m>, and the denominator collapses
+by the identity in the hint:
+<md>
+<mrow>\int \frac{dx}{1-x^2}
+\amp = \int \frac{\operatorname{sech}^2(t)}{1-\tanh^2(t)}\,dt</mrow>
+<mrow>\amp = \int \frac{\operatorname{sech}^2(t)}{\operatorname{sech}^2(t)}\,dt</mrow>
+<mrow>\amp = \int dt = t + C.</mrow>
+</md>
+</p>
+<p>
+Since <m>x = \tanh(t)</m> means <m>t = \tanh^{-1}(x)</m>, and using
+<xref ref="ex-hyp-arctanh"/> to rewrite the inverse function,
+<md>
+<mrow>\int \frac{dx}{1-x^2}
+\amp = \tanh^{-1}(x) + C</mrow>
+<mrow>\amp = \frac12\ln\left(\frac{1+x}{1-x}\right) + C.</mrow>
+</md>
+This agrees with the answer obtained by partial fractions, since
+<m>\frac12\ln\left(\frac{1+x}{1-x}\right)
+= \frac12\ln(1+x) - \frac12\ln(1-x)</m>.
 </p>
 </solution>
 </exercise>

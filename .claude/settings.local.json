@@ -173,7 +173,15 @@
       "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/2i-borisov/\" -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/borisov.html -w \"%{http_code} %{url_effective}\\\\n\")",
       "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/oumuamua/\" -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/oumuamua.html -w \"%{http_code}\\\\n\")",
       "Bash(curl -s -m 60 -L \"https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/07/borisov.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg\" -o borisov.jpg -w \"%{http_code} %{content_type} %{size_download}\\\\n\")",
-      "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/2i-borisov/\")"
+      "Bash(curl -s -m 30 -L \"https://science.nasa.gov/solar-system/comets/2i-borisov/\")",
+      "Bash(curl -s -m 20 \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=3\")",
+      "Bash(curl -s -m 30 -L \"https://www.nps.gov/jeff/index.htm\" -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/nps-jeff.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s -m 40 \"https://www.loc.gov/pictures/search/?q=gateway%20arch%20saint%20louis&fo=json&c=10\")",
+      "Bash(curl -s -m 30 \"https://www.loc.gov/pictures/item/2017708704/?fo=json\")",
+      "Bash(curl -s -m 30 -L \"https://www.loc.gov/pictures/item/2017708704/\")",
+      "Bash(curl -s -m 90 -L \"https://cdn.loc.gov/service/pnp/mrg/06600/06612v.jpg\" -o arch-large.jpg -w \"%{http_code} %{size_download}\\\\n\")",
+      "Bash(ls /opt/venv/lib/python3.13/site-packages/prefig/core/ | head -50)",
+      "Read(//opt/venv/lib/python3.13/site-packages/prefig/core/**)"
     ]
   }
 }
