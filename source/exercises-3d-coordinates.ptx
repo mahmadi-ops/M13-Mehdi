@@ -924,4 +924,151 @@ almost none at the center.
 </solution>
 </exercise>
 
+<exercise xml:id="ex-3d-cylinder-paraboloid-solid">
+<title>A Solid Bounded by a Cylinder and a Paraboloid</title>
+<statement>
+<p>
+Consider the solid bounded by the three surfaces
+<md>
+z = 0, \qquad z = x^2+y^2, \qquad x^2+y^2 = 4.
+</md>
+<ol marker="(a)">
+<li>
+<p>
+Describe each of the three bounding surfaces.
+</p>
+</li>
+<li>
+<p>
+Describe the solid region they enclose.
+</p>
+</li>
+<li>
+<p>
+Describe the cross-section of the solid in the plane <m>y=0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<term>(a)</term> The equation <m>z=0</m> is the <m>xy</m>-plane. The
+equation <m>z=x^2+y^2</m> is a paraboloid opening upward from its
+vertex at the origin. The equation <m>x^2+y^2=4</m> is missing
+<m>z</m>, so it is the infinite cylinder of radius <m>2</m> whose axis
+is the <m>z</m>-axis. The paraboloid meets that cylinder exactly where
+<m>x^2+y^2=4</m>, at height <m>z=4</m>.
+</p>
+<p>
+<term>(b)</term> The solid consists of the points inside the cylinder
+lying between the flat base and the paraboloid:
+<md>
+x^2+y^2 \le 4, \qquad 0 \le z \le x^2+y^2.
+</md>
+Near the <m>z</m>-axis this range for <m>z</m> is almost nothing, since
+<m>x^2+y^2 \approx 0</m> there, while at the rim <m>x^2+y^2=4</m> it is
+the full interval <m>0 \le z \le 4</m>. The solid is therefore shaped
+like a shallow bowl carved out from underneath the paraboloid: thin at
+the center and rising to its full height <m>4</m> at the cylinder wall,
+shown in <xref ref="fig-ex3d-cylinder-paraboloid-solid"/>. As with the
+solid in <xref ref="ex-3d-nonconvex-solid" text="the previous
+exercise"/>, this region is not convex, for the same kind of reason:
+two points near the rim at a fixed positive height are in the solid,
+but the segment between them dips toward the <m>z</m>-axis, where that
+height is no longer below the paraboloid.
+</p>
+<p>
+<term>(c)</term> Setting <m>y=0</m> restricts the solid's defining
+inequalities to <m>-2\le x\le 2</m> and <m>0\le z\le x^2</m>: the
+region under the parabola <m>z=x^2</m>, above the <m>x</m>-axis,
+between <m>x=-2</m> and <m>x=2</m>.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-paraboloid-solid">
+<caption>
+The solid bounded by <m>z=0</m>, the paraboloid <m>z=x^2+y^2</m>, and
+the cylinder <m>x^2+y^2=4</m>. The solid fills the region under the
+paraboloid, thin near the <m>z</m>-axis and reaching full height where
+the paraboloid meets the cylinder wall.
+</caption>
+<image width="55%">
+<description>
+<p>
+A paraboloid opening upward from the origin, shown as a shaded bowl
+sitting inside a cylindrical wall of radius two. The bowl's rim meets
+the top of the cylinder, and a shaded disk in the x y plane forms the
+flat base of the solid beneath the bowl.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{130}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.75]
+\tikzmath{function f(\x) {return \x;};}
+\pgfmathsetmacro{\zini}{0.5*sqrt(2.0)}
+\pgfmathsetmacro{\step}{0.01}
+\pgfmathsetmacro{\zsig}{\zini+\step}
+\pgfmathsetmacro{\nextz}{\zini+0.5*\step}
+\pgfmathsetmacro{\sig}{2.0*\step}
+\pgfmathsetmacro{\tini}{0.5*pi}
+\pgfmathsetmacro{\tnext}{\tini+\step}
+\pgfmathsetmacro{\tfin}{1.85*pi}
+\pgfmathsetmacro{\tend}{2.5*pi}
+\pgfmathsetmacro{\tNext}{\tfin+\step}
+\pgfmathsetmacro{\final}{2.0*pi}
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-2.5,0,0);
+\draw[thick,->] (0,0,0) -- (0,3.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-2.5,0);
+% the base disk
+\draw[gray,thick,fill=yellow,opacity=0.35] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+\draw[gray,dash dot dot] (-2,0,0) -- (-2,0,4);
+\draw[gray,dash dot dot] (0,-2,0) -- (0,-2,4);
+% the cylinder around the paraboloid (back)
+\foreach \angulo in {\tini,\tnext,...,\tfin}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
+}
+% the paraboloid (for z = constant)
+\foreach \altura in {\step,\sig,...,4.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.25] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
+}
+\draw[thick] (0,0,0) -- (0,0,4.0);
+% the curves bounding the solid
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},0,{\t*\t});
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] (0,{\t},{\t*\t});
+% the paraboloid (for z = constant)
+\foreach \altura in {\step,\sig,...,4.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.25] plot[domain=\tfin:\tend,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
+}
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0});
+% the cylinder out of the paraboloid (front)
+\foreach \angulo in {\tfin,\tNext,...,\tend}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
+}
+\draw[gray,dash dot dot] (2,0,0) -- (2,0,4);
+\draw[gray,dash dot dot] (0,2,0) -- (0,2,4);
+\node[blue,left] at (1,-1.25,2.5) {$z = x^2 + y^2$};
+\draw[thick,->] (0,0,4.0) -- (0,0,4.5) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>
