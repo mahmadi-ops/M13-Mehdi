@@ -431,33 +431,46 @@ its center.
 <image width="45%">
 <description>
 <p>
-A hemisphere sitting above a flat disk face, offset from the origin
-toward the point two, negative one, zero. A wireframe outline below the
-disk shows where the missing half of the ball would be.
+A shaded hemisphere sitting above a flat disk face at the plane y equals
+negative one, offset from the origin toward the point two, negative one,
+zero, with a dotted segment from the origin to the center of the disk.
 </p>
 </description>
 <latex-image><![CDATA[
-\begin{tikzpicture}[scale=1.0, >=stealth]
-% drawn directly in the picture plane, in the same style as fig-3d-shell:
-% the flat cut face is the disk where y = -1, shaded solid, with a
-% wireframe outline showing where the discarded half would sit
-\begin{scope}[shift={(-2.78,-0.58)}]
-  \fill[cyan!30, opacity=0.9]
-    (-1.55,0) arc (180:360:1.55cm and 0.43cm) arc (0:180:1.55cm);
-  \draw[cyan!55!black] (-1.55,0) arc (180:360:1.55cm and 0.43cm);
-  \draw[cyan!55!black] (-1.55,0) arc (180:0:1.55cm and 0.43cm);
-  \draw[cyan!55!black] (-1.55,0) arc (180:360:1.55cm);
-  \fill[gray] (0,0) circle (1pt);
-\end{scope}
-\draw[gray, densely dotted] (0,0) -- (-2.78,-0.58);
-% axes drawn last, so they stay visible where they cross the ball
-\draw[->, thick] (0,0) -- (0,2.6) node[above] {$z$};
-\draw[->, thick] (0,0) -- (3.4,-0.9) node[right] {$y$};
-\draw[->, thick] (0,0) -- (-1.5,-0.69) node[below left=1pt] {$x$};
-\node[above right] at (0,0.05) {$0$};
-\node[gray!70!black] at (-2.78,-2.1) {$(2,-1,0)$};
-\node[below, align=center] at (-2.78,-2.85)
-  {$(x-2)^2+(y+1)^2+z^2 \le 9,$\\[2pt] $y \ge -1$};
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+% the flat reference plane y=-1, exactly like part A's plane, so the
+% orientation is guaranteed consistent
+\fill[gray!15, opacity=0.7] (-2,-1,-3.7) -- (6,-1,-3.7) -- (6,-1,3.7) -- (-2,-1,3.7) -- cycle;
+\draw[gray!60, thin] (-2,-1,-3.7) -- (6,-1,-3.7) -- (6,-1,3.7) -- (-2,-1,3.7) -- cycle;
+% the curved dome (y from -1 up to the pole at y=2): stacked latitude
+% circles of shrinking radius sqrt(9-(y+1)^2), each plotted directly in
+% the true 3D coordinate system, giving a rounded, shaded cap
+\foreach \y in {-0.85,-0.7,...,1.9} {
+  \pgfmathsetmacro{\r}{sqrt(9-(\y+1)*(\y+1))}
+  \pgfmathsetmacro{\shd}{25+45*(\y+1)/3}
+  \fill[cyan!\shd, opacity=0.85]
+    plot[domain=0:360, samples=48, smooth cycle] ({2+\r*cos(\x)}, \y, {\r*sin(\x)});
+}
+% the flat cut disk (intersection with y=-1), same color family as the
+% dome so the whole solid reads as one continuous surface
+\fill[cyan!65, opacity=0.9]
+  plot[domain=0:360, samples=72, smooth cycle] ({2+3*cos(\x)}, -1, {3*sin(\x)});
+\draw[cyan!55!black, thick]
+  plot[domain=0:360, samples=72, smooth cycle] ({2+3*cos(\x)}, -1, {3*sin(\x)});
+% dotted line from the origin to the sphere's center
+\draw[gray, densely dotted] (0,0,0) -- (2,-1,0);
+\fill[gray] (2,-1,0) circle (1.3pt);
+% axes drawn last, so they stay visible where they cross the shape
+\draw[->, thick] (0,0,0) -- (-2.2,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,3.4,0) node[below right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,-3.9);
+\draw[->, thick] (0,0,0) -- (0,0,3.9) node[above] {$z$};
+\node[above right] at (0,0,0) {$0$};
+\node[gray!60!black] at (-1.6,-1,3.6) {$y=-1$};
+\node[gray!70!black, below right=1pt] at (2,-1,0) {$(2,-1,0)$};
+\node[cyan!55!black, below] at (2,-1,-4.2) {$(x-2)^2+(y+1)^2+z^2 \le 9,\; y \ge -1$};
 \end{tikzpicture}
 ]]></latex-image>
 </image>
