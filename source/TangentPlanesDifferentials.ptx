@@ -436,8 +436,123 @@ turn, followed by a slow rotation of the finished figure.
 <title>Estimating the Change in a Particular Direction</title>
 
 <p>
-Consider the function <m>z = f(x,y)</m>, a point <m>P_0(x_0,y_0)</m> in
-its domain, and a unit vector
+Before turning to functions of two variables, it is worth recalling the
+analogous idea from single-variable calculus. For a differentiable
+function <m>y = f(x)</m>, moving a small distance <m>dx</m> away from a
+point <m>x</m> changes the height of the curve by an amount that can be
+estimated from the slope <m>f'(x)</m>: the resulting
+<term>differential</term> is
+<md xml:id="eq-tp-1d-df" number="yes">
+df = f'(x)\,dx.
+</md>
+As <xref ref="fig-tp-linear-approx-1d"/> shows, this differential
+closely approximates the actual change in the function,
+<m>\Delta f = f(x+dx) - f(x)</m>, as long as <m>dx</m> is small.
+</p>
+
+<figure xml:id="fig-tp-linear-approx-1d">
+<caption>
+The tangent line at <m>x</m> approximates <m>y = f(x)</m> near
+<m>x + dx</m>. The differential <m>df = f'(x)\,dx</m>, found by walking
+along the tangent line, closely approximates the actual change
+<m>\Delta f = f(x+dx) - f(x)</m>, found by walking along the curve.
+</caption>
+<image width="72%">
+<description>
+<p>
+The graph of a curve y equals f of x. At a point x on the curve, a
+right triangle formed by the tangent line has horizontal leg d x and
+vertical leg d f, equal to f prime of x times d x. A separate vertical
+bracket to the left, labeled delta f, compares this to the actual rise
+of the curve, f of x plus d x minus f of x, and a bracket to the right
+shows the differential d f equals f prime of x times d x next to the
+baseline height f of x.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-tp-linear-approx-1d">
+<diagram dimensions="(500,340)" margins="14">
+<definition>curve(t) = (t, exp(0.35*t))</definition>
+<coordinates bbox="(-1.3,-0.5,6.2,4.9)">
+<vector at="la-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
+<vector at="la-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
+<parametric-curve at="la-curve" function="curve" domain="(0,4.3)"
+                   arrows="1" stroke="#D55E00" thickness="2"/>
+<line at="la-guide1" p1="(2.5,0)" p2="(2.5,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide2" p1="(2.5,2.398875)" p2="(0,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide3" p1="(3.5,0)" p2="(3.5,3.404166)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide4" p1="(3.5,3.404166)" p2="(0,3.404166)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-tick1" p1="(3.5,2.398875)" p2="(5.6,2.398875)"
+      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
+<line at="la-tick2" p1="(3.5,3.238482)" p2="(5.6,3.238482)"
+      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
+<polygon at="la-triangle" points="((2.5,2.398875),(3.5,3.238482),(3.5,2.398875))"
+         closed="yes" stroke="#0072B2" thickness="2.5" fill="none" linejoin="round"/>
+<vector at="la-dx" tail="(2.5,1.898875)" v="(1.0,0)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dx-back" tail="(3.5,1.898875)" v="(-1.0,0)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-approx" tail="(4.6,2.398875)" v="(0,0.839607)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-approx-back" tail="(4.6,3.238482)" v="(0,-0.839607)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-actual" tail="(1.375,2.398875)" v="(0,1.005291)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-actual-back" tail="(1.375,3.404166)" v="(0,-1.005291)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-fx-base" tail="(4.6,2.398875)" v="(0,-2.398875)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-fx-base-back" tail="(4.6,0)" v="(0,2.398875)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<label at="la-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
+<label at="la-ylabel" anchor="(-0.05,4.8)" alignment="w"><m>y</m></label>
+<label at="la-curvelabel" anchor="(3.5,4.05)" alignment="w" color="#D55E00">
+<m>y=f(x)</m>
+</label>
+<label at="la-x-tick" anchor="(2.5,-0.1)" alignment="s"><m>x</m></label>
+<label at="la-xdx-tick" anchor="(3.5,-0.1)" alignment="s">
+<m>x+dx</m>
+</label>
+<label at="la-fx-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x)</m></label>
+<label at="la-fxdx-tick" anchor="(-0.05,3.404166)" alignment="w">
+<m>f(x+dx)</m>
+</label>
+<label at="la-dx-label" anchor="(3.0,1.898875)" alignment="c" clear-background="yes">
+<m>dx</m>
+</label>
+<label at="la-dfx-approx-label" anchor="(4.6,2.818679)" alignment="e" clear-background="yes">
+<m>df=f'(x)\,dx</m>
+</label>
+<label at="la-dfx-actual-label" anchor="(1.2,2.90152)" alignment="w">
+<m>\Delta f</m>
+</label>
+<label at="la-fx-base-label" anchor="(4.6,1.199438)" alignment="w" clear-background="yes">
+<m>f(x)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The graph of a function y equals f of x, showing how the tangent line at x approximates the function near x plus d x.">
+  <annotation ref="la-curve" text="The graph of the function y equals f of x."/>
+  <annotation ref="la-triangle" text="A right triangle formed by the tangent line at x, with horizontal leg d x and vertical leg d f, equal to f prime of x times d x."/>
+  <annotation ref="la-dfx-actual" text="The actual change in the function, delta f, equal to f of x plus d x minus f of x, measured on the curve."/>
+  <annotation ref="la-dfx-approx" text="The differential predicted by the tangent line, d f equals f prime of x times d x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The same question arises for a function of two variables. The
+difference is that near a point in the plane there is no longer a
+single direction to move in — moving away from a point requires both a
+distance and a direction. Consider the function <m>z = f(x,y)</m>, a
+point <m>P_0(x_0,y_0)</m> in its domain, and a unit vector
 <m>\mathbf u = u_1\,\mathbf i + u_2\,\mathbf j</m>. The question is:
 </p>
 
@@ -811,129 +926,6 @@ curve, the tangent line, and the two marked values.
 <!-- ================================================================ -->
 <section xml:id="sec-tp-linearization">
 <title>Linearizing <m>z = f(x,y)</m></title>
-
-<p>
-Before turning to functions of two variables, it is worth recalling the
-analogous idea from single-variable calculus. A differentiable function
-<m>y = f(x)</m> can be approximated near a point <m>x</m> by its
-<term>tangent line</term>: walking away from the point
-<m>\bigl(x, f(x)\bigr)</m> at the constant rate given by the slope
-<m>f'(x)</m>, a step of size <m>\Delta x</m> changes the height by about
-<m>f'(x)\,\Delta x</m>. As <xref ref="fig-tp-linear-approx-1d"/> shows,
-this predicted change closely matches the actual change
-<m>f(x+\Delta x) - f(x)</m> in the function, as long as <m>\Delta x</m>
-is small.
-</p>
-
-<figure xml:id="fig-tp-linear-approx-1d">
-<caption>
-The tangent line at <m>x</m> approximates <m>y = f(x)</m> near
-<m>x + \Delta x</m>. The predicted rise <m>f'(x)\cdot\Delta x</m>,
-found by walking along the tangent line, closely matches the actual
-rise <m>f(x+\Delta x) - f(x)</m>, found by walking along the curve.
-</caption>
-<image width="72%">
-<description>
-<p>
-The graph of a curve y equals y of x. At a point x on the curve, a
-right triangle formed by the tangent line has horizontal leg delta x
-and vertical leg f prime of x times delta x. A separate vertical
-bracket to the left compares this to the actual rise of the curve, f
-of x plus delta x minus f of x, and a bracket to the right shows the
-predicted rise f prime of x times delta x next to the baseline height
-f of x.
-</p>
-</description>
-<prefigure xmlns="https://prefigure.org" label="prefigure-tp-linear-approx-1d">
-<diagram dimensions="(460,340)" margins="14">
-<definition>curve(t) = (t, exp(0.35*t))</definition>
-<coordinates bbox="(-0.5,-0.5,6.2,4.9)">
-<vector at="la-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
-<vector at="la-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
-<parametric-curve at="la-curve" function="curve" domain="(0,4.3)"
-                   arrows="1" stroke="#D55E00" thickness="2"/>
-<line at="la-guide1" p1="(2.5,0)" p2="(2.5,2.398875)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide2" p1="(2.5,2.398875)" p2="(0,2.398875)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide3" p1="(3.5,0)" p2="(3.5,3.404166)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide4" p1="(3.5,3.404166)" p2="(0,3.404166)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-tick1" p1="(3.5,2.398875)" p2="(5.6,2.398875)"
-      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
-<line at="la-tick2" p1="(3.5,3.238482)" p2="(5.6,3.238482)"
-      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
-<polygon at="la-triangle" points="((2.5,2.398875),(3.5,3.238482),(3.5,2.398875))"
-         closed="yes" stroke="#0072B2" thickness="2.5" fill="none" linejoin="round"/>
-<vector at="la-dx" tail="(2.5,1.898875)" v="(1.0,0)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dx-back" tail="(3.5,1.898875)" v="(-1.0,0)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-approx" tail="(4.6,2.398875)" v="(0,0.839607)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-approx-back" tail="(4.6,3.238482)" v="(0,-0.839607)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-actual" tail="(1.375,2.398875)" v="(0,1.005291)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-actual-back" tail="(1.375,3.404166)" v="(0,-1.005291)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-fx-base" tail="(4.6,2.398875)" v="(0,-2.398875)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-fx-base-back" tail="(4.6,0)" v="(0,2.398875)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<label at="la-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
-<label at="la-ylabel" anchor="(-0.15,4.8)" alignment="e"><m>y</m></label>
-<label at="la-curvelabel" anchor="(3.5,4.05)" alignment="w" color="#D55E00">
-<m>y=y(x)</m>
-</label>
-<label at="la-x-tick" anchor="(2.5,-0.1)" alignment="s"><m>x</m></label>
-<label at="la-xdx-tick" anchor="(3.5,-0.1)" alignment="s">
-<m>x+\Delta x</m>
-</label>
-<label at="la-fx-tick" anchor="(-0.1,2.398875)" alignment="e"><m>f(x)</m></label>
-<label at="la-fxdx-tick" anchor="(-0.1,3.404166)" alignment="e">
-<m>f(x+\Delta x)</m>
-</label>
-<label at="la-dx-label" anchor="(3.0,1.898875)" alignment="c" clear-background="yes">
-<m>\Delta x</m>
-</label>
-<label at="la-dfx-approx-label" anchor="(4.6,2.818679)" alignment="e" clear-background="yes">
-<m>f'(x)\cdot \Delta x</m>
-</label>
-<label at="la-dfx-actual-label" anchor="(1.6,2.90152)" alignment="ne" clear-background="yes">
-<m>f(x+\Delta x) - f(x)</m>
-</label>
-<label at="la-fx-base-label" anchor="(4.6,1.199438)" alignment="w" clear-background="yes">
-<m>f(x)</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="The graph of a function y equals y of x, showing how the tangent line at x approximates the function near x plus delta x.">
-  <annotation ref="la-curve" text="The graph of the function y equals y of x."/>
-  <annotation ref="la-triangle" text="A right triangle formed by the tangent line at x, with horizontal leg delta x and vertical leg f prime of x times delta x."/>
-  <annotation ref="la-dfx-actual" text="The actual change in the function, f of x plus delta x minus f of x, measured on the curve."/>
-  <annotation ref="la-dfx-approx" text="The approximate change predicted by the tangent line, f prime of x times delta x."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-The same idea generalizes directly to a function of two variables
-<m>z = f(x,y)</m>. Near a point there is no longer just one direction
-to move in, so a single slope is not enough to describe how <m>f</m>
-changes — that is exactly what the two partial derivatives <m>f_x</m>
-and <m>f_y</m> are for. In place of a tangent line we use a
-<term>tangent plane</term>, and the analogue of walking along the
-tangent line at the constant rate <m>f'(x)</m> is walking along the
-tangent plane, whose rate of change depends on the direction of the
-step, through <m>f_x</m> in the <m>x</m> direction and <m>f_y</m> in
-the <m>y</m> direction.
-</p>
 
 <p>
 We can estimate the behavior of a function of two variables
