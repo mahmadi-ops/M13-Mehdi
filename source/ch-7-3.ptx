@@ -745,12 +745,95 @@ curve <m>y = \cosh x</m>. (After Fig. 2 of Behroozi, cited below.)
 </figure>
 
 <p>
+A worked example of a hanging cable, in which we find the slope of the
+cable and the angle at which it meets its pole, appears in
+<xref ref="example-hyp-catenary"/>.
+</p>
+
+<p>
 The derivation above follows F. Behroozi,
 <url href="https://pubs.aip.org/aapt/pte/article/56/4/214/318980/In-Praise-of-the-Catenary" visual="pubs.aip.org">In Praise of the Catenary</url>,
 <em>The Physics Teacher</em> <term>56</term>, 214<ndash/>217 (2018),
 which also discusses the sense in which all catenaries are similar to
 one another and suggests simple classroom demonstrations.
 </p>
+
+</subsection>
+
+<subsection xml:id="subsec-hyp-celestial">
+<title>Celestial Mechanics</title>
+
+<p>
+If a comet has enough speed, it can escape the gravitational pull of the
+sun, in which case one possible trajectory is a hyperbolic trajectory.
+The comet
+<url href="https://science.nasa.gov/solar-system/comets/2i-borisov/" visual="science.nasa.gov">2I/Borisov</url>,
+discovered in 2019, is the first comet known to have come from outside
+our solar system. It was moving too fast for the sun to capture it, so
+its path is a hyperbola rather than an ellipse: it swung around the sun
+once and is now on its way back out. See
+<xref ref="fig-hyp-comet-borisov"/>.
+</p>
+
+<figure xml:id="fig-hyp-comet-borisov">
+<caption>
+The interstellar comet 2I/Borisov, photographed by the Hubble Space
+Telescope in 2019. Because its speed exceeds the escape speed of the
+sun, its trajectory is a hyperbola and it passes through the solar
+system only once. (Image: NASA, ESA and D. Jewitt (UCLA).)
+</caption>
+<image source="app-hyperbola-comet-borisov.jpg" width="60%">
+<shortdescription>
+A fuzzy blue comet with a bright core and a broad tail sweeping to the
+upper right, against a black background.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+
+<subsection xml:id="subsec-hyp-gateway-arch">
+<title>The Gateway Arch</title>
+
+<p>
+<term>The Gateway Arch in St. Louis, Missouri</term> (designed in 1963
+and completed in 1965) is a catenary turned upside down: flipping the
+curve converts the tension carried by a hanging chain into pure
+compression, which is what masonry and steel carry best. The geometric
+form of the gateway was set by Hannskari Bandel (structural engineer)
+and was expressed in the blueprints by the equation
+<md>
+y = A\left(\cosh\frac{Cx}{L} - 1\right),
+</md>
+where <m>A</m>, <m>C</m>, and <m>L</m> are constants. The arch is
+slightly flattened compared with a uniform hanging chain, because it is
+thicker at the base than at the top. It stands 630 feet tall and 630
+feet wide at the base; the National Park Service describes its
+construction and its geometry at
+<url href="https://www.nps.gov/jeff/index.htm" visual="nps.gov">Gateway Arch National Park</url>.
+See <xref ref="fig-hyp-gateway-arch"/>.
+</p>
+
+<figure xml:id="fig-hyp-gateway-arch">
+<caption>
+The Gateway Arch in St. Louis, Missouri. Its centerline follows the
+curve <m>y = A\left(\cosh(Cx/L) - 1\right)</m>, an upside-down catenary.
+(Photograph by John Margolies, 1988; John Margolies Roadside America
+photograph archive, Library of Congress, Prints and Photographs
+Division.)
+</caption>
+<image source="app-catenary-gateway-arch.jpg" width="48%">
+<shortdescription>
+The stainless steel Gateway Arch rising from a line of trees against a
+clear blue sky, curving up to a rounded peak and back down.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-more-examples">
+<title>Further Examples</title>
 
 <example xml:id="example-hyp-catenary">
 <title>A hanging telephone line</title>
@@ -846,82 +929,6 @@ between the line and the right pole.
 </figure>
 </solution>
 </example>
-</subsection>
-
-<subsection xml:id="subsec-hyp-celestial">
-<title>Celestial Mechanics</title>
-
-<p>
-If a comet has enough speed, it can escape the gravitational pull of the
-sun, in which case one possible trajectory is a hyperbolic trajectory.
-The comet
-<url href="https://science.nasa.gov/solar-system/comets/2i-borisov/" visual="science.nasa.gov">2I/Borisov</url>,
-discovered in 2019, is the first comet known to have come from outside
-our solar system. It was moving too fast for the sun to capture it, so
-its path is a hyperbola rather than an ellipse: it swung around the sun
-once and is now on its way back out. See
-<xref ref="fig-hyp-comet-borisov"/>.
-</p>
-
-<figure xml:id="fig-hyp-comet-borisov">
-<caption>
-The interstellar comet 2I/Borisov, photographed by the Hubble Space
-Telescope in 2019. Because its speed exceeds the escape speed of the
-sun, its trajectory is a hyperbola and it passes through the solar
-system only once. (Image: NASA, ESA and D. Jewitt (UCLA).)
-</caption>
-<image source="app-hyperbola-comet-borisov.jpg" width="60%">
-<shortdescription>
-A fuzzy blue comet with a bright core and a broad tail sweeping to the
-upper right, against a black background.
-</shortdescription>
-</image>
-</figure>
-</subsection>
-
-<subsection xml:id="subsec-hyp-gateway-arch">
-<title>The Gateway Arch</title>
-
-<p>
-<term>The Gateway Arch in St. Louis, Missouri</term> (designed in 1963
-and completed in 1965) is a catenary turned upside down: flipping the
-curve converts the tension carried by a hanging chain into pure
-compression, which is what masonry and steel carry best. The geometric
-form of the gateway was set by Hannskari Bandel (structural engineer)
-and was expressed in the blueprints by the equation
-<md>
-y = A\left(\cosh\frac{Cx}{L} - 1\right),
-</md>
-where <m>A</m>, <m>C</m>, and <m>L</m> are constants. The arch is
-slightly flattened compared with a uniform hanging chain, because it is
-thicker at the base than at the top. It stands 630 feet tall and 630
-feet wide at the base; the National Park Service describes its
-construction and its geometry at
-<url href="https://www.nps.gov/jeff/index.htm" visual="nps.gov">Gateway Arch National Park</url>.
-See <xref ref="fig-hyp-gateway-arch"/>.
-</p>
-
-<figure xml:id="fig-hyp-gateway-arch">
-<caption>
-The Gateway Arch in St. Louis, Missouri. Its centerline follows the
-curve <m>y = A\left(\cosh(Cx/L) - 1\right)</m>, an upside-down catenary.
-(Photograph by John Margolies, 1988; John Margolies Roadside America
-photograph archive, Library of Congress, Prints and Photographs
-Division.)
-</caption>
-<image source="app-catenary-gateway-arch.jpg" width="48%">
-<shortdescription>
-The stainless steel Gateway Arch rising from a line of trees against a
-clear blue sky, curving up to a rounded peak and back down.
-</shortdescription>
-</image>
-</figure>
-</subsection>
-</section>
-
-<!-- ================================================================ -->
-<section xml:id="sec-hyp-more-examples">
-<title>Further Examples</title>
 
 <example xml:id="example-hyp-sinh-ln">
 <title>Rewriting <m>\sinh(\ln(x))</m></title>
