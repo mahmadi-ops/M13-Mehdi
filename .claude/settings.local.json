@@ -181,7 +181,22 @@
       "Bash(curl -s -m 30 -L \"https://www.loc.gov/pictures/item/2017708704/\")",
       "Bash(curl -s -m 90 -L \"https://cdn.loc.gov/service/pnp/mrg/06600/06612v.jpg\" -o arch-large.jpg -w \"%{http_code} %{size_download}\\\\n\")",
       "Bash(ls /opt/venv/lib/python3.13/site-packages/prefig/core/ | head -50)",
-      "Read(//opt/venv/lib/python3.13/site-packages/prefig/core/**)"
+      "Read(//opt/venv/lib/python3.13/site-packages/prefig/core/**)",
+      "Bash(command -v ffmpeg)",
+      "Bash(command -v manim)",
+      "Bash(pip download *)",
+      "Bash(command -v apt-get)",
+      "Read(//usr/include/python3.13/**)",
+      "Bash(command -v manim ffmpeg latex)",
+      "Bash(rsvg-convert -w 900 -b white generated-assets/prefigure/prefigure-collision-directrix.svg -o /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/coll.png)",
+      "Bash(timeout 900 manim -ql --disable_caching manim_collision_directrix.py CollisionOnTheDirectrix)",
+      "Read(//root/.TinyTeX/bin/aarch64-linux/**)",
+      "Bash(command -v tlmgr)",
+      "Bash(tlmgr --version)",
+      "Bash(tlmgr install *)",
+      "Bash(tlmgr option *)",
+      "Bash(timeout 1800 manim -qh --disable_caching manim_collision_directrix.py CollisionOnTheDirectrix)",
+      "Bash(timeout 1800 manim -qh --disable_caching /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/manim_collision_directrix.py CollisionOnTheDirectrix --media_dir /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/media)"
     ]
   }
 }
