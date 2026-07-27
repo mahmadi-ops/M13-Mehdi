@@ -1,0 +1,39 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-m2b-1b-figure" speech2="Vectors A and B drawn from a common tail, with the projection of B onto A drawn along the line through A, pointing opposite to A since the angle between A and B is obtuse.">
+      <grouped>prefigure-m2b-1b-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-m2b-1b-pb-A</active>
+        <active>prefigure-m2b-1b-pb-B</active>
+        <active>prefigure-m2b-1b-pb-P</active>
+      </children>
+      <components>
+        <active>prefigure-m2b-1b-pb-A</active>
+        <active>prefigure-m2b-1b-pb-B</active>
+        <active>prefigure-m2b-1b-pb-P</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-m2b-1b-pb-A" speech2="The vector A.">
+      <active>prefigure-m2b-1b-pb-A</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-m2b-1b-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-m2b-1b-pb-B" speech2="The vector B.">
+      <active>prefigure-m2b-1b-pb-B</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-m2b-1b-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-m2b-1b-pb-P" speech2="The projection of B onto A, which points opposite to A because the angle between A and B is obtuse.">
+      <active>prefigure-m2b-1b-pb-P</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-m2b-1b-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
