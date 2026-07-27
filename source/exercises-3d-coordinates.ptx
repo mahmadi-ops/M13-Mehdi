@@ -614,4 +614,109 @@ axes.
 </solution>
 </exercise>
 
+<exercise xml:id="ex-3d-cylinder-plane-solid">
+<title>A Solid Bounded by a Cylinder and a Plane</title>
+<statement>
+<p>
+Consider the solid region bounded by the three surfaces
+<md>
+z = 0, \qquad x^2+y^2 = 4, \qquad x+y+z = 4,
+</md>
+restricted to <m>z \ge 0</m>. Describe each of the three bounding
+surfaces, and describe the solid region they enclose.
+</p>
+</statement>
+
+<solution>
+<p>
+The equation <m>x^2+y^2=4</m> is missing <m>z</m>, so it is the
+infinite cylinder of radius <m>2</m> whose axis is the <m>z</m>-axis.
+The equation <m>z=0</m> is the <m>xy</m>-plane, and <m>x+y+z=4</m> is a
+plane tilted with respect to all three coordinate axes.
+</p>
+<p>
+Solving the third equation for <m>z</m> gives <m>z = 4-x-y</m>. Over
+the disk <m>x^2+y^2 \le 4</m> enclosed by the cylinder, this height
+stays positive: the largest value of <m>x+y</m> on that disk is
+<m>2\sqrt2 \approx 2.83</m>, attained in the direction <m>(1,1)</m>, so
+<m>z = 4-x-y \ge 4-2\sqrt2 &gt; 0</m> throughout the disk. The tilted
+plane therefore never dips below the <m>xy</m>-plane over the region
+enclosed by the cylinder.
+</p>
+<p>
+The solid is the piece of the solid cylinder <m>x^2+y^2 \le 4</m>
+lying between the flat base <m>z=0</m> and the slanted lid
+<m>z=4-x-y</m>: an oblique, truncated cylinder whose base is the disk
+of radius <m>2</m> in the <m>xy</m>-plane and whose slanted top is an
+ellipse, shown in <xref ref="fig-ex3d-cylinder-plane-solid"/>.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-plane-solid">
+<caption>
+The solid bounded by <m>z=0</m>, the cylinder <m>x^2+y^2=4</m>, and the
+tilted plane <m>x+y+z=4</m>. The disk in the <m>xy</m>-plane is the
+flat base, and the plane, hatched in pink, cuts the cylinder in an
+ellipse that forms the slanted top.
+</caption>
+<image width="55%">
+<description>
+<p>
+A cylinder of radius two centered on the z axis, standing on a
+shaded disk in the x y plane. The cylinder is sliced off at a slant by
+a tilted plane, hatched in pink, that meets it in an ellipse forming
+the top of the solid.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.65]
+\tikzmath{function a(\x,\y) {return (4.0-\x-\y);};}
+\pgfmathsetmacro{\final}{2.0*pi}
+\pgfmathsetmacro{\ejez}{a(0,0)}
+% the equation of the circumference
+\draw[white] (0,-2.5,0) -- (2.75,0,0) node[blue,midway,below,sloped] {\footnotesize$x^2 + y^2 = 4$};
+% the base disk of radius 2
+\draw[thick,fill=yellow,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-3,0,0);
+\draw[thick,->] (0,0,0) -- (0,3.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-3,0);
+\draw[thick] (0,0,0) -- (0,0,\ejez);
+% the plane x+y+z=4
+\pgfmathsetmacro{\Az}{a(2.5,2.5)}
+\pgfmathsetmacro{\Bz}{a(-2.5,2.5)}
+\pgfmathsetmacro{\Cz}{a(-2.5,-2.5)}
+\pgfmathsetmacro{\Dz}{a(2.5,-2.5)}
+\coordinate (A) at (2.5,2.5,\Az);
+\coordinate (B) at (-2.5,2.5,\Bz);
+\coordinate (C) at (-2.5,-2.5,\Cz);
+\coordinate (D) at (2.5,-2.5,\Dz);
+% the cylinder's side wall, drawn as vertical segments up to the plane
+\foreach \angulo in {0,0.01,...,\final}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[cyan,opacity=0.5] (\px,\py,0) -- (\px,\py,4.0-\px-\py);
+}
+% the intersection of the cylinder and the plane (the slanted top)
+\draw[blue,thick] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2.0*sin(\t r)-2.0*cos(\t r)});
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2831853,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2*sin(\t r)-2.0*cos(\t r)});
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2831853,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+% the plane, hatched
+\draw[white] (C) -- (B) node[red,above,sloped,midway]{\footnotesize$x + y + z = 4$};
+\draw[red,dash dot] (A) -- (B) -- (C) -- (D) -- (A);
+\fill[pattern color=pink,pattern=north east lines] (A) -- (B) -- (C) -- (D) -- (A);
+\fill[pink,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2.0*sin(\t r) - 2.0*cos(\t r)});
+% z axis, drawn last so it stays visible above the solid
+\draw[thick,->] (0,0,\ejez) -- (0,0,8) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>
