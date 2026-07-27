@@ -15,6 +15,7 @@
   \usepackage{tikz}
   \usepackage{amsmath}
   \usetikzlibrary{decorations.pathmorphing, arrows.meta, calc}
+  \usepackage{tikz-3dplot}
   \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
   <!-- Palette used by the figures in ch-12-5.ptx, matching the colors of
