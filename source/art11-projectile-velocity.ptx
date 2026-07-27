@@ -398,6 +398,25 @@
         </p>
       </solution>
     </task>
+
+    <conclusion>
+      <p>
+        <xref ref="fig-collision-animation"/> puts the whole scenario in motion:
+        the projectile rises to <m>H</m>, the ball is released from <m>B</m> at
+        the time <m>t_{\text{rel}}</m>, the two meet at <m>C</m>, and the
+        velocity arrows there have the same length.
+      </p>
+
+      <figure xml:id="fig-collision-animation">
+        <caption>
+          Animation: the projectile and the ball, released from rest on the
+          directrix, collide at half of the maximum height with equal speeds.
+        </caption>
+        <video xml:id="video-collision-directrix"
+               source="videos/projectile_collision_directrix_1080p.mp4"
+               width="90%" aspect="16:9"/>
+      </figure>
+    </conclusion>
   </exercise>
 
 <exercise xml:id="rf-2">
