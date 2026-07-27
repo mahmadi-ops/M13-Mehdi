@@ -220,4 +220,92 @@ As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
 </solution>
 </exercise>
 
+<exercise xml:id="m2b-1c">
+<statement>
+<p>
+Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
+tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
+<m>\vec B</m>, and <m>\vec A \times \vec B</m>.
+</p>
+</statement>
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions described. Everything below is a statement about
+the <em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+
+<p>
+The cross product <m>\vec A\times\vec B</m> is
+perpendicular to both, hence perpendicular to the page. The right-hand
+rule (curl the fingers of the right hand from <m>\vec A</m> towards
+<m>\vec B</m> through the smaller angle) shows that it points
+<em>out of the page</em>, which we draw as a circle with a dot in it.
+Indeed, treating the vectors as lying in the <m>xy</m>-plane,
+<md>
+\vec A\times\vec B
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+4 \amp 2 \amp 0 \\
+-3 \amp 5 \amp 0
+\end{vmatrix}
+= \left\langle 0,\ 0,\ (4)(5)-(2)(-3) \right\rangle
+= 26\,\mathbf k ,
+</md>
+and the <m>\mathbf k</m>-component is positive. Its length,
+<m>26</m>, is the area of the parallelogram spanned by <m>\vec A</m>
+and <m>\vec B</m>. See <xref ref="fig-m2b-1c"/>.
+</p>
+
+<figure xml:id="fig-m2b-1c">
+<caption>
+<m>\vec A\times\vec B</m> points out of the page, drawn as a circle
+with a dot at its centre.
+</caption>
+<image width="55%">
+<description>
+<p>
+A blue arrow A points up and to the right and a green arrow B points
+up and to the left from a common tail. A circle with a dot at its
+centre represents A cross B, a vector pointing out of the page.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1c">
+<diagram dimensions="(300,290)" margins="16">
+<coordinates bbox="(-4.0,-0.8,5.0,8.0)">
+<vector at="pc-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pc-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<circle at="pc-out" center="(-1.4,7.0)" radius="0.62"
+        stroke="#8B1A4A" thickness="2.5" fill="none"/>
+<point at="pc-dot" p="(-1.4,7.0)" fill="#8B1A4A"/>
+<label at="pc-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec A</m>
+</label>
+<label at="pc-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec B</m>
+</label>
+<label at="pc-Xl" anchor="(-0.6,7.0)" alignment="e" color="#8B1A4A">
+<m>\vec A\times\vec B</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Vectors A and B drawn from a common tail. A circle with a dot at its centre, above and to the left, represents A cross B pointing out of the page.">
+  <annotation ref="pc-A" text="The vector A."/>
+  <annotation ref="pc-B" text="The vector B."/>
+  <annotation ref="pc-out" text="A circle with a dot at its centre, the standard symbol for a vector pointing out of the page, representing A cross B."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
 </worksheet>
