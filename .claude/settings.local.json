@@ -196,7 +196,8 @@
       "Bash(tlmgr install *)",
       "Bash(tlmgr option *)",
       "Bash(timeout 1800 manim -qh --disable_caching manim_collision_directrix.py CollisionOnTheDirectrix)",
-      "Bash(timeout 1800 manim -qh --disable_caching /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/manim_collision_directrix.py CollisionOnTheDirectrix --media_dir /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/media)"
+      "Bash(timeout 1800 manim -qh --disable_caching /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/manim_collision_directrix.py CollisionOnTheDirectrix --media_dir /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/media)",
+      "Bash(ffmpeg -v error -ss 25 -i media/videos/manim_collision_directrix/1080p60/CollisionOnTheDirectrix.mp4 -frames:v 1 -y p25.png)"
     ]
   }
 }
