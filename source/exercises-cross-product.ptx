@@ -326,13 +326,14 @@ genuinely different jobs. Watch for them:
 <li>
 <p>
 the <term>dot product</term> is used, through <m>\vec F\cdot\vec v</m>, to determine whether
-the speed of a particle acted upon by a perpendicular force can change;
+the speed of a particle acted upon by a perpendicular force can change,
 </p>
 </li>
 <li>
 <p>
 the <term>cross product</term> is used to determine the 
-direction and magnitude of the force that keeps a charged particle moving in uniform magnetic field;
+direction and magnitude of the force that keeps a charged 
+particle moving in a uniform magnetic field.
 </p>
 </li>
 </ul>
@@ -924,57 +925,7 @@ points straight in toward the centre, at a right angle to the velocity.
 </solution>
 </task>
 
-<conclusion>
-<p>
-<term>The two products, side by side.</term> It is worth separating what
-each one contributed, because they are not interchangeable.
-</p>
 
-<p>
-The <term>cross product</term> did the <em>constructing</em>. Nature hands
-us <m>\vec F_B = q\,\vec v\times\vec B</m>, and because a cross product is
-perpendicular to both of its factors by definition, the force is
-guaranteed perpendicular to <m>\vec v</m> at every instant of the motion —
-the exact hypothesis part <xref ref="task-cm-speed" text="local"/> needed,
-delivered for free. The cross product
-also fixed the <em>size</em> of the force through
-<m>\left|\vec v\times\vec B\right| = vB\sin\alpha</m>, and its
-<em>direction</em> through the right-hand rule, which is what decides
-whether the particle circles clockwise or counter-clockwise.
-</p>
-
-<p>
-The <term>dot product</term> did the <em>detecting</em>. It converted the
-geometric word <q>perpendicular</q> into the equation
-<m>\vec F\cdot\vec v = 0</m>, and that equation is what forced the speed to
-be constant, via
-<m>\frac{d}{dt}\left(\vec v\cdot\vec v\right) = \frac{2}{m}\vec F\cdot\vec v</m>.
-The dot product is the instrument that measures how much of a force acts
-along the motion — that is, how much of it does work.
-</p>
-
-<p>
-Put the two together and you get the one-line theorem
-<md>
-\vec F_B\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0\text{:}
-</md>
-the cross product builds the force, the dot product certifies that it does
-no work. A magnetic field steers charged particles but never speeds them up
-or slows them down.
-</p>
-
-<p>
-<term>A postscript.</term> The time for one full orbit is
-<md>
-T = \frac{2\pi r}{v} = \frac{2\pi}{v}\cdot\frac{mv}{|q|B}
-  = \frac{2\pi m}{|q|B}\text{,}
-</md>
-in which the speed <m>v</m> has cancelled. Every particle of a given charge
-and mass completes its orbit in the same time, however fast it is moving —
-fast ones simply travel on proportionally larger circles. This is the
-principle the cyclotron is built on.
-</p>
-</conclusion>
 </exercise>
 
 </worksheet>
