@@ -313,11 +313,10 @@ centre represents A cross B, a vector pointing out of the page.
 
 <introduction>
 <p>
-This guided exercise proves a single striking fact: <em>a force of constant
+Through this guided exercise, we prove that <em>a force of constant
 magnitude that always points perpendicular to the velocity drives the
 particle around a circle.</em> We then apply it to a charged particle in a
-magnetic field, where the cross product hands us exactly such a force for
-free.
+magnetic field.
 </p>
 
 <p>
@@ -326,16 +325,14 @@ genuinely different jobs. Watch for them:
 <ul>
 <li>
 <p>
-the <term>dot product</term> is the tool that <em>detects</em>
-perpendicularity and, through <m>\vec F\cdot\vec v</m>, controls whether
-the speed can change;
+the <term>dot product</term> is used, through <m>\vec F\cdot\vec v</m>, to determine whether
+the speed of a particle acted upon by a perpendicular force can change;
 </p>
 </li>
 <li>
 <p>
-the <term>cross product</term> is the tool that <em>manufactures</em> a
-perpendicular vector, and so supplies the very force this exercise is
-about.
+the <term>cross product</term> is used to determine the 
+direction and magnitude of the force that keeps a charged particle moving in uniform magnetic field;
 </p>
 </li>
 </ul>
@@ -354,17 +351,22 @@ Show that the particle's <em>speed</em> is constant.
 </statement>
 <solution>
 <p>
-Saying <m>\vec F</m> is perpendicular to <m>\vec v</m> says precisely that
+Since <m>\vec F</m> is perpendicular to <m>\vec v</m>, we have
 <md>
 \vec F\cdot\vec v = 0\text{.}
 </md>
-This is the whole content of the hypothesis, written in the language of the
-dot product.
 </p>
 
 <p>
-Now track the square of the speed, <m>v^2 = \vec v\cdot\vec v</m>. Using the
-product rule for the dot product and then Newton's second law
+Now consider the square of the speed, <m>v^2 = \vec v\cdot\vec v</m>. Using the
+product rule for the dot product<fn>The product rule holds for the dot
+product just as it does for ordinary multiplication:
+<m>\dfrac{d}{dt}\left(\vec u\cdot\vec v\right)
+= \dfrac{d\vec u}{dt}\cdot\vec v + \vec u\cdot\dfrac{d\vec v}{dt}</m>.
+Taking <m>\vec u = \vec v</m> makes the two terms equal, which gives the
+step used here,
+<m>\dfrac{d}{dt}\left(\vec v\cdot\vec v\right)
+= 2\,\vec v\cdot\dfrac{d\vec v}{dt}</m>.</fn> and then Newton's second law
 <m>m\,\dfrac{d\vec v}{dt} = \vec F</m>,
 <md>
 <mrow>\frac{d}{dt}\left(v^2\right) \amp = \frac{d}{dt}
@@ -377,13 +379,13 @@ So <m>v^2</m> never changes, and hence neither does the speed <m>v</m>.
 
 <p>
 <term>Why the dot product is the right tool here.</term> The quantity
-<m>\vec F\cdot\vec v</m> measures the component of the force <em>along the
-direction of motion</em> — it is the rate at which the force does work on the
+<m>\vec F\cdot\vec v</m> is the rate at which the force does work on the
 particle. A force with a forward component speeds the particle up; a force
 with a backward component slows it down. Only the part of <m>\vec F</m>
-lying along <m>\vec v</m> can change the speed at all, and the dot product is
-exactly the instrument that measures that part. When it vanishes, the force
-is left with nothing to do but <em>turn</em> the particle.
+lying along <m>\vec v</m> can change the speed, and the dot product is
+exactly the mathematical tool that isolates that part. When it vanishes, can 
+only change the direction of the velocity but not its magnitude, and so can 
+only <em>turn</em> the particle, while the speed remains constant.
 See <xref ref="fig-cm-dotproduct"/>.
 </p>
 
@@ -420,12 +422,12 @@ and the speed stays constant.
             stroke="#888888" thickness="1.4" dash="4 3"/>
       <vector at="da-proj" tail="(0,0)" v="(1.6712,0)" stroke="#009E73" thickness="4"/>
       <point at="da-P" p="(0,0)" fill="black" radius="3"/>
-      <label at="da-vl" anchor="(3.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
-      <label at="da-Fl" anchor="(1.74,2.06)" alignment="ne" color="#D55E00"><m>\vec F</m></label>
-      <label at="da-projl" anchor="(0.84,-0.16)" alignment="s" color="#009E73">
+      <label font-size="18" at="da-vl" anchor="(3.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="da-Fl" anchor="(1.74,2.06)" alignment="ne" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="da-projl" anchor="(0.84,-0.16)" alignment="s" color="#009E73">
       <m>\text{component along }\vec v</m>
       </label>
-      <label at="da-concl" anchor="(0.5,-1.35)" alignment="c">
+      <label font-size="18" at="da-concl" anchor="(0.5,-1.35)" alignment="c">
       <m>\vec F\cdot\vec v \ne 0 \;\Rightarrow\; \text{speed changes}</m>
       </label>
 
@@ -434,14 +436,14 @@ and the speed stays constant.
                         stroke="#BBBBBB" thickness="2"/>
       <vector at="db-v" tail="(9,0)" v="(3.2,0)" stroke="#0072B2" thickness="3"/>
       <vector at="db-F" tail="(9,0)" v="(0,2.6)" stroke="#D55E00" thickness="3"/>
-      <angle-marker at="db-right" points="((10,0),(9,0),(9,1))" radius="20" stroke="black"/>
+      <angle-marker font-size="18" at="db-right" points="((10,0),(9,0),(9,1))" radius="20" stroke="black"/>
       <point at="db-P" p="(9,0)" fill="black" radius="3"/>
-      <label at="db-vl" anchor="(12.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
-      <label at="db-Fl" anchor="(9,2.7)" alignment="n" color="#D55E00"><m>\vec F</m></label>
-      <label at="db-zero" anchor="(9.55,-0.55)" alignment="e" color="#009E73">
+      <label font-size="18" at="db-vl" anchor="(12.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="db-Fl" anchor="(9,2.7)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="db-zero" anchor="(9.55,-0.55)" alignment="e" color="#009E73">
       <m>\text{no component along }\vec v</m>
       </label>
-      <label at="db-concl" anchor="(9.5,-1.35)" alignment="c">
+      <label font-size="18" at="db-concl" anchor="(9.5,-1.35)" alignment="c">
       <m>\vec F\cdot\vec v = 0 \;\Rightarrow\; \text{speed constant}</m>
       </label>
 
@@ -544,29 +546,29 @@ times delta theta.
       <!-- their difference, which is what the force produces -->
       <vector at="dv-dv" tail="(4,0)" v="(-0.9358,2.5712)" stroke="#D55E00" thickness="3"/>
 
-      <angle-marker at="dv-ang" points="((1,0),(0,0),(0.766,0.643))" radius="46"
+      <angle-marker font-size="18" at="dv-ang" points="((1,0),(0,0),(0.766,0.643))" radius="46"
                     stroke="black"><m>\Delta\theta</m></angle-marker>
 
       <point at="dv-O" p="(0,0)" fill="black" radius="3"/>
 
-      <label at="dv-l1" anchor="(4.08,-0.06)" alignment="se" color="#0072B2">
+      <label font-size="18" at="dv-l1" anchor="(4.08,-0.06)" alignment="se" color="#0072B2">
       <m>\vec v(t)</m>
       </label>
-      <label at="dv-l2" anchor="(3.02,2.66)" alignment="ne" color="#0072B2">
+      <label font-size="18" at="dv-l2" anchor="(3.02,2.66)" alignment="ne" color="#0072B2">
       <m>\vec v(t+\Delta t)</m>
       </label>
-      <label at="dv-ldv" anchor="(3.62,1.30)" alignment="e" color="#D55E00">
+      <label font-size="18" at="dv-ldv" anchor="(3.62,1.30)" alignment="e" color="#D55E00">
       <m>\Delta\vec v</m>
       </label>
 
       <!-- the two lengths, marked on the vectors themselves -->
-      <label at="dv-len1" anchor="(2.0,-0.14)" alignment="s" color="#666666"><m>v</m></label>
-      <label at="dv-len2" anchor="(1.42,1.35)" alignment="nw" color="#666666"><m>v</m></label>
+      <label font-size="18" at="dv-len1" anchor="(2.0,-0.14)" alignment="s" color="#666666"><m>v</m></label>
+      <label font-size="18" at="dv-len2" anchor="(1.42,1.35)" alignment="nw" color="#666666"><m>v</m></label>
 
-      <label at="dv-note1" anchor="(-1.2,-1.15)" alignment="e">
+      <label font-size="18" at="dv-note1" anchor="(-1.2,-1.15)" alignment="e">
       <m>\text{equal lengths} \;\Rightarrow\; |\Delta\vec v| \approx v\,\Delta\theta</m>
       </label>
-      <label at="dv-note2" anchor="(-1.2,-1.80)" alignment="e">
+      <label font-size="18" at="dv-note2" anchor="(-1.2,-1.80)" alignment="e">
       <m>\text{Newton:}\; |\Delta\vec v| = \tfrac{F}{m}\Delta t
         \;\Rightarrow\; \Delta\theta = \tfrac{F}{mv}\Delta t</m>
       </label>
@@ -611,9 +613,6 @@ R = \frac{\Delta s}{\Delta\theta}
   = \frac{v\,\Delta t}{\dfrac{F}{mv}\,\Delta t}
   = \frac{mv^2}{F}\text{.}
 </md>
-The factors of <m>\Delta t</m> cancel, which is the crucial point: the
-answer does not depend on how long we watched. See
-<xref ref="fig-cm-circle"/>.
 </p>
 </solution>
 </task>
@@ -636,13 +635,7 @@ curvature is the same constant <m>R</m> at every point.
 <p>
 A plane curve with constant radius of curvature is a circle. Concretely,
 the centre of the turn always lies a fixed distance <m>R</m> from the
-particle in the direction of <m>\vec F</m>; since <m>\vec F</m> is always
-perpendicular to the motion, that centre never moves, and the particle
-stays at distance <m>R</m> from it. That is exactly a circle of radius
-<md>
-R = \frac{mv^2}{F}\text{,}
-</md>
-traversed at constant speed <m>v</m>.
+particle in the direction of <m>\vec F</m>.
 </p>
 
 <figure xml:id="fig-cm-circle">
@@ -673,7 +666,7 @@ of length delta s equals R delta theta, is highlighted.
       <!-- the two radii bounding the small turn -->
       <line at="cc-r1" p1="(0,0)" p2="(1.7207,2.4575)" stroke="#999999" thickness="1.4" dash="4 3"/>
       <line at="cc-r2" p1="(0,0)" p2="(0.2615,2.9886)" stroke="#999999" thickness="1.4" dash="4 3"/>
-      <angle-marker at="cc-dtheta" points="((1.7207,2.4575),(0,0),(0.2615,2.9886))"
+      <angle-marker font-size="18" at="cc-dtheta" points="((1.7207,2.4575),(0,0),(0.2615,2.9886))"
                     radius="38" stroke="black"><m>\Delta\theta</m></angle-marker>
 
       <!-- the arc actually travelled -->
@@ -685,25 +678,25 @@ of length delta s equals R delta theta, is highlighted.
               stroke="#0072B2" thickness="3"/>
       <vector at="cc-F" tail="(1.7207,2.4575)" v="(-0.8604,-1.2288)"
               stroke="#D55E00" thickness="3"/>
-      <angle-marker at="cc-right"
+      <angle-marker font-size="18" at="cc-right"
                     points="((0.9015,3.0311),(1.7207,2.4575),(1.1471,1.6383))"
                     radius="18" stroke="black"/>
 
       <point at="cc-O" p="(0,0)" fill="black" radius="3"/>
       <point at="cc-P" p="(1.7207,2.4575)" fill="black" radius="3.5"/>
 
-      <label at="cc-Ol" anchor="(-0.12,-0.12)" alignment="sw"><m>O</m></label>
-      <label at="cc-Rl" anchor="(0.10,1.62)" alignment="w" color="#666666"><m>R</m></label>
-      <label at="cc-vl" anchor="(0.20,3.56)" alignment="nw" color="#0072B2"><m>\vec v</m></label>
-      <label at="cc-Fl" anchor="(1.40,1.92)" alignment="e" color="#D55E00"><m>\vec F</m></label>
-      <label at="cc-dsl" anchor="(1.18,3.20)" alignment="ne" color="#009E73">
+      <label font-size="18" at="cc-Ol" anchor="(-0.12,-0.12)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="cc-Rl" anchor="(0.10,1.62)" alignment="w" color="#666666"><m>R</m></label>
+      <label font-size="18" at="cc-vl" anchor="(0.20,3.56)" alignment="nw" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="cc-Fl" anchor="(1.40,1.92)" alignment="e" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="cc-dsl" anchor="(1.18,3.20)" alignment="ne" color="#009E73">
       <m>\Delta s = R\,\Delta\theta</m>
       </label>
 
-      <label at="cc-note1" anchor="(-4.1,-3.55)" alignment="e">
+      <label font-size="18" at="cc-note1" anchor="(-4.1,-3.55)" alignment="e">
       <m>\Delta s = v\,\Delta t \quad\text{and}\quad \Delta\theta = \tfrac{F}{mv}\Delta t</m>
       </label>
-      <label at="cc-note2" anchor="(-4.1,-4.35)" alignment="e">
+      <label font-size="18" at="cc-note2" anchor="(-4.1,-4.35)" alignment="e">
       <m>\Rightarrow\;\; R = \dfrac{\Delta s}{\Delta\theta} = \dfrac{mv^2}{F}
         \;\;\text{— a constant}</m>
       </label>
@@ -753,7 +746,8 @@ perpendicular to the field, so <m>\alpha = 90^\circ</m> and
  = |q|\,vB\sin 90^\circ = |q|\,vB\text{.}
 </md>
 Since <m>v</m> is constant (we are about to confirm this) and <m>B</m> is
-uniform, this magnitude is constant — the first hypothesis of Part I.
+uniform, this magnitude is constant — the first hypothesis of part
+<xref ref="task-cm-speed" text="local"/>.
 </p>
 </solution>
 </task>
@@ -776,10 +770,12 @@ assumption about where the particle is or which way it is heading.
 
 <p>
 If you would like it verified rather than quoted, the dot product does it in
-one line. The scalar triple product
-<m>\left(\vec a\times\vec b\right)\cdot\vec c</m> is the determinant with
-rows <m>\vec a,\vec b,\vec c</m>, and a determinant with two equal rows is
-zero. Taking <m>\vec c = \vec v</m>,
+one line.<fn>Two facts are doing the work. First, the scalar triple product
+<m>\left(\vec a\times\vec b\right)\cdot\vec c</m> equals the determinant
+whose rows are <m>\vec a</m>, <m>\vec b</m> and <m>\vec c</m>. Second, a
+determinant with two equal rows is zero, since interchanging those two rows
+both leaves the determinant unchanged and reverses its sign.</fn> Taking
+<m>\vec c = \vec v</m>,
 <md>
 \vec F_B\cdot\vec v
  = q\left(\vec v\times\vec B\right)\cdot\vec v
@@ -792,11 +788,10 @@ zero. Taking <m>\vec c = \vec v</m>,
 </p>
 
 <p>
-<term>This single line is the heart of the exercise.</term> It says
-<m>\vec F_B\cdot\vec v = 0</m> identically — so by the very first task, a
+So such a
 magnetic field can <em>never</em> change the speed of a charged particle,
-no matter how strong it is or how the particle moves. A magnetic force does
-no work. It can only steer.
+no matter how strong it is. Here the magnetic force does no work and it solely 
+changes the direction of the velocity.
 </p>
 </solution>
 </task>
@@ -810,10 +805,11 @@ circle.
 </statement>
 <solution>
 <p>
-The previous two tasks establish exactly the two hypotheses of Part I: the
-magnetic force has constant magnitude <m>|q|vB</m>, and it is always
-perpendicular to the velocity. Part I therefore applies verbatim, and the
-particle travels in a circle at constant speed.
+The previous two tasks establish exactly the two hypotheses of part
+<xref ref="task-cm-speed" text="local"/>: the magnetic force has constant magnitude
+<m>|q|vB</m>, and it is always perpendicular to the velocity. The argument
+of parts <xref ref="task-cm-speed" text="local"/>–<xref ref="task-cm-circle" text="local"/> therefore
+applies verbatim, and the particle travels in a circle at constant speed.
 </p>
 
 <p>
@@ -855,24 +851,24 @@ points straight in toward the centre, at a right angle to the velocity.
       <coordinates bbox="(-4.6,-5.6,4.8,4.4)">
 
       <!-- uniform magnetic field INTO the page -->
-      <label at="mb-b00" anchor="(-3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b10" anchor="(-1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b20" anchor="(0,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b30" anchor="(1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b40" anchor="(3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b01" anchor="(-3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b11" anchor="(-1.85,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b21" anchor="(0,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b41" anchor="(3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b02" anchor="(-3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b12" anchor="(-1.85,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b22" anchor="(0,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b42" anchor="(3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b03" anchor="(-3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b13" anchor="(-1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b23" anchor="(0,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b33" anchor="(1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
-      <label at="mb-b43" anchor="(3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b00" anchor="(-3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b10" anchor="(-1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b20" anchor="(0,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b30" anchor="(1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b40" anchor="(3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b01" anchor="(-3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b11" anchor="(-1.85,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b21" anchor="(0,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b41" anchor="(3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b02" anchor="(-3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b12" anchor="(-1.85,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b22" anchor="(0,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b42" anchor="(3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b03" anchor="(-3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b13" anchor="(-1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b23" anchor="(0,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b33" anchor="(1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b43" anchor="(3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
 
       <!-- the circular orbit, with an arrowhead showing the sense of circulation -->
       <circle at="mb-orbit" center="(0,0)" radius="2.4"
@@ -886,26 +882,26 @@ points straight in toward the centre, at a right angle to the velocity.
       <!-- velocity (tangent, counter-clockwise) and magnetic force (toward centre) -->
       <vector at="mb-v" tail="(2.4,0)" v="(0,1.75)" stroke="#0072B2" thickness="3"/>
       <vector at="mb-F" tail="(2.4,0)" v="(-1.4,0)" stroke="#D55E00" thickness="3"/>
-      <angle-marker at="mb-right" points="((2.4,1),(2.4,0),(1.4,0))"
+      <angle-marker font-size="18" at="mb-right" points="((2.4,1),(2.4,0),(1.4,0))"
                     radius="17" stroke="black"/>
 
       <point at="mb-O" p="(0,0)" fill="black" radius="3"/>
       <point at="mb-P" p="(2.4,0)" fill="black" radius="4"/>
 
-      <label at="mb-Ol" anchor="(-0.12,-0.14)" alignment="sw"><m>O</m></label>
-      <label at="mb-rl" anchor="(0.62,-0.16)" alignment="s" color="#666666"><m>r</m></label>
-      <label at="mb-vl" anchor="(2.52,1.78)" alignment="ne" color="#0072B2"><m>\vec v</m></label>
-      <label at="mb-Fl" anchor="(1.62,0.14)" alignment="n" color="#D55E00"><m>\vec F</m></label>
-      <label at="mb-ql" anchor="(2.56,-0.14)" alignment="se"><m>q>0</m></label>
-      <label at="mb-Bl" anchor="(-4.4,4.2)" alignment="e" color="#7A5AA8">
+      <label font-size="18" at="mb-Ol" anchor="(-0.12,-0.14)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="mb-rl" anchor="(0.62,-0.16)" alignment="s" color="#666666"><m>r</m></label>
+      <label font-size="18" at="mb-vl" anchor="(2.52,1.78)" alignment="ne" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="mb-Fl" anchor="(1.62,0.14)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="mb-ql" anchor="(2.56,-0.14)" alignment="se"><m>q>0</m></label>
+      <label font-size="18" at="mb-Bl" anchor="(-4.4,4.2)" alignment="e" color="#7A5AA8">
       <m>\vec B \text{ into the page}</m>
       </label>
 
-      <label at="mb-note1" anchor="(-4.4,-3.95)" alignment="e">
+      <label font-size="18" at="mb-note1" anchor="(-4.4,-3.95)" alignment="e">
       <m>\vec F = q\,\vec v\times\vec B \;\Rightarrow\; |\vec F| = |q|vB,
         \;\; \vec F\perp\vec v \text{ automatically}</m>
       </label>
-      <label at="mb-note2" anchor="(-4.4,-5.15)" alignment="e">
+      <label font-size="18" at="mb-note2" anchor="(-4.4,-5.15)" alignment="e">
       <m>|q|vB = \dfrac{mv^2}{r} \;\;\Longrightarrow\;\; r = \dfrac{mv}{|q|B}</m>
       </label>
 
@@ -939,7 +935,8 @@ The <term>cross product</term> did the <em>constructing</em>. Nature hands
 us <m>\vec F_B = q\,\vec v\times\vec B</m>, and because a cross product is
 perpendicular to both of its factors by definition, the force is
 guaranteed perpendicular to <m>\vec v</m> at every instant of the motion —
-the exact hypothesis Part I needed, delivered for free. The cross product
+the exact hypothesis part <xref ref="task-cm-speed" text="local"/> needed,
+delivered for free. The cross product
 also fixed the <em>size</em> of the force through
 <m>\left|\vec v\times\vec B\right| = vB\sin\alpha</m>, and its
 <em>direction</em> through the right-hand rule, which is what decides
