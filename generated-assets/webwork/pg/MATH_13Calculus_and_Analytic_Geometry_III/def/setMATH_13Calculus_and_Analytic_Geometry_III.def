@@ -1,6 +1,6 @@
-openDate          = 07/27/2026 at 12:00am
-dueDate           = 01/27/2027 at 10:00pm
-answerDate        = 01/27/2027 at 10:00pm
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
 paperHeaderFile   = MATH_13Calculus_and_Analytic_Geometry_III/header/MATH_13Calculus_and_Analytic_Geometry_III.pg
 screenHeaderFile  = MATH_13Calculus_and_Analytic_Geometry_III/header/MATH_13Calculus_and_Analytic_Geometry_III.pg
 description       = MATH 13-Calculus and Analytic Geometry III
