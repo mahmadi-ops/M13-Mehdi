@@ -258,13 +258,22 @@ Any point on the unit circle <m>x^2+y^2=1</m> can be written as
       stroke="#8B1A4A" thickness="2"/>
 <line at="hc-oq" endpoints="((0,0),(0.6216,0))"
       stroke="#8B1A4A" thickness="2"/>
+<line at="hc-qp" endpoints="((0.6216,0),(0.6216,0.7833))"
+      stroke="#8B1A4A" thickness="2"/>
+<angle-marker at="hc-right-angle" points="((0.6216,0.7833),(0.6216,0),(0,0))"
+              clear-background="yes"/>
 <point at="hc-P" p="(0.6216,0.7833)" fill="black"/>
-<point at="hc-Q" p="(0.6216,0)" fill="black"/>
 <label at="hc-P-lab" anchor="(0.68,0.86)" alignment="ne">
 <m>P(\cos t, \sin t)</m>
 </label>
-<label at="hc-Q-lab" anchor="(0.65,-0.08)" alignment="se">
-<m>Q</m>
+<label at="hc-x-lab" anchor="(0.31,-0.06)" alignment="s">
+<m>x</m>
+</label>
+<label at="hc-y-lab" anchor="(0.66,0.39)" alignment="e">
+<m>y</m>
+</label>
+<label at="hc-hyp-lab" anchor="(0.28,0.42)" alignment="nw">
+<m>1</m>
 </label>
 <label at="hc-O-lab" anchor="(-0.08,-0.08)" alignment="sw">
 <m>O</m>
@@ -275,9 +284,10 @@ Any point on the unit circle <m>x^2+y^2=1</m> can be written as
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="The unit circle centered at the origin with a point P on it in the first quadrant labelled P of cosine t comma sine t. Segments from the origin to P and from the origin to the point Q directly below P on the x axis are drawn from the origin.">
+<annotation ref="figure" text="The unit circle centered at the origin with a point P on it in the first quadrant labelled P of cosine t comma sine t. A right triangle is formed by the horizontal leg of length x along the x axis, the vertical leg of length y rising to P, and the hypotenuse of length 1 from the origin to P. A small square marks the right angle between the two legs.">
   <annotation ref="hc-circle" text="The unit circle x squared plus y squared equals one."/>
   <annotation ref="hc-P" text="The point P with coordinates cosine t comma sine t."/>
+  <annotation ref="hc-right-angle" text="A right angle marker where the vertical leg meets the x axis."/>
 </annotation>
 </annotations>
 </diagram>
@@ -336,6 +346,58 @@ written as <m>P(\cosh t, \sinh t)</m>.
 </image>
 </figure>
 
+<exercise xml:id="checkpoint-hyp-left-branch">
+<title>Parametrizing the Left Branch</title>
+<statement>
+<p>
+Both branches of <m>x^2 - y^2 = 1</m> are drawn in
+<xref ref="fig-hyp-hyperbola"/>, but the parametrization
+<m>P(\cosh t, \sinh t)</m> traces only the right one, since
+<m>\cosh t \geq 1</m> for every <m>t \in \R</m>. How would you
+parametrize the <em>left</em> branch, where <m>x \leq -1</m>?
+</p>
+</statement>
+<hint>
+<p>
+The identity <m>\cosh^2 t - \sinh^2 t = 1</m> is unaffected if you change
+the sign of the first coordinate.
+</p>
+</hint>
+<answer>
+<p>
+<m>(x,y) = (-\cosh t, \sinh t)</m> for <m>t \in \R</m>.
+</p>
+</answer>
+<solution>
+<p>
+Every point of the hyperbola satisfies <m>x^2 = 1 + y^2 \geq 1</m>, so
+<m>\left|x\right| \geq 1</m>; the left branch is the part where <m>x \leq -1</m>.
+</p>
+<p>
+Start with a point <m>(x,y)</m> on that branch. Since
+<m>\sinh \colon \R \to \R</m> is one-to-one and onto, there is exactly one
+<m>t \in \R</m> with <m>y = \sinh t</m>. For that <m>t</m>,
+<md>x^2 = 1 + y^2 = 1 + \sinh^2 t = \cosh^2 t,</md>
+so <m>x = \pm \cosh t</m>, and <m>x \leq -1 \lt 0</m> forces
+<m>x = -\cosh t</m>. Hence every point of the left branch has the form
+<m>(-\cosh t, \sinh t)</m>.
+</p>
+<p>
+Conversely, each such point does lie on the left branch:
+<md>(-\cosh t)^2 - \sinh^2 t = \cosh^2 t - \sinh^2 t = 1,</md>
+and <m>-\cosh t \leq -1</m>. Therefore
+<md>x = -\cosh t, \qquad y = \sinh t, \qquad t \in \R</md>
+parametrizes the left branch exactly once, and geometrically it is the
+mirror image across the <m>y</m>-axis of the parametrization of the right
+branch.
+</p>
+<p>
+Note that <m>(-\cosh t, -\sinh t)</m> is also correct: it sweeps out the
+same branch, only downward instead of upward as <m>t</m> increases.
+</p>
+</solution>
+</exercise>
+
 <p>
 As you might have guessed, the rest of the hyperbolic functions are
 defined as follows.
@@ -358,15 +420,73 @@ Below are some identities that you may find useful in some problems,
 however, you are not expected to memorize them. We will prove some of
 them as an exercise later.
 
-<md>
-<mrow>\cosh^2 x - \sinh^2 x \amp = 1</mrow>
-<mrow>1 - \tanh^2 x \amp = \operatorname{sech}^2 x</mrow>
-<mrow>\sinh 2x \amp = 2 \sinh x \cosh x</mrow>
-<mrow>\cosh 2x \amp = \cosh^2 x + \sinh^2 x</mrow>
-<mrow>\cosh^2 x \amp = \frac{\cosh 2x + 1}{2}</mrow>
-<mrow>\sinh^2 x \amp = \frac{\cosh 2x - 1}{2}</mrow>
+<md number="yes">
+<mrow xml:id="eq-hyp-id-pythagorean">\amp \cosh^2 x - \sinh^2 x = 1</mrow>
+<mrow xml:id="eq-hyp-id-sech">\amp 1 - \tanh^2 x = \operatorname{sech}^2 x</mrow>
+<mrow xml:id="eq-hyp-id-sinh-double">\amp \sinh 2x = 2 \sinh x \cosh x</mrow>
+<mrow xml:id="eq-hyp-id-cosh-double">\amp \cosh 2x = \cosh^2 x + \sinh^2 x</mrow>
+<mrow xml:id="eq-hyp-id-cosh-square">\amp \cosh^2 x = \frac{\cosh 2x + 1}{2}</mrow>
+<mrow xml:id="eq-hyp-id-sinh-square">\amp \sinh^2 x = \frac{\cosh 2x - 1}{2}</mrow>
 </md>
 </p>
+
+<example xml:id="example-hyp-arccosh">
+<title>Computing <m>\cosh^{-1}(x)</m></title>
+<statement>
+<p>
+Show that the inverse hyperbolic cosine can be written in terms of the
+natural logarithm as
+<md>
+\cosh^{-1}(x) = \ln\left(x + \sqrt{x^2-1}\right), \qquad x \geq 1.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Since <m>\cosh</m> is even, it becomes one-to-one only after we restrict it
+to <m>x \geq 0</m>, where it increases from <m>1</m> to <m>\infty</m>. Set
+<m>y = \cosh(x)</m> and solve for <m>x</m>. Multiplying the numerator and
+the denominator by <m>e^{x}</m> gives
+<md>
+y = \cosh(x) = \frac{e^{x} + e^{-x}}{2}\cdot\frac{e^{x}}{e^{x}}
+= \frac{e^{2x}+1}{2e^{x}}.
+</md>
+</p>
+<p>
+Clearing the denominator gives <m>2y e^{x} = e^{2x} + 1</m>, and the
+substitution <m>u = e^{x}</m> turns this into a quadratic equation in
+<m>u</m>:
+<md>
+<mrow>2yu \amp = u^2 + 1</mrow>
+<mrow>u^2 - 2yu + 1 \amp = 0.</mrow>
+</md>
+</p>
+<p>
+By the quadratic formula,
+<md>
+u = \frac{2y \pm \sqrt{4y^2-4}}{2} = y \pm \sqrt{y^2-1},
+</md>
+that is, <m>e^{x} = y \pm \sqrt{y^2-1}</m>. Interchanging the names of the
+two variables, so that <m>y = \cosh^{-1}(x)</m> is the inverse function, we
+get
+<md>
+e^{y} = x \pm \sqrt{x^2-1}.
+</md>
+</p>
+<p>
+It remains to decide which sign to take, and the convention is to choose
+<m>y \geq 0</m>, matching the restriction made above. Note that
+<md>
+x - \sqrt{x^2-1} = \frac{1}{x + \sqrt{x^2-1}} \leq 1, \qquad x \geq 1,
+</md>
+so the minus sign would give <m>y = \ln\left(x - \sqrt{x^2-1}\right) \leq
+0</m>. Since we are looking for <m>y \geq 0</m>, we choose the plus sign:
+<md xml:id="eq-hyp-arccosh" number="yes">
+y = \cosh^{-1}(x) = \ln\left(x + \sqrt{x^2-1}\right).
+</md>
+</p>
+</solution>
+</example>
 
 <example xml:id="example-hyp-integral">
 <title>An integral via a hyperbolic substitution</title>
@@ -386,23 +506,31 @@ We substitute <m>x = \cosh(t)</m>, <m>dx = \sinh(t)\,dt</m>:
 
 <md>
 <mrow>\int \frac{\sqrt{x^2-1}}{x^2}\,dx
-\amp = \int \frac{\sqrt{\cosh^2(t)-1}}{\cosh^2(t)}\,\sinh(t)\,dt
-= \int \frac{\sinh^2(t)}{\cosh^2(t)}\,dt
+\amp = \int \frac{\sqrt{\cosh^2(t)-1}}{\cosh^2(t)}\,\sinh(t)\,dt</mrow>
+<mrow>\amp = \int \frac{\sinh^2(t)}{\cosh^2(t)}\,dt
 = \int \tanh^2(t)\,dt</mrow>
-<mrow>\amp = \int \left(1 - \operatorname{sech}^2(t)\right)dt
-= t - \tanh t + C
-= \cosh^{-1}(x) - \frac{\sqrt{x^2-1}}{x} + C.</mrow>
+<mrow>\amp = \int \left(1 - \operatorname{sech}^2(t)\right)dt</mrow>
+<mrow>\amp = t - \tanh t + C</mrow>
+<mrow>\amp = \cosh^{-1}(x) - \frac{\sqrt{x^2-1}}{x} + C</mrow>
+<mrow>\amp = \ln\left(x + \sqrt{x^2-1}\right)
+- \frac{\sqrt{x^2-1}}{x} + C.</mrow>
 </md>
 </p>
 
 <p>
-In the last step, we have used the following:
+The last line uses <xref ref="eq-hyp-arccosh"/> from
+<xref ref="example-hyp-arccosh"/>, which lets us state the answer without
+any inverse hyperbolic function.
+</p>
+
+<p>
+Along the way, we have also used the following:
 
 <md>
-\tanh^2(t) = 1 - \operatorname{sech}^2(t)
-= 1 - \frac{1}{\cosh^2(t)}
-= \frac{\cosh^2(t) - 1}{\cosh^2(t)}
-= \frac{x^2-1}{x^2}.
+<mrow>\tanh^2(t) \amp = 1 - \operatorname{sech}^2(t)
+= 1 - \frac{1}{\cosh^2(t)}</mrow>
+<mrow>\amp = \frac{\cosh^2(t) - 1}{\cosh^2(t)}
+= \frac{x^2-1}{x^2}.</mrow>
 </md>
 </p>
 </solution>
@@ -413,37 +541,299 @@ In the last step, we have used the following:
 <section xml:id="sec-hyp-real-life">
 <title>Hyperbolic Functions in Real Life</title>
 
+<introduction>
 <p>
-<ul>
-<li>
-<p>
-<term>Celestial mechanics:</term> If a comet has enough speed, it can
-escape the gravitational pull of the sun, in which case, one possible
-trajectory is a hyperbolic trajectory.
+Hyperbolic functions are more than a formal analogue of the
+trigonometric functions: they describe a number of concrete physical
+situations. We look at three of them.
 </p>
-</li>
-<li>
+</introduction>
+
+<subsection xml:id="subsec-hyp-catenary">
+<title>Hanging Cables and the Catenary</title>
+
 <p>
-If a heavy flexible cable (such as a telephone or power line) is
-suspended between two points at the same height, then it takes the
-shape of a curve with equation <m>y = c + a\cosh(x/a)</m> called a
-<term>catenary</term>.
+If a heavy flexible cable (such as a telephone line, a power line, or a
+chain) hangs freely from two supports, it settles into a curve called a
+<term>catenary</term>. Contrary to a common guess, this curve is not a
+parabola; it is the graph of a hyperbolic cosine,
+<md>
+y = a\cosh\left(\frac{x}{a}\right),
+</md>
+where <m>x</m> is measured horizontally from the lowest point of the
+cable, so that the <m>y</m>-axis is the axis of symmetry and the lowest
+point sits at height <m>y(0) = a</m>. Sliding the curve up or down, as
+in <m>y = c + a\cosh(x/a)</m>, only changes where we draw the
+<m>x</m>-axis.
 </p>
-</li>
-<li>
+
 <p>
-<term>The Gateway Arch in St. Louis, Missouri</term> (Designed in 1963
-and Completed in 1965): The geometric form of the gateway was set by
-Hannskari Bandel (Structural engineer) and was expressed in the
-blueprints by the equation
+The shape comes out of a balance of forces. Look at the piece of cable
+running from the lowest point to a point where the cable makes an angle
+<m>\theta</m> with the horizontal, and let <m>s</m> be the arc length of
+that piece. Three forces act on it: the tension <m>T_0</m> at the lowest
+point, which is horizontal; the tension <m>T</m> along the cable at the
+other end; and the weight <m>\lambda g s</m> of the piece, where
+<m>\lambda</m> is the mass per unit length; see
+<xref ref="fig-hyp-catenary-forces"/>. Balancing the horizontal and the
+vertical components gives
+<md>
+<mrow>T\cos\theta \amp = T_0</mrow>
+<mrow>T\sin\theta \amp = \lambda g s.</mrow>
+</md>
+</p>
+
+<figure xml:id="fig-hyp-catenary-forces">
+<caption>
+The three forces on the piece of cable of arc length <m>s</m> running
+from the lowest point of the cable to a point where the cable makes an
+angle <m>\theta</m> with the horizontal. The lowest point sits at height
+<m>a = T_0/(\lambda g)</m>, and the supports are a distance <m>2b</m>
+apart. (After Fig. 1 of Behroozi, cited below.)
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-catenary-forces">
+<diagram dimensions="(400,300)" margins="12">
+<definition>c(x) = (exp(x) + exp(-x))/2</definition>
+<definition>P = (1.1, 1.6685)</definition>
+<coordinates bbox="(-2.5,-0.5,2.9,3.3)">
+<axes xlabel="x" ylabel="y" decorations="no"/>
+<graph at="cf-curve" function="c" domain="(-1.75,1.75)"
+       stroke="#56B4E9" thickness="2"/>
+<graph at="cf-arc" function="c" domain="(0,1.1)"
+       stroke="#8B1A4A" thickness="4"/>
+<line at="cf-horiz" endpoints="(P,(1.85,1.6685))" stroke="gray" thickness="1"/>
+<angle-marker at="cf-theta" points="((1.85,1.6685),P,(1.4,2.0685))" radius="24"
+              clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<vector at="cf-T" v="(0.36,0.48)" tail="P" stroke="black" thickness="2"
+        alignment="ne"><m>T</m></vector>
+<vector at="cf-W" v="(0,-0.6)" tail="P" stroke="black" thickness="2"
+        alignment="e"><m>\lambda g s</m></vector>
+<vector at="cf-T0" v="(-0.6,0)" tail="(0,1)" stroke="black" thickness="2"
+        alignment="nw"><m>T_0</m></vector>
+<point at="cf-vertex" p="(0,1)" fill="black"/>
+<point at="cf-P" p="P" fill="black"/>
+<line at="cf-a" endpoints="((0,0),(0,1))" stroke="gray" thickness="2"
+      arrows="2"/>
+<label at="cf-a-lab" anchor="(-0.06,0.5)" alignment="w"><m>a</m></label>
+<label at="cf-s-lab" anchor="(0.62,1.02)" alignment="se" color="#8B1A4A">
+<m>s</m>
+</label>
+<line at="cf-b" endpoints="((0,3.05),(1.75,3.05))" stroke="gray" thickness="1"
+      arrows="2"/>
+<label at="cf-b-lab" anchor="(0.87,3.08)" alignment="n"><m>b</m></label>
+<line at="cf-support" endpoints="((1.75,2.925),(1.75,3.15))" stroke="gray"
+      thickness="1"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hanging cable in the shape of a catenary. The piece of the cable from its lowest point up to a point P is drawn in dark red and labelled s. Three force arrows are shown: the horizontal tension T naught at the lowest point, the tension T along the cable at P, and the weight lambda g s pointing straight down at P. The angle theta is marked between the cable at P and the horizontal. The height of the lowest point above the x axis is labelled a, and the horizontal distance from the y axis to the support is labelled b.">
+  <annotation ref="cf-curve" text="The catenary y equals a hyperbolic cosine of x over a."/>
+  <annotation ref="cf-arc" text="The section of cable of arc length s, from the vertex to the point P."/>
+  <annotation ref="cf-T0" text="The horizontal tension T naught at the lowest point of the cable."/>
+  <annotation ref="cf-T" text="The tension T at P, directed along the cable."/>
+  <annotation ref="cf-W" text="The weight lambda g s of the section, pointing straight down."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The quantity <m>a = T_0/(\lambda g)</m> has units of length, and
+dividing the second equation by the first eliminates <m>T</m> and leaves
+<m>s = a\tan\theta</m>. Since the cable makes the angle <m>\theta</m>
+with the horizontal, <m>\tan\theta</m> is its slope, so
+<md>
+\frac{dy}{dx} = \tan\theta = \frac{s}{a}.
+</md>
+Now use the arc length element
+<m>ds = \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + (s/a)^2}\,dx</m> and separate
+the variables:
+<md>
+dx = \frac{a\,ds}{\sqrt{a^2+s^2}}
+\qquad\Longrightarrow\qquad
+x = a\sinh^{-1}\!\left(\frac{s}{a}\right),
+</md>
+where the constant of integration vanishes because <m>s = 0</m> at
+<m>x = 0</m>.
+</p>
+
+<p>
+Solving for <m>s</m> gives <m>s = a\sinh(x/a)</m>, and therefore
+<md>
+\frac{dy}{dx} = \frac{s}{a} = \sinh\left(\frac{x}{a}\right).
+</md>
+One last integration, together with <m>y(0) = a</m>, produces the
+catenary equation <m>y = a\cosh(x/a)</m>.
+</p>
+
+<p>
+Two things are worth noticing. First, <m>a</m> is a pure scale factor:
+written as <m>y/a = \cosh(x/a)</m>, the equation shows that every
+catenary is a scaled copy of the single curve <m>y = \cosh x</m>, in
+exactly the same way that every circle is a scaled copy of the unit
+circle; <xref ref="fig-hyp-catenary-family"/> shows four of them. Second, <m>a</m> is fixed by the cable itself. If the cable has
+half-length <m>l</m> and its two supports are a distance <m>2b</m>
+apart, then putting <m>s = l</m> at <m>x = b</m> in
+<m>s = a\sinh(x/a)</m> gives
+<md>
+l = a\sinh\left(\frac{b}{a}\right),
+</md>
+which determines <m>a</m> (numerically) from the two lengths. Since
+<m>a = T_0/(\lambda g)</m>, a cable pulled tight has a large <m>a</m>
+and hangs almost flat, while a slack one has a small <m>a</m> and sags
+sharply.
+</p>
+
+<figure xml:id="fig-hyp-catenary-family">
+<caption>
+The catenaries <m>y = a\cosh(x/a)</m> for
+<m>a = 0.5,\ 1,\ 2,\ 4</m>. Each curve meets the <m>y</m>-axis at its
+own value of <m>a</m>, and all four are scaled copies of the single
+curve <m>y = \cosh x</m>. (After Fig. 2 of Behroozi, cited below.)
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hyp-catenary-family">
+<diagram dimensions="(420,320)" margins="12">
+<definition>ca(x) = 0.5*(exp(x/0.5) + exp(-x/0.5))/2</definition>
+<definition>cb(x) = (exp(x) + exp(-x))/2</definition>
+<definition>cc(x) = 2*(exp(x/2) + exp(-x/2))/2</definition>
+<definition>cd(x) = 4*(exp(x/4) + exp(-x/4))/2</definition>
+<coordinates bbox="(-6.9,-1.1,6.9,9.6)">
+<axes at="cfam-axes" xlabel="x" ylabel="y" hlabels="(-6,2,6)" vlabels="(0,2,8)"/>
+<graph at="cfam-a" function="ca" domain="(-1.6,1.6)"
+       stroke="#8B1A4A" thickness="2"/>
+<graph at="cfam-b" function="cb" domain="(-2.6,2.6)"
+       stroke="#56B4E9" thickness="3"/>
+<graph at="cfam-c" function="cc" domain="(-3.9,3.9)"
+       stroke="#E69F00" thickness="2"/>
+<graph at="cfam-d" function="cd" domain="(-5.6,5.6)"
+       stroke="#009E73" thickness="2"/>
+<point at="cfam-ia" p="(0,0.5)" fill="#8B1A4A"/>
+<point at="cfam-ib" p="(0,1)" fill="#56B4E9"/>
+<point at="cfam-ic" p="(0,2)" fill="#E69F00"/>
+<point at="cfam-id" p="(0,4)" fill="#009E73"/>
+<label at="cfam-la" anchor="(1.6,6.28)" alignment="n" color="#8B1A4A">
+<m>a=0.5</m>
+</label>
+<label at="cfam-lb" anchor="(-2.6,6.9)" alignment="n" color="#56B4E9">
+<m>a=1</m>
+</label>
+<label at="cfam-lc" anchor="(3.9,7.19)" alignment="n" color="#E69F00">
+<m>a=2</m>
+</label>
+<label at="cfam-ld" anchor="(5.6,8.73)" alignment="n" color="#009E73">
+<m>a=4</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four catenaries y equals a hyperbolic cosine of x over a, drawn on the same axes for a equal to one half, one, two, and four. Each curve is a U shape whose lowest point sits on the y axis at height a; the larger the value of a, the wider and flatter the curve.">
+  <annotation ref="cfam-a" text="The catenary with scale factor one half, the narrowest of the four."/>
+  <annotation ref="cfam-b" text="The unit catenary y equals hyperbolic cosine of x, with lowest point at height one."/>
+  <annotation ref="cfam-c" text="The catenary with scale factor two."/>
+  <annotation ref="cfam-d" text="The catenary with scale factor four, the widest and flattest of the four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+A worked example of a hanging cable, in which we find the slope of the
+cable and the angle at which it meets its pole, appears in
+<xref ref="example-hyp-catenary"/>.
+</p>
+
+<p>
+The derivation above follows F. Behroozi,
+<url href="https://pubs.aip.org/aapt/pte/article/56/4/214/318980/In-Praise-of-the-Catenary" visual="pubs.aip.org">In Praise of the Catenary</url>,
+<em>The Physics Teacher</em> <term>56</term>, 214<ndash/>217 (2018),
+which also discusses the sense in which all catenaries are similar to
+one another and suggests simple classroom demonstrations.
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-hyp-celestial">
+<title>Celestial Mechanics</title>
+
+<p>
+If a comet has enough speed, it can escape the gravitational pull of the
+sun, in which case one possible trajectory is a hyperbolic trajectory.
+The comet
+<url href="https://science.nasa.gov/solar-system/comets/2i-borisov/" visual="science.nasa.gov">2I/Borisov</url>,
+discovered in 2019, is the first comet known to have come from outside
+our solar system. It was moving too fast for the sun to capture it, so
+its path is a hyperbola rather than an ellipse: it swung around the sun
+once and is now on its way back out. See
+<xref ref="fig-hyp-comet-borisov"/>.
+</p>
+
+<figure xml:id="fig-hyp-comet-borisov">
+<caption>
+The interstellar comet 2I/Borisov, photographed by the Hubble Space
+Telescope in 2019. Because its speed exceeds the escape speed of the
+sun, its trajectory is a hyperbola and it passes through the solar
+system only once. (Image: NASA, ESA and D. Jewitt (UCLA).)
+</caption>
+<image source="app-hyperbola-comet-borisov.jpg" width="60%">
+<shortdescription>
+A fuzzy blue comet with a bright core and a broad tail sweeping to the
+upper right, against a black background.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+
+<subsection xml:id="subsec-hyp-gateway-arch">
+<title>The Gateway Arch</title>
+
+<p>
+<term>The Gateway Arch in St. Louis, Missouri</term> (designed in 1963
+and completed in 1965) is a catenary turned upside down: flipping the
+curve converts the tension carried by a hanging chain into pure
+compression, which is what masonry and steel carry best. The geometric
+form of the gateway was set by Hannskari Bandel (structural engineer)
+and was expressed in the blueprints by the equation
 <md>
 y = A\left(\cosh\frac{Cx}{L} - 1\right),
 </md>
-where <m>A</m>, <m>C</m>, and <m>L</m> are constants.
+where <m>A</m>, <m>C</m>, and <m>L</m> are constants. The arch is
+slightly flattened compared with a uniform hanging chain, because it is
+thicker at the base than at the top. It stands 630 feet tall and 630
+feet wide at the base; the National Park Service describes its
+construction and its geometry at
+<url href="https://www.nps.gov/jeff/index.htm" visual="nps.gov">Gateway Arch National Park</url>.
+See <xref ref="fig-hyp-gateway-arch"/>.
 </p>
-</li>
-</ul>
-</p>
+
+<figure xml:id="fig-hyp-gateway-arch">
+<caption>
+The Gateway Arch in St. Louis, Missouri. Its centerline follows the
+curve <m>y = A\left(\cosh(Cx/L) - 1\right)</m>, an upside-down catenary.
+(Photograph by John Margolies, 1988; John Margolies Roadside America
+photograph archive, Library of Congress, Prints and Photographs
+Division.)
+</caption>
+<image source="app-catenary-gateway-arch.jpg" width="48%">
+<shortdescription>
+The stainless steel Gateway Arch rising from a line of trees against a
+clear blue sky, curving up to a rounded peak and back down.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-hyp-more-examples">
+<title>Further Examples</title>
 
 <example xml:id="example-hyp-catenary">
 <title>A hanging telephone line</title>
@@ -476,9 +866,9 @@ The function <m>y = 20\cosh(x/20) - 15</m> is plotted in
 differentiate the function with respect to <m>x</m> and evaluate it at
 <m>x = 7</m>:
 <md>
-\left.\frac{df}{dx}\right|_{x=7}
-= \left.\sinh(x/20)\right|_{x=7}
-= \sinh(7/20) \approx 0.357.
+<mrow>\left.\frac{df}{dx}\right|_{x=7}
+\amp = \left.\sinh(x/20)\right|_{x=7}</mrow>
+<mrow>\amp = \sinh(7/20) \approx 0.357.</mrow>
 </md>
 </p>
 </li>
@@ -567,10 +957,10 @@ Calculate <m>\dfrac{df}{dx}</m>.
 We note that <m>e^{\ln(x)} = x</m> and
 <m>e^{-\ln(x)} = \dfrac{1}{x}</m> and hence
 <md>
-f(x) = \sinh(\ln(x))
-= \frac{e^{\ln(x)} - e^{-\ln(x)}}{2}
-= \frac{x - \frac{1}{x}}{2}
-= \frac{x^2-1}{2x}.
+<mrow>f(x) \amp = \sinh(\ln(x))
+= \frac{e^{\ln(x)} - e^{-\ln(x)}}{2}</mrow>
+<mrow>\amp = \frac{x - \frac{1}{x}}{2}
+= \frac{x^2-1}{2x}.</mrow>
 </md>
 </p>
 </li>
@@ -579,20 +969,20 @@ f(x) = \sinh(\ln(x))
 <em>First Method:</em> We can use the fraction derived in part A
 together with the quotient rule as follows.
 <md>
-f(x) = \frac{x^2-1}{2x}
-\;\Rightarrow\;
-\frac{df}{dx} = \frac{4x^2 - 2(x^2-1)}{4x^2} = \frac{x^2+1}{2x^2}.
+<mrow>f(x) \amp = \frac{x^2-1}{2x}</mrow>
+<mrow>\Rightarrow\quad \frac{df}{dx}
+\amp = \frac{4x^2 - 2(x^2-1)}{4x^2} = \frac{x^2+1}{2x^2}.</mrow>
 </md>
 </p>
 <p>
 <em>Second Method:</em> We can use the chain rule as follows.
 <md>
-f(x) = \sinh(\ln(x))
-\;\Rightarrow\;
-\frac{df}{dx} = \frac{1}{x}\left(\cosh(\ln(x))\right)
-= \frac{1}{x}\left(\frac{e^{\ln(x)} + e^{-\ln(x)}}{2}\right)
-= \frac{x + \frac1x}{2x}
-= \frac{x^2+1}{2x^2}.
+<mrow>f(x) \amp = \sinh(\ln(x))</mrow>
+<mrow>\Rightarrow\quad \frac{df}{dx}
+\amp = \frac{1}{x}\cosh(\ln(x))</mrow>
+<mrow>\amp = \frac{1}{x}\left(\frac{e^{\ln(x)} + e^{-\ln(x)}}{2}\right)</mrow>
+<mrow>\amp = \frac{x + \frac1x}{2x}
+= \frac{x^2+1}{2x^2}.</mrow>
 </md>
 </p>
 </li>
@@ -613,9 +1003,9 @@ Prove that <m>\sinh(2x) = 2\sinh(x)\cosh(x)</m>.
 Starting from the definition,
 
 <md>
-\sinh(2x) = \frac{e^{2x} - e^{-2x}}{2}
-= \frac12\left(e^x - e^{-x}\right)\left(e^x + e^{-x}\right)
-= 2\sinh(x)\cosh(x).
+<mrow>\sinh(2x) \amp = \frac{e^{2x} - e^{-2x}}{2}</mrow>
+<mrow>\amp = \frac12\left(e^x - e^{-x}\right)\left(e^x + e^{-x}\right)</mrow>
+<mrow>\amp = 2\sinh(x)\cosh(x).</mrow>
 </md>
 </p>
 
@@ -639,15 +1029,15 @@ Consider the equation <m>2\cosh(2x) + 10\sinh(2x) = 5</m> and solve for
 We begin by substituting the definitions of hyperbolic functions.
 
 <md>
-<mrow>2\cosh(2x) + 10\sinh(2x) = 5
-\amp \Rightarrow
-2\left(\frac{e^{2x}+e^{-2x}}{2}\right)
-+ 10\left(\frac{e^{2x}-e^{-2x}}{2}\right) = 5</mrow>
-<mrow>\amp \Rightarrow 6e^{2x} - 4e^{-2x} - 5 = 0
-\;\Rightarrow\; 6e^{4x} - 5e^{2x} - 4 = 0</mrow>
-<mrow>\amp \Rightarrow \left(3e^{2x} - 4\right)\left(2e^{2x} + 1\right) = 0
-\;\Rightarrow\; e^{2x} = \frac43 \text{ or } e^{2x} = -\frac12</mrow>
+<mrow>2\cosh(2x) + 10\sinh(2x) \amp = 5</mrow>
+<mrow>\Rightarrow\quad 2\left(\frac{e^{2x}+e^{-2x}}{2}\right)
++ 10\left(\frac{e^{2x}-e^{-2x}}{2}\right) \amp = 5</mrow>
+<mrow>\Rightarrow\quad 6e^{2x} - 4e^{-2x} - 5 \amp = 0</mrow>
+<mrow>\Rightarrow\quad 6e^{4x} - 5e^{2x} - 4 \amp = 0</mrow>
+<mrow>\Rightarrow\quad \left(3e^{2x} - 4\right)\left(2e^{2x} + 1\right)
+\amp = 0</mrow>
 </md>
+so that <m>e^{2x} = \frac43</m> or <m>e^{2x} = -\frac12</m>.
 </p>
 
 <p>
