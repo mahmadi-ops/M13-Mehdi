@@ -1089,12 +1089,15 @@ it.
       <m>\text{tangent line}</m>
       </label>
 
+      <!-- Plain | bars, never \left|...\right|: a stretchy delimiter makes
+           MathJax emit a nested <svg> inside the label, which browsers render
+           flipped and stacked at the diagram origin. -->
       <label font-size="18" at="ch-note1" anchor="(0,-2.95)" alignment="c">
-      <m>\left|\Delta\vec r\right| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
+      <m>|\Delta\vec r| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
       </label>
       <label font-size="18" at="ch-note2" anchor="(0,-3.85)" alignment="c">
-      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{\left|\Delta\vec r\right|}{\Delta t}
-        = r\left|\dfrac{d\theta}{dt}\right| = r\omega</m>
+      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{|\Delta\vec r|}{\Delta t}
+        = r\,\omega</m>
       </label>
 
       </coordinates>
@@ -1414,8 +1417,9 @@ vector.
         = \dfrac{d\theta}{dt}\,\hat k \times r\,\hat r
         = r\dfrac{d\theta}{dt}\,\hat\theta</m>
       </label>
+      <!-- Plain | bars: see the note in fig-circular-chord. -->
       <label font-size="18" at="cr-note2" anchor="(-4.6,-4.15)" alignment="e">
-      <m>\left|\vec v\right| = \omega r \sin 90^\circ = \omega r</m>
+      <m>|\vec v| = \omega r \sin 90^\circ = \omega r</m>
       </label>
 
       </coordinates>
