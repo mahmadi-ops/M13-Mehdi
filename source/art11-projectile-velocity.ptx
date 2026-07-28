@@ -162,6 +162,263 @@
       </p>
     </solution>
   </exercise>
+  <exercise xml:id="exercise-collision-directrix">
+    <title>A collision on the directrix</title>
+    <introduction>
+      <p>
+        Two objects move under gravity. The first is the projectile of the two
+        previous exercises: launched from <m>O</m> with speed <m>v_0</m> at an
+        elevation <m>\theta</m> to the horizontal. The second is a ball released
+        <em>from rest</em> at a point <m>B</m> on the directrix, the horizontal
+        line at height <m>\dfrac{v_0^2}{2g}</m> above <m>O</m>. We want the two
+        to collide at the moment the projectile is at half of its maximum
+        height, on the way <em>down</em>. See
+        <xref ref="fig-collision-directrix"/>.
+      </p>
+
+      <figure xml:id="fig-collision-directrix">
+        <caption>
+          The projectile reaches half of its maximum height <m>H</m> at the
+          point <m>C</m> on the way down. The ball is released from rest at the
+          point <m>B</m> vertically above <m>C</m> on the directrix, and falls
+          the depth <m>h</m> to meet it.
+        </caption>
+        <image width="85%">
+        <prefigure xmlns="https://prefigure.org" label="prefigure-collision-directrix">
+        <diagram dimensions="(440,290)" margins="6">
+          <definition>f(x) = 0.55*x*(8 - x)</definition>
+          <definition>C = (6.83, 4.4)</definition>
+          <coordinates bbox="(-1.3, -1.2, 10.2, 11.6)">
+            <axes at="cd-axes" xlabel="x" ylabel="y" decorations="no"/>
+            <line at="cd-directrix" p1="(-0.6,9.9)" p2="(9.6,9.9)" stroke="gray"
+                  dash="4"/>
+            <label anchor="(2.6,9.9)" alignment="n" color="gray">
+              <m>\text{directrix } y = \frac{v_0^2}{2g}</m>
+            </label>
+            <graph at="cd-path" domain="(0,8)" function="f" stroke="blue"
+                   thickness="2"/>
+            <label anchor="(2.4,4.4)" alignment="s" color="blue">
+              <m>\text{projectile}</m>
+            </label>
+            <line at="cd-apex-guide" p1="(0,8.8)" p2="(4,8.8)" stroke="gray"
+                  thickness="1" dash="3"/>
+            <line at="cd-half-guide" p1="(0,4.4)" p2="(6.83,4.4)" stroke="gray"
+                  thickness="1" dash="3"/>
+            <line at="cd-apex-drop" p1="(4,0)" p2="(4,8.8)" stroke="gray"
+                  thickness="1" dash="3"/>
+            <label anchor="(-0.15,8.8)" alignment="w"><m>H</m></label>
+            <label anchor="(-0.15,4.4)" alignment="w"><m>\frac{H}{2}</m></label>
+            <point at="cd-apex" p="(4,8.8)" fill="blue"/>
+            <point at="cd-B" p="(6.83,9.9)" fill="black"/>
+            <point at="cd-C" p="C" fill="black"/>
+            <vector at="cd-fall" v="(0,-5.5)" tail="(6.83,9.9)" stroke="#8B1A4A"
+                    thickness="2"/>
+            <label anchor="(6.95,7.15)" alignment="e" color="#8B1A4A">
+              <m>h</m>
+            </label>
+            <label anchor="(7.05,10.1)" alignment="ne"><m>B</m></label>
+            <label anchor="(7.05,4.3)" alignment="se"><m>C</m></label>
+            <label anchor="(-0.15,-0.15)" alignment="sw"><m>O</m></label>
+          </coordinates>
+
+          <annotations>
+            <annotation ref="figure" text="A parabolic trajectory launched from the origin O. A dashed horizontal line high above it is the directrix, at height v naught squared over two g. The apex of the parabola is at height H, and a dashed horizontal line at height H over two meets the descending branch at the collision point C. Directly above C, on the directrix, is the release point B, and a downward arrow of length h joins B to C.">
+              <annotation ref="cd-path" text="The parabolic path of the projectile."/>
+              <annotation ref="cd-directrix" text="The directrix, a horizontal line at height v naught squared over two g."/>
+              <annotation ref="cd-B" text="The release point B on the directrix."/>
+              <annotation ref="cd-C" text="The collision point C on the descending branch, at half the maximum height."/>
+              <annotation ref="cd-fall" text="The depth h through which the ball falls from B to C."/>
+            </annotation>
+          </annotations>
+        </diagram>
+        </prefigure>
+        </image>
+      </figure>
+    </introduction>
+
+    <task xml:id="task-collision-times">
+      <statement>
+        <p>
+          Show that the projectile is at half of its maximum height at the two
+          times
+          <md>
+            t_\pm = \frac{v_0\sin\theta}{g}\left(1 \pm \frac{\sqrt2}{2}\right)
+          </md>
+          and say which of these is on the descending branch.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The vertical motion is <m>y = v_0\sin\theta\,t - \tfrac12 g t^2</m>. It
+          is greatest when <m>\dot y = v_0\sin\theta - g t = 0</m>, that is at
+          <m>t = v_0\sin\theta/g</m>, which gives the maximum height
+          <md>
+            H = \frac{v_0^2\sin^2\theta}{2g}\text{.}
+          </md>
+          Setting <m>y = H/2</m> gives the quadratic equation
+          <md>
+            t^2 - \frac{2v_0\sin\theta}{g}\,t
+            + \frac{v_0^2\sin^2\theta}{2g^2} = 0\text{,}
+          </md>
+          whose discriminant is <m>2v_0^2\sin^2\theta/g^2</m>. Hence
+          <md>
+            t_\pm = \frac{v_0\sin\theta}{g}
+            \pm \frac{\sqrt2\,v_0\sin\theta}{2g}
+            = \frac{v_0\sin\theta}{g}\left(1 \pm \frac{\sqrt2}{2}\right)\text{.}
+          </md>
+          These straddle the apex time <m>v_0\sin\theta/g</m> symmetrically, as
+          they must. The descending crossing is the later one,
+          <md>
+            T = t_+ = \frac{\left(2+\sqrt2\right)v_0\sin\theta}{2g}\text{.}
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-collision-release-point">
+      <statement>
+        <p>
+          Find the point <m>B</m> on the directrix from which the ball must be
+          released.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Released from rest, the ball has no horizontal velocity, so it falls
+          along a vertical line: <m>B</m> must be <em>directly above</em> the
+          collision point <m>C</m>. The projectile's horizontal coordinate at
+          time <m>T</m> is
+          <md>
+            x_C = v_0\cos\theta\cdot T
+            = \frac{\left(2+\sqrt2\right)v_0^2\sin 2\theta}{4g}\text{,}
+          </md>
+          so the release point is
+          <md>
+            B = \left(\frac{\left(2+\sqrt2\right)v_0^2\sin 2\theta}{4g},\;
+            \frac{v_0^2}{2g}\right)\text{.}
+          </md>
+          In terms of the range <m>R = \dfrac{v_0^2\sin 2\theta}{g}</m> this is
+          <m>x_C = \frac{2+\sqrt2}{4}R \approx 0.854\,R</m><mdash/>comfortably
+          past the apex at <m>R/2</m> and short of the landing point, as
+          <xref ref="fig-collision-directrix"/> shows.
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-collision-release-time">
+      <statement>
+        <p>
+          Find how long after the projectile is launched the ball must be
+          released.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The depth of <m>C</m> below the directrix is
+          <md>
+            h = \frac{v_0^2}{2g} - \frac{H}{2}
+            = \frac{v_0^2\left(2-\sin^2\theta\right)}{4g}\text{.}
+          </md>
+          Falling from rest through <m>h</m> takes a time <m>\tau</m> with
+          <m>h = \tfrac12 g\tau^2</m>, so
+          <md>
+            \tau = \sqrt{\frac{2h}{g}}
+            = \frac{v_0}{g}\sqrt{\frac{2-\sin^2\theta}{2}}\text{.}
+          </md>
+          The ball must therefore be released
+          <md>
+            t_{\text{rel}} = T - \tau
+            = \frac{v_0}{g}\left[\frac{\left(2+\sqrt2\right)\sin\theta}{2}
+            - \sqrt{\frac{2-\sin^2\theta}{2}}\right]
+          </md>
+          seconds after the projectile is launched.
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-collision-equal-speeds">
+      <statement>
+        <p>
+          Show that at the instant of the collision the two objects have exactly
+          the same speed.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By <xref ref="exercise-directrix-freefall"/>, a projectile at depth
+          <m>h</m> below its directrix has speed
+          <m>v_{\text{proj}} = \sqrt{2gh}</m>. The ball starts from rest
+          <em>on</em> the directrix and has fallen the same depth <m>h</m>, so
+          its speed is
+          <md>
+            v_{\text{ball}} = g\tau = g\sqrt{\frac{2h}{g}} = \sqrt{2gh}\text{.}
+          </md>
+          The two are equal. This is not a coincidence of our particular choice
+          of <m>C</m>: the projectile always carries exactly the speed it
+          <em>would</em> have gained by falling freely from the directrix, and
+          the ball is doing precisely that fall. Wherever on the path we arrange
+          the collision, the two objects meet with the same speed, here
+          <md>
+            v = \sqrt{2gh} = v_0\sqrt{\frac{2-\sin^2\theta}{2}}\text{.}
+          </md>
+          Their <em>directions</em> of course differ: the ball moves straight
+          down, while the projectile moves down and forward at the angle
+          <m>\phi</m> of <xref ref="exercise-velocity-direction"/>.
+        </p>
+      </solution>
+    </task>
+
+    <task xml:id="task-collision-positive-time">
+      <statement>
+        <p>
+          Is <m>t_{\text{rel}}</m> always positive? Find the elevations
+          <m>\theta</m> for which the ball is released after the projectile is
+          launched, and explain what a negative <m>t_{\text{rel}}</m> would mean.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Requiring <m>t_{\text{rel}} \geq 0</m> means
+          <md>
+            \frac{\left(2+\sqrt2\right)\sin\theta}{2}
+            \geq \sqrt{\frac{2-\sin^2\theta}{2}}\text{,}
+          </md>
+          and squaring gives
+          <m>\sin^2\theta\left(4+2\sqrt2\right) \geq 2</m>, that is
+          <md>
+            \sin^2\theta \geq \frac{1}{2+\sqrt2} = \frac{2-\sqrt2}{2}
+            \quad\Longleftrightarrow\quad
+            \theta \geq \arcsin\sqrt{\frac{2-\sqrt2}{2}}
+            \approx 32.8^\circ\text{.}
+          </md>
+          For flatter launches the required release time is negative: the ball
+          would have to be dropped <em>before</em> the projectile is fired,
+          because a shallow trajectory reaches its (low) half-height point sooner
+          than the ball can fall the long way down from the directrix.
+        </p>
+      </solution>
+    </task>
+
+    <conclusion>
+      <p>
+        <xref ref="fig-collision-animation"/> puts the whole scenario in motion:
+        the projectile rises to <m>H</m>, the ball is released from <m>B</m> at
+        the time <m>t_{\text{rel}}</m>, the two meet at <m>C</m>, and the
+        velocity arrows there have the same length.
+      </p>
+
+      <figure xml:id="fig-collision-animation">
+        <caption>
+          Animation: the projectile and the ball, released from rest on the
+          directrix, collide at half of the maximum height with equal speeds.
+        </caption>
+        <video xml:id="video-collision-directrix"
+               source="videos/projectile_collision_directrix_1080p.mp4"
+               width="90%" aspect="16:9"/>
+      </figure>
+    </conclusion>
+  </exercise>
+
 <exercise xml:id="rf-2">
 <statement>
 <p>
