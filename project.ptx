@@ -8,7 +8,10 @@
     <target name="web" format="html">
       <stringparams html.css.extra="external/custom.css" html.js.extra="external/custom.js" />
     </target>
-    <target name="runestone" format="html" platform="runestone" />
+    <!-- publication-runestone.ptx withholds hints/answers/solutions, since
+         these exercises are auto-graded on Runestone. -->
+    <target name="runestone" format="html" platform="runestone"
+            publication="publication-runestone.ptx" />
     <target name="print" format="pdf" />
   </targets>
 </project>
