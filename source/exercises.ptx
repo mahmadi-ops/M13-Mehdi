@@ -1074,4 +1074,8 @@ this is a <term>local maximum</term>.
 <!-- ================= Lagrange Multipliers ================= -->
 <xi:include href="lagrange_exercise.ptx"/>
 
+<!-- ========= Runestone interactive question-type sampler ========= -->
+<!-- Uses dev-schema elements: validate with the CLI's dev schema option -->
+<xi:include href="exercises-runestone-samples.ptx"/>
+
 </chapter>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Runestone interactive exercise sampler.
+
+  One worked example of each auto-gradable Runestone question type that
+  PreTeXt supports, so we can evaluate the formats before rolling them out
+  more widely.  The types, and the markup that triggers each one (see
+  pretext-assembly.xsl, mode="exercise-interactive-attribute"):
+
+      truefalse       statement/@correct
+      multiplechoice  statement + choices
+      fillin-basic    statement//var   (answers live in a sibling "setup")
+      parson          statement + blocks
+      matching        statement + matching
+      cardsort        statement + cardsort
+      clickablearea   statement + areas
+      shortanswer     statement + response      (instructor-graded)
+
+  All but true/false are DEV-schema elements, so validate with the CLI's
+  "dev" schema flag (pretext validate, dev schema option).  The stable
+  schema will report false positives on this file.
+
+  Hints/answers/solutions are suppressed in the Runestone build by
+  publication/publication-runestone.ptx; due dates and release are set in the
+  Runestone instructor dashboard, not here.
+-->
+
+<worksheet xml:id="worksheet-runestone-samples">
+<title>Interactive Problem Set</title>
+
+<introduction>
+<p>
+The problems below are auto-graded. Each one is deliberately chosen so that
+a correct answer requires a full argument rather than pattern matching: the
+distractors are the answers you get from the most common shortcuts.
+</p>
+</introduction>
+
+<!-- ==================== 1. TRUE / FALSE ==================== -->
+
+<exercise xml:id="rs-tf-directional">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If every directional derivative <m>D_{\mathbf u}f(P_0)</m> exists at a point
+<m>P_0</m>, then <m>f</m> must be continuous at <m>P_0</m>.
+</p>
+</statement>
+<feedback>
+<p>
+False, and the failure is dramatic. Let
+<md>
+f(x,y) = \frac{x^2 y}{x^4 + y^2}\ \text{ for } (x,y)\ne(0,0),
+\qquad f(0,0) = 0 .
+</md>
+For a unit vector <m>\mathbf u = \langle a,b\rangle</m> with <m>b \ne 0</m>,
+<md>
+D_{\mathbf u}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
+ = \lim_{t\to 0}\frac{a^2 b}{t^2a^4 + b^2} = \frac{a^2}{b},
+</md>
+and <m>D_{\mathbf u}f(0,0) = 0</m> when <m>b = 0</m>. So <em>every</em>
+directional derivative exists. Yet along the parabola <m>y = mx^2</m>,
+<md>
+f(x,mx^2) = \frac{m}{1+m^2},
+</md>
+which depends on <m>m</m> — different parabolas approach different values,
+so <m>\lim_{(x,y)\to(0,0)}f</m> does not exist and <m>f</m> is not
+continuous at the origin. Existence of directional derivatives is a
+statement about behavior along <em>straight lines</em> only; continuity
+requires control along <em>every</em> approach.
+</p>
+</feedback>
+</exercise>
+
+<!-- ==================== 2. MULTIPLE CHOICE ==================== -->
+
+<exercise xml:id="rs-mc-vector-identity">
+<title>Which Identity Fails?</title>
+<statement>
+<p>
+Exactly one of the following is <em>not</em> valid for all vectors
+<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
+</p>
+</statement>
+<choices randomize="yes">
+
+<choice>
+<statement>
+<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid. Both sides equal the determinant with rows
+<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+Correct — the cross product is <em>not associative</em>. Take
+<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
+<md>
+\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
+ = -\mathbf j,
+\qquad
+(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
+</md>
+The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
+right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
+reason for those to agree.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid — the cross product <em>is</em> distributive over
+addition. (It is only associativity that fails.)
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c)
+   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid: it is the <q>BAC-CAB</q> triple product expansion. It
+looks the most exotic of the four, which is exactly why it is worth
+remembering that it is true.
+</p>
+</feedback>
+</choice>
+
+</choices>
+</exercise>
+
+<!-- ==================== 3. FILL IN THE BLANK ==================== -->
+
+<exercise xml:id="rs-fillin-skew-lines">
+<title>Distance Between Skew Lines</title>
+<statement>
+<p>
+Consider the two lines
+<md>
+<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
+   + t\,\langle 2,-1,1\rangle,</mrow>
+<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
+   + s\,\langle 1,2,-1\rangle .</mrow>
+</md>
+They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
+<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
+</p>
+<p>
+The absolute value of the scalar triple product
+<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
+<var width="6"/>.
+</p>
+<p>
+The distance between the two lines, to three decimal places, is
+<var width="8"/>.
+</p>
+</statement>
+<setup>
+<var>
+<condition number="5">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="-5">
+<feedback>
+<p>
+Nearly — the triple product itself is <m>-5</m>, but the question asks for
+its <em>absolute value</em>.
+</p>
+</feedback>
+</condition>
+</var>
+<var>
+<condition number="0.845" tolerance="0.001">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="5.916" tolerance="0.002">
+<feedback>
+<p>
+That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
+<em>denominator</em>. You still need to divide the triple product by it.
+</p>
+</feedback>
+</condition>
+<condition number="0.141" tolerance="0.002">
+<feedback>
+<p>
+You appear to have divided by <m>35</m> rather than by
+<m>\sqrt{35}</m>.
+</p>
+</feedback>
+</condition>
+</var>
+</setup>
+<hint>
+<p>
+The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
+distance is the length of the projection of <m>\vec w</m> onto it:
+<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
+\left|\vec u\times\vec v\right|</m>.
+</p>
+</hint>
+<solution>
+<p>
+With <m>\vec u = \langle 2,-1,1\rangle</m> and
+<m>\vec v = \langle 1,2,-1\rangle</m>,
+<md>
+\vec u\times\vec v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp -1 \amp 1 \\
+1 \amp 2 \amp -1
+\end{vmatrix}
+= \langle -1,\, 3,\, 5\rangle,
+\qquad
+\left|\vec u\times\vec v\right| = \sqrt{35}.
+</md>
+Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
+= \langle -1,3,-3\rangle</m>,
+<md>
+\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
+\qquad
+d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
+</md>
+</p>
+</solution>
+</exercise>
+
+<!-- ==================== 4. PARSONS PROBLEM ==================== -->
+
+<exercise xml:id="rs-parsons-no-work">
+<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
+<statement>
+<p>
+Arrange the steps below into a correct proof that the magnetic force does no
+work, and therefore that a charged particle in a magnetic field moves at
+constant speed.
+</p>
+</statement>
+<blocks randomize="yes">
+<block order="1">
+<p>
+Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
+<m>\vec v</m> through a magnetic field <m>\vec B</m>.
+</p>
+</block>
+<block order="2">
+<p>
+The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
+</p>
+</block>
+<block order="3">
+<p>
+By definition, a cross product is perpendicular to both of its factors, so
+<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
+</p>
+</block>
+<block order="4">
+<p>
+Hence <m>\vec F\cdot\vec v
+= q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+</p>
+</block>
+<block order="5">
+<p>
+The kinetic energy satisfies
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right)
+ = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+</p>
+</block>
+<block order="6">
+<p>
+Therefore <m>\dfrac{d}{dt}\left(\tfrac12 m v^2\right) = 0</m>, so <m>v</m>
+is constant: the field changes the particle's direction but never its
+speed.
+</p>
+</block>
+</blocks>
+</exercise>
+
+<!-- ==================== 5. MATCHING ==================== -->
+
+<exercise xml:id="rs-matching-quadrics">
+<title>Identify Each Quadric Surface</title>
+<statement>
+<p>
+Each equation below describes a quadric surface, but none is in standard
+position. Complete the square where necessary and match each equation to
+its surface.
+</p>
+</statement>
+<matching randomize="yes">
+<match>
+<premise><m>x^2 + y^2 - z^2 - 2x = 0</m></premise>
+<response>Hyperboloid of one sheet</response>
+</match>
+<match>
+<premise><m>x^2 + y^2 + 4z^2 - 4y = 0</m></premise>
+<response>Ellipsoid</response>
+</match>
+<match>
+<premise><m>x^2 - y^2 - z^2 = 1</m></premise>
+<response>Hyperboloid of two sheets</response>
+</match>
+<match>
+<premise><m>x^2 + y^2 - z^2 = 0</m></premise>
+<response>Elliptic cone</response>
+</match>
+<match>
+<premise><m>z + 1 = x^2 - y^2</m></premise>
+<response>Hyperbolic paraboloid</response>
+</match>
+</matching>
+<solution>
+<p>
+Completing the square in the first two:
+<md>
+<mrow>x^2 + y^2 - z^2 - 2x \amp = (x-1)^2 + y^2 - z^2 - 1 = 0
+   \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
+<mrow>x^2 + y^2 + 4z^2 - 4y \amp = x^2 + (y-2)^2 + 4z^2 - 4 = 0
+   \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
+</md>
+The first has one negative square and equals <m>+1</m>: a hyperboloid of
+<em>one</em> sheet. The second has all squares positive: an ellipsoid. The
+third has <em>two</em> negative squares and equals <m>+1</m>: two sheets.
+The fourth equals <m>0</m> rather than a positive constant, which
+degenerates the hyperboloid into a cone. The fifth is linear in <m>z</m>
+with squares of opposite sign: a hyperbolic paraboloid (a saddle) with
+vertex at <m>(0,0,-1)</m>.
+</p>
+</solution>
+</exercise>
+
+<!-- ==================== 6. CARD SORT ==================== -->
+
+<exercise xml:id="rs-cardsort-critical">
+<title>Classify the Critical Points</title>
+<statement>
+<p>
+The function <m>f(x,y) = x^3 - 3x + y^3 - 3y</m> has four critical points.
+Drag each one into the correct category.
+</p>
+</statement>
+<cardsort>
+<match>
+<premise><m>(1,1)</m></premise>
+<response>Local minimum</response>
+</match>
+<match>
+<premise><m>(-1,-1)</m></premise>
+<response>Local maximum</response>
+</match>
+<match>
+<premise><m>(1,-1)</m></premise>
+<premise><m>(-1,1)</m></premise>
+<response>Saddle point</response>
+</match>
+</cardsort>
+<solution>
+<p>
+From <m>f_x = 3x^2 - 3 = 0</m> and <m>f_y = 3y^2 - 3 = 0</m> we get
+<m>x = \pm 1</m> and <m>y = \pm 1</m>, giving four critical points. Since
+<m>f_{xx} = 6x</m>, <m>f_{yy} = 6y</m> and <m>f_{xy} = 0</m>,
+<md>
+D = f_{xx}f_{yy} - f_{xy}^2 = 36xy .
+</md>
+So <m>D = 36 \gt 0</m> at <m>(1,1)</m> and <m>(-1,-1)</m>, while
+<m>D = -36 \lt 0</m> at <m>(1,-1)</m> and <m>(-1,1)</m> — both saddles.
+Among the two with <m>D \gt 0</m>, the sign of <m>f_{xx}</m> decides:
+<m>f_{xx}(1,1) = 6 \gt 0</m> gives a local minimum, and
+<m>f_{xx}(-1,-1) = -6 \lt 0</m> gives a local maximum.
+</p>
+</solution>
+</exercise>
+
+<!-- ==================== 7. CLICKABLE AREA ==================== -->
+
+<exercise xml:id="rs-clickable-error">
+<title>Find the Error</title>
+<statement>
+<p>
+Below is a student's computation of the derivative of
+<m>f(x,y) = x^2 y</m> at the point <m>(1,2)</m> in the direction of
+<m>\vec v = \langle 3,4\rangle</m>. Exactly one line contains the error.
+Click on that line.
+</p>
+</statement>
+<feedback>
+<p>
+The error is in the third line. The formula
+<m>D_{\mathbf u}f = \nabla f\cdot\mathbf u</m> requires a <em>unit</em>
+vector. Since <m>\left|\vec v\right| = 5</m>, the correct direction is
+<m>\mathbf u = \left\langle \tfrac35, \tfrac45 \right\rangle</m>, giving
+<md>
+D_{\mathbf u}f(1,2) = 4\cdot\tfrac35 + 1\cdot\tfrac45 = \frac{16}{5} = 3.2,
+</md>
+not <m>16</m>. Lines 1, 2 and 4 are each correct given the line before
+them — line 4 faithfully reports the (wrong) number produced by line 3.
+</p>
+</feedback>
+<areas>
+<p><area correct="no"><m>\nabla f = \left\langle 2xy,\; x^2\right\rangle</m></area></p>
+<p><area correct="no"><m>\nabla f(1,2) = \left\langle 4,\; 1\right\rangle</m></area></p>
+<p><area correct="yes"><m>D_{\vec v}f(1,2) = \nabla f(1,2)\cdot\vec v
+  = (4)(3) + (1)(4) = 16</m></area></p>
+<p><area correct="no">So the directional derivative equals <m>16</m>.</area></p>
+</areas>
+</exercise>
+
+<!-- ==================== 8. SHORT ANSWER ==================== -->
+
+<exercise xml:id="rs-shortanswer-products">
+<title>The Roles of the Two Products</title>
+<statement>
+<p>
+In two or three sentences, explain why a magnetic field can bend a charged
+particle's path into a circle but can never make it move faster. Your
+answer should say what job the <em>cross</em> product does and what job the
+<em>dot</em> product does, and should make clear which one is responsible
+for the speed staying constant.
+</p>
+</statement>
+<response/>
+</exercise>
+
+</worksheet>

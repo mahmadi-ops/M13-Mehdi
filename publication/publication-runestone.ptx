@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  Publication file for the "runestone" target only.
+
+  Identical to publication.ptx except that hints, answers and solutions are
+  withheld from the built book.  On Runestone the exercises are auto-graded,
+  so shipping the solution next to the input box would defeat the point.
+
+  NOTE ON DUE DATES.  PreTeXt has no notion of a due date: there is no
+  date, due or release attribute anywhere in the schema, and the Runestone
+  XSL only ever refers to the *assignment builder*.  Release dates, due
+  dates, and when graded feedback becomes visible are all set per assignment
+  in the Runestone instructor dashboard.  This file controls only what gets
+  compiled into the book in the first place.
+
+  IMPORTANT: every setting here is BOOK-WIDE.  Adding statement="no" would
+  blank the statements of every exercise in the whole book, not just one
+  assignment, so it is not a usable way to gate a single problem set behind
+  a deadline.  To withhold a specific set of problems until a deadline
+  passes, build the assignment in the Runestone dashboard and leave it
+  unreleased until then.
+
+  To reveal solutions after a deadline, either
+    (a) release the assignment's feedback in the Runestone dashboard, or
+    (b) flip the "no" values below to "yes" and redeploy the book.
+-->
+
+<publication>
+    <!-- directories are relative to the main source PreTeXt file -->
+    <source>
+        <directories external="../assets" generated="../generated-assets"/>
+    </source>
+
+    <common>
+        <!-- Statements are shown (students must be able to read the      -->
+        <!-- question); everything that gives the answer away is hidden.  -->
+        <exercise-inline     statement="yes" hint="no" answer="no" solution="no"/>
+        <exercise-divisional statement="yes" hint="no" answer="no" solution="no"/>
+        <exercise-worksheet  statement="yes" hint="no" answer="no" solution="no"/>
+        <exercise-reading    statement="yes" hint="no" answer="no" solution="no"/>
+        <exercise-project    statement="yes" hint="no" answer="no" solution="no"/>
+
+        <tableofcontents level="4"/>
+    </common>
+
+    <numbering>
+        <divisions level="3" />
+        <blocks level="1" />
+        <projects level="2" />
+        <equations level="1" />
+        <footnotes level="1" />
+    </numbering>
+
+    <html>
+        <webwork divisional="dynamic"/>
+    </html>
+</publication>
