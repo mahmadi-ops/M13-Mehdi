@@ -9,13 +9,27 @@
   pretext-assembly.xsl, mode="exercise-interactive-attribute"):
 
       truefalse       statement/@correct
-      multiplechoice  statement + choices
+      multiplechoice  statement + choices   (2+ correct choices = checkboxes)
       fillin-basic    statement//var   (answers live in a sibling "setup")
       parson          statement + blocks
-      matching        statement + matching
       cardsort        statement + cardsort
       clickablearea   statement + areas
       shortanswer     statement + response      (instructor-graded)
+
+  Two types are deliberately NOT sampled here:
+
+    matching    PreTeXt emits no static representation for it, so on the web
+                target the exercise renders as a bare title with no statement
+                and no items.  Reproduced with a minimal example under both
+                2.44.0 and 2.45.0.  Problem 5 uses a multiple-select question
+                on the same content instead.
+
+    coding      an ActiveCode cell has no role in this course.
+
+  Note also that "shortanswer" shows its response box only on Runestone: the
+  static template in pretext-runestone-static.xsl explicitly skips the
+  "response" element, so the web build shows the prompt alone.  That is
+  PreTeXt's design, not a defect in this file.
 
   All but true/false are DEV-schema elements, so validate with the CLI's
   "dev" schema flag (pretext validate, dev schema option).  The stable
@@ -295,58 +309,106 @@ speed.
 </blocks>
 </exercise>
 
-<!-- ==================== 5. MATCHING ==================== -->
+<!-- ==================== 5. MULTI-SELECT MULTIPLE CHOICE ==================== -->
 
-<exercise xml:id="rs-matching-quadrics">
-<title>Identify Each Quadric Surface</title>
+<!--
+  This slot originally held a <matching> exercise.  PreTeXt emits no static
+  representation for "matching": in a non-Runestone (web) build the whole
+  exercise renders as a bare title plus solution, losing the statement and
+  every premise/response.  Verified with a minimal example under both
+  PreTeXt 2.44.0 and 2.45.0; "cardsort" (problem 6) is unaffected.  Since
+  this book deploys the web target, matching is unusable here.  It can be
+  restored if the book is ever published to Runestone only.
+
+  Replaced with a multiple-SELECT question on the same quadric content.
+  More than one choice marked correct="yes" makes Runestone render it with
+  checkboxes rather than radio buttons, a genuinely distinct widget.
+-->
+
+<exercise xml:id="rs-multiselect-quadrics">
+<title>Which of These Are Hyperboloids?</title>
 <statement>
 <p>
-Each equation below describes a quadric surface, but none is in standard
-position. Complete the square where necessary and match each equation to
-its surface.
+None of the equations below is in standard position. Complete the square
+where necessary, then select <em>every</em> equation whose surface is a
+hyperboloid, of one sheet or of two.
 </p>
 </statement>
-<matching randomize="yes">
-<match>
-<premise><m>x^2 + y^2 - z^2 - 2x = 0</m></premise>
-<response>Hyperboloid of one sheet</response>
-</match>
-<match>
-<premise><m>x^2 + y^2 + 4z^2 - 4y = 0</m></premise>
-<response>Ellipsoid</response>
-</match>
-<match>
-<premise><m>x^2 - y^2 - z^2 = 1</m></premise>
-<response>Hyperboloid of two sheets</response>
-</match>
-<match>
-<premise><m>x^2 + y^2 - z^2 = 0</m></premise>
-<response>Elliptic cone</response>
-</match>
-<match>
-<premise><m>z + 1 = x^2 - y^2</m></premise>
-<response>Hyperbolic paraboloid</response>
-</match>
-</matching>
+<choices randomize="yes">
+
+<choice correct="yes">
+<statement><p><m>x^2 + y^2 - z^2 - 2x = 0</m></p></statement>
+<feedback>
+<p>
+Correct. Completing the square gives
+<m>(x-1)^2 + y^2 - z^2 = 1</m>: one negative square, equal to a positive
+constant, so a hyperboloid of <em>one</em> sheet.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>x^2 + y^2 + 4z^2 - 4y = 0</m></p></statement>
+<feedback>
+<p>
+No. This is <m>x^2 + (y-2)^2 + 4z^2 = 4</m> — every square is positive, so
+it is an ellipsoid.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement><p><m>x^2 - y^2 - z^2 = 1</m></p></statement>
+<feedback>
+<p>
+Correct. <em>Two</em> negative squares against a positive constant gives a
+hyperboloid of two sheets.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>x^2 + y^2 - z^2 = 0</m></p></statement>
+<feedback>
+<p>
+No — and this is the trap. It has the same signs as the first option, but
+it equals <m>0</m> rather than a positive constant. That degenerates the
+hyperboloid into an <em>elliptic cone</em>, the surface the two families of
+hyperboloids approach asymptotically.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>z + 1 = x^2 - y^2</m></p></statement>
+<feedback>
+<p>
+No. The word <q>hyperbolic</q> is a red herring: this is linear in
+<m>z</m>, so it is a <em>hyperbolic paraboloid</em> (a saddle) with vertex
+at <m>(0,0,-1)</m>, not a hyperboloid.
+</p>
+</feedback>
+</choice>
+
+</choices>
 <solution>
 <p>
-Completing the square in the first two:
+Completing the square in the first and second,
 <md>
-<mrow>x^2 + y^2 - z^2 - 2x \amp = (x-1)^2 + y^2 - z^2 - 1 = 0
+<mrow>x^2 + y^2 - z^2 - 2x \amp = 0
    \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
-<mrow>x^2 + y^2 + 4z^2 - 4y \amp = x^2 + (y-2)^2 + 4z^2 - 4 = 0
+<mrow>x^2 + y^2 + 4z^2 - 4y \amp = 0
    \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
 </md>
-The first has one negative square and equals <m>+1</m>: a hyperboloid of
-<em>one</em> sheet. The second has all squares positive: an ellipsoid. The
-third has <em>two</em> negative squares and equals <m>+1</m>: two sheets.
-The fourth equals <m>0</m> rather than a positive constant, which
-degenerates the hyperboloid into a cone. The fifth is linear in <m>z</m>
-with squares of opposite sign: a hyperbolic paraboloid (a saddle) with
-vertex at <m>(0,0,-1)</m>.
+Reading off the signs: one negative square against <m>+1</m> is a
+hyperboloid of one sheet; two negative squares against <m>+1</m> is a
+hyperboloid of two sheets. So the first and third are hyperboloids. The
+second is an ellipsoid, the fourth equals <m>0</m> and so is a cone, and
+the fifth is linear in <m>z</m> and so is a hyperbolic paraboloid.
 </p>
 </solution>
 </exercise>
+
 
 <!-- ==================== 6. CARD SORT ==================== -->
 
