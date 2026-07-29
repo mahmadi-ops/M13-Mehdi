@@ -43,6 +43,19 @@ Understand torque as a measure of the turning effect of a force, and
 appreciate the role of cross product in determining torque.
 </p>
 </li>
+<li>
+<p>
+Describe circular motion with the moving unit vectors <m>\hat r</m> and
+<m>\hat\theta</m>, and represent the rate of rotation by the angular
+velocity vector <m>\vec\omega</m> along the axis of rotation.
+</p>
+</li>
+<li>
+<p>
+Use the cross product to obtain the velocity of a rotating object from its
+angular velocity and position, <m>\vec v = \vec\omega \times \vec r</m>.
+</p>
+</li>
 </ul>
 </objectives>
 
@@ -779,6 +792,830 @@ variation.
 </solution>
 </example>
 
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-circular-motion">
+<title>Application: Circular Motion: Velocity and Angular Velocity</title>
+
+<introduction>
+<p>
+A second physical application of the cross product describes the motion of
+an object travelling in a circle: a rider on a circular track, a ball whirled
+on a string, a point on a spinning wheel, or the moon on its (nearly
+circular) orbit. In each case the object turns about a fixed centre, and the
+natural way to keep track of where it is at time <m>t</m> is not by its
+coordinates <m>x</m> and <m>y</m> but by the single angle <m>\theta(t)</m>
+it has swung through. Our goal is to express the velocity in terms of that
+angle, and to package the answer in the single vector equation
+<m>\vec v = \vec\omega\times\vec r</m>.
+</p>
+
+<p>
+Throughout this section we write unit vectors with hats, so that
+<m>\hat i</m>, <m>\hat j</m> and <m>\hat k</m> are the usual fixed unit
+vectors <m>\mathbf i</m>, <m>\mathbf j</m> and <m>\mathbf k</m> along the
+coordinate axes.
+</p>
+</introduction>
+
+<subsection xml:id="subsec-polar-frame">
+<title>A Frame that Turns with the Particle</title>
+
+<p>
+Let an object move on a circle of radius <m>r</m> centred at the origin of
+the <m>xy</m>-plane, and let <m>\theta(t)</m> be the angle its position
+makes with the positive <m>x</m>-axis at time <m>t</m>, as in
+<xref ref="fig-polar-frame"/>. At the point <m>P</m> where the particle sits
+we attach two unit vectors:
+<ul>
+<li>
+<p>
+<m>\hat r(t)</m>, pointing radially outward, away from the centre, and
+</p>
+</li>
+<li>
+<p>
+<m>\hat\theta(t)</m>, perpendicular to <m>\hat r(t)</m> and tangent to the
+circle, pointing in the direction of increasing <m>\theta</m>.
+</p>
+</li>
+</ul>
+Reading their components off the figure,
+<md>
+<mrow xml:id="eq-rhat" number="yes">\hat r(t) \amp = \cos\theta(t)\,\hat i + \sin\theta(t)\,\hat j,</mrow>
+<mrow xml:id="eq-thetahat" number="yes">\hat\theta(t) \amp = -\sin\theta(t)\,\hat i + \cos\theta(t)\,\hat j.</mrow>
+</md>
+The position of the particle is then simply
+<md xml:id="eq-position-polar" number="yes">
+\vec r(t) = r\,\hat r(t).
+</md>
+</p>
+
+<p>
+The pair <m>\hat i</m>, <m>\hat j</m> is fixed once and for all, while the
+pair <m>\hat r(t)</m>, <m>\hat\theta(t)</m> rides along with the particle and
+turns as it goes; this is exactly what makes the second pair convenient. Note
+that together with <m>\hat k</m> the moving pair forms a right-handed frame,
+since
+<md xml:id="eq-polar-frame-right-handed" number="yes">
+\hat r \times \hat\theta =
+\begin{vmatrix}
+\hat i \amp \hat j \amp \hat k \\
+\cos\theta \amp \sin\theta \amp 0 \\
+-\sin\theta \amp \cos\theta \amp 0
+\end{vmatrix}
+= \left(\cos^2\theta + \sin^2\theta\right)\hat k = \hat k.
+</md>
+</p>
+
+<figure xml:id="fig-polar-frame">
+<caption>
+The moving frame at the point <m>P</m>: <m>\hat r(t)</m> points radially
+outward and <m>\hat\theta(t)</m> is tangent to the circle. The fixed vectors
+<m>\hat i</m> and <m>\hat j</m> are drawn at <m>P</m> for comparison; unlike
+<m>\hat r</m> and <m>\hat\theta</m>, they do not turn as the particle moves.
+</caption>
+<image width="62%">
+<description>
+<p>
+A circle of radius r centred at the origin. A particle sits at a point P on
+the circle, its position vector making an angle theta of t with the positive
+x-axis. At P the unit vector r hat points radially outward along the
+position vector, and the unit vector theta hat is perpendicular to it,
+tangent to the circle in the counterclockwise direction. The fixed unit
+vectors i and j are also drawn at P for comparison.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-polar-frame">
+      <diagram dimensions="(430,430)" margins="14">
+      <coordinates bbox="(-3.5,-3.1,3.9,3.9)">
+
+      <line at="pf-ax" p1="(-3.15,0)" p2="(3.35,0)" stroke="#999999" thickness="1.4"/>
+      <line at="pf-ay" p1="(0,-2.75)" p2="(0,3.35)" stroke="#999999" thickness="1.4"/>
+
+      <circle at="pf-circle" center="(0,0)" radius="2.4"
+              stroke="#9EC5E8" thickness="2" fill="none"/>
+
+      <vector at="pf-r" tail="(0,0)" v="(1.5427,1.8384)" stroke="#666666" thickness="2"/>
+
+      <vector at="pf-i" tail="(1.5427,1.8384)" v="(1,0)" stroke="#9EC5E8" thickness="2"/>
+      <vector at="pf-j" tail="(1.5427,1.8384)" v="(0,1)" stroke="#9EC5E8" thickness="2"/>
+
+      <vector at="pf-rhat" tail="(1.5427,1.8384)" v="(0.6428,0.766)" stroke="#D55E00" thickness="3"/>
+      <vector at="pf-thetahat" tail="(1.5427,1.8384)" v="(-0.766,0.6428)" stroke="#009E73" thickness="3"/>
+
+      <angle-marker font-size="18" at="pf-theta" points="((1,0),(0,0),(0.6428,0.766))"
+                    radius="42" stroke="black"><m>\theta(t)</m></angle-marker>
+
+      <point at="pf-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="pf-P" p="(1.5427,1.8384)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="pf-Pl" anchor="(1.60,1.76)" alignment="se"><m>P</m></label>
+      <label font-size="18" at="pf-rl" anchor="(0.66,1.00)" alignment="nw" color="#666666"><m>r</m></label>
+      <label font-size="18" at="pf-rhl" anchor="(2.24,2.66)" alignment="ne" color="#D55E00">
+      <m>\hat r(t)</m>
+      </label>
+      <label font-size="18" at="pf-thl" anchor="(0.72,2.54)" alignment="nw" color="#009E73">
+      <m>\hat\theta(t)</m>
+      </label>
+      <label font-size="18" at="pf-il" anchor="(2.60,1.80)" alignment="se" color="#5B9BD5"><m>\hat i</m></label>
+      <label font-size="18" at="pf-jl" anchor="(1.60,2.88)" alignment="e" color="#5B9BD5"><m>\hat j</m></label>
+      <label font-size="18" at="pf-xl" anchor="(3.25,0.05)" alignment="ne"><m>+x</m></label>
+      <label font-size="18" at="pf-yl" anchor="(0.10,3.25)" alignment="e"><m>+y</m></label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A circle of radius r centred at the origin. A particle sits at a point P on the circle, its position vector making an angle theta of t with the positive x axis. At P the unit vector r hat points radially outward along the position vector and the unit vector theta hat is perpendicular to it, tangent to the circle in the counterclockwise direction. The fixed unit vectors i and j are also drawn at P for comparison.">
+        <annotation ref="pf-circle" text="The circular orbit of radius r."/>
+        <annotation ref="pf-r" text="The position vector of the particle, of length r."/>
+        <annotation ref="pf-rhat" text="The unit vector r hat, pointing radially outward from the centre."/>
+        <annotation ref="pf-thetahat" text="The unit vector theta hat, tangent to the circle, perpendicular to r hat."/>
+        <annotation ref="pf-theta" text="The angle theta of t between the positive x axis and the position vector."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<subsection xml:id="subsec-circular-velocity">
+<title>The Velocity in Circular Motion</title>
+
+<p>
+Because the particle moves, the angle <m>\theta</m> depends on <m>t</m>, and
+so do the two moving unit vectors. Differentiating <xref ref="eq-rhat"/> and
+<xref ref="eq-thetahat"/> with the chain rule gives
+<md>
+<mrow xml:id="eq-drhat" number="yes">\frac{d\hat r}{dt} \amp = \left(-\sin\theta\,\hat i
+  + \cos\theta\,\hat j\right)\frac{d\theta}{dt}
+  = \frac{d\theta}{dt}\,\hat\theta,</mrow>
+<mrow xml:id="eq-dthetahat" number="yes">\frac{d\hat\theta}{dt} \amp = \left(-\cos\theta\,\hat i
+  - \sin\theta\,\hat j\right)\frac{d\theta}{dt}
+  = -\frac{d\theta}{dt}\,\hat r.</mrow>
+</md>
+Each unit vector has constant length, so it can only turn; and turning a
+unit vector moves its tip perpendicular to itself, which is exactly what
+<xref ref="eq-drhat"/> and <xref ref="eq-dthetahat"/> say.
+</p>
+
+<p>
+Now differentiate the position <xref ref="eq-position-polar"/>. The radius
+<m>r</m> is constant on a circle, so only the unit vector needs
+differentiating:
+<md xml:id="eq-circular-velocity" number="yes">
+\vec v(t) = \frac{d\vec r}{dt} = r\,\frac{d\hat r}{dt}
+ = r\,\frac{d\theta}{dt}\,\hat\theta(t).
+</md>
+The velocity has no <m>\hat r</m>-component at all: it points purely along
+<m>\hat\theta</m>, tangent to the circle. Its <m>\hat\theta</m>-component
+<md xml:id="eq-tangential-velocity" number="yes">
+v_\theta = r\,\frac{d\theta}{dt}
+</md>
+is called the <term>tangential component of the velocity</term>. It is
+positive when the particle turns counterclockwise and negative when it turns
+clockwise.
+</p>
+
+<definition xml:id="def-angular-speed">
+<title>Angular Speed</title>
+<statement>
+<p>
+The <term>angular speed</term> of the particle is the magnitude of the rate
+of change of its angle,
+<md xml:id="eq-angular-speed" number="yes">
+\omega = \left|\frac{d\theta}{dt}\right|,
+</md>
+measured in radians per second. By <xref ref="eq-circular-velocity"/>, the
+speed of the particle and its angular speed are related by
+<md xml:id="eq-speed-omega-r" number="yes">
+v = \left|\vec v\right| = r\,\omega.
+</md>
+</p>
+</statement>
+</definition>
+
+<p>
+It is worth seeing where <xref ref="eq-speed-omega-r"/> comes from
+geometrically, without any differentiation of unit vectors. In a short time
+interval <m>\Delta t</m> the particle moves from <m>\vec r(t)</m> to
+<m>\vec r(t+\Delta t)</m>, turning through a small angle
+<m>\Delta\theta</m>, as in <xref ref="fig-circular-chord"/>. The two
+position vectors have the same length <m>r</m>, so they form an isosceles
+triangle whose third side is the displacement
+<m>\Delta\vec r = \vec r(t+\Delta t) - \vec r(t)</m>. Splitting that triangle
+down the middle gives
+<md xml:id="eq-chord-length" number="yes">
+\left|\Delta\vec r\right| = 2r\sin\frac{\Delta\theta}{2}.
+</md>
+</p>
+
+<p>
+For a small angle the power series
+<m>\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots</m> is dominated by
+its first term, so <m>\sin(\Delta\theta/2)\approx \Delta\theta/2</m> and the
+chord is very nearly the arc it cuts off:
+<m>\left|\Delta\vec r\right| \approx r\,\Delta\theta</m>. Dividing by
+<m>\Delta t</m> and letting <m>\Delta t \to 0</m>,
+<md>
+v = \lim_{\Delta t\to 0}\frac{\left|\Delta\vec r\right|}{\Delta t}
+ = r\lim_{\Delta t\to 0}\frac{\left|\Delta\theta\right|}{\Delta t}
+ = r\left|\frac{d\theta}{dt}\right| = r\,\omega,
+</md>
+which is <xref ref="eq-speed-omega-r"/> again. The direction comes out of the
+same picture: as <m>\Delta t \to 0</m> the chord <m>\Delta\vec r</m> lines up
+with the tangent line to the circle, so <m>\vec v</m> is perpendicular to
+<m>\vec r</m>, in agreement with <xref ref="eq-circular-velocity"/>.
+</p>
+
+<figure xml:id="fig-circular-chord">
+<caption>
+The displacement <m>\Delta\vec r</m> is the chord subtending the angle
+<m>\Delta\theta</m>. For small <m>\Delta\theta</m> the chord is nearly the
+arc, <m>\left|\Delta\vec r\right| \approx r\,\Delta\theta</m>, and its
+direction approaches that of the tangent line, along which <m>\vec v</m>
+points.
+</caption>
+<image width="66%">
+<description>
+<p>
+Two position vectors of equal length r are drawn from the centre of a dashed
+circle, separated by a small angle delta theta. The chord delta r joins the
+tip of the first to the tip of the second. A dashed tangent line touches the
+circle at the first point, and the velocity arrow at that point lies along
+it.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-circular-chord">
+      <diagram dimensions="(470,492)" margins="14">
+      <coordinates bbox="(-3.7,-4.25,3.7,3.5)">
+
+      <circle at="ch-circle" center="(0,0)" radius="2.2"
+              stroke="#9EC5E8" thickness="1.8" fill="none" dash="4 3"/>
+
+      <line at="ch-tangent" p1="(1.7062,1.5553)" p2="(-0.8052,3.0053)"
+            stroke="#999999" thickness="1.4" dash="4 3"/>
+
+      <vector at="ch-r1" tail="(0,0)" v="(1.1000,1.9053)" stroke="#666666" thickness="2"/>
+      <vector at="ch-r2" tail="(0,0)" v="(-0.3820,2.1666)" stroke="#666666" thickness="2"/>
+
+      <vector at="ch-dr" tail="(1.1000,1.9053)" v="(-1.4820,0.2613)" stroke="#D55E00" thickness="3"/>
+      <vector at="ch-v" tail="(1.1000,1.9053)" v="(-1.2990,0.7500)" stroke="#0072B2" thickness="3"/>
+
+      <angle-marker font-size="18" at="ch-dtheta" points="((0.5,0.8660),(0,0),(-0.1736,0.9848))"
+                    radius="52" stroke="black"><m>\Delta\theta</m></angle-marker>
+
+      <point at="ch-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="ch-P1" p="(1.1000,1.9053)" fill="black" radius="3.5"/>
+      <point at="ch-P2" p="(-0.3820,2.1666)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="ch-r1l" anchor="(1.32,1.98)" alignment="e" color="#666666">
+      <m>\vec r(t)</m>
+      </label>
+      <label font-size="18" at="ch-r2l" anchor="(-0.55,2.24)" alignment="nw" color="#666666">
+      <m>\vec r(t+\Delta t)</m>
+      </label>
+      <label font-size="18" at="ch-drl" anchor="(0.30,1.92)" alignment="s" color="#D55E00">
+      <m>\Delta\vec r</m>
+      </label>
+      <label font-size="18" at="ch-vl" anchor="(-0.10,2.70)" alignment="e" color="#0072B2">
+      <m>\vec v(t)</m>
+      </label>
+      <label font-size="18" at="ch-tl" anchor="(-0.86,3.06)" alignment="nw" color="#666666">
+      <m>\text{tangent line}</m>
+      </label>
+
+      <!-- Plain | bars, never \left|...\right|: a stretchy delimiter makes
+           MathJax emit a nested <svg> inside the label, which browsers render
+           flipped and stacked at the diagram origin. -->
+      <label font-size="18" at="ch-note1" anchor="(0,-2.95)" alignment="c">
+      <m>|\Delta\vec r| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
+      </label>
+      <label font-size="18" at="ch-note2" anchor="(0,-3.85)" alignment="c">
+      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{|\Delta\vec r|}{\Delta t}
+        = r\,\omega</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two position vectors of equal length r are drawn from the centre of a dashed circle, separated by a small angle delta theta. The chord delta r joins the tip of the first to the tip of the second. A dashed tangent line touches the circle at the first point, and the velocity arrow at that point lies along it. As delta t tends to zero the chord lines up with the tangent, and its length, two r sine of half delta theta, is approximately r times delta theta, giving speed equal to r times omega.">
+        <annotation ref="ch-r1" text="The position vector at time t."/>
+        <annotation ref="ch-r2" text="The position vector a short time delta t later, the same length but turned through delta theta."/>
+        <annotation ref="ch-dr" text="The displacement delta r, the chord joining the two tips."/>
+        <annotation ref="ch-v" text="The velocity at time t, tangent to the circle."/>
+        <annotation ref="ch-tangent" text="The tangent line to the circle at the position at time t."/>
+        <annotation ref="ch-dtheta" text="The small angle delta theta swept out during the time interval."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<subsection xml:id="subsec-angular-velocity-vector">
+<title>Angular Velocity as a Vector</title>
+
+<p>
+So far the rate of turning has been a number, <m>d\theta/dt</m>. But a
+rotation has a direction as well as a rate: the plane of the circle can be
+tilted any which way, and the particle can go around it either way. Both
+pieces of information can be carried by a single vector, provided we point it
+along the axis of rotation rather than along the motion.
+</p>
+
+<p>
+We always choose a right-handed coordinate system, with <m>\theta</m>
+increasing in the counterclockwise direction when viewed from the positive
+<m>z</m>-axis.
+</p>
+
+<definition xml:id="def-angular-velocity">
+<title>Angular Velocity Vector</title>
+<statement>
+<p>
+For an object moving in a circle in the <m>xy</m>-plane about the origin, the
+<term>angular velocity vector</term> is
+<md xml:id="eq-angular-velocity" number="yes">
+\vec\omega = \frac{d\theta}{dt}\,\hat k = \omega_z\,\hat k,
+</md>
+directed along the axis of rotation. Its SI units are
+<m>\text{rad}\cdot\text{s}^{-1}</m>, and the angular speed of
+<xref ref="eq-angular-speed"/> is its magnitude,
+<m>\omega = \left|\vec\omega\right| = \left|\omega_z\right|</m>.
+</p>
+</statement>
+</definition>
+
+<p>
+The sign of <m>\omega_z</m> records which way the object goes around, and the
+right-hand rule turns that sign into a direction in space: curl the fingers
+of your right hand in the direction of the motion and your thumb points along
+<m>\vec\omega</m>. If the particle circulates counterclockwise as seen from
+above, then <m>\omega_z = d\theta/dt > 0</m> and <m>\vec\omega</m> points in
+the <m>+\hat k</m>-direction; if it circulates clockwise, then
+<m>\omega_z &lt; 0</m> and <m>\vec\omega</m> points in the
+<m>-\hat k</m>-direction. The two cases are shown in
+<xref ref="fig-angular-velocity-sign"/>.
+</p>
+
+<figure xml:id="fig-angular-velocity-sign">
+<caption>
+The angular velocity vector points along the axis of rotation, in the
+direction given by the right-hand rule: up the <m>z</m>-axis for
+counterclockwise motion (left), down it for clockwise motion (right). Note
+that <m>\vec\omega</m> is <em>not</em> tangent to the orbit — the velocity
+<m>\vec v</m> is.
+</caption>
+<image width="92%">
+<description>
+<p>
+Two panels showing a particle on a circular orbit in the horizontal plane,
+drawn in an oblique view with the z-axis vertical. In the left panel the
+particle circulates counterclockwise as seen from above and the angular
+velocity vector points up along the positive z-direction. In the right panel
+the particle circulates clockwise and the angular velocity vector points down
+along the negative z-direction. In both panels the velocity is tangent to the
+orbit.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-angular-velocity-sign">
+      <diagram dimensions="(710,372)" margins="14">
+      <definition>orbA(t) = (2.2*cos(t), 0.75*sin(t))</definition>
+      <definition>orbB(t) = (7.4 + 2.2*cos(t), 0.75*sin(t))</definition>
+      <coordinates bbox="(-3.5,-3.7,11.2,4.0)">
+
+      <!-- ============ PANEL A : counterclockwise, omega along +k ============ -->
+      <line at="av-axA" p1="(0,-2.7)" p2="(0,3.05)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="av-orbA" function="orbA" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="av-dirA" function="orbA" domain="(2.0,2.9)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+      <vector at="av-rA" tail="(0,0)" v="(1.8021,-0.4302)" stroke="#666666" thickness="2"/>
+      <vector at="av-vA" tail="(1.8021,-0.4302)" v="(1.1237,0.5471)" stroke="#0072B2" thickness="3"/>
+      <vector at="av-wA" tail="(0,0)" v="(0,2.5)" stroke="#D55E00" thickness="4"/>
+      <point at="av-OA" p="(0,0)" fill="black" radius="3"/>
+      <point at="av-PA" p="(1.8021,-0.4302)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="av-wAl" anchor="(0.14,2.42)" alignment="e" color="#D55E00">
+      <m>\vec\omega</m>
+      </label>
+      <label font-size="18" at="av-zAl" anchor="(0.10,3.05)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="av-OAl" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="av-rAl" anchor="(0.98,-0.34)" alignment="s" color="#666666">
+      <m>\vec r</m>
+      </label>
+      <label font-size="18" at="av-vAl" anchor="(3.00,0.18)" alignment="e" color="#0072B2">
+      <m>\vec v</m>
+      </label>
+      <label font-size="18" at="av-topA" anchor="(-3.35,3.60)" alignment="e">
+      <m>\omega_z = \dfrac{d\theta}{dt} > 0</m>
+      </label>
+      <label font-size="18" at="av-botA" anchor="(-3.35,-3.25)" alignment="e">
+      <m>\text{counterclockwise:}\;\; \vec\omega \text{ points along } +\hat k</m>
+      </label>
+
+      <!-- ============ PANEL B : clockwise, omega along -k ============ -->
+      <line at="av-axB" p1="(7.4,-2.7)" p2="(7.4,3.05)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="av-orbB" function="orbB" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="av-dirB" function="orbB" domain="(2.9,2.0)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+      <vector at="av-rB" tail="(7.4,0)" v="(1.8021,-0.4302)" stroke="#666666" thickness="2"/>
+      <vector at="av-vB" tail="(9.2021,-0.4302)" v="(-1.1237,-0.5471)" stroke="#0072B2" thickness="3"/>
+      <vector at="av-wB" tail="(7.4,0)" v="(0,-2.5)" stroke="#D55E00" thickness="4"/>
+      <point at="av-OB" p="(7.4,0)" fill="black" radius="3"/>
+      <point at="av-PB" p="(9.2021,-0.4302)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="av-wBl" anchor="(7.54,-2.42)" alignment="e" color="#D55E00">
+      <m>\vec\omega</m>
+      </label>
+      <label font-size="18" at="av-zBl" anchor="(7.50,3.05)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="av-OBl" anchor="(7.28,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="av-rBl" anchor="(8.34,-0.08)" alignment="n" color="#666666">
+      <m>\vec r</m>
+      </label>
+      <label font-size="18" at="av-vBl" anchor="(8.02,-1.06)" alignment="sw" color="#0072B2">
+      <m>\vec v</m>
+      </label>
+      <label font-size="18" at="av-topB" anchor="(4.45,3.60)" alignment="e">
+      <m>\omega_z = \dfrac{d\theta}{dt} &lt; 0</m>
+      </label>
+      <label font-size="18" at="av-botB" anchor="(4.45,-3.25)" alignment="e">
+      <m>\text{clockwise:}\;\; \vec\omega \text{ points along } -\hat k</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two panels showing a particle on a circular orbit in the horizontal plane, drawn in an oblique view with the z axis vertical. In the left panel the particle circulates counterclockwise as seen from above, the rate of change of theta is positive, and the angular velocity vector points up along the positive z direction. In the right panel the particle circulates clockwise, the rate of change of theta is negative, and the angular velocity vector points down along the negative z direction. In both panels the velocity is tangent to the orbit and the position vector runs from the centre out to the particle.">
+        <annotation ref="av-orbA" text="The circular orbit in the left panel."/>
+        <annotation ref="av-dirA" text="An arrowhead on the orbit showing counterclockwise circulation."/>
+        <annotation ref="av-wA" text="The angular velocity vector pointing up along the positive z axis."/>
+        <annotation ref="av-vA" text="The velocity of the particle, tangent to the orbit."/>
+        <annotation ref="av-orbB" text="The circular orbit in the right panel."/>
+        <annotation ref="av-dirB" text="An arrowhead on the orbit showing clockwise circulation."/>
+        <annotation ref="av-wB" text="The angular velocity vector pointing down along the negative z axis."/>
+        <annotation ref="av-vB" text="The velocity of the particle, tangent to the orbit."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<subsection xml:id="subsec-v-omega-cross-r">
+<title>Velocity as a Cross Product</title>
+
+<p>
+We now have two vectors attached to the motion: the angular velocity
+<m>\vec\omega</m>, along the axis, and the position <m>\vec r</m>, in the
+plane of the circle. The velocity is perpendicular to both, which is precisely
+the job of the cross product.
+</p>
+
+<fact xml:id="fact-velocity-cross-product">
+<title>Velocity and Angular Velocity</title>
+<statement>
+<p>
+For an object in circular motion about the origin,
+<md xml:id="eq-v-omega-cross-r" number="yes">
+\vec v = \vec\omega \times \vec r.
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+To verify this, first compute <m>\hat k \times \hat r</m> using
+<xref ref="eq-rhat"/>:
+<md xml:id="eq-k-cross-rhat" number="yes">
+\hat k \times \hat r =
+\begin{vmatrix}
+\hat i \amp \hat j \amp \hat k \\
+0 \amp 0 \amp 1 \\
+\cos\theta \amp \sin\theta \amp 0
+\end{vmatrix}
+= -\sin\theta\,\hat i + \cos\theta\,\hat j = \hat\theta.
+</md>
+Therefore, using <xref ref="eq-angular-velocity"/> and
+<xref ref="eq-position-polar"/>,
+<md>
+\vec\omega \times \vec r
+ = \left(\frac{d\theta}{dt}\,\hat k\right)\times\left(r\,\hat r\right)
+ = r\,\frac{d\theta}{dt}\left(\hat k \times \hat r\right)
+ = r\,\frac{d\theta}{dt}\,\hat\theta
+ = \vec v,
+</md>
+by <xref ref="eq-circular-velocity"/>. See
+<xref ref="fig-omega-cross-r"/>.
+</p>
+
+<p>
+The geometry of the cross product delivers all three features of the velocity
+at once, with no computation:
+<ul>
+<li>
+<p>
+<em>Magnitude.</em> Since <m>\vec\omega</m> is perpendicular to the plane of
+the circle, it is perpendicular to <m>\vec r</m>, so
+<m>\left|\vec v\right| = \left|\vec\omega\right|\left|\vec r\right|
+\sin 90^\circ = \omega r</m>, recovering
+<xref ref="eq-speed-omega-r"/>.
+</p>
+</li>
+<li>
+<p>
+<em>Direction.</em> The cross product is perpendicular to <m>\vec r</m>, so
+the velocity is tangent to the circle; and it is perpendicular to
+<m>\vec\omega</m>, so the motion stays in the plane of the orbit.
+</p>
+</li>
+<li>
+<p>
+<em>Sense.</em> The right-hand rule applied to
+<m>\vec\omega \times \vec r</m> automatically sends the particle
+counterclockwise when <m>\omega_z > 0</m> and clockwise when
+<m>\omega_z &lt; 0</m>, since reversing <m>\vec\omega</m> reverses the cross
+product.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+There is a bonus. A piece of <m>\vec r</m> running along the axis is parallel
+to <m>\vec\omega</m> and so contributes nothing to the cross product, since
+<m>\hat k \times \left(z\,\hat k\right) = \vec 0</m>. Consequently
+<xref ref="eq-v-omega-cross-r"/> remains true when <m>\vec r</m> is measured
+from <em>any</em> point on the axis of rotation, not just from the centre of
+the circle.
+This is what makes <xref ref="eq-v-omega-cross-r"/> the standard formula for
+the velocity of any point of a rotating rigid body, such as a wheel, a
+turntable, or the earth itself.
+</p>
+
+<figure xml:id="fig-omega-cross-r">
+<caption>
+The velocity of a particle in circular motion is
+<m>\vec v = \vec\omega \times \vec r</m>. Because <m>\vec\omega</m> and
+<m>\vec r</m> are perpendicular, the speed is <m>\omega r</m>, and the
+right-hand rule places <m>\vec v</m> tangent to the orbit in the direction of
+travel.
+</caption>
+<image width="66%">
+<description>
+<p>
+A circular orbit in the horizontal plane drawn in an oblique view, with the
+z-axis vertical. The angular velocity vector points straight up along the
+z-axis from the centre O. The position vector runs from O out to the particle
+on the orbit, and the velocity vector at the particle is tangent to the
+orbit, equal to the cross product of the angular velocity with the position
+vector.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-omega-cross-r">
+      <diagram dimensions="(500,450)" margins="14">
+      <definition>orb(t) = (2.6*cos(t), 0.9*sin(t))</definition>
+      <coordinates bbox="(-4.8,-4.6,5.0,4.2)">
+
+      <line at="cr-ax" p1="(0,-2.6)" p2="(0,3.5)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="cr-orb" function="orb" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="cr-dir" function="orb" domain="(2.0,2.9)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+
+      <vector at="cr-r" tail="(0,0)" v="(2.2517,-0.45)" stroke="#666666" thickness="2"/>
+      <vector at="cr-v" tail="(2.2517,-0.45)" v="(1.4581,0.8742)" stroke="#0072B2" thickness="3"/>
+      <vector at="cr-w" tail="(0,0)" v="(0,2.9)" stroke="#D55E00" thickness="4"/>
+
+      <point at="cr-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="cr-P" p="(2.2517,-0.45)" fill="black" radius="4"/>
+
+      <label font-size="18" at="cr-wl" anchor="(0.16,2.55)" alignment="e" color="#D55E00">
+      <m>\vec\omega = \dfrac{d\theta}{dt}\,\hat k</m>
+      </label>
+      <label font-size="18" at="cr-zl" anchor="(0.10,3.50)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="cr-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="cr-rl" anchor="(1.20,-0.34)" alignment="s" color="#666666">
+      <m>\vec r = r\,\hat r</m>
+      </label>
+      <label font-size="18" at="cr-vl" anchor="(3.78,0.48)" alignment="e" color="#0072B2">
+      <m>\vec v = \vec\omega\times\vec r</m>
+      </label>
+
+      <label font-size="18" at="cr-note1" anchor="(-4.6,-3.20)" alignment="e">
+      <m>\vec v = \vec\omega\times\vec r
+        = \dfrac{d\theta}{dt}\,\hat k \times r\,\hat r
+        = r\dfrac{d\theta}{dt}\,\hat\theta</m>
+      </label>
+      <!-- Plain | bars: see the note in fig-circular-chord. -->
+      <label font-size="18" at="cr-note2" anchor="(-4.6,-4.15)" alignment="e">
+      <m>|\vec v| = \omega r \sin 90^\circ = \omega r</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A circular orbit in the horizontal plane drawn in an oblique view, with the z axis vertical. The angular velocity vector points straight up along the z axis from the centre O. The position vector runs from O out to the particle on the orbit, and the velocity vector at the particle is tangent to the orbit. The velocity is the cross product of the angular velocity with the position vector; since the two factors are perpendicular, the speed is omega times r.">
+        <annotation ref="cr-orb" text="The circular orbit of the particle."/>
+        <annotation ref="cr-dir" text="An arrowhead on the orbit showing the sense of circulation."/>
+        <annotation ref="cr-w" text="The angular velocity vector, pointing up the z axis, perpendicular to the plane of the orbit."/>
+        <annotation ref="cr-r" text="The position vector from the centre out to the particle, equal to r times r hat."/>
+        <annotation ref="cr-v" text="The velocity, equal to the cross product of the angular velocity with the position vector, tangent to the orbit."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<subsection xml:id="subsec-circular-motion-examples">
+<title>Examples</title>
+
+<example xml:id="example-angular-velocity">
+<title>Angular velocity from an angle function</title>
+<statement>
+<p>
+A particle moves in a circle of radius <m>R</m> centred at the origin of the
+<m>xy</m>-plane; at <m>t = 0</m> it is on the positive <m>x</m>-axis. The
+angle it makes with the positive <m>x</m>-axis is
+<m>\theta(t) = At - Bt^3</m>, where <m>A</m> and <m>B</m> are positive
+constants.
+</p>
+<p>
+<ol>
+<li><p>Find the angular velocity vector.</p></li>
+<li><p>Find the velocity vector, in polar coordinates.</p></li>
+<li><p>At what time <m>t_1</m> is the angular velocity zero?</p></li>
+<li>
+<p>
+In which direction does the angular velocity point for <m>t &lt; t_1</m>,
+and for <m>t > t_1</m>?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The rate of change of the angle is
+<md>
+\frac{d\theta}{dt} = A - 3Bt^2.
+</md>
+</p>
+<p>
+<em>Part 1.</em> By <xref ref="eq-angular-velocity"/>,
+<md>
+\vec\omega(t) = \frac{d\theta}{dt}\,\hat k = \left(A - 3Bt^2\right)\hat k.
+</md>
+</p>
+<p>
+<em>Part 2.</em> By <xref ref="eq-circular-velocity"/>,
+<md>
+\vec v(t) = R\,\frac{d\theta}{dt}\,\hat\theta(t)
+ = R\left(A - 3Bt^2\right)\hat\theta(t).
+</md>
+Equivalently, one can obtain this from
+<xref ref="eq-v-omega-cross-r"/>:
+<m>\vec v = \vec\omega\times\vec r
+= \left(A - 3Bt^2\right)\hat k \times R\,\hat r
+= R\left(A-3Bt^2\right)\hat\theta</m>, using
+<xref ref="eq-k-cross-rhat"/>.
+</p>
+<p>
+<em>Part 3.</em> The angular velocity vanishes when
+<md>
+A - 3Bt_1^2 = 0 \quad\Longrightarrow\quad t_1 = \sqrt{\frac{A}{3B}}.
+</md>
+At that instant the particle is momentarily at rest.
+</p>
+<p>
+<em>Part 4.</em> For <m>t &lt; t_1</m> we have <m>A - 3Bt^2 > 0</m>, so
+<m>\vec\omega</m> points in the <m>+\hat k</m>-direction and the particle
+travels counterclockwise. For <m>t > t_1</m> we have
+<m>A - 3Bt^2 &lt; 0</m>, so <m>\vec\omega</m> points in the
+<m>-\hat k</m>-direction and the particle has reversed and travels clockwise.
+</p>
+</solution>
+</example>
+
+<example xml:id="example-turntable">
+<title>A turntable</title>
+<statement>
+<p>
+A record turntable spins at <m>33\tfrac13</m> revolutions per minute,
+counterclockwise when viewed from above. Take the axis of rotation to be the
+<m>z</m>-axis, with the turntable lying in the <m>xy</m>-plane, distances in
+meters.
+</p>
+<p>
+<ol>
+<li><p>Find the angular velocity vector <m>\vec\omega</m>.</p></li>
+<li>
+<p>
+Find the velocity of the point of the record at
+<m>\vec r = \left\langle 0.12,\,0,\,0 \right\rangle</m>, and its speed.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<em>Part 1.</em> One revolution is <m>2\pi</m> radians, so the frequency
+<m>f = 33\tfrac13</m> rev/min <m>= 0.5556</m> rev/s corresponds to an angular
+speed
+<md>
+\omega = 2\pi f = 2\pi(0.5556) \approx 3.49\ \text{rad}\cdot\text{s}^{-1}.
+</md>
+The rotation is counterclockwise seen from the <m>+z</m>-axis, so
+<m>\omega_z > 0</m> and
+<md>
+\vec\omega \approx \left\langle 0,\,0,\,3.49 \right\rangle
+ \ \text{rad}\cdot\text{s}^{-1}.
+</md>
+(For comparison, the period of one revolution is
+<m>T = 2\pi/\omega = 1/f = 1.8</m> s.)
+</p>
+<p>
+<em>Part 2.</em> By <xref ref="eq-v-omega-cross-r"/>,
+<md>
+<mrow>
+\vec v = \vec\omega\times\vec r \amp =
+\begin{vmatrix}
+\hat i \amp \hat j \amp \hat k \\
+0 \amp 0 \amp 3.49 \\
+0.12 \amp 0 \amp 0
+\end{vmatrix}
+</mrow>
+<mrow>
+\amp = \left(0 - 0\right)\hat i - \left(0 - (3.49)(0.12)\right)\hat j
+ + \left(0 - 0\right)\hat k
+</mrow>
+<mrow>
+\amp = \left\langle 0,\, 0.419,\, 0 \right\rangle\ \text{m}\cdot\text{s}^{-1}.
+</mrow>
+</md>
+The point in question is on the positive <m>x</m>-axis, and its velocity
+points in the <m>+y</m>-direction — tangent to its circle and consistent with
+counterclockwise motion, as it should be. Its speed is
+<m>0.419\ \text{m}\cdot\text{s}^{-1}</m>, which agrees with
+<xref ref="eq-speed-omega-r"/>:
+<m>v = r\omega = (0.12)(3.49) \approx 0.419\ \text{m}\cdot\text{s}^{-1}</m>.
+</p>
+</solution>
+</example>
+
+<exercise xml:id="exercise-carousel-velocity">
+<title>A carousel</title>
+<statement>
+<p>
+A carousel turns <em>clockwise</em> when viewed from above, making one
+complete turn every <m>12</m> seconds. Taking the axis of rotation as the
+<m>z</m>-axis, find the angular velocity vector, and the velocity of a horse
+located at <m>\vec r = \left\langle 0,\,4,\,0\right\rangle</m> meters.
+</p>
+</statement>
+<solution>
+<p>
+The angular speed is
+<m>\omega = 2\pi/T = 2\pi/12 \approx 0.524\ \text{rad}\cdot\text{s}^{-1}</m>.
+The motion is clockwise as seen from above, so <m>\omega_z &lt; 0</m> and the
+angular velocity points along <m>-\hat k</m>:
+<md>
+\vec\omega = -\frac{\pi}{6}\,\hat k
+ \approx \left\langle 0,\,0,\,-0.524\right\rangle\ \text{rad}\cdot\text{s}^{-1}.
+</md>
+Then
+<md>
+\vec v = \vec\omega\times\vec r =
+\begin{vmatrix}
+\hat i \amp \hat j \amp \hat k \\
+0 \amp 0 \amp -0.524 \\
+0 \amp 4 \amp 0
+\end{vmatrix}
+= \left(0 - (-0.524)(4)\right)\hat i
+= \left\langle 2.09,\,0,\,0 \right\rangle\ \text{m}\cdot\text{s}^{-1}.
+</md>
+The horse is on the positive <m>y</m>-axis and moves in the
+<m>+x</m>-direction, which is indeed clockwise seen from above. Its speed is
+<m>r\omega = (4)(0.524) \approx 2.09\ \text{m}\cdot\text{s}^{-1}</m>.
+</p>
+</solution>
+</exercise>
+
+</subsection>
 
 </section>
 

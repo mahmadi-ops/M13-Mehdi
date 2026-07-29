@@ -199,7 +199,10 @@
       "Bash(timeout 1800 manim -qh --disable_caching /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/manim_collision_directrix.py CollisionOnTheDirectrix --media_dir /claude-0/-workspaces-M13-Mehdi/d335e096-ba64-4b28-8068-f5eda958a98a/scratchpad/media)",
       "Bash(ffmpeg -v error -ss 25 -i media/videos/manim_collision_directrix/1080p60/CollisionOnTheDirectrix.mp4 -frames:v 1 -y p25.png)",
       "Bash(curl -s -m 20 \"https://api.github.com/repos/mahmadi-ops/M13-Mehdi/actions/runs?per_page=4\")",
-      "mcp__bf7c680d-5fdc-5ef4-b4a0-abadb619bf0a__list_repos"
+      "mcp__bf7c680d-5fdc-5ef4-b4a0-abadb619bf0a__list_repos",
+      "Bash(rm -f prefigure-circular-chord.*)",
+      "Bash(cp /workspaces/M13-Mehdi/generated-assets/prefigure/prefigure-circular-chord.svg built.svg)",
+      "Bash(prefig png *)"
     ]
   }
 }
