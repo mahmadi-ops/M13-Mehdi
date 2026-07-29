@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises for Lines and Planes in Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: true,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MATH 13-Calculus and Analytic Geometry III">
+<meta property="og:title" content="MATH 13-Calculus and Analytic Geometry III">
+<meta property="book:title" content="MATH 13-Calculus and Analytic Geometry III">
+<meta name="twitter:description" content="Interactive, accessible web-based modules for multivariable calculus (Santa Clara University's MATH 13). The materials strengthen conceptual understanding of foundational ideas (parametrization, Taylor approximation, dot and cross products, conic sections, quadric surfaces, directional derivatives and the gradient, and extreme values) through explicit connections to physical phenomena, with support for diverse learners including screen-reader and tactile-graphics users.">
+<meta property="og:description" content="Interactive, accessible web-based modules for multivariable calculus (Santa Clara University's MATH 13). The materials strengthen conceptual understanding of foundational ideas (parametrization, Taylor approximation, dot and cross products, conic sections, quadric surfaces, directional derivatives and the gradient, and extreme values) through explicit connections to physical phenomena, with support for diverse learners including screen-reader and tactile-graphics users.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.1.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.279b1f0077454c32.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.db8001875cb726c2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
+<script src="_static/pretext/js/dist/diagcess/diagcess.js"></script><script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="_static/pretext/js/dist/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="math13" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="shorttitlelowercase.html"><span class="title">MATH 13-Calculus and Analytic Geometry III</span></a></div>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="exercises-projectile-velocity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="section-exercises.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-conics-exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
+\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth4 focused" data-preexpanded-levels="0" data-max-levels="4"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-hyperbolic-functions.html" class="internal"><span class="codenumber">1</span> <span class="title">Hyperbolic Functions</span></a></div>
+<ul id="ptx-toc-group-chapter-hyperbolic-functions" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyp-definitions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Definitions and Derivatives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyp-graphs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Graph, Domain, and Range of <span class="process-math">\(\cosh x\)</span> and <span class="process-math">\(\sinh x\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyp-identities.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Identities and Other Hyperbolic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyp-identity-list.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Hyperbolic Identities</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hyp-real-life.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Hyperbolic Functions in Real Life</span></a></div>
+<ul id="ptx-toc-group-sec-hyp-real-life" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyp-real-life.html#subsec-hyp-catenary" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Hanging Cables and the Catenary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyp-real-life.html#subsec-hyp-celestial" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Celestial Mechanics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyp-real-life.html#subsec-hyp-gateway-arch" class="internal"><span class="codenumber">1.5.3</span> <span class="title">The Gateway Arch</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyp-more-examples.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Further Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-infinite-series.html" class="internal"><span class="codenumber">2</span> <span class="title">Infinite Series</span></a></div>
+<ul id="ptx-toc-group-chapter-infinite-series" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series-definitions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series-partial-sums.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Partial Sums</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series-geometric.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series-nth-term.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The <span class="process-math">\(n\)</span>th Term Test</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series-combining.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Combining Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-taylor-maclaurin.html" class="internal"><span class="codenumber">3</span> <span class="title">Taylor and Maclaurin Series</span></a></div>
+<ul id="ptx-toc-group-chapter-taylor-maclaurin" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-taylor-definitions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definitions of Taylor Series, Maclaurin Series, and Taylor Polynomials</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-taylor-example.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-taylor-exercises.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-taylor.html" class="internal"><span class="codenumber">4</span> <span class="title">Taylor Series and its convergence</span></a></div>
+<ul id="ptx-toc-group-section-taylor" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsection-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Taylor’s Formula and The Remainder Estimation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsection-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">An example of a Taylor series that converges</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsection-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The error in using a Taylor polynomial</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-taylor-7.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Applications of Taylor Series and Remainder Theorem</span></a></div>
+<ul id="ptx-toc-group-section-taylor-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-taylor-7.html#section-taylor-7-3" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Approximating Relativistic Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-taylor-7.html#subsubsec-pendulum-small-angle" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Small-Angle Approximation for a Pendulum</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-taylor-7.html#subsec-approximating-pi-taylor" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Approximating the value of <span class="process-math">\(\pi\)</span> using Taylor series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsection-5.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Proof of the remainder theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-binomial-series.html" class="internal"><span class="codenumber">5</span> <span class="title">The Binomial Series and Applications of Taylor Series</span></a></div>
+<ul id="ptx-toc-group-chapter-binomial-series" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-binomial-series.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Binomial Series</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-three-dimensional-coordinates.html" class="internal"><span class="codenumber">6</span> <span class="title">Three-Dimensional Coordinate Systems</span></a></div>
+<ul id="ptx-toc-group-chapter-three-dimensional-coordinates" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3d-coordinate-system.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The Rectangular Coordinate System</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3d-planes-octants.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Coordinate Planes and Octants</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3d-distance.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Distance Between Two Points</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3d-spheres.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Spheres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3d-describing-regions.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Describing Regions in Space</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-vectors.html" class="internal"><span class="codenumber">7</span> <span class="title">Vectors</span></a></div>
+<ul id="ptx-toc-group-chapter-vectors" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vec-definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions, Terminology, and Notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vec-algebra.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Vector Algebra Operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vec-unit.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Unit Vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-dot-product.html" class="internal"><span class="codenumber">8</span> <span class="title">The Dot Product</span></a></div>
+<ul id="ptx-toc-group-section-dot-product" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-law-of-cosines.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Law of Cosines and the Angle between Two Vectors</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dot-product.html" class="internal"><span class="codenumber">8.2</span> <span class="title">The Dot Product</span></a></div>
+<ul id="ptx-toc-group-sec-dot-product" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dot-product.html#subsec-properties" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Properties of the Dot Product</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-projection.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Projection of <span class="process-math">\(\mathbf u\)</span> in the Direction of <span class="process-math">\(\mathbf v\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-work.html" class="internal"><span class="codenumber">8.4</span> <span class="title">An Application of the Dot Product: Work</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-cross-product.html" class="internal"><span class="codenumber">9</span> <span class="title">The Cross Product</span></a></div>
+<ul id="ptx-toc-group-section-cross-product" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cross-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Definition and Properties of the Cross Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cross-components.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Second Definition of the Cross Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-true-false.html" class="internal"><span class="codenumber">9.3</span> <span class="title">True or False?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-torque.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Application: Torque</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-circular-motion.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Application: Circular Motion: Velocity and Angular Velocity</span></a></div>
+<ul id="ptx-toc-group-sec-circular-motion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-circular-motion.html#subsec-polar-frame" class="internal"><span class="codenumber">9.5.1</span> <span class="title">A Frame that Turns with the Particle</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-circular-motion.html#subsec-circular-velocity" class="internal"><span class="codenumber">9.5.2</span> <span class="title">The Velocity in Circular Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-circular-motion.html#subsec-angular-velocity-vector" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Angular Velocity as a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-circular-motion.html#subsec-v-omega-cross-r" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Velocity as a Cross Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-circular-motion.html#subsec-circular-motion-examples" class="internal"><span class="codenumber">9.5.5</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-parametrization.html" class="internal"><span class="codenumber">10</span> <span class="title">Parametrization of Plane Curves</span></a></div>
+<ul id="ptx-toc-group-section-parametrization" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-parametric-equations.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parametric Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-parametrizing-examples.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Some Examples of Parametrizing Curves</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-projectile-motion.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Projectile Motion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intersection-collision.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Intersection Points versus Collision Points</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-lines-planes.html" class="internal"><span class="codenumber">11</span> <span class="title">Lines and Planes in Space</span></a></div>
+<ul id="ptx-toc-group-chapter-lines-planes" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lines-vector-eq.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Vector Equation for a Line in Space</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lines-parametric.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Parametric Equations for a Line</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lines-distance.html" class="internal"><span class="codenumber">11.3</span> <span class="title">The Distance from a Point to a Line</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-planes-equation.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Equation of a Plane in Space</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-planes-intersection.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Lines of Intersection</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-planes-distance.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Distance of a Point from a Plane</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-conics.html" class="internal"><span class="codenumber">12</span> <span class="title">Conic Sections</span></a></div>
+<ul id="ptx-toc-group-section-conics" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-parabola.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parabola</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-ellipse.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Ellipse</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-hyperbola.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Hyperbola</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-app-reflector.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Application: Parabolic Reflectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-app-whisper.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Application: Whispering Galleries</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-app-loran.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Application: Hyperbolic Navigation (LORAN)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-quadric-surfaces.html" class="internal"><span class="codenumber">13</span> <span class="title">Quadric Surfaces</span></a></div>
+<ul id="ptx-toc-group-section-quadric-surfaces" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-elliptical-paraboloid.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Elliptical Paraboloid</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-hyperbolic-paraboloid.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Hyperbolic Paraboloid</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-ellipsoid.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Ellipsoid</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-elliptic-cone.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Elliptic Cone</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-hyperboloids.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Hyperboloids</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-quadric-summary.html" class="internal"><span class="codenumber">13.6</span> <span class="title">Summary of the Quadric Surfaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-quadric-applications.html" class="internal"><span class="codenumber">13.7</span> <span class="title">Quadric Surfaces in the World</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-functions-several-variables.html" class="internal"><span class="codenumber">14</span> <span class="title">Functions of Several Variables</span></a></div>
+<ul id="ptx-toc-group-chapter-functions-several-variables" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fsv-functions-two-variables.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Functions of Two Variables</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fsv-level-curves.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Level Curves and Contour Maps</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fsv-level-surfaces.html" class="internal"><span class="codenumber">14.3</span> <span class="title">More Than Two Variables: Level Surfaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-limits-continuity.html" class="internal"><span class="codenumber">15</span> <span class="title">Limits and Continuity in Higher Dimensions</span></a></div>
+<ul id="ptx-toc-group-chapter-limits-continuity" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lim-two-variable.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Limits of Two-Variable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lim-continuity.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Continuity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-partial-derivatives.html" class="internal"><span class="codenumber">16</span> <span class="title">Partial Derivatives</span></a></div>
+<ul id="ptx-toc-group-chapter-partial-derivatives" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-pd-definition.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Definition of Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-pd-examples.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-pd-second-derivatives.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Second Derivatives and the Mixed Derivative Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-chain-rule.html" class="internal"><span class="codenumber">17</span> <span class="title">The Chain Rule</span></a></div>
+<ul id="ptx-toc-group-chapter-chain-rule" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cr-one-independent.html" class="internal"><span class="codenumber">17.1</span> <span class="title">One Independent Variable</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cr-two-independent.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Two Independent Variables</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cr-applications.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Applications</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-directional-derivatives.html" class="internal"><span class="codenumber">18</span> <span class="title">Directional Derivatives and Gradient Vectors</span></a></div>
+<ul id="ptx-toc-group-section-directional-derivatives" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirderiv-definition.html" class="internal"><span class="codenumber">18.1</span> <span class="title">The Definition of the Directional Derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirderiv-example-definition.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Computing a Directional Derivative Using the Definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gradient-vector.html" class="internal"><span class="codenumber">18.3</span> <span class="title">The Gradient Vector</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirderiv-gradient-example.html" class="internal"><span class="codenumber">18.4</span> <span class="title">Evaluating a Directional Derivative Using the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirderiv-properties.html" class="internal"><span class="codenumber">18.5</span> <span class="title">Directions of Fastest Increase, Fastest Decrease, and No Change</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gradient-summary.html" class="internal"><span class="codenumber">18.6</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-scalar-fields-potentials.html" class="internal"><span class="codenumber">18.7</span> <span class="title">Scalar Fields, Potentials, and the Direction Nature Chooses</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exercises-gradient-applications.html" class="internal"><span class="codenumber">18.8</span> <span class="title">Exercises: Scalar Fields and Potentials</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-tangent-planes-differentials.html" class="internal"><span class="codenumber">19</span> <span class="title">Tangent Planes and Differentials</span></a></div>
+<ul id="ptx-toc-group-section-tangent-planes-differentials" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-tp-equation.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Equation of the Tangent Plane</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-tp-example-paraboloid.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Tangent Plane and Normal Line to a Surface</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-tp-change.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Estimating the Change in a Particular Direction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-tp-linearization.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Linearizing <span class="process-math">\(z = f(x,y)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-extreme-values.html" class="internal"><span class="codenumber">20</span> <span class="title">Extreme Values and Saddle Points</span></a></div>
+<ul id="ptx-toc-group-section-extreme-values" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-extrema.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Local Maximum and Local Minimum</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-saddle-example.html" class="internal"><span class="codenumber">20.2</span> <span class="title">A Saddle Point Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-derivative-test.html" class="internal"><span class="codenumber">20.3</span> <span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-absolute-extrema.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Absolute Maximum and Absolute Minimum</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-equilibrium-stability.html" class="internal"><span class="codenumber">20.5</span> <span class="title">A Physical Application: Equilibrium and Stability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-why-second-derivative-test.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Why the Second Derivative Test Works</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="section-lagrange-multipliers.html" class="internal"><span class="codenumber">21</span> <span class="title">Lagrange Multipliers</span></a></div>
+<ul id="ptx-toc-group-section-lagrange-multipliers" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lagrange-method.html" class="internal"><span class="codenumber">21.1</span> <span class="title">The Method of Lagrange Multipliers</span></a></div>
+<ul id="ptx-toc-group-sec-lagrange-method" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-lagrange-method.html#sec-lagrange-collinear" class="internal"><span class="codenumber">21.1.1</span> <span class="title">Why the Gradients Must Be Collinear</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-lagrange-method.html#subsec-lagrange-statement" class="internal"><span class="codenumber">21.1.2</span> <span class="title">Stating the Method</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lagrange-examples.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Examples</span></a></div>
+<ul id="ptx-toc-group-sec-lagrange-examples" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-lagrange-examples.html#sec-lagrange-example-ellipse" class="internal"><span class="codenumber">21.2.1</span> <span class="title">Extrema on an Ellipse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-lagrange-examples.html#sec-lagrange-example-distance" class="internal"><span class="codenumber">21.2.2</span> <span class="title">Shortest Distance to a Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-lagrange-examples.html#sec-lagrange-example-circle" class="internal"><span class="codenumber">21.2.3</span> <span class="title">Absolute Extrema on a Circle</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="section-exercises.html" class="internal"><span class="codenumber">22</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-section-exercises">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-hyperbolic.html" class="internal"><span class="codenumber">22.1</span> <span class="title">Exercises for Hyperbolic Functions</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-infinite-series.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Exercises for Infinite Series</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="activity-01-intro-activity.html" class="internal"><span class="codenumber">22.3</span> <span class="title">Exercises for Taylor Series and its convergence</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-binomial-series.html" class="internal"><span class="codenumber">22.4</span> <span class="title">Exercises for The Binomial Series and Applications of Taylor Series</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-3d-coordinates.html" class="internal"><span class="codenumber">22.5</span> <span class="title">Exercises for Three-Dimensional Coordinate Systems</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-vectors.html" class="internal"><span class="codenumber">22.6</span> <span class="title">Exercises for Vectors</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-dot-product.html" class="internal"><span class="codenumber">22.7</span> <span class="title">Exercises for The Dot Product</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-cross-product.html" class="internal"><span class="codenumber">22.8</span> <span class="title">Exercises for The Cross Product</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="exercises-projectile-velocity.html" class="internal"><span class="codenumber">22.9</span> <span class="title">Exercises for Parametrization of Plane Curves</span></a></div></li>
+<li class="toc-item toc-worksheet active"><div class="toc-title-box"><a href="worksheet-exercises-lines-planes.html" class="internal"><span class="codenumber">22.10</span> <span class="title">Exercises for Lines and Planes in Space</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="section-conics-exercises.html" class="internal"><span class="codenumber">22.11</span> <span class="title">Exercises for Conic Sections</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="exercises-quadric-surfaces.html" class="internal"><span class="codenumber">22.12</span> <span class="title">Exercises for Quadric Surfaces</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-functions-several-variables.html" class="internal"><span class="codenumber">22.13</span> <span class="title">Exercises for Functions of Several Variables</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-limits.html" class="internal"><span class="codenumber">22.14</span> <span class="title">Exercises for Limits and Continuity in Higher Dimensions</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-partial-derivatives.html" class="internal"><span class="codenumber">22.15</span> <span class="title">Exercises for Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-chain-rule.html" class="internal"><span class="codenumber">22.16</span> <span class="title">Exercises for The Chain Rule</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-gradients.html" class="internal"><span class="codenumber">22.17</span> <span class="title">Exercises for Directional Derivatives and Gradient Vectors</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-exercises-tangent-chain.html" class="internal"><span class="codenumber">22.18</span> <span class="title">Exercises for Tangent Planes and Differentials</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="subsection-abs-extrema.html" class="internal"><span class="codenumber">22.19</span> <span class="title">Exercises for Extreme Values and Saddle Points</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="exercises-lagrange.html" class="internal"><span class="codenumber">22.20</span> <span class="title">Exercises for Lagrange Multipliers</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="worksheet-runestone-samples.html" class="internal"><span class="codenumber">22.21</span> <span class="title">Interactive Problem Set</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<div class="print-preview-header">
+<h2 class="print-preview">Print preview</h2>
+<div class="print-controls">
+<div class="print-controls-toggles">
+<form class="papersize-select" id="papersize-select">
+<span class="name">Paper size</span><label><input type="radio" name="papersize" value="a4">A4
+        </label><label><input type="radio" name="papersize" value="letter">Letter
+        </label>
+</form>
+<details class="print-options"><summary>Additional printing options</summary><div class="hide-solutions-options"><div class="hide-option">
+<label for="hide-solution-checkbox">Hide solutions</label><input type="checkbox" id="hide-solution-checkbox">
+</div></div>
+<div class="header-footer-options">
+<div class="header-option">
+<span class="title">Print headers</span><label>First page<input type="checkbox" id="print-first-page-header-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-header-checkbox" checked></label>
+</div>
+<div class="footer-option">
+<span class="title">Print footers</span><label>First page<input type="checkbox" id="print-first-page-footer-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-footer-checkbox" checked></label>
+</div>
+</div>
+<div class="highlight-workspace-option">
+<label for="highlight-workspace-checkbox">Highlight workspace</label><input type="checkbox" id="highlight-workspace-checkbox">
+</div></details>
+</div>
+<button class="print-button" title="Print" onClick="window.print()"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span><span class="name">Print</span></button>
+</div>
+</div>
+<section class="worksheet" id="worksheet-exercises-lines-planes" data-margins="0.75in 0.75in 0.75in 0.75in">
+<h1 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises for Lines and Planes in Space</span><div class="print-links"><a href="?printpreview=worksheet-exercises-lines-planes" class="print-link" title="Print preview"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span></a></div>
+</h1>
+<section class="introduction" id="worksheet-exercises-lines-planes-2">
+<div class="para" id="worksheet-exercises-lines-planes-2-1">These final exam problems intersect lines with planes, build a plane from a line, and measure the distance between two lines. If you would like to review this topic first, see <a href="chapter-lines-planes.html" class="internal" title="Chapter 11: Lines and Planes in Space">Lines and Planes in Space</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#worksheet-exercises-lines-planes-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="rf-4"><h2 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="rf-4-1-1">
+<div class="para">Find the vector equation of the line of intersection of the following planes:</div>
+<div class="displaymath process-math" id="rf-4-1-1-1">
+\begin{align*}
+2x + y - z \amp = 6,\\
+x - y + 3z \amp = 4.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rf-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="rf-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="rf-4-2-1">
+<div class="para">The normal vectors are <span class="process-math">\(\vec n_1 = \langle 2, 1, -1\rangle\)</span> and <span class="process-math">\(\vec n_2 = \langle 1, -1, 3\rangle\text{,}\)</span> so the direction vector of the line of intersection is</div>
+<div class="displaymath process-math" id="rf-4-2-1-3">
+\begin{equation*}
+\mathbf v = \vec n_1 \times \vec n_2 =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp 1 \amp -1 \\
+1 \amp -1 \amp 3
+\end{vmatrix}
+= \langle 2, -7, -3\rangle.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rf-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="rf-4-2-2">
+<div class="para">Next we need a point on the line. Setting <span class="process-math">\(x = 0\)</span> in the equations of the planes gives</div>
+<div class="displaymath process-math" id="rf-4-2-2-2">
+\begin{align*}
+y - z \amp = 6\\
+-y + 3z \amp = 4
+\end{align*}
+</div>
+<div class="para">Adding the two equations gives <span class="process-math">\(2z = 10\text{,}\)</span> so <span class="process-math">\(z = 5\)</span> and <span class="process-math">\(y = 11\text{.}\)</span> Hence the point <span class="process-math">\((0, 11, 5)\)</span> is on the line, and the vector equation of the line of intersection is</div>
+<div class="displaymath process-math" id="rf-4-2-2-7">
+\begin{equation*}
+\mathbf r(t) = \langle 0, 11, 5\rangle + t\,\langle 2, -7, -3\rangle.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rf-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.1.1"><a tabindex="-1" href="#rf-4-2" title="Copy heading and permalink for Solution 22.10.1.1" aria-label="Copy heading and permalink for Solution 22.10.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.1"><a tabindex="-1" href="#rf-4" title="Copy heading and permalink for Worksheet Exercise 22.10.1" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="rw23-6"><h2 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="rw23-6-1-1">Find the intersection of the line <span class="process-math">\(\mathbf r(t) = \langle 1, 0, 1\rangle + t\langle -1, 1, 1\rangle\)</span> and the plane <span class="process-math">\(2x - y + z = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw23-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="rw23-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="rw23-6-2-1">
+<div class="para">The parametric equations of the line are</div>
+<div class="displaymath process-math" id="rw23-6-2-1-1">
+\begin{equation*}
+x(t) = 1 - t, \qquad y(t) = t, \qquad z(t) = 1 + t.
+\end{equation*}
+</div>
+<div class="para">Substituting into the equation of the plane,</div>
+<div class="displaymath process-math" id="rw23-6-2-1-2">
+\begin{equation*}
+2x - y + z = 2(1-t) - t + (1+t) = 3 - 2t = 1
+\;\Rightarrow\; t = 1,
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(x(1) = 0\text{,}\)</span> <span class="process-math">\(y(1) = 1\text{,}\)</span> <span class="process-math">\(z(1) = 2\text{.}\)</span> The intersection is the point <span class="process-math">\((0, 1, 2)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw23-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.2.1"><a tabindex="-1" href="#rw23-6-2" title="Copy heading and permalink for Solution 22.10.2.1" aria-label="Copy heading and permalink for Solution 22.10.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.2"><a tabindex="-1" href="#rw23-6" title="Copy heading and permalink for Worksheet Exercise 22.10.2" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="rw21-5"><h2 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="rw21-5-1-1">Find an equation of a plane containing the line <span class="process-math">\(\mathbf r = \langle -4, 5, -1\rangle + t\langle -4, 6, -3\rangle\)</span> and parallel to the plane <span class="process-math">\(-3x - y + 2z = 0\text{,}\)</span> in which the coefficient of <span class="process-math">\(x\)</span> is <span class="process-math">\(-3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw21-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="rw21-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="rw21-5-2-1">
+<div class="para">Since the desired plane is parallel to <span class="process-math">\(-3x - y + 2z = 0\text{,}\)</span> it has the same normal vector</div>
+<div class="displaymath process-math" id="rw21-5-2-1-2">
+\begin{equation*}
+\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+\end{equation*}
+</div>
+<div class="para">(Note that <span class="process-math">\(\vec n \cdot \langle -4, 6, -3\rangle
+= 12 - 6 - 6 = 0\text{,}\)</span> so the line is indeed parallel to such a plane.) When <span class="process-math">\(t = 0\text{,}\)</span> the point <span class="process-math">\((-4, 5, -1)\)</span> is on the plane, so from the point-normal form,</div>
+<div class="displaymath process-math" id="rw21-5-2-1-6">
+\begin{align*}
+A(x - x_0) + B(y - y_0) + C(z - z_0) \amp = 0\\
+\Rightarrow\quad -3(x+4) - (y-5) + 2(z+1) \amp = 0.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw21-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.3.1"><a tabindex="-1" href="#rw21-5-2" title="Copy heading and permalink for Solution 22.10.3.1" aria-label="Copy heading and permalink for Solution 22.10.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.3"><a tabindex="-1" href="#rw21-5" title="Copy heading and permalink for Worksheet Exercise 22.10.3" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="rs19-5"><h2 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="rs19-5-1-1">
+<div class="para">Calculate the distance between the following two lines:</div>
+<div class="displaymath process-math" id="rs19-5-1-1-1">
+\begin{align*}
+L_1: \amp \quad x = 4 - t, \quad y = 3 + 2t, \quad z = -5 + 3t\\
+L_2: \amp \quad x = 5 - t, \quad y = 3 + 2t, \quad z = -5 + 3t
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rs19-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="rs19-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="rs19-5-2-1">We notice that the two lines are parallel (both have direction vector <span class="process-math">\(\mathbf v = \langle -1, 2, 3\rangle\)</span>) and therefore we can find the distance between a point on <span class="process-math">\(L_2\)</span> and the line <span class="process-math">\(L_1\text{.}\)</span> Taking <span class="process-math">\(S(5, 3, -5)\)</span> on <span class="process-math">\(L_2\)</span> and <span class="process-math">\(P(4, 3, -5)\)</span> on <span class="process-math">\(L_1\text{,}\)</span> we get <span class="process-math">\(\vec{PS} = \langle 1, 0, 0\rangle\text{,}\)</span> and <span class="process-math">\(|\mathbf v| = \sqrt{1 + 4 + 9} = \sqrt{14}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rs19-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="rs19-5-2-2">
+<div class="para">Using the cross product,</div>
+<div class="displaymath process-math" id="rs19-5-2-2-1">
+\begin{equation*}
+\vec{PS} \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 0 \amp 0 \\
+-1 \amp 2 \amp 3
+\end{vmatrix}
+= -3\,\mathbf j + 2\,\mathbf k,
+\qquad
+\left|\vec{PS} \times \mathbf v\right| = \sqrt{9 + 4} = \sqrt{13},
+\end{equation*}
+</div>
+<div class="para">and the distance is</div>
+<div class="displaymath process-math" id="rs19-5-2-2-2">
+\begin{equation*}
+d = \frac{\left|\vec{PS} \times \mathbf v\right|}{|\mathbf v|}
+= \frac{\sqrt{13}}{\sqrt{14}}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rs19-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.4.1"><a tabindex="-1" href="#rs19-5-2" title="Copy heading and permalink for Solution 22.10.4.1" aria-label="Copy heading and permalink for Solution 22.10.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.4"><a tabindex="-1" href="#rs19-5" title="Copy heading and permalink for Worksheet Exercise 22.10.4" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="rw17-5"><h2 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="rw17-5-1-1">
+<div class="para">Find the distance between the two planes</div>
+<div class="displaymath process-math" id="rw17-5-1-1-1">
+\begin{equation*}
+x + 2y + z = 1
+\qquad\text{and}\qquad
+2x + 4y + 2z = 7.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw17-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="rw17-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="rw17-5-2-1">Dividing the second equation by <span class="process-math">\(2\)</span> gives <span class="process-math">\(x + 2y + z = \frac72\text{,}\)</span> so both planes have the same normal vector <span class="process-math">\(\vec n = \langle 1, 2, 1\rangle\)</span> and are therefore <em class="emphasis">parallel</em>. (They are distinct, since <span class="process-math">\(1 \ne \frac72\text{.}\)</span>)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw17-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="rw17-5-2-2">
+<div class="para">Pick any point on the first plane, say <span class="process-math">\(P(1,0,0)\text{,}\)</span> and any point on the second, say <span class="process-math">\(S\left(\frac72, 0, 0\right)\text{.}\)</span> Then <span class="process-math">\(\vec{PS} = \left\langle \frac52, 0, 0\right\rangle\text{,}\)</span> and the distance between the planes is the length of the projection of <span class="process-math">\(\vec{PS}\)</span> onto <span class="process-math">\(\vec n\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="rw17-5-2-2-6">
+\begin{equation*}
+d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
+= \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
+= \frac{5}{2\sqrt6}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rw17-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.5.1"><a tabindex="-1" href="#rw17-5-2" title="Copy heading and permalink for Solution 22.10.5.1" aria-label="Copy heading and permalink for Solution 22.10.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.5"><a tabindex="-1" href="#rw17-5" title="Copy heading and permalink for Worksheet Exercise 22.10.5" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="pp-12"><h2 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="pp-12-1-1">Find the angle between the planes <span class="process-math">\(2x + 2y = 7\)</span> and <span class="process-math">\(y + z = -1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="pp-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="pp-12-2-1">
+<div class="para">The angle between two planes equals the angle between their normal vectors, <span class="process-math">\(\vec n_1 = \langle 2, 2, 0\rangle\)</span> and <span class="process-math">\(\vec n_2 = \langle 0, 1, 1\rangle\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="pp-12-2-1-3">
+\begin{equation*}
+\cos\theta
+= \frac{\vec n_1 \cdot \vec n_2}{|\vec n_1|\,|\vec n_2|}
+= \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
+= \frac{2}{4}
+= \frac12,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\theta = \dfrac{\pi}{3}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.6.1"><a tabindex="-1" href="#pp-12-2" title="Copy heading and permalink for Solution 22.10.6.1" aria-label="Copy heading and permalink for Solution 22.10.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.6"><a tabindex="-1" href="#pp-12" title="Copy heading and permalink for Worksheet Exercise 22.10.6" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="pp-14"><h2 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="pp-14-1-1">There is a line <span class="process-math">\(L\)</span> parametrized by <span class="process-math">\(x = 1 + 2t\text{,}\)</span> <span class="process-math">\(y = 3 + 4t\text{,}\)</span> <span class="process-math">\(z = 5 + 6t\text{.}\)</span> The line passes through some point <span class="process-math">\(P\)</span> whose <span class="process-math">\(z\)</span>-coordinate is <span class="process-math">\(-7\text{.}\)</span> Find an equation for the plane through <span class="process-math">\(P\)</span> normal to <span class="process-math">\(L\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="pp-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="pp-14-2-1">
+<div class="para">First locate <span class="process-math">\(P\text{.}\)</span> Setting <span class="process-math">\(z = -7\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="pp-14-2-1-3">
+\begin{equation*}
+5 + 6t = -7 \;\Rightarrow\; t = -2,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(x = 1 + 2(-2) = -3\)</span> and <span class="process-math">\(y = 3 + 4(-2) = -5\text{,}\)</span> i.e. <span class="process-math">\(P(-3, -5, -7)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="pp-14-2-2">
+<div class="para">A plane normal to <span class="process-math">\(L\)</span> has the direction vector of <span class="process-math">\(L\)</span> as its normal vector, <span class="process-math">\(\vec n = \langle 2, 4, 6\rangle\text{.}\)</span> Therefore the plane is</div>
+<div class="displaymath process-math" id="pp-14-2-2-4">
+\begin{equation*}
+2(x+3) + 4(y+5) + 6(z+7) = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.7.1"><a tabindex="-1" href="#pp-14-2" title="Copy heading and permalink for Solution 22.10.7.1" aria-label="Copy heading and permalink for Solution 22.10.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.7"><a tabindex="-1" href="#pp-14" title="Copy heading and permalink for Worksheet Exercise 22.10.7" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="pp-17"><h2 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="pp-17-1-1">Find parametric equations for the line through <span class="process-math">\((2,1,1)\)</span> which is normal to the plane containing <span class="process-math">\((0,1,1)\text{,}\)</span> <span class="process-math">\((-1,2,4)\)</span> and <span class="process-math">\((3,0,1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="pp-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="pp-17-2-1">
+<div class="para">From <a href="worksheet-exercises-cross-product.html#pp-13" class="xref" data-knowl="./knowl/xref/pp-13.html" data-reveal-label="Reveal" data-close-label="Close" title="Worksheet Exercise 22.8.3">Worksheet Exercise 22.8.3</a>, the plane through those three points has normal vector <span class="process-math">\(\vec n = \langle 3, 9, -2\rangle\text{.}\)</span> A line normal to the plane has <span class="process-math">\(\vec n\)</span> as its direction vector, so through <span class="process-math">\((2,1,1)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pp-13.html" id="pp-17-2-1-5">
+\begin{equation*}
+x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
+\qquad t \in \R.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pp-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.8.1"><a tabindex="-1" href="#pp-17-2" title="Copy heading and permalink for Solution 22.10.8.1" aria-label="Copy heading and permalink for Solution 22.10.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.8"><a tabindex="-1" href="#pp-17" title="Copy heading and permalink for Worksheet Exercise 22.10.8" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="m2a-4"><h2 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="m2a-4-1-1">
+<div class="para">A surveyor determines that the three points</div>
+<div class="displaymath process-math" id="m2a-4-1-1-1">
+\begin{equation*}
+A = (-1,2,16), \qquad B = (2,-2,17), \qquad C = (2,0,16)
+\end{equation*}
+</div>
+<div class="para">all lie on a flat surface <span class="process-math">\(W\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-4" id="m2a-4-1-1-3">
+<li id="m2a-4-1-1-3-1">
+<div class="para" id="m2a-4-1-1-3-1-1">Find the point of <span class="process-math">\(W\)</span> that is closest to the point <span class="process-math">\((4,4,-3)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 22.10.9.a"><a tabindex="-1" href="#m2a-4-1-1-3-1" title="Copy heading and permalink for Item 22.10.9.a" aria-label="Copy heading and permalink for Item 22.10.9.a">🔗</a></div>
+</li>
+<li id="m2a-4-1-1-3-2">
+<div class="para" id="m2a-4-1-1-3-2-1">Find parametric equations for a line that passes through <span class="process-math">\((4,4,-3)\text{,}\)</span> never crosses <span class="process-math">\(W\text{,}\)</span> and satisfies <span class="process-math">\(x(t) = y(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 22.10.9.b"><a tabindex="-1" href="#m2a-4-1-1-3-2" title="Copy heading and permalink for Item 22.10.9.b" aria-label="Copy heading and permalink for Item 22.10.9.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="m2a-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="m2a-4-2-1">
+<div class="para">
+<dfn class="terminology">Finding the plane.</dfn> Two vectors lying in <span class="process-math">\(W\)</span> are</div>
+<div class="displaymath process-math" id="m2a-4-2-1-3">
+\begin{equation*}
+\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
+\qquad
+\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
+\end{equation*}
+</div>
+<div class="para">A normal vector is their cross product:</div>
+<div class="displaymath process-math" id="m2a-4-2-1-4">
+\begin{align*}
+\vec n \amp = \vec{AB}\times\vec{AC}
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 1 \\
+3 \amp -2 \amp 0
+\end{vmatrix}\\
+\amp = \left\langle (-4)(0)-(1)(-2),\ (1)(3)-(3)(0),\ (3)(-2)-(-4)(3)
+\right\rangle\\
+\amp = \left\langle 2,\ 3,\ 6 \right\rangle .
+\end{align*}
+</div>
+<div class="para">Note <span class="process-math">\(\|\vec n\| = \sqrt{4+9+36} = 7\text{,}\)</span> which will be convenient. Using the point <span class="process-math">\(A\text{,}\)</span> the plane is</div>
+<div class="displaymath process-math" id="m2a-4-2-1-7">
+\begin{align*}
+2(x+1) + 3(y-2) + 6(z-16) \amp = 0\\
+2x + 3y + 6z \amp = 100 .
+\end{align*}
+</div>
+<div class="para">(Check: <span class="process-math">\(B\)</span> gives <span class="process-math">\(4-6+102 = 100\)</span> and <span class="process-math">\(C\)</span> gives <span class="process-math">\(4+0+96 = 100\text{.}\)</span>)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2a-4-2-2">
+<div class="para">
+<dfn class="terminology">(a)</dfn> The closest point of a plane to a given point <span class="process-math">\(Q = (4,4,-3)\)</span> is the foot of the perpendicular from <span class="process-math">\(Q\text{,}\)</span> which we reach by moving from <span class="process-math">\(Q\)</span> in the direction of the normal. So consider</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-m2a-plane.html" id="m2a-4-2-2-5">
+\begin{equation*}
+\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
+\end{equation*}
+</div>
+<div class="para">and find the value of <span class="process-math">\(t\)</span> for which this point lies on <span class="process-math">\(W\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-m2a-plane.html" id="m2a-4-2-2-8">
+\begin{align*}
+2(4+2t) + 3(4+3t) + 6(-3+6t) \amp = 100\\
+8 + 4t + 12 + 9t - 18 + 36t \amp = 100\\
+2 + 49t \amp = 100\\
+t \amp = 2 .
+\end{align*}
+</div>
+<div class="para">Therefore the closest point is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-m2a-plane.html" id="m2a-4-2-2-9">
+\begin{equation*}
+\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
+\end{equation*}
+</div>
+<div class="para">(Check: <span class="process-math">\(16 + 30 + 54 = 100\text{.}\)</span>) Incidentally, the distance from <span class="process-math">\(Q\)</span> to <span class="process-math">\(W\)</span> is <span class="process-math">\(|t|\,\|\vec n\| = 2\cdot 7 = 14\text{.}\)</span> See <a href="worksheet-exercises-lines-planes.html#fig-m2a-plane" class="xref" data-knowl="./knowl/xref/fig-m2a-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 22.39">Figure 22.39</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-m2a-plane"><div class="image-box" style="width: 72%; margin-left: 14%; margin-right: 14%;">
+<img src="generated/latex-image/fig-m2a-plane-2.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="fig-m2a-plane-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-m2a-plane-2-description">
+<div class="para" id="fig-m2a-plane-2-1-1">A tilted plane W drawn as a parallelogram, with the point Q below it. A normal arrow runs from Q up to the foot of the perpendicular on the plane, and a second line through Q is drawn parallel to the plane, never meeting it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-m2a-plane-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.39<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Schematic picture of <a href="worksheet-exercises-lines-planes.html#m2a-4" class="xref" data-knowl="./knowl/xref/m2a-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Worksheet Exercise 22.10.9">Worksheet Exercise 22.10.9</a>. From <span class="process-math">\(Q(4,4,-3)\)</span> we travel along the normal direction <span class="process-math">\(\vec n = \langle 2,3,6\rangle\)</span> until we hit <span class="process-math">\(W\text{,}\)</span> arriving at <span class="process-math">\((8,10,9)\text{.}\)</span> Any line through <span class="process-math">\(Q\)</span> whose direction is perpendicular to <span class="process-math">\(\vec n\)</span> stays parallel to <span class="process-math">\(W\)</span> and never meets it.<div class="autopermalink" aria-hidden="true" data-description="Figure 22.39"><a tabindex="-1" href="#fig-m2a-plane" title="Copy heading and permalink for Figure 22.39" aria-label="Copy heading and permalink for Figure 22.39">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="m2a-4-2-4">
+<div class="para">
+<dfn class="terminology">(b)</dfn> A line never crosses the plane <span class="process-math">\(W\)</span> exactly when it is parallel to <span class="process-math">\(W\)</span> and does not lie in it. Since <span class="process-math">\(Q = (4,4,-3)\)</span> is not on <span class="process-math">\(W\)</span> (we saw <span class="process-math">\(2(4)+3(4)+6(-3) = 2 \ne 100\)</span>), we only need the direction vector <span class="process-math">\(\vec d = \left\langle a, b, c\right\rangle\)</span> to be perpendicular to the normal:</div>
+<div class="displaymath process-math" id="m2a-4-2-4-8">
+\begin{equation*}
+\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2a-4-2-5">
+<div class="para">The extra requirement <span class="process-math">\(x(t) = y(t)\)</span> forces the two lines <span class="process-math">\(x = 4 + at\)</span> and <span class="process-math">\(y = 4 + bt\)</span> to agree for all <span class="process-math">\(t\text{,}\)</span> which happens exactly when <span class="process-math">\(a = b\text{.}\)</span> Substituting <span class="process-math">\(b = a\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="m2a-4-2-5-7">
+\begin{equation*}
+2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
+\end{equation*}
+</div>
+<div class="para">Choosing <span class="process-math">\(a = 6\)</span> and <span class="process-math">\(c = -5\)</span> gives <span class="process-math">\(\vec d = \left\langle 6,\ 6,\ -5 \right\rangle\text{,}\)</span> and the line is</div>
+<div class="displaymath process-math" id="m2a-4-2-5-11">
+\begin{equation*}
+x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
+\end{equation*}
+</div>
+<div class="para">Indeed <span class="process-math">\(x(t) = y(t)\)</span> for every <span class="process-math">\(t\text{,}\)</span> and <span class="process-math">\(\vec d\cdot\vec n = 12+18-30 = 0\text{,}\)</span> so the line is parallel to <span class="process-math">\(W\)</span> and, starting from a point off <span class="process-math">\(W\text{,}\)</span> never reaches it.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2a-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.9.1"><a tabindex="-1" href="#m2a-4-2" title="Copy heading and permalink for Solution 22.10.9.1" aria-label="Copy heading and permalink for Solution 22.10.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.9"><a tabindex="-1" href="#m2a-4" title="Copy heading and permalink for Worksheet Exercise 22.10.9" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="m2b-3"><h2 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="m2b-3-1-1">
+<div class="para">The parametric equations</div>
+<div class="displaymath process-math" id="m2b-3-1-1-1">
+\begin{align*}
+x \amp = t+1,\\
+y \amp = 2t, \qquad -\infty \lt t \lt \infty\\
+z \amp = 2 + 3t - t^2,
+\end{align*}
+</div>
+<div class="para">sweep out a parabola lying in some plane in <span class="process-math">\(xyz\)</span>-space. Find the equation of that plane.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="m2b-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="m2b-3-2-1">
+<div class="para">The cleanest way to see the plane is to write the position vector as a constant vector plus multiples of two fixed vectors:</div>
+<div class="displaymath process-math" id="m2b-3-2-1-1">
+\begin{equation*}
+\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2 \right\rangle
+= \left\langle 1,0,2 \right\rangle
++ t\left\langle 1,\ 2,\ 3 \right\rangle
++ t^2\left\langle 0,\ 0,\ -1 \right\rangle .
+\end{equation*}
+</div>
+<div class="para">Whatever <span class="process-math">\(t\)</span> is, the point <span class="process-math">\(\vec r(t)\)</span> is the fixed point <span class="process-math">\((1,0,2)\)</span> plus a combination of the two fixed vectors <span class="process-math">\(\vec u = \left\langle 1,2,3\right\rangle\)</span> and <span class="process-math">\(\vec w = \left\langle 0,0,-1\right\rangle\text{.}\)</span> So the whole curve lies in the plane through <span class="process-math">\((1,0,2)\)</span> spanned by <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec w\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-3-2-2">
+<div class="para">A normal vector to that plane is</div>
+<div class="displaymath process-math" id="m2b-3-2-2-1">
+\begin{align*}
+\vec n \amp = \vec u \times \vec w
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 2 \amp 3 \\
+0 \amp 0 \amp -1
+\end{vmatrix}\\
+\amp = \left\langle (2)(-1)-(3)(0),\ (3)(0)-(1)(-1),\ 0-0 \right\rangle\\
+\amp = \left\langle -2,\ 1,\ 0 \right\rangle .
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-3-2-3">
+<div class="para">Using the point <span class="process-math">\((1,0,2)\text{,}\)</span> the plane is</div>
+<div class="displaymath process-math" id="m2b-3-2-3-2">
+\begin{align*}
+-2(x-1) + 1(y-0) + 0(z-2) \amp = 0\\
+-2x + y + 2 \amp = 0\\
+2x - y \amp = 2 .
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-3-2-4">
+<div class="para">There is a quicker route to the same answer once you notice that the normal has no <span class="process-math">\(\mathbf k\)</span>-component: the plane is vertical, so its equation involves only <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Eliminating <span class="process-math">\(t\)</span> from the first two equations, <span class="process-math">\(t = x - 1\)</span> and <span class="process-math">\(t = y/2\text{,}\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-m2b-parabola.html" id="m2b-3-2-4-7">
+\begin{equation*}
+x - 1 = \frac{y}{2} \quad\Longleftrightarrow\quad 2x - y = 2 ,
+\end{equation*}
+</div>
+<div class="para">and this relation holds for every <span class="process-math">\(t\)</span> regardless of the value of <span class="process-math">\(z\text{.}\)</span> The curve is a parabola drawn on this vertical wall; see <a href="worksheet-exercises-lines-planes.html#fig-m2b-parabola" class="xref" data-knowl="./knowl/xref/fig-m2b-parabola.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 22.40">Figure 22.40</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-m2b-parabola"><div class="image-box" style="width: 72%; margin-left: 14%; margin-right: 14%;">
+<img src="generated/latex-image/fig-m2b-parabola-2.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="fig-m2b-parabola-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-m2b-parabola-2-description">
+<div class="para" id="fig-m2b-parabola-2-1-1">A vertical plane drawn as a tilted rectangle in three dimensional space, with a downward opening parabola drawn on it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-m2b-parabola-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.40<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The curve <span class="process-math">\(\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2
+\right\rangle\)</span> is a parabola lying in the vertical plane <span class="process-math">\(2x - y = 2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 22.40"><a tabindex="-1" href="#fig-m2b-parabola" title="Copy heading and permalink for Figure 22.40" aria-label="Copy heading and permalink for Figure 22.40">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.10.1"><a tabindex="-1" href="#m2b-3-2" title="Copy heading and permalink for Solution 22.10.10.1" aria-label="Copy heading and permalink for Solution 22.10.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.10"><a tabindex="-1" href="#m2b-3" title="Copy heading and permalink for Worksheet Exercise 22.10.10" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="m2b-5"><h2 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="m2b-5-1-1">
+<div class="para">Let <span class="process-math">\(L\)</span> be the line given by</div>
+<div class="displaymath process-math" id="m2b-5-1-1-2">
+\begin{equation*}
+x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
+\end{equation*}
+</div>
+<div class="para">Find the point on <span class="process-math">\(L\)</span> that is closest to <span class="process-math">\((-2,2,-1)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="m2b-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="m2b-5-2-1">Write <span class="process-math">\(Q = (-2,2,-1)\)</span> and let <span class="process-math">\(P(t) = (4+t,\ -1-2t,\ 5+t)\)</span> be the general point of <span class="process-math">\(L\text{.}\)</span> The direction vector of the line is <span class="process-math">\(\vec d = \left\langle 1,\ -2,\ 1\right\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-5-2-2">
+<div class="para">The closest point is the foot of the perpendicular from <span class="process-math">\(Q\text{,}\)</span> so we want the value of <span class="process-math">\(t\)</span> for which <span class="process-math">\(\vec{QP}\)</span> is orthogonal to <span class="process-math">\(\vec d\text{.}\)</span> First,</div>
+<div class="displaymath process-math" id="m2b-5-2-2-5">
+\begin{align*}
+\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+\right\rangle\\
+\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-5-2-3">
+<div class="para">Now impose <span class="process-math">\(\vec{QP}\cdot\vec d = 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="m2b-5-2-3-2">
+\begin{align*}
+(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0\\
+6 + t + 6 + 4t + 6 + t \amp = 0\\
+18 + 6t \amp = 0\\
+t \amp = -3 .
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="m2b-5-2-4">
+<div class="para">Substituting <span class="process-math">\(t = -3\)</span> into the parametric equations gives the closest point</div>
+<div class="displaymath process-math" id="m2b-5-2-4-2">
+\begin{equation*}
+P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
+\end{equation*}
+</div>
+<div class="para">As a check, at <span class="process-math">\(t=-3\)</span> we get <span class="process-math">\(\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="m2b-5-2-4-5">
+\begin{equation*}
+\vec{QP}\cdot\vec d
+= \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
+= 3 - 6 + 3 = 0 ,
+\end{equation*}
+</div>
+<div class="para">as required. The distance from <span class="process-math">\(Q\)</span> to the line is <span class="process-math">\(\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#m2b-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 22.10.11.1"><a tabindex="-1" href="#m2b-5-2" title="Copy heading and permalink for Solution 22.10.11.1" aria-label="Copy heading and permalink for Solution 22.10.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 22.10.11"><a tabindex="-1" href="#m2b-5" title="Copy heading and permalink for Worksheet Exercise 22.10.11" aria-label="Copy heading and permalink for Worksheet Exercise 22.10.11">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Worksheet 22.10: Exercises for Lines and Planes in Space"><a tabindex="-1" href="#worksheet-exercises-lines-planes" title="Copy heading and permalink for Worksheet 22.10: Exercises for Lines and Planes in Space" aria-label="Copy heading and permalink for Worksheet 22.10: Exercises for Lines and Planes in Space">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="exercises-projectile-velocity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-conics-exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script><script src="external/custom.js"></script>
+</body>
+</html>
