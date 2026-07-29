@@ -53,6 +53,10 @@
     </numbering>
 
     <html>
+        <!-- Matches the target's platform="runestone" in project.ptx.  The
+             CLI forces this anyway, but stating it here keeps the two in
+             agreement and avoids an override warning at build time. -->
+        <platform host="runestone"/>
         <webwork divisional="dynamic"/>
     </html>
 </publication>
