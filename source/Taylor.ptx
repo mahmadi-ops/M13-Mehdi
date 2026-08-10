@@ -142,12 +142,23 @@
           implications. Interested students are encouraged to read the proof.</alert> 
       </p>
     </proof>
-    <remark>
+    <remark xml:id="rmk-error-upper-bound">
   <title>Finding an upper bound for the error term without knowing the value of <m>c</m></title>
   <p>
-  Usually the value of <m>c</m> is not explicitly known. However, we may manage to find <alert>an upper bound</alert> 
+  Usually the value of <m>c</m> is not explicitly known. However, we may manage to find <alert>an upper bound</alert>
    for the error term <m>R_n(x)</m> without knowing the exact value of <m>c</m>. This is achieved by finding an upper bound <m> M</m>
    for <m>|f^{(n+1)}(c)|</m>, where <m>c</m> is between <m>a</m> and <m>x</m>, and then using this upper bound to estimate the error term.
+  </p>
+  <p>
+    This is the idea behind every error estimate in this chapter. It is used in
+    <xref ref="ex-error-bound-exp ex-error-bound-sin-range ex-error-bound-sin-degree"/>
+    to bound the error in approximating
+    <m>e^x</m> and <m>\sin(x)</m>, in <xref ref="ex-error-newtonian-ke"/> to show that the
+    Newtonian kinetic energy formula is accurate for everyday speeds, in
+    <xref ref="ex-small-angle-pendulum"/> to justify the small-angle approximation
+    <m>\sin\theta \approx \theta</m>, and in <xref ref="ex-approx-pi-arctan"/> to control the
+    error in approximating <m>\pi</m>. It is also used in <xref ref="subsection-2"/> to prove
+    that the Taylor series of <m>e^x</m> converges to <m>e^x</m> for every <m>x</m>.
   </p>
 </remark>
 
@@ -198,16 +209,32 @@
     </md>
 </p>
     <p>
-      First, we consider the case when <m>x>0</m>. Since <m>c</m> is between <m>0</m> and <m>x</m>, 
-      we have <m>0 \leq c \leq x</m>. Therefore, we can bound the remainder term as follows:
+      First, we consider the case when <m>x>0</m>. As in <xref ref="rmk-error-upper-bound"/>, we do not
+      need the exact value of <m>c</m>, only an upper bound for <m>|f^{(n+1)}(c)| = e^c</m>. Since <m>c</m>
+      is between <m>0</m> and <m>x</m>, we have <m>0 \leq c \leq x</m>, so <m>M = e^x</m> works; see
+      <xref ref="fig-exp-taylor"/>. Therefore, we can bound the remainder term as follows:
 <md>
       R_n(x) \leq \frac{e^x}{(n+1)!} x^{n+1}
     </md>
 </p>
     <p>
-      Now we can compute the limit of the remainder term as <m>n\to \infty</m>:
+      Now we can compute the limit of the remainder term as <m>n\to \infty</m>, keeping in mind that
+      <m>x</m> is fixed and only <m>n</m> is changing<fn>
+        Why is <m>\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m> for every fixed <m>x</m>? Write the
+        quotient as a product of <m>n+1</m> factors,
+        <m>\frac{|x|^{n+1}}{(n+1)!} = \frac{|x|}{1}\cdot\frac{|x|}{2}\cdot\frac{|x|}{3}\cdots\frac{|x|}{n+1}</m>.
+        The numerators never change, but the denominators keep growing, so eventually every new factor is
+        small. Precisely, fix an integer <m>N</m> with <m>N \geq 2|x|</m>. The first <m>N</m> factors
+        contribute the fixed number <m>C = \frac{|x|^{N}}{N!}</m>, and each factor after that satisfies
+        <m>\frac{|x|}{k} \leq \frac{1}{2}</m> for <m>k > N</m>. Hence for <m>n+1 > N</m> we get
+        <m>0 \leq \frac{|x|^{n+1}}{(n+1)!} \leq C \left(\frac{1}{2}\right)^{n+1-N}</m>, and the
+        right-hand side tends to <m>0</m> as <m>n\to\infty</m>, so the squeeze theorem gives the limit
+        <m>0</m>. In short, the factorial in the denominator eventually outgrows any fixed power in the
+        numerator, no matter how large <m>|x|</m> is.
+      </fn>:
 <md>
-      \lim_{n\to \infty} |R_n(x)| \leq \lim_{n\to \infty} \frac{e^x}{(n+1)!} x^{n+1} = 0
+      \lim_{n\to \infty} |R_n(x)| \leq \lim_{n\to \infty} \frac{e^x}{(n+1)!} x^{n+1}
+      =e^x \lim_{n\to \infty} \frac{x^{n+1}}{(n+1)!}  = 0.
     </md>
 </p>
     <p>
@@ -301,9 +328,10 @@
 
     <p>
       The second case is when <m>x &lt; 0</m>. In this case, since <m>c</m> is between <m>x</m> and <m>0</m>,
-      we have <m>x \leq c \leq 0</m>. Hence, we can bound the remainder term as follows:
+      we have <m>x \leq c \leq 0</m>, so this time <m>M = e^0 = 1</m> is an upper bound for <m>e^c</m>; see
+      <xref ref="fig-exp-taylor"/> again. Hence, we can bound the remainder term as follows:
 <md>
-      |R_n(x)| \leq \frac{1}{(n+1)!} |x|^{n+1}
+      |R_n(x)| \leq \frac{1}{(n+1)!} |x|^{n+1}.
     </md>
 </p>
     <p>
@@ -340,7 +368,7 @@
   <section xml:id="subsection-3">
     <title> The error in using a Taylor polynomial</title>
     <p>
-      In this subsection, we will discuss how to approximate the error in using a Taylor polynomial to approximate a function. 
+      In this subsection, we will discuss how to estimate the error in using a Taylor polynomial to approximate a function. 
       We will use the remainder theorem to bound the error term <m>R_n(x)</m>.
     </p>
     <p>
@@ -351,10 +379,11 @@
     </md>
 </p>
     <p>
-      To bound the error term, we need to find an upper bound for <m>|f^{(n+1)}(c)|</m> on the interval between 
-      <m>a</m> and <m>x</m>.
-    </p> 
-    <example>
+      To bound the error term, we need to find an upper bound <m>M</m> for <m>|f^{(n+1)}(c)|</m> on the interval between
+      <m>a</m> and <m>x</m>, as explained in <xref ref="rmk-error-upper-bound"/>. The examples below carry
+      out this step in several different settings.
+    </p>
+    <example xml:id="ex-error-bound-exp">
       <title>Approximating <m>e^x</m> using a Taylor polynomial</title>
       <statement>
 <p>
@@ -378,7 +407,9 @@
       </md>
 </p>
       <p>
-        Since <m>f^{(3)}(x) = e^x</m>, we have:
+        We do not know the value of <m>c</m>, so we use the idea of <xref ref="rmk-error-upper-bound"/>
+        and bound <m>|f^{(3)}(c)|</m> instead. Since <m>f^{(3)}(x) = e^x</m> is increasing and
+        <m>c</m> lies between <m>0</m> and <m>0.5</m>, we may take <m>M = e^{0.5}</m>, and therefore:
 <md>
         |R_2(0.5)| \leq \frac{e^{0.5}}{6} (0.5)^3
       </md>
@@ -418,7 +449,7 @@ The red curve is the graph of <m>f(x) = e^x</m> and
   </solution>
 </example>
 
-    <example> 
+    <example xml:id="ex-error-bound-sin-range">
       <title>Given a desired error bound, find values of <m>x</m> for which the approximation is guaranteed to be valid</title>
       <statement>
 <p>
@@ -442,7 +473,9 @@ The red curve is the graph of <m>f(x) = e^x</m> and
       </md>
 </p>
       <p>
-        Since <m>f^{(5)}(x) = \cos(x)</m>, we have:
+        Again the value of <m>c</m> is unknown, so we follow <xref ref="rmk-error-upper-bound"/>:
+        since <m>f^{(5)}(x) = \cos(x)</m>, we have <m>|f^{(5)}(c)| \leq 1</m> for every <m>c</m>, so we
+        may take <m>M = 1</m> and obtain:
 <md>
         |R_4(x)| \leq \frac{|x|^5}{120}
       </md>
@@ -466,7 +499,7 @@ The red curve is the graph of <m>f(x) = e^x</m> and
       </md>
 </p>
       <p>
-        Therefore, we can replace <m>\sin(x)</m> by the Taylor polynomial of degree 3 
+        Therefore, we can safely replace <m>\sin(x)</m> by the Taylor polynomial of degree 3 
         at <m>x=0</m> with an error of magnitude no greater than 
         <m> 4 \times 10^{-3}</m> for <m>|x| \leq 0.86347</m>.
       </p>
@@ -484,8 +517,9 @@ The red curve is the graph of <m>f(x) = \sin(x)</m>
     <interactive geogebra="z854nrgd" width="95%" aspect="16:9">
     <description>
 <p>
-Use the slider to change the value of <m>x_0</m> and see how the error changes. 
-     Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>.
+Use the slider to change the value of <m>x_0</m> and see how the error changes.
+     Note that for <m>|x_0| \leq 0.86347</m>, the error is less than <m> 4 \times 10^{-3}</m>, as
+     guaranteed by the remainder theorem, <xref ref="thm-remainder-theorem"/>.
 </p>
 </description>
     </interactive>
@@ -493,7 +527,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 </example>
   
   
-  <example>
+  <example xml:id="ex-error-bound-sin-degree">
     <title> Finding the value of <m>n</m> such that the error is less than a given tolerance</title>
     <statement>
 <p>
@@ -518,7 +552,9 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
       </md>
 </p>
       <p>
-        Since <m>f^{(n+1)}(x)</m> is either <m>\cos(x)</m> or <m>\sin(x)</m>, we have:
+        As in <xref ref="rmk-error-upper-bound"/>, we bound the unknown derivative rather than
+        locating <m>c</m>. Since <m>f^{(n+1)}(x)</m> is either <m>\cos(x)</m> or <m>\sin(x)</m>, up to
+        a sign, we have <m>|f^{(n+1)}(c)| \leq 1</m> for every <m>c</m>, so <m>M = 1</m> works and:
 <md>
         |R_n(x)| \leq \frac{|x|^{n+1}}{(n+1)!}
       </md>
@@ -585,8 +621,8 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
       <p>
       In the case when <m>v \ll c</m>, we can use the Taylor series to approximate the kinetic energy. 
       In example <xref ref="example-1"/> we will show that the kinetic energy can be approximated by 
-      the formula <m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>. See <xref ref="fig-relativistic-ke"/> 
-      for a comparison of the relativistic kinetic energy and its Newtonian approximation. 
+      the formula <m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>. See <xref ref="fig-ke-cartoon"/>
+      for a comparison of the relativistic kinetic energy and its Newtonian approximation.
       </p>
 
       <figure xml:id="fig-ke-cartoon">
@@ -651,6 +687,10 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
   </image>
 </figure>
 
+      <!-- Figure hidden: relativistic vs. Newtonian kinetic energy graph.
+           The discussion now refers to fig-ke-cartoon instead. To restore it,
+           uncomment the block below and put back the [ ... ] comment markers.
+
       <figure xml:id="fig-relativistic-ke">
   <caption>Relativistic kinetic energy compared with its Newtonian
   approximation. The two nearly coincide when <m>v \ll c</m>, but the
@@ -658,9 +698,9 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
   <image width="60%">
     <prefigure xmlns="https://prefigure.org" label="relativistic-ke">
       <diagram dimensions="(400,300)" margins="8">
-        <!-- Natural units: c = 1, m0 = 1.
+        [ Natural units: c = 1, m0 = 1.
              Relativistic:  Krel(v) = 1/sqrt(1 - v^2) - 1
-             Newtonian:     Knewt(v) = (1/2) v^2 -->
+             Newtonian:     Knewt(v) = (1/2) v^2 ]
         <definition>Krel(v) = 1/sqrt(1 - v^2) - 1</definition>
         <definition>Knewt(v) = v^2/2</definition>
         <coordinates bbox="(-0.05, -0.15, 1.15, 2.2)">
@@ -699,6 +739,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
     </prefigure>
   </image>
 </figure>
+      -->
       <example xml:id="example-1">
         <title>Newtonian kinetic energy as an approximation to relativistic kinetic energy when <m>v \ll c</m></title>
         <statement>
@@ -759,7 +800,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 </example>
       
       
-      <example> 
+      <example xml:id="ex-error-newtonian-ke">
         <title>Estimating the error in using the Newtonian kinetic energy formula to approximate the relativistic kinetic energy</title>
         <statement>
 <p>
@@ -783,7 +824,10 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
           </md>
 </p>
           <p>
-            Since <m>f^{(2)}(x) = \frac{3}{4} (1-x)^{-5/2}</m>, we have:
+            Following <xref ref="rmk-error-upper-bound"/>, we bound the second derivative on the
+            interval between <m>0</m> and <m>x</m> instead of trying to find the unknown intermediate
+            point. Since <m>f^{(2)}(x) = \frac{3}{4} (1-x)^{-5/2}</m> is increasing on that interval,
+            its largest value there is at the right endpoint, so we have:
 <md>
             |R_1(x)| \leq m_0 c^2 \frac{3}{8} (1-x)^{-5/2} x^2
           </md>
@@ -849,7 +893,33 @@ when <m>\theta</m> is small (in radians) the higher-order terms are
   F \approx -mg\theta = -\frac{mg}{\ell}\,x,
 </md>
 which <em>is</em> Hooke's law <m>F = -kx</m> with effective spring constant
-  <m>k = \dfrac{mg}{\ell}</m>. Thus, for small swings the pendulum behaves as
+  <m>k = \dfrac{mg}{\ell}</m>.
+</p>
+<p>
+  This is exactly what fixes the period. Newton's second law <m>F = ma = m\dfrac{d^2x}{dt^2}</m>
+  turns Hooke's law into the equation of motion
+<md>
+  m\frac{d^2x}{dt^2} = -\frac{mg}{\ell}\,x,
+  \qquad\text{that is,}\qquad
+  \frac{d^2x}{dt^2} = -\frac{g}{\ell}\,x .
+</md>
+Notice that the mass cancels. The equation says that <m>x</m> is a function whose second
+  derivative is a negative multiple of itself, and the functions with that property are the
+  sines and cosines: writing <m>\omega^2 = \dfrac{g}{\ell}</m>, every solution has the form
+<md>
+  x(t) = A\cos(\omega t) + B\sin(\omega t),
+  \qquad \omega = \sqrt{\frac{g}{\ell}} ,
+</md>
+which you can verify by differentiating twice. The number <m>\omega</m> is the angular
+  frequency, and <m>\cos(\omega t)</m> and <m>\sin(\omega t)</m> repeat when <m>\omega t</m>
+  increases by <m>2\pi</m>. So the motion repeats after a time <m>T</m> with
+  <m>\omega T = 2\pi</m>, giving
+<md>
+  T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{\ell}{g}} .
+</md>
+</p>
+<p>
+  Thus, for small swings the pendulum behaves as
   a simple harmonic oscillator, with period
 <md>
   T = 2\pi\sqrt{\frac{\ell}{g}},
@@ -985,7 +1055,8 @@ independent of both the amplitude and the mass. Taylor's Remainder Theorem
   </md>
 </p>
   <p>
-    Because <m>|\cos c| \le 1</m>, the absolute error satisfies
+    The point <m>c</m> is not known, but as in <xref ref="rmk-error-upper-bound"/> we do not need it:
+    because <m>|\cos c| \le 1</m>, we may take <m>M = 1</m>, and the absolute error satisfies
 <md>
     \left| \sin\theta - \theta \right|
       = \frac{\cos c}{6}\,\theta^3 \le \frac{\theta^3}{6},
@@ -1120,7 +1191,8 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
           f^{(n)}(t) = (n-1)!\,\cos^n(\theta)\,\sin\!\left(n\left(\theta + \tfrac{\pi}{2}\right)\right),
           \qquad \theta = \arctan(t),
         </md>
-        which can be verified by induction on <m>n</m>. Since
+        which can be verified by induction on <m>n</m>. As in <xref ref="rmk-error-upper-bound"/>,
+        the bound <m>M</m> is found without locating the intermediate point: since
         <m>|\cos^{n}(\theta)| \le 1</m> and <m>|\sin\!\left(n\left(\theta + \tfrac{\pi}{2}\right)\right)| \le 1</m>, it follows that
         <md>
           \left|f^{(n+1)}(t)\right| \le n! \quad \text{for all } t \in \mathbb{R},
