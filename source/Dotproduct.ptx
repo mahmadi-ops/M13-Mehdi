@@ -559,6 +559,87 @@ To achieve a visual understanding of this decomposition, watch the video below.
 </solution>
 </example>
 
+<exercise xml:id="check-projection-decomposition">
+<title>Concept Check</title>
+<statement>
+<p>
+Everything in <xref ref="eq-decomposition"/> rests on the claim read off from
+<xref ref="fig-projection"/>: that <m>\text{proj}_{\mathbf v}\mathbf u</m> is
+parallel to <m>\mathbf v</m>, and that
+<m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular to
+<m>\mathbf v</m>. A picture is not a proof. Explain why each half of the claim
+is true.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+For the parallel half, look at the formula for
+<m>\text{proj}_{\mathbf v}\mathbf u</m> in
+<xref ref="fact-projection-formula"/> and say what kind of expression it is.
+Why does that observation alone settle the question?
+</p>
+</li>
+<li>
+<p>
+For the perpendicular half, compute
+<m>\left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right)\cdot\mathbf v</m>.
+Justify each step by naming the property of the dot product from
+<xref ref="fact-properties"/> that you used, and then say what the value you
+obtain tells you about the two vectors.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+In (b), write <m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> where
+<m>c = \dfrac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}</m> is a scalar. In that
+form properties 2 and 3 of <xref ref="fact-properties"/> apply directly, and
+property 4 will simplify <m>\mathbf v\cdot\mathbf v</m>.
+</p>
+</hint>
+<solution>
+<p>
+(a) By <xref ref="fact-projection-formula"/>,
+<md>
+\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v,
+\qquad c = \frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2},
+</md>
+so the projection is simply a number times <m>\mathbf v</m>. A scalar multiple
+of <m>\mathbf v</m> points along <m>\mathbf v</m> when <m>c &gt; 0</m> and
+opposite to <m>\mathbf v</m> when <m>c &lt; 0</m>; either way it is parallel to
+<m>\mathbf v</m>. Nothing further needs to be checked.
+</p>
+<p>
+(b) With <m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> as above,
+<md>
+\begin{aligned}
+\left(\mathbf u - c\,\mathbf v\right)\cdot\mathbf v
+\amp = \mathbf u\cdot\mathbf v - (c\,\mathbf v)\cdot\mathbf v \\
+\amp = \mathbf u\cdot\mathbf v - c\,(\mathbf v\cdot\mathbf v) \\
+\amp = \mathbf u\cdot\mathbf v - c\,\|\mathbf v\|^2 \\
+\amp = \mathbf u\cdot\mathbf v
+- \frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\,\|\mathbf v\|^2 = 0.
+\end{aligned}
+</md>
+</p>
+<p>
+The first line distributes the dot product over the difference, which is
+properties 1 and 3 of <xref ref="fact-properties"/>; the second pulls the scalar
+<m>c</m> out, which is property 2; the third replaces
+<m>\mathbf v\cdot\mathbf v</m> by <m>\|\mathbf v\|^2</m>, which is property 4.
+The last line just substitutes the value of <m>c</m>.
+</p>
+<p>
+So the dot product is zero, and by <xref ref="remark-orthogonal"/> that is
+exactly what it means for <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> to
+be perpendicular to <m>\mathbf v</m>.
+</p>
+</solution>
+</exercise>
+
 </paragraphs>
 
 </section>
@@ -568,7 +649,7 @@ To achieve a visual understanding of this decomposition, watch the video below.
 <title>An Application of the Dot Product: Work</title>
 
 <p>
-Consider the scenario in which a force <m>\mathbf F</m> causes an object to
+Consider the scenario in which a constant force <m>\mathbf F</m> causes an object to
 move from point <m>P</m> to point <m>Q</m>, as shown in
 <xref ref="fig-work"/>. The vector <m>\vec{PQ}</m> is often denoted
 <m>\mathbf D</m> and is referred to as the <term>displacement vector</term>.
@@ -752,21 +833,21 @@ and the work done is
         </figure>
 
         <p>
-          Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane[cite: 1]. 
-          Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal[cite: 1]:
+          Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane. 
+          Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal:
           <md>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
-          where <m>\|\vec{v}\| = 1</m>[cite: 1].
+          where <m>\|\vec{v}\| = 1</m>.
         </p>
         <p>
-          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>[cite: 1]:
+          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>:
           <md>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</md>
-          Computing the dot product[cite: 1]:
+          Computing the dot product:
           <md>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</md>
-          Thus, the parallel force vector is[cite: 1]:
+          Thus, the parallel force vector is:
           <md>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
         </p>
         <p>
-          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction[cite: 1]:
+          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction:
           <md>
             <mrow>\vec{F}_{\perp} \amp = \vec{F} - \vec{F}_{\parallel}</mrow>
             <mrow>\amp = \langle 0, -98 \rangle - 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</mrow>
