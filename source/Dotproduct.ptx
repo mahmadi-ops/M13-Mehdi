@@ -646,7 +646,7 @@ be perpendicular to <m>\mathbf v</m>.
 
 <!-- ================================================================ -->
 <section xml:id="sec-work">
-<title>An Application of the Dot Product: Work</title>
+<title>Application in Physics: Work</title>
 
 <p>
 Consider the scenario in which a constant force <m>\mathbf F</m> causes an object to
@@ -664,7 +664,8 @@ The work done by the force is then
 \text{Work} = \mathbf F \cdot \mathbf D = \|\mathbf D\|\|\mathbf F\|\cos\theta,
 </md>
 where <m>\left\|\text{proj}_{\mathbf D}\mathbf F\right\| = \|\mathbf F\|\cos\theta</m>
-is the magnitude of the force in the direction of motion.
+is the magnitude of the force in the direction of motion, as computed in
+<xref ref="sec-projection"/>.
 </p>
 </statement>
 </definition>
@@ -734,7 +735,8 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
 </statement>
 <hint>
   <p>
-    Consider using the formula for the dot product: <m>\mathbf F \cdot \mathbf D </m>. For more help, watch the video below. </p>
+    Consider using <xref ref="eq-work"/>, evaluating <m>\mathbf F \cdot \mathbf D</m>
+    with the component formula <xref ref="eq-5"/>. For more help, watch the video below. </p>
     <figure xml:id="fig-work-hint">
   <caption>Set up the work computation: build the displacement vector first, then take the dot product. What do you get?</caption>
   <video xml:id="video-work-hint"
@@ -745,7 +747,7 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
 <solution>
 <p>
 The displacement vector is <m>\mathbf D = \vec{AB} = \langle 6,2,12\rangle</m>,
-and the work done is
+so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 <md>
 \text{Work} = \mathbf F \cdot \mathbf D
 = \langle 8,-6,9\rangle \cdot \langle 6,2,12\rangle
@@ -839,15 +841,15 @@ and the work done is
           where <m>\|\vec{v}\| = 1</m>.
         </p>
         <p>
-          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>:
+          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>, given by <xref ref="eq-proj"/>:
           <md>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</md>
-          Computing the dot product:
+          Computing the dot product with <xref ref="eq-5"/>:
           <md>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</md>
           Thus, the parallel force vector is:
           <md>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
         </p>
         <p>
-          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>, the perpendicular force component is found by subtraction:
+          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m> by <xref ref="eq-decomposition"/>, the perpendicular force component is found by subtraction:
           <md>
             <mrow>\vec{F}_{\perp} \amp = \vec{F} - \vec{F}_{\parallel}</mrow>
             <mrow>\amp = \langle 0, -98 \rangle - 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</mrow>
@@ -858,6 +860,358 @@ and the work done is
       </solution>
 </example>
 
+
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-data-science">
+<title>Application in Data Science: Measuring Similarity in Tastes</title>
+
+<p>
+Every time a streaming service tells you <q>because you watched
+<em>Sinners</em>&#8230;</q>, some piece of software has decided that your taste
+resembles the taste of other people in its database. Deciding whose taste
+resembles whose can be framed as a geometry problem, and one tool that can help
+us decide is the dot product.
+</p>
+
+<p>
+The first step is to turn taste into a vector. Fix a list of movies and ask
+each person to rate every one of them on a scale from <m>-5</m> to <m>5</m>,
+where <m>5</m> means <q>loved it</q>, <m>-5</m> means <q>I want those two hours
+back</q>, and <m>0</m> means indifference. Reading the ratings off in the same
+order for everybody turns each person into a vector, and the question
+<q>do these two people have similar taste?</q> becomes a question about the
+angle between two vectors, which by <xref ref="thm-angle-formula"/> is exactly
+what the dot product measures.
+</p>
+
+<definition xml:id="def-angular-distance">
+<title>Angular Distance and Cosine Similarity</title>
+<statement>
+<p>
+Let <m>\mathbf u</m> and <m>\mathbf v</m> be two nonzero vectors. Their
+<term>angular distance</term> is the angle <m>\theta</m> between them, obtained
+from <xref ref="eq-4"/>,
+<md xml:id="eq-angular-distance" number="yes">
+d_A(\mathbf u,\mathbf v) = \theta
+= \cos^{-1}\left(\frac{\mathbf u \cdot \mathbf v}{\|\mathbf u\|\|\mathbf v\|}\right).
+</md>
+The quantity <m>\dfrac{\mathbf u \cdot \mathbf v}{\|\mathbf u\|\|\mathbf v\|} = \cos\theta</m>
+appearing inside is called the <term>cosine similarity</term> of
+<m>\mathbf u</m> and <m>\mathbf v</m>. The smaller the angular distance, the
+more similar the two vectors.
+</p>
+</statement>
+</definition>
+
+<p>
+Angular distance asks <q>how nearly do these two vectors point the same way?</q>
+Notice that it is completely blind to the lengths of <m>\mathbf u</m> and
+<m>\mathbf v</m>: multiplying either vector by a positive number leaves
+<m>\theta</m> untouched. We will come back to what that means for moviegoers.
+</p>
+
+<paragraphs xml:id="par-two-movies">
+<title>Two Movies at a Time</title>
+
+<p>
+Two movies give vectors in <m>\mathbb R^2</m>, which we can draw. Take two of
+the ten films nominated for Best Picture at the 2026 Academy Awards,
+<em>Sinners</em> and <em>Hamnet</em>, and record each person's rating of
+<em>Sinners</em> as the first component and of <em>Hamnet</em> as the second.
+Mehdi, Norm, and Popcorn rate them as follows:
+<md>
+\begin{aligned}
+\text{Mehdi:} \quad \mathbf u \amp = \langle 4, 5\rangle \\
+\text{Norm:} \quad \mathbf v \amp = \langle 5, 3\rangle \\
+\text{Popcorn:} \quad \mathbf w \amp = \langle -4, -2\rangle.
+\end{aligned}
+</md>
+Mehdi and Norm both enjoyed the two films; Popcorn sat through both of them and
+regretted it. <xref ref="fig-taste-vectors-2d"/> shows the three taste vectors.
+</p>
+
+<figure xml:id="fig-taste-vectors-2d">
+<caption>
+The taste vectors <m>\mathbf u</m> (Mehdi), <m>\mathbf v</m> (Norm), and
+<m>\mathbf w</m> (Popcorn). The angle <m>\theta</m> is the angular distance
+between <m>\mathbf u</m> and <m>\mathbf v</m>.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-taste-vectors-2d">
+<diagram dimensions="(420,420)" margins="14">
+<definition>m=(4,5)</definition>
+<definition>n=(5,3)</definition>
+<definition>d=(-4,-2)</definition>
+<coordinates bbox="(-7,-7,7,7)">
+<grid-axes at="grid-taste" xlabel="\text{Sinners}" ylabel="\text{Hamnet}"/>
+<vector at="vec-m" v="m" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="vec-n" v="n" tail="(0,0)" stroke="#D55E00" thickness="2"/>
+<vector at="vec-d" v="d" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<angle-marker at="angle-mn" points="(n,(0,0),m)" radius="40" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<label at="face-m" anchor="m" alignment="nw" font-size="26">&#x1F913;</label>
+<label at="face-n" anchor="n" alignment="e" font-size="26">&#x1F60E;</label>
+<label at="face-d" anchor="d" alignment="sw" font-size="26">&#x1F92A;</label>
+<label at="name-m" anchor="(3.2,5.5)" alignment="w">Mehdi</label>
+<label at="name-n" anchor="(5.2,2.6)" alignment="se">Norm</label>
+<label at="name-d" anchor="(-4.2,-2.9)" alignment="s">Popcorn</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid whose horizontal axis is the rating of the film Sinners and whose vertical axis is the rating of the film Hamnet, both running from negative 5 to 5. Three vectors are drawn from the origin: a blue vector to the point 4 comma 5, labeled Mehdi; an orange vector to the point 5 comma 3, labeled Norm; and a green vector to the point negative 4 comma negative 2, labeled Popcorn. The blue and orange vectors point in nearly the same direction and a small angle theta is marked between them, while the green vector points in almost the opposite direction.">
+  <annotation ref="grid-taste" text="A coordinate grid with the Sinners rating on the horizontal axis and the Hamnet rating on the vertical axis."/>
+  <annotation ref="vec-m" text="Mehdi's taste vector u equals 4 comma 5, drawn in blue from the origin."/>
+  <annotation ref="vec-n" text="Norm's taste vector v equals 5 comma 3, drawn in orange from the origin."/>
+  <annotation ref="vec-d" text="Popcorn's taste vector w equals negative 4 comma negative 2, drawn in green from the origin, pointing into the third quadrant."/>
+  <annotation ref="angle-mn" text="The angle theta between u and v, measured at the origin, is about 20 degrees."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-taste-2d">
+<title>Who should watch a movie together?</title>
+<statement>
+<p>
+Using the taste vectors above, rank the three pairs by angular distance.
+</p>
+</statement>
+<solution>
+<p>
+The three dot products are
+<md>
+\begin{aligned}
+\mathbf u \cdot \mathbf v \amp = 20 + 15 = 35, \\
+\mathbf u \cdot \mathbf w \amp = -16 - 10 = -26, \\
+\mathbf v \cdot \mathbf w \amp = -20 - 6 = -26,
+\end{aligned}
+</md>
+and the lengths are <m>\|\mathbf u\| = \sqrt{41}</m>,
+<m>\|\mathbf v\| = \sqrt{34}</m>, and <m>\|\mathbf w\| = \sqrt{20}</m>. Then, by
+<xref ref="eq-angular-distance"/>,
+<md>
+\begin{aligned}
+\text{Mehdi, Norm:} \quad \cos\theta \amp = \frac{35}{\sqrt{41}\,\sqrt{34}} \approx 0.9374 \\[2pt]
+\text{Mehdi, Popcorn:} \quad \cos\theta \amp = \frac{-26}{\sqrt{41}\,\sqrt{20}} \approx -0.9080 \\[2pt]
+\text{Norm, Popcorn:} \quad \cos\theta \amp = \frac{-26}{\sqrt{34}\,\sqrt{20}} \approx -0.9971.
+\end{aligned}
+</md>
+Taking <m>\cos^{-1}</m> of each of these gives the three angular distances.
+</p>
+<table xml:id="table-taste-2d">
+<title>Angular distance between the three taste vectors.</title>
+<tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+<row header="yes" bottom="major">
+<cell>Pair</cell>
+<cell><m>\cos\theta</m></cell>
+<cell><m>d_A</m></cell>
+</row>
+<row><cell>Mehdi, Norm</cell><cell><m>0.9374</m></cell><cell><m>20.4^\circ</m></cell></row>
+<row><cell>Mehdi, Popcorn</cell><cell><m>-0.9080</m></cell><cell><m>155.2^\circ</m></cell></row>
+<row><cell>Norm, Popcorn</cell><cell><m>-0.9971</m></cell><cell><m>175.6^\circ</m></cell></row>
+</tabular>
+</table>
+<p>
+Mehdi and Norm are the movie buddies. The sign of the dot product already told
+us most of the story: <m>\mathbf u \cdot \mathbf v &gt; 0</m> means an acute
+angle and broadly shared taste, while <m>\mathbf v \cdot \mathbf w &lt; 0</m>
+means an obtuse angle, and here an angle of nearly <m>180^\circ</m> &#8212; Norm
+and Popcorn are as close to being opposites as two moviegoers can be.
+</p>
+</solution>
+</example>
+</paragraphs>
+
+<paragraphs xml:id="par-scale-invariance">
+<title>Angular Distance Ignores Enthusiasm</title>
+
+<p>
+Suppose Ray, Vera, and Gus rate the same two films
+<md>
+\begin{aligned}
+\text{Ray:} \quad \mathbf a \amp = \langle 2, 2\rangle \\
+\text{Vera:} \quad \mathbf b \amp = \langle 5, 4\rangle \\
+\text{Gus:} \quad \mathbf c \amp = \langle 5, 5\rangle,
+\end{aligned}
+</md>
+as in <xref ref="fig-taste-disagree"/>. Since <m>\mathbf c = \tfrac52\mathbf a</m>,
+the vectors <m>\mathbf a</m> and <m>\mathbf c</m> point in exactly the same
+direction, so <m>d_A(\mathbf a,\mathbf c) = 0^\circ</m>: as far as angular
+distance is concerned, Ray and Gus have identical taste. Vera sits about
+<m>6.3^\circ</m> away from that shared direction, since
+<md>
+\cos\theta = \frac{\mathbf b \cdot \mathbf c}{\|\mathbf b\|\|\mathbf c\|}
+= \frac{25+20}{\sqrt{41}\,\sqrt{50}} \approx 0.9939.
+</md>
+</p>
+
+<figure xml:id="fig-taste-disagree">
+<caption>
+Ray, Vera, and Gus. Ray's vector <m>\mathbf a</m> lies along Gus's vector
+<m>\mathbf c</m>, so their angular distance is <m>0</m>, even though Gus handed
+out far more generous ratings.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-taste-disagree">
+<diagram dimensions="(420,330)" margins="14">
+<definition>r=(2,2)</definition>
+<definition>v=(5,4)</definition>
+<definition>g=(5,5)</definition>
+<coordinates bbox="(-0.8,-0.8,7.4,6.4)">
+<grid-axes at="grid-disagree" xlabel="\text{Sinners}" ylabel="\text{Hamnet}"/>
+<vector at="vec-g" v="g" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="vec-v" v="v" tail="(0,0)" stroke="#D55E00" thickness="2"/>
+<vector at="vec-r" v="r" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<label at="face-r" anchor="(2.2,1.9)" alignment="se" font-size="24">&#x1F610;</label>
+<label at="face-v" anchor="v" alignment="se" font-size="24">&#x1F929;</label>
+<label at="face-g" anchor="g" alignment="ne" font-size="24">&#x1F973;</label>
+<label at="name-r" anchor="(2.85,1.5)" alignment="e">Ray</label>
+<label at="name-v" anchor="(5.6,3.4)" alignment="e">Vera</label>
+<label at="name-g" anchor="(5.6,5.3)" alignment="e">Gus</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid whose horizontal axis is the rating of Sinners and whose vertical axis is the rating of Hamnet, both running from 0 to about 6. A short thick blue vector runs from the origin to the point 2 comma 2, labeled Ray. A longer green vector runs from the origin to the point 5 comma 5, labeled Gus, and lies along exactly the same line as the blue vector. An orange vector runs from the origin to the point 5 comma 4, labeled Vera, just below the green one.">
+  <annotation ref="grid-disagree" text="A coordinate grid with the Sinners rating on the horizontal axis and the Hamnet rating on the vertical axis."/>
+  <annotation ref="vec-r" text="Ray's taste vector a equals 2 comma 2, drawn as a short thick blue vector from the origin."/>
+  <annotation ref="vec-g" text="Gus's taste vector c equals 5 comma 5, drawn in green from the origin along the same line as Ray's vector."/>
+  <annotation ref="vec-v" text="Vera's taste vector b equals 5 comma 4, drawn in orange from the origin, slightly below Gus's vector."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+This is the scale invariance noted after
+<xref ref="def-angular-distance"/>, seen from the moviegoers' side. Ray is a
+cautious rater and Gus is an enthusiastic one, but they ranked the two films
+the same way and in the same proportion, and angular distance sees only that
+shared direction. If you regard a lukewarm reviewer and a euphoric one who
+agree about every film as having the same taste, this is exactly the behavior
+you want.
+</p>
+</paragraphs>
+
+<paragraphs xml:id="par-more-movies">
+<title>More Movies, More Dimensions</title>
+
+<p>
+Nothing above depended on there being exactly two movies. With <m>n</m> movies,
+a person's taste vector is
+<m>\mathbf u = \langle u_1, u_2, \ldots, u_n\rangle</m> in <m>\mathbb R^n</m>,
+the dot product of <xref ref="eq-5"/> becomes a sum of <m>n</m> products,
+<m>\mathbf u \cdot \mathbf v = \sum_{i=1}^{n} u_i v_i</m>, and the length of a
+vector becomes <m>\|\mathbf u\| = \sqrt{\sum_{i=1}^{n} u_i^2}</m>. The angular
+distance of <xref ref="def-angular-distance"/> carries over verbatim:
+<md xml:id="eq-similarity-n" number="yes">
+d_A(\mathbf u,\mathbf v) = \cos^{-1}\left(
+\frac{\sum_{i=1}^{n} u_i v_i}
+{\sqrt{\sum_{i=1}^{n} u_i^2}\,\sqrt{\sum_{i=1}^{n} v_i^2}}\right).
+</md>
+</p>
+
+<p>
+We can no longer draw the picture, but every formula still applies, and the
+language of <xref ref="remark-orthogonal"/> still means something: two taste
+vectors with <m>\mathbf u \cdot \mathbf v = 0</m> are orthogonal, an angular
+distance of <m>90^\circ</m>, which here says that knowing one person's ratings
+tells you nothing about the other's. This is what makes the dot product useful
+in practice. A streaming service with <m>50{,}000</m> titles works in
+<m>\mathbb R^{50{,}000}</m>, and finding the users nearest to you is still
+nothing more than the arithmetic in <xref ref="eq-similarity-n"/>.
+</p>
+
+<example xml:id="example-taste-10d">
+<title>All ten nominees</title>
+<statement>
+<p>
+List the ten 2026 Best Picture nominees alphabetically&#8212;<em>Bugonia</em>,
+<em>F1</em>, <em>Frankenstein</em>, <em>Hamnet</em>, <em>Marty Supreme</em>,
+<em>One Battle After Another</em>, <em>The Secret Agent</em>,
+<em>Sentimental Value</em>, <em>Sinners</em>, <em>Train Dreams</em>&#8212;and
+suppose Mehdi, Norm, and Popcorn rate all ten:
+<md>
+\begin{aligned}
+\mathbf u \amp = \langle 3,\,-1,\,2,\,5,\,0,\,5,\,4,\,3,\,4,\,2\rangle \\
+\mathbf v \amp = \langle 1,\,4,\,3,\,3,\,5,\,4,\,0,\,1,\,5,\,-2\rangle \\
+\mathbf w \amp = \langle -2,\,3,\,-3,\,-2,\,4,\,-1,\,-4,\,-5,\,-4,\,-3\rangle.
+\end{aligned}
+</md>
+(The fourth and ninth entries are the <em>Hamnet</em> and <em>Sinners</em>
+ratings from before.) Which pair has the most similar taste?
+</p>
+</statement>
+<solution>
+<p>
+The dot products are <m>\mathbf u \cdot \mathbf v = 59</m>,
+<m>\mathbf u \cdot \mathbf w = -83</m>, and
+<m>\mathbf v \cdot \mathbf w = -8</m>, and the lengths are
+<m>\|\mathbf u\| = \sqrt{109}</m>, <m>\|\mathbf v\| = \sqrt{106}</m>, and
+<m>\|\mathbf w\| = \sqrt{109}</m>. Applying
+<xref ref="eq-similarity-n"/> to each pair gives the following.
+</p>
+<table xml:id="table-taste-10d">
+<title>Angular distance across all ten nominees.</title>
+<tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+<row header="yes" bottom="major">
+<cell>Pair</cell>
+<cell><m>\cos\theta</m></cell>
+<cell><m>d_A</m></cell>
+</row>
+<row><cell>Mehdi, Norm</cell><cell><m>0.549</m></cell><cell><m>56.7^\circ</m></cell></row>
+<row><cell>Mehdi, Popcorn</cell><cell><m>-0.762</m></cell><cell><m>139.6^\circ</m></cell></row>
+<row><cell>Norm, Popcorn</cell><cell><m>-0.074</m></cell><cell><m>94.3^\circ</m></cell></row>
+</tabular>
+</table>
+<p>
+Mehdi and Norm are again the closest pair, though the extra eight films have
+pulled them apart: their angular distance grew from <m>20.4^\circ</m> to
+<m>56.7^\circ</m> once we stopped judging them on <em>Sinners</em> and
+<em>Hamnet</em> alone. Norm and Popcorn are nearly orthogonal, with an angle of
+<m>94.3^\circ</m>; their tastes are essentially unrelated rather than opposed,
+which is precisely the distinction the two-movie picture was too small to make.
+</p>
+</solution>
+</example>
+
+<p>
+Ten components are a lot to handle by hand, and a real recommender system deals
+with thousands. The cell below carries out the computation of
+<xref ref="example-taste-10d"/>. Press <em>Evaluate</em> to run it, then edit
+the ratings and run it again to see whose taste your own vector is closest to.
+</p>
+
+<sage>
+<input>
+u = vector([ 3, -1,  2,  5,  0,  5,  4,  3,  4,  2])   # Mehdi
+v = vector([ 1,  4,  3,  3,  5,  4,  0,  1,  5, -2])   # Norm
+w = vector([-2,  3, -3, -2,  4, -1, -4, -5, -4, -3])   # Popcorn
+
+def cosine_similarity(a, b):
+    return a.dot_product(b) / (a.norm() * b.norm())
+
+def angular_distance(a, b):
+    return arccos(cosine_similarity(a, b)) * 180 / pi   # in degrees
+
+for name, a, b in [("Mehdi, Norm", u, v),
+                   ("Mehdi, Popcorn", u, w),
+                   ("Norm, Popcorn", v, w)]:
+    print(name, N(cosine_similarity(a, b), digits=3), N(angular_distance(a, b), digits=4))
+</input>
+<output>
+Mehdi, Norm 0.549 56.71
+Mehdi, Popcorn -0.762 139.6
+Norm, Popcorn -0.0744 94.27
+</output>
+</sage>
+</paragraphs>
 
 </section>
 
