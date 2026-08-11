@@ -43,6 +43,14 @@ direction of motion, and appreciate why the dot product is the natural tool
 for expressing it.
 </p>
 </li>
+<li>
+<p>
+Explain how the dot product is used in data science to measure similarity:
+represent preferences as vectors, compute the cosine similarity and the
+angular distance between them, interpret the result, and extend the
+computation from two dimensions to <m>\mathbb R^n</m>.
+</p>
+</li>
 </ul>
 </objectives>
 
