@@ -1190,15 +1190,17 @@ the ratings and run it again to see whose taste your own vector is closest to.
 
 <sage>
 <input>
-u = vector([ 3, -1,  2,  5,  0,  5,  4,  3,  4,  2])   # Mehdi
-v = vector([ 1,  4,  3,  3,  5,  4,  0,  1,  5, -2])   # Norm
-w = vector([-2,  3, -3, -2,  4, -1, -4, -5, -4, -3])   # Popcorn
+# ratings of the ten nominees, in alphabetical order
+u = vector([ 3, -1,  2,  5,  0,  5,  4,  3,  4,  2])
+v = vector([ 1,  4,  3,  3,  5,  4,  0,  1,  5, -2])
+w = vector([-2,  3, -3, -2,  4, -1, -4, -5, -4, -3])
 
 def cosine_similarity(a, b):
     return a.dot_product(b) / (a.norm() * b.norm())
 
+# the angular distance, converted from radians to degrees
 def angular_distance(a, b):
-    return arccos(cosine_similarity(a, b)) * 180 / pi   # in degrees
+    return arccos(cosine_similarity(a, b)) * 180 / pi
 
 for name, a, b in [("Mehdi, Norm", u, v),
                    ("Mehdi, Popcorn", u, w),
