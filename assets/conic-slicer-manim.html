@@ -23,7 +23,6 @@
     --yellow:    #ffe14d;
     --red:       #fc6255;
     --gold:      #f0ac5f;
-    --purple:    #9a72ac;
     /* the book's own stacks */
     --sans:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --serif: "PT Serif", "Times New Roman", Times, serif;
@@ -120,7 +119,6 @@
   #btnEll.active { background: var(--green);  border-color: var(--green); }
   #btnPar.active { background: var(--yellow); border-color: var(--yellow); }
   #btnHyp.active { background: var(--red);    border-color: var(--red); }
-  #btnDeg.active { background: var(--purple); border-color: var(--purple); color: var(--ink); }
   #btnTour.running { background: var(--blue); border-color: var(--blue); color: #06070a; font-weight: 600; }
   #btnSpin.active  { background: var(--blue); border-color: var(--blue); color: #06070a; font-weight: 600; }
 
@@ -149,6 +147,31 @@
     width: 14px; height: 14px; border: none;
     border-radius: 50%; background: var(--blue); cursor: pointer;
   }
+
+  /* On a phone the equation card would cover most of the picture, so it stops
+     floating and becomes a strip above the canvas instead. See resize(), which
+     takes the strip's height out of the canvas rather than out of the cone. */
+  @media (max-width: 560px) {
+    #eqcard {
+      position: static;
+      padding: 7px 12px 8px 12px;
+      border: none; border-bottom: 1px solid var(--edge);
+      border-radius: 0; background: var(--panel);
+      line-height: 1.35;
+    }
+    .math { font-size: 16px; }
+    #conicName { font-size: 15px; }
+    #conicCond { display: none; }          /* the instructions below say the same */
+    /* a tighter panel leaves more of the box for the cone */
+    #panel { padding: 7px 10px 8px 10px; }
+    .row + .row { margin-top: 7px; }
+    .lbl { display: none; }
+    button { font-size: 13px; padding: 4px 10px; }
+    .sliderRow .name { min-width: 92px; font-size: 13px; }
+    #meter { font-size: 12px; padding: 6px 10px 7px 10px; left: 10px; bottom: 10px; }
+    #bar { width: 120px; }
+    #caption { font-size: 13px; max-width: 88%; bottom: 58px; }
+  }
 </style>
 </head>
 <body>
@@ -156,14 +179,13 @@
   <div id="stage">
     <div id="eqcard" class="overlay">
       <div class="math" style="color:#9cdceb"><i>x</i>&#178; + <i>y</i>&#178; = <i>z</i>&#178;</div>
-      <div class="math">cut by &nbsp;<i>z</i> = <span id="eqM">0.50</span>&#8202;<i>y</i> <span id="eqSign">+</span> <span id="eqC">1.00</span></div>
+      <div class="math">cut by &nbsp;<i>z</i> = <span id="eqM">0.50</span>&#8202;<i>y</i> + 1</div>
       <div id="conicName">Ellipse</div>
       <div id="conicCond">tilt shallower than the slant</div>
     </div>
 
     <div id="meter" class="overlay">
       tilt <b id="tiltDeg">26.6&#176;</b> &nbsp;vs&nbsp; slant <b>45.0&#176;</b>
-      &nbsp;&#183;&nbsp; eccentricity <b id="ecc">0.63</b>
       <div id="bar"><div id="barKnob" style="left:0px"></div></div>
     </div>
 
@@ -176,7 +198,6 @@
       <button id="btnEll">Ellipse</button>
       <button id="btnPar">Parabola</button>
       <button id="btnHyp">Hyperbola</button>
-      <button id="btnDeg">Degenerate</button>
       <span style="flex:1"></span>
       <button id="btnTour">&#9654;&nbsp;Play</button>
       <button id="btnSpin">Spin</button>
@@ -185,11 +206,6 @@
       <span class="name">tilt <i>m</i> = <span id="mVal">0.50</span></span>
       <input type="range" id="mSlider" min="0" max="2.4" step="0.01" value="0.5"
              aria-label="tilt m of the cutting plane">
-    </div>
-    <div class="row sliderRow">
-      <span class="name">offset <i>c</i> = <span id="cVal">1.00</span></span>
-      <input type="range" id="cSlider" min="-2" max="2" step="0.01" value="1"
-             aria-label="vertical offset c of the cutting plane">
     </div>
   </div>
 </div>
@@ -202,7 +218,7 @@
   // Manim colour constants, so the palette below reads the way a Scene would.
   var BLUE_D = 0x29abca, BLUE_E = 0x1c758a, BLUE_C = 0x58c4dd,
       GREEN_C = 0x83c167, YELLOW = 0xffe14d, RED_C = 0xfc6255,
-      GOLD_C = 0xf0ac5f, PURPLE_C = 0x9a72ac, GREY = 0x8a8f9c, INK = 0xece6e2;
+      GOLD_C = 0xf0ac5f, GREY = 0x8a8f9c, INK = 0xece6e2;
 
   var EPS = 1e-9;
   var ZMAX = 2.4;      // the cone is drawn for |z| <= ZMAX
@@ -220,14 +236,26 @@
   var camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.up.set(0, 0, 1);                 // z is up, the usual maths convention
 
+  // FIT is a bounding radius for everything drawn: the cone reaches |z| = ZMAX at
+  // a radius of ZMAX, and the axis labels sit a little beyond that.
+  var FIT = 3.5;
   var radius = 10.4, theta = 0.62, phi = 0.86;
+  var aimShift = 0;   // world units to slide the picture down the screen
+
   function placeCamera() {
-    camera.position.set(
+    var eye = new THREE.Vector3(
       radius * Math.sin(phi) * Math.cos(theta),
       radius * Math.sin(phi) * Math.sin(theta),
       radius * Math.cos(phi)
     );
-    camera.lookAt(0, 0, 0);
+    // Screen-up in world terms: camera.up with the view direction projected out.
+    var fwd = eye.clone().negate().normalize();
+    var up = camera.up.clone().addScaledVector(fwd, -camera.up.dot(fwd));
+    if (up.lengthSq() < 1e-9) up.set(0, 1, 0);
+    up.normalize().multiplyScalar(aimShift);
+
+    camera.position.copy(eye).add(up);
+    camera.lookAt(up.x, up.y, up.z);
   }
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.62));
@@ -376,14 +404,12 @@
     curveGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, 0.038, 10, !!closed), coreMat));
     curveGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, 0.10, 10, !!closed), glowMat));
   }
-  function addDot(p) {
-    var m = new THREE.Mesh(new THREE.SphereGeometry(0.085, 18, 14), coreMat);
-    m.position.copy(p);
-    curveGroup.add(m);
-  }
 
   // ---------- state ----------
-  var mVal = 0.5, cVal = 1.0;
+  // The plane keeps a fixed height, c = 1; only its tilt m is under the reader's
+  // control, so the section is always a genuine conic.
+  var mVal = 0.5;
+  var cVal = 1.0;
 
   // On the plane z = m*y + c the cone gives
   //     (1 - m^2) y^2 - 2 m c y + (x^2 - c^2) = 0,
@@ -394,20 +420,15 @@
     return (m * c + sign * Math.sqrt(Math.max(0, disc))) / q;
   }
 
-  function classify(m, c) {
-    var degenerate = Math.abs(c) < 1e-4;
-    var isPar = Math.abs(m - 1) < 5e-3;
-    if (degenerate) {
-      if (isPar)   return { key: "deg-line",   name: "Degenerate: one line",    cond: "the plane touches the cone along a ruling", color: PURPLE_C };
-      if (m < 1)   return { key: "deg-point",  name: "Degenerate: a point",     cond: "the plane meets the cone only at the apex", color: PURPLE_C };
-      return       { key: "deg-cross",  name: "Degenerate: two lines",   cond: "the plane cuts both nappes through the apex", color: PURPLE_C };
-    }
-    if (isPar)     return { key: "par", name: "Parabola",  cond: "tilt equal to the slant — parallel to a ruling", color: YELLOW };
+  function classify(m) {
+    if (Math.abs(m - 1) < 5e-3)
+      return { key: "par", name: "Parabola",  cond: "tilt equal to the slant — parallel to a ruling", color: YELLOW };
     if (m < 1) {
-      if (m < 5e-3) return { key: "ell", name: "Circle",   cond: "plane perpendicular to the axis", color: GREEN_C };
-      return        { key: "ell", name: "Ellipse",  cond: "tilt shallower than the slant — one nappe", color: GREEN_C };
+      if (m < 5e-3)
+        return { key: "ell", name: "Circle",  cond: "plane perpendicular to the axis", color: GREEN_C };
+      return   { key: "ell", name: "Ellipse", cond: "tilt shallower than the slant — one nappe", color: GREEN_C };
     }
-    return           { key: "hyp", name: "Hyperbola", cond: "tilt steeper than the slant — both nappes", color: RED_C };
+    return     { key: "hyp", name: "Hyperbola", cond: "tilt steeper than the slant — both nappes", color: RED_C };
   }
 
   function updateSlice() {
@@ -419,28 +440,13 @@
     planeEdge.rotation.copy(planeMesh.rotation);
     planeEdge.position.copy(planeMesh.position);
 
-    var info = classify(mVal, cVal);
+    var info = classify(mVal);
     setCurveColor(info.color);
 
     var i, t, x, y, z, pts, seg;
-    var degenerate = Math.abs(cVal) < 1e-4;
     var isPar = Math.abs(mVal - 1) < 5e-3;
 
-    if (degenerate) {
-      if (info.key === "deg-point") {
-        addDot(new THREE.Vector3(0, 0, 0));
-      } else if (info.key === "deg-line") {
-        addTube([new THREE.Vector3(0, -ZMAX, -ZMAX), new THREE.Vector3(0, ZMAX, ZMAX)]);
-      } else {
-        var sl = Math.sqrt(mVal * mVal - 1), ymax = ZMAX / mVal;
-        [1, -1].forEach(function (sg) {
-          addTube([
-            new THREE.Vector3(sg * sl * (-ymax), -ymax, -ZMAX),
-            new THREE.Vector3(sg * sl * ymax, ymax, ZMAX)
-          ]);
-        });
-      }
-    } else if (isPar) {
+    if (isPar) {
       // y = (x^2 - c^2)/(2c),  z = y + c, on the nappe carrying the sign of c
       var xlim = Math.sqrt(Math.max(0, 2 * Math.abs(cVal) * ZMAX - cVal * cVal));
       pts = [];
@@ -505,44 +511,32 @@
 
   // ---------- readouts ----------
   var elEqM = document.getElementById("eqM"),
-      elEqC = document.getElementById("eqC"),
-      elEqSign = document.getElementById("eqSign"),
       elName = document.getElementById("conicName"),
       elCond = document.getElementById("conicCond"),
       elTilt = document.getElementById("tiltDeg"),
-      elEcc = document.getElementById("ecc"),
       elKnob = document.getElementById("barKnob"),
-      elMVal = document.getElementById("mVal"),
-      elCVal = document.getElementById("cVal");
+      elMVal = document.getElementById("mVal");
 
   var CSS = { };
-  CSS[GREEN_C] = "#83c167"; CSS[YELLOW] = "#ffe14d";
-  CSS[RED_C] = "#fc6255";   CSS[PURPLE_C] = "#9a72ac";
+  CSS[GREEN_C] = "#83c167"; CSS[YELLOW] = "#ffe14d"; CSS[RED_C] = "#fc6255";
 
   function paintReadouts(info) {
     elEqM.textContent = mVal.toFixed(2);
-    elEqSign.textContent = cVal < 0 ? "−" : "+";
-    elEqC.textContent = Math.abs(cVal).toFixed(2);
     elName.textContent = info.name;
     elName.style.color = CSS[info.color] || "#ece6e2";
     elCond.textContent = info.cond;
 
     var tilt = Math.atan(mVal) * 180 / Math.PI;
     elTilt.textContent = tilt.toFixed(1) + "°";
-    // For a cone of half-angle 45 degrees, e = cos(angle to axis)/cos(45) = sqrt(2) sin(tilt).
-    elEcc.textContent = (Math.SQRT2 * Math.sin(Math.atan(mVal))).toFixed(2);
     elKnob.style.left = (Math.min(1, tilt / (2 * SLANT)) * 168 - 1.5) + "px";
 
     elMVal.textContent = mVal.toFixed(2);
-    elCVal.textContent = cVal.toFixed(2);
 
     document.getElementById("btnEll").classList.toggle("active", info.key === "ell");
     document.getElementById("btnPar").classList.toggle("active", info.key === "par");
     document.getElementById("btnHyp").classList.toggle("active", info.key === "hyp");
-    document.getElementById("btnDeg").classList.toggle("active", info.key.indexOf("deg") === 0);
 
     mSlider.value = String(mVal);
-    cSlider.value = String(cVal);
   }
 
   // ---------- render loop ----------
@@ -572,18 +566,17 @@
   function smooth(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
 
   var tween = null;
-  function animateTo(targetM, targetC, seconds, done) {
-    tween = { m0: mVal, c0: cVal, m1: targetM, c1: targetC, t: 0, dur: Math.max(0.01, seconds), done: done };
+  function animateTo(targetM, seconds, done) {
+    tween = { m0: mVal, m1: targetM, t: 0, dur: Math.max(0.01, seconds), done: done };
     ensureLoop();
   }
   function stepTween(dt) {
     tween.t += dt;
     var a = smooth(Math.min(1, tween.t / tween.dur));
     mVal = tween.m0 + (tween.m1 - tween.m0) * a;
-    cVal = tween.c0 + (tween.c1 - tween.c0) * a;
     updateSlice();
     if (tween.t >= tween.dur) {
-      mVal = tween.m1; cVal = tween.c1;
+      mVal = tween.m1;
       var cb = tween.done;
       tween = null;
       updateSlice();
@@ -602,12 +595,11 @@
   }
 
   var STORY = [
-    { say: "A plane perpendicular to the axis cuts a circle.",            m: 0.0,  c: 1.0,  run: 1.2, hold: 1.1 },
-    { say: "Tilt it a little — shallower than the slant — and the circle stretches into an ellipse.", m: 0.55, c: 1.0, run: 1.6, hold: 1.4 },
-    { say: "At tilt = slant the plane is parallel to a ruling (gold). The curve opens up: a parabola.", m: 1.0,  c: 1.0,  run: 1.8, hold: 1.8 },
-    { say: "Steeper still, and the plane reaches the second nappe: a hyperbola, in two branches.",      m: 1.8,  c: 1.0,  run: 1.8, hold: 1.6 },
-    { say: "Slide the plane down through the apex and the section degenerates — here, two crossing lines.", m: 1.8, c: 0.0, run: 1.6, hold: 1.6 },
-    { say: "Your turn: drag the sliders, and drag the figure to look from anywhere.",                   m: 0.55, c: 1.0,  run: 1.6, hold: 0.9 }
+    { say: "A plane perpendicular to the axis cuts a circle.", m: 0.0, run: 1.2, hold: 1.1 },
+    { say: "Tilt it a little — shallower than the slant — and the circle stretches into an ellipse.", m: 0.55, run: 1.6, hold: 1.4 },
+    { say: "At tilt = slant the plane is parallel to a ruling (gold). The curve opens up: a parabola.", m: 1.0, run: 1.8, hold: 1.8 },
+    { say: "Steeper still, and the plane reaches the second nappe: a hyperbola, in two branches.", m: 1.8, run: 1.8, hold: 1.8 },
+    { say: "Your turn: drag the tilt slider, and drag the figure to look from anywhere.", m: 0.55, run: 1.6, hold: 0.9 }
   ];
 
   var tour = { running: false, i: 0, timer: null };
@@ -618,7 +610,7 @@
     if (tour.i >= STORY.length) { stopTour(); return; }
     var beat = STORY[tour.i++];
     say(beat.say);
-    animateTo(beat.m, beat.c, beat.run, function () {
+    animateTo(beat.m, beat.run, function () {
       if (!tour.running) return;
       tour.timer = window.setTimeout(tourStep, beat.hold * 1000);
     });
@@ -644,8 +636,8 @@
   btnTour.addEventListener("click", function () { tour.running ? stopTour() : startTour(); });
 
   function setSlidersEnabled(on) {
-    mSlider.disabled = !on; cSlider.disabled = !on;
-    mSlider.style.opacity = cSlider.style.opacity = on ? "1" : "0.45";
+    mSlider.disabled = !on;
+    mSlider.style.opacity = on ? "1" : "0.45";
   }
 
   // ---------- drag to orbit ----------
@@ -673,19 +665,16 @@
 
   // ---------- controls ----------
   var mSlider = document.getElementById("mSlider");
-  var cSlider = document.getElementById("cSlider");
 
-  function jumpTo(m, c) {
+  function jumpTo(m) {
     if (tour.running) stopTour();
-    animateTo(m, c, 0.9);
+    animateTo(m, 0.9);
   }
-  document.getElementById("btnEll").addEventListener("click", function () { jumpTo(0.55, 1.0); });
-  document.getElementById("btnPar").addEventListener("click", function () { jumpTo(1.0,  1.0); });
-  document.getElementById("btnHyp").addEventListener("click", function () { jumpTo(1.8,  1.0); });
-  document.getElementById("btnDeg").addEventListener("click", function () { jumpTo(mVal < 1 ? 1.8 : mVal, 0.0); });
+  document.getElementById("btnEll").addEventListener("click", function () { jumpTo(0.55); });
+  document.getElementById("btnPar").addEventListener("click", function () { jumpTo(1.0); });
+  document.getElementById("btnHyp").addEventListener("click", function () { jumpTo(1.8); });
 
   mSlider.addEventListener("input", function () { tween = null; mVal = parseFloat(mSlider.value); updateSlice(); });
-  cSlider.addEventListener("input", function () { tween = null; cVal = parseFloat(cSlider.value); updateSlice(); });
 
   var btnSpin = document.getElementById("btnSpin");
   btnSpin.addEventListener("click", function () {
@@ -695,13 +684,44 @@
   });
 
   // ---------- sizing (fills the iframe) ----------
+  // The equation card and the tilt readout are drawn over the canvas, so the cone
+  // is framed into the clear band between them rather than into the whole canvas.
+  // That keeps them from colliding on a narrow phone as well as on a wide screen.
   function resize() {
     var w = document.getElementById("app").clientWidth;
-    var h = Math.max(260, window.innerHeight - document.getElementById("panel").offsetHeight - 2);
-    stage.style.height = h + "px";
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
+    var h = Math.max(220, window.innerHeight - document.getElementById("panel").offsetHeight - 2);
+
+    var card = document.getElementById("eqcard"), meter = document.getElementById("meter");
+    // Below 560px the card is a strip above the canvas (see the media query), so it
+    // costs canvas height instead of covering the cone.
+    var stacked = window.getComputedStyle(card).position === "static";
+    var cardH = stacked ? card.offsetHeight : 0;
+    var ch = Math.max(150, h - cardH);
+    // size the stage to what it actually holds, so the canvas can never spill over
+    // the control panel and swallow its clicks
+    stage.style.height = (cardH + ch) + "px";
+
+    renderer.setSize(w, ch);
+    camera.aspect = w / ch;
+
+    // How much vertical room a floating overlay really costs depends on how far it
+    // reaches across: spanning the width, the cone must clear it entirely; hugging
+    // the left edge of a wide screen, it barely intrudes.
+    var reach = function (el) { return Math.min(1, el.offsetWidth / (0.45 * w)); };
+    var topPad = stacked ? 0 : (card.offsetHeight + 20) * reach(card);
+    var botPad = (meter.offsetHeight + 20) * reach(meter);
+    // leave at least a third of the canvas for the picture, however tall the overlays are
+    var band = Math.max(0.34, (ch - topPad - botPad) / ch);
+
+    var tanHalf = Math.tan(camera.fov * Math.PI / 360);
+    // fit FIT into the band vertically, and into the full width horizontally
+    radius = FIT / (tanHalf * Math.min(band, camera.aspect));
+
+    // slide the picture into the middle of that band
+    aimShift = 0.5 * (topPad - botPad) * (2 * radius * tanHalf) / ch;
+
     camera.updateProjectionMatrix();
+    placeCamera();
     render();
   }
   window.addEventListener("resize", resize);
