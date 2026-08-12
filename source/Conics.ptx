@@ -72,6 +72,8 @@
       changes the orientation.
     </p>
 
+    <!-- HIDDEN: static conic slicer. The animated slicer below covers the same ground.
+         To restore, delete this comment wrapper.
     <interactive xml:id="interactive-conic-slicer" iframe="conic-slicer.html" width="100%" aspect="8:7">
       <instructions>
         <p>
@@ -87,6 +89,7 @@
         automatically.</p>
       </instructions>
     </interactive>
+    -->
 
     <interactive xml:id="interactive-conic-slicer-manim" iframe="conic-slicer-manim.html" width="100%" aspect="1:1">
       <instructions>
@@ -119,8 +122,26 @@
     </definition>
 
     <p>
-      For the standard parabola <m>x^2 = 4py</m> the vertex is at
+      The standard equation follows from that definition and nothing else. Choose coordinates
+      that make the picture symmetric: put the focus at <m>F(0,p)</m> and the directrix at
+      <m>y = -p</m>, so the two sit on opposite sides of the origin at equal distances. A point
+      <m>P(x,y)</m> lies on the parabola exactly when its distance to <m>F</m> equals its
+      distance to the directrix, and that second distance is measured straight down to the foot
+      <m>(x,-p)</m>:
+<md>\sqrt{x^2 + (y-p)^2} = |y+p|.</md>
+</p>
+    <p>Both sides are non-negative, so squaring loses nothing:
+<md>x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2.</md>
+</p>
+    <p>The <m>y^2</m> and <m>p^2</m> terms cancel from both sides, leaving <m>x^2 = 4py</m>.
+</p>
+    <p>
+      So for the standard parabola <m>x^2 = 4py</m> the vertex is at
       the origin, the focus is at <m>(0,p)</m>, and the directrix is the line <m>y = -p</m>.
+      The vertex sits halfway between focus and directrix, which is why both are a distance
+      <m>|p|</m> from it. If <m>p \lt 0</m> the same algebra applies unchanged and the curve
+      opens downward; interchanging the roles of <m>x</m> and <m>y</m> gives the sideways
+      parabola <m>y^2 = 4px</m>.
     </p>
 
     <figure xml:id="fig-parabola-def">
@@ -665,6 +686,94 @@ identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. F
       <video xml:id="video-hyperbola-formula-a"
              source="videos/hyperbola_formula_a_1080p.mp4"
              width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      The same box explains the asymptotes. Solving <m>\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1</m>
+      for <m>y</m> gives
+<md>y = \pm\frac{b}{a}\,\sqrt{x^2 - a^2}
+      = \pm\frac{b}{a}\,x\,\sqrt{1 - \frac{a^2}{x^2}}\qquad (x \gt 0).</md>
+</p>
+    <p>
+      The whole difference between the hyperbola and the pair of lines <m>y = \pm\frac{b}{a}x</m>
+      is that square root. As <m>|x|</m> grows, <m>a^2/x^2 \to 0</m>, so the root tends to
+      <m>1</m> and the curve tends to those lines. The gap closes but never shuts: since
+      <m>\sqrt{1 - a^2/x^2} \lt 1</m> for every finite <m>x</m>, each branch stays strictly
+      inside its asymptotes, approaching without ever touching. That is exactly the behavior of
+      an asymptote<mdash/>and it is why <m>a</m> and <m>b</m>, which never appear as distances
+      to a focus, nonetheless control the shape at infinity.
+    </p>
+    <p>
+      Geometrically the lines are just the extended diagonals of the central box, as
+      <xref ref="fig-hyperbola-box"/> shows: the diagonal through the corner <m>(a,b)</m> rises
+      <m>b</m> over a run of <m>a</m>, so its slope is <m>b/a</m>, and the one through
+      <m>(a,-b)</m> has slope <m>-b/a</m>. So drawing the box gives the asymptotes for free, and
+      the box plus the two vertices is enough to sketch the curve. For a vertical hyperbola
+      <m>\dfrac{y^2}{a^2} - \dfrac{x^2}{b^2} = 1</m> the box is the same, but the transverse
+      axis is vertical and the slopes become <m>\pm\dfrac{a}{b}</m>.
+    </p>
+
+    <figure xml:id="fig-hyperbola-box">
+      <caption>The central box has half-width <m>a</m> and half-height <m>b</m>. Its diagonals,
+      extended, are exactly the asymptotes: the diagonal to the corner <m>(a,b)</m> has run
+      <m>a</m> and rise <m>b</m>, hence slope <m>\frac{b}{a}</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="hyperbola-box">
+          <diagram dimensions="(420,313)" margins="8">
+            <definition>aa = 2</definition>
+            <definition>bb = 1.6</definition>
+            <definition>H(x,y) = x^2/aa^2 - y^2/bb^2</definition>
+            <coordinates bbox="(-4.3, -3.2, 4.3, 3.2)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <rectangle at="box" lower-left="(-aa,-bb)" dimensions="(2*aa, 2*bb)"
+                         fill="none" stroke="gray" thickness="2"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(aa,bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(aa,-bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <group at="diagonals">
+                <line p1="(-aa,-bb)" p2="(aa,bb)" stroke="purple" thickness="2.5"/>
+                <line p1="(-aa,bb)" p2="(aa,-bb)" stroke="purple" thickness="2.5"/>
+              </group>
+              <group at="run-rise">
+                <line p1="(0,0)" p2="(aa,0)" stroke="red" thickness="3"/>
+                <line p1="(aa,0)" p2="(aa,bb)" stroke="green" thickness="3"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <group at="vertices">
+                <point p="(aa,0)" fill="red" size="2.5"/>
+                <point p="(-aa,0)" fill="red" size="2.5"/>
+              </group>
+              <point at="corner" p="(aa,bb)" fill="purple" size="3"/>
+              <label at="corner-label" anchor="(aa,bb)" alignment="nw" offset="(-4,4)"><m>(a,b)</m></label>
+              <label at="run-label" anchor="(aa/2,0)" alignment="s" offset="(0,-6)"><m>a</m></label>
+              <label at="rise-label" anchor="(aa,bb/2)" alignment="w" offset="(-6,0)"><m>b</m></label>
+              <label at="asym-label-r" anchor="(3.0,3.0*bb/aa)" alignment="nw" offset="(-2,2)"><m>y=\tfrac{b}{a}x</m></label>
+              <label at="asym-label-l" anchor="(-3.0,3.0*bb/aa)" alignment="ne" offset="(2,2)"><m>y=-\tfrac{b}{a}x</m></label>
+              <label at="box-label" anchor="(-1.05,-2.75)" alignment="center"><m>\text{central box}</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="A hyperbola drawn together with its central box, showing that the extended diagonals of the box are the asymptotes">
+                <annotation ref="box"
+                    text="The central box, a rectangle centered at the origin with half-width a and half-height b, so its corners are at plus or minus a comma plus or minus b"/>
+                <annotation ref="diagonals"
+                    text="The two diagonals of the box drawn in purple, from corner to opposite corner through the center"/>
+                <annotation ref="asymptotes"
+                    text="The same two diagonals continued beyond the box as dashed lines, the asymptotes y equals plus and minus b over a times x"/>
+                <annotation ref="run-rise"
+                    text="A red horizontal segment of length a from the center to the vertex, and a green vertical segment of length b from the vertex up to the corner, showing the diagonal has run a and rise b and therefore slope b over a"/>
+                <annotation ref="corner"
+                    text="The corner of the box at a comma b, the point the diagonal passes through"/>
+                <annotation ref="hyperbola"
+                    text="The hyperbola itself, two blue branches opening left and right, each staying inside its asymptotes while drawing closer to them" sonify="yes"/>
+                <annotation ref="vertices"
+                    text="The vertices at plus and minus a comma zero, where each branch meets the box"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
     </figure>
 
     <example xml:id="ex-hyperbola-1">
