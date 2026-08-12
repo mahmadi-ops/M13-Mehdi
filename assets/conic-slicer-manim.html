@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slicing the double cone -- animated</title>
+<style>
+  /* Manim-style palette: dark stage, saturated accents, light serif math. */
+  :root {
+    --bg:        #06070a;
+    --panel:     #101218;
+    --edge:      #262a36;
+    --ink:       #ece6e2;   /* manim's off-white text */
+    --dim:       #9aa0ad;
+    --blue:      #58c4dd;
+    --green:     #83c167;
+    --yellow:    #ffe14d;
+    --red:       #fc6255;
+    --gold:      #f0ac5f;
+    --purple:    #9a72ac;
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  #app { width: 100%; box-sizing: border-box; }
+
+  /* ---- stage ---- */
+  #stage { position: relative; width: 100%; background: var(--bg); }
+  canvas { display: block; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+
+  .overlay { position: absolute; pointer-events: none; }
+
+  /* equation card, top-left, in the spirit of a manim MathTex on screen */
+  #eqcard {
+    top: 12px; left: 14px;
+    padding: 9px 13px 10px 13px;
+    background: rgba(16,18,24,0.72);
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--blue);
+    border-radius: 6px;
+    line-height: 1.45;
+  }
+  .math {
+    font-family: "Latin Modern Math", "Cambria Math", Cambria, Georgia, "Times New Roman", serif;
+    font-size: 18px;
+  }
+  .math i, .var { font-style: italic; }
+  #conicName {
+    font-size: 17px; font-weight: 600; letter-spacing: .2px;
+    transition: color .3s ease;
+  }
+  #conicCond { font-size: 13px; color: var(--dim); }
+
+  /* eccentricity / tilt readout, bottom-left */
+  #meter {
+    left: 14px; bottom: 12px;
+    padding: 8px 12px 9px 12px;
+    background: rgba(16,18,24,0.72);
+    border: 1px solid var(--edge);
+    border-radius: 6px;
+    font-size: 13px; color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+  #meter b { color: var(--ink); font-weight: 600; }
+  #bar {
+    position: relative; margin-top: 6px;
+    width: 168px; height: 5px; border-radius: 3px;
+    background: linear-gradient(to right, var(--green) 0%, var(--green) 49%,
+                                var(--yellow) 50%, var(--red) 51%, var(--red) 100%);
+    opacity: .75;
+  }
+  #barKnob {
+    position: absolute; top: -3px; width: 3px; height: 11px;
+    background: var(--ink); border-radius: 2px;
+    transition: left .12s linear;
+  }
+
+  /* caption for the guided tour, bottom-centre, fades like a manim Write() */
+  #caption {
+    left: 50%; transform: translateX(-50%);
+    bottom: 68px; max-width: 66%;
+    text-align: center; font-size: 15px; line-height: 1.4;
+    background: rgba(6,7,10,0.78);
+    padding: 7px 14px; border-radius: 6px;
+    opacity: 0; transition: opacity .45s ease;
+  }
+  #caption.show { opacity: 1; }
+
+  /* ---- control panel ---- */
+  #panel {
+    border-top: 1px solid var(--edge);
+    background: var(--panel);
+    padding: 9px 12px 11px 12px;
+    box-sizing: border-box;
+  }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .row + .row { margin-top: 9px; }
+  .lbl { font-size: 13px; color: var(--dim); }
+
+  button {
+    font: inherit; font-size: 13.5px;
+    padding: 5px 12px; border-radius: 999px;
+    color: var(--ink); background: #1a1d26;
+    border: 1px solid var(--edge);
+    cursor: pointer; transition: background .15s, border-color .15s, color .15s;
+  }
+  button:hover { background: #232734; }
+  button:disabled { opacity: .45; cursor: default; }
+  button.active { color: #06070a; font-weight: 600; }
+  #btnEll.active { background: var(--green);  border-color: var(--green); }
+  #btnPar.active { background: var(--yellow); border-color: var(--yellow); }
+  #btnHyp.active { background: var(--red);    border-color: var(--red); }
+  #btnDeg.active { background: var(--purple); border-color: var(--purple); color: var(--ink); }
+  #btnTour.running { background: var(--blue); border-color: var(--blue); color: #06070a; font-weight: 600; }
+  #btnSpin.active  { background: var(--blue); border-color: var(--blue); color: #06070a; font-weight: 600; }
+
+  .sliderRow { display: flex; align-items: center; gap: 10px; }
+  .sliderRow .name {
+    font-size: 14px; min-width: 104px;
+    font-family: "Latin Modern Math", "Cambria Math", Cambria, Georgia, serif;
+    font-variant-numeric: tabular-nums;
+  }
+  input[type=range] {
+    flex: 1; min-width: 120px; height: 22px;
+    -webkit-appearance: none; appearance: none; background: transparent;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 3px; border-radius: 2px; background: var(--edge);
+  }
+  input[type=range]::-moz-range-track {
+    height: 3px; border-radius: 2px; background: var(--edge);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 14px; height: 14px; margin-top: -5.5px;
+    border-radius: 50%; background: var(--blue); border: none; cursor: pointer;
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 14px; height: 14px; border: none;
+    border-radius: 50%; background: var(--blue); cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="stage">
+    <div id="eqcard" class="overlay">
+      <div class="math" style="color:#9cdceb"><i>x</i>&#178; + <i>y</i>&#178; = <i>z</i>&#178;</div>
+      <div class="math">cut by &nbsp;<i>z</i> = <span id="eqM">0.50</span>&#8202;<i>y</i> <span id="eqSign">+</span> <span id="eqC">1.00</span></div>
+      <div id="conicName">Ellipse</div>
+      <div id="conicCond">tilt shallower than the slant</div>
+    </div>
+
+    <div id="meter" class="overlay">
+      tilt <b id="tiltDeg">26.6&#176;</b> &nbsp;vs&nbsp; slant <b>45.0&#176;</b>
+      &nbsp;&#183;&nbsp; eccentricity <b id="ecc">0.63</b>
+      <div id="bar"><div id="barKnob" style="left:0px"></div></div>
+    </div>
+
+    <div id="caption" class="overlay"></div>
+  </div>
+
+  <div id="panel">
+    <div class="row">
+      <span class="lbl">Jump to:</span>
+      <button id="btnEll">Ellipse</button>
+      <button id="btnPar">Parabola</button>
+      <button id="btnHyp">Hyperbola</button>
+      <button id="btnDeg">Degenerate</button>
+      <span style="flex:1"></span>
+      <button id="btnTour">&#9654;&nbsp;Play</button>
+      <button id="btnSpin">Spin</button>
+    </div>
+    <div class="row sliderRow">
+      <span class="name">tilt <i>m</i> = <span id="mVal">0.50</span></span>
+      <input type="range" id="mSlider" min="0" max="2.4" step="0.01" value="0.5"
+             aria-label="tilt m of the cutting plane">
+    </div>
+    <div class="row sliderRow">
+      <span class="name">offset <i>c</i> = <span id="cVal">1.00</span></span>
+      <input type="range" id="cSlider" min="-2" max="2" step="0.01" value="1"
+             aria-label="vertical offset c of the cutting plane">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // Manim colour constants, so the palette below reads the way a Scene would.
+  var BLUE_D = 0x29abca, BLUE_E = 0x1c758a, BLUE_C = 0x58c4dd,
+      GREEN_C = 0x83c167, YELLOW = 0xffe14d, RED_C = 0xfc6255,
+      GOLD_C = 0xf0ac5f, PURPLE_C = 0x9a72ac, GREY = 0x8a8f9c, INK = 0xece6e2;
+
+  var EPS = 1e-9;
+  var ZMAX = 2.4;      // the cone is drawn for |z| <= ZMAX
+  var SLANT = 45;      // half-angle of x^2 + y^2 = z^2, in degrees
+
+  // ---------- renderer / scene ----------
+  var stage = document.getElementById("stage");
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  stage.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x06070a);
+
+  var camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  camera.up.set(0, 0, 1);                 // z is up, the usual maths convention
+
+  var radius = 10.4, theta = 0.62, phi = 0.86;
+  function placeCamera() {
+    camera.position.set(
+      radius * Math.sin(phi) * Math.cos(theta),
+      radius * Math.sin(phi) * Math.sin(theta),
+      radius * Math.cos(phi)
+    );
+    camera.lookAt(0, 0, 0);
+  }
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
+  var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(5, 3, 6);
+  var fill = new THREE.DirectionalLight(0x9fd8ff, 0.30); fill.position.set(-4, -5, 2);
+  scene.add(key); scene.add(fill);
+
+  // ---------- text sprites (axis labels) ----------
+  function makeLabel(text, cssColor) {
+    var s = 128, cv = document.createElement("canvas");
+    cv.width = cv.height = s;
+    var g = cv.getContext("2d");
+    g.font = "italic 78px Georgia, 'Times New Roman', serif";
+    g.fillStyle = cssColor;
+    g.textAlign = "center";
+    g.textBaseline = "middle";
+    g.fillText(text, s / 2, s / 2);
+    var tex = new THREE.CanvasTexture(cv);
+    tex.minFilter = THREE.LinearFilter;
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: tex, transparent: true, depthTest: false
+    }));
+    sp.scale.set(0.46, 0.46, 1);
+    return sp;
+  }
+
+  // ---------- axes, with manim-ish arrow tips ----------
+  (function buildAxes() {
+    var A = 2.95;
+    var mat = new THREE.LineBasicMaterial({ color: GREY, transparent: true, opacity: 0.55 });
+    var tipMat = new THREE.MeshBasicMaterial({ color: GREY, transparent: true, opacity: 0.75 });
+    var dirs = [
+      { v: new THREE.Vector3(1, 0, 0), rot: [0, 0, -Math.PI / 2], t: "x" },
+      { v: new THREE.Vector3(0, 1, 0), rot: [0, 0, 0],            t: "y" },
+      { v: new THREE.Vector3(0, 0, 1), rot: [Math.PI / 2, 0, 0],  t: "z" }
+    ];
+    dirs.forEach(function (d) {
+      var a = d.v.clone().multiplyScalar(-A), b = d.v.clone().multiplyScalar(A);
+      scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), mat));
+      var tip = new THREE.Mesh(new THREE.ConeGeometry(0.075, 0.24, 14), tipMat);
+      tip.position.copy(b);
+      tip.rotation.set(d.rot[0], d.rot[1], d.rot[2]);
+      scene.add(tip);
+      var lab = makeLabel(d.t, "#9aa0ad");
+      lab.position.copy(d.v.clone().multiplyScalar(A + 0.34));
+      scene.add(lab);
+    });
+  })();
+
+  // ---------- the double cone x^2 + y^2 = z^2 ----------
+  // Built with a checkerboard of BLUE_D / BLUE_E, the way manim shades a Surface.
+  (function buildCone() {
+    var nu = 72, nv = 36;
+    var pos = [], col = [];
+    var cA = new THREE.Color(BLUE_D), cB = new THREE.Color(BLUE_E);
+
+    function P(i, j) {
+      var v = -ZMAX + (2 * ZMAX * j) / nv;
+      var r = Math.abs(v);                       // on the cone the radius is |z|
+      var t = (2 * Math.PI * i) / nu;
+      return new THREE.Vector3(r * Math.cos(t), r * Math.sin(t), v);
+    }
+    for (var j = 0; j < nv; j++) {
+      for (var i = 0; i < nu; i++) {
+        var a = P(i, j), b = P(i + 1, j), c = P(i + 1, j + 1), d = P(i, j + 1);
+        [a, b, c, a, c, d].forEach(function (p) { pos.push(p.x, p.y, p.z); });
+        var cc = ((i + j) % 2 === 0) ? cA : cB;
+        for (var k = 0; k < 6; k++) col.push(cc.r, cc.g, cc.b);
+      }
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
+    geo.computeVertexNormals();
+    scene.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({
+      vertexColors: true, transparent: true, opacity: 0.42,
+      side: THREE.DoubleSide, depthWrite: false, shininess: 42
+    })));
+  })();
+
+  // ---------- the two rulings lying in the plane x = 0 ----------
+  // The plane z = m*y + c is parallel to the ruling z = y exactly when m = 1;
+  // that ruling lights up as the section turns into a parabola.
+  var rulingMat = new THREE.LineBasicMaterial({ color: GOLD_C, transparent: true, opacity: 0.22 });
+  var rulingHot = new THREE.LineBasicMaterial({ color: YELLOW, transparent: true, opacity: 0.95 });
+  var rulingUp = new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+        [new THREE.Vector3(0, -ZMAX, -ZMAX), new THREE.Vector3(0, ZMAX, ZMAX)]), rulingMat);
+  var rulingDn = new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+        [new THREE.Vector3(0, -ZMAX, ZMAX), new THREE.Vector3(0, ZMAX, -ZMAX)]), rulingMat);
+  scene.add(rulingUp); scene.add(rulingDn);
+
+  // ---------- the cutting plane ----------
+  var PLANE = 6.0;
+  var planeMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(PLANE, PLANE),
+    new THREE.MeshPhongMaterial({
+      color: 0xd8dee9, transparent: true, opacity: 0.13,
+      side: THREE.DoubleSide, depthWrite: false
+    })
+  );
+  scene.add(planeMesh);
+
+  var planeEdge = new THREE.LineSegments(
+    new THREE.EdgesGeometry(new THREE.PlaneGeometry(PLANE, PLANE)),
+    new THREE.LineBasicMaterial({ color: 0xd8dee9, transparent: true, opacity: 0.34 })
+  );
+  scene.add(planeEdge);
+
+  // ---------- the section curve ----------
+  var curveGroup = new THREE.Group();
+  scene.add(curveGroup);
+  var coreMat = new THREE.MeshBasicMaterial({ color: GREEN_C });
+  var glowMat = new THREE.MeshBasicMaterial({
+    color: GREEN_C, transparent: true, opacity: 0.22,
+    blending: THREE.AdditiveBlending, depthWrite: false
+  });
+
+  function setCurveColor(hex) {
+    coreMat.color.setHex(hex);
+    glowMat.color.setHex(hex);
+  }
+  function clearCurves() {
+    while (curveGroup.children.length) {
+      var m = curveGroup.children.pop();
+      m.geometry.dispose();
+    }
+  }
+  function addTube(points, closed) {
+    if (points.length < 2) return;
+    var curve = new THREE.CatmullRomCurve3(points, !!closed);
+    var n = Math.max(32, points.length * 2);
+    curveGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, 0.038, 10, !!closed), coreMat));
+    curveGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, 0.10, 10, !!closed), glowMat));
+  }
+  function addDot(p) {
+    var m = new THREE.Mesh(new THREE.SphereGeometry(0.085, 18, 14), coreMat);
+    m.position.copy(p);
+    curveGroup.add(m);
+  }
+
+  // ---------- state ----------
+  var mVal = 0.5, cVal = 1.0;
+
+  // On the plane z = m*y + c the cone gives
+  //     (1 - m^2) y^2 - 2 m c y + (x^2 - c^2) = 0,
+  // and for m > 1 the two y-roots trace the two branches of the hyperbola.
+  function yRoot(x, sign, m, c) {
+    var q = 1 - m * m;
+    var disc = m * m * c * c - q * (x * x - c * c);
+    return (m * c + sign * Math.sqrt(Math.max(0, disc))) / q;
+  }
+
+  function classify(m, c) {
+    var degenerate = Math.abs(c) < 1e-4;
+    var isPar = Math.abs(m - 1) < 5e-3;
+    if (degenerate) {
+      if (isPar)   return { key: "deg-line",   name: "Degenerate: one line",    cond: "the plane touches the cone along a ruling", color: PURPLE_C };
+      if (m < 1)   return { key: "deg-point",  name: "Degenerate: a point",     cond: "the plane meets the cone only at the apex", color: PURPLE_C };
+      return       { key: "deg-cross",  name: "Degenerate: two lines",   cond: "the plane cuts both nappes through the apex", color: PURPLE_C };
+    }
+    if (isPar)     return { key: "par", name: "Parabola",  cond: "tilt equal to the slant — parallel to a ruling", color: YELLOW };
+    if (m < 1) {
+      if (m < 5e-3) return { key: "ell", name: "Circle",   cond: "plane perpendicular to the axis", color: GREEN_C };
+      return        { key: "ell", name: "Ellipse",  cond: "tilt shallower than the slant — one nappe", color: GREEN_C };
+    }
+    return           { key: "hyp", name: "Hyperbola", cond: "tilt steeper than the slant — both nappes", color: RED_C };
+  }
+
+  function updateSlice() {
+    clearCurves();
+
+    // The plane z = m*y + c is the xy-plane rotated about the x-axis by atan(m).
+    planeMesh.rotation.set(Math.atan(mVal), 0, 0);
+    planeMesh.position.set(0, 0, cVal);
+    planeEdge.rotation.copy(planeMesh.rotation);
+    planeEdge.position.copy(planeMesh.position);
+
+    var info = classify(mVal, cVal);
+    setCurveColor(info.color);
+
+    var i, t, x, y, z, pts, seg;
+    var degenerate = Math.abs(cVal) < 1e-4;
+    var isPar = Math.abs(mVal - 1) < 5e-3;
+
+    if (degenerate) {
+      if (info.key === "deg-point") {
+        addDot(new THREE.Vector3(0, 0, 0));
+      } else if (info.key === "deg-line") {
+        addTube([new THREE.Vector3(0, -ZMAX, -ZMAX), new THREE.Vector3(0, ZMAX, ZMAX)]);
+      } else {
+        var sl = Math.sqrt(mVal * mVal - 1), ymax = ZMAX / mVal;
+        [1, -1].forEach(function (sg) {
+          addTube([
+            new THREE.Vector3(sg * sl * (-ymax), -ymax, -ZMAX),
+            new THREE.Vector3(sg * sl * ymax, ymax, ZMAX)
+          ]);
+        });
+      }
+    } else if (isPar) {
+      // y = (x^2 - c^2)/(2c),  z = y + c, on the nappe carrying the sign of c
+      var xlim = Math.sqrt(Math.max(0, 2 * Math.abs(cVal) * ZMAX - cVal * cVal));
+      pts = [];
+      for (i = 0; i <= 150; i++) {
+        x = -xlim + (2 * xlim * i) / 150;
+        y = (x * x - cVal * cVal) / (2 * cVal);
+        z = y + cVal;
+        if (Math.abs(z) <= ZMAX + 1e-9) pts.push(new THREE.Vector3(x, y, z));
+      }
+      addTube(pts);
+    } else if (mVal < 1) {
+      var q = 1 - mVal * mVal;
+      var y0 = mVal * cVal / q;                     // centre, along y
+      var Ay = cVal / q;                            // signed semi-axis along y
+      var Bx = Math.abs(cVal) / Math.sqrt(q);       // semi-axis along x
+      var clipped = Math.abs(cVal) / (1 - mVal) > ZMAX + 1e-9;
+      var M = 170;
+      if (!clipped) {
+        pts = [];
+        for (i = 0; i < M; i++) {
+          t = (2 * Math.PI * i) / M;
+          y = y0 + Ay * Math.sin(t);
+          pts.push(new THREE.Vector3(Bx * Math.cos(t), y, mVal * y + cVal));
+        }
+        addTube(pts, true);
+      } else {
+        seg = [];
+        for (i = 0; i <= M; i++) {
+          t = (2 * Math.PI * i) / M;
+          y = y0 + Ay * Math.sin(t);
+          z = mVal * y + cVal;
+          if (Math.abs(z) <= ZMAX) seg.push(new THREE.Vector3(Bx * Math.cos(t), y, z));
+          else { addTube(seg); seg = []; }
+        }
+        addTube(seg);
+      }
+    } else {
+      [-1, 1].forEach(function (sg) {
+        // bisect for the |x| at which the branch leaves the drawn part of the cone
+        var lo = 0, hi = 60;
+        for (var k = 0; k < 60; k++) {
+          var mid = 0.5 * (lo + hi);
+          if (Math.abs(mVal * yRoot(mid, sg, mVal, cVal) + cVal) > ZMAX) hi = mid; else lo = mid;
+        }
+        var segb = [];
+        for (var ii = 0; ii <= 150; ii++) {
+          var xx = -lo + (2 * lo * ii) / 150;
+          var yb = yRoot(xx, sg, mVal, cVal);
+          var zb = mVal * yb + cVal;
+          if (Math.abs(zb) <= ZMAX + 1e-6) segb.push(new THREE.Vector3(xx, yb, zb));
+        }
+        addTube(segb);
+      });
+    }
+
+    // the ruling the plane is racing turns bright at m = 1
+    rulingUp.material = isPar ? rulingHot : rulingMat;
+
+    paintReadouts(info);
+    render();
+  }
+
+  // ---------- readouts ----------
+  var elEqM = document.getElementById("eqM"),
+      elEqC = document.getElementById("eqC"),
+      elEqSign = document.getElementById("eqSign"),
+      elName = document.getElementById("conicName"),
+      elCond = document.getElementById("conicCond"),
+      elTilt = document.getElementById("tiltDeg"),
+      elEcc = document.getElementById("ecc"),
+      elKnob = document.getElementById("barKnob"),
+      elMVal = document.getElementById("mVal"),
+      elCVal = document.getElementById("cVal");
+
+  var CSS = { };
+  CSS[GREEN_C] = "#83c167"; CSS[YELLOW] = "#ffe14d";
+  CSS[RED_C] = "#fc6255";   CSS[PURPLE_C] = "#9a72ac";
+
+  function paintReadouts(info) {
+    elEqM.textContent = mVal.toFixed(2);
+    elEqSign.textContent = cVal < 0 ? "−" : "+";
+    elEqC.textContent = Math.abs(cVal).toFixed(2);
+    elName.textContent = info.name;
+    elName.style.color = CSS[info.color] || "#ece6e2";
+    elCond.textContent = info.cond;
+
+    var tilt = Math.atan(mVal) * 180 / Math.PI;
+    elTilt.textContent = tilt.toFixed(1) + "°";
+    // For a cone of half-angle 45 degrees, e = cos(angle to axis)/cos(45) = sqrt(2) sin(tilt).
+    elEcc.textContent = (Math.SQRT2 * Math.sin(Math.atan(mVal))).toFixed(2);
+    elKnob.style.left = (Math.min(1, tilt / (2 * SLANT)) * 168 - 1.5) + "px";
+
+    elMVal.textContent = mVal.toFixed(2);
+    elCVal.textContent = cVal.toFixed(2);
+
+    document.getElementById("btnEll").classList.toggle("active", info.key === "ell");
+    document.getElementById("btnPar").classList.toggle("active", info.key === "par");
+    document.getElementById("btnHyp").classList.toggle("active", info.key === "hyp");
+    document.getElementById("btnDeg").classList.toggle("active", info.key.indexOf("deg") === 0);
+
+    mSlider.value = String(mVal);
+    cSlider.value = String(cVal);
+  }
+
+  // ---------- render loop ----------
+  var spinning = false, rafId = null, lastT = 0;
+
+  function render() { renderer.render(scene, camera); }
+
+  function frame(now) {
+    rafId = requestAnimationFrame(frame);
+    var dt = lastT ? Math.min(0.05, (now - lastT) / 1000) : 0;
+    lastT = now;
+    var dirty = false;
+
+    if (spinning || tour.running) {
+      theta += (tour.running ? 0.10 : 0.22) * dt;
+      placeCamera();
+      dirty = true;
+    }
+    if (tween) { stepTween(dt); dirty = true; }   // stepTween redraws the slice itself
+    else if (dirty) render();
+
+    if (!spinning && !tour.running && !tween) { cancelAnimationFrame(rafId); rafId = null; lastT = 0; }
+  }
+  function ensureLoop() { if (rafId === null) { lastT = 0; rafId = requestAnimationFrame(frame); } }
+
+  // ---------- tweening, with manim's smoothstep rate function ----------
+  function smooth(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+
+  var tween = null;
+  function animateTo(targetM, targetC, seconds, done) {
+    tween = { m0: mVal, c0: cVal, m1: targetM, c1: targetC, t: 0, dur: Math.max(0.01, seconds), done: done };
+    ensureLoop();
+  }
+  function stepTween(dt) {
+    tween.t += dt;
+    var a = smooth(Math.min(1, tween.t / tween.dur));
+    mVal = tween.m0 + (tween.m1 - tween.m0) * a;
+    cVal = tween.c0 + (tween.c1 - tween.c0) * a;
+    updateSlice();
+    if (tween.t >= tween.dur) {
+      mVal = tween.m1; cVal = tween.c1;
+      var cb = tween.done;
+      tween = null;
+      updateSlice();
+      if (cb) cb();
+    }
+  }
+
+  // ---------- the guided tour: a little Scene, played in the browser ----------
+  var elCaption = document.getElementById("caption");
+  function say(text) {
+    elCaption.classList.remove("show");
+    window.setTimeout(function () {
+      elCaption.textContent = text;
+      elCaption.classList.add("show");
+    }, text ? 160 : 0);
+  }
+
+  var STORY = [
+    { say: "A plane perpendicular to the axis cuts a circle.",            m: 0.0,  c: 1.0,  run: 1.2, hold: 1.1 },
+    { say: "Tilt it a little — shallower than the slant — and the circle stretches into an ellipse.", m: 0.55, c: 1.0, run: 1.6, hold: 1.4 },
+    { say: "At tilt = slant the plane is parallel to a ruling (gold). The curve opens up: a parabola.", m: 1.0,  c: 1.0,  run: 1.8, hold: 1.8 },
+    { say: "Steeper still, and the plane reaches the second nappe: a hyperbola, in two branches.",      m: 1.8,  c: 1.0,  run: 1.8, hold: 1.6 },
+    { say: "Slide the plane down through the apex and the section degenerates — here, two crossing lines.", m: 1.8, c: 0.0, run: 1.6, hold: 1.6 },
+    { say: "Your turn: drag the sliders, and drag the figure to look from anywhere.",                   m: 0.55, c: 1.0,  run: 1.6, hold: 0.9 }
+  ];
+
+  var tour = { running: false, i: 0, timer: null };
+  var btnTour = document.getElementById("btnTour");
+
+  function tourStep() {
+    if (!tour.running) return;
+    if (tour.i >= STORY.length) { stopTour(); return; }
+    var beat = STORY[tour.i++];
+    say(beat.say);
+    animateTo(beat.m, beat.c, beat.run, function () {
+      if (!tour.running) return;
+      tour.timer = window.setTimeout(tourStep, beat.hold * 1000);
+    });
+  }
+  function startTour() {
+    tour.running = true; tour.i = 0;
+    btnTour.innerHTML = "&#10074;&#10074;&nbsp;Stop";
+    btnTour.classList.add("running");
+    setSlidersEnabled(false);
+    ensureLoop();
+    tourStep();
+  }
+  function stopTour() {
+    tour.running = false;
+    if (tour.timer) { window.clearTimeout(tour.timer); tour.timer = null; }
+    tween = null;
+    btnTour.innerHTML = "&#9654;&nbsp;Play";
+    btnTour.classList.remove("running");
+    setSlidersEnabled(true);
+    say("");
+    updateSlice();
+  }
+  btnTour.addEventListener("click", function () { tour.running ? stopTour() : startTour(); });
+
+  function setSlidersEnabled(on) {
+    mSlider.disabled = !on; cSlider.disabled = !on;
+    mSlider.style.opacity = cSlider.style.opacity = on ? "1" : "0.45";
+  }
+
+  // ---------- drag to orbit ----------
+  var dragging = false, lastX = 0, lastY = 0;
+  var el = renderer.domElement;
+  function startDrag(x, y) { dragging = true; lastX = x; lastY = y; }
+  function moveDrag(x, y) {
+    if (!dragging) return;
+    theta -= (x - lastX) * 0.008;
+    phi = Math.min(Math.PI - 0.05, Math.max(0.05, phi - (y - lastY) * 0.008));
+    lastX = x; lastY = y;
+    placeCamera();
+    render();
+  }
+  el.addEventListener("mousedown", function (e) { startDrag(e.clientX, e.clientY); });
+  window.addEventListener("mousemove", function (e) { moveDrag(e.clientX, e.clientY); });
+  window.addEventListener("mouseup", function () { dragging = false; });
+  el.addEventListener("touchstart", function (e) {
+    if (e.touches.length === 1) { startDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault(); }
+  }, { passive: false });
+  el.addEventListener("touchmove", function (e) {
+    if (e.touches.length === 1) { moveDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault(); }
+  }, { passive: false });
+  window.addEventListener("touchend", function () { dragging = false; });
+
+  // ---------- controls ----------
+  var mSlider = document.getElementById("mSlider");
+  var cSlider = document.getElementById("cSlider");
+
+  function jumpTo(m, c) {
+    if (tour.running) stopTour();
+    animateTo(m, c, 0.9);
+  }
+  document.getElementById("btnEll").addEventListener("click", function () { jumpTo(0.55, 1.0); });
+  document.getElementById("btnPar").addEventListener("click", function () { jumpTo(1.0,  1.0); });
+  document.getElementById("btnHyp").addEventListener("click", function () { jumpTo(1.8,  1.0); });
+  document.getElementById("btnDeg").addEventListener("click", function () { jumpTo(mVal < 1 ? 1.8 : mVal, 0.0); });
+
+  mSlider.addEventListener("input", function () { tween = null; mVal = parseFloat(mSlider.value); updateSlice(); });
+  cSlider.addEventListener("input", function () { tween = null; cVal = parseFloat(cSlider.value); updateSlice(); });
+
+  var btnSpin = document.getElementById("btnSpin");
+  btnSpin.addEventListener("click", function () {
+    spinning = !spinning;
+    btnSpin.classList.toggle("active", spinning);
+    if (spinning) ensureLoop();
+  });
+
+  // ---------- sizing (fills the iframe) ----------
+  function resize() {
+    var w = document.getElementById("app").clientWidth;
+    var h = Math.max(260, window.innerHeight - document.getElementById("panel").offsetHeight - 2);
+    stage.style.height = h + "px";
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    render();
+  }
+  window.addEventListener("resize", resize);
+
+  // ---------- go ----------
+  placeCamera();
+  resize();
+  updateSlice();
+})();
+</script>
+</body>
+</html>
