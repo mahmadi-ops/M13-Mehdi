@@ -87,6 +87,25 @@
         automatically.</p>
       </instructions>
     </interactive>
+
+    <interactive xml:id="interactive-conic-slicer-manim" iframe="conic-slicer-manim.html" width="100%" aspect="8:7">
+      <instructions>
+        <p>
+        The same cut, animated. Press <q>Play</q> to watch the plane
+        <m>z = m\,y + c</m> swing from horizontal to steep in one continuous motion:
+        the circle stretches to an ellipse, opens into a parabola at the instant the
+        plane becomes parallel to the gold ruling on the cone (<m>m = 1</m>), and then
+        breaks into the two branches of a hyperbola once the plane is steep enough to
+        reach the lower nappe. The reading at the lower left compares the tilt of the
+        plane with the <m>45^\circ</m> slant of the cone and shows the resulting
+        eccentricity <m>e = \sqrt{2}\,\sin\bigl(\arctan m\bigr)</m>, so you can see
+        <m>e</m> pass through <m>1</m> exactly when the parabola appears. Stop the
+        animation at any time and take the sliders yourself; set <m>c = 0</m> to send
+        the plane through the apex and watch the section degenerate to a point, a single
+        line, or a pair of crossing lines. Drag the figure to change the viewpoint, or
+        press <q>Spin</q> to let it turn.</p>
+      </instructions>
+    </interactive>
   </introduction>
 
   <!-- ===================== PARABOLA ===================== -->
