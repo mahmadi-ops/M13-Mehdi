@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slicing the double cone -- animated</title>
+<!-- The same two families the book itself loads (see pretext-html.xsl), so the
+     figure's lettering matches the surrounding page rather than the reader's
+     system UI font: Open Sans for text, PT Serif for the mathematics. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <style>
   /* Manim-style palette: dark stage, saturated accents, light serif math. */
   :root {
@@ -18,10 +24,13 @@
     --red:       #fc6255;
     --gold:      #f0ac5f;
     --purple:    #9a72ac;
+    /* the book's own stacks */
+    --sans:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: "PT Serif", "Times New Roman", Times, serif;
   }
   html, body { margin: 0; padding: 0; background: var(--bg); }
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--sans);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
   }
@@ -44,10 +53,7 @@
     border-radius: 6px;
     line-height: 1.45;
   }
-  .math {
-    font-family: "Latin Modern Math", "Cambria Math", Cambria, Georgia, "Times New Roman", serif;
-    font-size: 18px;
-  }
+  .math { font-family: var(--serif); font-size: 18px; }
   .math i, .var { font-style: italic; }
   #conicName {
     font-size: 17px; font-weight: 600; letter-spacing: .2px;
@@ -121,7 +127,7 @@
   .sliderRow { display: flex; align-items: center; gap: 10px; }
   .sliderRow .name {
     font-size: 14px; min-width: 104px;
-    font-family: "Latin Modern Math", "Cambria Math", Cambria, Georgia, serif;
+    font-family: var(--serif);
     font-variant-numeric: tabular-nums;
   }
   input[type=range] {
@@ -230,21 +236,35 @@
   scene.add(key); scene.add(fill);
 
   // ---------- text sprites (axis labels) ----------
-  function makeLabel(text, cssColor) {
+  // Drawn in the book's serif. The webfont may still be loading when the sprites
+  // are first painted, so they are repainted once document.fonts settles.
+  var LABEL_FONT = 'italic 78px "PT Serif", "Times New Roman", Times, serif';
+  var LABELS = [];
+
+  function paintLabel(rec) {
     var s = 128, cv = document.createElement("canvas");
     cv.width = cv.height = s;
     var g = cv.getContext("2d");
-    g.font = "italic 78px Georgia, 'Times New Roman', serif";
-    g.fillStyle = cssColor;
+    g.font = LABEL_FONT;
+    g.fillStyle = rec.color;
     g.textAlign = "center";
     g.textBaseline = "middle";
-    g.fillText(text, s / 2, s / 2);
+    g.fillText(rec.text, s / 2, s / 2);
     var tex = new THREE.CanvasTexture(cv);
     tex.minFilter = THREE.LinearFilter;
+    if (rec.sprite.material.map) rec.sprite.material.map.dispose();
+    rec.sprite.material.map = tex;
+    rec.sprite.material.needsUpdate = true;
+  }
+
+  function makeLabel(text, cssColor) {
     var sp = new THREE.Sprite(new THREE.SpriteMaterial({
-      map: tex, transparent: true, depthTest: false
+      transparent: true, depthTest: false
     }));
     sp.scale.set(0.46, 0.46, 1);
+    var rec = { sprite: sp, text: text, color: cssColor };
+    LABELS.push(rec);
+    paintLabel(rec);
     return sp;
   }
 
@@ -690,6 +710,14 @@
   placeCamera();
   resize();
   updateSlice();
+
+  // repaint the axis labels once PT Serif has actually arrived
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      LABELS.forEach(paintLabel);
+      render();
+    });
+  }
 })();
 </script>
 </body>
