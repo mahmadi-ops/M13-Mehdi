@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-triangle-area-figure" width="360" height="220" viewBox="0 0 360 220">
+<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-triangle-area-figure" width="330" height="220" viewBox="0 0 330 220">
   <defs>
     <clipPath id="prefigure-triangle-area-__clipPath-0">
-      <rect x="10.0" y="10.0" width="340.0" height="200.0"/>
+      <rect x="10.0" y="10.0" width="310.0" height="200.0"/>
     </clipPath>
     <clipPath id="prefigure-triangle-area-__clipPath-1">
-      <rect x="10.0" y="10.0" width="340.0" height="200.0"/>
+      <rect x="10.0" y="10.0" width="310.0" height="200.0"/>
     </clipPath>
     <marker id="prefigure-triangle-area-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
@@ -39,12 +39,12 @@
       </g>
     </marker>
   </defs>
-  <line id="prefigure-triangle-area-tri-side-bc" x1="114.6" y1="38.6" x2="245.4" y2="181.4" stroke="black" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <line id="prefigure-triangle-area-tri-side-top" x1="114.6" y1="38.6" x2="323.8" y2="38.6" stroke="red" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <line id="prefigure-triangle-area-tri-side-right" x1="245.4" y1="181.4" x2="323.8" y2="38.6" stroke="blue" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <path id="prefigure-triangle-area-tri-vec-ac" stroke="blue" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-blue)" d="M 36.2 181.4 L 112.8 41.8"/>
-  <path id="prefigure-triangle-area-tri-vec-ab" stroke="red" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-red)" d="M 36.2 181.4 L 241.7 181.4"/>
-  <g id="prefigure-triangle-area-tri-ac-label" transform="translate(71.4,106.0) translate(-27.3,-20.6)">
+  <line id="prefigure-triangle-area-tri-side-bc" x1="105.4" y1="38.6" x2="224.6" y2="181.4" stroke="black" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+  <line id="prefigure-triangle-area-tri-side-top" x1="105.4" y1="38.6" x2="296.2" y2="38.6" stroke="red" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+  <line id="prefigure-triangle-area-tri-side-right" x1="224.6" y1="181.4" x2="296.2" y2="38.6" stroke="blue" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+  <path id="prefigure-triangle-area-tri-vec-ac" stroke="blue" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-blue)" d="M 33.8 181.4 L 103.7 41.9"/>
+  <path id="prefigure-triangle-area-tri-vec-ab" stroke="red" stroke-width="3" fill="none" marker-end="url(#prefigure-triangle-area-arrow-head-end-3_None_24_60-red)" d="M 33.8 181.4 L 220.9 181.4"/>
+  <g id="prefigure-triangle-area-tri-ac-label" transform="translate(65.6,106.0) translate(-27.3,-20.6)">
     <g id="prefigure-triangle-area-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px; color:blue" width="27.328px" height="20.648px" role="img" focusable="false" viewBox="0 -1119 1510 1141" x="0.0" y="0.0">
         <defs>
@@ -78,7 +78,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-triangle-area-tri-ab-label" transform="translate(140.8,185.4) translate(-13.7,-0.0)">
+  <g id="prefigure-triangle-area-tri-ab-label" transform="translate(129.2,185.4) translate(-13.7,-0.0)">
     <g id="prefigure-triangle-area-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:red" width="27.312px" height="20.256px" role="img" focusable="false" viewBox="0 -1119 1509 1119" x="0.0" y="0.0">
         <defs>

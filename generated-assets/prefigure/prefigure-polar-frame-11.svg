@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-polar-frame-figure" width="458" height="458" viewBox="0 0 458 458">
+<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-polar-frame-figure" width="483" height="458" viewBox="0 0 483 458">
   <defs>
     <clipPath id="prefigure-polar-frame-__clipPath-0">
-      <rect x="14.0" y="14.0" width="430.0" height="430.0"/>
+      <rect x="14.0" y="14.0" width="455.0" height="430.0"/>
     </clipPath>
     <clipPath id="prefigure-polar-frame-__clipPath-1">
-      <rect x="14.0" y="14.0" width="430.0" height="430.0"/>
+      <rect x="14.0" y="14.0" width="455.0" height="430.0"/>
     </clipPath>
     <marker id="prefigure-polar-frame-arrow-head-end-2_None_24_60-h666666" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#666666" stroke="none"/>
@@ -71,16 +71,16 @@
       </g>
     </marker>
   </defs>
-  <line id="prefigure-polar-frame-pf-ax" x1="34.3" y1="253.6" x2="412.0" y2="253.6" stroke="#999999" stroke-width="1.4" fill="none"/>
-  <line id="prefigure-polar-frame-pf-ay" x1="217.4" y1="422.5" x2="217.4" y2="47.8" stroke="#999999" stroke-width="1.4" fill="none"/>
-  <path id="prefigure-polar-frame-pf-circle" d="M 356.8 253.6 L 356.6 244.3 L 355.7 235.1 L 354.4 225.9 L 352.5 216.9 L 350.0 208.0 L 347.0 199.3 L 343.6 190.8 L 339.6 182.5 L 335.1 174.6 L 330.2 166.9 L 324.8 159.6 L 319.0 152.6 L 312.8 146.1 L 306.3 140.0 L 299.4 134.3 L 292.1 129.1 L 284.6 124.4 L 276.8 120.2 L 268.7 116.5 L 260.5 113.4 L 252.1 110.8 L 243.5 108.8 L 234.9 107.3 L 226.1 106.4 L 217.4 106.1 L 208.6 106.4 L 199.9 107.3 L 191.2 108.8 L 182.7 110.8 L 174.3 113.4 L 166.0 116.5 L 158.0 120.2 L 150.2 124.4 L 142.7 129.1 L 135.4 134.3 L 128.5 140.0 L 121.9 146.1 L 115.7 152.6 L 109.9 159.6 L 104.6 166.9 L 99.6 174.6 L 95.2 182.5 L 91.2 190.8 L 87.7 199.3 L 84.7 208.0 L 82.3 216.9 L 80.4 225.9 L 79.0 235.1 L 78.2 244.3 L 77.9 253.6 L 78.2 262.8 L 79.0 272.0 L 80.4 281.2 L 82.3 290.2 L 84.7 299.1 L 87.7 307.8 L 91.2 316.3 L 95.2 324.6 L 99.6 332.6 L 104.6 340.2 L 109.9 347.5 L 115.7 354.5 L 121.9 361.0 L 128.5 367.2 L 135.4 372.8 L 142.7 378.0 L 150.2 382.8 L 158.0 387.0 L 166.0 390.6 L 174.3 393.8 L 182.7 396.4 L 191.2 398.4 L 199.9 399.8 L 208.6 400.7 L 217.4 401.0 L 226.1 400.7 L 234.9 399.8 L 243.5 398.4 L 252.1 396.4 L 260.5 393.8 L 268.7 390.6 L 276.8 387.0 L 284.6 382.8 L 292.1 378.0 L 299.4 372.8 L 306.3 367.2 L 312.8 361.0 L 319.0 354.5 L 324.8 347.5 L 330.2 340.2 L 335.1 332.6 L 339.6 324.6 L 343.6 316.3 L 347.0 307.8 L 350.0 299.1 L 352.5 290.2 L 354.4 281.2 L 355.7 272.0 L 356.6 262.8 Z" stroke="#9EC5E8" stroke-width="2" fill="none"/>
-  <path id="prefigure-polar-frame-pf-r" stroke="#666666" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h666666)" d="M 217.4 253.6 L 305.5 142.6"/>
-  <path id="prefigure-polar-frame-pf-i" stroke="#9EC5E8" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h9EC5E8)" d="M 307.0 140.6 L 362.7 140.6"/>
-  <path id="prefigure-polar-frame-pf-j" stroke="#9EC5E8" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h9EC5E8)" d="M 307.0 140.6 L 307.0 81.7"/>
-  <path id="prefigure-polar-frame-pf-rhat" stroke="#D55E00" stroke-width="3" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-3_None_24_60-hD55E00)" d="M 307.0 140.6 L 342.1 96.5"/>
-  <path id="prefigure-polar-frame-pf-thetahat" stroke="#009E73" stroke-width="3" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-3_None_24_60-h009E73)" d="M 307.0 140.6 L 265.3 103.6"/>
+  <line id="prefigure-polar-frame-pf-ax" x1="35.5" y1="253.6" x2="435.2" y2="253.6" stroke="#999999" stroke-width="1.4" fill="none"/>
+  <line id="prefigure-polar-frame-pf-ay" x1="229.2" y1="422.5" x2="229.2" y2="47.8" stroke="#999999" stroke-width="1.4" fill="none"/>
+  <path id="prefigure-polar-frame-pf-circle" d="M 376.8 253.6 L 376.5 244.3 L 375.6 235.1 L 374.2 225.9 L 372.1 216.9 L 369.5 208.0 L 366.4 199.3 L 362.7 190.8 L 358.5 182.5 L 353.8 174.6 L 348.6 166.9 L 342.9 159.6 L 336.8 152.6 L 330.2 146.1 L 323.3 140.0 L 315.9 134.3 L 308.3 129.1 L 300.3 124.4 L 292.0 120.2 L 283.5 116.5 L 274.8 113.4 L 265.9 110.8 L 256.9 108.8 L 247.7 107.3 L 238.5 106.4 L 229.2 106.1 L 219.9 106.4 L 210.7 107.3 L 201.6 108.8 L 192.5 110.8 L 183.6 113.4 L 174.9 116.5 L 166.4 120.2 L 158.1 124.4 L 150.1 129.1 L 142.5 134.3 L 135.1 140.0 L 128.2 146.1 L 121.6 152.6 L 115.5 159.6 L 109.8 166.9 L 104.6 174.6 L 99.9 182.5 L 95.7 190.8 L 92.0 199.3 L 88.9 208.0 L 86.3 216.9 L 84.2 225.9 L 82.8 235.1 L 81.9 244.3 L 81.6 253.6 L 81.9 262.8 L 82.8 272.0 L 84.2 281.2 L 86.3 290.2 L 88.9 299.1 L 92.0 307.8 L 95.7 316.3 L 99.9 324.6 L 104.6 332.6 L 109.8 340.2 L 115.5 347.5 L 121.6 354.5 L 128.2 361.0 L 135.1 367.2 L 142.5 372.8 L 150.1 378.0 L 158.1 382.8 L 166.4 387.0 L 174.9 390.6 L 183.6 393.8 L 192.5 396.4 L 201.6 398.4 L 210.7 399.8 L 219.9 400.7 L 229.2 401.0 L 238.5 400.7 L 247.7 399.8 L 256.9 398.4 L 265.9 396.4 L 274.8 393.8 L 283.5 390.6 L 292.0 387.0 L 300.3 382.8 L 308.3 378.0 L 315.9 372.8 L 323.3 367.2 L 330.2 361.0 L 336.8 354.5 L 342.9 347.5 L 348.6 340.2 L 353.8 332.6 L 358.5 324.6 L 362.7 316.3 L 366.4 307.8 L 369.5 299.1 L 372.1 290.2 L 374.2 281.2 L 375.6 272.0 L 376.5 262.8 Z" stroke="#9EC5E8" stroke-width="2" fill="none"/>
+  <path id="prefigure-polar-frame-pf-r" stroke="#666666" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h666666)" d="M 229.2 253.6 L 322.5 142.5"/>
+  <path id="prefigure-polar-frame-pf-i" stroke="#9EC5E8" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h9EC5E8)" d="M 324.1 140.6 L 383.1 140.6"/>
+  <path id="prefigure-polar-frame-pf-j" stroke="#9EC5E8" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-2_None_24_60-h9EC5E8)" d="M 324.1 140.6 L 324.1 81.7"/>
+  <path id="prefigure-polar-frame-pf-rhat" stroke="#D55E00" stroke-width="3" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-3_None_24_60-hD55E00)" d="M 324.1 140.6 L 361.2 96.4"/>
+  <path id="prefigure-polar-frame-pf-thetahat" stroke="#009E73" stroke-width="3" fill="none" marker-end="url(#prefigure-polar-frame-arrow-head-end-3_None_24_60-h009E73)" d="M 324.1 140.6 L 279.8 103.5"/>
   <g id="prefigure-polar-frame-pf-theta">
-    <g transform="translate(259.2,231.3) translate(0.0,-18.1)">
+    <g transform="translate(271.3,231.8) translate(0.0,-18.1)">
       <g id="prefigure-polar-frame-__g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="29.104px" height="18.096px" role="img" focusable="false" viewBox="0 -750 1608 1000" x="0.0" y="0.0">
           <defs>
@@ -114,11 +114,11 @@
         </svg>
       </g>
     </g>
-    <path stroke="black" stroke-width="2" fill="none" d="M 243.5 220.7 L 243.8 220.9 L 244.1 221.2 L 244.4 221.4 L 244.7 221.6 L 244.9 221.9 L 245.2 222.1 L 245.5 222.4 L 245.8 222.6 L 246.1 222.9 L 246.3 223.2 L 246.6 223.4 L 246.9 223.7 L 247.2 223.9 L 247.4 224.2 L 247.7 224.5 L 247.9 224.8 L 248.2 225.0 L 248.5 225.3 L 248.7 225.6 L 249.0 225.9 L 249.2 226.2 L 249.5 226.5 L 249.7 226.7 L 249.9 227.0 L 250.2 227.3 L 250.4 227.6 L 250.6 227.9 L 250.9 228.2 L 251.1 228.5 L 251.3 228.8 L 251.5 229.1 L 251.8 229.4 L 252.0 229.8 L 252.2 230.1 L 252.4 230.4 L 252.6 230.7 L 252.8 231.0 L 253.0 231.3 L 253.2 231.7 L 253.4 232.0 L 253.6 232.3 L 253.8 232.6 L 254.0 233.0 L 254.2 233.3 L 254.3 233.6 L 254.5 234.0 L 254.7 234.3 L 254.9 234.6 L 255.0 235.0 L 255.2 235.3 L 255.4 235.6 L 255.5 236.0 L 255.7 236.3 L 255.8 236.7 L 256.0 237.0 L 256.1 237.4 L 256.3 237.7 L 256.4 238.1 L 256.6 238.4 L 256.7 238.8 L 256.8 239.1 L 256.9 239.5 L 257.1 239.8 L 257.2 240.2 L 257.3 240.6 L 257.4 240.9 L 257.5 241.3 L 257.6 241.6 L 257.8 242.0 L 257.9 242.4 L 258.0 242.7 L 258.1 243.1 L 258.1 243.5 L 258.2 243.8 L 258.3 244.2 L 258.4 244.6 L 258.5 244.9 L 258.6 245.3 L 258.6 245.7 L 258.7 246.1 L 258.8 246.4 L 258.8 246.8 L 258.9 247.2 L 258.9 247.5 L 259.0 247.9 L 259.0 248.3 L 259.1 248.7 L 259.1 249.0 L 259.2 249.4 L 259.2 249.8 L 259.2 250.2 L 259.3 250.6 L 259.3 250.9 L 259.3 251.3 L 259.3 251.7 L 259.4 252.1 L 259.4 252.4 L 259.4 252.8 L 259.4 253.2 L 259.4 253.6"/>
+    <path stroke="black" stroke-width="2" fill="none" d="M 256.2 221.4 L 256.5 221.6 L 256.8 221.9 L 257.0 222.1 L 257.3 222.4 L 257.6 222.6 L 257.9 222.9 L 258.1 223.1 L 258.4 223.4 L 258.7 223.6 L 258.9 223.9 L 259.2 224.1 L 259.4 224.4 L 259.7 224.7 L 259.9 224.9 L 260.2 225.2 L 260.4 225.5 L 260.7 225.8 L 260.9 226.0 L 261.2 226.3 L 261.4 226.6 L 261.6 226.9 L 261.9 227.2 L 262.1 227.4 L 262.3 227.7 L 262.5 228.0 L 262.8 228.3 L 263.0 228.6 L 263.2 228.9 L 263.4 229.2 L 263.6 229.5 L 263.8 229.8 L 264.0 230.1 L 264.2 230.4 L 264.4 230.7 L 264.6 231.0 L 264.8 231.3 L 265.0 231.6 L 265.2 232.0 L 265.4 232.3 L 265.6 232.6 L 265.8 232.9 L 265.9 233.2 L 266.1 233.5 L 266.3 233.9 L 266.5 234.2 L 266.6 234.5 L 266.8 234.8 L 267.0 235.2 L 267.1 235.5 L 267.3 235.8 L 267.4 236.2 L 267.6 236.5 L 267.7 236.8 L 267.9 237.2 L 268.0 237.5 L 268.1 237.8 L 268.3 238.2 L 268.4 238.5 L 268.5 238.9 L 268.7 239.2 L 268.8 239.6 L 268.9 239.9 L 269.0 240.3 L 269.1 240.6 L 269.3 240.9 L 269.4 241.3 L 269.5 241.6 L 269.6 242.0 L 269.7 242.4 L 269.8 242.7 L 269.9 243.1 L 270.0 243.4 L 270.0 243.8 L 270.1 244.1 L 270.2 244.5 L 270.3 244.8 L 270.4 245.2 L 270.4 245.6 L 270.5 245.9 L 270.6 246.3 L 270.6 246.6 L 270.7 247.0 L 270.7 247.4 L 270.8 247.7 L 270.8 248.1 L 270.9 248.5 L 270.9 248.8 L 271.0 249.2 L 271.0 249.5 L 271.0 249.9 L 271.1 250.3 L 271.1 250.6 L 271.1 251.0 L 271.1 251.4 L 271.2 251.7 L 271.2 252.1 L 271.2 252.5 L 271.2 252.8 L 271.2 253.2 L 271.2 253.6"/>
   </g>
-  <circle id="prefigure-polar-frame-pf-O" cx="217.4" cy="253.6" r="4" stroke="black" stroke-width="2" fill="black"/>
-  <circle id="prefigure-polar-frame-pf-P" cx="307.0" cy="140.6" r="4" stroke="black" stroke-width="2" fill="black"/>
-  <g id="prefigure-polar-frame-pf-Pl" transform="translate(314.4,149.5) translate(0.0,-0.0)">
+  <circle id="prefigure-polar-frame-pf-O" cx="229.2" cy="253.6" r="4" stroke="black" stroke-width="2" fill="black"/>
+  <circle id="prefigure-polar-frame-pf-P" cx="324.1" cy="140.6" r="4" stroke="black" stroke-width="2" fill="black"/>
+  <g id="prefigure-polar-frame-pf-Pl" transform="translate(331.6,149.5) translate(0.0,-0.0)">
     <g id="prefigure-polar-frame-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.592px" height="12.360px" role="img" focusable="false" viewBox="0 -683 751 683" x="0.0" y="0.0">
         <defs>
@@ -134,7 +134,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-rl" transform="translate(251.7,188.1) translate(-8.2,-8.2)">
+  <g id="prefigure-polar-frame-pf-rl" transform="translate(265.8,188.1) translate(-8.2,-8.2)">
     <g id="prefigure-polar-frame-__g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#666666" width="8.160px" height="8.200px" role="img" focusable="false" viewBox="0 -442 451 453" x="0.0" y="0.0">
         <defs>
@@ -150,7 +150,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-rhl" transform="translate(351.5,86.2) translate(0.0,-19.2)">
+  <g id="prefigure-polar-frame-pf-rhl" transform="translate(370.9,86.2) translate(0.0,-19.2)">
     <g id="prefigure-polar-frame-__g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#D55E00" width="28.776px" height="19.184px" role="img" focusable="false" viewBox="0 -810 1590 1060" x="0.0" y="0.0">
         <defs>
@@ -192,7 +192,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-thl" transform="translate(255.2,93.5) translate(-29.1,-23.9)">
+  <g id="prefigure-polar-frame-pf-thl" transform="translate(269.5,93.5) translate(-29.1,-23.9)">
     <g id="prefigure-polar-frame-__g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#009E73" width="29.104px" height="23.944px" role="img" focusable="false" viewBox="0 -1073 1608 1323" x="0.0" y="0.0">
         <defs>
@@ -234,7 +234,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-il" transform="translate(372.5,147.0) translate(0.0,-0.0)">
+  <g id="prefigure-polar-frame-pf-il" transform="translate(393.1,147.0) translate(0.0,-0.0)">
     <g id="prefigure-polar-frame-__g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#5B9BD5" width="6.248px" height="18.824px" role="img" focusable="false" viewBox="0 -1029 345 1040" x="0.0" y="0.0">
         <defs>
@@ -258,7 +258,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-jl" transform="translate(314.4,76.7) translate(0.0,-11.2)">
+  <g id="prefigure-polar-frame-pf-jl" transform="translate(331.6,76.7) translate(0.0,-11.2)">
     <g id="prefigure-polar-frame-__g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.696px; color:#5B9BD5" width="7.456px" height="22.320px" role="img" focusable="false" viewBox="0 -1029 412 1233" x="0.0" y="0.0">
         <defs>
@@ -282,7 +282,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-xl" transform="translate(410.2,246.5) translate(0.0,-12.0)">
+  <g id="prefigure-polar-frame-pf-xl" transform="translate(433.0,246.5) translate(0.0,-12.0)">
     <g id="prefigure-polar-frame-__g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px" width="24.432px" height="12.040px" role="img" focusable="false" viewBox="0 -583 1350 665" x="0.0" y="0.0">
         <defs>
@@ -302,7 +302,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-polar-frame-pf-yl" transform="translate(227.2,53.9) translate(0.0,-7.1)">
+  <g id="prefigure-polar-frame-pf-yl" transform="translate(239.4,53.9) translate(0.0,-7.1)">
     <g id="prefigure-polar-frame-__g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="22.952px" height="14.264px" role="img" focusable="false" viewBox="0 -583 1268 788" x="0.0" y="0.0">
         <defs>

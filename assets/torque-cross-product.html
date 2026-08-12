@@ -361,8 +361,8 @@
   // ---------------- render ----------------
   var grow = { grid: reduced?1:0, axes: reduced?1:0, plane: reduced?1:0,
     r: reduced?1:0, f: reduced?1:0, tau: reduced?1:0 };
-  var TAUMAX = 2 * RANGE * RANGE;        // largest torque that can be produced
-  var TAUDRAW = RANGE * 0.8;             // longest arrow used to show it
+  var TAUDRAW = RANGE * 0.8;             // longest arrow used to show the torque
+  var TAUSCALE = TAUDRAW / 12;           // shrunk so a typical torque is legible
 
   function render() {
     var tz = tauZ(), th = theta(), lr = len(r), lf = len(F);
@@ -427,8 +427,7 @@
 
     // curved arrow for the sense of the rotation the torque produces
     if (Math.abs(tz) > 0.12 && lr > 0.2) {
-      var rad = 62, a0 = Math.atan2(-r[1], r[0]) - 0.95 * Math.sign(tz) * -1;
-      var sgn = tz > 0 ? -1 : 1;                    // screen y points downward
+      var rad = 62, sgn = tz > 0 ? -1 : 1;          // screen y points downward
       var start = Math.atan2(-r[1], r[0]) - sgn * 1.15, sweep = sgn * 2.0;
       senseArc.setAttribute("d", arcD(C, C, rad, start, sweep));
       var aEnd = start + sweep;
@@ -439,7 +438,6 @@
         "L" + (ex - tx*hs*0.4 + ty*hs*0.55) + "," + (ey - ty*hs*0.4 - tx*hs*0.55) + "Z");
       var op = grow.plane * 0.75;
       senseArc.setAttribute("opacity", op); senseTip.setAttribute("opacity", op);
-      void a0;
     } else {
       senseArc.setAttribute("opacity", 0); senseTip.setAttribute("opacity", 0);
     }
@@ -457,7 +455,7 @@
     var o3 = pOut.map([0,0,0]), hr3 = pOut.map(r), hf3 = pOut.map(tip);
     setArrow(rArrow3, o3[0], o3[1], hr3[0], hr3[1], "r", grow.r);
     setArrow(fArrow3, hr3[0], hr3[1], hf3[0], hf3[1], "F", grow.f);
-    var tz3 = TAUDRAW * tz / TAUMAX;
+    var tz3 = Math.max(-TAUDRAW, Math.min(TAUDRAW, tz * TAUSCALE));
     var ht3 = pOut.map([0, 0, tz3]);
     setArrow(tArrow3, o3[0], o3[1], ht3[0], ht3[1], "τ", grow.tau);
     scaleTxt.textContent = "τ drawn to a reduced scale";

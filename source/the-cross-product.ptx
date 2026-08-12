@@ -95,7 +95,7 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 </caption>
 <image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-area">
-<diagram dimensions="(340,200)" margins="10">
+<diagram dimensions="(381,200)" margins="10">
 <definition>u=(2,3)</definition>
 <definition>v=(5,0)</definition>
 <coordinates bbox="(-0.5,-0.6,7.5,3.6)">
@@ -405,17 +405,21 @@ If <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
 <p>
 One way to remember the second definition of the cross product is to
 write it as a determinant:
-<md xml:id="eq-cross-determinant" number="yes">
-\mathbf u \times \mathbf v =
+<md>
+<mrow>
+\mathbf u \times \mathbf v \amp =
 \begin{vmatrix}
 \mathbf i \amp \mathbf j \amp \mathbf k \\
 u_1 \amp u_2 \amp u_3 \\
 v_1 \amp v_2 \amp v_3
 \end{vmatrix}
-=
+</mrow>
+<mrow xml:id="eq-cross-determinant" number="yes">
+\amp =
 \begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\mathbf i
 - \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\mathbf j
 + \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\mathbf k,
+</mrow>
 </md>
 where
 <md xml:id="eq-two-by-two-determinant" number="yes">
@@ -442,7 +446,9 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 1 \amp -1 \amp 2 \\
 3 \amp -2 \amp 1
 \end{vmatrix}
-=
+</mrow>
+<mrow>
+\amp=
 \begin{vmatrix} -1 \amp 2 \\ -2 \amp 1 \end{vmatrix}\mathbf i
 - \begin{vmatrix} 1 \amp 2 \\ 3 \amp 1 \end{vmatrix}\mathbf j
 + \begin{vmatrix} 1 \amp -1 \\ 3 \amp -2 \end{vmatrix}\mathbf k
@@ -485,7 +491,9 @@ vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
 1 \amp 1 \amp -3 \\
 -1 \amp -1 \amp 1
 \end{vmatrix}
-=
+</mrow>
+<mrow>
+\amp=
 \begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf i
 - \begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf j
 + \begin{vmatrix} 1 \amp 1 \\ -1 \amp -1 \end{vmatrix}\mathbf k
@@ -553,7 +561,7 @@ is half of the corresponding parallelogram.
 </caption>
 <image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-triangle-area">
-<diagram dimensions="(340,200)" margins="10">
+<diagram dimensions="(310,200)" margins="10">
 <definition>b=(4,0)</definition>
 <definition>c=(1.5,3)</definition>
 <coordinates bbox="(-0.5,-0.6,6,3.6)">
@@ -604,14 +612,19 @@ is perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 Note that <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
 <m>\vec u</m> and <m>\text{proj}_{\vec v}\vec u</m>, which gives:
 <md xml:id="eq-true-false-1">
-       \begin{aligned}
+<mrow>
 \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot
 \left(\vec u - \text{proj}_{\vec v}\vec u\right)
 \amp =
 \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \vec u
-- \left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \text{proj}_{\vec v}\vec u\\
-= 0 - 0 = 0,
-\end{aligned}
+</mrow>
+<mrow>
+\amp \quad - \left(\vec u \times \text{proj}_{\vec v}\vec u\right)
+ \cdot \text{proj}_{\vec v}\vec u
+</mrow>
+<mrow>
+\amp = 0 - 0 = 0,
+</mrow>
 </md>
 and therefore <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is
 perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
@@ -685,6 +698,41 @@ vector relative to the axis of rotation is <m>\vec r</m>. The
 </statement>
 </definition>
 
+<figure xml:id="fig-int-torque">
+<caption>
+Interactive view of <xref ref="eq-torque-def"/>. The force <m>\vec F</m> is
+applied at the head of <m>\vec r</m>, and the torque
+<m>\vec\tau = \vec r \times \vec F</m> points along the axis of rotation.
+</caption>
+<interactive xml:id="interactive-torque" iframe="torque-cross-product.html" width="100%" aspect="8:7">
+<instructions>
+<p>
+In the left pane the axis of rotation passes through the marked point,
+perpendicular to the screen. Drag the head of the yellow position vector
+<m>\vec r</m> to move the point where the force is applied, and drag the
+head of the red force <m>\vec F</m> to change its size and direction. The
+dashed red line is the line along which the force acts, and the violet
+segment is the lever arm <m>r_\perp = \|\vec r\|\sin\theta</m>, the
+perpendicular distance from the axis to that line. The shaded
+parallelogram built on <m>\vec r</m> and <m>\vec F</m> has area
+<m>\|\vec\tau\|</m>, and the curved arrow shows the sense of the rotation
+the torque produces.
+</p>
+<p>
+The right pane shows the same two vectors in space, together with
+<m>\vec\tau = \vec r \times \vec F</m> along the axis; drag that pane to
+view it from another angle, or press <q>view</q> to restore the original
+one. Press <q>animate</q> to swing <m>\vec F</m> once around the point of
+application: watch <m>\|\vec\tau\|</m> reach its largest value when
+<m>\vec F \perp \vec r</m>, fall to zero when <m>\vec F</m> points
+straight at (or away from) the axis, and reverse direction as the
+rotation changes sense. Either vector can also be moved with the keyboard
+(press <q>Tab</q> to reach its head, then use the arrow keys).
+</p>
+</instructions>
+</interactive>
+</figure>
+
 <p>
 Everything we know about the cross product now translates into physics.
 By <xref ref="eq-cross-geometric"/>, the magnitude of the torque is
@@ -714,10 +762,159 @@ useful ways:
 </mrow>
 </md>
 </p>
+
+<figure xml:id="fig-torque-two-groupings">
+<caption>
+The two groupings of <xref ref="eq-torque-magnitude"/>. In both pictures the
+axis of rotation passes through <m>O</m>, perpendicular to the page, the
+force <m>\vec F</m> is applied at <m>P</m>, and <m>\theta</m> is the angle
+between <m>\vec r</m> and <m>\vec F</m>; the two products are equal because
+each is <m>\|\vec r\|\|\vec F\|\sin\theta</m>.
+</caption>
+<sidebyside widths="48% 48%" margins="2%">
+
+<figure xml:id="fig-torque-lever-arm">
+<caption>
+Force times lever arm: <m>\|\vec\tau\| = r_\perp\|\vec F\|</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-torque-lever-arm">
+<diagram dimensions="(330,300)" margins="8">
+<coordinates bbox="(-1.1,-3.95,6.5,2.95)">
+
+<line at="la-action" p1="(2.451,-2.212)" p2="(5.721,2.457)"
+      stroke="#D55E00" thickness="1.4" dash="5 4"/>
+<line at="la-rext" p1="(4,0)" p2="(6.0,0)"
+      stroke="#0072B2" thickness="1.2" dash="3 4"/>
+
+<line at="la-lever" endpoints="((0,0), (2.684,-1.879))"
+      stroke="#009E73" thickness="3"/>
+
+<vector at="la-r" v="(4,0)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="la-F" v="(1.491,2.130)" tail="(4,0)" stroke="#D55E00" thickness="2"/>
+
+<angle-marker at="la-theta" points="((5.6,0),(4,0),(5.491,2.130))"
+              radius="30" stroke="black"><m>\theta</m></angle-marker>
+<angle-marker at="la-right" points="((5.721,2.457),(2.684,-1.879),(0,0))"
+              radius="13" stroke="#009E73"/>
+
+<point at="la-O" p="(0,0)" fill="black" radius="3.5"/>
+<point at="la-P" p="(4,0)" fill="black" radius="3.5"/>
+<point at="la-Q" p="(2.684,-1.879)" fill="#009E73" radius="3"/>
+
+<label at="la-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+<label at="la-Pl" anchor="(4.02,0.10)" alignment="nw"><m>P</m></label>
+<label at="la-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
+<m>\vec r</m>
+</label>
+<label at="la-Fl" anchor="(5.30,2.35)" alignment="nw" color="#D55E00">
+<m>\vec F</m>
+</label>
+<label at="la-leverl" anchor="(1.22,-0.86)" alignment="ne" color="#009E73">
+<m>r_\perp</m>
+</label>
+<label at="la-eq1" anchor="(2.75,-3.05)" alignment="c">
+<m>r_\perp = \|\vec r\|\sin\theta</m>
+</label>
+<label at="la-eq2" anchor="(2.75,-3.75)" alignment="c">
+<m>\|\vec\tau\| = r_\perp\|\vec F\|</m>
+</label>
+
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The axis of rotation passes through the point O, perpendicular to the page, and the force F is applied at the point P at the head of the position vector r. The line along which the force acts is extended backwards past P as a dashed line, and it passes below O. The perpendicular segment from O to that line is the lever arm r perpendicular, whose length is the length of r times the sine of theta. The torque is the length of the force times this lever arm.">
+  <annotation ref="la-r" text="The position vector r, drawn from the axis at O to the point of application P."/>
+  <annotation ref="la-F" text="The force F, drawn from P, making an angle theta with the direction of r."/>
+  <annotation ref="la-action" text="The dashed line along which the force acts, extended in both directions past P."/>
+  <annotation ref="la-lever" text="The lever arm, the perpendicular segment from the axis at O to the line of action of the force."/>
+  <annotation ref="la-right" text="A right angle, showing that the lever arm meets the line of action perpendicularly."/>
+  <annotation ref="la-theta" text="The angle theta at P, between the direction of r and the force F."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-torque-perp-force">
+<caption>
+Distance times perpendicular force:
+<m>\|\vec\tau\| = \|\vec r\|F_\perp</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-torque-perp-force">
+<diagram dimensions="(330,300)" margins="8">
+<coordinates bbox="(-1.1,-3.95,6.5,2.95)">
+
+<line at="fp-boxv" p1="(5.491,0)" p2="(5.491,2.130)"
+      stroke="#999999" thickness="1.2" dash="3 4"/>
+<line at="fp-boxh" p1="(4,2.130)" p2="(5.491,2.130)"
+      stroke="#999999" thickness="1.2" dash="3 4"/>
+
+<vector at="fp-r" v="(4,0)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="fp-Fpar" v="(1.491,0)" tail="(4,0)" stroke="#666666" thickness="2"/>
+<vector at="fp-Fperp" v="(0,2.130)" tail="(4,0)" stroke="#009E73" thickness="3"/>
+<vector at="fp-F" v="(1.491,2.130)" tail="(4,0)" stroke="#D55E00" thickness="2"/>
+
+<angle-marker at="fp-theta" points="((5.6,0),(4,0),(5.491,2.130))"
+              radius="30" stroke="black"><m>\theta</m></angle-marker>
+<angle-marker at="fp-right" points="((5.6,0),(4,0),(4,2.130))"
+              radius="13" stroke="#009E73"/>
+
+<point at="fp-O" p="(0,0)" fill="black" radius="3.5"/>
+<point at="fp-P" p="(4,0)" fill="black" radius="3.5"/>
+
+<label at="fp-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+<label at="fp-Pl" anchor="(3.94,-0.10)" alignment="sw"><m>P</m></label>
+<label at="fp-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
+<m>\vec r</m>
+</label>
+<label at="fp-Fl" anchor="(5.55,2.20)" alignment="ne" color="#D55E00">
+<m>\vec F</m>
+</label>
+<label at="fp-Fperpl" anchor="(3.90,1.15)" alignment="w" color="#009E73">
+<m>F_\perp</m>
+</label>
+<label at="fp-Fparl" anchor="(4.75,-0.12)" alignment="s" color="#666666">
+<m>F_\parallel</m>
+</label>
+<label at="fp-note" anchor="(2.75,-1.95)" alignment="c" color="#666666">
+<m>F_\parallel \text{ produces no rotation}</m>
+</label>
+<label at="fp-eq1" anchor="(2.75,-3.05)" alignment="c">
+<m>F_\perp = \|\vec F\|\sin\theta</m>
+</label>
+<label at="fp-eq2" anchor="(2.75,-3.75)" alignment="c">
+<m>\|\vec\tau\| = \|\vec r\|F_\perp</m>
+</label>
+
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The same position vector r from the axis at O to the point of application P, with the force F at P split into two pieces by a dashed rectangle. One piece is perpendicular to r and has length the length of F times the sine of theta; the other piece is parallel to r and points straight away from the axis. The torque is the length of r times the perpendicular piece; the parallel piece produces no rotation.">
+  <annotation ref="fp-r" text="The position vector r, drawn from the axis at O to the point of application P."/>
+  <annotation ref="fp-F" text="The force F, drawn from P, making an angle theta with the direction of r."/>
+  <annotation ref="fp-Fperp" text="The component of the force perpendicular to r, of length F perpendicular; this is the part that turns the object."/>
+  <annotation ref="fp-Fpar" text="The component of the force parallel to r, pointing straight away from the axis; this part produces no rotation."/>
+  <annotation ref="fp-right" text="A right angle between the two components of the force."/>
+  <annotation ref="fp-theta" text="The angle theta at P, between the direction of r and the force F."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</sidebyside>
+</figure>
+
 <p>
-The first grouping says the torque is the force times the
+The first grouping, shown in <xref ref="fig-torque-lever-arm"/>, says the
+torque is the force times the
 <term>lever arm</term> <m>r_\perp</m>, the perpendicular distance from
-the axis to the line along which the force acts. The second says it is
+the axis to the line along which the force acts. The second, shown in
+<xref ref="fig-torque-perp-force"/>, says it is
 the distance <m>\|\vec r\|</m> times <m>F_\perp</m>, the component of the
 force perpendicular to <m>\vec r</m>; the parallel component
 <m>F_\parallel</m> points straight at the axis and produces no rotation.
@@ -750,6 +947,8 @@ the torque about the elbow when
 <li><p>the forearm makes a <m>30^\circ</m> angle below the horizontal.</p></li>
 </ol>
 </p>
+<!-- Hidden: the biceps torque video. Nothing cross-references it, so it can
+     be restored by simply removing this comment wrapper.
 <figure xml:id="fig-biceps-torque-video">
 <caption>
 The torque <m>\vec\tau = \vec r \times \vec F</m> of the biceps force
@@ -763,6 +962,8 @@ shortens, and the torque decreases from <m>35</m> to <m>30</m>
        source="videos/biceps_torque_1080p.mp4"
        width="70%" aspect="16:9"/>
 </figure>
+-->
+
 <figure xml:id="fig-biceps-torque">
   <caption>The biceps exerts a 700 N force on the forearm: (a) forearm horizontal, with the muscle attached 5.0 cm from the elbow axis; (b) forearm at 30&#xb0; below horizontal, with lever arm <m>R</m>.</caption>
   <image source="images/biceps-side-by-side.png" width="100%">
@@ -795,7 +996,9 @@ straight up.
 0.050 \amp 0 \amp 0 \\
 0 \amp 700 \amp 0
 \end{vmatrix}
-= \langle 0, 0, (0.050)(700)\rangle
+</mrow>
+<mrow>
+\amp= \langle 0, 0, (0.050)(700)\rangle
 = \langle 0, 0, 35 \rangle,
 </mrow>
 </md>
@@ -825,7 +1028,9 @@ product gives
 0.0433 \amp -0.025 \amp 0 \\
 0 \amp 700 \amp 0
 \end{vmatrix}
-= \langle 0, 0, (0.0433)(700) - (-0.025)(0)\rangle
+</mrow>
+<mrow>
+\amp= \langle 0, 0, (0.0433)(700) - (-0.025)(0)\rangle
 </mrow>
 <mrow>
 \amp= \langle 0, 0, 30.3 \rangle \approx \langle 0, 0, 30 \rangle.
@@ -872,9 +1077,8 @@ on a string, a point on a spinning wheel, or the moon on its (nearly
 circular) orbit. In each case the object turns about a fixed centre, and the
 natural way to keep track of where it is at time <m>t</m> is not by its
 coordinates <m>x</m> and <m>y</m> but by the single angle <m>\theta(t)</m>
-it has swung through. Our goal is to express the velocity in terms of that
-angle, and to package the answer in the single vector equation
-<m>\vec v = \vec\omega\times\vec r</m>.
+it has swung through. Our goal is to study how the velocity and the rate of
+change of that angle are related.
 </p>
 
 <p>
@@ -924,14 +1128,18 @@ pair <m>\hat r(t)</m>, <m>\hat\theta(t)</m> rides along with the particle and
 turns as it goes; this is exactly what makes the second pair convenient. Note
 that together with <m>\hat k</m> the moving pair forms a right-handed frame,
 since
-<md xml:id="eq-polar-frame-right-handed" number="yes">
-\hat r \times \hat\theta =
+<md>
+<mrow>
+\hat r \times \hat\theta \amp =
 \begin{vmatrix}
 \hat i \amp \hat j \amp \hat k \\
 \cos\theta \amp \sin\theta \amp 0 \\
 -\sin\theta \amp \cos\theta \amp 0
 \end{vmatrix}
-= \left(\cos^2\theta + \sin^2\theta\right)\hat k = \hat k.
+</mrow>
+<mrow xml:id="eq-polar-frame-right-handed" number="yes">
+\amp = \left(\cos^2\theta + \sin^2\theta\right)\hat k = \hat k.
+</mrow>
 </md>
 </p>
 
@@ -954,7 +1162,7 @@ vectors i and j are also drawn at P for comparison.
 </p>
 </description>
       <prefigure xmlns="https://prefigure.org" label="prefigure-polar-frame">
-      <diagram dimensions="(430,430)" margins="14">
+      <diagram dimensions="(455,430)" margins="14">
       <coordinates bbox="(-3.5,-3.1,3.9,3.9)">
 
       <line at="pf-ax" p1="(-3.15,0)" p2="(3.35,0)" stroke="#999999" thickness="1.4"/>
@@ -1087,9 +1295,13 @@ chord is very nearly the arc it cuts off:
 <m>\left\|\Delta\vec r\right\| \approx r\,\Delta\theta</m>. Dividing by
 <m>\Delta t</m> and letting <m>\Delta t \to 0</m>,
 <md>
-v = \lim_{\Delta t\to 0}\frac{\left\|\Delta\vec r\right\|}{\Delta t}
+<mrow>
+v \amp = \lim_{\Delta t\to 0}\frac{\left\|\Delta\vec r\right\|}{\Delta t}
  = r\lim_{\Delta t\to 0}\frac{\left|\Delta\theta\right|}{\Delta t}
- = r\left|\frac{d\theta}{dt}\right| = r\,\omega,
+</mrow>
+<mrow>
+\amp = r\left|\frac{d\theta}{dt}\right| = r\,\omega,
+</mrow>
 </md>
 which is <xref ref="eq-speed-omega-r"/> again. The direction comes out of the
 same picture: as <m>\Delta t \to 0</m> the chord <m>\Delta\vec r</m> lines up
@@ -1362,23 +1574,30 @@ For an object in circular motion about the origin,
 <p>
 To verify this, first compute <m>\hat k \times \hat r</m> using
 <xref ref="eq-rhat"/>:
-<md xml:id="eq-k-cross-rhat" number="yes">
-\hat k \times \hat r =
+<md>
+<mrow>
+\hat k \times \hat r \amp =
 \begin{vmatrix}
 \hat i \amp \hat j \amp \hat k \\
 0 \amp 0 \amp 1 \\
 \cos\theta \amp \sin\theta \amp 0
 \end{vmatrix}
-= -\sin\theta\,\hat i + \cos\theta\,\hat j = \hat\theta.
+</mrow>
+<mrow xml:id="eq-k-cross-rhat" number="yes">
+\amp = -\sin\theta\,\hat i + \cos\theta\,\hat j = \hat\theta.
+</mrow>
 </md>
 Therefore, using <xref ref="eq-angular-velocity"/> and
 <xref ref="eq-position-polar"/>,
 <md>
+<mrow>
 \vec\omega \times \vec r
- = \left(\frac{d\theta}{dt}\,\hat k\right)\times\left(r\,\hat r\right)
+ \amp = \left(\frac{d\theta}{dt}\,\hat k\right)\times\left(r\,\hat r\right)
  = r\,\frac{d\theta}{dt}\left(\hat k \times \hat r\right)
- = r\,\frac{d\theta}{dt}\,\hat\theta
- = \vec v,
+</mrow>
+<mrow>
+\amp = r\,\frac{d\theta}{dt}\,\hat\theta = \vec v,
+</mrow>
 </md>
 by <xref ref="eq-circular-velocity"/>. See
 <xref ref="fig-omega-cross-r"/>.
@@ -1423,9 +1642,6 @@ to <m>\vec\omega</m> and so contributes nothing to the cross product, since
 <xref ref="eq-v-omega-cross-r"/> remains true when <m>\vec r</m> is measured
 from <em>any</em> point on the axis of rotation, not just from the centre of
 the circle.
-This is what makes <xref ref="eq-v-omega-cross-r"/> the standard formula for
-the velocity of any point of a rotating rigid body, such as a wheel, a
-turntable, or the earth itself.
 </p>
 
 <figure xml:id="fig-omega-cross-r">
@@ -1664,14 +1880,18 @@ angular velocity points along <m>-\hat k</m>:
 </md>
 Then
 <md>
-\vec v = \vec\omega\times\vec r =
+<mrow>
+\vec v = \vec\omega\times\vec r \amp =
 \begin{vmatrix}
 \hat i \amp \hat j \amp \hat k \\
 0 \amp 0 \amp -0.524 \\
 0 \amp 4 \amp 0
 \end{vmatrix}
-= \left(0 - (-0.524)(4)\right)\hat i
+</mrow>
+<mrow>
+\amp = \left(0 - (-0.524)(4)\right)\hat i
 = \left\langle 2.09,\,0,\,0 \right\rangle\ \text{m}\cdot\text{s}^{-1}.
+</mrow>
 </md>
 The horse is on the positive <m>y</m>-axis and moves in the
 <m>+x</m>-direction, which is indeed clockwise seen from above. Its speed is
