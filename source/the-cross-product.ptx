@@ -71,7 +71,7 @@ Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
 <m>\mathbb R^3</m>, the <term>cross product</term>
 <m>\mathbf u \times \mathbf v</m> is the <em>vector</em> defined by
 <md xml:id="eq-cross-geometric" number="yes">
-\mathbf u \times \mathbf v = \left(|\mathbf u||\mathbf v|\sin\theta\right)\mathbf n,
+\mathbf u \times \mathbf v = \left(\|\mathbf u\|\|\mathbf v\|\sin\theta\right)\mathbf n,
 </md>
 where <m>\theta</m>, with <m>0 \le \theta \le \pi</m>, is the angle
 between <m>\mathbf u</m> and <m>\mathbf v</m>, and <m>\mathbf n</m> is
@@ -90,8 +90,8 @@ of the parallelogram built on the two vectors <m>\mathbf u</m> and
 <figure xml:id="fig-parallelogram-area">
 <caption>
 The parallelogram built on the vectors <m>\mathbf u</m> and
-<m>\mathbf v</m>, with base <m>|\mathbf v|</m> and height
-<m>|\mathbf u||\sin(\theta)|</m>.
+<m>\mathbf v</m>, with base <m>\|\mathbf v\|</m> and height
+<m>\|\mathbf u\||\sin(\theta)|</m>.
 </caption>
 <image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-area">
@@ -111,7 +111,7 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <m>\mathbf v</m>
 </label>
 <label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
-<m>|\mathbf u|\sin(\theta)</m>
+<m>\|\mathbf u\|\sin(\theta)</m>
 </label>
 <angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
 <m>\theta</m>
@@ -136,15 +136,15 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <p>
 <md xml:id="eq-parallelogram-area" number="yes">
 \text{Area of the parallelogram}
-= |\mathbf u||\mathbf v||\sin\theta|
-= |\mathbf u \times \mathbf v|.
+= \|\mathbf u\|\|\mathbf v\||\sin\theta|
+= \|\mathbf u \times \mathbf v\|.
 </md>
 </p>
 </statement>
 </fact>
 
 <p>
-Note that <m>|\mathbf u||\mathbf v||\sin\theta|</m> is the length of the
+Note that <m>\|\mathbf u\|\|\mathbf v\||\sin\theta|</m> is the length of the
 cross product <m>\mathbf u \times \mathbf v</m>. Since
 <m>\sin(\theta)</m> can be negative, we need to include its absolute
 value.
@@ -163,7 +163,7 @@ rule. Note that <m>\mathbf u \times \mathbf v</m> is orthogonal
 The cross product <m>\mathbf u \times \mathbf v</m> points in the
 direction of the unit vector <m>\mathbf n</m>, given by the right-hand
 rule, and is orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>;
-its length is <m>|\mathbf u||\mathbf v||\sin\theta|</m>.
+its length is <m>\|\mathbf u\|\|\mathbf v\||\sin\theta|</m>.
 </caption>
 <video xml:id="video-cross-product"
        source="videos/cross_product_3d_1080p.mp4"
@@ -405,7 +405,7 @@ vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
 The unit vector in question is then computed as follows:
 <md xml:id="eq-perpendicular-unit">
        \begin{aligned}
-\mathbf n \amp = \frac{\vec{AB} \times \vec{AC}}{\left|\vec{AB} \times \vec{AC}\right|}\\
+\mathbf n \amp = \frac{\vec{AB} \times \vec{AC}}{\left\|\vec{AB} \times \vec{AC}\right\|}\\
 \amp = \frac{1}{\sqrt 8}\langle -2,2,0\rangle
 = \left\langle -\frac{1}{\sqrt 2},\frac{1}{\sqrt 2},0\right\rangle
 = -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
@@ -442,11 +442,11 @@ parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
 <md>
 <mrow>
 \text{Area of the parallelogram} \amp=
-\left|\vec{AB} \times \vec{AC}\right| = \sqrt 8 = 2\sqrt 2
+\left\|\vec{AB} \times \vec{AC}\right\| = \sqrt 8 = 2\sqrt 2
 </mrow>
 <mrow>
 \text{Area of the triangle} \amp=
-\frac12 \left|\vec{AB} \times \vec{AC}\right| = \sqrt 2.
+\frac12 \left\|\vec{AB} \times \vec{AC}\right\| = \sqrt 2.
 </mrow>
 </md>
 </p>
@@ -560,7 +560,7 @@ perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 <p>
 Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 <m>\mathbb R^3</m>. Then,
-<m>\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2 = 1</m>.
+<m>\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2 = 1</m>.
 </p>
 </statement>
 <feedback>
@@ -568,21 +568,21 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 Note that:
 <md>
 <mrow>
-\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
-\amp= |\vec u|^2|\vec v|^2\cos^2\theta + |\vec u|^2|\vec v|^2\sin^2\theta
+\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2
+\amp= \|\vec u\|^2\|\vec v\|^2\cos^2\theta + \|\vec u\|^2\|\vec v\|^2\sin^2\theta
 </mrow>
 <mrow>
-\amp= |\vec u|^2|\vec v|^2\left(\cos^2\theta + \sin^2\theta\right)
-= |\vec u|^2|\vec v|^2.
+\amp= \|\vec u\|^2\|\vec v\|^2\left(\cos^2\theta + \sin^2\theta\right)
+= \|\vec u\|^2\|\vec v\|^2.
 </mrow>
 </md>
 </p>
 <p>
 Now, since <m>\vec u</m> and <m>\vec v</m> are standard unit vectors, we
-have <m>|\vec u| = |\vec v| = 1</m>, which means:
+have <m>\|\vec u\| = \|\vec v\| = 1</m>, which means:
 <md xml:id="eq-true-false-3">
-\left(\vec u \cdot \vec v\right)^2 + \left|\vec v \times \vec u\right|^2
-= |\vec u|^2|\vec v|^2 = 1.
+\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2
+= \|\vec u\|^2\|\vec v\|^2 = 1.
 </md>
 </p>
 </feedback>
@@ -624,7 +624,7 @@ vector relative to the axis of rotation is <m>\vec r</m>. The
 Everything we know about the cross product now translates into physics.
 By <xref ref="eq-cross-geometric"/>, the magnitude of the torque is
 <md xml:id="eq-torque-magnitude" number="yes">
-|\vec\tau| = |\vec r||\vec F||\sin\theta|,
+\|\vec\tau\| = \|\vec r\|\|\vec F\||\sin\theta|,
 </md>
 
 where <m>\theta</m> is the angle between <m>\vec r</m> and
@@ -640,12 +640,12 @@ The quantity in <xref ref="eq-torque-magnitude"/> can be grouped in two
 useful ways:
 <md>
 <mrow>
-|\vec\tau| \amp= \underbrace{\left(|\vec r|\sin\theta\right)}_{r_\perp}|\vec F|
- = r_\perp |\vec F|,
+\|\vec\tau\| \amp= \underbrace{\left(\|\vec r\|\sin\theta\right)}_{r_\perp}\|\vec F\|
+ = r_\perp \|\vec F\|,
 </mrow>
 <mrow>
-|\vec\tau| \amp= |\vec r|\underbrace{\left(|\vec F|\sin\theta\right)}_{F_\perp}
- = |\vec r|\, F_\perp.
+\|\vec\tau\| \amp= \|\vec r\|\underbrace{\left(\|\vec F\|\sin\theta\right)}_{F_\perp}
+ = \|\vec r\|\, F_\perp.
 </mrow>
 </md>
 </p>
@@ -653,7 +653,7 @@ useful ways:
 The first grouping says the torque is the force times the
 <term>lever arm</term> <m>r_\perp</m>, the perpendicular distance from
 the axis to the line along which the force acts. The second says it is
-the distance <m>|\vec r|</m> times <m>F_\perp</m>, the component of the
+the distance <m>\|\vec r\|</m> times <m>F_\perp</m>, the component of the
 force perpendicular to <m>\vec r</m>; the parallel component
 <m>F_\parallel</m> points straight at the axis and produces no rotation.
 </p>
@@ -675,7 +675,7 @@ This is why you cannot open a door by pushing toward its hinge.
 <statement>
 <p>
 The biceps muscle exerts a vertical force of
-<m>|\vec F| = 700</m> N on the lower arm, attached at a point
+<m>\|\vec F\| = 700</m> N on the lower arm, attached at a point
 <m>5.0</m> cm from the elbow joint (the axis of rotation). Calculate
 the torque about the elbow when
 </p>
@@ -690,7 +690,7 @@ the torque about the elbow when
 The torque <m>\vec\tau = \vec r \times \vec F</m> of the biceps force
 about the elbow. When the forearm drops <m>30^\circ</m> below the
 horizontal, the angle between <m>\vec r</m> and <m>\vec F</m> becomes
-<m>120^\circ</m>, the lever arm <m>r_\perp = |\vec r|\sin\theta</m>
+<m>120^\circ</m>, the lever arm <m>r_\perp = \|\vec r\|\sin\theta</m>
 shortens, and the torque decreases from <m>35</m> to <m>30</m>
 <m>\text{m}\cdot\text{N}</m>.
 </caption>
@@ -734,8 +734,8 @@ straight up.
 = \langle 0, 0, 35 \rangle,
 </mrow>
 </md>
-so <m>|\vec\tau| = 35\ \text{m}\cdot\text{N}</m>. Equivalently,
-<m>|\vec\tau| = |\vec r||\vec F|\sin 90^\circ = (0.050)(700)(1) = 35\
+so <m>\|\vec\tau\| = 35\ \text{m}\cdot\text{N}</m>. Equivalently,
+<m>\|\vec\tau\| = \|\vec r\|\|\vec F\|\sin 90^\circ = (0.050)(700)(1) = 35\
 \text{m}\cdot\text{N}</m>. The torque points in the direction
 <m>+\vec k</m> (out of the page), which by the right-hand rule
 corresponds to a counterclockwise rotation of the forearm about the
@@ -768,13 +768,13 @@ product gives
 </md>
 </p>
 <p>
-So <m>|\vec\tau| \approx 30\ \text{m}\cdot\text{N}</m>, again
+So <m>\|\vec\tau\| \approx 30\ \text{m}\cdot\text{N}</m>, again
 counterclockwise. To check with <xref ref="eq-torque-magnitude"/>: the
 vector <m>\vec r</m> sits at <m>-30^\circ</m> and <m>\vec F</m> at
 <m>90^\circ</m>, so the angle between them is <m>\theta = 120^\circ</m>,
 and
 <md xml:id="eq-biceps-check" number="yes">
-|\vec\tau| = |\vec r||\vec F|\sin 120^\circ
+\|\vec\tau\| = \|\vec r\|\|\vec F\|\sin 120^\circ
 = (0.050)(700)\left(\tfrac{\sqrt 3}{2}\right)
 \approx 30\ \text{m}\cdot\text{N}.
 </md>
@@ -993,7 +993,7 @@ of change of its angle,
 measured in radians per second. By <xref ref="eq-circular-velocity"/>, the
 speed of the particle and its angular speed are related by
 <md xml:id="eq-speed-omega-r" number="yes">
-v = \left|\vec v\right| = r\,\omega.
+v = \left\|\vec v\right\| = r\,\omega.
 </md>
 </p>
 </statement>
@@ -1010,7 +1010,7 @@ triangle whose third side is the displacement
 <m>\Delta\vec r = \vec r(t+\Delta t) - \vec r(t)</m>. Splitting that triangle
 down the middle gives
 <md xml:id="eq-chord-length" number="yes">
-\left|\Delta\vec r\right| = 2r\sin\frac{\Delta\theta}{2}.
+\left\|\Delta\vec r\right\| = 2r\sin\frac{\Delta\theta}{2}.
 </md>
 </p>
 
@@ -1019,10 +1019,10 @@ For a small angle the power series
 <m>\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots</m> is dominated by
 its first term, so <m>\sin(\Delta\theta/2)\approx \Delta\theta/2</m> and the
 chord is very nearly the arc it cuts off:
-<m>\left|\Delta\vec r\right| \approx r\,\Delta\theta</m>. Dividing by
+<m>\left\|\Delta\vec r\right\| \approx r\,\Delta\theta</m>. Dividing by
 <m>\Delta t</m> and letting <m>\Delta t \to 0</m>,
 <md>
-v = \lim_{\Delta t\to 0}\frac{\left|\Delta\vec r\right|}{\Delta t}
+v = \lim_{\Delta t\to 0}\frac{\left\|\Delta\vec r\right\|}{\Delta t}
  = r\lim_{\Delta t\to 0}\frac{\left|\Delta\theta\right|}{\Delta t}
  = r\left|\frac{d\theta}{dt}\right| = r\,\omega,
 </md>
@@ -1036,7 +1036,7 @@ with the tangent line to the circle, so <m>\vec v</m> is perpendicular to
 <caption>
 The displacement <m>\Delta\vec r</m> is the chord subtending the angle
 <m>\Delta\theta</m>. For small <m>\Delta\theta</m> the chord is nearly the
-arc, <m>\left|\Delta\vec r\right| \approx r\,\Delta\theta</m>, and its
+arc, <m>\left\|\Delta\vec r\right\| \approx r\,\Delta\theta</m>, and its
 direction approaches that of the tangent line, along which <m>\vec v</m>
 points.
 </caption>
@@ -1089,14 +1089,14 @@ it.
       <m>\text{tangent line}</m>
       </label>
 
-      <!-- Plain | bars, never \left|...\right|: a stretchy delimiter makes
+      <!-- Plain \| bars, never \left\|...\right\|: a stretchy delimiter makes
            MathJax emit a nested <svg> inside the label, which browsers render
            flipped and stacked at the diagram origin. -->
       <label font-size="18" at="ch-note1" anchor="(0,-2.95)" alignment="c">
-      <m>|\Delta\vec r| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
+      <m>\|\Delta\vec r\| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
       </label>
       <label font-size="18" at="ch-note2" anchor="(0,-3.85)" alignment="c">
-      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{|\Delta\vec r|}{\Delta t}
+      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{\|\Delta\vec r\|}{\Delta t}
         = r\,\omega</m>
       </label>
 
@@ -1148,7 +1148,7 @@ For an object moving in a circle in the <m>xy</m>-plane about the origin, the
 directed along the axis of rotation. Its SI units are
 <m>\text{rad}\cdot\text{s}^{-1}</m>, and the angular speed of
 <xref ref="eq-angular-speed"/> is its magnitude,
-<m>\omega = \left|\vec\omega\right| = \left|\omega_z\right|</m>.
+<m>\omega = \left\|\vec\omega\right\| = \left|\omega_z\right|</m>.
 </p>
 </statement>
 </definition>
@@ -1327,7 +1327,7 @@ at once, with no computation:
 <p>
 <em>Magnitude.</em> Since <m>\vec\omega</m> is perpendicular to the plane of
 the circle, it is perpendicular to <m>\vec r</m>, so
-<m>\left|\vec v\right| = \left|\vec\omega\right|\left|\vec r\right|
+<m>\left\|\vec v\right\| = \left\|\vec\omega\right\|\left\|\vec r\right\|
 \sin 90^\circ = \omega r</m>, recovering
 <xref ref="eq-speed-omega-r"/>.
 </p>
@@ -1417,9 +1417,9 @@ vector.
         = \dfrac{d\theta}{dt}\,\hat k \times r\,\hat r
         = r\dfrac{d\theta}{dt}\,\hat\theta</m>
       </label>
-      <!-- Plain | bars: see the note in fig-circular-chord. -->
+      <!-- Plain \| bars: see the note in fig-circular-chord. -->
       <label font-size="18" at="cr-note2" anchor="(-4.6,-4.15)" alignment="e">
-      <m>|\vec v| = \omega r \sin 90^\circ = \omega r</m>
+      <m>\|\vec v\| = \omega r \sin 90^\circ = \omega r</m>
       </label>
 
       </coordinates>

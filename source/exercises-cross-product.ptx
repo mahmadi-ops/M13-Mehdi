@@ -140,7 +140,7 @@ The magnitude of the cross product is the area of the parallelogram
 spanned by <m>\vec a</m> and <m>\vec b</m>, so the triangle has half
 that area:
 <md>
-\text{Area} = \frac12\left|\vec a \times \vec b\right|
+\text{Area} = \frac12\left\|\vec a \times \vec b\right\|
 = \frac12\sqrt{9 + 81 + 4}
 = \frac{\sqrt{94}}{2}.
 </md>
@@ -494,7 +494,7 @@ straight side <m>\Delta\vec v</m> is the chord cutting off the arc of angle
 <m>\Delta\theta</m> on that circle, and for a small angle a chord is very
 nearly the arc it subtends:
 <md>
-\left|\Delta\vec v\right| = 2v\sin\frac{\Delta\theta}{2}
+\left\|\Delta\vec v\right\| = 2v\sin\frac{\Delta\theta}{2}
   \approx v\,\Delta\theta\text{.}
 </md>
 </p>
@@ -502,9 +502,9 @@ nearly the arc it subtends:
 <p>
 On the other hand Newton's second law over the short interval gives
 <md>
-\left|\Delta\vec v\right| \approx \frac{F}{m}\,\Delta t\text{.}
+\left\|\Delta\vec v\right\| \approx \frac{F}{m}\,\Delta t\text{.}
 </md>
-Equating the two expressions for <m>\left|\Delta\vec v\right|</m>,
+Equating the two expressions for <m>\left\|\Delta\vec v\right\|</m>,
 <md>
 v\,\Delta\theta = \frac{F}{m}\,\Delta t
 \qquad\Longrightarrow\qquad
@@ -567,10 +567,10 @@ times delta theta.
       <label font-size="18" at="dv-len2" anchor="(1.42,1.35)" alignment="nw" color="#666666"><m>v</m></label>
 
       <label font-size="18" at="dv-note1" anchor="(-1.2,-1.15)" alignment="e">
-      <m>\text{equal lengths} \;\Rightarrow\; |\Delta\vec v| \approx v\,\Delta\theta</m>
+      <m>\text{equal lengths} \;\Rightarrow\; \|\Delta\vec v\| \approx v\,\Delta\theta</m>
       </label>
       <label font-size="18" at="dv-note2" anchor="(-1.2,-1.80)" alignment="e">
-      <m>\text{Newton:}\; |\Delta\vec v| = \tfrac{F}{m}\Delta t
+      <m>\text{Newton:}\; \|\Delta\vec v\| = \tfrac{F}{m}\Delta t
         \;\Rightarrow\; \Delta\theta = \tfrac{F}{mv}\Delta t</m>
       </label>
 
@@ -738,12 +738,12 @@ Show that this force has magnitude <m>|q|\,vB</m>.
 <solution>
 <p>
 The length of a cross product is
-<m>\left|\vec v\times\vec B\right| = vB\sin\alpha</m>, where <m>\alpha</m>
+<m>\left\|\vec v\times\vec B\right\| = vB\sin\alpha</m>, where <m>\alpha</m>
 is the angle between <m>\vec v</m> and <m>\vec B</m>. Here the velocity is
 perpendicular to the field, so <m>\alpha = 90^\circ</m> and
 <m>\sin\alpha = 1</m>. Therefore
 <md>
-\left|\vec F_B\right| = |q|\left|\vec v\times\vec B\right|
+\left\|\vec F_B\right\| = |q|\left\|\vec v\times\vec B\right\|
  = |q|\,vB\sin 90^\circ = |q|\,vB\text{.}
 </md>
 Since <m>v</m> is constant (we are about to confirm this) and <m>B</m> is
@@ -899,7 +899,7 @@ points straight in toward the centre, at a right angle to the velocity.
       </label>
 
       <label font-size="18" at="mb-note1" anchor="(-4.4,-3.95)" alignment="e">
-      <m>\vec F = q\,\vec v\times\vec B \;\Rightarrow\; |\vec F| = |q|vB,
+      <m>\vec F = q\,\vec v\times\vec B \;\Rightarrow\; \|\vec F\| = |q|vB,
         \;\; \vec F\perp\vec v \text{ automatically}</m>
       </label>
       <label font-size="18" at="mb-note2" anchor="(-4.4,-5.15)" alignment="e">
