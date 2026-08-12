@@ -281,6 +281,102 @@ products each containing a factor of <m>0</m>, so
 </p>
 </proof>
 
+<exercise xml:id="exercise-cross-identity">
+<statement>
+<p>
+Show that
+<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Using the distributive properties of the cross product from
+<xref ref="thm-cross-properties"/>,
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf u \times \mathbf u + \mathbf u \times \mathbf v
+- \mathbf v \times \mathbf u - \mathbf v \times \mathbf v.
+</md>
+Since a vector is parallel to itself,
+<m>\mathbf u \times \mathbf u = \mathbf 0</m> and
+<m>\mathbf v \times \mathbf v = \mathbf 0</m> by
+<xref ref="fact-parallel-vectors"/>. Also
+<m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m> by
+<xref ref="thm-cross-properties"/>, so
+<md>
+(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
+= \mathbf 0 + \mathbf u \times \mathbf v - \bigl(-(\mathbf u \times \mathbf v)\bigr) - \mathbf 0
+= 2(\mathbf u \times \mathbf v).
+</md>
+</p>
+</solution>
+</exercise>
+
+<example xml:id="example-cross-geometric">
+<title>Computing a cross product using the first definition</title>
+<statement>
+<p>
+Use <xref ref="def-cross-product"/> to compute
+</p>
+<p>
+<ol>
+<li><p><m>\mathbf i \times \mathbf j</m>, and also <m>\mathbf j \times \mathbf i</m>;</p></li>
+<li>
+<p>
+<m>\mathbf u \times \mathbf v</m>, where <m>\mathbf u = 4\mathbf i</m> and
+<m>\mathbf v</m> is a vector of length <m>3</m> lying in the
+<m>xy</m>-plane, making an angle of <m>30^\circ</m> with <m>\mathbf u</m>
+measured counterclockwise.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<em>Part 1.</em> The vectors <m>\mathbf i</m> and <m>\mathbf j</m> are unit
+vectors, so <m>\|\mathbf i\| = \|\mathbf j\| = 1</m>, and they are
+perpendicular, so <m>\theta = 90^\circ</m> and <m>\sin\theta = 1</m>. Both
+lie in the <m>xy</m>-plane, so the unit vector orthogonal to both is either
+<m>\mathbf k</m> or <m>-\mathbf k</m>; curling the fingers of the right hand
+from <m>\mathbf i</m> toward <m>\mathbf j</m> points the thumb along
+<m>+\mathbf k</m>, so <m>\mathbf n = \mathbf k</m> and
+<md>
+\mathbf i \times \mathbf j
+= \left(\|\mathbf i\|\|\mathbf j\|\sin 90^\circ\right)\mathbf k
+= (1)(1)(1)\,\mathbf k = \mathbf k.
+</md>
+For <m>\mathbf j \times \mathbf i</m> the two lengths and the angle are
+unchanged, but the right-hand rule now runs from <m>\mathbf j</m> toward
+<m>\mathbf i</m>, which points the thumb along <m>-\mathbf k</m>. Hence
+<m>\mathbf j \times \mathbf i = -\mathbf k = -(\mathbf i \times \mathbf j)</m>,
+in agreement with property 4 of <xref ref="thm-cross-properties"/>.
+</p>
+<p>
+<em>Part 2.</em> Here <m>\|\mathbf u\| = 4</m>, <m>\|\mathbf v\| = 3</m>, and
+<m>\theta = 30^\circ</m>, so the length of the cross product is
+<md>
+\|\mathbf u \times \mathbf v\|
+= \|\mathbf u\|\|\mathbf v\|\sin 30^\circ
+= (4)(3)\left(\tfrac12\right) = 6.
+</md>
+Both vectors lie in the <m>xy</m>-plane, and turning from <m>\mathbf u</m> to
+<m>\mathbf v</m> is counterclockwise, so the right-hand rule again gives
+<m>\mathbf n = \mathbf k</m> and
+<md>
+\mathbf u \times \mathbf v = 6\,\mathbf k = \langle 0,0,6\rangle.
+</md>
+</p>
+<p>
+As a check on the magnitude, <xref ref="fact-parallelogram-area"/> says
+<m>\|\mathbf u \times \mathbf v\|</m> is the area of the parallelogram built
+on <m>\mathbf u</m> and <m>\mathbf v</m>: its base is
+<m>\|\mathbf u\| = 4</m> and its height is
+<m>\|\mathbf v\|\sin 30^\circ = 1.5</m>, giving an area of <m>6</m>.
+</p>
+</solution>
+</example>
+
 </section>
 
 <!-- ================================================================ -->
@@ -488,37 +584,6 @@ is half of the corresponding parallelogram.
 </solution>
 </example>
 
-<exercise xml:id="exercise-cross-identity">
-<statement>
-<p>
-Show that
-<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
-</p>
-</statement>
-<solution>
-<p>
-Using the distributive properties of the cross product from
-<xref ref="thm-cross-properties"/>,
-<md>
-(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
-= \mathbf u \times \mathbf u + \mathbf u \times \mathbf v
-- \mathbf v \times \mathbf u - \mathbf v \times \mathbf v.
-</md>
-Since a vector is parallel to itself,
-<m>\mathbf u \times \mathbf u = \mathbf 0</m> and
-<m>\mathbf v \times \mathbf v = \mathbf 0</m> by
-<xref ref="fact-parallel-vectors"/>. Also
-<m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m> by
-<xref ref="thm-cross-properties"/>, so
-<md>
-(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v)
-= \mathbf 0 + \mathbf u \times \mathbf v - \bigl(-(\mathbf u \times \mathbf v)\bigr) - \mathbf 0
-= 2(\mathbf u \times \mathbf v).
-</md>
-</p>
-</solution>
-</exercise>
-
 </section>
 
 <!-- ================================================================ -->
@@ -595,7 +660,7 @@ have <m>\|\vec u\| = \|\vec v\| = 1</m>, which means:
 <title>Application: Torque</title>
 
 <p>
-One of the most important physical applications of the cross product is
+One of the well known physical applications of the cross product is
 <term>torque</term>, the rotational analog of force. A force makes an
 object accelerate; a torque makes it <em>rotate</em>. How effective a
 force is at producing rotation depends not only on its magnitude, but
@@ -603,7 +668,7 @@ also on <em>where</em> it is applied and in <em>what direction</em>.
 Think of pushing a door: pushing hard near the hinge barely moves it,
 while a light push at the doorknob swings it open easily. Pushing at the
 doorknob but <em>toward</em> the hinge does nothing at all. The cross
-product captures all three effects at once.
+product captures all three scenarios and more.
 </p>
 
 <definition xml:id="def-torque">
