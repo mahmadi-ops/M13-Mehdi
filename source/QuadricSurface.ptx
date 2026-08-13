@@ -660,35 +660,22 @@ We leave the student to explore the condition that would create a hyperboloid of
       <md>
         \frac{x^2}{4} + \frac{y^2}{9} - \frac{z^2}{16} = 1
         \qquad \text{and} \qquad
-        \frac{z^2}{16} - \frac{x^2}{4} - \frac{y^2}{9} = 1
+        \frac{z^2}{16} - \frac{x^2}{4} - \frac{y^2}{9} = 1,
       </md>
-      and discover why the first is called a <term>hyperboloid of one sheet</term>
+      both of which come from equation <xref ref="quad-simplified"/>.<fn>For the
+      first surface <m>A = 1/4</m>, <m>B = 1/9</m>, <m>C = -1/16</m>,
+      <m>D = 0</m>, and <m>E = 1</m>; for the second surface <m>A = -1/4</m>,
+      <m>B = -1/9</m>, <m>C = 1/16</m>, <m>D = 0</m>, and <m>E = 1</m>.  For the
+      ellipsoid all three squared terms were positive; here exactly <em>one</em>
+      squared term is negative for the first surface and exactly <em>two</em> are
+      negative for the second.  Keep this count in mind as you work through the
+      traces.</fn>
+      Discover why the first is called a <term>hyperboloid of one sheet</term>
       while the second is called a <term>hyperboloid of two sheets</term>.
       Pay particular attention to the traces in the horizontal planes <m>z = c</m>:
       they are what tells the two surfaces apart.
     </p>
   </introduction>
-
-  <task xml:id="task-hyperboloid-coefficients">
-    <statement>
-      <p>
-        Both surfaces can be obtained from equation <xref ref="quad-simplified"/>.
-        Find the values of <m>A, B, C, D,</m> and <m>E</m> that produce each surface.
-        Compared with the ellipsoid, what changed in the signs of the coefficients?
-      </p>
-    </statement>
-    <solution>
-      <p>
-        For the first surface <m>A = 1/4</m>, <m>B = 1/9</m>, <m>C = -1/16</m>,
-        <m>D = 0</m>, and <m>E = 1</m>.  For the second surface <m>A = -1/4</m>,
-        <m>B = -1/9</m>, <m>C = 1/16</m>, <m>D = 0</m>, and <m>E = 1</m>.
-        For the ellipsoid all three squared terms were positive; here exactly
-        <em>one</em> squared term is negative for the first surface and exactly
-        <em>two</em> are negative for the second.  Keep this count in mind as you
-        work through the traces.
-      </p>
-    </solution>
-  </task>
 
   <task xml:id="task-hyperboloid-one-sheet">
     <statement>
