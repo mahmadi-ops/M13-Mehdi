@@ -31,39 +31,51 @@
 
  <introduction>
 <p>
-Much like the conic sections, quadric surfaces are defined by second-degree equations in three variables. 
-The general form of a quadric surface is given by the equation: 
+The conic sections are the curves cut out by second-degree equations in two
+variables.  Asking the same question one dimension higher leads to the
+<term>quadric surfaces</term>: the surfaces in space described by a second-degree
+equation in three variables,
 <md>
-  Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0
-</md>  
-where <m>A, B, C, D, E, F, G, H, I,</m> and <m>J</m> are constants.
-For our purposes, we will focus on the simpler forms of quadric surfaces 
-that can be obtained by setting some of the coefficients to zero. 
-For our examples, we will consider the following simplified forms of quadric surfaces:
+  Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0,
+</md>
+where <m>A</m> through <m>J</m> are constants.
+</p>
 
+<p>
+This general equation carries more freedom than we need.  The cross terms
+<m>xy</m>, <m>xz</m>, and <m>yz</m> only tilt the surface away from the
+coordinate axes, and the linear terms <m>Gx</m> and <m>Hy</m> only slide it off
+the origin; neither affects the <em>shape</em> of the surface.  Setting those
+coefficients to zero therefore costs us nothing essential, and it leaves a
+surface in standard position.  Every example in this chapter comes from the
+resulting reduced equation
 <md xml:id="quad-simplified" number="yes">
-  Ax^2 + By^2 + Cz^2 + Dz = E
-</md>  
-
- </p>
+  Ax^2 + By^2 + Cz^2 + Dz = E.
+</md>
+Each surface below is obtained by one choice of the five remaining
+coefficients.  What tells the surfaces apart is which of them vanish and,
+above all, the signs of those that do not.
+</p>
 </introduction>
 <section xml:id="subsec-elliptical-paraboloid">
     <title>Elliptical Paraboloid</title>
   <p>
-    Consider the case where from equation <xref ref="quad-simplified"/> where
+    We begin with the case in which <m>x</m> and <m>y</m> appear squared with
+    coefficients of the same sign, while <m>z</m> appears only to the first
+    power.<fn>In equation <xref ref="quad-simplified"/>, take <m>A = 1/4</m>,
+    <m>B = 1/9</m>, <m>C = 0</m>, <m>D = -1</m>, and <m>E = 0</m>.</fn>
+    Equation <xref ref="quad-simplified"/> then reduces to
     <md>
-    A = 1/4, B= 1/9, C= 0, D= -1, E= 0
-    </md>  
-    Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <md>
-     z =  \frac{x^2}{4} + \frac{y^2}{9}  
+      z = \frac{x^2}{4} + \frac{y^2}{9},
     </md>
+    the surface known as an <term>elliptical paraboloid</term>.
   </p>
 
 <p>
-  By allowing fixed values of <m>x, y</m> and <m></m>, we can obtain traces of Conic
-    Sections.  For example, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
-    we get the following traces, as shown in <xref ref="fig-elliptical-paraboloid-slices"/>:
+  By fixing the value of <m>x</m>, <m>y</m>, or <m>z</m>, we cut the surface with a
+    plane and obtain traces that are conic sections.  For example, setting
+    <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m> in turn gives the following
+    traces, as shown in <xref ref="fig-elliptical-paraboloid-slices"/>:
 <md>
     <mrow>z \amp=  1 + \frac{y^2}{9}  \amp\amp (parabola)</mrow>
     <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
@@ -192,21 +204,23 @@ For our examples, we will consider the following simplified forms of quadric sur
   <title>Hyperbolic Paraboloid</title>
 
 <p>
-    We now consider the case where from equation <xref ref="quad-simplified"/> where
+    Now change a single sign: keep <m>z</m> to the first power, but let the
+    squared terms in <m>x</m> and <m>y</m> carry <em>opposite</em>
+    signs.<fn>In equation <xref ref="quad-simplified"/>, take <m>A = 1/4</m>,
+    <m>B = -1/9</m>, <m>C = 0</m>, <m>D = -1</m>, and <m>E = 0</m>.</fn>
+    Equation <xref ref="quad-simplified"/> becomes
     <md>
-    A = 1/4, B= -1/9, C= 0, D= -1, E= 0
-    </md>  
-    Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <md>
-     z =  \frac{x^2}{4} - \frac{y^2}{9}  
+      z = \frac{x^2}{4} - \frac{y^2}{9},
     </md>
+    a <term>hyperbolic paraboloid</term>.  That one sign is enough to change the
+    surface completely.
   </p>
 
 <p>
-  Similar to the previous example (<xref ref="subsec-elliptical-paraboloid"/>), we use 
-  fixed values of <m>x, y</m> and <m></m>, we can obtain traces of conic
-    sections.  Again, if we set <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>
-    we get the following traces, as shown in <xref ref="fig-hyperbolic-paraboloid-slices"/>:
+  As in the previous example (<xref ref="subsec-elliptical-paraboloid"/>), fixing the
+    value of <m>x</m>, <m>y</m>, or <m>z</m> produces traces that are conic
+    sections.  Again setting <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m> in turn
+    gives the following traces, as shown in <xref ref="fig-hyperbolic-paraboloid-slices"/>:
 <md>
     <mrow>z \amp=  1 - \frac{y^2}{9}  \amp\amp (parabola)</mrow>
     <mrow>z \amp=  \frac{x^2}{4} + 1  \amp\amp (parabola)</mrow>
@@ -341,14 +355,15 @@ For our examples, we will consider the following simplified forms of quadric sur
   <title>Ellipsoid</title>
 
 <p>
-    We now consider the case where from equation <xref ref="quad-simplified"/> where
+    Suppose next that all three variables appear squared with coefficients of the
+    same sign, and that no linear term is present at all.<fn>In equation
+    <xref ref="quad-simplified"/>, take <m>A = 1/4</m>, <m>B = 1/9</m>,
+    <m>C = 1/16</m>, <m>D = 0</m>, and <m>E = 1</m>.</fn>
+    Equation <xref ref="quad-simplified"/> reduces to
     <md>
-    A = 1/4, B= 1/9, C= 1/16, D= 0, E= 1
-    </md>  
-    Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <md>
-       \frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1
+      \frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1,
     </md>
+    an <term>ellipsoid</term>.
   </p>
 
 <p>
@@ -481,15 +496,15 @@ For our examples, we will consider the following simplified forms of quadric sur
   <title>Elliptic Cone</title>
 
 <p>
-    We now consider the case where from equation <xref ref="quad-simplified"/> where
+    Finally, keep all three squared terms, but let the coefficient of <m>z^2</m>
+    be negative and set the constant on the right-hand side to zero.<fn>In
+    equation <xref ref="quad-simplified"/>, take <m>A = 1/4</m>,
+    <m>B = 1/9</m>, <m>C = -1</m>, <m>D = 0</m>, and <m>E = 0</m>.</fn>
+    Equation <xref ref="quad-simplified"/> becomes
     <md>
-    A = 1/4, B= 1/9, C= -1, D= 0, E= 0
-    </md>  
-    Under these conditions, the general equation of a quadric surface reduces to the following equation:
-    <md>
-        z^2 = \frac{x^2}{4} + \frac{y^2}{9} 
-
+      z^2 = \frac{x^2}{4} + \frac{y^2}{9},
     </md>
+    an <term>elliptic cone</term>.
   </p>
 
 <p>
