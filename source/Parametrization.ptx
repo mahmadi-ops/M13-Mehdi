@@ -738,8 +738,8 @@ direction as the projectile falls.
     of this, there are two different questions we can ask about two parametric
     curves
     <md>
-      \mathbf r_1(t) = \bigl(f_1(t),\, g_1(t)\bigr), \qquad
-      \mathbf r_2(t) = \bigl(f_2(t),\, g_2(t)\bigr),
+      \mathbf r_1(t) = \bigl\langle f_1(t),\, g_1(t)\bigr\rangle, \qquad
+      \mathbf r_2(t) = \bigl\langle f_2(t),\, g_2(t)\bigr\rangle,
     </md>
     thought of as the trajectories of two particles.
   </p>
@@ -813,8 +813,8 @@ direction as the projectile falls.
       <p>
         Two particles move in the plane with position vectors
         <md>
-          \mathbf r_1(t) = \bigl(t,\; t^2\bigr), \qquad
-          \mathbf r_2(t) = \bigl(-t,\; 2-t\bigr), \qquad t \in \mathbb R .
+          \mathbf r_1(t) = \bigl\langle t,\; t^2\bigr\rangle, \qquad
+          \mathbf r_2(t) = \bigl\langle -t,\; 2-t\bigr\rangle, \qquad t \in \mathbb R .
         </md>
         Find all intersection points of their paths, and all collision points of
         the particles.
@@ -850,8 +850,8 @@ direction as the projectile falls.
 
   <figure xml:id="fig-no-collision-video">
     <caption>
-      The particles <m>\mathbf r_1(t) = (t,t^2)</m> and
-      <m>\mathbf r_2(t) = (-t,2-t)</m> move simultaneously. Their paths cross at
+      The particles <m>\mathbf r_1(t) = \langle t,t^2\rangle</m> and
+      <m>\mathbf r_2(t) = \langle -t,2-t\rangle</m> move simultaneously. Their paths cross at
       <m>(-1,1)</m> and <m>(2,4)</m>, but the clock shows that the two particles
       are never at either crossing at the same time.
     </caption>
@@ -944,8 +944,8 @@ direction as the projectile falls.
       <p>
         Keep the first particle, but re-schedule the second one:
         <md>
-          \mathbf r_1(t) = \bigl(t,\; t^2\bigr), \qquad
-          \mathbf r_2(t) = \bigl(2t-2,\; 2t\bigr), \qquad t \in \mathbb R .
+          \mathbf r_1(t) = \bigl\langle t,\; t^2\bigr\rangle, \qquad
+          \mathbf r_2(t) = \bigl\langle 2t-2,\; 2t\bigr\rangle, \qquad t \in \mathbb R .
         </md>
         Find the intersection points of the paths and the collision points of the
         particles.
@@ -968,7 +968,7 @@ direction as the projectile falls.
         second equation, since <m>2^2 = 4 = 2\cdot 2</m>. Hence the particles
         <em>do</em> collide, at
         <md>
-          \mathbf r_1(2) = \mathbf r_2(2) = (2,4), \qquad \text{at time } t = 2 .
+          \mathbf r_1(2) = \mathbf r_2(2) = \langle 2,4\rangle, \qquad \text{at time } t = 2 .
         </md>
       </p>
       <p>
@@ -983,7 +983,7 @@ direction as the projectile falls.
 
   <figure xml:id="fig-collision-video">
     <caption>
-      With <m>\mathbf r_2(t) = (2t-2,2t)</m> the second particle follows the same
+      With <m>\mathbf r_2(t) = \langle 2t-2,2t\rangle</m> the second particle follows the same
       line as before, but on a different schedule. It misses the first particle at
       <m>(-1,1)</m> and collides with it at <m>(2,4)</m> when <m>t = 2</m>.
     </caption>
@@ -1087,7 +1087,7 @@ direction as the projectile falls.
   <exercise xml:id="checkpoint-collision">
     <statement>
       <p>
-        Keep <m>\mathbf r_1(t) = (t,t^2)</m>. Find a parametrization
+        Keep <m>\mathbf r_1(t) = \langle t,t^2\rangle</m>. Find a parametrization
         <m>\mathbf r_2</m> of the line <m>y = x+2</m> for which the two particles
         collide at <em>both</em> intersection points.
       </p>
@@ -1100,12 +1100,12 @@ direction as the projectile falls.
     </hint>
     <answer>
       <p>
-        <m>\mathbf r_2(t) = (t,\; t+2)</m>.
+        <m>\mathbf r_2(t) = \langle t,\; t+2\rangle</m>.
       </p>
     </answer>
     <solution>
       <p>
-        With <m>\mathbf r_2(t) = (t, t+2)</m> the collision equations become
+        With <m>\mathbf r_2(t) = \langle t, t+2\rangle</m> the collision equations become
         <m>t = t</m> and <m>t^2 = t+2</m>, i.e. <m>(t-2)(t+1) = 0</m>. Thus
         <m>t = -1</m> gives the collision at <m>(-1,1)</m> and <m>t = 2</m> gives
         the collision at <m>(2,4)</m>: both intersection points are now collision
