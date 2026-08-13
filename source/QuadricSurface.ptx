@@ -649,7 +649,10 @@ above all, the signs of those that do not.
 <section xml:id="subsec-hyperboloids">
   <title>Hyperboloids</title>
 <p>
-We leave the student to explore the condition that would create a hyperboloid of one and two sheets.  
+The two remaining quadric surfaces are left for you to explore.  The aim of this
+section is to practice the slicing method of the previous sections on a new pair
+of surfaces and, in doing so, to see what separates a hyperboloid of one sheet
+from a hyperboloid of two sheets.
 </p>
 
 <activity xml:id="activity-hyperboloids">
