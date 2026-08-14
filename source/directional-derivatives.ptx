@@ -298,7 +298,7 @@ surface <m>z = 1 + x^2 + y^2</m>, rotating onto the tangent line at
 <m>P_0</m> as <m>s \to 0</m>, with slope
 <m>2\sqrt2 + s \to 2\sqrt2</m>.
 </caption>
-<interactive xml:id="interactive-dirderiv-secant-3d-manim" iframe="dirderiv-secant-3d-manim.html" width="100%" aspect="1:1">
+<interactive xml:id="interactive-dirderiv-secant-3d-manim" iframe="dirderiv-secant-3d-manim.html" width="100%" aspect="4:3">
 <instructions>
 <p>
 Press <q>Play</q> to watch the whole construction in one continuous
@@ -1044,7 +1044,7 @@ The same slice, animated: the tangent to the sliced surface at
 <m>(1,1,3)</m> tipping from steepest ascent through level to steepest
 descent as the direction <m>\mathbf u</m> turns around <m>P_0(1,1)</m>.
 </caption>
-<interactive xml:id="interactive-dirderiv-surface-slice-manim" iframe="dirderiv-surface-slice-manim.html" width="100%" aspect="1:1">
+<interactive xml:id="interactive-dirderiv-surface-slice-manim" iframe="dirderiv-surface-slice-manim.html" width="100%" aspect="4:3">
 <instructions>
 <p>
 Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
@@ -1501,7 +1501,7 @@ The same three directions, animated: <m>D_{\mathbf u} f</m> sweeping
 between <m>\|\nabla f\|</m> and <m>-\|\nabla f\|</m> as <m>\mathbf u</m>
 turns around <m>P_0(1,1)</m>.
 </caption>
-<interactive xml:id="interactive-gradient-max-directions-manim" iframe="gradient-max-directions-manim.html" width="100%" aspect="1:1">
+<interactive xml:id="interactive-gradient-max-directions-manim" iframe="gradient-max-directions-manim.html" width="100%" aspect="4:3">
 <instructions>
 <p>
 Press <q>Play</q> to watch <m>\mathbf u</m> turn once around
@@ -1552,7 +1552,7 @@ The same 3D view, animated: the tangent to the sliced surface at
 <m>(1,1,1)</m> tipping from steepest ascent through level to steepest
 descent as <m>\mathbf u</m> turns.
 </caption>
-<interactive xml:id="interactive-gradient-max-directions-3d-manim" iframe="gradient-max-directions-3d-manim.html" width="100%" aspect="1:1">
+<interactive xml:id="interactive-gradient-max-directions-3d-manim" iframe="gradient-max-directions-3d-manim.html" width="100%" aspect="4:3">
 <instructions>
 <p>
 Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
