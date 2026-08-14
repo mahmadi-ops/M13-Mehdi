@@ -142,10 +142,10 @@ along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
         thickness="3"/>
 <vector at="ds-u" v="(0.48,0.36)" tail="(0.65,0.55)" stroke="#D55E00"
         thickness="3"/>
-<point at="ds-P0" p="(0.65,0.55)" fill="#009E73" alignment="sw">
+<point at="ds-P0" p="(0.65,0.55)" fill="#009E73" alignment="s">
 <m>P_0(x_0,y_0)</m>
 </point>
-<point at="ds-P" p="(1.85,1.45)" fill="#009E73" alignment="ne">
+<point at="ds-P" p="(1.85,1.45)" fill="#009E73" alignment="n">
 <m>P(x_0+su_1,\,y_0+su_2)</m>
 </point>
 <label at="ds-su-label" anchor="(1.15,1.15)" alignment="nw" color="#0072B2">
@@ -186,8 +186,8 @@ the tangent line, whose slope is the directional derivative
 <m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
 </caption>
 <video xml:id="video-dirderiv-setup"
-       source="videos/dirderiv_definition_manim.mp4"
-       width="70%" aspect="16:9"/>
+       source="videos/dirderiv_secant_tangent_manim.mp4"
+       width="100%" aspect="16:9"/>
 </figure>
 
 <figure xml:id="fig-int-dirderiv-definition">
@@ -267,6 +267,8 @@ secant line of <m>g</m> through <m>s = 0</m> and <m>s</m>. As
 <m>s = 0</m>, whose slope is
 <m>g'(0) = 2\sqrt 2 = \left(D_{\mathbf u} f\right)_{P_0}</m>.
 </p>
+<!-- Hidden: superseded by fig-int-dirderiv-secant-3d-manim below, which shows
+     the same limit. Uncomment to bring it back.
 <figure xml:id="fig-int-dirderiv-secant-3d">
 <caption>
 The secant line on the surface <m>z=1+x^2+y^2</m> rotating onto the tangent line as <m>s \to 0</m>, giving the directional derivative <m>2\sqrt2</m>.
@@ -283,6 +285,33 @@ toward the tangent line. Press <q>s <m>\to</m> 0</q> to animate the
 limit; the readout shows the secant slope <m>2\sqrt 2 + s</m>
 approaching the directional derivative <m>2\sqrt 2</m>. Drag the figure
 to view it from a different angle, or press the <q>Rotate</q> button.
+</p>
+</instructions>
+</interactive>
+</figure>
+-->
+
+<figure xml:id="fig-int-dirderiv-secant-3d-manim">
+<caption>
+The secant through <m>(P_0, f(P_0))</m> and <m>(P, f(P))</m> on the
+surface <m>z = 1 + x^2 + y^2</m>, rotating onto the tangent line at
+<m>P_0</m> as <m>s \to 0</m>, with slope
+<m>2\sqrt2 + s \to 2\sqrt2</m>.
+</caption>
+<interactive xml:id="interactive-dirderiv-secant-3d-manim" iframe="dirderiv-secant-3d-manim.html" width="100%" aspect="1:1">
+<instructions>
+<p>
+Press <q>Play</q> to watch the whole construction in one continuous
+motion: the vertical plane through <m>P_0(1,1)</m> in the direction
+<m>\mathbf u</m> cuts the surface <m>z = 1 + x^2 + y^2</m> in the gold
+curve, the red secant joins <m>(P_0, f(P_0))</m> to <m>(P, f(P))</m>,
+and as <m>s \to 0</m> that secant rotates onto the green tangent line.
+The reading at the lower left compares the secant slope
+<m>2\sqrt 2 + s</m> with the tangent slope <m>2\sqrt 2</m>, which is the
+directional derivative <m>\left(D_{\mathbf u} f\right)_{P_0}</m>. Stop
+the animation at any time and drag the <m>s</m> slider yourself, or
+press <q>s <m>\to</m> 0</q> to replay just the limit. Drag the figure to
+change the viewpoint, or press <q>Spin</q> to let it turn.
 </p>
 </instructions>
 </interactive>
@@ -430,7 +459,7 @@ Every partial derivative is a directional derivative, so nothing already known a
 <m>f_x</m> and <m>f_y</m> is lost. What the definition adds is the freedom to point
 <m>\mathbf u</m> anywhere. Keep in mind that this depends on <m>\mathbf u</m> being a
 <em>unit</em> vector: the parameter <m>s</m> measures actual distance travelled in the
-<m>xy</m>-plane only when <m>|\mathbf u| = 1</m>.
+<m>xy</m>-plane only when <m>\|\mathbf u\| = 1</m>.
 </p>
 </conclusion>
 
@@ -796,7 +825,7 @@ which <m>f</m> increases.
 <answer>
 <p>
 The right angle persists everywhere. The arrow lengthens as the point moves
-outward, since <m>|\nabla f| = 2\sqrt{x^2 + y^2}</m> grows with the distance from
+outward, since <m>\|\nabla f\| = 2\sqrt{x^2 + y^2}</m> grows with the distance from
 the origin; correspondingly the level curves are spaced more closely there, because
 <m>f</m> is climbing faster. At the origin <m>\nabla f = \mathbf 0</m>: the level
 curve degenerates to a single point and there is no direction of steepest ascent.
@@ -984,6 +1013,8 @@ level curve <m>f = 3</m>, and its dashed projection in the
 </latex-image>
 </image>
 </figure>
+<!-- Hidden: superseded by fig-int-dirderiv-surface-slice-manim below, which shows
+     the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-dirderiv-surface-slice">
 <caption>
 Rotating the direction <m>\mathbf u</m> at <m>(1,1)</m> and reading off <m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m> as the slope of the tangent line to the sliced surface <m>z=1+x^2+y^2</m>.
@@ -1005,6 +1036,32 @@ change. Drag the figure to view it from a different angle, or press the
 </instructions>
 </interactive>
 </figure>
+
+-->
+<figure xml:id="fig-int-dirderiv-surface-slice-manim">
+<caption>
+The same slice, animated: the tangent to the sliced surface at
+<m>(1,1,3)</m> tipping from steepest ascent through level to steepest
+descent as the direction <m>\mathbf u</m> turns around <m>P_0(1,1)</m>.
+</caption>
+<interactive xml:id="interactive-dirderiv-surface-slice-manim" iframe="dirderiv-surface-slice-manim.html" width="100%" aspect="1:1">
+<instructions>
+<p>
+Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
+turn once around. The gold curve is where the plane cuts the surface
+<m>z = 1 + x^2 + y^2</m>, and the straight line through <m>(1,1,3)</m>
+is the tangent to that curve; its slope is
+<m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m>,
+read off at the lower left. The tangent is green and steepest upwards
+when <m>\mathbf u</m> points along <m>\nabla f</m>, red and steepest
+downwards along <m>-\nabla f</m>, and yellow and level in the two
+directions tangent to the pink level curve. Stop the animation at any
+time and drag the <m>\varphi</m> slider, drag the figure to change the
+viewpoint, or press <q>Spin</q>.
+</p>
+</instructions>
+</interactive>
+</figure>
 </solution>
 </example>
 
@@ -1018,27 +1075,38 @@ change. Drag the figure to view it from a different angle, or press the
 The directional derivative can be expressed as
 <md>
 <mrow>D_{\mathbf u} f \amp= \nabla f\cdot\mathbf u</mrow>
-<mrow>\amp= |\nabla f|\,|\mathbf u|\cos\theta</mrow>
-<mrow xml:id="eq-dirderiv-cos-theta" number="yes">\amp= |\nabla f|\cos\theta,</mrow>
+<mrow>\amp= \|\nabla f\|\,\|\mathbf u\|\cos\theta</mrow>
+<mrow xml:id="eq-dirderiv-cos-theta" number="yes">\amp= \|\nabla f\|\cos\theta,</mrow>
 </md>
 where <m>\theta</m> is the angle between <m>\nabla f</m> and the unit
-vector <m>\mathbf u</m>. This formula has three important consequences:
+vector <m>\mathbf u</m>. The first line is
+<xref ref="eq-dirderiv-gradient-relation"/>, obtained from the chain rule in
+<xref ref="sec-gradient-vector"/>; the second is the geometric form of the dot
+product; and the third uses <m>\|\mathbf u\| = 1</m>.
 </p>
 
+<remark xml:id="remark-dirderiv-three-consequences">
+<title>Three Consequences of <m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m></title>
+<p>
+Only the factor <m>\cos\theta</m> depends on the direction, and it runs over
+<m>[-1,1]</m> as <m>\mathbf u</m> turns through the circle of directions at
+<m>P_0</m>. Its three extreme values single out three directions, drawn in
+<xref ref="fig-dirderiv-angle-prefigure"/>:
+</p>
 <p>
 <ul>
 <li>
 <p>
 When <m>\nabla f</m> and <m>\mathbf u</m> are in the same direction
 (<m>\cos\theta = 1</m>), <m>f</m> increases most rapidly and
-<m>D_{\mathbf u} f = |\nabla f|</m>.
+<m>D_{\mathbf u} f = \|\nabla f\|</m>.
 </p>
 </li>
 <li>
 <p>
 When <m>\nabla f</m> and <m>\mathbf u</m> have opposite directions
 (<m>\cos\theta = -1</m>), <m>f</m> decreases most rapidly and
-<m>D_{\mathbf u} f = -|\nabla f|</m>.
+<m>D_{\mathbf u} f = -\|\nabla f\|</m>.
 </p>
 </li>
 <li>
@@ -1050,6 +1118,7 @@ When <m>\nabla f</m> and <m>\mathbf u</m> are orthogonal
 </li>
 </ul>
 </p>
+</remark>
 
 <figure xml:id="fig-dirderiv-angle-prefigure">
 <caption>
@@ -1087,7 +1156,7 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 <m>D_{\mathbf u}f=0</m>
 </label>
 <label at="an-formula" anchor="(0,-1.62)" alignment="c">
-<m>D_{\mathbf u} f = |\nabla f|\cos\theta</m>
+<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>
 </label>
 </coordinates>
 
@@ -1111,7 +1180,7 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 <introduction>
 <p>
 The three cases listed above are all consequences of a single formula,
-<m>D_{\mathbf u} f = |\nabla f|\cos\theta</m>. In this activity you will derive them
+<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>. In this activity you will derive them
 yourself and then check your answers against
 <xref ref="fig-int-gradient-direction-angle"/>, where <m>\mathbf u</m> can be dragged
 around the circle of directions.
@@ -1122,22 +1191,21 @@ around the circle of directions.
 <statement>
 <p>
 Beginning with <m>D_{\mathbf u} f = \nabla f \cdot \mathbf u</m>, explain why the dot
-product can be rewritten as <m>|\nabla f|\cos\theta</m>. Where is the assumption
-<m>|\mathbf u| = 1</m> used?
+product can be rewritten as <m>\|\nabla f\|\cos\theta</m>.
 </p>
 </statement>
 <answer>
 <p>
-For any two vectors, <m>\mathbf a \cdot \mathbf b = |\mathbf a||\mathbf b|\cos\theta</m>
+For any two vectors, <m>\mathbf a \cdot \mathbf b = \|\mathbf a\|\|\mathbf b\|\cos\theta</m>
 with <m>\theta</m> the angle between them. Applying this to <m>\nabla f</m> and
 <m>\mathbf u</m>,
 <md>
 <mrow>D_{\mathbf u} f = \nabla f \cdot \mathbf u</mrow>
-<mrow>\amp= |\nabla f|\,|\mathbf u|\cos\theta</mrow>
-<mrow>\amp= |\nabla f|\cos\theta ,</mrow>
+<mrow>\amp= \|\nabla f\|\,\|\mathbf u\|\cos\theta</mrow>
+<mrow>\amp= \|\nabla f\|\cos\theta ,</mrow>
 </md>
-where the last step uses <m>|\mathbf u| = 1</m>. Without that assumption the factor
-<m>|\mathbf u|</m> would survive, and rescaling <m>\mathbf u</m> would change
+where the last step uses <m>\|\mathbf u\| = 1</m>. Without that assumption the factor
+<m>\|\mathbf u\|</m> would survive, and rescaling <m>\mathbf u</m> would change
 <m>D_{\mathbf u} f</m> without changing the direction being measured.
 </p>
 </answer>
@@ -1146,7 +1214,7 @@ where the last step uses <m>|\mathbf u| = 1</m>. Without that assumption the fac
 <task xml:id="task-cos-theta-extremes">
 <statement>
 <p>
-Treat <m>|\nabla f|</m> as fixed and let <m>\theta</m> run over
+Treat <m>\|\nabla f\|</m> as fixed and let <m>\theta</m> run over
 <m>[0, 2\pi)</m>. What are the largest and smallest values of
 <m>D_{\mathbf u} f</m>, and at which angles do they occur? For which angles is
 <m>D_{\mathbf u} f = 0</m>?
@@ -1154,10 +1222,10 @@ Treat <m>|\nabla f|</m> as fixed and let <m>\theta</m> run over
 </statement>
 <answer>
 <p>
-Since <m>-1 \le \cos\theta \le 1</m>, the quantity <m>|\nabla f|\cos\theta</m> ranges
-between <m>-|\nabla f|</m> and <m>|\nabla f|</m>. The largest value <m>|\nabla f|</m>
+Since <m>-1 \le \cos\theta \le 1</m>, the quantity <m>\|\nabla f\|\cos\theta</m> ranges
+between <m>-\|\nabla f\|</m> and <m>\|\nabla f\|</m>. The largest value <m>\|\nabla f\|</m>
 occurs at <m>\theta = 0</m>, with <m>\mathbf u</m> pointing along <m>\nabla f</m>; the
-smallest, <m>-|\nabla f|</m>, occurs at <m>\theta = \pi</m>, with <m>\mathbf u</m>
+smallest, <m>-\|\nabla f\|</m>, occurs at <m>\theta = \pi</m>, with <m>\mathbf u</m>
 pointing along <m>-\nabla f</m>. The directional derivative vanishes when
 <m>\cos\theta = 0</m>, that is at <m>\theta = \pi/2</m> and <m>\theta = 3\pi/2</m>,
 the two directions orthogonal to <m>\nabla f</m>.
@@ -1170,7 +1238,7 @@ the two directions orthogonal to <m>\nabla f</m>.
 <p>
 Now take <m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>, the function of
 <xref ref="example-dirderiv-definition"/>. Compute <m>\nabla f</m> and
-<m>|\nabla f|</m> at <m>P_0</m>, write <m>D_{\mathbf u} f</m> as a function of
+<m>\|\nabla f\|</m> at <m>P_0</m>, write <m>D_{\mathbf u} f</m> as a function of
 <m>\theta</m>, and give the three special unit vectors explicitly.
 </p>
 </statement>
@@ -1178,7 +1246,7 @@ Now take <m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>, the function of
 <p>
 Here <m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m>, so
 <m>(\nabla f)_{(1,1)} = 2\,\mathbf i + 2\,\mathbf j</m> and
-<m>|\nabla f| = 2\sqrt 2</m>. Therefore
+<m>\|\nabla f\| = 2\sqrt 2</m>. Therefore
 <md>
 <mrow>
 D_{\mathbf u} f = 2\sqrt 2 \,\cos\theta .
@@ -1210,14 +1278,14 @@ reading change most quickly, and at what angle is it momentarily stationary?
 
 <figure xml:id="fig-int-gradient-direction-angle">
 <caption>
-The directional derivative <m>D_{\mathbf u} f = |\nabla f|\cos\theta</m> as the unit vector <m>\mathbf u</m> rotates around <m>P_0</m>.
+The directional derivative <m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m> as the unit vector <m>\mathbf u</m> rotates around <m>P_0</m>.
 </caption>
 <interactive xml:id="interactive-gradient-direction-angle" iframe="gradient-direction-angle.html" width="100%" aspect="7:6">
 <instructions>
 <p>
 Drag the blue unit vector <m>\mathbf u</m> around the circle of
 directions and watch the meter display
-<m>D_{\mathbf u} f = |\nabla f|\cos\theta</m>. Use the buttons to snap
+<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>. Use the buttons to snap
 <m>\mathbf u</m> to the three special cases: the same direction as
 <m>\nabla f</m> (fastest increase), the opposite direction (fastest
 decrease), and a direction orthogonal to <m>\nabla f</m> (no change).
@@ -1289,7 +1357,7 @@ Note that we need to divide
 length to find the unit vector corresponding to the direction of most
 rapid increase:
 <md xml:id="eq-directions-increase" number="yes">
-\frac{\left(\nabla f\right)_{(1,1)}}{\left|\left(\nabla f\right)_{(1,1)}\right|}
+\frac{\left(\nabla f\right)_{(1,1)}}{\left\|\left(\nabla f\right)_{(1,1)}\right\|}
 = \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
 </md>
 </p>
@@ -1298,7 +1366,7 @@ rapid increase:
 <em>B.</em> For the direction of most rapid decrease, we take the
 opposite direction:
 <md xml:id="eq-directions-decrease" number="yes">
--\frac{\left(\nabla f\right)_{(1,1)}}{\left|\left(\nabla f\right)_{(1,1)}\right|}
+-\frac{\left(\nabla f\right)_{(1,1)}}{\left\|\left(\nabla f\right)_{(1,1)}\right\|}
 = -\frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j.
 </md>
 </p>
@@ -1313,7 +1381,7 @@ opposite direction:
 </md>
 and since <m>\mathbf u</m> is a unit vector, we have
 <md xml:id="eq-directions-unit-length" number="yes">
-|\mathbf u|^2 = u_1^2 + u_2^2 = 1.
+\|\mathbf u\|^2 = u_1^2 + u_2^2 = 1.
 </md>
 </p>
 
@@ -1334,88 +1402,16 @@ Hence, the directions of zero change in <m>f</m> at <m>P_0(1,1)</m> are
 </p>
 <p>
 Note that <m>\tilde{\mathbf u} = -\mathbf u</m>. All four directions are
-shown in <xref ref="fig-gradient-directions-tikz"/> and
-<xref ref="fig-gradient-directions-prefigure"/>: the directions of zero
+shown in <xref ref="fig-gradient-directions-prefigure"/>: the directions of zero
 change are tangent to the level curve of <m>f</m> through <m>P_0(1,1)</m>,
 while the directions of most rapid increase and decrease are
 perpendicular to it.
 </p>
-<figure xml:id="fig-gradient-directions-tikz">
-<caption>
-The level curves of <m>f(x,y) = \frac{x^2}{2} + \frac{y^2}{2}</m> are
-circles centered at the origin. At <m>P_0(1,1)</m>, the direction of
-fastest increase points along <m>\nabla f</m>, the direction of fastest
-decrease points along <m>-\nabla f</m>, and the two directions of zero
-change are tangent to the level curve through <m>P_0</m>.
-</caption>
-<image xml:id="image-gradient-directions-tikz" width="70%">
-<shortdescription>
-Circular level curves with the four special directions marked at the
-point one comma one.
-</shortdescription>
-<description>
-<p>
-Concentric circles, the level curves of
-<m>f(x,y) = x^2/2 + y^2/2</m>, centered at the origin. At the point
-<m>P_0(1,1)</m>, four unit arrows are drawn: a green arrow pointing
-outward along the gradient (fastest increase), a vermillion arrow
-pointing inward opposite to the gradient (fastest decrease), and two
-dashed blue arrows tangent to the level circle through <m>P_0</m>
-(zero change). A dashed tangent line to the circle at <m>P_0</m>
-contains the two blue arrows.
-</p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[scale=1.75, line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  % axes
-  \draw[-{Latex}, black!75, line width=0.7pt] (-2.35,0) -- (2.5,0)
-    node[below left] {$x$};
-  \draw[-{Latex}, black!75, line width=0.7pt] (0,-2.35) -- (0,2.5)
-    node[below left] {$y$};
-  % level curves: x^2/2 + y^2/2 = c, radius sqrt(2c)
-  \foreach \r in {0.707, 1, 1.732, 2}
-    \draw[black!30] (0,0) circle (\r);
-  % highlighted level curve through P0: c = 1, radius sqrt(2)
-  \draw[oiblue!60, line width=1.1pt] (0,0) circle (1.41421);
-  \node[black!60, font=\scriptsize, anchor=north east] at (-0.35,-0.62)
-    {$f=\tfrac14$};
-  \node[black!60, font=\scriptsize, anchor=north east] at (-1.2,-1.28)
-    {$f=1$};
-  \node[black!60, font=\scriptsize, anchor=north east] at (-1.48,-1.58)
-    {$f=\tfrac32$};
-  % tangent line to level curve at P0 (direction (1,-1))
-  \draw[black!45, dashed] (0.15,1.85) -- (1.85,0.15);
-  % the four directions at P0 (unit arrows, drawn at scale 0.8)
-  % fastest increase: (1/sqrt2, 1/sqrt2)
-  \draw[-{Latex}, oigreen, line width=1.6pt] (1,1) -- (1.566,1.566)
-    node[above right=-2pt, font=\small]
-    {$\dfrac{\nabla f}{|\nabla f|}$};
-  % fastest decrease: -(1/sqrt2, 1/sqrt2)
-  \draw[-{Latex}, oivermillion, line width=1.6pt] (1,1) -- (0.434,0.434)
-    node[below left=-2pt, font=\small]
-    {$-\dfrac{\nabla f}{|\nabla f|}$};
-  % zero change: (1/sqrt2, -1/sqrt2) and (-1/sqrt2, 1/sqrt2)
-  \draw[-{Latex}, oiblue, line width=1.4pt, densely dashed]
-    (1,1) -- (1.566,0.434)
-    node[below right=-2pt, font=\small] {$\mathbf u$};
-  \draw[-{Latex}, oiblue, line width=1.4pt, densely dashed]
-    (1,1) -- (0.434,1.566)
-    node[above left=-2pt, font=\small] {$\tilde{\mathbf u}$};
-  % base point
-  \fill (1,1) circle (1.3pt) node[right=3pt, font=\small] {$P_0(1,1)$};
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
 <figure xml:id="fig-gradient-directions-prefigure">
 <caption>
 At <m>P_0(1,1)</m>: fastest increase along
-<m>\nabla f/|\nabla f|</m>, fastest decrease along
-<m>-\nabla f/|\nabla f|</m>, and zero change along
+<m>\nabla f/\|\nabla f\|</m>, fastest decrease along
+<m>-\nabla f/\|\nabla f\|</m>, and zero change along
 <m>\pm\mathbf u</m>, tangent to the level curve <m>f = 1</m>.
 </caption>
 <image width="52%">
@@ -1446,11 +1442,11 @@ At <m>P_0(1,1)</m>: fastest increase along
 </point>
 <label at="gd-increase-label" anchor="(1.7,1.75)" alignment="ne"
        color="#009E73">
-<m>\nabla f/|\nabla f|</m>
+<m>\nabla f/\|\nabla f\|</m>
 </label>
 <label at="gd-decrease-label" anchor="(0.38,0.28)" alignment="sw"
        color="#D55E00">
-<m>-\nabla f/|\nabla f|</m>
+<m>-\nabla f/\|\nabla f\|</m>
 </label>
 <label at="gd-zero1-label" anchor="(1.68,0.38)" alignment="se"
        color="#0072B2">
@@ -1477,6 +1473,8 @@ At <m>P_0(1,1)</m>: fastest increase along
 </prefigure>
 </image>
 </figure>
+<!-- Hidden: superseded by fig-int-gradient-max-directions-manim below, which shows
+     the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-gradient-max-directions">
 <caption>
 The value of <m>D_{\mathbf u} f = u_1 + u_2</m> for <m>f(x,y)=\frac{x^2}{2}+\frac{y^2}{2}</m> as <m>\mathbf u</m> rotates around <m>P_0(1,1)</m>, with the special directions of Example III.
@@ -1495,6 +1493,33 @@ directions of no change.
 </instructions>
 </interactive>
 </figure>
+
+-->
+<figure xml:id="fig-int-gradient-max-directions-manim">
+<caption>
+The same three directions, animated: <m>D_{\mathbf u} f</m> sweeping
+between <m>\|\nabla f\|</m> and <m>-\|\nabla f\|</m> as <m>\mathbf u</m>
+turns around <m>P_0(1,1)</m>.
+</caption>
+<interactive xml:id="interactive-gradient-max-directions-manim" iframe="gradient-max-directions-manim.html" width="100%" aspect="1:1">
+<instructions>
+<p>
+Press <q>Play</q> to watch <m>\mathbf u</m> turn once around
+<m>P_0(1,1)</m>. The reading at the lower left follows
+<m>D_{\mathbf u} f = \nabla f\cdot\mathbf u = \|\nabla f\|\cos\theta</m>
+as it sweeps from <m>\|\nabla f\|</m> down to <m>-\|\nabla f\|</m> and
+back: it is largest along <m>\nabla f</m> (A), smallest along
+<m>-\nabla f</m> (B), and zero in the two directions tangent to the
+highlighted level curve <m>f = 1</m> (C), where the second vector
+<m>\tilde{\mathbf u} = -\mathbf u</m> appears. Stop the animation at any
+time and drag <m>\mathbf u</m> on the picture, or use the slider.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<!-- Hidden: superseded by fig-int-gradient-max-directions-3d-manim below, which shows
+     the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-gradient-max-directions-3d">
 <caption>
 A 3D view of Example III: the vertical slice of <m>z=\frac{x^2}{2}+\frac{y^2}{2}</m> in the direction <m>\mathbf u</m>, its tangent slope, and the level curve <m>f=1</m>.
@@ -1515,6 +1540,31 @@ buttons to snap to the answers of Example III, and note that when
 <m>D_{\mathbf u} f = 0</m>, the vector <m>\mathbf u</m> is tangent to
 the level curve. Drag the figure to view it from a different angle, or
 press the <q>Rotate</q> button.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+-->
+<figure xml:id="fig-int-gradient-max-directions-3d-manim">
+<caption>
+The same 3D view, animated: the tangent to the sliced surface at
+<m>(1,1,1)</m> tipping from steepest ascent through level to steepest
+descent as <m>\mathbf u</m> turns.
+</caption>
+<interactive xml:id="interactive-gradient-max-directions-3d-manim" iframe="gradient-max-directions-3d-manim.html" width="100%" aspect="1:1">
+<instructions>
+<p>
+Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
+turn once around. The gold curve is where it cuts the surface
+<m>z = \frac{x^2}{2} + \frac{y^2}{2}</m>, and the straight line through
+<m>(1,1,1)</m> is the tangent to that curve, whose slope is
+<m>D_{\mathbf u} f</m>: it is green and steepest upwards along
+<m>\nabla f</m> (A), red and steepest downwards along <m>-\nabla f</m>
+(B), and yellow and level in the two directions tangent to the pink
+level curve <m>f = 1</m> (C). Stop the animation at any time and drag
+the <m>\varphi</m> slider, drag the figure to change the viewpoint, or
+press <q>Spin</q>.
 </p>
 </instructions>
 </interactive>
@@ -1574,7 +1624,7 @@ together.
 <li>
 <p>
 <em>Fastest increase, fastest decrease, and no change.</em> Writing
-<m>D_{\mathbf u} f = |\nabla f|\cos\theta</m> in
+<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m> in
 <xref ref="eq-dirderiv-cos-theta"/> shows that <m>f</m> increases most
 rapidly in the direction of <m>\nabla f</m>, decreases most rapidly in
 the direction of <m>-\nabla f</m>, and does not change in the directions

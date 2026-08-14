@@ -58,7 +58,7 @@
               <m>(\nabla V)_{(2,1)} = -8\,\mathbf i - 12\,\mathbf j</m> and
               <m>\mathbf E = 8\,\mathbf i + 12\,\mathbf j</m> V/cm. The potential drops
               fastest along <m>\mathbf u = \tfrac{1}{\sqrt{13}}(2\,\mathbf i + 3\,\mathbf j)</m>,
-              at the rate <m>-|\nabla V| = -4\sqrt{13} \approx -14.4</m> V/cm.
+              at the rate <m>-\|\nabla V\| = -4\sqrt{13} \approx -14.4</m> V/cm.
             </p>
           </li>
           <li>
@@ -78,7 +78,7 @@
         </ol>
       </p>
       <figure xml:id="figure-potential-plate">
-        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\mathbf u}V = -|\nabla V|</m> at every point.</caption>
+        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\mathbf u}V = -\|\nabla V\|</m> at every point.</caption>
         <interactive xml:id="interactive-potential-plate"
                      iframe="potential-plate-3d.html"
                      width="100%" aspect="16:10"/>
@@ -114,7 +114,7 @@
           <li>
             <p>
               She wants a gentler line of exactly <m>12\%</m> grade. Using
-              <m>D_{\mathbf u}h = |\nabla h|\cos\theta</m>, find the angle <m>\theta</m>
+              <m>D_{\mathbf u}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
               between her heading and the fall line.
             </p>
           </li>
@@ -131,7 +131,7 @@
               <m>(\nabla h)_{(200,100)} = -0.16\,\mathbf i - 0.20\,\mathbf j</m>. Steepest
               descent is along
               <m>\mathbf u = \tfrac{1}{\sqrt{41}}(4\,\mathbf i + 5\,\mathbf j)</m>, and
-              <m>|\nabla h| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
+              <m>\|\nabla h\| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
               <m>25.6\%</m>.
             </p>
           </li>
@@ -152,7 +152,7 @@
     
       <figure xml:id="figure-alpha-tangent">
         <caption>
-          Part (a) says the grade is <m>|\nabla h| = 0.2561</m>. Here is what that
+          Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
           number is, on the hill itself. The vertical plane through <m>P_0</m> in the
           direction <m>\mathbf u</m> cuts the surface in the gold curve; the red line
           is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
@@ -192,13 +192,13 @@
               Find the pressure at the ship and <m>\nabla P</m> there. The
               pressure-gradient force per unit volume of air is a positive multiple of
               <m>-\nabla P</m>; in which unit direction does it push, and what is
-              <m>|\nabla P|</m> in millibars per mile?
+              <m>\|\nabla P\|</m> in millibars per mile?
             </p>
           </li>
           <li>
             <p>
               A second ship 40 miles from the center reports a stronger wind. Using this
-              model, explain why <m>|\nabla P|</m> supports that report.
+              model, explain why <m>\|\nabla P\|</m> supports that report.
             </p>
           </li>
           <li>
@@ -222,12 +222,12 @@
               points along
               <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\mathbf i + \mathbf j)</m>, that is,
               inward toward the low, and
-              <m>|\nabla P| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
+              <m>\|\nabla P\| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
             </p>
           </li>
           <li>
             <p>
-              Here <m>|\nabla P| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
+              Here <m>\|\nabla P\| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
               the center, so at 40 miles it is <m>0.32</m> mb/mi, nearly double the value at
               the first ship. (Real storms reverse this trend close to the eye; the model is
               only reasonable over a limited annulus.)
@@ -249,7 +249,7 @@
         the ship moves.
       </p>
       <figure xml:id="figure-isobars-low">
-        <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>|\nabla P| = 0.008r</m> grows with radius.</caption>
+        <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
         <interactive xml:id="interactive-isobars-low"
                      iframe="isobars-low-3d.html"
                      width="100%" aspect="16:10"/>

@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slicing z = 1 + x^2 + y^2 in the direction u</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
 <style>
   html, body { margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #app { width: 100%; box-sizing: border-box; }
   #controls {
     display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
@@ -25,6 +28,8 @@
   }
   #phiSlider { flex: 1; }
   #phiLabel { font-size: 15px; min-width: 78px; font-variant-numeric: tabular-nums; }
+  /* the readout is mathematics: the page's maths face */
+  #readout, #controls span { font-family: "PT Serif", "Times New Roman", Times, serif; }
   #readout { font-size: 14px; color: #333; padding: 0 10px 6px 10px; min-height: 1.2em;
     font-variant-numeric: tabular-nums; }
   #canvasWrap { width: 100%; position: relative; }
@@ -262,8 +267,8 @@
     // readout
     var note = "";
     var mag = 2 * Math.sqrt(2);
-    if (Math.abs(D - mag) < 0.02) note = "  =  |∇f|  (fastest increase)";
-    else if (Math.abs(D + mag) < 0.02) note = "  =  −|∇f|  (fastest decrease)";
+    if (Math.abs(D - mag) < 0.02) note = "  =  ‖∇f‖  (fastest increase)";
+    else if (Math.abs(D + mag) < 0.02) note = "  =  −‖∇f‖  (fastest decrease)";
     else if (Math.abs(D) < 0.02) note = "  (no change: u ⊥ ∇f — both directions u and ũ = −u shown)";
     document.getElementById("readout").textContent =
       "Dᵤf = ∇f · u = 2cosφ + 2sinφ = " + D.toFixed(2) + note;

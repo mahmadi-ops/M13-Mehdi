@@ -4,10 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The fall line on a ski slope</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
 <style>
   :root{
     --ink:#F3F0E8; --muted:#A79E8C;
-    --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --sans:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif:"PT Serif", "Times New Roman", Times, serif;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:transparent;color:#22262E;font-family:var(--sans);
@@ -108,7 +112,9 @@ const CFG = {
 
 const cv=document.getElementById('c'), ctx=cv.getContext('2d');
 const W=cv.width, H=cv.height;
-const FONT=w=>w+' 40px system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
+// figure lettering in the book's maths face; italic for the variables
+const FONT=w=>w+' 40px '+"'PT Serif','Times New Roman',Times,serif";
+const MFONT=w=>'italic '+w+' 40px '+"'PT Serif','Times New Roman',Times,serif";
 
 /* ---------------- normalized box ----------------
    x,y are mapped into a box of half-width 1 (aspect preserved),
@@ -221,6 +227,7 @@ function buildSurface(){
   g.font=FONT(600); g.fillStyle=CFG.levelColor;
   g.fillText(CFG.levelLabel, 34, H-34);
   g.fillStyle='rgba(255,255,255,.55)';
+  g.font=MFONT(600);                       /* names a function: italic */
   g.fillText(CFG.axisLabel, 34, 56);
   dirty=false;
 }
@@ -309,7 +316,7 @@ function frame(now){
   /* start marker */
   const st=proj(nx(CFG.start[0]),ny(CFG.start[1]),nz(CFG.f(CFG.start[0],CFG.start[1])));
   ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(st[0],st[1],9,0,2*Math.PI); ctx.fill();
-  ctx.font=FONT(600); ctx.fillText(CFG.startLabel, st[0]+22, st[1]-22);
+  ctx.font=MFONT(600); ctx.fillText(CFG.startLabel, st[0]+22, st[1]-22);
 
   glyph(ctx, top[0], top[1], CFG.glyphSize, M.tint);
 

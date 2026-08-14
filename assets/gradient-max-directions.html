@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Directions of fastest increase, fastest decrease, and no change</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
 <style>
   html, body { margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #app { width: 100%; box-sizing: border-box; }
   #controls {
     display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
@@ -18,6 +21,8 @@
   }
   button:hover { background: #e6e6e6; }
   button.active { background: #2a6fdb; color: #fff; border-color: #2a6fdb; }
+  /* the readout is mathematics: the page's maths face */
+  #readout, #controls span { font-family: "PT Serif", "Times New Roman", Times, serif; }
   #readout { font-size: 14px; color: #333; padding: 0 10px 6px 10px; min-height: 1.2em;
     font-variant-numeric: tabular-nums; }
   #canvasWrap { width: 100%; position: relative; }
@@ -40,6 +45,8 @@
 <script>
 (function () {
   "use strict";
+  // the book sets its mathematics in PT Serif
+  var SERIF = "'PT Serif', 'Times New Roman', Times, serif";
   // palette (same as the sample-graphs interactive)
   var SURF_BLUE = "#4f8fd6", DARK_BLUE = "#35659a", GOLD = "#f2c14e",
       RED = "#d1362f", GRAY = "#999999", BTN_BLUE = "#2a6fdb", GREEN = "#009e73";
@@ -77,8 +84,8 @@
   function classify() {
     var u1 = Math.cos(alpha), u2 = Math.sin(alpha);
     var D = u1 + u2; // grad f(1,1) . u
-    if (Math.abs(D - MAG) < 0.02) return { D: D, note: " = |∇f|  — fastest increase", col: GREEN };
-    if (Math.abs(D + MAG) < 0.02) return { D: D, note: " = −|∇f|  — fastest decrease", col: RED };
+    if (Math.abs(D - MAG) < 0.02) return { D: D, note: " = ‖∇f‖  — fastest increase", col: GREEN };
+    if (Math.abs(D + MAG) < 0.02) return { D: D, note: " = −‖∇f‖  — fastest decrease", col: RED };
     if (Math.abs(D) < 0.02) return { D: D, note: "  — no change (u ⊥ ∇f)", col: GOLD };
     return { D: D, note: "", col: BTN_BLUE };
   }
@@ -88,7 +95,7 @@
     var dpr = window.devicePixelRatio || 1;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, w, h);
-    ctx.font = (13 * dpr) + "px system-ui, sans-serif";
+    ctx.font = "italic " + (15 * dpr) + 'px ' + SERIF;
 
     // level curves: x^2/2 + y^2/2 = c, radius sqrt(2c)
     ctx.strokeStyle = SURF_BLUE; ctx.globalAlpha = 0.35; ctx.lineWidth = 1.4 * dpr;

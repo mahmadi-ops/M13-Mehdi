@@ -39,7 +39,7 @@
       </g>
     </marker>
   </defs>
-  <g id="prefigure-chain-rule-tree-ct-z" transform="translate(160.0,48.2) translate(-41.9,-9.0)">
+  <g id="prefigure-chain-rule-tree-ct-z" transform="translate(160.0,48.2) scale(1.4,1.4) translate(-41.9,-9.0)">
     <g id="prefigure-chain-rule-tree-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="83.856px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4633.2 1000" x="0.0" y="0.0">
         <defs>
@@ -93,7 +93,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-x" transform="translate(75.0,150.0) translate(-5.2,-4.1)">
+  <g id="prefigure-chain-rule-tree-ct-x" transform="translate(75.0,150.0) scale(1.4,1.4) translate(-5.2,-4.1)">
     <g id="prefigure-chain-rule-tree-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
@@ -109,7 +109,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-y" transform="translate(245.0,150.0) translate(-4.4,-5.9)">
+  <g id="prefigure-chain-rule-tree-ct-y" transform="translate(245.0,150.0) scale(1.4,1.4) translate(-4.4,-5.9)">
     <g id="prefigure-chain-rule-tree-__g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
         <defs>
@@ -125,7 +125,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-s" transform="translate(160.0,251.8) translate(-4.2,-4.1)">
+  <g id="prefigure-chain-rule-tree-ct-s" transform="translate(160.0,251.8) scale(1.4,1.4) translate(-4.2,-4.1)">
     <g id="prefigure-chain-rule-tree-__g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="8.184px" role="img" focusable="false" viewBox="0 -442 469 452" x="0.0" y="0.0">
         <defs>
@@ -145,7 +145,7 @@
   <path id="prefigure-chain-rule-tree-ct-zy" stroke="#0072B2" stroke-width="2" fill="none" marker-end="url(#prefigure-chain-rule-tree-arrow-head-end-2_None_24_60-h0072B2)" d="M 182.5 64.1 L 235.9 129.0"/>
   <path id="prefigure-chain-rule-tree-ct-xs" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#prefigure-chain-rule-tree-arrow-head-end-2_None_24_60-hD55E00)" d="M 85.0 165.9 L 145.8 230.9"/>
   <path id="prefigure-chain-rule-tree-ct-ys" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#prefigure-chain-rule-tree-arrow-head-end-2_None_24_60-hD55E00)" d="M 235.0 165.9 L 174.2 230.9"/>
-  <g id="prefigure-chain-rule-tree-ct-dfdx" transform="translate(68.5,83.2) translate(-28.6,-19.0)">
+  <g id="prefigure-chain-rule-tree-ct-dfdx" transform="translate(68.5,83.2) scale(1.4,1.4) translate(-28.6,-19.0)">
     <g id="prefigure-chain-rule-tree-__g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -12.816px; color:#0072B2" width="28.560px" height="37.992px" role="img" focusable="false" viewBox="0 -1391 1578 2099" x="0.0" y="0.0">
         <defs>
@@ -181,7 +181,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-dfdy" transform="translate(251.5,83.2) translate(0.0,-20.7)">
+  <g id="prefigure-chain-rule-tree-ct-dfdy" transform="translate(251.5,83.2) scale(1.4,1.4) translate(0.0,-20.7)">
     <g id="prefigure-chain-rule-tree-__g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -16.128px; color:#0072B2" width="28.160px" height="41.304px" role="img" focusable="false" viewBox="0 -1391 1556 2282" x="0.0" y="0.0">
         <defs>
@@ -217,7 +217,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-dxds" transform="translate(76.0,210.5) translate(-27.7,-18.7)">
+  <g id="prefigure-chain-rule-tree-ct-dxds" transform="translate(76.0,210.5) scale(1.4,1.4) translate(-27.7,-18.7)">
     <g id="prefigure-chain-rule-tree-__g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -12.600px; color:#D55E00" width="27.728px" height="37.392px" role="img" focusable="false" viewBox="0 -1370 1532 2066" x="0.0" y="0.0">
         <defs>
@@ -260,7 +260,7 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-chain-rule-tree-ct-dyds" transform="translate(244.0,210.5) translate(0.0,-18.7)">
+  <g id="prefigure-chain-rule-tree-ct-dyds" transform="translate(244.0,210.5) scale(1.4,1.4) translate(0.0,-18.7)">
     <g id="prefigure-chain-rule-tree-__g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -12.600px; color:#D55E00" width="26.248px" height="37.392px" role="img" focusable="false" viewBox="0 -1370 1450 2066" x="0.0" y="0.0">
         <defs>
