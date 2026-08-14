@@ -510,16 +510,16 @@ adding the two products gives
 <prefigure xmlns="https://prefigure.org" label="prefigure-chain-rule-tree">
 <diagram dimensions="(300,280)" margins="10">
 <coordinates bbox="(-3.0,-0.7,3.0,3.7)">
-<label at="ct-z" anchor="(0,3.1)" alignment="c">
+<label at="ct-z" anchor="(0,3.1)" alignment="c" scale="1.4">
 <m>z=f(x,y)</m>
 </label>
-<label at="ct-x" anchor="(-1.7,1.5)" alignment="c">
+<label at="ct-x" anchor="(-1.7,1.5)" alignment="c" scale="1.4">
 <m>x</m>
 </label>
-<label at="ct-y" anchor="(1.7,1.5)" alignment="c">
+<label at="ct-y" anchor="(1.7,1.5)" alignment="c" scale="1.4">
 <m>y</m>
 </label>
-<label at="ct-s" anchor="(0,-0.1)" alignment="c">
+<label at="ct-s" anchor="(0,-0.1)" alignment="c" scale="1.4">
 <m>s</m>
 </label>
 <vector at="ct-zx" v="(-1.1,-1.05)" tail="(-0.45,2.85)" stroke="#0072B2"
@@ -530,16 +530,16 @@ adding the two products gives
         thickness="2"/>
 <vector at="ct-ys" v="(-1.25,-1.05)" tail="(1.5,1.25)" stroke="#D55E00"
         thickness="2"/>
-<label at="ct-dfdx" anchor="(-1.75,2.55)" alignment="w" color="#0072B2">
+<label at="ct-dfdx" anchor="(-1.75,2.55)" alignment="w" color="#0072B2" scale="1.4">
 <m>\dfrac{\partial f}{\partial x}</m>
 </label>
-<label at="ct-dfdy" anchor="(1.75,2.55)" alignment="e" color="#0072B2">
+<label at="ct-dfdy" anchor="(1.75,2.55)" alignment="e" color="#0072B2" scale="1.4">
 <m>\dfrac{\partial f}{\partial y}</m>
 </label>
-<label at="ct-dxds" anchor="(-1.6,0.55)" alignment="w" color="#D55E00">
+<label at="ct-dxds" anchor="(-1.6,0.55)" alignment="w" color="#D55E00" scale="1.4">
 <m>\dfrac{dx}{ds}</m>
 </label>
-<label at="ct-dyds" anchor="(1.6,0.55)" alignment="e" color="#D55E00">
+<label at="ct-dyds" anchor="(1.6,0.55)" alignment="e" color="#D55E00" scale="1.4">
 <m>\dfrac{dy}{ds}</m>
 </label>
 </coordinates>
@@ -656,13 +656,13 @@ at a right angle: it is perpendicular to the velocity vector
 <label at="gp-vel-label" anchor="(0.3,1.85)" alignment="nw" color="#0072B2">
 <m>\mathbf v(t)</m>
 </label>
-<label at="gp-C-label" anchor="(-1.6,-1.05)" alignment="w" color="#009E73">
+<label at="gp-C-label" anchor="(0,-1.6)" alignment="c" clear-background="yes" color="#009E73">
 <m>C\colon f=c</m>
 </label>
-<label at="gp-outer-label" anchor="(-2.3,-1.75)" alignment="w">
+<label at="gp-outer-label" anchor="(0,-2.08)" alignment="c" clear-background="yes">
 <m>f=c+\Delta c</m>
 </label>
-<label at="gp-inner-label" anchor="(-0.55,-0.5)" alignment="e">
+<label at="gp-inner-label" anchor="(0,-1.09)" alignment="c" clear-background="yes">
 <m>f=c-\Delta c</m>
 </label>
 </coordinates>
@@ -806,17 +806,12 @@ curve degenerates to a single point and there is no direction of steepest ascent
 
 </activity>
 
-
-</section>
-
-<!-- ================================================================ -->
-<section xml:id="sec-dirderiv-gradient-example">
-<title>Evaluating a Directional Derivative Using the Gradient</title>
-
 <p>
-We now rework <xref ref="example-dirderiv-definition"/> using
-<xref ref="eq-dirderiv-gradient-relation"/>, replacing the limit with a dot
-product, and then read the answer geometrically off the surface.
+With <xref ref="eq-dirderiv-gradient-relation"/> in hand, the limit that defined
+the directional derivative can be set aside: the gradient and a dot product do
+the same work in a couple of lines. To see the difference, we rework
+<xref ref="example-dirderiv-definition"/> <mdash/> the same function, point, and
+direction <mdash/> and then read the answer geometrically off the surface.
 </p>
 
 <example xml:id="example-dirderiv-gradient">
