@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Parked, not part of the build: this TikZ picture duplicated
+     fig-gradient-directions-prefigure, which follows it in
+     sec-dirderiv-properties. It is kept here so it can be dropped back
+     into directional-derivatives.ptx if it is wanted again; nothing
+     xincludes this file. -->
+
+<figure xml:id="fig-gradient-directions-tikz">
+<caption>
+The level curves of <m>f(x,y) = \frac{x^2}{2} + \frac{y^2}{2}</m> are
+circles centered at the origin. At <m>P_0(1,1)</m>, the direction of
+fastest increase points along <m>\nabla f</m>, the direction of fastest
+decrease points along <m>-\nabla f</m>, and the two directions of zero
+change are tangent to the level curve through <m>P_0</m>.
+</caption>
+<image xml:id="image-gradient-directions-tikz" width="70%">
+<shortdescription>
+Circular level curves with the four special directions marked at the
+point one comma one.
+</shortdescription>
+<description>
+<p>
+Concentric circles, the level curves of
+<m>f(x,y) = x^2/2 + y^2/2</m>, centered at the origin. At the point
+<m>P_0(1,1)</m>, four unit arrows are drawn: a green arrow pointing
+outward along the gradient (fastest increase), a vermillion arrow
+pointing inward opposite to the gradient (fastest decrease), and two
+dashed blue arrows tangent to the level circle through <m>P_0</m>
+(zero change). A dashed tangent line to the circle at <m>P_0</m>
+contains the two blue arrows.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.75, line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  % axes
+  \draw[-{Latex}, black!75, line width=0.7pt] (-2.35,0) -- (2.5,0)
+    node[below left] {$x$};
+  \draw[-{Latex}, black!75, line width=0.7pt] (0,-2.35) -- (0,2.5)
+    node[below left] {$y$};
+  % level curves: x^2/2 + y^2/2 = c, radius sqrt(2c)
+  \foreach \r in {0.707, 1, 1.732, 2}
+    \draw[black!30] (0,0) circle (\r);
+  % highlighted level curve through P0: c = 1, radius sqrt(2)
+  \draw[oiblue!60, line width=1.1pt] (0,0) circle (1.41421);
+  \node[black!60, font=\scriptsize, anchor=north east] at (-0.35,-0.62)
+    {$f=\tfrac14$};
+  \node[black!60, font=\scriptsize, anchor=north east] at (-1.2,-1.28)
+    {$f=1$};
+  \node[black!60, font=\scriptsize, anchor=north east] at (-1.48,-1.58)
+    {$f=\tfrac32$};
+  % tangent line to level curve at P0 (direction (1,-1))
+  \draw[black!45, dashed] (0.15,1.85) -- (1.85,0.15);
+  % the four directions at P0 (unit arrows, drawn at scale 0.8)
+  % fastest increase: (1/sqrt2, 1/sqrt2)
+  \draw[-{Latex}, oigreen, line width=1.6pt] (1,1) -- (1.566,1.566)
+    node[above right=-2pt, font=\small]
+    {$\dfrac{\nabla f}{\|\nabla f\|}$};
+  % fastest decrease: -(1/sqrt2, 1/sqrt2)
+  \draw[-{Latex}, oivermillion, line width=1.6pt] (1,1) -- (0.434,0.434)
+    node[below left=-2pt, font=\small]
+    {$-\dfrac{\nabla f}{\|\nabla f\|}$};
+  % zero change: (1/sqrt2, -1/sqrt2) and (-1/sqrt2, 1/sqrt2)
+  \draw[-{Latex}, oiblue, line width=1.4pt, densely dashed]
+    (1,1) -- (1.566,0.434)
+    node[below right=-2pt, font=\small] {$\mathbf u$};
+  \draw[-{Latex}, oiblue, line width=1.4pt, densely dashed]
+    (1,1) -- (0.434,1.566)
+    node[above left=-2pt, font=\small] {$\tilde{\mathbf u}$};
+  % base point
+  \fill (1,1) circle (1.3pt) node[right=3pt, font=\small] {$P_0(1,1)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>

@@ -69,7 +69,7 @@
     electric potential, a ball rolls toward low gravitational potential energy, air accelerates 
     toward low pressure. So the direction the physics actually selects is the direction of most rapid
     <em>decrease</em>, which is exactly the case <m>\theta = \pi</m> of
-    <m>D_{\mathbf u}f = |\nabla f|\cos\theta</m>.
+    <m>D_{\mathbf u}f = \|\nabla f\|\cos\theta</m>.
   </p>
 
   <p>
@@ -82,13 +82,13 @@
   <ul>
     <li>
       <p>
-        <m>\theta = 0</m>: fastest increase, at the rate <m>|\nabla f|</m>. This is the
+        <m>\theta = 0</m>: fastest increase, at the rate <m>\|\nabla f\|</m>. This is the
         direction heat comes <em>from</em>.
       </p>
     </li>
     <li>
       <p>
-        <m>\theta = \pi</m>: fastest decrease, at the rate <m>-|\nabla f|</m>. This is the
+        <m>\theta = \pi</m>: fastest decrease, at the rate <m>-\|\nabla f\|</m>. This is the
         direction the flux, the force, or the wind actually points.
       </p>
     </li>
@@ -151,7 +151,7 @@
         <md>\mathbf u = \frac{1}{\sqrt{10}}\,\mathbf i + \frac{3}{\sqrt{10}}\,\mathbf j,</md>
         and the rate of change along it is
         <md>
-          <mrow>D_{\mathbf u} T \amp = -|\nabla T|
+          <mrow>D_{\mathbf u} T \amp = -\|\nabla T\|
                 = -\frac{14\,e^{-1/10}}{40}\sqrt{4 + 36}</mrow>
           <mrow>\amp \approx -2.0 \ \frac{{}^\circ\text{F}}{\text{mi}} .</mrow>
         </md>

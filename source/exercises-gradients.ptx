@@ -212,7 +212,7 @@ the gradient:
 At <m>(1, 0, 1)</m>, this gradient is simply
 <m>\nabla z(1,0) = \langle 2, 0\rangle</m>, and the fastest possible
 rate of change is the length of the gradient, i.e.
-<m>|\nabla z(1,0)| = |\langle 2,0\rangle| = 2</m>.
+<m>\|\nabla z(1,0)\| = \|\langle 2,0\rangle\| = 2</m>.
 </p>
 </li>
 <li>
@@ -421,18 +421,18 @@ so at <m>(-4,3)</m>,
 <mrow>\nabla f(-4,3)
 \amp = \left(-\frac{8}{25}\right)\mathbf i
 + \left(\frac{6}{25}\right)\mathbf j,</mrow>
-<mrow>|\nabla f(-4,3)|
+<mrow>\|\nabla f(-4,3)\|
 \amp = \sqrt{\frac{100}{(25)^2}} = \frac{10}{25}
 = \frac25.</mrow>
 </md>
 The direction of maximum increase is
 <md>
-\hat u = \frac{\nabla f(-4,3)}{|\nabla f(-4,3)|}
+\hat u = \frac{\nabla f(-4,3)}{\|\nabla f(-4,3)\|}
 = \left(-\frac45\right)\mathbf i + \left(\frac35\right)\mathbf j,
 </md>
 and the maximum rate of increase is
 <md>
-\left(D_{\hat u} f\right)_{P_0} = |\nabla f(-4,3)| = \frac25.
+\left(D_{\hat u} f\right)_{P_0} = \|\nabla f(-4,3)\| = \frac25.
 </md>
 </p>
 </solution>
@@ -532,18 +532,18 @@ The gradient is
 <mrow>\nabla f \amp = (2x + y)\,\mathbf i + (x + 2y)\,\mathbf j,</mrow>
 <mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
 \qquad
-\left|\left(\nabla f\right)_{(-1,1)}\right| = \sqrt2.</mrow>
+\left\|\left(\nabla f\right)_{(-1,1)}\right\| = \sqrt2.</mrow>
 </md>
 The function increases most rapidly in the direction of the gradient,
 <md>
 \hat u_1 = \frac{\left(\nabla f\right)_{(-1,1)}}
-{\left|\left(\nabla f\right)_{(-1,1)}\right|}
+{\left\|\left(\nabla f\right)_{(-1,1)}\right\|}
 = \left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle,
 </md>
 and decreases most rapidly in the opposite direction,
 <md>
 \hat u_2 = -\frac{\left(\nabla f\right)_{(-1,1)}}
-{\left|\left(\nabla f\right)_{(-1,1)}\right|}
+{\left\|\left(\nabla f\right)_{(-1,1)}\right\|}
 = \left\langle \frac{1}{\sqrt2}, -\frac{1}{\sqrt2}\right\rangle.
 </md>
 </p>
@@ -556,15 +556,15 @@ The directional derivatives are
 \amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_1
 = \frac{1}{\sqrt2} + \frac{1}{\sqrt2}
 = \sqrt2
-= \left|\left(\nabla f\right)_{(-1,1)}\right|,</mrow>
+= \left\|\left(\nabla f\right)_{(-1,1)}\right\|,</mrow>
 <mrow>\left(D_{\hat u_2} f\right)_{P_0}
 \amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_2
 = -\frac{1}{\sqrt2} - \frac{1}{\sqrt2}
 = -\sqrt2
-= -\left|\left(\nabla f\right)_{(-1,1)}\right|.</mrow>
+= -\left\|\left(\nabla f\right)_{(-1,1)}\right\|.</mrow>
 </md>
 As expected, the largest possible rate of change is
-<m>|\nabla f|</m> and the smallest is <m>-|\nabla f|</m>.
+<m>\|\nabla f\|</m> and the smallest is <m>-\|\nabla f\|</m>.
 </p>
 </li>
 </ol>
@@ -637,7 +637,7 @@ Hence <m>-\nabla T</m> is a positive multiple of
 The third piece of information fixes <m>c</m>. The unit vector in the
 direction of <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
 <m>\frac13\langle -1, 2, 2\rangle</m>, since
-<m>|\langle -1,2,2\rangle| = 3</m>, so
+<m>\|\langle -1,2,2\rangle\| = 3</m>, so
 <md>
 2 = \nabla T \cdot \frac13\langle -1, 2, 2\rangle
 = \frac{c}{3}\Big(-2 - 2 + 8\Big)
@@ -739,7 +739,7 @@ In the direction of the gradient, the directional derivative equals
 the length of the gradient:
 <md>
 \left(D_{\hat u}T\right)_{(2,0,1)}
-= \left|\nabla T\big|_{(2,0,1)}\right|
+= \left\|\nabla T\big|_{(2,0,1)}\right\|
 = \sqrt{64 + 36} = 10.
 </md>
 </p>

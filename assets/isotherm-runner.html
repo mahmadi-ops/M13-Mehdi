@@ -4,11 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Two runners, one heat map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
 <style>
   :root{
     --edge:#1F2740; --ink:#EAEDF7; --muted:#8A96B2;
     --cool:#4FC3F7; --ember:#FFC14D;
-    --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --sans:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif:"PT Serif", "Times New Roman", Times, serif;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:transparent;color:#22262E;
@@ -69,7 +73,9 @@
 (function(){
 const cv=document.getElementById('c'), ctx=cv.getContext('2d');
 const W=cv.width, H=cv.height;
-const FONT=w=>w+' 44px system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
+// figure lettering in the book's maths face; italic for the variables
+const FONT=w=>w+' 44px '+"'PT Serif','Times New Roman',Times,serif";
+const MFONT=w=>'italic '+w+' 44px '+"'PT Serif','Times New Roman',Times,serif";
 
 /* ---------- world: miles ---------- */
 const XMIN=-3.6, XMAX=3.6, YMIN=-2.21, YMAX=2.21;
