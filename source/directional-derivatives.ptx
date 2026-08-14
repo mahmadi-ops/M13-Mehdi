@@ -83,16 +83,19 @@ provided the limit exists. It can alternatively be denoted by
 </definition>
 
 <p>
-The geometry behind this definition can be explored in the interactive
-figure below; it is also shown in
-<xref ref="fig-dirderiv-setup-prefigure"/> and animated in
-<xref ref="fig-dirderiv-setup-video"/>. Starting at the
-point <m>P_0(x_0,y_0)</m>, we move a distance <m>s</m> in the direction
-of the unit vector <m>\mathbf u</m> to reach the point
-<m>P(x_0 + su_1,\, y_0 + su_2)</m>, and we compare the values
-<m>f(x_0,y_0)</m> and <m>f(x_0 + su_1,\, y_0 + su_2)</m> of the surface
-<m>z = f(x,y)</m> above the two points. Note that as <m>s \to 0</m>, the
-two points <m>P_0</m> and <m>P</m> get closer and closer to each other.
+The geometry behind this definition is best seen in a picture. Starting at the
+point <m>P_0(x_0,y_0)</m>, we move a distance <m>s</m> in the direction of the
+unit vector <m>\mathbf u</m> to reach the point
+<m>P(x_0 + su_1,\, y_0 + su_2)</m>, and we compare the values of the surface
+<m>z = f(x,y)</m> above the two points. As <m>s \to 0</m>, the point <m>P</m>
+slides back along <m>\mathbf u</m> toward <m>P_0</m>. The four figures that
+follow show this from complementary angles:
+<xref ref="fig-int-dirderiv-setup-3d"/> lets you explore the construction in
+space, <xref ref="fig-dirderiv-setup-prefigure"/> records the displacement in
+the <m>xy</m>-plane, <xref ref="fig-dirderiv-setup-video"/> animates the secant
+line rotating onto the tangent line, and
+<xref ref="fig-int-dirderiv-definition"/> reports the difference quotient itself
+as <m>s</m> shrinks, so that the limit can be watched rather than only read.
 </p>
 
 <figure xml:id="fig-int-dirderiv-setup-3d">
@@ -187,12 +190,6 @@ the tangent line, whose slope is the directional derivative
        width="70%" aspect="16:9"/>
 </figure>
 
-<p>
-The figure below turns the definition into something you can interact with: as
-<m>s</m> shrinks, the difference quotient is recomputed and its value reported,
-so the limit can be watched rather than only read.
-</p>
-
 <figure xml:id="fig-int-dirderiv-definition">
 <caption>
 The difference quotient <m>\big(f(P)-f(P_0)\big)/s</m> for <m>f(x,y)=1+x^2+y^2</m> at <m>P_0(1,1)</m>, as functions of the direction angle and the step <m>s</m>.
@@ -212,16 +209,12 @@ quotient <m>\big(f(P) - f(P_0)\big)/s</m> with its limit as
 </interactive>
 </figure>
 
-</section>
-
-<!-- ================================================================ -->
-<section xml:id="sec-dirderiv-example-definition">
-<title>Computing a Directional Derivative Using the Definition</title>
-
 <p>
-Before developing shortcuts, it is worth evaluating a directional derivative
-directly from <xref ref="def-directional-derivative"/>, so that the limit behind
-the definition becomes concrete.
+Before developing any shortcuts, we evaluate a directional derivative straight
+from <xref ref="def-directional-derivative"/>. Working through the limit once
+makes the definition concrete, and it gives us a value to check against later:
+<xref ref="example-dirderiv-gradient"/> recovers the same number in a couple of
+lines, once the gradient is available.
 </p>
 
 <example xml:id="example-dirderiv-definition">
