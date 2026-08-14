@@ -65,6 +65,13 @@
   <directories external="assets" generated="generated-assets"/>
 </source> -->
   <html>
+    <!-- PreFigure diagrams that carry <annotations> are rendered by         -->
+    <!-- diagcess.js, which scans for .ChemAccess-element divs once at page  -->
+    <!-- load.  A figure opened later inside an xref knowl is injected after -->
+    <!-- that scan, so its div stays empty and the diagram never appears.    -->
+    <!-- Turning off figure knowls makes an <xref> to a figure an ordinary   -->
+    <!-- link to the figure in place, where the diagram does render.         -->
+    <knowl figure="no"/>
     <webwork divisional="dynamic"/>
   </html>
 </publication>
