@@ -65,13 +65,15 @@
   <directories external="assets" generated="generated-assets"/>
 </source> -->
   <html>
-    <!-- PreFigure diagrams that carry <annotations> are rendered by         -->
-    <!-- diagcess.js, which scans for .ChemAccess-element divs once at page  -->
-    <!-- load.  A figure opened later inside an xref knowl is injected after -->
-    <!-- that scan, so its div stays empty and the diagram never appears.    -->
-    <!-- Turning off figure knowls makes an <xref> to a figure an ordinary   -->
-    <!-- link to the figure in place, where the diagram does render.         -->
-    <knowl figure="no"/>
+    <!-- PreFigure diagrams that carry <annotations> are drawn by            -->
+    <!-- diagcess.js, which scans for its .ChemAccess-element target divs    -->
+    <!-- once at page load.  A figure opened afterwards inside a             -->
+    <!-- cross-reference knowl is injected after that scan, so its div stays -->
+    <!-- empty and the diagram never appears.  With "cross-page", a          -->
+    <!-- reference whose target sits on the same page is rendered as an      -->
+    <!-- ordinary link to the figure in place, where the diagram does draw;  -->
+    <!-- references that genuinely cross a page boundary stay knowls.        -->
+    <cross-references knowled="cross-page"/>
     <webwork divisional="dynamic"/>
   </html>
 </publication>
