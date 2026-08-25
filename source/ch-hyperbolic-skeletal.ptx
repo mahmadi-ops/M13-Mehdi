@@ -114,56 +114,8 @@ Find the derivatives <m>\dfrac{d}{dx}(\cosh x)</m> and
 Since <m>\sinh x</m> and <m>\cosh x</m> are built from the two
 exponentials <m>\tfrac12 e^x</m> and <m>\tfrac12 e^{-x}</m>, their
 graphs are easiest to understand by sketching those exponentials first.
-Use the empty grids in <xref ref="fig-skel-hyp-sinh-grid"/> and
-<xref ref="fig-skel-hyp-cosh-grid"/>.
-</p>
-
-<figure xml:id="fig-skel-hyp-sinh-grid">
-<caption>
-Sketch the graph of <m>y = \sinh x</m> here, together with the two
-exponentials <m>y = \tfrac12 e^x</m> and <m>y = -\tfrac12 e^{-x}</m>
-that squeeze it.
-</caption>
-<image width="72%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-sinh-grid">
-<diagram dimensions="(360,300)" margins="12">
-<coordinates bbox="(-2.6,-3.4,2.6,3.4)">
-<grid-axes xlabel="x" ylabel="y"/>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="An empty coordinate grid, x from negative 2.6 to 2.6 and y from negative 3.4 to 3.4, left blank for sketching the graph of hyperbolic sine and the two exponentials one half e to the x and negative one half e to the negative x."/>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-From your graph, read off the domain, the range, and the symmetry of
-<m>\sinh x</m>.
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
-\draw[gray!35] (0,3.6) -- (15,3.6);
-\draw[gray!35] (0,1.8) -- (15,1.8);
-\node[anchor=north west, font=\small\itshape] at (0.25,5.15) {Domain:};
-\node[anchor=north west, font=\small\itshape] at (0.25,3.35) {Range:};
-\node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Symmetry:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic sine.</shortdescription>
-</image>
-</sidebyside>
-
-<p>
-Now compare your sketch with the finished picture in
-<xref ref="fig-skel-hyp-sinh-graph"/>, and read off from it what happens
-to <m>\sinh x</m> at the two ends of the graph.
+See <xref ref="fig-skel-hyp-sinh-graph"/> and
+<xref ref="fig-skel-hyp-cosh-graph"/>.
 </p>
 
 <figure xml:id="fig-skel-hyp-sinh-graph">
@@ -211,57 +163,8 @@ approaching the first as <m>x \to \infty</m> and the second as
 </figure>
 
 <p>
-The picture suggests that <m>\sinh x</m> hugs <m>\tfrac12 e^x</m> when
-<m>x</m> is large and positive, and hugs <m>-\tfrac12 e^{-x}</m> when
-<m>x</m> is large and negative. Confirm this from the definition by
-evaluating the four limits
-<md>
-<mrow>\lim_{x \to \infty} \sinh x \amp \amp
-      \lim_{x \to -\infty} \sinh x</mrow>
-<mrow>\lim_{x \to \infty} \left(\sinh x - \tfrac12 e^{x}\right) \amp \amp
-      \lim_{x \to -\infty} \left(\sinh x + \tfrac12 e^{-x}\right)</mrow>
-</md>
-and explain in a sentence why the last two limits are exactly what
-<q>the curve approaches the exponential</q> means.
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
-\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,5.75) {workspace};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank workspace for confirming the limiting behaviour of hyperbolic sine by hand.</shortdescription>
-</image>
-</sidebyside>
-
-<figure xml:id="fig-skel-hyp-cosh-grid">
-<caption>
-Sketch the graph of <m>y = \cosh x</m> here, together with the two
-exponentials <m>y = \tfrac12 e^x</m> and <m>y = \tfrac12 e^{-x}</m>
-whose sum it is. Mark the minimum point.
-</caption>
-<image width="72%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-cosh-grid">
-<diagram dimensions="(360,300)" margins="12">
-<coordinates bbox="(-2.6,-0.8,2.6,4.0)">
-<grid-axes xlabel="x" ylabel="y"/>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="An empty coordinate grid, x from negative 2.6 to 2.6 and y from negative 0.8 to 4, left blank for sketching the graph of hyperbolic cosine and the two exponentials one half e to the x and one half e to the negative x."/>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-From your graph, read off the domain, the range, and the symmetry of
-<m>\cosh x</m>.
+From the graph, read off the domain, the range, and the symmetry of
+<m>\sinh x</m>.
 </p>
 
 <sidebyside width="97%">
@@ -276,15 +179,28 @@ From your graph, read off the domain, the range, and the symmetry of
 \node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Symmetry:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic cosine.</shortdescription>
+<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic sine.</shortdescription>
 </image>
 </sidebyside>
 
 <p>
-Now compare your sketch with the finished picture in
-<xref ref="fig-skel-hyp-cosh-graph"/>, and read off from it what happens
-to <m>\cosh x</m> at the two ends of the graph.
+The graph suggests that <m>\sinh x</m> hugs <m>\tfrac12 e^x</m> when
+<m>x</m> is large and positive, and hugs <m>-\tfrac12 e^{-x}</m> when
+<m>x</m> is large and negative. Confirm this observation.
 </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for confirming the limiting behaviour of hyperbolic sine by hand.</shortdescription>
+</image>
+</sidebyside>
 
 <figure xml:id="fig-skel-hyp-cosh-graph">
 <caption>
@@ -335,19 +251,31 @@ it lies above both and has its minimum value <m>1</m> at <m>x = 0</m>.
 </figure>
 
 <p>
-The picture suggests that <m>\cosh x</m> hugs <m>\tfrac12 e^x</m> when
+From the graph, read off the domain, the range, and the symmetry of
+<m>\cosh x</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\draw[gray!35] (0,1.8) -- (15,1.8);
+\node[anchor=north west, font=\small\itshape] at (0.25,5.15) {Domain:};
+\node[anchor=north west, font=\small\itshape] at (0.25,3.35) {Range:};
+\node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Symmetry:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic cosine.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The graph suggests that <m>\cosh x</m> hugs <m>\tfrac12 e^x</m> when
 <m>x</m> is large and positive, and hugs <m>\tfrac12 e^{-x}</m> when
 <m>x</m> is large and negative, while never dropping below <m>1</m>.
-Confirm this from the definition by evaluating the four limits
-<md>
-<mrow>\lim_{x \to \infty} \cosh x \amp \amp
-      \lim_{x \to -\infty} \cosh x</mrow>
-<mrow>\lim_{x \to \infty} \left(\cosh x - \tfrac12 e^{x}\right) \amp \amp
-      \lim_{x \to -\infty} \left(\cosh x - \tfrac12 e^{-x}\right)</mrow>
-</md>
-and then check the claim about the minimum: show that
-<m>\cosh x \geq 1</m> for every <m>x</m>, with equality only at
-<m>x = 0</m>.
+Confirm these observations.
 </p>
 
 <sidebyside width="97%">
