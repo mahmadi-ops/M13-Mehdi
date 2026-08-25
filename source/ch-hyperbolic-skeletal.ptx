@@ -88,16 +88,8 @@ and the <term>hyperbolic sine</term> is defined as
 </p>
 
 <p>
-The derivatives are given as follows.
-
-<md>
-<mrow xml:id="eq-skel-hyp-dcosh">\frac{d}{dx}(\cosh x) \amp = \sinh x</mrow>
-<mrow xml:id="eq-skel-hyp-dsinh">\frac{d}{dx}(\sinh x) \amp = \cosh x</mrow>
-</md>
-</p>
-
-<p>
-<em>Derivation (differentiate the two definitions).</em>
+Find the derivatives <m>\dfrac{d}{dx}(\cosh x)</m> and
+<m>\dfrac{d}{dx}(\sinh x)</m> by differentiating the two definitions.
 </p>
 
 <sidebyside width="97%">
