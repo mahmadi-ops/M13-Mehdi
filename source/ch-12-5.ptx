@@ -2,7 +2,7 @@
 <!--
   12.5 Lines and Planes in Space
 -->
-<chapter xml:id="chapter-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Lines and Planes in Space</title>
 
 <objectives>
@@ -41,14 +41,14 @@ the normal vector.
 
 <introduction>
 <p>
-In this chapter we use vectors, together with the dot and cross
+In this section we use vectors, together with the dot and cross
 products, to describe lines and planes in space and to measure
 distances from points to them.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lines-vector-eq">
+<subsection xml:id="sec-lines-vector-eq">
 <title>Vector Equation for a Line in Space</title>
 
 <p>
@@ -109,10 +109,10 @@ direction, illustrating that the vector P zero P is parallel to v.
 </latex-image>
 </image>
 </figure>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lines-parametric">
+<subsection xml:id="sec-lines-parametric">
 <title>Parametric Equations for a Line</title>
 
 <p>
@@ -217,10 +217,10 @@ comma negative one comma one.
 </figure>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lines-distance">
+<subsection xml:id="sec-lines-distance">
 <title>The Distance from a Point to a Line</title>
 
 <p>
@@ -341,10 +341,10 @@ d = \frac{|\vec{PS} \times \mathbf v|}{|\mathbf v|}
 </p>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-planes-equation">
+<subsection xml:id="sec-planes-equation">
 <title>Equation of a Plane in Space</title>
 
 <p>
@@ -483,10 +483,10 @@ coordinate planes.
 </figure>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-planes-intersection">
+<subsection xml:id="sec-planes-intersection">
 <title>Lines of Intersection</title>
 
 <p>
@@ -615,10 +615,10 @@ are
 </p>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-planes-distance">
+<subsection xml:id="sec-planes-distance">
 <title>Distance of a Point from a Plane</title>
 
 <p>
@@ -716,6 +716,6 @@ d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
 </p>
 </solution>
 </example>
-</section>
+</subsection>
 
-</chapter>
+</section>

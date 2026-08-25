@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-quadric-surfaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-quadric-surfaces" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quadric Surfaces</title>
 
 <objectives>
@@ -47,7 +47,7 @@ This general equation carries more freedom than we need.  The cross terms
 coordinate axes, and the linear terms <m>Gx</m> and <m>Hy</m> only slide it off
 the origin; neither affects the <em>shape</em> of the surface.  Setting those
 coefficients to zero therefore costs us nothing essential, and it leaves a
-surface in standard position.  Every example in this chapter comes from the
+surface in standard position.  Every example in this section comes from the
 resulting reduced equation
 <md xml:id="quad-simplified" number="yes">
   Ax^2 + By^2 + Cz^2 + Dz = E.
@@ -57,7 +57,7 @@ coefficients.  What tells the surfaces apart is which of them vanish and,
 above all, the signs of those that do not.
 </p>
 </introduction>
-<section xml:id="subsec-elliptical-paraboloid">
+<subsection xml:id="subsec-elliptical-paraboloid">
     <title>Elliptical Paraboloid</title>
   <p>
     We begin with the case in which <m>x</m> and <m>y</m> appear squared with
@@ -196,11 +196,11 @@ above all, the signs of those that do not.
  surface and elliptical paraboloid. 
  </p>
  
- </section>
+ </subsection>
 
 
 
- <section xml:id="subsec-hyperbolic-paraboloid">
+ <subsection xml:id="subsec-hyperbolic-paraboloid">
   <title>Hyperbolic Paraboloid</title>
 
 <p>
@@ -348,10 +348,10 @@ above all, the signs of those that do not.
 
 
 
-</section>
+</subsection>
 
 
-<section xml:id="subsec-ellipsoid">
+<subsection xml:id="subsec-ellipsoid">
   <title>Ellipsoid</title>
 
 <p>
@@ -490,9 +490,9 @@ above all, the signs of those that do not.
 
 
 
-</section>
+</subsection>
 
-<section xml:id="subsec-elliptic-cone">
+<subsection xml:id="subsec-elliptic-cone">
   <title>Elliptic Cone</title>
 
 <p>
@@ -643,10 +643,10 @@ above all, the signs of those that do not.
  </p>
 
 
-</section>
+</subsection>
 
 
-<section xml:id="subsec-hyperboloids">
+<subsection xml:id="subsec-hyperboloids">
   <title>Hyperboloids</title>
 <p>
 The two remaining quadric surfaces are left for you to explore.  The aim of this
@@ -1021,9 +1021,9 @@ from a hyperboloid of two sheets.
   </task>
 </activity>
 
-</section>
+</subsection>
 
-<section xml:id="subsec-quadric-summary">
+<subsection xml:id="subsec-quadric-summary">
   <title>Summary of the Quadric Surfaces</title>
   <p>
     We collect the six surfaces of this section in
@@ -1121,9 +1121,9 @@ from a hyperboloid of two sheets.
       </latex-image>
     </image>
   </figure>
-</section>
+</subsection>
 
-<section xml:id="subsec-quadric-applications">
+<subsection xml:id="subsec-quadric-applications">
   <title>Quadric Surfaces in the World</title>
 
   <p>
@@ -1305,7 +1305,7 @@ from a hyperboloid of two sheets.
     </image>
   </figure>
 
-</section>
+</subsection>
 
-</chapter>
+</section>
 

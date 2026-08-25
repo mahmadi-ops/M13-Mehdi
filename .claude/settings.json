@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pkill -f \"http.server\")"
+      "Bash(pkill -f \"http.server\")",
+      "WebFetch(domain:mahmadi-ops.github.io)"
     ]
   }
 }

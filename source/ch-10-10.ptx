@@ -2,7 +2,7 @@
 <!--
   10.10 The Binomial Series and Applications of Taylor Series
 -->
-<chapter xml:id="chapter-binomial-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-binomial-series" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Binomial Series and Applications of Taylor Series</title>
 
 <objectives>
@@ -38,7 +38,7 @@ Expand functions such as <m>(x+1)^5</m>, <m>(x+1)^{-2}</m>, and
 <p>
 We have already seen one of the applications of the Taylor series,
 namely approximating a function by a polynomial of degree <m>n</m>. In
-this chapter we study two more applications of the Taylor series: the
+this section we study two more applications of the Taylor series: the
 binomial series and estimating/evaluating non-elementary integrals.
 </p>
 
@@ -58,7 +58,7 @@ This series is known as the <term>binomial series</term>.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-binomial-series">
+<subsection xml:id="sec-binomial-series">
 <title>Binomial Series</title>
 
 <assemblage xml:id="summary-binomial-series">
@@ -287,6 +287,6 @@ series with two, three, and five terms. On the interval
 </figure>
 </solution>
 </example>
-</section>
+</subsection>
 
-</chapter>
+</section>

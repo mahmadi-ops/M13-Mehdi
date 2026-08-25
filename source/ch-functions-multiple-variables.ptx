@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Chapter 4.  Wrapper only: the mathematical content lives in the
+     included files, each of which is a <section> of this chapter. -->
+
+<chapter xml:id="chapter-functions-multiple-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Functions of Multiple Variables</title>
+
+  <xi:include href="ch-14-1.ptx" />
+  <xi:include href="ch-14-2.ptx" />
+  <xi:include href="ch-14-3.ptx" />
+  <xi:include href="ch-14-4.ptx" />
+  <xi:include href="directional-derivatives.ptx" />
+  <xi:include href="TangentPlanesDifferentials.ptx" />
+  <xi:include href="extreme-values-saddle-points.ptx" />
+  <xi:include href="LagrangeMultipliers.ptx" />
+</chapter>

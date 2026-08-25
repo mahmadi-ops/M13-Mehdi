@@ -11,6 +11,10 @@
 
 
   <exercise-divisional solution="yes"/> 
+        <!-- Chunk at subsection level: the divisions that used to be chapters -->
+        <!-- are now sections, so chunking one level deeper keeps each of      -->
+        <!-- their subdivisions on its own page, at its existing URL.          -->
+        <chunking level="3"/>
       <tableofcontents level="4"/>
         <!-- When writing an article for a specific journal, you can   -->
         <!-- specify the name of the journal to get appropriate latex. -->
@@ -44,11 +48,14 @@
   <!-- </numbering> -->
 
  <numbering>
-  <divisions level="3" />
-  <blocks level="1" />
-  <projects level="2" />
-  <equations level="1" />
-  <footnotes level="1" />
+  <!-- Everything sits one division deeper than it used to, now that the
+       former top-level sections are grouped under four chapters, so each
+       level below is one greater than before the regrouping. -->
+  <divisions level="4" />
+  <blocks level="2" />
+  <projects level="3" />
+  <equations level="2" />
+  <footnotes level="2" />
 </numbering>
 
   <!-- 

@@ -2,7 +2,7 @@
 <!--
   14.2 Limits and Continuity in Higher Dimensions
 -->
-<chapter xml:id="chapter-limits-continuity" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-limits-continuity" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Limits and Continuity in Higher Dimensions</title>
 
 <objectives>
@@ -55,19 +55,19 @@ which we denoted by <m>\lim_{x\to a^-} f(x)</m> and
 <p>
 In two variables the situation is richer, because there are infinitely
 many directions, and indeed infinitely many curved paths, along which a
-point can approach <m>(a,b)</m>. This chapter makes that precise and
+point can approach <m>(a,b)</m>. This section makes that precise and
 develops the tools for computing such limits, and for showing that a
 limit fails to exist.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lim-two-variable">
+<subsection xml:id="sec-lim-two-variable">
 <title>Limits of Two-Variable Functions</title>
 
 <p>
 Consider the function <m>z = f(x,y)</m> that we studied in the previous
-chapter. Below are some key points regarding the limit of such a
+section. Below are some key points regarding the limit of such a
 function.
 </p>
 
@@ -359,10 +359,10 @@ approach, and the final limit is evaluated by direct substitution, giving
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-lim-continuity">
+<subsection xml:id="sec-lim-continuity">
 <title>Continuity</title>
 
 <definition xml:id="def-continuity-two-variables">
@@ -553,6 +553,6 @@ the limit existed, it would have to equal <m>f(0,0)</m>.
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

@@ -2,7 +2,7 @@
 <!--
   14.4 The Chain Rule
 -->
-<chapter xml:id="chapter-chain-rule" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-chain-rule" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Chain Rule</title>
 
 <objectives>
@@ -53,7 +53,7 @@ memorizing them.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-cr-one-independent">
+<subsection xml:id="sec-cr-one-independent">
 <title>One Independent Variable</title>
 
 <theorem xml:id="thm-chain-rule-two-intermediate">
@@ -408,10 +408,10 @@ At <m>t = \pi</m> we have <m>\sin \pi = 0</m> and
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-cr-two-independent">
+<subsection xml:id="sec-cr-two-independent">
 <title>Two Independent Variables</title>
 
 <theorem xml:id="thm-chain-rule-rs">
@@ -559,10 +559,10 @@ and
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-cr-applications">
+<subsection xml:id="sec-cr-applications">
 <title>Applications</title>
 
 <example xml:id="example-cr-ant">
@@ -812,6 +812,6 @@ which is the identity we wanted to prove.
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

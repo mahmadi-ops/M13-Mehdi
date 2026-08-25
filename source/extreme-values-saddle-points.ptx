@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Extreme Values and Saddle Points</title>
 
 <objectives>
 <introduction>
 <p>
-After completing this chapter, you should be able to:
+After completing this section, you should be able to:
 </p>
 </introduction>
 
@@ -46,7 +46,7 @@ stability of a system.
 </objectives>
 
 <!-- ================================================================ -->
-<section xml:id="sec-local-extrema">
+<subsection xml:id="sec-local-extrema">
 <title>Local Maximum and Local Minimum</title>
 
 <definition xml:id="def-local-extrema">
@@ -235,10 +235,10 @@ saddle point of the surface.
 </statement>
 </definition>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-saddle-example">
+<subsection xml:id="sec-saddle-example">
 <title>A Saddle Point Example</title>
 
 <example xml:id="example-saddle-point">
@@ -335,10 +335,10 @@ upward, so <m>(0,0)</m> is a saddle point.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-second-derivative-test">
+<subsection xml:id="sec-second-derivative-test">
 <title>The Second Derivative Test</title>
 
 <theorem xml:id="thm-second-derivative-test">
@@ -636,10 +636,10 @@ d = \sqrt{\left(\frac{5}{6}\right)^2 + \left(\frac{5}{3}\right)^2
 </p>
 </paragraphs>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-absolute-extrema">
+<subsection xml:id="sec-absolute-extrema">
 <title>Absolute Maximum and Absolute Minimum</title>
 
 <p>
@@ -864,10 +864,10 @@ absolute minimum is <m>f(0,0) = f(2,2) = 0</m>.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-equilibrium-stability">
+<subsection xml:id="sec-equilibrium-stability">
 <title>A Physical Application: Equilibrium and Stability</title>
 
 <p>
@@ -1030,10 +1030,10 @@ dome, every cross-section is the red type; a saddle has one of each.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- <xi:include href="./exercises-absolute-extrema-division.ptx"/> -->
 <!-- <xi:include href="sec-why-second-derivative-test.ptx" /> -->
  <xi:include href="why-second-derivative-test.ptx" />
  
-</chapter>
+</section>

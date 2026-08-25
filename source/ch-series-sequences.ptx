@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Chapter 2.  Wrapper only: the mathematical content lives in the
+     included files, each of which is a <section> of this chapter. -->
+
+<chapter xml:id="chapter-series-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Series and Sequences</title>
+
+  <xi:include href="ch-10-2.ptx" />
+  <xi:include href="ch-10-8.ptx" />
+  <xi:include href="Taylor.ptx" />
+  <xi:include href="ch-10-10.ptx" />
+</chapter>

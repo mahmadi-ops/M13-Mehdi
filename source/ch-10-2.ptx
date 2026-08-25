@@ -2,7 +2,7 @@
 <!--
   10.2 Infinite Series
 -->
-<chapter xml:id="chapter-infinite-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-infinite-series" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Infinite Series</title>
 
 <objectives>
@@ -43,13 +43,13 @@ sums.
 
 <introduction>
 <p>
-This chapter is about infinite series and we will focus on studying its
+This section is about infinite series and we will focus on studying its
 definitions, providing some examples such as the geometric series.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-series-definitions">
+<subsection xml:id="sec-series-definitions">
 <title>Definitions</title>
 
 <p>
@@ -148,10 +148,10 @@ fills up a square of side one, so the sum is <m>1</m>.
 </prefigure>
 </image>
 </figure>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-series-partial-sums">
+<subsection xml:id="sec-series-partial-sums">
 <title>Partial Sums</title>
 
 <p>
@@ -195,10 +195,10 @@ converged to <m>1</m>. In general, if the sequence of the partial sums
 converges to a number, we say that the series <term>converges</term>,
 otherwise we say that the series <term>diverges</term>.
 </p>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-series-geometric">
+<subsection xml:id="sec-series-geometric">
 <title>Geometric Series</title>
 
 <p>
@@ -384,10 +384,10 @@ is <m>a + 2ar + 2ar^2 + \cdots</m>.
 </figure>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-series-nth-term">
+<subsection xml:id="sec-series-nth-term">
 <title>The <m>n</m>th Term Test</title>
 
 <theorem xml:id="thm-series-nth-term">
@@ -529,10 +529,10 @@ to <m>\dfrac{a}{1-r}</m>, hence
 </p>
 </solution>
 </example>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-series-combining">
+<subsection xml:id="sec-series-combining">
 <title>Combining Series</title>
 
 <theorem xml:id="thm-series-combining">
@@ -632,6 +632,6 @@ diverges.
 </p>
 </solution>
 </example>
-</section>
+</subsection>
 
-</chapter>
+</section>

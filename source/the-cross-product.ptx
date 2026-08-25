@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Cross Product</title>
 
 <objectives>
 <introduction>
 <p>
-After completing this chapter, you should be able to:
+After completing this section, you should be able to:
 </p>
 </introduction>
 
@@ -60,7 +60,7 @@ angular velocity and position, <m>\vec v = \vec\omega \times \vec r</m>.
 </objectives>
 
 <!-- ================================================================ -->
-<section xml:id="sec-cross-definition">
+<subsection xml:id="sec-cross-definition">
 <title>Definition and Properties of the Cross Product</title>
 
 <definition xml:id="def-cross-product">
@@ -377,10 +377,10 @@ on <m>\mathbf u</m> and <m>\mathbf v</m>: its base is
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-cross-components">
+<subsection xml:id="sec-cross-components">
 <title>Second Definition of the Cross Product</title>
 
 <p>
@@ -592,10 +592,10 @@ is half of the corresponding parallelogram.
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-true-false">
+<subsection xml:id="sec-true-false">
 <title>True or False?</title>
 
 <exercise xml:id="exercise-true-false-1">
@@ -666,10 +666,10 @@ have <m>\|\vec u\| = \|\vec v\| = 1</m>, which means:
 </feedback>
 </exercise>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-torque">
+<subsection xml:id="sec-torque">
 <title>Application: Torque</title>
 
 <p>
@@ -1063,10 +1063,10 @@ variation.
 </example>
 
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-circular-motion">
+<subsection xml:id="sec-circular-motion">
 <title>Application: Circular Motion: Velocity and Angular Velocity</title>
 
 <introduction>
@@ -1089,7 +1089,7 @@ coordinate axes.
 </p>
 </introduction>
 
-<subsection xml:id="subsec-polar-frame">
+<subsubsection xml:id="subsec-polar-frame">
 <title>A Frame that Turns with the Particle</title>
 
 <p>
@@ -1214,9 +1214,9 @@ vectors i and j are also drawn at P for comparison.
 </image>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<subsection xml:id="subsec-circular-velocity">
+<subsubsection xml:id="subsec-circular-velocity">
 <title>The Velocity in Circular Motion</title>
 
 <p>
@@ -1394,9 +1394,9 @@ it.
 </image>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<subsection xml:id="subsec-angular-velocity-vector">
+<subsubsection xml:id="subsec-angular-velocity-vector">
 <title>Angular Velocity as a Vector</title>
 
 <p>
@@ -1547,9 +1547,9 @@ orbit.
 </image>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<subsection xml:id="subsec-v-omega-cross-r">
+<subsubsection xml:id="subsec-v-omega-cross-r">
 <title>Velocity as a Cross Product</title>
 
 <p>
@@ -1719,9 +1719,9 @@ vector.
 </image>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<subsection xml:id="subsec-circular-motion-examples">
+<subsubsection xml:id="subsec-circular-motion-examples">
 <title>Examples</title>
 
 <example xml:id="example-angular-velocity">
@@ -1900,8 +1900,8 @@ The horse is on the positive <m>y</m>-axis and moves in the
 </solution>
 </exercise>
 
+</subsubsection>
+
 </subsection>
 
 </section>
-
-</chapter>

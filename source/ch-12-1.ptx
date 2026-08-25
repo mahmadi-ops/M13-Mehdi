@@ -8,7 +8,7 @@
       \pgfplotsset{compat=1.18}
     </latex-image-preamble>
 -->
-<chapter xml:id="chapter-three-dimensional-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-three-dimensional-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Three-Dimensional Coordinate Systems</title>
 
 <objectives>
@@ -52,7 +52,7 @@ a sphere.
 <introduction>
 <p>
 To locate a point in the plane we need two numbers; to locate a point in
-space we need three. In this chapter we set up the rectangular
+space we need three. In this section we set up the rectangular
 coordinate system in space, which is the setting for everything that
 follows. We then measure distance, describe spheres, and practice
 translating between an equation and the surface or region it represents.
@@ -60,7 +60,7 @@ translating between an equation and the surface or region it represents.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-3d-coordinate-system">
+<subsection xml:id="sec-3d-coordinate-system">
 <title>The Rectangular Coordinate System</title>
 
 <p>
@@ -291,10 +291,10 @@ coordinates negative 4, 3, negative 5 at the far bottom corner of the box.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-3d-planes-octants">
+<subsection xml:id="sec-3d-planes-octants">
 <title>Coordinate Planes and Octants</title>
 
 <p>
@@ -410,10 +410,10 @@ marked in green and labelled P with coordinates 1, 1, 1.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-3d-distance">
+<subsection xml:id="sec-3d-distance">
 <title>Distance Between Two Points</title>
 
 <p>
@@ -530,10 +530,10 @@ vertical triangle <m>P_1BP_2</m>.
        source="videos/DistanceFormulaProof.mp4" width="85%"/>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-3d-spheres">
+<subsection xml:id="sec-3d-spheres">
 <title>Spheres</title>
 
 <p>
@@ -616,10 +616,10 @@ sphere with center <m>P_0 = (-1,-2,0)</m> and radius
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-3d-describing-regions">
+<subsection xml:id="sec-3d-describing-regions">
 <title>Describing Regions in Space</title>
 
 <p>
@@ -942,6 +942,6 @@ meeting it in a circle.
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

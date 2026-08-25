@@ -3,7 +3,7 @@
   14.1 Functions of Several Variables
        (including the level-surfaces material)
 -->
-<chapter xml:id="chapter-functions-several-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-functions-several-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Functions of Several Variables</title>
 
 <objectives>
@@ -48,7 +48,7 @@ So far we have studied functions that take one real number as input and
 return one real number as output. Many quantities, however, depend on
 more than one input: the temperature at a point of a metal plate depends
 on two coordinates, and the temperature in a room depends on three. In
-this chapter we study functions of two variables, whose graphs are
+this section we study functions of two variables, whose graphs are
 surfaces in space, and we develop two ways of visualizing them, namely
 level curves and contour maps. At the end we look at functions of three
 variables, which we visualize by their level surfaces.
@@ -56,7 +56,7 @@ variables, which we visualize by their level surfaces.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-fsv-functions-two-variables">
+<subsection xml:id="sec-fsv-functions-two-variables">
 <title>Functions of Two Variables</title>
 
 <p>
@@ -211,10 +211,10 @@ surface directly above it.
 </image>
 </figure>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-fsv-level-curves">
+<subsection xml:id="sec-fsv-level-curves">
 <title>Level Curves and Contour Maps</title>
 
 <p>
@@ -506,10 +506,10 @@ different heights.
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-fsv-level-surfaces">
+<subsection xml:id="sec-fsv-level-surfaces">
 <title>More Than Two Variables: Level Surfaces</title>
 
 <p>
@@ -695,6 +695,6 @@ upwards above the origin and one opening downwards below it.
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Exercise for the Lagrange Multipliers chapter, collected in the Exercises chapter.
+  Exercise for the Lagrange Multipliers section, collected in the Exercises chapter.
 -->
 <worksheet xml:id="exercises-lagrange">
   <title> Exercises for <xref ref="section-lagrange-multipliers" text="title"/></title>
