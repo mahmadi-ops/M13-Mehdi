@@ -3,7 +3,7 @@
 <!-- Pulled into directional-derivatives.ptx by XInclude.
      Requires in assets/ :  isotherm-runner.html, isotherm-runner-preview.png -->
 
-<section xml:id="subsec-scalar-fields-potentials">
+<subsection xml:id="subsec-scalar-fields-potentials">
   <title>Scalar Fields, Potentials, and the Direction Nature Chooses</title>
 
   <p>
@@ -209,4 +209,4 @@
   </example>
 
 
-</section>
+</subsection>

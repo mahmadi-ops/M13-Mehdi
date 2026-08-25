@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-directional-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-directional-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Directional Derivatives and Gradient Vectors</title>
 
 <objectives>
@@ -62,7 +62,7 @@ to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 
 </introduction>
 
-<!-- ================================================================ --><section xml:id="sec-dirderiv-definition">
+<!-- ================================================================ --><subsection xml:id="sec-dirderiv-definition">
 <title>The Definition of the Directional Derivative</title>
 
 <definition xml:id="def-directional-derivative">
@@ -465,10 +465,10 @@ Every partial derivative is a directional derivative, so nothing already known a
 
 </activity>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-gradient-vector">
+<subsection xml:id="sec-gradient-vector">
 <title>The Gradient Vector</title>
 
 <p>
@@ -1065,10 +1065,10 @@ viewpoint, or press <q>Spin</q>.
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-dirderiv-properties">
+<subsection xml:id="sec-dirderiv-properties">
 <title>Directions of Fastest Increase, Fastest Decrease, and No Change</title>
 
 <p>
@@ -1572,12 +1572,12 @@ press <q>Spin</q>.
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
 
 <!-- ================================================================ -->
-<section xml:id="sec-gradient-summary">
+<subsection xml:id="sec-gradient-summary">
 <title>Summary</title>
 
 <p>
@@ -1644,9 +1644,9 @@ directions of most rapid increase and decrease are perpendicular to it.
 </ul>
 </p>
 
-</section>
+</subsection>
 
 <xi:include href="subsec-scalar-fields-potentials.ptx"/>
 <xi:include href="exercises-gradient-applications.ptx"/>
 
-</chapter>
+</section>

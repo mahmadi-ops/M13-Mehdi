@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-parametrization" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-parametrization" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Parametrization of Plane Curves</title>
 
 <objectives>
 <introduction>
 <p>
-After completing this chapter, you should be able to:
+After completing this section, you should be able to:
 </p>
 </introduction>
 
@@ -48,7 +48,7 @@ the same place at the same time.
 </objectives>
 
 <!-- ================================================================ -->
-<section xml:id="sec-parametric-equations">
+<subsection xml:id="sec-parametric-equations">
 <title>Parametric Equations</title>
 
 <p>
@@ -318,10 +318,10 @@ Can you think of another way to write a parametric form of the circle
 </statement>
 </exercise>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-parametrizing-examples">
+<subsection xml:id="sec-parametrizing-examples">
 <title>Some Examples of Parametrizing Curves</title>
 
 <example xml:id="ex-parametrizing-curves">
@@ -551,10 +551,10 @@ Part C: the circle <m>x = 2\cos(t)+2</m>, <m>y = 2\sin(t)</m>,
 </figure>
 
 </paragraphs>
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-projectile-motion">
+<subsection xml:id="sec-projectile-motion">
 <title>Projectile Motion</title>
 
 <p>
@@ -727,9 +727,9 @@ direction as the projectile falls.
 
 <xi:include href="art11-projectile-incline.ptx"/>
 
-</section>
+</subsection>
 
-<section xml:id="sec-intersection-collision">
+<subsection xml:id="sec-intersection-collision">
   <title>Intersection Points versus Collision Points</title>
 
   <p>
@@ -1114,8 +1114,8 @@ direction as the projectile falls.
     </solution>
   </exercise>
 
+</subsection>
+
+
+
 </section>
-
-
-
-</chapter>

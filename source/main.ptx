@@ -36,30 +36,17 @@
     <title>MATH 13-Calculus and Analytic Geometry III</title>
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
+
+    <!-- Chapter 1 -->
     <xi:include href="ch-7-3.ptx" />
-    <xi:include href="ch-10-2.ptx" />
-    <xi:include href="ch-10-8.ptx" />
-    <xi:include href="Taylor.ptx" />
-    <xi:include href="ch-10-10.ptx" />
-    <xi:include href="ch-12-1.ptx" />
-    <xi:include href="ch-12-2.ptx" />
-    <xi:include href="Dotproduct.ptx" />
-    <xi:include href="the-cross-product.ptx" />
-    <xi:include href="Parametrization.ptx" />
-    <xi:include href="ch-12-5.ptx" />
-    <xi:include href="Conics.ptx" />
-    <xi:include href="QuadricSurface.ptx" />
-    <xi:include href="ch-14-1.ptx" />
-    <xi:include href="ch-14-2.ptx" />
-    <xi:include href="ch-14-3.ptx" />
-    <xi:include href="ch-14-4.ptx" />
-    <xi:include href="directional-derivatives.ptx" />
-    <xi:include href="TangentPlanesDifferentials.ptx" />
-    <xi:include href="extreme-values-saddle-points.ptx" />
-    <xi:include href="LagrangeMultipliers.ptx" />
-    <!-- <xi:include href="section-sample-graphs.ptx" />
-    <xi:include href="Webwork.ptx" /> -->
-    <xi:include href="exercises.ptx" /> 
+    <!-- Chapter 2 -->
+    <xi:include href="ch-series-sequences.ptx" />
+    <!-- Chapter 3 -->
+    <xi:include href="ch-geometry.ptx" />
+    <!-- Chapter 4 -->
+    <xi:include href="ch-functions-multiple-variables.ptx" />
+    <!-- Chapter 5: the problem sets, gathered after the content chapters -->
+    <xi:include href="exercises.ptx" />
   </book>
 
 </pretext>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="section-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
 
 <objectives>
 <introduction>
 <p>
-After completing this chapter, you should be able to:
+After completing this section, you should be able to:
 </p>
 </introduction>
 
@@ -55,7 +55,7 @@ computation from two dimensions to <m>\mathbb R^n</m>.
 </objectives>
 
 <!-- ================================================================ -->
-<section xml:id="sec-dot-product">
+<subsection xml:id="sec-dot-product">
 <title>The Dot Product and the Angle between Two Vectors</title>
 
 <p>
@@ -402,10 +402,10 @@ Every component of <m>\mathbf 0</m> is zero, so
 </fact>
 </paragraphs>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-projection">
+<subsection xml:id="sec-projection">
 <title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
 
 <p>
@@ -650,10 +650,10 @@ be perpendicular to <m>\mathbf v</m>.
 
 </paragraphs>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-work">
+<subsection xml:id="sec-work">
 <title>Application in Physics: Work</title>
 
 <p>
@@ -869,10 +869,10 @@ so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 </example>
 
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-data-science">
+<subsection xml:id="sec-data-science">
 <title>Application in Data Science: Measuring Similarity in Tastes</title>
 
 <p>
@@ -1223,6 +1223,6 @@ Norm, Popcorn -0.0744 94.27
 </sage>
 </paragraphs>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

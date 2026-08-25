@@ -2,7 +2,7 @@
 <!--
   14.3 Partial Derivatives
 -->
-<chapter xml:id="chapter-partial-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-partial-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Partial Derivatives</title>
 
 <objectives>
@@ -58,7 +58,7 @@ variable is held fixed.
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-pd-definition">
+<subsection xml:id="sec-pd-definition">
 <title>Definition of Partial Derivatives</title>
 
 <p>
@@ -201,10 +201,10 @@ Note that similar notation can be used for the partial derivative with
 respect to any variable such as <m>y</m> and <m>z</m>.
 </p>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-pd-examples">
+<subsection xml:id="sec-pd-examples">
 <title>Examples</title>
 
 <example xml:id="example-pd-paraboloid">
@@ -428,10 +428,10 @@ is noticeably steeper than the one in the previous figure.
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-pd-second-derivatives">
+<subsection xml:id="sec-pd-second-derivatives">
 <title>Second Derivatives and the Mixed Derivative Theorem</title>
 
 <p>
@@ -555,6 +555,6 @@ f_{xy} = f_{yx} = -2x\sin(x^2y) - 2x^3y\cos(x^2y).
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>

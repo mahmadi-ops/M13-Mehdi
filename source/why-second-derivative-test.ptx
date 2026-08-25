@@ -5,7 +5,7 @@
 <!-- Include from extreme-values-saddle-points.ptx, after the         -->
 <!-- statement of Theorem II (thm-second-derivative-test).            -->
 <!-- ================================================================ -->
-<section xml:id="sec-why-second-derivative-test">
+<subsection xml:id="sec-why-second-derivative-test">
 <title>Why the Second Derivative Test Works</title>
 
 <p>
@@ -250,4 +250,4 @@ line-by-line conclusion to a genuine local one.
 </p>
 </paragraphs>
 
-</section>
+</subsection>

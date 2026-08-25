@@ -8,7 +8,7 @@
       \pgfplotsset{compat=1.18}
     </latex-image-preamble>
 -->
-<chapter xml:id="chapter-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="chapter-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Vectors</title>
 
 <objectives>
@@ -56,12 +56,12 @@ speed of the car and its direction of motion to specify its velocity
 completely. For instance, we might say that the car is moving with speed
 <m>65</m> miles per hour in the direction of north. Such quantities are
 referred to as <term>vector quantities</term>, and they are the subject
-of this chapter.
+of this section.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<section xml:id="sec-vec-definitions">
+<subsection xml:id="sec-vec-definitions">
 <title>Definitions, Terminology, and Notation</title>
 
 <p>
@@ -311,10 +311,10 @@ agrees with part <alert>A</alert>, as it must, since <m>\mathbf v</m> and
 </solution>
 </example>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-vec-algebra">
+<subsection xml:id="sec-vec-algebra">
 <title>Vector Algebra Operations</title>
 
 <p>
@@ -675,10 +675,10 @@ Let <m>\mathbf u</m>, <m>\mathbf v</m>, <m>\mathbf w</m> be vectors and
 </statement>
 </theorem>
 
-</section>
+</subsection>
 
 <!-- ================================================================ -->
-<section xml:id="sec-vec-unit">
+<subsection xml:id="sec-vec-unit">
 <title>Unit Vectors</title>
 
 <p>
@@ -807,6 +807,6 @@ by <xref ref="eq-vec-unit"/> we find the unit vector by dividing
 </solution>
 </example>
 
-</section>
+</subsection>
 
-</chapter>
+</section>
