@@ -139,6 +139,27 @@ that squeeze it.
 </image>
 </figure>
 
+<p>
+From your graph, read off the domain, the range, and the symmetry of
+<m>\sinh x</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\draw[gray!35] (0,1.8) -- (15,1.8);
+\node[anchor=north west, font=\small\itshape] at (0.25,5.15) {Domain:};
+\node[anchor=north west, font=\small\itshape] at (0.25,3.35) {Range:};
+\node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Symmetry:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic sine.</shortdescription>
+</image>
+</sidebyside>
+
 <figure xml:id="fig-skel-hyp-cosh-grid">
 <caption>
 Sketch the graph of <m>y = \cosh x</m> here, together with the two
@@ -161,31 +182,25 @@ whose sum it is. Mark the minimum point.
 </figure>
 
 <p>
-From the graphs we can read off the following facts.
+From your graph, read off the domain, the range, and the symmetry of
+<m>\cosh x</m>.
 </p>
 
-<p>
-<ul>
-<li>
-<p>
-The domain of <m>\cosh x</m> and <m>\sinh x</m> is <m>\R</m>.
-</p>
-</li>
-<li>
-<p>
-The range of <m>\sinh x</m> is <m>\R</m>, whereas the range of
-<m>\cosh x</m> is <m>[1,\infty)</m>.
-</p>
-</li>
-<li>
-<p>
-Notice that <m>\sinh x</m> is an odd function, i.e.
-<m>\sinh(-x) = -\sinh(x)</m>, whereas <m>\cosh x</m> is an even
-function, i.e. <m>\cosh(-x) = \cosh(x)</m>.
-</p>
-</li>
-</ul>
-</p>
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\draw[gray!35] (0,1.8) -- (15,1.8);
+\node[anchor=north west, font=\small\itshape] at (0.25,5.15) {Domain:};
+\node[anchor=north west, font=\small\itshape] at (0.25,3.35) {Range:};
+\node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Symmetry:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic cosine.</shortdescription>
+</image>
+</sidebyside>
 </section>
 
 <!-- ================================================================ -->
