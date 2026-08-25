@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 7.3 Hyperbolic Functions.
+
+  Definitions, identities, and problem statements are kept; derivations,
+  solutions, and finished graphs are replaced by blank workspace boxes
+  and empty grids, so the notes can be completed by hand (e.g. on an
+  iPad over the PDF, or printed).  The real-life applications are kept
+  in full.  Content mirrors ch-7-3.ptx; every xml:id here is prefixed
+  with "skel-" so the two chapters can coexist in the same book.
+-->
+<chapter xml:id="skel-chapter-hyperbolic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Hyperbolic Functions (Skeletal Notes)</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Define the hyperbolic sine and cosine in terms of <m>e^x</m> and
+<m>e^{-x}</m>, and differentiate them.
+</p>
+</li>
+<li>
+<p>
+Sketch the graphs of <m>\sinh x</m> and <m>\cosh x</m>, and state their
+domains and ranges.
+</p>
+</li>
+<li>
+<p>
+Use the identity <m>\cosh^2 x - \sinh^2 x = 1</m> and relate it to the
+parametrization of the hyperbola <m>x^2 - y^2 = 1</m>.
+</p>
+</li>
+<li>
+<p>
+Work with the remaining hyperbolic functions <m>\tanh x</m>,
+<m>\coth x</m>, <m>\operatorname{sech} x</m>, and
+<m>\operatorname{csch} x</m>, and apply hyperbolic identities to
+integrals and equations.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+This chapter is about certain combinations of <m>e^x</m> and
+<m>e^{-x}</m> which appear in multiple branches of science and
+engineering. In many ways they are analogous to the trigonometric
+functions, and they have a similar relationship to the hyperbola that
+the trigonometric functions have to the circle, which is why they are
+known as <term>hyperbolic functions</term>. We will study these
+relationships gradually during this chapter.
+</p>
+<p>
+<em>These are skeletal notes: the definitions, identities, and problem
+statements are given, and blank boxes and empty grids are left wherever
+a derivation, a solution, or a sketch belongs, so that you can fill
+them in by hand.</em>
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-definitions">
+<title>Definitions and Derivatives</title>
+
+<p>
+The <term>hyperbolic cosine</term> is defined as
+
+<md xml:id="eq-skel-hyp-cosh-def" number="yes">
+\cosh x = \frac{e^x + e^{-x}}{2},
+</md>
+</p>
+
+<p>
+and the <term>hyperbolic sine</term> is defined as
+
+<md xml:id="eq-skel-hyp-sinh-def" number="yes">
+\sinh x = \frac{e^x - e^{-x}}{2}.
+</md>
+</p>
+
+<p>
+The derivatives are given as follows.
+
+<md>
+<mrow xml:id="eq-skel-hyp-dcosh">\frac{d}{dx}(\cosh x) \amp = \sinh x</mrow>
+<mrow xml:id="eq-skel-hyp-dsinh">\frac{d}{dx}(\sinh x) \amp = \cosh x</mrow>
+</md>
+</p>
+
+<p>
+<em>Derivation (differentiate the two definitions).</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,4.5);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,4.25) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten derivation.</shortdescription>
+</image>
+</sidebyside>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-graphs">
+<title>Graph, Domain, and Range of <m>\cosh x</m> and <m>\sinh x</m></title>
+
+<p>
+Since <m>\sinh x</m> and <m>\cosh x</m> are built from the two
+exponentials <m>\tfrac12 e^x</m> and <m>\tfrac12 e^{-x}</m>, their
+graphs are easiest to understand by sketching those exponentials first.
+Use the empty grids in <xref ref="fig-skel-hyp-sinh-grid"/> and
+<xref ref="fig-skel-hyp-cosh-grid"/>.
+</p>
+
+<figure xml:id="fig-skel-hyp-sinh-grid">
+<caption>
+Sketch the graph of <m>y = \sinh x</m> here, together with the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = -\tfrac12 e^{-x}</m>
+that squeeze it.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-sinh-grid">
+<diagram dimensions="(360,300)" margins="12">
+<coordinates bbox="(-2.6,-3.4,2.6,3.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An empty coordinate grid, x from negative 2.6 to 2.6 and y from negative 3.4 to 3.4, left blank for sketching the graph of hyperbolic sine and the two exponentials one half e to the x and negative one half e to the negative x."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-skel-hyp-cosh-grid">
+<caption>
+Sketch the graph of <m>y = \cosh x</m> here, together with the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = \tfrac12 e^{-x}</m>
+whose sum it is. Mark the minimum point.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-cosh-grid">
+<diagram dimensions="(360,300)" margins="12">
+<coordinates bbox="(-2.6,-0.8,2.6,4.0)">
+<grid-axes xlabel="x" ylabel="y"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An empty coordinate grid, x from negative 2.6 to 2.6 and y from negative 0.8 to 4, left blank for sketching the graph of hyperbolic cosine and the two exponentials one half e to the x and one half e to the negative x."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+From the graphs we can read off the following facts.
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+The domain of <m>\cosh x</m> and <m>\sinh x</m> is <m>\R</m>.
+</p>
+</li>
+<li>
+<p>
+The range of <m>\sinh x</m> is <m>\R</m>, whereas the range of
+<m>\cosh x</m> is <m>[1,\infty)</m>.
+</p>
+</li>
+<li>
+<p>
+Notice that <m>\sinh x</m> is an odd function, i.e.
+<m>\sinh(-x) = -\sinh(x)</m>, whereas <m>\cosh x</m> is an even
+function, i.e. <m>\cosh(-x) = \cosh(x)</m>.
+</p>
+</li>
+</ul>
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-identities">
+<title>Identities and Other Hyperbolic Functions</title>
+
+<p>
+A similar identity to the trigonometric identity
+<m>\cos^2 x + \sin^2 x = 1</m> holds for the hyperbolic functions:
+
+<md xml:id="eq-skel-hyp-main-identity" number="yes">
+\cosh^2 x - \sinh^2 x = 1.
+</md>
+</p>
+
+<p>
+As you already know, any point <m>P(x,y)</m> on the circumference of
+the unit circle <m>(x^2 + y^2 = 1)</m> can be described in terms of sine
+and cosine of an angle <m>t \in [0, 2\pi)</m>, i.e. <m>x = \cos t</m>
+and <m>y = \sin t</m>, which results in the trigonometric identity
+<m>\cos^2 t + \sin^2 t = 1</m>. Draw this in
+<xref ref="fig-skel-hyp-circle-grid"/>.
+</p>
+
+<figure xml:id="fig-skel-hyp-circle-grid">
+<caption>
+Sketch the unit circle <m>x^2+y^2=1</m> here, mark a point
+<m>P(\cos t, \sin t)</m> on it, and draw the right triangle with legs
+<m>x</m> and <m>y</m> and hypotenuse <m>1</m>.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-circle-grid">
+<diagram dimensions="(320,300)" margins="12">
+<coordinates bbox="(-1.7,-1.6,1.7,1.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An empty coordinate grid, x from negative 1.7 to 1.7 and y from negative 1.6 to 1.6, left blank for sketching the unit circle and a point P of cosine t comma sine t on it."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Similarly, any point <m>P(x,y)</m> on the right branch of the hyperbola
+<m>x^2 - y^2 = 1</m> can be represented as <m>x = \cosh t</m> and
+<m>y = \sinh t</m>, where <m>t \in \R</m>. This follows directly from
+identity <xref ref="eq-skel-hyp-main-identity"/>, i.e.
+<m>\cosh^2 t - \sinh^2 t = 1</m>. Draw this in
+<xref ref="fig-skel-hyp-hyperbola-grid"/>.
+</p>
+
+<figure xml:id="fig-skel-hyp-hyperbola-grid">
+<caption>
+Sketch both branches of the hyperbola <m>x^2-y^2=1</m> here, and mark a
+point <m>P(\cosh t, \sinh t)</m> on the right branch.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-hyperbola-grid">
+<diagram dimensions="(340,300)" margins="12">
+<coordinates bbox="(-3.4,-2.9,3.4,2.9)">
+<grid-axes xlabel="x" ylabel="y"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An empty coordinate grid, x from negative 3.4 to 3.4 and y from negative 2.9 to 2.9, left blank for sketching the hyperbola x squared minus y squared equals one and a point P of hyperbolic cosine t comma hyperbolic sine t on its right branch."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<exercise xml:id="skel-checkpoint-hyp-left-branch">
+<title>Parametrizing the Left Branch</title>
+<statement>
+<p>
+Both branches of <m>x^2 - y^2 = 1</m> appear in
+<xref ref="fig-skel-hyp-hyperbola-grid"/>, but the parametrization
+<m>P(\cosh t, \sinh t)</m> traces only the right one, since
+<m>\cosh t \geq 1</m> for every <m>t \in \R</m>. How would you
+parametrize the <em>left</em> branch, where <m>x \leq -1</m>?
+</p>
+
+<p>
+<em>Your answer and reasoning.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten answer.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+The identity <m>\cosh^2 t - \sinh^2 t = 1</m> is unaffected if you change
+the sign of the first coordinate.
+</p>
+</hint>
+</exercise>
+
+<p>
+As you might have guessed, the rest of the hyperbolic functions are
+defined as follows.
+
+<md>
+<mrow xml:id="eq-skel-hyp-tanh">\tanh x \amp = \frac{\sinh x}{\cosh x}
+\amp \operatorname{sech} x \amp = \frac{1}{\cosh x}</mrow>
+<mrow xml:id="eq-skel-hyp-coth">\coth x \amp = \frac{\cosh x}{\sinh x}
+\amp \operatorname{csch} x \amp = \frac{1}{\sinh x}</mrow>
+</md>
+</p>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-identity-list">
+<title>Hyperbolic Identities</title>
+
+<p>
+Below are some identities that you may find useful in some problems,
+however, you are not expected to memorize them. We will prove some of
+them as an exercise later.
+
+<md number="yes">
+<mrow xml:id="eq-skel-hyp-id-pythagorean">\amp \cosh^2 x - \sinh^2 x = 1</mrow>
+<mrow xml:id="eq-skel-hyp-id-sech">\amp 1 - \tanh^2 x = \operatorname{sech}^2 x</mrow>
+<mrow xml:id="eq-skel-hyp-id-sinh-double">\amp \sinh 2x = 2 \sinh x \cosh x</mrow>
+<mrow xml:id="eq-skel-hyp-id-cosh-double">\amp \cosh 2x = \cosh^2 x + \sinh^2 x</mrow>
+<mrow xml:id="eq-skel-hyp-id-cosh-square">\amp \cosh^2 x = \frac{\cosh 2x + 1}{2}</mrow>
+<mrow xml:id="eq-skel-hyp-id-sinh-square">\amp \sinh^2 x = \frac{\cosh 2x - 1}{2}</mrow>
+</md>
+</p>
+
+<example xml:id="example-skel-hyp-arccosh">
+<title>Computing <m>\cosh^{-1}(x)</m></title>
+<statement>
+<p>
+Show that the inverse hyperbolic cosine can be written in terms of the
+natural logarithm as
+<md>
+\cosh^{-1}(x) = \ln\left(x + \sqrt{x^2-1}\right), \qquad x \geq 1.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Restrict <m>\cosh</m> to <m>x \geq 0</m> so that it is one-to-one, set
+<m>y = \cosh(x)</m>, and solve for <m>x</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="example-skel-hyp-integral">
+<title>An integral via a hyperbolic substitution</title>
+<statement>
+<p>
+Use hyperbolic functions to calculate the integral
+<md>
+\int \frac{\sqrt{x^2-1}}{x^2}\,dx, \qquad x \ge 1.
+</md>
+<em>Hint:</em> Similar to <m>\int \sec^2(x)\,dx = \tan(x) + C</m>, we
+have <m>\int \operatorname{sech}^2(x)\,dx = \tanh(x) + C</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-real-life">
+<title>Hyperbolic Functions in Real Life</title>
+
+<introduction>
+<p>
+Hyperbolic functions are more than a formal analogue of the
+trigonometric functions: they describe a number of concrete physical
+situations. We look at three of them.
+</p>
+</introduction>
+
+<subsection xml:id="subsec-skel-hyp-catenary">
+<title>Hanging Cables and the Catenary</title>
+
+<p>
+If a heavy flexible cable (such as a telephone line, a power line, or a
+chain) hangs freely from two supports, it settles into a curve called a
+<term>catenary</term>. Contrary to a common guess, this curve is not a
+parabola; it is the graph of a hyperbolic cosine,
+<md>
+y = a\cosh\left(\frac{x}{a}\right),
+</md>
+where <m>x</m> is measured horizontally from the lowest point of the
+cable, so that the <m>y</m>-axis is the axis of symmetry and the lowest
+point sits at height <m>y(0) = a</m>. Sliding the curve up or down, as
+in <m>y = c + a\cosh(x/a)</m>, only changes where we draw the
+<m>x</m>-axis.
+</p>
+
+<p>
+The shape comes out of a balance of forces. Look at the piece of cable
+running from the lowest point to a point where the cable makes an angle
+<m>\theta</m> with the horizontal, and let <m>s</m> be the arc length of
+that piece. Three forces act on it: the tension <m>T_0</m> at the lowest
+point, which is horizontal; the tension <m>T</m> along the cable at the
+other end; and the weight <m>\lambda g s</m> of the piece, where
+<m>\lambda</m> is the mass per unit length; see
+<xref ref="fig-skel-hyp-catenary-forces"/>. Balancing the horizontal and the
+vertical components gives
+<md>
+<mrow>T\cos\theta \amp = T_0</mrow>
+<mrow>T\sin\theta \amp = \lambda g s.</mrow>
+</md>
+</p>
+
+<figure xml:id="fig-skel-hyp-catenary-forces">
+<caption>
+The three forces on the piece of cable of arc length <m>s</m> running
+from the lowest point of the cable to a point where the cable makes an
+angle <m>\theta</m> with the horizontal. The lowest point sits at height
+<m>a = T_0/(\lambda g)</m>, and the supports are a distance <m>2b</m>
+apart. (After Fig. 1 of Behroozi, cited below.)
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-catenary-forces">
+<diagram dimensions="(400,300)" margins="12">
+<definition>c(x) = (exp(x) + exp(-x))/2</definition>
+<definition>P = (1.1, 1.6685)</definition>
+<coordinates bbox="(-2.5,-0.5,2.9,3.3)">
+<axes xlabel="x" ylabel="y" decorations="no"/>
+<graph at="cf-curve" function="c" domain="(-1.75,1.75)"
+       stroke="#56B4E9" thickness="2"/>
+<graph at="cf-arc" function="c" domain="(0,1.1)"
+       stroke="#8B1A4A" thickness="4"/>
+<line at="cf-horiz" endpoints="(P,(1.85,1.6685))" stroke="gray" thickness="1"/>
+<angle-marker at="cf-theta" points="((1.85,1.6685),P,(1.4,2.0685))" radius="24"
+              clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<vector at="cf-T" v="(0.36,0.48)" tail="P" stroke="black" thickness="2"
+        alignment="ne"><m>T</m></vector>
+<vector at="cf-W" v="(0,-0.6)" tail="P" stroke="black" thickness="2"
+        alignment="e"><m>\lambda g s</m></vector>
+<vector at="cf-T0" v="(-0.6,0)" tail="(0,1)" stroke="black" thickness="2"
+        alignment="nw"><m>T_0</m></vector>
+<point at="cf-vertex" p="(0,1)" fill="black"/>
+<point at="cf-P" p="P" fill="black"/>
+<line at="cf-a" endpoints="((0,0),(0,1))" stroke="gray" thickness="2"
+      arrows="2"/>
+<label at="cf-a-lab" anchor="(-0.06,0.5)" alignment="w"><m>a</m></label>
+<label at="cf-s-lab" anchor="(0.62,1.02)" alignment="se" color="#8B1A4A">
+<m>s</m>
+</label>
+<line at="cf-b" endpoints="((0,3.05),(1.75,3.05))" stroke="gray" thickness="1"
+      arrows="2"/>
+<label at="cf-b-lab" anchor="(0.87,3.08)" alignment="n"><m>b</m></label>
+<line at="cf-support" endpoints="((1.75,2.925),(1.75,3.15))" stroke="gray"
+      thickness="1"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hanging cable in the shape of a catenary. The piece of the cable from its lowest point up to a point P is drawn in dark red and labelled s. Three force arrows are shown: the horizontal tension T naught at the lowest point, the tension T along the cable at P, and the weight lambda g s pointing straight down at P. The angle theta is marked between the cable at P and the horizontal. The height of the lowest point above the x axis is labelled a, and the horizontal distance from the y axis to the support is labelled b.">
+  <annotation ref="cf-curve" text="The catenary y equals a hyperbolic cosine of x over a."/>
+  <annotation ref="cf-arc" text="The section of cable of arc length s, from the vertex to the point P."/>
+  <annotation ref="cf-T0" text="The horizontal tension T naught at the lowest point of the cable."/>
+  <annotation ref="cf-T" text="The tension T at P, directed along the cable."/>
+  <annotation ref="cf-W" text="The weight lambda g s of the section, pointing straight down."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The quantity <m>a = T_0/(\lambda g)</m> has units of length, and
+dividing the second equation by the first eliminates <m>T</m> and leaves
+<m>s = a\tan\theta</m>. Since the cable makes the angle <m>\theta</m>
+with the horizontal, <m>\tan\theta</m> is its slope, so
+<md>
+\frac{dy}{dx} = \tan\theta = \frac{s}{a}.
+</md>
+Now use the arc length element
+<m>ds = \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + (s/a)^2}\,dx</m> and separate
+the variables:
+<md>
+dx = \frac{a\,ds}{\sqrt{a^2+s^2}}
+\qquad\Longrightarrow\qquad
+x = a\sinh^{-1}\!\left(\frac{s}{a}\right),
+</md>
+where the constant of integration vanishes because <m>s = 0</m> at
+<m>x = 0</m>.
+</p>
+
+<p>
+Solving for <m>s</m> gives <m>s = a\sinh(x/a)</m>, and therefore
+<md>
+\frac{dy}{dx} = \frac{s}{a} = \sinh\left(\frac{x}{a}\right).
+</md>
+One last integration, together with <m>y(0) = a</m>, produces the
+catenary equation <m>y = a\cosh(x/a)</m>.
+</p>
+
+<p>
+Two things are worth noticing. First, <m>a</m> is a pure scale factor:
+written as <m>y/a = \cosh(x/a)</m>, the equation shows that every
+catenary is a scaled copy of the single curve <m>y = \cosh x</m>, in
+exactly the same way that every circle is a scaled copy of the unit
+circle; <xref ref="fig-skel-hyp-catenary-family"/> shows four of them.
+Second, <m>a</m> is fixed by the cable itself. If the cable has
+half-length <m>l</m> and its two supports are a distance <m>2b</m>
+apart, then putting <m>s = l</m> at <m>x = b</m> in
+<m>s = a\sinh(x/a)</m> gives
+<md>
+l = a\sinh\left(\frac{b}{a}\right),
+</md>
+which determines <m>a</m> (numerically) from the two lengths. Since
+<m>a = T_0/(\lambda g)</m>, a cable pulled tight has a large <m>a</m>
+and hangs almost flat, while a slack one has a small <m>a</m> and sags
+sharply.
+</p>
+
+<figure xml:id="fig-skel-hyp-catenary-family">
+<caption>
+The catenaries <m>y = a\cosh(x/a)</m> for
+<m>a = 0.5,\ 1,\ 2,\ 4</m>. Each curve meets the <m>y</m>-axis at its
+own value of <m>a</m>, and all four are scaled copies of the single
+curve <m>y = \cosh x</m>. (After Fig. 2 of Behroozi, cited below.)
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-catenary-family">
+<diagram dimensions="(420,320)" margins="12">
+<definition>ca(x) = 0.5*(exp(x/0.5) + exp(-x/0.5))/2</definition>
+<definition>cb(x) = (exp(x) + exp(-x))/2</definition>
+<definition>cc(x) = 2*(exp(x/2) + exp(-x/2))/2</definition>
+<definition>cd(x) = 4*(exp(x/4) + exp(-x/4))/2</definition>
+<coordinates bbox="(-6.9,-1.1,6.9,9.6)">
+<axes at="cfam-axes" xlabel="x" ylabel="y" hlabels="(-6,2,6)" vlabels="(0,2,8)"/>
+<graph at="cfam-a" function="ca" domain="(-1.6,1.6)"
+       stroke="#8B1A4A" thickness="2"/>
+<graph at="cfam-b" function="cb" domain="(-2.6,2.6)"
+       stroke="#56B4E9" thickness="3"/>
+<graph at="cfam-c" function="cc" domain="(-3.9,3.9)"
+       stroke="#E69F00" thickness="2"/>
+<graph at="cfam-d" function="cd" domain="(-5.6,5.6)"
+       stroke="#009E73" thickness="2"/>
+<point at="cfam-ia" p="(0,0.5)" fill="#8B1A4A"/>
+<point at="cfam-ib" p="(0,1)" fill="#56B4E9"/>
+<point at="cfam-ic" p="(0,2)" fill="#E69F00"/>
+<point at="cfam-id" p="(0,4)" fill="#009E73"/>
+<label at="cfam-la" anchor="(1.6,6.28)" alignment="n" color="#8B1A4A">
+<m>a=0.5</m>
+</label>
+<label at="cfam-lb" anchor="(-2.6,6.9)" alignment="n" color="#56B4E9">
+<m>a=1</m>
+</label>
+<label at="cfam-lc" anchor="(3.9,7.19)" alignment="n" color="#E69F00">
+<m>a=2</m>
+</label>
+<label at="cfam-ld" anchor="(5.6,8.73)" alignment="n" color="#009E73">
+<m>a=4</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four catenaries y equals a hyperbolic cosine of x over a, drawn on the same axes for a equal to one half, one, two, and four. Each curve is a U shape whose lowest point sits on the y axis at height a; the larger the value of a, the wider and flatter the curve.">
+  <annotation ref="cfam-a" text="The catenary with scale factor one half, the narrowest of the four."/>
+  <annotation ref="cfam-b" text="The unit catenary y equals hyperbolic cosine of x, with lowest point at height one."/>
+  <annotation ref="cfam-c" text="The catenary with scale factor two."/>
+  <annotation ref="cfam-d" text="The catenary with scale factor four, the widest and flattest of the four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+A worked example of a hanging cable, in which we find the slope of the
+cable and the angle at which it meets its pole, appears in
+<xref ref="example-skel-hyp-catenary"/>.
+</p>
+
+<p>
+The derivation above follows F. Behroozi,
+<url href="https://pubs.aip.org/aapt/pte/article/56/4/214/318980/In-Praise-of-the-Catenary" visual="pubs.aip.org">In Praise of the Catenary</url>,
+<em>The Physics Teacher</em> <term>56</term>, 214<ndash/>217 (2018),
+which also discusses the sense in which all catenaries are similar to
+one another and suggests simple classroom demonstrations.
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-skel-hyp-celestial">
+<title>Celestial Mechanics</title>
+
+<p>
+If a comet has enough speed, it can escape the gravitational pull of the
+sun, in which case one possible trajectory is a hyperbolic trajectory.
+The comet
+<url href="https://science.nasa.gov/solar-system/comets/2i-borisov/" visual="science.nasa.gov">2I/Borisov</url>,
+discovered in 2019, is the first comet known to have come from outside
+our solar system. It was moving too fast for the sun to capture it, so
+its path is a hyperbola rather than an ellipse: it swung around the sun
+once and is now on its way back out. See
+<xref ref="fig-skel-hyp-comet-borisov"/>.
+</p>
+
+<figure xml:id="fig-skel-hyp-comet-borisov">
+<caption>
+The interstellar comet 2I/Borisov, photographed by the Hubble Space
+Telescope in 2019. Because its speed exceeds the escape speed of the
+sun, its trajectory is a hyperbola and it passes through the solar
+system only once. (Image: NASA, ESA and D. Jewitt (UCLA).)
+</caption>
+<image source="app-hyperbola-comet-borisov.jpg" width="60%">
+<shortdescription>
+A fuzzy blue comet with a bright core and a broad tail sweeping to the
+upper right, against a black background.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+
+<subsection xml:id="subsec-skel-hyp-gateway-arch">
+<title>The Gateway Arch</title>
+
+<p>
+<term>The Gateway Arch in St. Louis, Missouri</term> (designed in 1963
+and completed in 1965) is a catenary turned upside down: flipping the
+curve converts the tension carried by a hanging chain into pure
+compression, which is what masonry and steel carry best. The geometric
+form of the gateway was set by Hannskari Bandel (structural engineer)
+and was expressed in the blueprints by the equation
+<md>
+y = A\left(\cosh\frac{Cx}{L} - 1\right),
+</md>
+where <m>A</m>, <m>C</m>, and <m>L</m> are constants. The arch is
+slightly flattened compared with a uniform hanging chain, because it is
+thicker at the base than at the top. It stands 630 feet tall and 630
+feet wide at the base; the National Park Service describes its
+construction and its geometry at
+<url href="https://www.nps.gov/jeff/index.htm" visual="nps.gov">Gateway Arch National Park</url>.
+See <xref ref="fig-skel-hyp-gateway-arch"/>.
+</p>
+
+<figure xml:id="fig-skel-hyp-gateway-arch">
+<caption>
+The Gateway Arch in St. Louis, Missouri. Its centerline follows the
+curve <m>y = A\left(\cosh(Cx/L) - 1\right)</m>, an upside-down catenary.
+(Photograph by John Margolies, 1988; John Margolies Roadside America
+photograph archive, Library of Congress, Prints and Photographs
+Division.)
+</caption>
+<image source="app-catenary-gateway-arch.jpg" width="48%">
+<shortdescription>
+The stainless steel Gateway Arch rising from a line of trees against a
+clear blue sky, curving up to a rounded peak and back down.
+</shortdescription>
+</image>
+</figure>
+</subsection>
+</section>
+
+<!-- ================================================================ -->
+<section xml:id="sec-skel-hyp-more-examples">
+<title>Further Examples</title>
+
+<example xml:id="example-skel-hyp-catenary">
+<title>A hanging telephone line</title>
+<statement>
+<p>
+A telephone line hangs between two poles <m>14</m> m apart in the shape
+of the catenary <m>y = 20\cosh(x/20) - 15</m>, where <m>x</m> and
+<m>y</m> are measured in meters.
+<ol marker="A.">
+<li>
+<p>
+Find the slope of this curve where it meets the right pole.
+</p>
+</li>
+<li>
+<p>
+Find the angle <m>\theta</m> between the line and the pole.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(A sketch of the line between the poles at <m>x = -7</m> and
+<m>x = 7</m> may help.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,11.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution and sketch.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="example-skel-hyp-sinh-ln">
+<title>Rewriting <m>\sinh(\ln(x))</m></title>
+<statement>
+<p>
+Consider the function <m>f(x) = \sinh(\ln(x))</m>.
+<ol marker="A.">
+<li>
+<p>
+Express <m>f(x)</m> as a fraction of two polynomials.
+</p>
+</li>
+<li>
+<p>
+Calculate <m>\dfrac{df}{dx}</m>.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="example-skel-hyp-double-angle">
+<title>A double-angle identity</title>
+<statement>
+<p>
+Prove that <m>\sinh(2x) = 2\sinh(x)\cosh(x)</m>.
+</p>
+
+<p>
+<em>Proof (start from the definitions).</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten proof.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="example-skel-hyp-equation">
+<title>Solving a hyperbolic equation</title>
+<statement>
+<p>
+Consider the equation <m>2\cosh(2x) + 10\sinh(2x) = 5</m> and solve for
+<m>x</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,7.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</section>
+
+</chapter>

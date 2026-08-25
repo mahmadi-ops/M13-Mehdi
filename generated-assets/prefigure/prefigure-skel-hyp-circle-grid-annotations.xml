@@ -1,0 +1,43 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-hyp-circle-grid-figure" speech2="An empty coordinate grid, x from negative 1.7 to 1.7 and y from negative 1.6 to 1.6, left blank for sketching the unit circle and a point P of cosine t comma sine t on it.">
+      <grouped>prefigure-skel-hyp-circle-grid-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-hyp-circle-grid-grid-axes</active>
+      </children>
+      <components>
+        <active>prefigure-skel-hyp-circle-grid-grid-axes</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-circle-grid-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>prefigure-skel-hyp-circle-grid-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-hyp-circle-grid-grid</active>
+        <active>prefigure-skel-hyp-circle-grid-axes</active>
+      </children>
+      <components>
+        <active>prefigure-skel-hyp-circle-grid-grid</active>
+        <active>prefigure-skel-hyp-circle-grid-axes</active>
+      </components>
+      <parents>
+        <grouped>prefigure-skel-hyp-circle-grid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-circle-grid-grid" speech2="The coordinate grid">
+      <active>prefigure-skel-hyp-circle-grid-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-circle-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-circle-grid-axes" speech2="The coordinate axes">
+      <active>prefigure-skel-hyp-circle-grid-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-circle-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,43 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-figure" speech2="An empty coordinate grid, x from negative 3.4 to 3.4 and y from negative 2.9 to 2.9, left blank for sketching the hyperbola x squared minus y squared equals one and a point P of hyperbolic cosine t comma hyperbolic sine t on its right branch.">
+      <grouped>prefigure-skel-hyp-hyperbola-grid-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-hyp-hyperbola-grid-grid-axes</active>
+      </children>
+      <components>
+        <active>prefigure-skel-hyp-hyperbola-grid-grid-axes</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>prefigure-skel-hyp-hyperbola-grid-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-hyp-hyperbola-grid-grid</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-axes</active>
+      </children>
+      <components>
+        <active>prefigure-skel-hyp-hyperbola-grid-grid</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-axes</active>
+      </components>
+      <parents>
+        <grouped>prefigure-skel-hyp-hyperbola-grid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-grid" speech2="The coordinate grid">
+      <active>prefigure-skel-hyp-hyperbola-grid-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-hyperbola-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-axes" speech2="The coordinate axes">
+      <active>prefigure-skel-hyp-hyperbola-grid-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-hyperbola-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
