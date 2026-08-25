@@ -1,13 +1,15 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-skel-hyp-circle-grid-figure" speech2="An empty coordinate grid, x from negative 1.7 to 1.7 and y from negative 1.6 to 1.6, left blank for sketching the unit circle and a point P of cosine t comma sine t on it.">
+    <annotation id="prefigure-skel-hyp-circle-grid-figure" speech2="The unit circle centered at the origin on a coordinate grid, with nothing else marked, left for labelling by hand: a point P of cosine t comma sine t and the right triangle with legs x and y and hypotenuse one.">
       <grouped>prefigure-skel-hyp-circle-grid-figure</grouped>
       <position>1</position>
       <children>
         <active>prefigure-skel-hyp-circle-grid-grid-axes</active>
+        <active>prefigure-skel-hyp-circle-grid-hc-circle</active>
       </children>
       <components>
         <active>prefigure-skel-hyp-circle-grid-grid-axes</active>
+        <active>prefigure-skel-hyp-circle-grid-hc-circle</active>
       </components>
     </annotation>
     <annotation id="prefigure-skel-hyp-circle-grid-grid-axes" speech2="The coordinate grid and axes">
@@ -37,6 +39,13 @@
       <position>2</position>
       <parents>
         <grouped>prefigure-skel-hyp-circle-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-circle-grid-hc-circle" speech2="The unit circle x squared plus y squared equals one.">
+      <active>prefigure-skel-hyp-circle-grid-hc-circle</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-circle-grid-figure</grouped>
       </parents>
     </annotation>
   </annotations>

@@ -160,6 +160,84 @@ From your graph, read off the domain, the range, and the symmetry of
 </image>
 </sidebyside>
 
+<p>
+Now compare your sketch with the finished picture in
+<xref ref="fig-skel-hyp-sinh-graph"/>, and read off from it what happens
+to <m>\sinh x</m> at the two ends of the graph.
+</p>
+
+<figure xml:id="fig-skel-hyp-sinh-graph">
+<caption>
+The graph of <m>y = \sinh x</m>. The curve is squeezed between the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = -\tfrac12 e^{-x}</m>,
+approaching the first as <m>x \to \infty</m> and the second as
+<m>x \to -\infty</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-sinh">
+<diagram dimensions="(360,300)" margins="12">
+<definition>s(t) = (t, (exp(t) - exp(-t))/2)</definition>
+<definition>ep(t) = (t, exp(t)/2)</definition>
+<definition>em(t) = (t, -exp(-t)/2)</definition>
+<coordinates bbox="(-2.6,-3.4,2.6,3.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="sh-ep" function="ep" domain="(-2.5,1.85)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="sh-em" function="em" domain="(-1.85,2.5)"
+                  stroke="#E69F00" thickness="2"/>
+<parametric-curve at="sh-s" function="s" domain="(-1.92,1.92)"
+                  stroke="#8B1A4A" thickness="3"/>
+<label at="sh-s-lab" anchor="(1.25,2.35)" alignment="w" color="#8B1A4A">
+<m>y=\sinh x</m>
+</label>
+<label at="sh-ep-lab" anchor="(-2.4,0.55)" alignment="ne" color="#56B4E9">
+<m>y=\frac12 e^{x}</m>
+</label>
+<label at="sh-em-lab" anchor="(1.05,-0.85)" alignment="se" color="#E69F00">
+<m>y=-\frac12 e^{-x}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three curves on a coordinate grid. A dark red curve, y equals hyperbolic sine of x, rises from the lower left through the origin to the upper right. A light blue curve, y equals one half e to the x, lies just above it on the right, and an orange curve, y equals negative one half e to the negative x, lies just below it on the left.">
+  <annotation ref="sh-s" text="The graph of hyperbolic sine: an increasing curve through the origin, odd about the origin."/>
+  <annotation ref="sh-ep" text="The exponential one half e to the x, which hyperbolic sine approaches as x grows."/>
+  <annotation ref="sh-em" text="The exponential negative one half e to the negative x, which hyperbolic sine approaches as x decreases."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The picture suggests that <m>\sinh x</m> hugs <m>\tfrac12 e^x</m> when
+<m>x</m> is large and positive, and hugs <m>-\tfrac12 e^{-x}</m> when
+<m>x</m> is large and negative. Confirm this from the definition by
+evaluating the four limits
+<md>
+<mrow>\lim_{x \to \infty} \sinh x \amp \amp
+      \lim_{x \to -\infty} \sinh x</mrow>
+<mrow>\lim_{x \to \infty} \left(\sinh x - \tfrac12 e^{x}\right) \amp \amp
+      \lim_{x \to -\infty} \left(\sinh x + \tfrac12 e^{-x}\right)</mrow>
+</md>
+and explain in a sentence why the last two limits are exactly what
+<q>the curve approaches the exponential</q> means.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for confirming the limiting behaviour of hyperbolic sine by hand.</shortdescription>
+</image>
+</sidebyside>
+
 <figure xml:id="fig-skel-hyp-cosh-grid">
 <caption>
 Sketch the graph of <m>y = \cosh x</m> here, together with the two
@@ -201,6 +279,89 @@ From your graph, read off the domain, the range, and the symmetry of
 <shortdescription>Blank box with rows labelled Domain, Range, and Symmetry, for observations about hyperbolic cosine.</shortdescription>
 </image>
 </sidebyside>
+
+<p>
+Now compare your sketch with the finished picture in
+<xref ref="fig-skel-hyp-cosh-graph"/>, and read off from it what happens
+to <m>\cosh x</m> at the two ends of the graph.
+</p>
+
+<figure xml:id="fig-skel-hyp-cosh-graph">
+<caption>
+The graph of <m>y = \cosh x</m>. The curve is the sum of the two
+exponentials <m>y = \tfrac12 e^x</m> and <m>y = \tfrac12 e^{-x}</m>, so
+it lies above both and has its minimum value <m>1</m> at <m>x = 0</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-cosh">
+<diagram dimensions="(360,300)" margins="12">
+<definition>c(t) = (t, (exp(t) + exp(-t))/2)</definition>
+<definition>ep(t) = (t, exp(t)/2)</definition>
+<definition>em(t) = (t, exp(-t)/2)</definition>
+<coordinates bbox="(-2.6,-0.8,2.6,4.0)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ch-ep" function="ep" domain="(-2.5,2.05)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="ch-em" function="em" domain="(-2.05,2.5)"
+                  stroke="#E69F00" thickness="2"/>
+<parametric-curve at="ch-c" function="c" domain="(-2.0,2.0)"
+                  stroke="#8B1A4A" thickness="3"/>
+<point at="ch-min" p="(0,1)" fill="#8B1A4A"/>
+<label at="ch-c-lab" anchor="(1.05,3.35)" alignment="w" color="#8B1A4A">
+<m>y=\cosh x</m>
+</label>
+<label at="ch-ep-lab" anchor="(1.30,0.85)" alignment="se" color="#56B4E9">
+<m>y=\frac12 e^{x}</m>
+</label>
+<label at="ch-em-lab" anchor="(-1.30,0.85)" alignment="sw" color="#E69F00">
+<m>y=\frac12 e^{-x}</m>
+</label>
+<label at="ch-min-lab" anchor="(0.12,1.02)" alignment="se">
+<m>1</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three curves on a coordinate grid. A dark red U shaped curve, y equals hyperbolic cosine of x, has its lowest point at zero comma one. A light blue exponential one half e to the x rises to the right below it, and an orange exponential one half e to the negative x rises to the left below it.">
+  <annotation ref="ch-c" text="The graph of hyperbolic cosine: a U shaped curve, even about the y axis, with minimum value one at x equals zero."/>
+  <annotation ref="ch-ep" text="The exponential one half e to the x, which hyperbolic cosine approaches as x grows."/>
+  <annotation ref="ch-em" text="The exponential one half e to the negative x, which hyperbolic cosine approaches as x decreases."/>
+  <annotation ref="ch-min" text="The minimum point zero comma one."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The picture suggests that <m>\cosh x</m> hugs <m>\tfrac12 e^x</m> when
+<m>x</m> is large and positive, and hugs <m>\tfrac12 e^{-x}</m> when
+<m>x</m> is large and negative, while never dropping below <m>1</m>.
+Confirm this from the definition by evaluating the four limits
+<md>
+<mrow>\lim_{x \to \infty} \cosh x \amp \amp
+      \lim_{x \to -\infty} \cosh x</mrow>
+<mrow>\lim_{x \to \infty} \left(\cosh x - \tfrac12 e^{x}\right) \amp \amp
+      \lim_{x \to -\infty} \left(\cosh x - \tfrac12 e^{-x}\right)</mrow>
+</md>
+and then check the claim about the minimum: show that
+<m>\cosh x \geq 1</m> for every <m>x</m>, with equality only at
+<m>x = 0</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for confirming the limiting behaviour of hyperbolic cosine by hand.</shortdescription>
+</image>
+</sidebyside>
 </section>
 
 <!-- ================================================================ -->
@@ -221,25 +382,30 @@ As you already know, any point <m>P(x,y)</m> on the circumference of
 the unit circle <m>(x^2 + y^2 = 1)</m> can be described in terms of sine
 and cosine of an angle <m>t \in [0, 2\pi)</m>, i.e. <m>x = \cos t</m>
 and <m>y = \sin t</m>, which results in the trigonometric identity
-<m>\cos^2 t + \sin^2 t = 1</m>. Draw this in
+<m>\cos^2 t + \sin^2 t = 1</m>. Mark this on the circle in
 <xref ref="fig-skel-hyp-circle-grid"/>.
 </p>
 
 <figure xml:id="fig-skel-hyp-circle-grid">
 <caption>
-Sketch the unit circle <m>x^2+y^2=1</m> here, mark a point
+The unit circle <m>x^2+y^2=1</m>. Mark a point
 <m>P(\cos t, \sin t)</m> on it, and draw the right triangle with legs
 <m>x</m> and <m>y</m> and hypotenuse <m>1</m>.
 </caption>
 <image width="62%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-circle-grid">
 <diagram dimensions="(320,300)" margins="12">
+<definition>circ(t) = (cos(t), sin(t))</definition>
 <coordinates bbox="(-1.7,-1.6,1.7,1.6)">
 <grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="hc-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="3"/>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="An empty coordinate grid, x from negative 1.7 to 1.7 and y from negative 1.6 to 1.6, left blank for sketching the unit circle and a point P of cosine t comma sine t on it."/>
+<annotation ref="figure" text="The unit circle centered at the origin on a coordinate grid, with nothing else marked, left for labelling by hand: a point P of cosine t comma sine t and the right triangle with legs x and y and hypotenuse one.">
+  <annotation ref="hc-circle" text="The unit circle x squared plus y squared equals one."/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
@@ -251,24 +417,34 @@ Similarly, any point <m>P(x,y)</m> on the right branch of the hyperbola
 <m>x^2 - y^2 = 1</m> can be represented as <m>x = \cosh t</m> and
 <m>y = \sinh t</m>, where <m>t \in \R</m>. This follows directly from
 identity <xref ref="eq-skel-hyp-main-identity"/>, i.e.
-<m>\cosh^2 t - \sinh^2 t = 1</m>. Draw this in
+<m>\cosh^2 t - \sinh^2 t = 1</m>. Mark this on the hyperbola in
 <xref ref="fig-skel-hyp-hyperbola-grid"/>.
 </p>
 
 <figure xml:id="fig-skel-hyp-hyperbola-grid">
 <caption>
-Sketch both branches of the hyperbola <m>x^2-y^2=1</m> here, and mark a
-point <m>P(\cosh t, \sinh t)</m> on the right branch.
+The hyperbola <m>x^2-y^2=1</m>. Mark a point
+<m>P(\cosh t, \sinh t)</m> on the right branch, and draw the segments
+from the origin to <m>P</m> and to the vertex.
 </caption>
 <image width="66%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-skel-hyp-hyperbola-grid">
 <diagram dimensions="(340,300)" margins="12">
+<definition>hr(t) = ((exp(t) + exp(-t))/2, (exp(t) - exp(-t))/2)</definition>
+<definition>hl(t) = (-(exp(t) + exp(-t))/2, (exp(t) - exp(-t))/2)</definition>
 <coordinates bbox="(-3.4,-2.9,3.4,2.9)">
 <grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="hh-right" function="hr" domain="(-1.65,1.65)"
+                  stroke="#56B4E9" thickness="3"/>
+<parametric-curve at="hh-left" function="hl" domain="(-1.65,1.65)"
+                  stroke="#56B4E9" thickness="3"/>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="An empty coordinate grid, x from negative 3.4 to 3.4 and y from negative 2.9 to 2.9, left blank for sketching the hyperbola x squared minus y squared equals one and a point P of hyperbolic cosine t comma hyperbolic sine t on its right branch."/>
+<annotation ref="figure" text="A hyperbola with two branches opening left and right on a coordinate grid, with nothing else marked, left for labelling by hand: a point P of hyperbolic cosine t comma hyperbolic sine t on the right branch and the segments from the origin.">
+  <annotation ref="hh-right" text="The right branch of the hyperbola, traced by the point hyperbolic cosine t comma hyperbolic sine t."/>
+  <annotation ref="hh-left" text="The left branch of the hyperbola."/>
+</annotation>
 </annotations>
 </diagram>
 </prefigure>
@@ -364,9 +540,9 @@ natural logarithm as
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
 \node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,9.75) {workspace};
+  at (0.25,14.75) {workspace};
 \end{tikzpicture}
 </latex-image>
 <shortdescription>Blank workspace for a handwritten solution.</shortdescription>
@@ -395,9 +571,9 @@ have <m>\int \operatorname{sech}^2(x)\,dx = \tanh(x) + C</m>.
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
 \node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,9.75) {workspace};
+  at (0.25,14.75) {workspace};
 \end{tikzpicture}
 </latex-image>
 <shortdescription>Blank workspace for a handwritten solution.</shortdescription>

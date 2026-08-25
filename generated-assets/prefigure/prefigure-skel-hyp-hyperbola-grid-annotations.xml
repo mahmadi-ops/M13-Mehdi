@@ -1,13 +1,17 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-skel-hyp-hyperbola-grid-figure" speech2="An empty coordinate grid, x from negative 3.4 to 3.4 and y from negative 2.9 to 2.9, left blank for sketching the hyperbola x squared minus y squared equals one and a point P of hyperbolic cosine t comma hyperbolic sine t on its right branch.">
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-figure" speech2="A hyperbola with two branches opening left and right on a coordinate grid, with nothing else marked, left for labelling by hand: a point P of hyperbolic cosine t comma hyperbolic sine t on the right branch and the segments from the origin.">
       <grouped>prefigure-skel-hyp-hyperbola-grid-figure</grouped>
       <position>1</position>
       <children>
         <active>prefigure-skel-hyp-hyperbola-grid-grid-axes</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-hh-right</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-hh-left</active>
       </children>
       <components>
         <active>prefigure-skel-hyp-hyperbola-grid-grid-axes</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-hh-right</active>
+        <active>prefigure-skel-hyp-hyperbola-grid-hh-left</active>
       </components>
     </annotation>
     <annotation id="prefigure-skel-hyp-hyperbola-grid-grid-axes" speech2="The coordinate grid and axes">
@@ -37,6 +41,20 @@
       <position>2</position>
       <parents>
         <grouped>prefigure-skel-hyp-hyperbola-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-hh-right" speech2="The right branch of the hyperbola, traced by the point hyperbolic cosine t comma hyperbolic sine t.">
+      <active>prefigure-skel-hyp-hyperbola-grid-hh-right</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-hyperbola-grid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-hyp-hyperbola-grid-hh-left" speech2="The left branch of the hyperbola.">
+      <active>prefigure-skel-hyp-hyperbola-grid-hh-left</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-skel-hyp-hyperbola-grid-figure</grouped>
       </parents>
     </annotation>
   </annotations>
