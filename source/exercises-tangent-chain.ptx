@@ -57,7 +57,7 @@ you found in the previous problem. (Any line will suffice.)
 <p>
 Note that the point <m>\left(\dfrac{\pi}{2}, 1, 0\right)</m> lies on
 this plane, and the plane has normal vector
-<m>\vec n = \left\langle 1, \dfrac{\pi}{2}, 1\right\rangle</m>. Any
+<m>\overrightarrow{n} = \left\langle 1, \dfrac{\pi}{2}, 1\right\rangle</m>. Any
 vector orthogonal to the normal vector will point along this plane. By
 inspection, we see that
 <md>
@@ -80,7 +80,7 @@ in the plane by making different choices of direction vector. See
 <caption>
 The tangent plane <m>x + \frac{\pi}{2}y + z = \pi</m> to the graph of
 <m>f(x,y) = \cos(xy)</m> at <m>P_0\left(\frac{\pi}{2},1,0\right)</m>,
-its normal vector <m>\vec n = \langle 1, \frac{\pi}{2}, 1\rangle</m>,
+its normal vector <m>\overrightarrow{n} = \langle 1, \frac{\pi}{2}, 1\rangle</m>,
 and the line <m>\mathbf r(t) = \langle t + \frac{\pi}{2}, 1, -t\rangle</m>
 contained in the plane.
 </caption>
@@ -112,7 +112,7 @@ line r of t.
   \fill[red] (1.5708,1,0) circle (2pt) node[below left=2pt, red] {$P_0\!\left(\frac{\pi}{2},1,0\right)$};
   % the normal vector at P0, direction (1, pi/2, 1)/|.| * 0.95
   \draw[-stealth, mblue, very thick] (1.5708,1,0) -- (2.0146,1.6971,0.4438)
-        node[below right=3pt] {$\vec n=\left\langle 1,\frac{\pi}{2},1\right\rangle$};
+        node[below right=3pt] {$\overrightarrow{n}=\left\langle 1,\frac{\pi}{2},1\right\rangle$};
   % label for the line
   \node[mred, below right=0pt] at (2.25,1.05,-0.72) {$\mathbf r(t)$};
 \end{tikzpicture}]]>
@@ -133,15 +133,15 @@ on the surface <m>2z - x^2 = 0</m>.
 <p>
 Let <m>w(x,y,z) = 2z - x^2 = 0</m>. Then
 <md>
-\nabla w = (-2x)\,\mathbf i + 2\,\mathbf k,
+\nabla w = (-2x)\,\hat{\imath} + 2\,\hat{k},
 </md>
 and the normal to the tangent plane is
 <md>
-\vec n = \nabla w\big|_{P_0} = -4\,\mathbf i + 2\,\mathbf k.
+\overrightarrow{n} = \nabla w\big|_{P_0} = -4\,\hat{\imath} + 2\,\hat{k}.
 </md>
 The constant is
 <md>
-D = \vec n \cdot \vec{OP_0}
+D = \overrightarrow{n} \cdot \overrightarrow{OP_0}
 = \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
 = -8 + 4 = -4,
 </md>
@@ -179,7 +179,7 @@ meets the graph at infinitely many points.
 <p>
 Let <m>S</m> be a sphere centered at the origin in <m>\R^3</m>, and
 consider any point <m>P</m> on <m>S</m>. Show that the vector
-<m>\vec{OP}</m> is orthogonal to the tangent plane to <m>S</m> at
+<m>\overrightarrow{OP}</m> is orthogonal to the tangent plane to <m>S</m> at
 <m>P</m>.
 </p>
 </statement>
@@ -213,7 +213,7 @@ x_0(x - x_0) + y_0(y - y_0) + z_0(z - z_0) = 0,
 where we use the fact that <m>z_0 = \sqrt{R^2 - x_0^2 - y_0^2}</m> to
 simplify things. From this we see that
 <m>\langle x_0, y_0, z_0\rangle</m> is a normal vector to the tangent
-plane. But <m>\langle x_0, y_0, z_0\rangle = \vec{OP}</m>, so this is
+plane. But <m>\langle x_0, y_0, z_0\rangle = \overrightarrow{OP}</m>, so this is
 exactly what we needed to show. See <xref ref="fig-rev-tp-sphere"/>.
 </p>
 
@@ -228,7 +228,7 @@ much everything is the same.
 
 <figure xml:id="fig-rev-tp-sphere">
 <caption>
-The vector <m>\vec{OP} = \langle x_0, y_0, z_0\rangle</m> from the
+The vector <m>\overrightarrow{OP} = \langle x_0, y_0, z_0\rangle</m> from the
 center of the sphere to the point <m>P</m> is a normal vector to the
 tangent plane to <m>S</m> at <m>P</m>.
 </caption>
@@ -255,7 +255,7 @@ tangent plane.
   \coordinate (P) at (40:2);
   % OP vector, extended past the sphere
   \draw[-stealth, mred, very thick] (0,0) -- (40:2.9)
-        node[above right=-1pt] {$\vec{OP}$};
+        node[above right=-1pt] {$\overrightarrow{OP}$};
   \fill[red] (P) circle (2pt) node[below right=2pt] {$P$};
   % tangent plane at P: parallelogram perpendicular to OP
   % direction along the page perpendicular to OP: (-sin40, cos40)
@@ -294,7 +294,7 @@ level surface:
 <md>
 \nabla F = \langle 2x, 2y, 2z\rangle,
 \qquad
-\vec n = \nabla F\big|_{(1,2,3)} = \langle 2, 4, 6\rangle.
+\overrightarrow{n} = \nabla F\big|_{(1,2,3)} = \langle 2, 4, 6\rangle.
 </md>
 Hence the tangent plane is
 <md>
@@ -328,7 +328,7 @@ f_x(1,2) = 3, \qquad f_y(1,2) = 5,
 </md>
 and therefore
 <md>
-\nabla f(1,2) = 3\,\mathbf i + 5\,\mathbf j.
+\nabla f(1,2) = 3\,\hat{\imath} + 5\,\hat{\jmath}.
 </md>
 (As a check, the plane passes through <m>(1,2,9)</m>:
 <m>3(1) + 5(2) - 4 = 9</m> <m>\checkmark</m>.)

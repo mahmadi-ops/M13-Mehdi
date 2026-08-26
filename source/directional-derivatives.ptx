@@ -15,14 +15,14 @@ After completing this section, you should be able to:
 Understand the directional derivative as the rate of change of
 <m>f(x,y)</m> in an arbitrary direction, generalizing the partial
 derivatives <m>f_x</m> and <m>f_y</m>, which are the special cases in the
-<m>\mathbf i</m> and <m>\mathbf j</m> directions.
+<m>\hat{\imath}</m> and <m>\hat{\jmath}</m> directions.
 </p>
 </li>
 <li>
 <p>
 Interpret the directional derivative geometrically as the slope of the
 tangent line to the curve in which a vertical plane through <m>P_0</m>,
-in the direction of <m>\mathbf u</m>, cuts the surface
+in the direction of <m>\hat{u}</m>, cuts the surface
 <m>z = f(x,y)</m>.
 </p>
 </li>
@@ -30,14 +30,14 @@ in the direction of <m>\mathbf u</m>, cuts the surface
 <p>
 Understand the gradient vector <m>\nabla f</m> and its relationship to
 the directional derivative through
-<m>\left(D_{\mathbf u} f\right)_{P_0}
-= \left(\nabla f\right)_{P_0}\cdot\mathbf u</m>.
+<m>\left(D_{\hat{u}} f\right)_{P_0}
+= \left(\nabla f\right)_{P_0}\cdot\hat{u}</m>.
 </p>
 </li>
 <li>
 <p>
 Interpret the directional derivative through the angle between
-<m>\nabla f</m> and <m>\mathbf u</m>, and understand why <m>f</m> changes
+<m>\nabla f</m> and <m>\hat{u}</m>, and understand why <m>f</m> changes
 most rapidly in the direction of the gradient.
 </p>
 </li>
@@ -53,11 +53,11 @@ of <m>f</m>.
 <introduction>
 <p>
 Recall that the partial derivatives <m>f_x</m> and <m>f_y</m> correspond
-to the rate of change of <m>z = f(x,y)</m> in the <m>\mathbf i</m> and
-<m>\mathbf j</m> directions. In this section, we generalize this notion
+to the rate of change of <m>z = f(x,y)</m> in the <m>\hat{\imath}</m> and
+<m>\hat{\jmath}</m> directions. In this section, we generalize this notion
 to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
-<m>\mathbf u</m>, which is a unit vector of the form
-<m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m>.
+<m>\hat{u}</m>, which is a unit vector of the form
+<m>\hat{u} = u_1\hat{\imath} + u_2\hat{\jmath}</m>.
 </p>
 
 </introduction>
@@ -70,14 +70,14 @@ to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 <statement>
 <p>
 The <term>derivative of <m>f</m> at <m>P_0(x_0,y_0)</m> in the direction
-of the unit vector <m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m></term>
+of the unit vector <m>\hat{u} = u_1\hat{\imath} + u_2\hat{\jmath}</m></term>
 is the number
 <md xml:id="eq-dirderiv-definition" number="yes">
-\left(\frac{df}{ds}\right)_{\mathbf u,\,P_0}
+\left(\frac{df}{ds}\right)_{\hat{u},\,P_0}
 = \lim_{s\to 0}\frac{f(x_0 + su_1,\; y_0 + su_2) - f(x_0,y_0)}{s},
 </md>
 provided the limit exists. It can alternatively be denoted by
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m>.
 </p>
 </statement>
 </definition>
@@ -85,10 +85,10 @@ provided the limit exists. It can alternatively be denoted by
 <p>
 The geometry behind this definition is best seen in a picture. Starting at the
 point <m>P_0(x_0,y_0)</m>, we move a distance <m>s</m> in the direction of the
-unit vector <m>\mathbf u</m> to reach the point
+unit vector <m>\hat{u}</m> to reach the point
 <m>P(x_0 + su_1,\, y_0 + su_2)</m>, and we compare the values of the surface
 <m>z = f(x,y)</m> above the two points. As <m>s \to 0</m>, the point <m>P</m>
-slides back along <m>\mathbf u</m> toward <m>P_0</m>. The four figures that
+slides back along <m>\hat{u}</m> toward <m>P_0</m>. The four figures that
 follow show this from complementary angles:
 <xref ref="fig-int-dirderiv-setup-3d"/> lets you explore the construction in
 space, <xref ref="fig-dirderiv-setup-prefigure"/> records the displacement in
@@ -100,15 +100,15 @@ as <m>s</m> shrinks, so that the limit can be watched rather than only read.
 
 <figure xml:id="fig-int-dirderiv-setup-3d">
 <caption>
-Interactive view of the definition of the directional derivative. The point <m>P</m> moves the distance <m>s</m> from <m>P_0</m> along <m>\mathbf u</m>, and the secant slope approaches <m>\left(D_{\mathbf u} f\right)_{P_0}</m> as <m>s \to 0</m>.
+Interactive view of the definition of the directional derivative. The point <m>P</m> moves the distance <m>s</m> from <m>P_0</m> along <m>\hat{u}</m>, and the secant slope approaches <m>\left(D_{\hat{u}} f\right)_{P_0}</m> as <m>s \to 0</m>.
 </caption>
 <interactive xml:id="interactive-dirderiv-setup-3d" iframe="dirderiv-setup-3d.html" width="100%" aspect="8:6">
 <instructions>
 <p>
 The translucent blue surface is the graph of <m>z = f(x,y)</m>. In the
 <m>xy</m>-plane below it, the point <m>P_0(x_0,y_0)</m> is fixed, the
-short blue arrow is the unit vector <m>\mathbf u</m>, and the gold arrow
-is the displacement <m>s\mathbf u</m>, which ends at the point
+short blue arrow is the unit vector <m>\hat{u}</m>, and the gold arrow
+is the displacement <m>s\hat{u}</m>, which ends at the point
 <m>P(x_0+su_1,\, y_0+su_2)</m>. The dashed vertical lines rise from
 <m>P_0</m> and <m>P</m> to the surface, where the values <m>f(P_0)</m>
 and <m>f(P)</m> are marked. Drag the slider to change the distance
@@ -116,7 +116,7 @@ and <m>f(P)</m> are marked. Drag the slider to change the distance
 definition of the directional derivative: as <m>s \to 0</m>, the point
 <m>P</m> slides back toward <m>P_0</m> and the difference quotient
 <m>\big(f(P) - f(P_0)\big)/s</m>, displayed above the figure,
-approaches <m>\left(D_{\mathbf u} f\right)_{P_0}</m>. Drag the figure
+approaches <m>\left(D_{\hat{u}} f\right)_{P_0}</m>. Drag the figure
 to view it from a different angle, or press <q>Rotate</q> to spin it.
 </p>
 </instructions>
@@ -127,7 +127,7 @@ to view it from a different angle, or press <q>Rotate</q> to spin it.
 <caption>
 The two points <m>P_0</m> and <m>P</m> used in the definition of the
 directional derivative. As <m>s \to 0</m>, the point <m>P</m> slides
-along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
+along the direction <m>\hat{u}</m> back toward <m>P_0</m>.
 </caption>
 <image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-dirderiv-setup">
@@ -149,13 +149,13 @@ along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
 <m>P(x_0+su_1,\,y_0+su_2)</m>
 </point>
 <label at="ds-su-label" anchor="(1.15,1.15)" alignment="nw" color="#0072B2">
-<m>s\mathbf u</m>
+<m>s\hat{u}</m>
 </label>
 <label at="ds-comp1-label" anchor="(1.25,0.45)" alignment="s">
-<m>su_1\mathbf i</m>
+<m>su_1\hat{\imath}</m>
 </label>
 <label at="ds-comp2-label" anchor="(1.95,1.0)" alignment="e">
-<m>su_2\mathbf j</m>
+<m>su_2\hat{\jmath}</m>
 </label>
 </coordinates>
 
@@ -177,13 +177,13 @@ along the direction <m>\mathbf u</m> back toward <m>P_0</m>.
 <figure xml:id="fig-dirderiv-setup-video">
 <caption>
 Animation of the definition of the directional derivative. The vertical
-plane through <m>P_0</m> in the direction <m>\mathbf u</m> cuts the
+plane through <m>P_0</m> in the direction <m>\hat{u}</m> cuts the
 surface <m>z = f(x,y)</m> in a curve, and the point
-<m>P = P_0 + s\mathbf u</m> moves on this plane. The secant line through
+<m>P = P_0 + s\hat{u}</m> moves on this plane. The secant line through
 <m>(P_0, f(P_0))</m> and <m>(P, f(P))</m> has slope
 <m>\big(f(P) - f(P_0)\big)/s</m>, and as <m>s \to 0</m> it rotates onto
 the tangent line, whose slope is the directional derivative
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m>.
 </caption>
 <video xml:id="video-dirderiv-setup"
        source="videos/dirderiv_secant_tangent_manim.mp4"
@@ -197,13 +197,13 @@ The difference quotient <m>\big(f(P)-f(P_0)\big)/s</m> for <m>f(x,y)=1+x^2+y^2</
 <interactive xml:id="interactive-dirderiv-definition" iframe="dirderiv-definition.html" width="100%" aspect="7:6">
 <instructions>
 <p>
-Drag the slider for the angle to choose the unit vector <m>\mathbf u</m>,
+Drag the slider for the angle to choose the unit vector <m>\hat{u}</m>,
 and drag the slider for <m>s</m> to move the point <m>P</m> along the
-direction <m>\mathbf u</m> starting at <m>P_0(1,1)</m>, for the function
+direction <m>\hat{u}</m> starting at <m>P_0(1,1)</m>, for the function
 <m>f(x,y) = 1 + x^2 + y^2</m>. The readout compares the difference
 quotient <m>\big(f(P) - f(P_0)\big)/s</m> with its limit as
 <m>s \to 0</m>, which is the directional derivative
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m>.
 </p>
 </instructions>
 </interactive>
@@ -223,9 +223,9 @@ lines, once the gradient is available.
 <p>
 Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
 <m>P_0(1,1)</m>, and the unit vector
-<m>\mathbf u = \dfrac{1}{\sqrt 2}\mathbf i + \dfrac{1}{\sqrt 2}\mathbf j</m>.
+<m>\hat{u} = \dfrac{1}{\sqrt 2}\hat{\imath} + \dfrac{1}{\sqrt 2}\hat{\jmath}</m>.
 Use the definition of directional derivative to compute
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m>.
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m>.
 </p>
 </statement>
 
@@ -236,7 +236,7 @@ We substitute <m>x_0 = y_0 = 1</m> and <m>u_1 = u_2 = \dfrac{1}{\sqrt 2}</m>
 in the definition:
 <md>
 <mrow>
-\left(\frac{df}{ds}\right)_{\mathbf u,P_0}
+\left(\frac{df}{ds}\right)_{\hat{u},P_0}
 \amp= \lim_{s\to 0}\frac{f(x_0 + su_1,\, y_0 + su_2) - f(x_0,y_0)}{s}
 </mrow>
 <mrow>
@@ -255,7 +255,7 @@ in the definition:
 <p>
 The computation has a useful geometric picture, illustrated in the
 interactive 3D figure below. Along the ray through
-<m>P_0(1,1)</m> in the direction <m>\mathbf u</m>, the values of <m>f</m>
+<m>P_0(1,1)</m> in the direction <m>\hat{u}</m>, the values of <m>f</m>
 are the single-variable function
 <md>
 <mrow>g(s) \amp= f\!\left(1 + \tfrac{s}{\sqrt 2},\, 1 + \tfrac{s}{\sqrt 2}\right)</mrow>
@@ -265,7 +265,7 @@ and the difference quotient in the limit above is the slope of the
 secant line of <m>g</m> through <m>s = 0</m> and <m>s</m>. As
 <m>s \to 0</m> the secant lines approach the tangent line at
 <m>s = 0</m>, whose slope is
-<m>g'(0) = 2\sqrt 2 = \left(D_{\mathbf u} f\right)_{P_0}</m>.
+<m>g'(0) = 2\sqrt 2 = \left(D_{\hat{u}} f\right)_{P_0}</m>.
 </p>
 <!-- Hidden: superseded by fig-int-dirderiv-secant-3d-manim below, which shows
      the same limit. Uncomment to bring it back.
@@ -277,8 +277,8 @@ The secant line on the surface <m>z=1+x^2+y^2</m> rotating onto the tangent line
 <instructions>
 <p>
 The surface <m>z = 1 + x^2 + y^2</m> is cut by the vertical plane through
-<m>P_0(1,1)</m> in the direction <m>\mathbf u</m>. Drag the slider to
-change <m>s</m>: the point <m>P</m> slides along <m>\mathbf u</m> in the
+<m>P_0(1,1)</m> in the direction <m>\hat{u}</m>. Drag the slider to
+change <m>s</m>: the point <m>P</m> slides along <m>\hat{u}</m> in the
 <m>xy</m>-plane, and the secant line through the surface points
 <m>(1,\,1,\,f(P_0))</m> and <m>(1+su_1,\,1+su_2,\,f(P))</m> rotates
 toward the tangent line. Press <q>s <m>\to</m> 0</q> to animate the
@@ -303,12 +303,12 @@ surface <m>z = 1 + x^2 + y^2</m>, rotating onto the tangent line at
 <p>
 Press <q>Play</q> to watch the whole construction in one continuous
 motion: the vertical plane through <m>P_0(1,1)</m> in the direction
-<m>\mathbf u</m> cuts the surface <m>z = 1 + x^2 + y^2</m> in the gold
+<m>\hat{u}</m> cuts the surface <m>z = 1 + x^2 + y^2</m> in the gold
 curve, the red secant joins <m>(P_0, f(P_0))</m> to <m>(P, f(P))</m>,
 and as <m>s \to 0</m> that secant rotates onto the green tangent line.
 The reading at the lower left compares the secant slope
 <m>2\sqrt 2 + s</m> with the tangent slope <m>2\sqrt 2</m>, which is the
-directional derivative <m>\left(D_{\mathbf u} f\right)_{P_0}</m>. Stop
+directional derivative <m>\left(D_{\hat{u}} f\right)_{P_0}</m>. Stop
 the animation at any time and drag the <m>s</m> slider yourself, or
 press <q>s <m>\to</m> 0</q> to replay just the limit. Drag the figure to
 change the viewpoint, or press <q>Spin</q> to let it turn.
@@ -326,9 +326,9 @@ change the viewpoint, or press <q>Spin</q> to let it turn.
 <introduction>
 <p>
 <xref ref="def-directional-derivative"/> measures the rate of change of <m>f</m> in
-an arbitrary direction <m>\mathbf u</m>. Two directions are already familiar from
+an arbitrary direction <m>\hat{u}</m>. Two directions are already familiar from
 <m>f_x</m> and <m>f_y</m>. In this activity you will check that the definition
-reproduces exactly those two derivatives when <m>\mathbf u</m> points along a
+reproduces exactly those two derivatives when <m>\hat{u}</m> points along a
 coordinate axis. Use only <xref ref="eq-dirderiv-definition"/>; nothing beyond the
 definition is needed.
 </p>
@@ -337,7 +337,7 @@ definition is needed.
 <task xml:id="task-dirderiv-i">
 <statement>
 <p>
-Take <m>\mathbf u = \mathbf i</m>, so that <m>u_1 = 1</m> and <m>u_2 = 0</m>.
+Take <m>\hat{u} = \hat{\imath}</m>, so that <m>u_1 = 1</m> and <m>u_2 = 0</m>.
 Substitute these into <xref ref="eq-dirderiv-definition"/> and simplify. Which
 single-variable limit is left, and what is its value?
 </p>
@@ -353,7 +353,7 @@ Substituting <m>u_1 = 1</m> and <m>u_2 = 0</m> leaves the second slot of <m>f</m
 fixed at <m>y_0</m>:
 <md>
 <mrow>
-\left(\frac{df}{ds}\right)_{\mathbf i,\,P_0}
+\left(\frac{df}{ds}\right)_{\hat{\imath},\,P_0}
 \amp= \lim_{s\to 0}\frac{f(x_0 + s\cdot 1,\; y_0 + s\cdot 0) - f(x_0,y_0)}{s}
 </mrow>
 <mrow>
@@ -365,7 +365,7 @@ fixed at <m>y_0</m>:
 <p>
 Only the first variable moves, so this is precisely the limit that defines the partial
 derivative with respect to <m>x</m>. That is,
-<m>\left(D_{\mathbf i} f\right)_{P_0} = f_x(x_0,y_0)</m>.
+<m>\left(D_{\hat{\imath}} f\right)_{P_0} = f_x(x_0,y_0)</m>.
 </p>
 </answer>
 </task>
@@ -373,7 +373,7 @@ derivative with respect to <m>x</m>. That is,
 <task xml:id="task-dirderiv-j">
 <statement>
 <p>
-Repeat the computation with <m>\mathbf u = \mathbf j</m>, and state the conclusion.
+Repeat the computation with <m>\hat{u} = \hat{\jmath}</m>, and state the conclusion.
 </p>
 </statement>
 <answer>
@@ -381,14 +381,14 @@ Repeat the computation with <m>\mathbf u = \mathbf j</m>, and state the conclusi
 Now <m>u_1 = 0</m> and <m>u_2 = 1</m>, so the first slot is held at <m>x_0</m>:
 <md>
 <mrow>
-\left(\frac{df}{ds}\right)_{\mathbf j,\,P_0}
+\left(\frac{df}{ds}\right)_{\hat{\jmath},\,P_0}
 \amp= \lim_{s\to 0}\frac{f(x_0,\; y_0 + s) - f(x_0,y_0)}{s}
 = f_y(x_0,y_0),
 </mrow>
 </md>
-so <m>\left(D_{\mathbf j} f\right)_{P_0} = f_y(x_0,y_0)</m>. The partial derivatives
+so <m>\left(D_{\hat{\jmath}} f\right)_{P_0} = f_y(x_0,y_0)</m>. The partial derivatives
 are the directional derivatives in the two coordinate directions, and
-<m>D_{\mathbf u} f</m> is the common generalization of both.
+<m>D_{\hat{u}} f</m> is the common generalization of both.
 </p>
 </answer>
 </task>
@@ -398,7 +398,7 @@ are the directional derivatives in the two coordinate directions, and
 <p>
 Test this on the function of <xref ref="example-dirderiv-definition"/>. With
 <m>f(x,y) = 1 + x^2 + y^2</m> and <m>P_0(1,1)</m>, compute
-<m>\left(D_{\mathbf i} f\right)_{P_0}</m> straight from the definition, then compute
+<m>\left(D_{\hat{\imath}} f\right)_{P_0}</m> straight from the definition, then compute
 <m>f_x(1,1)</m> in the usual way and compare.
 </p>
 </statement>
@@ -407,7 +407,7 @@ Test this on the function of <xref ref="example-dirderiv-definition"/>. With
 From the definition,
 <md>
 <mrow>
-\left(D_{\mathbf i} f\right)_{P_0}
+\left(D_{\hat{\imath}} f\right)_{P_0}
 \amp= \lim_{s\to 0}\frac{f(1+s,\,1) - f(1,1)}{s}
 = \lim_{s\to 0}\frac{\left[1 + (1+s)^2 + 1\right] - 3}{s}
 </mrow>
@@ -417,7 +417,7 @@ From the definition,
 </p>
 <p>
 Differentiating instead, <m>f_x = 2x</m>, so <m>f_x(1,1) = 2</m>. The two agree. By
-symmetry <m>\left(D_{\mathbf j} f\right)_{P_0} = f_y(1,1) = 2</m> as well. Note that
+symmetry <m>\left(D_{\hat{\jmath}} f\right)_{P_0} = f_y(1,1) = 2</m> as well. Note that
 both are smaller than the value <m>2\sqrt 2</m> found in
 <xref ref="example-dirderiv-definition"/>: the function climbs faster along the
 diagonal than along either axis.
@@ -428,8 +428,8 @@ diagonal than along either axis.
 <task xml:id="task-dirderiv-negative">
 <statement>
 <p>
-Finally, take <m>\mathbf u = -\mathbf i</m>. Show that
-<m>\left(D_{-\mathbf i} f\right)_{P_0} = -f_x(x_0,y_0)</m>, and say in a sentence why
+Finally, take <m>\hat{u} = -\hat{\imath}</m>. Show that
+<m>\left(D_{-\hat{\imath}} f\right)_{P_0} = -f_x(x_0,y_0)</m>, and say in a sentence why
 this is what you should expect.
 </p>
 </statement>
@@ -438,7 +438,7 @@ this is what you should expect.
 Here <m>u_1 = -1</m> and <m>u_2 = 0</m>, so
 <md>
 <mrow>
-\left(D_{-\mathbf i} f\right)_{P_0}
+\left(D_{-\hat{\imath}} f\right)_{P_0}
 \amp= \lim_{s\to 0}\frac{f(x_0 - s,\; y_0) - f(x_0,y_0)}{s} .
 </mrow>
 </md>
@@ -447,8 +447,8 @@ Here <m>u_1 = -1</m> and <m>u_2 = 0</m>, so
 Putting <m>h = -s</m> turns this into
 <m>-\lim_{h\to 0}\dfrac{f(x_0+h,\,y_0) - f(x_0,y_0)}{h} = -f_x(x_0,y_0)</m>.
 Walking the opposite way along the same line makes <m>f</m> change at the same rate
-with the opposite sign, so reversing <m>\mathbf u</m> reverses the sign of
-<m>D_{\mathbf u} f</m>.
+with the opposite sign, so reversing <m>\hat{u}</m> reverses the sign of
+<m>D_{\hat{u}} f</m>.
 </p>
 </answer>
 </task>
@@ -457,9 +457,9 @@ with the opposite sign, so reversing <m>\mathbf u</m> reverses the sign of
 <p>
 Every partial derivative is a directional derivative, so nothing already known about
 <m>f_x</m> and <m>f_y</m> is lost. What the definition adds is the freedom to point
-<m>\mathbf u</m> anywhere. Keep in mind that this depends on <m>\mathbf u</m> being a
+<m>\hat{u}</m> anywhere. Keep in mind that this depends on <m>\hat{u}</m> being a
 <em>unit</em> vector: the parameter <m>s</m> measures actual distance travelled in the
-<m>xy</m>-plane only when <m>\|\mathbf u\| = 1</m>.
+<m>xy</m>-plane only when <m>\|\hat{u}\| = 1</m>.
 </p>
 </conclusion>
 
@@ -474,7 +474,7 @@ Every partial derivative is a directional derivative, so nothing already known a
 <p>
 Note that we can write the equation of the line through the point
 <m>P_0(x_0,y_0)</m> with the direction
-<m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m> as
+<m>\hat{u} = u_1\hat{\imath} + u_2\hat{\jmath}</m> as
 <md xml:id="eq-line-through-P0" number="yes">
 x(s) = x_0 + su_1, \qquad y(s) = y_0 + su_2.
 </md>
@@ -486,14 +486,14 @@ and the chain rule, whose dependency diagram is shown in
 <xref ref="fig-chain-rule-tree-prefigure"/>, to compute the directional
 derivative as follows:
 <md>
-<mrow>\left(D_{\mathbf u} f\right)_{P_0} = \left(\frac{df}{ds}\right)_{\mathbf u,P_0} \amp= \left(\frac{\partial f}{\partial x}\right)_{P_0}\frac{dx}{ds}</mrow>
+<mrow>\left(D_{\hat{u}} f\right)_{P_0} = \left(\frac{df}{ds}\right)_{\hat{u},P_0} \amp= \left(\frac{\partial f}{\partial x}\right)_{P_0}\frac{dx}{ds}</mrow>
 <mrow>\amp\quad + \left(\frac{\partial f}{\partial y}\right)_{P_0}\frac{dy}{ds}</mrow>
 <mrow>\amp= \left(\frac{\partial f}{\partial x}\right)_{P_0}\cdot u_1</mrow>
 <mrow>\amp\quad + \left(\frac{\partial f}{\partial y}\right)_{P_0}\cdot u_2</mrow>
 <mrow>
-\amp= \left[\left(\frac{\partial f}{\partial x}\right)_{P_0}\mathbf i
-+ \left(\frac{\partial f}{\partial y}\right)_{P_0}\mathbf j\right]
-\cdot \left(u_1\mathbf i + u_2\mathbf j\right).
+\amp= \left[\left(\frac{\partial f}{\partial x}\right)_{P_0}\hat{\imath}
++ \left(\frac{\partial f}{\partial y}\right)_{P_0}\hat{\jmath}\right]
+\cdot \left(u_1\hat{\imath} + u_2\hat{\jmath}\right).
 </mrow>
 </md>
 </p>
@@ -510,19 +510,19 @@ The <term>gradient vector</term> of the function <m>f(x,y)</m> at
 <m>P_0(x_0,y_0)</m> is the vector
 <md xml:id="eq-gradient-definition" number="yes">
 \left(\nabla f\right)_{P_0}
-= \left(\frac{\partial f}{\partial x}\right)_{P_0}\mathbf i
-+ \left(\frac{\partial f}{\partial y}\right)_{P_0}\mathbf j.
+= \left(\frac{\partial f}{\partial x}\right)_{P_0}\hat{\imath}
++ \left(\frac{\partial f}{\partial y}\right)_{P_0}\hat{\jmath}.
 </md>
 </p>
 
 <p>
 The gradient vector and the directional derivative of <m>f(x,y)</m> at
 <m>P_0(x_0,y_0)</m> in the direction
-<m>\mathbf u = u_1\mathbf i + u_2\mathbf j</m> are related via the
+<m>\hat{u} = u_1\hat{\imath} + u_2\hat{\jmath}</m> are related via the
 following dot product:
 <md xml:id="eq-dirderiv-gradient-relation" number="yes">
-\left(\frac{df}{ds}\right)_{\mathbf u,\,P_0}
-= \left(\nabla f\right)_{P_0}\cdot\mathbf u.
+\left(\frac{df}{ds}\right)_{\hat{u},\,P_0}
+= \left(\nabla f\right)_{P_0}\cdot\hat{u}.
 </md>
 </p>
 </statement>
@@ -738,8 +738,8 @@ circle is perpendicular to its radius.
 <p>
 Since <m>f(1,1) = 3</m>, the level curve is <m>1 + x^2 + y^2 = 3</m>, that is the
 circle <m>x^2 + y^2 = 2</m> of radius <m>\sqrt 2</m>. The radius at <m>P_0</m>
-points along <m>\mathbf i + \mathbf j</m>, so a tangent vector is
-<m>\mathbf T = -\mathbf i + \mathbf j</m>.
+points along <m>\hat{\imath} + \hat{\jmath}</m>, so a tangent vector is
+<m>\mathbf T = -\hat{\imath} + \hat{\jmath}</m>.
 </p>
 </answer>
 </task>
@@ -753,8 +753,8 @@ gradient with your tangent vector. What does the result say?
 </statement>
 <answer>
 <p>
-<m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m> gives
-<m>\left(\nabla f\right)_{(1,1)} = 2\,\mathbf i + 2\,\mathbf j</m>, and
+<m>\nabla f = 2x\,\hat{\imath} + 2y\,\hat{\jmath}</m> gives
+<m>\left(\nabla f\right)_{(1,1)} = 2\,\hat{\imath} + 2\,\hat{\jmath}</m>, and
 <md>
 <mrow>
 \left(\nabla f\right)_{(1,1)} \cdot \mathbf T
@@ -780,8 +780,8 @@ angle is not a coincidence of the point <m>(1,1)</m>.
 <answer>
 <p>
 The level curve through <m>(a,b)</m> is the circle <m>x^2 + y^2 = a^2 + b^2</m>,
-whose tangent there is <m>\mathbf T = -b\,\mathbf i + a\,\mathbf j</m>. Since
-<m>\left(\nabla f\right)_{(a,b)} = 2a\,\mathbf i + 2b\,\mathbf j</m>,
+whose tangent there is <m>\mathbf T = -b\,\hat{\imath} + a\,\hat{\jmath}</m>. Since
+<m>\left(\nabla f\right)_{(a,b)} = 2a\,\hat{\imath} + 2b\,\hat{\jmath}</m>,
 <md>
 <mrow>
 \left(\nabla f\right)_{(a,b)} \cdot \mathbf T
@@ -812,7 +812,7 @@ The gradient <m>\nabla f</m> of <m>f(x,y)=1+x^2+y^2</m> at a movable point, show
 <instructions>
 <p>
 Drag the red point anywhere in the plane. The gradient vector
-<m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m> of
+<m>\nabla f = 2x\,\hat{\imath} + 2y\,\hat{\jmath}</m> of
 <m>f(x,y) = 1 + x^2 + y^2</m> is drawn at the point, together with the
 level curve of <m>f</m> through the point. Observe that the gradient is
 always perpendicular to the level curve and points in the direction in
@@ -849,9 +849,9 @@ direction <mdash/> and then read the answer geometrically off the surface.
 <p>
 Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
 <m>P_0(1,1)</m>, and the unit vector
-<m>\mathbf u = \dfrac{1}{\sqrt 2}\mathbf i + \dfrac{1}{\sqrt 2}\mathbf j</m>.
+<m>\hat{u} = \dfrac{1}{\sqrt 2}\hat{\imath} + \dfrac{1}{\sqrt 2}\hat{\jmath}</m>.
 Evaluate the directional derivative
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m> and interpret your result.
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m> and interpret your result.
 </p>
 </statement>
 
@@ -859,25 +859,25 @@ Evaluate the directional derivative
 <solution>
 <p>
 We use
-<m>\left(\dfrac{df}{ds}\right)_{\mathbf u,P_0}
-= \left(\nabla f\right)_{P_0}\cdot\mathbf u</m>.
+<m>\left(\dfrac{df}{ds}\right)_{\hat{u},P_0}
+= \left(\nabla f\right)_{P_0}\cdot\hat{u}</m>.
 First we compute the gradient vector:
 <md>
-<mrow>\nabla f \amp= \frac{\partial f}{\partial x}\,\mathbf i
-        + \frac{\partial f}{\partial y}\,\mathbf j</mrow>
-<mrow>\amp= (2x)\,\mathbf i + (2y)\,\mathbf j,</mrow>
+<mrow>\nabla f \amp= \frac{\partial f}{\partial x}\,\hat{\imath}
+        + \frac{\partial f}{\partial y}\,\hat{\jmath}</mrow>
+<mrow>\amp= (2x)\,\hat{\imath} + (2y)\,\hat{\jmath},</mrow>
 <mrow>\left(\nabla f\right)_{(1,1)}
-        \amp= \left(\frac{\partial f}{\partial x}\right)_{(1,1)}\mathbf i
-        + \left(\frac{\partial f}{\partial y}\right)_{(1,1)}\mathbf j</mrow>
-<mrow>\amp= 2\,\mathbf i + 2\,\mathbf j.</mrow>
+        \amp= \left(\frac{\partial f}{\partial x}\right)_{(1,1)}\hat{\imath}
+        + \left(\frac{\partial f}{\partial y}\right)_{(1,1)}\hat{\jmath}</mrow>
+<mrow>\amp= 2\,\hat{\imath} + 2\,\hat{\jmath}.</mrow>
 </md>
 </p>
 <p>
-Then we take the dot product with <m>\mathbf u</m>:
+Then we take the dot product with <m>\hat{u}</m>:
 <md>
-<mrow>\left(\frac{df}{ds}\right)_{\mathbf u,P_0} \amp= \left(\nabla f\right)_{P_0}\cdot\mathbf u</mrow>
-<mrow>\amp= \left(2\,\mathbf i + 2\,\mathbf j\right)\cdot
-        \left(\tfrac{1}{\sqrt 2}\,\mathbf i + \tfrac{1}{\sqrt 2}\,\mathbf j\right)</mrow>
+<mrow>\left(\frac{df}{ds}\right)_{\hat{u},P_0} \amp= \left(\nabla f\right)_{P_0}\cdot\hat{u}</mrow>
+<mrow>\amp= \left(2\,\hat{\imath} + 2\,\hat{\jmath}\right)\cdot
+        \left(\tfrac{1}{\sqrt 2}\,\hat{\imath} + \tfrac{1}{\sqrt 2}\,\hat{\jmath}\right)</mrow>
 <mrow>\amp= \frac{4}{\sqrt 2}</mrow>
 <mrow xml:id="eq-gradient-example-dot" number="yes">\amp= 2\sqrt 2,</mrow>
 </md>
@@ -885,7 +885,7 @@ which agrees with the limit computation in
 <xref ref="example-dirderiv-definition"/>. See
 <xref ref="fig-dirderiv-surface-tikz"/> for a geometrical interpretation
 of the directional derivative. Note that the unit vector
-<m>\mathbf u = \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j</m>
+<m>\hat{u} = \frac{1}{\sqrt 2}\hat{\imath} + \frac{1}{\sqrt 2}\hat{\jmath}</m>
 is the direction vector of the line <m>y = x</m> located in the
 <m>xy</m>-plane. The plane <m>x - y = 0</m> contains this line and is
 orthogonal to the <m>xy</m>-plane. The intersection of the surface
@@ -898,9 +898,9 @@ the slope of the tangent line to the surface <m>z = 1 + x^2 + y^2</m> at
 <figure xml:id="fig-dirderiv-surface-tikz">
 <caption>
 The surface <m>z = 1 + x^2 + y^2</m> cut by the vertical plane
-<m>x - y = 0</m>, which contains the direction <m>\mathbf u</m>. The
+<m>x - y = 0</m>, which contains the direction <m>\hat{u}</m>. The
 intersection is a parabola, and the directional derivative
-<m>\left(D_{\mathbf u} f\right)_{(1,1)} = 2\sqrt 2</m> is the slope of
+<m>\left(D_{\hat{u}} f\right)_{(1,1)} = 2\sqrt 2</m> is the slope of
 its tangent line at the point <m>(1,1,3)</m>. The level curve
 <m>f = 3</m> through <m>(1,1)</m>, the circle <m>x^2 + y^2 = 2</m>, is
 drawn on the surface at height <m>z = 3</m>, with its dashed projection
@@ -917,7 +917,7 @@ The surface <m>z = 1 + x^2 + y^2</m>, an upward-opening paraboloid,
 drawn as a translucent blue surface. A translucent yellow vertical
 plane <m>x - y = 0</m> passes through the surface above the line
 <m>y = x</m> in the <m>xy</m>-plane, where the unit vector
-<m>\mathbf u</m> is drawn as a blue arrow starting at <m>(1,1,0)</m>.
+<m>\hat{u}</m> is drawn as a blue arrow starting at <m>(1,1,0)</m>.
 The plane meets the surface in a parabola, drawn in solid vermillion,
 and a green tangent line touches this parabola at the marked point
 <m>(1,1,3)</m>. The slope of this tangent line, measured within the
@@ -1006,7 +1006,7 @@ level curve <m>f = 3</m>, and its dashed projection in the
     \draw[-{Latex}, oiblue, line width=1.5pt]
       (axis cs:1,1,0) -- (axis cs:1.5,1.5,0);
     \node[oiblue, anchor=north west, font=\small] at (axis cs:1.45,1.45,0)
-      {$\mathbf u=\left\langle\tfrac{1}{\sqrt2},\tfrac{1}{\sqrt2}\right\rangle$};
+      {$\hat{u}=\left\langle\tfrac{1}{\sqrt2},\tfrac{1}{\sqrt2}\right\rangle$};
     \node[anchor=south east, font=\small] at (axis cs:1,1,-0.12) {$(1,1)$};
   \end{axis}
 \end{tikzpicture}]]>
@@ -1017,18 +1017,18 @@ level curve <m>f = 3</m>, and its dashed projection in the
      the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-dirderiv-surface-slice">
 <caption>
-Rotating the direction <m>\mathbf u</m> at <m>(1,1)</m> and reading off <m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m> as the slope of the tangent line to the sliced surface <m>z=1+x^2+y^2</m>.
+Rotating the direction <m>\hat{u}</m> at <m>(1,1)</m> and reading off <m>D_{\hat{u}} f = \left(\nabla f\right)_{(1,1)}\cdot\hat{u}</m> as the slope of the tangent line to the sliced surface <m>z=1+x^2+y^2</m>.
 </caption>
 <interactive xml:id="interactive-dirderiv-surface-slice" iframe="dirderiv-surface-slice.html" width="100%" aspect="8:6">
 <instructions>
 <p>
 Drag the slider to rotate the direction
-<m>\mathbf u = \langle\cos\varphi, \sin\varphi\rangle</m> at the point
+<m>\hat{u} = \langle\cos\varphi, \sin\varphi\rangle</m> at the point
 <m>(1,1)</m>. The vertical plane through <m>(1,1)</m> in the direction
-<m>\mathbf u</m> cuts the surface <m>z = 1 + x^2 + y^2</m> in a curve,
+<m>\hat{u}</m> cuts the surface <m>z = 1 + x^2 + y^2</m> in a curve,
 and the tangent line to this curve at <m>(1,1,3)</m> has slope
-<m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m>,
-displayed above the figure. Use the buttons to snap <m>\mathbf u</m> to
+<m>D_{\hat{u}} f = \left(\nabla f\right)_{(1,1)}\cdot\hat{u}</m>,
+displayed above the figure. Use the buttons to snap <m>\hat{u}</m> to
 the direction of <m>\nabla f</m>, its opposite, or a direction of zero
 change. Drag the figure to view it from a different angle, or press the
 <q>Rotate</q> button to spin it automatically.
@@ -1042,7 +1042,7 @@ change. Drag the figure to view it from a different angle, or press the
 <caption>
 The same slice, animated: the tangent to the sliced surface at
 <m>(1,1,3)</m> tipping from steepest ascent through level to steepest
-descent as the direction <m>\mathbf u</m> turns around <m>P_0(1,1)</m>.
+descent as the direction <m>\hat{u}</m> turns around <m>P_0(1,1)</m>.
 </caption>
 <interactive xml:id="interactive-dirderiv-surface-slice-manim" iframe="dirderiv-surface-slice-manim.html" width="100%" aspect="1:1">
 <instructions>
@@ -1051,9 +1051,9 @@ Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
 turn once around. The gold curve is where the plane cuts the surface
 <m>z = 1 + x^2 + y^2</m>, and the straight line through <m>(1,1,3)</m>
 is the tangent to that curve; its slope is
-<m>D_{\mathbf u} f = \left(\nabla f\right)_{(1,1)}\cdot\mathbf u</m>,
+<m>D_{\hat{u}} f = \left(\nabla f\right)_{(1,1)}\cdot\hat{u}</m>,
 read off at the lower left. The tangent is green and steepest upwards
-when <m>\mathbf u</m> points along <m>\nabla f</m>, red and steepest
+when <m>\hat{u}</m> points along <m>\nabla f</m>, red and steepest
 downwards along <m>-\nabla f</m>, and yellow and level in the two
 directions tangent to the pink level curve. Stop the animation at any
 time and drag the <m>\varphi</m> slider, drag the figure to change the
@@ -1074,22 +1074,22 @@ viewpoint, or press <q>Spin</q>.
 <p>
 The directional derivative can be expressed as
 <md>
-<mrow>D_{\mathbf u} f \amp= \nabla f\cdot\mathbf u</mrow>
-<mrow>\amp= \|\nabla f\|\,\|\mathbf u\|\cos\theta</mrow>
+<mrow>D_{\hat{u}} f \amp= \nabla f\cdot\hat{u}</mrow>
+<mrow>\amp= \|\nabla f\|\,\|\hat{u}\|\cos\theta</mrow>
 <mrow xml:id="eq-dirderiv-cos-theta" number="yes">\amp= \|\nabla f\|\cos\theta,</mrow>
 </md>
 where <m>\theta</m> is the angle between <m>\nabla f</m> and the unit
-vector <m>\mathbf u</m>. The first line is
+vector <m>\hat{u}</m>. The first line is
 <xref ref="eq-dirderiv-gradient-relation"/>, obtained from the chain rule in
 <xref ref="sec-gradient-vector"/>; the second is the geometric form of the dot
-product; and the third uses <m>\|\mathbf u\| = 1</m>.
+product; and the third uses <m>\|\hat{u}\| = 1</m>.
 </p>
 
 <remark xml:id="remark-dirderiv-three-consequences">
-<title>Three Consequences of <m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m></title>
+<title>Three Consequences of <m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m></title>
 <p>
 Only the factor <m>\cos\theta</m> depends on the direction, and it runs over
-<m>[-1,1]</m> as <m>\mathbf u</m> turns through the circle of directions at
+<m>[-1,1]</m> as <m>\hat{u}</m> turns through the circle of directions at
 <m>P_0</m>. Its three extreme values single out three directions, drawn in
 <xref ref="fig-dirderiv-angle-prefigure"/>:
 </p>
@@ -1097,23 +1097,23 @@ Only the factor <m>\cos\theta</m> depends on the direction, and it runs over
 <ul>
 <li>
 <p>
-When <m>\nabla f</m> and <m>\mathbf u</m> are in the same direction
+When <m>\nabla f</m> and <m>\hat{u}</m> are in the same direction
 (<m>\cos\theta = 1</m>), <m>f</m> increases most rapidly and
-<m>D_{\mathbf u} f = \|\nabla f\|</m>.
+<m>D_{\hat{u}} f = \|\nabla f\|</m>.
 </p>
 </li>
 <li>
 <p>
-When <m>\nabla f</m> and <m>\mathbf u</m> have opposite directions
+When <m>\nabla f</m> and <m>\hat{u}</m> have opposite directions
 (<m>\cos\theta = -1</m>), <m>f</m> decreases most rapidly and
-<m>D_{\mathbf u} f = -\|\nabla f\|</m>.
+<m>D_{\hat{u}} f = -\|\nabla f\|</m>.
 </p>
 </li>
 <li>
 <p>
-When <m>\nabla f</m> and <m>\mathbf u</m> are orthogonal
+When <m>\nabla f</m> and <m>\hat{u}</m> are orthogonal
 (<m>\cos\theta = 0</m>), <m>f</m> does not change, and
-<m>D_{\mathbf u} f = 0</m>.
+<m>D_{\hat{u}} f = 0</m>.
 </p>
 </li>
 </ul>
@@ -1147,16 +1147,16 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 <m>\nabla f</m>
 </label>
 <label at="an-u-label" anchor="(0.09,1.1)" alignment="n" color="#0072B2">
-<m>\mathbf u</m>
+<m>\hat{u}</m>
 </label>
 <label at="an-zero1-label" anchor="(-0.55,1.15)" alignment="nw">
-<m>D_{\mathbf u}f=0</m>
+<m>D_{\hat{u}}f=0</m>
 </label>
 <label at="an-zero2-label" anchor="(0.55,-1.15)" alignment="se">
-<m>D_{\mathbf u}f=0</m>
+<m>D_{\hat{u}}f=0</m>
 </label>
 <label at="an-formula" anchor="(0,-1.62)" alignment="c">
-<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>
+<m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m>
 </label>
 </coordinates>
 
@@ -1180,9 +1180,9 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 <introduction>
 <p>
 The three cases listed above are all consequences of a single formula,
-<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>. In this activity you will derive them
+<m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m>. In this activity you will derive them
 yourself and then check your answers against
-<xref ref="fig-int-gradient-direction-angle"/>, where <m>\mathbf u</m> can be dragged
+<xref ref="fig-int-gradient-direction-angle"/>, where <m>\hat{u}</m> can be dragged
 around the circle of directions.
 </p>
 </introduction>
@@ -1190,7 +1190,7 @@ around the circle of directions.
 <task xml:id="task-cos-theta-formula">
 <statement>
 <p>
-Beginning with <m>D_{\mathbf u} f = \nabla f \cdot \mathbf u</m>, explain why the dot
+Beginning with <m>D_{\hat{u}} f = \nabla f \cdot \hat{u}</m>, explain why the dot
 product can be rewritten as <m>\|\nabla f\|\cos\theta</m>.
 </p>
 </statement>
@@ -1198,15 +1198,15 @@ product can be rewritten as <m>\|\nabla f\|\cos\theta</m>.
 <p>
 For any two vectors, <m>\mathbf a \cdot \mathbf b = \|\mathbf a\|\|\mathbf b\|\cos\theta</m>
 with <m>\theta</m> the angle between them. Applying this to <m>\nabla f</m> and
-<m>\mathbf u</m>,
+<m>\hat{u}</m>,
 <md>
-<mrow>D_{\mathbf u} f = \nabla f \cdot \mathbf u</mrow>
-<mrow>\amp= \|\nabla f\|\,\|\mathbf u\|\cos\theta</mrow>
+<mrow>D_{\hat{u}} f = \nabla f \cdot \hat{u}</mrow>
+<mrow>\amp= \|\nabla f\|\,\|\hat{u}\|\cos\theta</mrow>
 <mrow>\amp= \|\nabla f\|\cos\theta ,</mrow>
 </md>
-where the last step uses <m>\|\mathbf u\| = 1</m>. Without that assumption the factor
-<m>\|\mathbf u\|</m> would survive, and rescaling <m>\mathbf u</m> would change
-<m>D_{\mathbf u} f</m> without changing the direction being measured.
+where the last step uses <m>\|\hat{u}\| = 1</m>. Without that assumption the factor
+<m>\|\hat{u}\|</m> would survive, and rescaling <m>\hat{u}</m> would change
+<m>D_{\hat{u}} f</m> without changing the direction being measured.
 </p>
 </answer>
 </task>
@@ -1216,16 +1216,16 @@ where the last step uses <m>\|\mathbf u\| = 1</m>. Without that assumption the f
 <p>
 Treat <m>\|\nabla f\|</m> as fixed and let <m>\theta</m> run over
 <m>[0, 2\pi)</m>. What are the largest and smallest values of
-<m>D_{\mathbf u} f</m>, and at which angles do they occur? For which angles is
-<m>D_{\mathbf u} f = 0</m>?
+<m>D_{\hat{u}} f</m>, and at which angles do they occur? For which angles is
+<m>D_{\hat{u}} f = 0</m>?
 </p>
 </statement>
 <answer>
 <p>
 Since <m>-1 \le \cos\theta \le 1</m>, the quantity <m>\|\nabla f\|\cos\theta</m> ranges
 between <m>-\|\nabla f\|</m> and <m>\|\nabla f\|</m>. The largest value <m>\|\nabla f\|</m>
-occurs at <m>\theta = 0</m>, with <m>\mathbf u</m> pointing along <m>\nabla f</m>; the
-smallest, <m>-\|\nabla f\|</m>, occurs at <m>\theta = \pi</m>, with <m>\mathbf u</m>
+occurs at <m>\theta = 0</m>, with <m>\hat{u}</m> pointing along <m>\nabla f</m>; the
+smallest, <m>-\|\nabla f\|</m>, occurs at <m>\theta = \pi</m>, with <m>\hat{u}</m>
 pointing along <m>-\nabla f</m>. The directional derivative vanishes when
 <m>\cos\theta = 0</m>, that is at <m>\theta = \pi/2</m> and <m>\theta = 3\pi/2</m>,
 the two directions orthogonal to <m>\nabla f</m>.
@@ -1238,29 +1238,29 @@ the two directions orthogonal to <m>\nabla f</m>.
 <p>
 Now take <m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>, the function of
 <xref ref="example-dirderiv-definition"/>. Compute <m>\nabla f</m> and
-<m>\|\nabla f\|</m> at <m>P_0</m>, write <m>D_{\mathbf u} f</m> as a function of
+<m>\|\nabla f\|</m> at <m>P_0</m>, write <m>D_{\hat{u}} f</m> as a function of
 <m>\theta</m>, and give the three special unit vectors explicitly.
 </p>
 </statement>
 <answer>
 <p>
-Here <m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m>, so
-<m>(\nabla f)_{(1,1)} = 2\,\mathbf i + 2\,\mathbf j</m> and
+Here <m>\nabla f = 2x\,\hat{\imath} + 2y\,\hat{\jmath}</m>, so
+<m>(\nabla f)_{(1,1)} = 2\,\hat{\imath} + 2\,\hat{\jmath}</m> and
 <m>\|\nabla f\| = 2\sqrt 2</m>. Therefore
 <md>
 <mrow>
-D_{\mathbf u} f = 2\sqrt 2 \,\cos\theta .
+D_{\hat{u}} f = 2\sqrt 2 \,\cos\theta .
 </mrow>
 </md>
 </p>
 <p>
 The fastest increase happens along
-<m>\mathbf u = \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j</m>, giving
-<m>D_{\mathbf u} f = 2\sqrt 2 \approx 2.83</m>, which is the value computed in
+<m>\hat{u} = \frac{1}{\sqrt 2}\hat{\imath} + \frac{1}{\sqrt 2}\hat{\jmath}</m>, giving
+<m>D_{\hat{u}} f = 2\sqrt 2 \approx 2.83</m>, which is the value computed in
 <xref ref="example-dirderiv-definition"/>. The fastest decrease happens along
-<m>-\frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j</m>, giving
+<m>-\frac{1}{\sqrt 2}\hat{\imath} - \frac{1}{\sqrt 2}\hat{\jmath}</m>, giving
 <m>-2\sqrt 2</m>. There is no change along
-<m>\pm\left(\frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j\right)</m>, the two
+<m>\pm\left(\frac{1}{\sqrt 2}\hat{\imath} - \frac{1}{\sqrt 2}\hat{\jmath}\right)</m>, the two
 directions orthogonal to <m>\nabla f</m>.
 </p>
 </answer>
@@ -1270,7 +1270,7 @@ directions orthogonal to <m>\nabla f</m>.
 <statement>
 <p>
 Check your work against the figure below. Drag
-<m>\mathbf u</m> around the circle and confirm that the meter agrees with
+<m>\hat{u}</m> around the circle and confirm that the meter agrees with
 <m>2\sqrt 2\cos\theta</m> at several angles. Then use the three buttons and compare the
 readings with your answers to the previous task. As you drag, at what angle does the
 reading change most quickly, and at what angle is it momentarily stationary?
@@ -1278,15 +1278,15 @@ reading change most quickly, and at what angle is it momentarily stationary?
 
 <figure xml:id="fig-int-gradient-direction-angle">
 <caption>
-The directional derivative <m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m> as the unit vector <m>\mathbf u</m> rotates around <m>P_0</m>.
+The directional derivative <m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m> as the unit vector <m>\hat{u}</m> rotates around <m>P_0</m>.
 </caption>
 <interactive xml:id="interactive-gradient-direction-angle" iframe="gradient-direction-angle.html" width="100%" aspect="7:6">
 <instructions>
 <p>
-Drag the blue unit vector <m>\mathbf u</m> around the circle of
+Drag the blue unit vector <m>\hat{u}</m> around the circle of
 directions and watch the meter display
-<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m>. Use the buttons to snap
-<m>\mathbf u</m> to the three special cases: the same direction as
+<m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m>. Use the buttons to snap
+<m>\hat{u}</m> to the three special cases: the same direction as
 <m>\nabla f</m> (fastest increase), the opposite direction (fastest
 decrease), and a direction orthogonal to <m>\nabla f</m> (no change).
 </p>
@@ -1300,8 +1300,8 @@ The three buttons should give <m>2\sqrt 2 \approx 2.83</m>,
 <m>-2\sqrt 2 \approx -2.83</m>, and <m>0</m>. The reading changes fastest where
 <m>\left|\frac{d}{d\theta}\cos\theta\right| = |\sin\theta|</m> is largest, namely at
 <m>\theta = \pi/2</m> and <m>3\pi/2</m>, the very directions where
-<m>D_{\mathbf u} f</m> itself is zero. It is momentarily stationary at
-<m>\theta = 0</m> and <m>\theta = \pi</m>, where <m>D_{\mathbf u} f</m> is largest and
+<m>D_{\hat{u}} f</m> itself is zero. It is momentarily stationary at
+<m>\theta = 0</m> and <m>\theta = \pi</m>, where <m>D_{\hat{u}} f</m> is largest and
 smallest. So a small change of heading matters least when you are already pointing
 straight uphill, and most when you are moving along a level direction.
 </p>
@@ -1347,18 +1347,18 @@ there is no change in <m>f</m>.
 <em>A.</em> As explained above, <m>f</m> increases most rapidly in the
 direction of <m>\nabla f</m>. We have
 <md>
-<mrow>\nabla f \amp= x\,\mathbf i + y\,\mathbf j \quad\Rightarrow\quad \left(\nabla f\right)_{(1,1)}</mrow>
-<mrow xml:id="eq-directions-gradient" number="yes">\amp= \mathbf i + \mathbf j.</mrow>
+<mrow>\nabla f \amp= x\,\hat{\imath} + y\,\hat{\jmath} \quad\Rightarrow\quad \left(\nabla f\right)_{(1,1)}</mrow>
+<mrow xml:id="eq-directions-gradient" number="yes">\amp= \hat{\imath} + \hat{\jmath}.</mrow>
 </md>
 </p>
 <p>
 Note that we need to divide
-<m>\left(\nabla f\right)_{(1,1)} = \mathbf i + \mathbf j</m> by its
+<m>\left(\nabla f\right)_{(1,1)} = \hat{\imath} + \hat{\jmath}</m> by its
 length to find the unit vector corresponding to the direction of most
 rapid increase:
 <md xml:id="eq-directions-increase" number="yes">
 \frac{\left(\nabla f\right)_{(1,1)}}{\left\|\left(\nabla f\right)_{(1,1)}\right\|}
-= \frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
+= \frac{1}{\sqrt 2}\hat{\imath} + \frac{1}{\sqrt 2}\hat{\jmath}.
 </md>
 </p>
 
@@ -1367,21 +1367,21 @@ rapid increase:
 opposite direction:
 <md xml:id="eq-directions-decrease" number="yes">
 -\frac{\left(\nabla f\right)_{(1,1)}}{\left\|\left(\nabla f\right)_{(1,1)}\right\|}
-= -\frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j.
+= -\frac{1}{\sqrt 2}\hat{\imath} - \frac{1}{\sqrt 2}\hat{\jmath}.
 </md>
 </p>
 
 <p>
 <em>C.</em> To find the directions of zero change in <m>f</m>, we require
 <md>
-<mrow>\left(\nabla f\right)_{(1,1)}\cdot\mathbf u \amp= (\mathbf i + \mathbf j)\cdot(u_1\mathbf i + u_2\mathbf j)</mrow>
+<mrow>\left(\nabla f\right)_{(1,1)}\cdot\hat{u} \amp= (\hat{\imath} + \hat{\jmath})\cdot(u_1\hat{\imath} + u_2\hat{\jmath})</mrow>
 <mrow>\amp= u_1 + u_2</mrow>
 <mrow>\amp= 0 \quad\text{or}\quad u_1</mrow>
 <mrow xml:id="eq-directions-zero-dot" number="yes">\amp= -u_2,</mrow>
 </md>
-and since <m>\mathbf u</m> is a unit vector, we have
+and since <m>\hat{u}</m> is a unit vector, we have
 <md xml:id="eq-directions-unit-length" number="yes">
-\|\mathbf u\|^2 = u_1^2 + u_2^2 = 1.
+\|\hat{u}\|^2 = u_1^2 + u_2^2 = 1.
 </md>
 </p>
 
@@ -1396,12 +1396,12 @@ After substituting <xref ref="eq-directions-zero-dot"/> in
 <p>
 Hence, the directions of zero change in <m>f</m> at <m>P_0(1,1)</m> are
 <md>
-<mrow>\mathbf u \amp= \frac{1}{\sqrt 2}\mathbf i - \frac{1}{\sqrt 2}\mathbf j \qquad\text{and}\qquad \tilde{\mathbf u}</mrow>
-<mrow xml:id="eq-directions-zero-answer" number="yes">\amp= -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.</mrow>
+<mrow>\hat{u} \amp= \frac{1}{\sqrt 2}\hat{\imath} - \frac{1}{\sqrt 2}\hat{\jmath} \qquad\text{and}\qquad \tilde{\hat{u}}</mrow>
+<mrow xml:id="eq-directions-zero-answer" number="yes">\amp= -\frac{1}{\sqrt 2}\hat{\imath} + \frac{1}{\sqrt 2}\hat{\jmath}.</mrow>
 </md>
 </p>
 <p>
-Note that <m>\tilde{\mathbf u} = -\mathbf u</m>. All four directions are
+Note that <m>\tilde{\hat{u}} = -\hat{u}</m>. All four directions are
 shown in <xref ref="fig-gradient-directions-prefigure"/>: the directions of zero
 change are tangent to the level curve of <m>f</m> through <m>P_0(1,1)</m>,
 while the directions of most rapid increase and decrease are
@@ -1412,7 +1412,7 @@ perpendicular to it.
 At <m>P_0(1,1)</m>: fastest increase along
 <m>\nabla f/\|\nabla f\|</m>, fastest decrease along
 <m>-\nabla f/\|\nabla f\|</m>, and zero change along
-<m>\pm\mathbf u</m>, tangent to the level curve <m>f = 1</m>.
+<m>\pm\hat{u}</m>, tangent to the level curve <m>f = 1</m>.
 </caption>
 <image width="52%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-gradient-directions">
@@ -1450,11 +1450,11 @@ At <m>P_0(1,1)</m>: fastest increase along
 </label>
 <label at="gd-zero1-label" anchor="(1.68,0.38)" alignment="se"
        color="#0072B2">
-<m>\mathbf u</m>
+<m>\hat{u}</m>
 </label>
 <label at="gd-zero2-label" anchor="(0.38,1.68)" alignment="nw"
        color="#0072B2">
-<m>\tilde{\mathbf u}</m>
+<m>\tilde{\hat{u}}</m>
 </label>
 </coordinates>
 
@@ -1477,16 +1477,16 @@ At <m>P_0(1,1)</m>: fastest increase along
      the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-gradient-max-directions">
 <caption>
-The value of <m>D_{\mathbf u} f = u_1 + u_2</m> for <m>f(x,y)=\frac{x^2}{2}+\frac{y^2}{2}</m> as <m>\mathbf u</m> rotates around <m>P_0(1,1)</m>, with the special directions of Example III.
+The value of <m>D_{\hat{u}} f = u_1 + u_2</m> for <m>f(x,y)=\frac{x^2}{2}+\frac{y^2}{2}</m> as <m>\hat{u}</m> rotates around <m>P_0(1,1)</m>, with the special directions of Example III.
 </caption>
 <interactive xml:id="interactive-gradient-max-directions" iframe="gradient-max-directions.html" width="100%" aspect="7:6">
 <instructions>
 <p>
-Drag the unit vector <m>\mathbf u</m> around the point <m>P_0(1,1)</m>
+Drag the unit vector <m>\hat{u}</m> around the point <m>P_0(1,1)</m>
 on the level-curve plot of
 <m>f(x,y) = \frac{x^2}{2} + \frac{y^2}{2}</m> and watch the value of
-<m>D_{\mathbf u} f = u_1 + u_2</m>. Use the buttons to snap
-<m>\mathbf u</m> to the answers of Example III: the direction of
+<m>D_{\hat{u}} f = u_1 + u_2</m>. Use the buttons to snap
+<m>\hat{u}</m> to the answers of Example III: the direction of
 fastest increase, the direction of fastest decrease, and the two
 directions of no change.
 </p>
@@ -1497,22 +1497,22 @@ directions of no change.
 -->
 <figure xml:id="fig-int-gradient-max-directions-manim">
 <caption>
-The same three directions, animated: <m>D_{\mathbf u} f</m> sweeping
-between <m>\|\nabla f\|</m> and <m>-\|\nabla f\|</m> as <m>\mathbf u</m>
+The same three directions, animated: <m>D_{\hat{u}} f</m> sweeping
+between <m>\|\nabla f\|</m> and <m>-\|\nabla f\|</m> as <m>\hat{u}</m>
 turns around <m>P_0(1,1)</m>.
 </caption>
 <interactive xml:id="interactive-gradient-max-directions-manim" iframe="gradient-max-directions-manim.html" width="100%" aspect="1:1">
 <instructions>
 <p>
-Press <q>Play</q> to watch <m>\mathbf u</m> turn once around
+Press <q>Play</q> to watch <m>\hat{u}</m> turn once around
 <m>P_0(1,1)</m>. The reading at the lower left follows
-<m>D_{\mathbf u} f = \nabla f\cdot\mathbf u = \|\nabla f\|\cos\theta</m>
+<m>D_{\hat{u}} f = \nabla f\cdot\hat{u} = \|\nabla f\|\cos\theta</m>
 as it sweeps from <m>\|\nabla f\|</m> down to <m>-\|\nabla f\|</m> and
 back: it is largest along <m>\nabla f</m> (A), smallest along
 <m>-\nabla f</m> (B), and zero in the two directions tangent to the
 highlighted level curve <m>f = 1</m> (C), where the second vector
-<m>\tilde{\mathbf u} = -\mathbf u</m> appears. Stop the animation at any
-time and drag <m>\mathbf u</m> on the picture, or use the slider.
+<m>\tilde{\hat{u}} = -\hat{u}</m> appears. Stop the animation at any
+time and drag <m>\hat{u}</m> on the picture, or use the slider.
 </p>
 </instructions>
 </interactive>
@@ -1522,7 +1522,7 @@ time and drag <m>\mathbf u</m> on the picture, or use the slider.
      the same construction. Uncomment to bring it back.
 <figure xml:id="fig-int-gradient-max-directions-3d">
 <caption>
-A 3D view of Example III: the vertical slice of <m>z=\frac{x^2}{2}+\frac{y^2}{2}</m> in the direction <m>\mathbf u</m>, its tangent slope, and the level curve <m>f=1</m>.
+A 3D view of Example III: the vertical slice of <m>z=\frac{x^2}{2}+\frac{y^2}{2}</m> in the direction <m>\hat{u}</m>, its tangent slope, and the level curve <m>f=1</m>.
 </caption>
 <interactive xml:id="interactive-gradient-max-directions-3d" iframe="gradient-max-directions-3d.html" width="100%" aspect="8:6">
 <instructions>
@@ -1532,12 +1532,12 @@ A 3D view of Example III. The surface
 <m>f = 1</m>, the circle <m>x^2 + y^2 = 2</m>, passing through the point
 <m>(1,1,1)</m>; its dashed projection lies in the <m>xy</m>-plane. Drag
 the slider to rotate the direction
-<m>\mathbf u = \langle\cos\varphi, \sin\varphi\rangle</m> at
-<m>P_0(1,1)</m>: the vertical plane in the direction <m>\mathbf u</m>
+<m>\hat{u} = \langle\cos\varphi, \sin\varphi\rangle</m> at
+<m>P_0(1,1)</m>: the vertical plane in the direction <m>\hat{u}</m>
 cuts the surface in a curve whose tangent line at <m>(1,1,1)</m> has
-slope <m>D_{\mathbf u} f = \cos\varphi + \sin\varphi</m>. Use the
+slope <m>D_{\hat{u}} f = \cos\varphi + \sin\varphi</m>. Use the
 buttons to snap to the answers of Example III, and note that when
-<m>D_{\mathbf u} f = 0</m>, the vector <m>\mathbf u</m> is tangent to
+<m>D_{\hat{u}} f = 0</m>, the vector <m>\hat{u}</m> is tangent to
 the level curve. Drag the figure to view it from a different angle, or
 press the <q>Rotate</q> button.
 </p>
@@ -1550,7 +1550,7 @@ press the <q>Rotate</q> button.
 <caption>
 The same 3D view, animated: the tangent to the sliced surface at
 <m>(1,1,1)</m> tipping from steepest ascent through level to steepest
-descent as <m>\mathbf u</m> turns.
+descent as <m>\hat{u}</m> turns.
 </caption>
 <interactive xml:id="interactive-gradient-max-directions-3d-manim" iframe="gradient-max-directions-3d-manim.html" width="100%" aspect="1:1">
 <instructions>
@@ -1559,7 +1559,7 @@ Press <q>Play</q> to watch the vertical plane through <m>P_0(1,1)</m>
 turn once around. The gold curve is where it cuts the surface
 <m>z = \frac{x^2}{2} + \frac{y^2}{2}</m>, and the straight line through
 <m>(1,1,1)</m> is the tangent to that curve, whose slope is
-<m>D_{\mathbf u} f</m>: it is green and steepest upwards along
+<m>D_{\hat{u}} f</m>: it is green and steepest upwards along
 <m>\nabla f</m> (A), red and steepest downwards along <m>-\nabla f</m>
 (B), and yellow and level in the two directions tangent to the pink
 level curve <m>f = 1</m> (C). Stop the animation at any time and drag
@@ -1587,8 +1587,8 @@ We collect here the main ideas of this section.
 <figure xml:id="video-dirderiv-2d-3d">
 <caption>
 A directional derivative viewed together in the plane and in space: the unit
-vector <m>\mathbf u</m> at <m>P_0</m> in the <m>xy</m>-plane selects a slice of
-the surface <m>z=f(x,y)</m>, and <m>\left(D_{\mathbf u} f\right)_{P_0}</m> is the
+vector <m>\hat{u}</m> at <m>P_0</m> in the <m>xy</m>-plane selects a slice of
+the surface <m>z=f(x,y)</m>, and <m>\left(D_{\hat{u}} f\right)_{P_0}</m> is the
 slope of the resulting tangent line to that slice.
 </caption>
 <video xml:id="video-dirderiv-definition-2d-3d"
@@ -1602,9 +1602,9 @@ slope of the resulting tangent line to that slice.
 <p>
 <em>The directional derivative.</em>
 <xref ref="def-directional-derivative"/> defines
-<m>\left(D_{\mathbf u} f\right)_{P_0}</m> as the limit in
+<m>\left(D_{\hat{u}} f\right)_{P_0}</m> as the limit in
 <xref ref="eq-dirderiv-definition"/>; it measures the rate of change of
-<m>f</m> at <m>P_0</m> in the direction of a unit vector <m>\mathbf u</m>.
+<m>f</m> at <m>P_0</m> in the direction of a unit vector <m>\hat{u}</m>.
 It is computed directly from this limit in
 <xref ref="example-dirderiv-definition"/>, and
 <xref ref="video-dirderiv-2d-3d"/> shows how the plane and space pictures fit
@@ -1615,8 +1615,8 @@ together.
 <p>
 <em>The gradient vector.</em> Using the chain rule we obtain
 <xref ref="def-gradient-vector"/>, which gives the shortcut
-<m>\left(D_{\mathbf u} f\right)_{P_0}
-= \left(\nabla f\right)_{P_0}\cdot\mathbf u</m> in
+<m>\left(D_{\hat{u}} f\right)_{P_0}
+= \left(\nabla f\right)_{P_0}\cdot\hat{u}</m> in
 <xref ref="eq-dirderiv-gradient-relation"/>. This is applied in
 <xref ref="example-dirderiv-gradient"/>.
 </p>
@@ -1624,7 +1624,7 @@ together.
 <li>
 <p>
 <em>Fastest increase, fastest decrease, and no change.</em> Writing
-<m>D_{\mathbf u} f = \|\nabla f\|\cos\theta</m> in
+<m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m> in
 <xref ref="eq-dirderiv-cos-theta"/> shows that <m>f</m> increases most
 rapidly in the direction of <m>\nabla f</m>, decreases most rapidly in
 the direction of <m>-\nabla f</m>, and does not change in the directions

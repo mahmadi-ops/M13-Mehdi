@@ -1,6 +1,6 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-lines-dist-figure" speech2="A solid black line L runs up and to the right. A point S floats above the line. A dashed green segment joins a point P on the line to S, making an angle theta with the line. A dashed dark red segment drops from S perpendicularly to the line; its length is the magnitude of P S times sine theta. A magenta vector v below the line shows the line's direction.">
+    <annotation id="prefigure-lines-dist-figure" speech2="A solid black line L runs up and to the right. A point S floats above the line. A dashed green segment joins a point P on the line to S, making an angle theta with the line. A dashed dark red segment drops from S perpendicularly to the line; its length is the magnitude of P S times the absolute value of sine theta. A magenta vector v below the line shows the line's direction.">
       <grouped>prefigure-lines-dist-figure</grouped>
       <position>1</position>
       <children>
@@ -39,7 +39,7 @@
         <grouped>prefigure-lines-dist-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-lines-dist-dl-drop" speech2="The perpendicular distance d, equal to the magnitude of P S times sine theta.">
+    <annotation id="prefigure-lines-dist-dl-drop" speech2="The perpendicular distance d, equal to the magnitude of P S times the absolute value of sine theta.">
       <active>prefigure-lines-dist-dl-drop</active>
       <position>4</position>
       <parents>

@@ -49,7 +49,10 @@ a sphere.
 </ul>
 </objectives>
 
-<introduction>
+<!-- ================================================================ -->
+<subsection xml:id="sec-3d-coordinate-system">
+<title>The Rectangular Coordinate System</title>
+
 <p>
 To locate a point in the plane we need two numbers; to locate a point in
 space we need three. In this section we set up the rectangular
@@ -57,11 +60,6 @@ coordinate system in space, which is the setting for everything that
 follows. We then measure distance, describe spheres, and practice
 translating between an equation and the surface or region it represents.
 </p>
-</introduction>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-3d-coordinate-system">
-<title>The Rectangular Coordinate System</title>
 
 <p>
 We will study the Cartesian coordinate system, which is also known as
@@ -120,15 +118,26 @@ The three axes must follow the <term>right-hand rule</term>: if the
 index finger of the right hand points along the positive <m>x</m>-axis
 and the middle finger points along the positive <m>y</m>-axis, then the
 thumb points along the positive <m>z</m>-axis. <xref ref="fig-3d-right-hand"/>
-illustrates this convention. Every coordinate system in this course is
+illustrates this convention; the square corner marks in that figure are a
+reminder that the three axes are mutually orthogonal, so each pair of axes
+meets at a right angle. Every coordinate system in this course is
 arranged this way.
+</p>
+
+<p>
+The right-hand rule will return in <xref ref="section-cross-product"/>,
+where we use it in a second form to determine the direction of the cross
+product <m>\mathbf u \times \mathbf v</m> of two vectors.
 </p>
 
 <figure xml:id="fig-3d-right-hand">
 <caption>
 The right-hand rule. With the index finger of the right hand along the
 positive <m>x</m>-axis and the middle finger along the positive
-<m>y</m>-axis, the thumb points along the positive <m>z</m>-axis.
+<m>y</m>-axis, the thumb points along the positive <m>z</m>-axis. The
+square corner marks record that the three axes are mutually orthogonal:
+each pair of axes meets at a right angle, even though the drawing on the
+page must distort those angles.
 </caption>
 <image width="55%">
 <description>
@@ -136,7 +145,9 @@ positive <m>x</m>-axis and the middle finger along the positive
 A right hand with the index finger extended along the positive x axis,
 the middle finger bent to point along the positive y axis, and the
 thumb extended upward along the positive z axis. A small arc marks the
-angle between the index and middle fingers.
+angle between the index and middle fingers. Three magenta square corner
+marks at the origin, one for each pair of axes, indicate that the x, y, and z axes
+are mutually perpendicular.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -239,8 +250,13 @@ angle between the index and middle fingers.
     (O) --++ (148:3.3) coordinate (X) node[above=6,left=-6,scale=1.5] {$x$};
   \draw[thick vector,<->]
     (O) ++ (-172:3.25) coordinate (Y) node[above=5,left=-6,scale=1.5] {$y$} --
-    (O) --++ (82:3.2) node[above=-1,scale=1.5] {$z$};
+    (O) --++ (82:3.2) coordinate (Z) node[above=-1,scale=1.5] {$z$};
   \draw pic[->,draw=black,thick,angle radius=30,angle eccentricity=1.2] {angle = X--O--Y};
+
+  % RIGHT ANGLES: the three axes are mutually perpendicular
+  \draw[magenta, thick] (O) ++ (148:0.55) --++ (188:0.55) --++ (-32:0.55); % x and y
+  \draw[magenta, thick] (O) ++ ( 82:0.55) --++ (148:0.55) --++ (-98:0.55); % z and x
+  \draw[magenta, thick] (O) ++ (188:0.55) --++ ( 82:0.55) --++ (  8:0.55); % y and z
 \end{tikzpicture}
 ]]></latex-image>
 </image>
@@ -418,13 +434,13 @@ marked in green and labelled P with coordinates 1, 1, 1.
 
 <p>
 The distance between two points <m>P_1(x_1,y_1,z_1)</m> and
-<m>P_2(x_2,y_2,z_2)</m> is denoted by <m>\left|P_1P_2\right|</m> and can
+<m>P_2(x_2,y_2,z_2)</m> is denoted by <m>\left\|P_1P_2\right\|</m> and can
 be computed with the Pythagorean theorem. As
 <xref ref="fig-3d-distance"/> shows, the segment <m>P_1P_2</m> is the
 diagonal of a rectangular box whose edges are parallel to the coordinate
 axes, and applying the Pythagorean theorem twice gives
 <md xml:id="eq-3d-distance" number="yes">
-\left|P_1P_2\right| =
+\left\|P_1P_2\right\| =
 \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.
 </md>
 </p>
@@ -513,10 +529,10 @@ The video in <xref ref="fig-video-distance-formula"/> builds this box one
 edge at a time and applies the Pythagorean theorem twice, in the same two
 steps and with the same colors as <xref ref="fig-3d-distance"/>. Step 1
 works in the base, where the right angle at <m>A</m> gives
-<m>\left|P_1B\right|^2 = \left|x_2-x_1\right|^2 +
+<m>\left\|P_1B\right\|^2 = \left|x_2-x_1\right|^2 +
 \left|y_2-y_1\right|^2</m>; step 2 goes up the vertical edge, where the
-right angle at <m>B</m> gives <m>\left|P_1P_2\right|^2 =
-\left|P_1B\right|^2 + \left|z_2-z_1\right|^2</m>. Substituting the first
+right angle at <m>B</m> gives <m>\left\|P_1P_2\right\|^2 =
+\left\|P_1B\right\|^2 + \left|z_2-z_1\right|^2</m>. Substituting the first
 equation into the second gives <xref ref="eq-3d-distance"/>.
 </p>
 
@@ -605,9 +621,9 @@ x^2 + y^2 + z^2 + 2x + 4y = 0
 <p>
 We begin by completing the squares in <m>x</m> and in <m>y</m>:
 <md>
-<mrow>x^2 + y^2 + z^2 + 2x + 4y = 0
-\amp \;\Rightarrow\; (x^2 + 2x + 1) - 1 + (y^2 + 4y + 4) - 4 + z^2 = 0</mrow>
-<mrow>\amp \;\Rightarrow\; (x+1)^2 + (y+2)^2 + z^2 = 5.</mrow>
+<mrow>x^2 + y^2 + z^2 + 2x + 4y \amp = 0</mrow>
+<mrow>(x^2 + 2x + 1) - 1 + (y^2 + 4y + 4) - 4 + z^2 \amp = 0</mrow>
+<mrow>(x+1)^2 + (y+2)^2 + z^2 \amp = 5.</mrow>
 </md>
 Comparing with <xref ref="eq-3d-sphere"/>, this is the equation of a
 sphere with center <m>P_0 = (-1,-2,0)</m> and radius

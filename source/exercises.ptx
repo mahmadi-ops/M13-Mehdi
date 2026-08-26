@@ -375,11 +375,11 @@ is taut and has fixed total length, the two straight segments
 <m>\overline{AP}</m> and <m>\overline{PB}</m> together always use up
 the whole rope:
 <md>
-|AP| + |PB| = 120 \text{ feet} \qquad\text{(constant).}
+\|AP\| + \|PB\| = 120 \text{ feet} \qquad\text{(constant).}
 </md>
 This is precisely the defining property of an <term>ellipse</term>
 with foci <m>A</m> and <m>B</m>. (The curve exists because
-<m>120 \gt |AB|</m>: the distance between the attachment points is
+<m>120 \gt \|AB\|</m>: the distance between the attachment points is
 <m>\sqrt{100^2 + 50^2} \approx 111.8 \lt 120</m> feet.) So the path is
 an arc of an <term>ellipse</term>, lying in the vertical plane
 containing the two trees.

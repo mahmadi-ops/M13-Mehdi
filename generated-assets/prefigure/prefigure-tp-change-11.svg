@@ -332,66 +332,81 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-tp-change-cs-header1" transform="translate(29.2,22.8) translate(0.0,-8.1)">
+  <g id="prefigure-tp-change-cs-header1" transform="translate(29.2,22.8) translate(0.0,-9.2)">
     <g id="prefigure-tp-change-__g-5">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.616px" width="112.512px" height="16.200px" role="img" focusable="false" viewBox="0 -695 6216.1 895" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.696px" width="111.336px" height="18.352px" role="img" focusable="false" viewBox="0 -810 6151.1 1014" x="0.0" y="0.0">
         <defs>
-          <path id="prefigure-tp-change-MJX-7-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
-          <path id="prefigure-tp-change-MJX-7-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
           <path id="prefigure-tp-change-MJX-7-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-tp-change-MJX-7-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
+          <path id="prefigure-tp-change-MJX-7-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
           <path id="prefigure-tp-change-MJX-7-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-          <path id="prefigure-tp-change-MJX-7-TEX-B-1D422" d="M72 610Q72 649 98 672T159 695Q193 693 217 670T241 610Q241 572 217 549T157 525Q120 525 96 548T72 610ZM46 442L136 446L226 450H232V62H294V0H286Q271 3 171 3Q67 3 49 0H40V62H109V209Q109 358 108 362Q103 380 55 380H43V442H46Z"/>
+          <path id="prefigure-tp-change-MJX-7-TEX-I-131" d="M75 287Q75 292 82 313T103 362T142 413T196 441H214Q248 441 270 419T293 357Q292 338 289 330T245 208Q193 72 193 46Q193 26 209 26Q228 26 247 43Q273 71 292 136Q295 148 297 150T311 153H317Q327 153 330 153T337 150T340 143Q340 133 330 105T292 41T228 -8Q220 -10 204 -10Q160 -10 141 15T122 71Q122 98 171 227T221 384Q221 396 218 400T203 405Q175 403 156 374T128 312T116 279Q115 278 97 278H81Q75 284 75 287Z"/>
           <path id="prefigure-tp-change-MJX-7-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
           <path id="prefigure-tp-change-MJX-7-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-          <path id="prefigure-tp-change-MJX-7-TEX-B-1D423" d="M104 610Q104 649 130 672T191 695Q225 693 249 670T273 610Q273 572 249 549T189 525Q152 525 128 548T104 610ZM78 442L173 446L268 450H274V196Q274 -5 274 -37T269 -83Q256 -132 201 -166T71 -200Q10 -200 -30 -173T-71 -102Q-71 -70 -51 -51T-1 -31Q27 -31 48 -49T69 -100Q69 -121 53 -147H56Q66 -149 77 -149H80Q90 -149 100 -146T127 -125T149 -73Q151 -55 151 149V362Q150 364 148 366T145 370T142 373T138 375T133 377T124 378T113 379T97 380H75V442H78Z"/>
+          <path id="prefigure-tp-change-MJX-7-TEX-I-237" d="M75 284T75 287T81 305T101 343T133 389T180 426T240 442Q273 440 300 420T327 350V332L278 134Q267 92 253 37T233 -45T225 -73Q208 -123 162 -163T54 -204Q8 -204 -15 -181Q-32 -164 -32 -140Q-32 -112 -14 -96T27 -79Q48 -79 57 -91T67 -114Q67 -146 39 -166L44 -167H59H60Q112 -167 145 -74Q148 -65 198 134T251 347Q252 353 252 370Q252 382 251 388T245 399T230 405Q204 405 175 378Q157 360 145 337T126 298T117 280T98 278H81Q75 284 75 287Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="18" data-semantic-children="0,17" data-semantic-content="1" data-semantic-speech="bold u equals u 1 bold i plus u 2 bold j">
+          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="24" data-semantic-children="2,23" data-semantic-content="3" data-semantic-speech="ModifyingAbove u With caret equals u 1 ModifyingAbove modifying above dotless i With caret plus u 2 ModifyingAbove modifying above dotless j With caret">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="18" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
-                <use data-c="1D42E" xlink:href="#prefigure-tp-change-MJX-7-TEX-B-1D42E"/>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="24" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                  <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-7-TEX-I-1D462"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                  <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-5E"/>
+                </g>
               </g>
             </g>
-            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="18" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(916.8,0)">
+            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="3" data-semantic-parent="24" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(849.8,0)">
               <use data-c="3D" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-3D"/>
             </g>
-            <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="addition" data-semantic-id="17" data-semantic-children="14,16" data-semantic-content="7" data-semantic-parent="18" data-semantic-speech="u 1 bold i plus u 2 bold j" transform="translate(1972.6,0)">
-              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="14" data-semantic-children="4,6" data-semantic-content="13" data-semantic-parent="17" data-semantic-speech="u 1 bold i">
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="14" data-semantic-speech="u 1">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="4" data-semantic-speech="u" data-semantic-prefix="Base">
+            <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="addition" data-semantic-id="23" data-semantic-children="20,22" data-semantic-content="11" data-semantic-parent="24" data-semantic-speech="u 1 ModifyingAbove modifying above dotless i With caret plus u 2 ModifyingAbove modifying above dotless j With caret" transform="translate(1905.6,0)">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="20" data-semantic-children="6,10" data-semantic-content="19" data-semantic-parent="23" data-semantic-speech="u 1 ModifyingAbove modifying above dotless i With caret">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="6" data-semantic-children="4,5" data-semantic-parent="20" data-semantic-speech="u 1">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="6" data-semantic-speech="u" data-semantic-prefix="Base">
                     <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-7-TEX-I-1D462"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="6" data-semantic-speech="1" data-semantic-prefix="Subscript">
                     <use data-c="31" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-31"/>
                   </g>
                 </g>
                 <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-                  <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="13" data-semantic-parent="14" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                  <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="19" data-semantic-parent="20" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                 </g>
                 <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1175.6,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="14" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold i">
-                    <use data-c="1D422" xlink:href="#prefigure-tp-change-MJX-7-TEX-B-1D422"/>
+                  <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="10" data-semantic-children="8,9" data-semantic-parent="20" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless i With caret">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="8" data-semantic-parent="10" data-semantic-speech="modifying above dotless i" data-semantic-prefix="Base">
+                      <use data-c="131" xlink:href="#prefigure-tp-change-MJX-7-TEX-I-131"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="9" data-semantic-parent="10" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(178.2,16) translate(-250 0)">
+                      <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-5E"/>
+                    </g>
                   </g>
                 </g>
               </g>
-              <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="7" data-semantic-parent="17" data-semantic-operator="infixop,+" data-semantic-speech="plus" transform="translate(1716.8,0)">
+              <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="11" data-semantic-parent="23" data-semantic-operator="infixop,+" data-semantic-speech="plus" transform="translate(1737.8,0)">
                 <use data-c="2B" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-2B"/>
               </g>
-              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="16" data-semantic-children="10,12" data-semantic-content="15" data-semantic-parent="17" data-semantic-speech="u 2 bold j" transform="translate(2717,0)">
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="10" data-semantic-children="8,9" data-semantic-parent="16" data-semantic-speech="u 2">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="8" data-semantic-parent="10" data-semantic-speech="u" data-semantic-prefix="Base">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="22" data-semantic-children="14,18" data-semantic-content="21" data-semantic-parent="23" data-semantic-speech="u 2 ModifyingAbove modifying above dotless j With caret" transform="translate(2738,0)">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="14" data-semantic-children="12,13" data-semantic-parent="22" data-semantic-speech="u 2">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="12" data-semantic-parent="14" data-semantic-speech="u" data-semantic-prefix="Base">
                     <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-7-TEX-I-1D462"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="9" data-semantic-parent="10" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="13" data-semantic-parent="14" data-semantic-speech="2" data-semantic-prefix="Subscript">
                     <use data-c="32" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-32"/>
                   </g>
                 </g>
                 <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-                  <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="15" data-semantic-parent="16" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                  <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="21" data-semantic-parent="22" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                 </g>
                 <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1175.6,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="12" data-semantic-parent="16" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold j">
-                    <use data-c="1D423" xlink:href="#prefigure-tp-change-MJX-7-TEX-B-1D423"/>
+                  <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="18" data-semantic-children="16,17" data-semantic-parent="22" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless j With caret">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="16" data-semantic-parent="18" data-semantic-speech="modifying above dotless j" data-semantic-prefix="Base">
+                      <use data-c="237" xlink:href="#prefigure-tp-change-MJX-7-TEX-I-237"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="17" data-semantic-parent="18" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(166,16) translate(-250 0)">
+                      <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-7-TEX-N-5E"/>
+                    </g>
                   </g>
                 </g>
               </g>
@@ -401,167 +416,187 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-tp-change-cs-header2" transform="translate(29.2,45.8) translate(0.0,-9.0)">
+  <g id="prefigure-tp-change-cs-header2" transform="translate(29.2,45.8) translate(0.0,-9.6)">
     <g id="prefigure-tp-change-__g-6">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.512px" width="286.016px" height="18.080px" role="img" focusable="false" viewBox="0 -749.5 15802.3 999" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="291.664px" height="19.184px" role="img" focusable="false" viewBox="0 -810 16114.3 1060" x="0.0" y="0.0">
         <defs>
-          <path id="prefigure-tp-change-MJX-8-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
+          <path id="prefigure-tp-change-MJX-8-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-tp-change-MJX-8-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-2062" d=""/>
           <path id="prefigure-tp-change-MJX-8-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
-          <path id="prefigure-tp-change-MJX-8-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-          <path id="prefigure-tp-change-MJX-8-TEX-B-1D422" d="M72 610Q72 649 98 672T159 695Q193 693 217 670T241 610Q241 572 217 549T157 525Q120 525 96 548T72 610ZM46 442L136 446L226 450H232V62H294V0H286Q271 3 171 3Q67 3 49 0H40V62H109V209Q109 358 108 362Q103 380 55 380H43V442H46Z"/>
+          <path id="prefigure-tp-change-MJX-8-TEX-I-131" d="M75 287Q75 292 82 313T103 362T142 413T196 441H214Q248 441 270 419T293 357Q292 338 289 330T245 208Q193 72 193 46Q193 26 209 26Q228 26 247 43Q273 71 292 136Q295 148 297 150T311 153H317Q327 153 330 153T337 150T340 143Q340 133 330 105T292 41T228 -8Q220 -10 204 -10Q160 -10 141 15T122 71Q122 98 171 227T221 384Q221 396 218 400T203 405Q175 403 156 374T128 312T116 279Q115 278 97 278H81Q75 284 75 287Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-          <path id="prefigure-tp-change-MJX-8-TEX-B-1D423" d="M104 610Q104 649 130 672T191 695Q225 693 249 670T273 610Q273 572 249 549T189 525Q152 525 128 548T104 610ZM78 442L173 446L268 450H274V196Q274 -5 274 -37T269 -83Q256 -132 201 -166T71 -200Q10 -200 -30 -173T-71 -102Q-71 -70 -51 -51T-1 -31Q27 -31 48 -49T69 -100Q69 -121 53 -147H56Q66 -149 77 -149H80Q90 -149 100 -146T127 -125T149 -73Q151 -55 151 149V362Q150 364 148 366T145 370T142 373T138 375T133 377T124 378T113 379T97 380H75V442H78Z"/>
+          <path id="prefigure-tp-change-MJX-8-TEX-I-237" d="M75 284T75 287T81 305T101 343T133 389T180 426T240 442Q273 440 300 420T327 350V332L278 134Q267 92 253 37T233 -45T225 -73Q208 -123 162 -163T54 -204Q8 -204 -15 -181Q-32 -164 -32 -140Q-32 -112 -14 -96T27 -79Q48 -79 57 -91T67 -114Q67 -146 39 -166L44 -167H59H60Q112 -167 145 -74Q148 -65 198 134T251 347Q252 353 252 370Q252 382 251 388T245 399T230 405Q204 405 175 378Q157 360 145 337T126 298T117 280T98 278H81Q75 284 75 287Z"/>
           <path id="prefigure-tp-change-MJX-8-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-          <path id="prefigure-tp-change-MJX-8-TEX-N-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"/>
+          <path id="prefigure-tp-change-MJX-8-TEX-N-2225" d="M133 736Q138 750 153 750Q164 750 170 739Q172 735 172 250T170 -239Q164 -250 152 -250Q144 -250 138 -244L137 -243Q133 -241 133 -179T132 250Q132 731 133 736ZM329 739Q334 750 346 750Q353 750 361 744L362 743Q366 741 366 679T367 250T367 -178T362 -243L361 -244Q355 -250 347 -250Q335 -250 329 -239Q327 -235 327 250T329 739Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="55" data-semantic-children="49,22,54" data-semantic-content="22" data-semantic-speech="bold u d s equals u 1 d s bold i plus u 2 d s bold j comma StartAbsoluteValue bold u d s EndAbsoluteValue equals d s">
-            <g data-mml-node="mrow" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="49" data-semantic-children="39,48" data-semantic-content="4" data-semantic-parent="55" data-semantic-speech="bold u d s equals u 1 d s bold i plus u 2 d s bold j">
-              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="39" data-semantic-children="0,2,3" data-semantic-content="37,38" data-semantic-parent="49" data-semantic-speech="bold u d s">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="63" data-semantic-children="57,28,62" data-semantic-content="28" data-semantic-speech="ModifyingAbove u With caret d s equals u 1 d s ModifyingAbove modifying above dotless i With caret plus u 2 d s ModifyingAbove modifying above dotless j With caret comma StartMetric ModifyingAbove u With caret d s EndMetric equals d s">
+            <g data-mml-node="mrow" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="57" data-semantic-children="47,56" data-semantic-content="6" data-semantic-parent="63" data-semantic-speech="ModifyingAbove u With caret d s equals u 1 d s ModifyingAbove modifying above dotless i With caret plus u 2 d s ModifyingAbove modifying above dotless j With caret">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="47" data-semantic-children="2,4,5" data-semantic-content="45,46" data-semantic-parent="57" data-semantic-speech="ModifyingAbove u With caret d s">
                 <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="39" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
-                    <use data-c="1D42E" xlink:href="#prefigure-tp-change-MJX-8-TEX-B-1D42E"/>
+                  <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="47" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                      <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-5E"/>
+                    </g>
                   </g>
                 </g>
-                <g data-mml-node="mstyle" transform="translate(639,0)">
+                <g data-mml-node="mstyle" transform="translate(572,0)">
                   <g data-mml-node="mspace"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="37" data-semantic-parent="39" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(806,0)">
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="45" data-semantic-parent="47" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(739,0)">
                   <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                 </g>
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="39" data-semantic-speech="d" transform="translate(806,0)">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="47" data-semantic-speech="d" transform="translate(739,0)">
                   <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D451"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="38" data-semantic-parent="39" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1326,0)">
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="46" data-semantic-parent="47" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1259,0)">
                   <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                 </g>
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="39" data-semantic-speech="s" transform="translate(1326,0)">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="47" data-semantic-speech="s" transform="translate(1259,0)">
                   <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D460"/>
                 </g>
               </g>
-              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="4" data-semantic-parent="49" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(2072.8,0)">
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="6" data-semantic-parent="57" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(2005.8,0)">
                 <use data-c="3D" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-3D"/>
               </g>
-              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="addition" data-semantic-id="48" data-semantic-children="43,47" data-semantic-content="13" data-semantic-parent="49" data-semantic-speech="u 1 d s bold i plus u 2 d s bold j" transform="translate(3128.6,0)">
-                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="43" data-semantic-children="7,9,10,12" data-semantic-content="40,41,42" data-semantic-parent="48" data-semantic-speech="u 1 d s bold i">
-                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="43" data-semantic-speech="u 1">
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="u" data-semantic-prefix="Base">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="addition" data-semantic-id="56" data-semantic-children="51,55" data-semantic-content="17" data-semantic-parent="57" data-semantic-speech="u 1 d s ModifyingAbove modifying above dotless i With caret plus u 2 d s ModifyingAbove modifying above dotless j With caret" transform="translate(3061.6,0)">
+                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="51" data-semantic-children="9,11,12,16" data-semantic-content="48,49,50" data-semantic-parent="56" data-semantic-speech="u 1 d s ModifyingAbove modifying above dotless i With caret">
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="9" data-semantic-children="7,8" data-semantic-parent="51" data-semantic-speech="u 1">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="9" data-semantic-speech="u" data-semantic-prefix="Base">
                       <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D462"/>
                     </g>
-                    <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                    <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="8" data-semantic-parent="9" data-semantic-speech="1" data-semantic-prefix="Subscript">
                       <use data-c="31" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-31"/>
                     </g>
                   </g>
                   <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="40" data-semantic-parent="43" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="48" data-semantic-parent="51" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                   </g>
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="9" data-semantic-parent="43" data-semantic-speech="d" transform="translate(1175.6,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="11" data-semantic-parent="51" data-semantic-speech="d" transform="translate(1175.6,0)">
                     <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D451"/>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="41" data-semantic-parent="43" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="49" data-semantic-parent="51" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
                     <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                   </g>
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="10" data-semantic-parent="43" data-semantic-speech="s" transform="translate(1695.6,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="12" data-semantic-parent="51" data-semantic-speech="s" transform="translate(1695.6,0)">
                     <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D460"/>
                   </g>
                   <g data-mml-node="mstyle" transform="translate(2164.6,0)">
-                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="42" data-semantic-parent="43" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="50" data-semantic-parent="51" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                   </g>
                   <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2331.6,0)">
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="12" data-semantic-parent="43" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold i">
-                      <use data-c="1D422" xlink:href="#prefigure-tp-change-MJX-8-TEX-B-1D422"/>
+                    <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="16" data-semantic-children="14,15" data-semantic-parent="51" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless i With caret">
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="14" data-semantic-parent="16" data-semantic-speech="modifying above dotless i" data-semantic-prefix="Base">
+                        <use data-c="131" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-131"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="15" data-semantic-parent="16" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(178.2,16) translate(-250 0)">
+                        <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-5E"/>
+                      </g>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="13" data-semantic-parent="48" data-semantic-operator="infixop,+" data-semantic-speech="plus" transform="translate(2872.8,0)">
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="17" data-semantic-parent="56" data-semantic-operator="infixop,+" data-semantic-speech="plus" transform="translate(2893.8,0)">
                   <use data-c="2B" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2B"/>
                 </g>
-                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="47" data-semantic-children="16,18,19,21" data-semantic-content="44,45,46" data-semantic-parent="48" data-semantic-speech="u 2 d s bold j" transform="translate(3873,0)">
-                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="16" data-semantic-children="14,15" data-semantic-parent="47" data-semantic-speech="u 2">
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="14" data-semantic-parent="16" data-semantic-speech="u" data-semantic-prefix="Base">
+                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="55" data-semantic-children="20,22,23,27" data-semantic-content="52,53,54" data-semantic-parent="56" data-semantic-speech="u 2 d s ModifyingAbove modifying above dotless j With caret" transform="translate(3894,0)">
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="20" data-semantic-children="18,19" data-semantic-parent="55" data-semantic-speech="u 2">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="18" data-semantic-parent="20" data-semantic-speech="u" data-semantic-prefix="Base">
                       <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D462"/>
                     </g>
-                    <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="15" data-semantic-parent="16" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                    <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="19" data-semantic-parent="20" data-semantic-speech="2" data-semantic-prefix="Subscript">
                       <use data-c="32" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-32"/>
                     </g>
                   </g>
                   <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="44" data-semantic-parent="47" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="52" data-semantic-parent="55" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                   </g>
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="18" data-semantic-parent="47" data-semantic-speech="d" transform="translate(1175.6,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="22" data-semantic-parent="55" data-semantic-speech="d" transform="translate(1175.6,0)">
                     <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D451"/>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="45" data-semantic-parent="47" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="53" data-semantic-parent="55" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
                     <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                   </g>
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="19" data-semantic-parent="47" data-semantic-speech="s" transform="translate(1695.6,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="23" data-semantic-parent="55" data-semantic-speech="s" transform="translate(1695.6,0)">
                     <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D460"/>
                   </g>
                   <g data-mml-node="mstyle" transform="translate(2164.6,0)">
-                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="46" data-semantic-parent="47" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+                    <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="54" data-semantic-parent="55" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
                   </g>
                   <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2331.6,0)">
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="21" data-semantic-parent="47" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold j">
-                      <use data-c="1D423" xlink:href="#prefigure-tp-change-MJX-8-TEX-B-1D423"/>
+                    <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="27" data-semantic-children="25,26" data-semantic-parent="55" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless j With caret">
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="25" data-semantic-parent="27" data-semantic-speech="modifying above dotless j" data-semantic-prefix="Base">
+                        <use data-c="237" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-237"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="26" data-semantic-parent="27" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(166,16) translate(-250 0)">
+                        <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-5E"/>
+                      </g>
                     </g>
                   </g>
                 </g>
               </g>
             </g>
-            <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="22" data-semantic-parent="55" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(9684.1,0)">
+            <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="28" data-semantic-parent="63" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(9619.1,0)">
               <use data-c="2C" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2C"/>
             </g>
-            <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="54" data-semantic-children="23,52" data-semantic-parent="55" data-semantic-collapsed="(54 (c 53) 23 52)" data-semantic-speech="StartAbsoluteValue bold u d s EndAbsoluteValue equals d s" transform="translate(9962.1,0)">
+            <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="62" data-semantic-children="29,60" data-semantic-parent="63" data-semantic-collapsed="(62 (c 61) 29 60)" data-semantic-speech="StartMetric ModifyingAbove u With caret d s EndMetric equals d s" transform="translate(9897.1,0)">
               <g data-mml-node="mstyle">
-                <g data-mml-node="mspace" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit" data-semantic-id="23" data-semantic-parent="54" data-semantic-speech=""/>
+                <g data-mml-node="mspace" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit" data-semantic-id="29" data-semantic-parent="62" data-semantic-speech=""/>
               </g>
-              <g data-mml-node="mrow" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="52" data-semantic-children="36,51" data-semantic-content="30" data-semantic-parent="54" data-semantic-speech="StartAbsoluteValue bold u d s EndAbsoluteValue equals d s" transform="translate(1166.7,0)">
-                <g data-mml-node="mrow" data-semantic-type="fenced" data-semantic-role="neutral" data-semantic-id="36" data-semantic-children="35" data-semantic-content="24,29" data-semantic-parent="52" data-semantic-speech="StartAbsoluteValue bold u d s EndAbsoluteValue">
-                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="neutral" data-semantic-id="24" data-semantic-parent="36" data-semantic-attributes="texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="vertical bar" transform="translate(0 -0.5)">
-                    <use data-c="7C" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-7C"/>
+              <g data-mml-node="mrow" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="60" data-semantic-children="44,59" data-semantic-content="38" data-semantic-parent="62" data-semantic-speech="StartMetric ModifyingAbove u With caret d s EndMetric equals d s" transform="translate(1166.7,0)">
+                <g data-mml-node="mrow" data-semantic-type="fenced" data-semantic-role="metric" data-semantic-id="44" data-semantic-children="43" data-semantic-content="30,37" data-semantic-parent="60" data-semantic-speech="StartMetric ModifyingAbove u With caret d s EndMetric">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="metric" data-semantic-id="30" data-semantic-parent="44" data-semantic-attributes="texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="parallel to">
+                    <use data-c="2225" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2225"/>
                   </g>
-                  <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="35" data-semantic-children="25,27,28" data-semantic-content="33,34" data-semantic-parent="36" data-semantic-speech="bold u d s" transform="translate(278,0)">
+                  <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="43" data-semantic-children="33,35,36" data-semantic-content="41,42" data-semantic-parent="44" data-semantic-speech="ModifyingAbove u With caret d s" transform="translate(500,0)">
                     <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="25" data-semantic-parent="35" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
-                        <use data-c="1D42E" xlink:href="#prefigure-tp-change-MJX-8-TEX-B-1D42E"/>
+                      <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="33" data-semantic-children="31,32" data-semantic-parent="43" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="31" data-semantic-parent="33" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="32" data-semantic-parent="33" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                          <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-5E"/>
+                        </g>
                       </g>
                     </g>
-                    <g data-mml-node="mstyle" transform="translate(639,0)">
+                    <g data-mml-node="mstyle" transform="translate(572,0)">
                       <g data-mml-node="mspace"/>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="33" data-semantic-parent="35" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(806,0)">
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="41" data-semantic-parent="43" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(739,0)">
                       <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                     </g>
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="27" data-semantic-parent="35" data-semantic-speech="d" transform="translate(806,0)">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="35" data-semantic-parent="43" data-semantic-speech="d" transform="translate(739,0)">
                       <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D451"/>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="34" data-semantic-parent="35" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1326,0)">
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="42" data-semantic-parent="43" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1259,0)">
                       <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                     </g>
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="28" data-semantic-parent="35" data-semantic-speech="s" transform="translate(1326,0)">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="36" data-semantic-parent="43" data-semantic-speech="s" transform="translate(1259,0)">
                       <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D460"/>
                     </g>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="neutral" data-semantic-id="29" data-semantic-parent="36" data-semantic-attributes="texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="vertical bar" transform="translate(2073,0) translate(0 -0.5)">
-                    <use data-c="7C" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-7C"/>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="metric" data-semantic-id="37" data-semantic-parent="44" data-semantic-attributes="texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="parallel to" transform="translate(2228,0)">
+                    <use data-c="2225" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2225"/>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="30" data-semantic-parent="52" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(2628.8,0)">
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="38" data-semantic-parent="60" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(3005.8,0)">
                   <use data-c="3D" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-3D"/>
                 </g>
-                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit" data-semantic-id="51" data-semantic-children="31,32" data-semantic-content="50" data-semantic-parent="52" data-semantic-speech="d s" transform="translate(3684.6,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="31" data-semantic-parent="51" data-semantic-speech="d">
+                <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit" data-semantic-id="59" data-semantic-children="39,40" data-semantic-content="58" data-semantic-parent="60" data-semantic-speech="d s" transform="translate(4061.6,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="39" data-semantic-parent="59" data-semantic-speech="d">
                     <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D451"/>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="50" data-semantic-parent="51" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(520,0)">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="58" data-semantic-parent="59" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(520,0)">
                     <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-8-TEX-N-2062"/>
                   </g>
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="32" data-semantic-parent="51" data-semantic-speech="s" transform="translate(520,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="40" data-semantic-parent="59" data-semantic-speech="s" transform="translate(520,0)">
                     <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-8-TEX-I-1D460"/>
                   </g>
                 </g>
@@ -572,20 +607,21 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-tp-change-cs-u1-label" transform="translate(106.3,157.0) translate(-24.0,-0.0)">
+  <g id="prefigure-tp-change-cs-u1-label" transform="translate(106.3,157.0) translate(-24.2,-0.0)">
     <g id="prefigure-tp-change-__g-7">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px; color:#E69F00" width="47.976px" height="15.296px" role="img" focusable="false" viewBox="0 -695 2650.6 845" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px; color:#E69F00" width="48.352px" height="17.376px" role="img" focusable="false" viewBox="0 -810 2671.6 960" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-tp-change-MJX-9-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
           <path id="prefigure-tp-change-MJX-9-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
           <path id="prefigure-tp-change-MJX-9-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/>
           <path id="prefigure-tp-change-MJX-9-TEX-N-2062" d=""/>
           <path id="prefigure-tp-change-MJX-9-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/>
-          <path id="prefigure-tp-change-MJX-9-TEX-B-1D422" d="M72 610Q72 649 98 672T159 695Q193 693 217 670T241 610Q241 572 217 549T157 525Q120 525 96 548T72 610ZM46 442L136 446L226 450H232V62H294V0H286Q271 3 171 3Q67 3 49 0H40V62H109V209Q109 358 108 362Q103 380 55 380H43V442H46Z"/>
+          <path id="prefigure-tp-change-MJX-9-TEX-I-131" d="M75 287Q75 292 82 313T103 362T142 413T196 441H214Q248 441 270 419T293 357Q292 338 289 330T245 208Q193 72 193 46Q193 26 209 26Q228 26 247 43Q273 71 292 136Q295 148 297 150T311 153H317Q327 153 330 153T337 150T340 143Q340 133 330 105T292 41T228 -8Q220 -10 204 -10Q160 -10 141 15T122 71Q122 98 171 227T221 384Q221 396 218 400T203 405Q175 403 156 374T128 312T116 279Q115 278 97 278H81Q75 284 75 287Z"/>
+          <path id="prefigure-tp-change-MJX-9-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="11" data-semantic-children="2,4,5,7" data-semantic-content="8,9,10" data-semantic-speech="u 1 d s bold i">
-            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="11" data-semantic-speech="u 1">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="13" data-semantic-children="2,4,5,9" data-semantic-content="10,11,12" data-semantic-speech="u 1 d s ModifyingAbove modifying above dotless i With caret">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="13" data-semantic-speech="u 1">
               <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
                 <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-9-TEX-I-1D462"/>
               </g>
@@ -594,23 +630,28 @@
               </g>
             </g>
             <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="8" data-semantic-parent="11" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="10" data-semantic-parent="13" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="11" data-semantic-speech="d" transform="translate(1175.6,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="13" data-semantic-speech="d" transform="translate(1175.6,0)">
               <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-9-TEX-I-1D451"/>
             </g>
-            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="9" data-semantic-parent="11" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="11" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
               <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-9-TEX-N-2062"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="11" data-semantic-speech="s" transform="translate(1695.6,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="13" data-semantic-speech="s" transform="translate(1695.6,0)">
               <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-9-TEX-I-1D460"/>
             </g>
             <g data-mml-node="mstyle" transform="translate(2164.6,0)">
-              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="10" data-semantic-parent="11" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="12" data-semantic-parent="13" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
             </g>
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2331.6,0)">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="11" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold i">
-                <use data-c="1D422" xlink:href="#prefigure-tp-change-MJX-9-TEX-B-1D422"/>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="9" data-semantic-children="7,8" data-semantic-parent="13" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless i With caret">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="9" data-semantic-speech="modifying above dotless i" data-semantic-prefix="Base">
+                  <use data-c="131" xlink:href="#prefigure-tp-change-MJX-9-TEX-I-131"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="8" data-semantic-parent="9" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(178.2,16) translate(-250 0)">
+                  <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-9-TEX-N-5E"/>
+                </g>
               </g>
             </g>
           </g>
@@ -618,20 +659,21 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-tp-change-cs-u2-label" transform="translate(132.0,136.7) translate(0.0,-8.1)">
+  <g id="prefigure-tp-change-cs-u2-label" transform="translate(132.0,136.7) translate(0.0,-9.2)">
     <g id="prefigure-tp-change-__g-8">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.616px; color:#009E73" width="48.552px" height="16.200px" role="img" focusable="false" viewBox="0 -695 2682.6 895" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.696px; color:#009E73" width="48.208px" height="18.352px" role="img" focusable="false" viewBox="0 -810 2663.6 1014" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-tp-change-MJX-10-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
           <path id="prefigure-tp-change-MJX-10-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
           <path id="prefigure-tp-change-MJX-10-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/>
           <path id="prefigure-tp-change-MJX-10-TEX-N-2062" d=""/>
           <path id="prefigure-tp-change-MJX-10-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/>
-          <path id="prefigure-tp-change-MJX-10-TEX-B-1D423" d="M104 610Q104 649 130 672T191 695Q225 693 249 670T273 610Q273 572 249 549T189 525Q152 525 128 548T104 610ZM78 442L173 446L268 450H274V196Q274 -5 274 -37T269 -83Q256 -132 201 -166T71 -200Q10 -200 -30 -173T-71 -102Q-71 -70 -51 -51T-1 -31Q27 -31 48 -49T69 -100Q69 -121 53 -147H56Q66 -149 77 -149H80Q90 -149 100 -146T127 -125T149 -73Q151 -55 151 149V362Q150 364 148 366T145 370T142 373T138 375T133 377T124 378T113 379T97 380H75V442H78Z"/>
+          <path id="prefigure-tp-change-MJX-10-TEX-I-237" d="M75 284T75 287T81 305T101 343T133 389T180 426T240 442Q273 440 300 420T327 350V332L278 134Q267 92 253 37T233 -45T225 -73Q208 -123 162 -163T54 -204Q8 -204 -15 -181Q-32 -164 -32 -140Q-32 -112 -14 -96T27 -79Q48 -79 57 -91T67 -114Q67 -146 39 -166L44 -167H59H60Q112 -167 145 -74Q148 -65 198 134T251 347Q252 353 252 370Q252 382 251 388T245 399T230 405Q204 405 175 378Q157 360 145 337T126 298T117 280T98 278H81Q75 284 75 287Z"/>
+          <path id="prefigure-tp-change-MJX-10-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="11" data-semantic-children="2,4,5,7" data-semantic-content="8,9,10" data-semantic-speech="u 2 d s bold j">
-            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="11" data-semantic-speech="u 2">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="13" data-semantic-children="2,4,5,9" data-semantic-content="10,11,12" data-semantic-speech="u 2 d s ModifyingAbove modifying above dotless j With caret">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="13" data-semantic-speech="u 2">
               <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
                 <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-10-TEX-I-1D462"/>
               </g>
@@ -640,23 +682,28 @@
               </g>
             </g>
             <g data-mml-node="mstyle" transform="translate(1008.6,0)">
-              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="8" data-semantic-parent="11" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="10" data-semantic-parent="13" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="11" data-semantic-speech="d" transform="translate(1175.6,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="13" data-semantic-speech="d" transform="translate(1175.6,0)">
               <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-10-TEX-I-1D451"/>
             </g>
-            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="9" data-semantic-parent="11" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="11" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1695.6,0)">
               <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-10-TEX-N-2062"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="11" data-semantic-speech="s" transform="translate(1695.6,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="13" data-semantic-speech="s" transform="translate(1695.6,0)">
               <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-10-TEX-I-1D460"/>
             </g>
             <g data-mml-node="mstyle" transform="translate(2164.6,0)">
-              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="10" data-semantic-parent="11" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
+              <g data-mml-node="mspace" data-semantic-type="operator" data-semantic-role="space" data-semantic-id="12" data-semantic-parent="13" data-semantic-operator="infixop,⁢" data-semantic-speech="times"/>
             </g>
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2331.6,0)">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="11" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold j">
-                <use data-c="1D423" xlink:href="#prefigure-tp-change-MJX-10-TEX-B-1D423"/>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="9" data-semantic-children="7,8" data-semantic-parent="13" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove modifying above dotless j With caret">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="9" data-semantic-speech="modifying above dotless j" data-semantic-prefix="Base">
+                  <use data-c="237" xlink:href="#prefigure-tp-change-MJX-10-TEX-I-237"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="8" data-semantic-parent="9" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(166,16) translate(-250 0)">
+                  <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-10-TEX-N-5E"/>
+                </g>
               </g>
             </g>
           </g>
@@ -664,35 +711,41 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-tp-change-cs-uds-label" transform="translate(88.1,117.4) translate(-32.5,-12.7)">
+  <g id="prefigure-tp-change-cs-uds-label" transform="translate(88.1,117.4) translate(-31.3,-14.9)">
     <g id="prefigure-tp-change-__g-9">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:black" width="32.488px" height="12.744px" role="img" focusable="false" viewBox="0 -694 1795 704" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:black" width="31.280px" height="14.856px" role="img" focusable="false" viewBox="0 -810 1728 821" x="0.0" y="0.0">
         <defs>
-          <path id="prefigure-tp-change-MJX-11-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
+          <path id="prefigure-tp-change-MJX-11-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-tp-change-MJX-11-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
           <path id="prefigure-tp-change-MJX-11-TEX-N-2062" d=""/>
           <path id="prefigure-tp-change-MJX-11-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/>
           <path id="prefigure-tp-change-MJX-11-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="6" data-semantic-children="0,2,3" data-semantic-content="4,5" data-semantic-speech="bold u d s">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="8" data-semantic-children="2,4,5" data-semantic-content="6,7" data-semantic-speech="ModifyingAbove u With caret d s">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="6" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
-                <use data-c="1D42E" xlink:href="#prefigure-tp-change-MJX-11-TEX-B-1D42E"/>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="8" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                  <use data-c="1D462" xlink:href="#prefigure-tp-change-MJX-11-TEX-I-1D462"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                  <use data-c="5E" xlink:href="#prefigure-tp-change-MJX-11-TEX-N-5E"/>
+                </g>
               </g>
             </g>
-            <g data-mml-node="mstyle" transform="translate(639,0)">
+            <g data-mml-node="mstyle" transform="translate(572,0)">
               <g data-mml-node="mspace"/>
             </g>
-            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="4" data-semantic-parent="6" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(806,0)">
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="6" data-semantic-parent="8" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(739,0)">
               <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-11-TEX-N-2062"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="6" data-semantic-speech="d" transform="translate(806,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="8" data-semantic-speech="d" transform="translate(739,0)">
               <use data-c="1D451" xlink:href="#prefigure-tp-change-MJX-11-TEX-I-1D451"/>
             </g>
-            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="5" data-semantic-parent="6" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1326,0)">
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="7" data-semantic-parent="8" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(1259,0)">
               <use data-c="2062" xlink:href="#prefigure-tp-change-MJX-11-TEX-N-2062"/>
             </g>
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="6" data-semantic-speech="s" transform="translate(1326,0)">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="8" data-semantic-speech="s" transform="translate(1259,0)">
               <use data-c="1D460" xlink:href="#prefigure-tp-change-MJX-11-TEX-I-1D460"/>
             </g>
           </g>

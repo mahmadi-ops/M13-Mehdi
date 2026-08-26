@@ -16,35 +16,35 @@ attempting them, see <xref ref="section-dot-product" text="title"/>.
 <statement>
 <p>
 Consider the two vectors
-<m>\mathbf u = 3\,\mathbf j + 4\,\mathbf k</m> and
-<m>\mathbf v = \mathbf i + \mathbf j</m>. Write <m>\mathbf u</m> as
+<m>\mathbf u = 3\,\hat{\jmath} + 4\,\hat{k}</m> and
+<m>\mathbf v = \hat{\imath} + \hat{\jmath}</m>. Write <m>\mathbf u</m> as
 the sum of a vector parallel to <m>\mathbf v</m> and a vector
 orthogonal to <m>\mathbf v</m>.
 </p>
 </statement>
 <solution>
 <p>
-We have <m>\vec u \cdot \vec v = 3</m> and
-<m>|\vec v| = \sqrt{1+1} = \sqrt2</m>. The component of
-<m>\vec u</m> parallel to <m>\vec v</m> is
+We have <m>\overrightarrow{u} \cdot \overrightarrow{v} = 3</m> and
+<m>\|\overrightarrow{v}\| = \sqrt{1+1} = \sqrt2</m>. The component of
+<m>\overrightarrow{u}</m> parallel to <m>\overrightarrow{v}</m> is
 <md>
-\vec u_{\parallel}
-= \operatorname{proj}_{\vec v} \vec u
-= \left(\frac{\vec u \cdot \vec v}{|\vec v|^2}\right)\vec v
-= \frac32\,(\mathbf i + \mathbf j)
-= \frac32\,\mathbf i + \frac32\,\mathbf j,
+\overrightarrow{u}_{\parallel}
+= \operatorname{proj}_{\overrightarrow{v}} \overrightarrow{u}
+= \left(\frac{\overrightarrow{u} \cdot \overrightarrow{v}}{\|\overrightarrow{v}\|^2}\right)\overrightarrow{v}
+= \frac32\,(\hat{\imath} + \hat{\jmath})
+= \frac32\,\hat{\imath} + \frac32\,\hat{\jmath},
 </md>
-and the component orthogonal to <m>\vec v</m> is
+and the component orthogonal to <m>\overrightarrow{v}</m> is
 <md>
-\vec u_{\perp}
-= \vec u - \vec u_{\parallel}
-= \left(3\,\mathbf j + 4\,\mathbf k\right)
-- \left(\frac32\,\mathbf i + \frac32\,\mathbf j\right)
-= -\frac32\,\mathbf i + \frac32\,\mathbf j + 4\,\mathbf k.
+\overrightarrow{u}_{\perp}
+= \overrightarrow{u} - \overrightarrow{u}_{\parallel}
+= \left(3\,\hat{\jmath} + 4\,\hat{k}\right)
+- \left(\frac32\,\hat{\imath} + \frac32\,\hat{\jmath}\right)
+= -\frac32\,\hat{\imath} + \frac32\,\hat{\jmath} + 4\,\hat{k}.
 </md>
-Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
-<m>\vec u_{\perp}</m> is orthogonal to <m>\vec v</m>. Note that
-<m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
+Here <m>\overrightarrow{u}_{\parallel}</m> is parallel to <m>\overrightarrow{v}</m> and
+<m>\overrightarrow{u}_{\perp}</m> is orthogonal to <m>\overrightarrow{v}</m>. Note that
+<m>\overrightarrow{u}_{\parallel} + \overrightarrow{u}_{\perp} = \overrightarrow{u}</m>.
 </p>
 </solution>
 </exercise>
@@ -57,20 +57,20 @@ parallel, or neither.
 <ol marker="A.">
 <li>
 <p>
-<m>\vec u_1 = -3\,\mathbf i + 9\,\mathbf j + 6\,\mathbf k</m> and
-<m>\vec u_2 = 4\,\mathbf i - 12\,\mathbf j - 8\,\mathbf k</m>
+<m>\overrightarrow{u}_1 = -3\,\hat{\imath} + 9\,\hat{\jmath} + 6\,\hat{k}</m> and
+<m>\overrightarrow{u}_2 = 4\,\hat{\imath} - 12\,\hat{\jmath} - 8\,\hat{k}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec v_1 = \mathbf i + \mathbf j - 2\,\mathbf k</m> and
-<m>\vec v_2 = \mathbf i + \mathbf j + \mathbf k</m>
+<m>\overrightarrow{v}_1 = \hat{\imath} + \hat{\jmath} - 2\,\hat{k}</m> and
+<m>\overrightarrow{v}_2 = \hat{\imath} + \hat{\jmath} + \hat{k}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec w_1 = a\,\mathbf i + b\,\mathbf j</m> and
-<m>\vec w_2 = c\,\mathbf k</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
+<m>\overrightarrow{w}_1 = a\,\hat{\imath} + b\,\hat{\jmath}</m> and
+<m>\overrightarrow{w}_2 = c\,\hat{k}</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
 are non-zero real numbers.
 </p>
 </li>
@@ -82,7 +82,7 @@ are non-zero real numbers.
 <ol marker="A.">
 <li>
 <p>
-<term>Parallel</term>, since <m>\vec u_2 = -\frac43\,\vec u_1</m>:
+<term>Parallel</term>, since <m>\overrightarrow{u}_2 = -\frac43\,\overrightarrow{u}_1</m>:
 indeed
 <m>-\frac43\langle -3, 9, 6\rangle = \langle 4, -12, -8\rangle</m>.
 (Two vectors are parallel exactly when one is a scalar multiple of the
@@ -92,16 +92,16 @@ other.)
 <li>
 <p>
 <term>Orthogonal</term>, since
-<m>\vec v_1 \cdot \vec v_2 = 1 + 1 - 2 = 0</m>.
+<m>\overrightarrow{v}_1 \cdot \overrightarrow{v}_2 = 1 + 1 - 2 = 0</m>.
 </p>
 </li>
 <li>
 <p>
 <term>Orthogonal</term>, since
-<m>\vec w_1 \cdot \vec w_2
+<m>\overrightarrow{w}_1 \cdot \overrightarrow{w}_2
 = \langle a, b, 0\rangle \cdot \langle 0, 0, c\rangle = 0</m>. They
-are not parallel, because <m>\vec w_2</m> has a non-zero
-<m>\mathbf k</m> component while <m>\vec w_1</m> does not.
+are not parallel, because <m>\overrightarrow{w}_2</m> has a non-zero
+<m>\hat{k}</m> component while <m>\overrightarrow{w}_1</m> does not.
 </p>
 </li>
 </ol>
@@ -113,30 +113,30 @@ are not parallel, because <m>\vec w_2</m> has a non-zero
 <statement>
 <p>
 Find the projection of
-<m>-\mathbf i + 5\,\mathbf j - 2\,\mathbf k</m> on
-<m>3\,\mathbf i - \mathbf j</m>.
+<m>-\hat{\imath} + 5\,\hat{\jmath} - 2\,\hat{k}</m> on
+<m>3\,\hat{\imath} - \hat{\jmath}</m>.
 </p>
 </statement>
 <solution>
 <p>
-With <m>\vec u = \langle -1, 5, -2\rangle</m> and
-<m>\vec v = \langle 3, -1, 0\rangle</m>,
+With <m>\overrightarrow{u} = \langle -1, 5, -2\rangle</m> and
+<m>\overrightarrow{v} = \langle 3, -1, 0\rangle</m>,
 <md>
-\vec u \cdot \vec v = -3 - 5 + 0 = -8,
+\overrightarrow{u} \cdot \overrightarrow{v} = -3 - 5 + 0 = -8,
 \qquad
-|\vec v|^2 = 9 + 1 + 0 = 10,
+\|\overrightarrow{v}\|^2 = 9 + 1 + 0 = 10,
 </md>
 so
 <md>
-<mrow>\operatorname{proj}_{\vec v}\vec u
-\amp = \left(\frac{\vec u \cdot \vec v}{|\vec v|^2}\right)\vec v
+<mrow>\operatorname{proj}_{\overrightarrow{v}}\overrightarrow{u}
+\amp = \left(\frac{\overrightarrow{u} \cdot \overrightarrow{v}}{\|\overrightarrow{v}\|^2}\right)\overrightarrow{v}
 = -\frac{8}{10}\langle 3, -1, 0\rangle</mrow>
 <mrow>\amp = \left\langle -\frac{12}{5}, \frac45, 0\right\rangle
-= -\frac{12}{5}\,\mathbf i + \frac45\,\mathbf j.</mrow>
+= -\frac{12}{5}\,\hat{\imath} + \frac45\,\hat{\jmath}.</mrow>
 </md>
 The negative scalar tells us the projection points opposite to
-<m>\vec v</m>, i.e. the angle between <m>\vec u</m> and
-<m>\vec v</m> is obtuse.
+<m>\overrightarrow{v}</m>, i.e. the angle between <m>\overrightarrow{u}</m> and
+<m>\overrightarrow{v}</m> is obtuse.
 </p>
 </solution>
 </exercise>
@@ -145,8 +145,8 @@ The negative scalar tells us the projection points opposite to
 <statement>
 <p>
 A 100-meter dash is run on a track in the direction of the vector
-<m>2\,\mathbf i + 6\,\mathbf j</m>. The wind velocity is
-<m>\mathbf v = 5\,\mathbf i + 2\,\mathbf j</m> km/hr. The rules say
+<m>2\,\hat{\imath} + 6\,\hat{\jmath}</m>. The wind velocity is
+<m>\mathbf v = 5\,\hat{\imath} + 2\,\hat{\jmath}</m> km/hr. The rules say
 that a legal wind speed measured in the direction of the dash must not
 exceed 5 km/hr.
 <ol marker="A.">
@@ -166,21 +166,21 @@ Find the velocity vector of the wind in the direction of the dash.
 </statement>
 <solution>
 <p>
-Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
-and <m>\vec v = \langle 5, 2\rangle</m> the wind velocity. Then
+Let <m>\overrightarrow{d} = \langle 2, 6\rangle</m> be the direction of the dash
+and <m>\overrightarrow{v} = \langle 5, 2\rangle</m> the wind velocity. Then
 <md>
-\vec v \cdot \vec d = 10 + 12 = 22,
+\overrightarrow{v} \cdot \overrightarrow{d} = 10 + 12 = 22,
 \qquad
-|\vec d| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
+\|\overrightarrow{d}\| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
 </md>
 <ol marker="A.">
 <li>
 <p>
 The wind speed measured in the direction of the dash is the scalar
-component of <m>\vec v</m> along <m>\vec d</m>:
+component of <m>\overrightarrow{v}</m> along <m>\overrightarrow{d}</m>:
 <md>
-\operatorname{comp}_{\vec d}\vec v
-= \frac{\vec v \cdot \vec d}{|\vec d|}
+\operatorname{comp}_{\overrightarrow{d}}\overrightarrow{v}
+= \frac{\overrightarrow{v} \cdot \overrightarrow{d}}{\|\overrightarrow{d}\|}
 = \frac{22}{2\sqrt{10}}
 = \frac{11}{\sqrt{10}} \approx 3.48 \text{ km/hr}.
 </md>
@@ -193,11 +193,11 @@ Since <m>3.48 \lt 5</m>, the wind is legal and the race results will
 The velocity vector of the wind in the direction of the dash is the
 vector projection
 <md>
-<mrow>\operatorname{proj}_{\vec d}\vec v
-\amp = \left(\frac{\vec v \cdot \vec d}{|\vec d|^2}\right)\vec d
+<mrow>\operatorname{proj}_{\overrightarrow{d}}\overrightarrow{v}
+\amp = \left(\frac{\overrightarrow{v} \cdot \overrightarrow{d}}{\|\overrightarrow{d}\|^2}\right)\overrightarrow{d}
 = \frac{22}{40}\langle 2, 6\rangle</mrow>
 <mrow>\amp = \left\langle \frac{11}{10}, \frac{33}{10}\right\rangle
-= 1.1\,\mathbf i + 3.3\,\mathbf j \text{ km/hr}.</mrow>
+= 1.1\,\hat{\imath} + 3.3\,\hat{\jmath} \text{ km/hr}.</mrow>
 </md>
 As a check, its length is
 <m>\sqrt{1.1^2 + 3.3^2} = 1.1\sqrt{10} = \frac{11}{\sqrt{10}}</m>,
@@ -212,18 +212,18 @@ matching part A.
 <exercise xml:id="m2a-1">
 <statement>
 <p>
-Let <m>\vec v</m> be the vector from <m>(-4,3,-1)</m> to
+Let <m>\overrightarrow{v}</m> be the vector from <m>(-4,3,-1)</m> to
 <m>(-2,-1,3)</m>.
 <ol marker="(a)">
 <li>
 <p>
-Find a non-zero unit vector that is orthogonal to <m>\vec v</m>.
+Find a non-zero unit vector that is orthogonal to <m>\overrightarrow{v}</m>.
 </p>
 </li>
 <li>
 <p>
-Find the angle between <m>\vec v</m> and
-<m>\vec w = 3\mathbf i - \mathbf k</m>.
+Find the angle between <m>\overrightarrow{v}</m> and
+<m>\overrightarrow{w} = 3\hat{\imath} - \hat{k}</m>.
 </p>
 </li>
 </ol>
@@ -233,16 +233,16 @@ Find the angle between <m>\vec v</m> and
 <p>
 First,
 <md>
-<mrow>\vec v \amp = \left\langle -2-(-4),\ -1-3,\ 3-(-1) \right\rangle
+<mrow>\overrightarrow{v} \amp = \left\langle -2-(-4),\ -1-3,\ 3-(-1) \right\rangle
 = \left\langle 2,\ -4,\ 4 \right\rangle ,</mrow>
-<mrow>\|\vec v\| \amp = \sqrt{4+16+16} = \sqrt{36} = 6 .</mrow>
+<mrow>\|\overrightarrow{v}\| \amp = \sqrt{4+16+16} = \sqrt{36} = 6 .</mrow>
 </md>
 </p>
 
 <p>
-<term>(a)</term> We need any non-zero <m>\vec u</m> with
-<m>\vec u \cdot \vec v = 0</m>. Writing
-<m>\vec u = \left\langle a,b,c\right\rangle</m>, the condition is
+<term>(a)</term> We need any non-zero <m>\overrightarrow{u}</m> with
+<m>\overrightarrow{u} \cdot \overrightarrow{v} = 0</m>. Writing
+<m>\overrightarrow{u} = \left\langle a,b,c\right\rangle</m>, the condition is
 <md>
 2a - 4b + 4c = 0 .
 </md>
@@ -250,12 +250,12 @@ This is one equation in three unknowns, so there are infinitely many
 answers; we just pick a convenient one. Taking <m>c = 0</m> gives
 <m>2a = 4b</m>, so <m>a = 2</m>, <m>b = 1</m> works:
 <md>
-\vec u = \left\langle 2,\ 1,\ 0 \right\rangle ,
-\qquad \vec u \cdot \vec v = 4 - 4 + 0 = 0 . 
+\overrightarrow{u} = \left\langle 2,\ 1,\ 0 \right\rangle ,
+\qquad \overrightarrow{u} \cdot \overrightarrow{v} = 4 - 4 + 0 = 0 . 
 </md>
 Finally we normalize:
 <md>
-\hat u = \frac{\vec u}{\|\vec u\|}
+\hat u = \frac{\overrightarrow{u}}{\|\overrightarrow{u}\|}
        = \frac{1}{\sqrt5}\left\langle 2,\ 1,\ 0 \right\rangle
        = \left\langle \frac{2}{\sqrt5},\ \frac{1}{\sqrt5},\ 0
          \right\rangle .
@@ -264,14 +264,14 @@ Finally we normalize:
 
 <p>
 <term>(b)</term> With
-<m>\vec w = \left\langle 3, 0, -1 \right\rangle</m> we have
+<m>\overrightarrow{w} = \left\langle 3, 0, -1 \right\rangle</m> we have
 <md>
-<mrow>\vec v \cdot \vec w \amp = (2)(3) + (-4)(0) + (4)(-1) = 6 - 4 = 2 ,</mrow>
-<mrow>\|\vec w\| \amp = \sqrt{9+0+1} = \sqrt{10} .</mrow>
+<mrow>\overrightarrow{v} \cdot \overrightarrow{w} \amp = (2)(3) + (-4)(0) + (4)(-1) = 6 - 4 = 2 ,</mrow>
+<mrow>\|\overrightarrow{w}\| \amp = \sqrt{9+0+1} = \sqrt{10} .</mrow>
 </md>
 Therefore
 <md>
-\cos\theta = \frac{\vec v \cdot \vec w}{\|\vec v\|\,\|\vec w\|}
+\cos\theta = \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\|\overrightarrow{v}\|\,\|\overrightarrow{w}\|}
            = \frac{2}{6\sqrt{10}} = \frac{1}{3\sqrt{10}}
            \approx 0.1054 ,
 </md>
@@ -290,8 +290,8 @@ that the dot product is positive but small.
 <statement>
 <p>
 Let <m>A = (0,0,1)</m> and <m>B = (0,2,3)</m>. Find an equation for the
-set of all points <m>P = (x,y,z)</m> such that <m>\vec{AP}</m> is
-orthogonal to <m>\vec{BP}</m>. Then sketch the resulting surface in
+set of all points <m>P = (x,y,z)</m> such that <m>\overrightarrow{AP}</m> is
+orthogonal to <m>\overrightarrow{BP}</m>. Then sketch the resulting surface in
 three dimensions.
 </p>
 </statement>
@@ -299,16 +299,16 @@ three dimensions.
 <p>
 The two vectors are
 <md>
-<mrow>\vec{AP} \amp = \left\langle x-0,\ y-0,\ z-1 \right\rangle
+<mrow>\overrightarrow{AP} \amp = \left\langle x-0,\ y-0,\ z-1 \right\rangle
 = \left\langle x,\ y,\ z-1 \right\rangle ,</mrow>
-<mrow>\vec{BP} \amp = \left\langle x,\ y-2,\ z-3 \right\rangle .</mrow>
+<mrow>\overrightarrow{BP} \amp = \left\langle x,\ y-2,\ z-3 \right\rangle .</mrow>
 </md>
 </p>
 
 <p>
 Orthogonality means the dot product vanishes:
 <md>
-<mrow>\vec{AP}\cdot\vec{BP} \amp = 0</mrow>
+<mrow>\overrightarrow{AP}\cdot\overrightarrow{BP} \amp = 0</mrow>
 <mrow>x^2 + y(y-2) + (z-1)(z-3) \amp = 0</mrow>
 <mrow>x^2 + y^2 - 2y + z^2 - 4z + 3 \amp = 0 .</mrow>
 </md>
@@ -327,7 +327,7 @@ Now complete the square in <m>y</m> and in <m>z</m>:
 This is the sphere of radius <m>\sqrt2</m> centred at
 <m>(0,1,2)</m>. That centre is exactly the midpoint of <m>A</m> and
 <m>B</m>, and the radius is exactly half of
-<m>\|\vec{AB}\| = \|\langle 0,2,2\rangle\| = 2\sqrt2</m>. This is the
+<m>\|\overrightarrow{AB}\| = \|\langle 0,2,2\rangle\| = 2\sqrt2</m>. This is the
 three-dimensional version of the familiar fact from plane geometry: the
 points from which a given segment subtends a right angle form the
 circle having that segment as a diameter. See
@@ -336,7 +336,7 @@ circle having that segment as a diameter. See
 
 <figure xml:id="fig-m2a-sphere">
 <caption>
-The set of points <m>P</m> with <m>\vec{AP} \perp \vec{BP}</m> is the
+The set of points <m>P</m> with <m>\overrightarrow{AP} \perp \overrightarrow{BP}</m> is the
 sphere having <m>\overline{AB}</m> as a diameter, namely
 <m>x^2+(y-1)^2+(z-2)^2 = 2</m>.
 </caption>
@@ -382,47 +382,47 @@ meet at a right angle.
 <exercise xml:id="m2b-1b">
 <statement>
 <p>
-Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
-tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+Two vectors <m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> are drawn with a common
+tail; <m>\overrightarrow{A}</m> points up and to the right, <m>\overrightarrow{B}</m> points up
 and to the left, and the angle between them is slightly larger than a
-right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
-<m>\vec B</m>, and <m>\operatorname{proj}_{\vec A}\vec B</m>.
+right angle. Sketch and clearly label a diagram showing <m>\overrightarrow{A}</m>,
+<m>\overrightarrow{B}</m>, and <m>\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}</m>.
 </p>
 </statement>
 <solution>
 <p>
 To make the picture concrete let us take
-<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
-<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+<m>\overrightarrow{A} = \left\langle 4, 2 \right\rangle</m> and
+<m>\overrightarrow{B} = \left\langle -3, 5 \right\rangle</m>, which have roughly
 the directions described. Everything below is a statement about
 the <em>geometry</em>, so the same picture is correct for any pair of
 vectors in that configuration.
 </p>
 
 <p>
-The projection of <m>\vec B</m> onto <m>\vec A</m> is
-the shadow that <m>\vec B</m> casts on the line through
-<m>\vec A</m>, obtained by dropping a perpendicular from the tip of
-<m>\vec B</m> to that line. Algebraically,
+The projection of <m>\overrightarrow{B}</m> onto <m>\overrightarrow{A}</m> is
+the shadow that <m>\overrightarrow{B}</m> casts on the line through
+<m>\overrightarrow{A}</m>, obtained by dropping a perpendicular from the tip of
+<m>\overrightarrow{B}</m> to that line. Algebraically,
 <md>
-<mrow>\operatorname{proj}_{\vec A}\vec B
-\amp = \left(\frac{\vec A\cdot\vec B}{\|\vec A\|^2}\right)\vec A
+<mrow>\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}
+\amp = \left(\frac{\overrightarrow{A}\cdot\overrightarrow{B}}{\|\overrightarrow{A}\|^2}\right)\overrightarrow{A}
 = \left(\frac{-12+10}{20}\right)\left\langle 4,2\right\rangle</mrow>
 <mrow>\amp = -\frac{1}{10}\left\langle 4,2\right\rangle
 = \left\langle -0.4,\ -0.2 \right\rangle .</mrow>
 </md>
-Because the angle between <m>\vec A</m> and <m>\vec B</m> is
+Because the angle between <m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> is
 <em>obtuse</em>, the dot product is negative and the projection points
-in the direction <em>opposite</em> to <m>\vec A</m>. This is the
+in the direction <em>opposite</em> to <m>\overrightarrow{A}</m>. This is the
 feature of the picture the problem is testing. See
 <xref ref="fig-m2b-1b"/>.
 </p>
 
 <figure xml:id="fig-m2b-1b">
 <caption>
-Since the angle between <m>\vec A</m> and <m>\vec B</m> is obtuse,
-<m>\operatorname{proj}_{\vec A}\vec B</m> points opposite to
-<m>\vec A</m>.
+Since the angle between <m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> is obtuse,
+<m>\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}</m> points opposite to
+<m>\overrightarrow{A}</m>.
 </caption>
 <image width="55%">
 <description>
@@ -445,13 +445,13 @@ onto A.
 <line at="pb-drop" p1="(-3,5)" p2="(-0.4,-0.2)"
       stroke="#7F7F7F" thickness="1.5" dash="4 3"/>
 <label at="pb-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
-<m>\vec A</m>
+<m>\overrightarrow{A}</m>
 </label>
 <label at="pb-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
-<m>\vec B</m>
+<m>\overrightarrow{B}</m>
 </label>
 <label at="pb-Pl" anchor="(-0.55,-1.35)" alignment="w" color="#8B1A4A">
-<m>\operatorname{proj}_{\vec A}\vec B</m>
+<m>\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}</m>
 </label>
 </coordinates>
 
@@ -475,11 +475,11 @@ onto A.
 Suppose <m>\mathbf u</m> and <m>\mathbf v</m> are non-zero vectors
 satisfying
 <md>
-|\mathbf u + \mathbf v| = 5, \qquad |\mathbf u - \mathbf v| = 13,
+\|\mathbf u + \mathbf v\| = 5, \qquad \|\mathbf u - \mathbf v\| = 13,
 </md>
 and
 <md>
-|\mathbf u|^2 + |\mathbf v|^2 = 97, \qquad |\mathbf u| = 7 .
+\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97, \qquad \|\mathbf u\| = 7 .
 </md>
 Without finding the coordinates of either vector:
 <ol marker="(a)">
@@ -490,7 +490,7 @@ Compute <m>\mathbf u\cdot\mathbf v</m>.
 </li>
 <li>
 <p>
-Find <m>|\mathbf v|</m>.
+Find <m>\|\mathbf v\|</m>.
 </p>
 </li>
 <li>
@@ -510,15 +510,15 @@ Determine whether the angle is acute, right, or obtuse.
 <solution>
 <p>
 The whole problem rests on one idea: the square of a length is a dot
-product, <m>|\mathbf w|^2 = \mathbf w\cdot\mathbf w</m>. Expanding with
+product, <m>\|\mathbf w\|^2 = \mathbf w\cdot\mathbf w</m>. Expanding with
 the distributive property,
 <md>
-<mrow>|\mathbf u + \mathbf v|^2 \amp
+<mrow>\|\mathbf u + \mathbf v\|^2 \amp
 = (\mathbf u + \mathbf v)\cdot(\mathbf u + \mathbf v)
-= |\mathbf u|^2 + 2\,\mathbf u\cdot\mathbf v + |\mathbf v|^2 ,</mrow>
-<mrow>|\mathbf u - \mathbf v|^2 \amp
+= \|\mathbf u\|^2 + 2\,\mathbf u\cdot\mathbf v + \|\mathbf v\|^2 ,</mrow>
+<mrow>\|\mathbf u - \mathbf v\|^2 \amp
 = (\mathbf u - \mathbf v)\cdot(\mathbf u - \mathbf v)
-= |\mathbf u|^2 - 2\,\mathbf u\cdot\mathbf v + |\mathbf v|^2 .</mrow>
+= \|\mathbf u\|^2 - 2\,\mathbf u\cdot\mathbf v + \|\mathbf v\|^2 .</mrow>
 </md>
 These two identities are the algebraic form of the parallelogram in
 <xref ref="fig-dp-parallelogram"/>: the diagonals of the parallelogram
@@ -528,10 +528,10 @@ built on <m>\mathbf u</m> and <m>\mathbf v</m> are
 
 <p>
 <term>(a)</term> Subtracting the second identity from the first makes
-the <m>|\mathbf u|^2</m> and <m>|\mathbf v|^2</m> terms cancel, leaving
+the <m>\|\mathbf u\|^2</m> and <m>\|\mathbf v\|^2</m> terms cancel, leaving
 only the dot product:
 <md>
-|\mathbf u + \mathbf v|^2 - |\mathbf u - \mathbf v|^2
+\|\mathbf u + \mathbf v\|^2 - \|\mathbf u - \mathbf v\|^2
 = 4\,\mathbf u\cdot\mathbf v .
 </md>
 Substituting the two given lengths,
@@ -548,31 +548,31 @@ It is worth pausing to check that the data are consistent.
 <em>Adding</em> the two identities instead of subtracting gives the
 parallelogram law,
 <md>
-|\mathbf u + \mathbf v|^2 + |\mathbf u - \mathbf v|^2
-= 2\left(|\mathbf u|^2 + |\mathbf v|^2\right) ,
+\|\mathbf u + \mathbf v\|^2 + \|\mathbf u - \mathbf v\|^2
+= 2\left(\|\mathbf u\|^2 + \|\mathbf v\|^2\right) ,
 </md>
 and indeed <m>5^2 + 13^2 = 25 + 169 = 194 = 2(97)</m>, exactly as it
 should be.
 </p>
 
 <p>
-<term>(b)</term> We are told <m>|\mathbf u| = 7</m> and
-<m>|\mathbf u|^2 + |\mathbf v|^2 = 97</m>, so
+<term>(b)</term> We are told <m>\|\mathbf u\| = 7</m> and
+<m>\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97</m>, so
 <md>
-<mrow>7^2 + |\mathbf v|^2 \amp = 97 ,</mrow>
-<mrow>49 + |\mathbf v|^2 \amp = 97 ,</mrow>
-<mrow>|\mathbf v|^2 \amp = 48 .</mrow>
+<mrow>7^2 + \|\mathbf v\|^2 \amp = 97 ,</mrow>
+<mrow>49 + \|\mathbf v\|^2 \amp = 97 ,</mrow>
+<mrow>\|\mathbf v\|^2 \amp = 48 .</mrow>
 </md>
 A length is never negative, so
-<m>|\mathbf v| = \sqrt{48} = 4\sqrt3 \approx 6.93</m>.
+<m>\|\mathbf v\| = \sqrt{48} = 4\sqrt3 \approx 6.93</m>.
 </p>
 
 <p>
 <term>(c)</term> For non-zero vectors,
-<m>\mathbf u\cdot\mathbf v = |\mathbf u|\,|\mathbf v|\cos\theta</m>, so
+<m>\mathbf u\cdot\mathbf v = \|\mathbf u\|\,\|\mathbf v\|\cos\theta</m>, so
 <md>
 <mrow>\cos\theta \amp
-= \frac{\mathbf u\cdot\mathbf v}{|\mathbf u|\,|\mathbf v|}
+= \frac{\mathbf u\cdot\mathbf v}{\|\mathbf u\|\,\|\mathbf v\|}
 = \frac{-36}{(7)\left(4\sqrt3\right)}</mrow>
 <mrow>\amp = -\frac{9}{7\sqrt3} = -\frac{3\sqrt3}{7}
 \approx -0.7423 ,</mrow>
@@ -628,10 +628,10 @@ with an obtuse angle marked between u and v.
 <m>\theta</m>
 </angle-marker>
 <label at="dpp-ul" anchor="(3.5,-0.25)" alignment="s" color="#0072B2">
-<m>\mathbf u,\ |\mathbf u| = 7</m>
+<m>\mathbf u,\ \|\mathbf u\| = 7</m>
 </label>
 <label at="dpp-vl" anchor="(-3.1,2.55)" alignment="w" color="#009E73">
-<m>\mathbf v,\ |\mathbf v| = 4\sqrt3</m>
+<m>\mathbf v,\ \|\mathbf v\| = 4\sqrt3</m>
 </label>
 <label at="dpp-suml" anchor="(2.0,4.82)" alignment="ne" color="#8B1A4A">
 <m>\mathbf u+\mathbf v,\ \text{length } 5</m>
@@ -658,13 +658,13 @@ with an obtuse angle marked between u and v.
 <p>
 <term>A remark on the data.</term> The two diagonal lengths by
 themselves already determine <m>\mathbf u\cdot\mathbf v</m>, and the
-condition <m>|\mathbf u|^2 + |\mathbf v|^2 = 97</m> then follows
+condition <m>\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97</m> then follows
 automatically from the parallelogram law. So the individual lengths are
 <em>not</em> pinned down by that data alone: the pair
-<m>|\mathbf u| = 4\sqrt3</m>, <m>|\mathbf v| = 7</m> fits equally well
+<m>\|\mathbf u\| = 4\sqrt3</m>, <m>\|\mathbf v\| = 7</m> fits equally well
 and gives the same angle, while other splits of <m>97</m> give
 different angles. This is why the extra condition
-<m>|\mathbf u| = 7</m> is needed for parts (b) and (c).
+<m>\|\mathbf u\| = 7</m> is needed for parts (b) and (c).
 </p>
 </solution>
 </exercise>
@@ -707,7 +707,7 @@ Find one unit direction in the plane for which the work is zero.
 Reading the coefficients of the plane, a normal vector is
 <md>
 \mathbf n = \left\langle 2, -1, 2 \right\rangle ,
-\qquad |\mathbf n| = \sqrt{4+1+4} = 3 .
+\qquad \|\mathbf n\| = \sqrt{4+1+4} = 3 .
 </md>
 A vector is parallel to the plane exactly when it is orthogonal to
 <m>\mathbf n</m>.
@@ -727,7 +727,7 @@ The first piece comes from the projection formula. Since
 = 2(2) + (-1)(-1) + 3(2)</mrow>
 <mrow>\amp = 4 + 1 + 6 = 11 ,</mrow>
 </md>
-and <m>|\mathbf n|^2 = 9</m>, we get
+and <m>\|\mathbf n\|^2 = 9</m>, we get
 <md>
 \operatorname{proj}_{\mathbf n}\mathbf F
 = \frac{11}{9}\left\langle 2,-1,2\right\rangle
@@ -760,8 +760,8 @@ W = \mathbf F\cdot\mathbf d
 The normal part of the force is simply wasted: it presses the particle
 against the constraint and does no work. Writing
 <m>\mathbf F_{\parallel}\cdot\mathbf d
-= |\mathbf F_{\parallel}|\,|\mathbf d|\cos\varphi
-= |\mathbf F_{\parallel}|\cos\varphi</m>, the largest value occurs when
+= \|\mathbf F_{\parallel}\|\,\|\mathbf d\|\cos\varphi
+= \|\mathbf F_{\parallel}\|\cos\varphi</m>, the largest value occurs when
 <m>\cos\varphi = 1</m>, that is when <m>\mathbf d</m> points in the same
 direction as <m>\mathbf F_{\parallel}</m>. Since
 <md>
@@ -783,8 +783,8 @@ The force <m>\mathbf F</m> splits into a piece
 does no work, and a much shorter piece <m>\mathbf F_{\parallel}</m>
 lying in the plane, which is the only part that can do work. The
 picture is drawn to scale:
-<m>\left|\operatorname{proj}_{\mathbf n}\mathbf F\right| = \tfrac{11}{3}</m>
-while <m>\left|\mathbf F_{\parallel}\right| = \tfrac{\sqrt5}{3}</m>.
+<m>\left\|\operatorname{proj}_{\mathbf n}\mathbf F\right\| = \tfrac{11}{3}</m>
+while <m>\left\|\mathbf F_{\parallel}\right\| = \tfrac{\sqrt5}{3}</m>.
 </caption>
 <image width="85%">
 <description>
@@ -853,7 +853,7 @@ in the plane.
 <term>(b)</term> The maximum work per unit displacement is the length of
 the in-plane component,
 <md>
-<mrow>W_{\max} \amp = \left|\mathbf F_{\parallel}\right|
+<mrow>W_{\max} \amp = \left\|\mathbf F_{\parallel}\right\|
 = \left|\frac19\left\langle -4,2,5\right\rangle\right|</mrow>
 <mrow>\amp = \frac19\left(3\sqrt5\right) = \frac{\sqrt5}{3}
 \approx 0.745 .</mrow>
@@ -866,7 +866,7 @@ We can confirm this directly from the original force:
 = \frac{-8-2+15}{3\sqrt5}</mrow>
 <mrow>\amp = \frac{5}{3\sqrt5} = \frac{\sqrt5}{3} .</mrow>
 </md>
-Compare this with <m>|\mathbf F| = \sqrt{14} \approx 3.74</m>: the
+Compare this with <m>\|\mathbf F\| = \sqrt{14} \approx 3.74</m>: the
 constraint costs us about <m>80\%</m> of the force.
 </p>
 

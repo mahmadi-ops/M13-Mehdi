@@ -124,27 +124,25 @@
     </g>
   </g>
   <line id="pendulum-forces-FT" x1="249.8" y1="235.4" x2="177.2" y2="123.7" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
-  <g id="pendulum-forces-__label-4" transform="translate(182.2,113.6) translate(0.0,-22.3)">
+  <g id="pendulum-forces-__label-4" transform="translate(182.2,113.6) translate(0.0,-28.2)">
     <g id="pendulum-forces-__g-5">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px; color:magenta" width="23.616px" height="22.320px" role="img" focusable="false" viewBox="0 -1083 1304.8 1233" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px; color:magenta" width="23.616px" height="28.184px" role="img" focusable="false" viewBox="0 -1407 1304.8 1557" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-6-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
-          <path id="pendulum-forces-MJX-6-TEX-N-20D7" d="M377 694Q377 702 382 708T397 714Q404 714 409 709Q414 705 419 690Q429 653 460 633Q471 626 471 615Q471 606 468 603T454 594Q411 572 379 531Q377 529 374 525T369 519T364 517T357 516Q350 516 344 521T337 536Q337 555 384 595H213L42 596Q29 605 29 615Q29 622 42 635H401Q377 673 377 694Z"/>
+          <path id="pendulum-forces-MJX-6-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/>
           <path id="pendulum-forces-MJX-6-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
             <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-speech="ModifyingAbove bold upper F With right arrow Subscript upper T">
-              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="4" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove bold upper F With right arrow" data-semantic-prefix="Base">
-                  <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F" data-semantic-prefix="Base">
-                      <use data-c="1D405" xlink:href="#pendulum-forces-MJX-6-TEX-B-1D405"/>
-                    </g>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="4" data-semantic-speech="ModifyingAbove bold upper F With right arrow" data-semantic-prefix="Base">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F" data-semantic-prefix="Base">
+                    <use data-c="1D405" xlink:href="#pendulum-forces-MJX-6-TEX-B-1D405"/>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(362,269) translate(-250 0)">
-                    <use data-c="20D7" xlink:href="#pendulum-forces-MJX-6-TEX-N-20D7"/>
-                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(362,796) translate(-500 0)">
+                  <use data-c="2192" xlink:href="#pendulum-forces-MJX-6-TEX-N-2192"/>
                 </g>
               </g>
               <g data-mml-node="mi" transform="translate(757,-150) scale(0.707)" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="upper T" data-semantic-prefix="Subscript">
@@ -159,12 +157,12 @@
   <line id="pendulum-forces-mgvec" x1="249.8" y1="235.4" x2="249.8" y2="364.3" stroke="magenta" stroke-width="3" fill="none" marker-end="url(#pendulum-forces-arrow-head-end-3_None_24_60-magenta)"/>
   <g id="pendulum-forces-__label-5" transform="translate(249.8,375.0) translate(-13.1,-0.0)">
     <g id="pendulum-forces-__g-6">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.640px; color:magenta" width="26.296px" height="19.168px" role="img" focusable="false" viewBox="0 -858 1453 1059" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.640px; color:magenta" width="26.296px" height="25.032px" role="img" focusable="false" viewBox="0 -1182 1453 1383" x="0.0" y="0.0">
         <defs>
           <path id="pendulum-forces-MJX-7-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
           <path id="pendulum-forces-MJX-7-TEX-N-2062" d=""/>
           <path id="pendulum-forces-MJX-7-TEX-B-1D420" d="M50 300Q50 368 105 409T255 450Q328 450 376 426L388 420Q435 455 489 455Q517 455 533 441T554 414T558 389Q558 367 544 353T508 339Q484 339 471 354T458 387Q458 397 462 400Q464 401 461 400Q459 400 454 399Q429 392 427 390Q454 353 459 328Q461 315 461 300Q461 240 419 202Q364 149 248 149Q185 149 136 172Q129 158 129 148Q129 105 170 93Q176 91 263 91Q273 91 298 91T334 91T366 89T400 85T432 77T466 64Q544 22 544 -69Q544 -114 506 -145Q438 -201 287 -201Q149 -201 90 -161T30 -70Q30 -58 33 -47T42 -27T54 -13T69 -1T82 6T94 12T101 15Q66 57 66 106Q66 151 90 187L97 197L89 204Q50 243 50 300ZM485 403H492Q491 404 488 404L485 403V403ZM255 200Q279 200 295 206T319 219T331 242T335 268T336 300Q336 337 333 352T317 380Q298 399 255 399Q228 399 211 392T187 371T178 345T176 312V300V289Q176 235 194 219Q215 200 255 200ZM287 -150Q357 -150 400 -128T443 -71Q443 -65 442 -61T436 -50T420 -37T389 -27T339 -21L308 -20Q276 -20 253 -20Q190 -20 180 -20T156 -26Q130 -38 130 -69Q130 -105 173 -127T287 -150Z"/>
-          <path id="pendulum-forces-MJX-7-TEX-N-20D7" d="M377 694Q377 702 382 708T397 714Q404 714 409 709Q414 705 419 690Q429 653 460 633Q471 626 471 615Q471 606 468 603T454 594Q411 572 379 531Q377 529 374 525T369 519T364 517T357 516Q350 516 344 521T337 536Q337 555 384 595H213L42 596Q29 605 29 615Q29 622 42 635H401Q377 673 377 694Z"/>
+          <path id="pendulum-forces-MJX-7-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="5" data-semantic-children="0,3" data-semantic-content="4" data-semantic-speech="m ModifyingAbove bold g With right arrow">
@@ -174,16 +172,14 @@
             <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="4" data-semantic-parent="5" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(878,0)">
               <use data-c="2062" xlink:href="#pendulum-forces-MJX-7-TEX-N-2062"/>
             </g>
-            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(878,0)">
-              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove bold g With right arrow">
-                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold g" data-semantic-prefix="Base">
-                    <use data-c="1D420" xlink:href="#pendulum-forces-MJX-7-TEX-B-1D420"/>
-                  </g>
+            <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-speech="ModifyingAbove bold g With right arrow" transform="translate(878,0)">
+              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold g" data-semantic-prefix="Base">
+                  <use data-c="1D420" xlink:href="#pendulum-forces-MJX-7-TEX-B-1D420"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(287.5,44) translate(-250 0)">
-                  <use data-c="20D7" xlink:href="#pendulum-forces-MJX-7-TEX-N-20D7"/>
-                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(287.5,571) translate(-500 0)">
+                <use data-c="2192" xlink:href="#pendulum-forces-MJX-7-TEX-N-2192"/>
               </g>
             </g>
           </g>

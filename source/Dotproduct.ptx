@@ -239,16 +239,17 @@ are orthogonal.
 <statement>
 <p>
 Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
-<m>C(2,0)</m>. Show that this is a right triangle using the dot product.
+<m>C(2,0)</m>. Show that this is a right triangle using the dot product
+and the orthogonality criterion <xref ref="eq-6"/>.
 </p>
 </statement>
 <solution>
 <p>
 <md>
 \begin{aligned}
-\vec{CA} \amp = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle \\
-\vec{CB} \amp = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle \\
-\vec{CA}\cdot\vec{CB} \amp = 1 - 1 = 0 \implies \vec{CA} \perp \vec{CB}.
+\overrightarrow{CA} \amp = \langle 1-2,\,-1-0\rangle = \langle -1,-1\rangle \\
+\overrightarrow{CB} \amp = \langle 1-2,\,1-0\rangle = \langle -1,1\rangle \\
+\overrightarrow{CA}\cdot\overrightarrow{CB} \amp = 1 - 1 = 0 \implies \overrightarrow{CA} \perp \overrightarrow{CB}.
 \end{aligned}
 </md>
 </p>
@@ -256,7 +257,7 @@ Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
 <figure xml:id="fig-right-triangle">
 <caption>
 The triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, <m>C(2,0)</m>,
-together with the vectors <m>\vec{CA}</m> and <m>\vec{CB}</m> meeting at a
+together with the vectors <m>\overrightarrow{CA}</m> and <m>\overrightarrow{CB}</m> meeting at a
 right angle at <m>C</m>.
 </caption>
 <image width="50%">
@@ -270,10 +271,10 @@ right angle at <m>C</m>.
 <triangle at="triangle" vertices="(A,B,C)" labels="A,B,C"
           show-vertices="yes" point-fill="black" stroke="black"/>
 <vector at="vec-ca" v="A-C" tail="C" stroke="blue" thickness="4" alignment="sw">
-<m>\vec{CA}</m>
+<m>\overrightarrow{CA}</m>
 </vector>
 <vector at="vec-cb" v="B-C" tail="C" stroke="red" thickness="4" alignment="ne">
-<m>\vec{CB}</m>
+<m>\overrightarrow{CB}</m>
 </vector>
 <angle-marker at="right-angle" points="(B,C,A)" clear-background="yes"/>
 </coordinates>
@@ -304,13 +305,13 @@ For the triangle of <xref ref="example-right-triangle"/>
 </statement>
 <solution>
 <p>
-For the angle between the sides <m>\vec{AC}</m> and <m>\vec{AB}</m>, we have
+For the angle between the sides <m>\overrightarrow{AC}</m> and <m>\overrightarrow{AB}</m>, we have
 <md>
 \begin{aligned}
-\vec{AC} \amp = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies \|\vec{AC}\| = \sqrt2 \\
-\vec{AB} \amp = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies \|\vec{AB}\| = 2 \\
-\vec{AB}\cdot\vec{AC} \amp = 0 + 2 = 2 \\
-\cos\theta \amp = \frac{\vec{AB}\cdot\vec{AC}}{\|\vec{AB}\|\|\vec{AC}\|}
+\overrightarrow{AC} \amp = \langle 2-1,\,0+1\rangle = \langle 1,1\rangle \implies \|\overrightarrow{AC}\| = \sqrt2 \\
+\overrightarrow{AB} \amp = \langle 1-1,\,1+1\rangle = \langle 0,2\rangle \implies \|\overrightarrow{AB}\| = 2 \\
+\overrightarrow{AB}\cdot\overrightarrow{AC} \amp = 0 + 2 = 2 \\
+\cos\theta \amp = \frac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{\|\overrightarrow{AB}\|\|\overrightarrow{AC}\|}
 = \frac{2}{2\sqrt2} = \frac{1}{\sqrt2} \implies \theta = \frac{\pi}{4}.
 \end{aligned}
 </md>
@@ -514,7 +515,7 @@ we can write <m>\mathbf u</m> as
 </p>
 
 <figure xml:id="fig-projection-shadow">
-  <caption>The projection of <m>\vec{u}</m> onto <m>\vec{v}</m> as a shadow cast by light from above.</caption>
+  <caption>The projection of <m>\overrightarrow{u}</m> onto <m>\overrightarrow{v}</m> as a shadow cast by light from above.</caption>
   <video xml:id="video-projection-shadow"
          source="videos/projection_formula_1080p.mp4"
          width="90%" aspect="16:9"/>
@@ -524,8 +525,8 @@ we can write <m>\mathbf u</m> as
 <title>Decomposing a vector into parallel and perpendicular parts</title>
 <statement>
 <p>
-Consider the two vectors <m>\mathbf v = \mathbf i + \mathbf j</m> and
-<m>\mathbf u = 2\mathbf i + 2\mathbf j + 2\mathbf k</m>. Write <m>\mathbf u</m>
+Consider the two vectors <m>\mathbf v = \hat{\imath} + \hat{\jmath}</m> and
+<m>\mathbf u = 2\hat{\imath} + 2\hat{\jmath} + 2\hat{k}</m>. Write <m>\mathbf u</m>
 as a sum of two vectors, one of which is parallel to <m>\mathbf v</m> and the
 other perpendicular to it.
 </p>
@@ -541,7 +542,7 @@ is parallel to <m>\mathbf v</m>, we have
 \|\mathbf v\| \amp = \sqrt{1+1} = \sqrt2 \\
 \mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u
 \amp = \left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v
-= \frac{4}{2}(\mathbf i+\mathbf j) = 2\mathbf i + 2\mathbf j.
+= \frac{4}{2}(\hat{\imath}+\hat{\jmath}) = 2\hat{\imath} + 2\hat{\jmath}.
 \end{aligned}
 </md>
 </p>
@@ -549,16 +550,16 @@ is parallel to <m>\mathbf v</m>, we have
 For the perpendicular component of <m>\mathbf u</m> to <m>\mathbf v</m>, we have
 <md number="yes">
 \mathbf u_{\perp} = \mathbf u - \text{proj}_{\mathbf v}\mathbf u
-= (2\mathbf i+2\mathbf j+2\mathbf k) - (2\mathbf i+2\mathbf j) = 2\mathbf k.
+= (2\hat{\imath}+2\hat{\jmath}+2\hat{k}) - (2\hat{\imath}+2\hat{\jmath}) = 2\hat{k}.
 </md>
 </p>
 <p>
 To achieve a visual understanding of this decomposition, watch the video below.
 </p>
 <figure xml:id="fig-decompose-3d">
-  <caption>Decomposing <m>\mathbf u = 2\mathbf i + 2\mathbf j + 2\mathbf k</m> into
-  <m>\mathbf u_{\parallel} = 2\mathbf i + 2\mathbf j</m>, lying in the
-  <m>xy</m>-plane along <m>\mathbf v</m>, and <m>\mathbf u_{\perp} = 2\mathbf k</m>,
+  <caption>Decomposing <m>\mathbf u = 2\hat{\imath} + 2\hat{\jmath} + 2\hat{k}</m> into
+  <m>\mathbf u_{\parallel} = 2\hat{\imath} + 2\hat{\jmath}</m>, lying in the
+  <m>xy</m>-plane along <m>\mathbf v</m>, and <m>\mathbf u_{\perp} = 2\hat{k}</m>,
   pointing straight up.</caption>
   <video xml:id="video-decompose-3d"
          source="videos/decompose_3d_v3_1080p.mp4"
@@ -659,7 +660,7 @@ be perpendicular to <m>\mathbf v</m>.
 <p>
 Consider the scenario in which a constant force <m>\mathbf F</m> causes an object to
 move from point <m>P</m> to point <m>Q</m>, as shown in
-<xref ref="fig-work"/>. The vector <m>\vec{PQ}</m> is often denoted
+<xref ref="fig-work"/>. The vector <m>\overrightarrow{PQ}</m> is often denoted
 <m>\mathbf D</m> and is referred to as the <term>displacement vector</term>.
 The work done by the force is then
 </p>
@@ -736,7 +737,7 @@ magnitude of the force in the direction of motion, <m>\|\mathbf F\|\cos\theta</m
 <title>Computing work done by a force</title>
 <statement>
 <p>
-A force is given by the vector <m>\mathbf F = 8\mathbf i - 6\mathbf j + 9\mathbf k</m>
+A force is given by the vector <m>\mathbf F = 8\hat{\imath} - 6\hat{\jmath} + 9\hat{k}</m>
 and moves a particle from the point <m>A(0,10,8)</m> to the point
 <m>B(6,12,20)</m>. Find the work done.
 </p>
@@ -754,7 +755,7 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
   </hint>
 <solution>
 <p>
-The displacement vector is <m>\mathbf D = \vec{AB} = \langle 6,2,12\rangle</m>,
+The displacement vector is <m>\mathbf D = \overrightarrow{AB} = \langle 6,2,12\rangle</m>,
 so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 <md>
 \text{Work} = \mathbf F \cdot \mathbf D
@@ -781,28 +782,28 @@ so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 
 <figure xml:id="fig-inclined-video">
   <caption>Decomposing gravity on a <m>30^{\circ}</m> incline: the parallel component
-  <m>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F}</m> pulls the mass down
+  <m>\overrightarrow{F}_{\parallel} = \operatorname{proj}_{\hat{v}}\overrightarrow{F}</m> pulls the mass down
   the slope, and the perpendicular component
-  <m>\vec{F}_{\perp} = \vec{F} - \vec{F}_{\parallel}</m> presses it into the surface.</caption>
+  <m>\overrightarrow{F}_{\perp} = \overrightarrow{F} - \overrightarrow{F}_{\parallel}</m> presses it into the surface.</caption>
   <video xml:id="video-inclined-plane"
          source="videos/inclined_plane_1080p.mp4"
          width="100%" aspect="16:9"/>
 </figure>
 
         <p>
-          First, we determine the total gravitational force vector <m>\vec{F}</m> acting on the mass. 
+          First, we determine the total gravitational force vector <m>\overrightarrow{F}</m> acting on the mass. 
           Using <m>g = 9.8\text{ m/s}^2</m>:
-          <md>\|\vec{F}\| = (10)(9.8) = 98\text{ N}</md>
+          <md>\|\overrightarrow{F}\| = (10)(9.8) = 98\text{ N}</md>
           Acting entirely in the negative vertical direction, this gives:
-          <md>\vec{F} = \langle 0, -98 \rangle = -98\hat{j}</md>
+          <md>\overrightarrow{F} = \langle 0, -98 \rangle = -98\hat{\jmath}</md>
         </p>
 
         <!-- Diagram inserted here -->
         <figure xml:id="fig-inclined-forces">
           <caption>Forces acting on a mass on a <m>30^{\circ}</m> incline: the weight
-          <m>\vec{F}</m> resolves into a component <m>\vec{F}_{\parallel}</m> down the
-          slope and a component <m>\vec{F}_{\perp}</m> into the surface, with
-          <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m>.</caption>
+          <m>\overrightarrow{F}</m> resolves into a component <m>\overrightarrow{F}_{\parallel}</m> down the
+          slope and a component <m>\overrightarrow{F}_{\perp}</m> into the surface, with
+          <m>\overrightarrow{F} = \overrightarrow{F}_{\parallel} + \overrightarrow{F}_{\perp}</m>.</caption>
           <image width="60%">
             <prefigure xmlns="https://prefigure.org" label="prefigure-inclined-forces">
               <diagram dimensions="(350,300)" margins="5">
@@ -819,13 +820,13 @@ so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 
                   <!-- Force vectors from the center of mass; scaled so they add to the weight -->
                   <vector at="vec-weight" v="(0,-3)" tail="(2.398,1.846)" stroke="blue" thickness="2"/>
-                  <label at="weight-label" anchor="(2.75,-1.05)" alignment="e" color="blue"><m>\vec{F}</m></label>
+                  <label at="weight-label" anchor="(2.75,-1.05)" alignment="e" color="blue"><m>\overrightarrow{F}</m></label>
 
                   <vector at="vec-parallel" v="(-1.299,-0.75)" tail="(2.398,1.846)" stroke="red" thickness="2"/>
-                  <label at="parallel-label" anchor="(0.75,1.05)" alignment="w" color="red"><m>\vec{F}_{\parallel}</m></label>
+                  <label at="parallel-label" anchor="(0.75,1.05)" alignment="w" color="red"><m>\overrightarrow{F}_{\parallel}</m></label>
 
                   <vector at="vec-perp" v="(1.299,-2.25)" tail="(2.398,1.846)" stroke="purple" thickness="2"/>
-                  <label at="perp-label" anchor="(3.95,-0.4)" alignment="e" color="purple"><m>\vec{F}_{\perp}</m></label>
+                  <label at="perp-label" anchor="(3.95,-0.4)" alignment="e" color="purple"><m>\overrightarrow{F}_{\perp}</m></label>
                 </coordinates>
 
                 <annotations>
@@ -843,23 +844,23 @@ so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
         </figure>
 
         <p>
-          Next, we define a unit vector <m>\vec{v}</m> pointing down the surface of the inclined plane. 
+          Next, we define a unit vector <m>\hat{v}</m> pointing down the surface of the inclined plane. 
           Since the plane is tilted at <m>30^{\circ}</m> (or <m>\frac{\pi}{6}</m> radians), a unit vector pointing down the slope is directed at an angle of <m>-\frac{\pi}{6}</m> relative to the horizontal:
-          <md>\vec{v} = \cos\left(\frac{\pi}{6}\right)\hat{i} - \sin\left(\frac{\pi}{6}\right)\hat{j} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
-          where <m>\|\vec{v}\| = 1</m>.
+          <md>\hat{v} = \cos\left(\frac{\pi}{6}\right)\hat{\imath} - \sin\left(\frac{\pi}{6}\right)\hat{\jmath} = \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
+          where <m>\|\hat{v}\| = 1</m>.
         </p>
         <p>
-          The component of the force parallel to the incline, <m>\vec{F}_{\parallel}</m>, is the projection of <m>\vec{F}</m> onto <m>\vec{v}</m>, given by <xref ref="eq-proj"/>:
-          <md>\vec{F}_{\parallel} = \operatorname{proj}_{\vec{v}}\vec{F} = \left(\frac{\vec{F} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} = (\vec{F} \cdot \vec{v})\vec{v}</md>
+          The component of the force parallel to the incline, <m>\overrightarrow{F}_{\parallel}</m>, is the projection of <m>\overrightarrow{F}</m> onto <m>\hat{v}</m>, given by <xref ref="eq-proj"/>:
+          <md>\overrightarrow{F}_{\parallel} = \operatorname{proj}_{\hat{v}}\overrightarrow{F} = \left(\frac{\overrightarrow{F} \cdot \hat{v}}{\|\hat{v}\|^2}\right)\hat{v} = (\overrightarrow{F} \cdot \hat{v})\hat{v}</md>
           Computing the dot product with <xref ref="eq-5"/>:
-          <md>\vec{F} \cdot \vec{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</md>
+          <md>\overrightarrow{F} \cdot \hat{v} = \langle 0, -98 \rangle \cdot \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle = 0 + 49 = 49</md>
           Thus, the parallel force vector is:
-          <md>\vec{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
+          <md>\overrightarrow{F}_{\parallel} = 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</md>
         </p>
         <p>
-          Since <m>\vec{F} = \vec{F}_{\parallel} + \vec{F}_{\perp}</m> by <xref ref="eq-decomposition"/>, the perpendicular force component is found by subtraction:
+          Since <m>\overrightarrow{F} = \overrightarrow{F}_{\parallel} + \overrightarrow{F}_{\perp}</m> by <xref ref="eq-decomposition"/>, the perpendicular force component is found by subtraction:
           <md>
-            <mrow>\vec{F}_{\perp} \amp = \vec{F} - \vec{F}_{\parallel}</mrow>
+            <mrow>\overrightarrow{F}_{\perp} \amp = \overrightarrow{F} - \overrightarrow{F}_{\parallel}</mrow>
             <mrow>\amp = \langle 0, -98 \rangle - 49 \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle</mrow>
             <mrow>\amp = 49 \left( \langle 0, -2 \rangle - \left\langle \frac{\sqrt{3}}{2}, -\frac{1}{2} \right\rangle \right)</mrow>
             <mrow>\amp = 49 \left\langle -\frac{\sqrt{3}}{2}, -\frac{3}{2} \right\rangle</mrow>

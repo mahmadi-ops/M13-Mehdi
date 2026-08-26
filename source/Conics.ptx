@@ -133,7 +133,9 @@
     <p>Both sides are non-negative, so squaring loses nothing:
 <md>x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2.</md>
 </p>
-    <p>The <m>y^2</m> and <m>p^2</m> terms cancel from both sides, leaving <m>x^2 = 4py</m>.
+    <p>The <m>y^2</m> and <m>p^2</m> terms cancel from both sides, leaving the
+      standard form of the parabola:
+<md xml:id="eq-parabola-standard" number="yes">x^2 = 4py.</md>
 </p>
     <p>
       So for the standard parabola <m>x^2 = 4py</m> the vertex is at
@@ -141,7 +143,8 @@
       The vertex sits halfway between focus and directrix, which is why both are a distance
       <m>|p|</m> from it. If <m>p \lt 0</m> the same algebra applies unchanged and the curve
       opens downward; interchanging the roles of <m>x</m> and <m>y</m> gives the sideways
-      parabola <m>y^2 = 4px</m>.
+      parabola
+<md xml:id="eq-parabola-sideways" number="yes">y^2 = 4px.</md>
     </p>
 
     <figure xml:id="fig-parabola-def">
@@ -214,7 +217,8 @@
       \qquad\text{i.e.}\qquad (x-1)^2 = -2y.</md>
 </p>
       <p>
-        Comparing with <m>x^2 = 4py</m> gives <m>4p = -2</m>, so <m>p = -\frac{1}{2}</m>.
+        Comparing with <xref ref="eq-parabola-standard"/> gives <m>4p = -2</m>, so
+        <m>p = -\frac{1}{2}</m>.
         The graph is the standard parabola shifted right by one unit, so the vertex is at
         <m>(1,0)</m>. Therefore the focus is at
 <md>(1,\, p) = \left(1,\, -\tfrac{1}{2}\right),</md>
@@ -283,7 +287,8 @@ and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
 </p>
       <p>
         Because the directrix is <em>vertical</em> and the focus lies to its right, the
-        parabola opens <em>to the right</em>. Comparing with <m>y^2 = 4px</m> gives
+        parabola opens <em>to the right</em>. Comparing with
+        <xref ref="eq-parabola-sideways"/> gives
         <m>4p = 8</m>, so <m>p = 2</m>, consistent with the focus at <m>(2,0)</m>. This is
         the same equidistance idea as the previous example, but with a horizontal axis of
         symmetry.
@@ -351,7 +356,12 @@ and the directrix is the horizontal line <m>y = -p = \tfrac{1}{2}</m>.</p>
     </definition>
 
     <p>
-      For <m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1</m> with <m>a \gt b</m>, the segment
+      An ellipse centred at the origin with its foci on the <m>x</m>-axis has the
+      standard form
+<md xml:id="eq-ellipse-standard" number="yes">
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, \qquad a \gt b.
+</md>
+      The segment
       joining <m>(a,0)</m> and <m>(-a,0)</m> is the <term>semi-major axis</term>, the
       segment joining <m>(0,b)</m> and <m>(0,-b)</m> is the <term>semi-minor axis</term>,
       and the foci satisfy <m>c^2 = a^2 - b^2 \gt 0</m>.
@@ -424,7 +434,7 @@ which identifies the constant in the definition as <m>2a</m>; equivalently
       <m>a = \frac{1}{2}(r_1 + r_2)</m>. Second, evaluating at the co-vertex <m>(0,b)</m>
       forces <m>r_1 = r_2 = a</m> by symmetry, and that radius is the hypotenuse of a right
       triangle with legs <m>b</m> and <m>c</m>. Pythagoras then gives
-<md>a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</md>
+<md xml:id="eq-ellipse-focal" number="yes">a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</md>
 </p>
     <p>
       So for the ellipse in <xref ref="fig-ellipse-def"/>, <m>a</m> is the <em>hypotenuse</em>
@@ -451,12 +461,13 @@ which identifies the constant in the definition as <m>2a</m>; equivalently
 
 
     <solution xml:id="sol-ellipse-1">
-      <p>Dividing through by <m>36</m> puts the equation in standard form:
+      <p>Dividing through by <m>36</m> puts the equation in the standard form
+      <xref ref="eq-ellipse-standard"/>:
 <md>\frac{x^2}{9} + \frac{y^2}{4} = 1.</md>
 </p>
       <p>
         The larger denominator sits under <m>x^2</m>, so the major axis is horizontal with
-        <m>a = 3</m> and <m>b = 2</m>. Then
+        <m>a = 3</m> and <m>b = 2</m>. Then, by <xref ref="eq-ellipse-focal"/>,
 <md>c^2 = a^2 - b^2 = 9 - 4 = 5 \;\Longrightarrow\; c = \sqrt{5},</md>
 so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
 
@@ -526,7 +537,7 @@ so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
         This time the larger denominator, <m>25</m>, sits under <m>y^2</m>, so the major
         axis is <em>vertical</em>. The semi-major axis is <m>a = \sqrt{25} = 5</m> (along
         the <m>y</m>-axis) and the semi-minor axis is <m>b = \sqrt{16} = 4</m> (along the
-        <m>x</m>-axis). Hence
+        <m>x</m>-axis). Hence, by <xref ref="eq-ellipse-focal"/>,
 <md>c^2 = a^2 - b^2 = 25 - 16 = 9 \;\Longrightarrow\; c = 3.</md>
 </p>
       <p>
@@ -597,8 +608,12 @@ so the foci are <m>F_1(\sqrt{5},0)</m> and <m>F_2(-\sqrt{5},0)</m>.</p>
     </definition>
 
     <p>
-      For <m>\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1</m> the
-      vertices are <m>(\pm a, 0)</m>, the foci satisfy <m>c^2 = a^2 + b^2</m>, and the
+      A hyperbola centred at the origin with its foci on the <m>x</m>-axis has the
+      standard form
+<md xml:id="eq-hyperbola-standard" number="yes">
+\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1.
+</md>
+      Its vertices are <m>(\pm a, 0)</m>, the foci satisfy <m>c^2 = a^2 + b^2</m>, and the
       asymptotes are <m>y = \pm\dfrac{b}{a}\,x</m>.
     </p>
 
@@ -671,7 +686,7 @@ identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. F
       second relation, draw the central box whose half-width is <m>a</m> and half-height is
       <m>b</m>. Its corner <m>(a,b)</m> lies at distance <m>c</m> from the center, so the
       right triangle with legs <m>a</m> and <m>b</m> has hypotenuse <m>c</m>, and
-<md>c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</md>
+<md xml:id="eq-hyperbola-focal" number="yes">c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</md>
 </p>
     <p>
       Notice the contrast with the ellipse: there <m>a</m> was the <em>hypotenuse</em>, so
@@ -786,11 +801,13 @@ identifying the constant as <m>2a</m>, or <m>a = \frac{1}{2}\,|r_1 - r_2|</m>. F
 
 
     <solution xml:id="sol-hyperbola-1">
-      <p>Dividing by <m>144</m> gives standard form:
+      <p>Dividing by <m>144</m> gives the standard form
+      <xref ref="eq-hyperbola-standard"/>:
 <md>\frac{x^2}{16} - \frac{y^2}{9} = 1
       \;\Longrightarrow\; a = \sqrt{16} = 4,\quad b = \sqrt{9} = 3.</md>
 </p>
-      <p>Since the <m>x^2</m>-term is positive, the hyperbola opens left and right. Then
+      <p>Since the <m>x^2</m>-term is positive, the hyperbola opens left and right. Then,
+      by <xref ref="eq-hyperbola-focal"/>,
 <md>c^2 = a^2 + b^2 = 16 + 9 = 25 \;\Longrightarrow\; c = 5,</md>
 so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         asymptotes are <m>y = \pm\frac{b}{a}x = \pm\frac{3}{4}x</m>.
@@ -872,7 +889,7 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
         Now the <em><m>y^2</m>-term</em> is the positive one, so the hyperbola opens
         <em>up and down</em>. In this orientation <m>a^2</m> is the denominator under
         <m>y^2</m>, giving <m>a = 3</m> (measured along the <m>y</m>-axis) and <m>b = 4</m>.
-        Still using <m>c^2 = a^2 + b^2</m>,
+        Still using <xref ref="eq-hyperbola-focal"/>,
 <md>c^2 = 9 + 16 = 25 \;\Longrightarrow\; c = 5.</md>
 </p>
       <p>
@@ -1016,8 +1033,8 @@ so the foci are <m>(\pm 5, 0)</m>, the vertices are <m>(\pm 4, 0)</m>, and the
     <solution xml:id="sol-app-reflector">
       <p>
         Put the vertex at the origin with the dish opening upward, so the cross-section is
-        <m>x^2 = 4py</m>. The dish is <m>4</m> feet wide and <m>1</m> foot deep, so the rim
-        passes through the point <m>(2,1)</m>. Substituting,
+        <xref ref="eq-parabola-standard"/>. The dish is <m>4</m> feet wide and <m>1</m>
+        foot deep, so the rim passes through the point <m>(2,1)</m>. Substituting,
 <md>2^2 = 4p(1) \;\Longrightarrow\; 4 = 4p \;\Longrightarrow\; p = 1.</md>
 </p>
       <p>
@@ -1138,7 +1155,8 @@ A hand-coloured aquatint from 1809 showing the interior of Saint
       <p>
         Model the room as <m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1</m> with center at the
         origin. The room is <m>100</m> feet long and <m>60</m> feet wide, so <m>2a = 100</m> and
-        <m>2b = 60</m>, giving <m>a = 50</m> and <m>b = 30</m>. Then
+        <m>2b = 60</m>, giving <m>a = 50</m> and <m>b = 30</m>. Then, by
+        <xref ref="eq-ellipse-focal"/>,
 <md>c^2 = a^2 - b^2 = 2500 - 900 = 1600 \;\Longrightarrow\; c = 40.</md>
 </p>
       <p>
@@ -1353,14 +1371,14 @@ farther from <m>P_2</m> than from <m>P_1</m>. He therefore also lies on the bran
         Let <m>A</m> denote Emma's unknown position, and let <m>o</m> be the perpendicular
         bisector of <m>P_1P_3</m>. The line <m>o</m> passes through the midpoint
         <m>S\left(\tfrac52, \tfrac32\right)</m> of the segment, and since
-        <m>P_3 - P_1 = (1,3)</m>, the direction <m>\vec u_o = (3,-1)</m> is perpendicular to
+        <m>P_3 - P_1 = (1,3)</m>, the direction <m>\overrightarrow{u}_o = (3,-1)</m> is perpendicular to
         the segment. Parametrically,
 <md>o:\quad x = \tfrac52 + 3t, \qquad y = \tfrac32 - t, \qquad t \in \mathbb{R}.</md>
 </p>
       <p>
         For the hyperbola, the foci are <m>P_1(2,0)</m> and <m>P_2(-2,0)</m>, so the center is
-        <m>O</m> and <m>c = |OP_1| = 2</m>. The constant difference
-        <m>|AP_2| - |AP_1| = 24\ \text{km} = 2</m> units equals <m>2a</m>, so <m>a = 1</m>,
+        <m>O</m> and <m>c = \|OP_1\| = 2</m>. The constant difference
+        <m>\|AP_2\| - \|AP_1\| = 24\ \text{km} = 2</m> units equals <m>2a</m>, so <m>a = 1</m>,
         and then <m>b^2 = c^2 - a^2 = 4 - 1 = 3</m>. Hence
 <md>h:\quad x^2 - \frac{y^2}{3} = 1,</md>
 and since <m>A</m> is closer to <m>P_1</m>, it lies on the right branch:
@@ -1395,8 +1413,8 @@ that is, <m>A_1\left(\tfrac{19}{13}, \tfrac{24}{13}\right)</m>. Substituting
         Emma's position is therefore
 <md>A\left(\tfrac{19}{13},\ \tfrac{24}{13}\right),</md>
 about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distances come
-        out exactly: <m>|AP_1| = |AP_3| = \tfrac{25}{13}</m> units and
-        <m>|AP_2| = \tfrac{51}{13}</m> units, so <m>|AP_2| - |AP_1| = 2</m> units
+        out exactly: <m>\|AP_1\| = \|AP_3\| = \tfrac{25}{13}</m> units and
+        <m>\|AP_2\| = \tfrac{51}{13}</m> units, so <m>\|AP_2\| - \|AP_1\| = 2</m> units
         <m>= 24</m> km, as required. In kilometers, Emma is
         <m>\tfrac{300}{13} \approx 23.1</m> km from <m>P_1</m> and <m>P_3</m>.
       </p>
@@ -1462,7 +1480,7 @@ about <m>(17.5,\ 22.2)</m> in kilometers from <m>O</m>. As a check, the distance
       </p>
       <p>
         If the two arrival times differed, the delay would instead give a <em>nonzero</em>
-        difference <m>\bigl||AP_3| - |AP_1|\bigr| = v\,\Delta t</m>, and Emma would lie on a
+        difference <m>\bigl|\,\|AP_3\| - \|AP_1\|\,\bigr| = v\,\Delta t</m>, and Emma would lie on a
         genuine second hyperbola, with foci <m>P_1</m> and <m>P_3</m><mdash/>tilted, since its
         focal axis <m>P_1P_3</m> is not parallel to a coordinate axis. Locating him would then
         mean intersecting the correct branches of <em>two</em> hyperbolas, as in the figure

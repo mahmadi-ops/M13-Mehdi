@@ -30,4 +30,7 @@
 <path transform="matrix(1,0,0,-1.00006,124.634,122.272678)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#000000" d=""/>
 <path transform="matrix(1,0,0,-1.00006,124.634,122.272678)" stroke-width=".79701" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#000000" d="M3.0004 35.6807C-.7225 29.72273-2.22784 22.64003-1.61047 18.24794"/>
 <path transform="matrix(.13914,.99030938,.99025,-.13914834,123.02351,104.023639)" d="M2.59026 0-1.55415 2.0722 0 0-1.55415-2.0722"/>
+<path transform="matrix(1,0,0,-1.00006,124.634,122.272678)" stroke-width=".79701" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ec008c" d="M15.12498 28.10455-.31401 25.93497 12.90779 17.67307"/>
+<path transform="matrix(1,0,0,-1.00006,124.634,122.272678)" stroke-width=".79701" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ec008c" d="M30.5164 35.28168 17.29459 43.54356 15.12498 28.10455"/>
+<path transform="matrix(1,0,0,-1.00006,124.634,122.272678)" stroke-width=".79701" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ec008c" d="M12.90779 17.67307 15.0774 33.11208 30.5164 35.28168"/>
 </svg>

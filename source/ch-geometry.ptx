@@ -4,7 +4,7 @@
      included files, each of which is a <section> of this chapter. -->
 
 <chapter xml:id="chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Geometry</title>
+  <title>3D Space and Vector Algebra</title>
 
   <xi:include href="ch-12-1.ptx" />
   <xi:include href="ch-12-2.ptx" />

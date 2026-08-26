@@ -58,7 +58,7 @@ and collecting terms,
 This is the equation of a plane. Its normal vector is
 <m>\langle 14, -6, -10\rangle = 2\langle 7, -3, -5\rangle</m>, which
 is parallel to
-<m>\vec{AB} = \langle 6-(-1),\, 2-5,\, -2-3\rangle
+<m>\overrightarrow{AB} = \langle 6-(-1),\, 2-5,\, -2-3\rangle
 = \langle 7, -3, -5\rangle</m>. Moreover, the midpoint of
 <m>\overline{AB}</m>,
 <md>
@@ -69,7 +69,7 @@ satisfies the equation, since
 <m>14\left(\frac52\right) - 6\left(\frac72\right)
 - 10\left(\frac12\right) = 35 - 21 - 5 = 9</m>. Hence the set is the
 plane that passes through the midpoint of <m>\overline{AB}</m> and is
-orthogonal to <m>\vec{AB}</m>, i.e. the <term>perpendicular bisector
+orthogonal to <m>\overrightarrow{AB}</m>, i.e. the <term>perpendicular bisector
 plane</term> of the segment <m>\overline{AB}</m>. See
 <xref ref="fig-rw22-bisector"/>.
 </p>
@@ -81,7 +81,7 @@ plane</term> of the segment <m>\overline{AB}</m>. See
 <caption>
 The set of points equidistant from <m>A</m> and <m>B</m> is the plane
 through the midpoint <m>C</m> of <m>\overline{AB}</m> perpendicular to
-<m>\vec{AB}</m>.
+<m>\overrightarrow{AB}</m>.
 </caption>
 <image width="58%">
 <description>
