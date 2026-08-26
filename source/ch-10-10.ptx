@@ -75,9 +75,9 @@ where
 </md>
 and
 <md>
-\binom{m}{k} = \frac{m!}{k!(m-k)!}
-= \frac{m(m-1)(m-2)\cdots(m-k+2)(m-k+1)}{k!}
-\quad\text{for } k \ge 3.
+<mrow>\binom{m}{k} \amp = \frac{m!}{k!(m-k)!}</mrow>
+<mrow>\amp = \frac{m(m-1)(m-2)\cdots(m-k+2)(m-k+1)}{k!}
+\quad\text{for } k \ge 3.</mrow>
 </md>
 </p>
 </assemblage>
@@ -104,8 +104,9 @@ We apply the binomial series with <m>m = 5</m>:
 
 <md>
 <mrow>(1+x)^5 \amp = 1 + \sum_{k=1}^{\infty} \binom{5}{k} x^k</mrow>
-<mrow>\amp = 1 + \binom{5}{1}x + \binom{5}{2}x^2 + \binom{5}{3}x^3
-+ \binom{5}{4}x^4 + \binom{5}{5}x^5 + \binom{5}{6}x^6
+<mrow>\amp = 1 + \binom{5}{1}x + \binom{5}{2}x^2
++ \binom{5}{3}x^3 + \binom{5}{4}x^4</mrow>
+<mrow>\amp \quad + \binom{5}{5}x^5 + \binom{5}{6}x^6
 + \binom{5}{7}x^7 + \cdots</mrow>
 </md>
 </p>
@@ -158,10 +159,9 @@ The first coefficients are
 and for general <m>k</m>,
 
 <md>
-\binom{-2}{k}
-= \frac{(-2)(-2-1)(-2-2)(-2-3)\cdots(-2-k+1)}{k!}
-= (-1)^k \frac{(k+1)!}{k!}
-= (-1)^k (k+1).
+<mrow>\binom{-2}{k} \amp
+= \frac{(-2)(-2-1)(-2-2)(-2-3)\cdots(-2-k+1)}{k!}</mrow>
+<mrow>\amp = (-1)^k \frac{(k+1)!}{k!} = (-1)^k (k+1).</mrow>
 </md>
 </p>
 

@@ -4,5 +4,6 @@
       "Bash(pkill -f \"http.server\")",
       "WebFetch(domain:mahmadi-ops.github.io)"
     ]
-  }
+  },
+  "includeCoAuthoredBy": false
 }
