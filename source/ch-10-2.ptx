@@ -43,8 +43,12 @@ sums.
 
 <introduction>
 <p>
-This section is about infinite series and we will focus on studying its
-definitions, providing some examples such as the geometric series.
+What does it mean to add infinitely many numbers together? In this section
+we answer that question by defining an infinite series and its sequence of
+partial sums, so that convergence of a series becomes a statement about a
+limit we already know how to study. We then put the definition to work on
+the geometric series, whose behavior we can settle completely, and on the
+<m>n</m>th Term Test, which is our first quick check for divergence.
 </p>
 </introduction>
 
@@ -52,50 +56,56 @@ definitions, providing some examples such as the geometric series.
 <subsection xml:id="sec-series-definitions">
 <title>Definitions</title>
 
-<p>
-<ul>
-<li>
+<definition xml:id="def-sequence">
+<title>Sequence</title>
+<statement>
 <p>
 A <term>sequence</term> is a list of numbers,
-<m>a_1, a_2, a_3, \cdots</m>.
+<m>a_1, a_2, a_3, \cdots</m>. An <term>infinite sequence</term> of
+numbers is a function whose domain is the set of positive integers.
 </p>
-</li>
-<li>
+</statement>
+</definition>
+
+<example xml:id="ex-halving-sequence">
+<title>A Sequence of Halves</title>
+<statement>
 <p>
-An <term>infinite sequence</term> of numbers is a function whose domain
-is the set of positive integers.
+The numbers
+<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m> form an
+infinite sequence; its <m>n</m>th term is
+<m>a_n = \left(\dfrac12\right)^{n}</m>.
 </p>
-</li>
-<li>
-<p>
-As an example, consider the infinite sequence of numbers
-<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m>.
-</p>
-</li>
-<li>
+</statement>
+</example>
+
+<definition xml:id="def-infinite-series">
+<title>Infinite Series</title>
+<statement>
 <p>
 The sum of the numbers in an infinite sequence <m>\{a_n\}</m>, i.e.
 <m>a_1 + a_2 + a_3 + \cdots = \displaystyle\sum_{n=1}^{\infty} a_n</m>,
 is called an <term>infinite series</term>. Here <m>a_n</m> is the
 <m>n</m>th term of the series.
 </p>
-</li>
-<li>
+</statement>
+</definition>
+
+<example xml:id="ex-halving-series">
+<title>An Infinite Series with a Finite Sum</title>
+<statement>
 <p>
 Infinite sequences can have finite sums. Consider the sum of the
-previous sequence, i.e.
+sequence from <xref ref="ex-halving-sequence"/>, i.e.
 <m>\dfrac12 + \dfrac14 + \dfrac18 + \dfrac{1}{16} + \cdots = 1</m>.
 </p>
-</li>
-<li>
 <p>
 It is most convenient to evaluate the result of this sum geometrically.
 The above sum corresponds to the area of a square of side one. See
 <xref ref="fig-series-square"/>.
 </p>
-</li>
-</ul>
-</p>
+</statement>
+</example>
 
 <figure xml:id="fig-series-square">
 <caption>
@@ -166,21 +176,22 @@ pattern in the sequence of partial sums?
 <mrow>s_2 \amp = \frac12 + \frac14 = 1 - \frac14</mrow>
 <mrow>s_3 \amp = \frac12 + \frac14 + \frac18 = 1 - \frac18</mrow>
 <mrow>\amp \;\;\vdots</mrow>
-<mrow>s_n \amp = \sum_{k=1}^{n} \left(\frac12\right)^{k} = 1 - \frac{1}{2^{n}}</mrow>
+<mrow xml:id="eq-halving-partial-sum" number="yes">s_n \amp
+= \sum_{k=1}^{n} \left(\frac12\right)^{k} = 1 - \frac{1}{2^{n}}</mrow>
 </md>
 </p>
 
 <p>
-From the above pattern, we can compute the result of the infinite
-series by taking the limit of the partial sum <m>s_n</m> as
-<m>n \to \infty</m>.
+From the pattern in <xref ref="eq-halving-partial-sum"/>, we can compute
+the result of the infinite series by taking the limit of the partial sum
+<m>s_n</m> as <m>n \to \infty</m>.
 
 <md>
-\frac12 + \frac14 + \frac18 + \frac{1}{16} + \cdots
-= \sum_{k=1}^{\infty} \left(\frac12\right)^{k}
-= \lim_{n\to\infty} s_n
-= \lim_{n\to\infty} 1 - \frac{1}{2^{n}}
-= 1
+<mrow>\frac12 + \frac14 + \frac18 + \frac{1}{16} + \cdots
+\amp = \sum_{k=1}^{\infty} \left(\frac12\right)^{k}
+= \lim_{n\to\infty} s_n</mrow>
+<mrow xml:id="eq-halving-sum" number="yes">\amp
+= \lim_{n\to\infty} \left(1 - \frac{1}{2^{n}}\right) = 1</mrow>
 </md>
 </p>
 
@@ -204,7 +215,7 @@ otherwise we say that the series <term>diverges</term>.
 <p>
 An important example of infinite series is the geometric series. The
 <term>geometric series</term> is of the form
-<md>
+<md xml:id="eq-geometric-series" number="yes">
 a + ar + ar^2 + \cdots + ar^{n-1} + \cdots
 = \sum_{n=1}^{\infty} ar^{n-1},
 </md>
@@ -236,18 +247,21 @@ Then deducting <xref ref="eq-series-geo-rsn"/> from
 
 <md>
 <mrow>s_n - r s_n \amp = a - ar^{n}</mrow>
-<mrow>s_n \amp = a\,\frac{1-r^{n}}{1-r}.</mrow>
+<mrow xml:id="eq-geometric-partial-sum" number="yes">s_n \amp
+= a\,\frac{1-r^{n}}{1-r}.</mrow>
 </md>
 </p>
 
 <p>
 Next, to compute the result of the geometric series, we take the limit
-of the partial sum as in the previous example.
+of the partial sum <xref ref="eq-geometric-partial-sum"/> as in the
+previous example.
 
 <md>
-\lim_{n\to\infty} s_n
-= \lim_{n\to\infty} \frac{a(1-r^{n})}{1-r}
-= \frac{a}{1-r} - \frac{a}{1-r}\lim_{n\to\infty} r^{n}
+<mrow>\lim_{n\to\infty} s_n \amp
+= \lim_{n\to\infty} \frac{a(1-r^{n})}{1-r}</mrow>
+<mrow>\amp = \frac{a}{1-r}
+- \frac{a}{1-r}\lim_{n\to\infty} r^{n}</mrow>
 </md>
 </p>
 
@@ -256,8 +270,8 @@ Note that if <m>|r| \lt 1</m>, we have
 <m>\lim\limits_{n\to\infty} r^{n} = 0</m> and hence
 <m>\lim\limits_{n\to\infty} s_n = \dfrac{a}{1-r}</m>, whereas if
 <m>|r| \gt 1</m>, <m>\lim\limits_{n\to\infty} r^{n}</m> diverges and
-therefore the geometric series diverges. The only case left to consider
-is <m>r = 1</m>, which gives the following partial sum
+therefore the geometric series diverges. That leaves the two cases with
+<m>|r| = 1</m>. When <m>r = 1</m>, the partial sum is
 
 <md>
 s_n = a + a + a + \cdots + a = na,
@@ -265,20 +279,42 @@ s_n = a + a + a + \cdots + a = na,
 </p>
 
 <p>
-limit of which diverges. We can say that if <m>|r| \ge 1</m>, the
-geometric series is divergent.
+limit of which diverges.
+</p>
+
+<exercise xml:id="exercise-geometric-r-negative-one">
+<title>What Happens When <m>r = -1</m>?</title>
+<statement>
+<p>
+We have now handled <m>|r| \lt 1</m>, <m>|r| \gt 1</m>, and
+<m>r = 1</m>, but one case is still missing: <m>r = -1</m>. Write out the
+partial sums <m>s_1, s_2, s_3, s_4</m> of the series
+<m>a - a + a - a + \cdots = \displaystyle\sum_{n=1}^{\infty} a(-1)^{n-1}</m>
+for <m>a \neq 0</m>. Does the sequence of partial sums approach a single
+number as <m>n \to \infty</m>? What does that tell you about the series?
+</p>
+</statement>
+<hint>
+<p>
+The partial sums do not grow without bound here, the way they do when
+<m>r = 1</m>. Look instead at whether they settle down to one value.
+</p>
+</hint>
+</exercise>
+
+<p>
+Putting all of the cases together, we can say that if <m>|r| \ge 1</m>,
+the geometric series is divergent.
 </p>
 
 <assemblage xml:id="summary-geometric-series">
 <title>Summary</title>
 <p>
-The geometric series
-<m>a + ar + ar^2 + \cdots + ar^{n-1} + \cdots
-= \displaystyle\sum_{n=1}^{\infty} ar^{n-1}</m>
-converges to <m>\dfrac{a}{1-r}</m> if <m>|r| \lt 1</m>, i.e.
-<md>
-\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r}
-\qquad \text{for} \quad |r| \lt 1,
+The geometric series <xref ref="eq-geometric-series"/> converges to
+<m>\dfrac{a}{1-r}</m> if <m>|r| \lt 1</m>, i.e.
+<md xml:id="eq-geometric-sum" number="yes">
+\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r},
+\qquad |r| \lt 1,
 </md>
 and diverges if <m>|r| \ge 1</m>.
 </p>
@@ -310,12 +346,13 @@ a + 2ar + 2ar^2 + \cdots + 2ar^{n-1} + \cdots
 </p>
 
 <p>
-which can be re-written as
+which can be re-written and then summed with
+<xref ref="eq-geometric-sum"/>, since <m>|r| \lt 1</m> here.
 
 <md>
 <mrow>-a + 2a \amp + 2ar + 2ar^2 + \cdots + 2ar^{n-1} + \cdots</mrow>
 <mrow>\amp = -a + 2\sum_{n=1}^{\infty} ar^{n-1}
-\;\overset{|r| \lt 1}{=}\; -a + 2\,\frac{a}{1-r}</mrow>
+= -a + 2\,\frac{a}{1-r}</mrow>
 <mrow>\amp = \frac{-a + ar + 2a}{1-r} = \frac{a(1+r)}{1-r}.</mrow>
 </md>
 </p>
@@ -491,16 +528,15 @@ Note that in this case
 the partial sum.
 <md>
 <mrow>s_n \amp = \sum_{k=1}^{n} \frac{1}{k(k+1)}
-= \sum_{k=1}^{n} \frac1k - \frac{1}{k+1}</mrow>
+= \sum_{k=1}^{n} \left(\frac1k - \frac{1}{k+1}\right)</mrow>
 <mrow>\amp = \left(\frac11 - \frac12\right)
 + \left(\frac12 - \frac13\right)
-+ \left(\frac13 - \frac14\right)
-+ \cdots
-+ \left(\frac{1}{n-1} - \frac1n\right)
++ \left(\frac13 - \frac14\right) + \cdots</mrow>
+<mrow>\amp \quad + \left(\frac{1}{n-1} - \frac1n\right)
 + \left(\frac1n - \frac{1}{n+1}\right)</mrow>
 <mrow>\amp = 1 - \frac{1}{n+1}</mrow>
 </md>
-<md>
+<md xml:id="eq-telescoping-sum" number="yes">
 \sum_{n=1}^{\infty} \frac{1}{n(n+1)}
 = \lim_{n\to\infty}\left(1 - \frac{1}{n+1}\right) = 1
 </md>
@@ -514,14 +550,14 @@ We begin by writing the infinite series in the sigma notation.
 = \sum_{n=1}^{\infty} \frac49\left(-\frac23\right)^{n-1}
 </md>
 Note that <em>the <m>n</m>th Term Test is not conclusive</em> for this
-one, since <m>\lim\limits_{n\to\infty} a_n = 0</m>. However, we know
-that in a geometric series when <m>|r| \lt 1</m>, the series converges
-to <m>\dfrac{a}{1-r}</m>, hence
+one, since <m>\lim\limits_{n\to\infty} a_n = 0</m>. However, this is a
+geometric series with <m>a = \dfrac49</m> and <m>r = -\dfrac23</m>, so
+<m>|r| \lt 1</m> and <xref ref="eq-geometric-sum"/> applies.
 <md>
-\frac49 - \frac{8}{27} + \frac{16}{81} - \frac{32}{243} + \cdots
-= \sum_{n=1}^{\infty} \frac49\left(-\frac23\right)^{n-1}
-= \frac{\frac49}{1-\left(-\frac23\right)}
-= \frac{4}{15}.
+<mrow>\frac49 - \frac{8}{27} + \frac{16}{81} - \frac{32}{243} + \cdots
+\amp = \sum_{n=1}^{\infty} \frac49\left(-\frac23\right)^{n-1}</mrow>
+<mrow>\amp = \frac{\frac49}{1-\left(-\frac23\right)}
+= \frac{4}{15}.</mrow>
 </md>
 </p>
 </li>
@@ -575,7 +611,8 @@ Evaluate <m>\displaystyle\sum_{n=1}^{\infty}
 </statement>
 <solution>
 <p>
-Note that in our previous examples, we found that
+Note that in <xref ref="eq-telescoping-sum"/> and
+<xref ref="eq-halving-sum"/> we already found that
 
 <md>
 \sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1
@@ -612,16 +649,13 @@ We begin by writing the partial sum <m>s_n</m>.
 
 <md>
 <mrow>s_n \amp = \sum_{k=0}^{n} \ln\!\left(\frac{k+2}{k+1}\right)
-= \sum_{k=0}^{n} \ln(k+2) - \ln(k+1)</mrow>
+= \sum_{k=0}^{n} \left(\ln(k+2) - \ln(k+1)\right)</mrow>
 <mrow>\amp = \left(\ln 2 - \ln 1\right)
 + \left(\ln 3 - \ln 2\right)
-+ \left(\ln 4 - \ln 3\right)
-+ \left(\ln 5 - \ln 4\right)</mrow>
-<mrow>\amp \quad + \cdots
-+ \left(\ln(n+1) - \ln(n)\right)
-+ \left(\ln(n+2) - \ln(n+1)\right)
-= -\ln(1) + \ln(n+2)</mrow>
-<mrow>\amp = \ln(n+2)</mrow>
++ \left(\ln 4 - \ln 3\right) + \cdots</mrow>
+<mrow>\amp \quad + \left(\ln(n+1) - \ln(n)\right)
++ \left(\ln(n+2) - \ln(n+1)\right)</mrow>
+<mrow>\amp = -\ln(1) + \ln(n+2) = \ln(n+2)</mrow>
 </md>
 </p>
 

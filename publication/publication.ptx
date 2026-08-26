@@ -72,15 +72,17 @@
   <directories external="assets" generated="generated-assets"/>
 </source> -->
   <html>
-    <!-- PreFigure diagrams that carry <annotations> are drawn by            -->
-    <!-- diagcess.js, which scans for its .ChemAccess-element target divs    -->
-    <!-- once at page load.  A figure opened afterwards inside a             -->
-    <!-- cross-reference knowl is injected after that scan, so its div stays -->
-    <!-- empty and the diagram never appears.  With "cross-page", a          -->
-    <!-- reference whose target sits on the same page is rendered as an      -->
-    <!-- ordinary link to the figure in place, where the diagram does draw;  -->
-    <!-- references that genuinely cross a page boundary stay knowls.        -->
-    <cross-references knowled="cross-page"/>
+    <!-- "maximum" renders every cross-reference to a numbered object as a  -->
+    <!-- knowl that opens in place and carries an "in context" link, on the  -->
+    <!-- same page as well as across pages; references to divisions stay     -->
+    <!-- ordinary links.  This was "cross-page" because annotated PreFigure  -->
+    <!-- diagrams are drawn by diagcess.js, which scans for its              -->
+    <!-- .ChemAccess-element divs once at page load, so a figure injected    -->
+    <!-- later by a knowl could come up empty.  custom.js watches for those  -->
+    <!-- late arrivals and initializes them (see initLateDiagrams there);    -->
+    <!-- if an annotated figure ever opens blank inside a knowl, that is the -->
+    <!-- code to look at first, not this setting.                            -->
+    <cross-references knowled="maximum"/>
     <webwork divisional="dynamic"/>
   </html>
 </publication>

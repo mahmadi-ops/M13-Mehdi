@@ -45,15 +45,15 @@
           Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on an open interval 
           <m>I</m> containing <m>a</m>. Then for each <m>x\in I</m> and for each positive integer <m>n</m>, there exists a number 
           <m>c</m> between <m>a</m> and <m>x</m> such that
-          <md>
+          <md xml:id="eq-taylor-formula" number="yes">
             f(x) = p_n(x) + R_n(x),
           </md>
           where 
-          <md>
+          <md xml:id="eq-taylor-polynomial" number="yes">
             p_n(x)= \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k,
           </md>
           and
-        <md>
+        <md xml:id="eq-taylor-remainder" number="yes">
           R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}.
         </md>
         </p>
@@ -169,7 +169,7 @@
           Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on an open interval 
           <m>I</m> containing <m>a</m>. Then for each <m>x\in I</m> and for each positive integer <m>n</m>, there exists a number 
           <m>c</m> between <m>a</m> and <m>x</m> such that
-          <md>
+          <md xml:id="eq-remainder-bound" number="yes">
             |R_n(x)| \leq \frac{M}{(n+1)!} |x-a|^{n+1},
           </md>
           where <m>M</m> is an upper bound for <m>|f^{(n+1)}(c)|</m> on the interval between <m>a</m> and <m>x</m>.
@@ -179,7 +179,8 @@
     <proof>
       <p>
         The proof of the remainder estimation theorem is based on the Taylor's formula <xref ref="Taylor-Formula" />. 
-        Suppose that we can find an upper bound <m>M</m> for <m>|f^{(n+1)}(c)|</m> on the interval between <m>a</m> and <m>x</m>, i.e., <m>|f^{(n+1)}(c)| \leq M</m>, then:
+        Suppose that we can find an upper bound <m>M</m> for <m>|f^{(n+1)}(c)|</m> on the interval between <m>a</m> and <m>x</m>, i.e., <m>|f^{(n+1)}(c)| \leq M</m>. Taking absolute values in
+        <xref ref="eq-taylor-remainder"/> then gives:
 <md>
         |R_n(x)| = \left| \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1} \right| \leq \frac{M}{(n+1)!} |x-a|^{n+1}.
       </md>
@@ -203,7 +204,8 @@
     </md>
 </p>
     <p>
-      We will show that this series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>. To do this, we will use the remainder theorem. We have:
+      We will show that this series converges to <m>f(x) = e^x</m> for all <m>x\in \R</m>. To do this, we will use the remainder theorem. Putting <m>a = 0</m> and <m>f^{(n+1)}(c) = e^c</m> into
+      <xref ref="eq-taylor-remainder"/>, we have:
 <md>
       R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} x^{n+1} = \frac{e^c}{(n+1)!} x^{n+1}
     </md>
@@ -372,8 +374,11 @@
       We will use the remainder theorem to bound the error term <m>R_n(x)</m>.
     </p>
     <p>
-      Suppose we want to approximate <m>f(x)</m> using the Taylor polynomial of degree <m>n</m> at <m>x=a</m>. 
-      The error in this approximation is given by <m>R_n(x) = f(x) - p_n(x)</m>. By the remainder theorem, we have:
+      Suppose we want to approximate <m>f(x)</m> using the Taylor polynomial
+      <xref ref="eq-taylor-polynomial"/> of degree <m>n</m> at <m>x=a</m>. 
+      The error in this approximation is given by <m>R_n(x) = f(x) - p_n(x)</m>, which is
+      <xref ref="eq-taylor-formula"/> rearranged. By the remainder theorem
+      <xref ref="eq-taylor-remainder"/>, we have:
 <md>
       R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}
     </md>
@@ -609,12 +614,12 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
       <title>Approximating Relativistic Kinetic Energy</title>
       <p>
         In relativistic mechanics, the mass of an object moving with velocity <m>v</m> is given by: 
-        <md>
+        <md xml:id="eq-relativistic-mass" number="yes">
           m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}}
         </md>
         where <m>m_0</m> is the rest mass of the object and <m>c</m> is the speed of light.
         Then the kinetic energy of an object of mass <m>m</m> moving with velocity <m>v</m> is:
-<md>
+<md xml:id="eq-relativistic-ke" number="yes">
         K = mc^2-m_0c^2
       </md>
 </p>
@@ -758,7 +763,8 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
         
         <solution>
           <p>
-            We can rewrite the kinetic energy as follows:
+            Substituting <xref ref="eq-relativistic-mass"/> into
+            <xref ref="eq-relativistic-ke"/>, we can rewrite the kinetic energy as follows:
 <md>
             K = mc^2-m_0c^2 = m_0c^2 \left( \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} - 1 \right)
           </md>
@@ -773,12 +779,12 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
           <p>
             Now we can use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1 - x}}</m> at <m>x=0</m> 
             to approximate <m>K</m>. The Taylor series for <m>f(x)</m> at <m>x=0</m> is given by:
-<md>
+<md xml:id="eq-inv-sqrt-series" number="yes">
             f(x) = 1 + \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + \cdots
           </md>
 </p>
           <p>
-            Therefore, we have:
+            Subtracting the <m>1</m> from <xref ref="eq-inv-sqrt-series"/>, we have:
 <md>
             K = m_0c^2 \left( \frac{1}{\sqrt{1 - x}} - 1 \right) = m_0c^2 \left( \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + \cdots \right) 
           </md>
@@ -792,7 +798,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 </p>
           <p>
             When <m>v \ll c</m>, the higher order terms in the series become negligible, and we can approximate the kinetic energy as:
-<md>
+<md xml:id="eq-newtonian-ke" number="yes">
             K \approx \frac{1}{2} m_0v^2.
           </md>
 </p>
@@ -805,7 +811,8 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
         <statement>
 <p>
         Assume that a car a moving with a velocity of <m>v = 30 m/s </m> (<m>\approx 67</m> miles per hour). Use the remainder's theorem 
-        to estimate the error in using the Newtonian kinetic energy formula <m>K \approx \frac{1}{2} m_0v^2</m> to approximate 
+        to estimate the error in using the Newtonian kinetic energy formula
+        <xref ref="eq-newtonian-ke"/> to approximate
         the relativistic kinetic energy of the car. The speed of light is <m>c = 3 \times 10^8 m/s</m>.
         </p>
       
@@ -816,9 +823,10 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 
         <solution>
           <p>
-            Note that when using the Newtonian kinetic energy formula, we are using
-             the Taylor polynomial of degree 1 at <m>x=0</m> to approximate <m>K</m>.
-            Therefore, the error term is given by:
+            Note that when using the Newtonian kinetic energy formula, we are keeping only the
+            degree-<m>1</m> term of <xref ref="eq-inv-sqrt-series"/>, i.e. we are using the Taylor
+            polynomial of degree <m>1</m> at <m>x=0</m> to approximate <m>K</m>. Therefore, by
+            <xref ref="eq-taylor-remainder"/> the error term is given by:
 <md>
             R_1(x) = m_0 c^2 \frac{f^{(2)}(c)}{2!} x^2
           </md>
@@ -868,7 +876,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
   (<m>mg\cos\theta</m>, balanced by the string tension
   <m>\vec{\mathbf{F}}_T</m>) and a component tangent to the arc, as shown in
   <xref ref="fig-pendulum-forces"/>, gives the restoring force
-<md>
+<md xml:id="eq-pendulum-force" number="yes">
   F = -mg\sin\theta .
 </md>
 </p>
@@ -883,7 +891,7 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 </p>
 <p>
   The small-angle approximation bridges this gap. From the Taylor series
-<md>
+<md xml:id="eq-sin-series" number="yes">
   \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots,
 </md>
 when <m>\theta</m> is small (in radians) the higher-order terms are
@@ -914,17 +922,14 @@ which you can verify by differentiating twice. The number <m>\omega</m> is the a
   frequency, and <m>\cos(\omega t)</m> and <m>\sin(\omega t)</m> repeat when <m>\omega t</m>
   increases by <m>2\pi</m>. So the motion repeats after a time <m>T</m> with
   <m>\omega T = 2\pi</m>, giving
-<md>
+<md xml:id="eq-pendulum-period" number="yes">
   T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{\ell}{g}} .
 </md>
 </p>
 <p>
-  Thus, for small swings the pendulum behaves as
-  a simple harmonic oscillator, with period
-<md>
-  T = 2\pi\sqrt{\frac{\ell}{g}},
-</md>
-independent of both the amplitude and the mass. Taylor's Remainder Theorem
+  Thus, for small swings the pendulum behaves as a simple harmonic oscillator, with the
+  period <xref ref="eq-pendulum-period"/>, which is
+  independent of both the amplitude and the mass. Taylor's Remainder Theorem
   (see <xref ref="ex-small-angle-pendulum"/>) enables us to quantify how
   small <m>\theta</m> must be for this approximation<mdash/>.
 </p>
@@ -1024,8 +1029,8 @@ independent of both the amplitude and the mass. Taylor's Remainder Theorem
       
       <solution xml:id="sol-small-angle-pendulum">
   <p>
-    In deriving simple harmonic motion for a pendulum, the restoring force
-    is <m>F = -mg\sin\theta</m>, which is proportional to <m>\sin\theta</m>
+    In deriving simple harmonic motion for a pendulum, the restoring force is
+    <xref ref="eq-pendulum-force"/>, which is proportional to <m>\sin\theta</m>
     rather than to the angular displacement <m>\theta</m> itself. The motion
     is therefore not <em>exactly</em> simple harmonic. Giancoli resolves this
     by appealing to the smallness of the angle: for angles below
@@ -1033,7 +1038,8 @@ independent of both the amplitude and the mass. Taylor's Remainder Theorem
     <q>the difference between <m>\theta</m> (in radians) and
     <m>\sin\theta</m> is less than <m>1\%</m></q> <!-- <xref ref="biblio-giancoli"/>. -->
     He notes that this can be seen <q>by looking at the series
-    expansion</q> of <m>\sin\theta</m>, namely
+    expansion</q> of <m>\sin\theta</m>, which is <xref ref="eq-sin-series"/>, carried one
+    term further:
 <md>
     \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}
       - \frac{\theta^7}{7!} + \cdots .
@@ -1047,7 +1053,8 @@ independent of both the amplitude and the mass. Taylor's Remainder Theorem
     <m>p_1(\theta) = \theta</m>. Since the coefficient of <m>\theta^2</m> in
     the series above is zero, we have
     <m>p_1(\theta) = p_2(\theta) = \theta</m>, so the error is controlled by
-    the third derivative: for some <m>c</m> with <m>0 \lt c \lt \theta</m>,
+    the third derivative. By <xref ref="eq-taylor-remainder"/>, for some <m>c</m> with
+    <m>0 \lt c \lt \theta</m>,
 <md>
     \sin\theta - \theta = R_2(\theta)
       = \frac{f'''(c)}{3!}\,\theta^3
@@ -1081,8 +1088,8 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
     boundary of the <q>less than <m>1\%</m></q> regime, and Taylor's
     Remainder Theorem locates the true <m>1\%</m> threshold at
     <m>\theta \approx 14^\circ</m>. This is precisely the range in which the
-    pendulum behaves as a simple harmonic oscillator with period
-    <m>T = 2\pi\sqrt{\ell/g}</m>.
+    pendulum behaves as a simple harmonic oscillator with the period
+    <xref ref="eq-pendulum-period"/>.
   </p>
   <figure xml:id="fig-relative-error-1pct">
   <caption>The relative error <m>\dfrac{|\theta - \sin\theta|}{\sin\theta}</m>
@@ -1166,14 +1173,15 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
       <p>
         The Taylor series for <m>f(x) = \arctan(x)</m> centered at <m>a = 0</m> is
         <md>
-  <mrow>\arctan(x) \amp = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}\, x^{2k+1}</mrow>
+  <mrow xml:id="eq-arctan-series" number="yes">\arctan(x) \amp = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}\, x^{2k+1}</mrow>
   <mrow>\amp = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots, \qquad |x| \le 1.</mrow>
 </md>
         Since <m>\arctan(1) = \dfrac{\pi}{4}</m>, evaluating the series at <m>x = 1</m> gives
         <md>
           \pi = 4\arctan(1) = 4\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots\right).
         </md>
-        Therefore, if <m>T_n(x)</m> denotes the Taylor polynomial of order <m>n</m> for
+        Therefore, if <m>T_n(x)</m> denotes the Taylor polynomial
+        <xref ref="eq-taylor-polynomial"/> of order <m>n</m> for
         <m>\arctan(x)</m> centered at <m>0</m>, we obtain the approximation
         <md>
           \pi \approx 4\,T_n(1).
@@ -1181,7 +1189,7 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
       </p>
 
       <p>
-        To bound the error, we apply Taylor's Remainder Theorem: if
+        To bound the error, we apply <xref ref="eq-remainder-bound"/>: if
         <m>\left|f^{(n+1)}(t)\right| \le M</m> for all <m>t</m> between <m>0</m> and <m>x</m>, then
         <md>
           |R_n(x)| = |f(x) - T_n(x)| \le \frac{M}{(n+1)!}\,|x|^{n+1}.
@@ -1194,7 +1202,7 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
         which can be verified by induction on <m>n</m>. As in <xref ref="rmk-error-upper-bound"/>,
         the bound <m>M</m> is found without locating the intermediate point: since
         <m>|\cos^{n}(\theta)| \le 1</m> and <m>|\sin\!\left(n\left(\theta + \tfrac{\pi}{2}\right)\right)| \le 1</m>, it follows that
-        <md>
+        <md xml:id="eq-arctan-deriv-bound" number="yes">
           \left|f^{(n+1)}(t)\right| \le n! \quad \text{for all } t \in \mathbb{R},
         </md>
         so we may take <m>M = n!</m>. With <m>x = 1</m>, Taylor's Remainder Theorem gives
@@ -1205,7 +1213,7 @@ i.e. about <m>1.1\%</m>. So <m>15^\circ</m> is exactly the round-number
 
       <p>
         Multiplying by <m>4</m>, the error in the approximation of <m>\pi</m> satisfies
-        <md>
+        <md xml:id="eq-pi-error-bound" number="yes">
           \left|\pi - 4\,T_n(1)\right| \le \frac{4}{n+1}.
         </md>
         Since <m>\dfrac{4}{n+1} \to 0</m> as <m>n \to \infty</m>, the error decreases to zero
@@ -1241,11 +1249,11 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
   <introduction>
     <p>
       In <xref ref="ex-approx-pi-arctan"/> we approximated <m>\pi</m> by evaluating the
-      Taylor series for <m>\arctan(x)</m> at <m>x = 1</m>, and Taylor's Remainder Theorem
-      gave the error bound <m>\frac{4}{n+1}</m>, which decreases very slowly. In this
-      guided problem we compute <m>\pi</m> far more efficiently using
+      Taylor series <xref ref="eq-arctan-series"/> at <m>x = 1</m>, and Taylor's Remainder
+      Theorem gave the error bound <xref ref="eq-pi-error-bound"/>, which decreases very
+      slowly. In this guided problem we compute <m>\pi</m> far more efficiently using
       <term>Euler's identity</term>
-      <md>
+      <md xml:id="eq-euler-identity" number="yes">
         \arctan\left(\tfrac{1}{2}\right) + \arctan\left(\tfrac{1}{3}\right) = \frac{\pi}{4},
       </md>
       which lets us evaluate the Taylor series at the small arguments
@@ -1295,7 +1303,8 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
     <statement>
       <p>
         Let <m>T_n(x)</m> be the Taylor polynomial of order <m>n</m> for
-        <m>\arctan(x)</m> centered at <m>0</m>. Use Euler's identity to explain why
+        <m>\arctan(x)</m> centered at <m>0</m>. Use Euler's identity
+        <xref ref="eq-euler-identity"/> to explain why
         <md>
           \pi \approx 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right].
         </md>
@@ -1304,13 +1313,13 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
     </statement>
     <hint>
       <p>
-        Multiply Euler's identity by <m>4</m> and replace each arctangent by its Taylor
-        polynomial.
+        Multiply <xref ref="eq-euler-identity"/> by <m>4</m> and replace each arctangent by
+        its Taylor polynomial.
       </p>
     </hint>
     <solution>
       <p>
-        By Euler's identity,
+        By <xref ref="eq-euler-identity"/>,
         <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>.
         Replacing <m>\arctan(x)</m> by <m>T_n(x)</m> at <m>x=\tfrac12</m> and
         <m>x=\tfrac13</m> gives the stated approximation. For <m>n = 3</m>,
@@ -1330,9 +1339,8 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
     <statement>
       <p>
         In <xref ref="ex-approx-pi-arctan"/> we showed that the derivatives of
-        <m>f(x) = \arctan(x)</m> satisfy
-        <m>\left|f^{(n+1)}(t)\right| \le n!</m> for all <m>t</m>. Use Taylor's Remainder
-        Theorem to show that for <m>|x| \le 1</m>
+        <m>f(x) = \arctan(x)</m> satisfy <xref ref="eq-arctan-deriv-bound"/>. Use
+        <xref ref="eq-remainder-bound"/> to show that for <m>|x| \le 1</m>
         <md>
           \left|\arctan(x) - T_n(x)\right| \le \frac{|x|^{n+1}}{n+1},
         </md>
@@ -1345,19 +1353,19 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
     </statement>
     <hint>
       <p>
-        Apply Taylor's Remainder Theorem with <m>M = n!</m> exactly as in
+        Apply <xref ref="eq-remainder-bound"/> with <m>M = n!</m> exactly as in
         <xref ref="ex-approx-pi-arctan"/>, but keep the factor <m>|x|^{n+1}</m>. Then use
         the triangle inequality on the two remainders.
       </p>
     </hint>
     <solution>
       <p>
-        Taylor's Remainder Theorem with <m>M = n!</m> gives
+        <xref ref="eq-remainder-bound"/> with <m>M = n!</m> gives
         <md>
           |R_n(x)| \le \frac{n!}{(n+1)!}\,|x|^{n+1} = \frac{|x|^{n+1}}{n+1}.
         </md>
         Writing <m>\pi = 4\arctan\left(\tfrac12\right) + 4\arctan\left(\tfrac13\right)</m>
-        and using the triangle inequality,
+        by <xref ref="eq-euler-identity"/> and using the triangle inequality,
         <md>
           <mrow>\left|\pi - 4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
             \amp\le 4\left|R_n\!\left(\tfrac12\right)\right|
@@ -1365,7 +1373,7 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
           <mrow>\amp\le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1}
             + \left(\tfrac13\right)^{n+1}\right].</mrow>
         </md>
-        Unlike the bound <m>\frac{4}{n+1}</m> at <m>x = 1</m>, this bound decays
+        Unlike the bound <xref ref="eq-pi-error-bound"/> at <m>x = 1</m>, this bound decays
         <em>geometrically</em>: each increase of <m>n</m> by one cuts it by better than
         half.
       </p>
