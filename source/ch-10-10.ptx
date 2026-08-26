@@ -36,38 +36,258 @@ Expand functions such as <m>(x+1)^5</m>, <m>(x+1)^{-2}</m>, and
 
 <introduction>
 <p>
-From algebra we already know how to expand a power of a binomial when
-the exponent is a positive integer: the <term>Binomial Theorem</term>
-says that
+We have already seen one of the applications of the Taylor series,
+namely approximating a function by a polynomial of degree <m>n</m>. In
+this section we study two more applications of the Taylor series: the
+binomial series and estimating/evaluating non-elementary integrals.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-binomial-series">
+<title>Binomial Series</title>
+
+<p>
+Before we try powers such as <m>(1+x)^{-2}</m> or
+<m>\sqrt{1+x}</m>, let us look at what happens when the exponent is an
+ordinary positive integer, where nothing beyond multiplication is
+needed. Multiplying out by hand,
 
 <md>
-(1+x)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
-= 1 + nx + \frac{n(n-1)}{2!}x^2 + \cdots + nx^{n-1} + x^n,
+<mrow>(1+x)^1 \amp = 1 + x,</mrow>
+<mrow>(1+x)^2 \amp = 1 + 2x + x^2,</mrow>
+<mrow>(1+x)^3 \amp = 1 + 3x + 3x^2 + x^3,</mrow>
+<mrow>(1+x)^4 \amp = 1 + 4x + 6x^2 + 4x^3 + x^4.</mrow>
+</md>
+</p>
+
+<p>
+Two features stand out. First, each expansion <em>stops</em>: the power
+<m>(1+x)^n</m> gives a polynomial with exactly <m>n+1</m> terms.
+Second, the coefficients are far from random. Stripping them out and
+stacking one row per exponent gives the array in
+<xref ref="fig-pascals-triangle"/>.
+</p>
+
+<figure xml:id="fig-pascals-triangle">
+<caption>
+Pascal's triangle. Row <m>n</m> holds the coefficients of
+<m>(1+x)^n</m>. Every row begins and ends with <m>1</m>, and each
+remaining entry is the sum of the two entries above it; the arrows
+show the <m>3 + 3 = 6</m> of the last row.
+</caption>
+<image width="52%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pascals-triangle">
+<diagram dimensions="(200,180)" margins="8">
+<coordinates bbox="(-1.9,-3.15,1.9,0.4)">
+<group at="pt-row-0">
+  <label anchor="(0.00,-0.00)" alignment="c"><m>1</m></label>
+</group>
+<group at="pt-row-1">
+  <label anchor="(-0.40,-0.70)" alignment="c"><m>1</m></label>
+  <label anchor="(0.40,-0.70)" alignment="c"><m>1</m></label>
+</group>
+<group at="pt-row-2">
+  <label anchor="(-0.80,-1.40)" alignment="c"><m>1</m></label>
+  <label anchor="(0.00,-1.40)" alignment="c"><m>2</m></label>
+  <label anchor="(0.80,-1.40)" alignment="c"><m>1</m></label>
+</group>
+<group at="pt-row-3">
+  <label anchor="(-1.20,-2.10)" alignment="c"><m>1</m></label>
+  <label anchor="(-0.40,-2.10)" alignment="c"><m>3</m></label>
+  <label anchor="(0.40,-2.10)" alignment="c"><m>3</m></label>
+  <label anchor="(1.20,-2.10)" alignment="c"><m>1</m></label>
+</group>
+<group at="pt-row-4">
+  <label anchor="(-1.60,-2.80)" alignment="c"><m>1</m></label>
+  <label anchor="(-0.80,-2.80)" alignment="c"><m>4</m></label>
+  <label anchor="(0.00,-2.80)" alignment="c"><m>6</m></label>
+  <label anchor="(0.80,-2.80)" alignment="c"><m>4</m></label>
+  <label anchor="(1.60,-2.80)" alignment="c"><m>1</m></label>
+</group>
+<group at="pt-addition">
+  <line p1="(-0.40,-2.30)" p2="(-0.09,-2.58)" stroke="#D55E00" thickness="2" arrows="1"/>
+  <line p1="(0.40,-2.30)" p2="(0.09,-2.58)" stroke="#D55E00" thickness="2" arrows="1"/>
+</group>
+</coordinates>
+
+<annotations>
+  <annotation ref="figure" text="Pascal's triangle, five rows, arranged so that each row is centered below the one before it. Row n holds the coefficients of one plus x to the n. Every row begins and ends with one, and each remaining entry is the sum of the two entries just above it.">
+    <annotation ref="pt-row-0" text="Row 0: one. These are the coefficients of one plus x to the zero, which is one."/>
+    <annotation ref="pt-row-1" text="Row 1: one, one. These are the coefficients of one plus x."/>
+    <annotation ref="pt-row-2" text="Row 2: one, two, one. These are the coefficients of one plus x squared."/>
+    <annotation ref="pt-row-3" text="Row 3: one, three, three, one. These are the coefficients of one plus x cubed."/>
+    <annotation ref="pt-row-4" text="Row 4: one, four, six, four, one. These are the coefficients of one plus x to the fourth."/>
+    <annotation ref="pt-addition" text="Two arrows showing the addition rule: the three and the three in row three point down to the six directly below them in row four, because three plus three is six."/>
+  </annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+This array is called <term>Pascal's triangle</term>. Every row starts
+and ends with <m>1</m>, and each remaining entry is the sum of the two
+entries just above it <mdash/> the <m>6</m> in the bottom row, for
+instance, is <m>3 + 3</m>. That rule alone produces the next expansion
+with no multiplying at all: the following row is
+<m>1,\, 5,\, 10,\, 10,\, 5,\, 1</m>, and therefore
+<m>(1+x)^5 = 1 + 5x + 10x^2 + 10x^3 + 5x^4 + x^5</m>.
+</p>
+
+<p>
+The triangle tells us <em>what</em> the coefficients are, but not yet
+<em>why</em>. For that, look at where a term of the expansion actually
+comes from. Written out in full, the fourth power is
+
+<md xml:id="eq-fourth-power" number="yes">
+(1+x)^4 = (1+x)(1+x)(1+x)(1+x),
 </md>
 
-where the coefficients <m>\binom{n}{k}</m> are the familiar entries of
-Pascal's triangle. For instance,
-<m>(1+x)^3 = 1 + 3x + 3x^2 + x^3</m>. The essential feature here is
-that the expansion <em>stops</em>: it is a polynomial with exactly
-<m>n+1</m> terms.
+and multiplying this out means walking through the four factors,
+picking either the <m>1</m> or the <m>x</m> out of each one, and
+multiplying the four picks together. Every term of the expansion arises
+that way, from one such set of picks. So to land on <m>x^3</m> we must
+take the <m>x</m> from exactly three of the four factors, and the
+<m>1</m> from the single factor left over. The question <q>what is the
+coefficient of <m>x^3</m>?</q> has turned into a counting question:
+<em>in how many ways can we choose <m>3</m> of the <m>4</m> factors to
+hand us an <m>x</m>?</em>
+</p>
+
+<figure xml:id="fig-binomial-choose-x3">
+<caption>
+The four ways to produce <m>x^3</m> from
+<m>(1+x)(1+x)(1+x)(1+x)</m>. Each row picks one term out of every
+factor: an <m>x</m> from three of them (colored arrows) and the
+<m>1</m> from the fourth (gray arrow). Four rows, so the coefficient
+of <m>x^3</m> is <m>4</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-binomial-choose-x3">
+<diagram dimensions="(640,420)" margins="10">
+<coordinates bbox="(0.4,-6.4,12.4,0.9)">
+<group at="row-1">
+  <label anchor="(1.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-0.90)" p2="(1.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.89,-0.90)" p2="(3.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-0.90)" p2="(5.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.30,-0.90)" p2="(7.30,-0.30)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-0.00)" alignment="e"><m>x\cdot x\cdot x\cdot 1 = x^3</m></label>
+</group>
+<group at="row-2">
+  <label anchor="(1.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-2.65)" p2="(1.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.89,-2.65)" p2="(3.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-2.65)" p2="(7.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.30,-2.65)" p2="(5.30,-2.05)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-1.75)" alignment="e"><m>x\cdot x\cdot 1\cdot x = x^3</m></label>
+</group>
+<group at="row-3">
+  <label anchor="(1.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-4.40)" p2="(1.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-4.40)" p2="(5.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-4.40)" p2="(7.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.30,-4.40)" p2="(3.30,-3.80)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-3.50)" alignment="e"><m>x\cdot 1\cdot x\cdot x = x^3</m></label>
+</group>
+<group at="row-4">
+  <label anchor="(1.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(3.89,-6.15)" p2="(3.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-6.15)" p2="(5.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-6.15)" p2="(7.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(1.30,-6.15)" p2="(1.30,-5.55)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-5.25)" alignment="e"><m>1\cdot x\cdot x\cdot x = x^3</m></label>
+</group>
+</coordinates>
+
+<annotations>
+  <annotation ref="figure" text="Four rows. Each row shows the product one plus x written four times, with arrows pointing up at the one term picked out of each factor: an x from three of the factors, drawn as orange arrows, and the one from the remaining factor, drawn as a gray arrow. Every row multiplies out to x cubed, and the four rows are the only ways to do it, so the coefficient of x cubed is four.">
+    <annotation ref="row-1" text="The first way: the x is taken from the first, second and third factors, and the one from the fourth factor. Multiplying the four picks gives x times x times x times one, which is x cubed."/>
+    <annotation ref="row-2" text="The second way: the x is taken from the first, second and fourth factors, and the one from the third factor. Multiplying the four picks gives x times x times one times x, which is x cubed."/>
+    <annotation ref="row-3" text="The third way: the x is taken from the first, third and fourth factors, and the one from the second factor. Multiplying the four picks gives x times one times x times x, which is x cubed."/>
+    <annotation ref="row-4" text="The fourth way: the x is taken from the second, third and fourth factors, and the one from the first factor. Multiplying the four picks gives one times x times x times x, which is x cubed."/>
+  </annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+There are four such choices and no others, so multiplying out
+<xref ref="eq-fourth-power"/> produces <m>x^3</m> four times and its
+coefficient is <m>4</m> <mdash/> exactly the entry
+sitting in the row <m>1,\, 4,\, 6,\, 4,\, 1</m>. Nothing here was
+special to <m>x^3</m> or to the fourth power. In <m>(1+x)^n</m> the
+coefficient of <m>x^k</m> counts the ways of choosing <m>k</m> of the
+<m>n</m> factors to supply an <m>x</m>, the remaining <m>n-k</m>
+factors supplying a <m>1</m>. That count is written
+<m>\binom{n}{k}</m> and read <q>n choose k</q>, and counting the
+choices gives the formula
+
+<md xml:id="eq-binom-factorial" number="yes">
+\binom{n}{k} = \frac{n!}{k!\,(n-k)!}.
+</md>
+
+The addition rule we noticed in the triangle is a consequence of the
+same count.<fn>
+  Sort the four rows of <xref ref="fig-binomial-choose-x3"/> by what
+  the <em>last</em> factor contributes. In three of them it hands over
+  its <m>x</m>, so the two remaining <m>x</m>'s come from the first
+  three factors; there are <m>\binom{3}{2} = 3</m> ways to pick which
+  two, namely <m>\{1,2\}</m>, <m>\{1,3\}</m> and <m>\{2,3\}</m>, and
+  these are precisely the second, third and fourth rows of the figure.
+  In the row left over the last factor hands over its <m>1</m>, so all
+  three <m>x</m>'s come from the first three factors, and there is
+  only <m>\binom{3}{3} = 1</m> way to do that. Hence
+  <m>\binom{4}{3} = \binom{3}{2} + \binom{3}{3} = 3 + 1 = 4</m>, which
+  is why the <m>4</m> in the row <m>1,\, 4,\, 6,\, 4,\, 1</m> sits
+  directly below the <m>3</m> and the <m>1</m> above it. Nothing
+  depended on the particular numbers: a choice of <m>k</m> factors out
+  of <m>n</m> either uses the last factor or it does not, so
+  <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m> in general.
+</fn>
+</p>
+
+<p>
+Putting the count together with the expansion gives the
+<term>Binomial Theorem</term>:
+
+<md xml:id="eq-binomial-theorem" number="yes">
+(1+x)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
+= 1 + nx + \frac{n(n-1)}{2!}x^2 + \cdots + nx^{n-1} + x^n.
+</md>
 </p>
 
 <p>
 But what if the exponent is <em>not</em> a positive integer? Could we
 expand something like <m>(1+x)^{-2}</m>, or
 <m>\sqrt{1+x} = (1+x)^{1/2}</m>, in the same spirit? At first the idea
-seems doomed: the factorial formula
-<m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m> makes no sense when
-<m>n = \frac12</m>. However, the equivalent <q>falling product</q> form
+seems doomed: the factorial formula <xref ref="eq-binom-factorial"/>
+makes no sense when <m>n = \frac12</m>. However, the equivalent <q>falling product</q> form
 
-<md>
+<md xml:id="eq-binom-falling" number="yes">
 \binom{m}{k} = \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}
 </md>
 
 asks only that we start at <m>m</m> and multiply <m>k</m> numbers,
 each one less than the previous <mdash/> and that recipe works for
-<em>any</em> real number <m>m</m>. It also explains why the Binomial
-Theorem terminates: when <m>m</m> is a non-negative integer, the
+<em>any</em> real number <m>m</m>. It also explains why the Binomial Theorem
+<xref ref="eq-binomial-theorem"/> terminates: when <m>m</m> is a non-negative integer, the
 factor <m>(m-m) = 0</m> eventually appears in the product, killing
 every coefficient from <m>k = m+1</m> on. When <m>m</m> is negative or
 fractional, no factor is ever zero, so the expansion never stops:
@@ -80,33 +300,22 @@ series give us exactly the right framework to justify it.
 Indeed, the Taylor series generated by <m>f(x) = (1+x)^m</m> at
 <m>x = 0</m> is
 
-<md>
+<md xml:id="eq-binomial-taylor" number="yes">
 1 + mx + \frac{m(m-1)}{2!}x^2 + \cdots
 + \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}x^k + \cdots,
 </md>
 
-with precisely the coefficients predicted above. This series is known
-as the <term>binomial series</term>.
+with precisely the coefficients that <xref ref="eq-binom-falling"/>
+predicts. The series <xref ref="eq-binomial-taylor"/> is known as the
+<term>binomial series</term>.
 </p>
 
-<p>
-We have already seen one of the applications of the Taylor series,
-namely approximating a function by a polynomial of degree <m>n</m>. In
-this section we study two more applications of the Taylor series: the
-binomial series and estimating/evaluating non-elementary integrals.
-</p>
-
-</introduction>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-binomial-series">
-<title>Binomial Series</title>
 
 <assemblage xml:id="summary-binomial-series">
 <title>Binomial Series</title>
 <p>
 For <m>-1 \lt x \lt 1</m>,
-<md>
+<md xml:id="eq-binomial-series" number="yes">
 (1+x)^m = 1 + \sum_{k=1}^{\infty} \binom{m}{k} x^k
 </md>
 where
@@ -124,11 +333,9 @@ and
 </assemblage>
 
 <p>
-<term>Remark:</term> If <m>m</m> is an integer greater than or equal to
-zero, the series stops after <m>(m+1)</m> terms because the
-coefficients from <m>k = m+1</m> on are zero, and if <m>m</m> is not a
-positive integer or zero, the series is infinite and converges for
-<m>|x| \lt 1</m>.
+<term>Remark:</term> The binomial series <xref ref="eq-binomial-series"/>
+converges for
+<m>|x| \lt 1</m>. We will not prove this in these notes.
 </p>
 
 <example xml:id="example-binomial-positive">
@@ -141,7 +348,8 @@ series.
 </statement>
 <solution>
 <p>
-We apply the binomial series with <m>m = 5</m>:
+We apply the binomial series <xref ref="eq-binomial-series"/> with
+<m>m = 5</m>:
 
 <md>
 <mrow>(1+x)^5 \amp = 1 + \sum_{k=1}^{\infty} \binom{5}{k} x^k</mrow>
@@ -180,7 +388,8 @@ series.
 </statement>
 <solution>
 <p>
-We apply the binomial series with <m>m = -2</m>:
+We apply the binomial series <xref ref="eq-binomial-series"/> with
+<m>m = -2</m>:
 
 <md>
 (1+x)^{-2} = 1 + \sum_{k=1}^{\infty} \binom{-2}{k} x^k
@@ -210,10 +419,10 @@ and for general <m>k</m>,
 Hence
 
 <md>
-<mrow>(1+x)^{-2} \amp = 1 + \sum_{k=1}^{\infty} \binom{-2}{k} x^k
-= 1 - 2x + 3x^2 + \sum_{k=3}^{\infty} (-1)^k (k+1) x^k</mrow>
-<mrow>\amp = 1 - 2x + 3x^2 - 4x^3 + 5x^4 - 6x^5 + \cdots
-+ (-1)^k (k+1) x^k + \cdots</mrow>
+<mrow>(1+x)^{-2} \amp = 1 + \sum_{k=1}^{\infty} \binom{-2}{k} x^k</mrow>
+<mrow>\amp = 1 - 2x + 3x^2 + \sum_{k=3}^{\infty} (-1)^k (k+1) x^k</mrow>
+<mrow>\amp = 1 - 2x + 3x^2 - 4x^3 + 5x^4 - 6x^5 + \cdots</mrow>
+<mrow>\amp \quad + (-1)^k (k+1) x^k + \cdots</mrow>
 </md>
 </p>
 
@@ -234,7 +443,8 @@ terms.
 </statement>
 <solution>
 <p>
-We apply the binomial series with <m>m = \frac12</m>:
+We apply the binomial series <xref ref="eq-binomial-series"/> with
+<m>m = \frac12</m>:
 
 <md>
 (1+x)^{\frac12} = 1 + \sum_{k=1}^{\infty} \binom{\frac12}{k} x^k
@@ -332,7 +542,7 @@ series with two, three, and five terms. On the interval
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-binomial-applications">
-<title>Applications of Taylor Series</title>
+<title>Applications</title>
 
 <p>
 Many integrals that arise in practice cannot be expressed in terms of
@@ -361,8 +571,8 @@ and compute an upper bound for the error of your estimate.
 <p>
 The antiderivative of <m>\dfrac{1}{\sqrt{1-x^3}}</m> is not an
 elementary function, so we replace the integrand by its binomial
-series. We apply the binomial series with <m>m = -\frac12</m>,
-substituting <m>-x^3</m> for <m>x</m>:
+series. We apply the binomial series <xref ref="eq-binomial-series"/>
+with <m>m = -\frac12</m>, substituting <m>-x^3</m> for <m>x</m>:
 
 <md>
 (1-x^3)^{-\frac12}
@@ -386,14 +596,14 @@ The first coefficients are
 
 so that for <m>|x| \lt 1</m>,
 
-<md>
+<md xml:id="eq-integrand-series" number="yes">
 \frac{1}{\sqrt{1-x^3}}
 = 1 + \frac{x^3}{2} + \frac{3x^6}{8} + \frac{5x^9}{16} + \cdots.
 </md>
 </p>
 
 <p>
-Integrating term by term,
+Integrating <xref ref="eq-integrand-series"/> term by term,
 
 <md>
 <mrow>\int_0^{1/3} \frac{1}{\sqrt{1-x^3}} \, dx
@@ -435,7 +645,7 @@ geometric series with ratio <m>\frac{1}{27}</m>,
 </md>
 
 Therefore the two-term estimate <m>0.334877</m> is correct to within
-<m>2.6 \times 10^{-5}</m>, i.e. accurate to four decimal places.
+<m>2.6 \times 10^{-5}</m>.
 </p>
 </solution>
 </example>
@@ -456,13 +666,13 @@ Use series to evaluate
 From <xref ref="example-binomial-fractional"/> we have the binomial
 series
 
-<md>
+<md xml:id="eq-sqrt-series" number="yes">
 \sqrt{1+u} = 1 + \frac{u}{2} - \frac{u^2}{8} + \frac{u^3}{16}
 - \cdots, \qquad |u| \lt 1.
 </md>
 
 Near <m>x = 0</m> the quantity <m>\sin x</m> is small, so we may
-substitute <m>u = \sin x</m>:
+substitute <m>u = \sin x</m> in <xref ref="eq-sqrt-series"/>:
 
 <md>
 \sqrt{1 + \sin x}
@@ -481,8 +691,8 @@ involves powers <m>x^3</m> and higher. Collecting powers of
 <md>
 <mrow>\sqrt{1 + \sin x}
 \amp = 1 + \frac12\left(x - \frac{x^3}{6} + \cdots\right)
-- \frac18\left(x^2 - \cdots\right)
-+ \frac{1}{16}\left(x^3 - \cdots\right) - \cdots</mrow>
+- \frac18\left(x^2 - \cdots\right)</mrow>
+<mrow>\amp \quad + \frac{1}{16}\left(x^3 - \cdots\right) - \cdots</mrow>
 <mrow>\amp = 1 + \frac{x}{2} - \frac{x^2}{8}
 - \frac{x^3}{48} + \cdots.</mrow>
 </md>
@@ -499,9 +709,9 @@ Hence the numerator is
 and dividing by <m>x^2</m> gives
 
 <md>
-\lim_{x \to 0} \frac{\sqrt{1 + \sin x} - 1 - \frac{x}{2}}{x^2}
-= \lim_{x \to 0}\left(-\frac18 - \frac{x}{48} + \cdots\right)
-= -\frac18.
+<mrow>\lim_{x \to 0} \frac{\sqrt{1 + \sin x} - 1 - \frac{x}{2}}{x^2}
+\amp = \lim_{x \to 0}\left(-\frac18 - \frac{x}{48} + \cdots\right)</mrow>
+<mrow>\amp = -\frac18.</mrow>
 </md>
 </p>
 
