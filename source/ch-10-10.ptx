@@ -96,13 +96,6 @@ this section we study two more applications of the Taylor series: the
 binomial series and estimating/evaluating non-elementary integrals.
 </p>
 
-<figure xml:id="fig-binomial-series-video">
-<caption>Beyond the Binomial Theorem: how the binomial expansion
-extends from positive integer powers to arbitrary real powers.</caption>
-<video xml:id="video-binomial-series-intro"
-       youtube="6kykYQK19No"
-       width="90%" aspect="16:9"/>
-</figure>
 </introduction>
 
 <!-- ================================================================ -->
@@ -335,6 +328,193 @@ series with two, three, and five terms. On the interval
 </figure>
 </solution>
 </example>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-binomial-applications">
+<title>Applications of Taylor Series</title>
+
+<p>
+Many integrals that arise in practice cannot be expressed in terms of
+elementary functions. Replacing the integrand by its Taylor series and
+integrating term by term produces a series for the integral, and the
+partial sums of that series give numerical estimates whose accuracy we
+can control. Taylor series also give an efficient way to evaluate
+limits of indeterminate form, often faster than repeated applications
+of l'H&#xf4;pital's rule.
+</p>
+
+<example xml:id="example-binomial-integral-estimate">
+<title>Estimating a non-elementary integral</title>
+<statement>
+<p>
+Use the binomial series to estimate
+
+<md>
+\int_0^{1/3} \frac{1}{\sqrt{1-x^3}} \, dx,
+</md>
+
+and compute an upper bound for the error of your estimate.
+</p>
+</statement>
+<solution>
+<p>
+The antiderivative of <m>\dfrac{1}{\sqrt{1-x^3}}</m> is not an
+elementary function, so we replace the integrand by its binomial
+series. We apply the binomial series with <m>m = -\frac12</m>,
+substituting <m>-x^3</m> for <m>x</m>:
+
+<md>
+(1-x^3)^{-\frac12}
+= 1 + \sum_{k=1}^{\infty} \binom{-\frac12}{k} (-x^3)^k.
+</md>
+</p>
+
+<p>
+The first coefficients are
+
+<md>
+<mrow>\binom{-\frac12}{1}(-1)^1 \amp = \frac12,</mrow>
+<mrow>\binom{-\frac12}{2}(-1)^2 \amp
+= \frac{\left(-\frac12\right)\left(-\frac32\right)}{2!}
+= \frac{3}{8},</mrow>
+<mrow>\binom{-\frac12}{3}(-1)^3 \amp
+= -\frac{\left(-\frac12\right)\left(-\frac32\right)
+\left(-\frac52\right)}{3!}
+= \frac{5}{16},</mrow>
+</md>
+
+so that for <m>|x| \lt 1</m>,
+
+<md>
+\frac{1}{\sqrt{1-x^3}}
+= 1 + \frac{x^3}{2} + \frac{3x^6}{8} + \frac{5x^9}{16} + \cdots.
+</md>
+</p>
+
+<p>
+Integrating term by term,
+
+<md>
+<mrow>\int_0^{1/3} \frac{1}{\sqrt{1-x^3}} \, dx
+\amp = \left[ x + \frac{x^4}{8} + \frac{3x^7}{56}
++ \frac{x^{10}}{32} + \cdots \right]_0^{1/3}</mrow>
+<mrow>\amp = \frac13 + \frac{1}{8 \cdot 3^4}
++ \frac{3}{56 \cdot 3^7} + \frac{1}{32 \cdot 3^{10}} + \cdots</mrow>
+<mrow>\amp = \frac13 + \frac{1}{648} + \frac{1}{40824}
++ \frac{1}{1889568} + \cdots.</mrow>
+</md>
+</p>
+
+<p>
+Using the first two terms,
+
+<md>
+\int_0^{1/3} \frac{1}{\sqrt{1-x^3}} \, dx
+\approx \frac13 + \frac{1}{648} = \frac{217}{648} \approx 0.334877.
+</md>
+</p>
+
+<p>
+<term>Upper bound for the error.</term> All the terms of the series
+are positive, so the error of the estimate is exactly the sum of the
+omitted terms, beginning with <m>a_2 = \frac{1}{40824}</m>. Each term
+of the series contains a factor <m>x^{3}</m> more than the one before
+it, and on our interval <m>x^3 \le \left(\frac13\right)^3 =
+\frac{1}{27}</m>; since the remaining factors in the ratio of
+consecutive terms are all less than <m>1</m>, each omitted term is
+less than <m>\frac{1}{27}</m> times the previous one. Comparing with a
+geometric series with ratio <m>\frac{1}{27}</m>,
+
+<md>
+<mrow>\text{Error} \amp \lt a_2\left(1 + \frac{1}{27}
++ \frac{1}{27^2} + \cdots\right)
+= \frac{1}{40824} \cdot \frac{1}{1 - \frac{1}{27}}</mrow>
+<mrow>\amp = \frac{1}{40824} \cdot \frac{27}{26}
+\lt 2.6 \times 10^{-5}.</mrow>
+</md>
+
+Therefore the two-term estimate <m>0.334877</m> is correct to within
+<m>2.6 \times 10^{-5}</m>, i.e. accurate to four decimal places.
+</p>
+</solution>
+</example>
+
+<example xml:id="example-binomial-limit">
+<title>Evaluating a limit</title>
+<statement>
+<p>
+Use series to evaluate
+
+<md>
+\lim_{x \to 0} \frac{\sqrt{1 + \sin x} - 1 - \frac{x}{2}}{x^2}.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+From <xref ref="example-binomial-fractional"/> we have the binomial
+series
+
+<md>
+\sqrt{1+u} = 1 + \frac{u}{2} - \frac{u^2}{8} + \frac{u^3}{16}
+- \cdots, \qquad |u| \lt 1.
+</md>
+
+Near <m>x = 0</m> the quantity <m>\sin x</m> is small, so we may
+substitute <m>u = \sin x</m>:
+
+<md>
+\sqrt{1 + \sin x}
+= 1 + \frac{\sin x}{2} - \frac{\sin^2 x}{8} + \frac{\sin^3 x}{16}
+- \cdots.
+</md>
+</p>
+
+<p>
+Now replace <m>\sin x</m> by its Maclaurin series
+<m>\sin x = x - \frac{x^3}{3!} + \cdots</m>, so that
+<m>\sin^2 x = x^2 - \frac{x^4}{3} + \cdots</m> and every later term
+involves powers <m>x^3</m> and higher. Collecting powers of
+<m>x</m>,
+
+<md>
+<mrow>\sqrt{1 + \sin x}
+\amp = 1 + \frac12\left(x - \frac{x^3}{6} + \cdots\right)
+- \frac18\left(x^2 - \cdots\right)
++ \frac{1}{16}\left(x^3 - \cdots\right) - \cdots</mrow>
+<mrow>\amp = 1 + \frac{x}{2} - \frac{x^2}{8}
+- \frac{x^3}{48} + \cdots.</mrow>
+</md>
+</p>
+
+<p>
+Hence the numerator is
+
+<md>
+\sqrt{1 + \sin x} - 1 - \frac{x}{2}
+= -\frac{x^2}{8} - \frac{x^3}{48} + \cdots,
+</md>
+
+and dividing by <m>x^2</m> gives
+
+<md>
+\lim_{x \to 0} \frac{\sqrt{1 + \sin x} - 1 - \frac{x}{2}}{x^2}
+= \lim_{x \to 0}\left(-\frac18 - \frac{x}{48} + \cdots\right)
+= -\frac18.
+</md>
+</p>
+
+<p>
+Notice that the constant terms and the <m>\frac{x}{2}</m> terms cancel
+exactly; the limit is decided by the coefficient of <m>x^2</m> in the
+series for <m>\sqrt{1+\sin x}</m>. Evaluating the same limit by
+l'H&#xf4;pital's rule would require differentiating the numerator
+twice, a much longer computation.
+</p>
+</solution>
+</example>
+
 </subsection>
 
 </section>
