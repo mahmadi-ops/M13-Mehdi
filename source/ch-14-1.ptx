@@ -228,15 +228,15 @@ example, consider our previous example of
 \quad\Longleftrightarrow\quad
 x^2 + y^2 = 1 - c,
 </md>
-so each level curve is a circle centered at the origin, of radius
-<m>\sqrt{1-c}</m>. Taking
-<m>c = -2, -1, 0, \tfrac14, \tfrac12</m> gives
+so by <xref ref="eq-fsv-level-curves"/> each level curve is a circle
+centered at the origin, of radius <m>\sqrt{1-c}</m>. Taking the equally spaced values
+<m>c = \tfrac12, 0, -\tfrac12, -1, -\tfrac32</m> gives
 <md>
-<mrow>c = -2 \amp\;\Rightarrow\; x^2+y^2 = 3
-      \amp\qquad c = \tfrac12 \amp\;\Rightarrow\; x^2+y^2 = \tfrac12</mrow>
-<mrow>c = -1 \amp\;\Rightarrow\; x^2+y^2 = 2
-      \amp\qquad c = \tfrac34 \amp\;\Rightarrow\; x^2+y^2 = \tfrac14</mrow>
-<mrow>c = 0 \amp\;\Rightarrow\; x^2+y^2 = 1 \amp \amp</mrow>
+<mrow>c = \tfrac12 \amp\;\Rightarrow\; x^2+y^2 = \tfrac12
+      \amp\qquad c = -1 \amp\;\Rightarrow\; x^2+y^2 = 2</mrow>
+<mrow>c = 0 \amp\;\Rightarrow\; x^2+y^2 = 1
+      \amp\qquad c = -\tfrac32 \amp\;\Rightarrow\; x^2+y^2 = \tfrac52</mrow>
+<mrow>c = -\tfrac12 \amp\;\Rightarrow\; x^2+y^2 = \tfrac32 \amp \amp</mrow>
 </md>
 <xref ref="fig-fsv-level-curves-3d"/> shows these curves drawn on the
 surface itself: each one is the intersection of the graph with a
@@ -245,8 +245,9 @@ horizontal plane <m>z = c</m>.
 
 <figure xml:id="fig-fsv-level-curves-3d">
 <caption>
-Level curves of <m>f(x,y) = 1 - x^2 - y^2</m> drawn on the surface. The
-curve at height <m>c</m> is the intersection of the graph with the
+Level curves of <m>f(x,y) = 1 - x^2 - y^2</m> drawn on the surface at the
+equally spaced heights <m>c = \tfrac12, 0, -\tfrac12, -1, -\tfrac32</m>.
+The curve at height <m>c</m> is the intersection of the graph with the
 horizontal plane <m>z = c</m>; higher values of <m>c</m> give smaller
 circles.
 </caption>
@@ -274,28 +275,29 @@ the top of the dome and grow larger further down.
           domain=0:1.79, y domain=0:360, samples=13, samples y=31,
           z buffer=sort]
   ({x*cos(y)},{x*sin(y)},{1-x^2});
-% level curves at c = 3/4, 1/2, 0, -1, -2  (radii sqrt(1-c))
+% level curves at the equally spaced heights c = 1/2, 0, -1/2, -1, -3/2
+% (radii sqrt(1-c))
 \addplot3[very thick, orange, domain=0:360, samples=48]
-  ({0.5*cos(x)},{0.5*sin(x)},{0.75});
-\addplot3[very thick, purple!70!black, domain=0:360, samples=48]
   ({0.7071*cos(x)},{0.7071*sin(x)},{0.5});
-\addplot3[very thick, cyan!60!black, domain=0:360, samples=48]
+\addplot3[very thick, purple!70!black, domain=0:360, samples=48]
   ({cos(x)},{sin(x)},{0});
+\addplot3[very thick, cyan!60!black, domain=0:360, samples=48]
+  ({1.2247*cos(x)},{1.2247*sin(x)},{-0.5});
 \addplot3[very thick, green!50!black, domain=0:360, samples=48]
   ({1.4142*cos(x)},{1.4142*sin(x)},{-1});
 \addplot3[very thick, black, domain=0:360, samples=48]
-  ({1.7321*cos(x)},{1.7321*sin(x)},{-2});
-% labels
-\node[orange, anchor=west] at (axis description cs:1.02,0.86)
-  {$z=3/4$};
-\node[purple!70!black, anchor=west] at (axis description cs:1.02,0.76)
+  ({1.5811*cos(x)},{1.5811*sin(x)},{-1.5});
+% labels, spaced as evenly as the levels they name
+\node[orange, anchor=west] at (axis description cs:1.02,0.80)
   {$z=1/2$};
-\node[cyan!60!black, anchor=west] at (axis description cs:1.02,0.66)
+\node[purple!70!black, anchor=west] at (axis description cs:1.02,0.68)
   {$z=0$};
+\node[cyan!60!black, anchor=west] at (axis description cs:1.02,0.56)
+  {$z=-1/2$};
 \node[green!50!black, anchor=west] at (axis description cs:1.02,0.44)
   {$z=-1$};
-\node[black, anchor=west] at (axis description cs:1.02,0.22)
-  {$z=-2$};
+\node[black, anchor=west] at (axis description cs:1.02,0.32)
+  {$z=-3/2$};
 \end{axis}
 \end{tikzpicture}
 ]]></latex-image>
@@ -316,17 +318,17 @@ gentle.
 <caption>
 The contour map of <m>f(x,y) = 1 - x^2 - y^2</m>, obtained by projecting
 the level curves of <xref ref="fig-fsv-level-curves-3d"/> down into the
-<m>xy</m>-plane. Each circle is labelled with the value <m>c</m> of the
-function along it.
+<m>xy</m>-plane. The contour interval is constant, <m>\Delta c = \tfrac12</m>;
+the legend gives the value of <m>c</m> along each circle.
 </caption>
 <image width="66%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-fsv-contour">
 <diagram dimensions="(360,360)" margins="12">
-<definition>c1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
-<definition>c2(t) = (0.7071*cos(t), 0.7071*sin(t))</definition>
-<definition>c3(t) = (1*cos(t), 1*sin(t))</definition>
+<definition>c1(t) = (0.7071*cos(t), 0.7071*sin(t))</definition>
+<definition>c2(t) = (1*cos(t), 1*sin(t))</definition>
+<definition>c3(t) = (1.2247*cos(t), 1.2247*sin(t))</definition>
 <definition>c4(t) = (1.4142*cos(t), 1.4142*sin(t))</definition>
-<definition>c5(t) = (1.7321*cos(t), 1.7321*sin(t))</definition>
+<definition>c5(t) = (1.5811*cos(t), 1.5811*sin(t))</definition>
 <coordinates bbox="(-2.1,-2.1,2.1,2.1)">
 <axes at="ct-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <parametric-curve at="ct-c1" function="c1" domain="(0,6.2832)"
@@ -339,30 +341,22 @@ function along it.
                   stroke="#009E73" thickness="2.5"/>
 <parametric-curve at="ct-c5" function="c5" domain="(0,6.2832)"
                   stroke="black" thickness="2.5"/>
-<label at="ct-l1" anchor="(0.36,0.36)" alignment="ne" color="#E69F00">
-<m>c=\tfrac34</m>
-</label>
-<label at="ct-l2" anchor="(0.50,-0.50)" alignment="se" color="#8B1A4A">
-<m>c=\tfrac12</m>
-</label>
-<label at="ct-l3" anchor="(-0.707,0.707)" alignment="nw" color="#0072B2">
-<m>c=0</m>
-</label>
-<label at="ct-l4" anchor="(-1.0,-1.0)" alignment="sw" color="#009E73">
-<m>c=-1</m>
-</label>
-<label at="ct-l5" anchor="(0,1.7321)" alignment="n">
-<m>c=-2</m>
-</label>
+<legend anchor="(-2.08,2.08)" alignment="se" scale="0.85" opacity="1">
+<item ref="ct-c1"><m>c=\tfrac12</m></item>
+<item ref="ct-c2"><m>c=0</m></item>
+<item ref="ct-c3"><m>c=-\tfrac12</m></item>
+<item ref="ct-c4"><m>c=-1</m></item>
+<item ref="ct-c5"><m>c=-\tfrac32</m></item>
+</legend>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="Five concentric circles centred at the origin in the x y plane, each drawn in a different colour and labelled with a value of c. The smallest, in amber, is c equals three quarters; going outwards they are c equals one half, c equals zero, c equals negative one, and the largest, in black, is c equals negative two.">
-  <annotation ref="ct-c1" text="The level curve where f equals three quarters, a circle of radius one half. It is the innermost circle, so the largest values of f occur near the origin."/>
-  <annotation ref="ct-c2" text="The level curve where f equals one half, a circle of radius one over root two."/>
-  <annotation ref="ct-c3" text="The level curve where f equals zero, the unit circle."/>
+<annotation ref="figure" text="Five concentric circles centred at the origin in the x y plane, each drawn in a different colour, with a legend in the upper left giving the value of c on each. The values step down by one half, from c equals one half on the innermost circle to c equals negative three halves on the outermost.">
+  <annotation ref="ct-c1" text="The level curve where f equals one half, a circle of radius one over root two. It is the innermost circle, so the largest values of f occur near the origin."/>
+  <annotation ref="ct-c2" text="The level curve where f equals zero, the unit circle."/>
+  <annotation ref="ct-c3" text="The level curve where f equals negative one half, a circle of radius root three over two."/>
   <annotation ref="ct-c4" text="The level curve where f equals negative one, a circle of radius root two."/>
-  <annotation ref="ct-c5" text="The level curve where f equals negative two, a circle of radius root three. The circles spread further apart as c decreases, which tells us the surface is steepest near the rim."/>
+  <annotation ref="ct-c5" text="The level curve where f equals negative three halves, a circle of radius root five over two. Because c steps down by the same amount from one circle to the next, the circles crowd closer together further out, which tells us the surface is steepest near the rim."/>
 </annotation>
 </annotations>
 </diagram>
@@ -406,20 +400,18 @@ intersections with the planes <m>z = c</m> are ellipses.
 
 <figure xml:id="fig-fsv-elliptic-contour">
 <caption>
-Level curves of <m>g(x,y) = x^2 + \frac{y^2}{4}</m> for
-<m>c = 0.1, 0.2, \ldots, 1</m>. Each is an ellipse twice as long in the
-<m>y</m>-direction as in the <m>x</m>-direction.
+Level curves of <m>g(x,y) = x^2 + \frac{y^2}{4}</m> for the equally
+spaced values <m>c = 0.2, 0.4, \ldots, 1</m>. Each is an ellipse twice as
+long in the <m>y</m>-direction as in the <m>x</m>-direction.
 </caption>
 <image width="60%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-fsv-elliptic">
 <diagram dimensions="(330,420)" margins="12">
-<definition>e1(t) = (0.3162*cos(t), 0.6325*sin(t))</definition>
-<definition>e2(t) = (0.4472*cos(t), 0.8944*sin(t))</definition>
-<definition>e3(t) = (0.5477*cos(t), 1.0954*sin(t))</definition>
-<definition>e4(t) = (0.6325*cos(t), 1.2649*sin(t))</definition>
-<definition>e5(t) = (0.7071*cos(t), 1.4142*sin(t))</definition>
-<definition>e6(t) = (0.8367*cos(t), 1.6733*sin(t))</definition>
-<definition>e7(t) = (1*cos(t), 2*sin(t))</definition>
+<definition>e1(t) = (0.4472*cos(t), 0.8944*sin(t))</definition>
+<definition>e2(t) = (0.6325*cos(t), 1.2649*sin(t))</definition>
+<definition>e3(t) = (0.7746*cos(t), 1.5492*sin(t))</definition>
+<definition>e4(t) = (0.8944*cos(t), 1.7889*sin(t))</definition>
+<definition>e5(t) = (1*cos(t), 2*sin(t))</definition>
 <coordinates bbox="(-1.45,-2.35,1.45,2.35)">
 <axes at="el-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <parametric-curve at="el-e1" function="e1" domain="(0,6.2832)"
@@ -431,23 +423,20 @@ Level curves of <m>g(x,y) = x^2 + \frac{y^2}{4}</m> for
 <parametric-curve at="el-e4" function="e4" domain="(0,6.2832)"
                   stroke="#57B36B" thickness="2"/>
 <parametric-curve at="el-e5" function="e5" domain="(0,6.2832)"
-                  stroke="#8ACE88" thickness="2"/>
-<parametric-curve at="el-e6" function="e6" domain="(0,6.2832)"
-                  stroke="#BFE3A6" thickness="2"/>
-<parametric-curve at="el-e7" function="e7" domain="(0,6.2832)"
                   stroke="#E5D93C" thickness="2.5"/>
-<label at="el-lab" anchor="(1.05,2.05)" alignment="ne" color="#B8AE20">
-<m>c=1</m>
-</label>
-<label at="el-lab2" anchor="(0.34,0.68)" alignment="ne" color="#00441B">
-<m>c=0.1</m>
-</label>
+<legend anchor="(-1.42,2.32)" alignment="se" scale="0.85" opacity="1">
+<item ref="el-e1"><m>c=0.2</m></item>
+<item ref="el-e2"><m>c=0.4</m></item>
+<item ref="el-e3"><m>c=0.6</m></item>
+<item ref="el-e4"><m>c=0.8</m></item>
+<item ref="el-e5"><m>c=1.0</m></item>
+</legend>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="A family of nested ellipses centred at the origin, all twice as tall as they are wide. They are shaded from dark green for the innermost, where c equals nought point one, out to yellow for the outermost, where c equals one.">
-  <annotation ref="el-e1" text="The innermost level curve, where g equals nought point one."/>
-  <annotation ref="el-e7" text="The outermost level curve, where g equals one. It is the ellipse x squared plus y squared over four equals one, crossing the x axis at plus and minus one and the y axis at plus and minus two."/>
+<annotation ref="figure" text="Five nested ellipses centred at the origin, all twice as tall as they are wide, with a legend in the upper left. They are shaded from dark green for the innermost, where c equals nought point two, out to yellow for the outermost, where c equals one, in equal steps of nought point two.">
+  <annotation ref="el-e1" text="The innermost level curve, where g equals nought point two."/>
+  <annotation ref="el-e5" text="The outermost level curve, where g equals one. It is the ellipse x squared plus y squared over four equals one, crossing the x axis at plus and minus one and the y axis at plus and minus two."/>
   <annotation ref="el-axes" text="The ellipses are stretched along the y axis because the y term is divided by four, so reaching a given height takes twice the distance in y that it does in x."/>
 </annotation>
 </annotations>
@@ -460,7 +449,8 @@ Level curves of <m>g(x,y) = x^2 + \frac{y^2}{4}</m> for
 <caption>
 The elliptic paraboloid <m>z = g(x,y) = x^2 + \frac{y^2}{4}</m>. Slicing
 it with a horizontal plane <m>z = c</m> produces the ellipses of
-<xref ref="fig-fsv-elliptic-contour"/>.
+<xref ref="fig-fsv-elliptic-contour"/>; the rings drawn here are at the
+same equally spaced heights <m>c = 0.2, 0.4, \ldots, 1</m>.
 </caption>
 <image width="72%">
 <description>
@@ -487,13 +477,16 @@ different heights.
           domain=0:1, y domain=0:360, samples=13, samples y=31,
           z buffer=sort]
   ({x*cos(y)},{2*x*sin(y)},{x^2});
-% a few level ellipses on the surface
+% level ellipses at the equally spaced heights z = 0.2, 0.4, 0.6, 0.8, 1,
+% matching the contour map
 \addplot3[very thick, green!25!black, domain=0:360, samples=48]
   ({0.4472*cos(x)},{0.8944*sin(x)},{0.2});
 \addplot3[very thick, green!45!black, domain=0:360, samples=48]
   ({0.6325*cos(x)},{1.2649*sin(x)},{0.4});
 \addplot3[very thick, green!60!black, domain=0:360, samples=48]
   ({0.7746*cos(x)},{1.5492*sin(x)},{0.6});
+\addplot3[very thick, green!80!black, domain=0:360, samples=48]
+  ({0.8944*cos(x)},{1.7889*sin(x)},{0.8});
 \addplot3[very thick, yellow!70!black, domain=0:360, samples=48]
   ({cos(x)},{2*sin(x)},{1});
 \node[green!35!black, anchor=west] at (axis description cs:1.02,0.72)
@@ -525,11 +518,11 @@ f(x,y,z) = c.
 </p>
 
 <p>
-For example, the level surfaces of
+For example, taking <xref ref="eq-fsv-level-surface"/> with
 <md>
 f(x,y,z) = x^2 + y^2 + z^2
 </md>
-are the spheres with equation <m>x^2+y^2+z^2 = c</m>, drawn in
+gives the spheres with equation <m>x^2+y^2+z^2 = c</m>, drawn in
 <xref ref="fig-fsv-level-spheres"/> for <m>c = 1, 4, 9</m>. Each sphere
 collects the points at which <m>f</m> takes one fixed value; as <m>c</m>
 grows the spheres grow with it. For functions of four or more variables
@@ -578,9 +571,14 @@ constant.
 \node[green!35!black, anchor=west]  at (2.6,1.9) {$x^2+y^2+z^2=1$};
 \node[orange!60!black, anchor=west] at (2.6,1.35) {$x^2+y^2+z^2=4$};
 \node[cyan!55!black, anchor=west]   at (2.6,0.8) {$x^2+y^2+z^2=9$};
-\draw[gray, thin] (2.55,1.9) -- (0.42,0.42);
-\draw[gray, thin] (2.55,1.35) -- (1.05,0.95);
-\draw[gray, thin] (2.55,0.8) -- (1.75,1.5);
+% leaders, each ending on the surface it names: the visible caps lie below
+% the cut plane, so the endpoints sit on the arcs of radius 0.8, 1.6, 2.4
+\draw[gray, thin] (2.55,1.9) -- (0.655,-0.459);
+\draw[gray, thin] (2.55,1.35) -- (1.31,-0.918);
+\draw[gray, thin] (2.55,0.8) -- (1.966,-1.377);
+\fill[green!45!black] (0.655,-0.459) circle (1.3pt);
+\fill[orange!60!black] (1.31,-0.918) circle (1.3pt);
+\fill[cyan!55!black] (1.966,-1.377) circle (1.3pt);
 \end{tikzpicture}
 ]]></latex-image>
 </image>
@@ -659,12 +657,19 @@ upwards above the origin and one opening downwards below it.
   xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
   hide axis, clip=false,
 ]
-% x^2 + y^2 = z^2  ->  r = |z|
+% x^2 + y^2 = z^2  ->  r = |z|.  The two nappes are drawn as separate
+% patches, each running down to z = 0, so that they meet in a true apex
+% instead of being joined by a band of quadrilaterals.
 \addplot3[surf, shader=flat, fill=orange!30, draw=orange!60!black,
           fill opacity=0.55, draw opacity=0.45,
-          domain=-1.7:1.7, y domain=0:360, samples=16, samples y=41,
+          domain=-1.7:0, y domain=0:360, samples=9, samples y=41,
           z buffer=sort]
-  ({abs(x)*cos(y)},{abs(x)*sin(y)},{x});
+  ({-x*cos(y)},{-x*sin(y)},{x});
+\addplot3[surf, shader=flat, fill=orange!30, draw=orange!60!black,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=0:1.7, y domain=0:360, samples=9, samples y=41,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{x});
 \node at (axis cs:0,0,-2.5) {$g(x,y,z)=0$};
 \end{axis}
 % ============ right: two sheets, c < 0 ============
@@ -691,6 +696,34 @@ upwards above the origin and one opening downwards below it.
 \end{tikzpicture}
 ]]></latex-image>
 </image>
+</figure>
+
+<figure xml:id="fig-fsv-level-surface-morph">
+<caption>
+The same three cases, animated. As <m>c</m> passes through zero the
+hyperboloid of two sheets closes up into the cone and then opens out into
+the hyperboloid of one sheet.
+</caption>
+<interactive xml:id="interactive-level-surface-morph"
+             iframe="level-surface-morph.html" width="100%" aspect="1:1">
+<instructions>
+<p>
+The surface shown is the level surface <m>g(x,y,z) = x^2+y^2-z^2 = c</m>.
+Drag the <m>c</m> slider, or press <q>Play</q> to sweep <m>c</m> from
+<m>-4</m> to <m>4</m> and back. Every horizontal slice is a circle of
+radius <m>\sqrt{c+z^2}</m>: for <m>c \gt 0</m> that radius is defined for
+every <m>z</m>, so the surface is a single sheet pinched to a waist of
+radius <m>\sqrt c</m> in the <m>xy</m>-plane; for <m>c \lt 0</m> it needs
+<m>|z| \ge \sqrt{-c}</m>, so the surface breaks into two bowls with a gap
+between them; and at <m>c = 0</m> the waist and the gap both shrink to the
+single point where the two nappes of the cone meet. The buttons jump
+straight to the three cases. <q>Cone ghost</q> keeps the <m>c = 0</m> cone
+on screen faintly, so you can watch both hyperboloids hug it as
+<m>|c|</m> gets small. Drag the figure to change the viewpoint, or press
+<q>Spin</q> to let it turn.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </example>

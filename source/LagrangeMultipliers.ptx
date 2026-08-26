@@ -54,8 +54,10 @@ function <m>f(x,y)</m> over regions of the plane. In this section we
 learn how to find the extrema of a function whose domain is restricted to
 a subset of the plane such as a curve, namely the problem
 <md xml:id="eq-lagrange-problem" number="yes">
-\text{maximize or minimize } f(x,y) \quad
-\text{subject to the constraint } g(x,y) = 0.
+\begin{aligned}
+\amp \text{maximize or minimize } f(x,y) \\
+\amp \text{subject to the constraint } g(x,y) = 0.
+\end{aligned}
 </md>
 More generally, one can impose several constraints on a function of many
 variables; here we work with a single constraint on a function of two or
@@ -384,13 +386,15 @@ If we picture the graph of <m>f(x,y) = xy</m>, a saddle-shaped surface,
 then restricting the inputs <m>(x,y)</m> to the ellipse traces a curve on
 that surface, and we are after the highest and lowest points of this
 curve. We wish to find the extrema of <m>f(x,y) = xy</m> subject to the
-constraint
+constraint <xref ref="eq-lagrange-ellipse"/>, written in the form required
+by <xref ref="eq-lagrange-method"/>:
 <md xml:id="eq-lagrange-ellipse-constraint" number="yes">
 g(x,y) = \frac{x^2}{8} + \frac{y^2}{2} - 1 = 0.
 </md>
 </p>
 <p>
-We begin by computing the gradients of both functions:
+To apply <xref ref="eq-lagrange-method"/> we begin by computing the
+gradients of both functions:
 <md>
 <mrow>\nabla f \amp= y\,\hat{\imath} + x\,\hat{\jmath}</mrow>
 <mrow>\nabla g \amp= \frac{x}{4}\,\hat{\imath} + y\,\hat{\jmath}.</mrow>
@@ -633,11 +637,12 @@ the plane is the closest point to <m>P_0</m>. As
 the shortest distance meets the plane perpendicularly, so the vector
 <m>\overrightarrow{P_0 P}</m> must be parallel to the normal vector
 <m>\mathbf n = \hat{\imath} + 2\,\hat{\jmath} + \hat{k}</m> of the plane:
-<md xml:id="eq-lagrange-normal-parallel">
+<md>
 <mrow>\overrightarrow{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
-<mrow>\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
+<mrow xml:id="eq-lagrange-normal-parallel" number="yes">\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
 </md>
-We then substitute the above equations into the equation of the plane:
+We then substitute <xref ref="eq-lagrange-normal-parallel"/> into the
+equation of the plane:
 <md xml:id="eq-lagrange-normal-solve">
 <mrow>(\lambda + 1) + 2(2\lambda) + (\lambda - 2) \amp= 4
 \;\Rightarrow\; \lambda = \frac{5}{6}</mrow>

@@ -450,7 +450,7 @@ x^3 = (y^3)^3 = y^9 = y \amp\Rightarrow y(y^8 - 1) = 0
 Therefore, the two partials are zero at the points <m>(-1,-1)</m>,
 <m>(1,1)</m>, and <m>(0,0)</m>, as shown in
 <xref ref="fig-quartic-critical-points"/>. Next we compute the Hessian
-and apply the second derivative test. We have
+<xref ref="eq-hessian"/> and apply the second derivative test. We have
 <m>f_{xx} = 12x^2</m>, <m>f_{yy} = 12y^2</m>, and
 <m>f_{xy} = f_{yx} = -4</m>, so that
 <md xml:id="eq-quartic-hessian" number="yes">
@@ -610,14 +610,17 @@ We subtract the first equation from the second one:
 </md>
 </p>
 <p>
-We compute the Hessian:
+We compute the Hessian <xref ref="eq-hessian"/>:
 <md xml:id="eq-distance-hessian" number="yes">
-H(x,y) =
+\begin{aligned}
+H(x,y) \amp =
 \begin{vmatrix}
 f_{xx} \amp f_{xy} \\
 f_{xy} \amp f_{yy}
 \end{vmatrix}
-= f_{xx}f_{yy} - f_{xy}^2 = (4)(10) - (4)^2 = 24 \gt 0.
+= f_{xx}f_{yy} - f_{xy}^2 \\
+\amp = (4)(10) - (4)^2 = 24 \gt 0.
+\end{aligned}
 </md>
 </p>
 <p>
