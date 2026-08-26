@@ -1,6 +1,6 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-lim-paths-figure" speech2="A coordinate plane with the point a comma b marked in orange, located by dashed lines dropped to the two axes. Four green curves of different shapes come in towards that point from different directions, two of them carrying arrowheads, showing that a point may approach a comma b along infinitely many different paths.">
+    <annotation id="prefigure-lim-paths-figure" speech2="A coordinate plane with the point a comma b marked in orange, located by dashed lines dropped to the two axes. Four green curves of different shapes come in towards that point from different directions, each ending in an arrowhead at the point, showing that a point may approach a comma b along infinitely many different paths.">
       <grouped>prefigure-lim-paths-figure</grouped>
       <position>1</position>
       <children>
@@ -25,21 +25,21 @@
         <grouped>prefigure-lim-paths-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-lim-paths-lp-c1" speech2="One path approaching the point from above, curving as it comes in.">
+    <annotation id="prefigure-lim-paths-lp-c1" speech2="One path approaching the point from above, curving as it comes in, with an arrowhead at the point.">
       <active>prefigure-lim-paths-lp-c1</active>
       <position>2</position>
       <parents>
         <grouped>prefigure-lim-paths-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-lim-paths-lp-c2" speech2="A second path approaching from the upper left.">
+    <annotation id="prefigure-lim-paths-lp-c2" speech2="A second path approaching from the upper left, with an arrowhead at the point.">
       <active>prefigure-lim-paths-lp-c2</active>
       <position>3</position>
       <parents>
         <grouped>prefigure-lim-paths-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-lim-paths-lp-c3" speech2="A third path approaching from the right along a curve.">
+    <annotation id="prefigure-lim-paths-lp-c3" speech2="A third path approaching from the upper right along a curve, with an arrowhead at the point.">
       <active>prefigure-lim-paths-lp-c3</active>
       <position>4</position>
       <parents>

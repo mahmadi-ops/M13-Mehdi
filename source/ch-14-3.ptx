@@ -223,13 +223,13 @@ following partial derivatives at the point
 
 <solution>
 <p>
-<alert>A.</alert> Treating <m>y</m> as a constant, we have
-<m>f_x = -2x</m> and therefore
+<alert>A.</alert> By <xref ref="eq-pd-as-ordinary-x"/>, treating <m>y</m>
+as a constant, we have <m>f_x = -2x</m> and therefore
 <m>f_x(1/2,1/2) = -2(1/2) = -1</m>.
 </p>
 <p>
-<alert>B.</alert> Treating <m>x</m> as a constant, we have
-<m>f_y = -2y</m> and therefore
+<alert>B.</alert> By <xref ref="eq-pd-as-ordinary-y"/>, treating <m>x</m>
+as a constant, we have <m>f_y = -2y</m> and therefore
 <m>f_y(1/2,1/2) = -2(1/2) = -1</m>.
 </p>
 </solution>
@@ -467,19 +467,19 @@ following partial derivatives.
 <p>
 <alert>A.</alert>
 <md>
-f_{yx} = \frac{\partial}{\partial y}
+<mrow>f_{yx} \amp = \frac{\partial}{\partial y}
 \left(\frac{\partial}{\partial x}\cos(xy^2)\right)
-= \frac{\partial}{\partial y}\left(-y^2\sin(xy^2)\right)
-= -2y\sin(xy^2) - 2xy^3\cos(xy^2)
+= \frac{\partial}{\partial y}\left(-y^2\sin(xy^2)\right)</mrow>
+<mrow>\amp = -2y\sin(xy^2) - 2xy^3\cos(xy^2)</mrow>
 </md>
 </p>
 <p>
 <alert>B.</alert>
 <md>
-f_{xy} = \frac{\partial}{\partial x}
+<mrow>f_{xy} \amp = \frac{\partial}{\partial x}
 \left(\frac{\partial}{\partial y}\cos(xy^2)\right)
-= \frac{\partial}{\partial x}\left(-2xy\sin(xy^2)\right)
-= -2y\sin(xy^2) - 2xy^3\cos(xy^2)
+= \frac{\partial}{\partial x}\left(-2xy\sin(xy^2)\right)</mrow>
+<mrow>\amp = -2y\sin(xy^2) - 2xy^3\cos(xy^2)</mrow>
 </md>
 </p>
 <p>
@@ -535,17 +535,18 @@ Consider
 
 <solution>
 <p>
-We notice that the mixed derivative theorem applies, so
+We notice that the mixed derivative theorem <xref ref="eq-mixed-derivative"/>
+applies, so
 <m>f_{xy} = f_{yx}</m>, and that it is faster to compute
 <m>f_{yx}</m>. The reason is that differentiating with respect to
 <m>x</m> first annihilates the entire second term, which depends on
 <m>y</m> alone and is unpleasant to differentiate:
 <md>
-f_{xy} = f_{yx} = \frac{\partial}{\partial y}\left(
+<mrow>f_{xy} = f_{yx} \amp = \frac{\partial}{\partial y}\left(
 \frac{\partial}{\partial x}\left(\cos(x^2 y)
-+ \frac{e^{(y^2+y+1)}}{y^2+5}\right)\right)
-= \frac{\partial}{\partial y}\left(-2xy\sin(x^2y)\right)
-= -2x\sin(x^2y) - 2x^3y\cos(x^2y).
++ \frac{e^{(y^2+y+1)}}{y^2+5}\right)\right)</mrow>
+<mrow>\amp = \frac{\partial}{\partial y}\left(-2xy\sin(x^2y)\right)</mrow>
+<mrow>\amp = -2x\sin(x^2y) - 2x^3y\cos(x^2y).</mrow>
 </md>
 Hence
 <md>

@@ -294,8 +294,9 @@ and therefore
 <alert>Method 2: without using the chain rule.</alert> We can substitute
 first and then differentiate:
 <md>
-w = f(x,y) = xy \;\Rightarrow\; w(t) = \cos t \sin t
-= \frac{1}{2}\sin(2t) \;\Rightarrow\; \frac{dw}{dt} = \cos(2t),
+<mrow>w = f(x,y) = xy \amp \;\Rightarrow\; w(t) = \cos t \sin t
+= \frac{1}{2}\sin(2t)</mrow>
+<mrow>\amp \;\Rightarrow\; \frac{dw}{dt} = \cos(2t),</mrow>
 </md>
 so again
 <md>
@@ -642,8 +643,8 @@ The halfway point is
 </md>
 and therefore
 <md>
-\left.\frac{dT}{dt}\right|_{(3,5)} = (-2)(3) - (4)(5) = -26
-\text{ degrees Fahrenheit per unit time}.
+<mrow>\left.\frac{dT}{dt}\right|_{(3,5)} \amp = (-2)(3) - (4)(5) = -26</mrow>
+<mrow>\amp \text{degrees Fahrenheit per unit time}.</mrow>
 </md>
 </p>
 <p>

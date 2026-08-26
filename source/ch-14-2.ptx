@@ -42,7 +42,10 @@ continuous.
 </ul>
 </objectives>
 
-<introduction>
+<!-- ================================================================ -->
+<subsection xml:id="sec-lim-two-variable">
+<title>Limits of Two-Variable Functions</title>
+
 <p>
 For <m>y = f(x)</m>, we could ask what value the function approaches when
 <m>x</m> approaches <m>a \in \R</m>, and there were two possible
@@ -52,6 +55,62 @@ which we denoted by <m>\lim_{x\to a^-} f(x)</m> and
 <m>\lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = L \in \R</m>, then
 <m>\lim_{x\to a} f(x) = L</m>.
 </p>
+
+<figure xml:id="fig-lim-one-variable">
+<caption>
+For <m>y = f(x)</m> there are only two ways to approach <m>x = a</m>:
+from the left and from the right. When both one-sided limits agree, their
+common value <m>L</m> is <m>\lim_{x\to a} f(x)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lim-one-variable">
+<diagram dimensions="(420,280)" margins="12">
+<definition>f(x) = 1.8 + 0.42*(x-2.2) - 0.18*(x-2.2)^2</definition>
+<definition>curve(t) = (t, f(t))</definition>
+<!-- the two one-sided approaches, each parametrised to land on x = a at t = 1 -->
+<definition>left(t) = (2.2 - 1.05*(1-t), f(2.2 - 1.05*(1-t)))</definition>
+<definition>right(t) = (2.2 + 1.15*(1-t), f(2.2 + 1.15*(1-t)))</definition>
+<coordinates bbox="(-0.6,-0.55,4.7,3.05)">
+<axes at="l1-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="l1-curve" function="curve" domain="(0.3,4.35)"
+                  stroke="#555555" thickness="2"/>
+<line at="l1-vert" endpoints="((2.2,0),(2.2,1.8))" stroke="#888888"
+      dash="3 3" thickness="1"/>
+<line at="l1-horiz" endpoints="((0,1.8),(2.2,1.8))" stroke="#888888"
+      dash="3 3" thickness="1"/>
+<parametric-curve at="l1-left" function="left" domain="(0,1)"
+                  stroke="#0072B2" thickness="4" arrows="1"
+                  arrow-location="0.65"/>
+<parametric-curve at="l1-right" function="right" domain="(0,1)"
+                  stroke="#D55E00" thickness="4" arrows="1"
+                  arrow-location="0.65"/>
+<point at="l1-P" p="(2.2,1.8)" fill="black"/>
+<label at="l1-left-lab" anchor="(1.28,1.22)" alignment="sw" color="#0072B2">
+<m>x \to a^-</m>
+</label>
+<label at="l1-right-lab" anchor="(3.15,2.12)" alignment="ne" color="#D55E00">
+<m>x \to a^+</m>
+</label>
+<label at="l1-a" anchor="(2.2,-0.06)" alignment="s"><m>a</m></label>
+<label at="l1-L" anchor="(-0.06,1.8)" alignment="w"><m>L</m></label>
+<label at="l1-f" anchor="(4.35,1.55)" alignment="sw" color="#555555">
+<m>y=f(x)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The graph of a function y equals f of x in the plane. A point on the graph above x equals a is marked, and dashed lines run from it to a on the x axis and to L on the y axis. The piece of the graph just to the left of a is drawn thick in blue with an arrow pointing right towards the marked point, and the piece just to the right is drawn thick in orange with an arrow pointing left towards it, so the point is approached from only two directions.">
+  <annotation ref="l1-left" text="The approach from the left, x tending to a from below. Along this piece of the graph the height tends to L."/>
+  <annotation ref="l1-right" text="The approach from the right, x tending to a from above. Along this piece too the height tends to L."/>
+  <annotation ref="l1-P" text="The point a comma L on the graph. Because the two one sided limits agree, the limit of f as x tends to a is L."/>
+  <annotation ref="l1-axes" text="On the line there are only these two directions of approach, which is what changes in two variables."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
 <p>
 In two variables the situation is richer, because there are infinitely
 many directions, and indeed infinitely many curved paths, along which a
@@ -59,11 +118,6 @@ point can approach <m>(a,b)</m>. This section makes that precise and
 develops the tools for computing such limits, and for showing that a
 limit fails to exist.
 </p>
-</introduction>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-lim-two-variable">
-<title>Limits of Two-Variable Functions</title>
 
 <p>
 Consider the function <m>z = f(x,y)</m> that we studied in the previous
@@ -86,30 +140,27 @@ arrive from any direction.
 <image width="66%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-lim-paths">
 <diagram dimensions="(400,300)" margins="12">
-<definition>p1(t) = (1.55 + 0.95*sin(2.6*t), 2.55 - 1.55*t)</definition>
-<definition>p2(t) = (1.55 - 1.7*t + 0.35*t^2, 0.35 + 0.65*t)</definition>
-<definition>p3(t) = (1.55 + 1.85*t, 1.0 + 0.72*t^2)</definition>
-<definition>p4(t) = (1.55 + 1.9*t - 0.55*t^2, 1.0 - 0.95*t^2)</definition>
+<!-- every path is parametrised so that t = 1 lands exactly on (a,b) -->
+<definition>p1(t) = (1.55 + 0.38*(1-t)*sin(4*(1-t)), 1.0 + 1.65*(1-t))</definition>
+<definition>p2(t) = (1.55 - 1.45*(1-t), 1.0 + 0.85*(1-t)^2)</definition>
+<definition>p3(t) = (1.55 + 1.85*(1-t), 1.0 + 0.80*(1-t)^2)</definition>
+<definition>p4(t) = (1.55 + 1.55*(1-t) - 0.30*(1-t)^2, 1.0 - 0.95*(1-t))</definition>
 <coordinates bbox="(-0.55,-0.5,4.2,3.2)">
 <axes at="lp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <parametric-curve at="lp-c1" function="p1" domain="(0,1)"
-                  stroke="#009E73" thickness="2.5"/>
+                  stroke="#009E73" thickness="3" arrows="1" arrow-location="0.72"/>
 <parametric-curve at="lp-c2" function="p2" domain="(0,1)"
-                  stroke="#009E73" thickness="2.5"/>
+                  stroke="#009E73" thickness="3" arrows="1" arrow-location="0.72"/>
 <parametric-curve at="lp-c3" function="p3" domain="(0,1)"
-                  stroke="#009E73" thickness="2.5"/>
+                  stroke="#009E73" thickness="3" arrows="1" arrow-location="0.72"/>
 <parametric-curve at="lp-c4" function="p4" domain="(0,1)"
-                  stroke="#009E73" thickness="2.5"/>
-<vector at="lp-a1" v="(-0.16,-0.30)" tail="(1.71,1.30)"
-        stroke="#009E73" thickness="2"/>
-<vector at="lp-a2" v="(0.30,-0.12)" tail="(1.25,1.12)"
-        stroke="#009E73" thickness="2"/>
+                  stroke="#009E73" thickness="3" arrows="1" arrow-location="0.72"/>
 <line at="lp-hx" endpoints="((0,1.0),(1.55,1.0))" stroke="#D55E00"
       dash="3 3" thickness="1.5"/>
 <line at="lp-hy" endpoints="((1.55,0),(1.55,1.0))" stroke="#D55E00"
       dash="3 3" thickness="1.5"/>
 <point at="lp-P" p="(1.55,1.0)" fill="#D55E00"/>
-<label at="lp-P-lab" anchor="(1.62,1.03)" alignment="e" color="#D55E00">
+<label at="lp-P-lab" anchor="(1.49,1.07)" alignment="nw" color="#D55E00">
 <m>(a,b)</m>
 </label>
 <label at="lp-a" anchor="(1.55,-0.06)" alignment="s" color="#D55E00">
@@ -118,16 +169,14 @@ arrive from any direction.
 <label at="lp-b" anchor="(-0.06,1.0)" alignment="w" color="#D55E00">
 <m>b</m>
 </label>
-<label at="lp-x" anchor="(4.0,-0.04)" alignment="se"><m>x</m></label>
-<label at="lp-y" anchor="(-0.04,3.05)" alignment="nw"><m>y</m></label>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="A coordinate plane with the point a comma b marked in orange, located by dashed lines dropped to the two axes. Four green curves of different shapes come in towards that point from different directions, two of them carrying arrowheads, showing that a point may approach a comma b along infinitely many different paths.">
+<annotation ref="figure" text="A coordinate plane with the point a comma b marked in orange, located by dashed lines dropped to the two axes. Four green curves of different shapes come in towards that point from different directions, each ending in an arrowhead at the point, showing that a point may approach a comma b along infinitely many different paths.">
   <annotation ref="lp-P" text="The point a comma b that is being approached."/>
-  <annotation ref="lp-c1" text="One path approaching the point from above, curving as it comes in."/>
-  <annotation ref="lp-c2" text="A second path approaching from the upper left."/>
-  <annotation ref="lp-c3" text="A third path approaching from the right along a curve."/>
+  <annotation ref="lp-c1" text="One path approaching the point from above, curving as it comes in, with an arrowhead at the point."/>
+  <annotation ref="lp-c2" text="A second path approaching from the upper left, with an arrowhead at the point."/>
+  <annotation ref="lp-c3" text="A third path approaching from the upper right along a curve, with an arrowhead at the point."/>
   <annotation ref="lp-c4" text="A fourth path approaching from below. For the limit to exist, the function must approach the same value along every one of these paths."/>
 </annotation>
 </annotations>
@@ -217,9 +266,8 @@ Evaluate
 <p>
 Note that we can use the direct substitution property to write
 <md>
-\lim_{(x,y)\to(2,2\pi)} \frac{x}{y} = \frac{2}{2\pi} = \frac{1}{\pi}
-\qquad \text{and} \qquad
-\lim_{(x,y)\to(2,2\pi)} \cos(xy) = \cos(4\pi) = 1.
+<mrow>\lim_{(x,y)\to(2,2\pi)} \frac{x}{y} \amp = \frac{2}{2\pi} = \frac{1}{\pi},</mrow>
+<mrow>\lim_{(x,y)\to(2,2\pi)} \cos(xy) \amp = \cos(4\pi) = 1.</mrow>
 </md>
 Then we use the sum rule to write
 <md>
@@ -347,10 +395,10 @@ We begin by simplifying the fraction. The numerator is
 <m>\frac12\left(x^2 - 2xy + y^2\right) = \frac12 (x-y)^2</m> and the
 denominator factors as <m>(x-y)(x+y)</m>, so
 <md>
-\lim_{(x,y)\to(1,1)}
+<mrow>\lim_{(x,y)\to(1,1)}
 \frac{\frac{x^2}{2} - xy + \frac{y^2}{2}}{x^2 - y^2}
-= \lim_{(x,y)\to(1,1)} \frac{1}{2}\,\frac{(x-y)^2}{(x-y)(x+y)}
-= \frac{1}{2} \lim_{(x,y)\to(1,1)} \frac{x-y}{x+y} = 0.
+\amp = \lim_{(x,y)\to(1,1)} \frac{1}{2}\,\frac{(x-y)^2}{(x-y)(x+y)}</mrow>
+<mrow>\amp = \frac{1}{2} \lim_{(x,y)\to(1,1)} \frac{x-y}{x+y} = 0.</mrow>
 </md>
 The cancellation is legitimate because <m>x \neq y</m> along the
 approach, and the final limit is evaluated by direct substitution, giving

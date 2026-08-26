@@ -52,7 +52,8 @@ of <m>f</m>.
 
 <introduction>
 <p>
-Recall that the partial derivatives <m>f_x</m> and <m>f_y</m> correspond
+Recall from <xref ref="chapter-partial-derivatives"/> that the partial
+derivatives <m>f_x</m> and <m>f_y</m> correspond
 to the rate of change of <m>z = f(x,y)</m> in the <m>\hat{\imath}</m> and
 <m>\hat{\jmath}</m> directions. In this section, we generalize this notion
 to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
@@ -861,7 +862,7 @@ Evaluate the directional derivative
 We use
 <m>\left(\dfrac{df}{ds}\right)_{\hat{u},P_0}
 = \left(\nabla f\right)_{P_0}\cdot\hat{u}</m>.
-First we compute the gradient vector:
+First we compute the gradient vector <xref ref="eq-gradient-definition"/>:
 <md>
 <mrow>\nabla f \amp= \frac{\partial f}{\partial x}\,\hat{\imath}
         + \frac{\partial f}{\partial y}\,\hat{\jmath}</mrow>

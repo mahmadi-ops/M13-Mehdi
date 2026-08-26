@@ -1,0 +1,48 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-lim-one-variable-figure" speech2="The graph of a function y equals f of x in the plane. A point on the graph above x equals a is marked, and dashed lines run from it to a on the x axis and to L on the y axis. The piece of the graph just to the left of a is drawn thick in blue with an arrow pointing right towards the marked point, and the piece just to the right is drawn thick in orange with an arrow pointing left towards it, so the point is approached from only two directions.">
+      <grouped>prefigure-lim-one-variable-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-lim-one-variable-l1-left</active>
+        <active>prefigure-lim-one-variable-l1-right</active>
+        <active>prefigure-lim-one-variable-l1-P</active>
+        <active>prefigure-lim-one-variable-l1-axes</active>
+      </children>
+      <components>
+        <active>prefigure-lim-one-variable-l1-left</active>
+        <active>prefigure-lim-one-variable-l1-right</active>
+        <active>prefigure-lim-one-variable-l1-P</active>
+        <active>prefigure-lim-one-variable-l1-axes</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-lim-one-variable-l1-left" speech2="The approach from the left, x tending to a from below. Along this piece of the graph the height tends to L.">
+      <active>prefigure-lim-one-variable-l1-left</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-lim-one-variable-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-lim-one-variable-l1-right" speech2="The approach from the right, x tending to a from above. Along this piece too the height tends to L.">
+      <active>prefigure-lim-one-variable-l1-right</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-lim-one-variable-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-lim-one-variable-l1-P" speech2="The point a comma L on the graph. Because the two one sided limits agree, the limit of f as x tends to a is L.">
+      <active>prefigure-lim-one-variable-l1-P</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-lim-one-variable-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-lim-one-variable-l1-axes" speech2="On the line there are only these two directions of approach, which is what changes in two variables.">
+      <active>prefigure-lim-one-variable-l1-axes</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-lim-one-variable-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

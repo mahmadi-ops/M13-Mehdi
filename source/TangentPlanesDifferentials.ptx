@@ -71,7 +71,7 @@ point and use the tangent plane as a linear approximation of the surface.
 
 <introduction>
 <p>
-Recall that the partial
+Recall from <xref ref="chapter-partial-derivatives"/> that the partial
 derivative <m>f_x(x_0,y_0)</m> is the slope of the tangent line to the
 curve cut from the surface <m>z = f(x,y)</m> by the plane <m>y = y_0</m>,
 and that <m>f_y(x_0,y_0)</m> is the slope of the tangent line to the
@@ -256,11 +256,13 @@ Also, note that <m>\mathbf n = \nabla w \Big|_{P_0}</m> is the direction
 vector of the line normal to the surface at
 <m>P_0(x_0, y_0, f(x_0,y_0))</m>, which means the parametric equations of
 the <term>normal line to the surface</term> at <m>P_0</m> are
-<md number="yes">
-<mrow>x(t) \amp= x_0 + f_x(x_0,y_0)\,t</mrow>
-<mrow>y(t) \amp= y_0 + f_y(x_0,y_0)\,t</mrow>
-<mrow>z(t) \amp= f(x_0,y_0) - t</mrow>
-<mrow>t \amp\in \R.</mrow>
+<md xml:id="eq-tp-normal-line" number="yes">
+\begin{aligned}
+x(t) \amp= x_0 + f_x(x_0,y_0)\,t \\
+y(t) \amp= y_0 + f_y(x_0,y_0)\,t \\
+z(t) \amp= f(x_0,y_0) - t
+\end{aligned}
+\qquad t \in \R.
 </md>
 </p>
 
@@ -313,12 +315,15 @@ at <m>P_0(1,1,-2)</m>, which is given by
 <mrow>\mathbf n \amp= \nabla w \Big|_{P_0}
 = -2\,\hat{\imath} - 2\,\hat{\jmath} - \hat{k}.</mrow>
 </md>
-Hence the parametric equations of the normal line are
-<md number="yes">
-<mrow>x(t) \amp= x_0 + f_x(x_0,y_0)\,t = 1 - 2t</mrow>
-<mrow>y(t) \amp= y_0 + f_y(x_0,y_0)\,t = 1 - 2t</mrow>
-<mrow>z(t) \amp= f(x_0,y_0) - t = -2 - t</mrow>
-<mrow>t \amp\in \R.</mrow>
+Hence, by <xref ref="eq-tp-normal-line"/>, the parametric equations of the
+normal line are
+<md xml:id="eq-tp-ex1-normal-line" number="yes">
+\begin{aligned}
+x(t) \amp= x_0 + f_x(x_0,y_0)\,t = 1 - 2t \\
+y(t) \amp= y_0 + f_y(x_0,y_0)\,t = 1 - 2t \\
+z(t) \amp= f(x_0,y_0) - t = -2 - t
+\end{aligned}
+\qquad t \in \R.
 </md>
 </p>
 
