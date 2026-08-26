@@ -142,11 +142,11 @@
           For a point <m>S(x,y,z)</m> on the ellipsoid, the distance from
           <m>S</m> to the plane is
           <me>
-            \frac{\overrightarrow{PS}\cdot\mathbf{n}}{\lvert\mathbf{n}\rvert}
+            \frac{\overrightarrow{PS}\cdot\mathbf{n}}{\lVert \mathbf{n}\rVert}
             = \frac{\langle x-3,\, y,\, z\rangle\cdot\langle 1,5,2\rangle}
-                   {\lvert\mathbf{n}\rvert}.
+                   {\lVert \mathbf{n}\rVert}.
           </me>
-          Since <m>\lvert\mathbf{n}\rvert</m> is constant, it suffices to
+          Since <m>\lVert \mathbf{n}\rVert</m> is constant, it suffices to
           optimize the numerator
           <me>
             f(x,y,z) = x - 3 + 5y + 2z
@@ -864,9 +864,9 @@ constraint <m>x^2 + y^2 = 4</m>.
 <p>
 With <m>g(x,y) = x^2 + y^2 - 4 = 0</m>, we have
 <md>
-\nabla f = \sqrt2\,\mathbf i - \sqrt2\,\mathbf j,
+\nabla f = \sqrt2\,\hat{\imath} - \sqrt2\,\hat{\jmath},
 \qquad
-\nabla g = (2x)\,\mathbf i + (2y)\,\mathbf j.
+\nabla g = (2x)\,\hat{\imath} + (2y)\,\hat{\jmath}.
 </md>
 The system <m>\nabla f = \lambda \nabla g</m> is
 <md>

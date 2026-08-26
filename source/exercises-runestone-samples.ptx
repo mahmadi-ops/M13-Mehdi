@@ -57,7 +57,7 @@ distractors are the answers you get from the most common shortcuts.
 <title>True or False</title>
 <statement correct="no">
 <p>
-If every directional derivative <m>D_{\mathbf u}f(P_0)</m> exists at a point
+If every directional derivative <m>D_{\hat{u}}f(P_0)</m> exists at a point
 <m>P_0</m>, then <m>f</m> must be continuous at <m>P_0</m>.
 </p>
 </statement>
@@ -68,12 +68,12 @@ False, and the failure is dramatic. Let
 f(x,y) = \frac{x^2 y}{x^4 + y^2}\ \text{ for } (x,y)\ne(0,0),
 \qquad f(0,0) = 0 .
 </md>
-For a unit vector <m>\mathbf u = \langle a,b\rangle</m> with <m>b \ne 0</m>,
+For a unit vector <m>\hat{u} = \langle a,b\rangle</m> with <m>b \ne 0</m>,
 <md>
-D_{\mathbf u}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
+D_{\hat{u}}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
  = \lim_{t\to 0}\frac{a^2 b}{t^2a^4 + b^2} = \frac{a^2}{b},
 </md>
-and <m>D_{\mathbf u}f(0,0) = 0</m> when <m>b = 0</m>. So <em>every</em>
+and <m>D_{\hat{u}}f(0,0) = 0</m> when <m>b = 0</m>. So <em>every</em>
 directional derivative exists. Yet along the parabola <m>y = mx^2</m>,
 <md>
 f(x,mx^2) = \frac{m}{1+m^2},
@@ -94,39 +94,39 @@ requires control along <em>every</em> approach.
 <statement>
 <p>
 Exactly one of the following is <em>not</em> valid for all vectors
-<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
+<m>\overrightarrow{a}, \overrightarrow{b}, \overrightarrow{c}</m> in <m>\R^3</m>. Which one?
 </p>
 </statement>
 <choices randomize="yes">
 
 <choice>
 <statement>
-<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
+<p><m>\overrightarrow{a}\cdot(\overrightarrow{b}\times\overrightarrow{c}) = (\overrightarrow{a}\times\overrightarrow{b})\cdot\overrightarrow{c}</m></p>
 </statement>
 <feedback>
 <p>
 This one is valid. Both sides equal the determinant with rows
-<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
+<m>\overrightarrow{a},\overrightarrow{b},\overrightarrow{c}</m>, so the dot and the cross may be interchanged.
 </p>
 </feedback>
 </choice>
 
 <choice correct="yes">
 <statement>
-<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
+<p><m>\overrightarrow{a}\times(\overrightarrow{b}\times\overrightarrow{c}) = (\overrightarrow{a}\times\overrightarrow{b})\times\overrightarrow{c}</m></p>
 </statement>
 <feedback>
 <p>
 Correct — the cross product is <em>not associative</em>. Take
-<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
+<m>\overrightarrow{a} = \overrightarrow{b} = \hat{\imath}</m> and <m>\overrightarrow{c} = \hat{\jmath}</m>. Then
 <md>
-\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
- = -\mathbf j,
+\hat{\imath}\times(\hat{\imath}\times\hat{\jmath}) = \hat{\imath}\times\hat{k}
+ = -\hat{\jmath},
 \qquad
-(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
+(\hat{\imath}\times\hat{\imath})\times\hat{\jmath} = \overrightarrow{0}\times\hat{\jmath} = \overrightarrow{0} .
 </md>
-The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
-right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
+The left side lies in the plane of <m>\overrightarrow{b}</m> and <m>\overrightarrow{c}</m>; the
+right side lies in the plane of <m>\overrightarrow{a}</m> and <m>\overrightarrow{b}</m>. There is no
 reason for those to agree.
 </p>
 </feedback>
@@ -134,7 +134,7 @@ reason for those to agree.
 
 <choice>
 <statement>
-<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
+<p><m>\overrightarrow{a}\times(\overrightarrow{b} + \overrightarrow{c}) = \overrightarrow{a}\times\overrightarrow{b} + \overrightarrow{a}\times\overrightarrow{c}</m></p>
 </statement>
 <feedback>
 <p>
@@ -146,8 +146,8 @@ addition. (It is only associativity that fails.)
 
 <choice>
 <statement>
-<p><m>\vec a\times(\vec b\times\vec c)
-   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
+<p><m>\overrightarrow{a}\times(\overrightarrow{b}\times\overrightarrow{c})
+   = (\overrightarrow{a}\cdot\overrightarrow{c})\,\overrightarrow{b} - (\overrightarrow{a}\cdot\overrightarrow{b})\,\overrightarrow{c}</m></p>
 </statement>
 <feedback>
 <p>
@@ -169,17 +169,17 @@ remembering that it is true.
 <p>
 Consider the two lines
 <md>
-<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
+<mrow>L_1: \amp \quad \overrightarrow{r} = \langle 1,0,2\rangle
    + t\,\langle 2,-1,1\rangle,</mrow>
-<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
+<mrow>L_2: \amp \quad \overrightarrow{r} = \langle 0,3,-1\rangle
    + s\,\langle 1,2,-1\rangle .</mrow>
 </md>
-They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
-<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
+They are skew. Let <m>\overrightarrow{u},\overrightarrow{v}</m> be the direction vectors and let
+<m>\overrightarrow{w}</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
 </p>
 <p>
 The absolute value of the scalar triple product
-<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
+<m>\left|\overrightarrow{w}\cdot(\overrightarrow{u}\times\overrightarrow{v})\right|</m> equals
 <var width="6"/>.
 </p>
 <p>
@@ -208,7 +208,7 @@ its <em>absolute value</em>.
 <condition number="5.916" tolerance="0.002">
 <feedback>
 <p>
-That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
+That is <m>\left\|\overrightarrow{u}\times\overrightarrow{v}\right\| = \sqrt{35}</m>, the
 <em>denominator</em>. You still need to divide the triple product by it.
 </p>
 </feedback>
@@ -225,31 +225,31 @@ You appear to have divided by <m>35</m> rather than by
 </setup>
 <hint>
 <p>
-The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
-distance is the length of the projection of <m>\vec w</m> onto it:
-<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
-\left|\vec u\times\vec v\right|</m>.
+The vector <m>\overrightarrow{u}\times\overrightarrow{v}</m> is perpendicular to both lines, so the
+distance is the length of the projection of <m>\overrightarrow{w}</m> onto it:
+<m>d = \left|\overrightarrow{w}\cdot(\overrightarrow{u}\times\overrightarrow{v})\right| /
+\left\|\overrightarrow{u}\times\overrightarrow{v}\right\|</m>.
 </p>
 </hint>
 <solution>
 <p>
-With <m>\vec u = \langle 2,-1,1\rangle</m> and
-<m>\vec v = \langle 1,2,-1\rangle</m>,
+With <m>\overrightarrow{u} = \langle 2,-1,1\rangle</m> and
+<m>\overrightarrow{v} = \langle 1,2,-1\rangle</m>,
 <md>
-\vec u\times\vec v =
+\overrightarrow{u}\times\overrightarrow{v} =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 2 \amp -1 \amp 1 \\
 1 \amp 2 \amp -1
 \end{vmatrix}
 = \langle -1,\, 3,\, 5\rangle,
 \qquad
-\left|\vec u\times\vec v\right| = \sqrt{35}.
+\left\|\overrightarrow{u}\times\overrightarrow{v}\right\| = \sqrt{35}.
 </md>
-Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
+Taking <m>\overrightarrow{w} = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
 = \langle -1,3,-3\rangle</m>,
 <md>
-\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
+\overrightarrow{w}\cdot(\overrightarrow{u}\times\overrightarrow{v}) = 1 + 9 - 15 = -5,
 \qquad
 d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
 </md>
@@ -272,31 +272,31 @@ constant speed.
 <block order="1">
 <p>
 Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
-<m>\vec v</m> through a magnetic field <m>\vec B</m>.
+<m>\overrightarrow{v}</m> through a magnetic field <m>\overrightarrow{B}</m>.
 </p>
 </block>
 <block order="2">
 <p>
-The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
+The force on the particle is <m>\overrightarrow{F} = q\,\overrightarrow{v}\times\overrightarrow{B}</m>.
 </p>
 </block>
 <block order="3">
 <p>
 By definition, a cross product is perpendicular to both of its factors, so
-<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
+<m>\overrightarrow{v}\times\overrightarrow{B}</m> is perpendicular to <m>\overrightarrow{v}</m>.
 </p>
 </block>
 <block order="4">
 <p>
-Hence <m>\vec F\cdot\vec v
-= q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+Hence <m>\overrightarrow{F}\cdot\overrightarrow{v}
+= q\left(\overrightarrow{v}\times\overrightarrow{B}\right)\cdot\overrightarrow{v} = 0</m>.
 </p>
 </block>
 <block order="5">
 <p>
 The kinetic energy satisfies
-<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right)
- = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\overrightarrow{v}\cdot\overrightarrow{v}\right)
+ = m\,\overrightarrow{v}\cdot\dfrac{d\overrightarrow{v}}{dt} = \overrightarrow{F}\cdot\overrightarrow{v}</m>.
 </p>
 </block>
 <block order="6">
@@ -460,18 +460,18 @@ Among the two with <m>D \gt 0</m>, the sign of <m>f_{xx}</m> decides:
 <p>
 Below is a student's computation of the derivative of
 <m>f(x,y) = x^2 y</m> at the point <m>(1,2)</m> in the direction of
-<m>\vec v = \langle 3,4\rangle</m>. Exactly one line contains the error.
+<m>\overrightarrow{v} = \langle 3,4\rangle</m>. Exactly one line contains the error.
 Click on that line.
 </p>
 </statement>
 <feedback>
 <p>
 The error is in the third line. The formula
-<m>D_{\mathbf u}f = \nabla f\cdot\mathbf u</m> requires a <em>unit</em>
-vector. Since <m>\left|\vec v\right| = 5</m>, the correct direction is
-<m>\mathbf u = \left\langle \tfrac35, \tfrac45 \right\rangle</m>, giving
+<m>D_{\hat{u}}f = \nabla f\cdot\hat{u}</m> requires a <em>unit</em>
+vector. Since <m>\left\|\overrightarrow{v}\right\| = 5</m>, the correct direction is
+<m>\hat{u} = \left\langle \tfrac35, \tfrac45 \right\rangle</m>, giving
 <md>
-D_{\mathbf u}f(1,2) = 4\cdot\tfrac35 + 1\cdot\tfrac45 = \frac{16}{5} = 3.2,
+D_{\hat{u}}f(1,2) = 4\cdot\tfrac35 + 1\cdot\tfrac45 = \frac{16}{5} = 3.2,
 </md>
 not <m>16</m>. Lines 1, 2 and 4 are each correct given the line before
 them — line 4 faithfully reports the (wrong) number produced by line 3.
@@ -480,7 +480,7 @@ them — line 4 faithfully reports the (wrong) number produced by line 3.
 <areas>
 <p><area correct="no"><m>\nabla f = \left\langle 2xy,\; x^2\right\rangle</m></area></p>
 <p><area correct="no"><m>\nabla f(1,2) = \left\langle 4,\; 1\right\rangle</m></area></p>
-<p><area correct="yes"><m>D_{\vec v}f(1,2) = \nabla f(1,2)\cdot\vec v
+<p><area correct="yes"><m>D_{\overrightarrow{v}}f(1,2) = \nabla f(1,2)\cdot\overrightarrow{v}
   = (4)(3) + (1)(4) = 16</m></area></p>
 <p><area correct="no">So the directional derivative equals <m>16</m>.</area></p>
 </areas>

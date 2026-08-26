@@ -16,21 +16,21 @@ attempting them, see <xref ref="section-cross-product" text="title"/>.
 <title>True or False</title>
 <statement correct="no">
 <p>
-If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
+If <m>\overrightarrow{u}</m> and <m>\overrightarrow{v}</m> are two non-zero vectors in
 <m>\R^3</m>, then
-<m>\vec u \cdot (\vec u \times \vec v)
-= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
+<m>\overrightarrow{u} \cdot (\overrightarrow{u} \times \overrightarrow{v})
+= \|\overrightarrow{u}\|^2 + \overrightarrow{u} \cdot \overrightarrow{v}</m>.
 </p>
 </statement>
 <feedback>
 <p>
 Counterexample: take
-<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
+<m>\overrightarrow{u} = \hat{\imath}</m> and <m>\overrightarrow{v} = \hat{\imath}</m>. Then
 <md>
-\mathbf i \cdot
-\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
+\hat{\imath} \cdot
+\underbrace{(\hat{\imath} \times \hat{\imath})}_{\overrightarrow{0}} = 0,
 \quad\text{whereas}\quad
-\|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
+\|\hat{\imath}\|^2 + \hat{\imath} \cdot \hat{\imath} = 1 + 1 = 2,
 </md>
 and <m>0 \ne 2</m>.
 </p>
@@ -41,7 +41,7 @@ and <m>0 \ne 2</m>.
 <statement>
 <p>
 Let <m>\mathbf v</m> be the vector
-<m>3\,\mathbf i - 4\,\mathbf j + 5\,\mathbf k</m>.
+<m>3\,\hat{\imath} - 4\,\hat{\jmath} + 5\,\hat{k}</m>.
 <ol marker="A.">
 <li>
 <p>
@@ -67,7 +67,7 @@ We need <m>\langle a,b,c\rangle</m> with
 <m>3a - 4b + 5c = 0</m>. Any solution will do; taking <m>c = 0</m>
 leaves <m>3a = 4b</m>, so <m>a = 4</m>, <m>b = 3</m> works:
 <md>
-\mathbf v' = 4\,\mathbf i + 3\,\mathbf j,
+\mathbf v' = 4\,\hat{\imath} + 3\,\hat{\jmath},
 \qquad
 \mathbf v \cdot \mathbf v' = 12 - 12 + 0 = 0.
 </md>
@@ -80,15 +80,15 @@ The cross product is orthogonal to both:
 <md>
 <mrow>\mathbf v \times \mathbf v' \amp =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 3 \amp -4 \amp 5 \\
 4 \amp 3 \amp 0
 \end{vmatrix}</mrow>
-<mrow>\amp = (0 - 15)\mathbf i - (0 - 20)\mathbf j + (9 + 16)\mathbf k</mrow>
-<mrow>\amp = -15\,\mathbf i + 20\,\mathbf j + 25\,\mathbf k.</mrow>
+<mrow>\amp = (0 - 15)\hat{\imath} - (0 - 20)\hat{\jmath} + (9 + 16)\hat{k}</mrow>
+<mrow>\amp = -15\,\hat{\imath} + 20\,\hat{\jmath} + 25\,\hat{k}.</mrow>
 </md>
 Dividing by <m>5</m> gives the simpler answer
-<m>-3\,\mathbf i + 4\,\mathbf j + 5\,\mathbf k</m>.
+<m>-3\,\hat{\imath} + 4\,\hat{\jmath} + 5\,\hat{k}</m>.
 </p>
 </li>
 </ol>
@@ -118,29 +118,29 @@ Find the equation of the plane containing the triangle.
 <p>
 Take <m>A(0,1,1)</m> as the base vertex and form two edge vectors:
 <md>
-\vec a = \vec{AB} = \langle -1, 1, 3\rangle,
+\overrightarrow{a} = \overrightarrow{AB} = \langle -1, 1, 3\rangle,
 \qquad
-\vec b = \vec{AC} = \langle 3, -1, 0\rangle.
+\overrightarrow{b} = \overrightarrow{AC} = \langle 3, -1, 0\rangle.
 </md>
 Their cross product is
 <md>
-\vec a \times \vec b =
+\overrightarrow{a} \times \overrightarrow{b} =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 -1 \amp 1 \amp 3 \\
 3 \amp -1 \amp 0
 \end{vmatrix}
-= (0+3)\mathbf i - (0-9)\mathbf j + (1-3)\mathbf k
+= (0+3)\hat{\imath} - (0-9)\hat{\jmath} + (1-3)\hat{k}
 = \langle 3, 9, -2\rangle.
 </md>
 <ol marker="A.">
 <li>
 <p>
 The magnitude of the cross product is the area of the parallelogram
-spanned by <m>\vec a</m> and <m>\vec b</m>, so the triangle has half
+spanned by <m>\overrightarrow{a}</m> and <m>\overrightarrow{b}</m>, so the triangle has half
 that area:
 <md>
-\text{Area} = \frac12\left\|\vec a \times \vec b\right\|
+\text{Area} = \frac12\left\|\overrightarrow{a} \times \overrightarrow{b}\right\|
 = \frac12\sqrt{9 + 81 + 4}
 = \frac{\sqrt{94}}{2}.
 </md>
@@ -164,17 +164,17 @@ The cross product is normal to the plane, so the plane has the form
 <exercise xml:id="m2b-4">
 <statement>
 <p>
-Suppose <m>\|\vec A\| = 3</m>, <m>\|\vec B\| = 4</m> and
-<m>\|\vec A\times\vec B\| = 6</m>. Find
+Suppose <m>\|\overrightarrow{A}\| = 3</m>, <m>\|\overrightarrow{B}\| = 4</m> and
+<m>\|\overrightarrow{A}\times\overrightarrow{B}\| = 6</m>. Find
 <ol marker="(a)">
 <li>
 <p>
-<m>\left|\vec A\cdot\vec B\right|</m>;
+<m>\left|\overrightarrow{A}\cdot\overrightarrow{B}\right|</m>;
 </p>
 </li>
 <li>
 <p>
-<m>\left\|\operatorname{proj}_{\vec A}\vec B\right\|</m>.
+<m>\left\|\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}\right\|</m>.
 </p>
 </li>
 </ol>
@@ -184,7 +184,7 @@ Suppose <m>\|\vec A\| = 3</m>, <m>\|\vec B\| = 4</m> and
 <p>
 <term>(a)</term> Let <m>\theta</m> be the angle between the two
 vectors, <m>0 \le \theta \le \pi</m>. From
-<m>\|\vec A\times\vec B\| = \|\vec A\|\,\|\vec B\|\sin\theta</m>,
+<m>\|\overrightarrow{A}\times\overrightarrow{B}\| = \|\overrightarrow{A}\|\,\|\overrightarrow{B}\|\sin\theta</m>,
 <md>
 6 = (3)(4)\sin\theta \quad\Longrightarrow\quad
 \sin\theta = \frac{6}{12} = \frac12 .
@@ -197,25 +197,25 @@ Since <m>\sin^2\theta + \cos^2\theta = 1</m>,
 <m>\theta</m> could be <m>30^\circ</m> or <m>150^\circ</m>; this is
 exactly why the problem asks for the absolute value.) Therefore
 <md>
-\left|\vec A\cdot\vec B\right|
- = \|\vec A\|\,\|\vec B\|\,|\cos\theta|
+\left|\overrightarrow{A}\cdot\overrightarrow{B}\right|
+ = \|\overrightarrow{A}\|\,\|\overrightarrow{B}\|\,|\cos\theta|
  = (3)(4)\frac{\sqrt3}{2} = 6\sqrt3 .
 </md>
 </p>
 
 <p>
 <term>(b)</term> The projection is
-<m>\operatorname{proj}_{\vec A}\vec B
-= \left(\dfrac{\vec A\cdot\vec B}{\|\vec A\|^2}\right)\vec A</m>, so
+<m>\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}
+= \left(\dfrac{\overrightarrow{A}\cdot\overrightarrow{B}}{\|\overrightarrow{A}\|^2}\right)\overrightarrow{A}</m>, so
 its length is
 <md>
-\left\|\operatorname{proj}_{\vec A}\vec B\right\|
- = \frac{\left|\vec A\cdot\vec B\right|}{\|\vec A\|^2}\,\|\vec A\|
- = \frac{\left|\vec A\cdot\vec B\right|}{\|\vec A\|}
+\left\|\operatorname{proj}_{\overrightarrow{A}}\overrightarrow{B}\right\|
+ = \frac{\left|\overrightarrow{A}\cdot\overrightarrow{B}\right|}{\|\overrightarrow{A}\|^2}\,\|\overrightarrow{A}\|
+ = \frac{\left|\overrightarrow{A}\cdot\overrightarrow{B}\right|}{\|\overrightarrow{A}\|}
  = \frac{6\sqrt3}{3} = 2\sqrt3 .
 </md>
 As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
-<m>\|\vec B\| = 4</m>, as a shadow must be.
+<m>\|\overrightarrow{B}\| = 4</m>, as a shadow must be.
 </p>
 </solution>
 </exercise>
@@ -223,48 +223,48 @@ As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
 <exercise xml:id="m2b-1c">
 <statement>
 <p>
-Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
-tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+Two vectors <m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> are drawn with a common
+tail; <m>\overrightarrow{A}</m> points up and to the right, <m>\overrightarrow{B}</m> points up
 and to the left, and the angle between them is slightly larger than a
-right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
-<m>\vec B</m>, and <m>\vec A \times \vec B</m>.
+right angle. Sketch and clearly label a diagram showing <m>\overrightarrow{A}</m>,
+<m>\overrightarrow{B}</m>, and <m>\overrightarrow{A} \times \overrightarrow{B}</m>.
 </p>
 </statement>
 <solution>
 <p>
 To make the picture concrete let us take
-<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
-<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+<m>\overrightarrow{A} = \left\langle 4, 2 \right\rangle</m> and
+<m>\overrightarrow{B} = \left\langle -3, 5 \right\rangle</m>, which have roughly
 the directions described. Everything below is a statement about
 the <em>geometry</em>, so the same picture is correct for any pair of
 vectors in that configuration.
 </p>
 
 <p>
-The cross product <m>\vec A\times\vec B</m> is
+The cross product <m>\overrightarrow{A}\times\overrightarrow{B}</m> is
 perpendicular to both, hence perpendicular to the page. The right-hand
-rule (curl the fingers of the right hand from <m>\vec A</m> towards
-<m>\vec B</m> through the smaller angle) shows that it points
+rule (curl the fingers of the right hand from <m>\overrightarrow{A}</m> towards
+<m>\overrightarrow{B}</m> through the smaller angle) shows that it points
 <em>out of the page</em>, which we draw as a circle with a dot in it.
 Indeed, treating the vectors as lying in the <m>xy</m>-plane,
 <md>
-\vec A\times\vec B
+\overrightarrow{A}\times\overrightarrow{B}
 = \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 4 \amp 2 \amp 0 \\
 -3 \amp 5 \amp 0
 \end{vmatrix}
 = \left\langle 0,\ 0,\ (4)(5)-(2)(-3) \right\rangle
-= 26\,\mathbf k ,
+= 26\,\hat{k} ,
 </md>
-and the <m>\mathbf k</m>-component is positive. Its length,
-<m>26</m>, is the area of the parallelogram spanned by <m>\vec A</m>
-and <m>\vec B</m>. See <xref ref="fig-m2b-1c"/>.
+and the <m>\hat{k}</m>-component is positive. Its length,
+<m>26</m>, is the area of the parallelogram spanned by <m>\overrightarrow{A}</m>
+and <m>\overrightarrow{B}</m>. See <xref ref="fig-m2b-1c"/>.
 </p>
 
 <figure xml:id="fig-m2b-1c">
 <caption>
-<m>\vec A\times\vec B</m> points out of the page, drawn as a circle
+<m>\overrightarrow{A}\times\overrightarrow{B}</m> points out of the page, drawn as a circle
 with a dot at its centre.
 </caption>
 <image width="55%">
@@ -284,13 +284,13 @@ centre represents A cross B, a vector pointing out of the page.
         stroke="#8B1A4A" thickness="2.5" fill="none"/>
 <point at="pc-dot" p="(-1.4,7.0)" fill="#8B1A4A"/>
 <label at="pc-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
-<m>\vec A</m>
+<m>\overrightarrow{A}</m>
 </label>
 <label at="pc-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
-<m>\vec B</m>
+<m>\overrightarrow{B}</m>
 </label>
 <label at="pc-Xl" anchor="(-0.6,7.0)" alignment="e" color="#8B1A4A">
-<m>\vec A\times\vec B</m>
+<m>\overrightarrow{A}\times\overrightarrow{B}</m>
 </label>
 </coordinates>
 
@@ -325,7 +325,7 @@ genuinely different jobs. Watch for them:
 <ul>
 <li>
 <p>
-the <term>dot product</term> is used, through <m>\vec F\cdot\vec v</m>, to determine whether
+the <term>dot product</term> is used, through <m>\overrightarrow{F}\cdot\overrightarrow{v}</m>, to determine whether
 the speed of a particle acted upon by a perpendicular force can change,
 </p>
 </li>
@@ -345,45 +345,45 @@ particle moving in a uniform magnetic field.
 <task xml:id="task-cm-speed">
 <statement>
 <p>
-A particle of mass <m>m</m> moves under a force <m>\vec F</m> of constant
-magnitude that is always perpendicular to its velocity <m>\vec v</m>.
+A particle of mass <m>m</m> moves under a force <m>\overrightarrow{F}</m> of constant
+magnitude that is always perpendicular to its velocity <m>\overrightarrow{v}</m>.
 Show that the particle's <em>speed</em> is constant.
 </p>
 </statement>
 <solution>
 <p>
-Since <m>\vec F</m> is perpendicular to <m>\vec v</m>, we have
+Since <m>\overrightarrow{F}</m> is perpendicular to <m>\overrightarrow{v}</m>, we have
 <md>
-\vec F\cdot\vec v = 0\text{.}
+\overrightarrow{F}\cdot\overrightarrow{v} = 0\text{.}
 </md>
 </p>
 
 <p>
-Now consider the square of the speed, <m>v^2 = \vec v\cdot\vec v</m>. Using the
+Now consider the square of the speed, <m>v^2 = \overrightarrow{v}\cdot\overrightarrow{v}</m>. Using the
 product rule for the dot product<fn>The product rule holds for the dot
 product just as it does for ordinary multiplication:
-<m>\dfrac{d}{dt}\left(\vec u\cdot\vec v\right)
-= \dfrac{d\vec u}{dt}\cdot\vec v + \vec u\cdot\dfrac{d\vec v}{dt}</m>.
-Taking <m>\vec u = \vec v</m> makes the two terms equal, which gives the
+<m>\dfrac{d}{dt}\left(\overrightarrow{u}\cdot\overrightarrow{v}\right)
+= \dfrac{d\overrightarrow{u}}{dt}\cdot\overrightarrow{v} + \overrightarrow{u}\cdot\dfrac{d\overrightarrow{v}}{dt}</m>.
+Taking <m>\overrightarrow{u} = \overrightarrow{v}</m> makes the two terms equal, which gives the
 step used here,
-<m>\dfrac{d}{dt}\left(\vec v\cdot\vec v\right)
-= 2\,\vec v\cdot\dfrac{d\vec v}{dt}</m>.</fn> and then Newton's second law
-<m>m\,\dfrac{d\vec v}{dt} = \vec F</m>,
+<m>\dfrac{d}{dt}\left(\overrightarrow{v}\cdot\overrightarrow{v}\right)
+= 2\,\overrightarrow{v}\cdot\dfrac{d\overrightarrow{v}}{dt}</m>.</fn> and then Newton's second law
+<m>m\,\dfrac{d\overrightarrow{v}}{dt} = \overrightarrow{F}</m>,
 <md>
 <mrow>\frac{d}{dt}\left(v^2\right) \amp = \frac{d}{dt}
-   \left(\vec v\cdot\vec v\right)
-   = 2\,\vec v\cdot\frac{d\vec v}{dt}</mrow>
-<mrow>\amp = \frac{2}{m}\,\vec v\cdot\vec F = 0\text{.}</mrow>
+   \left(\overrightarrow{v}\cdot\overrightarrow{v}\right)
+   = 2\,\overrightarrow{v}\cdot\frac{d\overrightarrow{v}}{dt}</mrow>
+<mrow>\amp = \frac{2}{m}\,\overrightarrow{v}\cdot\overrightarrow{F} = 0\text{.}</mrow>
 </md>
 So <m>v^2</m> never changes, and hence neither does the speed <m>v</m>.
 </p>
 
 <p>
 <term>Why the dot product is the right tool here.</term> The quantity
-<m>\vec F\cdot\vec v</m> is the rate at which the force does work on the
+<m>\overrightarrow{F}\cdot\overrightarrow{v}</m> is the rate at which the force does work on the
 particle. A force with a forward component speeds the particle up; a force
-with a backward component slows it down. Only the part of <m>\vec F</m>
-lying along <m>\vec v</m> can change the speed, and the dot product is
+with a backward component slows it down. Only the part of <m>\overrightarrow{F}</m>
+lying along <m>\overrightarrow{v}</m> can change the speed, and the dot product is
 exactly the mathematical tool that isolates that part. When it vanishes, can 
 only change the direction of the velocity but not its magnitude, and so can 
 only <em>turn</em> the particle, while the speed remains constant.
@@ -392,9 +392,9 @@ See <xref ref="fig-cm-dotproduct"/>.
 
 <figure xml:id="fig-cm-dotproduct">
 <caption>
-Only the component of <m>\vec F</m> along <m>\vec v</m> can change the
+Only the component of <m>\overrightarrow{F}</m> along <m>\overrightarrow{v}</m> can change the
 speed. On the left that component is non-zero, so the particle speeds up;
-on the right <m>\vec F\perp\vec v</m>, the component is zero, and the speed
+on the right <m>\overrightarrow{F}\perp\overrightarrow{v}</m>, the component is zero, and the speed
 cannot change.
 </caption>
 <image width="92%">
@@ -423,13 +423,13 @@ and the speed stays constant.
             stroke="#888888" thickness="1.4" dash="4 3"/>
       <vector at="da-proj" tail="(0,0)" v="(1.6712,0)" stroke="#009E73" thickness="4"/>
       <point at="da-P" p="(0,0)" fill="black" radius="3"/>
-      <label font-size="18" at="da-vl" anchor="(3.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
-      <label font-size="18" at="da-Fl" anchor="(1.74,2.06)" alignment="ne" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="da-vl" anchor="(3.3,0.02)" alignment="e" color="#0072B2"><m>\overrightarrow{v}</m></label>
+      <label font-size="18" at="da-Fl" anchor="(1.74,2.06)" alignment="ne" color="#D55E00"><m>\overrightarrow{F}</m></label>
       <label font-size="18" at="da-projl" anchor="(0.84,-0.16)" alignment="s" color="#009E73">
-      <m>\text{component along }\vec v</m>
+      <m>\text{component along }\overrightarrow{v}</m>
       </label>
       <label font-size="18" at="da-concl" anchor="(0.5,-1.35)" alignment="c">
-      <m>\vec F\cdot\vec v \ne 0 \;\Rightarrow\; \text{speed changes}</m>
+      <m>\overrightarrow{F}\cdot\overrightarrow{v} \ne 0 \;\Rightarrow\; \text{speed changes}</m>
       </label>
 
       <!-- ============ PANEL B : force purely perpendicular ============ -->
@@ -439,13 +439,13 @@ and the speed stays constant.
       <vector at="db-F" tail="(9,0)" v="(0,2.6)" stroke="#D55E00" thickness="3"/>
       <angle-marker font-size="18" at="db-right" points="((10,0),(9,0),(9,1))" radius="20" stroke="black"/>
       <point at="db-P" p="(9,0)" fill="black" radius="3"/>
-      <label font-size="18" at="db-vl" anchor="(12.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
-      <label font-size="18" at="db-Fl" anchor="(9,2.7)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="db-vl" anchor="(12.3,0.02)" alignment="e" color="#0072B2"><m>\overrightarrow{v}</m></label>
+      <label font-size="18" at="db-Fl" anchor="(9,2.7)" alignment="n" color="#D55E00"><m>\overrightarrow{F}</m></label>
       <label font-size="18" at="db-zero" anchor="(9.55,-0.55)" alignment="e" color="#009E73">
-      <m>\text{no component along }\vec v</m>
+      <m>\text{no component along }\overrightarrow{v}</m>
       </label>
       <label font-size="18" at="db-concl" anchor="(9.5,-1.35)" alignment="c">
-      <m>\vec F\cdot\vec v = 0 \;\Rightarrow\; \text{speed constant}</m>
+      <m>\overrightarrow{F}\cdot\overrightarrow{v} = 0 \;\Rightarrow\; \text{speed constant}</m>
       </label>
 
       </coordinates>
@@ -480,21 +480,21 @@ common tail.)
 <solution>
 <p>
 By the previous task the velocity never changes length; it only swings
-around. So <m>\vec v(t)</m> and <m>\vec v(t+\Delta t)</m> are two vectors of
+around. So <m>\overrightarrow{v}(t)</m> and <m>\overrightarrow{v}(t+\Delta t)</m> are two vectors of
 the <em>same</em> length <m>v</m>, separated by the small angle
 <m>\Delta\theta</m> we are after. Drawn from a common tail they form an
 isosceles triangle whose third side is
-<m>\Delta\vec v = \vec v(t+\Delta t) - \vec v(t)</m>, as in
+<m>\Delta\overrightarrow{v} = \overrightarrow{v}(t+\Delta t) - \overrightarrow{v}(t)</m>, as in
 <xref ref="fig-cm-deltav"/>.
 </p>
 
 <p>
 The tips of the two vectors both lie on a circle of radius <m>v</m>. The
-straight side <m>\Delta\vec v</m> is the chord cutting off the arc of angle
+straight side <m>\Delta\overrightarrow{v}</m> is the chord cutting off the arc of angle
 <m>\Delta\theta</m> on that circle, and for a small angle a chord is very
 nearly the arc it subtends:
 <md>
-\left\|\Delta\vec v\right\| = 2v\sin\frac{\Delta\theta}{2}
+\left\|\Delta\overrightarrow{v}\right\| = 2v\sin\frac{\Delta\theta}{2}
   \approx v\,\Delta\theta\text{.}
 </md>
 </p>
@@ -502,9 +502,9 @@ nearly the arc it subtends:
 <p>
 On the other hand Newton's second law over the short interval gives
 <md>
-\left\|\Delta\vec v\right\| \approx \frac{F}{m}\,\Delta t\text{.}
+\left\|\Delta\overrightarrow{v}\right\| \approx \frac{F}{m}\,\Delta t\text{.}
 </md>
-Equating the two expressions for <m>\left\|\Delta\vec v\right\|</m>,
+Equating the two expressions for <m>\left\|\Delta\overrightarrow{v}\right\|</m>,
 <md>
 v\,\Delta\theta = \frac{F}{m}\,\Delta t
 \qquad\Longrightarrow\qquad
@@ -519,7 +519,7 @@ steady angular rate.
 <figure xml:id="fig-cm-deltav">
 <caption>
 The two velocities have equal length <m>v</m> (dashed arc), so the triangle
-is isosceles and the chord <m>\Delta\vec v</m> has length
+is isosceles and the chord <m>\Delta\overrightarrow{v}</m> has length
 <m>\approx v\,\Delta\theta</m>.
 </caption>
 <image width="62%">
@@ -553,13 +553,13 @@ times delta theta.
       <point at="dv-O" p="(0,0)" fill="black" radius="3"/>
 
       <label font-size="18" at="dv-l1" anchor="(4.08,-0.06)" alignment="se" color="#0072B2">
-      <m>\vec v(t)</m>
+      <m>\overrightarrow{v}(t)</m>
       </label>
       <label font-size="18" at="dv-l2" anchor="(3.02,2.66)" alignment="ne" color="#0072B2">
-      <m>\vec v(t+\Delta t)</m>
+      <m>\overrightarrow{v}(t+\Delta t)</m>
       </label>
       <label font-size="18" at="dv-ldv" anchor="(3.62,1.30)" alignment="e" color="#D55E00">
-      <m>\Delta\vec v</m>
+      <m>\Delta\overrightarrow{v}</m>
       </label>
 
       <!-- the two lengths, marked on the vectors themselves -->
@@ -567,10 +567,10 @@ times delta theta.
       <label font-size="18" at="dv-len2" anchor="(1.42,1.35)" alignment="nw" color="#666666"><m>v</m></label>
 
       <label font-size="18" at="dv-note1" anchor="(-1.2,-1.15)" alignment="e">
-      <m>\text{equal lengths} \;\Rightarrow\; \|\Delta\vec v\| \approx v\,\Delta\theta</m>
+      <m>\text{equal lengths} \;\Rightarrow\; \|\Delta\overrightarrow{v}\| \approx v\,\Delta\theta</m>
       </label>
       <label font-size="18" at="dv-note2" anchor="(-1.2,-1.80)" alignment="e">
-      <m>\text{Newton:}\; \|\Delta\vec v\| = \tfrac{F}{m}\Delta t
+      <m>\text{Newton:}\; \|\Delta\overrightarrow{v}\| = \tfrac{F}{m}\Delta t
         \;\Rightarrow\; \Delta\theta = \tfrac{F}{mv}\Delta t</m>
       </label>
 
@@ -636,7 +636,7 @@ curvature is the same constant <m>R</m> at every point.
 <p>
 A plane curve with constant radius of curvature is a circle. Concretely,
 the centre of the turn always lies a fixed distance <m>R</m> from the
-particle in the direction of <m>\vec F</m>.
+particle in the direction of <m>\overrightarrow{F}</m>.
 </p>
 
 <figure xml:id="fig-cm-circle">
@@ -688,8 +688,8 @@ of length delta s equals R delta theta, is highlighted.
 
       <label font-size="18" at="cc-Ol" anchor="(-0.12,-0.12)" alignment="sw"><m>O</m></label>
       <label font-size="18" at="cc-Rl" anchor="(0.10,1.62)" alignment="w" color="#666666"><m>R</m></label>
-      <label font-size="18" at="cc-vl" anchor="(0.20,3.56)" alignment="nw" color="#0072B2"><m>\vec v</m></label>
-      <label font-size="18" at="cc-Fl" anchor="(1.40,1.92)" alignment="e" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="cc-vl" anchor="(0.20,3.56)" alignment="nw" color="#0072B2"><m>\overrightarrow{v}</m></label>
+      <label font-size="18" at="cc-Fl" anchor="(1.40,1.92)" alignment="e" color="#D55E00"><m>\overrightarrow{F}</m></label>
       <label font-size="18" at="cc-dsl" anchor="(1.18,3.20)" alignment="ne" color="#009E73">
       <m>\Delta s = R\,\Delta\theta</m>
       </label>
@@ -727,10 +727,10 @@ of length delta s equals R delta theta, is highlighted.
 <statement>
 <p>
 A particle of charge <m>q</m> enters a uniform magnetic field
-<m>\vec B</m> with its velocity <em>perpendicular</em> to the field. The
+<m>\overrightarrow{B}</m> with its velocity <em>perpendicular</em> to the field. The
 magnetic force is
 <md>
-\vec F_B = q\,\vec v\times\vec B\text{.}
+\overrightarrow{F}_B = q\,\overrightarrow{v}\times\overrightarrow{B}\text{.}
 </md>
 Show that this force has magnitude <m>|q|\,vB</m>.
 </p>
@@ -738,12 +738,12 @@ Show that this force has magnitude <m>|q|\,vB</m>.
 <solution>
 <p>
 The length of a cross product is
-<m>\left\|\vec v\times\vec B\right\| = vB\sin\alpha</m>, where <m>\alpha</m>
-is the angle between <m>\vec v</m> and <m>\vec B</m>. Here the velocity is
+<m>\left\|\overrightarrow{v}\times\overrightarrow{B}\right\| = vB\sin\alpha</m>, where <m>\alpha</m>
+is the angle between <m>\overrightarrow{v}</m> and <m>\overrightarrow{B}</m>. Here the velocity is
 perpendicular to the field, so <m>\alpha = 90^\circ</m> and
 <m>\sin\alpha = 1</m>. Therefore
 <md>
-\left\|\vec F_B\right\| = |q|\left\|\vec v\times\vec B\right\|
+\left\|\overrightarrow{F}_B\right\| = |q|\left\|\overrightarrow{v}\times\overrightarrow{B}\right\|
  = |q|\,vB\sin 90^\circ = |q|\,vB\text{.}
 </md>
 Since <m>v</m> is constant (we are about to confirm this) and <m>B</m> is
@@ -762,9 +762,9 @@ not just at the initial instant, but at every moment of the motion.
 </statement>
 <solution>
 <p>
-This is the defining property of the cross product: <m>\vec v\times\vec B</m>
+This is the defining property of the cross product: <m>\overrightarrow{v}\times\overrightarrow{B}</m>
 is perpendicular to <em>both</em> factors, whatever they happen to be. So
-<m>\vec F_B = q\,\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>
+<m>\overrightarrow{F}_B = q\,\overrightarrow{v}\times\overrightarrow{B}</m> is perpendicular to <m>\overrightarrow{v}</m>
 automatically, at every instant, with no computation and no special
 assumption about where the particle is or which way it is heading.
 </p>
@@ -772,14 +772,14 @@ assumption about where the particle is or which way it is heading.
 <p>
 If you would like it verified rather than quoted, the dot product does it in
 one line.<fn>Two facts are doing the work. First, the scalar triple product
-<m>\left(\vec a\times\vec b\right)\cdot\vec c</m> equals the determinant
-whose rows are <m>\vec a</m>, <m>\vec b</m> and <m>\vec c</m>. Second, a
+<m>\left(\overrightarrow{a}\times\overrightarrow{b}\right)\cdot\overrightarrow{c}</m> equals the determinant
+whose rows are <m>\overrightarrow{a}</m>, <m>\overrightarrow{b}</m> and <m>\overrightarrow{c}</m>. Second, a
 determinant with two equal rows is zero, since interchanging those two rows
 both leaves the determinant unchanged and reverses its sign.</fn> Taking
-<m>\vec c = \vec v</m>,
+<m>\overrightarrow{c} = \overrightarrow{v}</m>,
 <md>
-\vec F_B\cdot\vec v
- = q\left(\vec v\times\vec B\right)\cdot\vec v
+\overrightarrow{F}_B\cdot\overrightarrow{v}
+ = q\left(\overrightarrow{v}\times\overrightarrow{B}\right)\cdot\overrightarrow{v}
  = q\begin{vmatrix}
  v_1 \amp v_2 \amp v_3 \\
  B_1 \amp B_2 \amp B_3 \\
@@ -832,8 +832,8 @@ tighter.
 
 <figure xml:id="fig-cm-magnetic">
 <caption>
-A positive charge in a uniform field <m>\vec B</m> directed into the page.
-The force <m>q\,\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>
+A positive charge in a uniform field <m>\overrightarrow{B}</m> directed into the page.
+The force <m>q\,\overrightarrow{v}\times\overrightarrow{B}</m> is perpendicular to <m>\overrightarrow{v}</m>
 automatically, so it never changes the speed — it only bends the path into
 a circle of radius <m>r = mv/(|q|B)</m>.
 </caption>
@@ -891,16 +891,16 @@ points straight in toward the centre, at a right angle to the velocity.
 
       <label font-size="18" at="mb-Ol" anchor="(-0.12,-0.14)" alignment="sw"><m>O</m></label>
       <label font-size="18" at="mb-rl" anchor="(0.62,-0.16)" alignment="s" color="#666666"><m>r</m></label>
-      <label font-size="18" at="mb-vl" anchor="(2.52,1.78)" alignment="ne" color="#0072B2"><m>\vec v</m></label>
-      <label font-size="18" at="mb-Fl" anchor="(1.62,0.14)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="mb-vl" anchor="(2.52,1.78)" alignment="ne" color="#0072B2"><m>\overrightarrow{v}</m></label>
+      <label font-size="18" at="mb-Fl" anchor="(1.62,0.14)" alignment="n" color="#D55E00"><m>\overrightarrow{F}</m></label>
       <label font-size="18" at="mb-ql" anchor="(2.56,-0.14)" alignment="se"><m>q>0</m></label>
       <label font-size="18" at="mb-Bl" anchor="(-4.4,4.2)" alignment="e" color="#7A5AA8">
-      <m>\vec B \text{ into the page}</m>
+      <m>\overrightarrow{B} \text{ into the page}</m>
       </label>
 
       <label font-size="18" at="mb-note1" anchor="(-4.4,-3.95)" alignment="e">
-      <m>\vec F = q\,\vec v\times\vec B \;\Rightarrow\; \|\vec F\| = |q|vB,
-        \;\; \vec F\perp\vec v \text{ automatically}</m>
+      <m>\overrightarrow{F} = q\,\overrightarrow{v}\times\overrightarrow{B} \;\Rightarrow\; \|\overrightarrow{F}\| = |q|vB,
+        \;\; \overrightarrow{F}\perp\overrightarrow{v} \text{ automatically}</m>
       </label>
       <label font-size="18" at="mb-note2" anchor="(-4.4,-5.15)" alignment="e">
       <m>|q|vB = \dfrac{mv^2}{r} \;\;\Longrightarrow\;\; r = \dfrac{mv}{|q|B}</m>

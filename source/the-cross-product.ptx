@@ -47,13 +47,13 @@ appreciate the role of cross product in determining torque.
 <p>
 Describe circular motion with the moving unit vectors <m>\hat r</m> and
 <m>\hat\theta</m>, and represent the rate of rotation by the angular
-velocity vector <m>\vec\omega</m> along the axis of rotation.
+velocity vector <m>\overrightarrow{\omega}</m> along the axis of rotation.
 </p>
 </li>
 <li>
 <p>
 Use the cross product to obtain the velocity of a rotating object from its
-angular velocity and position, <m>\vec v = \vec\omega \times \vec r</m>.
+angular velocity and position, <m>\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}</m>.
 </p>
 </li>
 </ul>
@@ -71,10 +71,10 @@ Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
 <m>\mathbb R^3</m>, the <term>cross product</term>
 <m>\mathbf u \times \mathbf v</m> is the <em>vector</em> defined by
 <md xml:id="eq-cross-geometric" number="yes">
-\mathbf u \times \mathbf v = \left(\|\mathbf u\|\|\mathbf v\|\sin\theta\right)\mathbf n,
+\mathbf u \times \mathbf v = \left(\|\mathbf u\|\|\mathbf v\|\sin\theta\right)\hat{n},
 </md>
 where <m>\theta</m>, with <m>0 \le \theta \le \pi</m>, is the angle
-between <m>\mathbf u</m> and <m>\mathbf v</m>, and <m>\mathbf n</m> is
+between <m>\mathbf u</m> and <m>\mathbf v</m>, and <m>\hat{n}</m> is
 the unit vector orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>
 whose direction is given by the right-hand rule.
 </p>
@@ -151,7 +151,7 @@ value.
 </p>
 
 <p>
-The vector <m>\mathbf n</m> is the unit vector that determines the
+The vector <m>\hat{n}</m> is the unit vector that determines the
 direction of <m>\mathbf u \times \mathbf v</m> using the right-hand
 rule. Note that <m>\mathbf u \times \mathbf v</m> is orthogonal
 (perpendicular) to both vectors, as shown in
@@ -161,7 +161,7 @@ rule. Note that <m>\mathbf u \times \mathbf v</m> is orthogonal
 <figure xml:id="fig-cross-product-video">
 <caption>
 The cross product <m>\mathbf u \times \mathbf v</m> points in the
-direction of the unit vector <m>\mathbf n</m>, given by the right-hand
+direction of the unit vector <m>\hat{n}</m>, given by the right-hand
 rule, and is orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>;
 its length is <m>\|\mathbf u\|\|\mathbf v\||\sin\theta|</m>.
 </caption>
@@ -320,10 +320,10 @@ Use <xref ref="def-cross-product"/> to compute
 </p>
 <p>
 <ol>
-<li><p><m>\mathbf i \times \mathbf j</m>, and also <m>\mathbf j \times \mathbf i</m>;</p></li>
+<li><p><m>\hat{\imath} \times \hat{\jmath}</m>, and also <m>\hat{\jmath} \times \hat{\imath}</m>;</p></li>
 <li>
 <p>
-<m>\mathbf u \times \mathbf v</m>, where <m>\mathbf u = 4\mathbf i</m> and
+<m>\mathbf u \times \mathbf v</m>, where <m>\mathbf u = 4\hat{\imath}</m> and
 <m>\mathbf v</m> is a vector of length <m>3</m> lying in the
 <m>xy</m>-plane, making an angle of <m>30^\circ</m> with <m>\mathbf u</m>
 measured counterclockwise.
@@ -334,22 +334,22 @@ measured counterclockwise.
 </statement>
 <solution>
 <p>
-<em>Part 1.</em> The vectors <m>\mathbf i</m> and <m>\mathbf j</m> are unit
-vectors, so <m>\|\mathbf i\| = \|\mathbf j\| = 1</m>, and they are
+<em>Part 1.</em> The vectors <m>\hat{\imath}</m> and <m>\hat{\jmath}</m> are unit
+vectors, so <m>\|\hat{\imath}\| = \|\hat{\jmath}\| = 1</m>, and they are
 perpendicular, so <m>\theta = 90^\circ</m> and <m>\sin\theta = 1</m>. Both
 lie in the <m>xy</m>-plane, so the unit vector orthogonal to both is either
-<m>\mathbf k</m> or <m>-\mathbf k</m>; curling the fingers of the right hand
-from <m>\mathbf i</m> toward <m>\mathbf j</m> points the thumb along
-<m>+\mathbf k</m>, so <m>\mathbf n = \mathbf k</m> and
+<m>\hat{k}</m> or <m>-\hat{k}</m>; curling the fingers of the right hand
+from <m>\hat{\imath}</m> toward <m>\hat{\jmath}</m> points the thumb along
+<m>+\hat{k}</m>, so <m>\hat{n} = \hat{k}</m> and
 <md>
-\mathbf i \times \mathbf j
-= \left(\|\mathbf i\|\|\mathbf j\|\sin 90^\circ\right)\mathbf k
-= (1)(1)(1)\,\mathbf k = \mathbf k.
+\hat{\imath} \times \hat{\jmath}
+= \left(\|\hat{\imath}\|\|\hat{\jmath}\|\sin 90^\circ\right)\hat{k}
+= (1)(1)(1)\,\hat{k} = \hat{k}.
 </md>
-For <m>\mathbf j \times \mathbf i</m> the two lengths and the angle are
-unchanged, but the right-hand rule now runs from <m>\mathbf j</m> toward
-<m>\mathbf i</m>, which points the thumb along <m>-\mathbf k</m>. Hence
-<m>\mathbf j \times \mathbf i = -\mathbf k = -(\mathbf i \times \mathbf j)</m>,
+For <m>\hat{\jmath} \times \hat{\imath}</m> the two lengths and the angle are
+unchanged, but the right-hand rule now runs from <m>\hat{\jmath}</m> toward
+<m>\hat{\imath}</m>, which points the thumb along <m>-\hat{k}</m>. Hence
+<m>\hat{\jmath} \times \hat{\imath} = -\hat{k} = -(\hat{\imath} \times \hat{\jmath})</m>,
 in agreement with property 4 of <xref ref="thm-cross-properties"/>.
 </p>
 <p>
@@ -362,9 +362,9 @@ in agreement with property 4 of <xref ref="thm-cross-properties"/>.
 </md>
 Both vectors lie in the <m>xy</m>-plane, and turning from <m>\mathbf u</m> to
 <m>\mathbf v</m> is counterclockwise, so the right-hand rule again gives
-<m>\mathbf n = \mathbf k</m> and
+<m>\hat{n} = \hat{k}</m> and
 <md>
-\mathbf u \times \mathbf v = 6\,\mathbf k = \langle 0,0,6\rangle.
+\mathbf u \times \mathbf v = 6\,\hat{k} = \langle 0,0,6\rangle.
 </md>
 </p>
 <p>
@@ -409,16 +409,16 @@ write it as a determinant:
 <mrow>
 \mathbf u \times \mathbf v \amp =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 u_1 \amp u_2 \amp u_3 \\
 v_1 \amp v_2 \amp v_3
 \end{vmatrix}
 </mrow>
 <mrow xml:id="eq-cross-determinant" number="yes">
 \amp =
-\begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\mathbf i
-- \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\mathbf j
-+ \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\mathbf k,
+\begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\hat{\imath}
+- \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\hat{\jmath}
++ \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\hat{k},
 </mrow>
 </md>
 where
@@ -438,24 +438,26 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 </statement>
 <solution>
 <p>
+By <xref ref="eq-cross-determinant"/> and
+<xref ref="eq-two-by-two-determinant"/>,
 <md>
 <mrow>
 \mathbf u \times \mathbf v \amp=
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 1 \amp -1 \amp 2 \\
 3 \amp -2 \amp 1
 \end{vmatrix}
 </mrow>
 <mrow>
 \amp=
-\begin{vmatrix} -1 \amp 2 \\ -2 \amp 1 \end{vmatrix}\mathbf i
-- \begin{vmatrix} 1 \amp 2 \\ 3 \amp 1 \end{vmatrix}\mathbf j
-+ \begin{vmatrix} 1 \amp -1 \\ 3 \amp -2 \end{vmatrix}\mathbf k
+\begin{vmatrix} -1 \amp 2 \\ -2 \amp 1 \end{vmatrix}\hat{\imath}
+- \begin{vmatrix} 1 \amp 2 \\ 3 \amp 1 \end{vmatrix}\hat{\jmath}
++ \begin{vmatrix} 1 \amp -1 \\ 3 \amp -2 \end{vmatrix}\hat{k}
 </mrow>
 <mrow>
-\amp= (-1+4)\mathbf i - (1-6)\mathbf j + (-2+3)\mathbf k
-= 3\mathbf i + 5\mathbf j + \mathbf k
+\amp= (-1+4)\hat{\imath} - (1-6)\hat{\jmath} + (-2+3)\hat{k}
+= 3\hat{\imath} + 5\hat{\jmath} + \hat{k}
 = \langle 3,5,1\rangle.
 </mrow>
 </md>
@@ -469,38 +471,38 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 <p>
 Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
 <m>C(0,-2,3)</m>. Find a unit vector which is orthogonal to both
-<m>\vec{AB}</m> and <m>\vec{AC}</m>.
+<m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>.
 </p>
 </statement>
 <solution>
 <p>
 We first compute the two vectors:
 <md>
-<mrow>\vec{AB} \amp= \langle 1,1,-3\rangle</mrow>
-<mrow>\vec{AC} \amp= \langle -1,-1,1\rangle.</mrow>
+<mrow>\overrightarrow{AB} \amp= \langle 1,1,-3\rangle</mrow>
+<mrow>\overrightarrow{AC} \amp= \langle -1,-1,1\rangle.</mrow>
 </md>
 </p>
 <p>
-The cross product <m>\vec{AB} \times \vec{AC}</m> is orthogonal to both
-vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
+The cross product <m>\overrightarrow{AB} \times \overrightarrow{AC}</m> is orthogonal to both
+vectors <m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>:
 <md>
 <mrow>
-\vec{AB} \times \vec{AC} \amp=
+\overrightarrow{AB} \times \overrightarrow{AC} \amp=
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 1 \amp 1 \amp -3 \\
 -1 \amp -1 \amp 1
 \end{vmatrix}
 </mrow>
 <mrow>
 \amp=
-\begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf i
-- \begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\mathbf j
-+ \begin{vmatrix} 1 \amp 1 \\ -1 \amp -1 \end{vmatrix}\mathbf k
+\begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\hat{\imath}
+- \begin{vmatrix} 1 \amp -3 \\ -1 \amp 1 \end{vmatrix}\hat{\jmath}
++ \begin{vmatrix} 1 \amp 1 \\ -1 \amp -1 \end{vmatrix}\hat{k}
 </mrow>
 <mrow>
-\amp= (1-3)\mathbf i - (1-3)\mathbf j + (-1+1)\mathbf k
-= -2\mathbf i + 2\mathbf j
+\amp= (1-3)\hat{\imath} - (1-3)\hat{\jmath} + (-1+1)\hat{k}
+= -2\hat{\imath} + 2\hat{\jmath}
 = \langle -2,2,0\rangle.
 </mrow>
 </md>
@@ -509,17 +511,17 @@ vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>:
 The unit vector in question is then computed as follows:
 <md xml:id="eq-perpendicular-unit">
        \begin{aligned}
-\mathbf n \amp = \frac{\vec{AB} \times \vec{AC}}{\left\|\vec{AB} \times \vec{AC}\right\|}\\
+\hat{n} \amp = \frac{\overrightarrow{AB} \times \overrightarrow{AC}}{\left\|\overrightarrow{AB} \times \overrightarrow{AC}\right\|}\\
 \amp = \frac{1}{\sqrt 8}\langle -2,2,0\rangle
 = \left\langle -\frac{1}{\sqrt 2},\frac{1}{\sqrt 2},0\right\rangle
-= -\frac{1}{\sqrt 2}\mathbf i + \frac{1}{\sqrt 2}\mathbf j.
+= -\frac{1}{\sqrt 2}\hat{\imath} + \frac{1}{\sqrt 2}\hat{\jmath}.
 \end{aligned}
 </md>
 </p>
 <figure xml:id="fig-normal-vector-video">
 <caption>
-The unit vector <m>\mathbf n</m> is orthogonal to both
-<m>\vec{AB}</m> and <m>\vec{AC}</m>, and hence to the plane through the
+The unit vector <m>\hat{n}</m> is orthogonal to both
+<m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>, and hence to the plane through the
 points <m>A</m>, <m>B</m>, and <m>C</m>.
 </caption>
 <video xml:id="video-normal-vector"
@@ -541,22 +543,23 @@ points that we had in the previous example.
 <solution>
 <p>
 To find the area of the triangle, we first compute the area of the
-parallelogram built on <m>\vec{AB}</m> and <m>\vec{AC}</m>, shown in
-<xref ref="fig-triangle-area"/>, and then divide by <m>2</m>:
+parallelogram built on <m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>, shown in
+<xref ref="fig-triangle-area"/>, and then divide by <m>2</m>. By
+<xref ref="eq-parallelogram-area"/>,
 <md>
 <mrow>
 \text{Area of the parallelogram} \amp=
-\left\|\vec{AB} \times \vec{AC}\right\| = \sqrt 8 = 2\sqrt 2
+\left\|\overrightarrow{AB} \times \overrightarrow{AC}\right\| = \sqrt 8 = 2\sqrt 2
 </mrow>
 <mrow>
 \text{Area of the triangle} \amp=
-\frac12 \left\|\vec{AB} \times \vec{AC}\right\| = \sqrt 2.
+\frac12 \left\|\overrightarrow{AB} \times \overrightarrow{AC}\right\| = \sqrt 2.
 </mrow>
 </md>
 </p>
 <figure xml:id="fig-triangle-area">
 <caption>
-The triangle built on the vectors <m>\vec{AB}</m> and <m>\vec{AC}</m>
+The triangle built on the vectors <m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>
 is half of the corresponding parallelogram.
 </caption>
 <image width="55%">
@@ -571,10 +574,10 @@ is half of the corresponding parallelogram.
 <vector at="tri-vec-ac" v="c" tail="(0,0)" stroke="blue"/>
 <vector at="tri-vec-ab" v="b" tail="(0,0)" stroke="red"/>
 <label at="tri-ac-label" anchor="(0.75,1.5)" alignment="nw" color="blue">
-<m>\vec{AC}</m>
+<m>\overrightarrow{AC}</m>
 </label>
 <label at="tri-ab-label" anchor="(2,0)" alignment="s" color="red">
-<m>\vec{AB}</m>
+<m>\overrightarrow{AB}</m>
 </label>
 </coordinates>
 
@@ -602,32 +605,32 @@ is half of the corresponding parallelogram.
 <title>True or False</title>
 <statement correct="yes">
 <p>
-Let <m>\vec u</m> and <m>\vec v</m> be two vectors in
-<m>\mathbb R^3</m>. Then, <m>\vec u \times \text{proj}_{\vec v}\vec u</m>
-is perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
+Let <m>\overrightarrow{u}</m> and <m>\overrightarrow{v}</m> be two vectors in
+<m>\mathbb R^3</m>. Then, <m>\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>
+is perpendicular to <m>\overrightarrow{u} - \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>.
 </p>
 </statement>
 <feedback>
 <p>
-Note that <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is perpendicular to both
-<m>\vec u</m> and <m>\text{proj}_{\vec v}\vec u</m>, which gives:
+Note that <m>\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m> is perpendicular to both
+<m>\overrightarrow{u}</m> and <m>\text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>, which gives:
 <md xml:id="eq-true-false-1">
 <mrow>
-\left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot
-\left(\vec u - \text{proj}_{\vec v}\vec u\right)
+\left(\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}\right) \cdot
+\left(\overrightarrow{u} - \text{proj}_{\overrightarrow{v}}\overrightarrow{u}\right)
 \amp =
-\left(\vec u \times \text{proj}_{\vec v}\vec u\right) \cdot \vec u
+\left(\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}\right) \cdot \overrightarrow{u}
 </mrow>
 <mrow>
-\amp \quad - \left(\vec u \times \text{proj}_{\vec v}\vec u\right)
- \cdot \text{proj}_{\vec v}\vec u
+\amp \quad - \left(\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}\right)
+ \cdot \text{proj}_{\overrightarrow{v}}\overrightarrow{u}
 </mrow>
 <mrow>
 \amp = 0 - 0 = 0,
 </mrow>
 </md>
-and therefore <m>\vec u \times \text{proj}_{\vec v}\vec u</m> is
-perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
+and therefore <m>\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m> is
+perpendicular to <m>\overrightarrow{u} - \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>.
 </p>
 </feedback>
 </exercise>
@@ -636,9 +639,9 @@ perpendicular to <m>\vec u - \text{proj}_{\vec v}\vec u</m>.
 <title>True or False</title>
 <statement correct="yes">
 <p>
-Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
+Let <m>\hat{u}</m> and <m>\hat{v}</m> be two standard unit vectors in
 <m>\mathbb R^3</m>. Then,
-<m>\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2 = 1</m>.
+<m>\left(\hat{u} \cdot \hat{v}\right)^2 + \left\|\hat{v} \times \hat{u}\right\|^2 = 1</m>.
 </p>
 </statement>
 <feedback>
@@ -646,21 +649,21 @@ Let <m>\vec u</m> and <m>\vec v</m> be two standard unit vectors in
 Note that:
 <md>
 <mrow>
-\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2
-\amp= \|\vec u\|^2\|\vec v\|^2\cos^2\theta + \|\vec u\|^2\|\vec v\|^2\sin^2\theta
+\left(\hat{u} \cdot \hat{v}\right)^2 + \left\|\hat{v} \times \hat{u}\right\|^2
+\amp= \|\hat{u}\|^2\|\hat{v}\|^2\cos^2\theta + \|\hat{u}\|^2\|\hat{v}\|^2\sin^2\theta
 </mrow>
 <mrow>
-\amp= \|\vec u\|^2\|\vec v\|^2\left(\cos^2\theta + \sin^2\theta\right)
-= \|\vec u\|^2\|\vec v\|^2.
+\amp= \|\hat{u}\|^2\|\hat{v}\|^2\left(\cos^2\theta + \sin^2\theta\right)
+= \|\hat{u}\|^2\|\hat{v}\|^2.
 </mrow>
 </md>
 </p>
 <p>
-Now, since <m>\vec u</m> and <m>\vec v</m> are standard unit vectors, we
-have <m>\|\vec u\| = \|\vec v\| = 1</m>, which means:
+Now, since <m>\hat{u}</m> and <m>\hat{v}</m> are standard unit vectors, we
+have <m>\|\hat{u}\| = \|\hat{v}\| = 1</m>, which means:
 <md xml:id="eq-true-false-3">
-\left(\vec u \cdot \vec v\right)^2 + \left\|\vec v \times \vec u\right\|^2
-= \|\vec u\|^2\|\vec v\|^2 = 1.
+\left(\hat{u} \cdot \hat{v}\right)^2 + \left\|\hat{v} \times \hat{u}\right\|^2
+= \|\hat{u}\|^2\|\hat{v}\|^2 = 1.
 </md>
 </p>
 </feedback>
@@ -688,11 +691,11 @@ product captures all three scenarios and more.
 <title>Torque</title>
 <statement>
 <p>
-Suppose a force <m>\vec F</m> is applied at a point whose position
-vector relative to the axis of rotation is <m>\vec r</m>. The
-<term>torque</term> produced by <m>\vec F</m> is the vector
+Suppose a force <m>\overrightarrow{F}</m> is applied at a point whose position
+vector relative to the axis of rotation is <m>\overrightarrow{r}</m>. The
+<term>torque</term> produced by <m>\overrightarrow{F}</m> is the vector
 <md xml:id="eq-torque-def" number="yes">
-\vec\tau = \vec r \times \vec F.
+\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}.
 </md>
 </p>
 </statement>
@@ -700,31 +703,31 @@ vector relative to the axis of rotation is <m>\vec r</m>. The
 
 <figure xml:id="fig-int-torque">
 <caption>
-Interactive view of <xref ref="eq-torque-def"/>. The force <m>\vec F</m> is
-applied at the head of <m>\vec r</m>, and the torque
-<m>\vec\tau = \vec r \times \vec F</m> points along the axis of rotation.
+Interactive view of <xref ref="eq-torque-def"/>. The force <m>\overrightarrow{F}</m> is
+applied at the head of <m>\overrightarrow{r}</m>, and the torque
+<m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> points along the axis of rotation.
 </caption>
 <interactive xml:id="interactive-torque" iframe="torque-cross-product.html" width="100%" aspect="8:7">
 <instructions>
 <p>
 In the left pane the axis of rotation passes through the marked point,
 perpendicular to the screen. Drag the head of the yellow position vector
-<m>\vec r</m> to move the point where the force is applied, and drag the
-head of the red force <m>\vec F</m> to change its size and direction. The
+<m>\overrightarrow{r}</m> to move the point where the force is applied, and drag the
+head of the red force <m>\overrightarrow{F}</m> to change its size and direction. The
 dashed red line is the line along which the force acts, and the violet
-segment is the lever arm <m>r_\perp = \|\vec r\|\sin\theta</m>, the
+segment is the lever arm <m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>, the
 perpendicular distance from the axis to that line. The shaded
-parallelogram built on <m>\vec r</m> and <m>\vec F</m> has area
-<m>\|\vec\tau\|</m>, and the curved arrow shows the sense of the rotation
+parallelogram built on <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m> has area
+<m>\|\overrightarrow{\tau}\|</m>, and the curved arrow shows the sense of the rotation
 the torque produces.
 </p>
 <p>
 The right pane shows the same two vectors in space, together with
-<m>\vec\tau = \vec r \times \vec F</m> along the axis; drag that pane to
+<m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> along the axis; drag that pane to
 view it from another angle, or press <q>view</q> to restore the original
-one. Press <q>animate</q> to swing <m>\vec F</m> once around the point of
-application: watch <m>\|\vec\tau\|</m> reach its largest value when
-<m>\vec F \perp \vec r</m>, fall to zero when <m>\vec F</m> points
+one. Press <q>animate</q> to swing <m>\overrightarrow{F}</m> once around the point of
+application: watch <m>\|\overrightarrow{\tau}\|</m> reach its largest value when
+<m>\overrightarrow{F} \perp \overrightarrow{r}</m>, fall to zero when <m>\overrightarrow{F}</m> points
 straight at (or away from) the axis, and reverse direction as the
 rotation changes sense. Either vector can also be moved with the keyboard
 (press <q>Tab</q> to reach its head, then use the arrow keys).
@@ -737,14 +740,14 @@ rotation changes sense. Either vector can also be moved with the keyboard
 Everything we know about the cross product now translates into physics.
 By <xref ref="eq-cross-geometric"/>, the magnitude of the torque is
 <md xml:id="eq-torque-magnitude" number="yes">
-\|\vec\tau\| = \|\vec r\|\|\vec F\||\sin\theta|,
+\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|\|\overrightarrow{F}\||\sin\theta|,
 </md>
 
-where <m>\theta</m> is the angle between <m>\vec r</m> and
-<m>\vec F</m>, and the direction of <m>\vec\tau</m> is given by the
-right-hand rule: <m>\vec\tau</m> points along the axis of rotation, and
-curling the fingers of the right hand from <m>\vec r</m> toward
-<m>\vec F</m> gives the sense of the rotation. Torque has units of
+where <m>\theta</m> is the angle between <m>\overrightarrow{r}</m> and
+<m>\overrightarrow{F}</m>, and the direction of <m>\overrightarrow{\tau}</m> is given by the
+right-hand rule: <m>\overrightarrow{\tau}</m> points along the axis of rotation, and
+curling the fingers of the right hand from <m>\overrightarrow{r}</m> toward
+<m>\overrightarrow{F}</m> gives the sense of the rotation. Torque has units of
 meter-newtons (<m>\text{m}\cdot\text{N}</m>) in SI.
 </p>
 
@@ -753,12 +756,12 @@ The quantity in <xref ref="eq-torque-magnitude"/> can be grouped in two
 useful ways:
 <md>
 <mrow>
-\|\vec\tau\| \amp= \underbrace{\left(\|\vec r\|\sin\theta\right)}_{r_\perp}\|\vec F\|
- = r_\perp \|\vec F\|,
+\|\overrightarrow{\tau}\| \amp= \underbrace{\left(\|\overrightarrow{r}\|\sin\theta\right)}_{r_\perp}\|\overrightarrow{F}\|
+ = r_\perp \|\overrightarrow{F}\|,
 </mrow>
 <mrow>
-\|\vec\tau\| \amp= \|\vec r\|\underbrace{\left(\|\vec F\|\sin\theta\right)}_{F_\perp}
- = \|\vec r\|\, F_\perp.
+\|\overrightarrow{\tau}\| \amp= \|\overrightarrow{r}\|\underbrace{\left(\|\overrightarrow{F}\|\sin\theta\right)}_{F_\perp}
+ = \|\overrightarrow{r}\|\, F_\perp.
 </mrow>
 </md>
 </p>
@@ -767,15 +770,15 @@ useful ways:
 <caption>
 The two groupings of <xref ref="eq-torque-magnitude"/>. In both pictures the
 axis of rotation passes through <m>O</m>, perpendicular to the page, the
-force <m>\vec F</m> is applied at <m>P</m>, and <m>\theta</m> is the angle
-between <m>\vec r</m> and <m>\vec F</m>; the two products are equal because
-each is <m>\|\vec r\|\|\vec F\|\sin\theta</m>.
+force <m>\overrightarrow{F}</m> is applied at <m>P</m>, and <m>\theta</m> is the angle
+between <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m>; the two products are equal because
+each is <m>\|\overrightarrow{r}\|\|\overrightarrow{F}\|\sin\theta</m>.
 </caption>
 <sidebyside widths="48% 48%" margins="2%">
 
 <figure xml:id="fig-torque-lever-arm">
 <caption>
-Force times lever arm: <m>\|\vec\tau\| = r_\perp\|\vec F\|</m>.
+Force times lever arm: <m>\|\overrightarrow{\tau}\| = r_\perp\|\overrightarrow{F}\|</m>.
 </caption>
 <image width="100%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-torque-lever-arm">
@@ -805,19 +808,19 @@ Force times lever arm: <m>\|\vec\tau\| = r_\perp\|\vec F\|</m>.
 <label at="la-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
 <label at="la-Pl" anchor="(4.02,0.10)" alignment="nw"><m>P</m></label>
 <label at="la-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
-<m>\vec r</m>
+<m>\overrightarrow{r}</m>
 </label>
 <label at="la-Fl" anchor="(5.30,2.35)" alignment="nw" color="#D55E00">
-<m>\vec F</m>
+<m>\overrightarrow{F}</m>
 </label>
 <label at="la-leverl" anchor="(1.22,-0.86)" alignment="ne" color="#009E73">
 <m>r_\perp</m>
 </label>
 <label at="la-eq1" anchor="(2.75,-3.05)" alignment="c">
-<m>r_\perp = \|\vec r\|\sin\theta</m>
+<m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>
 </label>
 <label at="la-eq2" anchor="(2.75,-3.75)" alignment="c">
-<m>\|\vec\tau\| = r_\perp\|\vec F\|</m>
+<m>\|\overrightarrow{\tau}\| = r_\perp\|\overrightarrow{F}\|</m>
 </label>
 
 </coordinates>
@@ -840,7 +843,7 @@ Force times lever arm: <m>\|\vec\tau\| = r_\perp\|\vec F\|</m>.
 <figure xml:id="fig-torque-perp-force">
 <caption>
 Distance times perpendicular force:
-<m>\|\vec\tau\| = \|\vec r\|F_\perp</m>.
+<m>\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|F_\perp</m>.
 </caption>
 <image width="100%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-torque-perp-force">
@@ -868,10 +871,10 @@ Distance times perpendicular force:
 <label at="fp-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
 <label at="fp-Pl" anchor="(3.94,-0.10)" alignment="sw"><m>P</m></label>
 <label at="fp-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
-<m>\vec r</m>
+<m>\overrightarrow{r}</m>
 </label>
 <label at="fp-Fl" anchor="(5.55,2.20)" alignment="ne" color="#D55E00">
-<m>\vec F</m>
+<m>\overrightarrow{F}</m>
 </label>
 <label at="fp-Fperpl" anchor="(3.90,1.15)" alignment="w" color="#009E73">
 <m>F_\perp</m>
@@ -883,10 +886,10 @@ Distance times perpendicular force:
 <m>F_\parallel \text{ produces no rotation}</m>
 </label>
 <label at="fp-eq1" anchor="(2.75,-3.05)" alignment="c">
-<m>F_\perp = \|\vec F\|\sin\theta</m>
+<m>F_\perp = \|\overrightarrow{F}\|\sin\theta</m>
 </label>
 <label at="fp-eq2" anchor="(2.75,-3.75)" alignment="c">
-<m>\|\vec\tau\| = \|\vec r\|F_\perp</m>
+<m>\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|F_\perp</m>
 </label>
 
 </coordinates>
@@ -915,8 +918,8 @@ torque is the force times the
 <term>lever arm</term> <m>r_\perp</m>, the perpendicular distance from
 the axis to the line along which the force acts. The second, shown in
 <xref ref="fig-torque-perp-force"/>, says it is
-the distance <m>\|\vec r\|</m> times <m>F_\perp</m>, the component of the
-force perpendicular to <m>\vec r</m>; the parallel component
+the distance <m>\|\overrightarrow{r}\|</m> times <m>F_\perp</m>, the component of the
+force perpendicular to <m>\overrightarrow{r}</m>; the parallel component
 <m>F_\parallel</m> points straight at the axis and produces no rotation.
 </p>
 
@@ -924,8 +927,8 @@ force perpendicular to <m>\vec r</m>; the parallel component
 <title>Zero Torque</title>
 <statement>
 <p>
-By <xref ref="eq-parallel-vectors"/>, if <m>\vec F</m> is parallel to
-<m>\vec r</m> then <m>\vec\tau = \vec r \times \vec F = \vec 0</m>: a
+By <xref ref="eq-parallel-vectors"/>, if <m>\overrightarrow{F}</m> is parallel to
+<m>\overrightarrow{r}</m> then <m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F} = \overrightarrow{0}</m>: a
 force directed straight at (or away from) the axis produces no rotation.
 This is why you cannot open a door by pushing toward its hinge.
 </p>
@@ -937,7 +940,7 @@ This is why you cannot open a door by pushing toward its hinge.
 <statement>
 <p>
 The biceps muscle exerts a vertical force of
-<m>\|\vec F\| = 700</m> N on the lower arm, attached at a point
+<m>\|\overrightarrow{F}\| = 700</m> N on the lower arm, attached at a point
 <m>5.0</m> cm from the elbow joint (the axis of rotation). Calculate
 the torque about the elbow when
 </p>
@@ -951,10 +954,10 @@ the torque about the elbow when
      be restored by simply removing this comment wrapper.
 <figure xml:id="fig-biceps-torque-video">
 <caption>
-The torque <m>\vec\tau = \vec r \times \vec F</m> of the biceps force
+The torque <m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> of the biceps force
 about the elbow. When the forearm drops <m>30^\circ</m> below the
-horizontal, the angle between <m>\vec r</m> and <m>\vec F</m> becomes
-<m>120^\circ</m>, the lever arm <m>r_\perp = \|\vec r\|\sin\theta</m>
+horizontal, the angle between <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m> becomes
+<m>120^\circ</m>, the lever arm <m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>
 shortens, and the torque decreases from <m>35</m> to <m>30</m>
 <m>\text{m}\cdot\text{N}</m>.
 </caption>
@@ -980,19 +983,19 @@ Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N b
 
 <p>
 Place the elbow at the origin and let the force act in the plane
-<m>z = 0</m>, with <m>\vec F = \langle 0, 700, 0\rangle</m> pointing
+<m>z = 0</m>, with <m>\overrightarrow{F} = \langle 0, 700, 0\rangle</m> pointing
 straight up.
 </p>
 
 <p>
 <em>Part 1.</em> The forearm is horizontal, so
-<m>\vec r = \langle 0.050, 0, 0\rangle</m> and the angle between
-<m>\vec r</m> and <m>\vec F</m> is <m>\theta = 90^\circ</m>. Then
+<m>\overrightarrow{r} = \langle 0.050, 0, 0\rangle</m> and the angle between
+<m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m> is <m>\theta = 90^\circ</m>. Then
 <md>
 <mrow>
-\vec\tau = \vec r \times \vec F \amp=
+\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F} \amp=
 \begin{vmatrix}
-\vec i \amp \vec j \amp \vec k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 0.050 \amp 0 \amp 0 \\
 0 \amp 700 \amp 0
 \end{vmatrix}
@@ -1002,10 +1005,10 @@ straight up.
 = \langle 0, 0, 35 \rangle,
 </mrow>
 </md>
-so <m>\|\vec\tau\| = 35\ \text{m}\cdot\text{N}</m>. Equivalently,
-<m>\|\vec\tau\| = \|\vec r\|\|\vec F\|\sin 90^\circ = (0.050)(700)(1) = 35\
+so <m>\|\overrightarrow{\tau}\| = 35\ \text{m}\cdot\text{N}</m>. Equivalently,
+<m>\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|\|\overrightarrow{F}\|\sin 90^\circ = (0.050)(700)(1) = 35\
 \text{m}\cdot\text{N}</m>. The torque points in the direction
-<m>+\vec k</m> (out of the page), which by the right-hand rule
+<m>+\hat{k}</m> (out of the page), which by the right-hand rule
 corresponds to a counterclockwise rotation of the forearm about the
 elbow.
 </p>
@@ -1014,17 +1017,17 @@ elbow.
 <em>Part 2.</em> Now the forearm points <m>30^\circ</m> below the
 horizontal, so
 <md xml:id="eq-biceps-r-vector" number="yes">
-\vec r = 0.050\,\langle \cos(-30^\circ), \sin(-30^\circ), 0\rangle
+\overrightarrow{r} = 0.050\,\langle \cos(-30^\circ), \sin(-30^\circ), 0\rangle
        = \langle 0.0433, -0.025, 0\rangle,
 </md>
 
-while <m>\vec F = \langle 0, 700, 0\rangle</m> is unchanged. The cross
+while <m>\overrightarrow{F} = \langle 0, 700, 0\rangle</m> is unchanged. The cross
 product gives
 <md>
 <mrow>
-\vec\tau = \vec r \times \vec F \amp=
+\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F} \amp=
 \begin{vmatrix}
-\vec i \amp \vec j \amp \vec k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 0.0433 \amp -0.025 \amp 0 \\
 0 \amp 700 \amp 0
 \end{vmatrix}
@@ -1038,13 +1041,13 @@ product gives
 </md>
 </p>
 <p>
-So <m>\|\vec\tau\| \approx 30\ \text{m}\cdot\text{N}</m>, again
+So <m>\|\overrightarrow{\tau}\| \approx 30\ \text{m}\cdot\text{N}</m>, again
 counterclockwise. To check with <xref ref="eq-torque-magnitude"/>: the
-vector <m>\vec r</m> sits at <m>-30^\circ</m> and <m>\vec F</m> at
+vector <m>\overrightarrow{r}</m> sits at <m>-30^\circ</m> and <m>\overrightarrow{F}</m> at
 <m>90^\circ</m>, so the angle between them is <m>\theta = 120^\circ</m>,
 and
 <md xml:id="eq-biceps-check" number="yes">
-\|\vec\tau\| = \|\vec r\|\|\vec F\|\sin 120^\circ
+\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|\|\overrightarrow{F}\|\sin 120^\circ
 = (0.050)(700)\left(\tfrac{\sqrt 3}{2}\right)
 \approx 30\ \text{m}\cdot\text{N}.
 </md>
@@ -1083,8 +1086,8 @@ change of that angle are related.
 
 <p>
 Throughout this section we write unit vectors with hats, so that
-<m>\hat i</m>, <m>\hat j</m> and <m>\hat k</m> are the usual fixed unit
-vectors <m>\mathbf i</m>, <m>\mathbf j</m> and <m>\mathbf k</m> along the
+<m>\hat{\imath}</m>, <m>\hat{\jmath}</m> and <m>\hat{k}</m> are the usual fixed unit
+vectors <m>\hat{\imath}</m>, <m>\hat{\jmath}</m> and <m>\hat{k}</m> along the
 coordinate axes.
 </p>
 </introduction>
@@ -1113,32 +1116,32 @@ circle, pointing in the direction of increasing <m>\theta</m>.
 </ul>
 Reading their components off the figure,
 <md>
-<mrow xml:id="eq-rhat" number="yes">\hat r(t) \amp = \cos\theta(t)\,\hat i + \sin\theta(t)\,\hat j,</mrow>
-<mrow xml:id="eq-thetahat" number="yes">\hat\theta(t) \amp = -\sin\theta(t)\,\hat i + \cos\theta(t)\,\hat j.</mrow>
+<mrow xml:id="eq-rhat" number="yes">\hat r(t) \amp = \cos\theta(t)\,\hat{\imath} + \sin\theta(t)\,\hat{\jmath},</mrow>
+<mrow xml:id="eq-thetahat" number="yes">\hat\theta(t) \amp = -\sin\theta(t)\,\hat{\imath} + \cos\theta(t)\,\hat{\jmath}.</mrow>
 </md>
 The position of the particle is then simply
 <md xml:id="eq-position-polar" number="yes">
-\vec r(t) = r\,\hat r(t).
+\overrightarrow{r}(t) = r\,\hat r(t).
 </md>
 </p>
 
 <p>
-The pair <m>\hat i</m>, <m>\hat j</m> is fixed once and for all, while the
+The pair <m>\hat{\imath}</m>, <m>\hat{\jmath}</m> is fixed once and for all, while the
 pair <m>\hat r(t)</m>, <m>\hat\theta(t)</m> rides along with the particle and
 turns as it goes; this is exactly what makes the second pair convenient. Note
-that together with <m>\hat k</m> the moving pair forms a right-handed frame,
+that together with <m>\hat{k}</m> the moving pair forms a right-handed frame,
 since
 <md>
 <mrow>
 \hat r \times \hat\theta \amp =
 \begin{vmatrix}
-\hat i \amp \hat j \amp \hat k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 \cos\theta \amp \sin\theta \amp 0 \\
 -\sin\theta \amp \cos\theta \amp 0
 \end{vmatrix}
 </mrow>
 <mrow xml:id="eq-polar-frame-right-handed" number="yes">
-\amp = \left(\cos^2\theta + \sin^2\theta\right)\hat k = \hat k.
+\amp = \left(\cos^2\theta + \sin^2\theta\right)\hat{k} = \hat{k}.
 </mrow>
 </md>
 </p>
@@ -1147,7 +1150,7 @@ since
 <caption>
 The moving frame at the point <m>P</m>: <m>\hat r(t)</m> points radially
 outward and <m>\hat\theta(t)</m> is tangent to the circle. The fixed vectors
-<m>\hat i</m> and <m>\hat j</m> are drawn at <m>P</m> for comparison; unlike
+<m>\hat{\imath}</m> and <m>\hat{\jmath}</m> are drawn at <m>P</m> for comparison; unlike
 <m>\hat r</m> and <m>\hat\theta</m>, they do not turn as the particle moves.
 </caption>
 <image width="62%">
@@ -1193,8 +1196,8 @@ vectors i and j are also drawn at P for comparison.
       <label font-size="18" at="pf-thl" anchor="(0.72,2.54)" alignment="nw" color="#009E73">
       <m>\hat\theta(t)</m>
       </label>
-      <label font-size="18" at="pf-il" anchor="(2.60,1.80)" alignment="se" color="#5B9BD5"><m>\hat i</m></label>
-      <label font-size="18" at="pf-jl" anchor="(1.60,2.88)" alignment="e" color="#5B9BD5"><m>\hat j</m></label>
+      <label font-size="18" at="pf-il" anchor="(2.60,1.80)" alignment="se" color="#5B9BD5"><m>\hat{\imath}</m></label>
+      <label font-size="18" at="pf-jl" anchor="(1.60,2.88)" alignment="e" color="#5B9BD5"><m>\hat{\jmath}</m></label>
       <label font-size="18" at="pf-xl" anchor="(3.25,0.05)" alignment="ne"><m>+x</m></label>
       <label font-size="18" at="pf-yl" anchor="(0.10,3.25)" alignment="e"><m>+y</m></label>
 
@@ -1224,11 +1227,11 @@ Because the particle moves, the angle <m>\theta</m> depends on <m>t</m>, and
 so do the two moving unit vectors. Differentiating <xref ref="eq-rhat"/> and
 <xref ref="eq-thetahat"/> with the chain rule gives
 <md>
-<mrow xml:id="eq-drhat" number="yes">\frac{d\hat r}{dt} \amp = \left(-\sin\theta\,\hat i
-  + \cos\theta\,\hat j\right)\frac{d\theta}{dt}
+<mrow xml:id="eq-drhat" number="yes">\frac{d\hat r}{dt} \amp = \left(-\sin\theta\,\hat{\imath}
+  + \cos\theta\,\hat{\jmath}\right)\frac{d\theta}{dt}
   = \frac{d\theta}{dt}\,\hat\theta,</mrow>
-<mrow xml:id="eq-dthetahat" number="yes">\frac{d\hat\theta}{dt} \amp = \left(-\cos\theta\,\hat i
-  - \sin\theta\,\hat j\right)\frac{d\theta}{dt}
+<mrow xml:id="eq-dthetahat" number="yes">\frac{d\hat\theta}{dt} \amp = \left(-\cos\theta\,\hat{\imath}
+  - \sin\theta\,\hat{\jmath}\right)\frac{d\theta}{dt}
   = -\frac{d\theta}{dt}\,\hat r.</mrow>
 </md>
 Each unit vector has constant length, so it can only turn; and turning a
@@ -1241,7 +1244,7 @@ Now differentiate the position <xref ref="eq-position-polar"/>. The radius
 <m>r</m> is constant on a circle, so only the unit vector needs
 differentiating:
 <md xml:id="eq-circular-velocity" number="yes">
-\vec v(t) = \frac{d\vec r}{dt} = r\,\frac{d\hat r}{dt}
+\overrightarrow{v}(t) = \frac{d\overrightarrow{r}}{dt} = r\,\frac{d\hat r}{dt}
  = r\,\frac{d\theta}{dt}\,\hat\theta(t).
 </md>
 The velocity has no <m>\hat r</m>-component at all: it points purely along
@@ -1266,7 +1269,7 @@ of change of its angle,
 measured in radians per second. By <xref ref="eq-circular-velocity"/>, the
 speed of the particle and its angular speed are related by
 <md xml:id="eq-speed-omega-r" number="yes">
-v = \left\|\vec v\right\| = r\,\omega.
+v = \left\|\overrightarrow{v}\right\| = r\,\omega.
 </md>
 </p>
 </statement>
@@ -1275,15 +1278,15 @@ v = \left\|\vec v\right\| = r\,\omega.
 <p>
 It is worth seeing where <xref ref="eq-speed-omega-r"/> comes from
 geometrically, without any differentiation of unit vectors. In a short time
-interval <m>\Delta t</m> the particle moves from <m>\vec r(t)</m> to
-<m>\vec r(t+\Delta t)</m>, turning through a small angle
+interval <m>\Delta t</m> the particle moves from <m>\overrightarrow{r}(t)</m> to
+<m>\overrightarrow{r}(t+\Delta t)</m>, turning through a small angle
 <m>\Delta\theta</m>, as in <xref ref="fig-circular-chord"/>. The two
 position vectors have the same length <m>r</m>, so they form an isosceles
 triangle whose third side is the displacement
-<m>\Delta\vec r = \vec r(t+\Delta t) - \vec r(t)</m>. Splitting that triangle
+<m>\Delta\overrightarrow{r} = \overrightarrow{r}(t+\Delta t) - \overrightarrow{r}(t)</m>. Splitting that triangle
 down the middle gives
 <md xml:id="eq-chord-length" number="yes">
-\left\|\Delta\vec r\right\| = 2r\sin\frac{\Delta\theta}{2}.
+\left\|\Delta\overrightarrow{r}\right\| = 2r\sin\frac{\Delta\theta}{2}.
 </md>
 </p>
 
@@ -1292,11 +1295,11 @@ For a small angle the power series
 <m>\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots</m> is dominated by
 its first term, so <m>\sin(\Delta\theta/2)\approx \Delta\theta/2</m> and the
 chord is very nearly the arc it cuts off:
-<m>\left\|\Delta\vec r\right\| \approx r\,\Delta\theta</m>. Dividing by
+<m>\left\|\Delta\overrightarrow{r}\right\| \approx r\,\Delta\theta</m>. Dividing by
 <m>\Delta t</m> and letting <m>\Delta t \to 0</m>,
 <md>
 <mrow>
-v \amp = \lim_{\Delta t\to 0}\frac{\left\|\Delta\vec r\right\|}{\Delta t}
+v \amp = \lim_{\Delta t\to 0}\frac{\left\|\Delta\overrightarrow{r}\right\|}{\Delta t}
  = r\lim_{\Delta t\to 0}\frac{\left|\Delta\theta\right|}{\Delta t}
 </mrow>
 <mrow>
@@ -1304,17 +1307,17 @@ v \amp = \lim_{\Delta t\to 0}\frac{\left\|\Delta\vec r\right\|}{\Delta t}
 </mrow>
 </md>
 which is <xref ref="eq-speed-omega-r"/> again. The direction comes out of the
-same picture: as <m>\Delta t \to 0</m> the chord <m>\Delta\vec r</m> lines up
-with the tangent line to the circle, so <m>\vec v</m> is perpendicular to
-<m>\vec r</m>, in agreement with <xref ref="eq-circular-velocity"/>.
+same picture: as <m>\Delta t \to 0</m> the chord <m>\Delta\overrightarrow{r}</m> lines up
+with the tangent line to the circle, so <m>\overrightarrow{v}</m> is perpendicular to
+<m>\overrightarrow{r}</m>, in agreement with <xref ref="eq-circular-velocity"/>.
 </p>
 
 <figure xml:id="fig-circular-chord">
 <caption>
-The displacement <m>\Delta\vec r</m> is the chord subtending the angle
+The displacement <m>\Delta\overrightarrow{r}</m> is the chord subtending the angle
 <m>\Delta\theta</m>. For small <m>\Delta\theta</m> the chord is nearly the
-arc, <m>\left\|\Delta\vec r\right\| \approx r\,\Delta\theta</m>, and its
-direction approaches that of the tangent line, along which <m>\vec v</m>
+arc, <m>\left\|\Delta\overrightarrow{r}\right\| \approx r\,\Delta\theta</m>, and its
+direction approaches that of the tangent line, along which <m>\overrightarrow{v}</m>
 points.
 </caption>
 <image width="66%">
@@ -1351,16 +1354,16 @@ it.
       <point at="ch-P2" p="(-0.3820,2.1666)" fill="black" radius="3.5"/>
 
       <label font-size="18" at="ch-r1l" anchor="(1.32,1.98)" alignment="e" color="#666666">
-      <m>\vec r(t)</m>
+      <m>\overrightarrow{r}(t)</m>
       </label>
       <label font-size="18" at="ch-r2l" anchor="(-0.55,2.24)" alignment="nw" color="#666666">
-      <m>\vec r(t+\Delta t)</m>
+      <m>\overrightarrow{r}(t+\Delta t)</m>
       </label>
       <label font-size="18" at="ch-drl" anchor="(0.30,1.92)" alignment="s" color="#D55E00">
-      <m>\Delta\vec r</m>
+      <m>\Delta\overrightarrow{r}</m>
       </label>
       <label font-size="18" at="ch-vl" anchor="(-0.10,2.70)" alignment="e" color="#0072B2">
-      <m>\vec v(t)</m>
+      <m>\overrightarrow{v}(t)</m>
       </label>
       <label font-size="18" at="ch-tl" anchor="(-0.86,3.06)" alignment="nw" color="#666666">
       <m>\text{tangent line}</m>
@@ -1370,10 +1373,10 @@ it.
            MathJax emit a nested <svg> inside the label, which browsers render
            flipped and stacked at the diagram origin. -->
       <label font-size="18" at="ch-note1" anchor="(0,-2.95)" alignment="c">
-      <m>\|\Delta\vec r\| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
+      <m>\|\Delta\overrightarrow{r}\| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
       </label>
       <label font-size="18" at="ch-note2" anchor="(0,-3.85)" alignment="c">
-      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{\|\Delta\vec r\|}{\Delta t}
+      <m>\Rightarrow\;\; v = \lim\limits_{\Delta t\to 0}\dfrac{\|\Delta\overrightarrow{r}\|}{\Delta t}
         = r\,\omega</m>
       </label>
 
@@ -1420,12 +1423,12 @@ increasing in the counterclockwise direction when viewed from the positive
 For an object moving in a circle in the <m>xy</m>-plane about the origin, the
 <term>angular velocity vector</term> is
 <md xml:id="eq-angular-velocity" number="yes">
-\vec\omega = \frac{d\theta}{dt}\,\hat k = \omega_z\,\hat k,
+\overrightarrow{\omega} = \frac{d\theta}{dt}\,\hat{k} = \omega_z\,\hat{k},
 </md>
 directed along the axis of rotation. Its SI units are
 <m>\text{rad}\cdot\text{s}^{-1}</m>, and the angular speed of
 <xref ref="eq-angular-speed"/> is its magnitude,
-<m>\omega = \left\|\vec\omega\right\| = \left|\omega_z\right|</m>.
+<m>\omega = \left\|\overrightarrow{\omega}\right\| = \left|\omega_z\right|</m>.
 </p>
 </statement>
 </definition>
@@ -1434,11 +1437,11 @@ directed along the axis of rotation. Its SI units are
 The sign of <m>\omega_z</m> records which way the object goes around, and the
 right-hand rule turns that sign into a direction in space: curl the fingers
 of your right hand in the direction of the motion and your thumb points along
-<m>\vec\omega</m>. If the particle circulates counterclockwise as seen from
-above, then <m>\omega_z = d\theta/dt > 0</m> and <m>\vec\omega</m> points in
-the <m>+\hat k</m>-direction; if it circulates clockwise, then
-<m>\omega_z &lt; 0</m> and <m>\vec\omega</m> points in the
-<m>-\hat k</m>-direction. The two cases are shown in
+<m>\overrightarrow{\omega}</m>. If the particle circulates counterclockwise as seen from
+above, then <m>\omega_z = d\theta/dt > 0</m> and <m>\overrightarrow{\omega}</m> points in
+the <m>+\hat{k}</m>-direction; if it circulates clockwise, then
+<m>\omega_z &lt; 0</m> and <m>\overrightarrow{\omega}</m> points in the
+<m>-\hat{k}</m>-direction. The two cases are shown in
 <xref ref="fig-angular-velocity-sign"/>.
 </p>
 
@@ -1447,8 +1450,8 @@ the <m>+\hat k</m>-direction; if it circulates clockwise, then
 The angular velocity vector points along the axis of rotation, in the
 direction given by the right-hand rule: up the <m>z</m>-axis for
 counterclockwise motion (left), down it for clockwise motion (right). Note
-that <m>\vec\omega</m> is <em>not</em> tangent to the orbit — the velocity
-<m>\vec v</m> is.
+that <m>\overrightarrow{\omega}</m> is <em>not</em> tangent to the orbit — the velocity
+<m>\overrightarrow{v}</m> is.
 </caption>
 <image width="92%">
 <description>
@@ -1481,21 +1484,21 @@ orbit.
       <point at="av-PA" p="(1.8021,-0.4302)" fill="black" radius="3.5"/>
 
       <label font-size="18" at="av-wAl" anchor="(0.14,2.42)" alignment="e" color="#D55E00">
-      <m>\vec\omega</m>
+      <m>\overrightarrow{\omega}</m>
       </label>
       <label font-size="18" at="av-zAl" anchor="(0.10,3.05)" alignment="e"><m>+z</m></label>
       <label font-size="18" at="av-OAl" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
       <label font-size="18" at="av-rAl" anchor="(0.98,-0.34)" alignment="s" color="#666666">
-      <m>\vec r</m>
+      <m>\overrightarrow{r}</m>
       </label>
       <label font-size="18" at="av-vAl" anchor="(3.00,0.18)" alignment="e" color="#0072B2">
-      <m>\vec v</m>
+      <m>\overrightarrow{v}</m>
       </label>
       <label font-size="18" at="av-topA" anchor="(-3.35,3.60)" alignment="e">
       <m>\omega_z = \dfrac{d\theta}{dt} > 0</m>
       </label>
       <label font-size="18" at="av-botA" anchor="(-3.35,-3.25)" alignment="e">
-      <m>\text{counterclockwise:}\;\; \vec\omega \text{ points along } +\hat k</m>
+      <m>\text{counterclockwise:}\;\; \overrightarrow{\omega} \text{ points along } +\hat{k}</m>
       </label>
 
       <!-- ============ PANEL B : clockwise, omega along -k ============ -->
@@ -1511,21 +1514,21 @@ orbit.
       <point at="av-PB" p="(9.2021,-0.4302)" fill="black" radius="3.5"/>
 
       <label font-size="18" at="av-wBl" anchor="(7.54,-2.42)" alignment="e" color="#D55E00">
-      <m>\vec\omega</m>
+      <m>\overrightarrow{\omega}</m>
       </label>
       <label font-size="18" at="av-zBl" anchor="(7.50,3.05)" alignment="e"><m>+z</m></label>
       <label font-size="18" at="av-OBl" anchor="(7.28,-0.10)" alignment="sw"><m>O</m></label>
       <label font-size="18" at="av-rBl" anchor="(8.34,-0.08)" alignment="n" color="#666666">
-      <m>\vec r</m>
+      <m>\overrightarrow{r}</m>
       </label>
       <label font-size="18" at="av-vBl" anchor="(8.02,-1.06)" alignment="sw" color="#0072B2">
-      <m>\vec v</m>
+      <m>\overrightarrow{v}</m>
       </label>
       <label font-size="18" at="av-topB" anchor="(4.45,3.60)" alignment="e">
       <m>\omega_z = \dfrac{d\theta}{dt} &lt; 0</m>
       </label>
       <label font-size="18" at="av-botB" anchor="(4.45,-3.25)" alignment="e">
-      <m>\text{clockwise:}\;\; \vec\omega \text{ points along } -\hat k</m>
+      <m>\text{clockwise:}\;\; \overrightarrow{\omega} \text{ points along } -\hat{k}</m>
       </label>
 
       </coordinates>
@@ -1554,7 +1557,7 @@ orbit.
 
 <p>
 We now have two vectors attached to the motion: the angular velocity
-<m>\vec\omega</m>, along the axis, and the position <m>\vec r</m>, in the
+<m>\overrightarrow{\omega}</m>, along the axis, and the position <m>\overrightarrow{r}</m>, in the
 plane of the circle. The velocity is perpendicular to both, which is precisely
 the job of the cross product.
 </p>
@@ -1565,38 +1568,38 @@ the job of the cross product.
 <p>
 For an object in circular motion about the origin,
 <md xml:id="eq-v-omega-cross-r" number="yes">
-\vec v = \vec\omega \times \vec r.
+\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}.
 </md>
 </p>
 </statement>
 </fact>
 
 <p>
-To verify this, first compute <m>\hat k \times \hat r</m> using
+To verify this, first compute <m>\hat{k} \times \hat r</m> using
 <xref ref="eq-rhat"/>:
 <md>
 <mrow>
-\hat k \times \hat r \amp =
+\hat{k} \times \hat r \amp =
 \begin{vmatrix}
-\hat i \amp \hat j \amp \hat k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 0 \amp 0 \amp 1 \\
 \cos\theta \amp \sin\theta \amp 0
 \end{vmatrix}
 </mrow>
 <mrow xml:id="eq-k-cross-rhat" number="yes">
-\amp = -\sin\theta\,\hat i + \cos\theta\,\hat j = \hat\theta.
+\amp = -\sin\theta\,\hat{\imath} + \cos\theta\,\hat{\jmath} = \hat\theta.
 </mrow>
 </md>
 Therefore, using <xref ref="eq-angular-velocity"/> and
 <xref ref="eq-position-polar"/>,
 <md>
 <mrow>
-\vec\omega \times \vec r
- \amp = \left(\frac{d\theta}{dt}\,\hat k\right)\times\left(r\,\hat r\right)
- = r\,\frac{d\theta}{dt}\left(\hat k \times \hat r\right)
+\overrightarrow{\omega} \times \overrightarrow{r}
+ \amp = \left(\frac{d\theta}{dt}\,\hat{k}\right)\times\left(r\,\hat r\right)
+ = r\,\frac{d\theta}{dt}\left(\hat{k} \times \hat r\right)
 </mrow>
 <mrow>
-\amp = r\,\frac{d\theta}{dt}\,\hat\theta = \vec v,
+\amp = r\,\frac{d\theta}{dt}\,\hat\theta = \overrightarrow{v},
 </mrow>
 </md>
 by <xref ref="eq-circular-velocity"/>. See
@@ -1609,26 +1612,26 @@ at once, with no computation:
 <ul>
 <li>
 <p>
-<em>Magnitude.</em> Since <m>\vec\omega</m> is perpendicular to the plane of
-the circle, it is perpendicular to <m>\vec r</m>, so
-<m>\left\|\vec v\right\| = \left\|\vec\omega\right\|\left\|\vec r\right\|
+<em>Magnitude.</em> Since <m>\overrightarrow{\omega}</m> is perpendicular to the plane of
+the circle, it is perpendicular to <m>\overrightarrow{r}</m>, so
+<m>\left\|\overrightarrow{v}\right\| = \left\|\overrightarrow{\omega}\right\|\left\|\overrightarrow{r}\right\|
 \sin 90^\circ = \omega r</m>, recovering
 <xref ref="eq-speed-omega-r"/>.
 </p>
 </li>
 <li>
 <p>
-<em>Direction.</em> The cross product is perpendicular to <m>\vec r</m>, so
+<em>Direction.</em> The cross product is perpendicular to <m>\overrightarrow{r}</m>, so
 the velocity is tangent to the circle; and it is perpendicular to
-<m>\vec\omega</m>, so the motion stays in the plane of the orbit.
+<m>\overrightarrow{\omega}</m>, so the motion stays in the plane of the orbit.
 </p>
 </li>
 <li>
 <p>
 <em>Sense.</em> The right-hand rule applied to
-<m>\vec\omega \times \vec r</m> automatically sends the particle
+<m>\overrightarrow{\omega} \times \overrightarrow{r}</m> automatically sends the particle
 counterclockwise when <m>\omega_z > 0</m> and clockwise when
-<m>\omega_z &lt; 0</m>, since reversing <m>\vec\omega</m> reverses the cross
+<m>\omega_z &lt; 0</m>, since reversing <m>\overrightarrow{\omega}</m> reverses the cross
 product.
 </p>
 </li>
@@ -1636,10 +1639,10 @@ product.
 </p>
 
 <p>
-There is a bonus. A piece of <m>\vec r</m> running along the axis is parallel
-to <m>\vec\omega</m> and so contributes nothing to the cross product, since
-<m>\hat k \times \left(z\,\hat k\right) = \vec 0</m>. Consequently
-<xref ref="eq-v-omega-cross-r"/> remains true when <m>\vec r</m> is measured
+There is a bonus. A piece of <m>\overrightarrow{r}</m> running along the axis is parallel
+to <m>\overrightarrow{\omega}</m> and so contributes nothing to the cross product, since
+<m>\hat{k} \times \left(z\,\hat{k}\right) = \overrightarrow{0}</m>. Consequently
+<xref ref="eq-v-omega-cross-r"/> remains true when <m>\overrightarrow{r}</m> is measured
 from <em>any</em> point on the axis of rotation, not just from the centre of
 the circle.
 </p>
@@ -1647,9 +1650,9 @@ the circle.
 <figure xml:id="fig-omega-cross-r">
 <caption>
 The velocity of a particle in circular motion is
-<m>\vec v = \vec\omega \times \vec r</m>. Because <m>\vec\omega</m> and
-<m>\vec r</m> are perpendicular, the speed is <m>\omega r</m>, and the
-right-hand rule places <m>\vec v</m> tangent to the orbit in the direction of
+<m>\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}</m>. Because <m>\overrightarrow{\omega}</m> and
+<m>\overrightarrow{r}</m> are perpendicular, the speed is <m>\omega r</m>, and the
+right-hand rule places <m>\overrightarrow{v}</m> tangent to the orbit in the direction of
 travel.
 </caption>
 <image width="66%">
@@ -1682,25 +1685,25 @@ vector.
       <point at="cr-P" p="(2.2517,-0.45)" fill="black" radius="4"/>
 
       <label font-size="18" at="cr-wl" anchor="(0.16,2.55)" alignment="e" color="#D55E00">
-      <m>\vec\omega = \dfrac{d\theta}{dt}\,\hat k</m>
+      <m>\overrightarrow{\omega} = \dfrac{d\theta}{dt}\,\hat{k}</m>
       </label>
       <label font-size="18" at="cr-zl" anchor="(0.10,3.50)" alignment="e"><m>+z</m></label>
       <label font-size="18" at="cr-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
       <label font-size="18" at="cr-rl" anchor="(1.20,-0.34)" alignment="s" color="#666666">
-      <m>\vec r = r\,\hat r</m>
+      <m>\overrightarrow{r} = r\,\hat r</m>
       </label>
       <label font-size="18" at="cr-vl" anchor="(3.78,0.48)" alignment="e" color="#0072B2">
-      <m>\vec v = \vec\omega\times\vec r</m>
+      <m>\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r}</m>
       </label>
 
       <label font-size="18" at="cr-note1" anchor="(-4.6,-3.20)" alignment="e">
-      <m>\vec v = \vec\omega\times\vec r
-        = \dfrac{d\theta}{dt}\,\hat k \times r\,\hat r
+      <m>\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r}
+        = \dfrac{d\theta}{dt}\,\hat{k} \times r\,\hat r
         = r\dfrac{d\theta}{dt}\,\hat\theta</m>
       </label>
       <!-- Plain \| bars: see the note in fig-circular-chord. -->
       <label font-size="18" at="cr-note2" anchor="(-4.6,-4.15)" alignment="e">
-      <m>\|\vec v\| = \omega r \sin 90^\circ = \omega r</m>
+      <m>\|\overrightarrow{v}\| = \omega r \sin 90^\circ = \omega r</m>
       </label>
 
       </coordinates>
@@ -1758,19 +1761,19 @@ The rate of change of the angle is
 <p>
 <em>Part 1.</em> By <xref ref="eq-angular-velocity"/>,
 <md>
-\vec\omega(t) = \frac{d\theta}{dt}\,\hat k = \left(A - 3Bt^2\right)\hat k.
+\overrightarrow{\omega}(t) = \frac{d\theta}{dt}\,\hat{k} = \left(A - 3Bt^2\right)\hat{k}.
 </md>
 </p>
 <p>
 <em>Part 2.</em> By <xref ref="eq-circular-velocity"/>,
 <md>
-\vec v(t) = R\,\frac{d\theta}{dt}\,\hat\theta(t)
+\overrightarrow{v}(t) = R\,\frac{d\theta}{dt}\,\hat\theta(t)
  = R\left(A - 3Bt^2\right)\hat\theta(t).
 </md>
 Equivalently, one can obtain this from
 <xref ref="eq-v-omega-cross-r"/>:
-<m>\vec v = \vec\omega\times\vec r
-= \left(A - 3Bt^2\right)\hat k \times R\,\hat r
+<m>\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r}
+= \left(A - 3Bt^2\right)\hat{k} \times R\,\hat r
 = R\left(A-3Bt^2\right)\hat\theta</m>, using
 <xref ref="eq-k-cross-rhat"/>.
 </p>
@@ -1783,10 +1786,10 @@ At that instant the particle is momentarily at rest.
 </p>
 <p>
 <em>Part 4.</em> For <m>t &lt; t_1</m> we have <m>A - 3Bt^2 > 0</m>, so
-<m>\vec\omega</m> points in the <m>+\hat k</m>-direction and the particle
+<m>\overrightarrow{\omega}</m> points in the <m>+\hat{k}</m>-direction and the particle
 travels counterclockwise. For <m>t > t_1</m> we have
-<m>A - 3Bt^2 &lt; 0</m>, so <m>\vec\omega</m> points in the
-<m>-\hat k</m>-direction and the particle has reversed and travels clockwise.
+<m>A - 3Bt^2 &lt; 0</m>, so <m>\overrightarrow{\omega}</m> points in the
+<m>-\hat{k}</m>-direction and the particle has reversed and travels clockwise.
 </p>
 </solution>
 </example>
@@ -1802,11 +1805,11 @@ meters.
 </p>
 <p>
 <ol>
-<li><p>Find the angular velocity vector <m>\vec\omega</m>.</p></li>
+<li><p>Find the angular velocity vector <m>\overrightarrow{\omega}</m>.</p></li>
 <li>
 <p>
 Find the velocity of the point of the record at
-<m>\vec r = \left\langle 0.12,\,0,\,0 \right\rangle</m>, and its speed.
+<m>\overrightarrow{r} = \left\langle 0.12,\,0,\,0 \right\rangle</m>, and its speed.
 </p>
 </li>
 </ol>
@@ -1823,7 +1826,7 @@ speed
 The rotation is counterclockwise seen from the <m>+z</m>-axis, so
 <m>\omega_z > 0</m> and
 <md>
-\vec\omega \approx \left\langle 0,\,0,\,3.49 \right\rangle
+\overrightarrow{\omega} \approx \left\langle 0,\,0,\,3.49 \right\rangle
  \ \text{rad}\cdot\text{s}^{-1}.
 </md>
 (For comparison, the period of one revolution is
@@ -1833,16 +1836,16 @@ The rotation is counterclockwise seen from the <m>+z</m>-axis, so
 <em>Part 2.</em> By <xref ref="eq-v-omega-cross-r"/>,
 <md>
 <mrow>
-\vec v = \vec\omega\times\vec r \amp =
+\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r} \amp =
 \begin{vmatrix}
-\hat i \amp \hat j \amp \hat k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 0 \amp 0 \amp 3.49 \\
 0.12 \amp 0 \amp 0
 \end{vmatrix}
 </mrow>
 <mrow>
-\amp = \left(0 - 0\right)\hat i - \left(0 - (3.49)(0.12)\right)\hat j
- + \left(0 - 0\right)\hat k
+\amp = \left(0 - 0\right)\hat{\imath} - \left(0 - (3.49)(0.12)\right)\hat{\jmath}
+ + \left(0 - 0\right)\hat{k}
 </mrow>
 <mrow>
 \amp = \left\langle 0,\, 0.419,\, 0 \right\rangle\ \text{m}\cdot\text{s}^{-1}.
@@ -1865,7 +1868,7 @@ counterclockwise motion, as it should be. Its speed is
 A carousel turns <em>clockwise</em> when viewed from above, making one
 complete turn every <m>12</m> seconds. Taking the axis of rotation as the
 <m>z</m>-axis, find the angular velocity vector, and the velocity of a horse
-located at <m>\vec r = \left\langle 0,\,4,\,0\right\rangle</m> meters.
+located at <m>\overrightarrow{r} = \left\langle 0,\,4,\,0\right\rangle</m> meters.
 </p>
 </statement>
 <solution>
@@ -1873,23 +1876,23 @@ located at <m>\vec r = \left\langle 0,\,4,\,0\right\rangle</m> meters.
 The angular speed is
 <m>\omega = 2\pi/T = 2\pi/12 \approx 0.524\ \text{rad}\cdot\text{s}^{-1}</m>.
 The motion is clockwise as seen from above, so <m>\omega_z &lt; 0</m> and the
-angular velocity points along <m>-\hat k</m>:
+angular velocity points along <m>-\hat{k}</m>:
 <md>
-\vec\omega = -\frac{\pi}{6}\,\hat k
+\overrightarrow{\omega} = -\frac{\pi}{6}\,\hat{k}
  \approx \left\langle 0,\,0,\,-0.524\right\rangle\ \text{rad}\cdot\text{s}^{-1}.
 </md>
 Then
 <md>
 <mrow>
-\vec v = \vec\omega\times\vec r \amp =
+\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r} \amp =
 \begin{vmatrix}
-\hat i \amp \hat j \amp \hat k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 0 \amp 0 \amp -0.524 \\
 0 \amp 4 \amp 0
 \end{vmatrix}
 </mrow>
 <mrow>
-\amp = \left(0 - (-0.524)(4)\right)\hat i
+\amp = \left(0 - (-0.524)(4)\right)\hat{\imath}
 = \left\langle 2.09,\,0,\,0 \right\rangle\ \text{m}\cdot\text{s}^{-1}.
 </mrow>
 </md>

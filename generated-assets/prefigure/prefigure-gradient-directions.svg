@@ -226,15 +226,21 @@
   </g>
   <g id="prefigure-gradient-directions-gd-zero1-label" transform="translate(271.2,156.8) translate(0.0,-0.0)">
     <g id="prefigure-gradient-directions-__g-5">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.112px; color:#0072B2" width="11.568px" height="8.256px" role="img" focusable="false" viewBox="0 -450 639 456" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#0072B2" width="10.352px" height="14.856px" role="img" focusable="false" viewBox="0 -810 572 821" x="0.0" y="0.0">
         <defs>
-          <path id="prefigure-gradient-directions-MJX-7-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
+          <path id="prefigure-gradient-directions-MJX-7-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-gradient-directions-MJX-7-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
-                <use data-c="1D42E" xlink:href="#prefigure-gradient-directions-MJX-7-TEX-B-1D42E"/>
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                  <use data-c="1D462" xlink:href="#prefigure-gradient-directions-MJX-7-TEX-I-1D462"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                  <use data-c="5E" xlink:href="#prefigure-gradient-directions-MJX-7-TEX-N-5E"/>
+                </g>
               </g>
             </g>
           </g>
@@ -242,23 +248,29 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-gradient-directions-gd-zero2-label" transform="translate(183.2,68.8) translate(-11.6,-13.8)">
+  <g id="prefigure-gradient-directions-gd-zero2-label" transform="translate(183.2,68.8) translate(-10.4,-18.5)">
     <g id="prefigure-gradient-directions-__g-6">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.112px; color:#0072B2" width="11.568px" height="13.832px" role="img" focusable="false" viewBox="0 -758 639 764" x="0.0" y="0.0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#0072B2" width="10.352px" height="18.536px" role="img" focusable="false" viewBox="0 -1013 572 1024" x="0.0" y="0.0">
         <defs>
-          <path id="prefigure-gradient-directions-MJX-8-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
+          <path id="prefigure-gradient-directions-MJX-8-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-gradient-directions-MJX-8-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
           <path id="prefigure-gradient-directions-MJX-8-TEX-N-7E" d="M179 251Q164 251 151 245T131 234T111 215L97 227L83 238Q83 239 95 253T121 283T142 304Q165 318 187 318T253 300T320 282Q335 282 348 288T368 299T388 318L402 306L416 295Q375 236 344 222Q330 215 313 215Q292 215 248 233T179 251Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u overtilde">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret overtilde">
                 <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u" data-semantic-prefix="Base">
-                    <use data-c="1D42E" xlink:href="#prefigure-gradient-directions-MJX-8-TEX-B-1D42E"/>
+                  <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-parent="4" data-semantic-attributes="texclass:ORD" data-semantic-speech="ModifyingAbove u With caret" data-semantic-prefix="Base">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#prefigure-gradient-directions-MJX-8-TEX-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="overaccent" data-semantic-annotation="accent:unknown" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="caret" data-semantic-prefix="Overscript" transform="translate(313.8,16) translate(-250 0)">
+                      <use data-c="5E" xlink:href="#prefigure-gradient-directions-MJX-8-TEX-N-5E"/>
+                    </g>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:tilde" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="tilde" data-semantic-prefix="Overscript" transform="translate(319.5,340) translate(-250 0)">
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:tilde" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="tilde" data-semantic-prefix="Overscript" transform="translate(313.8,595) translate(-250 0)">
                   <use data-c="7E" xlink:href="#prefigure-gradient-directions-MJX-8-TEX-N-7E"/>
                 </g>
               </g>

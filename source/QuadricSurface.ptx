@@ -35,14 +35,15 @@ The conic sections are the curves cut out by second-degree equations in two
 variables.  Asking the same question one dimension higher leads to the
 <term>quadric surfaces</term>: the surfaces in space described by a second-degree
 equation in three variables,
-<md>
+<md xml:id="eq-quadric-general" number="yes">
   Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0,
 </md>
 where <m>A</m> through <m>J</m> are constants.
 </p>
 
 <p>
-This general equation carries more freedom than we need.  The cross terms
+The general equation <xref ref="eq-quadric-general"/> carries more freedom
+than we need.  The cross terms
 <m>xy</m>, <m>xz</m>, and <m>yz</m> only tilt the surface away from the
 coordinate axes, and the linear terms <m>Gx</m> and <m>Hy</m> only slide it off
 the origin; neither affects the <em>shape</em> of the surface.  Setting those

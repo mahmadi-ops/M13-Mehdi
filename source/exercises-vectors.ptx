@@ -20,17 +20,17 @@ Write each combination of vectors as a single vector. See
 <ol marker="A.">
 <li>
 <p>
-<m>\vec{PQ} + \vec{QR}</m>
+<m>\overrightarrow{PQ} + \overrightarrow{QR}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec{QS} - \vec{PS}</m>
+<m>\overrightarrow{QS} - \overrightarrow{PS}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec{RS} + \vec{SP} + \vec{PQ}</m>
+<m>\overrightarrow{RS} + \overrightarrow{SP} + \overrightarrow{PQ}</m>
 </p>
 </li>
 </ol>
@@ -93,18 +93,18 @@ The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
 <ol marker="A.">
 <li>
 <p>
-By the triangle law, placing <m>\vec{QR}</m> at the tip of
-<m>\vec{PQ}</m>,
+By the triangle law, placing <m>\overrightarrow{QR}</m> at the tip of
+<m>\overrightarrow{PQ}</m>,
 <md>
-\vec{PQ} + \vec{QR} = \vec{PR}.
+\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR}.
 </md>
 </p>
 </li>
 <li>
 <p>
-Since <m>-\vec{PS} = \vec{SP}</m>,
+Since <m>-\overrightarrow{PS} = \overrightarrow{SP}</m>,
 <md>
-\vec{QS} - \vec{PS} = \vec{QS} + \vec{SP} = \vec{QP}.
+\overrightarrow{QS} - \overrightarrow{PS} = \overrightarrow{QS} + \overrightarrow{SP} = \overrightarrow{QP}.
 </md>
 </p>
 </li>
@@ -112,7 +112,7 @@ Since <m>-\vec{PS} = \vec{SP}</m>,
 <p>
 Chaining the three vectors tip to tail,
 <md>
-\vec{RS} + \vec{SP} + \vec{PQ} = \vec{RQ}.
+\overrightarrow{RS} + \overrightarrow{SP} + \overrightarrow{PQ} = \overrightarrow{RQ}.
 </md>
 </p>
 </li>
@@ -125,7 +125,7 @@ Chaining the three vectors tip to tail,
 <statement>
 <p>
 Find a vector of length 3 pointing in the opposite direction from the
-vector <m>2\,\mathbf i - 4\,\mathbf j + 4\,\mathbf k</m>.
+vector <m>2\,\hat{\imath} - 4\,\hat{\jmath} + 4\,\hat{k}</m>.
 </p>
 </statement>
 <solution>
@@ -139,7 +139,7 @@ Multiplying by <m>-3</m> reverses the direction and gives length
 <md>
 -3\left\langle \frac13, -\frac23, \frac23\right\rangle
 = \langle -1, 2, -2\rangle
-= -\mathbf i + 2\,\mathbf j - 2\,\mathbf k.
+= -\hat{\imath} + 2\,\hat{\jmath} - 2\,\hat{k}.
 </md>
 </p>
 </solution>
@@ -148,8 +148,8 @@ Multiplying by <m>-3</m> reverses the direction and gives length
 <exercise xml:id="pp-10">
 <statement>
 <p>
-The vectors <m>2\,\mathbf i + 3\,\mathbf j</m>,
-<m>4\,\mathbf i + \mathbf j</m> and <m>5\,\mathbf i + y\,\mathbf j</m>
+The vectors <m>2\,\hat{\imath} + 3\,\hat{\jmath}</m>,
+<m>4\,\hat{\imath} + \hat{\jmath}</m> and <m>5\,\hat{\imath} + y\,\hat{\jmath}</m>
 have their tails at the origin. Find the value of <m>y</m> that will
 make their heads collinear.
 </p>
@@ -174,10 +174,10 @@ For <m>(5,y)</m> to lie on that same line, the slope from
 <exercise xml:id="m1-2">
 <statement>
 <p>
-Let <m>\vec v</m> be the vector that goes from the point
+Let <m>\overrightarrow{v}</m> be the vector that goes from the point
 <m>\left(5,-4,\sqrt3\right)</m> to the point <m>(3,-1,0)</m>. Find a
 vector of length <m>\tfrac13</m> that points in the same direction as
-<m>\vec v</m>.
+<m>\overrightarrow{v}</m>.
 </p>
 </statement>
 <solution>
@@ -185,7 +185,7 @@ vector of length <m>\tfrac13</m> that points in the same direction as
 The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
 by subtracting the tail from the head:
 <md>
-\vec v = \vec{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
+\overrightarrow{v} = \overrightarrow{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
 \right\rangle = \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
 </md>
 </p>
@@ -193,15 +193,15 @@ by subtracting the tail from the head:
 <p>
 Its length is
 <md>
-\|\vec v\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
+\|\overrightarrow{v}\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
            = \sqrt{4+9+3} = \sqrt{16} = 4 .
 </md>
 </p>
 
 <p>
-The unit vector in the direction of <m>\vec v</m> is therefore
+The unit vector in the direction of <m>\overrightarrow{v}</m> is therefore
 <md>
-\hat u = \frac{\vec v}{\|\vec v\|}
+\hat u = \frac{\overrightarrow{v}}{\|\overrightarrow{v}\|}
        = \frac14 \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
 </md>
 Scaling by <m>\tfrac13</m> gives a vector of length <m>\tfrac13</m>
@@ -253,16 +253,16 @@ sides is given by the <em>same</em> vector, since equal vectors have both
 the same direction and the same length. Along the sides <m>AB</m> and
 <m>DC</m>,
 <md>
-<mrow>\vec{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
+<mrow>\overrightarrow{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
 = \langle 3,\; 1,\; -2 \rangle,</mrow>
-<mrow>\vec{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
+<mrow>\overrightarrow{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
 = \langle 3,\; 1,\; -2 \rangle.</mrow>
 </md>
-Since <m>\vec{AB} = \vec{DC}</m>, these two sides are parallel and have
+Since <m>\overrightarrow{AB} = \overrightarrow{DC}</m>, these two sides are parallel and have
 equal length, so <m>ABCD</m> is a parallelogram. The other pair of sides
 matches as well:
 <md>
-\vec{AD} = \langle 2,\; 4,\; 1 \rangle = \vec{BC}.
+\overrightarrow{AD} = \langle 2,\; 4,\; 1 \rangle = \overrightarrow{BC}.
 </md>
 See <xref ref="fig-vec-parallelogram-space"/>.
 </p>
@@ -271,18 +271,18 @@ See <xref ref="fig-vec-parallelogram-space"/>.
 <p>
 The diagonals of a parallelogram bisect each other, so <m>M</m> is the
 midpoint of <m>AC</m>. Using position vectors and
-<m>\vec{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
+<m>\overrightarrow{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
 <md>
-<mrow>\vec{OM} \amp = \vec{OA} + \tfrac12 \vec{AC}
+<mrow>\overrightarrow{OM} \amp = \overrightarrow{OA} + \tfrac12 \overrightarrow{AC}
 = \langle 1,\; 2,\; 5 \rangle
 + \tfrac12\langle 5,\; 5,\; -1 \rangle</mrow>
 <mrow>\amp = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92
 \right\rangle.</mrow>
 </md>
 Travelling along the other diagonal instead, with
-<m>\vec{BD} = \langle -1,\; 3,\; 3\rangle</m>,
+<m>\overrightarrow{BD} = \langle -1,\; 3,\; 3\rangle</m>,
 <md>
-\vec{OB} + \tfrac12 \vec{BD}
+\overrightarrow{OB} + \tfrac12 \overrightarrow{BD}
 = \langle 4,\; 3,\; 3 \rangle + \tfrac12\langle -1,\; 3,\; 3 \rangle
 = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92 \right\rangle,
 </md>
@@ -293,11 +293,11 @@ the same point, which confirms both the answer and part A. Hence
 <li>
 <p>
 Opposite sides have equal length, so the perimeter is
-<m>2\left(\left|\vec{AB}\right| + \left|\vec{AD}\right|\right)</m>, where
+<m>2\left(\left\|\overrightarrow{AB}\right\| + \left\|\overrightarrow{AD}\right\|\right)</m>, where
 <md>
-<mrow>\left|\vec{AB}\right| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
+<mrow>\left\|\overrightarrow{AB}\right\| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
 = \sqrt{14},</mrow>
-<mrow>\left|\vec{AD}\right| \amp = \sqrt{2^2 + 4^2 + 1^2}
+<mrow>\left\|\overrightarrow{AD}\right\| \amp = \sqrt{2^2 + 4^2 + 1^2}
 = \sqrt{21}.</mrow>
 </md>
 The perimeter is therefore
@@ -311,8 +311,8 @@ The perimeter is therefore
 <figure xml:id="fig-vec-parallelogram-space">
 <caption>
 The parallelogram <m>ABCD</m>, with
-<m>\vec{AB} = \vec{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
-<m>\vec{AD} = \vec{BC} = \langle 2,4,1\rangle</m> in magenta. The
+<m>\overrightarrow{AB} = \overrightarrow{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
+<m>\overrightarrow{AD} = \overrightarrow{BC} = \langle 2,4,1\rangle</m> in magenta. The
 diagonals <m>AC</m> and <m>BD</m> cross at their common midpoint
 <m>M\left(\frac72,\frac92,\frac92\right)</m>.
 </caption>
@@ -366,40 +366,40 @@ point M in the middle of the parallelogram.
 <exercise xml:id="m2b-1a">
 <statement>
 <p>
-Two vectors <m>\vec A</m> and <m>\vec B</m> are drawn with a common
-tail; <m>\vec A</m> points up and to the right, <m>\vec B</m> points up
+Two vectors <m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> are drawn with a common
+tail; <m>\overrightarrow{A}</m> points up and to the right, <m>\overrightarrow{B}</m> points up
 and to the left, and the angle between them is slightly larger than a
-right angle. Sketch and clearly label a diagram showing <m>\vec A</m>,
-<m>\vec B</m>, and <m>\vec B - \vec A</m>.
+right angle. Sketch and clearly label a diagram showing <m>\overrightarrow{A}</m>,
+<m>\overrightarrow{B}</m>, and <m>\overrightarrow{B} - \overrightarrow{A}</m>.
 </p>
 </statement>
 
 <solution>
 <p>
 To make the picture concrete let us take
-<m>\vec A = \left\langle 4, 2 \right\rangle</m> and
-<m>\vec B = \left\langle -3, 5 \right\rangle</m>, which have roughly
+<m>\overrightarrow{A} = \left\langle 4, 2 \right\rangle</m> and
+<m>\overrightarrow{B} = \left\langle -3, 5 \right\rangle</m>, which have roughly
 the directions described. Everything below is a statement about the
 <em>geometry</em>, so the same picture is correct for any pair of
 vectors in that configuration.
 </p>
 <p>
-The difference <m>\vec B - \vec A</m> is the vector that, added to
-<m>\vec A</m>, gives <m>\vec B</m>. So when
-<m>\vec A</m> and <m>\vec B</m> are drawn from a common tail,
-<m>\vec B - \vec A</m> is the arrow that runs
-<em>from the tip of</em> <m>\vec A</m> <em>to the tip of</em>
-<m>\vec B</m>. (Here it is
+The difference <m>\overrightarrow{B} - \overrightarrow{A}</m> is the vector that, added to
+<m>\overrightarrow{A}</m>, gives <m>\overrightarrow{B}</m>. So when
+<m>\overrightarrow{A}</m> and <m>\overrightarrow{B}</m> are drawn from a common tail,
+<m>\overrightarrow{B} - \overrightarrow{A}</m> is the arrow that runs
+<em>from the tip of</em> <m>\overrightarrow{A}</m> <em>to the tip of</em>
+<m>\overrightarrow{B}</m>. (Here it is
 <m>\left\langle -7, 3 \right\rangle</m>.) It is easy to get this
 backwards; the check is that
-<m>\vec A + (\vec B - \vec A) = \vec B</m>. See
+<m>\overrightarrow{A} + (\overrightarrow{B} - \overrightarrow{A}) = \overrightarrow{B}</m>. See
 <xref ref="fig-m2b-1a"/>.
 </p>
 
 <figure xml:id="fig-m2b-1a">
 <caption>
-<m>\vec B-\vec A</m> runs from the tip of <m>\vec A</m> to the tip of
-<m>\vec B</m>.
+<m>\overrightarrow{B}-\overrightarrow{A}</m> runs from the tip of <m>\overrightarrow{A}</m> to the tip of
+<m>\overrightarrow{B}</m>.
 </caption>
 <image width="55%">
 <description>
@@ -416,13 +416,13 @@ tip of A to the tip of B, representing B minus A.
 <vector at="pa-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
 <vector at="pa-D" v="(-7,3)" tail="(4,2)" stroke="#D55E00" thickness="2"/>
 <label at="pa-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
-<m>\vec A</m>
+<m>\overrightarrow{A}</m>
 </label>
 <label at="pa-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
-<m>\vec B</m>
+<m>\overrightarrow{B}</m>
 </label>
 <label at="pa-Dl" anchor="(0.5,3.9)" alignment="n" color="#D55E00">
-<m>\vec B-\vec A</m>
+<m>\overrightarrow{B}-\overrightarrow{A}</m>
 </label>
 </coordinates>
 

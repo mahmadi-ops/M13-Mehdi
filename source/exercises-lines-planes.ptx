@@ -24,13 +24,13 @@ planes:
 </statement>
 <solution>
 <p>
-The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
-<m>\vec n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
+The normal vectors are <m>\overrightarrow{n}_1 = \langle 2, 1, -1\rangle</m> and
+<m>\overrightarrow{n}_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
 the line of intersection is
 <md>
-\mathbf v = \vec n_1 \times \vec n_2 =
+\mathbf v = \overrightarrow{n}_1 \times \overrightarrow{n}_2 =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 2 \amp 1 \amp -1 \\
 1 \amp -1 \amp 3
 \end{vmatrix}
@@ -94,9 +94,9 @@ coefficient of <m>x</m> is <m>-3</m>.
 Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
 the same normal vector
 <md>
-\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+\overrightarrow{n} = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
 </md>
-(Note that <m>\vec n \cdot \langle -4, 6, -3\rangle
+(Note that <m>\overrightarrow{n} \cdot \langle -4, 6, -3\rangle
 = 12 - 6 - 6 = 0</m>, so the line is indeed parallel to such a plane.)
 When <m>t = 0</m>, the point <m>(-4, 5, -1)</m> is on the plane, so
 from the point-normal form,
@@ -124,26 +124,26 @@ We notice that the two lines are parallel (both have direction vector
 <m>\mathbf v = \langle -1, 2, 3\rangle</m>) and therefore we can find
 the distance between a point on <m>L_2</m> and the line <m>L_1</m>.
 Taking <m>S(5, 3, -5)</m> on <m>L_2</m> and <m>P(4, 3, -5)</m> on
-<m>L_1</m>, we get <m>\vec{PS} = \langle 1, 0, 0\rangle</m>, and
-<m>|\mathbf v| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
+<m>L_1</m>, we get <m>\overrightarrow{PS} = \langle 1, 0, 0\rangle</m>, and
+<m>\|\mathbf v\| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
 </p>
 
 <p>
 Using the cross product,
 <md>
-\vec{PS} \times \mathbf v =
+\overrightarrow{PS} \times \mathbf v =
 \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 1 \amp 0 \amp 0 \\
 -1 \amp 2 \amp 3
 \end{vmatrix}
-= -3\,\mathbf j + 2\,\mathbf k,
+= -3\,\hat{\jmath} + 2\,\hat{k},
 \qquad
-\left|\vec{PS} \times \mathbf v\right| = \sqrt{9 + 4} = \sqrt{13},
+\left\|\overrightarrow{PS} \times \mathbf v\right\| = \sqrt{9 + 4} = \sqrt{13},
 </md>
 and the distance is
 <md>
-d = \frac{\left|\vec{PS} \times \mathbf v\right|}{|\mathbf v|}
+d = \frac{\left\|\overrightarrow{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
 = \frac{\sqrt{13}}{\sqrt{14}}.
 </md>
 </p>
@@ -165,18 +165,18 @@ x + 2y + z = 1
 <p>
 Dividing the second equation by <m>2</m> gives
 <m>x + 2y + z = \frac72</m>, so both planes have the same normal
-vector <m>\vec n = \langle 1, 2, 1\rangle</m> and are therefore
+vector <m>\overrightarrow{n} = \langle 1, 2, 1\rangle</m> and are therefore
 <em>parallel</em>. (They are distinct, since <m>1 \ne \frac72</m>.)
 </p>
 
 <p>
 Pick any point on the first plane, say <m>P(1,0,0)</m>, and any point
 on the second, say <m>S\left(\frac72, 0, 0\right)</m>. Then
-<m>\vec{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
+<m>\overrightarrow{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
 distance between the planes is the length of the projection of
-<m>\vec{PS}</m> onto <m>\vec n</m>:
+<m>\overrightarrow{PS}</m> onto <m>\overrightarrow{n}</m>:
 <md>
-d = \left|\vec{PS}\cdot\frac{\vec n}{|\vec n|}\right|
+d = \frac{\left|\overrightarrow{PS}\cdot\overrightarrow{n}\right|}{\|\overrightarrow{n}\|}
 = \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
 = \frac{5}{2\sqrt6}.
 </md>
@@ -194,11 +194,11 @@ Find the angle between the planes <m>2x + 2y = 7</m> and
 <solution>
 <p>
 The angle between two planes equals the angle between their normal
-vectors, <m>\vec n_1 = \langle 2, 2, 0\rangle</m> and
-<m>\vec n_2 = \langle 0, 1, 1\rangle</m>:
+vectors, <m>\overrightarrow{n}_1 = \langle 2, 2, 0\rangle</m> and
+<m>\overrightarrow{n}_2 = \langle 0, 1, 1\rangle</m>:
 <md>
 \cos\theta
-= \frac{\vec n_1 \cdot \vec n_2}{|\vec n_1|\,|\vec n_2|}
+= \frac{\overrightarrow{n}_1 \cdot \overrightarrow{n}_2}{\|\overrightarrow{n}_1\|\,\|\overrightarrow{n}_2\|}
 = \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
 = \frac{2}{4}
 = \frac12,
@@ -229,7 +229,7 @@ so <m>x = 1 + 2(-2) = -3</m> and <m>y = 3 + 4(-2) = -5</m>, i.e.
 
 <p>
 A plane normal to <m>L</m> has the direction vector of <m>L</m> as its
-normal vector, <m>\vec n = \langle 2, 4, 6\rangle</m>. Therefore the
+normal vector, <m>\overrightarrow{n} = \langle 2, 4, 6\rangle</m>. Therefore the
 plane is
 <md>
 2(x+3) + 4(y+5) + 6(z+7) = 0.
@@ -249,8 +249,8 @@ normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
 <solution>
 <p>
 From <xref ref="pp-13"/>, the plane through those three points has
-normal vector <m>\vec n = \langle 3, 9, -2\rangle</m>. A line normal
-to the plane has <m>\vec n</m> as its direction vector, so through
+normal vector <m>\overrightarrow{n} = \langle 3, 9, -2\rangle</m>. A line normal
+to the plane has <m>\overrightarrow{n}</m> as its direction vector, so through
 <m>(2,1,1)</m>,
 <md>
 x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
@@ -289,15 +289,15 @@ Find parametric equations for a line that passes through
 <p>
 <term>Finding the plane.</term> Two vectors lying in <m>W</m> are
 <md>
-\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
+\overrightarrow{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
 \qquad
-\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
+\overrightarrow{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
 </md>
 A normal vector is their cross product:
 <md>
-<mrow>\vec n \amp = \vec{AB}\times\vec{AC}
+<mrow>\overrightarrow{n} \amp = \overrightarrow{AB}\times\overrightarrow{AC}
 = \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 3 \amp -4 \amp 1 \\
 3 \amp -2 \amp 0
 \end{vmatrix}</mrow>
@@ -305,7 +305,7 @@ A normal vector is their cross product:
 \right\rangle</mrow>
 <mrow>\amp = \left\langle 2,\ 3,\ 6 \right\rangle .</mrow>
 </md>
-Note <m>\|\vec n\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
+Note <m>\|\overrightarrow{n}\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
 Using the point <m>A</m>, the plane is
 <md>
 <mrow>2(x+1) + 3(y-2) + 6(z-16) \amp = 0</mrow>
@@ -321,7 +321,7 @@ Using the point <m>A</m>, the plane is
 which we reach by moving from <m>Q</m> in the direction of the normal.
 So consider
 <md>
-\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
+\overrightarrow{r}(t) = Q + t\,\overrightarrow{n} = (4+2t,\ 4+3t,\ -3+6t)
 </md>
 and find the value of <m>t</m> for which this point lies on <m>W</m>:
 <md>
@@ -332,20 +332,20 @@ and find the value of <m>t</m> for which this point lies on <m>W</m>:
 </md>
 Therefore the closest point is
 <md>
-\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
+\overrightarrow{r}(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
 </md>
 (Check: <m>16 + 30 + 54 = 100</m>.) Incidentally, the
 distance from <m>Q</m> to <m>W</m> is
-<m>|t|\,\|\vec n\| = 2\cdot 7 = 14</m>.
+<m>|t|\,\|\overrightarrow{n}\| = 2\cdot 7 = 14</m>.
 See <xref ref="fig-m2a-plane"/>.
 </p>
 
 <figure xml:id="fig-m2a-plane">
 <caption>
 Schematic picture of <xref ref="m2a-4"/>. From <m>Q(4,4,-3)</m> we
-travel along the normal direction <m>\vec n = \langle 2,3,6\rangle</m>
+travel along the normal direction <m>\overrightarrow{n} = \langle 2,3,6\rangle</m>
 until we hit <m>W</m>, arriving at <m>(8,10,9)</m>. Any line through
-<m>Q</m> whose direction is perpendicular to <m>\vec n</m> stays
+<m>Q</m> whose direction is perpendicular to <m>\overrightarrow{n}</m> stays
 parallel to <m>W</m> and never meets it.
 </caption>
 <image width="72%">
@@ -369,7 +369,7 @@ never meeting it.
 \coordinate (Q) at (0.2,-2.5);
 \coordinate (F) at (1.15,0.85);
 \draw[->, very thick, mverm] (Q) -- (F)
-      node[midway, right] {$\vec n=\langle 2,3,6\rangle$};
+      node[midway, right] {$\overrightarrow{n}=\langle 2,3,6\rangle$};
 \fill[mred] (Q) circle (2pt);
 \fill[mverm] (F) circle (2pt);
 \node[mred, anchor=north] at (Q) {$Q(4,4,-3)$};
@@ -377,7 +377,7 @@ never meeting it.
 % the parallel line through Q
 \draw[very thick, mgreen] (-3.0,-2.94) -- (3.6,-2.06);
 \node[mgreen, anchor=north east] at (-1.3,-2.98)
-      {$\ell:\ \vec d=\langle 6,6,-5\rangle$};
+      {$\ell:\ \overrightarrow{d}=\langle 6,6,-5\rangle$};
 % right angle mark at F
 \draw[mgray] ($(F)+(-0.20,-0.18)$) -- ($(F)+(-0.02,-0.30)$)
              -- ($(F)+(0.10,-0.12)$);
@@ -391,10 +391,10 @@ never meeting it.
 it is parallel to <m>W</m> and does not lie in it. Since
 <m>Q = (4,4,-3)</m> is not on <m>W</m> (we saw
 <m>2(4)+3(4)+6(-3) = 2 \ne 100</m>), we only need the direction vector
-<m>\vec d = \left\langle a, b, c\right\rangle</m> to be perpendicular
+<m>\overrightarrow{d} = \left\langle a, b, c\right\rangle</m> to be perpendicular
 to the normal:
 <md>
-\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
+\overrightarrow{d} \cdot \overrightarrow{n} = 2a + 3b + 6c = 0 .
 </md>
 </p>
 
@@ -406,12 +406,12 @@ which happens exactly when <m>a = b</m>. Substituting <m>b = a</m>,
 2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
 </md>
 Choosing <m>a = 6</m> and <m>c = -5</m> gives
-<m>\vec d = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
+<m>\overrightarrow{d} = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
 <md>
 x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
 </md>
 Indeed <m>x(t) = y(t)</m> for every <m>t</m>, and
-<m>\vec d\cdot\vec n = 12+18-30 = 0</m>, so the line is parallel to
+<m>\overrightarrow{d}\cdot\overrightarrow{n} = 12+18-30 = 0</m>, so the line is parallel to
 <m>W</m> and, starting from a point off <m>W</m>, never reaches it.
 </p>
 </solution>
@@ -435,25 +435,25 @@ equation of that plane.
 The cleanest way to see the plane is to write the position vector as a
 constant vector plus multiples of two fixed vectors:
 <md>
-\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2 \right\rangle
+\overrightarrow{r}(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2 \right\rangle
 = \left\langle 1,0,2 \right\rangle
 + t\left\langle 1,\ 2,\ 3 \right\rangle
 + t^2\left\langle 0,\ 0,\ -1 \right\rangle .
 </md>
-Whatever <m>t</m> is, the point <m>\vec r(t)</m> is the fixed point
+Whatever <m>t</m> is, the point <m>\overrightarrow{r}(t)</m> is the fixed point
 <m>(1,0,2)</m> plus a combination of the two fixed vectors
-<m>\vec u = \left\langle 1,2,3\right\rangle</m> and
-<m>\vec w = \left\langle 0,0,-1\right\rangle</m>. So the whole curve
-lies in the plane through <m>(1,0,2)</m> spanned by <m>\vec u</m> and
-<m>\vec w</m>.
+<m>\overrightarrow{u} = \left\langle 1,2,3\right\rangle</m> and
+<m>\overrightarrow{w} = \left\langle 0,0,-1\right\rangle</m>. So the whole curve
+lies in the plane through <m>(1,0,2)</m> spanned by <m>\overrightarrow{u}</m> and
+<m>\overrightarrow{w}</m>.
 </p>
 
 <p>
 A normal vector to that plane is
 <md>
-<mrow>\vec n \amp = \vec u \times \vec w
+<mrow>\overrightarrow{n} \amp = \overrightarrow{u} \times \overrightarrow{w}
 = \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
 1 \amp 2 \amp 3 \\
 0 \amp 0 \amp -1
 \end{vmatrix}</mrow>
@@ -473,7 +473,7 @@ Using the point <m>(1,0,2)</m>, the plane is
 
 <p>
 There is a quicker route to the same answer once you notice that the
-normal has no <m>\mathbf k</m>-component: the plane is vertical, so its
+normal has no <m>\hat{k}</m>-component: the plane is vertical, so its
 equation involves only <m>x</m> and <m>y</m>. Eliminating <m>t</m> from
 the first two equations, <m>t = x - 1</m> and <m>t = y/2</m>, gives
 <md>
@@ -486,7 +486,7 @@ and this relation holds for every <m>t</m> regardless of the value of
 
 <figure xml:id="fig-m2b-parabola">
 <caption>
-The curve <m>\vec r(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2
+The curve <m>\overrightarrow{r}(t) = \left\langle t+1,\ 2t,\ 2+3t-t^2
 \right\rangle</m> is a parabola lying in the vertical plane
 <m>2x - y = 2</m>.
 </caption>
@@ -542,22 +542,22 @@ Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
 Write <m>Q = (-2,2,-1)</m> and let
 <m>P(t) = (4+t,\ -1-2t,\ 5+t)</m> be the general point of <m>L</m>. The
 direction vector of the line is
-<m>\vec d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
+<m>\overrightarrow{d} = \left\langle 1,\ -2,\ 1\right\rangle</m>.
 </p>
 
 <p>
 The closest point is the foot of the perpendicular from <m>Q</m>, so we
-want the value of <m>t</m> for which <m>\vec{QP}</m> is orthogonal to
-<m>\vec d</m>. First,
+want the value of <m>t</m> for which <m>\overrightarrow{QP}</m> is orthogonal to
+<m>\overrightarrow{d}</m>. First,
 <md>
-<mrow>\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+<mrow>\overrightarrow{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
 \right\rangle</mrow>
 <mrow>\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .</mrow>
 </md>
 </p>
 
 <p>
-Now impose <m>\vec{QP}\cdot\vec d = 0</m>:
+Now impose <m>\overrightarrow{QP}\cdot\overrightarrow{d} = 0</m>:
 <md>
 <mrow>(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0</mrow>
 <mrow>6 + t + 6 + 4t + 6 + t \amp = 0</mrow>
@@ -573,14 +573,14 @@ closest point
 P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
 </md>
 As a check, at <m>t=-3</m> we get
-<m>\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
+<m>\overrightarrow{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
 <md>
-\vec{QP}\cdot\vec d
+\overrightarrow{QP}\cdot\overrightarrow{d}
  = \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
  = 3 - 6 + 3 = 0 ,
 </md>
 as required. The distance from <m>Q</m> to the line is
-<m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
+<m>\|\overrightarrow{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
 </p>
 </solution>
 </exercise>

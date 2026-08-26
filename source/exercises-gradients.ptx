@@ -124,21 +124,21 @@ centered at <m>(1,2)</m>. Along the line <m>y = x+1</m> the gradient
 <title>True or False</title>
 <statement correct="yes">
 <p>
-If <m>\vec u = \langle a, b\rangle</m> is a unit vector and <m>f</m>
+If <m>\hat{u} = \langle a, b\rangle</m> is a unit vector and <m>f</m>
 has continuous second partials, then
 <md>
-D^2_{\vec u} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
+D^2_{\hat{u}} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
 </md>
-where <m>D^2_{\vec u} f = D_{\vec u}\left[D_{\vec u} f(x,y)\right]</m>.
+where <m>D^2_{\hat{u}} f = D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]</m>.
 </p>
 </statement>
 <feedback>
 <p>
 We have that
 <md>
-D^2_{\vec u} f
-= D_{\vec u}\left[D_{\vec u} f(x,y)\right]
-= D_{\vec u}\left[a f_x + b f_y\right].
+D^2_{\hat{u}} f
+= D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]
+= D_{\hat{u}}\left[a f_x + b f_y\right].
 </md>
 This simplifies to
 <md>
@@ -156,15 +156,15 @@ Clairaut's Theorem.
 <title>True or False</title>
 <statement correct="yes">
 <p>
-<m>D_{\vec i + \vec j}\,f(x,y) = f_x + f_y</m>.
+<m>D_{\hat{\imath} + \hat{\jmath}}\,f(x,y) = f_x + f_y</m>.
 </p>
 </statement>
 <feedback>
 <p>
 Since
-<m>\vec i + \vec j = \langle 1, 1\rangle</m>,
+<m>\hat{\imath} + \hat{\jmath} = \langle 1, 1\rangle</m>,
 <md>
-D_{\vec i + \vec j}\,f(x,y)
+D_{\hat{\imath} + \hat{\jmath}}\,f(x,y)
 = \nabla f(x,y) \cdot \langle 1, 1\rangle
 = f_x + f_y.
 </md>
@@ -219,26 +219,26 @@ rate of change is the length of the gradient, i.e.
 <p>
 Half of the fastest possible rate of height increase at point
 <m>(1,0,1)</m> is <m>\frac12 \cdot 2 = 1</m>. Let
-<m>\vec u = \langle a, b\rangle</m> be a unit vector in the desired
+<m>\hat{u} = \langle a, b\rangle</m> be a unit vector in the desired
 direction. Then the directional derivative
-<m>D_{\vec u}(1,0) = 1</m> is the desired rate of change of height at
-<m>(1,0,1)</m> in the direction of <m>\vec u</m>; it can be calculated
+<m>D_{\hat{u}}(1,0) = 1</m> is the desired rate of change of height at
+<m>(1,0,1)</m> in the direction of <m>\hat{u}</m>; it can be calculated
 using the dot product with the gradient:
 <md>
-1 = D_{\vec u}(1,0)
-= \vec u \cdot \nabla z(1,0)
+1 = D_{\hat{u}}(1,0)
+= \hat{u} \cdot \nabla z(1,0)
 = \langle a, b\rangle \cdot \langle 2, 0\rangle
 = 2a + 0b = 2a.
 </md>
 Thus, <m>a = \frac12</m> and <m>b</m> must be such that
-<m>\vec u = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
+<m>\hat{u} = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
 <m>\left(\frac12\right)^2 + b^2 = 1</m>, from which
 <m>b^2 = \frac34</m> and <m>b = \pm\frac{\sqrt3}{2}</m>. Therefore,
 the desired directions in which the height is increasing at a rate
 equal to half of the fastest possible rate are
-<m>\vec u_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
+<m>\hat{u}_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
 and
-<m>\vec u_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
+<m>\hat{u}_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
 </p>
 </li>
 </ol>
@@ -256,7 +256,7 @@ temperature <m>T</m> at any point <m>(x,y)</m> is given by
 <li>
 <p>
 What is the rate of change in temperature at <m>(0,0)</m> in the
-direction of <m>3\,\mathbf i - 4\,\mathbf j</m>?
+direction of <m>3\,\hat{\imath} - 4\,\hat{\jmath}</m>?
 </p>
 </li>
 <li>
@@ -288,9 +288,9 @@ We first compute the gradient:
 \qquad T_y(0,0) = 1,</mrow>
 </md>
 so <m>\nabla T\big|_{(0,0)} = \langle 1, 1\rangle</m>. The direction
-vector is <m>\vec u = \langle 3, -4\rangle</m> with
-<m>\|\vec u\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
-<m>\hat u = \dfrac{\vec u}{\|\vec u\|}
+vector is <m>\overrightarrow{u} = \langle 3, -4\rangle</m> with
+<m>\|\overrightarrow{u}\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
+<m>\hat u = \dfrac{\overrightarrow{u}}{\|\overrightarrow{u}\|}
 = \left\langle \dfrac35, -\dfrac45\right\rangle</m>. Hence
 <md>
 \left(D_{\hat u} T\right)_{(0,0)}
@@ -413,14 +413,14 @@ occurs.
 <p>
 The gradient is
 <md>
-\nabla f = \left(\frac{2x}{x^2+y^2}\right)\mathbf i
-+ \left(\frac{2y}{x^2+y^2}\right)\mathbf j,
+\nabla f = \left(\frac{2x}{x^2+y^2}\right)\hat{\imath}
++ \left(\frac{2y}{x^2+y^2}\right)\hat{\jmath},
 </md>
 so at <m>(-4,3)</m>,
 <md>
 <mrow>\nabla f(-4,3)
-\amp = \left(-\frac{8}{25}\right)\mathbf i
-+ \left(\frac{6}{25}\right)\mathbf j,</mrow>
+\amp = \left(-\frac{8}{25}\right)\hat{\imath}
++ \left(\frac{6}{25}\right)\hat{\jmath},</mrow>
 <mrow>\|\nabla f(-4,3)\|
 \amp = \sqrt{\frac{100}{(25)^2}} = \frac{10}{25}
 = \frac25.</mrow>
@@ -428,7 +428,7 @@ so at <m>(-4,3)</m>,
 The direction of maximum increase is
 <md>
 \hat u = \frac{\nabla f(-4,3)}{\|\nabla f(-4,3)\|}
-= \left(-\frac45\right)\mathbf i + \left(\frac35\right)\mathbf j,
+= \left(-\frac45\right)\hat{\imath} + \left(\frac35\right)\hat{\jmath},
 </md>
 and the maximum rate of increase is
 <md>
@@ -453,7 +453,7 @@ at <m>P_0</m>.
 <li>
 <p>
 Find the directional derivative of <m>f(x,y)</m> at <m>P_0</m> in the
-direction given by <m>\vec v = \langle -1, 1\rangle</m>.
+direction given by <m>\overrightarrow{v} = \langle -1, 1\rangle</m>.
 </p>
 </li>
 </ol>
@@ -463,9 +463,9 @@ direction given by <m>\vec v = \langle -1, 1\rangle</m>.
 <p>
 The gradient is
 <md>
-<mrow>\nabla f \amp = \left(2x e^{3y}\right)\mathbf i
-+ \left(3x^2 e^{3y}\right)\mathbf j,</mrow>
-<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\mathbf i + 3\,\mathbf j,
+<mrow>\nabla f \amp = \left(2x e^{3y}\right)\hat{\imath}
++ \left(3x^2 e^{3y}\right)\hat{\jmath},</mrow>
+<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\hat{\imath} + 3\,\hat{\jmath},
 \qquad
 \left\|\nabla f\big|_{(-1,0)}\right\| = \sqrt{13}.</mrow>
 </md>
@@ -475,8 +475,8 @@ The gradient is
 The direction of most rapid decrease is opposite to the gradient:
 <md>
 -\frac{\nabla f}{\|\nabla f\|}
-= \left(\frac{2}{\sqrt{13}}\right)\mathbf i
-- \left(\frac{3}{\sqrt{13}}\right)\mathbf j
+= \left(\frac{2}{\sqrt{13}}\right)\hat{\imath}
+- \left(\frac{3}{\sqrt{13}}\right)\hat{\jmath}
 = \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}}
 \right\rangle.
 </md>
@@ -484,8 +484,8 @@ The direction of most rapid decrease is opposite to the gradient:
 </li>
 <li>
 <p>
-The unit vector in the direction of <m>\vec v</m> is
-<m>\hat u = \dfrac{\vec v}{\|\vec v\|}
+The unit vector in the direction of <m>\overrightarrow{v}</m> is
+<m>\hat u = \dfrac{\overrightarrow{v}}{\|\overrightarrow{v}\|}
 = \left\langle -\dfrac{1}{\sqrt2}, \dfrac{1}{\sqrt2}\right\rangle</m>,
 so
 <md>
@@ -529,7 +529,7 @@ Find the derivatives of <m>f(x,y)</m> in these directions at
 <p>
 The gradient is
 <md>
-<mrow>\nabla f \amp = (2x + y)\,\mathbf i + (x + 2y)\,\mathbf j,</mrow>
+<mrow>\nabla f \amp = (2x + y)\,\hat{\imath} + (x + 2y)\,\hat{\jmath},</mrow>
 <mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
 \qquad
 \left\|\left(\nabla f\right)_{(-1,1)}\right\| = \sqrt2.</mrow>
@@ -597,7 +597,7 @@ the derivative of <m>T</m> at <m>(1,1,1)</m> obtains its smallest
 <li>
 <p>
 the derivative of <m>T</m> at <m>(1,1,1)</m> in the direction of the
-<em>vector</em> <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+<em>vector</em> <m>-\hat{\imath} + 2\,\hat{\jmath} + 2\,\hat{k}</m> is
 <m>2</m> <degree/>C/m.
 </p>
 </li>
@@ -635,7 +635,7 @@ Hence <m>-\nabla T</m> is a positive multiple of
 
 <p>
 The third piece of information fixes <m>c</m>. The unit vector in the
-direction of <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+direction of <m>-\hat{\imath} + 2\,\hat{\jmath} + 2\,\hat{k}</m> is
 <m>\frac13\langle -1, 2, 2\rangle</m>, since
 <m>\|\langle -1,2,2\rangle\| = 3</m>, so
 <md>
@@ -726,9 +726,9 @@ A function increases fastest in the direction of its gradient:
 \nabla T = \langle 4y, 4x, 6z\rangle,
 \qquad
 \nabla T\big|_{(2,0,1)} = \langle 0, 8, 6\rangle
-= 8\,\mathbf j + 6\,\mathbf k.
+= 8\,\hat{\jmath} + 6\,\hat{k}.
 </md>
-So head in the direction <m>8\,\mathbf j + 6\,\mathbf k</m>
+So head in the direction <m>8\,\hat{\jmath} + 6\,\hat{k}</m>
 (equivalently, the unit vector
 <m>\left\langle 0, \frac45, \frac35\right\rangle</m>).
 </p>
@@ -769,7 +769,7 @@ unit of distance travelled, so by the linear approximation
 <ol marker="A.">
 <li>
 <p>
-Let <m>u_1 = \frac{1}{\sqrt2}\mathbf i + \frac{1}{\sqrt2}\mathbf j</m>.
+Let <m>u_1 = \frac{1}{\sqrt2}\hat{\imath} + \frac{1}{\sqrt2}\hat{\jmath}</m>.
 Estimate <m>D_{u_1}f(4,3)</m>.
 </p>
 </li>
@@ -1027,7 +1027,7 @@ A sheet of metal of varying density occupies the <m>xy</m>-plane. At
 the point <m>(x,y)</m>, the density is
 <m>100 + 0.1xy + 0.1y^2</m>. We move away from the point
 <m>(10,10)</m> in the direction
-<m>\frac35\mathbf i + \frac45\mathbf j</m>. Use the directional
+<m>\frac35\hat{\imath} + \frac45\hat{\jmath}</m>. Use the directional
 derivative to estimate about how far we'll have to go for the density
 to increase by <m>6</m>.
 </p>

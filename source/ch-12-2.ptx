@@ -28,7 +28,7 @@ and describe a vector by its initial and terminal points.
 <li>
 <p>
 Write a vector in component form, find the standard position vector of
-<m>\vec{PQ}</m>, and compute the length <m>\|\mathbf v\|</m> of a vector.
+<m>\overrightarrow{PQ}</m>, and compute the length <m>\|\mathbf v\|</m> of a vector.
 </p>
 </li>
 <li>
@@ -40,14 +40,17 @@ geometrically using the parallelogram law.
 <li>
 <p>
 Write a vector as a linear combination of the standard unit vectors
-<m>\mathbf i</m>, <m>\mathbf j</m>, and <m>\mathbf k</m>, and find the
+<m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and <m>\hat{k}</m>, and find the
 unit vector in the direction of a given vector.
 </p>
 </li>
 </ul>
 </objectives>
 
-<introduction>
+<!-- ================================================================ -->
+<subsection xml:id="sec-vec-definitions">
+<title>Definitions, Terminology, and Notation</title>
+
 <p>
 Some quantities can be described using real numbers alone, such as time
 or temperature. To describe other quantities we need a direction as well
@@ -58,24 +61,19 @@ completely. For instance, we might say that the car is moving with speed
 referred to as <term>vector quantities</term>, and they are the subject
 of this section.
 </p>
-</introduction>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-vec-definitions">
-<title>Definitions, Terminology, and Notation</title>
 
 <p>
 A <term>vector</term> is a directed line segment from an
 <term>initial point</term> <m>A</m> to a <term>terminal point</term>
-<m>B</m>, and is denoted by <m>\vec{AB}</m>. We denote the length of a
-vector by <m>\|\vec{AB}\|</m>. See <xref ref="fig-vec-directed-segment"/>.
+<m>B</m>, and is denoted by <m>\overrightarrow{AB}</m>. We denote the length of a
+vector by <m>\|\overrightarrow{AB}\|</m>. See <xref ref="fig-vec-directed-segment"/>.
 </p>
 
 <figure xml:id="fig-vec-directed-segment">
 <caption>
 A vector is a directed line segment. It carries two pieces of
 information: a direction, shown by the arrowhead, and a magnitude, which
-is its length <m>\|\vec{AB}\|</m>.
+is its length <m>\|\overrightarrow{AB}\|</m>.
 </caption>
 <image width="60%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-vec-segment">
@@ -98,7 +96,7 @@ is its length <m>\|\vec{AB}\|</m>.
 <m>\text{terminal point}</m>
 </label>
 <label at="ds-name" anchor="(2.0,1.28)" alignment="nw" color="#0072B2">
-<m>\vec{AB}</m>
+<m>\overrightarrow{AB}</m>
 </label>
 </coordinates>
 
@@ -120,14 +118,14 @@ the same magnitude. Notice that this definition says nothing about where
 a vector is located: a vector may be moved around the plane freely, and
 as long as its direction and length are unchanged it is the same vector.
 The vectors shown in <xref ref="fig-vec-equal"/> are all equal to each
-other, <m>\vec{AB} = \vec{CD} = \vec{OP} = \vec{EF}</m>.
+other, <m>\overrightarrow{AB} = \overrightarrow{CD} = \overrightarrow{OP} = \overrightarrow{EF}</m>.
 </p>
 
 <figure xml:id="fig-vec-equal">
 <caption>
 Four equal vectors. They have different initial points, but the same
 direction and the same length, so
-<m>\vec{AB} = \vec{CD} = \vec{OP} = \vec{EF}</m>. Only <m>\vec{OP}</m>
+<m>\overrightarrow{AB} = \overrightarrow{CD} = \overrightarrow{OP} = \overrightarrow{EF}</m>. Only <m>\overrightarrow{OP}</m>
 begins at the origin.
 </caption>
 <image width="70%">
@@ -184,9 +182,9 @@ begins at the origin.
 
 <p>
 Only one of the vectors in <xref ref="fig-vec-equal"/> starts from the
-origin. We say that <m>\vec{OP}</m> is in <term>standard position</term>,
+origin. We say that <m>\overrightarrow{OP}</m> is in <term>standard position</term>,
 and we denote it by a bold letter such as
-<m>\mathbf v = \vec{OP}</m>, which is also referred to as the
+<m>\mathbf v = \overrightarrow{OP}</m>, which is also referred to as the
 <term>standard position vector</term>.
 </p>
 
@@ -201,7 +199,7 @@ of a vector is the origin, i.e. <m>(0,0,0)</m>, and its final point is
 </p>
 
 <p>
-In <xref ref="fig-vec-components"/> we have <m>\mathbf v = \vec{PQ}</m>.
+In <xref ref="fig-vec-components"/> we have <m>\mathbf v = \overrightarrow{PQ}</m>.
 Also <m>x_1 + v_1 = x_2</m>, <m>y_1 + v_2 = y_2</m>, and
 <m>z_1 + v_3 = z_2</m>. This means we have
 <md xml:id="eq-vec-components" number="yes">
@@ -212,7 +210,7 @@ Also <m>x_1 + v_1 = x_2</m>, <m>y_1 + v_2 = y_2</m>, and
 
 <figure xml:id="fig-vec-components">
 <caption>
-The vector <m>\vec{PQ}</m> and its standard position vector
+The vector <m>\overrightarrow{PQ}</m> and its standard position vector
 <m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>. The two arrows are
 equal as vectors; only the second one begins at the origin.
 </caption>
@@ -258,12 +256,12 @@ three components along the axes.
 </figure>
 
 <p>
-The magnitude of <m>\mathbf v = \vec{PQ}</m> is the same as the distance
+The magnitude of <m>\mathbf v = \overrightarrow{PQ}</m> is the same as the distance
 between the two points <m>P(x_1,y_1,z_1)</m> and <m>Q(x_2,y_2,z_2)</m>,
 that is
-<md xml:id="eq-vec-length" number="yes">
-\|\mathbf v\| = \|\vec{PQ}\| = \sqrt{v_1^2 + v_2^2 + v_3^2}
-= \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.
+<md>
+<mrow>\|\mathbf v\| = \|\overrightarrow{PQ}\| \amp = \sqrt{v_1^2 + v_2^2 + v_3^2}</mrow>
+<mrow xml:id="eq-vec-length" number="yes">\amp = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.</mrow>
 </md>
 </p>
 
@@ -290,23 +288,22 @@ Find the standard position vector corresponding to this vector.
 <solution>
 <p>
 <alert>A.</alert> By <xref ref="eq-vec-length"/>, the length of the
-vector <m>\vec{PQ}</m> is
+vector <m>\overrightarrow{PQ}</m> is
 <md>
-\|\vec{PQ}\| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}
-= \sqrt{(-1-1)^2 + (0-1)^2 + (1+1)^2} = 3.
+<mrow>\|\overrightarrow{PQ}\| \amp = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}</mrow>
+<mrow>\amp = \sqrt{(-1-1)^2 + (0-1)^2 + (1+1)^2} = 3.</mrow>
 </md>
 </p>
 <p>
 <alert>B.</alert> By <xref ref="eq-vec-components"/>, the standard
 position vector is
 <md>
-\mathbf v = \langle x_2 - x_1,\; y_2 - y_1,\; z_2 - z_1 \rangle
-= \langle 1-(-1),\; 1-0,\; -1-1 \rangle
-= \langle 2, 1, -2 \rangle.
+<mrow>\mathbf v \amp = \langle x_2 - x_1,\; y_2 - y_1,\; z_2 - z_1 \rangle</mrow>
+<mrow>\amp = \langle 1-(-1),\; 1-0,\; -1-1 \rangle = \langle 2, 1, -2 \rangle.</mrow>
 </md>
 As a check, <m>\|\mathbf v\| = \sqrt{2^2 + 1^2 + (-2)^2} = 3</m>, which
 agrees with part <alert>A</alert>, as it must, since <m>\mathbf v</m> and
-<m>\vec{PQ}</m> are the same vector.
+<m>\overrightarrow{PQ}</m> are the same vector.
 </p>
 </solution>
 </example>
@@ -317,26 +314,20 @@ agrees with part <alert>A</alert>, as it must, since <m>\mathbf v</m> and
 <subsection xml:id="sec-vec-algebra">
 <title>Vector Algebra Operations</title>
 
+<definition xml:id="def-vec-addition">
+<title>Vector Addition</title>
+<statement>
 <p>
-<term>Vector addition.</term> Let
-<m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and
-<m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>, then
+Let <m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3 \rangle</m>. The <term>sum</term>
+of <m>\mathbf u</m> and <m>\mathbf v</m> is the vector
 <md xml:id="eq-vec-addition" number="yes">
 \mathbf u + \mathbf v
 = \langle u_1+v_1,\; u_2+v_2,\; u_3+v_3 \rangle.
 </md>
 </p>
-
-<p>
-<term>Scalar multiplication.</term> Let
-<m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and
-<m>k \in \R</m>, then
-<md xml:id="eq-vec-scalar" number="yes">
-k\,\mathbf u = \langle k u_1,\; k u_2,\; k u_3 \rangle.
-</md>
-Note that the above definitions can be reduced to the 2D case simply by
-removing the last components of the vectors.
-</p>
+</statement>
+</definition>
 
 <p>
 <term>Parallelogram law.</term> The parallelogram law tells us how to add
@@ -381,9 +372,10 @@ parallelogram spanned by <m>\mathbf u</m> and <m>\mathbf v</m>.
 <m>\mathbf u+\mathbf v</m>
 </label>
 <label at="pl-u1" anchor="(1.05,-0.08)" alignment="s"><m>u_1</m></label>
+<label at="pl-u2" anchor="(2.02,0.42)" alignment="w"><m>u_2</m></label>
 <label at="pl-v1" anchor="(2.68,0.78)" alignment="s"><m>v_1</m></label>
 <label at="pl-v2" anchor="(3.32,1.72)" alignment="e"><m>v_2</m></label>
-<label at="pl-top" anchor="(3.3,2.68)" alignment="ne">
+<label at="pl-top" anchor="(3.2,2.72)" alignment="nw">
 <m>\langle u_1+v_1,\; u_2+v_2\rangle</m>
 </label>
 <!-- = right panel: the parallelogram = -->
@@ -404,7 +396,7 @@ parallelogram spanned by <m>\mathbf u</m> and <m>\mathbf v</m>.
 <label at="pr-v-lab" anchor="(6.05,1.35)" alignment="nw" color="#0072B2">
 <m>\mathbf v</m>
 </label>
-<label at="pr-sum-lab" anchor="(7.15,1.8)" alignment="nw" color="#D55E00">
+<label at="pr-sum-lab" anchor="(6.95,0.58)" alignment="n" color="#D55E00">
 <m>\mathbf u+\mathbf v</m>
 </label>
 </coordinates>
@@ -494,6 +486,25 @@ diagonal of the parallelogram is
 </solution>
 </example>
 
+<definition xml:id="def-vec-scalar">
+<title>Scalar Multiplication</title>
+<statement>
+<p>
+Let <m>\mathbf u = \langle u_1, u_2, u_3 \rangle</m> and let
+<m>k \in \R</m> be a scalar. The <term>scalar multiple</term>
+<m>k\,\mathbf u</m> is the vector
+<md xml:id="eq-vec-scalar" number="yes">
+k\,\mathbf u = \langle k u_1,\; k u_2,\; k u_3 \rangle.
+</md>
+</p>
+</statement>
+</definition>
+
+<p>
+Note that both definitions can be reduced to the 2D case simply by
+removing the last components of the vectors.
+</p>
+
 <p>
 Let <m>k \in \R</m> and <m>\mathbf u = \langle u_1,u_2,u_3\rangle</m>.
 Then the length of the vector
@@ -557,14 +568,22 @@ Scalar multiples of <m>\mathbf u</m>. Multiplying by <m>1.5</m> or
 </image>
 </figure>
 
+<definition xml:id="def-vec-subtraction">
+<title>Vector Subtraction</title>
+<statement>
 <p>
-Subtraction is handled with the same idea:
+Subtraction is handled with the same idea: the <term>difference</term>
 <m>\mathbf u - \mathbf v</m> means
-<m>\mathbf u + (-\mathbf v)</m>, so we reverse <m>\mathbf v</m> and then
-add. Geometrically, <m>\mathbf u - \mathbf v</m> is the vector that
-points from the head of <m>\mathbf v</m> to the head of <m>\mathbf u</m>
-when both are drawn from a common initial point.
+<md xml:id="eq-vec-subtraction" number="yes">
+\mathbf u - \mathbf v = \mathbf u + (-\mathbf v),
+</md>
+so we reverse <m>\mathbf v</m> and then add. Geometrically,
+<m>\mathbf u - \mathbf v</m> is the vector that points from the head of
+<m>\mathbf v</m> to the head of <m>\mathbf u</m> when both are drawn
+from a common initial point.
 </p>
+</statement>
+</definition>
 
 <example xml:id="example-vec-add-subtract">
 <title>Adding and Subtracting Geometrically</title>
@@ -580,7 +599,8 @@ geometrically.
 <solution>
 <p>
 For the sum we complete the parallelogram spanned by <m>\mathbf u</m> and
-<m>\mathbf v</m>. For the difference we first draw
+<m>\mathbf v</m>. For the difference we use
+<xref ref="eq-vec-subtraction"/>: we first draw
 <m>-\mathbf v = \langle 1,-2 \rangle</m> and then add it to
 <m>\mathbf u</m>, which gives
 <m>\mathbf u - \mathbf v = \langle 2,-1 \rangle</m>. Both constructions
@@ -685,15 +705,15 @@ Let <m>\mathbf u</m>, <m>\mathbf v</m>, <m>\mathbf w</m> be vectors and
 Vectors of length one are referred to as <term>unit vectors</term>. The
 <term>standard unit vectors</term> are the ones pointing in the positive
 direction of <m>x</m>, <m>y</m>, and <m>z</m>, and they are denoted by
-<m>\mathbf i</m>, <m>\mathbf j</m>, and <m>\mathbf k</m> respectively, as
+<m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and <m>\hat{k}</m> respectively, as
 in <xref ref="fig-vec-ijk"/>.
 </p>
 
 <figure xml:id="fig-vec-ijk">
 <caption>
-The standard unit vectors <m>\mathbf i</m>, <m>\mathbf j</m>, and
-<m>\mathbf k</m>, and the decomposition
-<m>\mathbf a = a_1\mathbf i + a_2\mathbf j + a_3\mathbf k</m> of a vector
+The standard unit vectors <m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and
+<m>\hat{k}</m>, and the decomposition
+<m>\mathbf a = a_1\hat{\imath} + a_2\hat{\jmath} + a_3\hat{k}</m> of a vector
 into components along the axes.
 </caption>
 <image width="72%">
@@ -714,9 +734,9 @@ components a one i, a two j and a three k.
 \draw[->, thick] (0,0,0) -- (0,0,3.6) node[above] {$z$};
 % standard unit vectors, drawn thicker than the other vectors
 \draw[->, magenta, line width=1.8pt] (0,0,0) -- (1,0,0);
-\node[magenta, above] at (0.5,0,0) {$\mathbf i$};
-\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,1,0) node[right] {$\mathbf j$};
-\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,0,1) node[left] {$\mathbf k$};
+\node[magenta, above] at (0.5,0,0) {$\hat{\imath}$};
+\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,1,0) node[right] {$\hat{\jmath}$};
+\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,0,1) node[left] {$\hat{k}$};
 % a general vector a = (2.4, 3.2, 2.2)
 \coordinate (A) at (2.4,3.2,2.2);
 \draw[->, magenta, very thick] (0,0,0) -- (A);
@@ -725,11 +745,11 @@ components a one i, a two j and a three k.
 \node[magenta] at (1.1,1.5,1.35) {$\mathbf a$};
 % components
 \draw[->, cyan!60!black, very thick] (0,0,0) -- (2.4,0,0)
-      node[pos=0.35, below] {$a_1\mathbf i$};
+      node[pos=0.35, below] {$a_1\hat{\imath}$};
 \draw[->, cyan!60!black, very thick] (2.4,0,0) -- (2.4,3.2,0)
-      node[midway, below] {$a_2\mathbf j$};
+      node[midway, below] {$a_2\hat{\jmath}$};
 \draw[->, cyan!60!black, very thick] (2.4,3.2,0) -- (A)
-      node[midway, right] {$a_3\mathbf k$};
+      node[midway, right] {$a_3\hat{k}$};
 \draw[gray, dashed] (0,0,0) -- (2.4,3.2,0);
 \end{tikzpicture}
 ]]></latex-image>
@@ -737,24 +757,28 @@ components a one i, a two j and a three k.
 </figure>
 
 <p>
-Any vector <m>\mathbf a = \langle a_1,a_2,a_3\rangle</m> can be written
-as a linear combination of <m>\mathbf i</m>, <m>\mathbf j</m>, and
-<m>\mathbf k</m> as
+Combining <xref ref="eq-vec-addition"/> and <xref ref="eq-vec-scalar"/>,
+any vector <m>\mathbf a = \langle a_1,a_2,a_3\rangle</m> can be written
+as a linear combination of <m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and
+<m>\hat{k}</m> as
 <md xml:id="eq-vec-ijk" number="yes">
 \mathbf a = \langle a_1,a_2,a_3\rangle
-= a_1\mathbf i + a_2\mathbf j + a_3\mathbf k.
+= a_1\hat{\imath} + a_2\hat{\jmath} + a_3\hat{k}.
 </md>
 </p>
 
 <p>
 To find a unit vector pointing in the same direction as a nonzero vector
-<m>\mathbf a</m>, we divide <m>\mathbf a</m> by its own length:
+<m>\mathbf a</m>, we divide <m>\mathbf a</m> by its own length. We write
+<m>\hat{a}</m>, read <q>a hat</q>, for the resulting unit vector:
 <md xml:id="eq-vec-unit" number="yes">
-\text{unit vector in the direction of } \mathbf a
-= \frac{\mathbf a}{\|\mathbf a\|}.
+\hat{a} = \frac{\mathbf a}{\|\mathbf a\|}.
 </md>
 By <xref ref="eq-vec-scalar-length"/> this vector has length
-<m>\frac{1}{\|\mathbf a\|}\|\mathbf a\| = 1</m>, as required.
+<m>\frac{1}{\|\mathbf a\|}\|\mathbf a\| = 1</m>, as required. From now
+on a hat always marks a vector of length one, as it does for the standard
+unit vectors <m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and
+<m>\hat{k}</m>.
 </p>
 
 <example xml:id="example-vec-unit">
@@ -762,8 +786,8 @@ By <xref ref="eq-vec-scalar-length"/> this vector has length
 <statement>
 <p>
 Consider the two vectors
-<m>\mathbf v = \langle 1,0,1 \rangle = \mathbf i + \mathbf k</m> and
-<m>\mathbf u = \langle -1,1,0 \rangle = -\mathbf i + \mathbf j</m>.
+<m>\mathbf v = \langle 1,0,1 \rangle = \hat{\imath} + \hat{k}</m> and
+<m>\mathbf u = \langle -1,1,0 \rangle = -\hat{\imath} + \hat{\jmath}</m>.
 <ol marker="A.">
 <li>
 <p>
@@ -783,12 +807,13 @@ Find the unit vector in the direction of <m>\mathbf u + \mathbf v</m>.
 <solution>
 <p>
 <alert>A.</alert> We have <m>\mathbf v = \langle 1,0,1 \rangle</m> and
-<m>\mathbf u = \langle -1,1,0 \rangle</m>, and hence
+<m>\mathbf u = \langle -1,1,0 \rangle</m>, and hence, using
+<xref ref="eq-vec-addition"/> and <xref ref="eq-vec-ijk"/>,
 <md>
 <mrow>\mathbf u + \mathbf v \amp= \langle 1,0,1 \rangle
       + \langle -1,1,0 \rangle = \langle 0,1,1 \rangle</mrow>
-<mrow>\amp= (-\mathbf i + \mathbf j) + (\mathbf i + \mathbf k)
-      = \mathbf j + \mathbf k.</mrow>
+<mrow>\amp= (-\hat{\imath} + \hat{\jmath}) + (\hat{\imath} + \hat{k})
+      = \hat{\jmath} + \hat{k}.</mrow>
 </md>
 </p>
 <p>
@@ -797,9 +822,9 @@ Find the unit vector in the direction of <m>\mathbf u + \mathbf v</m>.
 by <xref ref="eq-vec-unit"/> we find the unit vector by dividing
 <m>\mathbf u + \mathbf v</m> by its length:
 <md>
-\text{unit vector in the } \mathbf u + \mathbf v \text{ direction}
+\widehat{\mathbf u + \mathbf v}
 = \frac{\mathbf u + \mathbf v}{\|\mathbf u + \mathbf v\|}
-= \frac{1}{\sqrt 2}(\mathbf j + \mathbf k)
+= \frac{1}{\sqrt 2}(\hat{\jmath} + \hat{k})
 = \left\langle 0,\; \frac{1}{\sqrt 2},\; \frac{1}{\sqrt 2}
 \right\rangle.
 </md>

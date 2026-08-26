@@ -86,7 +86,7 @@ Find the maximum area of a rectangle which is inscribed in <m>[$constraint]=[$c]
   <solution>
     <p>
 The area of the rectangle is <m>f(x,y)=4xy</m> and the constraint is <m>g(x,y)=[$constraint]-[$c]=0</m>. 
-Due to the Lagrange Multiplier method, we have <m>\vec{\nabla f}=\lambda \vec{\nabla g}</m>, which gives 
+Due to the Lagrange Multiplier method, we have <m>\overrightarrow{\nabla f}=\lambda \overrightarrow{\nabla g}</m>, which gives 
 the following vector equation: 
     <md>\langle 4y, 4x\rangle=\lambda \langle [$LM1] x, [$LM2] y\rangle</md>.
     </p>

@@ -78,26 +78,26 @@ value <m>0</m>. We showed in
 function is perpendicular to its level curves, so at every point of
 <m>C</m> where <m>\nabla g \neq \mathbf 0</m>,
 <md xml:id="eq-lagrange-gradg-perp" number="yes">
-\nabla g \cdot \mathbf T = 0,
+\nabla g \cdot \hat{T} = 0,
 </md>
-where <m>\mathbf T</m> is a vector tangent to <m>C</m> at that point.
+where <m>\hat{T}</m> is a unit vector tangent to <m>C</m> at that point.
 To stay on the curve, any small motion away from the point must be along
-the tangent direction <m>\mathbf T</m>.
+the tangent direction <m>\hat{T}</m>.
 </p>
 
 <p>
 How does <m>f</m> change as we move along <m>C</m>? By
 <xref ref="eq-dirderiv-gradient-relation"/>, the rate of change of
-<m>f</m> in the direction of the unit tangent vector <m>\mathbf T</m> is
+<m>f</m> in the direction of the unit tangent vector <m>\hat{T}</m> is
 the directional derivative
 <md xml:id="eq-lagrange-rate-along-C" number="yes">
-D_{\mathbf T} f = \nabla f \cdot \mathbf T.
+D_{\hat{T}} f = \nabla f \cdot \hat{T}.
 </md>
-If <m>\nabla f \cdot \mathbf T \neq 0</m> at a point of <m>C</m>, as in
+If <m>\nabla f \cdot \hat{T} \neq 0</m> at a point of <m>C</m>, as in
 <xref ref="fig-lagrange-tangent"/>, then the motion along the curve has a
 component along <m>\nabla f</m>: the value of <m>f</m> increases as we
-move along <m>C</m> in the direction of <m>\mathbf T</m> and decreases as
-we move in the direction of <m>-\mathbf T</m>. Such a point cannot be a
+move along <m>C</m> in the direction of <m>\hat{T}</m> and decreases as
+we move in the direction of <m>-\hat{T}</m>. Such a point cannot be a
 constrained maximum or minimum.
 </p>
 
@@ -107,7 +107,7 @@ A point of the constraint curve <m>g(x,y)=0</m> that is not a constrained
 extremum. The gradient <m>\nabla g</m> is perpendicular to the curve by
 <xref ref="thm-gradient-perp-level-curve"/>, but <m>\nabla f</m> is not:
 it has a nonzero component (dashed) along the tangent direction
-<m>\mathbf T</m>, so <m>f</m> is still changing as we move along the
+<m>\hat{T}</m>, so <m>f</m> is still changing as we move along the
 curve.
 </caption>
 <image width="70%">
@@ -138,7 +138,7 @@ curve.
 <m>g(x,y)=0</m>
 </label>
 <label at="lt-T-label" anchor="(2.05,1.28)" alignment="e" color="#0072B2">
-<m>\mathbf T</m>
+<m>\hat{T}</m>
 </label>
 <label at="lt-gradg-label" anchor="(0.35,1.66)" alignment="nw" color="#009E73">
 <m>\nabla g</m>
@@ -168,13 +168,13 @@ At a constrained local maximum or minimum, then, a small motion along the
 curve must not produce any change in <m>f</m>: the rate of change
 <xref ref="eq-lagrange-rate-along-C"/> must vanish, so
 <md xml:id="eq-lagrange-gradf-perp" number="yes">
-\nabla f \cdot \mathbf T = 0.
+\nabla f \cdot \hat{T} = 0.
 </md>
 Now compare <xref ref="eq-lagrange-gradg-perp"/> and
 <xref ref="eq-lagrange-gradf-perp"/>: at a constrained extremum, the
-tangent vector <m>\mathbf T</m> is perpendicular to both gradients
+tangent vector <m>\hat{T}</m> is perpendicular to both gradients
 <m>\nabla f</m> and <m>\nabla g</m>. In the plane, all vectors
-perpendicular to the nonzero vector <m>\mathbf T</m> lie on a single
+perpendicular to the nonzero vector <m>\hat{T}</m> lie on a single
 line, so <m>\nabla f</m> and <m>\nabla g</m> must be collinear (parallel).
 Phrased differently, there exists some number <m>\lambda \in \R</m> such
 that
@@ -392,15 +392,15 @@ g(x,y) = \frac{x^2}{8} + \frac{y^2}{2} - 1 = 0.
 <p>
 We begin by computing the gradients of both functions:
 <md>
-<mrow>\nabla f \amp= y\,\mathbf i + x\,\mathbf j</mrow>
-<mrow>\nabla g \amp= \frac{x}{4}\,\mathbf i + y\,\mathbf j.</mrow>
+<mrow>\nabla f \amp= y\,\hat{\imath} + x\,\hat{\jmath}</mrow>
+<mrow>\nabla g \amp= \frac{x}{4}\,\hat{\imath} + y\,\hat{\jmath}.</mrow>
 </md>
 </p>
 <p>
 The Lagrange multiplier equation gives
 <md xml:id="eq-lagrange-ellipse-system">
 <mrow>\nabla f \amp= \lambda\,\nabla g</mrow>
-<mrow>\amp\;\Rightarrow\; y\,\mathbf i + x\,\mathbf j = \lambda\frac{x}{4}\,\mathbf i + \lambda y\,\mathbf j</mrow>
+<mrow>\amp\;\Rightarrow\; y\,\hat{\imath} + x\,\hat{\jmath} = \lambda\frac{x}{4}\,\hat{\imath} + \lambda y\,\hat{\jmath}</mrow>
 <mrow>\amp\;\Rightarrow\; y = \lambda\frac{x}{4}, \quad x = \lambda y.</mrow>
 </md>
 After substituting <m>x = \lambda y</m> into
@@ -443,8 +443,8 @@ the origin. Exactly as promised by
 <m>xy = -2</m> are tangent to the ellipse at the four extremal points,
 and at each of them <m>\nabla f</m> and <m>\nabla g</m> are collinear.
 For instance, at <m>(2,1)</m> we have
-<m>\nabla f = \mathbf i + 2\,\mathbf j</m> and
-<m>\nabla g = \frac{1}{2}\,\mathbf i + \mathbf j</m>, so
+<m>\nabla f = \hat{\imath} + 2\,\hat{\jmath}</m> and
+<m>\nabla g = \frac{1}{2}\,\hat{\imath} + \hat{\jmath}</m>, so
 <m>\nabla f = 2\,\nabla g</m>, matching the multiplier
 <m>\lambda = 2</m>.
 </p>
@@ -582,14 +582,14 @@ g(x,y,z) = x + 2y + z - 4 = 0.
 <p>
 We compute the gradients:
 <md>
-<mrow>\nabla f \amp= 2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k</mrow>
-<mrow>\nabla g \amp= \mathbf i + 2\,\mathbf j + \mathbf k.</mrow>
+<mrow>\nabla f \amp= 2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
+<mrow>\nabla g \amp= \hat{\imath} + 2\,\hat{\jmath} + \hat{k}.</mrow>
 </md>
 The Lagrange multiplier equation gives
 <md xml:id="eq-lagrange-distance-system">
 <mrow>\nabla f = \lambda\,\nabla g \amp\;\Rightarrow\;
-2(x-1)\,\mathbf i + 2y\,\mathbf j + 2(z+2)\,\mathbf k</mrow>
-<mrow>\amp= \lambda\,\mathbf i + 2\lambda\,\mathbf j + \lambda\,\mathbf k.</mrow>
+2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
+<mrow>\amp= \lambda\,\hat{\imath} + 2\lambda\,\hat{\jmath} + \lambda\,\hat{k}.</mrow>
 </md>
 so that
 <md xml:id="eq-lagrange-distance-xyz" number="yes">
@@ -631,10 +631,10 @@ point <m>P_0(1,0,-2)</m>, we assume that the point <m>P(x,y,z)</m> on
 the plane is the closest point to <m>P_0</m>. As
 <xref ref="fig-lagrange-plane-prefigure"/> shows, the segment realizing
 the shortest distance meets the plane perpendicularly, so the vector
-<m>\vec{P_0 P}</m> must be parallel to the normal vector
-<m>\mathbf n = \mathbf i + 2\,\mathbf j + \mathbf k</m> of the plane:
+<m>\overrightarrow{P_0 P}</m> must be parallel to the normal vector
+<m>\mathbf n = \hat{\imath} + 2\,\hat{\jmath} + \hat{k}</m> of the plane:
 <md xml:id="eq-lagrange-normal-parallel">
-<mrow>\vec{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
+<mrow>\overrightarrow{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
 <mrow>\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
 </md>
 We then substitute the above equations into the equation of the plane:
@@ -648,10 +648,10 @@ and therefore the minimum distance is again
 </p>
 <p>
 The two solutions are closely related. At the closest point,
-<m>\nabla f = 2\langle x-1,\, y,\, z+2\rangle = 2\,\vec{P_0 P}</m>,
+<m>\nabla f = 2\langle x-1,\, y,\, z+2\rangle = 2\,\overrightarrow{P_0 P}</m>,
 while <m>\nabla g = \langle 1,2,1\rangle = \mathbf n</m>. So the
 Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> says precisely
-that <m>\vec{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
+that <m>\overrightarrow{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
 method of Lagrange multipliers rediscovers the geometry on its own.
 </p>
 </solution>
@@ -695,7 +695,7 @@ which reach the plane in any other direction, are longer.
 <m>d=\frac{5}{6}\sqrt{6}</m>
 </label>
 <label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
-<m>\mathbf n=\mathbf i+2\,\mathbf j+\mathbf k</m>
+<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
 </label>
 </coordinates>
 
@@ -754,13 +754,13 @@ two circles are tangent and the gradients are collinear,
 <p>
 We compute the gradients:
 <md>
-<mrow>\nabla f \amp= (2x-2)\,\mathbf i + (2y+2)\,\mathbf j</mrow>
-<mrow>\nabla g \amp= 2x\,\mathbf i + 2y\,\mathbf j.</mrow>
+<mrow>\nabla f \amp= (2x-2)\,\hat{\imath} + (2y+2)\,\hat{\jmath}</mrow>
+<mrow>\nabla g \amp= 2x\,\hat{\imath} + 2y\,\hat{\jmath}.</mrow>
 </md>
 The Lagrange multiplier equation gives
 <md xml:id="eq-lagrange-circle-system">
 <mrow>\nabla f \amp= \lambda\,\nabla g</mrow>
-<mrow>\amp\;\Rightarrow\; (2x-2)\,\mathbf i + (2y+2)\,\mathbf j = 2\lambda x\,\mathbf i + 2\lambda y\,\mathbf j</mrow>
+<mrow>\amp\;\Rightarrow\; (2x-2)\,\hat{\imath} + (2y+2)\,\hat{\jmath} = 2\lambda x\,\hat{\imath} + 2\lambda y\,\hat{\jmath}</mrow>
 <mrow>\amp\;\Rightarrow\; x - 1 = \lambda x, \quad y + 1 = \lambda y.</mrow>
 </md>
 Adding the two equations yields

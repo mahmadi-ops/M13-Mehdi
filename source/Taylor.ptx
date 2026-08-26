@@ -872,9 +872,9 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
         <p>
   The bob moves along the arc, so only the component of gravity
   <em>tangent</em> to that arc drives the motion. Resolving the weight
-  <m>m\vec{\mathbf{g}}</m> into a component along the string
+  <m>m\overrightarrow{\mathbf{g}}</m> into a component along the string
   (<m>mg\cos\theta</m>, balanced by the string tension
-  <m>\vec{\mathbf{F}}_T</m>) and a component tangent to the arc, as shown in
+  <m>\overrightarrow{\mathbf{F}}_T</m>) and a component tangent to the arc, as shown in
   <xref ref="fig-pendulum-forces"/>, gives the restoring force
 <md xml:id="eq-pendulum-force" number="yes">
   F = -mg\sin\theta .
@@ -935,9 +935,9 @@ which you can verify by differentiating twice. The number <m>\omega</m> is the a
 </p>
 
         <figure xml:id="fig-pendulum-forces">
-  <caption>Forces on a simple pendulum. The weight <m>m\vec{\mathbf{g}}</m>
+  <caption>Forces on a simple pendulum. The weight <m>m\overrightarrow{\mathbf{g}}</m>
   resolves into a component <m>mg\cos\theta</m> along the string (balanced by
-  the tension <m>\vec{\mathbf{F}}_T</m>) and a component <m>mg\sin\theta</m>
+  the tension <m>\overrightarrow{\mathbf{F}}_T</m>) and a component <m>mg\sin\theta</m>
   tangent to the arc, which acts as the restoring force.</caption>
   <image width="70%">
     <prefigure xmlns="https://prefigure.org" label="pendulum-forces">
@@ -965,9 +965,9 @@ which you can verify by differentiating twice. The number <m>\omega</m> is the a
           <label anchor="(0.5*bob[0], -cos(theta))" alignment="n" offset="(0,3)"><m>\ell\sin\theta</m></label>
           <label anchor="(0.25, -0.9)" alignment="s"><m>x</m></label>
           <line at="FT" p1="bob" p2="ftEnd" stroke="magenta" thickness="3" arrows="1"/>
-          <label anchor="ftEnd" alignment="ne" offset="(3,3)" color="magenta"><m>\vec{\mathbf{F}}_T</m></label>
+          <label anchor="ftEnd" alignment="ne" offset="(3,3)" color="magenta"><m>\overrightarrow{\mathbf{F}}_T</m></label>
           <line at="mgvec" p1="bob" p2="mgEnd" stroke="magenta" thickness="3" arrows="1"/>
-          <label anchor="mgEnd" alignment="s" offset="(0,-3)" color="magenta"><m>m\vec{\mathbf{g}}</m></label>
+          <label anchor="mgEnd" alignment="s" offset="(0,-3)" color="magenta"><m>m\overrightarrow{\mathbf{g}}</m></label>
           <line at="mgsin" p1="bob" p2="sinEnd" stroke="magenta" thickness="2" arrows="1"/>
           <label anchor="sinEnd" alignment="sw" offset="(-4,-2)"><m>mg\sin\theta</m></label>
           <line at="mgcos" p1="bob" p2="cosEnd" dash="4 3" stroke="magenta" thickness="2" arrows="1"/>
@@ -993,9 +993,9 @@ which you can verify by differentiating twice. The number <m>\omega</m> is the a
  
 <figure xml:id="fig-pendulum-forces-video">
   <caption>
-    Forces on a simple pendulum. The weight <m>m\vec{g}</m> resolves into a
+    Forces on a simple pendulum. The weight <m>m\overrightarrow{g}</m> resolves into a
     radial component <m>mg\cos\theta</m> along the string, balanced by the
-    tension <m>\vec{F}_T</m>, and a tangential component <m>mg\sin\theta</m>
+    tension <m>\overrightarrow{F}_T</m>, and a tangential component <m>mg\sin\theta</m>
     directed toward equilibrium, which acts as the restoring force. For small
     angles, <m>\sin\theta \approx \theta</m> gives
     <m>F \approx -\dfrac{mg}{\ell}x</m>.

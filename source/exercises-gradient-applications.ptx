@@ -35,8 +35,8 @@
           <li>
             <p>
               A test charge is nudged along
-              <m>\mathbf u = \tfrac{4}{5}\mathbf i - \tfrac{3}{5}\mathbf j</m>. Compute
-              <m>D_{\mathbf u}V</m> at <m>P_0</m>.
+              <m>\hat{u} = \tfrac{4}{5}\hat{\imath} - \tfrac{3}{5}\hat{\jmath}</m>. Compute
+              <m>D_{\hat{u}}V</m> at <m>P_0</m>.
             </p>
           </li>
           <li>
@@ -54,23 +54,23 @@
         <ol>
           <li>
             <p>
-              <m>\nabla V = -4x\,\mathbf i - 12y\,\mathbf j</m>, so
-              <m>(\nabla V)_{(2,1)} = -8\,\mathbf i - 12\,\mathbf j</m> and
-              <m>\mathbf E = 8\,\mathbf i + 12\,\mathbf j</m> V/cm. The potential drops
-              fastest along <m>\mathbf u = \tfrac{1}{\sqrt{13}}(2\,\mathbf i + 3\,\mathbf j)</m>,
+              <m>\nabla V = -4x\,\hat{\imath} - 12y\,\hat{\jmath}</m>, so
+              <m>(\nabla V)_{(2,1)} = -8\,\hat{\imath} - 12\,\hat{\jmath}</m> and
+              <m>\mathbf E = 8\,\hat{\imath} + 12\,\hat{\jmath}</m> V/cm. The potential drops
+              fastest along <m>\hat{u} = \tfrac{1}{\sqrt{13}}(2\,\hat{\imath} + 3\,\hat{\jmath})</m>,
               at the rate <m>-\|\nabla V\| = -4\sqrt{13} \approx -14.4</m> V/cm.
             </p>
           </li>
           <li>
             <p>
-              <md>D_{\mathbf u}V = (-8)\left(\tfrac{4}{5}\right)
+              <md>D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right)
                   + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5} = 0.8</md>
               in V/cm. The potential rises slightly along this heading.
             </p>
           </li>
           <li>
             <p>
-              <m>\mathbf u = \pm\tfrac{1}{\sqrt{13}}(3\,\mathbf i - 2\,\mathbf j)</m>. These are
+              <m>\hat{u} = \pm\tfrac{1}{\sqrt{13}}(3\,\hat{\imath} - 2\,\hat{\jmath})</m>. These are
               tangent to the equipotential ellipse <m>2x^2 + 6y^2 = 14</m> through <m>P_0</m>,
               and they are orthogonal to <m>\mathbf E</m>, as they must be.
             </p>
@@ -78,7 +78,7 @@
         </ol>
       </p>
       <figure xml:id="figure-potential-plate">
-        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\mathbf u}V = -\|\nabla V\|</m> at every point.</caption>
+        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
         <interactive xml:id="interactive-potential-plate"
                      iframe="potential-plate-3d.html"
                      width="100%" aspect="16:10"/>
@@ -114,7 +114,7 @@
           <li>
             <p>
               She wants a gentler line of exactly <m>12\%</m> grade. Using
-              <m>D_{\mathbf u}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
+              <m>D_{\hat{u}}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
               between her heading and the fall line.
             </p>
           </li>
@@ -127,17 +127,17 @@
         <ol>
           <li>
             <p>
-              <m>\nabla h = -0.0008x\,\mathbf i - 0.002y\,\mathbf j</m>, so
-              <m>(\nabla h)_{(200,100)} = -0.16\,\mathbf i - 0.20\,\mathbf j</m>. Steepest
+              <m>\nabla h = -0.0008x\,\hat{\imath} - 0.002y\,\hat{\jmath}</m>, so
+              <m>(\nabla h)_{(200,100)} = -0.16\,\hat{\imath} - 0.20\,\hat{\jmath}</m>. Steepest
               descent is along
-              <m>\mathbf u = \tfrac{1}{\sqrt{41}}(4\,\mathbf i + 5\,\mathbf j)</m>, and
+              <m>\hat{u} = \tfrac{1}{\sqrt{41}}(4\,\hat{\imath} + 5\,\hat{\jmath})</m>, and
               <m>\|\nabla h\| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
               <m>25.6\%</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>\mathbf u = \pm\tfrac{1}{\sqrt{41}}(5\,\mathbf i - 4\,\mathbf j)</m>, tangent
+              <m>\hat{u} = \pm\tfrac{1}{\sqrt{41}}(5\,\hat{\imath} - 4\,\hat{\jmath})</m>, tangent
               to the contour line of constant elevation through <m>P_0</m>.
             </p>
           </li>
@@ -154,10 +154,10 @@
         <caption>
           Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
           number is, on the hill itself. The vertical plane through <m>P_0</m> in the
-          direction <m>\mathbf u</m> cuts the surface in the gold curve; the red line
+          direction <m>\hat{u}</m> cuts the surface in the gold curve; the red line
           is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
-          makes with the horizontal. Since <m>\tan\alpha = D_{\mathbf u}h</m>, the
-          grade <em>is</em> the tangent of that angle. Swing <m>\mathbf u</m> with the
+          makes with the horizontal. Since <m>\tan\alpha = D_{\hat{u}}h</m>, the
+          grade <em>is</em> the tangent of that angle. Swing <m>\hat{u}</m> with the
           slider: <m>\alpha</m> is largest along the fall line, where
           <m>\tan\alpha = 0.2561</m> and <m>\alpha = 14.4^\circ</m>, and it closes to
           nothing along the contour, where the tangent line lies flat.
@@ -217,10 +217,10 @@
           <li>
             <p>
               <m>P(20,10) = 988 + 0.004(500) = 990</m> mb, and
-              <m>\nabla P = 0.008x\,\mathbf i + 0.008y\,\mathbf j</m> gives
-              <m>(\nabla P)_{(20,10)} = 0.16\,\mathbf i + 0.08\,\mathbf j</m>. The force
+              <m>\nabla P = 0.008x\,\hat{\imath} + 0.008y\,\hat{\jmath}</m> gives
+              <m>(\nabla P)_{(20,10)} = 0.16\,\hat{\imath} + 0.08\,\hat{\jmath}</m>. The force
               points along
-              <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\mathbf i + \mathbf j)</m>, that is,
+              <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\hat{\imath} + \hat{\jmath})</m>, that is,
               inward toward the low, and
               <m>\|\nabla P\| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
             </p>
@@ -235,7 +235,7 @@
           </li>
           <li>
             <p>
-              <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\mathbf i - 2\,\mathbf j)</m>. Since the
+              <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\hat{\imath} - 2\,\hat{\jmath})</m>. Since the
               level curves of <m>P</m> are the circles <m>x^2+y^2 = \text{constant}</m>,
               holding the barometer steady means circling the storm at a fixed radius of
               <m>\sqrt{500} \approx 22.4</m> miles.

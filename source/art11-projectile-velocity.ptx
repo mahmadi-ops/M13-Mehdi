@@ -602,9 +602,9 @@ i.e. at <m>P_0(-8, -2, 4)</m>.
 Writing the surface as a level surface
 <m>F(x,y,z) = x - y^2 + 16 - z = 0</m>, the normal vector is
 <md>
-\vec n = \nabla F = \langle 1, -2y, -1\rangle,
+\overrightarrow{n} = \nabla F = \langle 1, -2y, -1\rangle,
 \qquad
-\vec n\big|_{P_0} = \langle 1, 4, -1\rangle.
+\overrightarrow{n}\big|_{P_0} = \langle 1, 4, -1\rangle.
 </md>
 Hence the tangent plane at <m>P_0</m> is
 <md>

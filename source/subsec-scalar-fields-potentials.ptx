@@ -137,18 +137,18 @@
       <p>
         Differentiating the exponential with the chain rule,
         <md>
-          <mrow>\nabla T \amp = -\frac{14}{40}\,e^{-(x^2+3y^2)/40}\left(2x\,\mathbf i + 6y\,\mathbf j\right),</mrow>
-          <mrow>(\nabla T)_{(1,1)} \amp = -\frac{14\,e^{-1/10}}{40}\left(2\,\mathbf i + 6\,\mathbf j\right)</mrow>
-          <mrow>\amp \approx -0.633\,\mathbf i - 1.900\,\mathbf j .</mrow>
+          <mrow>\nabla T \amp = -\frac{14}{40}\,e^{-(x^2+3y^2)/40}\left(2x\,\hat{\imath} + 6y\,\hat{\jmath}\right),</mrow>
+          <mrow>(\nabla T)_{(1,1)} \amp = -\frac{14\,e^{-1/10}}{40}\left(2\,\hat{\imath} + 6\,\hat{\jmath}\right)</mrow>
+          <mrow>\amp \approx -0.633\,\hat{\imath} - 1.900\,\hat{\jmath} .</mrow>
         </md>
         At <m>P_0</m> the temperature itself is
         <m>T(1,1) = 74 + 14e^{-1/10} \approx 86.7^\circ</m>F.
       </p>
       <p>
         <term>Part 1.</term> Temperature falls fastest in the direction of
-        <m>-\nabla T</m>, which is a positive multiple of <m>\mathbf i + 3\mathbf j</m>.
+        <m>-\nabla T</m>, which is a positive multiple of <m>\hat{\imath} + 3\hat{\jmath}</m>.
         Normalizing, the heading is north-northeast:
-        <md>\mathbf u = \frac{1}{\sqrt{10}}\,\mathbf i + \frac{3}{\sqrt{10}}\,\mathbf j,</md>
+        <md>\mathbf u = \frac{1}{\sqrt{10}}\,\hat{\imath} + \frac{3}{\sqrt{10}}\,\hat{\jmath},</md>
         and the rate of change along it is
         <md>
           <mrow>D_{\mathbf u} T \amp = -\|\nabla T\|
@@ -162,7 +162,7 @@
       <p>
         <term>Part 2.</term> The second runner needs <m>D_{\mathbf u}T = 0</m>, that is,
         <m>\mathbf u</m> orthogonal to <m>\nabla T</m>:
-        <md>\mathbf u = \pm\frac{1}{\sqrt{10}}\left(3\,\mathbf i - \mathbf j\right).</md>
+        <md>\mathbf u = \pm\frac{1}{\sqrt{10}}\left(3\,\hat{\imath} - \hat{\jmath}\right).</md>
         Following that condition continuously, rather than for a single step, means never
         leaving the level curve of <m>T</m> through <m>P_0</m>. Since <m>T</m> is constant
         exactly when <m>x^2 + 3y^2</m> is constant, her route is
