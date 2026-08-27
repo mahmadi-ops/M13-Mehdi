@@ -1648,6 +1648,5 @@ directions of most rapid increase and decrease are perpendicular to it.
 </subsection>
 
 <xi:include href="subsec-scalar-fields-potentials.ptx"/>
-<xi:include href="exercises-gradient-applications.ptx"/>
 
 </section>

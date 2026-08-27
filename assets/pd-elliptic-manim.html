@@ -47,8 +47,9 @@
 
   .overlay { position: absolute; pointer-events: none; }
 
-  /* the function, top-left, in the spirit of a manim MathTex on screen */
-  #eqcard {
+  /* one legend, top-left: the function, the point, and what the chosen
+     slices report. There is deliberately nothing else drawn over the stage. */
+  #legend {
     top: 12px; left: 14px;
     padding: 9px 13px 10px 13px;
     background: rgba(16,18,24,0.72);
@@ -57,52 +58,23 @@
     border-radius: 6px;
     line-height: 1.5;
   }
-  .math { font-family: var(--serif); font-size: 17px; }
+  .math { font-family: var(--serif); font-size: 16px; }
   .math i { font-style: italic; }
-  .frac { display: inline-block; text-align: center; vertical-align: -0.62em;
-          margin: 0 2px; }
-  .frac .num { display: block; padding: 0 3px; }
-  .frac .den { display: block; padding: 0 3px; border-top: 1px solid currentColor; }
-  #eqcard .sub { font-size: 13px; color: var(--dim); font-family: var(--sans); }
-
-  /* what the chosen paths report, top-right: the whole point of the figure */
-  #readout {
-    top: 12px; right: 14px; min-width: 176px;
-    padding: 8px 12px 9px 12px;
-    background: rgba(16,18,24,0.72);
-    border: 1px solid var(--edge); border-radius: 6px;
-    font-size: 13px; color: var(--dim);
-  }
-  #readout .title { font-size: 12px; letter-spacing: .3px;
-                    text-transform: uppercase; color: var(--dim); }
-  #readout .row {
+  #legend .head { color: #9cdceb; }
+  #legend .head .at { color: var(--ink); }
+  #rows { margin-top: 7px; padding-top: 7px; border-top: 1px solid var(--edge); }
+  #rows .row {
     display: flex; align-items: baseline; gap: 8px;
-    margin-top: 6px; font-family: var(--serif); font-size: 15px;
-    color: var(--ink);
+    font-family: var(--serif); font-size: 15px; color: var(--ink);
   }
-  #readout .row .swatch {
+  #rows .row + .row { margin-top: 4px; }
+  #rows .row .swatch {
     width: 16px; height: 3px; border-radius: 2px; flex: 0 0 auto;
     transform: translateY(-4px);
   }
-  #readout .row .val { margin-left: auto; font-weight: 700; }
-  #readout .empty { margin-top: 6px; font-style: italic; }
-  #verdict {
-    margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--edge);
-    font-size: 13.5px; line-height: 1.35; color: var(--red); font-weight: 600;
-    display: none;
-  }
-  #verdict.show { display: block; }
-
-  /* guidance, bottom-centre, fading like a manim Write() */
-  #caption {
-    left: 50%; transform: translateX(-50%);
-    bottom: 12px; max-width: 74%;
-    text-align: center; font-size: 14px; line-height: 1.4; color: var(--dim);
-    background: rgba(6,7,10,0.78);
-    padding: 6px 14px; border-radius: 6px;
-    opacity: 0; transition: opacity .45s ease;
-  }
-  #caption.show { opacity: 1; }
+  #rows .row .val { margin-left: auto; font-weight: 700; padding-left: 14px; }
+  #rows .empty { font-family: var(--sans); font-size: 12.5px;
+                 font-style: italic; color: var(--dim); }
 
   /* ---- control panel ---- */
   #panel {
@@ -124,18 +96,15 @@
   button .eq { font-family: var(--serif); font-style: italic; }
   /* an active path button wears its own colour, set from the palette in JS */
   button.on { color: #06070a; font-weight: 700; }
-  #btnApproach.running, #btnSpin.on, #btnTop.on {
+  #btnSpin.on, #btnEyeY.on, #btnEyeX.on {
     background: var(--blue); border-color: var(--blue);
     color: #06070a; font-weight: 600;
   }
 
   @media (max-width: 620px) {
-    #eqcard { padding: 7px 10px 8px 10px; }
-    .math { font-size: 15px; }
-    #readout { min-width: 0; font-size: 12px; padding: 6px 9px 7px 9px;
-               top: 10px; right: 10px; }
-    #readout .row { font-size: 13px; }
-    #caption { font-size: 12.5px; max-width: 92%; bottom: 8px; }
+    #legend { padding: 7px 10px 8px 10px; top: 10px; left: 10px; }
+    .math { font-size: 14px; }
+    #rows .row { font-size: 13px; }
     .lbl { display: none; }
     button { font-size: 12.5px; padding: 4px 10px; }
   }
@@ -145,37 +114,29 @@
 <body>
 <div id="app">
   <div id="stage">
-    <div id="eqcard" class="overlay">
-      <div class="math" style="color:#9cdceb">
-        <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>) = 4 &#8722; <i>x</i>&#178; &#8722; 2<i>y</i>&#178;
+    <div id="legend" class="overlay">
+      <div class="math head">
+        <i>z</i> = 4 &#8722; <i>x</i>&#178; &#8722; 2<i>y</i>&#178;
+        <span class="at">at <i>P</i>(1,&#8202;1,&#8202;1)</span>
       </div>
-      <div class="math">at <i>P</i>(1,&#8202;1,&#8202;1)</div>
-      <div class="sub">each slice through <i>P</i> leaves a parabola</div>
-    </div>
-
-    <div id="readout" class="overlay">
-      <div class="title">slope at <i>P</i></div>
       <div id="rows"><div class="empty">no slice chosen yet</div></div>
-      <div id="verdict"></div>
     </div>
 
-    <div id="caption" class="overlay"></div>
   </div>
 
   <div id="panel">
     <div class="row">
-      <span class="lbl">Slice with:</span>
+      <span class="lbl">Slice:</span>
       <button class="cutBtn" data-i="0"><span class="eq">y</span> = 1</button>
       <button class="cutBtn" data-i="1"><span class="eq">x</span> = 1</button>
-      <span style="flex:1"></span>
-      <button id="btnAll">Show both</button>
+      <button id="btnAll">Both</button>
       <button id="btnClear">Clear</button>
-    </div>
-    <div class="row">
+      <span style="flex:1"></span>
       <span class="lbl">View:</span>
-      <button id="btnEye">Look along <span class="eq">y</span></button>
+      <button id="btnEyeY">Along <span class="eq">y</span></button>
+      <button id="btnEyeX">Along <span class="eq">x</span></button>
       <button id="btnSpin">Spin</button>
-      <button id="btnReset">Reset view</button>
+      <button id="btnReset">Reset</button>
     </div>
   </div>
 </div>
@@ -484,36 +445,22 @@
     C.grow = 0;
   });
 
-  // ---------- the readout ----------
-  var rowsEl = document.getElementById("rows"),
-      verdictEl = document.getElementById("verdict"),
-      captionEl = document.getElementById("caption");
-
-  function say(text) {
-    captionEl.textContent = text;
-    captionEl.classList.add("show");
-  }
+  // ---------- the legend ----------
+  var rowsEl = document.getElementById("rows");
 
   function refreshReadout() {
     var chosen = CUTS.filter(function (C) { return C.on; });
     if (!chosen.length) {
       rowsEl.innerHTML = '<div class="empty">no slice chosen yet</div>';
-      verdictEl.classList.remove("show");
       return;
     }
     rowsEl.innerHTML = chosen.map(function (C) {
       var d = C.key === "y1" ? "&#8706;f/&#8706;x" : "&#8706;f/&#8706;y";
       return '<div class="row">' +
              '<span class="swatch" style="background:' + C.tanCss + '"></span>' +
-             '<span>' + d + ' at P</span>' +
+             '<span>' + d + ' at <i>P</i></span>' +
              '<span class="val" style="color:' + C.tanCss + '">' + C.slope + '</span></div>';
     }).join("");
-    var both = chosen.length === 2;
-    verdictEl.innerHTML = both
-      ? "The <i>x</i>&#8209;slice falls at &#8722;2, the <i>y</i>&#8209;slice twice as fast at &#8722;4."
-      : "";
-    verdictEl.style.color = "#ece6e2";
-    verdictEl.classList.toggle("show", both);
   }
 
   function toggleCut(i, force) {
@@ -526,13 +473,6 @@
     btn.style.background = on ? C.css : "";
     btn.style.borderColor = on ? C.css : "";
     refreshReadout();
-    if (on) {
-      say("Slicing with " + C.tex + " leaves the parabola " +
-          (C.key === "y1" ? "z = 2 − x²" : "z = 3 − 2y²") +
-          "; its tangent at P has slope " + C.slope + ".");
-    } else if (!CUTS.some(function (D) { return D.on; })) {
-      say("Click a slice below, or the parabola itself, to cut the dome open.");
-    }
   }
 
   document.querySelectorAll(".cutBtn").forEach(function (b) {
@@ -540,7 +480,6 @@
   });
   document.getElementById("btnAll").addEventListener("click", function () {
     CUTS.forEach(function (C, i) { toggleCut(i, true); });
-    say("Both tangent lines meet at P: the one across x has slope −2, the one across y has slope −4.");
   });
   document.getElementById("btnClear").addEventListener("click", function () {
     CUTS.forEach(function (C, i) { toggleCut(i, false); });
@@ -590,25 +529,40 @@
   });
 
   // ---------- view buttons ----------
-  var btnEye = document.getElementById("btnEye");
-  btnEye.addEventListener("click", function () {
-    var on = !btnEye.classList.contains("on");
-    btnEye.classList.toggle("on", on);
-    spinning = false;
-    document.getElementById("btnSpin").classList.remove("on");
-    targetPhi = on ? Math.PI / 2 - 0.02 : 1.20;
-    targetTheta = on ? -Math.PI / 2 : -0.98;
-    if (on) say("Looking straight along the y-axis: the green parabola and its tangent are now seen edge on, at their true slope.");
-  });
+  // Looking along y puts the x-z plane on the screen, so C1 and its tangent are
+  // seen in true shape; looking along x does the same for C2. Only one of the
+  // two can be active at a time.
+  var btnEyeY = document.getElementById("btnEyeY"),
+      btnEyeX = document.getElementById("btnEyeX");
+
+  function eye(btn, other, theta0) {
+    btn.addEventListener("click", function () {
+      var on = !btn.classList.contains("on");
+      btn.classList.toggle("on", on);
+      other.classList.remove("on");
+      spinning = false;
+      btnSpin.classList.remove("on");
+      targetPhi = on ? Math.PI / 2 - 0.02 : 1.20;
+      targetTheta = on ? theta0 : -0.98;
+    });
+  }
+
   var spinning = false, btnSpin = document.getElementById("btnSpin");
+  eye(btnEyeY, btnEyeX, -Math.PI / 2);   // camera down the -y axis
+  eye(btnEyeX, btnEyeY, 0);              // camera down the +x axis
+
   btnSpin.addEventListener("click", function () {
     spinning = !spinning;
     btnSpin.classList.toggle("on", spinning);
-    if (spinning) { targetPhi = targetTheta = null; btnEye.classList.remove("on"); }
+    if (spinning) {
+      targetPhi = targetTheta = null;
+      btnEyeY.classList.remove("on"); btnEyeX.classList.remove("on");
+    }
   });
   document.getElementById("btnReset").addEventListener("click", function () {
     spinning = false;
-    btnSpin.classList.remove("on"); btnEye.classList.remove("on");
+    btnSpin.classList.remove("on");
+    btnEyeY.classList.remove("on"); btnEyeX.classList.remove("on");
     targetPhi = 1.20; targetTheta = -0.98;
   });
 
@@ -665,7 +619,6 @@
 
   resize();
   refreshReadout();
-  say("Click a slice below, or the parabola itself, to cut the dome open.");
   placeCamera();
   tick();
 })();
