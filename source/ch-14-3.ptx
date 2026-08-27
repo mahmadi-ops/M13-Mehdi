@@ -680,6 +680,49 @@ f_{xy}(a,b) = f_{yx}(a,b).
 </theorem>
 
 <p>
+Why should the order of differentiation not matter? The animation below
+gives the geometric reason, and no computation with derivative rules is
+involved. Start at a point <m>(a,b)</m>, step by <m>h</m> in the
+<m>x</m>-direction and by <m>k</m> in the <m>y</m>-direction, and look at
+the four heights of the surface above the corners of the resulting
+rectangle. The rises along the two edges in the <m>x</m>-direction are
+approximately <m>h\,f_x(a,b)</m> and <m>h\,f_x(a,b{+}k)</m>, so their
+difference measures how <m>f_x</m> changes as <m>y</m> increases: it is
+approximately <m>hk\,\frac{\partial}{\partial y}\!\left(
+\frac{\partial f}{\partial x}\right)</m>. Grouping the same four heights
+by the two edges in the <m>y</m>-direction instead measures how
+<m>f_y</m> changes as <m>x</m> increases, which is approximately
+<m>hk\,\frac{\partial}{\partial x}\!\left(
+\frac{\partial f}{\partial y}\right)</m>. But both groupings expand to
+exactly the same number,
+<md>
+\Delta = f(a{+}h,b{+}k) - f(a{+}h,b) - f(a,b{+}k) + f(a,b),
+</md>
+in which each corner height appears with a <m>+</m> sign on one diagonal
+and a <m>-</m> sign on the other, a pattern that treats <m>x</m> and
+<m>y</m> identically. So the two mixed partials approximate the same
+quantity <m>\Delta/(hk)</m>, and letting <m>h, k \to 0</m> forces
+<m>f_{xy}(a,b) = f_{yx}(a,b)</m>.
+</p>
+
+<figure xml:id="fig-pd-mixed-commute-video">
+<caption>
+Why <m>f_{xy} = f_{yx}</m>: the four heights of the surface over the
+corners of a small rectangle with sides <m>h</m> and <m>k</m>. Differencing
+along the two <m>x</m>-edges (green, with blue rises) gives approximately
+<m>hk\,\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial x}
+\right)</m>; differencing along the two <m>y</m>-edges (amber, with red
+rises) gives approximately <m>hk\,\frac{\partial}{\partial x}\!\left(
+\frac{\partial f}{\partial y}\right)</m>. Both are the same four-corner
+sum <m>\Delta</m>, so shrinking the rectangle to the point gives
+<m>f_{xy}(a,b) = f_{yx}(a,b)</m>.
+</caption>
+<video xml:id="video-pd-mixed-commute"
+       source="videos/mixed_partials_commute_manim.mp4"
+       width="100%" aspect="16:9"/>
+</figure>
+
+<p>
 Consider again <m>f(x,y) = \cos(xy^2)</m> from
 <xref ref="example-pd-second"/>. We computed <m>f_{xy}</m> and
 <m>f_{yx}</m>, and if you compare the two results, you can see that the
