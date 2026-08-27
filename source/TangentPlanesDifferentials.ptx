@@ -144,8 +144,10 @@ tangent plane</term> is
 <figure xml:id="fig-tp-plane-normal">
 <caption>
 The two vertical planes <m>y = y_0</m> and <m>x = x_0</m> cut the surface
-<m>z = f(x,y)</m> along the orange and black curves, whose tangent lines
-at <m>P_0</m> have slopes <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m>.
+<m>z = f(x,y)</m> along the green and amber curves of
+<xref ref="fig-pd-tangent-x"/> and <xref ref="fig-pd-tangent-y"/>, whose
+tangent lines at <m>P_0</m> have slopes <m>f_x(x_0,y_0)</m> and
+<m>f_y(x_0,y_0)</m>.
 The tangent plane at <m>P_0</m> contains both tangent lines, and its
 normal vector is <m>\mathbf n = \nabla w \Big|_{P_0}</m>. Equivalently,
 <m>\mathbf n</m> is given (up to sign) by the cross product of the
@@ -155,94 +157,138 @@ direction vectors <m>\hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
 <image width="85%">
 <description>
 <p>
-A gray dome-shaped surface, the graph of z equals f of x y, with the pink
-tangent plane touching it
-at the red point P 0. The orange curve cut by the plane y equals y 0 and
-the black curve cut by the plane x equals x 0 run across the surface
-through P 0. The blue tangent line to the orange curve at P 0 and the
-dark red tangent line to the black curve at P 0
-lie inside the tangent plane, and a magenta arrow,
-the normal vector n, points away from the plane at P 0, perpendicular to
-both tangent lines. A legend below the figure names each of these seven
-elements.
+A grey dome-shaped surface, the graph of z equals f of x y, with the pink
+tangent plane touching it at the magenta point P 0. The green curve cut
+by the plane y equals y 0 and the amber curve cut by the plane x equals
+x 0 run across the surface through P 0, drawn in the same colors as the
+two partial derivative figures. The blue tangent line to the green curve
+at P 0 and the dark red tangent line to the amber curve at P 0 lie inside
+the tangent plane, and a black arrow, the normal vector n, points away
+from the plane at P 0, perpendicular to both tangent lines. A legend in
+the top left corner names each of these seven elements.
 </p>
 </description>
-<latex-image>
-\begin{tikzpicture}[font=\large]
+<latex-image><![CDATA[
+\begin{tikzpicture}[font=\fontfamily{phv}\selectfont]
 \begin{axis}[
   width=12cm, height=9.5cm,
-  view={-35}{22},
-  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=4.6,
+  view={-35}{20},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=5.2,
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   ticks=none,
   clip=false,
+  legend cell align=left,
   legend style={
-    at={(0.5,-0.04)}, anchor=north, font=\normalsize,
-    draw=gray!50, fill=white,
-    cells={anchor=west}, legend columns=2,
-    row sep=1pt, column sep=8pt,
+    at={(0.01,0.99)}, anchor=north west,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
+    legend columns=2, column sep=8pt,
   },
 ]
-% the surface z = f(x,y)
+% the surface z = f(x,y); same surface, point and styling as the
+% partial-derivative figures fig-pd-tangent-x and fig-pd-tangent-y
 \addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
-          fill opacity=0.35, draw opacity=0.45,
-          domain=-2:2, y domain=-2:2, samples=21, forget plot]
+          fill opacity=0.35, draw opacity=0.4,
+          domain=-2:2, y domain=-2:2, samples=15, forget plot]
   {3 - 0.25*x^2 - 0.45*y^2};
 % the tangent plane at P0 (pink)
 \addplot3[surf, shader=flat, samples=2, domain=-1:2, y domain=-1:2,
           fill=red!30, fill opacity=0.45, draw=red!50!black, draw opacity=0.6,
           forget plot]
   {2.825 - 0.25*(x-0.5) - 0.45*(y-0.5)};
-% intersection curve with y = y0 (orange); samples y=0 keeps this a single
-% curve -- without it pgfplots closes the parabola with a straight chord
-\addplot3[very thick, orange, domain=-2:2, samples=41, samples y=0,
+% intersection curve with y = y0 (green, as in fig-pd-tangent-x);
+% samples y=0 keeps this a single curve -- without it pgfplots closes the
+% parabola with a straight chord
+\addplot3[very thick, green!50!black, domain=-2:2, samples=33, samples y=0,
           forget plot]
   ({x},{0.5},{2.8875 - 0.25*x^2});
-% intersection curve with x = x0 (black)
-\addplot3[very thick, black, domain=-2:2, samples=41, samples y=0,
+% intersection curve with x = x0 (amber, as in fig-pd-tangent-y)
+\addplot3[very thick, orange, domain=-2:2, samples=33, samples y=0,
           forget plot]
   ({0.5},{x},{2.9375 - 0.45*x^2});
-% tangent line at P0 in the plane y = y0 (blue)
-\addplot3[very thick, blue!70!black, domain=-1.4:1.4, samples=2, samples y=0,
+% tangent line at P0 in the plane y = y0 (blue, as in fig-pd-tangent-x)
+\addplot3[very thick, cyan!60!black, domain=-1.4:1.4, samples=2, samples y=0,
           forget plot]
   ({0.5+x},{0.5},{2.825 - 0.25*x});
-% tangent line at P0 in the plane x = x0 (dark red)
-\addplot3[very thick, purple!70!black, domain=-1.4:1.4, samples=2, samples y=0,
+% tangent line at P0 in the plane x = x0 (dark red, as in fig-pd-tangent-y)
+\addplot3[very thick, purple!60!black, domain=-1.4:1.4, samples=2, samples y=0,
           forget plot]
   ({0.5},{0.5+x},{2.825 - 0.45*x});
-% the normal vector n (magenta)
-\draw[-stealth, magenta, very thick]
+% the normal vector n (black)
+\draw[-stealth, black, very thick]
   (axis cs:0.5,0.5,2.825) -- (axis cs:0.75,0.95,3.83);
-% the point P0
-\addplot3[only marks, mark=*, mark size=1.8, color=red, forget plot]
+% the point P0 (magenta, as P in the partial-derivative figures)
+\addplot3[only marks, mark=*, mark size=1.9, color=magenta, forget plot]
   coordinates {(0.5,0.5,2.825)};
-\node[red, anchor=north] at (axis cs:0.5,0.3,2.66) {$P_0$};
-% legend
-\addlegendimage{area legend, fill=gray!30, fill opacity=0.35, draw=gray!55}
+\node[magenta, anchor=north, font=\fontfamily{phv}\selectfont]
+  at (axis cs:0.5,0.3,2.66) {$P_0$};
+% the legend, built by hand so that the surface gets an entry too
+\addlegendimage{area legend, draw=gray!55, fill=gray!30, fill opacity=0.35}
 \addlegendentry{$z=f(x,y)$}
 \addlegendimage{area legend, fill=red!30, fill opacity=0.45,
                 draw=red!50!black}
 \addlegendentry{tangent plane at $P_0$}
+\addlegendimage{very thick, green!50!black}
+\addlegendentry{$z=f(x,y_0)$, cut by $y=y_0$}
 \addlegendimage{very thick, orange}
-\addlegendentry{curve cut by $y=y_0$}
-\addlegendimage{very thick, black}
-\addlegendentry{curve cut by $x=x_0$}
-\addlegendimage{very thick, blue!70!black}
+\addlegendentry{$z=f(x_0,y)$, cut by $x=x_0$}
+\addlegendimage{very thick, cyan!60!black}
 \addlegendentry{tangent line in $y=y_0$}
-\addlegendimage{very thick, purple!70!black}
+\addlegendimage{very thick, purple!60!black}
 \addlegendentry{tangent line in $x=x_0$}
-\addlegendimage{-stealth, magenta, very thick}
+\addlegendimage{-stealth, black, very thick}
 \addlegendentry{$\mathbf n$: normal at $P_0$}
 \end{axis}
 \end{tikzpicture}
-</latex-image>
+]]></latex-image>
 </image>
 </figure>
 
 <p>
-Everything in the figure above can also be explored interactively in
-the <dataurl source="tangent-plane-explorer.html">Tangent Plane
-Explorer</dataurl>, which opens in a new tab. It builds the picture up one
+<xref ref="fig-tp-plane-interactive"/> rebuilds the picture above one
+layer at a time, so each ingredient of the construction can be seen
+arriving: the two slices with their tangent lines first, then the
+tangent plane that contains both lines, and finally the normal vector.
+</p>
+
+<figure xml:id="fig-tp-plane-interactive">
+<caption>
+The construction of <xref ref="fig-tp-plane-normal"/>, one layer at a
+time. The plane <m>y = y_0</m> cuts the surface along the green curve of
+<xref ref="fig-pd-tangent-x"/>, whose tangent line at <m>P_0</m> has
+slope <m>f_x(x_0,y_0)</m>; the plane <m>x = x_0</m> cuts it along the
+amber curve of <xref ref="fig-pd-tangent-y"/>, whose tangent line has
+slope <m>f_y(x_0,y_0)</m>. The tangent plane contains both tangent
+lines, and <m>\mathbf n = \langle f_x, f_y, -1\rangle</m> stands
+perpendicular to it.
+</caption>
+<!-- aspect 6:5 rather than 3:2: like limit-paths-manim.html, the equation
+     card and the readout sit in a bar above the picture (and the caption in
+     a strip below it) rather than overlaying it, so the frame needs the
+     extra height to keep the surface itself the same size. -->
+<interactive xml:id="interactive-tp-plane"
+             iframe="tangent-plane-manim.html" width="100%" aspect="6:5">
+<instructions>
+<p>
+The surface and the point <m>P_0</m> are those of the figure above. Add
+the layers with the buttons <mdash/> the slice <m>y = y_0</m> with its
+blue tangent line, the slice <m>x = x_0</m> with its dark red tangent
+line, the pink tangent plane, and the normal vector <m>\mathbf n</m>
+<mdash/> in any order, or press <q>Build it up</q> to watch them arrive
+one at a time. The values of <m>f_x</m>, <m>f_y</m> and <m>\mathbf n</m>
+are collected in the panel above the picture. <q>Side view</q> looks
+straight down the <m>y</m> axis so the slope of the blue tangent line can
+be read directly, <q>Spin</q> turns the picture, and dragging rotates it
+by hand.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<p>
+Everything in <xref ref="fig-tp-plane-normal"/> can also be explored
+interactively in the <dataurl source="tangent-plane-explorer.html">Tangent
+Plane Explorer</dataurl>, which opens in a new tab. It builds the picture up one
 layer at a time <mdash/> the surface, the point <m>P_0</m>, the two
 cutting planes and the curves they cut, the two tangent lines, the tangent
 plane, and finally <m>\mathbf n</m> <mdash/> for any of several surfaces.
