@@ -37,7 +37,11 @@
   /* ---- stage ---- */
   #stage { position: relative; width: 100%; background: var(--bg);
            flex: 1 1 auto; min-height: 0; overflow: hidden; }
-  #stage canvas { display: block; cursor: grab; touch-action: none; }
+  /* the renderer is sized with updateStyle off, so the canvas has to be told
+     to fill the stage in CSS -- otherwise it draws at its buffer size, which is
+     devicePixelRatio times too big, and the picture overflows the frame. */
+  #stage canvas { display: block; width: 100%; height: 100%;
+                  cursor: grab; touch-action: none; }
   #stage canvas:active { cursor: grabbing; }
   #stage canvas.pick { cursor: pointer; }
 
@@ -455,7 +459,7 @@
     });
 
     P.floorTag = makeLabel(P.tex, P.css, 0.32);
-    P.floorTag.position.set(R_OUT * ct * 1.12, R_OUT * st * 1.12, Z_FLOOR + 0.12);
+    P.floorTag.position.set(R_OUT * ct * 1.2, R_OUT * st * 1.2, Z_FLOOR + 0.12);
     P.floorTag.material.opacity = 0.55;
     P.group.add(P.floorTag);
 
@@ -487,12 +491,15 @@
     // the value the path arrives at, marked on the trace next to the origin
     P.dot = new THREE.Mesh(new THREE.SphereGeometry(0.05, 18, 12),
                            new THREE.MeshBasicMaterial({ color: P.colour }));
-    P.dot.position.set(0.11 * ct, 0.11 * st, z + LIFT);
+    P.dot.position.set(-0.11 * ct, -0.11 * st, z + LIFT);
     P.dot.visible = false;
     P.group.add(P.dot);
 
+    // the value sits on the half of the path opposite its name on the floor, so
+    // the two never land on top of each other whichever way the picture is turned
     P.valueTag = makeLabel(P.label, P.css, 0.34);
-    P.valueTag.position.set(0.92 * ct, 0.92 * st, z + 0.2);
+    var vr = 0.72 + 0.26 * i;             // staggered, so no two values collide
+    P.valueTag.position.set(-vr * ct, -vr * st, z + 0.26);
     P.valueTag.material.opacity = 0;
     P.group.add(P.valueTag);
 

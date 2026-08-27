@@ -372,6 +372,41 @@ and t equals pi over two.
 ]]></latex-image>
 </image>
 </figure>
+
+<p>
+<xref ref="fig-cr-saddle-interactive"/> sets that picture moving. As
+<m>t</m> runs from <m>0</m> to <m>2\pi</m> the point travels once round
+the circle while the curve above it climbs and falls twice, and the
+readout carries both the height <m>w</m> and the rate
+<m>\frac{dw}{dt} = \cos 2t</m> the chain rule predicts. At
+<m>t = \pi/2</m> that rate reads <m>-1</m>, the answer computed above.
+</p>
+
+<figure xml:id="fig-cr-saddle-interactive">
+<caption>
+<xref ref="fig-cr-saddle"/>, set moving. Send the point round the circle
+with the slider, or
+jump to <m>t = 0</m>, <m>t = \pi/4</m> and <m>t = \pi/2</m>: the readout
+gives the height <m>w = \tfrac12\sin 2t</m> of the curve and the rate
+<m>\frac{dw}{dt} = \cos 2t</m> at which that height is changing, which is
+the number the chain rule computes.
+</caption>
+<interactive xml:id="interactive-cr-saddle"
+             iframe="saddle-circle-manim.html" width="100%" aspect="3:2">
+<instructions>
+<p>
+The saddle is <m>z = xy</m>, the mauve ring below it is the unit circle
+<m>x = \cos t</m>, <m>y = \sin t</m>, and the green curve is the path
+traced on the saddle as <m>t</m> increases. The white point marks the
+current <m>t</m>; the arrow on it points along the curve and grows with
+<m>\left|\frac{dw}{dt}\right|</m>, turning amber where the height is
+rising and red where it is falling. The three coloured dots are the
+marked points <m>t=0</m>, <m>t=\pi/4</m> and <m>t=\pi/2</m>. Drag the
+picture to turn it.
+</p>
+</instructions>
+</interactive>
+</figure>
 </solution>
 </example>
 
