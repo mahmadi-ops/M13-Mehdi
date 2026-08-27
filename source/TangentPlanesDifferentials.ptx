@@ -782,8 +782,8 @@ For comparison, the exact change is
 <mrow>\amp= \left(3 + 0.2\sqrt 2 + 0.01\right) - 3
 = 0.2\sqrt 2 + 0.01,</mrow>
 </md>
-so the estimate <m>df</m> is off by only <m>0.01</m> units. The right
-panel of <xref ref="fig-tp-example-change"/> zooms in on the stretch just
+so the estimate <m>df</m> is off by only <m>0.01</m> units.
+<xref ref="fig-tp-example-change-zoom"/> zooms in on the stretch just
 past <m>P_0</m> and shows this gap between the tangent line and the
 surface.
 </p>
@@ -791,21 +791,14 @@ surface.
 
 <figure xml:id="fig-tp-example-change">
 <caption>
-<term>Left:</term> the graph of <m>z = 1 + x^2 + y^2</m> and the vertical
+The graph of <m>z = 1 + x^2 + y^2</m> and the vertical
 plane <m>x - y = 0</m> that contains the direction <m>\hat{u}</m>.
 Moving from <m>P_0(1,1,0)</m> by <m>ds = 0.1</m> along <m>\hat{u}</m>
 moves the input point (light blue), and the value of <m>f</m> climbs
 along the black intersection curve from <m>f(1,1) = 3</m> (green) to the
-orange point. <term>Right:</term> the same curve plotted against the
-distance <m>s</m> travelled along <m>\hat{u}</m>, together with its
-tangent line at <m>P_0</m>. The window starts at <m>s = 0.05</m>, past
-the stretch where the two are indistinguishable, so that the gap between
-them can be seen: at <m>s = ds = 0.1</m> the tangent line has risen by
-<m>df \approx 0.283</m> to <m>3.283</m>, while the curve itself has risen
-by <m>\Delta f \approx 0.293</m> to <m>3.293</m>.
+orange point.
 </caption>
-<sidebyside widths="48% 48%" margins="2%" valign="middle">
-<image xml:id="image-tp-change-3d">
+<image xml:id="image-tp-change-3d" width="75%">
 <description>
 <p>
 An upward-opening gray paraboloid, the graph of z equals 1 plus x squared
@@ -896,7 +889,19 @@ the four points.
 \end{tikzpicture}
 </latex-image>
 </image>
-<image xml:id="image-tp-change-zoom">
+</figure>
+
+<figure xml:id="fig-tp-example-change-zoom">
+<caption>
+The curve of <xref ref="fig-tp-example-change"/> plotted against the
+distance <m>s</m> travelled along <m>\hat{u}</m>, together with its
+tangent line at <m>P_0</m>. The window starts at <m>s = 0.05</m>, past
+the stretch where the two are indistinguishable, so that the gap between
+them can be seen: at <m>s = ds = 0.1</m> the tangent line has risen by
+<m>df \approx 0.283</m> to <m>3.283</m>, while the curve itself has risen
+by <m>\Delta f \approx 0.293</m> to <m>3.293</m>.
+</caption>
+<image xml:id="image-tp-change-zoom" width="65%">
 <description>
 <p>
 A two dimensional graph zoomed into the neighborhood of the moved point.
@@ -969,7 +974,6 @@ curve, the tangent line, and the two marked values.
 \end{tikzpicture}
 </latex-image>
 </image>
-</sidebyside>
 </figure>
 
 </subsection>
@@ -1149,6 +1153,10 @@ normal direction.
 \begin{axis}[
   width=10.26cm, height=10.01cm,
   view={-125}{25},
+  % equal data units on all three axes, so the normal direction really is
+  % drawn at a right angle to the tangent plane instead of being sheared
+  % by different per-axis scales
+  unit vector ratio=1 1 1,
   xmin=-0.96, xmax=-0.04, ymin=-0.96, ymax=-0.04, zmin=-0.46, zmax=0.66,
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   xtick={-0.8,-0.6,-0.4,-0.2}, ytick={-0.8,-0.6,-0.4,-0.2},
