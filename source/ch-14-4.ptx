@@ -358,10 +358,14 @@ surface, the circle, the curve and the three marked points.
 ]
 % the saddle z = xy, drawn over the disc that the unit circle sits inside so
 % that it stays within the axis box instead of running off the top and bottom
-\addplot3[surf, shader=interp, point meta=z,
-          fill opacity=0.75, draw=black, draw opacity=0.16,
+% shader=flat, not interp: an interpolated shader emits a PDF smooth shading,
+% which the pdf-to-svg step flattens to a low-resolution bitmap and leaves the
+% rim of the disc visibly pixelated. Flat cells stay vector, and at this mesh
+% density they read as a continuous gradient anyway.
+\addplot3[surf, shader=flat corner, point meta=z,
+          fill opacity=0.8, draw=mapped color, draw opacity=0.8, line width=0.1pt,
           z buffer=sort, forget plot,
-          domain=0:1.32, y domain=0:360, samples=13, samples y=49]
+          domain=0:1.32, y domain=0:360, samples=17, samples y=97]
   ({x*cos(y)},{x*sin(y)},{x^2*cos(y)*sin(y)});
 % the unit circle in the xy-plane
 \addplot3[very thick, violet!75!black, forget plot, domain=0:360, samples=64]
