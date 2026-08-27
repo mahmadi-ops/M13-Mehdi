@@ -77,7 +77,70 @@ respect to <m>x</m></term> and is defined as
 \left.\frac{\partial f}{\partial x}\right|_{(x_0,y_0)}
 = \lim_{h\to 0} \frac{f(x_0+h,\, y_0) - f(x_0,y_0)}{h}.
 </md>
+<xref ref="fig-pd-tangent-x"/> shows this curve and its tangent line.
 </p>
+
+<figure xml:id="fig-pd-tangent-x">
+<caption>
+The curve <m>z = f(x,y_0)</m> cut from the surface by the vertical plane
+<m>y = y_0</m>, and its tangent line at <m>P</m>. The slope of that
+tangent line is <m>\left.\frac{\partial f}{\partial x}\right|_{(x_0,y_0)}</m>.
+</caption>
+<image width="86%">
+<description>
+<p>
+A grey surface with a green curve drawn on it through a magenta point P.
+The curve is the trace of the surface in the plane y equals y nought, and
+a blue tangent line touches it at P. A legend in the top left corner names
+the surface, the curve, the tangent line and the point P.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[font=\fontfamily{phv}\selectfont]
+\begin{axis}[
+  width=12cm, height=9cm,
+  view={-35}{20},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=5.2,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none, clip=false,
+  legend cell align=left,
+  legend style={
+    at={(0.01,0.99)}, anchor=north west,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
+  },
+]
+% the surface
+\addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
+          fill opacity=0.35, draw opacity=0.4, forget plot,
+          domain=-2:2, y domain=-2:2, samples=15]
+  {3 - 0.25*x^2 - 0.45*y^2};
+% trace in the plane y = y0 (green)
+\addplot3[very thick, green!50!black, forget plot,
+          domain=-2:2, samples=33, samples y=0]
+  ({x},{0.5},{2.8875 - 0.25*x^2});
+% tangent line in y = y0, slope df/dx = -0.25
+\addplot3[very thick, cyan!60!black, forget plot,
+          domain=-1.3:1.3, samples=2, samples y=0]
+  ({0.5+x},{0.5},{2.825 - 0.25*x});
+% the point P
+\addplot3[only marks, mark=*, mark size=1.9, color=magenta, forget plot]
+  coordinates {(0.5,0.5,2.825)};
+\node[magenta, anchor=south west, font=\fontfamily{phv}\selectfont] at (axis cs:0.5,0.5,2.9) {$P$};
+% the legend, built by hand so that the surface gets an entry too
+\addlegendimage{area legend, draw=gray!55, fill=gray!30, fill opacity=0.35}
+\addlegendentry{$z=f(x,y)$}
+\addlegendimage{very thick, green!50!black}
+\addlegendentry{$z=f(x,y_0)$}
+\addlegendimage{very thick, cyan!60!black}
+\addlegendentry{Tangent line in $y=y_0$}
+\addlegendimage{only marks, mark=*, mark size=1.9, color=magenta}
+\addlegendentry{$P=(x_0,y_0,f(x_0,y_0))$}
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
 
 <p>
 The slope of the tangent line in the plane <m>x = x_0</m> at the point
@@ -90,84 +153,94 @@ respect to <m>y</m></term> and is defined as
 \left.\frac{\partial f}{\partial y}\right|_{(x_0,y_0)}
 = \lim_{h\to 0} \frac{f(x_0,\, y_0+h) - f(x_0,y_0)}{h}.
 </md>
-<xref ref="fig-pd-two-tangents"/> shows both tangent lines at once.
+<xref ref="fig-pd-tangent-y"/> shows the matching picture in the plane
+<m>x = x_0</m>.
 </p>
 
-<figure xml:id="fig-pd-two-tangents">
+<figure xml:id="fig-pd-tangent-y">
 <caption>
-The two curves through <m>P</m> cut from the surface by the vertical
-planes <m>y = y_0</m> and <m>x = x_0</m>, and their tangent lines at
-<m>P</m>. The slope of the blue line is
-<m>\frac{\partial f}{\partial x}</m> and the slope of the dark red line
-is <m>\frac{\partial f}{\partial y}</m>.
+The curve <m>z = f(x_0,y)</m> cut from the surface by the vertical plane
+<m>x = x_0</m>, and its tangent line at <m>P</m>. The slope of that
+tangent line is <m>\left.\frac{\partial f}{\partial y}\right|_{(x_0,y_0)}</m>.
 </caption>
 <image width="86%">
 <description>
 <p>
-A grey surface with two curves drawn on it through a magenta point P. One
-curve, in green, is the trace in the plane y equals y nought and has a
-blue tangent line at P. The other, in amber, is the trace in the plane x
-equals x nought and has a dark red tangent line at P.
+A grey surface with an amber curve drawn on it through a magenta point P.
+The curve is the trace of the surface in the plane x equals x nought, and
+a dark red tangent line touches it at P. A legend in the top left corner
+names the surface, the curve, the tangent line and the point P.
 </p>
 </description>
 <latex-image><![CDATA[
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\fontfamily{phv}\selectfont]
 \begin{axis}[
   width=12cm, height=9cm,
   view={-35}{20},
-  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=4.4,
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=5.2,
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   ticks=none, clip=false,
+  legend cell align=left,
+  legend style={
+    at={(0.01,0.99)}, anchor=north west,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
+  },
 ]
 % the surface
 \addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
-          fill opacity=0.35, draw opacity=0.4,
+          fill opacity=0.35, draw opacity=0.4, forget plot,
           domain=-2:2, y domain=-2:2, samples=15]
   {3 - 0.25*x^2 - 0.45*y^2};
-% trace in the plane y = y0 (green)
-\addplot3[very thick, green!50!black, domain=-2:2, samples=33]
-  ({x},{0.5},{2.8875 - 0.25*x^2});
 % trace in the plane x = x0 (amber)
-\addplot3[very thick, orange, domain=-2:2, samples=33]
+\addplot3[very thick, orange, forget plot,
+          domain=-2:2, samples=33, samples y=0]
   ({0.5},{x},{2.9375 - 0.45*x^2});
-% tangent line in y = y0, slope df/dx = -0.25
-\addplot3[very thick, cyan!60!black, domain=-1.6:1.6, samples=2]
-  ({0.5+x},{0.5},{2.825 - 0.25*x});
 % tangent line in x = x0, slope df/dy = -0.45
-\addplot3[very thick, purple!60!black, domain=-1.6:1.6, samples=2]
+\addplot3[very thick, purple!60!black, forget plot,
+          domain=-1.3:1.3, samples=2, samples y=0]
   ({0.5},{0.5+x},{2.825 - 0.45*x});
 % the point P
-\addplot3[only marks, mark=*, mark size=1.9, color=magenta]
+\addplot3[only marks, mark=*, mark size=1.9, color=magenta, forget plot]
   coordinates {(0.5,0.5,2.825)};
-\node[magenta, anchor=west] at (axis cs:0.62,0.55,2.72)
-  {$P(x_0,y_0,f(x_0,y_0))$};
-% labels with leaders
-\node[cyan!60!black, align=center, anchor=south]
-  at (axis description cs:0.30,1.0)
-  {Tangent line at $P$\\ in the $y=y_0$ plane};
-\draw[gray!60, thin] (axis description cs:0.30,1.0)
-  -- (axis cs:-0.9,0.5,3.175);
-\node[purple!60!black, align=center, anchor=west]
-  at (axis description cs:1.0,0.62)
-  {Tangent line at $P$\\ in the $x=x_0$ plane};
-\draw[gray!60, thin] (axis description cs:1.0,0.62)
-  -- (axis cs:0.5,1.7,2.285);
-\node[green!50!black, anchor=east] at (axis description cs:0.0,0.80)
-  {$z=f(x,y_0)$};
-\draw[gray!60, thin] (axis description cs:0.0,0.80)
-  -- (axis cs:-1.55,0.5,2.287);
-\node[orange, anchor=east] at (axis description cs:0.02,0.36)
-  {$z=f(x_0,y)$};
-\draw[gray!60, thin] (axis description cs:0.02,0.36)
-  -- (axis cs:0.5,-1.5,1.925);
-\node[gray!30!black, anchor=west] at (axis description cs:1.0,0.20)
-  {$z=f(x,y)$};
-\draw[gray!60, thin] (axis description cs:1.0,0.20)
-  -- (axis cs:1.75,1.6,1.08);
+\node[magenta, anchor=south west, font=\fontfamily{phv}\selectfont] at (axis cs:0.5,0.5,2.9) {$P$};
+% the legend, built by hand so that the surface gets an entry too
+\addlegendimage{area legend, draw=gray!55, fill=gray!30, fill opacity=0.35}
+\addlegendentry{$z=f(x,y)$}
+\addlegendimage{very thick, orange}
+\addlegendentry{$z=f(x_0,y)$}
+\addlegendimage{very thick, purple!60!black}
+\addlegendentry{Tangent line in $x=x_0$}
+\addlegendimage{only marks, mark=*, mark size=1.9, color=magenta}
+\addlegendentry{$P=(x_0,y_0,f(x_0,y_0))$}
 \end{axis}
 \end{tikzpicture}
 ]]></latex-image>
 </image>
+</figure>
+
+<p>
+<xref ref="fig-pd-two-tangents-video"/> builds both pictures up one piece
+at a time: the surface on its own, then the plane <m>y = y_0</m> slicing it,
+the parabola that slice cuts out, and the tangent line to that parabola at
+<m>P</m>, whose slope is <m>\partial f/\partial x</m>. The surface then
+returns on its own and the same three steps are repeated in the plane
+<m>x = x_0</m>, giving <m>\partial f/\partial y</m>, and the video closes
+with both traces and both tangent lines in place.
+</p>
+
+<figure xml:id="fig-pd-two-tangents-video">
+<caption>
+The two partial derivatives at <m>P</m>, built one at a time: the cut by
+<m>y = y_0</m> with its green parabola <m>z = f(x,y_0)</m> and blue tangent
+line of slope <m>\frac{\partial f}{\partial x}</m>, then the cut by
+<m>x = x_0</m> with its amber parabola <m>z = f(x_0,y)</m> and red tangent
+line of slope <m>\frac{\partial f}{\partial y}</m>, and finally the two
+together.
+</caption>
+<video xml:id="video-pd-two-tangents"
+       source="videos/pd_two_tangents_manim.mp4"
+       width="100%" aspect="16:9"/>
 </figure>
 
 <p>
@@ -223,14 +296,52 @@ following partial derivatives at the point
 
 <solution>
 <p>
-<alert>A.</alert> By <xref ref="eq-pd-as-ordinary-x"/>, treating <m>y</m>
-as a constant, we have <m>f_x = -2x</m> and therefore
-<m>f_x(1/2,1/2) = -2(1/2) = -1</m>.
+<alert>A.</alert> We first work straight from the definition
+<xref ref="eq-pd-def-x"/>, which freezes <m>y</m> at <m>y_0 = 1/2</m> and
+moves <m>x</m> from <m>1/2</m> to <m>1/2 + h</m>. The numerator of the
+difference quotient is
+<md>
+<mrow>f\left(\tfrac12+h,\ \tfrac12\right) - f\left(\tfrac12,\tfrac12\right)
+  \amp= \left[1 - \left(\tfrac12+h\right)^2 - \left(\tfrac12\right)^2\right]</mrow>
+<mrow>\amp\qquad - \left[1 - \left(\tfrac12\right)^2 - \left(\tfrac12\right)^2\right]</mrow>
+<mrow>\amp= \left(\tfrac12\right)^2 - \left(\tfrac12+h\right)^2</mrow>
+<mrow>\amp= \tfrac14 - \left(\tfrac14 + h + h^2\right) = -h - h^2,</mrow>
+</md>
+so that
+<md>
+\left.\frac{\partial f}{\partial x}\right|_{(1/2,1/2)}
+= \lim_{h\to 0} \frac{-h-h^2}{h}
+= \lim_{h\to 0}\, (-1 - h) = -1.
+</md>
 </p>
 <p>
-<alert>B.</alert> By <xref ref="eq-pd-as-ordinary-y"/>, treating <m>x</m>
-as a constant, we have <m>f_y = -2y</m> and therefore
-<m>f_y(1/2,1/2) = -2(1/2) = -1</m>.
+<alert>B.</alert> The definition <xref ref="eq-pd-def-y"/> works the same
+way, this time freezing <m>x</m> at <m>x_0 = 1/2</m> and moving <m>y</m>
+from <m>1/2</m> to <m>1/2 + h</m>:
+<md>
+<mrow>f\left(\tfrac12,\ \tfrac12+h\right) - f\left(\tfrac12,\tfrac12\right)
+  \amp= \left[1 - \left(\tfrac12\right)^2 - \left(\tfrac12+h\right)^2\right]</mrow>
+<mrow>\amp\qquad - \left[1 - \left(\tfrac12\right)^2 - \left(\tfrac12\right)^2\right]</mrow>
+<mrow>\amp= \left(\tfrac12\right)^2 - \left(\tfrac12+h\right)^2 = -h - h^2,</mrow>
+</md>
+and therefore
+<md>
+\left.\frac{\partial f}{\partial y}\right|_{(1/2,1/2)}
+= \lim_{h\to 0} \frac{-h-h^2}{h} = -1.
+</md>
+</p>
+<p>
+<alert>The shortcut.</alert> Neither limit had to be computed. By
+<xref ref="eq-pd-as-ordinary-x"/>, treating <m>y</m> as a constant gives
+<m>f_x = -2x</m>, and by <xref ref="eq-pd-as-ordinary-y"/>, treating
+<m>x</m> as a constant gives <m>f_y = -2y</m>. Evaluating at
+<m>(1/2,1/2)</m>,
+<md>
+f_x\left(\tfrac12,\tfrac12\right) = -2\left(\tfrac12\right) = -1,
+\qquad
+f_y\left(\tfrac12,\tfrac12\right) = -2\left(\tfrac12\right) = -1,
+</md>
+which is what the two limits above gave.
 </p>
 </solution>
 </example>

@@ -341,7 +341,7 @@ the legend gives the value of <m>c</m> along each circle.
                   stroke="#009E73" thickness="2.5"/>
 <parametric-curve at="ct-c5" function="c5" domain="(0,6.2832)"
                   stroke="black" thickness="2.5"/>
-<legend anchor="(-2.08,2.08)" alignment="se" scale="0.85" opacity="1">
+<legend anchor="(2.08,2.08)" alignment="sw" scale="0.85" opacity="1">
 <item ref="ct-c1"><m>c=\tfrac12</m></item>
 <item ref="ct-c2"><m>c=0</m></item>
 <item ref="ct-c3"><m>c=-\tfrac12</m></item>
@@ -351,7 +351,7 @@ the legend gives the value of <m>c</m> along each circle.
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="Five concentric circles centred at the origin in the x y plane, each drawn in a different colour, with a legend in the upper left giving the value of c on each. The values step down by one half, from c equals one half on the innermost circle to c equals negative three halves on the outermost.">
+<annotation ref="figure" text="Five concentric circles centred at the origin in the x y plane, each drawn in a different colour, with a legend in the upper right giving the value of c on each. The values step down by one half, from c equals one half on the innermost circle to c equals negative three halves on the outermost.">
   <annotation ref="ct-c1" text="The level curve where f equals one half, a circle of radius one over root two. It is the innermost circle, so the largest values of f occur near the origin."/>
   <annotation ref="ct-c2" text="The level curve where f equals zero, the unit circle."/>
   <annotation ref="ct-c3" text="The level curve where f equals negative one half, a circle of radius root three over two."/>
@@ -705,7 +705,7 @@ hyperboloid of two sheets closes up into the cone and then opens out into
 the hyperboloid of one sheet.
 </caption>
 <interactive xml:id="interactive-level-surface-morph"
-             iframe="level-surface-morph.html" width="100%" aspect="1:1">
+             iframe="level-surface-morph.html" width="100%" aspect="3:2">
 <instructions>
 <p>
 The surface shown is the level surface <m>g(x,y,z) = x^2+y^2-z^2 = c</m>.

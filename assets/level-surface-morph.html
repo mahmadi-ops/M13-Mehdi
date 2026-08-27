@@ -50,21 +50,6 @@
   }
   #eqcard .math { font-family: var(--serif); font-size: 15px; line-height: 1.5; }
   #surfName { margin-top: 5px; font-size: 13px; font-weight: 600; }
-  #surfCond { font-size: 12px; color: var(--dim); }
-
-  #meter {
-    right: 14px; top: 12px; font-size: 12px; color: var(--dim);
-    background: rgba(16,18,24,0.78);
-    border: 1px solid var(--edge); border-radius: 6px;
-    padding: 7px 10px 9px; text-align: right;
-  }
-  #meter b { color: var(--ink); font-family: var(--serif); font-size: 13px; }
-  #bar { position: relative; width: 132px; height: 5px; margin-top: 7px;
-         border-radius: 3px;
-         background: linear-gradient(90deg, var(--green) 0%, var(--green) 46%,
-                     var(--gold) 50%, var(--blue) 54%, var(--blue) 100%); }
-  #barKnob { position: absolute; top: -3px; width: 3px; height: 11px;
-             border-radius: 2px; background: var(--ink); }
 
   #caption { left: 14px; bottom: 12px; right: 14px; font-size: 12.5px;
              color: var(--dim); }
@@ -96,12 +81,6 @@
       <div class="math" style="color:#9cdceb"><i>g</i>(<i>x</i>,<i>y</i>,<i>z</i>) = <i>x</i>&#178; + <i>y</i>&#178; &#8722; <i>z</i>&#178;</div>
       <div class="math">level surface &nbsp;<i>g</i> = <span id="eqC">1.00</span></div>
       <div id="surfName">Hyperboloid of one sheet</div>
-      <div id="surfCond">c &gt; 0</div>
-    </div>
-
-    <div id="meter" class="overlay">
-      waist radius <b id="waist">1.00</b>
-      <div id="bar"><div id="barKnob" style="left:0px"></div></div>
     </div>
 
     <div id="caption" class="overlay"></div>
@@ -151,7 +130,18 @@
   var camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.up.set(0, 0, 1);                 // z is up, the usual maths convention
 
+  // The camera is dollied to whatever distance makes the whole picture — the
+  // surface plus the labelled axes — fit the stage, so the figure never needs
+  // to be scrolled or cropped, however short or narrow the frame is.
+  var CONTENT = 3.6;                 // half-extent to keep in view (axis tips)
   var radius = 10.8, theta = 0.62, phi = 0.92;
+
+  function fitRadius(aspect) {
+    var halfFov = camera.fov * Math.PI / 360;
+    var byHeight = CONTENT / Math.tan(halfFov);
+    var byWidth = byHeight / Math.max(aspect, 0.001);
+    return Math.max(byHeight, byWidth);
+  }
 
   function placeCamera() {
     camera.position.set(
@@ -328,24 +318,18 @@
   var eqC = document.getElementById("eqC"),
       cValOut = document.getElementById("cVal"),
       nameOut = document.getElementById("surfName"),
-      condOut = document.getElementById("surfCond"),
-      waistOut = document.getElementById("waist"),
-      knob = document.getElementById("barKnob"),
       caption = document.getElementById("caption");
 
   function describe(c) {
     if (c > 0.02) {
       return ["Hyperboloid of one sheet",
-              "c > 0: one connected surface, pinched to a waist of radius √c",
               "Every horizontal slice is a circle of radius √(c + z²); the smallest sits at z = 0."];
     }
     if (c < -0.02) {
       return ["Hyperboloid of two sheets",
-              "c < 0: two separate bowls, with no surface between them",
               "There is no point with |z| < √(−c): the plane z = 0 misses the surface entirely."];
     }
     return ["Cone",
-            "c = 0: the boundary case between the two hyperboloids",
             "The two nappes meet at the origin — the only level surface with a corner."];
   }
 
@@ -356,11 +340,7 @@
     cValOut.textContent = c.toFixed(2);
     nameOut.textContent = d[0];
     nameOut.style.color = "#" + surfaceColour(c).toString(16).padStart(6, "0");
-    condOut.textContent = d[1];
-    caption.textContent = d[2];
-    waistOut.textContent = c >= 0 ? Math.sqrt(c).toFixed(2)
-                                  : "— (gap " + Math.sqrt(-c).toFixed(2) + ")";
-    knob.style.left = (132 * (c - CMIN) / (CMAX - CMIN) - 1.5) + "px";
+    caption.textContent = d[1];
   }
 
   // ---------- controls ----------
@@ -428,6 +408,7 @@
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    radius = fitRadius(camera.aspect);
   }
   window.addEventListener("resize", resize);
 
