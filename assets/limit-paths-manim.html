@@ -34,6 +34,14 @@
   #app { width: 100%; height: 100%; box-sizing: border-box;
          display: flex; flex-direction: column; }
 
+  /* ---- header: the equation and the readout, in their own bar above the
+     stage so that nothing sits on top of the picture itself ---- */
+  #top {
+    flex: 0 0 auto; display: flex; align-items: stretch; gap: 10px;
+    padding: 8px 12px; box-sizing: border-box;
+    background: var(--panel); border-bottom: 1px solid var(--edge);
+  }
+
   /* ---- stage ---- */
   #stage { position: relative; width: 100%; background: var(--bg);
            flex: 1 1 auto; min-height: 0; overflow: hidden; }
@@ -45,13 +53,10 @@
   #stage canvas:active { cursor: grabbing; }
   #stage canvas.pick { cursor: pointer; }
 
-  .overlay { position: absolute; pointer-events: none; }
-
-  /* the function, top-left, in the spirit of a manim MathTex on screen */
+  /* the function, left half of the header bar */
   #eqcard {
-    top: 12px; left: 14px;
     padding: 9px 13px 10px 13px;
-    background: rgba(16,18,24,0.72);
+    background: #14161e;
     border: 1px solid var(--edge);
     border-left: 3px solid var(--blue);
     border-radius: 6px;
@@ -65,11 +70,13 @@
   .frac .den { display: block; padding: 0 3px; border-top: 1px solid currentColor; }
   #eqcard .sub { font-size: 13px; color: var(--dim); font-family: var(--sans); }
 
-  /* what the chosen paths report, top-right: the whole point of the figure */
+  /* what the chosen paths report, right half of the header bar: all three
+     paths are always listed (a dash until one is chosen) so the bar keeps a
+     constant height and the stage below it never jumps */
   #readout {
-    top: 12px; right: 14px; min-width: 176px;
+    margin-left: auto; min-width: 190px;
     padding: 8px 12px 9px 12px;
-    background: rgba(16,18,24,0.72);
+    background: #14161e;
     border: 1px solid var(--edge); border-radius: 6px;
     font-size: 13px; color: var(--dim);
   }
@@ -77,29 +84,32 @@
                     text-transform: uppercase; color: var(--dim); }
   #readout .row {
     display: flex; align-items: baseline; gap: 8px;
-    margin-top: 6px; font-family: var(--serif); font-size: 15px;
+    margin-top: 4px; font-family: var(--serif); font-size: 14.5px;
     color: var(--ink);
   }
+  #readout .row.off { opacity: 0.45; }
   #readout .row .swatch {
     width: 16px; height: 3px; border-radius: 2px; flex: 0 0 auto;
     transform: translateY(-4px);
   }
   #readout .row .val { margin-left: auto; font-weight: 700; }
-  #readout .empty { margin-top: 6px; font-style: italic; }
+  /* the verdict keeps its line of space even while hidden, again so the
+     header height (and with it the canvas) stays put */
   #verdict {
-    margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--edge);
-    font-size: 13.5px; line-height: 1.35; color: var(--red); font-weight: 600;
-    display: none;
+    margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--edge);
+    font-size: 13px; line-height: 1.35; color: var(--red); font-weight: 600;
+    min-height: 1.35em; visibility: hidden;
   }
-  #verdict.show { display: block; }
+  #verdict.show { visibility: visible; }
 
-  /* guidance, bottom-centre, fading like a manim Write() */
+  /* guidance, its own strip between the stage and the buttons, still fading
+     in like a manim Write() but no longer laid over the picture */
   #caption {
-    left: 50%; transform: translateX(-50%);
-    bottom: 12px; max-width: 74%;
+    flex: 0 0 auto; box-sizing: border-box;
+    width: 100%; min-height: 32px;
     text-align: center; font-size: 14px; line-height: 1.4; color: var(--dim);
-    background: rgba(6,7,10,0.78);
-    padding: 6px 14px; border-radius: 6px;
+    background: var(--bg); border-top: 1px solid var(--edge);
+    padding: 6px 14px;
     opacity: 0; transition: opacity .45s ease;
   }
   #caption.show { opacity: 1; }
@@ -130,12 +140,13 @@
   }
 
   @media (max-width: 620px) {
+    #top { padding: 6px 10px; }
     #eqcard { padding: 7px 10px 8px 10px; }
+    #eqcard .sub { display: none; }
     .math { font-size: 15px; }
-    #readout { min-width: 0; font-size: 12px; padding: 6px 9px 7px 9px;
-               top: 10px; right: 10px; }
+    #readout { min-width: 0; font-size: 12px; padding: 6px 9px 7px 9px; }
     #readout .row { font-size: 13px; }
-    #caption { font-size: 12.5px; max-width: 92%; bottom: 8px; }
+    #caption { font-size: 12.5px; min-height: 28px; padding: 5px 10px; }
     .lbl { display: none; }
     button { font-size: 12.5px; padding: 4px 10px; }
   }
@@ -144,24 +155,24 @@
 
 <body>
 <div id="app">
-  <div id="stage">
-    <div id="eqcard" class="overlay">
-      <div class="math" style="color:#9cdceb">
-        <i>f</i>(<i>x</i>,<i>y</i>) =
-        <span class="frac"><span class="num"><i>xy</i></span><span class="den"><i>x</i>&#178; + <i>y</i>&#178;</span></span>
-      </div>
-      <div class="math">as (<i>x</i>,<i>y</i>) &#8594; (0,&#8202;0)</div>
+  <div id="top">
+    <div id="eqcard">
+      <div class="math"><span style="color:#9cdceb"><i>f</i>(<i>x</i>,<i>y</i>) =
+        <span class="frac"><span class="num"><i>xy</i></span><span class="den"><i>x</i>&#178; + <i>y</i>&#178;</span></span></span>
+        &#8201;as (<i>x</i>,<i>y</i>) &#8594; (0,&#8202;0)</div>
       <div class="sub">the floor is the <i>xy</i>-plane; the surface above it is <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>)</div>
     </div>
 
-    <div id="readout" class="overlay">
+    <div id="readout">
       <div class="title">along each path</div>
-      <div id="rows"><div class="empty">no path chosen yet</div></div>
+      <div id="rows"></div>
       <div id="verdict"></div>
     </div>
-
-    <div id="caption" class="overlay"></div>
   </div>
+
+  <div id="stage"></div>
+
+  <div id="caption"></div>
 
   <div id="panel">
     <div class="row">
@@ -527,23 +538,24 @@
 
   function refreshReadout() {
     var chosen = PATHS.filter(function (P) { return P.on; });
+    // every path keeps its row (with a dash until it is chosen), so the
+    // readout -- and with it the stage below -- never changes height
+    rowsEl.innerHTML = PATHS.map(function (P) {
+      return '<div class="row' + (P.on ? '' : ' off') + '">' +
+             '<span class="swatch" style="background:' + P.css + '"></span>' +
+             '<span>along ' + P.tex + '</span>' +
+             '<span class="val"' + (P.on ? ' style="color:' + P.css + '"' : '') + '>' +
+             (P.on ? (P.value === 0.5 ? "&#189;" : "0") : "&#8212;") + '</span></div>';
+    }).join("");
     if (!chosen.length) {
-      rowsEl.innerHTML = '<div class="empty">no path chosen yet</div>';
       verdictEl.classList.remove("show");
       return;
     }
-    rowsEl.innerHTML = chosen.map(function (P) {
-      return '<div class="row">' +
-             '<span class="swatch" style="background:' + P.css + '"></span>' +
-             '<span>along ' + P.tex + '</span>' +
-             '<span class="val" style="color:' + P.css + '">' +
-             (P.value === 0.5 ? "&#189;" : "0") + '</span></div>';
-    }).join("");
 
     var values = chosen.map(function (P) { return P.value; });
     var differ = Math.max.apply(null, values) !== Math.min.apply(null, values);
     verdictEl.innerHTML = differ
-      ? "0 &#8800; &#189;, so no single number is approached:<br>the limit does not exist."
+      ? "0 &#8800; &#189; &#8212; the limit does not exist."
       : "";
     verdictEl.classList.toggle("show", differ);
   }
