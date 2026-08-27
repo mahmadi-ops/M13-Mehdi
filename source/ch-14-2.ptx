@@ -70,6 +70,9 @@ common value <m>L</m> is <m>\lim_{x\to a} f(x)</m>.
 <!-- the two one-sided approaches, each parametrised to land on x = a at t = 1 -->
 <definition>left(t) = (2.2 - 1.05*(1-t), f(2.2 - 1.05*(1-t)))</definition>
 <definition>right(t) = (2.2 + 1.15*(1-t), f(2.2 + 1.15*(1-t)))</definition>
+<!-- the same two approaches seen on the x-axis, where x itself moves toward a -->
+<definition>xleft(t) = (1.15 + 0.93*t, 0)</definition>
+<definition>xright(t) = (3.35 - 1.03*t, 0)</definition>
 <coordinates bbox="(-0.6,-0.55,4.7,3.05)">
 <axes at="l1-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <parametric-curve at="l1-curve" function="curve" domain="(0.3,4.35)"
@@ -84,11 +87,23 @@ common value <m>L</m> is <m>\lim_{x\to a} f(x)</m>.
 <parametric-curve at="l1-right" function="right" domain="(0,1)"
                   stroke="#D55E00" thickness="4" arrows="1"
                   arrow-location="0.65"/>
+<parametric-curve at="l1-xleft" function="xleft" domain="(0,1)"
+                  stroke="#0072B2" thickness="4" arrows="1"
+                  arrow-location="0.95"/>
+<parametric-curve at="l1-xright" function="xright" domain="(0,1)"
+                  stroke="#D55E00" thickness="4" arrows="1"
+                  arrow-location="0.95"/>
 <point at="l1-P" p="(2.2,1.8)" fill="black"/>
-<label at="l1-left-lab" anchor="(1.28,1.22)" alignment="sw" color="#0072B2">
+<label at="l1-left-lab" anchor="(1.18,1.0)" alignment="se" color="#0072B2">
+<m>f(x) \to L</m>
+</label>
+<label at="l1-right-lab" anchor="(3.2,2.16)" alignment="ne" color="#D55E00">
+<m>f(x) \to L</m>
+</label>
+<label at="l1-xleft-lab" anchor="(1.45,-0.12)" alignment="s" color="#0072B2">
 <m>x \to a^-</m>
 </label>
-<label at="l1-right-lab" anchor="(3.15,2.12)" alignment="ne" color="#D55E00">
+<label at="l1-xright-lab" anchor="(3.05,-0.12)" alignment="s" color="#D55E00">
 <m>x \to a^+</m>
 </label>
 <label at="l1-a" anchor="(2.2,-0.06)" alignment="s"><m>a</m></label>
@@ -99,9 +114,11 @@ common value <m>L</m> is <m>\lim_{x\to a} f(x)</m>.
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="The graph of a function y equals f of x in the plane. A point on the graph above x equals a is marked, and dashed lines run from it to a on the x axis and to L on the y axis. The piece of the graph just to the left of a is drawn thick in blue with an arrow pointing right towards the marked point, and the piece just to the right is drawn thick in orange with an arrow pointing left towards it, so the point is approached from only two directions.">
-  <annotation ref="l1-left" text="The approach from the left, x tending to a from below. Along this piece of the graph the height tends to L."/>
-  <annotation ref="l1-right" text="The approach from the right, x tending to a from above. Along this piece too the height tends to L."/>
+<annotation ref="figure" text="The graph of a function y equals f of x in the plane. A point on the graph above x equals a is marked, and dashed lines run from it to a on the x axis and to L on the y axis. On the x axis two thick arrows run towards a, a blue one from the left labelled x tending to a from below and an orange one from the right labelled x tending to a from above. The matching pieces of the graph are drawn thick in the same colours and are labelled f of x tending to L, so the point is approached from only two directions.">
+  <annotation ref="l1-xleft" text="The approach from the left along the x axis, x tending to a from below."/>
+  <annotation ref="l1-xright" text="The approach from the right along the x axis, x tending to a from above."/>
+  <annotation ref="l1-left" text="The piece of the graph over the approach from the left. Along it the height of the graph tends to L."/>
+  <annotation ref="l1-right" text="The piece of the graph over the approach from the right. Along it too the height tends to L."/>
   <annotation ref="l1-P" text="The point a comma L on the graph. Because the two one sided limits agree, the limit of f as x tends to a is L."/>
   <annotation ref="l1-axes" text="On the line there are only these two directions of approach, which is what changes in two variables."/>
 </annotation>
@@ -374,6 +391,42 @@ exist.
 </prefigure>
 </image>
 </figure>
+
+<p>
+<xref ref="fig-lim-paths-interactive"/> puts the same three paths on the
+surface itself. Click a path on the floor of the figure &#8212; or the
+matching button beneath it &#8212; and the piece of the surface above that
+path is drawn in. The surface is built so that its height depends only on
+the <em>direction</em> of approach, which is why each lifted path is a
+level line: whichever of the three you follow in, the height you arrive at
+is the one your path started with.
+</p>
+
+<figure xml:id="fig-lim-paths-interactive">
+<caption>
+The three paths of <xref ref="fig-lim-three-paths"/>, lifted onto the
+surface <m>z = \dfrac{xy}{x^2+y^2}</m>. Choosing <m>y=0</m> or <m>x=0</m>
+lifts to a path at height <m>0</m>, while <m>y=x</m> lifts to one at
+height <m>\frac12</m>, so the two approaches deliver two different
+numbers and the limit cannot exist.
+</caption>
+<interactive xml:id="interactive-lim-paths"
+             iframe="limit-paths-manim.html" width="100%" aspect="3:2">
+<instructions>
+<p>
+The floor of the picture is the <m>xy</m>-plane and the surface above it
+is <m>z = f(x,y) = \frac{xy}{x^2+y^2}</m>. The three coloured lines on the
+floor are the paths <m>y=0</m>, <m>x=0</m> and <m>y=x</m>; click one, or
+use the buttons, to draw the part of the surface lying over it. The value
+that path approaches is written beside it and collected in the panel at
+the top right. <q>Approach <m>(0,0)</m></q> slides a point in along every
+chosen path at once, <q>Top view</q> looks straight down at the three
+lines, and dragging turns the picture.
+</p>
+</instructions>
+</interactive>
+</figure>
+
 </solution>
 </example>
 
