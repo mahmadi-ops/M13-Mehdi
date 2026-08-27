@@ -414,14 +414,14 @@ The trace <m>C_1</m> cut from <m>z = 4 - x^2 - 2y^2</m> by the plane
 <m>y = 1</m> is the parabola <m>z = 2 - x^2</m>. Its tangent line at
 <m>(1,1,1)</m> has slope <m>f_x(1,1) = -2</m>.
 </caption>
-<image width="66%">
+<image width="92%">
 <description>
 <p>
 A tall dome shaped surface cut by the vertical plane y equals one. The
 curve of intersection is drawn in dark blue and labelled C one, and a
-magenta tangent line touches it at the point 1, 1, 1. A legend in the top
-left corner names the surface, the cutting plane, the curve, the tangent
-line and the point.
+magenta tangent line touches it at the point 1, 1, 1. A two-line legend
+across the top names the surface, the cutting plane, the curve, the
+tangent line and the point.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -433,18 +433,23 @@ line and the point.
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   ticks=none, clip=false,
   legend cell align=left,
+  legend columns=3,
   legend style={
-    at={(0.01,0.99)}, anchor=north west,
+    at={(0.5,1.0)}, anchor=north,
     draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
-    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=7pt},
+    font=\fontfamily{phv}\selectfont,
   },
 ]
 % the surface z = 4 - x^2 - 2y^2 (only where z >= 0)
+% parametrised over the elliptical footprint x^2 + 2y^2 <= 4, so the rim
+% at z = 0 comes out smooth instead of stair-stepped
 \addplot3[surf, shader=flat, fill=cyan!25, draw=cyan!55!black,
           fill opacity=0.42, draw opacity=0.35, forget plot,
-          restrict z to domain=0:4.2, unbounded coords=jump,
-          domain=-2:2, y domain=-1.41:1.41, samples=25, samples y=21]
-  {4 - x^2 - 2*y^2};
+          z buffer=sort,
+          domain=0:1, y domain=0:360, samples=11, samples y=49]
+  ({2*x*cos(y)}, {1.4142135624*x*sin(y)}, {4 - 4*x^2});
 % the cutting plane y = 1
 \addplot3[surf, shader=flat, samples=2, samples y=2, domain=-2:2, y domain=0:3.6,
           fill=cyan!45, fill opacity=0.22, draw=cyan!50!black,
@@ -465,11 +470,11 @@ line and the point.
 \addlegendentry{$z=4-x^2-2y^2$}
 \addlegendimage{area legend, fill=cyan!45, draw=cyan!50!black,
                 fill opacity=0.22, draw opacity=0.35}
-\addlegendentry{the plane $y=1$}
+\addlegendentry{plane $y=1$}
 \addlegendimage{very thick, blue!55!black}
 \addlegendentry{$C_1\colon z=2-x^2$}
 \addlegendimage{very thick, magenta}
-\addlegendentry{Tangent line, slope $-2$}
+\addlegendentry{tangent, slope $-2$}
 \addlegendimage{only marks, mark=*, mark size=1.8, color=magenta}
 \addlegendentry{$(1,1,1)$}
 \end{axis}
@@ -497,15 +502,15 @@ The trace <m>C_2</m> cut from <m>z = 4 - x^2 - 2y^2</m> by the plane
 <m>x = 1</m> is the parabola <m>z = 3 - 2y^2</m>. Its tangent line at
 <m>(1,1,1)</m> has slope <m>f_y(1,1) = -4</m>.
 </caption>
-<image width="66%">
+<image width="92%">
 <description>
 <p>
 The same dome shaped surface, now cut by the vertical plane x equals one.
 The curve of intersection is drawn in dark blue and labelled C two, and a
 magenta tangent line touches it at the point 1, 1, 1. This tangent line
-is noticeably steeper than the one in the previous figure. A legend in the
-top left corner names the surface, the cutting plane, the curve, the
-tangent line and the point.
+is noticeably steeper than the one in the previous figure. A two-line
+legend across the top names the surface, the cutting plane, the curve,
+the tangent line and the point.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -517,18 +522,23 @@ tangent line and the point.
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   ticks=none, clip=false,
   legend cell align=left,
+  legend columns=3,
   legend style={
-    at={(0.01,0.99)}, anchor=north west,
+    at={(0.5,1.0)}, anchor=north,
     draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
-    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=7pt},
+    font=\fontfamily{phv}\selectfont,
   },
 ]
 % the surface z = 4 - x^2 - 2y^2 (only where z >= 0)
+% parametrised over the elliptical footprint x^2 + 2y^2 <= 4, so the rim
+% at z = 0 comes out smooth instead of stair-stepped
 \addplot3[surf, shader=flat, fill=cyan!25, draw=cyan!55!black,
           fill opacity=0.42, draw opacity=0.35, forget plot,
-          restrict z to domain=0:4.2, unbounded coords=jump,
-          domain=-2:2, y domain=-1.41:1.41, samples=25, samples y=21]
-  {4 - x^2 - 2*y^2};
+          z buffer=sort,
+          domain=0:1, y domain=0:360, samples=11, samples y=49]
+  ({2*x*cos(y)}, {1.4142135624*x*sin(y)}, {4 - 4*x^2});
 % the cutting plane x = 1
 \addplot3[surf, shader=flat, samples=2, samples y=2, domain=-1.41:1.41, y domain=0:3.6,
           fill=cyan!45, fill opacity=0.22, draw=cyan!50!black,
@@ -549,11 +559,11 @@ tangent line and the point.
 \addlegendentry{$z=4-x^2-2y^2$}
 \addlegendimage{area legend, fill=cyan!45, draw=cyan!50!black,
                 fill opacity=0.22, draw opacity=0.35}
-\addlegendentry{the plane $x=1$}
+\addlegendentry{plane $x=1$}
 \addlegendimage{very thick, blue!55!black}
 \addlegendentry{$C_2\colon z=3-2y^2$}
 \addlegendimage{very thick, magenta}
-\addlegendentry{Tangent line, slope $-4$}
+\addlegendentry{tangent, slope $-4$}
 \addlegendimage{only marks, mark=*, mark size=1.8, color=magenta}
 \addlegendentry{$(1,1,1)$}
 \end{axis}
@@ -587,10 +597,10 @@ The dome is <m>z = 4-x^2-2y^2</m> and the white point is
 parabola in the picture, to slice the dome with that plane: the parabola
 cut out of it is drawn on the surface and the tangent line to that
 parabola at <m>P</m> follows, labelled with its slope. Those slopes are
-the two partial derivatives, and they are collected in the panel at the
-top right. <q>Look along <m>y</m></q> turns the picture until the
-<m>y=1</m> slice is seen edge on, at its true steepness; dragging turns it
-by hand.
+the two partial derivatives, and the legend collects them. <q>Along
+<m>y</m></q> and <q>Along <m>x</m></q> turn the picture until the
+<m>y=1</m> and <m>x=1</m> slices respectively are seen edge on, at their
+true steepness; dragging turns it by hand.
 </p>
 </instructions>
 </interactive>

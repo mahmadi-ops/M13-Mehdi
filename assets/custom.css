@@ -60,3 +60,25 @@ body.letter .diagcess-navigation-controls,
 body.a4 .diagcess-navigation-controls {
   display: none !important;
 }
+
+/* ------------------------------------------------------------------ *
+ * Interactive iframes that fit their column.
+ *
+ * PreTeXt emits every <interactive> iframe at a fixed pixel width taken
+ * from its width= attribute (100% -> 600px). The reading column is
+ * narrower than that on most screens, so the container -- which is
+ * overflow-x: auto -- grows a horizontal scrollbar and part of the
+ * figure sits off-screen. Let the iframe shrink to the column instead,
+ * keeping its authored aspect ratio (custom.js copies the ratio from the
+ * inline width/height onto the element).
+ * ------------------------------------------------------------------ */
+.interactive-iframe-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.interactive-iframe-container iframe.fits-column {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+}

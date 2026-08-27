@@ -47,8 +47,9 @@
 
   .overlay { position: absolute; pointer-events: none; }
 
-  /* the function, top-left, in the spirit of a manim MathTex on screen */
-  #eqcard {
+  /* one legend, top-left: what is being traced, and the two numbers the
+     chain rule is about. Nothing else is written over the stage. */
+  #legend {
     top: 12px; left: 14px;
     padding: 9px 13px 10px 13px;
     background: rgba(16,18,24,0.72);
@@ -57,52 +58,23 @@
     border-radius: 6px;
     line-height: 1.5;
   }
-  .math { font-family: var(--serif); font-size: 17px; }
+  .math { font-family: var(--serif); font-size: 16px; }
   .math i { font-style: italic; }
-  .frac { display: inline-block; text-align: center; vertical-align: -0.62em;
-          margin: 0 2px; }
-  .frac .num { display: block; padding: 0 3px; }
-  .frac .den { display: block; padding: 0 3px; border-top: 1px solid currentColor; }
-  #eqcard .sub { font-size: 13px; color: var(--dim); font-family: var(--sans); }
-
-  /* what the chosen paths report, top-right: the whole point of the figure */
-  #readout {
-    top: 12px; right: 14px; min-width: 176px;
-    padding: 8px 12px 9px 12px;
-    background: rgba(16,18,24,0.72);
-    border: 1px solid var(--edge); border-radius: 6px;
-    font-size: 13px; color: var(--dim);
-  }
-  #readout .title { font-size: 12px; letter-spacing: .3px;
-                    text-transform: uppercase; color: var(--dim); }
-  #readout .row {
+  #legend .head { color: #9cdceb; }
+  #rows { margin-top: 7px; padding-top: 7px; border-top: 1px solid var(--edge); }
+  #rows .row {
     display: flex; align-items: baseline; gap: 8px;
-    margin-top: 6px; font-family: var(--serif); font-size: 15px;
-    color: var(--ink);
+    font-family: var(--serif); font-size: 15px; color: var(--ink);
   }
-  #readout .row .swatch {
+  #rows .row + .row { margin-top: 4px; }
+  #rows .row .swatch {
     width: 16px; height: 3px; border-radius: 2px; flex: 0 0 auto;
     transform: translateY(-4px);
   }
-  #readout .row .val { margin-left: auto; font-weight: 700; }
-  #readout .empty { margin-top: 6px; font-style: italic; }
-  #verdict {
-    margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--edge);
-    font-size: 13.5px; line-height: 1.35; color: var(--red); font-weight: 600;
-    display: none;
+  #rows .row .val {
+    margin-left: auto; padding-left: 16px; font-weight: 700;
+    font-variant-numeric: tabular-nums;
   }
-  #verdict.show { display: block; }
-
-  /* guidance, bottom-centre, fading like a manim Write() */
-  #caption {
-    left: 50%; transform: translateX(-50%);
-    bottom: 12px; max-width: 74%;
-    text-align: center; font-size: 14px; line-height: 1.4; color: var(--dim);
-    background: rgba(6,7,10,0.78);
-    padding: 6px 14px; border-radius: 6px;
-    opacity: 0; transition: opacity .45s ease;
-  }
-  #caption.show { opacity: 1; }
 
   /* ---- control panel ---- */
   #panel {
@@ -156,12 +128,9 @@
   }
 
   @media (max-width: 620px) {
-    #eqcard { padding: 7px 10px 8px 10px; }
-    .math { font-size: 15px; }
-    #readout { min-width: 0; font-size: 12px; padding: 6px 9px 7px 9px;
-               top: 10px; right: 10px; }
-    #readout .row { font-size: 13px; }
-    #caption { font-size: 12.5px; max-width: 92%; bottom: 8px; }
+    #legend { padding: 7px 10px 8px 10px; top: 10px; left: 10px; }
+    .math { font-size: 14px; }
+    #rows .row { font-size: 13px; }
     .lbl { display: none; }
     button { font-size: 12.5px; padding: 4px 10px; }
   }
@@ -171,21 +140,13 @@
 <body>
 <div id="app">
   <div id="stage">
-    <div id="eqcard" class="overlay">
-      <div class="math" style="color:#9cdceb">
-        <i>w</i> = <i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i>
+    <div id="legend" class="overlay">
+      <div class="math head">
+        <i>w</i> = <i>xy</i> on <i>x</i> = cos&#8202;<i>t</i>, <i>y</i> = sin&#8202;<i>t</i>
       </div>
-      <div class="math"><i>x</i> = cos&#8202;<i>t</i>,&nbsp; <i>y</i> = sin&#8202;<i>t</i></div>
-      <div class="sub">the point runs round the unit circle</div>
-    </div>
-
-    <div id="readout" class="overlay">
-      <div class="title">at this instant</div>
       <div id="rows"></div>
-      <div id="verdict"></div>
     </div>
 
-    <div id="caption" class="overlay"></div>
   </div>
 
   <div id="panel">
@@ -272,7 +233,7 @@
       r = Math.max(r, along + Math.abs(d.dot(_upv)) / tanV,
                       along + Math.abs(d.dot(_rt)) / tanH);
     }
-    radius = 1.16 * r;
+    radius = 1.06 * r;
     camera.far = 3 * radius;
     camera.updateProjectionMatrix();
   }
@@ -293,28 +254,37 @@
   scene.add(key); scene.add(fill);
 
   // ---------- text sprites ----------
-  var LABELS = [];
+  // The canvas is cut to the text rather than being a fixed 256x96 box, so a
+  // short label is not padded down to nothing: `height` is the sprite's height
+  // in world units and the width follows from the type. Drawn large enough to
+  // be read at the size the figure is embedded at.
+  var LABELS = [], LABEL_PX = 96;
   function paintLabel(rec) {
-    var wpx = 256, h = 96, cv = document.createElement("canvas");
-    cv.width = wpx; cv.height = h;
+    var cv = rec.canvas || (rec.canvas = document.createElement("canvas"));
+    var font = 'italic ' + LABEL_PX + 'px "PT Serif", "Times New Roman", Times, serif';
     var g = cv.getContext("2d");
-    g.font = 'italic 50px "PT Serif", "Times New Roman", Times, serif';
+    g.font = font;
+    var wpx = Math.ceil(g.measureText(rec.text).width) + 20,
+        hpx = Math.ceil(LABEL_PX * 1.4);
+    cv.width = wpx; cv.height = hpx;
+    g = cv.getContext("2d");                       // resizing clears the state
+    g.font = font;
     g.fillStyle = rec.colour;
     g.textAlign = "center"; g.textBaseline = "middle";
-    g.fillText(rec.text, wpx / 2, h / 2);
+    g.fillText(rec.text, wpx / 2, hpx / 2);
     var tex = new THREE.CanvasTexture(cv);
     tex.minFilter = THREE.LinearFilter;
     if (rec.sprite.material.map) rec.sprite.material.map.dispose();
     rec.sprite.material.map = tex;
     rec.sprite.material.needsUpdate = true;
+    rec.sprite.scale.set(rec.height * wpx / hpx, rec.height, 1);
   }
-  function makeLabel(text, colour, scale, opacity) {
+  function makeLabel(text, colour, height, opacity) {
     var sp = new THREE.Sprite(new THREE.SpriteMaterial({
       transparent: true, depthTest: false,
       opacity: opacity === undefined ? 1 : opacity
     }));
-    sp.scale.set(scale * 2.667, scale, 1);
-    var rec = { text: text, colour: colour, sprite: sp };
+    var rec = { text: text, colour: colour, height: height, sprite: sp };
     LABELS.push(rec); paintLabel(rec);
     return sp;
   }
@@ -402,8 +372,8 @@
                            200, 0.022, 8, true),
     new THREE.MeshBasicMaterial({ color: PURPLE }));
   scene.add(circle);
-  var circleTag = makeLabel("x\u00b2 + y\u00b2 = 1", "#c074b6", 0.32, 0.9);
-  circleTag.position.copy(P3(-0.66, -1.02, 0.28));
+  var circleTag = makeLabel("x\u00b2 + y\u00b2 = 1", "#c074b6", 0.42, 1);
+  circleTag.position.copy(P3(-0.86, -0.86, -0.88));
   scene.add(circleTag);
 
   var trail = new THREE.Mesh(
@@ -412,8 +382,8 @@
     new THREE.MeshBasicMaterial({ color: GREEN_C }));
   scene.add(trail);
   var trailCount = trail.geometry.index.count;
-  var trailTag = makeLabel("z = xy", "#83c167", 0.32, 0.9);
-  trailTag.position.copy(P3(-1.06, 0.78, -1.06 * 0.78 - 0.3));
+  var trailTag = makeLabel("z = xy", "#b8c0cc", 0.42, 1);
+  trailTag.position.copy(P3(0.95, 0.95, 0.95 * 0.95 + 0.16));
   scene.add(trailTag);
 
   // ---------- the three marked points of the static figure ----------
@@ -441,17 +411,10 @@
                                         new THREE.Vector3(), 0.5, GOLD_C, 0.14, 0.09);
   scene.add(rateArrow);
 
-  // ---------- the readout ----------
+  // ---------- the legend ----------
   var rowsEl = document.getElementById("rows"),
-      verdictEl = document.getElementById("verdict"),
-      captionEl = document.getElementById("caption"),
       tValEl = document.getElementById("tVal"),
       slider = document.getElementById("tSlider");
-
-  function say(text) {
-    captionEl.textContent = text;
-    captionEl.classList.add("show");
-  }
 
   function fmt(v) {
     if (Math.abs(v) < 0.005) v = 0;          // no "-0.00" in the readout
@@ -483,13 +446,6 @@
       '<span>dw/dt = cos 2t</span><span class="val" style="color:' +
       (rate >= 0 ? "#f0ac5f" : "#fc6255") + '">' + fmt(rate) + '</span></div>';
 
-    verdictEl.style.color = "#ece6e2";
-    var near = Math.abs(t - Math.PI / 2) < 0.02;
-    verdictEl.innerHTML = near
-      ? "At <i>t</i> = &#960;/2 the height is falling at its fastest: d<i>w</i>/d<i>t</i> = &#8722;1."
-      : "";
-    verdictEl.classList.toggle("show", near);
-
     // the trail is drawn only as far as the point has travelled
     trail.geometry.setDrawRange(0, Math.max(6, Math.floor(trailCount * t / (2 * Math.PI))));
   }
@@ -507,9 +463,6 @@
       var t = parseFloat(b.dataset.t);
       slider.value = String(t);
       refresh(t);
-      say(b.textContent.trim() + ": the point is at (" + fmt(Math.cos(t)) + ", " +
-          fmt(Math.sin(t)) + "), the height is " + fmt(w(t)) +
-          " and it is changing at " + fmt(dw(t)) + " per unit of t.");
     });
   });
 
@@ -517,7 +470,6 @@
   btnPlay.addEventListener("click", function () {
     playing = !playing;
     btnPlay.classList.toggle("running", playing);
-    if (playing) say("Once round the circle: the height rises, falls, rises and falls again, twice as often as the point goes round.");
   });
 
   var spinning = false, btnSpin = document.getElementById("btnSpin");
@@ -574,7 +526,6 @@
 
   resize();
   refresh(0);
-  say("Drag the slider, or press Run, to send the point round the circle.");
   placeCamera();
   tick();
 })();

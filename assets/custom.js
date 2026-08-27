@@ -109,3 +109,39 @@
     start();
   }
 })();
+
+/* ------------------------------------------------------------------ *
+ * Let interactive iframes shrink to the reading column.
+ *
+ * PreTeXt writes a fixed pixel width and height into each interactive
+ * iframe's inline style, so a 600px figure overflows the (narrower)
+ * column and the reader has to scroll sideways to see all of it. Copy
+ * that authored width:height onto the element as an aspect-ratio and tag
+ * it, so custom.css can size it at 100% of the column with the shape the
+ * figure was designed at. Re-runs for iframes that arrive inside knowls.
+ * ------------------------------------------------------------------ */
+(function () {
+  function fitIframes(root) {
+    var frames = (root || document).querySelectorAll(
+      ".interactive-iframe-container iframe:not(.fits-column)"
+    );
+    frames.forEach(function (f) {
+      var w = parseFloat(f.style.width), h = parseFloat(f.style.height);
+      if (!w || !h) return;                     // not sized in px; leave alone
+      f.style.aspectRatio = w + " / " + h;
+      f.classList.add("fits-column");
+    });
+  }
+
+  function start() {
+    fitIframes(document);
+    new MutationObserver(function () { fitIframes(document); })
+      .observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
