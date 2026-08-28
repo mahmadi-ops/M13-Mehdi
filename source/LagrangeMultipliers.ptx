@@ -1120,8 +1120,11 @@ each surface where that product is constant. Write
 <m>g(x_1, \ldots, x_n) = x_1x_2\cdots x_n</m> for that product, fix a
 constant <m>C \gt 0</m>, and work on
 <md xml:id="eq-hm-gm-surface" number="yes">
-S_C = \bigl\{\,(x_1, \ldots, x_n) : x_j \gt 0 \text{ for all } j,
-\ \ g(x_1, \ldots, x_n) = C \,\bigr\},
+\begin{aligned}
+S_C = \bigl\{\, (x_1, \ldots, x_n) : \amp\ x_j \gt 0
+  \text{ for all } j, \\
+\amp\ g(x_1, \ldots, x_n) = C \,\bigr\},
+\end{aligned}
 </md>
 on which <m>G = \sqrt[n]{C}</m> at every single point. Every choice of
 positive numbers lies on exactly one such surface, so
