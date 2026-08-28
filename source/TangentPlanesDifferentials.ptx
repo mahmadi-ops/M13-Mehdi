@@ -164,8 +164,8 @@ x 0 run across the surface through P 0, drawn in the same colors as the
 two partial derivative figures. The blue tangent line to the green curve
 at P 0 and the dark red tangent line to the amber curve at P 0 lie inside
 the tangent plane, and a black arrow, the normal vector n, points away
-from the plane at P 0, perpendicular to both tangent lines. A legend in
-the top left corner names each of these seven elements.
+from the plane at P 0, perpendicular to both tangent lines. A legend above
+the picture names each of these seven elements.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -177,12 +177,15 @@ the top left corner names each of these seven elements.
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   ticks=none,
   clip=false,
+  % the legend of fig-cr-saddle: above the axes, two columns, Helvetica
   legend cell align=left,
+  legend columns=2,
   legend style={
-    at={(0.01,0.99)}, anchor=north west,
+    at={(0.5,1.03)}, anchor=south,
     draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
-    row sep=1.5pt, inner sep=4pt, font=\fontfamily{phv}\selectfont,
-    legend columns=2, column sep=8pt,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=10pt},
+    font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont,
   },
 ]
 % the surface z = f(x,y); same surface, point and styling as the
@@ -343,10 +346,8 @@ Find the equation of the tangent plane to the surface at <m>P_0</m>.
 </ol>
 </p>
 </statement>
-</example>
 
-<paragraphs xml:id="solution-tp-paraboloid">
-<title>Solution</title>
+<solution xml:id="solution-tp-paraboloid">
 
 <p>
 <alert>A.</alert> We begin by computing the normal vector to the surface
@@ -390,7 +391,8 @@ Therefore the tangent plane is
 <xref ref="fig-tp-example-paraboloid"/> shows the surface, the tangent
 plane, and the normal line at <m>P_0(1,1,-2)</m>.
 </p>
-</paragraphs>
+</solution>
+</example>
 
 <figure xml:id="fig-tp-example-paraboloid">
 <caption>
@@ -406,11 +408,12 @@ A downward-opening paraboloid drawn as a blue mesh, the graph of z equals
 negative x squared minus y squared. A green tangent plane patch touches
 the surface at the red point P 0 with coordinates 1, 1, negative 2, on
 the side of the dome. A black line passes through P 0 perpendicular to
-the plane: the normal line to the surface.
+the plane: the normal line to the surface. A legend above the axes names
+the surface, the point P 0, the tangent plane and the normal line.
 </p>
 </description>
 <latex-image>
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont]
 \begin{axis}[
   width=11.5cm, height=10cm,
   view={-40}{25},
@@ -418,37 +421,46 @@ the plane: the normal line to the surface.
   xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
   xtick={-2,0,2}, ytick={-2,0,2}, ztick={2,0,-2,-4,-6,-8},
   clip=false,
+  % the legend of fig-cr-saddle: above the axes, two columns, Helvetica, so
+  % that nothing has to be named by a callout line inside the picture
+  legend cell align=left,
+  legend columns=2,
+  legend style={
+    at={(0.5,1.03)}, anchor=south,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=10pt},
+    font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont,
+  },
 ]
 % the surface z = -x^2 - y^2 (blue mesh)
 \addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
-          fill opacity=0.85, draw opacity=0.9,
+          fill opacity=0.85, draw opacity=0.9, forget plot,
           domain=-2:2, y domain=-2:2, samples=17, z buffer=sort]
   {-x^2 - y^2};
 % the tangent plane -2x - 2y - z = -2 (green)
 \addplot3[surf, shader=flat, samples=2, domain=0.2:1.8, y domain=0.2:1.8,
           fill=green!45!gray, fill opacity=0.50, draw=green!25!black,
-          draw opacity=0.7]
+          draw opacity=0.7, forget plot]
   {2 - 2*x - 2*y};
 % the normal line (1-2t, 1-2t, -2-t) (black)
-\addplot3[very thick, black, samples=2, domain=-0.55:0.4]
+\addplot3[very thick, black, samples=2, domain=-0.55:0.4, forget plot]
   ({1-2*x},{1-2*x},{-2-x});
-% the point P0
-\addplot3[only marks, mark=*, mark size=1.9, color=red]
+% the point P0, ringed in white so it reads against the surface
+\addplot3[only marks, mark=*, mark size=2.2, color=red, forget plot,
+          mark options={fill=red, draw=white, line width=0.5pt}]
   coordinates {(1,1,-2)};
-\node[red, anchor=west] at (axis cs:1.8,0.85,-3.9) {$P_0(1,1,-2)$};
-% labels
-\node[green!35!black, anchor=south] at (axis description cs:0.34,0.985)
-  {Tangent Plane at $P_0(1,1,-2)$};
-\draw[gray!60, thin] (axis description cs:0.34,0.985)
-  -- (axis cs:0.4,1.6,-1.2);
-\node[black, anchor=south] at (axis description cs:0.80,0.90)
-  {Normal Line at $P_0(1,1,-2)$};
-\draw[gray!60, thin] (axis description cs:0.80,0.90)
-  -- (axis cs:2.1,2.1,-1.45);
-\node[blue!60!black, anchor=east] at (axis description cs:0.09,0.72)
-  {$z=-x^2-y^2$};
-\draw[gray!60, thin] (axis description cs:0.09,0.72)
-  -- (axis cs:-1.6,1.0,-3.56);
+% the legend: the two surfaces on the left, the point and the line on the right
+\addlegendimage{area legend, draw=blue!60, fill=blue!8}
+\addlegendentry{the surface $z=-x^2-y^2$}
+\addlegendimage{only marks, mark=*, mark size=2.2, color=red,
+                mark options={fill=red, draw=white, line width=0.5pt}}
+\addlegendentry{$P_0(1,1,-2)$}
+\addlegendimage{area legend, draw=green!25!black, fill=green!45!gray,
+                fill opacity=0.5}
+\addlegendentry{the tangent plane $-2x-2y-z=-2$}
+\addlegendimage{very thick, black}
+\addlegendentry{the normal line $(1-2t,\,1-2t,\,-2-t)$}
 \end{axis}
 \end{tikzpicture}
 </latex-image>
@@ -1029,12 +1041,14 @@ f of x0, matching both the height and the slope of the curve there.
 <label at="lz-curvelabel" anchor="(0.6,1.55)" alignment="n" color="#D55E00">
 <m>y=f(x)</m>
 </label>
-<label at="lz-tangentlabel" anchor="(4.6,4.162)" alignment="n" color="#0072B2">
+<!-- both labels sit below the tangent line, where the picture is empty:
+     the curve is convex, so it stays above the line everywhere -->
+<label at="lz-tangentlabel" anchor="(4.95,4.456)" alignment="se" color="#0072B2">
 <m>L(x)</m>
 </label>
 <label at="lz-x0-tick" anchor="(2.5,-0.1)" alignment="s"><m>x_0</m></label>
 <label at="lz-fx0-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x_0)</m></label>
-<label at="lz-P0-label" anchor="(2.6,2.498875)" alignment="ne"><m>P_0</m></label>
+<label at="lz-P0-label" anchor="(2.66,2.33)" alignment="se"><m>P_0</m></label>
 </coordinates>
 
 <annotations>

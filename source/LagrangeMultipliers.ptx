@@ -298,6 +298,26 @@ collinearity that matters.
 </image>
 </figure>
 
+<figure xml:id="fig-lagrange-collinear-video">
+<caption>
+<xref ref="fig-lagrange-level-curves"/>, set moving. A point travels
+along the constraint curve from <m>(x_1,y_1)</m> to <m>(x_2,y_2)</m>
+carrying the unit tangent <m>\hat{T}</m> (blue) and <m>\nabla f</m>
+(red); the shaded band on <m>\hat{T}</m> is the component of
+<m>\nabla f</m> along the direction of travel, and the gauge beside the
+picture reads off the value of <m>f</m>. The component is negative and
+shrinking on the way in, zero at <m>(x^*,y^*)</m>, and positive on the
+way out, so <m>f</m> falls to the constrained minimum <m>c^*</m> and
+rises again. Since <m>\hat{T}</m> is perpendicular to <m>\nabla g</m>
+as well, the two gradients are collinear there,
+<xref ref="eq-lagrange-collinear"/>, and the level curve
+<m>f = c^*</m> is tangent to the constraint curve.
+</caption>
+<video xml:id="video-lagrange-collinear"
+       source="videos/lagrange_collinear_manim.mp4"
+       width="100%" aspect="16:9"/>
+</figure>
+
 <p>
 Suppose we find the set <m>S</m> of points <m>(x,y)</m> satisfying the
 two equations
@@ -460,7 +480,11 @@ For instance, at <m>(2,1)</m> we have
 The ellipse <m>\frac{x^2}{8} + \frac{y^2}{2} = 1</m> and the level
 curves of <m>f(x,y) = xy</m>. The hyperbolas <m>xy = \pm 2</m> are
 tangent to the ellipse at the four extremal points, where
-<m>\nabla f = \lambda\,\nabla g</m>.
+<m>\nabla f = \lambda\,\nabla g</m>. The two gradients are drawn at all
+four points: at the maxima <m>(\pm 2, \pm 1)</m> they point the same way
+(<m>\lambda = 2</m>), and at the minima <m>(\mp 2, \pm 1)</m> they point
+in opposite directions (<m>\lambda = -2</m>). Where they overlap, the two
+arrows are drawn slightly apart so both are visible.
 </caption>
 <image width="85%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-ellipse">
@@ -493,6 +517,18 @@ tangent to the ellipse at the four extremal points, where
 <vector at="ee-gradf" v="(0.55,1.10)" tail="(2,1)"
         stroke="#D55E00" thickness="3"/>
 <vector at="ee-gradg" v="(0.275,0.55)" tail="(2.063,0.969)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-max2" v="(-0.55,-1.10)" tail="(-2,-1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-max2" v="(-0.275,-0.55)" tail="(-2.063,-0.969)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-min1" v="(0.55,-1.10)" tail="(-2,1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-min1" v="(-0.275,0.55)" tail="(-2,1)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-min2" v="(-0.55,1.10)" tail="(2,-1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-min2" v="(0.275,-0.55)" tail="(2,-1)"
         stroke="#009E73" thickness="3"/>
 <point at="ee-max1" p="(2,1)" fill="black" alignment="w">
 <m>(2,1)</m>
@@ -527,7 +563,7 @@ tangent to the ellipse at the four extremal points, where
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="The x y plane with a green ellipse centered at the origin and several hyperbolas that are level curves of f equals x y. The red hyperbolas x y equals 2 and x y equals negative 2 are tangent to the ellipse at the four points 2 comma 1, negative 2 comma negative 1, negative 2 comma 1, and 2 comma negative 1. At the point 2 comma 1, a red arrow shows the gradient of f and a green arrow shows the gradient of g, pointing in the same direction.">
+<annotation ref="figure" text="The x y plane with a green ellipse centered at the origin and several hyperbolas that are level curves of f equals x y. The red hyperbolas x y equals 2 and x y equals negative 2 are tangent to the ellipse at the four points 2 comma 1, negative 2 comma negative 1, negative 2 comma 1, and 2 comma negative 1. At each of the four points a red arrow shows the gradient of f and a green arrow shows the gradient of g, and in every case the two arrows are collinear. At the two maximum points, 2 comma 1 and negative 2 comma negative 1, they point in the same direction, so lambda is positive; at the two minimum points, negative 2 comma 1 and 2 comma negative 1, they point in opposite directions, so lambda is negative.">
   <annotation ref="ee-ellipse" text="The constraint ellipse, x squared over 8 plus y squared over 2 equals 1, drawn in green."/>
   <annotation ref="ee-h2-q1" text="The branch of the level curve x y equals 2 in the first quadrant, drawn in red, tangent to the ellipse at the point 2 comma 1, where f attains its maximum value 2."/>
   <annotation ref="ee-h2-q3" text="The branch of the level curve x y equals 2 in the third quadrant, drawn in red, tangent to the ellipse at the point negative 2 comma negative 1, where f also attains its maximum value 2."/>
@@ -537,6 +573,12 @@ tangent to the ellipse at the four extremal points, where
   <annotation ref="ee-max1" text="The point 2 comma 1, where the absolute maximum value 2 is attained."/>
   <annotation ref="ee-gradf" text="The gradient of f at the point 2 comma 1, drawn in red: it equals i plus 2 j."/>
   <annotation ref="ee-gradg" text="The gradient of g at the point 2 comma 1, drawn in green: it equals one half i plus j, so the gradient of f is exactly twice the gradient of g, and lambda equals 2. The two arrows are drawn slightly apart so both are visible."/>
+  <annotation ref="ee-gradf-max2" text="The gradient of f at the point negative 2 comma negative 1, drawn in red: it equals negative i minus 2 j."/>
+  <annotation ref="ee-gradg-max2" text="The gradient of g at the point negative 2 comma negative 1, drawn in green: it equals negative one half i minus j, so again the gradient of f is twice the gradient of g and lambda equals 2. The two arrows point the same way and are drawn slightly apart so both are visible."/>
+  <annotation ref="ee-gradf-min1" text="The gradient of f at the point negative 2 comma 1, drawn in red: it equals i minus 2 j, pointing into the ellipse."/>
+  <annotation ref="ee-gradg-min1" text="The gradient of g at the point negative 2 comma 1, drawn in green: it equals negative one half i plus j, pointing out of the ellipse. The two arrows lie along the same line but point in opposite directions, so the gradient of f is negative 2 times the gradient of g and lambda equals negative 2."/>
+  <annotation ref="ee-gradf-min2" text="The gradient of f at the point 2 comma negative 1, drawn in red: it equals negative i plus 2 j, pointing into the ellipse."/>
+  <annotation ref="ee-gradg-min2" text="The gradient of g at the point 2 comma negative 1, drawn in green: it equals one half i minus j, pointing out of the ellipse. Here too the two gradients are collinear and opposite, so lambda equals negative 2."/>
 </annotation>
 </annotations>
 </diagram>
@@ -828,14 +870,18 @@ circles are tangent and <m>\nabla f</m> is parallel to <m>\nabla g</m>.
 
 <figure xml:id="fig-lagrange-circle-video">
 <caption>
-The extrema of <m>f</m> on the constraint circle <m>x^2 + y^2 = 4</m>.
-The level circles of <m>f</m>, centered at the vertex <m>(1,-1)</m> where
-<m>f = 3</m>, expand until they touch the constraint circle; the points
-of tangency are the constrained minimum and maximum.
+The extrema of <m>f</m> on the constraint circle <m>x^2 + y^2 = 4</m>
+(green). Over that circle the paraboloid carries the light blue curve,
+and we are after its highest and lowest points. The level circles of
+<m>f</m> (red), centered at the vertex <m>(1,-1)</m> where <m>f = 3</m>,
+expand until they touch the constraint circle; the first contact is the
+constrained minimum <m>B</m> and the last is the maximum <m>A</m>, and at
+both the gradients <m>\nabla f</m> and <m>\nabla g</m> line up,
+<m>\nabla f = \lambda\,\nabla g</m>.
 </caption>
 <video xml:id="video-lagrange-example3"
-       source="videos/lagrange_example3_1080p_1.mp4"
-       width="70%" aspect="16:9"/>
+       source="videos/lagrange_circle_extrema_manim.mp4"
+       width="100%" aspect="16:9"/>
 </figure>
 </solution>
 </example>
@@ -936,6 +982,675 @@ tangent to the constraint circle, while an intermediate level curve
 </prefigure>
 </image>
 </figure>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="sec-lagrange-n-variables">
+<title>The Method in <m>n</m> Variables</title>
+
+<p>
+Nothing in the reasoning behind <xref ref="thm-lagrange-multipliers"/>
+depended on the inputs being two or three numbers. The constraint
+<m>g = 0</m> still describes a set of points on which we are allowed to
+move; <m>\nabla g</m> is still perpendicular to that set; and at a
+constrained extremum <m>f</m> still cannot be changing along any
+direction we are allowed to move in, so <m>\nabla f</m> can have no
+component tangent to the constraint set. As before, the only way for a
+vector to be perpendicular to every allowed direction is for it to point
+along <m>\nabla g</m>. So the method reads the same way for any number of
+variables.
+</p>
+
+<theorem xml:id="thm-lagrange-n-variables">
+<title>The Method of Lagrange Multipliers in <m>n</m> Variables</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be differentiable functions of the <m>n</m>
+variables <m>x_1, x_2, \ldots, x_n</m>. To find the local maximum and
+minimum values of <m>f</m> subject to the constraint
+<m>g(x_1, x_2, \ldots, x_n) = 0</m>, find the values of
+<m>x_1, x_2, \ldots, x_n</m> and <m>\lambda</m> that simultaneously
+satisfy the equations
+<md xml:id="eq-lagrange-n-method" number="yes">
+\nabla f = \lambda\, \nabla g
+\qquad \text{and} \qquad
+g(x_1, x_2, \ldots, x_n) = 0 .
+</md>
+</p>
+</statement>
+</theorem>
+
+<p>
+Here <m>\nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial
+f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)</m>, and
+likewise for <m>\nabla g</m>. Reading
+<xref ref="eq-lagrange-n-method"/> one component at a time turns it into
+<md>
+<mrow>\frac{\partial f}{\partial x_j} \amp= \lambda\,
+\frac{\partial g}{\partial x_j}, \qquad j = 1, 2, \ldots, n,</mrow>
+</md>
+which together with <m>g = 0</m> is a system of <m>n+1</m> equations in
+the <m>n+1</m> unknowns <m>x_1, x_2, \ldots, x_n, \lambda</m>. For
+<m>n = 2</m> and <m>n = 3</m> this is exactly
+<xref ref="eq-lagrange-method"/>. The bookkeeping grows, but the strategy
+does not: eliminate <m>\lambda</m>, solve for the candidate points, and
+then compare the values of <m>f</m> there.
+</p>
+
+<p>
+One habit does need adjusting. In
+<xref ref="example-lagrange-ellipse"/> and
+<xref ref="example-lagrange-circle"/> the constraint curve was closed and
+bounded, so the Extreme Value Theorem guaranteed in advance that the
+absolute maximum and minimum existed and were among the candidate points.
+In <m>n</m> variables a constraint set is often unbounded, and then no
+such guarantee comes for free: after solving the system we must argue
+separately that the point we found really is the extremum we are after.
+The activity below does exactly that.
+</p>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="sec-lagrange-hm-gm">
+<title>An Inequality Between Two Means</title>
+
+<p>
+Our last application of the method is not an optimization problem at
+first sight: it is an inequality, valid for any number of positive
+numbers, that turns into a constrained minimum problem once it is
+normalized correctly. For positive numbers
+<m>x_1, x_2, \ldots, x_n</m>, the <term>harmonic mean</term> and the
+<term>geometric mean</term><fn>You are not expected to have met these
+averages before, and nothing later in the course depends on them. The
+<term>arithmetic mean</term> <m>A = \frac{x_1 + \cdots + x_n}{n}</m> is
+the ordinary average. The <term>geometric mean</term>
+<m>G = \sqrt[n]{x_1 \cdots x_n}</m> is the number that, repeated <m>n</m>
+times, has the same <em>product</em>: for <m>n = 2</m> it is the side of
+a square with the same area as an <m>a</m>-by-<m>b</m> rectangle, and it
+is the right average for growth factors, since an investment that grows
+by factors <m>x_1, \ldots, x_n</m> in successive years grows in total as
+though it had grown by the constant factor <m>G</m> each year. The
+<term>harmonic mean</term> <m>H = \frac{n}{1/x_1 + \cdots + 1/x_n}</m> is
+the reciprocal of the average of the reciprocals, and it is the right
+average for rates: drive one mile at <m>30</m> mph and the next at
+<m>60</m> mph and your average speed over the two miles is the harmonic
+mean <m>40</m> mph, not the arithmetic mean <m>45</m> mph.</fn> are
+<md xml:id="eq-hm-gm-definitions" number="yes">
+H = \frac{n}{\dfrac{1}{x_1} + \dfrac{1}{x_2} + \cdots + \dfrac{1}{x_n}},
+\qquad
+G = \sqrt[n]{x_1 x_2 \cdots x_n} .
+</md>
+The claim we shall prove is that <m>H \le G</m> always, with equality
+exactly when all the numbers are the same.
+</p>
+
+<remark xml:id="remark-hm-gm-two-variables">
+<title>For the Curious: the Two-Variable Case and a Picture</title>
+<p>
+This remark is optional. It is here for the reader who would like to see
+what the inequality says before proving it, and none of it is needed for
+the activity that follows or for anything later in the course.
+</p>
+<p>
+For <m>n = 2</m> no calculus is needed at all. Write the two positive
+numbers as <m>a</m> and <m>b</m>. Then
+<md xml:id="eq-hm-gm-two-var" number="yes">
+H = \frac{2}{\frac1a + \frac1b} = \frac{2ab}{a+b},
+\qquad
+G = \sqrt{ab},
+</md>
+and since <m>a + b \gt 0</m> and <m>\sqrt{ab} \gt 0</m> we may multiply
+and divide freely without reversing the inequality:
+<md>
+<mrow>\frac{2ab}{a+b} \le \sqrt{ab}
+\amp\;\Longleftrightarrow\; 2ab \le \sqrt{ab}\,(a+b)</mrow>
+<mrow>\amp\;\Longleftrightarrow\; 2\sqrt{ab} \le a + b</mrow>
+<mrow>\amp\;\Longleftrightarrow\; 0 \le a - 2\sqrt{ab} + b
+= \left(\sqrt a - \sqrt b\,\right)^2 ,</mrow>
+</md>
+where the second line divides through by <m>\sqrt{ab} \gt 0</m>, using
+<m>ab = \sqrt{ab}\cdot\sqrt{ab}</m>. The last line is true for every
+choice of <m>a</m> and <m>b</m>, and it is an equality exactly when
+<m>\sqrt a = \sqrt b</m>, that is, when <m>a = b</m>.
+</p>
+<p>
+The middle line of that chain is worth a second look. It says
+<m>\sqrt{ab} \le \frac{a+b}{2}</m>, so for two numbers the statement
+<m>H \le G</m> is the very same statement as <m>G \le A</m>, where
+<m>A</m> is the arithmetic mean. The two-variable case therefore carries
+the whole chain
+<md xml:id="eq-hm-gm-chain" number="yes">
+H \le G \le A .
+</md>
+</p>
+<p>
+All three means can be read off a single picture, and the geometric mean
+is the interesting one. It comes from a fact about right triangles: the
+altitude drawn from the right angle to the hypotenuse is the geometric
+mean of the two pieces into which it cuts the hypotenuse. In
+<xref ref="fig-hm-gm-altitude"/> the right angle is at <m>C</m>, the
+altitude <m>CD</m> has length <m>h</m>, and it splits the hypotenuse into
+pieces of lengths <m>a</m> and <m>b</m>. The two small triangles
+<m>ADC</m> and <m>CDB</m> are both similar to the whole triangle
+<m>ACB</m>, hence to each other, so matching the short leg of one against
+the long leg of the other gives
+<md xml:id="eq-hm-gm-altitude" number="yes">
+\frac{a}{h} = \frac{h}{b}
+\qquad\Longrightarrow\qquad
+h^2 = ab
+\qquad\Longrightarrow\qquad
+h = \sqrt{ab} = G .
+</md>
+</p>
+<p>
+Now lay the two lengths <m>a</m> and <m>b</m> end to end and draw the
+semicircle having the resulting segment as its diameter, as in
+<xref ref="fig-hm-gm-semicircle"/>. The radius is
+<m>\frac{a+b}{2} = A</m>, drawn vertically at the center <m>O</m>. Any
+triangle inscribed in a semicircle has a right angle at the point on the
+arc, so the vertical segment <m>DC</m> erected where <m>a</m> meets
+<m>b</m> is precisely the altitude of
+<xref ref="eq-hm-gm-altitude"/>: its length is <m>G = \sqrt{ab}</m>.
+Finally drop a perpendicular from <m>D</m> to the radius <m>OC</m>,
+meeting it at <m>M</m>. Applying <xref ref="eq-hm-gm-altitude"/> a
+second time, now to the right triangle <m>ODC</m> with its right angle at
+<m>D</m>, gives <m>DC^2 = CM \cdot CO</m>, so
+<md>
+CM = \frac{DC^2}{CO} = \frac{G^2}{A} = \frac{ab}{\frac{a+b}{2}}
+   = \frac{2ab}{a+b} = H .
+</md>
+The chain <xref ref="eq-hm-gm-chain"/> is now visible rather than
+computed: <m>CM \le CD</m> because a leg of the right triangle
+<m>CMD</m> cannot exceed its hypotenuse, and <m>CD \le CO</m> for the
+same reason in the right triangle <m>ODC</m>. Both become equalities
+exactly when <m>D</m> coincides with <m>O</m>, that is, when
+<m>a = b</m>.
+</p>
+</remark>
+
+<figure xml:id="fig-hm-gm-altitude">
+<caption>
+The altitude from the right angle of a right triangle is the geometric
+mean of the two pieces of the hypotenuse. Here the right angle is at
+<m>C</m>, the altitude <m>CD</m> has length <m>h</m>, and it cuts the
+hypotenuse into pieces of lengths <m>a = 4</m> and <m>b = 1</m>; the
+similar triangles <m>ADC</m> and <m>CDB</m> give
+<m>h = \sqrt{ab} = 2</m>.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hm-gm-altitude">
+<diagram dimensions="(450,268)" margins="10">
+<definition>A=(0,0)</definition>
+<definition>B=(5,0)</definition>
+<definition>C=(4,2)</definition>
+<definition>D=(4,0)</definition>
+<coordinates bbox="(-0.6,-1.0,5.6,2.7)">
+<polygon at="ga-tri-left" points="(A,D,C)" fill="#9EC5E8"
+         stroke="none" opacity="0.35"/>
+<polygon at="ga-tri-right" points="(D,B,C)" fill="#E69F00"
+         stroke="none" opacity="0.30"/>
+<triangle at="ga-triangle" vertices="(A,B,C)" stroke="black"
+          thickness="2.5"/>
+<line at="ga-altitude" endpoints="(C,D)" stroke="#0072B2"
+      thickness="2.5"/>
+<angle-marker at="ga-right-c" points="(A,C,B)" radius="14"
+              clear-background="yes"/>
+<angle-marker at="ga-right-d" points="(B,D,C)" radius="12"
+              clear-background="yes"/>
+<point at="ga-a" p="A" fill="black" alignment="sw"><m>A</m></point>
+<point at="ga-b" p="B" fill="black" alignment="se"><m>B</m></point>
+<point at="ga-c" p="C" fill="black" alignment="ne"><m>C</m></point>
+<point at="ga-d" p="D" fill="black" alignment="s"><m>D</m></point>
+<label at="ga-label-a" anchor="(2,-0.12)" alignment="s">
+<m>a</m>
+</label>
+<label at="ga-label-b" anchor="(4.5,-0.12)" alignment="s">
+<m>b</m>
+</label>
+<label at="ga-label-h" anchor="(3.82,1.18)" alignment="w" color="#0072B2">
+<m>h=\sqrt{ab}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A right triangle A B C with the right angle at C. The hypotenuse A B is horizontal, running from A on the left to B on the right. The altitude from C meets the hypotenuse at right angles at the point D, splitting it into a left piece of length a and a right piece of length b. The altitude itself has length h. The two small triangles A D C and D B C, shaded in different colors, are similar to the whole triangle and to each other, which forces a over h to equal h over b, so h is the square root of a b, the geometric mean of a and b.">
+  <annotation ref="ga-triangle" text="The right triangle A B C, with the right angle at the top vertex C and the hypotenuse A B along the bottom."/>
+  <annotation ref="ga-right-c" text="The right angle marker at C, on the hypotenuse A B."/>
+  <annotation ref="ga-altitude" text="The altitude from C down to the point D on the hypotenuse, drawn in blue, of length h equal to the square root of a b."/>
+  <annotation ref="ga-right-d" text="The right angle marker at D, showing that the altitude meets the hypotenuse perpendicularly."/>
+  <annotation ref="ga-tri-left" text="The left small triangle A D C, shaded light blue, with legs a and h. It is similar to the whole triangle."/>
+  <annotation ref="ga-tri-right" text="The right small triangle D B C, shaded light orange, with legs b and h. It too is similar to the whole triangle, so the ratio a to h equals the ratio h to b."/>
+  <annotation ref="ga-label-a" text="The label a for the left piece of the hypotenuse, from A to D, of length 4."/>
+  <annotation ref="ga-label-b" text="The label b for the right piece of the hypotenuse, from D to B, of length 1."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-hm-gm-semicircle">
+<caption>
+The three means of <m>a = 4</m> and <m>b = 1</m> in one picture. The
+semicircle has the segment of length <m>a+b</m> as its diameter, so its
+radius is the arithmetic mean <m>A = 2.5</m>, drawn in red at the center
+<m>O</m>. The vertical segment <m>DC</m> erected where <m>a</m> meets
+<m>b</m> is the altitude of the inscribed right triangle, so its length is
+the geometric mean <m>G = 2</m>, drawn in blue. The perpendicular from
+<m>D</m> to the radius <m>OC</m> cuts off the piece <m>CM</m>, whose
+length is the harmonic mean <m>H = 1.6</m>, drawn in purple. Since a leg
+of a right triangle is never longer than its hypotenuse,
+<m>H \le G \le A</m>.
+</caption>
+<image width="78%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-hm-gm-semicircle">
+<diagram dimensions="(450,283)" margins="10">
+<definition>P=(0,0)</definition>
+<definition>Q=(5,0)</definition>
+<definition>O=(2.5,0)</definition>
+<definition>D=(4,0)</definition>
+<definition>C=(4,2)</definition>
+<definition>M=(3.04,0.72)</definition>
+<definition>T=(2.5,2.5)</definition>
+<coordinates bbox="(-0.6,-1.0,5.6,2.9)">
+<arc at="sc-arc" center="O" radius="2.5" range="(0,180)" degrees="yes"
+     stroke="black" thickness="2.5"/>
+<line at="sc-diameter" endpoints="(P,Q)" stroke="black" thickness="2.5"/>
+<line at="sc-chord-left" endpoints="(P,C)" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-chord-right" endpoints="(C,Q)" stroke="#7F7F7F"
+      thickness="1.5"/>
+<angle-marker at="sc-right-c" points="(P,C,Q)" radius="12"
+              clear-background="yes" stroke="#7F7F7F"/>
+<line at="sc-radius" endpoints="(O,C)" stroke="black" thickness="1.5"/>
+<line at="sc-perp" endpoints="(D,M)" stroke="black" thickness="1.5"/>
+<angle-marker at="sc-right-m" points="(D,M,C)" radius="11"
+              clear-background="yes"/>
+<line at="sc-mean-a" endpoints="(O,T)" stroke="#D55E00" thickness="3.5"/>
+<line at="sc-mean-g" endpoints="(D,C)" stroke="#0072B2" thickness="3.5"/>
+<line at="sc-mean-h" endpoints="(M,C)" stroke="#7A5AA8" thickness="3.5"/>
+<line at="sc-tick-p" endpoints="((0,-0.3),(0,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-tick-d" endpoints="((4,-0.3),(4,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-tick-q" endpoints="((5,-0.3),(5,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-brace" endpoints="((0,-0.56),(5,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<point at="sc-o" p="O" fill="black"/>
+<point at="sc-d" p="D" fill="black"/>
+<point at="sc-c" p="C" fill="black" alignment="ne"><m>C</m></point>
+<point at="sc-m" p="M" fill="black" alignment="w"><m>M</m></point>
+<label at="sc-label-o" anchor="(2.42,-0.2)" alignment="sw">
+<m>O</m>
+</label>
+<label at="sc-label-d" anchor="(4.02,-0.2)" alignment="se">
+<m>D</m>
+</label>
+<label at="sc-label-a-piece" anchor="(2.0,-0.64)" alignment="s">
+<m>a</m>
+</label>
+<label at="sc-label-b-piece" anchor="(4.5,-0.64)" alignment="s">
+<m>b</m>
+</label>
+<label at="sc-label-mean-a" anchor="(2.42,1.35)" alignment="w"
+       color="#D55E00">
+<m>A</m>
+</label>
+<label at="sc-label-mean-g" anchor="(4.08,1.0)" alignment="e"
+       color="#0072B2">
+<m>G</m>
+</label>
+<label at="sc-label-mean-h" anchor="(3.46,1.44)" alignment="nw"
+       color="#7A5AA8">
+<m>H</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A semicircle drawn on a horizontal diameter of length a plus b, with a equal to 4 on the left and b equal to 1 on the right, meeting at the point D. The center of the semicircle is O. Three segments in the picture have lengths equal to the three means of a and b. A red vertical segment from O up to the top of the arc is the radius, whose length is the arithmetic mean 2.5. A blue vertical segment from D up to the point C on the arc is the altitude of the inscribed right triangle, whose length is the geometric mean 2. A purple segment along the radius O C, running from C back to the foot M of the perpendicular dropped from D, has length equal to the harmonic mean 1.6. Because a leg of a right triangle is never longer than its hypotenuse, the harmonic mean is at most the geometric mean, which is at most the arithmetic mean.">
+  <annotation ref="sc-arc" text="The semicircle whose diameter is the segment of length a plus b, that is, of length 5."/>
+  <annotation ref="sc-diameter" text="The diameter, split at the point D into a left piece of length a equal to 4 and a right piece of length b equal to 1."/>
+  <annotation ref="sc-mean-a" text="The arithmetic mean, drawn in red: the vertical radius from the center O to the top of the arc, of length a plus b over 2, which is 2.5."/>
+  <annotation ref="sc-mean-g" text="The geometric mean, drawn in blue: the vertical segment from D up to the point C on the arc, of length the square root of a b, which is 2."/>
+  <annotation ref="sc-mean-h" text="The harmonic mean, drawn in purple: the piece of the radius O C running from C back to M, of length 2 a b over a plus b, which is 1.6."/>
+  <annotation ref="sc-chord-left" text="The chord from the left end of the diameter to the point C on the arc, one leg of the inscribed right triangle, drawn in gray."/>
+  <annotation ref="sc-chord-right" text="The chord from C to the right end of the diameter, the other leg of the inscribed right triangle, drawn in gray."/>
+  <annotation ref="sc-right-c" text="The right angle marker at C: any triangle inscribed in a semicircle has a right angle at the point on the arc, which is why the blue segment is an altitude from a right angle and therefore the geometric mean."/>
+  <annotation ref="sc-radius" text="The radius from the center O out to the point C on the arc. Its length is also the arithmetic mean 2.5, and the purple harmonic mean is the part of it nearest C."/>
+  <annotation ref="sc-perp" text="The perpendicular dropped from D to the radius O C, meeting it at the point M."/>
+  <annotation ref="sc-right-m" text="The right angle marker at M, showing that D M is perpendicular to the radius O C."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<activity xml:id="activity-lagrange-hm-gm">
+<title>Harmonic Mean <m>\le</m> Geometric Mean, by Lagrange Multipliers</title>
+
+<introduction>
+<p>
+Let <m>n \ge 2</m> and let <m>x_1, x_2, \ldots, x_n</m> be positive real
+numbers, with <m>H</m> and <m>G</m> as in
+<xref ref="eq-hm-gm-definitions"/>. In this activity you will prove that
+<md xml:id="eq-hm-gm-claim" number="yes">
+\frac{n}{\dfrac{1}{x_1} + \dfrac{1}{x_2} + \cdots + \dfrac{1}{x_n}}
+\;\le\; \sqrt[n]{x_1 x_2 \cdots x_n},
+</md>
+with equality if and only if <m>x_1 = x_2 = \cdots = x_n</m>.
+</p>
+<p>
+The plan is the one described above: first use a scaling observation to
+replace the inequality by a single constrained minimum problem, then let
+<xref ref="thm-lagrange-n-variables"/> solve it, then check that the
+solution really is a minimum. Throughout, write
+<md>
+P(x_1, \ldots, x_n) = x_1 x_2 \cdots x_n
+</md>
+for the product, so that <m>G = \sqrt[n]{P}</m>, and work only in the
+region where every <m>x_j \gt 0</m>.
+</p>
+</introduction>
+
+<task xml:id="task-hm-gm-scaling">
+<statement>
+<p>
+Show that for every constant <m>c \gt 0</m>, replacing each <m>x_j</m> by
+<m>c\,x_j</m> multiplies both <m>H</m> and <m>G</m> by <m>c</m>. Use this
+to explain why <xref ref="eq-hm-gm-claim"/> will follow once we know the
+single statement
+<md xml:id="eq-hm-gm-normalized" number="yes">
+P(x_1, \ldots, x_n) \ge 1
+\qquad\text{whenever}\qquad
+\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n
+\text{ and every } x_j \gt 0 .
+</md>
+</p>
+</statement>
+<hint>
+<p>
+Given arbitrary positive numbers, what happens if you divide every one of
+them by their own harmonic mean?
+</p>
+</hint>
+<solution>
+<p>
+Both means are <term>homogeneous of degree one</term>. For the harmonic
+mean, each reciprocal is divided by <m>c</m>, so the whole denominator is
+divided by <m>c</m>:
+<md>
+<mrow>H(cx_1, \ldots, cx_n)
+\amp= \frac{n}{\dfrac{1}{cx_1} + \cdots + \dfrac{1}{cx_n}}
+= \frac{n}{\dfrac{1}{c}\left(\dfrac{1}{x_1} + \cdots + \dfrac{1}{x_n}\right)}
+= c\,H(x_1, \ldots, x_n).</mrow>
+</md>
+For the geometric mean, each of the <m>n</m> factors picks up a
+<m>c</m>, and the <m>n</m>-th root removes exactly one of them:
+<md>
+<mrow>G(cx_1, \ldots, cx_n) \amp= \sqrt[n]{(cx_1)(cx_2)\cdots(cx_n)}
+= \sqrt[n]{c^n\,x_1x_2\cdots x_n} = c\,G(x_1, \ldots, x_n).</mrow>
+</md>
+</p>
+<p>
+So the inequality <m>H \le G</m> is unaffected by rescaling: it holds for
+<m>(x_1, \ldots, x_n)</m> exactly when it holds for
+<m>(cx_1, \ldots, cx_n)</m>. Now take any positive numbers
+<m>x_1, \ldots, x_n</m>, let <m>h = H(x_1, \ldots, x_n) \gt 0</m>, and
+rescale by <m>c = 1/h</m>, that is, set <m>u_j = x_j/h</m>. Then
+<md>
+<mrow>\frac{1}{u_1} + \cdots + \frac{1}{u_n}
+\amp= h\left(\frac{1}{x_1} + \cdots + \frac{1}{x_n}\right)
+= h \cdot \frac{n}{h} = n,</mrow>
+</md>
+so <m>(u_1, \ldots, u_n)</m> satisfies the constraint in
+<xref ref="eq-hm-gm-normalized"/>, and its harmonic mean is
+<m>H(u_1,\ldots,u_n) = 1</m>. If we know
+<m>P(u_1, \ldots, u_n) \ge 1</m>, then
+<m>G(u_1, \ldots, u_n) = \sqrt[n]{P} \ge 1 = H(u_1, \ldots, u_n)</m>, and
+multiplying both sides by <m>h</m> and using homogeneity returns
+<m>G(x_1, \ldots, x_n) \ge H(x_1, \ldots, x_n)</m>, which is
+<xref ref="eq-hm-gm-claim"/>.
+</p>
+</solution>
+</task>
+
+<task xml:id="task-hm-gm-system">
+<statement>
+<p>
+The statement <xref ref="eq-hm-gm-normalized"/> asks for the minimum of
+<m>P</m> on a constraint set. Take
+<md>
+f(x_1, \ldots, x_n) = x_1x_2\cdots x_n,
+\qquad
+g(x_1, \ldots, x_n) = \frac{1}{x_1} + \frac{1}{x_2} + \cdots
++ \frac{1}{x_n} - n ,
+</md>
+both defined for <m>x_j \gt 0</m>, and write out the system
+<xref ref="eq-lagrange-n-method"/> for this pair of functions.
+</p>
+</statement>
+<hint>
+<p>
+When you differentiate a product of <m>n</m> factors with respect to one
+of them, every other factor comes along for the ride. It is convenient to
+write the answer as <m>P/x_j</m>.
+</p>
+</hint>
+<solution>
+<p>
+Differentiating <m>f</m> with respect to <m>x_j</m> leaves the product of
+all the other factors, which is <m>P/x_j</m> since <m>x_j \neq 0</m>:
+<md>
+<mrow>\frac{\partial f}{\partial x_j}
+\amp= x_1 \cdots x_{j-1}x_{j+1}\cdots x_n = \frac{P}{x_j},
+\qquad
+\frac{\partial g}{\partial x_j} = -\frac{1}{x_j^2}.</mrow>
+</md>
+The method therefore asks for numbers <m>x_1, \ldots, x_n \gt 0</m> and
+<m>\lambda</m> with
+<md xml:id="eq-hm-gm-system" number="yes">
+\frac{P}{x_j} = -\frac{\lambda}{x_j^2}
+\quad\text{for } j = 1, 2, \ldots, n,
+\qquad\text{and}\qquad
+\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n .
+</md>
+That is <m>n+1</m> equations in the <m>n+1</m> unknowns
+<m>x_1, \ldots, x_n, \lambda</m>.
+</p>
+</solution>
+</task>
+
+<task xml:id="task-hm-gm-solve">
+<statement>
+<p>
+Solve the system <xref ref="eq-hm-gm-system"/>. Show that it has exactly
+one solution, and find the value of <m>P</m> there.
+</p>
+</statement>
+<hint>
+<p>
+Clear the denominators in the <m>j</m>-th equation by multiplying through
+by <m>x_j^2</m>, and then compare the resulting equations for two
+different values of <m>j</m>.
+</p>
+</hint>
+<solution>
+<p>
+Multiplying the <m>j</m>-th equation by <m>x_j^2 \gt 0</m> gives
+<md xml:id="eq-hm-gm-cleared" number="yes">
+P\,x_j = -\lambda, \qquad j = 1, 2, \ldots, n .
+</md>
+The right-hand side does not depend on <m>j</m>, and <m>P \gt 0</m>
+because all the <m>x_j</m> are positive. Dividing by <m>P</m>,
+<md>
+x_1 = x_2 = \cdots = x_n = -\frac{\lambda}{P} .
+</md>
+So every candidate point has all its coordinates equal; call the common
+value <m>a \gt 0</m>. (Incidentally, <m>\lambda = -Pa \lt 0</m>, which is
+why the minus sign was needed.) Substituting into the constraint,
+<md>
+<mrow>\frac{1}{a} + \frac{1}{a} + \cdots + \frac{1}{a} = \frac{n}{a} = n
+\amp\;\Longrightarrow\; a = 1 .</mrow>
+</md>
+The only solution of the system is therefore
+<m>(x_1, \ldots, x_n) = (1, 1, \ldots, 1)</m>, with
+<m>\lambda = -1</m>, and there
+<md>
+P(1, 1, \ldots, 1) = 1 .
+</md>
+</p>
+</solution>
+</task>
+
+<task xml:id="task-hm-gm-minimum">
+<statement>
+<p>
+The candidate is found, but nothing so far says it is a minimum: the
+constraint set
+<md>
+S = \left\{ (x_1, \ldots, x_n) : x_j \gt 0 \text{ for all } j,
+\ \frac{1}{x_1} + \cdots + \frac{1}{x_n} = n \right\}
+</md>
+is not bounded, since one coordinate may be made as large as we please.
+Supply the missing argument in three steps.
+</p>
+<p>
+<ol>
+<li>
+<p>
+Show that every point of <m>S</m> satisfies <m>x_j \gt \frac{1}{n}</m>
+for all <m>j</m>.
+</p>
+</li>
+<li>
+<p>
+Show that if in addition <m>P \le 1</m>, then
+<m>x_j \le n^{\,n-1}</m> for all <m>j</m>.
+</p>
+</li>
+<li>
+<p>
+Conclude that <m>P</m> attains an absolute minimum on <m>S</m>, and that
+this minimum value is <m>1</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For (b), isolate one factor: <m>x_j = P \big/ \prod_{i \neq j} x_i</m>,
+and bound the denominator from below using (a). For (c), the set carved
+out by (a) and (b) is closed and bounded.
+</p>
+</hint>
+<solution>
+<p>
+<em>(a)</em> All <m>n</m> terms of the sum
+<m>\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n</m> are positive, and
+<m>n \ge 2</m>, so each single term is strictly smaller than the whole
+sum:
+<md>
+<mrow>\frac{1}{x_j} \lt n \amp\;\Longrightarrow\; x_j \gt \frac{1}{n},
+\qquad j = 1, 2, \ldots, n .</mrow>
+</md>
+In particular no point of <m>S</m> comes anywhere near the boundary
+<m>x_j = 0</m> of the region where <m>f</m> and <m>g</m> are defined.
+</p>
+<p>
+<em>(b)</em> Fix <m>j</m> and separate the <m>j</m>-th factor from the
+rest of the product. By part (a) each of the other <m>n-1</m> factors
+exceeds <m>\frac{1}{n}</m>, so
+<md>
+<mrow>x_j = \frac{P}{\displaystyle\prod_{i \neq j} x_i}
+\le \frac{1}{\left(\dfrac{1}{n}\right)^{n-1}} = n^{\,n-1},</mrow>
+</md>
+using <m>P \le 1</m> in the numerator.
+</p>
+<p>
+<em>(c)</em> Let
+<m>S_1 = \{\, x \in S : P(x) \le 1 \,\}</m>. It is not empty, since
+<m>(1, 1, \ldots, 1)</m> belongs to it. By (a) and (b) it is contained in
+the box <m>\left[\frac{1}{n},\, n^{\,n-1}\right]^n</m>, so it is bounded,
+and it is closed, being cut out of that box by the continuous conditions
+<m>g = 0</m> and <m>P \le 1</m>. So <m>S_1</m> is closed and bounded, and
+the Extreme Value Theorem applies to the continuous function <m>P</m> on
+it: <m>P</m> attains an absolute minimum value <m>m \le 1</m> at some
+point of <m>S_1</m>.
+</p>
+<p>
+That value is the absolute minimum over all of <m>S</m>, not merely over
+<m>S_1</m>, because every point of <m>S</m> outside <m>S_1</m> has
+<m>P \gt 1 \ge m</m> by the definition of <m>S_1</m>. An absolute
+minimum is in particular a local one, and
+<m>\nabla g = \left(-\frac{1}{x_1^2}, \ldots, -\frac{1}{x_n^2}\right)</m>
+is never the zero vector, so the minimizing point must satisfy the
+Lagrange system <xref ref="eq-hm-gm-system"/>. By the previous task the
+only such point is <m>(1, 1, \ldots, 1)</m>. Therefore the minimizer is
+that point and <m>m = P(1, \ldots, 1) = 1</m>.
+</p>
+</solution>
+</task>
+
+<task xml:id="task-hm-gm-conclude">
+<statement>
+<p>
+Put the pieces together to prove <xref ref="eq-hm-gm-claim"/>, and show
+that equality holds if and only if
+<m>x_1 = x_2 = \cdots = x_n</m>.
+</p>
+</statement>
+<solution>
+<p>
+The previous task proves exactly the statement
+<xref ref="eq-hm-gm-normalized"/>: on the constraint set <m>S</m> the
+product satisfies <m>P \ge 1</m>. By the first task this gives
+<m>H \le G</m> for every choice of positive
+<m>x_1, \ldots, x_n</m>, which is <xref ref="eq-hm-gm-claim"/>.
+</p>
+<p>
+For the equality case, suppose <m>H = G</m> and again put
+<m>h = H(x_1, \ldots, x_n)</m> and <m>u_j = x_j/h</m>. Rescaling gives
+<m>G(u_1, \ldots, u_n) = H(u_1, \ldots, u_n) = 1</m>, so
+<m>P(u_1, \ldots, u_n) = 1</m>, meaning that
+<m>(u_1, \ldots, u_n)</m> is a point of <m>S</m> at which <m>P</m>
+attains its absolute minimum. By part (c) of the previous task the only
+such point is <m>(1, 1, \ldots, 1)</m>, so <m>u_j = 1</m> for every
+<m>j</m>, that is, <m>x_j = h</m> for every <m>j</m>: all the numbers are
+equal.
+</p>
+<p>
+Conversely, if <m>x_1 = \cdots = x_n = a</m>, then
+<m>H = \dfrac{n}{n/a} = a</m> and <m>G = \sqrt[n]{a^n} = a</m>, so the
+two means agree. This completes the proof.
+</p>
+</solution>
+</task>
+
+</activity>
+
+<p>
+One last observation costs nothing and doubles the yield. Apply
+<xref ref="eq-hm-gm-claim"/> not to the numbers <m>x_j</m> themselves but
+to their reciprocals <m>y_j = 1/x_j</m>. The harmonic mean of the
+<m>y_j</m> is <m>n \big/ \sum x_j = 1/A</m>, where <m>A</m> is the
+arithmetic mean of the <m>x_j</m>, and the geometric mean of the
+<m>y_j</m> is <m>1/G</m>. So <m>H(y) \le G(y)</m> reads
+<m>\frac{1}{A} \le \frac{1}{G}</m>, that is,
+<md xml:id="eq-gm-am" number="yes">
+\sqrt[n]{x_1x_2\cdots x_n} \;\le\; \frac{x_1 + x_2 + \cdots + x_n}{n} ,
+</md>
+the celebrated inequality between the geometric and arithmetic means,
+again with equality exactly when all the <m>x_j</m> are equal. Together
+with the activity this establishes the full chain
+<xref ref="eq-hm-gm-chain"/>, <m>H \le G \le A</m>, for any number of
+positive numbers&#8212;the general form of what
+<xref ref="fig-hm-gm-semicircle"/> shows for two.
+</p>
 
 </subsubsection>
 
