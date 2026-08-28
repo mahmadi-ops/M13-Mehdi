@@ -16,6 +16,44 @@ table there (`source/updates.ptx`); its `CLAUDE.md` has the row format. If
 that repo is not available in the session, add it (`add_repo`) or, failing
 that, give the instructor the exact `<row>` to paste.
 
+## The Posting Desk (click-to-post panel)
+
+The instructor has a private control-panel artifact, the **Posting Desk**:
+https://claude.ai/code/artifact/806060e5-7cc7-41fe-bee1-014bc1fbc2aa
+
+Buttons on it create requests; a scheduled Routine ("MATH 13 Posting Desk —
+process clicks", hourly) has Claude read the panel and act. When asked to
+"check the posting desk" (or when the Routine fires):
+
+1. Read the artifact (Artifact tool, `action: "read"`). Its
+   `<script id="state">` block holds JSON with `requests[]`; act on every
+   request whose `status` is `"sent"`.
+   - `kind: "notes"` (`key` = the section's xml:id) → the Posting-notes
+     workflow below.
+   - `kind: "assignment"` (`payload.n`, `payload.due`) → the
+     Posting-an-assignment workflow.
+   - `kind: "release"` (`payload.n`) → the Releasing-solutions workflow.
+   - `kind: "custom"` (`payload.text`) → the instructor's free-text
+     instruction, if it is routine posting work; otherwise mark it
+     `needs-input` and say why.
+2. **Standing authorization**: the instructor chose "publish live
+   immediately" for panel clicks, so commit panel-initiated changes
+   directly to `main` in both repos (still validate first). This applies
+   only to work a panel click requested — everything else follows the
+   session's normal branch rules.
+3. Never invent content: a request that needs material not in the repo
+   (e.g. an assignment with no problem set in `source/`) is not posted —
+   set its `status` to `"needs-input"` and a one-line `result` saying what
+   to provide (the page shows it to the instructor).
+4. Afterwards update the panel **on top of its current version** (re-read
+   it just before publishing; keep requests that arrived meanwhile):
+   set each handled request's `status` to `"done"` (with a short `result`),
+   set the item's `posted`/`released` date (`YYYY-MM-DD`), prepend a `log`
+   entry, and republish to the same URL with the markup otherwise
+   unchanged and `<div id="app">` left empty (the page renders itself
+   from state).
+5. If nothing is pending, do nothing — no commits, no messages.
+
 ## The three routine workflows
 
 Invocable as slash commands (see `.claude/skills/`), or by the instructor
