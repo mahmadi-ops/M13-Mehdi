@@ -762,10 +762,8 @@ Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
 direction of <m>\hat{u}</m> by <m>0.1</m> units.
 </p>
 </statement>
-</example>
 
-<paragraphs xml:id="solution-tp-change">
-<title>Solution</title>
+<solution xml:id="solution-tp-change">
 
 <p>
 Note that from the question we know <m>ds = 0.1</m> units. Our goal is to
@@ -799,7 +797,8 @@ so the estimate <m>df</m> is off by only <m>0.01</m> units.
 past <m>P_0</m> and shows this gap between the tangent line and the
 surface.
 </p>
-</paragraphs>
+</solution>
+</example>
 
 <figure xml:id="fig-tp-example-change">
 <caption>
@@ -1104,10 +1103,8 @@ Consider the function <m>f(x,y) = -2x^2 - 2xy^3 - 2x</m>. Approximate
 function <m>L(x,y)</m>.
 </p>
 </statement>
-</example>
 
-<paragraphs xml:id="solution-tp-linearization">
-<title>Solution</title>
+<solution xml:id="solution-tp-linearization">
 
 <p>
 We use the equation of the tangent plane at
@@ -1135,7 +1132,8 @@ Then, by <xref ref="eq-tp-linearization"/>,
 together with the graph of <m>L</m>, which is the tangent plane patch at
 <m>P_0</m>.
 </p>
-</paragraphs>
+</solution>
+</example>
 
 <figure xml:id="fig-tp-example-linearization">
 <caption>
