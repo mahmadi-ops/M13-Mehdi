@@ -1022,9 +1022,13 @@ g(x_1, x_2, \ldots, x_n) = 0 .
 </theorem>
 
 <p>
-Here <m>\nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial
-f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)</m>, and
-likewise for <m>\nabla g</m>. Reading
+Here the gradient has <m>n</m> components,
+<md>
+\nabla f = \left(\frac{\partial f}{\partial x_1},\
+\frac{\partial f}{\partial x_2},\ \ldots,\
+\frac{\partial f}{\partial x_n}\right),
+</md>
+and likewise for <m>\nabla g</m>. Reading
 <xref ref="eq-lagrange-n-method"/> one component at a time turns it into
 <md>
 <mrow>\frac{\partial f}{\partial x_j} \amp= \lambda\,
@@ -1059,8 +1063,8 @@ The activity below does exactly that.
 <p>
 Our last application of the method is not an optimization problem at
 first sight: it is an inequality, valid for any number of positive
-numbers, that turns into a constrained minimum problem once it is
-normalized correctly. For positive numbers
+numbers, which turns into a constrained optimization problem as soon as
+the right quantity is held fixed. For positive numbers
 <m>x_1, x_2, \ldots, x_n</m>, the <term>harmonic mean</term> and the
 <term>geometric mean</term><fn>You are not expected to have met these
 averages before, and nothing later in the course depends on them. The
@@ -1078,20 +1082,177 @@ average for rates: drive one mile at <m>30</m> mph and the next at
 <m>60</m> mph and your average speed over the two miles is the harmonic
 mean <m>40</m> mph, not the arithmetic mean <m>45</m> mph.</fn> are
 <md xml:id="eq-hm-gm-definitions" number="yes">
-H = \frac{n}{\dfrac{1}{x_1} + \dfrac{1}{x_2} + \cdots + \dfrac{1}{x_n}},
+H = \frac{n}{1/x_1 + 1/x_2 + \cdots + 1/x_n},
 \qquad
 G = \sqrt[n]{x_1 x_2 \cdots x_n} .
 </md>
-The claim we shall prove is that <m>H \le G</m> always, with equality
-exactly when all the numbers are the same.
+The example below proves that <m>H \le G</m> always, with equality
+exactly when all the numbers are the same. If you are curious about
+where these two averages come from, and about what the inequality
+amounts to for two numbers, where it can be both checked by hand and
+seen in a picture, read
+<xref ref="remark-hm-gm-two-variables"/> after the example; it is
+optional.
+</p>
+
+<example xml:id="example-lagrange-hm-gm">
+<title>The Harmonic Mean Never Exceeds the Geometric Mean</title>
+<statement>
+<p>
+Let <m>n \ge 2</m> and let <m>x_1, x_2, \ldots, x_n</m> be positive real
+numbers. Use the method of Lagrange multipliers to prove that
+<md xml:id="eq-hm-gm-claim" number="yes">
+\frac{n}{1/x_1 + 1/x_2 + \cdots + 1/x_n}
+\;\le\; \sqrt[n]{x_1 x_2 \cdots x_n},
+</md>
+that is, <m>H \le G</m>, with equality if and only if
+<m>x_1 = x_2 = \cdots = x_n</m>.
+</p>
+</statement>
+
+<solution xml:id="solution-lagrange-hm-gm">
+
+<p>
+The difficulty is that both sides vary at once. The remedy is to hold
+the right-hand side still: <m>G = \sqrt[n]{x_1 \cdots x_n}</m> depends on
+the numbers only through their product, so it is <em>constant</em> on
+each surface where that product is constant. Write
+<m>g(x_1, \ldots, x_n) = x_1x_2\cdots x_n</m> for that product, fix a
+constant <m>C \gt 0</m>, and work on
+<md xml:id="eq-hm-gm-surface" number="yes">
+S_C = \bigl\{\,(x_1, \ldots, x_n) : x_j \gt 0 \text{ for all } j,
+\ \ g(x_1, \ldots, x_n) = C \,\bigr\},
+</md>
+on which <m>G = \sqrt[n]{C}</m> at every single point. Every choice of
+positive numbers lies on exactly one such surface, so
+<xref ref="eq-hm-gm-claim"/> will be proved
+if we show that the largest value of <m>H</m> on <m>S_C</m> is
+<m>\sqrt[n]{C}</m>, and that it is attained only where all the
+coordinates agree.
+</p>
+
+<p>
+Maximizing <m>H</m> is the same as minimizing the sum in its
+denominator, since
+<m>H = \dfrac{n}{F}</m> with
+<md xml:id="eq-hm-gm-F" number="yes">
+F(x_1, \ldots, x_n) = \frac{1}{x_1} + \frac{1}{x_2} + \cdots
++ \frac{1}{x_n} \gt 0 ,
+</md>
+and <m>n/F</m> is largest exactly where the positive quantity <m>F</m> is
+smallest. So the problem to solve is: <em>minimize <m>F</m> subject to
+<m>g = C</m></em>.
+</p>
+
+<p>
+First, that minimum exists. The quantity <m>F</m> tends to infinity as
+<m>\min(x_1, \ldots, x_n) \to 0</m>, because the reciprocal of the
+smallest coordinate blows up; and on <m>S_C</m> no coordinate can run off
+to infinity without dragging another one down to zero, since the product
+of them all stays pinned at <m>C</m>. Both ways of drifting off to the
+edges of <m>S_C</m> therefore drive <m>F</m> up without bound, so
+<m>F</m> must attain an absolute minimum at some point of <m>S_C</m>
+itself. That point is one the method of Lagrange
+multipliers will find, because
+<md>
+<mrow>\nabla g \amp= \left( x_2x_3\cdots x_n,\ \ x_1x_3 \cdots x_n,\ \
+\ldots,\ \ x_1x_2 \cdots x_{n-1} \right)</mrow>
+<mrow>\amp= \left( \frac{C}{x_1},\ \frac{C}{x_2},\ \ldots,\
+\frac{C}{x_n} \right)</mrow>
+</md>
+has every entry positive on <m>S_C</m>, so <m>\nabla g</m> is never the
+zero vector there.
+</p>
+
+<p>
+Now apply <xref ref="eq-lagrange-n-method"/> to <m>F</m> and <m>g</m>.
+Differentiating <m>g</m> with respect to <m>x_k</m> leaves the product of
+all the <em>other</em> factors, written below as
+<m>x_1 \cdots \widehat{x_k} \cdots x_n</m>, where the hat indicates that
+<m>x_k</m> is omitted from the product. So for each
+<m>k = 1, 2, \ldots, n</m>, the equation
+<m>\partial F/\partial x_k = \lambda\,\partial g/\partial x_k</m> reads
+<md xml:id="eq-hm-gm-lagrange" number="yes">
+\frac{-1}{x_k^2} = \lambda\, x_1 \cdots \widehat{x_k} \cdots x_n .
+</md>
+Rearranging, by multiplying through by <m>x_k^2</m>, restores the missing
+factor and leaves one spare copy of <m>x_k</m>:
+<md number="yes">
+<mrow number="no">-1 \amp= \lambda\, x_1 \cdots x_k^2 \cdots x_n</mrow>
+<mrow xml:id="eq-hm-gm-cleared">\amp= \lambda\, x_k
+\left( x_1x_2\cdots x_n \right) = C\lambda\,x_k .</mrow>
+</md>
+</p>
+
+<p>
+Now <m>\lambda</m> must be nonzero for <xref ref="eq-hm-gm-cleared"/> to
+hold at all, since <m>\lambda = 0</m> would read <m>-1 = 0</m>. So
+<md>
+x_k = -\frac{1}{C\lambda}, \qquad k = 1, 2, \ldots, n,
+</md>
+and the right-hand side does not depend on <m>k</m>. Every coordinate of
+a Lagrange point is therefore the same, and the constraint
+<m>x_1 \cdots x_n = C</m> pins down their common value:
+<md>
+x_1 = x_2 = \cdots = x_n = \sqrt[n]{C} .
+</md>
+So <m>S_C</m> carries exactly one Lagrange point.
+</p>
+
+<p>
+Since the absolute minimum of <m>F</m> on <m>S_C</m> exists and must
+occur at a Lagrange point, that one point is where it occurs. There
+<md>
+<mrow>F \amp= \underbrace{\frac{1}{\sqrt[n]{C}} + \cdots
++ \frac{1}{\sqrt[n]{C}}}_{n \text{ terms}} = \frac{n}{\sqrt[n]{C}},</mrow>
+<mrow>\text{so}\quad H \amp= \frac{n}{F} = \sqrt[n]{C} = G,</mrow>
+</md>
+which is the promised equality. At every other point of <m>S_C</m> the
+value of <m>F</m> is strictly greater than this minimum&#8212;a second
+point achieving the minimum would be a second Lagrange point, and there
+is only one&#8212;so at every other point
+<m>H = n/F \lt \sqrt[n]{C} = G</m>.
+</p>
+
+<p>
+Finally, an arbitrary list of positive numbers lies on <m>S_C</m> for
+<m>C = x_1x_2\cdots x_n</m>, so the two conclusions of the previous
+paragraph say exactly that <m>H \le G</m>, with equality precisely when
+<m>x_1 = x_2 = \cdots = x_n</m>. This proves
+<xref ref="eq-hm-gm-claim"/>.
+</p>
+</solution>
+</example>
+
+<p>
+One last observation costs nothing and doubles the yield. Apply
+<xref ref="eq-hm-gm-claim"/> not to the numbers <m>x_j</m> themselves but
+to their reciprocals <m>y_j = 1/x_j</m>. The harmonic mean of the
+<m>y_j</m> is <m>n \big/ \sum x_j = 1/A</m>, where <m>A</m> is the
+arithmetic mean of the <m>x_j</m>, and the geometric mean of the
+<m>y_j</m> is <m>1/G</m>. So <m>H(y) \le G(y)</m> reads
+<m>\frac{1}{A} \le \frac{1}{G}</m>, that is,
+<md xml:id="eq-gm-am" number="yes">
+\sqrt[n]{x_1x_2\cdots x_n} \;\le\; \frac{x_1 + x_2 + \cdots + x_n}{n} ,
+</md>
+the celebrated inequality between the geometric and arithmetic means,
+again with equality exactly when all the <m>x_j</m> are equal. Together
+with the example this establishes the full chain
+<md xml:id="eq-hm-gm-chain" number="yes">
+H \le G \le A
+</md>
+for any number of positive numbers&#8212;the general form of what
+<xref ref="fig-hm-gm-semicircle"/> shows for two.
 </p>
 
 <remark xml:id="remark-hm-gm-two-variables">
 <title>For the Curious: the Two-Variable Case and a Picture</title>
 <p>
-This remark is optional. It is here for the reader who would like to see
-what the inequality says before proving it, and none of it is needed for
-the activity that follows or for anything later in the course.
+This remark is optional, and nothing later in the course depends on it.
+It is here for the reader curious about what the inequality just proved
+actually says. For two numbers it can be checked with nothing but
+algebra and, better, read off a single picture, along with the
+arithmetic mean for good measure.
 </p>
 <p>
 For <m>n = 2</m> no calculus is needed at all. Write the two positive
@@ -1120,10 +1281,8 @@ The middle line of that chain is worth a second look. It says
 <m>\sqrt{ab} \le \frac{a+b}{2}</m>, so for two numbers the statement
 <m>H \le G</m> is the very same statement as <m>G \le A</m>, where
 <m>A</m> is the arithmetic mean. The two-variable case therefore carries
-the whole chain
-<md xml:id="eq-hm-gm-chain" number="yes">
-H \le G \le A .
-</md>
+the whole chain <xref ref="eq-hm-gm-chain"/> on its own, without any
+appeal to <xref ref="eq-gm-am"/>.
 </p>
 <p>
 All three means can be read off a single picture, and the geometric mean
@@ -1138,9 +1297,9 @@ pieces of lengths <m>a</m> and <m>b</m>. The two small triangles
 the long leg of the other gives
 <md xml:id="eq-hm-gm-altitude" number="yes">
 \frac{a}{h} = \frac{h}{b}
-\qquad\Longrightarrow\qquad
+\quad\Longrightarrow\quad
 h^2 = ab
-\qquad\Longrightarrow\qquad
+\quad\Longrightarrow\quad
 h = \sqrt{ab} = G .
 </md>
 </p>
@@ -1329,328 +1488,6 @@ of a right triangle is never longer than its hypotenuse,
 </image>
 </figure>
 
-<activity xml:id="activity-lagrange-hm-gm">
-<title>Harmonic Mean <m>\le</m> Geometric Mean, by Lagrange Multipliers</title>
-
-<introduction>
-<p>
-Let <m>n \ge 2</m> and let <m>x_1, x_2, \ldots, x_n</m> be positive real
-numbers, with <m>H</m> and <m>G</m> as in
-<xref ref="eq-hm-gm-definitions"/>. In this activity you will prove that
-<md xml:id="eq-hm-gm-claim" number="yes">
-\frac{n}{\dfrac{1}{x_1} + \dfrac{1}{x_2} + \cdots + \dfrac{1}{x_n}}
-\;\le\; \sqrt[n]{x_1 x_2 \cdots x_n},
-</md>
-with equality if and only if <m>x_1 = x_2 = \cdots = x_n</m>.
-</p>
-<p>
-The plan is the one described above: first use a scaling observation to
-replace the inequality by a single constrained minimum problem, then let
-<xref ref="thm-lagrange-n-variables"/> solve it, then check that the
-solution really is a minimum. Throughout, write
-<md>
-P(x_1, \ldots, x_n) = x_1 x_2 \cdots x_n
-</md>
-for the product, so that <m>G = \sqrt[n]{P}</m>, and work only in the
-region where every <m>x_j \gt 0</m>.
-</p>
-</introduction>
-
-<task xml:id="task-hm-gm-scaling">
-<statement>
-<p>
-Show that for every constant <m>c \gt 0</m>, replacing each <m>x_j</m> by
-<m>c\,x_j</m> multiplies both <m>H</m> and <m>G</m> by <m>c</m>. Use this
-to explain why <xref ref="eq-hm-gm-claim"/> will follow once we know the
-single statement
-<md xml:id="eq-hm-gm-normalized" number="yes">
-P(x_1, \ldots, x_n) \ge 1
-\qquad\text{whenever}\qquad
-\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n
-\text{ and every } x_j \gt 0 .
-</md>
-</p>
-</statement>
-<hint>
-<p>
-Given arbitrary positive numbers, what happens if you divide every one of
-them by their own harmonic mean?
-</p>
-</hint>
-<solution>
-<p>
-Both means are <term>homogeneous of degree one</term>. For the harmonic
-mean, each reciprocal is divided by <m>c</m>, so the whole denominator is
-divided by <m>c</m>:
-<md>
-<mrow>H(cx_1, \ldots, cx_n)
-\amp= \frac{n}{\dfrac{1}{cx_1} + \cdots + \dfrac{1}{cx_n}}
-= \frac{n}{\dfrac{1}{c}\left(\dfrac{1}{x_1} + \cdots + \dfrac{1}{x_n}\right)}
-= c\,H(x_1, \ldots, x_n).</mrow>
-</md>
-For the geometric mean, each of the <m>n</m> factors picks up a
-<m>c</m>, and the <m>n</m>-th root removes exactly one of them:
-<md>
-<mrow>G(cx_1, \ldots, cx_n) \amp= \sqrt[n]{(cx_1)(cx_2)\cdots(cx_n)}
-= \sqrt[n]{c^n\,x_1x_2\cdots x_n} = c\,G(x_1, \ldots, x_n).</mrow>
-</md>
-</p>
-<p>
-So the inequality <m>H \le G</m> is unaffected by rescaling: it holds for
-<m>(x_1, \ldots, x_n)</m> exactly when it holds for
-<m>(cx_1, \ldots, cx_n)</m>. Now take any positive numbers
-<m>x_1, \ldots, x_n</m>, let <m>h = H(x_1, \ldots, x_n) \gt 0</m>, and
-rescale by <m>c = 1/h</m>, that is, set <m>u_j = x_j/h</m>. Then
-<md>
-<mrow>\frac{1}{u_1} + \cdots + \frac{1}{u_n}
-\amp= h\left(\frac{1}{x_1} + \cdots + \frac{1}{x_n}\right)
-= h \cdot \frac{n}{h} = n,</mrow>
-</md>
-so <m>(u_1, \ldots, u_n)</m> satisfies the constraint in
-<xref ref="eq-hm-gm-normalized"/>, and its harmonic mean is
-<m>H(u_1,\ldots,u_n) = 1</m>. If we know
-<m>P(u_1, \ldots, u_n) \ge 1</m>, then
-<m>G(u_1, \ldots, u_n) = \sqrt[n]{P} \ge 1 = H(u_1, \ldots, u_n)</m>, and
-multiplying both sides by <m>h</m> and using homogeneity returns
-<m>G(x_1, \ldots, x_n) \ge H(x_1, \ldots, x_n)</m>, which is
-<xref ref="eq-hm-gm-claim"/>.
-</p>
-</solution>
-</task>
-
-<task xml:id="task-hm-gm-system">
-<statement>
-<p>
-The statement <xref ref="eq-hm-gm-normalized"/> asks for the minimum of
-<m>P</m> on a constraint set. Take
-<md>
-f(x_1, \ldots, x_n) = x_1x_2\cdots x_n,
-\qquad
-g(x_1, \ldots, x_n) = \frac{1}{x_1} + \frac{1}{x_2} + \cdots
-+ \frac{1}{x_n} - n ,
-</md>
-both defined for <m>x_j \gt 0</m>, and write out the system
-<xref ref="eq-lagrange-n-method"/> for this pair of functions.
-</p>
-</statement>
-<hint>
-<p>
-When you differentiate a product of <m>n</m> factors with respect to one
-of them, every other factor comes along for the ride. It is convenient to
-write the answer as <m>P/x_j</m>.
-</p>
-</hint>
-<solution>
-<p>
-Differentiating <m>f</m> with respect to <m>x_j</m> leaves the product of
-all the other factors, which is <m>P/x_j</m> since <m>x_j \neq 0</m>:
-<md>
-<mrow>\frac{\partial f}{\partial x_j}
-\amp= x_1 \cdots x_{j-1}x_{j+1}\cdots x_n = \frac{P}{x_j},
-\qquad
-\frac{\partial g}{\partial x_j} = -\frac{1}{x_j^2}.</mrow>
-</md>
-The method therefore asks for numbers <m>x_1, \ldots, x_n \gt 0</m> and
-<m>\lambda</m> with
-<md xml:id="eq-hm-gm-system" number="yes">
-\frac{P}{x_j} = -\frac{\lambda}{x_j^2}
-\quad\text{for } j = 1, 2, \ldots, n,
-\qquad\text{and}\qquad
-\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n .
-</md>
-That is <m>n+1</m> equations in the <m>n+1</m> unknowns
-<m>x_1, \ldots, x_n, \lambda</m>.
-</p>
-</solution>
-</task>
-
-<task xml:id="task-hm-gm-solve">
-<statement>
-<p>
-Solve the system <xref ref="eq-hm-gm-system"/>. Show that it has exactly
-one solution, and find the value of <m>P</m> there.
-</p>
-</statement>
-<hint>
-<p>
-Clear the denominators in the <m>j</m>-th equation by multiplying through
-by <m>x_j^2</m>, and then compare the resulting equations for two
-different values of <m>j</m>.
-</p>
-</hint>
-<solution>
-<p>
-Multiplying the <m>j</m>-th equation by <m>x_j^2 \gt 0</m> gives
-<md xml:id="eq-hm-gm-cleared" number="yes">
-P\,x_j = -\lambda, \qquad j = 1, 2, \ldots, n .
-</md>
-The right-hand side does not depend on <m>j</m>, and <m>P \gt 0</m>
-because all the <m>x_j</m> are positive. Dividing by <m>P</m>,
-<md>
-x_1 = x_2 = \cdots = x_n = -\frac{\lambda}{P} .
-</md>
-So every candidate point has all its coordinates equal; call the common
-value <m>a \gt 0</m>. (Incidentally, <m>\lambda = -Pa \lt 0</m>, which is
-why the minus sign was needed.) Substituting into the constraint,
-<md>
-<mrow>\frac{1}{a} + \frac{1}{a} + \cdots + \frac{1}{a} = \frac{n}{a} = n
-\amp\;\Longrightarrow\; a = 1 .</mrow>
-</md>
-The only solution of the system is therefore
-<m>(x_1, \ldots, x_n) = (1, 1, \ldots, 1)</m>, with
-<m>\lambda = -1</m>, and there
-<md>
-P(1, 1, \ldots, 1) = 1 .
-</md>
-</p>
-</solution>
-</task>
-
-<task xml:id="task-hm-gm-minimum">
-<statement>
-<p>
-The candidate is found, but nothing so far says it is a minimum: the
-constraint set
-<md>
-S = \left\{ (x_1, \ldots, x_n) : x_j \gt 0 \text{ for all } j,
-\ \frac{1}{x_1} + \cdots + \frac{1}{x_n} = n \right\}
-</md>
-is not bounded, since one coordinate may be made as large as we please.
-Supply the missing argument in three steps.
-</p>
-<p>
-<ol>
-<li>
-<p>
-Show that every point of <m>S</m> satisfies <m>x_j \gt \frac{1}{n}</m>
-for all <m>j</m>.
-</p>
-</li>
-<li>
-<p>
-Show that if in addition <m>P \le 1</m>, then
-<m>x_j \le n^{\,n-1}</m> for all <m>j</m>.
-</p>
-</li>
-<li>
-<p>
-Conclude that <m>P</m> attains an absolute minimum on <m>S</m>, and that
-this minimum value is <m>1</m>.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-<hint>
-<p>
-For (b), isolate one factor: <m>x_j = P \big/ \prod_{i \neq j} x_i</m>,
-and bound the denominator from below using (a). For (c), the set carved
-out by (a) and (b) is closed and bounded.
-</p>
-</hint>
-<solution>
-<p>
-<em>(a)</em> All <m>n</m> terms of the sum
-<m>\frac{1}{x_1} + \cdots + \frac{1}{x_n} = n</m> are positive, and
-<m>n \ge 2</m>, so each single term is strictly smaller than the whole
-sum:
-<md>
-<mrow>\frac{1}{x_j} \lt n \amp\;\Longrightarrow\; x_j \gt \frac{1}{n},
-\qquad j = 1, 2, \ldots, n .</mrow>
-</md>
-In particular no point of <m>S</m> comes anywhere near the boundary
-<m>x_j = 0</m> of the region where <m>f</m> and <m>g</m> are defined.
-</p>
-<p>
-<em>(b)</em> Fix <m>j</m> and separate the <m>j</m>-th factor from the
-rest of the product. By part (a) each of the other <m>n-1</m> factors
-exceeds <m>\frac{1}{n}</m>, so
-<md>
-<mrow>x_j = \frac{P}{\displaystyle\prod_{i \neq j} x_i}
-\le \frac{1}{\left(\dfrac{1}{n}\right)^{n-1}} = n^{\,n-1},</mrow>
-</md>
-using <m>P \le 1</m> in the numerator.
-</p>
-<p>
-<em>(c)</em> Let
-<m>S_1 = \{\, x \in S : P(x) \le 1 \,\}</m>. It is not empty, since
-<m>(1, 1, \ldots, 1)</m> belongs to it. By (a) and (b) it is contained in
-the box <m>\left[\frac{1}{n},\, n^{\,n-1}\right]^n</m>, so it is bounded,
-and it is closed, being cut out of that box by the continuous conditions
-<m>g = 0</m> and <m>P \le 1</m>. So <m>S_1</m> is closed and bounded, and
-the Extreme Value Theorem applies to the continuous function <m>P</m> on
-it: <m>P</m> attains an absolute minimum value <m>m \le 1</m> at some
-point of <m>S_1</m>.
-</p>
-<p>
-That value is the absolute minimum over all of <m>S</m>, not merely over
-<m>S_1</m>, because every point of <m>S</m> outside <m>S_1</m> has
-<m>P \gt 1 \ge m</m> by the definition of <m>S_1</m>. An absolute
-minimum is in particular a local one, and
-<m>\nabla g = \left(-\frac{1}{x_1^2}, \ldots, -\frac{1}{x_n^2}\right)</m>
-is never the zero vector, so the minimizing point must satisfy the
-Lagrange system <xref ref="eq-hm-gm-system"/>. By the previous task the
-only such point is <m>(1, 1, \ldots, 1)</m>. Therefore the minimizer is
-that point and <m>m = P(1, \ldots, 1) = 1</m>.
-</p>
-</solution>
-</task>
-
-<task xml:id="task-hm-gm-conclude">
-<statement>
-<p>
-Put the pieces together to prove <xref ref="eq-hm-gm-claim"/>, and show
-that equality holds if and only if
-<m>x_1 = x_2 = \cdots = x_n</m>.
-</p>
-</statement>
-<solution>
-<p>
-The previous task proves exactly the statement
-<xref ref="eq-hm-gm-normalized"/>: on the constraint set <m>S</m> the
-product satisfies <m>P \ge 1</m>. By the first task this gives
-<m>H \le G</m> for every choice of positive
-<m>x_1, \ldots, x_n</m>, which is <xref ref="eq-hm-gm-claim"/>.
-</p>
-<p>
-For the equality case, suppose <m>H = G</m> and again put
-<m>h = H(x_1, \ldots, x_n)</m> and <m>u_j = x_j/h</m>. Rescaling gives
-<m>G(u_1, \ldots, u_n) = H(u_1, \ldots, u_n) = 1</m>, so
-<m>P(u_1, \ldots, u_n) = 1</m>, meaning that
-<m>(u_1, \ldots, u_n)</m> is a point of <m>S</m> at which <m>P</m>
-attains its absolute minimum. By part (c) of the previous task the only
-such point is <m>(1, 1, \ldots, 1)</m>, so <m>u_j = 1</m> for every
-<m>j</m>, that is, <m>x_j = h</m> for every <m>j</m>: all the numbers are
-equal.
-</p>
-<p>
-Conversely, if <m>x_1 = \cdots = x_n = a</m>, then
-<m>H = \dfrac{n}{n/a} = a</m> and <m>G = \sqrt[n]{a^n} = a</m>, so the
-two means agree. This completes the proof.
-</p>
-</solution>
-</task>
-
-</activity>
-
-<p>
-One last observation costs nothing and doubles the yield. Apply
-<xref ref="eq-hm-gm-claim"/> not to the numbers <m>x_j</m> themselves but
-to their reciprocals <m>y_j = 1/x_j</m>. The harmonic mean of the
-<m>y_j</m> is <m>n \big/ \sum x_j = 1/A</m>, where <m>A</m> is the
-arithmetic mean of the <m>x_j</m>, and the geometric mean of the
-<m>y_j</m> is <m>1/G</m>. So <m>H(y) \le G(y)</m> reads
-<m>\frac{1}{A} \le \frac{1}{G}</m>, that is,
-<md xml:id="eq-gm-am" number="yes">
-\sqrt[n]{x_1x_2\cdots x_n} \;\le\; \frac{x_1 + x_2 + \cdots + x_n}{n} ,
-</md>
-the celebrated inequality between the geometric and arithmetic means,
-again with equality exactly when all the <m>x_j</m> are equal. Together
-with the activity this establishes the full chain
-<xref ref="eq-hm-gm-chain"/>, <m>H \le G \le A</m>, for any number of
-positive numbers&#8212;the general form of what
-<xref ref="fig-hm-gm-semicircle"/> shows for two.
-</p>
 
 </subsubsection>
 
