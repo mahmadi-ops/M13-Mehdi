@@ -63,26 +63,26 @@
     border-radius: 6px;
     line-height: 1.5;
   }
-  .math { font-family: var(--serif); font-size: 16.5px; }
+  .math { font-family: var(--serif); font-size: 18px; }
   .math i { font-style: italic; }
-  .math sub { font-size: 11px; }
+  .math sub { font-size: 12px; }
   #eqcard .sub { font-size: 13px; color: var(--dim); font-family: var(--sans); }
 
   /* what the layers report, right half of the header bar: every row is always
      listed (a dash until its layer is chosen) so the bar keeps a constant
      height and the stage below it never jumps */
   #readout {
-    margin-left: auto; min-width: 225px;
+    margin-left: auto; min-width: 250px;
     padding: 8px 12px 9px 12px;
     background: #14161e;
     border: 1px solid var(--edge); border-radius: 6px;
-    font-size: 13px; color: var(--dim);
+    font-size: 13.5px; color: var(--dim);
   }
-  #readout .title { font-size: 12px; letter-spacing: .3px;
+  #readout .title { font-size: 12.5px; letter-spacing: .3px;
                     text-transform: uppercase; color: var(--dim); }
   #readout .row {
     display: flex; align-items: baseline; gap: 8px;
-    margin-top: 4px; font-family: var(--serif); font-size: 14.5px;
+    margin-top: 4px; font-family: var(--serif); font-size: 16px;
     color: var(--ink);
   }
   #readout .row.off { opacity: 0.45; }
@@ -90,12 +90,15 @@
     width: 16px; height: 3px; border-radius: 2px; flex: 0 0 auto;
     transform: translateY(-4px);
   }
-  #readout .row .val { margin-left: auto; font-weight: 700; }
+  #readout .row .val { margin-left: auto; font-weight: 700;
+                       white-space: nowrap; padding-left: 10px; }
+  #readout sub, #verdict sub { font-size: 0.62em; }
+  #readout i, #verdict i { font-style: italic; }
   /* the tangent-plane equation keeps its space even while hidden, again so
      the header height (and with it the canvas) stays put */
   #verdict {
     margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--edge);
-    font-size: 13px; line-height: 1.35; color: var(--pink); font-weight: 600;
+    font-size: 13.5px; line-height: 1.35; color: var(--pink); font-weight: 600;
     font-family: var(--serif);
     min-height: 1.35em; visibility: hidden;
   }
@@ -106,12 +109,14 @@
   #caption {
     flex: 0 0 auto; box-sizing: border-box;
     width: 100%; min-height: 32px;
-    text-align: center; font-size: 14px; line-height: 1.4; color: var(--dim);
+    text-align: center; font-size: 14.5px; line-height: 1.4; color: var(--dim);
     background: var(--bg); border-top: 1px solid var(--edge);
     padding: 6px 14px;
     opacity: 0; transition: opacity .45s ease;
   }
   #caption.show { opacity: 1; }
+  #caption i, #caption sub { font-family: var(--serif); }
+  #caption sub { font-size: 0.65em; }
 
   /* ---- control panel ---- */
   #panel {
@@ -142,9 +147,9 @@
     #top { padding: 6px 10px; }
     #eqcard { padding: 7px 10px 8px 10px; }
     #eqcard .sub { display: none; }
-    .math { font-size: 14.5px; }
-    #readout { min-width: 0; font-size: 12px; padding: 6px 9px 7px 9px; }
-    #readout .row { font-size: 13px; }
+    .math { font-size: 16px; }
+    #readout { min-width: 0; font-size: 12.5px; padding: 6px 9px 7px 9px; }
+    #readout .row { font-size: 14.5px; }
     #caption { font-size: 12.5px; min-height: 28px; padding: 5px 10px; }
     .lbl { display: none; }
     button { font-size: 12.5px; padding: 4px 10px; }
@@ -576,15 +581,30 @@
       verdictEl = document.getElementById("verdict"),
       captionEl = document.getElementById("caption");
 
-  function say(text) {
-    captionEl.textContent = text;
+  function say(html) {
+    captionEl.innerHTML = html;
     captionEl.classList.add("show");
   }
 
+  // real <sub> markup rather than the unicode subscript characters: there is
+  // no latin subscript y in unicode (only the greek gamma), and PT Serif has
+  // no subscript glyphs anyway, so those codepoints render in a mismatched
+  // fallback font
+  var SUB = {
+    fx: "<i>f</i><sub>x</sub>",
+    fy: "<i>f</i><sub>y</sub>",
+    P0: "<i>P</i><sub>0</sub>",
+    x0: "<i>x</i><sub>0</sub>",
+    y0: "<i>y</i><sub>0</sub>",
+    z0: "<i>z</i><sub>0</sub>"
+  };
   var ROWS = [
-    { swatch: "#58c4dd", label: "fₓ(x₀,y₀)", value: "−0.25", layer: 0 },
-    { swatch: "#c678dd", label: "fᵧ(x₀,y₀)", value: "−0.45", layer: 1 },
-    { swatch: "#fc6255", label: "n = ⟨fₓ, fᵧ, −1⟩", value: "⟨−0.25, −0.45, −1⟩", layer: 3 }
+    { swatch: "#58c4dd", label: SUB.fx + "(" + SUB.x0 + "," + SUB.y0 + ")",
+      value: "−0.25", layer: 0 },
+    { swatch: "#c678dd", label: SUB.fy + "(" + SUB.x0 + "," + SUB.y0 + ")",
+      value: "−0.45", layer: 1 },
+    { swatch: "#fc6255", label: "normal <i>n</i>",
+      value: "⟨−0.25,&#8202;−0.45,&#8202;−1⟩", layer: 3 }
   ];
   function refreshReadout() {
     // every row is always rendered (with a dash until its layer is on), so
@@ -598,16 +618,17 @@
              (on ? R.value : "—") + '</span></div>';
     }).join("");
     verdictEl.innerHTML = LAYERS[2].on
-      ? "z − z₀ = −0.25(x − x₀) − 0.45(y − y₀)"
+      ? "<i>z</i> − " + SUB.z0 + " = −0.25(<i>x</i> − " + SUB.x0 +
+        ") − 0.45(<i>y</i> − " + SUB.y0 + ")"
       : "";
     verdictEl.classList.toggle("show", LAYERS[2].on);
   }
 
   var CAPTIONS = [
-    "The plane y = y₀ cuts the surface in the green parabola; its tangent line at P₀ (blue) has slope fₓ(x₀,y₀) = −0.25.",
-    "The plane x = x₀ cuts the surface in the amber parabola; its tangent line at P₀ (dark red) has slope fᵧ(x₀,y₀) = −0.45.",
-    "One plane contains both tangent lines: the tangent plane to the surface at P₀.",
-    "n = ∇w at P₀ = ⟨fₓ, fᵧ, −1⟩ stands perpendicular to the tangent plane (drawn with the upward sign)."
+    "The plane <i>y</i> = " + SUB.y0 + " cuts the surface in the green parabola; its tangent line at " + SUB.P0 + " (blue) has slope " + SUB.fx + " = −0.25.",
+    "The plane <i>x</i> = " + SUB.x0 + " cuts the surface in the amber parabola; its tangent line at " + SUB.P0 + " (dark red) has slope " + SUB.fy + " = −0.45.",
+    "One plane contains both tangent lines: the tangent plane to the surface at " + SUB.P0 + ".",
+    "<i>n</i> = ⟨" + SUB.fx + ", " + SUB.fy + ", −1⟩ stands perpendicular to the tangent plane (drawn with the upward sign)."
   ];
   var IDLE = "Add the layers with the buttons below, or press ▶ Build it up.";
 
@@ -631,7 +652,7 @@
   document.getElementById("btnAll").addEventListener("click", function () {
     stopBuild();
     LAYERS.forEach(function (L, i) { toggleLayer(i, true); });
-    say("Both tangent lines lie in the tangent plane, and n stands at a right angle to it.");
+    say("Both tangent lines lie in the tangent plane, and <i>n</i> stands at a right angle to it.");
   });
   document.getElementById("btnClear").addEventListener("click", function () {
     stopBuild();
@@ -670,7 +691,7 @@
     LAYERS.forEach(function (L, i) { toggleLayer(i, false); });
     building = true; buildT = 0; buildStep = 0;
     btnBuild.classList.add("running");
-    say("First the surface and the point P₀ alone — the layers arrive one at a time.");
+    say("First the surface and the point <i>P</i><sub>0</sub> alone — the layers arrive one at a time.");
   });
 
   var btnSide = document.getElementById("btnSide");
@@ -679,7 +700,7 @@
     btnSide.classList.toggle("on", side);
     targetPhi = side ? 1.42 : 1.08;
     targetTheta = side ? -Math.PI / 2 : -0.95;
-    if (side) say("Looking straight down the y axis: the plane y = y₀ is seen edge-on and the blue tangent line shows its slope fₓ = −0.25.");
+    if (side) say("Looking straight down the <i>y</i> axis: the plane <i>y</i> = <i>y</i><sub>0</sub> is seen edge-on and the blue tangent line shows its slope <i>f</i><sub>x</sub> = −0.25.");
   });
 
   var spinning = false, btnSpin = document.getElementById("btnSpin");
