@@ -2,7 +2,7 @@
   <title>Exercises</title>
 
 <!-- ================= Hyperbolic Functions ================= -->
-<!-- UNPOSTED <xi:include href="exercises-hyperbolic.ptx"/> UNPOSTED -->
+<xi:include href="exercises-hyperbolic.ptx"/>
 
 <!-- ================= Infinite Series ================= -->
 <xi:include href="exercises-infinite-series.ptx"/>
