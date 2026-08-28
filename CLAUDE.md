@@ -54,6 +54,12 @@ process clicks", hourly) has Claude read the panel and act. When asked to
    from state).
 5. If nothing is pending, do nothing — no commits, no messages.
 
+The sync goes both ways: after any posting done **outside** the panel
+(a `/post-notes`, `/post-assignment`, or `/release-solutions` run from
+chat), also update the panel's state — posted/released date and a log
+entry — and republish it, so the desk always shows the true posting
+history.
+
 ## The three routine workflows
 
 Invocable as slash commands (see `.claude/skills/`), or by the instructor
