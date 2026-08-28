@@ -62,6 +62,20 @@ chat), also update the panel's state — posted/released date and a log
 entry — and republish it, so the desk always shows the true posting
 history.
 
+### The instant path (no Claude in the loop)
+
+For mechanically safe topics (marked `instant: true` in the panel state)
+a notes Post/Unpost click does **not** create a request: the page itself
+dispatches `desk.yml` here (runs `scripts/desk_action.py`, which toggles
+the topic's include, wraps dependent exercise sets with
+`UNPOSTED-WITH topic="<key>"` markers, validates, commits to `main`, and
+re-runs the deploy) and `desk-row.yml` in the syllabus repo (runs
+`scripts/desk_row.py` to add or remove the table row). Claude only sees
+those clicks in the panel's log. Keep `scripts/desk_action.py`'s topic
+map and the panel's topic list in sync with the book; topics whose
+removal would break other topics' pages stay `instant: false` and come
+through the request queue as before.
+
 ## The three routine workflows
 
 Invocable as slash commands (see `.claude/skills/`), or by the instructor
