@@ -128,8 +128,8 @@ SU = np.array([-np.cos(PHI) * np.cos(THETA), -np.cos(PHI) * np.sin(THETA),
                np.sin(PHI)])
 PLOT_AT = (2.75, -1.35)                 # where the plane's centre should land
 
-IS_ = 0.68                              # inset units per data unit
-IC = np.array([-4.70, -0.90, 0.0])      # the centre of the inset: low enough
+IS_ = 0.62                              # inset units per data unit
+IC = np.array([-4.75, -1.05, 0.0])      # the centre of the inset: low enough
                                         # to clear the column of lettering
 
 
@@ -184,8 +184,6 @@ class CircleExtrema(ThreeDScene):
                                t_range=[0, TAU]),
             num_dashes=64, dashed_ratio=0.55)
         gcircle.set_stroke(CON, 4.5)
-        g_tag = MathTex("x^2+y^2=4", font_size=27, color=CON)
-        g_tag.move_to(p3(-0.6, 3.4, 0.0))
 
         def lifted(t):
             x, y = on_circle(t)
@@ -332,10 +330,7 @@ class CircleExtrema(ThreeDScene):
         cap2 = caption(r"\text{but } (1,-1) \text{ lies inside the circle } "
                        r"x^2+y^2=4")
         self.play(FadeOut(cap1), run_time=0.4)
-        self.add_fixed_orientation_mobjects(g_tag)
-        self.remove(g_tag)
-        self.play(FadeIn(cap2), Create(gcircle), FadeIn(g_tag),
-                  FadeIn(inset), run_time=1.8)
+        self.play(FadeIn(cap2), Create(gcircle), FadeIn(inset), run_time=1.8)
         self.wait(1.4)
 
         cap3 = caption(r"\text{over that circle, } f \text{ traces the blue "
