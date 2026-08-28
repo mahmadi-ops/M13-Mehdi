@@ -38,7 +38,7 @@
    <!-- <xi:include href="introduction.ptx" /> -->
 
     <!-- Chapter 1 -->
-    <xi:include href="ch-7-3.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-7-3.ptx" /> UNPOSTED -->
     <!-- Chapter 2 -->
     <xi:include href="ch-series-sequences.ptx" />
     <!-- Chapter 3 -->
