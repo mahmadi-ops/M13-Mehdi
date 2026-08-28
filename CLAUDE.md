@@ -33,6 +33,8 @@ process clicks", hourly) has Claude read the panel and act. When asked to
    - `kind: "assignment"` (`payload.n`, `payload.due`) → the
      Posting-an-assignment workflow.
    - `kind: "release"` (`payload.n`) → the Releasing-solutions workflow.
+   - `kind: "unpost-notes"`, `"unpost-assignment"`, `"relock"` → the
+     Unposting workflows below.
    - `kind: "custom"` (`payload.text`) → the instructor's free-text
      instruction, if it is routine posting work; otherwise mark it
      `needs-input` and say why.
@@ -118,6 +120,34 @@ just describing what happened in class:
 4. Validate, build, commit, push.
 5. Syllabus-table row: `Solutions: Assignment <n>`, today's date, and
    `was due <date>` in the due-date column.
+
+## Unposting (the reverse workflows)
+
+Every desk action has an inverse; these are panel/instructor-initiated
+only, never done on your own judgment.
+
+- **Unpost notes** (`unpost-notes`, `key` = xml:id): comment out the
+  section's `<xi:include>` where it lives (its chapter file, or
+  `source/main.ptx`) as
+  `<!-- UNPOSTED <xi:include href="..."/> UNPOSTED -->`, so reposting is
+  just removing the wrapper. Then build: if still-included files hold
+  `<xref>`s into the removed section (the exercises chapter often does),
+  the build breaks — in that case also unpost the referencing exercise
+  worksheet if it belongs to the same topic, and otherwise mark the
+  request `needs-input` naming the conflicting file instead of forcing
+  it. Finally remove the topic's row from the syllabus table and set the
+  desk state back (`posted: null`, `live: false`).
+- **Unpost an assignment** (`unpost-assignment`, `payload.n`): same
+  wrapper trick on the assignment's include in `source/exercises.ptx`;
+  remove its syllabus row; desk state `posted: null`.
+- **Re-lock solutions** (`relock`, `payload.n`): re-wrap that
+  assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
+  markers (restore the original `assignment`/`due` attributes); remove
+  the `Solutions: Assignment <n>` row; desk state `released: null`.
+
+Removing a syllabus row is allowed **only** here, and only the row of the
+item being unposted — the newest-first order of the remaining rows stays
+untouched. Validate and push exactly as for posting.
 
 ## The SOLUTION-LOCKED convention
 
