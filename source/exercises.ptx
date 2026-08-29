@@ -402,7 +402,7 @@ containing the two trees.
 <xi:include href="exercises-partial-derivatives.ptx"/>
 
 <!-- ================= The Chain Rule ================= -->
-<!-- UNPOSTED-WITH topic="chapter-chain-rule" <xi:include href="exercises-chain-rule.ptx"/> UNPOSTED -->
+<xi:include href="exercises-chain-rule.ptx"/>
 
 <!-- ================= Directional Derivatives and Gradient Vectors ================= -->
 <xi:include href="exercises-gradients.ptx"/>
