@@ -377,8 +377,9 @@ coordinates of the candidate points.
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-lagrange-examples">
-<title>Examples</title>
+<title>Examples: Functions of Two Variables</title>
 
+<!-- ================================================================ -->
 <subsubsection xml:id="sec-lagrange-example-ellipse">
 <title>Extrema on an Ellipse</title>
 
@@ -579,182 +580,6 @@ arrows are drawn slightly apart so both are visible.
   <annotation ref="ee-gradg-min1" text="The gradient of g at the point negative 2 comma 1, drawn in green: it equals negative one half i plus j, pointing out of the ellipse. The two arrows lie along the same line but point in opposite directions, so the gradient of f is negative 2 times the gradient of g and lambda equals negative 2."/>
   <annotation ref="ee-gradf-min2" text="The gradient of f at the point 2 comma negative 1, drawn in red: it equals negative i plus 2 j, pointing into the ellipse."/>
   <annotation ref="ee-gradg-min2" text="The gradient of g at the point 2 comma negative 1, drawn in green: it equals one half i minus j, pointing out of the ellipse. Here too the two gradients are collinear and opposite, so lambda equals negative 2."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-</subsubsection>
-
-<!-- ================================================================ -->
-<subsubsection xml:id="sec-lagrange-example-distance">
-<title>Shortest Distance to a Plane</title>
-
-<p>
-In <xref ref="example-shortest-distance"/> we found the shortest
-distance from a point to a plane by substituting the equation of the
-plane into the distance function and minimizing the resulting function
-of two variables with the second derivative test. In the next example we
-solve the same problem with Lagrange multipliers, and then once more
-using the normal vector to the plane.
-</p>
-
-<example xml:id="example-lagrange-distance">
-<title>Shortest Distance to a Plane, Revisited</title>
-<statement>
-<p>
-Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
-<m>x + 2y + z = 4</m>.
-</p>
-</statement>
-<solution>
-
-<p>
-We find the closest point on the plane <m>x + 2y + z = 4</m> to the
-point <m>(1,0,-2)</m>. The distance from a point <m>(x,y,z)</m> to
-<m>(1,0,-2)</m> is
-<m>\sqrt{(x-1)^2 + y^2 + (z+2)^2}</m>, and, as before, minimizing the
-distance is the same as minimizing its square. So we minimize
-<md xml:id="eq-lagrange-distance-f" number="yes">
-f(x,y,z) = (x-1)^2 + y^2 + (z+2)^2
-</md>
-subject to the constraint
-<md xml:id="eq-lagrange-distance-g" number="yes">
-g(x,y,z) = x + 2y + z - 4 = 0.
-</md>
-</p>
-<p>
-We compute the gradients:
-<md>
-<mrow>\nabla f \amp= 2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
-<mrow>\nabla g \amp= \hat{\imath} + 2\,\hat{\jmath} + \hat{k}.</mrow>
-</md>
-The Lagrange multiplier equation gives
-<md xml:id="eq-lagrange-distance-system">
-<mrow>\nabla f = \lambda\,\nabla g \amp\;\Rightarrow\;
-2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
-<mrow>\amp= \lambda\,\hat{\imath} + 2\lambda\,\hat{\jmath} + \lambda\,\hat{k}.</mrow>
-</md>
-so that
-<md xml:id="eq-lagrange-distance-xyz" number="yes">
-x = \frac{\lambda}{2} + 1, \qquad
-y = \lambda, \qquad
-z = \frac{\lambda}{2} - 2.
-</md>
-We substitute these into the equation of the constraint to find
-<m>\lambda</m>:
-<md xml:id="eq-lagrange-distance-lambda">
-<mrow>g(x,y,z) = x + 2y + z - 4 \amp= 0</mrow>
-<mrow>\amp\;\Rightarrow\; 3\lambda - 5 = 0
-\;\Rightarrow\; \lambda = \frac{5}{3}.</mrow>
-</md>
-</p>
-<p>
-Therefore the closest point on the plane <m>x + 2y + z = 4</m> to the
-point <m>(1,0,-2)</m> is
-<md xml:id="eq-lagrange-distance-point" number="yes">
-\left(\frac{11}{6},\; \frac{5}{3},\; -\frac{7}{6}\right)
-</md>
-and their distance is
-<md xml:id="eq-lagrange-distance-value" number="yes">
-d = \sqrt{\left(\frac{11}{6} - 1\right)^2
-+ \left(\frac{5}{3}\right)^2
-+ \left(-\frac{7}{6} + 2\right)^2}
-= \frac{5}{6}\sqrt{6},
-</md>
-in agreement with <xref ref="example-shortest-distance"/>.
-</p>
-</solution>
-
-<solution>
-<title>Another Solution, Using the Normal to the Plane</title>
-
-<p>
-To find the closest point on the plane <m>x + 2y + z = 4</m> to the
-point <m>P_0(1,0,-2)</m>, we assume that the point <m>P(x,y,z)</m> on
-the plane is the closest point to <m>P_0</m>. As
-<xref ref="fig-lagrange-plane-prefigure"/> shows, the segment realizing
-the shortest distance meets the plane perpendicularly, so the vector
-<m>\overrightarrow{P_0 P}</m> must be parallel to the normal vector
-<m>\mathbf n = \hat{\imath} + 2\,\hat{\jmath} + \hat{k}</m> of the plane:
-<md>
-<mrow>\overrightarrow{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
-<mrow xml:id="eq-lagrange-normal-parallel" number="yes">\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
-</md>
-We then substitute <xref ref="eq-lagrange-normal-parallel"/> into the
-equation of the plane:
-<md xml:id="eq-lagrange-normal-solve">
-<mrow>(\lambda + 1) + 2(2\lambda) + (\lambda - 2) \amp= 4
-\;\Rightarrow\; \lambda = \frac{5}{6}</mrow>
-<mrow>\amp\;\Rightarrow\; x = \frac{11}{6}, \quad y = \frac{5}{3}, \quad z = -\frac{7}{6},</mrow>
-</md>
-and therefore the minimum distance is again
-<m>d = \frac{5}{6}\sqrt{6}</m>.
-</p>
-<p>
-The two solutions are closely related. At the closest point,
-<m>\nabla f = 2\langle x-1,\, y,\, z+2\rangle = 2\,\overrightarrow{P_0 P}</m>,
-while <m>\nabla g = \langle 1,2,1\rangle = \mathbf n</m>. So the
-Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> says precisely
-that <m>\overrightarrow{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
-method of Lagrange multipliers rediscovers the geometry on its own.
-</p>
-</solution>
-</example>
-
-<figure xml:id="fig-lagrange-plane-prefigure">
-<caption>
-A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
-point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
-plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
-which reach the plane in any other direction, are longer.
-</caption>
-<image width="75%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-plane">
-<diagram dimensions="(450,290)" margins="10">
-<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
-<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
-      stroke="#009E73" thickness="2.5"/>
-<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
-      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
-<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
-      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
-<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
-      stroke="black" thickness="1.5"/>
-<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
-      stroke="black" thickness="1.5"/>
-<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
-        stroke="#D55E00" thickness="3"/>
-<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
-        stroke="#0072B2" thickness="3"/>
-<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
-<m>P_0(1,0,-2)</m>
-</point>
-<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
-<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
-</point>
-<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
-<m>x+2y+z=4</m>
-</label>
-<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
-<m>d=\frac{5}{6}\sqrt{6}</m>
-</label>
-<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
-<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
-  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
-  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
-  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
-  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
-  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
-  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
-  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
 </annotation>
 </annotations>
 </diagram>
@@ -984,6 +809,311 @@ tangent to the constraint circle, while an intermediate level curve
 </figure>
 
 </subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-lagrange-three-variables">
+<title>Examples: Functions of Three Variables</title>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="sec-lagrange-example-distance">
+<title>Shortest Distance to a Plane</title>
+
+<p>
+In <xref ref="example-shortest-distance"/> we found the shortest
+distance from a point to a plane by substituting the equation of the
+plane into the distance function and minimizing the resulting function
+of two variables with the second derivative test. In the next example we
+solve the same problem with Lagrange multipliers, and then once more
+using the normal vector to the plane.
+</p>
+
+<example xml:id="example-lagrange-distance">
+<title>Shortest Distance to a Plane, Revisited</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+</statement>
+<solution>
+
+<p>
+We find the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>(1,0,-2)</m>. The distance from a point <m>(x,y,z)</m> to
+<m>(1,0,-2)</m> is
+<m>\sqrt{(x-1)^2 + y^2 + (z+2)^2}</m>, and, as before, minimizing the
+distance is the same as minimizing its square. So we minimize
+<md xml:id="eq-lagrange-distance-f" number="yes">
+f(x,y,z) = (x-1)^2 + y^2 + (z+2)^2
+</md>
+subject to the constraint
+<md xml:id="eq-lagrange-distance-g" number="yes">
+g(x,y,z) = x + 2y + z - 4 = 0.
+</md>
+</p>
+<p>
+We compute the gradients:
+<md>
+<mrow>\nabla f \amp= 2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
+<mrow>\nabla g \amp= \hat{\imath} + 2\,\hat{\jmath} + \hat{k}.</mrow>
+</md>
+The Lagrange multiplier equation gives
+<md xml:id="eq-lagrange-distance-system">
+<mrow>\nabla f = \lambda\,\nabla g \amp\;\Rightarrow\;
+2(x-1)\,\hat{\imath} + 2y\,\hat{\jmath} + 2(z+2)\,\hat{k}</mrow>
+<mrow>\amp= \lambda\,\hat{\imath} + 2\lambda\,\hat{\jmath} + \lambda\,\hat{k}.</mrow>
+</md>
+so that
+<md xml:id="eq-lagrange-distance-xyz" number="yes">
+x = \frac{\lambda}{2} + 1, \qquad
+y = \lambda, \qquad
+z = \frac{\lambda}{2} - 2.
+</md>
+We substitute these into the equation of the constraint to find
+<m>\lambda</m>:
+<md xml:id="eq-lagrange-distance-lambda">
+<mrow>g(x,y,z) = x + 2y + z - 4 \amp= 0</mrow>
+<mrow>\amp\;\Rightarrow\; 3\lambda - 5 = 0
+\;\Rightarrow\; \lambda = \frac{5}{3}.</mrow>
+</md>
+</p>
+<p>
+Therefore the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>(1,0,-2)</m> is
+<md xml:id="eq-lagrange-distance-point" number="yes">
+\left(\frac{11}{6},\; \frac{5}{3},\; -\frac{7}{6}\right)
+</md>
+and their distance is
+<md xml:id="eq-lagrange-distance-value" number="yes">
+d = \sqrt{\left(\frac{11}{6} - 1\right)^2
++ \left(\frac{5}{3}\right)^2
++ \left(-\frac{7}{6} + 2\right)^2}
+= \frac{5}{6}\sqrt{6},
+</md>
+in agreement with <xref ref="example-shortest-distance"/>.
+</p>
+</solution>
+
+<solution>
+<title>Another Solution, Using the Normal to the Plane</title>
+
+<p>
+To find the closest point on the plane <m>x + 2y + z = 4</m> to the
+point <m>P_0(1,0,-2)</m>, we assume that the point <m>P(x,y,z)</m> on
+the plane is the closest point to <m>P_0</m>. As
+<xref ref="fig-lagrange-plane-prefigure"/> shows, the segment realizing
+the shortest distance meets the plane perpendicularly, so the vector
+<m>\overrightarrow{P_0 P}</m> must be parallel to the normal vector
+<m>\mathbf n = \hat{\imath} + 2\,\hat{\jmath} + \hat{k}</m> of the plane:
+<md>
+<mrow>\overrightarrow{P_0 P} = \langle x - 1,\; y,\; z + 2\rangle \amp= \lambda\,\langle 1, 2, 1\rangle</mrow>
+<mrow xml:id="eq-lagrange-normal-parallel" number="yes">\amp\;\Rightarrow\; x = \lambda + 1, \quad y = 2\lambda, \quad z = \lambda - 2.</mrow>
+</md>
+We then substitute <xref ref="eq-lagrange-normal-parallel"/> into the
+equation of the plane:
+<md xml:id="eq-lagrange-normal-solve">
+<mrow>(\lambda + 1) + 2(2\lambda) + (\lambda - 2) \amp= 4
+\;\Rightarrow\; \lambda = \frac{5}{6}</mrow>
+<mrow>\amp\;\Rightarrow\; x = \frac{11}{6}, \quad y = \frac{5}{3}, \quad z = -\frac{7}{6},</mrow>
+</md>
+and therefore the minimum distance is again
+<m>d = \frac{5}{6}\sqrt{6}</m>.
+</p>
+<p>
+The two solutions are closely related. At the closest point,
+<m>\nabla f = 2\langle x-1,\, y,\, z+2\rangle = 2\,\overrightarrow{P_0 P}</m>,
+while <m>\nabla g = \langle 1,2,1\rangle = \mathbf n</m>. So the
+Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> says precisely
+that <m>\overrightarrow{P_0 P}</m> is parallel to the normal <m>\mathbf n</m>: the
+method of Lagrange multipliers rediscovers the geometry on its own.
+</p>
+</solution>
+</example>
+
+<figure xml:id="fig-lagrange-plane-prefigure">
+<caption>
+A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
+point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
+plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
+which reach the plane in any other direction, are longer.
+</caption>
+<image width="75%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-lagrange-plane">
+<diagram dimensions="(450,290)" margins="10">
+<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
+<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
+      stroke="#009E73" thickness="2.5"/>
+<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
+      stroke="black" thickness="1.5"/>
+<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
+      stroke="black" thickness="1.5"/>
+<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
+        stroke="#0072B2" thickness="3"/>
+<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
+<m>P_0(1,0,-2)</m>
+</point>
+<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
+<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
+</point>
+<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
+<m>x+2y+z=4</m>
+</label>
+<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
+<m>d=\frac{5}{6}\sqrt{6}</m>
+</label>
+<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
+<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
+  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
+  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
+  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
+  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
+  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
+  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
+  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="sec-lagrange-example-box">
+<title>Minimizing the Cost of a Box</title>
+
+<exercise xml:id="exer-jewelry-box">
+  <title>Minimizing the cost of a box</title>
+
+  <statement>
+    <p>
+      A jewelry box is to be constructed of material that costs
+      <dollar/>1 per square inch for the bottom, <dollar/>2 per square
+      inch for the sides, and <dollar/>5 per square inch for the top.
+      If the total volume is to be <m>96 \text{ in}^3</m>, what
+      dimensions will minimize the total cost of construction?
+    </p>
+
+    <figure xml:id="fig-jewelry-box">
+      <caption>
+        The box with dimensions <m>x</m>, <m>y</m>, <m>z</m>: bottom and
+        top of area <m>xy</m>, and sides of areas <m>xz</m> and
+        <m>yz</m>.
+      </caption>
+      <image xml:id="img-jewelry-box" width="45%">
+        <description>
+          A rectangular box drawn in three dimensions, with the
+          horizontal edges of the base labeled x and y and the vertical
+          edge labeled z.
+        </description>
+        <latex-image label="jewelry-box">
+          \begin{tikzpicture}[line join=round, scale=1.0]
+            \def\W{4}   % x : front width
+            \def\H{2.5} % z : height
+            \def\OX{1.5}\def\OY{0.85} % oblique offsets for the y depth
+            % faces
+            \fill[orange!30] (0,0) rectangle (\W,\H);
+            \fill[orange!50]
+              (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+            \fill[orange!40]
+              (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+            % hidden edges
+            \draw[orange!60!black, dashed]
+              (0,0) -- (\OX,\OY) -- (\W+\OX,\OY);
+            \draw[orange!60!black, dashed] (\OX,\OY) -- (\OX,\H+\OY);
+            % visible edges
+            \draw[orange!60!black, thick] (0,0) rectangle (\W,\H);
+            \draw[orange!60!black, thick]
+              (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H);
+            \draw[orange!60!black, thick]
+              (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY);
+            % dimension labels
+            \node[below] at (\W/2, 0) {$x$};
+            \node[below right] at (\W + 0.5*\OX, 0.5*\OY) {$y$};
+            \node[right] at (\W+\OX, \OY + 0.5*\H) {$z$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>x</m> and <m>y</m> be the dimensions of the base and
+      <m>z</m> the height.  The bottom costs <m>1\cdot xy</m>, the top
+      costs <m>5\cdot xy</m>, and the four sides cost
+      <m>2(2xz) + 2(2yz)</m>, so the total cost of construction is
+      <me>
+        C(x,y,z) = 6xy + 4xz + 4yz,
+      </me>
+      with partial derivatives
+      <me>
+        C_x = 6y + 4z, \qquad
+        C_y = 6x + 4z, \qquad
+        C_z = 4x + 4y.
+      </me>
+      The volume requirement gives the constraint
+      <me>
+        g(x,y,z) = xyz - 96 = 0,
+      </me>
+      with <m>g_x = yz</m>, <m>g_y = xz</m>, <m>g_z = xy</m>.
+    </p>
+
+    <p>
+      The Lagrange condition <m>\nabla C = \lambda\,\nabla g</m> gives
+      the system
+      <me>
+        6y + 4z = \lambda yz, \qquad
+        6x + 4z = \lambda xz, \qquad
+        4x + 4y = \lambda xy.
+      </me>
+      Multiplying the equations by <m>x</m>, <m>y</m>, <m>z</m>
+      respectively makes each right-hand side equal to
+      <m>\lambda xyz</m>:
+      <me>
+        6xy + 4xz = 6xy + 4yz = 4xz + 4yz.
+      </me>
+      The first equality gives <m>4xz = 4yz</m>, so <m>x = y</m>.
+      The second gives <m>6xy = 4xz</m>, so <m>z = \frac{3}{2}y</m>.
+    </p>
+
+    <p>
+      Substituting <m>y = x</m> and <m>z = \frac{3}{2}x</m> into the
+      constraint <m>xyz = 96</m>,
+      <me>
+        (x)(x)\left(\tfrac{3}{2}x\right) = 96
+        \qquad\Longrightarrow\qquad
+        x^3 = 64,
+      </me>
+      so <m>x = 4</m>.  The cost is minimized by the dimensions
+      <me>
+        x = 4, \qquad y = 4, \qquad z = 6.
+      </me>
+    </p>
+  </solution>
+</exercise>
+
+</subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-lagrange-functions-n-variables">
+<title>Functions of <m>n</m> Variables</title>
 
 <!-- ================================================================ -->
 <subsubsection xml:id="sec-lagrange-n-variables">
