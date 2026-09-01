@@ -10,31 +10,52 @@ changing `publication/`, `project.ptx`, or the chapter order in
 `source/main.ptx` beyond what the workflows below require (adding or
 uncommenting a single `<xi:include>`).
 
-Its companion repo is `mahmadi-ops/MATH13-Syllabus-Fall2026` (the syllabus).
-Every posting action here ends with a row added to the posted-materials
-table there (`source/updates.ptx`); its `CLAUDE.md` has the row format. If
-that repo is not available in the session, add it (`add_repo`) or, failing
-that, give the instructor the exact `<row>` to paste.
+Its companion repos:
+
+- `mahmadi-ops/MATH13-Syllabus-Fall2026` (the syllabus). Every posting
+  action ends with a row added to the posted-materials table there
+  (`source/updates.ptx`); its `CLAUDE.md` has the row format.
+- `mahmadi-ops/M13-Skeletal-Notes` (published at
+  https://mahmadi-ops.github.io/M13-Skeletal-Notes/). **Assignments,
+  solutions, review problem sets, and skeletal (fill-in) notes are posted
+  from that repo, not this one.** This repo posts only the completed
+  lecture notes. See that repo's `CLAUDE.md` for its posting rules.
+
+If a companion repo is not available in the session, add it (`add_repo`)
+or, failing that, give the instructor the exact change to paste.
 
 ## The Posting Desk (click-to-post panel)
 
 The instructor has a private control-panel artifact, the **Posting Desk**:
 https://claude.ai/code/artifact/806060e5-7cc7-41fe-bee1-014bc1fbc2aa
 
-Buttons on it create requests; a scheduled Routine ("MATH 13 Posting Desk —
-process clicks", hourly) has Claude read the panel and act. When asked to
-"check the posting desk" (or when the Routine fires):
+Buttons on it either run instantly through the instructor's GitHub
+connection (see "The instant path" below) or queue a request on the panel;
+the instructor then says "check the posting desk" in a Claude chat. (The
+hourly Routine that used to sweep the panel is disabled at the
+instructor's request.) When asked to check the desk:
 
 1. Read the artifact (Artifact tool, `action: "read"`). Its
    `<script id="state">` block holds JSON with `requests[]`; act on every
-   request whose `status` is `"sent"`.
-   - `kind: "notes"` (`key` = the section's xml:id) → the Posting-notes
-     workflow below.
-   - `kind: "assignment"` (`payload.n`, `payload.due`) → the
-     Posting-an-assignment workflow.
-   - `kind: "release"` (`payload.n`) → the Releasing-solutions workflow.
+   request whose `status` is `"sent"`. Requests carry a `payload.repo`
+   naming which repo they act on (`M13-Mehdi` for completed notes;
+   `M13-Skeletal-Notes` for skeletal notes, assignments, review sets, and
+   solutions).
+   - `kind: "notes"` (`key` = the topic key) → the Posting-notes workflow
+     below, in the named repo. In M13-Skeletal-Notes, toggle the include
+     with `scripts/desk_action.py <post-notes|unpost-notes> <key>` there
+     (sections usually need their referencing assignments/review sets
+     handled together — that is exactly why they queue).
+   - `kind: "assignment"` (`payload.n`, `payload.due`, `payload.key`) →
+     post the assignment worksheet in M13-Skeletal-Notes (toggle its
+     include) and add the syllabus row with the due date.
+   - `kind: "lock"` (`payload.n`) → wrap that assignment's solutions in
+     SOLUTION-LOCKED markers in M13-Skeletal-Notes (they are public by
+     default there).
+   - `kind: "release"` (`payload.n`) → the Releasing-solutions workflow,
+     in M13-Skeletal-Notes.
    - `kind: "unpost-notes"`, `"unpost-assignment"`, `"relock"` → the
-     Unposting workflows below.
+     Unposting workflows below, in the named repo.
    - `kind: "custom"` (`payload.text`) → the instructor's free-text
      instruction, if it is routine posting work; otherwise mark it
      `needs-input` and say why.
@@ -64,17 +85,20 @@ history.
 
 ### The instant path (no Claude in the loop)
 
-For mechanically safe topics (marked `instant: true` in the panel state)
-a notes Post/Unpost click does **not** create a request: the page itself
-dispatches `desk.yml` here (runs `scripts/desk_action.py`, which toggles
-the topic's include, wraps dependent exercise sets with
-`UNPOSTED-WITH topic="<key>"` markers, validates, commits to `main`, and
-re-runs the deploy) and `desk-row.yml` in the syllabus repo (runs
-`scripts/desk_row.py` to add or remove the table row). Claude only sees
-those clicks in the panel's log. Keep `scripts/desk_action.py`'s topic
-map and the panel's topic list in sync with the book; topics whose
-removal would break other topics' pages stay `instant: false` and come
-through the request queue as before.
+For mechanically safe items (marked `instant: true` in the panel state)
+a Post/Unpost click does **not** create a request: the page commits a
+small JSON request file into `desk-requests/` of the target repo (this
+one for completed notes; M13-Skeletal-Notes for skeletal notes,
+assignments and review sets) through the instructor's GitHub connection,
+plus a row request handled by the syllabus repo. Each repo's
+`desk-requests.yml` workflow applies the file with its
+`scripts/desk_action.py` (toggles the include, wraps dependents with
+`UNPOSTED-WITH topic="<key>"` markers, validates, commits to `main`,
+bails cleanly to the queue if it cannot be done mechanically) and
+re-runs the deploy. Claude only sees those clicks in the panel's log.
+Keep each repo's topic map and the panel's lists in sync with its book;
+items whose removal would break other live pages stay `instant: false`
+and come through the request queue.
 
 ## The three routine workflows
 
@@ -108,32 +132,29 @@ just describing what happened in class:
    `https://mahmadi-ops.github.io/M13-Mehdi/<xml-id>.html`, today's date,
    `<mdash/>` for the due date.
 
-## Posting an assignment
+## Posting an assignment / releasing or locking solutions
 
-1. Assignment problems live as worksheets/exercise sets under the Exercises
-   chapter (`source/exercises.ptx` includes one file per topic — follow that
-   pattern; new sets go in a new `exercises-*.ptx` file included from
-   `exercises.ptx`).
-2. Every `<solution>`, `<answer>`, and `<hint>` of the assignment's problems
-   must be wrapped in a SOLUTION-LOCKED comment (below) before pushing.
-   `publication/publication.ptx` shows solutions book-wide, so an unwrapped
-   `<solution>` is publicly visible the moment it reaches `main`.
-3. Validate, build, commit, push.
-4. Syllabus-table row: `Assignment <n>` with the link **and the due date**
-   (assignments are due Fridays 11:59 PM; Wednesday in exam weeks 3, 6, 9).
+**These now happen in `mahmadi-ops/M13-Skeletal-Notes`, not here** — the
+ten assignment worksheets and four review problem sets live in that
+book's Exercises chapter, one file each, included from its
+`source/exercises.ptx`. Posting one is the include-toggle workflow above
+run in that repo; the syllabus row is `Assignment <n>` linking to
+`https://mahmadi-ops.github.io/M13-Skeletal-Notes/worksheet-assignment-<n>.html`
+**with the due date** (assignments are due Fridays 11:59 PM; Wednesday
+in exam weeks 3, 6, 9).
 
-## Releasing solutions (after the due date)
+Solutions in that book are **public by default** (its publication file
+shows divisional solutions, folded behind a link — that is the design its
+AI tutor assumes). Locking is opt-in: on a `lock` request, wrap that
+assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
+markers (convention below) in its `assignment-<n>-*.ptx`; `release`
+after the due date deletes only the two marker lines; `relock` re-wraps.
+Syllabus-table row on release: `Solutions: Assignment <n>`, today's
+date, and `was due <date>` in the due-date column.
 
-1. Find the locked blocks: `grep -rn "SOLUTION-LOCKED" source/`.
-2. Confirm the named assignment's due date has actually passed (ask the
-   instructor if the date in the marker is in the future).
-3. Unlock by deleting **only the two marker lines** (the opening
-   `<!-- SOLUTION-LOCKED ...` line and the closing `END SOLUTION-LOCKED -->`
-   line), leaving the `<solution>`/`<answer>`/`<hint>` element intact and
-   correctly indented.
-4. Validate, build, commit, push.
-5. Syllabus-table row: `Solutions: Assignment <n>`, today's date, and
-   `was due <date>` in the due-date column.
+This repo (the completed notes) still hosts exercise worksheets under
+its own Exercises chapter for the notes pages themselves; the skeletal
+rule below still applies to anything posted here.
 
 ## Unposting (the reverse workflows)
 
