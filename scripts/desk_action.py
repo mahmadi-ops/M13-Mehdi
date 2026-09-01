@@ -22,7 +22,6 @@ SRC = "source"
 # topic xml:id -> (file holding its include, include href)
 TOPICS = {
     "chapter-hyperbolic-functions": ("source/main.ptx", "ch-7-3.ptx"),
-    "skel-chapter-hyperbolic-functions": ("source/main.ptx", "ch-hyperbolic-skeletal.ptx"),
     "chapter-infinite-series": ("source/ch-series-sequences.ptx", "ch-10-2.ptx"),
     "chapter-taylor-maclaurin": ("source/ch-series-sequences.ptx", "ch-10-8.ptx"),
     "section-taylor": ("source/ch-series-sequences.ptx", "Taylor.ptx"),
