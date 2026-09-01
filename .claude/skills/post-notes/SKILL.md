@@ -1,6 +1,6 @@
 ---
 name: post-notes
-description: Post the class notes for a topic the instructor covered in class — make the topic's section live in the published book and log it in the syllabus posted-materials table. Use when the instructor says they covered a topic and wants the notes posted/published/up.
+description: Post the completed class notes for a topic the instructor covered in class — make the topic's section live in the published book and log it on the Posting Desk. Use when the instructor says they covered a topic and wants the notes posted/published/up.
 ---
 
 # Post class notes for a topic

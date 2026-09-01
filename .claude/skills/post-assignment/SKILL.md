@@ -1,6 +1,6 @@
 ---
 name: post-assignment
-description: Post an assignment's problem set to the course-notes book with questions visible and solutions locked until the due date, and log it with its due date in the syllabus posted-materials table. Use when the instructor wants an assignment/problem set posted.
+description: Post an assignment's problem set (the standing ten live in the M13-Skeletal-Notes book) with questions visible and, when the instructor wants, solutions locked until the due date; log it on the Posting Desk. Use when the instructor wants an assignment/problem set posted.
 ---
 
 # Post an assignment (questions now, solutions locked)

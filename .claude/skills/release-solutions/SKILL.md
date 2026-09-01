@@ -1,6 +1,6 @@
 ---
 name: release-solutions
-description: Release (unlock) the solutions of an assignment in the published course-notes book after its due date has passed, and log the release in the syllabus posted-materials table. Use when the instructor says a due date passed or asks to post/release/unlock solutions.
+description: Release (unlock) an assignment's locked solutions after its due date has passed (the standing ten assignments live in the M13-Skeletal-Notes book), and log the release on the Posting Desk. Use when the instructor says a due date passed or asks to post/release/unlock solutions.
 ---
 
 # Release an assignment's solutions
