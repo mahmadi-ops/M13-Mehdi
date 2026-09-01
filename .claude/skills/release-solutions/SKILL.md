@@ -21,9 +21,8 @@ Follow the **Releasing solutions** workflow in this repo's `CLAUDE.md`:
 4. Validate (`xmllint` on each touched file; `pretext build web` when
    available), commit, push to the session's designated branch. Re-grep to
    confirm no marker fragments remain in the released blocks.
-5. In `mahmadi-ops/MATH13-Syllabus-Fall2026`, add a row to the top of the
-   table in `source/updates.ptx`: today's date,
-   `Solutions: Assignment <n>` linked to the page holding the problems, and
-   `was due <date>` in the due-date column. Commit and push there too; if
-   the repo can't be added to the session, output the ready-to-paste
-   `<row>`.
+5. Update the Posting Desk panel's state (released/solutions state, log
+   entry) per `CLAUDE.md`. (The syllabus's posted-materials table was
+   removed at the instructor's request — no syllabus row any more. The
+   ten standing assignments and their solutions live in
+   `mahmadi-ops/M13-Skeletal-Notes`.)
