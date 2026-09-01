@@ -23,11 +23,12 @@ Follow the **Posting an assignment** workflow in this repo's `CLAUDE.md`:
    that each one sits inside a locked block.
 3. Validate (`xmllint`, `pretext build web` when available), commit, push
    to the session's designated branch.
-4. In `mahmadi-ops/MATH13-Syllabus-Fall2026`, add a row to the top of the
-   table in `source/updates.ptx`: today's date, `Assignment <n>` linked to
-   its page, and the **due date** (e.g. `Fri Oct 2, 11:59 PM`). Commit and
-   push there too; if the repo can't be added to the session, output the
-   ready-to-paste `<row>`.
+4. Update the Posting Desk panel's state (posted date, due date, log
+   entry) per `CLAUDE.md`. (The syllabus's posted-materials table was
+   removed at the instructor's request — no syllabus row any more.
+   Note the ten standing assignments live in `mahmadi-ops/M13-Skeletal-Notes`
+   and are posted by toggling their includes there; this skill's
+   solution-locking steps apply to whichever repo holds the problems.)
 5. Offer to schedule the solution release for after the due date if the
    session has a scheduling tool; otherwise remind the instructor to run
    `/release-solutions <n>` once the due date passes.

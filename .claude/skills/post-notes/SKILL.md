@@ -20,9 +20,8 @@ Follow the **Posting notes** workflow in this repo's `CLAUDE.md`, in short:
    only — wrap any `<solution>`/`<answer>`/`<hint>` with the SOLUTION-LOCKED
    markers defined in `CLAUDE.md`.
 4. Validate (`xmllint`, and `pretext build web` when available), commit,
-   push to the session's designated branch.
-5. In `mahmadi-ops/MATH13-Syllabus-Fall2026`, add a row to the top of the
-   table in `source/updates.ptx`: today's date, `Notes: <topic>` linked to
-   the section's page (`https://mahmadi-ops.github.io/M13-Mehdi/<xml-id>.html`),
-   `<mdash/>` for due date. Commit and push there too. If that repo isn't in
-   the session and can't be added, output the ready-to-paste `<row>` instead.
+   push to the session's designated branch. The page goes live at
+   `https://mahmadi-ops.github.io/M13-Mehdi/<xml-id>.html`.
+5. Update the Posting Desk panel's state (posted date, log entry) per
+   `CLAUDE.md`. (The syllabus's posted-materials table was removed at the
+   instructor's request — no syllabus row any more.)

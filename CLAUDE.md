@@ -12,9 +12,9 @@ uncommenting a single `<xi:include>`).
 
 Its companion repos:
 
-- `mahmadi-ops/MATH13-Syllabus-Fall2026` (the syllabus). Every posting
-  action ends with a row added to the posted-materials table there
-  (`source/updates.ptx`); its `CLAUDE.md` has the row format.
+- `mahmadi-ops/MATH13-Syllabus-Fall2026` (the syllabus). Posting actions
+  do not touch it — its posted-materials table was removed at the
+  instructor's request (Sep 2026).
 - `mahmadi-ops/M13-Skeletal-Notes` (published at
   https://mahmadi-ops.github.io/M13-Skeletal-Notes/). **Assignments,
   solutions, review problem sets, and skeletal (fill-in) notes are posted
@@ -48,7 +48,7 @@ instructor's request.) When asked to check the desk:
      handled together — that is exactly why they queue).
    - `kind: "assignment"` (`payload.n`, `payload.due`, `payload.key`) →
      post the assignment worksheet in M13-Skeletal-Notes (toggle its
-     include) and add the syllabus row with the due date.
+     include).
    - `kind: "lock"` (`payload.n`) → wrap that assignment's solutions in
      SOLUTION-LOCKED markers in M13-Skeletal-Notes (they are public by
      default there).
@@ -89,9 +89,8 @@ For mechanically safe items (marked `instant: true` in the panel state)
 a Post/Unpost click does **not** create a request: the page commits a
 small JSON request file into `desk-requests/` of the target repo (this
 one for completed notes; M13-Skeletal-Notes for skeletal notes,
-assignments and review sets) through the instructor's GitHub connection,
-plus a row request handled by the syllabus repo. Each repo's
-`desk-requests.yml` workflow applies the file with its
+assignments and review sets) through the instructor's GitHub connection.
+The repo's `desk-requests.yml` workflow applies the file with its
 `scripts/desk_action.py` (toggles the include, wraps dependents with
 `UNPOSTED-WITH topic="<key>"` markers, validates, commits to `main`,
 bails cleanly to the queue if it cannot be done mechanically) and
@@ -127,10 +126,8 @@ just describing what happened in class:
    hands out skeletal/fill-in notes in class; the posted page mirrors them
    plus the completed exposition.)
 4. Validate and build (see "Validating a change"), commit, push to the
-   session's designated branch.
-5. Add the syllabus-table row: `Notes: <topic>` linking to
-   `https://mahmadi-ops.github.io/M13-Mehdi/<xml-id>.html`, today's date,
-   `<mdash/>` for the due date.
+   session's designated branch. The page goes live at
+   `https://mahmadi-ops.github.io/M13-Mehdi/<xml-id>.html`.
 
 ## Posting an assignment / releasing or locking solutions
 
@@ -138,10 +135,9 @@ just describing what happened in class:
 ten assignment worksheets and four review problem sets live in that
 book's Exercises chapter, one file each, included from its
 `source/exercises.ptx`. Posting one is the include-toggle workflow above
-run in that repo; the syllabus row is `Assignment <n>` linking to
+run in that repo; the page is
 `https://mahmadi-ops.github.io/M13-Skeletal-Notes/worksheet-assignment-<n>.html`
-**with the due date** (assignments are due Fridays 11:59 PM; Wednesday
-in exam weeks 3, 6, 9).
+(assignments are due Fridays 11:59 PM; Wednesday in exam weeks 3, 6, 9).
 
 Solutions in that book are **public by default** (its publication file
 shows divisional solutions, folded behind a link — that is the design its
@@ -149,8 +145,6 @@ AI tutor assumes). Locking is opt-in: on a `lock` request, wrap that
 assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
 markers (convention below) in its `assignment-<n>-*.ptx`; `release`
 after the due date deletes only the two marker lines; `relock` re-wraps.
-Syllabus-table row on release: `Solutions: Assignment <n>`, today's
-date, and `was due <date>` in the due-date column.
 
 This repo (the completed notes) still hosts exercise worksheets under
 its own Exercises chapter for the notes pages themselves; the skeletal
@@ -170,19 +164,16 @@ only, never done on your own judgment.
   the build breaks — in that case also unpost the referencing exercise
   worksheet if it belongs to the same topic, and otherwise mark the
   request `needs-input` naming the conflicting file instead of forcing
-  it. Finally remove the topic's row from the syllabus table and set the
-  desk state back (`posted: null`, `live: false`).
+  it. Finally set the desk state back (`posted: null`, `live: false`).
 - **Unpost an assignment** (`unpost-assignment`, `payload.n`): same
   wrapper trick on the assignment's include in `source/exercises.ptx`;
-  remove its syllabus row; desk state `posted: null`.
+  desk state `posted: null`, `live: false`.
 - **Re-lock solutions** (`relock`, `payload.n`): re-wrap that
   assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
-  markers (restore the original `assignment`/`due` attributes); remove
-  the `Solutions: Assignment <n>` row; desk state `released: null`.
+  markers (restore the original `assignment`/`due` attributes); desk
+  state `solutions: "locked"`.
 
-Removing a syllabus row is allowed **only** here, and only the row of the
-item being unposted — the newest-first order of the remaining rows stays
-untouched. Validate and push exactly as for posting.
+Validate and push exactly as for posting.
 
 ## The SOLUTION-LOCKED convention
 
@@ -220,8 +211,8 @@ Before any push:
    malformed marker shows up here).
 2. If the PreTeXt CLI is available (`pip install -r requirements.txt`),
    run `pretext build web` and confirm it succeeds; then confirm the target
-   page exists in `output/web/` to get the exact filename for the syllabus
-   link. If the CLI can't be installed in the session, say so and derive
-   the link from the section's `xml:id` instead.
-3. Never mark a solution released, or notes posted, in the syllabus table
-   before the corresponding push has actually been made.
+   page exists in `output/web/` to get its exact filename. If the CLI
+   can't be installed in the session, say so and derive the filename from
+   the section's `xml:id` instead.
+3. Never mark a solution released, or notes posted, on the desk before
+   the corresponding push has actually been made.
