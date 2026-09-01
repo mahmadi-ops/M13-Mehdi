@@ -47,9 +47,8 @@
     <xi:include href="ch-functions-multiple-variables.ptx" />
     <!-- Chapter 5: the problem sets, gathered after the content chapters -->
     <xi:include href="exercises.ptx" />
-    <!-- Skeletal (fill-in) notes, out of the book for now.  The source and
-         its generated figures are still in the repo; restore by uncommenting.
-    <xi:include href="ch-hyperbolic-skeletal.ptx" /> -->
+    <!-- Skeletal (fill-in) notes: posted and unposted from the Posting Desk. -->
+    <!-- UNPOSTED <xi:include href="ch-hyperbolic-skeletal.ptx" /> UNPOSTED -->
   </book>
 
 </pretext>
