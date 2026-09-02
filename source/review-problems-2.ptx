@@ -1,0 +1,3541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review Problems #2.
+
+  Everything from the Chapter 3 worksheets (three-dimensional coordinates,
+  vectors, the dot product, the cross product, parametrization of plane
+  curves, lines and planes, conic sections and quadric surfaces) that the
+  instructor's markup marked R2 rather than assigning to Assignments 4-6.
+
+  Starred problems (ex-cross-circular-motion, the three projectile exercises
+  and exer-parabolic-antenna) are optional and will not be examined.
+
+  ex-3d-parabolic-cylinder and ex-3d-cylinder-paraboloid-solid came from the
+  three-dimensional coordinates worksheet; the markup asks for them to sit
+  with the quadric surfaces problems, so they are last.
+
+  rs-multiselect-quadrics ("Which of These Are Hyperboloids?") was moved here
+  from the Interactive Problem Set (exercises-runestone-samples.ptx), where it
+  filled the multiple-select slot.  That worksheet has since been dissolved,
+  and its three Chapter 3 problems (rs-mc-vector-identity,
+  rs-fillin-skew-lines and rs-parsons-no-work) close this file; its Chapter 4
+  problems went to review-problems-3.ptx.
+
+  Those Runestone problems are DEV-schema elements, so validate this file
+  with the CLI's dev schema option; the stable schema reports false positives
+  on them.  See CLAUDE.md for which markup triggers which question type.
+
+  exercise-quadric-graph-match was marked R2 but has since been moved to
+  Assignment 6 at the instructor's request.
+
+  Notation: |v| has become \|v\| for the length of a vector throughout, and
+  m2b-1a, m2b-1b and m2b-1c now use \vec u and \vec v in place of \vec A and
+  \vec B.  pp-10 explains what collinear means, and pp-19 gains a part asking
+  for the xy-projection of the curve of intersection.
+-->
+<worksheet xml:id="worksheet-review-problems-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Review Problems #2</title>
+
+<introduction>
+<p>
+These are the problems from the Chapter 3 topics that were not assigned in
+Assignments 4-6, collected here for review. They are not assigned, but they
+are fair game on an exam. Problems marked with a star (<m>*</m>) are the
+exception: those are for the interested reader and will not be examined.
+</p>
+
+<p>
+The topics they cover, with links to the notes:
+</p>
+
+<p>
+<ul>
+<li><p><xref ref="chapter-three-dimensional-coordinates" text="title"/></p></li>
+<li><p><xref ref="chapter-vectors" text="title"/></p></li>
+<li><p><xref ref="section-dot-product" text="title"/></p></li>
+<li><p><xref ref="section-cross-product" text="title"/></p></li>
+<li><p><xref ref="section-parametrization" text="title"/></p></li>
+<li><p><xref ref="chapter-lines-planes" text="title"/></p></li>
+<li><p><xref ref="section-conics" text="title"/></p></li>
+<li><p><xref ref="section-quadric-surfaces" text="title"/></p></li>
+</ul>
+</p>
+</introduction>
+
+<exercise xml:id="ex-3d-describe-more">
+<title>Describing More Equations and Inequalities Geometrically</title>
+<statement>
+<p>
+Describe the geometrical meaning of the following equalities and
+inequalities.
+<ol marker="A.">
+<li><p><m>y = -2</m></p></li>
+<li><p><m>y = -2,\; z = 1</m></p></li>
+<li><p><m>(x-2)^2 + (y+1)^2 + z^2 = 9</m></p></li>
+<li><p><m>(x-2)^2 + (y+1)^2 + z^2 \le 9,\; y \ge -1</m></p></li>
+<li><p><m>y^2 + z^2 = 4</m></p></li>
+<li><p><m>y^2 + z^2 = 4,\; 0 \le x \le 5</m></p></li>
+<li><p><m>x = y</m></p></li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<alert>A.</alert> This is the set of all points whose <m>y</m>-coordinate
+equals <m>-2</m>, that is <m>\{(x,y,z) \in \R^3 : y = -2\}</m>. Both
+<m>x</m> and <m>z</m> are unrestricted, so it is a plane parallel to the
+<m>xz</m>-plane, sitting two units to the negative side of it, shown in
+<xref ref="fig-ex3d-plane-y"/>.
+</p>
+
+<figure xml:id="fig-ex3d-plane-y">
+<caption>
+Part <alert>A</alert>: the plane <m>y=-2</m>, parallel to the
+<m>xz</m>-plane.
+</caption>
+<image width="55%">
+<description>
+<p>
+A shaded rectangle parallel to the x z plane, offset from it in the
+negative y direction, representing the plane y equals negative two.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.75] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[cyan!55!black] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[->, thick] (0,0,0) -- (-2.2,0,0);
+\draw[->, thick] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,-2.2);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\node[cyan!70!black] at (-1.8,-2,1.5) {$y=-2$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>B.</alert> This is the intersection of the two planes
+<m>y = -2</m> and <m>z = 1</m>, which is a line. Only <m>x</m> is
+unrestricted, so the line is parallel to the <m>x</m>-axis and passes
+through the point <m>(0,-2,1)</m>, as shown in
+<xref ref="fig-ex3d-line-y-z"/>.
+</p>
+
+<figure xml:id="fig-ex3d-line-y-z">
+<caption>
+Part <alert>B</alert>: the planes <m>y=-2</m> and <m>z=1</m> meet in a
+line parallel to the <m>x</m>-axis, highlighted in red.
+</caption>
+<image width="60%">
+<description>
+<p>
+Two shaded planes, one for y equals negative two and one for z equals
+one, crossing each other. Their intersection is a red line parallel to
+the x axis.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+\fill[cyan!25, opacity=0.55] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\fill[orange!25, opacity=0.55] (-1.8,-2.6,1) -- (1.8,-2.6,1) -- (1.8,2.2,1) -- (-1.8,2.2,1) -- cycle;
+\draw[cyan!55!black] (-1.8,-2,-1.8) -- (1.8,-2,-1.8) -- (1.8,-2,1.8) -- (-1.8,-2,1.8) -- cycle;
+\draw[orange!70!black] (-1.8,-2.6,1) -- (1.8,-2.6,1) -- (1.8,2.2,1) -- (-1.8,2.2,1) -- cycle;
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\draw[red!70!black, very thick] (-1.8,-2,1) -- (1.8,-2,1);
+\node[cyan!70!black, anchor=east] at (-1.9,-2,-1.85) {$y=-2$};
+\node[orange!80!black, anchor=west] at (1.9,2.2,1) {$z=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>C.</alert> Comparing with the standard equation of a sphere, this
+is the sphere of radius <m>3</m> centered at <m>(2,-1,0)</m>. Note the
+center lies in the <m>xy</m>-plane, and since the radius is <m>3</m> the
+sphere reaches from <m>z = -3</m> up to <m>z = 3</m>, as shown in
+<xref ref="fig-ex3d-sphere-off"/>.
+</p>
+
+<figure xml:id="fig-ex3d-sphere-off">
+<caption>
+Part <alert>C</alert>: the sphere <m>(x-2)^2+(y+1)^2+z^2=9</m>, of
+radius <m>3</m> centered at <m>(2,-1,0)</m>.
+</caption>
+<image width="45%">
+<description>
+<p>
+A shaded sphere of radius three, offset from the origin toward the
+point two, negative one, zero, with a dotted segment from the origin
+to its center and a dashed ellipse marking its equator.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+\draw[gray, densely dotted] (0,0) -- (-2.78,-0.58);
+\fill[gray] (-2.78,-0.58) circle (1pt);
+\shade[ball color=cyan!30, opacity=0.92] (-2.78,-0.58) circle (1.55cm);
+\draw[cyan!55!black, dashed, opacity=0.8] (-2.78,-0.58) ellipse (1.55cm and 0.43cm);
+\node[gray!70!black, below=2pt] at (-2.78,-0.58) {$(2,-1,0)$};
+% axes drawn last, so they stay visible where they cross the sphere;
+% the x axis is shortened so its arrowhead and label sit in front of
+% the sphere rather than buried in its middle
+\draw[->, thick] (0,0) -- (0,2.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.4,-0.9) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-1.5,-0.69) node[below left=1pt] {$x$};
+\node[above right] at (0,0.05) {$0$};
+\node[below] at (-2.78,-2.5) {$(x-2)^2+(y+1)^2+z^2=9$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>D.</alert> Replacing the equality by <m>\le</m> gives the solid
+ball: every point whose distance from <m>(2,-1,0)</m> is at most
+<m>3</m>. The extra condition <m>y \ge -1</m> keeps only the points on
+one side of the plane <m>y = -1</m>. That plane passes through the
+<em>center</em> of the ball, so exactly half of the ball survives: the
+region is a solid half-ball of radius <m>3</m>, whose flat face is the
+disk of radius <m>3</m> cut out of the plane <m>y = -1</m>, shown in
+<xref ref="fig-ex3d-halfball-off"/>.
+</p>
+
+<figure xml:id="fig-ex3d-halfball-off">
+<caption>
+Part <alert>D</alert>: the half-ball of radius <m>3</m> centered at
+<m>(2,-1,0)</m>, cut by the condition <m>y \ge -1</m>, a plane through
+its center.
+</caption>
+<image width="45%">
+<description>
+<p>
+A shaded hemisphere sitting above a flat disk face at the plane y equals
+negative one, offset from the origin toward the point two, negative one,
+zero, with a dotted segment from the origin to the center of the disk.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=1.05, >=stealth]
+% the flat reference plane y=-1, exactly like part A's plane, so the
+% orientation is guaranteed consistent
+\fill[gray!15, opacity=0.7] (-2,-1,-3.7) -- (6,-1,-3.7) -- (6,-1,3.7) -- (-2,-1,3.7) -- cycle;
+\draw[gray!60, thin] (-2,-1,-3.7) -- (6,-1,-3.7) -- (6,-1,3.7) -- (-2,-1,3.7) -- cycle;
+% the curved dome (y from -1 up to the pole at y=2): stacked latitude
+% circles of shrinking radius sqrt(9-(y+1)^2), each plotted directly in
+% the true 3D coordinate system, giving a rounded, shaded cap
+\foreach \y in {-0.85,-0.7,...,1.9} {
+  \pgfmathsetmacro{\r}{sqrt(9-(\y+1)*(\y+1))}
+  \pgfmathsetmacro{\shd}{25+45*(\y+1)/3}
+  \fill[cyan!\shd, opacity=0.85]
+    plot[domain=0:360, samples=48, smooth cycle] ({2+\r*cos(\x)}, \y, {\r*sin(\x)});
+}
+% the flat cut disk (intersection with y=-1), same color family as the
+% dome so the whole solid reads as one continuous surface
+\fill[cyan!65, opacity=0.9]
+  plot[domain=0:360, samples=72, smooth cycle] ({2+3*cos(\x)}, -1, {3*sin(\x)});
+\draw[cyan!55!black, thick]
+  plot[domain=0:360, samples=72, smooth cycle] ({2+3*cos(\x)}, -1, {3*sin(\x)});
+% dotted line from the origin to the sphere's center
+\draw[gray, densely dotted] (0,0,0) -- (2,-1,0);
+\fill[gray] (2,-1,0) circle (1.3pt);
+% axes drawn last, so they stay visible where they cross the shape
+\draw[->, thick] (0,0,0) -- (-2.2,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.8,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,3.4,0) node[below right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,-3.9);
+\draw[->, thick] (0,0,0) -- (0,0,3.9) node[above] {$z$};
+\node[above right] at (0,0,0) {$0$};
+\node[gray!60!black] at (-1.6,-1,3.6) {$y=-1$};
+\node[gray!70!black, below right=1pt] at (2,-1,0) {$(2,-1,0)$};
+\node[cyan!55!black, below] at (2,-1,-4.2) {$(x-2)^2+(y+1)^2+z^2 \le 9,\; y \ge -1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>E.</alert> In the <m>yz</m>-plane, <m>y^2 + z^2 = 4</m> is a
+circle of radius <m>2</m> centered at the origin. In space <m>x</m> is
+unrestricted, so the equation represents an infinitely long cylinder of
+radius <m>2</m> whose axis is the <m>x</m>-axis. Had the missing
+variable been <m>z</m> instead, the axis would have been the
+<m>z</m>-axis: the axis of the cylinder is always the axis of the
+variable that does not appear. The
+left half of <xref ref="fig-ex3d-cylinder-x"/> shows this cylinder.
+</p>
+
+<p>
+<alert>F.</alert> The extra condition <m>0 \le x \le 5</m> cuts the
+cylinder of part <alert>E</alert> down to a piece of length <m>5</m>,
+running from the circle in the plane <m>x = 0</m> to the circle in the
+plane <m>x = 5</m>, as on the right of
+<xref ref="fig-ex3d-cylinder-x"/>. It is a tube, not a solid: the two
+end disks are not included, since the equation forces
+<m>y^2 + z^2 = 4</m> exactly.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-x">
+<caption>
+Parts <alert>E</alert> and <alert>F</alert>. On the left, the infinite
+cylinder <m>y^2+z^2=4</m>, whose axis is the <m>x</m>-axis; the dashed
+lines indicate that it continues without bound in both directions. On
+the right, the same cylinder cut down to <m>0 \le x \le 5</m>.
+</caption>
+<image width="92%">
+<description>
+<p>
+Two pictures side by side. On the left, a tube of radius two lying along
+the x axis, with dashed lines continuing past both ends to show that it
+is unbounded. On the right, the same tube cut off by the plane x equals
+zero at one end and the plane x equals five at the other, leaving a
+piece of length five with open ends.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.82, >=stealth]
+% ------------- left: the infinite cylinder y^2+z^2=4 -------------
+\begin{scope}
+  % tube wall between the two drawn rims
+  \fill[cyan!22, opacity=0.8] (-1.4,-1.5) rectangle (3.4,1.5);
+  % both rim disks lighter than the wall: the tube is open, not capped,
+  % so only the side wall gets the solid body color
+  \fill[cyan!10, opacity=0.9] (-1.4,0) ellipse (0.42cm and 1.5cm);
+  \fill[cyan!10, opacity=0.9] (3.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black, thick] (-1.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black, thick] (3.4,0) ellipse (0.42cm and 1.5cm);
+  \draw[cyan!55!black] (-1.4,1.5) -- (3.4,1.5);
+  \draw[cyan!55!black] (-1.4,-1.5) -- (3.4,-1.5);
+  % dashed continuations: the cylinder is unbounded in both directions
+  \draw[cyan!55!black, dashed] (-1.4,1.5) -- (-2.1,1.5);
+  \draw[cyan!55!black, dashed] (-1.4,-1.5) -- (-2.1,-1.5);
+  \draw[cyan!55!black, dashed] (3.4,1.5) -- (4.1,1.5);
+  \draw[cyan!55!black, dashed] (3.4,-1.5) -- (4.1,-1.5);
+  % axes last, so they stay visible where they pass through the tube
+  \draw[->, thick] (0,0) -- (0,2.5) node[above] {$z$};
+  \draw[->, thick] (0,0) -- (-1.5,-1.05) node[below left] {$y$};
+  \draw[->, thick] (-2.2,0) -- (4.3,0) node[right] {$x$};
+  \node[below] at (1.0,-2.2) {$y^2+z^2=4$};
+\end{scope}
+% ------------- right: the piece with 0 <= x <= 5 -------------
+\begin{scope}[xshift=8.2cm]
+  \draw[->, thick] (0,0) -- (0,2.5) node[above] {$z$};
+  \draw[->, thick] (0,0) -- (-1.5,-1.05) node[below left] {$y$};
+  \draw[->, thick] (-1.3,0) -- (4.6,0) node[right] {$x$};
+  \fill[purple!20, opacity=0.8] (0,-1.5) rectangle (3.6,1.5);
+  % both rim disks lighter than the wall: the tube is open, not capped,
+  % so only the side wall gets the solid body color
+  \fill[purple!8, opacity=0.9] (0,0) ellipse (0.42cm and 1.5cm);
+  \fill[purple!8, opacity=0.9] (3.6,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black, thick] (0,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black, thick] (3.6,0) ellipse (0.42cm and 1.5cm);
+  \draw[purple!60!black] (0,1.5) -- (3.6,1.5);
+  \draw[purple!60!black] (0,-1.5) -- (3.6,-1.5);
+  \node[purple!60!black, above] at (0,1.6) {$x=0$};
+  \node[purple!60!black, above] at (3.6,1.6) {$x=5$};
+  \node[below] at (1.8,-2.2) {$y^2+z^2=4,\; 0\le x\le 5$};
+\end{scope}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<alert>G.</alert> The condition <m>x = y</m> says nothing about
+<m>z</m>, so whenever a point satisfies it, so does the whole vertical
+line through that point. In the <m>xy</m>-plane the equation
+<m>x = y</m> describes a line through the origin, and sweeping that line
+vertically gives a plane: the plane containing the <m>z</m>-axis that
+cuts the <m>xy</m>-plane along the line <m>y = x</m>, shown in
+<xref ref="fig-ex3d-plane-xy"/>. It is <em>not</em> parallel to any
+coordinate plane, unlike part <alert>A</alert>.
+</p>
+
+<figure xml:id="fig-ex3d-plane-xy">
+<caption>
+Part <alert>G</alert>: the plane <m>x = y</m>. It contains the
+<m>z</m>-axis and meets the <m>xy</m>-plane in the line <m>y = x</m>,
+drawn in red.
+</caption>
+<image width="58%">
+<description>
+<p>
+A shaded plane standing vertically and cutting diagonally through the
+first and third octants. It contains the z axis, and the red line where
+it meets the horizontal x y plane runs diagonally between the x and y
+axes.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.95, >=stealth]
+% the plane x = y is spanned by the directions (1,1,0) and (0,0,1)
+\fill[cyan!25, opacity=0.7]
+  (-2.0,-2.0,-1.4) -- (3.6,3.6,-1.4) -- (3.6,3.6,1.9) -- (-2.0,-2.0,1.9) -- cycle;
+\draw[cyan!55!black]
+  (-2.0,-2.0,-1.4) -- (3.6,3.6,-1.4) -- (3.6,3.6,1.9) -- (-2.0,-2.0,1.9) -- cycle;
+% axes, negative parts drawn thin so the plane reads as passing through the origin
+\draw[thick] (-1.8,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.6,0,0) node[below left] {$x$};
+\draw[thick] (0,-1.4,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,4.2,0) node[right] {$y$};
+\draw[thick] (0,0,-1.7) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.4) node[above] {$z$};
+% the trace in the xy-plane
+\draw[red!70!black, very thick] (-2.0,-2.0,0) -- (3.6,3.6,0);
+\node[red!70!black, below right=1pt] at (3.6,3.6,0) {$y=x$};
+\node[cyan!70!black] at (0.9,0.9,1.55) {$x=y$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-3d-cylinder-plane-solid">
+<title>A Solid Bounded by a Cylinder and a Plane</title>
+<statement>
+<p>
+Consider the solid region bounded by the three surfaces
+<md>
+z = 0, \qquad x^2+y^2 = 4, \qquad x+y+z = 4,
+</md>
+restricted to <m>z \ge 0</m>. Describe each of the three bounding
+surfaces, and describe the solid region they enclose.
+</p>
+</statement>
+
+<solution>
+<p>
+The equation <m>x^2+y^2=4</m> is missing <m>z</m>, so it is the
+infinite cylinder of radius <m>2</m> whose axis is the <m>z</m>-axis.
+The equation <m>z=0</m> is the <m>xy</m>-plane, and <m>x+y+z=4</m> is a
+plane tilted with respect to all three coordinate axes.
+</p>
+<p>
+Solving the third equation for <m>z</m> gives <m>z = 4-x-y</m>. Over
+the disk <m>x^2+y^2 \le 4</m> enclosed by the cylinder, this height
+stays positive: the largest value of <m>x+y</m> on that disk is
+<m>2\sqrt2 \approx 2.83</m>, attained in the direction <m>(1,1)</m>, so
+<m>z = 4-x-y \ge 4-2\sqrt2 &gt; 0</m> throughout the disk. The tilted
+plane therefore never dips below the <m>xy</m>-plane over the region
+enclosed by the cylinder.
+</p>
+<p>
+The solid is the piece of the solid cylinder <m>x^2+y^2 \le 4</m>
+lying between the flat base <m>z=0</m> and the slanted lid
+<m>z=4-x-y</m>: an oblique, truncated cylinder whose base is the disk
+of radius <m>2</m> in the <m>xy</m>-plane and whose slanted top is an
+ellipse, shown in <xref ref="fig-ex3d-cylinder-plane-solid"/>.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-plane-solid">
+<caption>
+The solid bounded by <m>z=0</m>, the cylinder <m>x^2+y^2=4</m>, and the
+tilted plane <m>x+y+z=4</m>. The disk in the <m>xy</m>-plane is the
+flat base, and the plane, hatched in pink, cuts the cylinder in an
+ellipse that forms the slanted top.
+</caption>
+<image width="55%">
+<description>
+<p>
+A cylinder of radius two centered on the z axis, standing on a
+shaded disk in the x y plane. The cylinder is sliced off at a slant by
+a tilted plane, hatched in pink, that meets it in an ellipse forming
+the top of the solid.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.65]
+\tikzmath{function a(\x,\y) {return (4.0-\x-\y);};}
+\pgfmathsetmacro{\final}{2.0*pi}
+\pgfmathsetmacro{\ejez}{a(0,0)}
+% the equation of the circumference
+\draw[white] (0,-2.5,0) -- (2.75,0,0) node[blue,midway,below,sloped] {\footnotesize$x^2 + y^2 = 4$};
+% the base disk of radius 2
+\draw[thick,fill=yellow,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-3,0,0);
+\draw[thick,->] (0,0,0) -- (0,3.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-3,0);
+\draw[thick] (0,0,0) -- (0,0,\ejez);
+% the plane x+y+z=4
+\pgfmathsetmacro{\Az}{a(2.5,2.5)}
+\pgfmathsetmacro{\Bz}{a(-2.5,2.5)}
+\pgfmathsetmacro{\Cz}{a(-2.5,-2.5)}
+\pgfmathsetmacro{\Dz}{a(2.5,-2.5)}
+\coordinate (A) at (2.5,2.5,\Az);
+\coordinate (B) at (-2.5,2.5,\Bz);
+\coordinate (C) at (-2.5,-2.5,\Cz);
+\coordinate (D) at (2.5,-2.5,\Dz);
+% the cylinder's side wall, drawn as vertical segments up to the plane
+\foreach \angulo in {0,0.01,...,\final}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[cyan,opacity=0.5] (\px,\py,0) -- (\px,\py,4.0-\px-\py);
+}
+% the intersection of the cylinder and the plane (the slanted top)
+\draw[blue,thick] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2.0*sin(\t r)-2.0*cos(\t r)});
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2831853,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2*sin(\t r)-2.0*cos(\t r)});
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2831853,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+% the plane, hatched
+\draw[white] (C) -- (B) node[red,above,sloped,midway]{\footnotesize$x + y + z = 4$};
+\draw[red,dash dot] (A) -- (B) -- (C) -- (D) -- (A);
+\fill[pattern color=pink,pattern=north east lines] (A) -- (B) -- (C) -- (D) -- (A);
+\fill[pink,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0-2.0*sin(\t r) - 2.0*cos(\t r)});
+% z axis, drawn last so it stays visible above the solid
+\draw[thick,->] (0,0,\ejez) -- (0,0,8) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-10">
+<statement>
+<p>
+The vectors <m>2\,\mathbf i + 3\,\mathbf j</m>,
+<m>4\,\mathbf i + \mathbf j</m> and <m>5\,\mathbf i + y\,\mathbf j</m>
+have their tails at the origin. Find the value of <m>y</m> that will
+make their heads collinear.
+</p>
+<p>
+Three points are <term>collinear</term> when they all lie on one
+straight line. Two points always do, so the condition is a condition on
+the third: it has to lie on the line already determined by the other
+two.
+</p>
+</statement>
+<solution>
+<p>
+The heads are the points <m>(2,3)</m>, <m>(4,1)</m>, and
+<m>(5,y)</m>, and we want all three on a single line. Two of them are
+already given, so the line is fixed: the line through the first two has
+slope
+<md>
+m = \frac{1-3}{4-2} = -1.
+</md>
+For <m>(5,y)</m> to lie on that same line, the slope from
+<m>(4,1)</m> to <m>(5,y)</m> must also be <m>-1</m>:
+<md>
+\frac{y-1}{5-4} = -1 \;\Rightarrow\; y - 1 = -1
+\;\Rightarrow\; y = 0.
+</md>
+</p>
+
+<p>
+Equivalently, in vector language: the three heads are collinear exactly
+when the displacement vectors between them are parallel. Here
+<m>\langle 4,1\rangle - \langle 2,3\rangle = \langle 2,-2\rangle</m>
+and
+<m>\langle 5,y\rangle - \langle 4,1\rangle = \langle 1,y-1\rangle</m>,
+and these are parallel exactly when
+<m>\langle 1, y-1\rangle = \tfrac12\langle 2,-2\rangle</m>, that is
+<m>y - 1 = -1</m>, giving <m>y = 0</m> again.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-1a">
+<statement>
+<p>
+Two vectors <m>\vec u</m> and <m>\vec v</m> are drawn with a common
+tail; <m>\vec u</m> points up and to the right, <m>\vec v</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label a diagram showing <m>\vec u</m>,
+<m>\vec v</m>, and <m>\vec v - \vec u</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec u = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec v = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions described. Everything below is a statement about the
+<em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+<p>
+The difference <m>\vec v - \vec u</m> is the vector that, added to
+<m>\vec u</m>, gives <m>\vec v</m>. So when
+<m>\vec u</m> and <m>\vec v</m> are drawn from a common tail,
+<m>\vec v - \vec u</m> is the arrow that runs
+<em>from the tip of</em> <m>\vec u</m> <em>to the tip of</em>
+<m>\vec v</m>. (Here it is
+<m>\left\langle -7, 3 \right\rangle</m>.) It is easy to get this
+backwards; the check is that
+<m>\vec u + (\vec v - \vec u) = \vec v</m>. See
+<xref ref="fig-m2b-1a"/>.
+</p>
+
+<figure xml:id="fig-m2b-1a">
+<caption>
+<m>\vec v-\vec u</m> runs from the tip of <m>\vec u</m> to the tip of
+<m>\vec v</m>.
+</caption>
+<image width="55%">
+<description>
+<p>
+A blue arrow u points up and to the right and a green arrow v points
+up and to the left from a common tail. An orange arrow runs from the
+tip of u to the tip of v, representing v minus u.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1a">
+<diagram dimensions="(300,230)" margins="16">
+<coordinates bbox="(-4.0,-0.8,5.0,6.0)">
+<vector at="pa-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pa-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="pa-D" v="(-7,3)" tail="(4,2)" stroke="#D55E00" thickness="2"/>
+<label at="pa-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec u</m>
+</label>
+<label at="pa-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec v</m>
+</label>
+<label at="pa-Dl" anchor="(0.5,3.9)" alignment="n" color="#D55E00">
+<m>\vec v-\vec u</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Vectors u and v drawn from a common tail, with the vector v minus u drawn from the tip of u to the tip of v.">
+  <annotation ref="pa-A" text="The vector u."/>
+  <annotation ref="pa-B" text="The vector v."/>
+  <annotation ref="pa-D" text="The vector v minus u, drawn from the tip of u to the tip of v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-11">
+<statement>
+<p>
+Find the projection of
+<m>-\mathbf i + 5\,\mathbf j - 2\,\mathbf k</m> on
+<m>3\,\mathbf i - \mathbf j</m>.
+</p>
+</statement>
+<solution>
+<p>
+With <m>\vec u = \langle -1, 5, -2\rangle</m> and
+<m>\vec v = \langle 3, -1, 0\rangle</m>,
+<md>
+\vec u \cdot \vec v = -3 - 5 + 0 = -8,
+\qquad
+\|\vec v\|^2 = 9 + 1 + 0 = 10,
+</md>
+so
+<md>
+<mrow>\operatorname{proj}_{\vec v}\vec u
+\amp = \left(\frac{\vec u \cdot \vec v}{\|\vec v\|^2}\right)\vec v
+= -\frac{8}{10}\langle 3, -1, 0\rangle</mrow>
+<mrow>\amp = \left\langle -\frac{12}{5}, \frac45, 0\right\rangle
+= -\frac{12}{5}\,\mathbf i + \frac45\,\mathbf j.</mrow>
+</md>
+The negative scalar tells us the projection points opposite to
+<m>\vec v</m>, i.e. the angle between <m>\vec u</m> and
+<m>\vec v</m> is obtuse.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-1">
+<statement>
+<p>
+Let <m>\vec v</m> be the vector from <m>(-4,3,-1)</m> to
+<m>(-2,-1,3)</m>.
+<ol marker="(a)">
+<li>
+<p>
+Find a non-zero unit vector that is orthogonal to <m>\vec v</m>.
+</p>
+</li>
+<li>
+<p>
+Find the angle between <m>\vec v</m> and
+<m>\vec w = 3\mathbf i - \mathbf k</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+First,
+<md>
+<mrow>\vec v \amp = \left\langle -2-(-4),\ -1-3,\ 3-(-1) \right\rangle
+= \left\langle 2,\ -4,\ 4 \right\rangle ,</mrow>
+<mrow>\|\vec v\| \amp = \sqrt{4+16+16} = \sqrt{36} = 6 .</mrow>
+</md>
+</p>
+
+<p>
+<term>(a)</term> We need any non-zero <m>\vec u</m> with
+<m>\vec u \cdot \vec v = 0</m>. Writing
+<m>\vec u = \left\langle a,b,c\right\rangle</m>, the condition is
+<md>
+2a - 4b + 4c = 0 .
+</md>
+This is one equation in three unknowns, so there are infinitely many
+answers; we just pick a convenient one. Taking <m>c = 0</m> gives
+<m>2a = 4b</m>, so <m>a = 2</m>, <m>b = 1</m> works:
+<md>
+\vec u = \left\langle 2,\ 1,\ 0 \right\rangle ,
+\qquad \vec u \cdot \vec v = 4 - 4 + 0 = 0 . 
+</md>
+Finally we normalize:
+<md>
+\hat u = \frac{\vec u}{\|\vec u\|}
+       = \frac{1}{\sqrt5}\left\langle 2,\ 1,\ 0 \right\rangle
+       = \left\langle \frac{2}{\sqrt5},\ \frac{1}{\sqrt5},\ 0
+         \right\rangle .
+</md>
+</p>
+
+<p>
+<term>(b)</term> With
+<m>\vec w = \left\langle 3, 0, -1 \right\rangle</m> we have
+<md>
+<mrow>\vec v \cdot \vec w \amp = (2)(3) + (-4)(0) + (4)(-1) = 6 - 4 = 2 ,</mrow>
+<mrow>\|\vec w\| \amp = \sqrt{9+0+1} = \sqrt{10} .</mrow>
+</md>
+Therefore
+<md>
+\cos\theta = \frac{\vec v \cdot \vec w}{\|\vec v\|\,\|\vec w\|}
+           = \frac{2}{6\sqrt{10}} = \frac{1}{3\sqrt{10}}
+           \approx 0.1054 ,
+</md>
+so
+<md>
+\theta = \cos^{-1}\!\left(\frac{1}{3\sqrt{10}}\right)
+       \approx 1.465 \text{ radians} \approx 83.9^{\circ} .
+</md>
+The angle is slightly less than a right angle, which matches the fact
+that the dot product is positive but small.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-3">
+<statement>
+<p>
+Let <m>A = (0,0,1)</m> and <m>B = (0,2,3)</m>. Find an equation for the
+set of all points <m>P = (x,y,z)</m> such that <m>\vec{AP}</m> is
+orthogonal to <m>\vec{BP}</m>. Then sketch the resulting surface in
+three dimensions.
+</p>
+</statement>
+<solution>
+<p>
+The two vectors are
+<md>
+<mrow>\vec{AP} \amp = \left\langle x-0,\ y-0,\ z-1 \right\rangle
+= \left\langle x,\ y,\ z-1 \right\rangle ,</mrow>
+<mrow>\vec{BP} \amp = \left\langle x,\ y-2,\ z-3 \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Orthogonality means the dot product vanishes:
+<md>
+<mrow>\vec{AP}\cdot\vec{BP} \amp = 0</mrow>
+<mrow>x^2 + y(y-2) + (z-1)(z-3) \amp = 0</mrow>
+<mrow>x^2 + y^2 - 2y + z^2 - 4z + 3 \amp = 0 .</mrow>
+</md>
+</p>
+
+<p>
+Now complete the square in <m>y</m> and in <m>z</m>:
+<md>
+<mrow>x^2 + \left(y^2 - 2y + 1\right) + \left(z^2 - 4z + 4\right)
+  \amp = -3 + 1 + 4</mrow>
+<mrow>x^2 + (y-1)^2 + (z-2)^2 \amp = 2 .</mrow>
+</md>
+</p>
+
+<p>
+This is the sphere of radius <m>\sqrt2</m> centred at
+<m>(0,1,2)</m>. That centre is exactly the midpoint of <m>A</m> and
+<m>B</m>, and the radius is exactly half of
+<m>\|\vec{AB}\| = \|\langle 0,2,2\rangle\| = 2\sqrt2</m>. This is the
+three-dimensional version of the familiar fact from plane geometry: the
+points from which a given segment subtends a right angle form the
+circle having that segment as a diameter. See
+<xref ref="fig-m2a-sphere"/>.
+</p>
+
+<figure xml:id="fig-m2a-sphere">
+<caption>
+The set of points <m>P</m> with <m>\vec{AP} \perp \vec{BP}</m> is the
+sphere having <m>\overline{AB}</m> as a diameter, namely
+<m>x^2+(y-1)^2+(z-2)^2 = 2</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+A sphere in three dimensional space with the segment from A at zero,
+zero, one to B at zero, two, three drawn as a diameter. A point P is
+marked on the sphere and the two segments from P to A and from P to B
+meet at a right angle.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
+% axes
+\draw[->, thick] (-1.6,0,0) -- (2.2,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1.2,0) -- (0,4.0,0) node[right] {$y$};
+\draw[->, thick] (0,0,-0.8) -- (0,0,4.6) node[above] {$z$};
+% the sphere: centre (0,1,2), radius sqrt(2)
+\shade[ball color=mblue, opacity=0.30] (0,1,2) circle (1.4142cm);
+% the diameter AB
+\coordinate (A) at (0,0,1);
+\coordinate (B) at (0,2,3);
+\coordinate (P) at (0,2.1,1.15);
+\draw[very thick, mred] (A) -- (B);
+\draw[very thick, mgreen] (A) -- (P);
+\draw[very thick, morange] (B) -- (P);
+\fill[mred] (A) circle (1.7pt);
+\fill[mred] (B) circle (1.7pt);
+\fill[black] (0,1,2) circle (1.4pt);
+\fill[mverm] (P) circle (1.7pt);
+\node[mred, anchor=east] at (A) {$A(0,0,1)$\;};
+\node[mred, anchor=south] at (B) {$B(0,2,3)$};
+\node[anchor=south east] at (0,1,2) {$(0,1,2)$\;};
+\node[mverm, anchor=west] at (P) {\;$P$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-1b">
+<statement>
+<p>
+Two vectors <m>\vec u</m> and <m>\vec v</m> are drawn with a common
+tail; <m>\vec u</m> points up and to the right, <m>\vec v</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label a diagram showing <m>\vec u</m>,
+<m>\vec v</m>, and <m>\operatorname{proj}_{\vec u}\vec v</m>.
+</p>
+</statement>
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec u = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec v = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions described. Everything below is a statement about
+the <em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+
+<p>
+The projection of <m>\vec v</m> onto <m>\vec u</m> is
+the shadow that <m>\vec v</m> casts on the line through
+<m>\vec u</m>, obtained by dropping a perpendicular from the tip of
+<m>\vec v</m> to that line. Algebraically,
+<md>
+<mrow>\operatorname{proj}_{\vec u}\vec v
+\amp = \left(\frac{\vec u\cdot\vec v}{\|\vec u\|^2}\right)\vec u
+= \left(\frac{-12+10}{20}\right)\left\langle 4,2\right\rangle</mrow>
+<mrow>\amp = -\frac{1}{10}\left\langle 4,2\right\rangle
+= \left\langle -0.4,\ -0.2 \right\rangle .</mrow>
+</md>
+Because the angle between <m>\vec u</m> and <m>\vec v</m> is
+<em>obtuse</em>, the dot product is negative and the projection points
+in the direction <em>opposite</em> to <m>\vec u</m>. This is the
+feature of the picture the problem is testing. See
+<xref ref="fig-m2b-1b"/>.
+</p>
+
+<figure xml:id="fig-m2b-1b">
+<caption>
+Since the angle between <m>\vec u</m> and <m>\vec v</m> is obtuse,
+<m>\operatorname{proj}_{\vec u}\vec v</m> points opposite to
+<m>\vec u</m>.
+</caption>
+<image width="55%">
+<description>
+<p>
+A blue arrow u points up and to the right and a green arrow v points
+up and to the left from a common tail. A short dark red arrow along
+the line of u points backwards, away from u, with a dashed
+perpendicular from the tip of v, representing the projection of v
+onto u.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1b">
+<diagram dimensions="(300,240)" margins="16">
+<coordinates bbox="(-4.5,-2.0,5.5,6.0)">
+<line at="pb-axis" p1="(-3.5,-1.75)" p2="(5.5,2.75)"
+      stroke="#7F7F7F" thickness="1.5" dash="5 4"/>
+<vector at="pb-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pb-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="pb-P" v="(-0.4,-0.2)" tail="(0,0)" stroke="#8B1A4A" thickness="3"/>
+<line at="pb-drop" p1="(-3,5)" p2="(-0.4,-0.2)"
+      stroke="#7F7F7F" thickness="1.5" dash="4 3"/>
+<label at="pb-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec u</m>
+</label>
+<label at="pb-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec v</m>
+</label>
+<label at="pb-Pl" anchor="(-0.55,-1.35)" alignment="w" color="#8B1A4A">
+<m>\operatorname{proj}_{\vec u}\vec v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Vectors u and v drawn from a common tail, with the projection of v onto u drawn along the line through u, pointing opposite to u since the angle between u and v is obtuse.">
+  <annotation ref="pb-A" text="The vector u."/>
+  <annotation ref="pb-B" text="The vector v."/>
+  <annotation ref="pb-P" text="The projection of v onto u, which points opposite to u because the angle between u and v is obtuse."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="dp-norms-geometry">
+<statement>
+<p>
+Suppose <m>\mathbf u</m> and <m>\mathbf v</m> are non-zero vectors
+satisfying
+<md>
+\|\mathbf u + \mathbf v\| = 5, \qquad \|\mathbf u - \mathbf v\| = 13,
+</md>
+and
+<md>
+\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97, \qquad \|\mathbf u\| = 7 .
+</md>
+Without finding the coordinates of either vector:
+<ol marker="(a)">
+<li>
+<p>
+Compute <m>\mathbf u\cdot\mathbf v</m>.
+</p>
+</li>
+<li>
+<p>
+Find <m>\|\mathbf v\|</m>.
+</p>
+</li>
+<li>
+<p>
+Find the angle <m>\theta</m> between <m>\mathbf u</m> and
+<m>\mathbf v</m>.
+</p>
+</li>
+<li>
+<p>
+Determine whether the angle is acute, right, or obtuse.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The whole problem rests on one idea: the square of a length is a dot
+product, <m>\|\mathbf w\|^2 = \mathbf w\cdot\mathbf w</m>. Expanding with
+the distributive property,
+<md>
+<mrow>\|\mathbf u + \mathbf v\|^2 \amp
+= (\mathbf u + \mathbf v)\cdot(\mathbf u + \mathbf v)
+= \|\mathbf u\|^2 + 2\,\mathbf u\cdot\mathbf v + \|\mathbf v\|^2 ,</mrow>
+<mrow>\|\mathbf u - \mathbf v\|^2 \amp
+= (\mathbf u - \mathbf v)\cdot(\mathbf u - \mathbf v)
+= \|\mathbf u\|^2 - 2\,\mathbf u\cdot\mathbf v + \|\mathbf v\|^2 .</mrow>
+</md>
+These two identities are the algebraic form of the parallelogram in
+<xref ref="fig-dp-parallelogram"/>: the diagonals of the parallelogram
+built on <m>\mathbf u</m> and <m>\mathbf v</m> are
+<m>\mathbf u + \mathbf v</m> and <m>\mathbf u - \mathbf v</m>.
+</p>
+
+<p>
+<term>(a)</term> Subtracting the second identity from the first makes
+the <m>\|\mathbf u\|^2</m> and <m>\|\mathbf v\|^2</m> terms cancel, leaving
+only the dot product:
+<md>
+\|\mathbf u + \mathbf v\|^2 - \|\mathbf u - \mathbf v\|^2
+= 4\,\mathbf u\cdot\mathbf v .
+</md>
+Substituting the two given lengths,
+<md>
+<mrow>5^2 - 13^2 \amp = 4\,\mathbf u\cdot\mathbf v ,</mrow>
+<mrow>25 - 169 \amp = 4\,\mathbf u\cdot\mathbf v ,</mrow>
+<mrow>-144 \amp = 4\,\mathbf u\cdot\mathbf v ,</mrow>
+</md>
+and therefore <m>\mathbf u\cdot\mathbf v = -36</m>.
+</p>
+
+<p>
+It is worth pausing to check that the data are consistent.
+<em>Adding</em> the two identities instead of subtracting gives the
+parallelogram law,
+<md>
+\|\mathbf u + \mathbf v\|^2 + \|\mathbf u - \mathbf v\|^2
+= 2\left(\|\mathbf u\|^2 + \|\mathbf v\|^2\right) ,
+</md>
+and indeed <m>5^2 + 13^2 = 25 + 169 = 194 = 2(97)</m>, exactly as it
+should be.
+</p>
+
+<p>
+<term>(b)</term> We are told <m>\|\mathbf u\| = 7</m> and
+<m>\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97</m>, so
+<md>
+<mrow>7^2 + \|\mathbf v\|^2 \amp = 97 ,</mrow>
+<mrow>49 + \|\mathbf v\|^2 \amp = 97 ,</mrow>
+<mrow>\|\mathbf v\|^2 \amp = 48 .</mrow>
+</md>
+A length is never negative, so
+<m>\|\mathbf v\| = \sqrt{48} = 4\sqrt3 \approx 6.93</m>.
+</p>
+
+<p>
+<term>(c)</term> For non-zero vectors,
+<m>\mathbf u\cdot\mathbf v = \|\mathbf u\|\,\|\mathbf v\|\cos\theta</m>, so
+<md>
+<mrow>\cos\theta \amp
+= \frac{\mathbf u\cdot\mathbf v}{\|\mathbf u\|\,\|\mathbf v\|}
+= \frac{-36}{(7)\left(4\sqrt3\right)}</mrow>
+<mrow>\amp = -\frac{9}{7\sqrt3} = -\frac{3\sqrt3}{7}
+\approx -0.7423 ,</mrow>
+</md>
+and therefore
+<md>
+\theta = \cos^{-1}\!\left(-\frac{3\sqrt3}{7}\right)
+\approx 2.407 \text{ radians} \approx 137.9^{\circ} .
+</md>
+</p>
+
+<p>
+<term>(d)</term> Since <m>\mathbf u\cdot\mathbf v = -36 \lt 0</m> and
+the lengths are positive, <m>\cos\theta \lt 0</m>. Hence
+<m>\tfrac{\pi}{2} \lt \theta \lt \pi</m> and the angle is
+<term>obtuse</term>. Notice that we could have answered this part
+immediately after part (a), without knowing either length: the
+<em>sign</em> of the dot product already decides the type of angle.
+</p>
+
+<figure xml:id="fig-dp-parallelogram">
+<caption>
+The parallelogram built on <m>\mathbf u</m> and <m>\mathbf v</m>. Its
+diagonals are <m>\mathbf u + \mathbf v</m>, of length <m>5</m>, and
+<m>\mathbf u - \mathbf v</m>, of length <m>13</m>. One short diagonal
+together with one long one forces the angle <m>\theta</m> between the
+sides to be obtuse.
+</caption>
+<image width="90%">
+<description>
+<p>
+A parallelogram with two vectors u and v drawn from a common corner,
+showing the short diagonal u plus v and the long diagonal u minus v,
+with an obtuse angle marked between u and v.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-dp-parallelogram">
+<diagram dimensions="(640,270)" margins="18">
+<coordinates bbox="(-6.8,-1.8,13.8,6.8)">
+<line at="dpp-side1" p1="(7,0)" p2="(1.857,4.643)"
+      stroke="#7F7F7F" thickness="1" dash="5 4"/>
+<line at="dpp-side2" p1="(-5.143,4.643)" p2="(1.857,4.643)"
+      stroke="#7F7F7F" thickness="1" dash="5 4"/>
+<vector at="dpp-u" v="(7,0)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<vector at="dpp-v" v="(-5.143,4.643)" tail="(0,0)"
+        stroke="#009E73" thickness="3"/>
+<vector at="dpp-sum" v="(1.857,4.643)" tail="(0,0)"
+        stroke="#8B1A4A" thickness="3"/>
+<vector at="dpp-diff" v="(12.143,-4.643)" tail="(-5.143,4.643)"
+        stroke="#D55E00" thickness="3"/>
+<angle-marker at="dpp-theta" points="((7,0),(0,0),(-5.143,4.643))"
+              radius="26" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<label at="dpp-ul" anchor="(3.5,-0.25)" alignment="s" color="#0072B2">
+<m>\mathbf u,\ \|\mathbf u\| = 7</m>
+</label>
+<label at="dpp-vl" anchor="(-3.1,2.55)" alignment="w" color="#009E73">
+<m>\mathbf v,\ \|\mathbf v\| = 4\sqrt3</m>
+</label>
+<label at="dpp-suml" anchor="(2.0,4.82)" alignment="ne" color="#8B1A4A">
+<m>\mathbf u+\mathbf v,\ \text{length } 5</m>
+</label>
+<label at="dpp-diffl" anchor="(6.2,1.55)" alignment="ne" color="#D55E00">
+<m>\mathbf u-\mathbf v,\ \text{length } 13</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A parallelogram drawn with two solid vectors from a common corner and two dashed sides completing it. The blue vector u points to the right, the green vector v points up and to the left at an obtuse angle to u, a short dark red diagonal runs from the common corner to the opposite corner, and a long orange diagonal runs from the tip of v to the tip of u.">
+  <annotation ref="dpp-u" text="The vector u, of length seven, drawn to the right from the common corner."/>
+  <annotation ref="dpp-v" text="The vector v, of length four root three, drawn up and to the left, making an obtuse angle with u."/>
+  <annotation ref="dpp-sum" text="The short diagonal, u plus v, of length five, running from the common corner to the far corner of the parallelogram."/>
+  <annotation ref="dpp-diff" text="The long diagonal, u minus v, of length thirteen, running from the tip of v to the tip of u."/>
+  <annotation ref="dpp-theta" text="The angle theta between u and v, about one hundred thirty eight degrees."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<term>A remark on the data.</term> The two diagonal lengths by
+themselves already determine <m>\mathbf u\cdot\mathbf v</m>, and the
+condition <m>\|\mathbf u\|^2 + \|\mathbf v\|^2 = 97</m> then follows
+automatically from the parallelogram law. So the individual lengths are
+<em>not</em> pinned down by that data alone: the pair
+<m>\|\mathbf u\| = 4\sqrt3</m>, <m>\|\mathbf v\| = 7</m> fits equally well
+and gives the same angle, while other splits of <m>97</m> give
+different angles. This is why the extra condition
+<m>\|\mathbf u\| = 7</m> is needed for parts (b) and (c).
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-13">
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Find the area of the triangle with vertices <m>(0,1,1)</m>,
+<m>(-1,2,4)</m>, <m>(3,0,1)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the plane containing the triangle.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Take <m>A(0,1,1)</m> as the base vertex and form two edge vectors:
+<md>
+\vec a = \vec{AB} = \langle -1, 1, 3\rangle,
+\qquad
+\vec b = \vec{AC} = \langle 3, -1, 0\rangle.
+</md>
+Their cross product is
+<md>
+\vec a \times \vec b =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+-1 \amp 1 \amp 3 \\
+3 \amp -1 \amp 0
+\end{vmatrix}
+= (0+3)\mathbf i - (0-9)\mathbf j + (1-3)\mathbf k
+= \langle 3, 9, -2\rangle.
+</md>
+<ol marker="A.">
+<li>
+<p>
+The magnitude of the cross product is the area of the parallelogram
+spanned by <m>\vec a</m> and <m>\vec b</m>, so the triangle has half
+that area:
+<md>
+\text{Area} = \frac12\left\|\vec a \times \vec b\right\|
+= \frac12\sqrt{9 + 81 + 4}
+= \frac{\sqrt{94}}{2}.
+</md>
+</p>
+</li>
+<li>
+<p>
+The cross product is normal to the plane, so the plane has the form
+<m>3x + 9y - 2z = D</m>. Substituting the point <m>(0,1,1)</m> gives
+<m>D = 0 + 9 - 2 = 7</m>, hence
+<md>
+3x + 9y - 2z = 7.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-1c">
+<statement>
+<p>
+Two vectors <m>\vec u</m> and <m>\vec v</m> are drawn with a common
+tail; <m>\vec u</m> points up and to the right, <m>\vec v</m> points up
+and to the left, and the angle between them is slightly larger than a
+right angle. Sketch and clearly label a diagram showing <m>\vec u</m>,
+<m>\vec v</m>, and <m>\vec u \times \vec v</m>.
+</p>
+</statement>
+<solution>
+<p>
+To make the picture concrete let us take
+<m>\vec u = \left\langle 4, 2 \right\rangle</m> and
+<m>\vec v = \left\langle -3, 5 \right\rangle</m>, which have roughly
+the directions described. Everything below is a statement about
+the <em>geometry</em>, so the same picture is correct for any pair of
+vectors in that configuration.
+</p>
+
+<p>
+The cross product <m>\vec u\times\vec v</m> is
+perpendicular to both, hence perpendicular to the page. The right-hand
+rule (curl the fingers of the right hand from <m>\vec u</m> towards
+<m>\vec v</m> through the smaller angle) shows that it points
+<em>out of the page</em>, which we draw as a circle with a dot in it.
+Indeed, treating the vectors as lying in the <m>xy</m>-plane,
+<md>
+\vec u\times\vec v
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+4 \amp 2 \amp 0 \\
+-3 \amp 5 \amp 0
+\end{vmatrix}
+= \left\langle 0,\ 0,\ (4)(5)-(2)(-3) \right\rangle
+= 26\,\mathbf k ,
+</md>
+and the <m>\mathbf k</m>-component is positive. Its length,
+<m>26</m>, is the area of the parallelogram spanned by <m>\vec u</m>
+and <m>\vec v</m>. See <xref ref="fig-m2b-1c"/>.
+</p>
+
+<figure xml:id="fig-m2b-1c">
+<caption>
+<m>\vec u\times\vec v</m> points out of the page, drawn as a circle
+with a dot at its centre.
+</caption>
+<image width="55%">
+<description>
+<p>
+A blue arrow u points up and to the right and a green arrow v points
+up and to the left from a common tail. A circle with a dot at its
+centre represents u cross v, a vector pointing out of the page.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2b-1c">
+<diagram dimensions="(300,290)" margins="16">
+<coordinates bbox="(-4.0,-0.8,5.0,8.0)">
+<vector at="pc-A" v="(4,2)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="pc-B" v="(-3,5)" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<circle at="pc-out" center="(-1.4,7.0)" radius="0.62"
+        stroke="#8B1A4A" thickness="2.5" fill="none"/>
+<point at="pc-dot" p="(-1.4,7.0)" fill="#8B1A4A"/>
+<label at="pc-Al" anchor="(4.1,1.9)" alignment="e" color="#0072B2">
+<m>\vec u</m>
+</label>
+<label at="pc-Bl" anchor="(-3.1,5.1)" alignment="nw" color="#009E73">
+<m>\vec v</m>
+</label>
+<label at="pc-Xl" anchor="(-0.6,7.0)" alignment="e" color="#8B1A4A">
+<m>\vec u\times\vec v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Vectors u and v drawn from a common tail. A circle with a dot at its centre, above and to the left, represents u cross v pointing out of the page.">
+  <annotation ref="pc-A" text="The vector u."/>
+  <annotation ref="pc-B" text="The vector v."/>
+  <annotation ref="pc-out" text="A circle with a dot at its centre, the standard symbol for a vector pointing out of the page, representing u cross v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-cross-circular-motion">
+<title>*Circular Motion from a Perpendicular Force</title>
+
+<introduction>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
+<p>
+Through this guided exercise, we prove that <em>a force of constant
+magnitude that always points perpendicular to the velocity drives the
+particle around a circle.</em> We then apply it to a charged particle in a
+magnetic field.
+</p>
+
+<p>
+Both of the products you have met so far appear, and they do
+genuinely different jobs. Watch for them:
+<ul>
+<li>
+<p>
+the <term>dot product</term> is used, through <m>\vec F\cdot\vec v</m>, to determine whether
+the speed of a particle acted upon by a perpendicular force can change,
+</p>
+</li>
+<li>
+<p>
+the <term>cross product</term> is used to determine the 
+direction and magnitude of the force that keeps a charged 
+particle moving in a uniform magnetic field.
+</p>
+</li>
+</ul>
+</p>
+</introduction>
+
+<!-- ===================== PART I ===================== -->
+
+<task xml:id="task-cm-speed">
+<statement>
+<p>
+A particle of mass <m>m</m> moves under a force <m>\vec F</m> of constant
+magnitude that is always perpendicular to its velocity <m>\vec v</m>.
+Show that the particle's <em>speed</em> is constant.
+</p>
+</statement>
+<solution>
+<p>
+Since <m>\vec F</m> is perpendicular to <m>\vec v</m>, we have
+<md>
+\vec F\cdot\vec v = 0\text{.}
+</md>
+</p>
+
+<p>
+Now consider the square of the speed, <m>v^2 = \vec v\cdot\vec v</m>. Using the
+product rule for the dot product<fn>The product rule holds for the dot
+product just as it does for ordinary multiplication:
+<m>\dfrac{d}{dt}\left(\vec u\cdot\vec v\right)
+= \dfrac{d\vec u}{dt}\cdot\vec v + \vec u\cdot\dfrac{d\vec v}{dt}</m>.
+Taking <m>\vec u = \vec v</m> makes the two terms equal, which gives the
+step used here,
+<m>\dfrac{d}{dt}\left(\vec v\cdot\vec v\right)
+= 2\,\vec v\cdot\dfrac{d\vec v}{dt}</m>.</fn> and then Newton's second law
+<m>m\,\dfrac{d\vec v}{dt} = \vec F</m>,
+<md>
+<mrow>\frac{d}{dt}\left(v^2\right) \amp = \frac{d}{dt}
+   \left(\vec v\cdot\vec v\right)
+   = 2\,\vec v\cdot\frac{d\vec v}{dt}</mrow>
+<mrow>\amp = \frac{2}{m}\,\vec v\cdot\vec F = 0\text{.}</mrow>
+</md>
+So <m>v^2</m> never changes, and hence neither does the speed <m>v</m>.
+</p>
+
+<p>
+<term>Why the dot product is the right tool here.</term> The quantity
+<m>\vec F\cdot\vec v</m> is the rate at which the force does work on the
+particle. A force with a forward component speeds the particle up; a force
+with a backward component slows it down. Only the part of <m>\vec F</m>
+lying along <m>\vec v</m> can change the speed, and the dot product is
+exactly the mathematical tool that isolates that part. When it vanishes, can 
+only change the direction of the velocity but not its magnitude, and so can 
+only <em>turn</em> the particle, while the speed remains constant.
+See <xref ref="fig-cm-dotproduct"/>.
+</p>
+
+<figure xml:id="fig-cm-dotproduct">
+<caption>
+Only the component of <m>\vec F</m> along <m>\vec v</m> can change the
+speed. On the left that component is non-zero, so the particle speeds up;
+on the right <m>\vec F\perp\vec v</m>, the component is zero, and the speed
+cannot change.
+</caption>
+<image width="92%">
+<description>
+<p>
+Two panels. In the left panel a force arrow leans forward over the
+direction of motion and its component along the velocity is drawn in
+green, so the dot product is non-zero and the speed changes. In the right
+panel the force is perpendicular to the velocity, marked with a right
+angle, so it has no component along the velocity, the dot product is zero,
+and the speed stays constant.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-cm-dotproduct">
+      <diagram dimensions="(660,270)" margins="14">
+      <definition>pathA(t) = (t, 0.09*t^2)</definition>
+      <definition>pathB(t) = (t + 9, 0.09*t^2)</definition>
+      <coordinates bbox="(-3.0,-2.4,13.6,4.4)">
+
+      <!-- ============ PANEL A : force has a component along v ============ -->
+      <parametric-curve at="da-path" function="pathA" domain="(-2.4,3.4)"
+                        stroke="#BBBBBB" thickness="2"/>
+      <vector at="da-v" tail="(0,0)" v="(3.2,0)" stroke="#0072B2" thickness="3"/>
+      <vector at="da-F" tail="(0,0)" v="(1.6712,1.9919)" stroke="#D55E00" thickness="3"/>
+      <line at="da-drop" p1="(1.6712,1.9919)" p2="(1.6712,0)"
+            stroke="#888888" thickness="1.4" dash="4 3"/>
+      <vector at="da-proj" tail="(0,0)" v="(1.6712,0)" stroke="#009E73" thickness="4"/>
+      <point at="da-P" p="(0,0)" fill="black" radius="3"/>
+      <label font-size="18" at="da-vl" anchor="(3.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="da-Fl" anchor="(1.74,2.06)" alignment="ne" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="da-projl" anchor="(0.84,-0.16)" alignment="s" color="#009E73">
+      <m>\text{component along }\vec v</m>
+      </label>
+      <label font-size="18" at="da-concl" anchor="(0.5,-1.35)" alignment="c">
+      <m>\vec F\cdot\vec v \ne 0 \;\Rightarrow\; \text{speed changes}</m>
+      </label>
+
+      <!-- ============ PANEL B : force purely perpendicular ============ -->
+      <parametric-curve at="db-path" function="pathB" domain="(-2.4,3.4)"
+                        stroke="#BBBBBB" thickness="2"/>
+      <vector at="db-v" tail="(9,0)" v="(3.2,0)" stroke="#0072B2" thickness="3"/>
+      <vector at="db-F" tail="(9,0)" v="(0,2.6)" stroke="#D55E00" thickness="3"/>
+      <angle-marker font-size="18" at="db-right" points="((10,0),(9,0),(9,1))" radius="20" stroke="black"/>
+      <point at="db-P" p="(9,0)" fill="black" radius="3"/>
+      <label font-size="18" at="db-vl" anchor="(12.3,0.02)" alignment="e" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="db-Fl" anchor="(9,2.7)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="db-zero" anchor="(9.55,-0.55)" alignment="e" color="#009E73">
+      <m>\text{no component along }\vec v</m>
+      </label>
+      <label font-size="18" at="db-concl" anchor="(9.5,-1.35)" alignment="c">
+      <m>\vec F\cdot\vec v = 0 \;\Rightarrow\; \text{speed constant}</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two panels comparing a force that is not perpendicular to the velocity with one that is. In the left panel the force arrow leans forward and has a green component along the velocity, so the dot product is nonzero and the speed changes. In the right panel the force is straight up, perpendicular to the velocity, so it has no component along the velocity, the dot product is zero, and the speed stays constant.">
+        <annotation ref="da-F" text="A force leaning forward, at an acute angle to the velocity."/>
+        <annotation ref="da-proj" text="The component of that force along the velocity, drawn in green; it is nonzero, so the speed changes."/>
+        <annotation ref="db-F" text="A force perpendicular to the velocity."/>
+        <annotation ref="db-right" text="A right angle marker showing the force is perpendicular to the velocity, so its component along the velocity is zero."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+</solution>
+</task>
+
+<task xml:id="task-cm-turn">
+<statement>
+<p>
+During a short time interval <m>\Delta t</m>, show that the
+<em>direction</em> of the velocity turns through the angle
+<md>
+\Delta\theta = \frac{F}{mv}\,\Delta t\text{.}
+</md>
+(Hint: draw the two velocity vectors, which have equal length, from a
+common tail.)
+</p>
+</statement>
+<solution>
+<p>
+By the previous task the velocity never changes length; it only swings
+around. So <m>\vec v(t)</m> and <m>\vec v(t+\Delta t)</m> are two vectors of
+the <em>same</em> length <m>v</m>, separated by the small angle
+<m>\Delta\theta</m> we are after. Drawn from a common tail they form an
+isosceles triangle whose third side is
+<m>\Delta\vec v = \vec v(t+\Delta t) - \vec v(t)</m>, as in
+<xref ref="fig-cm-deltav"/>.
+</p>
+
+<p>
+The tips of the two vectors both lie on a circle of radius <m>v</m>. The
+straight side <m>\Delta\vec v</m> is the chord cutting off the arc of angle
+<m>\Delta\theta</m> on that circle, and for a small angle a chord is very
+nearly the arc it subtends:
+<md>
+\left\|\Delta\vec v\right\| = 2v\sin\frac{\Delta\theta}{2}
+  \approx v\,\Delta\theta\text{.}
+</md>
+</p>
+
+<p>
+On the other hand Newton's second law over the short interval gives
+<md>
+\left\|\Delta\vec v\right\| \approx \frac{F}{m}\,\Delta t\text{.}
+</md>
+Equating the two expressions for <m>\left\|\Delta\vec v\right\|</m>,
+<md>
+v\,\Delta\theta = \frac{F}{m}\,\Delta t
+\qquad\Longrightarrow\qquad
+\Delta\theta = \frac{F}{mv}\,\Delta t\text{,}
+</md>
+which is what we wanted. Notice the rate of turning
+<m>\Delta\theta/\Delta t = F/(mv)</m> is a <em>constant</em>, since
+<m>F</m>, <m>m</m> and <m>v</m> all are: the particle swings around at a
+steady angular rate.
+</p>
+
+<figure xml:id="fig-cm-deltav">
+<caption>
+The two velocities have equal length <m>v</m> (dashed arc), so the triangle
+is isosceles and the chord <m>\Delta\vec v</m> has length
+<m>\approx v\,\Delta\theta</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+Two velocity arrows of equal length v are drawn from a common tail,
+separated by a small angle delta theta, with a dashed circular arc of
+radius v joining their tips to show the lengths are equal. A third arrow,
+delta v, runs from the first tip to the second; its length is about v
+times delta theta.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-cm-deltav">
+      <diagram dimensions="(470,336)" margins="14">
+      <coordinates bbox="(-1.4,-2.1,7.0,3.9)">
+
+      <!-- dashed arc of radius v, showing both velocities have the SAME length -->
+      <arc at="dv-arc" center="(0,0)" radius="4" range="(0,40)" degrees="yes"
+           stroke="#999999" thickness="1.4" dash="4 3"/>
+
+      <!-- the two velocity vectors, equal in length -->
+      <vector at="dv-v1" tail="(0,0)" v="(4,0)" stroke="#0072B2" thickness="3"/>
+      <vector at="dv-v2" tail="(0,0)" v="(3.0642,2.5712)" stroke="#0072B2" thickness="3"/>
+
+      <!-- their difference, which is what the force produces -->
+      <vector at="dv-dv" tail="(4,0)" v="(-0.9358,2.5712)" stroke="#D55E00" thickness="3"/>
+
+      <angle-marker font-size="18" at="dv-ang" points="((1,0),(0,0),(0.766,0.643))" radius="46"
+                    stroke="black"><m>\Delta\theta</m></angle-marker>
+
+      <point at="dv-O" p="(0,0)" fill="black" radius="3"/>
+
+      <label font-size="18" at="dv-l1" anchor="(4.08,-0.06)" alignment="se" color="#0072B2">
+      <m>\vec v(t)</m>
+      </label>
+      <label font-size="18" at="dv-l2" anchor="(3.02,2.66)" alignment="ne" color="#0072B2">
+      <m>\vec v(t+\Delta t)</m>
+      </label>
+      <label font-size="18" at="dv-ldv" anchor="(3.62,1.30)" alignment="e" color="#D55E00">
+      <m>\Delta\vec v</m>
+      </label>
+
+      <!-- the two lengths, marked on the vectors themselves -->
+      <label font-size="18" at="dv-len1" anchor="(2.0,-0.14)" alignment="s" color="#666666"><m>v</m></label>
+      <label font-size="18" at="dv-len2" anchor="(1.42,1.35)" alignment="nw" color="#666666"><m>v</m></label>
+
+      <label font-size="18" at="dv-note1" anchor="(-1.2,-1.15)" alignment="e">
+      <m>\text{equal lengths} \;\Rightarrow\; \|\Delta\vec v\| \approx v\,\Delta\theta</m>
+      </label>
+      <label font-size="18" at="dv-note2" anchor="(-1.2,-1.80)" alignment="e">
+      <m>\text{Newton:}\; \|\Delta\vec v\| = \tfrac{F}{m}\Delta t
+        \;\Rightarrow\; \Delta\theta = \tfrac{F}{mv}\Delta t</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two velocity vectors of equal length v are drawn from a common tail, separated by a small angle delta theta. A dashed circular arc of radius v joins their tips, confirming the lengths are equal. A third arrow, delta v, runs from the tip of the first to the tip of the second. Because the triangle is isosceles and the angle is small, the length of delta v is approximately v times delta theta.">
+        <annotation ref="dv-arc" text="A dashed arc of radius v joining the two arrow tips, showing both velocities have the same length."/>
+        <annotation ref="dv-v1" text="The velocity at time t."/>
+        <annotation ref="dv-v2" text="The velocity a short time delta t later, the same length but turned through delta theta."/>
+        <annotation ref="dv-dv" text="The change in velocity, delta v, joining the two tips; its length is approximately v times delta theta."/>
+        <annotation ref="dv-ang" text="The small angle delta theta through which the velocity has turned."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+</solution>
+</task>
+
+<task xml:id="task-cm-radius">
+<statement>
+<p>
+Combine <m>\Delta s = v\,\Delta t</m> with the arc-length formula
+<m>\Delta s = R\,\Delta\theta</m> to prove that
+<md>
+R = \frac{mv^2}{F}\text{.}
+</md>
+</p>
+</statement>
+<solution>
+<p>
+In time <m>\Delta t</m> the particle covers the arc length
+<m>\Delta s = v\,\Delta t</m>. If that arc bends through the angle
+<m>\Delta\theta</m>, then the radius <m>R</m> of the arc is defined by
+<m>\Delta s = R\,\Delta\theta</m>. Solving for <m>R</m> and substituting
+both expressions,
+<md>
+R = \frac{\Delta s}{\Delta\theta}
+  = \frac{v\,\Delta t}{\dfrac{F}{mv}\,\Delta t}
+  = \frac{mv^2}{F}\text{.}
+</md>
+</p>
+</solution>
+</task>
+
+<task xml:id="task-cm-circle">
+<statement>
+<p>
+Conclude that the trajectory is a circle.
+</p>
+</statement>
+<solution>
+<p>
+The quantity <m>R = mv^2/F</m> is built from <m>m</m>, <m>v</m> and
+<m>F</m>, every one of which is constant — <m>v</m> because of the first
+task, and <m>F</m> by hypothesis. So the path bends through equal angles
+over equal arc lengths, everywhere along the trajectory: its radius of
+curvature is the same constant <m>R</m> at every point.
+</p>
+
+<p>
+A plane curve with constant radius of curvature is a circle. Concretely,
+the centre of the turn always lies a fixed distance <m>R</m> from the
+particle in the direction of <m>\vec F</m>.
+</p>
+
+<figure xml:id="fig-cm-circle">
+<caption>
+The velocity is tangent to the circle and the force points straight at the
+centre. Equal arcs <m>\Delta s</m> subtend equal angles
+<m>\Delta\theta</m>, and the ratio of the two is the constant radius
+<m>R = mv^2/F</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+A circle of radius R centred at O. At a point on the circle the velocity
+arrow is tangent and the force arrow points from the particle straight in
+toward the centre, meeting the velocity at a right angle. Two dashed radii
+mark a small angle delta theta at the centre, and the arc between them,
+of length delta s equals R delta theta, is highlighted.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-cm-circle">
+      <diagram dimensions="(430,459)" margins="14">
+      <coordinates bbox="(-4.3,-4.9,4.5,4.5)">
+
+      <!-- the circular trajectory -->
+      <circle at="cc-circle" center="(0,0)" radius="3"
+              stroke="#9EC5E8" thickness="2" fill="none"/>
+
+      <!-- the two radii bounding the small turn -->
+      <line at="cc-r1" p1="(0,0)" p2="(1.7207,2.4575)" stroke="#999999" thickness="1.4" dash="4 3"/>
+      <line at="cc-r2" p1="(0,0)" p2="(0.2615,2.9886)" stroke="#999999" thickness="1.4" dash="4 3"/>
+      <angle-marker font-size="18" at="cc-dtheta" points="((1.7207,2.4575),(0,0),(0.2615,2.9886))"
+                    radius="38" stroke="black"><m>\Delta\theta</m></angle-marker>
+
+      <!-- the arc actually travelled -->
+      <arc at="cc-ds" center="(0,0)" radius="3" range="(55,85)" degrees="yes"
+           stroke="#009E73" thickness="5"/>
+
+      <!-- velocity (tangent) and force (toward the centre) at the particle -->
+      <vector at="cc-v" tail="(1.7207,2.4575)" v="(-1.4745,1.0324)"
+              stroke="#0072B2" thickness="3"/>
+      <vector at="cc-F" tail="(1.7207,2.4575)" v="(-0.8604,-1.2288)"
+              stroke="#D55E00" thickness="3"/>
+      <angle-marker font-size="18" at="cc-right"
+                    points="((0.9015,3.0311),(1.7207,2.4575),(1.1471,1.6383))"
+                    radius="18" stroke="black"/>
+
+      <point at="cc-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="cc-P" p="(1.7207,2.4575)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="cc-Ol" anchor="(-0.12,-0.12)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="cc-Rl" anchor="(0.10,1.62)" alignment="w" color="#666666"><m>R</m></label>
+      <label font-size="18" at="cc-vl" anchor="(0.20,3.56)" alignment="nw" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="cc-Fl" anchor="(1.40,1.92)" alignment="e" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="cc-dsl" anchor="(1.18,3.20)" alignment="ne" color="#009E73">
+      <m>\Delta s = R\,\Delta\theta</m>
+      </label>
+
+      <label font-size="18" at="cc-note1" anchor="(-4.1,-3.55)" alignment="e">
+      <m>\Delta s = v\,\Delta t \quad\text{and}\quad \Delta\theta = \tfrac{F}{mv}\Delta t</m>
+      </label>
+      <label font-size="18" at="cc-note2" anchor="(-4.1,-4.35)" alignment="e">
+      <m>\Rightarrow\;\; R = \dfrac{\Delta s}{\Delta\theta} = \dfrac{mv^2}{F}
+        \;\;\text{— a constant}</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A circular trajectory with centre O and radius R. At a point on the circle the velocity arrow is drawn tangent to the circle and the force arrow points from the particle straight in toward the centre, the two meeting at a right angle. Two dashed radii mark off a small angle delta theta at the centre, and the arc of the circle between them, of length delta s equals R times delta theta, is highlighted. Combining delta s equals v delta t with delta theta equals F over m v times delta t gives R equals m v squared over F, a constant.">
+        <annotation ref="cc-circle" text="The circular path of the particle."/>
+        <annotation ref="cc-v" text="The velocity, tangent to the circle."/>
+        <annotation ref="cc-F" text="The force, pointing from the particle straight in toward the centre, perpendicular to the velocity."/>
+        <annotation ref="cc-right" text="A right angle marker between the velocity and the force."/>
+        <annotation ref="cc-ds" text="The arc of length delta s travelled during the short time interval."/>
+        <annotation ref="cc-dtheta" text="The angle delta theta subtended at the centre by that arc."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+</solution>
+</task>
+
+<!-- ===================== PART II ===================== -->
+
+<task xml:id="task-cm-magnitude">
+<statement>
+<p>
+A particle of charge <m>q</m> enters a uniform magnetic field
+<m>\vec B</m> with its velocity <em>perpendicular</em> to the field. The
+magnetic force is
+<md>
+\vec F_B = q\,\vec v\times\vec B\text{.}
+</md>
+Show that this force has magnitude <m>|q|\,vB</m>.
+</p>
+</statement>
+<solution>
+<p>
+The length of a cross product is
+<m>\left\|\vec v\times\vec B\right\| = vB\sin\alpha</m>, where <m>\alpha</m>
+is the angle between <m>\vec v</m> and <m>\vec B</m>. Here the velocity is
+perpendicular to the field, so <m>\alpha = 90^\circ</m> and
+<m>\sin\alpha = 1</m>. Therefore
+<md>
+\left\|\vec F_B\right\| = |q|\left\|\vec v\times\vec B\right\|
+ = |q|\,vB\sin 90^\circ = |q|\,vB\text{.}
+</md>
+Since <m>v</m> is constant (we are about to confirm this) and <m>B</m> is
+uniform, this magnitude is constant — the first hypothesis of part
+<xref ref="task-cm-speed" text="local"/>.
+</p>
+</solution>
+</task>
+
+<task xml:id="task-cm-perp">
+<statement>
+<p>
+Explain why this force is <em>always</em> perpendicular to the velocity —
+not just at the initial instant, but at every moment of the motion.
+</p>
+</statement>
+<solution>
+<p>
+This is the defining property of the cross product: <m>\vec v\times\vec B</m>
+is perpendicular to <em>both</em> factors, whatever they happen to be. So
+<m>\vec F_B = q\,\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>
+automatically, at every instant, with no computation and no special
+assumption about where the particle is or which way it is heading.
+</p>
+
+<p>
+If you would like it verified rather than quoted, the dot product does it in
+one line.<fn>Two facts are doing the work. First, the scalar triple product
+<m>\left(\vec a\times\vec b\right)\cdot\vec c</m> equals the determinant
+whose rows are <m>\vec a</m>, <m>\vec b</m> and <m>\vec c</m>. Second, a
+determinant with two equal rows is zero, since interchanging those two rows
+both leaves the determinant unchanged and reverses its sign.</fn> Taking
+<m>\vec c = \vec v</m>,
+<md>
+\vec F_B\cdot\vec v
+ = q\left(\vec v\times\vec B\right)\cdot\vec v
+ = q\begin{vmatrix}
+ v_1 \amp v_2 \amp v_3 \\
+ B_1 \amp B_2 \amp B_3 \\
+ v_1 \amp v_2 \amp v_3
+ \end{vmatrix} = 0\text{.}
+</md>
+</p>
+
+<p>
+So such a
+magnetic field can <em>never</em> change the speed of a charged particle,
+no matter how strong it is. Here the magnetic force does no work and it solely 
+changes the direction of the velocity.
+</p>
+</solution>
+</task>
+
+<task xml:id="task-cm-orbit">
+<statement>
+<p>
+Deduce that the particle moves in a circle, and find the radius of that
+circle.
+</p>
+</statement>
+<solution>
+<p>
+The previous two tasks establish exactly the two hypotheses of part
+<xref ref="task-cm-speed" text="local"/>: the magnetic force has constant magnitude
+<m>|q|vB</m>, and it is always perpendicular to the velocity. The argument
+of parts <xref ref="task-cm-speed" text="local"/>–<xref ref="task-cm-circle" text="local"/> therefore
+applies verbatim, and the particle travels in a circle at constant speed.
+</p>
+
+<p>
+For the radius, put <m>F = |q|vB</m> into <m>R = mv^2/F</m>:
+<md>
+r = \frac{mv^2}{|q|vB} = \frac{mv}{|q|B}\text{.}
+</md>
+Equivalently, the magnetic force supplies precisely the inward force
+<m>mv^2/r</m> that circular motion demands:
+<md>
+|q|vB = \frac{mv^2}{r}
+\qquad\Longrightarrow\qquad
+r = \frac{mv}{|q|B}\text{.}
+</md>
+See <xref ref="fig-cm-magnetic"/>. Faster particles and heavier particles
+travel on wider circles; stronger fields and larger charges wind them
+tighter.
+</p>
+
+<figure xml:id="fig-cm-magnetic">
+<caption>
+A positive charge in a uniform field <m>\vec B</m> directed into the page.
+The force <m>q\,\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>
+automatically, so it never changes the speed — it only bends the path into
+a circle of radius <m>r = mv/(|q|B)</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+A uniform magnetic field into the page, shown as a grid of small crosses.
+A positive charge travels counter-clockwise around a circle of radius r
+centred at O. At the rightmost point of the circle its velocity points
+straight up, tangent to the circle, and the magnetic force q v cross B
+points straight in toward the centre, at a right angle to the velocity.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-cm-magnetic">
+      <diagram dimensions="(460,489)" margins="14">
+      <coordinates bbox="(-4.6,-5.6,4.8,4.4)">
+
+      <!-- uniform magnetic field INTO the page -->
+      <label font-size="18" at="mb-b00" anchor="(-3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b10" anchor="(-1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b20" anchor="(0,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b30" anchor="(1.85,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b40" anchor="(3.7,-3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b01" anchor="(-3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b11" anchor="(-1.85,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b21" anchor="(0,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b41" anchor="(3.7,-1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b02" anchor="(-3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b12" anchor="(-1.85,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b22" anchor="(0,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b42" anchor="(3.7,1.25)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b03" anchor="(-3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b13" anchor="(-1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b23" anchor="(0,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b33" anchor="(1.85,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+      <label font-size="18" at="mb-b43" anchor="(3.7,3.4)" alignment="c" color="#7A5AA8"><m>\times</m></label>
+
+      <!-- the circular orbit, with an arrowhead showing the sense of circulation -->
+      <circle at="mb-orbit" center="(0,0)" radius="2.4"
+              stroke="#9EC5E8" thickness="2" fill="none"/>
+      <arc at="mb-dir" center="(0,0)" radius="2.4" range="(58,112)" degrees="yes"
+           stroke="#0072B2" thickness="3" arrows="1"/>
+
+      <!-- radius to the particle -->
+      <line at="mb-r" p1="(0,0)" p2="(2.4,0)" stroke="#999999" thickness="1.4" dash="4 3"/>
+
+      <!-- velocity (tangent, counter-clockwise) and magnetic force (toward centre) -->
+      <vector at="mb-v" tail="(2.4,0)" v="(0,1.75)" stroke="#0072B2" thickness="3"/>
+      <vector at="mb-F" tail="(2.4,0)" v="(-1.4,0)" stroke="#D55E00" thickness="3"/>
+      <angle-marker font-size="18" at="mb-right" points="((2.4,1),(2.4,0),(1.4,0))"
+                    radius="17" stroke="black"/>
+
+      <point at="mb-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="mb-P" p="(2.4,0)" fill="black" radius="4"/>
+
+      <label font-size="18" at="mb-Ol" anchor="(-0.12,-0.14)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="mb-rl" anchor="(0.62,-0.16)" alignment="s" color="#666666"><m>r</m></label>
+      <label font-size="18" at="mb-vl" anchor="(2.52,1.78)" alignment="ne" color="#0072B2"><m>\vec v</m></label>
+      <label font-size="18" at="mb-Fl" anchor="(1.62,0.14)" alignment="n" color="#D55E00"><m>\vec F</m></label>
+      <label font-size="18" at="mb-ql" anchor="(2.56,-0.14)" alignment="se"><m>q>0</m></label>
+      <label font-size="18" at="mb-Bl" anchor="(-4.4,4.2)" alignment="e" color="#7A5AA8">
+      <m>\vec B \text{ into the page}</m>
+      </label>
+
+      <label font-size="18" at="mb-note1" anchor="(-4.4,-3.95)" alignment="e">
+      <m>\vec F = q\,\vec v\times\vec B \;\Rightarrow\; \|\vec F\| = |q|vB,
+        \;\; \vec F\perp\vec v \text{ automatically}</m>
+      </label>
+      <label font-size="18" at="mb-note2" anchor="(-4.4,-5.15)" alignment="e">
+      <m>|q|vB = \dfrac{mv^2}{r} \;\;\Longrightarrow\;\; r = \dfrac{mv}{|q|B}</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A uniform magnetic field pointing into the page is shown as a grid of small crosses. A positive charge travels counter-clockwise around a circle of radius r centred at O. At the rightmost point of the circle the velocity arrow points straight up, tangent to the circle, and the magnetic force arrow q v cross B points straight in toward the centre, at a right angle to the velocity. Because the cross product is automatically perpendicular to the velocity, the force can only turn the particle and never change its speed; balancing the magnetic force against m v squared over r gives r equals m v over the absolute value of q times B.">
+        <annotation ref="mb-orbit" text="The circular orbit of the charged particle."/>
+        <annotation ref="mb-dir" text="An arrowhead on the orbit showing the particle circulates counter-clockwise."/>
+        <annotation ref="mb-v" text="The velocity of the particle, tangent to the circle."/>
+        <annotation ref="mb-F" text="The magnetic force q times v cross B, pointing from the particle in toward the centre."/>
+        <annotation ref="mb-right" text="A right angle marker showing the magnetic force is perpendicular to the velocity."/>
+        <annotation ref="mb-r" text="The radius r from the centre O out to the particle."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+</solution>
+</task>
+
+
+</exercise>
+
+<exercise xml:id="exercise-velocity-direction">
+  <title>*Speed and direction of a projectile</title>
+  <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
+    <p>
+      A particle is projected from <m>O</m> with speed <m>v_0</m> at an
+      elevation <m>\theta</m> to the horizontal, as in
+      <xref ref="fig-velocity-at-P"/>. At time <m>t</m> it is at the point
+      <m>P</m>, moving with speed <m>v</m> in a direction making an angle
+      <m>\phi</m> with the horizontal. Show that
+      <md>
+        v = \sqrt{\,v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2\,}
+      </md>
+      and
+      <md>
+        \tan\phi = \frac{v_0\sin\theta - g\,t}{v_0\cos\theta}\text{.}
+      </md>
+    </p>
+  <figure xml:id="fig-velocity-at-P">
+    <caption>
+      A particle projected from <m>O</m> with speed <m>v_0</m> at elevation
+      <m>\theta</m>. At the point <m>P</m> reached after time <m>t</m>, the
+      velocity <m>v</m> is tangent to the path and makes an angle <m>\phi</m>
+      with the horizontal; <m>h</m> is the depth of <m>P</m> below the directrix.
+    </caption>
+    <image width="85%" xml:id="image-velocity-at-P">
+      <!-- PreFigure source embedded inline -->
+      <prefigure xmlns="https://prefigure.org" label="prefigure-velocity-at-P">
+      <diagram dimensions="(420,300)" margins="5">
+        <definition>f(x) = 0.2*x*(8 - x)</definition>
+        <coordinates bbox="(-1.2, -1, 9.6, 5.4)">
+          <axes at="vp-axes" xlabel="x" ylabel="y" decorations="no"/>
+          <!-- directrix (for the corollary) -->
+          <line at="vp-directrix" p1="(-0.5,4.45)" p2="(8.8,4.45)" stroke="gray" dash="4"/>
+          <label anchor="(3.3,4.45)" alignment="n"><m>\text{directrix}</m></label>
+          <!-- parabolic trajectory -->
+          <graph at="vp-path" domain="(0,8)" function="f" stroke="blue" thickness="2"/>
+          <!-- vertical fall from the directrix down to P -->
+          <line at="vp-h" p1="(6,2.4)" p2="(6,4.45)" stroke="gray" dash="4"/>
+          <label anchor="(6,3.42)" alignment="w"><m>h</m></label>
+          <!-- initial velocity at O -->
+          <line at="vp-v0" p1="(0,0)" p2="(1.06,1.70)" stroke="red" thickness="2" arrows="1"/>
+          <angle-marker at="vp-theta" points="((1,0),(0,0),(1.06,1.70))" radius="30" stroke="black"><m>\theta</m></angle-marker>
+          <label anchor="(1.06,1.70)" alignment="nw"><m>v_0</m></label>
+          <!-- velocity components triangle at P -->
+          <line at="vp-vcos" p1="(6,2.4)" p2="(7.64,2.4)" stroke="gray" dash="3"/>
+          <line at="vp-vsin" p1="(7.64,2.4)" p2="(7.64,1.09)" stroke="gray" dash="3"/>
+          <label anchor="(6.82,2.4)" alignment="n"><m>v\cos\phi</m></label>
+          <label anchor="(7.64,1.745)" alignment="e"><m>v\sin\phi</m></label>
+          <!-- velocity vector at P (tangent to path) -->
+          <line at="vp-v" p1="(6,2.4)" p2="(7.64,1.09)" stroke="red" thickness="2" arrows="1"/>
+          <angle-marker at="vp-phi" points="((7.64,1.09),(6,2.4),(7.64,2.4))" radius="26" stroke="black"><m>\phi</m></angle-marker>
+          <label anchor="(6.82,1.745)" alignment="sw" offset="(-2,-2)"><m>v</m></label>
+          <!-- key points -->
+          <point at="vp-O" p="(0,0)" size="3"/>
+          <point at="vp-P" p="(6,2.4)" size="3"/>
+          <label anchor="(0,0)" alignment="sw"><m>O</m></label>
+          <label anchor="(6,2.4)" alignment="nw" offset="(-4,6)"><m>P</m></label>
+        </coordinates>
+
+        <annotations>
+        <annotation ref="figure" text="A particle is launched from O and follows a parabolic path. At the point P reached after time t, the velocity v is tangent to the path and makes an angle phi with the horizontal. A horizontal directrix lies above the path, and h is the depth of P below it.">
+          <annotation ref="vp-axes" text="Horizontal and vertical axes with origin at the launch point O."/>
+          <annotation ref="vp-path" text="The parabolic trajectory of the particle, drawn in blue."/>
+          <annotation ref="vp-directrix" text="The directrix, a horizontal dashed line above the trajectory."/>
+          <annotation ref="vp-h" text="The vertical depth h of the point P below the directrix."/>
+          <annotation ref="vp-v0" text="The initial velocity v naught at O, directed at elevation angle theta above the horizontal."/>
+          <annotation ref="vp-theta" text="The angle theta between the horizontal and the initial velocity at O."/>
+          <annotation ref="vp-v" text="The velocity v at P, tangent to the path, pointing down and to the right."/>
+          <annotation ref="vp-phi" text="The angle phi between the horizontal and the velocity at P."/>
+          <annotation ref="vp-vcos" text="The horizontal component v cosine phi of the velocity at P."/>
+          <annotation ref="vp-vsin" text="The vertical component v sine phi of the velocity at P."/>
+          <annotation ref="vp-O" text="The launch point O at the origin."/>
+          <annotation ref="vp-P" text="The point P on the path reached after time t."/>
+        </annotation>
+        </annotations>
+      </diagram>
+      </prefigure>
+    </image>
+  </figure>
+  </statement>
+  <solution>
+    <p>
+      Take the origin at <m>O</m> with horizontal and vertical axes. The
+      coordinates of <m>P</m> at time <m>t</m> are
+      <md>
+        x = v_0\cos\theta\;t\text{,} \qquad
+        y = v_0\sin\theta\;t - \tfrac{1}{2}g\,t^2\text{.}
+      </md>
+      The horizontal and vertical components of the velocity are the time
+      derivatives of these, so
+      <md>
+        v\cos\phi = \frac{dx}{dt} = v_0\cos\theta\text{,} \qquad
+        v\sin\phi = \frac{dy}{dt} = v_0\sin\theta - g\,t\text{.}
+      </md>
+      Squaring and adding eliminates <m>\phi</m>:
+      <md>
+        v^2 = v_0^2\cos^2\theta + \bigl(v_0\sin\theta - g\,t\bigr)^2
+            = v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2\text{,}
+      </md>
+      which gives the speed at time <m>t</m>. Dividing the vertical component
+      by the horizontal component gives the direction,
+      <md>
+        \tan\phi = \frac{v_0\sin\theta - g\,t}{v_0\cos\theta}\text{,}
+      </md>
+      that is, <m>\phi = \arctan\!\left(\dfrac{v_0\sin\theta - g\,t}{v_0\cos\theta}\right)</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="exercise-directrix-freefall">
+  <title>*Free fall from the directrix</title>
+  <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
+    <p>
+      The <term>directrix</term> of the parabolic path is the horizontal line
+      at height <m>\dfrac{v_0^2}{2g}</m> above <m>O</m>. Using the previous
+      exercise, show that the speed of the particle at <m>P</m> is equal to the
+      speed it would acquire by falling freely from the level of the directrix
+      down to <m>P</m>. That is, if <m>h</m> denotes the depth of <m>P</m>
+      below the directrix (see <xref ref="fig-velocity-at-P"/>), then
+      <m>v^2 = 2\,g\,h</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      From the previous exercise,
+      <md>
+        v^2 = v_0^2 - 2\,v_0\,g\,t\sin\theta + g^2 t^2
+            = v_0^2 - 2g\!\left(v_0\,t\sin\theta - \tfrac{1}{2}g\,t^2\right)
+            = v_0^2 - 2 g y\text{,}
+      </md>
+      since <m>y = v_0\,t\sin\theta - \tfrac{1}{2}g\,t^2</m> is the height of
+      <m>P</m>. Writing this as
+      <md>
+        v^2 = 2g\!\left(\frac{v_0^2}{2g} - y\right)
+      </md>
+      and recognizing <m>\dfrac{v_0^2}{2g}</m> as the height of the directrix
+      above <m>O</m>, the quantity <m>h = \dfrac{v_0^2}{2g} - y</m> is exactly
+      the depth of <m>P</m> below the directrix. Hence <m>v^2 = 2\,g\,h</m>,
+      the square of the speed gained by falling freely through the height
+      <m>h</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="exercise-collision-directrix">
+  <title>*A collision on the directrix</title>
+  <introduction>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
+    <p>
+      Two objects move under gravity. The first is the projectile of the two
+      previous exercises: launched from <m>O</m> with speed <m>v_0</m> at an
+      elevation <m>\theta</m> to the horizontal. The second is a ball released
+      <em>from rest</em> at a point <m>B</m> on the directrix, the horizontal
+      line at height <m>\dfrac{v_0^2}{2g}</m> above <m>O</m>. We want the two
+      to collide at the moment the projectile is at half of its maximum
+      height, on the way <em>down</em>. See
+      <xref ref="fig-collision-directrix"/>.
+    </p>
+
+    <figure xml:id="fig-collision-directrix">
+      <caption>
+        The projectile reaches half of its maximum height <m>H</m> at the
+        point <m>C</m> on the way down. The ball is released from rest at the
+        point <m>B</m> vertically above <m>C</m> on the directrix, and falls
+        the depth <m>h</m> to meet it.
+      </caption>
+      <image width="85%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-collision-directrix">
+      <diagram dimensions="(440,290)" margins="6">
+        <definition>f(x) = 0.55*x*(8 - x)</definition>
+        <definition>C = (6.83, 4.4)</definition>
+        <coordinates bbox="(-1.3, -1.2, 10.2, 11.6)">
+          <axes at="cd-axes" xlabel="x" ylabel="y" decorations="no"/>
+          <line at="cd-directrix" p1="(-0.6,9.9)" p2="(9.6,9.9)" stroke="gray"
+                dash="4"/>
+          <label anchor="(2.6,9.9)" alignment="n" color="gray">
+            <m>\text{directrix } y = \frac{v_0^2}{2g}</m>
+          </label>
+          <graph at="cd-path" domain="(0,8)" function="f" stroke="blue"
+                 thickness="2"/>
+          <label anchor="(2.4,4.4)" alignment="s" color="blue">
+            <m>\text{projectile}</m>
+          </label>
+          <line at="cd-apex-guide" p1="(0,8.8)" p2="(4,8.8)" stroke="gray"
+                thickness="1" dash="3"/>
+          <line at="cd-half-guide" p1="(0,4.4)" p2="(6.83,4.4)" stroke="gray"
+                thickness="1" dash="3"/>
+          <line at="cd-apex-drop" p1="(4,0)" p2="(4,8.8)" stroke="gray"
+                thickness="1" dash="3"/>
+          <label anchor="(-0.15,8.8)" alignment="w"><m>H</m></label>
+          <label anchor="(-0.15,4.4)" alignment="w"><m>\frac{H}{2}</m></label>
+          <point at="cd-apex" p="(4,8.8)" fill="blue"/>
+          <point at="cd-B" p="(6.83,9.9)" fill="black"/>
+          <point at="cd-C" p="C" fill="black"/>
+          <vector at="cd-fall" v="(0,-5.5)" tail="(6.83,9.9)" stroke="#8B1A4A"
+                  thickness="2"/>
+          <label anchor="(6.95,7.15)" alignment="e" color="#8B1A4A">
+            <m>h</m>
+          </label>
+          <label anchor="(7.05,10.1)" alignment="ne"><m>B</m></label>
+          <label anchor="(7.05,4.3)" alignment="se"><m>C</m></label>
+          <label anchor="(-0.15,-0.15)" alignment="sw"><m>O</m></label>
+        </coordinates>
+
+        <annotations>
+          <annotation ref="figure" text="A parabolic trajectory launched from the origin O. A dashed horizontal line high above it is the directrix, at height v naught squared over two g. The apex of the parabola is at height H, and a dashed horizontal line at height H over two meets the descending branch at the collision point C. Directly above C, on the directrix, is the release point B, and a downward arrow of length h joins B to C.">
+            <annotation ref="cd-path" text="The parabolic path of the projectile."/>
+            <annotation ref="cd-directrix" text="The directrix, a horizontal line at height v naught squared over two g."/>
+            <annotation ref="cd-B" text="The release point B on the directrix."/>
+            <annotation ref="cd-C" text="The collision point C on the descending branch, at half the maximum height."/>
+            <annotation ref="cd-fall" text="The depth h through which the ball falls from B to C."/>
+          </annotation>
+        </annotations>
+      </diagram>
+      </prefigure>
+      </image>
+    </figure>
+  </introduction>
+
+  <task xml:id="task-collision-times">
+    <statement>
+      <p>
+        Show that the projectile is at half of its maximum height at the two
+        times
+        <md>
+          t_\pm = \frac{v_0\sin\theta}{g}\left(1 \pm \frac{\sqrt2}{2}\right)
+        </md>
+        and say which of these is on the descending branch.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The vertical motion is <m>y = v_0\sin\theta\,t - \tfrac12 g t^2</m>. It
+        is greatest when <m>\dot y = v_0\sin\theta - g t = 0</m>, that is at
+        <m>t = v_0\sin\theta/g</m>, which gives the maximum height
+        <md>
+          H = \frac{v_0^2\sin^2\theta}{2g}\text{.}
+        </md>
+        Setting <m>y = H/2</m> gives the quadratic equation
+        <md>
+          t^2 - \frac{2v_0\sin\theta}{g}\,t
+          + \frac{v_0^2\sin^2\theta}{2g^2} = 0\text{,}
+        </md>
+        whose discriminant is <m>2v_0^2\sin^2\theta/g^2</m>. Hence
+        <md>
+          t_\pm = \frac{v_0\sin\theta}{g}
+          \pm \frac{\sqrt2\,v_0\sin\theta}{2g}
+          = \frac{v_0\sin\theta}{g}\left(1 \pm \frac{\sqrt2}{2}\right)\text{.}
+        </md>
+        These straddle the apex time <m>v_0\sin\theta/g</m> symmetrically, as
+        they must. The descending crossing is the later one,
+        <md>
+          T = t_+ = \frac{\left(2+\sqrt2\right)v_0\sin\theta}{2g}\text{.}
+        </md>
+      </p>
+    </solution>
+  </task>
+
+  <task xml:id="task-collision-release-point">
+    <statement>
+      <p>
+        Find the point <m>B</m> on the directrix from which the ball must be
+        released.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Released from rest, the ball has no horizontal velocity, so it falls
+        along a vertical line: <m>B</m> must be <em>directly above</em> the
+        collision point <m>C</m>. The projectile's horizontal coordinate at
+        time <m>T</m> is
+        <md>
+          x_C = v_0\cos\theta\cdot T
+          = \frac{\left(2+\sqrt2\right)v_0^2\sin 2\theta}{4g}\text{,}
+        </md>
+        so the release point is
+        <md>
+          B = \left(\frac{\left(2+\sqrt2\right)v_0^2\sin 2\theta}{4g},\;
+          \frac{v_0^2}{2g}\right)\text{.}
+        </md>
+        In terms of the range <m>R = \dfrac{v_0^2\sin 2\theta}{g}</m> this is
+        <m>x_C = \frac{2+\sqrt2}{4}R \approx 0.854\,R</m><mdash/>comfortably
+        past the apex at <m>R/2</m> and short of the landing point, as
+        <xref ref="fig-collision-directrix"/> shows.
+      </p>
+    </solution>
+  </task>
+
+  <task xml:id="task-collision-release-time">
+    <statement>
+      <p>
+        Find how long after the projectile is launched the ball must be
+        released.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The depth of <m>C</m> below the directrix is
+        <md>
+          h = \frac{v_0^2}{2g} - \frac{H}{2}
+          = \frac{v_0^2\left(2-\sin^2\theta\right)}{4g}\text{.}
+        </md>
+        Falling from rest through <m>h</m> takes a time <m>\tau</m> with
+        <m>h = \tfrac12 g\tau^2</m>, so
+        <md>
+          \tau = \sqrt{\frac{2h}{g}}
+          = \frac{v_0}{g}\sqrt{\frac{2-\sin^2\theta}{2}}\text{.}
+        </md>
+        The ball must therefore be released
+        <md>
+          t_{\text{rel}} = T - \tau
+          = \frac{v_0}{g}\left[\frac{\left(2+\sqrt2\right)\sin\theta}{2}
+          - \sqrt{\frac{2-\sin^2\theta}{2}}\right]
+        </md>
+        seconds after the projectile is launched.
+      </p>
+    </solution>
+  </task>
+
+  <task xml:id="task-collision-equal-speeds">
+    <statement>
+      <p>
+        Show that at the instant of the collision the two objects have exactly
+        the same speed.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By <xref ref="exercise-directrix-freefall"/>, a projectile at depth
+        <m>h</m> below its directrix has speed
+        <m>v_{\text{proj}} = \sqrt{2gh}</m>. The ball starts from rest
+        <em>on</em> the directrix and has fallen the same depth <m>h</m>, so
+        its speed is
+        <md>
+          v_{\text{ball}} = g\tau = g\sqrt{\frac{2h}{g}} = \sqrt{2gh}\text{.}
+        </md>
+        The two are equal. This is not a coincidence of our particular choice
+        of <m>C</m>: the projectile always carries exactly the speed it
+        <em>would</em> have gained by falling freely from the directrix, and
+        the ball is doing precisely that fall. Wherever on the path we arrange
+        the collision, the two objects meet with the same speed, here
+        <md>
+          v = \sqrt{2gh} = v_0\sqrt{\frac{2-\sin^2\theta}{2}}\text{.}
+        </md>
+        Their <em>directions</em> of course differ: the ball moves straight
+        down, while the projectile moves down and forward at the angle
+        <m>\phi</m> of <xref ref="exercise-velocity-direction"/>.
+      </p>
+    </solution>
+  </task>
+
+  <task xml:id="task-collision-positive-time">
+    <statement>
+      <p>
+        Is <m>t_{\text{rel}}</m> always positive? Find the elevations
+        <m>\theta</m> for which the ball is released after the projectile is
+        launched, and explain what a negative <m>t_{\text{rel}}</m> would mean.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Requiring <m>t_{\text{rel}} \geq 0</m> means
+        <md>
+          \frac{\left(2+\sqrt2\right)\sin\theta}{2}
+          \geq \sqrt{\frac{2-\sin^2\theta}{2}}\text{,}
+        </md>
+        and squaring gives
+        <m>\sin^2\theta\left(4+2\sqrt2\right) \geq 2</m>, that is
+        <md>
+          \sin^2\theta \geq \frac{1}{2+\sqrt2} = \frac{2-\sqrt2}{2}
+          \quad\Longleftrightarrow\quad
+          \theta \geq \arcsin\sqrt{\frac{2-\sqrt2}{2}}
+          \approx 32.8^\circ\text{.}
+        </md>
+        For flatter launches the required release time is negative: the ball
+        would have to be dropped <em>before</em> the projectile is fired,
+        because a shallow trajectory reaches its (low) half-height point sooner
+        than the ball can fall the long way down from the directrix.
+      </p>
+    </solution>
+  </task>
+
+  <conclusion>
+    <p component="web">
+      <xref ref="fig-collision-animation"/> puts the whole scenario in motion:
+      the projectile rises to <m>H</m>, the ball is released from <m>B</m> at
+      the time <m>t_{\text{rel}}</m>, the two meet at <m>C</m>, and the
+      velocity arrows there have the same length.
+    </p>
+    <p component="print">
+      An animation of the whole scenario <mdash/> the projectile rising to
+      <m>H</m>, the ball released from <m>B</m> at the time
+      <m>t_{\text{rel}}</m>, and the two meeting at <m>C</m> with velocity
+      arrows of equal length <mdash/> accompanies the online version of these
+      notes.
+    </p>
+
+    <!-- Web only: in print this could only ever be a dead still, so the
+         whole sidebyside is dropped by publication-print.ptx. -->
+    <sidebyside component="web" width="90%">
+      <figure xml:id="fig-collision-animation">
+        <caption>
+          Animation: the projectile and the ball, released from rest on the
+          directrix, collide at half of the maximum height with equal speeds.
+        </caption>
+        <video xml:id="video-collision-directrix"
+               source="videos/projectile_collision_directrix_1080p.mp4"
+               width="100%" aspect="16:9"/>
+      </figure>
+    </sidebyside>
+  </conclusion>
+</exercise>
+
+<exercise xml:id="pp-19">
+<statement>
+<p>
+Consider the curve of intersection of the surfaces
+<m>4x^2 + z^2 = 16</m> and <m>y = z</m>.
+<ol marker="(a)">
+<li>
+<p>
+Parametrize the curve.
+</p>
+</li>
+<li>
+<p>
+Find the projection of the curve onto the <m>xy</m>-plane, and give a
+Cartesian equation for it.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term>
+The first surface does not involve <m>y</m>; dividing by <m>16</m>,
+<md>
+\frac{x^2}{4} + \frac{z^2}{16} = 1,
+</md>
+which is an ellipse in the <m>xz</m>-plane with semi-axes <m>2</m>
+(in <m>x</m>) and <m>4</m> (in <m>z</m>). It is parametrized by
+<m>x = 2\cos(t)</m>, <m>z = 4\sin(t)</m>. The second surface simply
+forces <m>y = z</m>, so
+<md>
+x = 2\cos(t), \qquad y = 4\sin(t), \qquad z = 4\sin(t),
+\qquad 0 \le t \le 2\pi.
+</md>
+</p>
+
+<p>
+<term>(b)</term> Projecting onto the <m>xy</m>-plane just means forgetting
+the <m>z</m>-coordinate, so the projected curve is parametrized by the
+first two components alone,
+<md>
+x = 2\cos(t), \qquad y = 4\sin(t), \qquad 0 \le t \le 2\pi.
+</md>
+To turn that into a Cartesian equation, eliminate <m>t</m> with
+<m>\cos^2 t + \sin^2 t = 1</m>:
+<md>
+\left(\frac{x}{2}\right)^2 + \left(\frac{y}{4}\right)^2
+= \cos^2 t + \sin^2 t = 1,
+\qquad\text{that is}\qquad
+\frac{x^2}{4} + \frac{y^2}{16} = 1 .
+</md>
+The shadow is an ellipse in the <m>xy</m>-plane with semi-axes <m>2</m>
+in the <m>x</m>-direction and <m>4</m> in the <m>y</m>-direction. This
+is the same ellipse we started from in the <m>xz</m>-plane, which is no
+accident: the plane <m>y = z</m> carries the <m>z</m>-coordinate over to
+the <m>y</m>-coordinate unchanged.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-6">
+<statement>
+<p>
+Find the intersection of the line
+<m>\mathbf r(t) = \langle 1, 0, 1\rangle + t\langle -1, 1, 1\rangle</m>
+and the plane <m>2x - y + z = 1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The parametric equations of the line are
+<md>
+x(t) = 1 - t, \qquad y(t) = t, \qquad z(t) = 1 + t.
+</md>
+Substituting into the equation of the plane,
+<md>
+2x - y + z = 2(1-t) - t + (1+t) = 3 - 2t = 1
+\;\Rightarrow\; t = 1,
+</md>
+and <m>x(1) = 0</m>, <m>y(1) = 1</m>, <m>z(1) = 2</m>. The
+intersection is the point <m>(0, 1, 2)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-5">
+<statement>
+<p>
+Find the distance between the two planes
+<md>
+x + 2y + z = 1
+\qquad\text{and}\qquad
+2x + 4y + 2z = 7.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Dividing the second equation by <m>2</m> gives
+<m>x + 2y + z = \frac72</m>, so both planes have the same normal
+vector <m>\vec n = \langle 1, 2, 1\rangle</m> and are therefore
+<em>parallel</em>. (They are distinct, since <m>1 \ne \frac72</m>.)
+</p>
+
+<p>
+Pick any point on the first plane, say <m>P(1,0,0)</m>, and any point
+on the second, say <m>S\left(\frac72, 0, 0\right)</m>. Then
+<m>\vec{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
+distance between the planes is the length of the projection of
+<m>\vec{PS}</m> onto <m>\vec n</m>:
+<md>
+d = \left|\vec{PS}\cdot\frac{\vec n}{\|\vec n\|}\right|
+= \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
+= \frac{5}{2\sqrt6}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-12">
+<statement>
+<p>
+Find the angle between the planes <m>2x + 2y = 7</m> and
+<m>y + z = -1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The angle between two planes equals the angle between their normal
+vectors, <m>\vec n_1 = \langle 2, 2, 0\rangle</m> and
+<m>\vec n_2 = \langle 0, 1, 1\rangle</m>:
+<md>
+\cos\theta
+= \frac{\vec n_1 \cdot \vec n_2}{\|\vec n_1\|\,\|\vec n_2\|}
+= \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
+= \frac{2}{4}
+= \frac12,
+</md>
+so <m>\theta = \dfrac{\pi}{3}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-14">
+<statement>
+<p>
+There is a line <m>L</m> parametrized by <m>x = 1 + 2t</m>,
+<m>y = 3 + 4t</m>, <m>z = 5 + 6t</m>. The line passes through some
+point <m>P</m> whose <m>z</m>-coordinate is <m>-7</m>. Find an
+equation for the plane through <m>P</m> normal to <m>L</m>.
+</p>
+</statement>
+<solution>
+<p>
+First locate <m>P</m>. Setting <m>z = -7</m>,
+<md>
+5 + 6t = -7 \;\Rightarrow\; t = -2,
+</md>
+so <m>x = 1 + 2(-2) = -3</m> and <m>y = 3 + 4(-2) = -5</m>, i.e.
+<m>P(-3, -5, -7)</m>.
+</p>
+
+<p>
+A plane normal to <m>L</m> has the direction vector of <m>L</m> as its
+normal vector, <m>\vec n = \langle 2, 4, 6\rangle</m>. Therefore the
+plane is
+<md>
+2(x+3) + 4(y+5) + 6(z+7) = 0.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-4">
+<statement>
+<p>
+A surveyor determines that the three points
+<md>
+A = (-1,2,16), \qquad B = (2,-2,17), \qquad C = (2,0,16)
+</md>
+all lie on a flat surface <m>W</m>.
+<ol marker="(a)">
+<li>
+<p>
+Find the point of <m>W</m> that is closest to the point
+<m>(4,4,-3)</m>.
+</p>
+</li>
+<li>
+<p>
+Find parametric equations for a line that passes through
+<m>(4,4,-3)</m>, never crosses <m>W</m>, and satisfies
+<m>x(t) = y(t)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>Finding the plane.</term> Two vectors lying in <m>W</m> are
+<md>
+\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
+\qquad
+\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
+</md>
+A normal vector is their cross product:
+<md>
+<mrow>\vec n \amp = \vec{AB}\times\vec{AC}
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 1 \\
+3 \amp -2 \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp = \left\langle (-4)(0)-(1)(-2),\ (1)(3)-(3)(0),\ (3)(-2)-(-4)(3)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 2,\ 3,\ 6 \right\rangle .</mrow>
+</md>
+Note <m>\|\vec n\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
+Using the point <m>A</m>, the plane is
+<md>
+<mrow>2(x+1) + 3(y-2) + 6(z-16) \amp = 0</mrow>
+<mrow>2x + 3y + 6z \amp = 100 .</mrow>
+</md>
+(Check: <m>B</m> gives <m>4-6+102 = 100</m> and <m>C</m> gives
+<m>4+0+96 = 100</m>.)
+</p>
+
+<p>
+<term>(a)</term> The closest point of a plane to a given point
+<m>Q = (4,4,-3)</m> is the foot of the perpendicular from <m>Q</m>,
+which we reach by moving from <m>Q</m> in the direction of the normal.
+So consider
+<md>
+\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
+</md>
+and find the value of <m>t</m> for which this point lies on <m>W</m>:
+<md>
+<mrow>2(4+2t) + 3(4+3t) + 6(-3+6t) \amp = 100</mrow>
+<mrow>8 + 4t + 12 + 9t - 18 + 36t \amp = 100</mrow>
+<mrow>2 + 49t \amp = 100</mrow>
+<mrow>t \amp = 2 .</mrow>
+</md>
+Therefore the closest point is
+<md>
+\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
+</md>
+(Check: <m>16 + 30 + 54 = 100</m>.) Incidentally, the
+distance from <m>Q</m> to <m>W</m> is
+<m>|t|\,\|\vec n\| = 2\cdot 7 = 14</m>.
+See <xref ref="fig-m2a-plane"/>.
+</p>
+
+<figure xml:id="fig-m2a-plane">
+<caption>
+Schematic picture of <xref ref="m2a-4"/>. From <m>Q(4,4,-3)</m> we
+travel along the normal direction <m>\vec n = \langle 2,3,6\rangle</m>
+until we hit <m>W</m>, arriving at <m>(8,10,9)</m>. Any line through
+<m>Q</m> whose direction is perpendicular to <m>\vec n</m> stays
+parallel to <m>W</m> and never meets it.
+</caption>
+<image width="72%">
+<description>
+<p>
+A tilted plane W drawn as a parallelogram, with the point Q below it.
+A normal arrow runs from Q up to the foot of the perpendicular on the
+plane, and a second line through Q is drawn parallel to the plane,
+never meeting it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0]
+% the plane W as a parallelogram
+\fill[mblue, opacity=0.20] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\draw[mblue, thick] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\node[mblue] at (-2.75,1.45) {$W$};
+% the point Q and the foot F
+\coordinate (Q) at (0.2,-2.5);
+\coordinate (F) at (1.15,0.85);
+\draw[->, very thick, mverm] (Q) -- (F)
+      node[midway, right] {$\vec n=\langle 2,3,6\rangle$};
+\fill[mred] (Q) circle (2pt);
+\fill[mverm] (F) circle (2pt);
+\node[mred, anchor=north] at (Q) {$Q(4,4,-3)$};
+\node[mverm, anchor=south west] at (F) {$(8,10,9)$};
+% the parallel line through Q
+\draw[very thick, mgreen] (-3.0,-2.94) -- (3.6,-2.06);
+\node[mgreen, anchor=north east] at (-1.3,-2.98)
+      {$\ell:\ \vec d=\langle 6,6,-5\rangle$};
+% right angle mark at F
+\draw[mgray] ($(F)+(-0.20,-0.18)$) -- ($(F)+(-0.02,-0.30)$)
+             -- ($(F)+(0.10,-0.12)$);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> A line never crosses the plane <m>W</m> exactly when
+it is parallel to <m>W</m> and does not lie in it. Since
+<m>Q = (4,4,-3)</m> is not on <m>W</m> (we saw
+<m>2(4)+3(4)+6(-3) = 2 \ne 100</m>), we only need the direction vector
+<m>\vec d = \left\langle a, b, c\right\rangle</m> to be perpendicular
+to the normal:
+<md>
+\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
+</md>
+</p>
+
+<p>
+The extra requirement <m>x(t) = y(t)</m> forces the two lines
+<m>x = 4 + at</m> and <m>y = 4 + bt</m> to agree for all <m>t</m>,
+which happens exactly when <m>a = b</m>. Substituting <m>b = a</m>,
+<md>
+2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
+</md>
+Choosing <m>a = 6</m> and <m>c = -5</m> gives
+<m>\vec d = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
+<md>
+x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
+</md>
+Indeed <m>x(t) = y(t)</m> for every <m>t</m>, and
+<m>\vec d\cdot\vec n = 12+18-30 = 0</m>, so the line is parallel to
+<m>W</m> and, starting from a point off <m>W</m>, never reaches it.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="exer-parabolic-antenna">
+ <title>*A Parabolic Antenna</title>
+   <introduction>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
+<p>
+     A parabolic antenna has the shape of a paraboloid of revolution: it is
+     created by rotating part of a parabola around its axis.  By the
+     reflection property, all signals arriving parallel to the axis are
+     concentrated at the focus after reflecting off the dish, so that is
+     where the receiver is mounted.  The axial cross-section of the dish is
+     described by two measurements: the <em>diameter</em> <m>d</m> of the
+     dish and its <em>depth</em> <m>h</m>.  Placing the vertex at the origin
+     with the dish opening upward, the cross-section is the parabola
+     <m>x^2 = 4py</m>, and the rim passes through the points
+     <m>\left(\pm\tfrac{d}{2},\, h\right)</m>.
+   </p>
+   <p>
+     Consider a dish antenna with diameter <m>d = 120</m> cm and depth
+     <m>h = 20.3</m> cm, suitable for the amateur radio band at
+     <m>5.76</m> GHz.
+   </p>
+   <figure xml:id="fig-antenna-model">
+     <caption>
+       Cross-section of the parabolic antenna: diameter <m>d</m>, depth
+       <m>h</m>, focus <m>F(0,p)</m>, and opening angle <m>2\varphi</m>.
+     </caption>
+     <image xml:id="prefig-antenna-model" width="75%">
+       <description>
+<p>
+A parabola opening upward with vertex at the origin.  The rim
+         points at (minus d over 2, h) and (d over 2, h) are joined by a
+         horizontal double arrow labeled d.  A vertical double arrow labeled
+         h shows the depth from the rim down to the axis level.  The focus
+         F(0,p) lies on the y axis above the rim, and two segments run from
+         the focus to the rim points, enclosing the opening angle two phi.
+</p>
+</description>
+       <prefigure xmlns="https://prefigure.org" label="prefig-antenna-model">
+         <diagram dimensions="(540,260)" margins="5">
+           <definition>d = 120</definition>
+           <definition>h = 20.3</definition>
+           <definition>p = d^2/(16*h)</definition>
+           <definition>f(x) = x^2/(4*p)</definition>
+           <coordinates bbox="[-80,-14,80,64]">
+             <axes at="axes" xlabel="x" ylabel="y"/>
+             <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
+             <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
+             <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
+             <angle-marker at="opening-angle" points="((-d/2,h),(0,p),(d/2,h))" stroke="blue">
+               <m>2\varphi</m>
+             </angle-marker>
+             <line at="diameter" endpoints="((-d/2+3,h),(d/2-3,h))" stroke="blue" arrows="2"/>
+             <label at="label-d" anchor="(-30,h)" alignment="n"><m>d</m></label>
+             <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
+             <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
+             <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
+               <m>\left(-\tfrac{d}{2},\,h\right)</m>
+             </point>
+             <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
+               <m>\left(\tfrac{d}{2},\,h\right)</m>
+             </point>
+             <point at="focus" p="(0,p)" fill="blue" alignment="ne">
+               <m>F(0,p)</m>
+             </point>
+           </coordinates>
+           <annotations>
+             <annotation ref="figure"
+                 text="Cross-section of a parabolic dish antenna, showing its diameter, depth, focus, and opening angle">
+               <annotation ref="dish" sonify="yes"
+                   text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
+               <annotation ref="left-rim"
+                   text="the left rim point, with coordinates minus d over 2, comma, h"/>
+               <annotation ref="right-rim"
+                   text="the right rim point, with coordinates d over 2, comma, h"/>
+               <annotation ref="diameter"
+                   text="the diameter d of the dish, 120 centimeters, measured between the two rim points"/>
+               <annotation ref="depth"
+                   text="the depth h of the dish, 20.3 centimeters, measured from the rim level down to the level of the vertex"/>
+               <annotation ref="focus"
+                   text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex, which is above the rim of this shallow dish"/>
+               <annotation ref="left-ray"
+                   text="a segment from the focus to the left rim point"/>
+               <annotation ref="right-ray"
+                   text="a segment from the focus to the right rim point"/>
+               <annotation ref="opening-angle"
+                   text="the opening angle, 2 phi, between the two segments meeting at the focus, about 136 degrees"/>
+             </annotation>
+           </annotations>
+         </diagram>
+       </prefigure>
+     </image>
+   </figure>
+</introduction>
+ <task xml:id="task-antenna-focus">
+   <statement>
+     <p>
+       Determine the optimal location for the receiver, that is, find the
+       distance from the vertex of the dish to the focus.
+     </p>
+   </statement>
+   <solution>
+     <p>
+       The receiver must sit at the focus <m>(0,p)</m>.  The rim point
+       <m>\left(\tfrac{d}{2}, h\right) = (60,\, 20.3)</m> lies on the
+       parabola <m>x^2 = 4py</m>, so
+       <md>
+         60^2 = 4p(20.3)
+         \quad\Longrightarrow\quad
+         p = \frac{3600}{81.2} \approx 44.3.
+       </md>
+     </p>
+     <p>
+       The receiver should be mounted on the axis about <m>44.3</m> cm above
+       the vertex of the dish.  Note that <m>p \gt h</m> here, so the focus
+       sits <em>above</em> the rim of this shallow dish.
+     </p>
+   </solution>
+ </task>
+ <task xml:id="task-antenna-quadratic">
+   <statement>
+     <p>
+       Find the quadratic function <m>y = f(x)</m> (explicit form) that
+       describes the curvature of the dish, and graph it (for example, in
+       GeoGebra or Desmos).
+     </p>
+   </statement>
+   <solution>
+     <p>
+       Solving <m>x^2 = 4py</m> for <m>y</m> with
+       <m>4p = \frac{3600}{20.3} \approx 177.3</m> gives
+       <md>
+         y = \frac{1}{4p}\,x^2 = \frac{20.3}{3600}\,x^2 \approx \frac{x^2}{177.3},
+         \qquad -60 \le x \le 60.
+       </md>
+     </p>
+     <p>
+       The graph captures the true curvature of the dish provided both axes
+       use the same scale.
+     </p>
+   </solution>
+ </task>
+ <task xml:id="task-antenna-angle">
+   <statement>
+     <p>
+       The <em>opening angle</em> <m>2\varphi</m> of the dish is the angle
+       at which the two edges of the rim are seen from the focus.  Compute
+       it.
+     </p>
+   </statement>
+   <solution>
+     <p>
+       The focus <m>F(0,p)</m>, the point <m>(0,h)</m>, and the rim point
+       <m>\left(\tfrac{d}{2}, h\right)</m> form a right triangle with legs
+       <m>p - h</m> (vertical) and <m>\tfrac{d}{2}</m> (horizontal), and
+       <m>\varphi</m> is the angle at the focus.  Hence
+       <md>
+         \tan\varphi = \frac{d/2}{p - h} = \frac{60}{44.3 - 20.3} = \frac{60}{24}
+         \quad\Longrightarrow\quad
+         \varphi \approx 68.2^\circ.
+       </md>
+     </p>
+     <figure xml:id="fig-antenna-angle-triangle">
+       <caption>
+         The right triangle used to compute the half opening angle
+         <m>\varphi</m>: legs <m>p-h</m> and <m>d/2</m>.
+       </caption>
+       <image xml:id="prefig-antenna-angle-triangle" width="75%">
+         <description>
+<p>
+The same parabola and focus as before, with a red right triangle
+           drawn from the focus: a vertical leg of length p minus h down to
+           the rim level, a horizontal leg of length d over 2 out to the
+           right rim point, and the segment from the focus to the rim point
+           as hypotenuse.  The angle phi at the focus is marked.
+</p>
+</description>
+         <prefigure xmlns="https://prefigure.org" label="prefig-antenna-angle-triangle">
+           <diagram dimensions="(540,260)" margins="5">
+             <definition>d = 120</definition>
+             <definition>h = 20.3</definition>
+             <definition>p = d^2/(16*h)</definition>
+             <definition>f(x) = x^2/(4*p)</definition>
+             <coordinates bbox="[-80,-14,80,64]">
+               <axes at="axes" xlabel="x" ylabel="y"/>
+               <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
+               <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
+               <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
+               <line at="vertical-leg" endpoints="((0,p),(0,h))" stroke="red" thickness="3"/>
+               <line at="horizontal-leg" endpoints="((0,h),(d/2,h))" stroke="red" thickness="3"/>
+               <line at="square-1" endpoints="((0,h+4),(4,h+4))" stroke="red" thickness="1"/>
+               <line at="square-2" endpoints="((4,h+4),(4,h))" stroke="red" thickness="1"/>
+               <angle-marker at="half-angle" points="((0,h),(0,p),(d/2,h))" stroke="red">
+                 <m>\varphi</m>
+               </angle-marker>
+               <label at="label-vleg" anchor="(-2,(p+h)/2)" alignment="w"><m>p-h</m></label>
+               <label at="label-hleg" anchor="(d/4,h)" alignment="s"><m>d/2</m></label>
+               <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
+               <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
+               <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
+                 <m>\left(-\tfrac{d}{2},\,h\right)</m>
+               </point>
+               <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
+                 <m>\left(\tfrac{d}{2},\,h\right)</m>
+               </point>
+               <point at="focus" p="(0,p)" fill="blue" alignment="ne">
+                 <m>F(0,p)</m>
+               </point>
+             </coordinates>
+             <annotations>
+               <annotation ref="figure"
+                   text="The right triangle used to compute the half opening angle phi of the parabolic dish">
+                 <annotation ref="dish" sonify="yes"
+                     text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
+                 <annotation ref="focus"
+                     text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex"/>
+                 <annotation ref="right-rim"
+                     text="the right rim point, with coordinates d over 2, comma, h"/>
+                 <annotation ref="vertical-leg"
+                     text="the vertical leg of the right triangle, running from the focus down to rim level, with length p minus h, about 24 centimeters"/>
+                 <annotation ref="horizontal-leg"
+                     text="the horizontal leg, running from the axis out to the right rim point, with length d over 2, which is 60 centimeters"/>
+                 <annotation ref="right-ray"
+                     text="the hypotenuse, the segment from the focus to the right rim point"/>
+                 <annotation ref="half-angle"
+                     text="the half opening angle phi at the focus, about 68.2 degrees; its tangent is d over 2, divided by p minus h"/>
+                 <annotation ref="depth"
+                     text="the depth h of the dish, 20.3 centimeters"/>
+               </annotation>
+             </annotations>
+           </diagram>
+         </prefigure>
+       </image>
+     </figure>
+     <p>
+       The opening angle of the dish is <m>2\varphi \approx 136.4^\circ</m>.
+     </p>
+   </solution>
+ </task>
+</exercise>
+
+<exercise xml:id="rs19-3">
+<statement>
+<p>
+Identify and sketch the surface <m>4x^2 - y^2 + 2z^2 + 4 = 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+Dividing by <m>-4</m>, we can rewrite the equation as
+<md>
+x^2 - \frac{y^2}{4} + \frac{z^2}{2} = -1,
+\qquad\text{i.e.}\qquad
+\frac{y^2}{4} = 1 + x^2 + \frac{z^2}{2},
+</md>
+which forces <m>y^2 \ge 4</m>, i.e. <m>y \ge 2</m> or
+<m>y \le -2</m>. Let us look at the traces:
+<ul>
+<li>
+<p>
+Intersection with the plane <m>x = c_1</m>:
+<m>\dfrac{y^2}{4} - \dfrac{z^2}{2} = 1 + c_1^2</m>, a hyperbola.
+</p>
+</li>
+<li>
+<p>
+Intersection with the plane <m>y = c_2</m>:
+<m>x^2 + \dfrac{z^2}{2} = \dfrac{c_2^2}{4} - 1</m>; when
+<m>|c_2| \gt 2</m>, we have ellipses as intersections.
+</p>
+</li>
+<li>
+<p>
+Intersection with the plane <m>z = c_3</m>:
+<m>\dfrac{y^2}{4} - x^2 = 1 + \dfrac{c_3^2}{2}</m>, a hyperbola.
+</p>
+</li>
+</ul>
+The surface is a <term>hyperboloid of two sheets</term> along the
+<m>y</m>-axis, with vertices <m>(0,-2,0)</m> and <m>(0,2,0)</m>. See
+<xref ref="fig-rs19-hyperboloid2"/>.
+</p>
+
+<figure xml:id="fig-rs19-hyperboloid2">
+<caption>
+The hyperboloid of two sheets
+<m>\frac{y^2}{4} - x^2 - \frac{z^2}{2} = 1</m>: two bowl-shaped
+sheets opening along the <m>y</m>-axis, with vertices at
+<m>(0,\pm 2,0)</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+Two bowl shaped surfaces in a three dimensional coordinate system,
+opening away from each other along the horizontal y axis. The left
+sheet has its vertex at zero comma negative two comma zero and opens
+to the left; the right sheet has its vertex at zero comma two comma
+zero and opens to the right. Each sheet ends in an ellipse.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-2.3) -- (0,2.5) node[above] {$z$};
+  \draw[-stealth, thick] (-3.9,0) -- (4.1,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  % right sheet: vertex at y=2, profile z = +-0.95*sqrt(y^2/2 - 2)
+  \draw[mblue, thick] plot[domain=2:3.5, samples=31]
+    (\x, {0.95*sqrt(0.5*\x*\x - 2)});
+  \draw[mblue, thick] plot[domain=2:3.5, samples=31]
+    (\x, {-0.95*sqrt(0.5*\x*\x - 2)});
+  \draw[mblue, thick] (3.5,0) ellipse (0.34cm and 1.9cm);
+  % left sheet
+  \draw[mblue, thick] plot[domain=-3.5:-2, samples=31]
+    (\x, {0.95*sqrt(0.5*\x*\x - 2)});
+  \draw[mblue, thick] plot[domain=-3.5:-2, samples=31]
+    (\x, {-0.95*sqrt(0.5*\x*\x - 2)});
+  \draw[mblue, thick] (-3.5,0) ellipse (0.34cm and 1.9cm);
+  % vertices
+  \fill (2,0) circle (1.6pt) node[below right=1pt] {$(0,2,0)$};
+  \fill (-2,0) circle (1.6pt) node[below left=1pt] {$(0,-2,0)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rs-multiselect-quadrics">
+<title>Which of These Are Hyperboloids?</title>
+<statement>
+<p>
+None of the equations below is in standard position. Complete the square
+where necessary, then select <em>every</em> equation whose surface is a
+hyperboloid, of one sheet or of two.
+</p>
+</statement>
+<choices randomize="yes">
+
+<choice correct="yes">
+<statement><p><m>x^2 + y^2 - z^2 - 2x = 0</m></p></statement>
+<feedback>
+<p>
+Correct. Completing the square gives
+<m>(x-1)^2 + y^2 - z^2 = 1</m>: one negative square, equal to a positive
+constant, so a hyperboloid of <em>one</em> sheet.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>x^2 + y^2 + 4z^2 - 4y = 0</m></p></statement>
+<feedback>
+<p>
+No. This is <m>x^2 + (y-2)^2 + 4z^2 = 4</m> — every square is positive, so
+it is an ellipsoid.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement><p><m>x^2 - y^2 - z^2 = 1</m></p></statement>
+<feedback>
+<p>
+Correct. <em>Two</em> negative squares against a positive constant gives a
+hyperboloid of two sheets.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>x^2 + y^2 - z^2 = 0</m></p></statement>
+<feedback>
+<p>
+No — and this is the trap. It has the same signs as the first option, but
+it equals <m>0</m> rather than a positive constant. That degenerates the
+hyperboloid into an <em>elliptic cone</em>, the surface the two families of
+hyperboloids approach asymptotically.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement><p><m>z + 1 = x^2 - y^2</m></p></statement>
+<feedback>
+<p>
+No. The word <q>hyperbolic</q> is a red herring: this is linear in
+<m>z</m>, so it is a <em>hyperbolic paraboloid</em> (a saddle) with vertex
+at <m>(0,0,-1)</m>, not a hyperboloid.
+</p>
+</feedback>
+</choice>
+
+</choices>
+<solution>
+<p>
+Completing the square in the first and second,
+<md>
+<mrow>x^2 + y^2 - z^2 - 2x \amp = 0
+   \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
+<mrow>x^2 + y^2 + 4z^2 - 4y \amp = 0
+   \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
+</md>
+Reading off the signs: one negative square against <m>+1</m> is a
+hyperboloid of one sheet; two negative squares against <m>+1</m> is a
+hyperboloid of two sheets. So the first and third are hyperboloids. The
+second is an ellipsoid, the fourth equals <m>0</m> and so is a cone, and
+the fifth is linear in <m>z</m> and so is a hyperbolic paraboloid.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-3d-parabolic-cylinder">
+<title>Graphing a Parabolic Cylinder</title>
+<statement>
+<p>
+Sketch the graph of <m>z = 4 - x^2</m> over the rectangle
+<m>-2 \le x \le 2</m>, <m>0 \le y \le 4</m> in the <m>xy</m>-plane.
+Why is this surface called a <term>parabolic cylinder</term>?
+</p>
+</statement>
+
+<solution>
+<p>
+Since the equation <m>z=4-x^2</m> does not involve <m>y</m>, every
+cross-section of the surface at a fixed value of <m>y</m> is the
+<em>same</em> parabola <m>z=4-x^2</m> in the <m>xz</m>-plane, opening
+downward from its vertex at <m>(0,4)</m>. Sliding that parabola along
+the <m>y</m>-axis from <m>y=0</m> to <m>y=4</m> sweeps out the surface.
+</p>
+<p>
+Over <m>-2\le x\le 2</m>, the parabola satisfies <m>4-x^2 \ge 0</m>,
+with equality exactly at <m>x=\pm 2</m>, so the surface touches the
+<m>xy</m>-plane along the two edges <m>x=\pm2</m> of the rectangular
+region and rises to a maximum height of <m>4</m> along the ridge
+<m>x=0</m>. Because it is generated by sliding a fixed curve along a
+straight line, rather than curving in the <m>y</m> direction as well,
+it is called a <term>parabolic cylinder</term>, shown in
+<xref ref="fig-ex3d-parabolic-cylinder"/>.
+</p>
+
+<figure xml:id="fig-ex3d-parabolic-cylinder">
+<caption>
+The parabolic cylinder <m>z=4-x^2</m> over the rectangle
+<m>-2\le x\le 2</m>, <m>0 \le y \le 4</m>. Every slice at a fixed
+<m>y</m> is the same downward-opening parabola.
+</caption>
+<image width="55%">
+<description>
+<p>
+A curved sheet shaped like a downward opening parabola in the x z
+plane, extended without change along the y direction over a rectangular
+region in the x y plane, forming an arched, tunnel-like surface.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.85]
+\pgfmathsetmacro{\step}{0.01}
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (2.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-2.5,0,0);
+\draw[thick,->] (0,0,0) -- (0,4.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-0.5,0);
+\draw[thick] (0,0,0.0) -- (0,0,4.0);
+% the rectangular region in the xy-plane
+\draw[gray,thick,fill=yellow,opacity=0.35] (2,0,0) -- (2,4,0) -- (-2,4,0) -- (-2,0,0) -- cycle;
+\draw[blue,thick,opacity=0.5] (2,0,0) -- (2,4,0) -- (-2,4,0) -- (-2,0,0) -- cycle;
+% the curves slicing the surface
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},{0},{4.0 - \t*\t});
+% the surface
+\foreach \y in {0,\step,...,4.0}{
+  \draw[cyan,thick,opacity=0.25] plot[domain=-2:2,smooth,variable=\t] ({\t},{\y},{4.0 - \t*\t});
+}
+% the curves slicing the surface
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},{4.0},{4.0 - \t*\t});
+\node[blue,above right] at (0,2.5,4.125) {$z = 4 - x^2$};
+% last part of the z axis
+\draw[thick,->] (0,0,4.0) -- (0,0,4.5) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-3d-cylinder-paraboloid-solid">
+<title>A Solid Bounded by a Cylinder and a Paraboloid</title>
+<statement>
+<p>
+Consider the solid bounded by the three surfaces
+<md>
+z = 0, \qquad z = x^2+y^2, \qquad x^2+y^2 = 4.
+</md>
+<ol marker="(a)">
+<li>
+<p>
+Describe each of the three bounding surfaces.
+</p>
+</li>
+<li>
+<p>
+Describe the solid region they enclose.
+</p>
+</li>
+<li>
+<p>
+Describe the cross-section of the solid in the plane <m>y=0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<term>(a)</term> The equation <m>z=0</m> is the <m>xy</m>-plane. The
+equation <m>z=x^2+y^2</m> is a paraboloid opening upward from its
+vertex at the origin. The equation <m>x^2+y^2=4</m> is missing
+<m>z</m>, so it is the infinite cylinder of radius <m>2</m> whose axis
+is the <m>z</m>-axis. The paraboloid meets that cylinder exactly where
+<m>x^2+y^2=4</m>, at height <m>z=4</m>.
+</p>
+<p>
+<term>(b)</term> The solid consists of the points inside the cylinder
+lying between the flat base and the paraboloid:
+<md>
+x^2+y^2 \le 4, \qquad 0 \le z \le x^2+y^2.
+</md>
+Near the <m>z</m>-axis this range for <m>z</m> is almost nothing, since
+<m>x^2+y^2 \approx 0</m> there, while at the rim <m>x^2+y^2=4</m> it is
+the full interval <m>0 \le z \le 4</m>. The solid is therefore shaped
+like a shallow bowl carved out from underneath the paraboloid: thin at
+the center and rising to its full height <m>4</m> at the cylinder wall,
+shown in <xref ref="fig-ex3d-cylinder-paraboloid-solid"/>.
+</p>
+<p>
+<term>(c)</term> Setting <m>y=0</m> restricts the solid's defining
+inequalities to <m>-2\le x\le 2</m> and <m>0\le z\le x^2</m>: the
+region under the parabola <m>z=x^2</m>, above the <m>x</m>-axis,
+between <m>x=-2</m> and <m>x=2</m>, shown in
+<xref ref="fig-ex3d-cylinder-paraboloid-cross-section"/>.
+</p>
+
+<figure xml:id="fig-ex3d-cylinder-paraboloid-cross-section">
+<caption>
+The cross-section of the solid in the plane <m>y=0</m>: the region
+under the parabola <m>z=x^2</m> for <m>-2\le x\le 2</m>.
+</caption>
+<image width="40%">
+<description>
+<p>
+A two dimensional graph in the x z plane. A shaded region lies under
+the upward opening parabola z equals x squared, above the x axis,
+between x equals negative two and x equals two.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+% the region 0 <= z <= x^2 for -2 <= x <= 2
+\fill[cyan!35, opacity=0.85] plot[domain=-2:2, samples=60] (\x,{\x*\x}) -- (2,0) -- (-2,0) -- cycle;
+\draw[cyan!55!black, thick] plot[domain=-2:2, samples=60] (\x,{\x*\x});
+\draw[cyan!55!black, thick] (-2,0) -- (2,0);
+\draw[->, thick] (-2.6,0) -- (2.6,0) node[right] {$x$};
+\draw[->, thick] (0,-0.4) -- (0,4.6) node[above] {$z$};
+\node[below left] at (0,0) {$0$};
+\draw[dashed, gray] (2,0) -- (2,4);
+\draw[dashed, gray] (-2,0) -- (-2,4);
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\node[cyan!55!black, above right] at (1.3,2.0) {$z=x^2$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<figure xml:id="fig-ex3d-cylinder-paraboloid-solid">
+<caption>
+The solid bounded by <m>z=0</m>, the paraboloid <m>z=x^2+y^2</m>, and
+the cylinder <m>x^2+y^2=4</m>. The solid fills the region under the
+paraboloid, thin near the <m>z</m>-axis and reaching full height where
+the paraboloid meets the cylinder wall.
+</caption>
+<image width="55%">
+<description>
+<p>
+A paraboloid opening upward from the origin, shown as a shaded bowl
+sitting inside a cylindrical wall of radius two. The bowl's rim meets
+the top of the cylinder, and a shaded disk in the x y plane forms the
+flat base of the solid beneath the bowl.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{130}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.75]
+\tikzmath{function f(\x) {return \x;};}
+\pgfmathsetmacro{\zini}{0.5*sqrt(2.0)}
+\pgfmathsetmacro{\step}{0.01}
+\pgfmathsetmacro{\zsig}{\zini+\step}
+\pgfmathsetmacro{\nextz}{\zini+0.5*\step}
+\pgfmathsetmacro{\sig}{2.0*\step}
+\pgfmathsetmacro{\tini}{0.5*pi}
+\pgfmathsetmacro{\tnext}{\tini+\step}
+\pgfmathsetmacro{\tfin}{1.85*pi}
+\pgfmathsetmacro{\tend}{2.5*pi}
+\pgfmathsetmacro{\tNext}{\tfin+\step}
+\pgfmathsetmacro{\final}{2.0*pi}
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-2.5,0,0);
+\draw[thick,->] (0,0,0) -- (0,3.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-2.5,0);
+% the base disk
+\draw[gray,thick,fill=yellow,opacity=0.35] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
+\draw[gray,dash dot dot] (-2,0,0) -- (-2,0,4);
+\draw[gray,dash dot dot] (0,-2,0) -- (0,-2,4);
+% the cylinder around the paraboloid (back)
+\foreach \angulo in {\tini,\tnext,...,\tfin}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
+}
+% the paraboloid (for z = constant)
+\foreach \altura in {\step,\sig,...,4.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.25] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
+}
+\draw[thick] (0,0,0) -- (0,0,4.0);
+% the curves bounding the solid
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},0,{\t*\t});
+\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] (0,{\t},{\t*\t});
+% the paraboloid (for z = constant)
+\foreach \altura in {\step,\sig,...,4.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.25] plot[domain=\tfin:\tend,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
+}
+\draw[blue,thick,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0});
+% the cylinder out of the paraboloid (front)
+\foreach \angulo in {\tfin,\tNext,...,\tend}{
+  \pgfmathparse{2.0*cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{2.0*sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
+}
+\draw[gray,dash dot dot] (2,0,0) -- (2,0,4);
+\draw[gray,dash dot dot] (0,2,0) -- (0,2,4);
+\node[blue,left] at (1,-1.25,2.5) {$z = x^2 + y^2$};
+\draw[thick,->] (0,0,4.0) -- (0,0,4.5) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<!-- ===== From the Interactive Problem Set (exercises-runestone-samples.ptx):
+     its three Chapter 3 problems.  These use dev-schema elements. ===== -->
+<exercise xml:id="rs-mc-vector-identity">
+<title>Which Identity Fails?</title>
+<statement>
+<p>
+Exactly one of the following is <em>not</em> valid for all vectors
+<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
+</p>
+</statement>
+<choices randomize="yes">
+
+<choice>
+<statement>
+<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid. Both sides equal the determinant with rows
+<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+Correct — the cross product is <em>not associative</em>. Take
+<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
+<md>
+\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
+ = -\mathbf j,
+\qquad
+(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
+</md>
+The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
+right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
+reason for those to agree.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid — the cross product <em>is</em> distributive over
+addition. (It is only associativity that fails.)
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c)
+   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid: it is the <q>BAC-CAB</q> triple product expansion. It
+looks the most exotic of the four, which is exactly why it is worth
+remembering that it is true.
+</p>
+</feedback>
+</choice>
+
+</choices>
+</exercise>
+
+<exercise xml:id="rs-fillin-skew-lines">
+<title>Distance Between Skew Lines</title>
+<statement>
+<p>
+Consider the two lines
+<md>
+<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
+   + t\,\langle 2,-1,1\rangle,</mrow>
+<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
+   + s\,\langle 1,2,-1\rangle .</mrow>
+</md>
+They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
+<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
+</p>
+<p>
+The absolute value of the scalar triple product
+<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
+<var width="6"/>.
+</p>
+<p>
+The distance between the two lines, to three decimal places, is
+<var width="8"/>.
+</p>
+</statement>
+<setup>
+<var>
+<condition number="5">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="-5">
+<feedback>
+<p>
+Nearly — the triple product itself is <m>-5</m>, but the question asks for
+its <em>absolute value</em>.
+</p>
+</feedback>
+</condition>
+</var>
+<var>
+<condition number="0.845" tolerance="0.001">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="5.916" tolerance="0.002">
+<feedback>
+<p>
+That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
+<em>denominator</em>. You still need to divide the triple product by it.
+</p>
+</feedback>
+</condition>
+<condition number="0.141" tolerance="0.002">
+<feedback>
+<p>
+You appear to have divided by <m>35</m> rather than by
+<m>\sqrt{35}</m>.
+</p>
+</feedback>
+</condition>
+</var>
+</setup>
+<hint>
+<p>
+The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
+distance is the length of the projection of <m>\vec w</m> onto it:
+<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
+\left|\vec u\times\vec v\right|</m>.
+</p>
+</hint>
+<solution>
+<p>
+With <m>\vec u = \langle 2,-1,1\rangle</m> and
+<m>\vec v = \langle 1,2,-1\rangle</m>,
+<md>
+\vec u\times\vec v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp -1 \amp 1 \\
+1 \amp 2 \amp -1
+\end{vmatrix}
+= \langle -1,\, 3,\, 5\rangle,
+\qquad
+\left|\vec u\times\vec v\right| = \sqrt{35}.
+</md>
+Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
+= \langle -1,3,-3\rangle</m>,
+<md>
+\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
+\qquad
+d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs-parsons-no-work">
+<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
+<statement>
+<p>
+Arrange the steps below into a correct proof that the magnetic force does no
+work, and therefore that a charged particle in a magnetic field moves at
+constant speed.
+</p>
+</statement>
+<!--
+  Keep the content of each <m> on ONE source line inside a <block>.  Parsons
+  blocks are line-oriented, so a newline inside the math splits the \( \)
+  delimiters across two lines and MathJax leaves the LaTeX as literal text.
+-->
+<blocks randomize="yes">
+<block order="1">
+<p>
+Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
+<m>\vec v</m> through a magnetic field <m>\vec B</m>.
+</p>
+</block>
+<block order="2">
+<p>
+The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
+</p>
+</block>
+<block order="3">
+<p>
+By definition, a cross product is perpendicular to both of its factors, so
+<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
+</p>
+</block>
+<block order="4">
+<p>
+Hence <m>\vec F\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+</p>
+</block>
+<block order="5">
+<p>
+The kinetic energy satisfies
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right) = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+</p>
+</block>
+<block order="6">
+<p>
+Therefore <m>\dfrac{d}{dt}\left(\tfrac12 m v^2\right) = 0</m>, so <m>v</m>
+is constant: the field changes the particle's direction but never its
+speed.
+</p>
+</block>
+</blocks>
+</exercise>
+
+</worksheet>

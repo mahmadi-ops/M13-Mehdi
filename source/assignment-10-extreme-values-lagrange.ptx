@@ -1,16 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Exercise for the Lagrange Multipliers section, collected in the Exercises chapter.
--->
-<worksheet xml:id="exercises-lagrange">
-  <title> Exercises for <xref ref="section-lagrange-multipliers" text="title"/></title>
+  Assignment 10: Extreme Values and Saddle Points, and Lagrange Multipliers.
 
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-lagrange-multipliers" text="title"/>.
-    </p>
-  </introduction>
+  The odd-numbered problems of the old worksheet "Exercises for Extreme
+  Values and Saddle Points" (ex-extrema-triangle, rm2-ex-2, rw21-7, rw23-4
+  and pp-35), which lived inline in exercises.ptx, followed by the
+  odd-numbered problems of the old worksheet "Exercises for Lagrange
+  Multipliers" (exer-parallel-tangent-plane, exer-cobb-douglas, rf-7,
+  rs19-10, pp-37 and pp-39), which lived in lagrange_exercise.ptx.  The
+  even-numbered problems of both went to review-problems-4.ptx.
+
+  ex-extrema-triangle carried an interactive step-by-step hint (the
+  "hints-extrema-triangle" iframe and its print-only note); both the markup
+  and the asset assets/iframe/hint-extrema-triangle.html were deleted at the
+  instructor's request.
+-->
+<worksheet xml:id="worksheet-assignment-10" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 10</title>
+
+<introduction>
+<p>
+These problems find absolute extrema on a closed region, classify critical
+points with the second derivative test, and use Lagrange multipliers to
+optimize a function subject to a constraint. If you would like to review the
+material first, see
+<xref ref="section-extreme-values" text="title"/> and
+<xref ref="section-lagrange-multipliers" text="title"/>.
+</p>
+</introduction>
+
+      <exercise xml:id="ex-extrema-triangle">
+        <statement>
+          <p>
+            Find the absolute maximum and minimum values of
+            <md>f(x,y)=x^2-xy+y^2-3y</md>
+            on the region bounded by the <m>x</m>- and
+            <m>y</m>-axes and the line <m>x+y=4</m>.
+          </p>
+        </statement>
+
+         <solution>
+      <p>
+        The gradient is <m>\nabla f = \langle 2x - y,\; -x + 2y - 3\rangle</m>, which
+        vanishes only at <m>(1,2)</m>, a point in the interior of the region. There
+        <m>f(1,2) = -3</m>. Since this is the only critical point on all of
+        <m>\mathbb{R}^2</m> and it is a minimum (by the second derivative test), it is a
+        global minimum. We now examine the three boundary segments to look for possible
+        maxima.
+      </p>
+      <p>
+        On the <m>x</m>-axis with <m>0 \le x \le 4</m>, we have <m>f(x,0) = x^2</m>, which
+        is maximized at <m>f(4,0) = 16</m>.
+      </p>
+      <p>
+        On the <m>y</m>-axis with <m>0 \le y \le 4</m>, we have <m>f(0,y) = y^2 - 3y</m>,
+        which is maximized at <m>f(0,4) = 4</m>.
+      </p>
+      <p>
+        Finally, on the line <m>x = 4 - y</m> with <m>0 \le y \le 4</m>, we have
+        <m>f(4-y,\,y) = 3y^2 - 15y + 16</m>, which is maximized at <m>f(4,0) = 16</m>.
+      </p>
+      <p>
+        Altogether, there is an absolute minimum <m>f(1,2) = -3</m> and an absolute maximum
+        <m>f(4,0) = 16</m>.
+      </p>
+    </solution>
+      </exercise>
+
+<exercise xml:id="rm2-ex-2">
+<statement>
+<p>
+Find and classify all the critical points of
+<m>f(x,y) = xy\,e^{x^2+y^2}</m>.
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+\nabla f(x,y) = \left\langle
+\left(1 + 2x^2\right) y\, e^{x^2+y^2},\;
+x \left(1 + 2y^2\right) e^{x^2+y^2}
+\right\rangle.
+</md>
+Since the exponential factors, as well as <m>1 + 2x^2</m> and
+<m>1 + 2y^2</m>, are always positive, we might as well ignore them
+when finding the zeros. So we are left with
+<m>\langle x, y\rangle = \langle 0, 0\rangle</m>, i.e. the only
+critical point is <m>(0,0)</m>. The second derivatives of <m>f</m> are
+<md>
+<mrow>f_{xx} \amp = \left(6x + 4x^3\right) y\, e^{x^2+y^2}</mrow>
+<mrow>f_{xy} \amp = \left(1 + 2x^2\right)\left(1 + 2y^2\right)
+e^{x^2+y^2}</mrow>
+<mrow>f_{yy} \amp = x\left(6y + 4y^3\right) e^{x^2+y^2}</mrow>
+</md>
+Hence <m>D(0,0) = f_{xx}f_{yy} - f_{xy}^2 = -1</m>, so <m>(0,0)</m> is
+a saddle point.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-7">
+<statement>
+<p>
+Find the maximum and minimum values of the function
+<m>f(x,y) = 2x^2 + 3y^2 - 4x - 5</m> on the domain
+<m>x^2 + y^2 \le 121</m>.
+</p>
+</statement>
+<solution>
+<p>
+<em>Critical points in the interior:</em>
+<md>
+f_x = 4x - 4 = 0 \;\Rightarrow\; x = 1,
+\qquad
+f_y = 6y = 0 \;\Rightarrow\; y = 0,
+</md>
+so <m>(1,0)</m> is the only critical point, with
+<m>f(1,0) = -7</m>.
+</p>
+
+<p>
+<em>The boundary:</em> on the circle <m>x^2 + y^2 = 121</m> we have
+<m>y^2 = 121 - x^2</m> with <m>-11 \le x \le 11</m>, so
+<md>
+f = 2x^2 + 3\left(121 - x^2\right) - 4x - 5
+= 358 - 4x - x^2,
+</md>
+and
+<md>
+\frac{d}{dx}\left(358 - 4x - x^2\right) = -4 - 2x = 0
+\;\Rightarrow\; x = -2,
+</md>
+giving <m>y^2 = 117</m>, i.e. <m>y = \pm\sqrt{117}</m>, with
+<md>
+f\left(-2, \pm\sqrt{117}\right) = 358 + 8 - 4 = 362.
+</md>
+At the endpoints <m>x = \pm 11</m> (where <m>y = 0</m>),
+<m>f(11,0) = 193</m> and <m>f(-11,0) = 281</m>.
+</p>
+
+<p>
+Comparing all the values, the maximum value of <m>f</m> is
+<m>362</m>, attained at <m>\left(-2, \sqrt{117}\right)</m> and
+<m>\left(-2, -\sqrt{117}\right)</m>, and the minimum value is
+<m>-7</m>, attained at <m>(1,0)</m>. See
+<xref ref="fig-rw21-disk"/>.
+</p>
+
+<figure xml:id="fig-rw21-disk">
+<caption>
+The disk <m>x^2 + y^2 \le 121</m>, the interior minimum at
+<m>(1,0)</m>, and the boundary maxima at
+<m>\left(-2, \pm\sqrt{117}\right)</m>.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-disk">
+<diagram dimensions="(300,290)" margins="12">
+<definition>circ(t) = (11*cos(t), 11*sin(t))</definition>
+<coordinates bbox="(-15.5,-14.5,15.5,14.5)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="dk-circle" function="circ" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="dk-min" p="(1,0)" fill="#009E73"/>
+<point at="dk-max1" p="(-2,10.8167)" fill="#D55E00"/>
+<point at="dk-max2" p="(-2,-10.8167)" fill="#D55E00"/>
+<label at="dk-min-lab" anchor="(1.6,-2.6)" alignment="se" color="#009E73">
+<m>(1,0),\ f=-7</m>
+</label>
+<label at="dk-max1-lab" anchor="(-14.8,12.1)" alignment="e" color="#D55E00">
+<m>\left(-2,\sqrt{117}\right),\ f=362</m>
+</label>
+<label at="dk-max2-lab" anchor="(-14.8,-13.2)" alignment="e" color="#D55E00">
+<m>\left(-2,-\sqrt{117}\right),\ f=362</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue circle of radius eleven centered at the origin. A green point just right of the center at one comma zero marks the minimum, f equals negative seven. Two vermillion points on the circle at negative two comma plus and minus the square root of one hundred seventeen mark the maxima, f equals three hundred sixty two.">
+  <annotation ref="dk-circle" text="The boundary circle x squared plus y squared equals one hundred twenty one."/>
+  <annotation ref="dk-min" text="The interior critical point one comma zero, where the minimum negative seven occurs."/>
+  <annotation ref="dk-max1" text="A boundary maximum at negative two comma square root of one hundred seventeen."/>
+  <annotation ref="dk-max2" text="A boundary maximum at negative two comma negative square root of one hundred seventeen."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-4">
+<statement>
+<p>
+The business manager for Acme Corporation plots a grid on a map of the
+region Acme serves and determines that the company's three most
+important customers are located at points <m>A(1,5)</m>,
+<m>B(0,0)</m>, and <m>C(8,0)</m>, where units are in miles. At what
+point <m>W(x,y)</m> should a warehouse be located in order to minimize
+<em>the sum of the squares of the distances</em> (NOT the square of
+the sum) from <m>W</m> to <m>A</m>, <m>B</m>, and <m>C</m>?
+</p>
+</statement>
+<solution>
+<p>
+The sum of the squares of the distances is
+<md>
+<mrow>f(x,y) \amp = (x-1)^2 + (y-5)^2 + x^2 + y^2 + (x-8)^2 + y^2</mrow>
+<mrow>\amp = 3x^2 - 18x + 3y^2 - 10y + 90.</mrow>
+</md>
+Setting the partial derivatives equal to zero,
+<md>
+<mrow>f_x \amp = 6x - 18 = 0 \;\Rightarrow\; x = 3,</mrow>
+<mrow>f_y \amp = 6y - 10 = 0 \;\Rightarrow\; y = \frac53,</mrow>
+</md>
+so <m>\left(3, \frac53\right)</m> is the only critical point. The
+second derivatives are <m>f_{xx} = 6 \gt 0</m>, <m>f_{yy} = 6</m>,
+<m>f_{xy} = 0</m>, so
+<m>D = f_{xx}f_{yy} - f_{xy}^2 = 36 \gt 0</m>. Since <m>D \gt 0</m>
+and <m>f_{xx} \gt 0</m>, the point <m>\left(3, \frac53\right)</m> is a
+local minimum.
+</p>
+
+<p>
+Also, if we complete the squares we can see that this point is where
+the absolute minimum happens:
+<md>
+f(x,y) = 3\left(y - \frac53\right)^2 + 3(x-3)^2
++ \underbrace{90 - \frac{25}{3} - 27}_{\gt 0},
+</md>
+where the first two terms are non-negative and vanish exactly at
+<m>\left(3, \frac53\right)</m>. See <xref ref="fig-rw23-warehouse"/>.
+</p>
+
+<figure xml:id="fig-rw23-warehouse">
+<caption>
+The three customers <m>A(1,5)</m>, <m>B(0,0)</m>, <m>C(8,0)</m>, and
+the warehouse location <m>W\left(3, \frac53\right)</m> that minimizes
+the sum of the squares of the distances.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw23-warehouse">
+<diagram dimensions="(360,260)" margins="12">
+<coordinates bbox="(-1.2,-1.2,9.2,6.2)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="wh-wa" endpoints="((3,1.6667),(1,5))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<line at="wh-wb" endpoints="((3,1.6667),(0,0))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<line at="wh-wc" endpoints="((3,1.6667),(8,0))"
+      stroke="#009E73" dash="5 4" thickness="2"/>
+<point at="wh-A" p="(1,5)" fill="#0072B2"/>
+<point at="wh-B" p="(0,0)" fill="#0072B2"/>
+<point at="wh-C" p="(8,0)" fill="#0072B2"/>
+<point at="wh-W" p="(3,1.6667)" fill="#D55E00"/>
+<label at="wh-A-lab" anchor="(1.15,5.15)" alignment="ne" color="#0072B2">
+<m>A(1,5)</m>
+</label>
+<label at="wh-B-lab" anchor="(0.15,-0.35)" alignment="se" color="#0072B2">
+<m>B(0,0)</m>
+</label>
+<label at="wh-C-lab" anchor="(7.9,-0.35)" alignment="sw" color="#0072B2">
+<m>C(8,0)</m>
+</label>
+<label at="wh-W-lab" anchor="(3.25,1.85)" alignment="ne" color="#D55E00">
+<m>W\!\left(3,\frac53\right)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three blue points mark the customers: A at one comma five, B at the origin, and C at eight comma zero. A vermillion point W at three comma five thirds sits between them, joined to each customer by a dashed green segment.">
+  <annotation ref="wh-W" text="The warehouse location W at three comma five thirds, the point minimizing the sum of the squares of the distances."/>
+  <annotation ref="wh-A" text="Customer A at one comma five."/>
+  <annotation ref="wh-B" text="Customer B at the origin."/>
+  <annotation ref="wh-C" text="Customer C at eight comma zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-35">
+<statement>
+<p>
+Find all local maxima, minima and saddle points for
+<m>f(x,y) = \frac13 x^3 - x + xy^2</m>.
+</p>
+</statement>
+<solution>
+<p>
+The first partials are
+<md>
+f_x = x^2 - 1 + y^2,
+\qquad
+f_y = 2xy.
+</md>
+Setting <m>f_y = 0</m> forces <m>x = 0</m> or <m>y = 0</m>.
+<ul>
+<li>
+<p>
+If <m>x = 0</m>: <m>f_x = -1 + y^2 = 0</m> gives <m>y = \pm 1</m>, so
+the critical points are <m>(0,1)</m> and <m>(0,-1)</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>y = 0</m>: <m>f_x = x^2 - 1 = 0</m> gives <m>x = \pm 1</m>, so
+the critical points are <m>(1,0)</m> and <m>(-1,0)</m>.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+The second partials are <m>f_{xx} = 2x</m>, <m>f_{yy} = 2x</m>, and
+<m>f_{xy} = 2y</m>, so the discriminant is
+<md>
+D = f_{xx}f_{yy} - f_{xy}^{2} = 4x^2 - 4y^2.
+</md>
+Applying the second derivative test:
+<ul>
+<li>
+<p>
+<m>(0, \pm 1)</m>: <m>D = -4 \lt 0</m>, so both are
+<term>saddle points</term>.
+</p>
+</li>
+<li>
+<p>
+<m>(1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = 2 \gt 0</m>, so this
+is a <term>local minimum</term>.
+</p>
+</li>
+<li>
+<p>
+<m>(-1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = -2 \lt 0</m>, so
+this is a <term>local maximum</term>.
+</p>
+</li>
+</ul>
+</p>
+</solution>
+</exercise>
 
     <exercise xml:id="exer-parallel-tangent-plane">
       <title>Tangent Planes Parallel to a Given Plane</title>
@@ -142,11 +477,11 @@
           For a point <m>S(x,y,z)</m> on the ellipsoid, the distance from
           <m>S</m> to the plane is
           <me>
-            \frac{\overrightarrow{PS}\cdot\mathbf{n}}{\lVert \mathbf{n}\rVert}
+            \frac{\overrightarrow{PS}\cdot\mathbf{n}}{\lvert\mathbf{n}\rvert}
             = \frac{\langle x-3,\, y,\, z\rangle\cdot\langle 1,5,2\rangle}
-                   {\lVert \mathbf{n}\rVert}.
+                   {\lvert\mathbf{n}\rvert}.
           </me>
-          Since <m>\lVert \mathbf{n}\rVert</m> is constant, it suffices to
+          Since <m>\lvert\mathbf{n}\rvert</m> is constant, it suffices to
           optimize the numerator
           <me>
             f(x,y,z) = x - 3 + 5y + 2z
@@ -204,234 +539,6 @@
       </solution>
     </exercise>
 
-    <!-- ================================================================ -->
-    <exercise xml:id="exer-xy-on-circle">
-      <title>A product on a circle</title>
-
-      <statement>
-        <p>
-          Find the maximum and minimum values of the function
-          <m>f(x,y) = 4xy</m> subject to the constraint
-          <m>x^2 + y^2 = 8</m>.
-        </p>
-      </statement>
-
-      <solution>
-        <p>
-          Write the constraint as
-          <me>
-            g(x,y) = x^2 + y^2 - 8 = 0,
-          </me>
-          so that <m>g_x = 2x</m> and <m>g_y = 2y</m>, while
-          <m>f_x = 4y</m> and <m>f_y = 4x</m>.
-          The Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> gives
-          <me>
-            4y = 2\lambda x, \qquad 4x = 2\lambda y.
-          </me>
-        </p>
-
-        <p>
-          Solving each equation for <m>\lambda</m>,
-          <me>
-            \lambda = \frac{2y}{x} = \frac{2x}{y}
-            \qquad\Longrightarrow\qquad
-            x^2 = y^2.
-          </me>
-          Substituting into the constraint <m>x^2 + y^2 - 8 = 0</m> gives
-          <m>2x^2 = 8</m>, so
-          <me>
-            x = \pm 2, \qquad y = \pm 2.
-          </me>
-          Hence there are four extrema:
-          <m>(2,2)</m>, <m>(2,-2)</m>, <m>(-2,2)</m>, <m>(-2,-2)</m>.
-        </p>
-
-        <p>
-          Evaluating <m>f</m> at the four candidates:
-        </p>
-
-        <tabular halign="center">
-          <col width="30%"/>
-          <col width="30%"/>
-          <row header="yes" bottom="minor">
-            <cell><m>(x,y)</m></cell>
-            <cell><m>f(x,y)</m></cell>
-          </row>
-          <row>
-            <cell><m>(2,2)</m></cell>
-            <cell><m>16</m></cell>
-          </row>
-          <row>
-            <cell><m>(-2,-2)</m></cell>
-            <cell><m>16</m></cell>
-          </row>
-          <row>
-            <cell><m>(2,-2)</m></cell>
-            <cell><m>-16</m></cell>
-          </row>
-          <row>
-            <cell><m>(-2,2)</m></cell>
-            <cell><m>-16</m></cell>
-          </row>
-        </tabular>
-
-        <p>
-          The maximum value is <m>16</m>, attained at <m>(2,2)</m> and
-          <m>(-2,-2)</m>; the minimum value is <m>-16</m>, attained at
-          <m>(2,-2)</m> and <m>(-2,2)</m>.
-        </p>
-
-        <p>
-          <em>Geometric interpretation.</em>  A rectangle with corners
-          <m>(\pm x, \pm y)</m> inscribed in the circle <m>x^2+y^2=8</m>
-          has area exactly <m>4xy = f(x,y)</m>.  As the corner
-          <m>(x,y)</m> moves along the circle, we obtain rectangles of
-          different areas.
-        </p>
-
-        <figure xml:id="fig-inscribed-rects">
-          <caption>
-            Some of the possible rectangles inscribed in the circle
-            <m>x^2+y^2=8</m>.  Each has corners <m>(\pm x, \pm y)</m> for a
-            point <m>(x,y)</m> on the circle, and therefore area
-            <m>4xy = f(x,y)</m>.
-          </caption>
-          <image xml:id="img-inscribed-rects" width="55%">
-            <prefigure label="inscribed-rects" xmlns="https://prefigure.org">
-              <diagram dimensions="(400,360)" margins="5">
-                <definition>r = sqrt(8)</definition>
-                <definition>A = (r*cos(pi/9), r*sin(pi/9))</definition>
-                <definition>B = (r*cos(11*pi/36), r*sin(11*pi/36))</definition>
-                <definition>C = (r*cos(7*pi/18), r*sin(7*pi/18))</definition>
-                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
-
-                  <axes at="axes" xlabel="x" ylabel="y"/>
-
-                  <group at="constraint">
-                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
-                            stroke="blue" thickness="3"/>
-                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
-                      <m>x^2+y^2=8</m>
-                    </label>
-                  </group>
-
-                  <group at="candidates">
-                    <polygon at="rect-A" points="(A, (-A[0],A[1]), -A, (A[0],-A[1]))"
-                             closed="yes" stroke="gray" thickness="2" dash="7 4"/>
-                    <polygon at="rect-B" points="(B, (-B[0],B[1]), -B, (B[0],-B[1]))"
-                             closed="yes" stroke="orange" thickness="2" dash="7 4"/>
-                    <polygon at="rect-C" points="(C, (-C[0],C[1]), -C, (C[0],-C[1]))"
-                             closed="yes" stroke="red" thickness="2" dash="7 4"/>
-                    <point at="corner-generic" p="B" fill="orange" alignment="northeast">
-                      <m>(x,y)</m>
-                    </point>
-                  </group>
-
-                </coordinates>
-
-                <annotations>
-                  <annotation ref="figure"
-                              text="The circle x squared plus y squared equals 8 with several inscribed rectangles of different proportions">
-                    <annotation ref="constraint"
-                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
-                    <annotation ref="candidates"
-                                text="Three of the possible inscribed rectangles, each with corners plus or minus x comma plus or minus y and area 4 x y">
-                      <annotation ref="rect-A"
-                                  text="A wide and short inscribed rectangle"/>
-                      <annotation ref="rect-B"
-                                  text="An inscribed rectangle of intermediate proportions, with the generic corner x comma y marked on the circle"/>
-                      <annotation ref="rect-C"
-                                  text="A tall and narrow inscribed rectangle"/>
-                    </annotation>
-                  </annotation>
-                </annotations>
-
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-
-        <p>
-          The values of <m>(x,y)</m> that maximize <m>f</m> are exactly the
-          values that maximize the area of the inscribed rectangle.
-        </p>
-
-        <figure xml:id="fig-xy-on-circle">
-          <caption>
-            The optimal solution: the inscribed rectangle with corners
-            <m>(\pm 2, \pm 2)</m>, whose area
-            <m>4xy = f(2,2) = 16</m> is the largest possible.
-          </caption>
-          <image xml:id="img-xy-on-circle" width="55%">
-            <prefigure label="xy-on-circle" xmlns="https://prefigure.org">
-              <diagram dimensions="(400,360)" margins="5">
-                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
-
-                  <axes at="axes" xlabel="x" ylabel="y"/>
-
-                  <group at="constraint">
-                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
-                            stroke="blue" thickness="3"/>
-                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
-                      <m>x^2+y^2=8</m>
-                    </label>
-                  </group>
-
-                  <group at="rectangle">
-                    <polygon at="rect" points="((2,2),(-2,2),(-2,-2),(2,-2))"
-                             closed="yes" stroke="red" thickness="2.5"/>
-                    <label at="area-label" anchor="(0,-1.1)" alignment="center"
-                           clear-background="yes">
-                      <m>\text{Area} = 4xy</m>
-                    </label>
-                  </group>
-
-                  <group at="corners">
-                    <point at="corner-pp" p="(2,2)" fill="red" alignment="northeast">
-                      <m>(2,2)</m>
-                    </point>
-                    <point at="corner-mp" p="(-2,2)" fill="red" alignment="northwest">
-                      <m>(-2,2)</m>
-                    </point>
-                    <point at="corner-mm" p="(-2,-2)" fill="red" alignment="southwest">
-                      <m>(-2,-2)</m>
-                    </point>
-                    <point at="corner-pm" p="(2,-2)" fill="red" alignment="southeast">
-                      <m>(2,-2)</m>
-                    </point>
-                  </group>
-
-                </coordinates>
-
-                <annotations>
-                  <annotation ref="figure"
-                              text="The circle x squared plus y squared equals 8 with an inscribed rectangle whose corners are the four constrained extrema">
-                    <annotation ref="constraint"
-                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
-                    <annotation ref="rectangle"
-                                text="The inscribed rectangle with corners plus or minus 2 comma plus or minus 2, whose area is 4 x y"/>
-                    <annotation ref="corners"
-                                text="The four constrained extrema of f">
-                      <annotation ref="corner-pp"
-                                  text="The point 2 comma 2, where f attains its maximum value 16"/>
-                      <annotation ref="corner-mm"
-                                  text="The point minus 2 comma minus 2, where f also attains its maximum value 16"/>
-                      <annotation ref="corner-pm"
-                                  text="The point 2 comma minus 2, where f attains its minimum value minus 16"/>
-                      <annotation ref="corner-mp"
-                                  text="The point minus 2 comma 2, where f also attains its minimum value minus 16"/>
-                    </annotation>
-                  </annotation>
-                </annotations>
-
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-      </solution>
-    </exercise>
-
-    <!-- ================================================================ -->
     <exercise xml:id="exer-cobb-douglas">
       <title>Maximizing a Cobb-Douglas utility</title>
 
@@ -493,122 +600,6 @@
         </p>
       </solution>
     </exercise>
-
-<exercise xml:id="rm2-lm-1">
-<statement>
-<p>
-Consider <m>f(x,y) = xy</m> and <m>x^2 - y = 12</m>. We assume
-<m>y \le 0</m>.
-<ol marker="A.">
-<li>
-<p>
-Why do we need <m>y \le 0</m> here?
-</p>
-</li>
-<li>
-<p>
-Find the extreme values of <m>f</m> subject to the above constraints.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-<solution>
-<p>
-<ol marker="A.">
-<li>
-<p>
-Else a minimum and maximum would not exist, since we could just pick
-<m>y</m> very large and <m>x = \pm\sqrt{y + 12}</m> would also have a
-very large magnitude, resulting in a very large or very negative value
-of <m>f(x,y)</m>.
-</p>
-</li>
-<li>
-<p>
-The constraint describes the portion of the parabola
-<m>y = x^2 - 12</m> in the third and fourth quadrant. This shape is
-closed and bounded so we are guaranteed the existence of global
-maxima and minima. The two boundary points, which occur at
-<m>y = 0</m>, need to be handled separately; this part is not very
-hard, since we immediately see that <m>f</m> has value <m>0</m> on
-them.
-</p>
-<p>
-Now we proceed to find the critical points of <m>f</m> on the
-parabola <m>g(x,y) = x^2 - y - 12 = 0</m>. The system of equations we
-need to solve is obtained from
-<m>\nabla f(x,y) = \langle y, x\rangle</m> and
-<m>\nabla g(x,y) = \langle 2x, -1\rangle</m>. It is
-<md>
-<mrow>y \amp = 2\lambda x</mrow>
-<mrow>x \amp = -\lambda</mrow>
-<mrow>x^2 - y \amp = 12</mrow>
-</md>
-Combining the first two equations we see that <m>y = -2x^2</m>, and
-using the third, <m>3x^2 = 12</m>, so <m>x = \pm 2</m> and
-<m>y = -8</m>. Computing the value of <m>f</m> at these points, we
-see that the global maximum of <m>f</m> is at <m>(-2, -8)</m> with a
-value of <m>16</m>, while the global minimum with value <m>-16</m> is
-at <m>(2, -8)</m>. See <xref ref="fig-rm2-lagrange"/>.
-</p>
-</li>
-</ol>
-</p>
-
-<figure xml:id="fig-rm2-lagrange">
-<caption>
-The constraint curve <m>y = x^2 - 12</m> with <m>y \le 0</m>, and the
-level curves <m>xy = 16</m> and <m>xy = -16</m> of <m>f</m>. The
-extrema occur at <m>(-2,-8)</m> and <m>(2,-8)</m>, where the level
-curves are tangent to the parabola.
-</caption>
-<image width="70%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-rm2-lagrange">
-<diagram dimensions="(360,300)" margins="12">
-<definition>par(t) = (t, t^2 - 12)</definition>
-<definition>hypp(t) = (t, 16/t)</definition>
-<definition>hypm(t) = (t, -16/t)</definition>
-<coordinates bbox="(-5.2,-13.5,5.2,1.8)">
-<grid-axes xlabel="x" ylabel="y"/>
-<parametric-curve at="lm-par" function="par" domain="(-3.4641,3.4641)"
-                  stroke="#0072B2" thickness="3"/>
-<parametric-curve at="lm-hm" function="hypm" domain="(1.25,5.0)"
-                  stroke="#009E73" dash="6 4" thickness="2"/>
-<parametric-curve at="lm-hp" function="hypp" domain="(-5.0,-1.25)"
-                  stroke="#D55E00" dash="6 4" thickness="2"/>
-<point at="lm-max" p="(-2,-8)" fill="#D55E00"/>
-<point at="lm-min" p="(2,-8)" fill="#009E73"/>
-<label at="lm-par-lab" anchor="(3.0,-11.9)" alignment="w" color="#0072B2">
-<m>y=x^2-12</m>
-</label>
-<label at="lm-max-lab" anchor="(-2.15,-8.2)" alignment="sw" color="#D55E00">
-<m>(-2,-8)</m>
-</label>
-<label at="lm-min-lab" anchor="(2.15,-8.2)" alignment="se" color="#009E73">
-<m>(2,-8)</m>
-</label>
-<label at="lm-hp-lab" anchor="(-4.95,-2.6)" alignment="se" color="#D55E00">
-<m>xy=16</m>
-</label>
-<label at="lm-hm-lab" anchor="(5.0,-2.3)" alignment="sw" color="#009E73">
-<m>xy=-16</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A blue parabola y equals x squared minus twelve, drawn for y less than or equal to zero, opens upward with vertex at zero comma negative twelve. A dashed vermillion hyperbola branch x y equals sixteen in the third quadrant touches the parabola at negative two comma negative eight, and a dashed green hyperbola branch x y equals negative sixteen in the fourth quadrant touches it at two comma negative eight.">
-  <annotation ref="lm-par" text="The constraint curve, the portion of the parabola y equals x squared minus twelve with y at most zero."/>
-  <annotation ref="lm-hp" text="The level curve x y equals sixteen, tangent to the parabola at the maximum point negative two comma negative eight."/>
-  <annotation ref="lm-hm" text="The level curve x y equals negative sixteen, tangent to the parabola at the minimum point two comma negative eight."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
 
 <exercise xml:id="rf-7">
 <statement>
@@ -694,52 +685,6 @@ and these dimensions (a cube) will maximize the volume.
 </solution>
 </exercise>
 
-<exercise xml:id="rw23-5">
-<statement>
-<p>
-Find the point(s) on the surface <m>xyz = 1</m> closest to the origin.
-</p>
-</statement>
-<solution>
-<p>
-The distance of a point from the origin is
-<m>\sqrt{x^2 + y^2 + z^2}</m>, so it suffices to minimize
-<m>f(x,y,z) = x^2 + y^2 + z^2</m> with the constraint
-<m>g(x,y,z) = xyz - 1 = 0</m>. The Lagrange system
-<m>\nabla f = \lambda \nabla g</m> is
-<md>
-\langle 2x, 2y, 2z\rangle
-= \langle \lambda yz, \lambda xz, \lambda xy\rangle.
-</md>
-Multiplying the first equation by <m>x</m> and using
-<m>xyz = 1</m>,
-<md>
-2x = \lambda yz
-\;\Rightarrow\; 2x^2 = \lambda xyz
-\;\overset{xyz=1}{\Rightarrow}\; 2x^2 = \lambda
-\;\Rightarrow\; x^2 = \frac{\lambda}{2},
-</md>
-and similarly <m>y^2 = \dfrac{\lambda}{2}</m> and
-<m>z^2 = \dfrac{\lambda}{2}</m>, hence <m>x^2 = y^2 = z^2</m>.
-</p>
-
-<p>
-Substituting into the constraint,
-<md>
-x^2 y^2 z^2 = 1
-\;\Rightarrow\; x^6 = 1
-\;\Rightarrow\; x^2 = 1.
-</md>
-Since <m>xyz = 1</m>, we know that <m>x</m>, <m>y</m>, and <m>z</m>
-are either all positive or two are negative and the third one is
-positive. Hence, the closest points are
-<md>
-(1,1,1), \quad (1,-1,-1), \quad (-1,1,-1), \quad (-1,-1,1).
-</md>
-</p>
-</solution>
-</exercise>
-
 <exercise xml:id="rs19-10">
 <statement>
 <p>
@@ -752,9 +697,9 @@ constraint <m>x^2 + y^2 = 4</m>.
 <p>
 With <m>g(x,y) = x^2 + y^2 - 4 = 0</m>, we have
 <md>
-\nabla f = \sqrt2\,\hat{\imath} - \sqrt2\,\hat{\jmath},
+\nabla f = \sqrt2\,\mathbf i - \sqrt2\,\mathbf j,
 \qquad
-\nabla g = (2x)\,\hat{\imath} + (2y)\,\hat{\jmath}.
+\nabla g = (2x)\,\mathbf i + (2y)\,\mathbf j.
 </md>
 The system <m>\nabla f = \lambda \nabla g</m> is
 <md>
@@ -829,53 +774,6 @@ the circle at the extrema
 </prefigure>
 </image>
 </figure>
-</solution>
-</exercise>
-
-<exercise xml:id="rw22-5">
-<statement>
-<p>
-Find the point <m>P(x,y,z)</m> closest to the origin on the plane
-<m>2x + y - z - 5 = 0</m>.
-</p>
-</statement>
-<solution>
-<p>
-The distance from the origin is <m>\sqrt{x^2+y^2+z^2}</m>, so it
-suffices to minimize the function
-<m>f(x,y,z) = x^2 + y^2 + z^2</m> subject to the constraint
-<m>g(x,y,z) = 2x + y - z - 5 = 0</m>. We compute
-<md>
-\nabla f = \langle 2x, 2y, 2z\rangle,
-\qquad
-\nabla g = \langle 2, 1, -1\rangle.
-</md>
-</p>
-
-<p>
-The Lagrange system <m>\nabla f = \lambda \nabla g</m> is
-<md>
-<mrow>2x \amp = 2\lambda \amp \;\Rightarrow\; x \amp = \lambda,</mrow>
-<mrow>2y \amp = \lambda \amp \;\Rightarrow\; y \amp = \frac{\lambda}{2},</mrow>
-<mrow>2z \amp = -\lambda \amp \;\Rightarrow\; z \amp = -\frac{\lambda}{2}.</mrow>
-</md>
-Substituting into the equation of the plane,
-<md>
-2\lambda + \frac{\lambda}{2} + \frac{\lambda}{2} - 5 = 0
-\;\Rightarrow\; 3\lambda = 5
-\;\Rightarrow\; \lambda = \frac53.
-</md>
-Hence the closest point is
-<md>
-P\left(\frac53,\; \frac56,\; -\frac56\right).
-</md>
-</p>
-
-<p>
-(Only one critical point arises, and the distance certainly has a
-minimum on the plane but no maximum, so this point must be the
-minimizer.)
-</p>
 </solution>
 </exercise>
 
@@ -1000,60 +898,6 @@ point <m>\left(-\frac{3}{\sqrt2}, \frac{3}{\sqrt2}\right)</m>.
 </prefigure>
 </image>
 </figure>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-38">
-<statement>
-<p>
-Find the minimum value of <m>x + y^2 + z^3</m> along the part of the
-plane <m>x + y + z = 2</m> in the first octant
-(<m>x, y, z \ge 0</m>). The solution found by Lagrange multipliers
-gives the minimum. Use common sense for the maximum value.
-</p>
-</statement>
-<solution>
-<p>
-Let <m>f(x,y,z) = x + y^2 + z^3</m> and
-<m>g(x,y,z) = x + y + z - 2 = 0</m>. Then
-<md>
-\nabla f = \left\langle 1, 2y, 3z^2\right\rangle,
-\qquad
-\nabla g = \langle 1, 1, 1\rangle,
-</md>
-and <m>\nabla f = \lambda \nabla g</m> gives
-<md>
-1 = \lambda, \qquad 2y = \lambda, \qquad 3z^2 = \lambda.
-</md>
-Hence <m>\lambda = 1</m>, <m>y = \frac12</m>, and
-<m>z = \frac{1}{\sqrt3}</m> (taking the positive root, since
-<m>z \ge 0</m>). From the constraint,
-<m>x = 2 - \frac12 - \frac{1}{\sqrt3} = \frac32 - \frac{1}{\sqrt3}</m>,
-which is positive, so the point is in the first octant.
-</p>
-
-<p>
-The minimum value is therefore
-<md>
-<mrow>f \amp = \left(\frac32 - \frac{1}{\sqrt3}\right)
-+ \frac14 + \frac{1}{3\sqrt3}</mrow>
-<mrow>\amp = \frac74 - \frac{1}{\sqrt3} + \frac{1}{3\sqrt3}
-= \frac74 - \frac{3}{3\sqrt3} + \frac{1}{3\sqrt3}</mrow>
-<mrow>\amp = \frac74 - \frac{2}{3\sqrt3}
-= \frac74 - \frac23\sqrt{\frac13}.</mrow>
-</md>
-</p>
-
-<p>
-For the maximum, note that the region is a triangle with vertices
-<m>(2,0,0)</m>, <m>(0,2,0)</m>, and <m>(0,0,2)</m>. Since the largest
-power dominates, the largest value should occur at the vertex where
-all the <q>weight</q> is on <m>z</m>. Checking the three vertices,
-<md>
-f(2,0,0) = 2, \qquad f(0,2,0) = 4, \qquad f(0,0,2) = 8,
-</md>
-so the maximum value is <m>8</m>, attained at <m>(0,0,2)</m>.
-</p>
 </solution>
 </exercise>
 

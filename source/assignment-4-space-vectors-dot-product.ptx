@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Assignment 4: Three-Dimensional Space, Vectors and the Dot Product.
+
+  Built from the problems marked A4 in the instructor's markup of the old
+  worksheets "Exercises for Three-Dimensional Coordinate Systems",
+  "Exercises for Vectors" and "Exercises for The Dot Product".  The problems
+  marked R2 in the same markup went to review-problems-2.ptx.
+
+  Notation: the markup asks for double bars for the length of a vector
+  everywhere, so |v| has become \|v\| throughout, and rw17-4 now states the
+  scalar component as \|proj_d v\| rather than with comp_d.
+  Figure work requested by the markup: fig-rw22-bisector dashes the part of
+  segment AB that passes behind the plane and closes the right-angle marker at
+  C; fig-dp-constrained-work closes the outline of the plane.
+-->
+<worksheet xml:id="worksheet-assignment-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 4</title>
+
+<introduction>
+<p>
+These problems set up coordinates in space, describe regions and solids by
+equations and inequalities, do algebra with vectors, and use the dot product
+to measure angles and to split a vector into a piece along a given direction
+and a piece orthogonal to it. If you would like to review the material first,
+see
+<xref ref="chapter-three-dimensional-coordinates" text="title"/>,
+<xref ref="chapter-vectors" text="title"/> and
+<xref ref="section-dot-product" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rw22-3">
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Find an equation of the set of all points equidistant from the points
+<m>A(-1,5,3)</m> and <m>B(6,2,-2)</m>.
+</p>
+</li>
+<li>
+<p>
+Describe the geometrical shape corresponding to the set.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We want to find all points <m>P(x,y,z)</m> that have the same distance
+from <m>A</m> and <m>B</m>. Squaring both distances (which is
+equivalent, since distances are non-negative) gives
+<md>
+(x+1)^2 + (y-5)^2 + (z-3)^2 = (x-6)^2 + (y-2)^2 + (z+2)^2.
+</md>
+Expanding both sides,
+<md>
+<mrow>\amp x^2 + 2x + 1 + y^2 - 10y + 25 + z^2 - 6z + 9</mrow>
+<mrow>\amp = x^2 - 12x + 36 + y^2 - 4y + 4 + z^2 + 4z + 4,</mrow>
+<mrow>\amp 2x - 10y - 6z + 35 = -12x - 4y + 4z + 44,</mrow>
+</md>
+and collecting terms,
+<md>
+14x - 6y - 10z = 9.
+</md>
+</p>
+</li>
+<li>
+<p>
+This is the equation of a plane. Its normal vector is
+<m>\langle 14, -6, -10\rangle = 2\langle 7, -3, -5\rangle</m>, which
+is parallel to
+<m>\vec{AB} = \langle 6-(-1),\, 2-5,\, -2-3\rangle
+= \langle 7, -3, -5\rangle</m>. Moreover, the midpoint of
+<m>\overline{AB}</m>,
+<md>
+C\left(\frac{-1+6}{2},\, \frac{5+2}{2},\, \frac{3+(-2)}{2}\right)
+= C\left(\frac52, \frac72, \frac12\right),
+</md>
+satisfies the equation, since
+<m>14\left(\frac52\right) - 6\left(\frac72\right)
+- 10\left(\frac12\right) = 35 - 21 - 5 = 9</m>. Hence the set is the
+plane that passes through the midpoint of <m>\overline{AB}</m> and is
+orthogonal to <m>\vec{AB}</m>, i.e. the <term>perpendicular bisector
+plane</term> of the segment <m>\overline{AB}</m>. See
+<xref ref="fig-rw22-bisector"/>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rw22-bisector">
+<caption>
+The set of points equidistant from <m>A</m> and <m>B</m> is the plane
+through the midpoint <m>C</m> of <m>\overline{AB}</m> perpendicular to
+<m>\vec{AB}</m>.
+</caption>
+<image width="58%">
+<description>
+<p>
+Two points A and B are joined by a segment. A shaded rectangle
+representing a plane cuts the segment at right angles at its midpoint
+C, with a small right angle marker at C. The stretch of the segment
+that passes behind the plane is drawn dashed.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % the plane, drawn as a slanted rectangle
+  \fill[msky, opacity=0.25, rotate=-28] (-1.15,-1.9) rectangle (1.15,1.9);
+  \draw[mred, thick, rotate=-28] (-1.15,-1.9) rectangle (1.15,1.9);
+  % the segment AB: the stretch from where it enters the plane patch up to
+  % the midpoint C runs behind the plane, so it is drawn dashed
+  \draw[thick] (-2.4,-0.6) -- (-1.15,-0.287);
+  \draw[thick, dashed] (-1.15,-0.287) -- (0,0);
+  \draw[thick] (0,0) -- (2.4,0.6);
+  \fill (-2.4,-0.6) circle (2pt) node[left=2pt] {$A$};
+  \fill (2.4,0.6) circle (2pt) node[right=2pt] {$B$};
+  % the midpoint
+  \fill[mblue] (0,0) circle (2pt);
+  \node[mblue, above left=1pt] at (0,0.06) {$C$};
+  % right-angle marker at C, closed back onto the segment AB
+  \draw[mred] (0.22,0.055) -- (0.28,-0.185) -- (0.06,-0.24) -- (0,0);
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-24">
+<statement>
+<p>
+Describe the following regions and graphs.
+<ol marker="A.">
+<li>
+<p>
+<m>x^2 + y^2 + z^2 \le 4</m>, <m>z \ge 0</m>
+</p>
+</li>
+<li>
+<p>
+<m>x^2 + y^2 + z^2 \le 4</m>, <m>z = 0</m>
+</p>
+</li>
+<li>
+<p>
+<m>x^2 + y^2 + z^2 = 4</m>, <m>z \ge 0</m>
+</p>
+</li>
+<li>
+<p>
+<m>x^2 + y^2 + z^2 = 4</m>, <m>z = 0</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The key is to notice whether the first condition is an
+<em>inequality</em> (a solid region) or an <em>equation</em> (a
+surface), and then what the second condition does to it.
+<ol marker="A.">
+<li>
+<p>
+The solid ball of radius <m>2</m> centered at the origin, restricted
+to <m>z \ge 0</m>: the <em>upper half of the solid ball</em>,
+including the flat disk in the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+Setting <m>z = 0</m> in the solid ball gives <m>x^2 + y^2 \le 4</m>:
+the <em>solid disk</em> of radius <m>2</m> centered at the origin,
+lying in the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+The sphere of radius <m>2</m> restricted to <m>z \ge 0</m>: the
+<em>upper hemisphere</em> (a surface only), together with the circle
+where it meets the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+Setting <m>z = 0</m> on the sphere gives <m>x^2 + y^2 = 4</m>: the
+<em>circle</em> of radius <m>2</m> centered at the origin in the
+<m>xy</m>-plane.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m1-3">
+<statement>
+<p>
+Consider the point <m>(3,7,-5)</m>.
+<ol marker="(a)">
+<li>
+<p>
+What is its distance to the <m>yz</m>-plane?
+</p>
+</li>
+<li>
+<p>
+What is its distance to the <m>y</m>-axis?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> The <m>yz</m>-plane is the plane <m>x = 0</m>. The
+closest point of that plane to <m>(3,7,-5)</m> is obtained by simply
+setting the <m>x</m>-coordinate to zero, giving <m>(0,7,-5)</m>. Hence
+the distance is
+<md>
+\sqrt{(3-0)^2 + (7-7)^2 + (-5+5)^2} = |3| = 3 .
+</md>
+In general the distance from <m>(x_0,y_0,z_0)</m> to the
+<m>yz</m>-plane is <m>|x_0|</m>.
+</p>
+
+<p>
+<term>(b)</term> The <m>y</m>-axis consists of the points
+<m>(0,y,0)</m>. The closest such point to <m>(3,7,-5)</m> is the one
+with the same <m>y</m>-coordinate, namely <m>(0,7,0)</m>, so the
+distance is
+<md>
+\sqrt{(3-0)^2 + (7-7)^2 + (-5-0)^2} = \sqrt{9+25} = \sqrt{34} .
+</md>
+In general the distance from <m>(x_0,y_0,z_0)</m> to the
+<m>y</m>-axis is <m>\sqrt{x_0^2+z_0^2}</m>: we drop the coordinate
+along the axis and keep the other two.
+See <xref ref="fig-m1-distances"/>.
+</p>
+
+<figure xml:id="fig-m1-distances">
+<caption>
+The point <m>P(3,7,-5)</m>, its distance <m>3</m> to the
+<m>yz</m>-plane (measured horizontally, parallel to the
+<m>x</m>-axis), and its distance <m>\sqrt{34}</m> to the
+<m>y</m>-axis (measured perpendicular to that axis).
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional coordinate system with the point P at three, seven,
+negative five. A segment runs from P horizontally to the point zero,
+seven, negative five in the y z plane, and a second segment runs from P
+to the point zero, seven, zero on the y axis.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
+% axes
+\draw[->, thick] (-1,0,0) -- (5,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1,0) -- (0,9,0) node[right] {$y$};
+\draw[->, thick] (0,0,-7) -- (0,0,3) node[above] {$z$};
+% a patch of the yz-plane
+\fill[mblue, opacity=0.14] (0,3.4,-6.8) -- (0,9.2,-6.8) -- (0,9.2,1.6)
+      -- (0,3.4,1.6) -- cycle;
+\node[mblue, anchor=south] at (0,6.3,1.7) {$yz$-plane};
+% the point and its shadows
+\coordinate (P) at (3,7,-5);
+\coordinate (F) at (0,7,-5);
+\coordinate (A) at (0,7,0);
+\draw[dashed, mgray] (0,7,0) -- (F);
+\draw[dashed, mgray] (3,0,0) -- (3,7,0) -- (P);
+\draw[dashed, mgray] (3,7,0) -- (A);
+\draw[very thick, mverm] (P) -- (F)
+      node[midway, anchor=north west, inner sep=1pt] {$3$};
+\draw[very thick, mgreen] (P) -- (A)
+      node[midway, anchor=east] {$\sqrt{34}$\;};
+\fill[mred] (P) circle (1.6pt);
+\fill[mverm] (F) circle (1.6pt);
+\fill[mgreen] (A) circle (1.6pt);
+\node[mred, anchor=north east] at (P) {$P(3,7,-5)$\;};
+\node[mverm, anchor=west] at (F) {\;$(0,7,-5)$};
+\node[mgreen, anchor=south west] at (A) {\;$(0,7,0)$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-3d-nonconvex-solid">
+<title>A Solid Bounded by a Paraboloid, a Plane, and a Cylinder</title>
+<statement>
+<p>
+Consider the solid region bounded below by the paraboloid
+<m>z = 1-x^2-y^2</m>, above by the plane <m>z=1</m>, and on the outside
+by the cylinder <m>x^2+y^2=1</m>. Describe this solid.
+</p>
+</statement>
+
+<solution>
+<p>
+The paraboloid <m>z=1-x^2-y^2</m> opens downward from its vertex
+<m>(0,0,1)</m>, reaching <m>z=0</m> exactly on the circle
+<m>x^2+y^2=1</m>, the same circle where the cylinder meets the
+<m>xy</m>-plane. The plane <m>z=1</m> is tangent to the paraboloid at
+its vertex.
+</p>
+<p>
+The solid consists of the points inside the cylinder that lie
+<em>above</em> the paraboloid and <em>below</em> the plane:
+<md>
+x^2+y^2 \le 1, \qquad 1-x^2-y^2 \le z \le 1.
+</md>
+At the center <m>(x,y)=(0,0)</m>, this range for <m>z</m> collapses to
+the single point <m>z=1</m>, since the paraboloid already reaches the
+plane there. At the rim <m>x^2+y^2=1</m>, the range is the full
+interval <m>0 \le z \le 1</m>. The solid is therefore a disk-shaped
+shell that thins to a single point at its center, as though a
+dome-shaped cavity bounded by the paraboloid had been hollowed out from
+the top of the solid cylinder <m>x^2+y^2\le1</m>, <m>0\le z\le 1</m>,
+shown in <xref ref="fig-ex3d-nonconvex-solid"/>.
+</p>
+
+<figure xml:id="fig-ex3d-nonconvex-solid">
+<caption>
+The solid bounded below by the paraboloid <m>z=1-x^2-y^2</m>, above by
+the plane <m>z=1</m>, and on the outside by the cylinder
+<m>x^2+y^2=1</m>. The paraboloid hollows out a dome-shaped cavity from
+the top of the solid, which is thin at the center and full height at
+the rim.
+</caption>
+<image width="50%">
+<description>
+<p>
+A short solid cylinder whose flat top has a dome-shaped dent scooped
+out of it. The dent is bounded by a downward-curving paraboloid that
+touches the flat top at the center and meets the bottom rim of the
+cylinder at its edge, leaving a thin shell of material near the rim and
+almost none at the center.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{patterns, math}
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[tdplot_main_coords,scale=2.0]
+\pgfmathsetmacro{\tini}{0.5*pi}
+\pgfmathsetmacro{\tfin}{1.85*pi}
+\pgfmathsetmacro{\tend}{2.5*pi}
+\pgfmathsetmacro{\final}{2.0*pi}
+\coordinate (A) at (1.25,1.25,1);
+\coordinate (B) at (-1.25,1.25,1);
+\coordinate (C) at (-1.25,-1.5,1);
+\coordinate (D) at (1.25,-1.5,1);
+% node indicating the equation of the circumference
+\draw[white] (1.35,0,0) -- (0,1.35,0) node [black,below,midway,sloped] {$x^2 + y^2 = 1$};
+% coordinate axes
+\draw[thick,->] (0,0,0) -- (1.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) -- (-1.25,0,0);
+\draw[thick,->] (0,0,0) -- (0,1.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) -- (0,-1.25,0);
+\draw[thick] (0,0,0) -- (0,0,1.0);
+% the base disk
+\fill[yellow,opacity=0.35] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{0.0});
+\draw[gray,thick] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{0.0});
+\draw[black,thick,opacity=0.75] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{0.0});
+% the curves slicing the paraboloid
+\draw[blue,thick,opacity=0.5] plot[domain=-1:1,smooth,variable=\t] ({\t},0,{1.0 - \t*\t});
+\draw[blue,thick,opacity=0.5] plot[domain=-1:1,smooth,variable=\t] (0,{\t},{1.0 - \t*\t});
+\foreach \angulo in {0,2,...,358}{
+  \draw[cyan,very thick,rotate around z=\angulo,opacity=0.15] plot[domain=0:1,smooth,variable=\t] ({0},{\t},{1.0 - \t*\t});
+}
+% the paraboloid (drawn as circles of constant height)
+\foreach \altura in {0.0125,0.025,...,1.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.35] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{1.0 - \altura});
+}
+% first part of the z axis
+\draw[thick,->] (0,0,1.0) -- (0,0,1.5) node [above] {\footnotesize$z$};
+\foreach \altura in {0.0125,0.025,...,1.0}{
+  \pgfmathparse{sqrt(\altura)}
+  \pgfmathsetmacro{\radio}{\pgfmathresult}
+  \draw[cyan,thick,opacity=0.35] plot[domain=\tfin:\tend,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{1.0 - \altura});
+}
+\node[blue,right] at (0,0.5,1.125) {$z = 1 - x^2 - y^2$};
+% the outer cylinder wall
+\foreach \angulo in {0,0.01,...,\final}{
+  \pgfmathparse{cos(\angulo r)}
+  \pgfmathsetmacro{\px}{\pgfmathresult}
+  \pgfmathparse{sin(\angulo r)}
+  \pgfmathsetmacro{\py}{\pgfmathresult}
+  \draw[gray,opacity=0.5] (\px,\py,0) -- (\px,\py,1.0);
+}
+% the circle at z = 1
+\draw[black,thick,opacity=0.75] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{1.0});
+% the plane z = 1
+\draw[white] (C) -- (B) node[red,above,sloped,midway]{\footnotesize$z = 1$};
+\draw[red,dash dot] (A) -- (B) -- (C) -- (D) -- (A);
+\fill[pattern color=pink,pattern=north east lines] (A) -- (B) -- (C) -- (D) -- (A);
+\draw[thick,->] (0,0,1.0) -- (0,0,1.5) node [above] {\footnotesize$z$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-2">
+<statement>
+<p>
+Write each combination of vectors as a single vector. See
+<xref ref="fig-rs19-quad"/>.
+<ol marker="A.">
+<li>
+<p>
+<m>\vec{PQ} + \vec{QR}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec{QS} - \vec{PS}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec{RS} + \vec{SP} + \vec{PQ}</m>
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rs19-quad">
+<caption>
+The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
+<m>S</m>, with its diagonals.
+</caption>
+<image width="52%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rs19-quad">
+<diagram dimensions="(300,240)" margins="12">
+<coordinates bbox="(-0.6,-0.55,3.9,3.5)">
+<line at="qd-QP" endpoints="((0.8,2.9),(2.9,2.2))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-PS" endpoints="((2.9,2.2),(3.3,0.3))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-RS" endpoints="((0,0),(3.3,0.3))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-RQ" endpoints="((0,0),(0.8,2.9))"
+      stroke="#56B4E9" thickness="2"/>
+<line at="qd-QS" endpoints="((0.8,2.9),(3.3,0.3))"
+      stroke="#56B4E9" thickness="1.5"/>
+<line at="qd-RP" endpoints="((0,0),(2.9,2.2))"
+      stroke="#56B4E9" thickness="1.5"/>
+<point at="qd-P" p="(2.9,2.2)" fill="black"/>
+<point at="qd-Q" p="(0.8,2.9)" fill="black"/>
+<point at="qd-R" p="(0,0)" fill="black"/>
+<point at="qd-S" p="(3.3,0.3)" fill="black"/>
+<label at="qd-P-lab" anchor="(3.0,2.32)" alignment="ne">
+<m>P</m>
+</label>
+<label at="qd-Q-lab" anchor="(0.72,3.02)" alignment="nw">
+<m>Q</m>
+</label>
+<label at="qd-R-lab" anchor="(-0.12,-0.12)" alignment="sw">
+<m>R</m>
+</label>
+<label at="qd-S-lab" anchor="(3.42,0.22)" alignment="e">
+<m>S</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A quadrilateral with vertices labelled Q at the top left, P at the top right, R at the bottom left, and S at the bottom right, drawn in light blue together with its two diagonals Q S and R P.">
+  <annotation ref="qd-P" text="The vertex P at the top right."/>
+  <annotation ref="qd-Q" text="The vertex Q at the top left."/>
+  <annotation ref="qd-R" text="The vertex R at the bottom left."/>
+  <annotation ref="qd-S" text="The vertex S at the bottom right."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+By the triangle law, placing <m>\vec{QR}</m> at the tip of
+<m>\vec{PQ}</m>,
+<md>
+\vec{PQ} + \vec{QR} = \vec{PR}.
+</md>
+</p>
+</li>
+<li>
+<p>
+Since <m>-\vec{PS} = \vec{SP}</m>,
+<md>
+\vec{QS} - \vec{PS} = \vec{QS} + \vec{SP} = \vec{QP}.
+</md>
+</p>
+</li>
+<li>
+<p>
+Chaining the three vectors tip to tail,
+<md>
+\vec{RS} + \vec{SP} + \vec{PQ} = \vec{RQ}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-9">
+<statement>
+<p>
+Find a vector of length 3 pointing in the opposite direction from the
+vector <m>2\,\mathbf i - 4\,\mathbf j + 4\,\mathbf k</m>.
+</p>
+</statement>
+<solution>
+<p>
+The given vector has length
+<m>\sqrt{4 + 16 + 16} = \sqrt{36} = 6</m>, so the unit vector in its
+direction is <m>\frac16\langle 2, -4, 4\rangle
+= \left\langle \frac13, -\frac23, \frac23\right\rangle</m>.
+Multiplying by <m>-3</m> reverses the direction and gives length
+<m>3</m>:
+<md>
+-3\left\langle \frac13, -\frac23, \frac23\right\rangle
+= \langle -1, 2, -2\rangle
+= -\mathbf i + 2\,\mathbf j - 2\,\mathbf k.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m1-2">
+<statement>
+<p>
+Let <m>\vec v</m> be the vector that goes from the point
+<m>\left(5,-4,\sqrt3\right)</m> to the point <m>(3,-1,0)</m>. Find a
+vector of length <m>\tfrac13</m> that points in the same direction as
+<m>\vec v</m>.
+</p>
+</statement>
+<solution>
+<p>
+The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
+by subtracting the tail from the head:
+<md>
+\vec v = \vec{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
+\right\rangle = \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
+</md>
+</p>
+
+<p>
+Its length is
+<md>
+\|\vec v\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
+           = \sqrt{4+9+3} = \sqrt{16} = 4 .
+</md>
+</p>
+
+<p>
+The unit vector in the direction of <m>\vec v</m> is therefore
+<md>
+\hat u = \frac{\vec v}{\|\vec v\|}
+       = \frac14 \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
+</md>
+Scaling by <m>\tfrac13</m> gives a vector of length <m>\tfrac13</m>
+pointing the same way:
+<md>
+\frac13\,\hat u = \frac{1}{12}\left\langle -2,\ 3,\ -\sqrt3
+\right\rangle
+= \left\langle -\frac16,\ \frac14,\ -\frac{\sqrt3}{12}
+\right\rangle .
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="vec-parallelogram-space">
+<title>A parallelogram in space</title>
+<statement>
+<p>
+Consider the four points
+<md>
+A(1,2,5), \qquad B(4,3,3), \qquad C(6,7,4), \qquad D(3,6,6).
+</md>
+<ol marker="A.">
+<li>
+<p>
+Show that <m>ABCD</m> is a parallelogram.
+</p>
+</li>
+<li>
+<p>
+Find the point <m>M</m> at which the two diagonals of <m>ABCD</m> meet.
+</p>
+</li>
+<li>
+<p>
+Find the perimeter of <m>ABCD</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+A quadrilateral is a parallelogram exactly when one pair of opposite
+sides is given by the <em>same</em> vector, since equal vectors have both
+the same direction and the same length. Along the sides <m>AB</m> and
+<m>DC</m>,
+<md>
+<mrow>\vec{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
+= \langle 3,\; 1,\; -2 \rangle,</mrow>
+<mrow>\vec{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
+= \langle 3,\; 1,\; -2 \rangle.</mrow>
+</md>
+Since <m>\vec{AB} = \vec{DC}</m>, these two sides are parallel and have
+equal length, so <m>ABCD</m> is a parallelogram. The other pair of sides
+matches as well:
+<md>
+\vec{AD} = \langle 2,\; 4,\; 1 \rangle = \vec{BC}.
+</md>
+See <xref ref="fig-vec-parallelogram-space"/>.
+</p>
+</li>
+<li>
+<p>
+The diagonals of a parallelogram bisect each other, so <m>M</m> is the
+midpoint of <m>AC</m>. Using position vectors and
+<m>\vec{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
+<md>
+<mrow>\vec{OM} \amp = \vec{OA} + \tfrac12 \vec{AC}
+= \langle 1,\; 2,\; 5 \rangle
++ \tfrac12\langle 5,\; 5,\; -1 \rangle</mrow>
+<mrow>\amp = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92
+\right\rangle.</mrow>
+</md>
+Travelling along the other diagonal instead, with
+<m>\vec{BD} = \langle -1,\; 3,\; 3\rangle</m>,
+<md>
+\vec{OB} + \tfrac12 \vec{BD}
+= \langle 4,\; 3,\; 3 \rangle + \tfrac12\langle -1,\; 3,\; 3 \rangle
+= \left\langle \tfrac72,\; \tfrac92,\; \tfrac92 \right\rangle,
+</md>
+the same point, which confirms both the answer and part A. Hence
+<m>M\left(\frac72,\, \frac92,\, \frac92\right)</m>.
+</p>
+</li>
+<li>
+<p>
+Opposite sides have equal length, so the perimeter is
+<m>2\left(\left\|\vec{AB}\right\| + \left\|\vec{AD}\right\|\right)</m>, where
+<md>
+<mrow>\left\|\vec{AB}\right\| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
+= \sqrt{14},</mrow>
+<mrow>\left\|\vec{AD}\right\| \amp = \sqrt{2^2 + 4^2 + 1^2}
+= \sqrt{21}.</mrow>
+</md>
+The perimeter is therefore
+<m>2\left(\sqrt{14} + \sqrt{21}\right) \approx 16.65</m>. Since
+<m>\sqrt{14} \ne \sqrt{21}</m>, this parallelogram is not a rhombus.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-vec-parallelogram-space">
+<caption>
+The parallelogram <m>ABCD</m>, with
+<m>\vec{AB} = \vec{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
+<m>\vec{AD} = \vec{BC} = \langle 2,4,1\rangle</m> in magenta. The
+diagonals <m>AC</m> and <m>BD</m> cross at their common midpoint
+<m>M\left(\frac72,\frac92,\frac92\right)</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+Three coordinate axes labelled x, y and z. Four points A, B, C and D in
+space are joined into a slanted parallelogram. The two sides from A to B
+and from D to C are drawn as blue arrows of the same length and
+direction, and the two sides from A to D and from B to C are drawn as
+magenta arrows, also equal to each other. The two diagonals, from A to C
+and from B to D, are dashed grey segments that cross at a marked red
+point M in the middle of the parallelogram.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.78, >=stealth]
+\draw[->, thick] (0,0,0) -- (5.0,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,8.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,7.2) node[above] {$z$};
+\node[above left] at (0,0,0) {$0$};
+\coordinate (A) at (1,2,5);
+\coordinate (B) at (4,3,3);
+\coordinate (C) at (6,7,4);
+\coordinate (D) at (3,6,6);
+\coordinate (M) at (3.5,4.5,4.5);
+% the diagonals, drawn first so the sides sit on top of them
+\draw[gray, thick, dashed] (A) -- (C);
+\draw[gray, thick, dashed] (B) -- (D);
+% the two pairs of equal sides
+\draw[->, cyan!60!black, very thick] (A) -- (B);
+\draw[->, cyan!60!black, very thick] (D) -- (C);
+\draw[->, magenta, very thick] (A) -- (D);
+\draw[->, magenta, very thick] (B) -- (C);
+% vertices
+\foreach \p in {A,B,C,D} \fill[black] (\p) circle (1.7pt);
+\fill[red] (M) circle (2.0pt);
+\node[left=3pt]         at (A) {$A(1,2,5)$};
+\node[below left=1pt]   at (B) {$B(4,3,3)$};
+\node[below right=1pt]  at (C) {$C(6,7,4)$};
+\node[above right=1pt]  at (D) {$D(3,6,6)$};
+\node[red, right=2pt]   at (M) {$M$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-4">
+<statement>
+<p>
+Consider the two vectors
+<m>\mathbf u = 3\,\mathbf j + 4\,\mathbf k</m> and
+<m>\mathbf v = \mathbf i + \mathbf j</m>. Write <m>\mathbf u</m> as
+the sum of a vector parallel to <m>\mathbf v</m> and a vector
+orthogonal to <m>\mathbf v</m>.
+</p>
+</statement>
+<solution>
+<p>
+We have <m>\vec u \cdot \vec v = 3</m> and
+<m>\|\vec v\| = \sqrt{1+1} = \sqrt2</m>. The component of
+<m>\vec u</m> parallel to <m>\vec v</m> is
+<md>
+\vec u_{\parallel}
+= \operatorname{proj}_{\vec v} \vec u
+= \left(\frac{\vec u \cdot \vec v}{\|\vec v\|^2}\right)\vec v
+= \frac32\,(\mathbf i + \mathbf j)
+= \frac32\,\mathbf i + \frac32\,\mathbf j,
+</md>
+and the component orthogonal to <m>\vec v</m> is
+<md>
+\vec u_{\perp}
+= \vec u - \vec u_{\parallel}
+= \left(3\,\mathbf j + 4\,\mathbf k\right)
+- \left(\frac32\,\mathbf i + \frac32\,\mathbf j\right)
+= -\frac32\,\mathbf i + \frac32\,\mathbf j + 4\,\mathbf k.
+</md>
+Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
+<m>\vec u_{\perp}</m> is orthogonal to <m>\vec v</m>. Note that
+<m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw22-4">
+<statement>
+<p>
+Determine whether the following pairs of vectors are orthogonal,
+parallel, or neither.
+<ol marker="A.">
+<li>
+<p>
+<m>\vec u_1 = -3\,\mathbf i + 9\,\mathbf j + 6\,\mathbf k</m> and
+<m>\vec u_2 = 4\,\mathbf i - 12\,\mathbf j - 8\,\mathbf k</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec v_1 = \mathbf i + \mathbf j - 2\,\mathbf k</m> and
+<m>\vec v_2 = \mathbf i + \mathbf j + \mathbf k</m>
+</p>
+</li>
+<li>
+<p>
+<m>\vec w_1 = a\,\mathbf i + b\,\mathbf j</m> and
+<m>\vec w_2 = c\,\mathbf k</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
+are non-zero real numbers.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<term>Parallel</term>, since <m>\vec u_2 = -\frac43\,\vec u_1</m>:
+indeed
+<m>-\frac43\langle -3, 9, 6\rangle = \langle 4, -12, -8\rangle</m>.
+(Two vectors are parallel exactly when one is a scalar multiple of the
+other.)
+</p>
+</li>
+<li>
+<p>
+<term>Orthogonal</term>, since
+<m>\vec v_1 \cdot \vec v_2 = 1 + 1 - 2 = 0</m>.
+</p>
+</li>
+<li>
+<p>
+<term>Orthogonal</term>, since
+<m>\vec w_1 \cdot \vec w_2
+= \langle a, b, 0\rangle \cdot \langle 0, 0, c\rangle = 0</m>. They
+are not parallel, because <m>\vec w_2</m> has a non-zero
+<m>\mathbf k</m> component while <m>\vec w_1</m> does not.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-4">
+<statement>
+<p>
+A 100-meter dash is run on a track in the direction of the vector
+<m>2\,\mathbf i + 6\,\mathbf j</m>. The wind velocity is
+<m>\mathbf v = 5\,\mathbf i + 2\,\mathbf j</m> km/hr. The rules say
+that a legal wind speed measured in the direction of the dash must not
+exceed 5 km/hr.
+<ol marker="A.">
+<li>
+<p>
+Will the race results be disqualified due to an illegal wind? Justify
+your answer.
+</p>
+</li>
+<li>
+<p>
+Find the velocity vector of the wind in the direction of the dash.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
+and <m>\vec v = \langle 5, 2\rangle</m> the wind velocity. Then
+<md>
+\vec v \cdot \vec d = 10 + 12 = 22,
+\qquad
+\|\vec d\| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
+</md>
+<ol marker="A.">
+<li>
+<p>
+The wind speed measured in the direction of the dash is the length of
+the projection of <m>\vec v</m> onto <m>\vec d</m>:
+<md>
+\left\|\operatorname{proj}_{\vec d}\vec v\right\|
+= \frac{\vec v \cdot \vec d}{\|\vec d\|}
+= \frac{22}{2\sqrt{10}}
+= \frac{11}{\sqrt{10}} \approx 3.48 \text{ km/hr}.
+</md>
+Since <m>3.48 \lt 5</m>, the wind is legal and the race results will
+<em>not</em> be disqualified.
+</p>
+</li>
+<li>
+<p>
+The velocity vector of the wind in the direction of the dash is the
+vector projection
+<md>
+<mrow>\operatorname{proj}_{\vec d}\vec v
+\amp = \left(\frac{\vec v \cdot \vec d}{\|\vec d\|^2}\right)\vec d
+= \frac{22}{40}\langle 2, 6\rangle</mrow>
+<mrow>\amp = \left\langle \frac{11}{10}, \frac{33}{10}\right\rangle
+= 1.1\,\mathbf i + 3.3\,\mathbf j \text{ km/hr}.</mrow>
+</md>
+As a check, its length is
+<m>\sqrt{1.1^2 + 3.3^2} = 1.1\sqrt{10} = \frac{11}{\sqrt{10}}</m>,
+matching part A.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="dp-constrained-work">
+<statement>
+<p>
+A constant force is
+<md>
+\mathbf F = \left\langle 2, -1, 3 \right\rangle .
+</md>
+A particle is constrained to move in directions parallel to the plane
+<md>
+2x - y + 2z = 0 .
+</md>
+For a displacement of one unit, the work done by the force is
+<m>W = \mathbf F\cdot\mathbf d</m>, where <m>\mathbf d</m> is an
+allowed unit direction lying in the plane.
+<ol marker="(a)">
+<li>
+<p>
+Find the unit direction in the plane that maximizes the work.
+</p>
+</li>
+<li>
+<p>
+Find the maximum possible work per unit distance.
+</p>
+</li>
+<li>
+<p>
+Find one unit direction in the plane for which the work is zero.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Reading the coefficients of the plane, a normal vector is
+<md>
+\mathbf n = \left\langle 2, -1, 2 \right\rangle ,
+\qquad \|\mathbf n\| = \sqrt{4+1+4} = 3 .
+</md>
+A vector is parallel to the plane exactly when it is orthogonal to
+<m>\mathbf n</m>.
+</p>
+
+<p>
+<term>(a)</term> Decompose the force into a normal piece and a piece
+lying in the plane,
+<md>
+\mathbf F = \operatorname{proj}_{\mathbf n}\mathbf F
+          + \mathbf F_{\parallel} .
+</md>
+The first piece comes from the projection formula. Since
+<md>
+<mrow>\mathbf F\cdot\mathbf n \amp
+= \left\langle 2,-1,3\right\rangle\cdot\left\langle 2,-1,2\right\rangle
+= 2(2) + (-1)(-1) + 3(2)</mrow>
+<mrow>\amp = 4 + 1 + 6 = 11 ,</mrow>
+</md>
+and <m>\|\mathbf n\|^2 = 9</m>, we get
+<md>
+\operatorname{proj}_{\mathbf n}\mathbf F
+= \frac{11}{9}\left\langle 2,-1,2\right\rangle
+= \left\langle \frac{22}{9},\ -\frac{11}{9},\ \frac{22}{9}\right\rangle .
+</md>
+Subtracting,
+<md>
+<mrow>\mathbf F_{\parallel} \amp
+= \mathbf F - \operatorname{proj}_{\mathbf n}\mathbf F
+= \left\langle 2,-1,3\right\rangle
+- \left\langle \frac{22}{9},\ -\frac{11}{9},\ \frac{22}{9}\right\rangle</mrow>
+<mrow>\amp = \left\langle -\frac49,\ \frac29,\ \frac59\right\rangle
+= \frac19\left\langle -4,\ 2,\ 5 \right\rangle .</mrow>
+</md>
+As a check, this really is parallel to the plane:
+<m>\left\langle -4,2,5\right\rangle\cdot\left\langle 2,-1,2\right\rangle
+= -8 - 2 + 10 = 0</m>.
+</p>
+
+<p>
+Now let <m>\mathbf d</m> be any allowed unit direction. Because
+<m>\operatorname{proj}_{\mathbf n}\mathbf F</m> is orthogonal to every
+vector lying in the plane,
+<md>
+W = \mathbf F\cdot\mathbf d
+  = \left(\operatorname{proj}_{\mathbf n}\mathbf F
+    + \mathbf F_{\parallel}\right)\cdot\mathbf d
+  = \mathbf F_{\parallel}\cdot\mathbf d .
+</md>
+The normal part of the force is simply wasted: it presses the particle
+against the constraint and does no work. Writing
+<m>\mathbf F_{\parallel}\cdot\mathbf d
+= \|\mathbf F_{\parallel}\|\,\|\mathbf d\|\cos\varphi
+= \|\mathbf F_{\parallel}\|\cos\varphi</m>, the largest value occurs when
+<m>\cos\varphi = 1</m>, that is when <m>\mathbf d</m> points in the same
+direction as <m>\mathbf F_{\parallel}</m>. Since
+<md>
+\left\|\left\langle -4,2,5\right\rangle\right\| = \sqrt{16+4+25}
+= \sqrt{45} = 3\sqrt5 ,
+</md>
+the maximizing unit vector is
+<md>
+\mathbf d_{\max}
+= \frac{\left\langle -4,\ 2,\ 5\right\rangle}{3\sqrt5} .
+</md>
+See <xref ref="fig-dp-constrained-work"/>.
+</p>
+
+<figure xml:id="fig-dp-constrained-work">
+<caption>
+The force <m>\mathbf F</m> splits into a piece
+<m>\operatorname{proj}_{\mathbf n}\mathbf F</m> along the normal, which
+does no work, and a much shorter piece <m>\mathbf F_{\parallel}</m>
+lying in the plane, which is the only part that can do work. The
+picture is drawn to scale:
+<m>\left\|\operatorname{proj}_{\mathbf n}\mathbf F\right\| = \tfrac{11}{3}</m>
+while <m>\left\|\mathbf F_{\parallel}\right\| = \tfrac{\sqrt5}{3}</m>.
+</caption>
+<image width="85%">
+<description>
+<p>
+A tilted plane through the origin with a normal arrow. A force vector
+rises steeply from the origin, almost along the normal; it is resolved
+into a long component along the normal and a very short component lying
+in the plane.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-dp-constrained-work">
+<diagram dimensions="(600,310)" margins="16">
+<coordinates bbox="(-4.7,-1.6,6.0,4.0)">
+<polygon at="dpw-plane"
+         points="((-0.70,0.30),(5.30,-1.20),(1.90,1.50),(-4.10,3.00))"
+         closed="yes"
+         stroke="#0072B2" thickness="2"
+         fill="#0072B2" fill-opacity="0.12"/>
+<line at="dpw-dash1" p1="(0.701,3.143)" p2="(1.135,3.034)"
+      stroke="#7F7F7F" thickness="1" dash="4 3"/>
+<line at="dpw-dash2" p1="(0.701,3.143)" p2="(0.166,1.009)"
+      stroke="#7F7F7F" thickness="1" dash="4 3"/>
+<vector at="dpw-n" v="(0.316,1.261)" tail="(3.3,0.25)"
+        stroke="black" thickness="2"/>
+<vector at="dpw-proj" v="(0.535,2.134)" tail="(0.6,0.9)"
+        stroke="#8B1A4A" thickness="3"/>
+<vector at="dpw-force" v="(0.101,2.243)" tail="(0.6,0.9)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="dpw-par" v="(-0.434,0.109)" tail="(0.6,0.9)"
+        stroke="#009E73" thickness="4"/>
+<point at="dpw-origin" p="(0.6,0.9)" fill="black"/>
+<label at="dpw-originl" anchor="(0.66,0.78)" alignment="se">
+<m>O</m>
+</label>
+<label at="dpw-nl" anchor="(3.68,1.56)" alignment="e">
+<m>\mathbf n=\left\langle 2,-1,2\right\rangle</m>
+</label>
+<label at="dpw-forcel" anchor="(0.62,3.24)" alignment="nw" color="#D55E00">
+<m>\mathbf F</m>
+</label>
+<label at="dpw-projl" anchor="(1.22,3.06)" alignment="ne" color="#8B1A4A">
+<m>\operatorname{proj}_{\mathbf n}\mathbf F</m>
+</label>
+<label at="dpw-parl" anchor="(0.08,0.97)" alignment="w" color="#009E73">
+<m>\mathbf F_{\parallel}</m>
+</label>
+<label at="dpw-planel" anchor="(5.1,-1.32)" alignment="s" color="#0072B2">
+<m>2x-y+2z=0</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue parallelogram represents the plane two x minus y plus two z equals zero, drawn through the origin O. A black arrow off to the right shows the normal direction n. From O, a long dark red arrow rises steeply as the projection of F onto n, a slightly tilted orange arrow of almost the same length is the force F itself, and a very short green arrow lying in the plane is the component of F parallel to the plane. Dashed grey segments complete the rectangle of the decomposition.">
+  <annotation ref="dpw-plane" text="The constraint plane, two x minus y plus two z equals zero, passing through the origin."/>
+  <annotation ref="dpw-n" text="A normal vector n to the plane, with components two, negative one, two."/>
+  <annotation ref="dpw-force" text="The force F, rising steeply and therefore nearly perpendicular to the plane."/>
+  <annotation ref="dpw-proj" text="The projection of F onto the normal, the long component that does no work."/>
+  <annotation ref="dpw-par" text="The component of F parallel to the plane, very short compared with the normal component; this is the only part of the force that can do work."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> The maximum work per unit displacement is the length of
+the in-plane component,
+<md>
+<mrow>W_{\max} \amp = \left\|\mathbf F_{\parallel}\right\|
+= \left|\frac19\left\langle -4,2,5\right\rangle\right|</mrow>
+<mrow>\amp = \frac19\left(3\sqrt5\right) = \frac{\sqrt5}{3}
+\approx 0.745 .</mrow>
+</md>
+We can confirm this directly from the original force:
+<md>
+<mrow>\mathbf F\cdot\mathbf d_{\max} \amp
+= \left\langle 2,-1,3\right\rangle\cdot
+  \frac{\left\langle -4,2,5\right\rangle}{3\sqrt5}
+= \frac{-8-2+15}{3\sqrt5}</mrow>
+<mrow>\amp = \frac{5}{3\sqrt5} = \frac{\sqrt5}{3} .</mrow>
+</md>
+Compare this with <m>\|\mathbf F\| = \sqrt{14} \approx 3.74</m>: the
+constraint costs us about <m>80\%</m> of the force.
+</p>
+
+<p>
+<term>(c)</term> We want a unit vector
+<m>\mathbf d = \left\langle x,y,z\right\rangle</m> satisfying two
+conditions at once: it must lie in the plane, and it must do no work.
+That is,
+<md>
+\mathbf d\cdot\mathbf n = 0 \qquad\text{and}\qquad
+\mathbf d\cdot\mathbf F = 0 ,
+</md>
+or explicitly
+<md>
+<mrow>2x - y + 2z \amp = 0 ,</mrow>
+<mrow>2x - y + 3z \amp = 0 .</mrow>
+</md>
+Subtracting the first equation from the second gives <m>z = 0</m>, and
+then <m>2x - y = 0</m>, so <m>y = 2x</m>. Taking <m>x = 1</m> gives the
+non-zero vector <m>\left\langle 1,2,0\right\rangle</m>, whose length is
+<m>\sqrt{1+4} = \sqrt5</m>. Hence one suitable unit vector is
+<md>
+\mathbf d_0 = \frac{1}{\sqrt5}\left\langle 1,\ 2,\ 0\right\rangle .
+</md>
+Indeed <m>\mathbf F\cdot\mathbf d_0
+= \tfrac{1}{\sqrt5}(2 - 2 + 0) = 0</m>, and the opposite direction
+<m>-\mathbf d_0</m> works equally well. Geometrically, <m>\mathbf d_0</m>
+is the direction in the plane perpendicular to
+<m>\mathbf F_{\parallel}</m>: moving along it, the particle travels
+neither with nor against the usable part of the force.
+</p>
+</solution>
+</exercise>
+
+</worksheet>

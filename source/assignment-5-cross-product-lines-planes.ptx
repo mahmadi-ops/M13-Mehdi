@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Assignment 5: The Cross Product, Parametrization, and Lines and Planes.
+
+  Built from the problems marked A5 in the instructor's markup of the old
+  worksheets "Exercises for The Cross Product", "Exercises for Parametrization
+  of Plane Curves", "Exercises for Lines and Planes in Space" and "Exercises
+  for Conic Sections".  The problems marked R2 went to review-problems-2.ptx.
+  The three conic-section problems (pp-20, exer-parabola-focus-directrix and
+  pp-21) later moved to assignment-6-quadric-surfaces.ptx.
+
+  Three problems the markup crossed out were dropped: the old rw17-2 (an
+  airplane trajectory meeting z = x - y^2 + 16, whose tangent plane belongs to
+  Chapter 4), the old pp-16 (dy/dx for x = 2 - t - t^3, y = 3t^2 - 6t + 1) and
+  the old m2b-3 (the plane containing the parabola r(t) = <t+1, 2t, 2+3t-t^2>).
+
+  Notation: m2b-1c in review-problems-2.ptx was the problem the markup asked
+  to restate with \vec u and \vec v; m2b-4 sits beside it and was renamed the
+  same way for consistency.
+-->
+<worksheet xml:id="worksheet-assignment-5" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 5</title>
+
+<introduction>
+<p>
+These problems use the cross product to build normal vectors, areas and
+orthogonal directions, parametrize plane curves and curves of intersection in
+space, and intersect lines with planes and measure distances between them. If
+you would like to review the material first, see
+<xref ref="section-cross-product" text="title"/>,
+<xref ref="section-parametrization" text="title"/> and
+<xref ref="chapter-lines-planes" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rw23-9-a">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
+<m>\R^3</m>, then
+<m>\vec u \cdot (\vec u \times \vec v)
+= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
+</statement>
+<feedback>
+<p>
+Counterexample: take
+<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
+<md>
+\mathbf i \cdot
+\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
+\quad\text{whereas}\quad
+\|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
+</md>
+and <m>0 \ne 2</m>.
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="pp-8">
+<statement>
+<p>
+Let <m>\mathbf v</m> be the vector
+<m>3\,\mathbf i - 4\,\mathbf j + 5\,\mathbf k</m>.
+<ol marker="A.">
+<li>
+<p>
+Find a non-zero vector <m>\mathbf v'</m> orthogonal to
+<m>\mathbf v</m>.
+</p>
+</li>
+<li>
+<p>
+Find a vector orthogonal to both <m>\mathbf v</m> and
+<m>\mathbf v'</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We need <m>\langle a,b,c\rangle</m> with
+<m>3a - 4b + 5c = 0</m>. Any solution will do; taking <m>c = 0</m>
+leaves <m>3a = 4b</m>, so <m>a = 4</m>, <m>b = 3</m> works:
+<md>
+\mathbf v' = 4\,\mathbf i + 3\,\mathbf j,
+\qquad
+\mathbf v \cdot \mathbf v' = 12 - 12 + 0 = 0.
+</md>
+(There are infinitely many correct answers.)
+</p>
+</li>
+<li>
+<p>
+The cross product is orthogonal to both:
+<md>
+<mrow>\mathbf v \times \mathbf v' \amp =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 5 \\
+4 \amp 3 \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp = (0 - 15)\mathbf i - (0 - 20)\mathbf j + (9 + 16)\mathbf k</mrow>
+<mrow>\amp = -15\,\mathbf i + 20\,\mathbf j + 25\,\mathbf k.</mrow>
+</md>
+Dividing by <m>5</m> gives the simpler answer
+<m>-3\,\mathbf i + 4\,\mathbf j + 5\,\mathbf k</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-4">
+<statement>
+<p>
+Suppose <m>\|\vec u\| = 3</m>, <m>\|\vec v\| = 4</m> and
+<m>\|\vec u\times\vec v\| = 6</m>. Find
+<ol marker="(a)">
+<li>
+<p>
+<m>\left|\vec u\cdot\vec v\right|</m>;
+</p>
+</li>
+<li>
+<p>
+<m>\left\|\operatorname{proj}_{\vec u}\vec v\right\|</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Let <m>\theta</m> be the angle between the two
+vectors, <m>0 \le \theta \le \pi</m>. From
+<m>\|\vec u\times\vec v\| = \|\vec u\|\,\|\vec v\|\sin\theta</m>,
+<md>
+6 = (3)(4)\sin\theta \quad\Longrightarrow\quad
+\sin\theta = \frac{6}{12} = \frac12 .
+</md>
+Since <m>\sin^2\theta + \cos^2\theta = 1</m>,
+<md>
+|\cos\theta| = \sqrt{1 - \tfrac14} = \frac{\sqrt3}{2} .
+</md>
+(We cannot determine the <em>sign</em> of <m>\cos\theta</m>, since
+<m>\theta</m> could be <m>30^\circ</m> or <m>150^\circ</m>; this is
+exactly why the problem asks for the absolute value.) Therefore
+<md>
+\left|\vec u\cdot\vec v\right|
+ = \|\vec u\|\,\|\vec v\|\,|\cos\theta|
+ = (3)(4)\frac{\sqrt3}{2} = 6\sqrt3 .
+</md>
+</p>
+
+<p>
+<term>(b)</term> The projection is
+<m>\operatorname{proj}_{\vec u}\vec v
+= \left(\dfrac{\vec u\cdot\vec v}{\|\vec u\|^2}\right)\vec u</m>, so
+its length is
+<md>
+\left\|\operatorname{proj}_{\vec u}\vec v\right\|
+ = \frac{\left|\vec u\cdot\vec v\right|}{\|\vec u\|^2}\,\|\vec u\|
+ = \frac{\left|\vec u\cdot\vec v\right|}{\|\vec u\|}
+ = \frac{6\sqrt3}{3} = 2\sqrt3 .
+</md>
+As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
+<m>\|\vec v\| = 4</m>, as a shadow must be.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rf-2">
+<statement>
+<p>
+Find the Cartesian equation <m>f(x,y) = 0</m> for the curve
+represented by the following parametric equations, then graph it:
+<md>
+<mrow>x(t) \amp = e^{2t},</mrow>
+<mrow>y(t) \amp = e^{t} - 1,</mrow>
+<mrow>0 \amp \le t \le \ln(2).</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+From the second equation, <m>y + 1 = e^t</m>, and hence
+<md>
+x = e^{2t} = \left(e^{t}\right)^2 = (y+1)^2
+\;\Rightarrow\;
+y + 1 = \sqrt{x}
+\;\Rightarrow\;
+y = \sqrt{x} - 1.
+</md>
+For the range, note that <m>0 \le t \le \ln(2)</m> gives
+<md>
+e^0 \le e^t \le e^{\ln(2)}
+\;\Rightarrow\; 1 \le e^t \le 2
+\;\Rightarrow\; 0 \le e^t - 1 \le 1
+\;\Rightarrow\; 0 \le y \le 1,
+</md>
+and correspondingly <m>1 \le x \le 4</m>. The curve is the portion of
+<m>y = \sqrt{x} - 1</m> from <m>(1,0)</m> to <m>(4,1)</m>, shown in
+<xref ref="fig-rf-parametric"/>.
+</p>
+
+<figure xml:id="fig-rf-parametric">
+<caption>
+The curve <m>y = \sqrt{x} - 1</m> traced by the parametric equations
+for <m>0 \le t \le \ln(2)</m>, from <m>(1,0)</m> to <m>(4,1)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rf-parametric">
+<diagram dimensions="(360,220)" margins="12">
+<definition>c(t) = (t, t^(1/2) - 1)</definition>
+<coordinates bbox="(-0.6,-0.7,4.9,1.7)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="rf2-curve" function="c" domain="(1,4)"
+                  stroke="#8B1A4A" thickness="3"/>
+<point at="rf2-start" p="(1,0)" fill="#8B1A4A"/>
+<point at="rf2-end" p="(4,1)" fill="#8B1A4A"/>
+<label at="rf2-lab" anchor="(2.15,0.85)" alignment="nw" color="#8B1A4A">
+<m>y=\sqrt{x}-1</m>
+</label>
+<label at="rf2-start-lab" anchor="(1.05,-0.18)" alignment="se">
+<m>(1,0)</m>
+</label>
+<label at="rf2-end-lab" anchor="(4.05,0.95)" alignment="se">
+<m>(4,1)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A short dark red curve rises from the point one comma zero to the point four comma one, following the graph of y equals the square root of x minus one. Both endpoints are marked with dots.">
+  <annotation ref="rf2-curve" text="The curve y equals square root of x minus one, for x between one and four."/>
+  <annotation ref="rf2-start" text="The starting point one comma zero, corresponding to t equals zero."/>
+  <annotation ref="rf2-end" text="The ending point four comma one, corresponding to t equals natural log of two."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-8">
+<statement>
+<p>
+Provide a parametrized form of the curve given by
+<md>
+x^2 + 4y^2 + 8y - 2\sqrt{21}\,x = 0.
+</md>
+Assume that the curve is traced <term>counter-clockwise</term> as the
+parameter increases.
+</p>
+</statement>
+<solution>
+<p>
+We complete the squares:
+<md>
+<mrow>\left(x - \sqrt{21}\right)^2 - 21
++ 4(y+1)^2 - 4 \amp = 0</mrow>
+<mrow>\left(x - \sqrt{21}\right)^2 + 4(y+1)^2 \amp = 25.</mrow>
+</md>
+This is an ellipse centered at <m>\left(\sqrt{21}, -1\right)</m>.
+Setting
+<md>
+x - \sqrt{21} = 5\cos t
+\quad\text{and}\quad
+2(y+1) = 5\sin t
+</md>
+gives the counter-clockwise parametrization
+<md>
+<mrow>x(t) \amp = 5\cos t + \sqrt{21}</mrow>
+<mrow>y(t) \amp = \frac52 \sin t - 1</mrow>
+<mrow>0 \amp \le t \le 2\pi.</mrow>
+</md>
+See <xref ref="fig-rw23-ellipse"/>.
+</p>
+
+<figure xml:id="fig-rw23-ellipse">
+<caption>
+The ellipse <m>\left(x - \sqrt{21}\right)^2 + 4(y+1)^2 = 25</m>,
+centered at <m>\left(\sqrt{21}, -1\right)</m> with semi-axes <m>5</m>
+and <m>\frac52</m>, traced counter-clockwise.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw23-ellipse">
+<diagram dimensions="(380,240)" margins="12">
+<definition>ell(t) = (5*cos(t) + 4.5826, 2.5*sin(t) - 1)</definition>
+<coordinates bbox="(-1.3,-4.4,10.6,2.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="el-curve" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<vector at="el-dir" v="(-0.45,0.70)" tail="(9.35,-0.25)"
+        stroke="#D55E00" thickness="3"/>
+<point at="el-center" p="(4.5826,-1)" fill="#8B1A4A"/>
+<label at="el-center-lab" anchor="(4.62,-1.35)" alignment="se" color="#8B1A4A">
+<m>\left(\sqrt{21},-1\right)</m>
+</label>
+<label at="el-dir-lab" anchor="(9.05,0.65)" alignment="ne" color="#D55E00">
+<m>t</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wide blue ellipse centered at the point square root of twenty one comma negative one, with horizontal semi axis five and vertical semi axis five halves. A short vermillion arrow on the right side of the ellipse points up and to the left, showing the counter clockwise direction of increasing parameter t.">
+  <annotation ref="el-curve" text="The ellipse traced by the parametrization, counter clockwise."/>
+  <annotation ref="el-center" text="The center of the ellipse at square root of twenty one comma negative one."/>
+  <annotation ref="el-dir" text="The direction of increasing t, counter clockwise."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-15">
+<statement>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Parametrize the intersection of <m>x^2 + y^2 + z^2 = 25</m> and the
+plane <m>x = 4</m>.
+</p>
+</li>
+<li>
+<p>
+Which axis is perpendicular to the plane <m>x = 4</m>?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Substituting <m>x = 4</m> into the equation of the sphere,
+<md>
+16 + y^2 + z^2 = 25 \;\Rightarrow\; y^2 + z^2 = 9,
+</md>
+a circle of radius <m>3</m> lying in the plane <m>x = 4</m>. Hence
+<md>
+x = 4, \qquad y = 3\cos(t), \qquad z = 3\sin(t),
+\qquad 0 \le t \le 2\pi.
+</md>
+</p>
+</li>
+<li>
+<p>
+The plane <m>x = 4</m> has normal vector
+<m>\langle 1, 0, 0\rangle</m>, so the <m>x</m>-axis is perpendicular
+to it.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-2">
+<statement>
+<p>
+Consider the curve <m>25(y+4)^2 + 400(x-1)^2 = 100</m>.
+<ol marker="(a)">
+<li>
+<p>
+Sketch the curve and label its important points.
+</p>
+</li>
+<li>
+<p>
+Parametrize the entire curve using one parametrization.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term> Divide both sides by <m>100</m> to put the equation in
+standard form:
+<md>
+<mrow>\frac{25(y+4)^2}{100} + \frac{400(x-1)^2}{100} \amp = 1</mrow>
+<mrow>\frac{(y+4)^2}{4} + 4(x-1)^2 \amp = 1</mrow>
+<mrow>\frac{(x-1)^2}{\left(\frac12\right)^2} + \frac{(y+4)^2}{2^2}
+  \amp = 1 .</mrow>
+</md>
+</p>
+
+<p>
+This is an ellipse with centre <m>(1,-4)</m>, semi-axis
+<m>a = \tfrac12</m> in the <m>x</m>-direction and semi-axis
+<m>b = 2</m> in the <m>y</m>-direction. Since <m>b \gt a</m>, the major
+axis is vertical. The four vertices are
+<md>
+\left(\tfrac12, -4\right), \quad \left(\tfrac32, -4\right), \quad
+(1,-2), \quad (1,-6),
+</md>
+and the foci lie on the vertical axis at distance
+<m>c = \sqrt{b^2-a^2} = \sqrt{4-\tfrac14} = \tfrac{\sqrt{15}}{2}
+\approx 1.94</m>
+from the centre. See <xref ref="fig-m2a-ellipse"/>.
+</p>
+
+<figure xml:id="fig-m2a-ellipse">
+<caption>
+The ellipse <m>25(y+4)^2 + 400(x-1)^2 = 100</m>, with centre
+<m>(1,-4)</m>, horizontal semi-axis <m>\tfrac12</m> and vertical
+semi-axis <m>2</m>.
+</caption>
+<image width="62%">
+<description>
+<p>
+A tall narrow ellipse centred at the point one comma negative four. Its
+topmost and bottommost points are one comma negative two and one comma
+negative six, and its leftmost and rightmost points are one half comma
+negative four and three halves comma negative four.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="prefigure-m2a-ellipse">
+<diagram dimensions="(330,470)" margins="30">
+<definition>ell(t) = (1 + 0.5*cos(t), -4 + 2*sin(t))</definition>
+<coordinates bbox="(-0.85,-7.4,2.8,-0.6)">
+<grid-axes at="m2ae-axes" xlabel="x" ylabel="y"/>
+<parametric-curve at="m2ae-e" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="2.5"/>
+<point at="m2ae-c" p="(1,-4)" fill="#8B1A4A"/>
+<point at="m2ae-t" p="(1,-2)" fill="#D55E00"/>
+<point at="m2ae-b" p="(1,-6)" fill="#D55E00"/>
+<point at="m2ae-l" p="(0.5,-4)" fill="#009E73"/>
+<point at="m2ae-r" p="(1.5,-4)" fill="#009E73"/>
+<label at="m2ae-clab" anchor="(0.42,-3.72)" alignment="w" color="#8B1A4A">
+<m>(1,-4)</m>
+</label>
+<label at="m2ae-tlab" anchor="(1.1,-1.95)" alignment="ne" color="#D55E00">
+<m>(1,-2)</m>
+</label>
+<label at="m2ae-blab" anchor="(1.1,-6.05)" alignment="se" color="#D55E00">
+<m>(1,-6)</m>
+</label>
+<label at="m2ae-llab" anchor="(0.44,-4.28)" alignment="sw" color="#009E73">
+<m>\left(\tfrac12,-4\right)</m>
+</label>
+<label at="m2ae-rlab" anchor="(1.56,-4.0)" alignment="e" color="#009E73">
+<m>\left(\tfrac32,-4\right)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A tall narrow blue ellipse in the fourth quadrant region below the x axis, centred at one comma negative four. Five points are marked and labelled: the centre, the top vertex at one comma negative two, the bottom vertex at one comma negative six, and the left and right vertices at one half and three halves, each with y equal to negative four.">
+  <annotation ref="m2ae-e" text="The ellipse twenty five times the square of y plus four, plus four hundred times the square of x minus one, equals one hundred."/>
+  <annotation ref="m2ae-c" text="The centre of the ellipse, at one comma negative four."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> For a circle <m>x^2+y^2=r^2</m> we would use
+<m>x = r\cos t</m>, <m>y = r\sin t</m>. Here the standard form tells us
+that
+<md>
+\frac{x-1}{\frac12} \quad\text{and}\quad \frac{y+4}{2}
+</md>
+play the roles of <m>\cos t</m> and <m>\sin t</m>, since their squares
+add to <m>1</m>. So we set
+<md>
+\frac{x-1}{\frac12} = \cos t, \qquad \frac{y+4}{2} = \sin t ,
+</md>
+which gives
+<md>
+x = 1 + \frac12\cos t, \qquad y = -4 + 2\sin t,
+\qquad 0 \le t \le 2\pi .
+</md>
+Letting <m>t</m> run over a full period of length <m>2\pi</m> traces
+the entire ellipse exactly once, counterclockwise, starting at the
+right vertex <m>\left(\tfrac32,-4\right)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rf-4">
+<statement>
+<p>
+Find the vector equation of the line of intersection of the following
+planes:
+<md>
+<mrow>2x + y - z \amp = 6,</mrow>
+<mrow>x - y + 3z \amp = 4.</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
+<m>\vec n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
+the line of intersection is
+<md>
+\mathbf v = \vec n_1 \times \vec n_2 =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp 1 \amp -1 \\
+1 \amp -1 \amp 3
+\end{vmatrix}
+= \langle 2, -7, -3\rangle.
+</md>
+</p>
+
+<p>
+Next we need a point on the line. Setting <m>x = 0</m> in the
+equations of the planes gives
+<md>
+<mrow>y - z \amp = 6</mrow>
+<mrow>-y + 3z \amp = 4</mrow>
+</md>
+Adding the two equations gives <m>2z = 10</m>, so <m>z = 5</m> and
+<m>y = 11</m>. Hence the point <m>(0, 11, 5)</m> is on the line, and
+the vector equation of the line of intersection is
+<md>
+\mathbf r(t) = \langle 0, 11, 5\rangle + t\,\langle 2, -7, -3\rangle.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-5">
+<statement>
+<p>
+Find an equation of a plane containing the line
+<m>\mathbf r = \langle -4, 5, -1\rangle + t\langle -4, 6, -3\rangle</m>
+and parallel to the plane <m>-3x - y + 2z = 0</m>, in which the
+coefficient of <m>x</m> is <m>-3</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
+the same normal vector
+<md>
+\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+</md>
+(Note that <m>\vec n \cdot \langle -4, 6, -3\rangle
+= 12 - 6 - 6 = 0</m>, so the line is indeed parallel to such a plane.)
+When <m>t = 0</m>, the point <m>(-4, 5, -1)</m> is on the plane, so
+from the point-normal form,
+<md>
+<mrow>A(x - x_0) + B(y - y_0) + C(z - z_0) \amp = 0</mrow>
+<mrow>\Rightarrow\quad -3(x+4) - (y-5) + 2(z+1) \amp = 0.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-5">
+<statement>
+<p>
+Calculate the distance between the following two lines:
+<md>
+<mrow>L_1: \amp \quad x = 4 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+<mrow>L_2: \amp \quad x = 5 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+We notice that the two lines are parallel (both have direction vector
+<m>\mathbf v = \langle -1, 2, 3\rangle</m>) and therefore we can find
+the distance between a point on <m>L_2</m> and the line <m>L_1</m>.
+Taking <m>S(5, 3, -5)</m> on <m>L_2</m> and <m>P(4, 3, -5)</m> on
+<m>L_1</m>, we get <m>\vec{PS} = \langle 1, 0, 0\rangle</m>, and
+<m>\|\mathbf v\| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
+</p>
+
+<p>
+Using the cross product,
+<md>
+\vec{PS} \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 0 \amp 0 \\
+-1 \amp 2 \amp 3
+\end{vmatrix}
+= -3\,\mathbf j + 2\,\mathbf k,
+\qquad
+\left\|\vec{PS} \times \mathbf v\right\| = \sqrt{9 + 4} = \sqrt{13},
+</md>
+and the distance is
+<md>
+d = \frac{\left\|\vec{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
+= \frac{\sqrt{13}}{\sqrt{14}}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-17">
+<statement>
+<p>
+Find parametric equations for the line through <m>(2,1,1)</m> which is
+normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
+<m>(3,0,1)</m>.
+</p>
+</statement>
+<solution>
+<p>
+From <xref ref="pp-13"/>, the plane through those three points has
+normal vector <m>\vec n = \langle 3, 9, -2\rangle</m>. A line normal
+to the plane has <m>\vec n</m> as its direction vector, so through
+<m>(2,1,1)</m>,
+<md>
+x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
+\qquad t \in \R.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-5">
+<statement>
+<p>
+Let <m>L</m> be the line given by
+<md>
+x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
+</md>
+Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Write <m>Q = (-2,2,-1)</m> and let
+<m>P(t) = (4+t,\ -1-2t,\ 5+t)</m> be the general point of <m>L</m>. The
+direction vector of the line is
+<m>\vec d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
+</p>
+
+<p>
+The closest point is the foot of the perpendicular from <m>Q</m>, so we
+want the value of <m>t</m> for which <m>\vec{QP}</m> is orthogonal to
+<m>\vec d</m>. First,
+<md>
+<mrow>\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Now impose <m>\vec{QP}\cdot\vec d = 0</m>:
+<md>
+<mrow>(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0</mrow>
+<mrow>6 + t + 6 + 4t + 6 + t \amp = 0</mrow>
+<mrow>18 + 6t \amp = 0</mrow>
+<mrow>t \amp = -3 .</mrow>
+</md>
+</p>
+
+<p>
+Substituting <m>t = -3</m> into the parametric equations gives the
+closest point
+<md>
+P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
+</md>
+As a check, at <m>t=-3</m> we get
+<m>\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
+<md>
+\vec{QP}\cdot\vec d
+ = \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
+ = 3 - 6 + 3 = 0 ,
+</md>
+as required. The distance from <m>Q</m> to the line is
+<m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
+</p>
+</solution>
+</exercise>
+
+</worksheet>

@@ -82,3 +82,134 @@ body.a4 .diagcess-navigation-controls {
   max-width: 100%;
   height: auto !important;
 }
+
+/* ------------------------------------------------------------------ *
+ * The "Assignments and Review Problems" chapter is unnumbered.
+ *
+ * It holds the assignments and the review problem sets; a number in
+ * front of "Assignment 7" only competes with the one the student
+ * actually cares about. Its own heading, the worksheet headings, and
+ * every table-of-contents or navigation entry pointing into it show the
+ * bare title. This is the same treatment the chapter gets in the
+ * skeletal-notes book (M13-Skeletal-Notes, assets/custom.css), which is
+ * where these worksheets came from.
+ *
+ * PreTeXt has no source-level switch for an unnumbered chapter, so this
+ * is display-only and applies to the web target; the PDF still numbers
+ * the chapter.
+ * ------------------------------------------------------------------ */
+section#section-exercises > .heading .type,
+section#section-exercises > .heading .codenumber,
+section#section-exercises > .heading .heading-divison-mark,
+section.worksheet[id^="worksheet-assignment-"] > .heading .type,
+section.worksheet[id^="worksheet-assignment-"] > .heading .codenumber,
+section.worksheet[id^="worksheet-assignment-"] > .heading .heading-divison-mark,
+section.worksheet[id^="worksheet-review-problems-"] > .heading .type,
+section.worksheet[id^="worksheet-review-problems-"] > .heading .codenumber,
+section.worksheet[id^="worksheet-review-problems-"] > .heading .heading-divison-mark,
+a[href^="section-exercises.html"] .codenumber,
+a[href^="worksheet-assignment-"] .codenumber,
+a[href^="worksheet-review-problems-"] .codenumber {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------------ *
+ * Floating Socratic AI tutor (assignment pages only) -- see custom.js.
+ * Ported from the MATH 14 book, assets/custom.css.
+ * ------------------------------------------------------------------ */
+#m13-tutor-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3000;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  padding: 16px 28px;
+  font: 700 19px/1 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.3px;
+  background: #205f80;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+#m13-tutor-fab:hover { background: #2b7aa3; transform: scale(1.04); }
+
+/* One-time attention pulse on a student's first visit -- see custom.js. */
+@keyframes m13-tutor-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4); }
+  50% { transform: scale(1.14); box-shadow: 0 6px 30px rgba(32, 95, 128, 0.75); }
+}
+#m13-tutor-fab.m13-pulse { animation: m13-tutor-pulse 0.9s ease-in-out 2; }
+@media (prefers-reduced-motion: reduce) {
+  #m13-tutor-fab.m13-pulse { animation: none; }
+}
+@media (max-width: 600px) {
+  #m13-tutor-fab { padding: 13px 20px; font-size: 16px; }
+}
+
+#m13-tutor-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3000;
+  width: 390px;
+  max-width: calc(100vw - 24px);
+  height: min(72vh, 580px);
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #b9b9b9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+}
+#m13-tutor-panel.m13-open { display: flex; }
+
+#m13-tutor-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #205f80;
+  color: #fff;
+  font: 600 13.5px/1.2 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+#m13-tutor-min {
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+#m13-tutor-min:hover { background: rgba(255, 255, 255, 0.32); }
+
+#m13-tutor-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  #m13-tutor-panel {
+    right: 8px;
+    bottom: 8px;
+    height: 68vh;
+  }
+}
+
+/* The tutor is a screen affordance and must not appear on paper -- in
+   either print context (see the note at the top of this file). */
+@media print {
+  #m13-tutor-fab, #m13-tutor-panel { display: none !important; }
+}
+body.letter #m13-tutor-fab, body.letter #m13-tutor-panel,
+body.a4 #m13-tutor-fab, body.a4 #m13-tutor-panel {
+  display: none !important;
+}

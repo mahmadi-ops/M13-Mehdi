@@ -146,9 +146,23 @@ assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
 markers (convention below) in its `assignment-<n>-*.ptx`; `release`
 after the due date deletes only the two marker lines; `relock` re-wraps.
 
-This repo (the completed notes) still hosts exercise worksheets under
-its own Exercises chapter for the notes pages themselves; the skeletal
-rule below still applies to anything posted here.
+This repo's own Chapter 5 is a copy of that book's **Assignments and
+Review Problems** chapter (Sep 2026): `source/exercises.ptx` includes the
+same fourteen worksheet files (`assignment-<n>-*.ptx`,
+`review-problems-<n>.ptx`, pages `worksheet-assignment-<n>.html` and
+`worksheet-review-problems-<n>.html`), with their cross-references
+pointed at this book's section ids. The chapter and its worksheets are
+shown unnumbered, exactly as in the skeletal book, by the rules at the
+end of `assets/custom.css` (display-only; PreTeXt has no unnumbered
+chapter). The assignment pages carry the same Socratic tutor widget
+(`assets/custom.js`, `assets/gemini-tutor.html`). The old per-topic
+`exercises-*.ptx` worksheets are gone. Two consequences: the desk's
+`unpost-notes` for a topic here now takes down every assignment and
+review set whose introduction links that topic (the script wraps them
+`UNPOSTED-WITH` and restores them on repost); and any content change to
+an assignment should be made in both books, or copied across from the
+skeletal book, so the two stay identical. The skeletal rule below still
+applies to anything posted here.
 
 ## Unposting (the reverse workflows)
 

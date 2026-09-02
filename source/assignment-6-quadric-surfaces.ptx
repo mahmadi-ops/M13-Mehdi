@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Assignment 6: Quadric Surfaces and Conic Sections.
+
+  Built from the problems marked A6 in the instructor's markup of the old
+  "Exercises for Quadric Surfaces" worksheet.  The problems marked R2 went to
+  review-problems-2.ptx, and the old pp-22 (graph y - z = x^2) was crossed out
+  and dropped.
+
+  The three conic-section problems at the end (pp-20,
+  exer-parabola-focus-directrix and pp-21) were originally the last three
+  problems of assignment-5-cross-product-lines-planes.ptx and were moved here
+  at the instructor's request.  Of these, exer-parabola-focus-directrix is
+  new, added at the markup's request as a parabola counterpart to the
+  hyperbola problem pp-20.
+
+  m2b-2 keeps only part (a); the markup crossed out its part (b), which
+  parametrized the trace in the plane y = sqrt(6).
+
+  exercise-quadric-graph-match was marked R2 in the markup but moved here at
+  the instructor's request; it opens the assignment, as it did the old
+  worksheet.
+-->
+<worksheet xml:id="worksheet-assignment-6" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 6</title>
+
+<introduction>
+<p>
+These problems match equations to pictures, identify a quadric surface from
+its equation by slicing it with the coordinate planes and sketch it, and
+identify conic sections from their equations. If you would like to review the
+material first, see
+<xref ref="section-quadric-surfaces" text="title"/> and
+<xref ref="section-conics" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="exercise-quadric-graph-match">
+  <title>Matching Quadric Surfaces</title>
+  <introduction>
+    <image xml:id="image-quadric-match-grid" width="100%">
+      <shortdescription>
+        Six quadric surfaces labeled A through F: an ellipsoid, a cone
+        opening along the y axis, a saddle, a cylinder parallel to the
+        y axis, a paraboloid opening along the positive y axis, and two
+        bowl-shaped pieces meeting at the origin.
+      </shortdescription>
+      <latex-image>
+        <![CDATA[\scalebox{0.62}{
+\begin{tikzpicture}
+\definecolor{oiblue}{RGB}{0,114,178}
+\pgfplotsset{
+  quadric/.style={
+    view={115}{20},
+    width=5.6cm,
+    axis lines=center,
+    axis on top,
+    axis line style={-latex, black!75, line width=0.5pt},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    label style={font=\normalsize},
+    ticks=none,
+    clip=false,
+  },
+  surfstyle/.style 2 args={
+    surf, shader=faceted,
+    colormap={soft#1}{color=(#2!14!white) color=(#2!48!white)},
+    faceted color=black!45, line width=0.15pt,
+    z buffer=sort,
+  },
+}
+% ---- A: ellipsoid ----
+\begin{axis}[quadric, at={(0cm,0cm)}, anchor=north west,
+    xmin=-1.6, xmax=1.6, ymin=-1.9, ymax=1.9, zmin=-1.9, zmax=1.9]
+  \addplot3[surfstyle={A}{oiblue},
+      domain=0:360, samples=29, y domain=0:180, samples y=19]
+    ({sin(y)*cos(x)}, {1.3*sin(y)*sin(x)}, {1.6*cos(y)});
+\end{axis}
+\node[font=\Large\bfseries] at (2.8cm, -5.3cm) {A};
+% ---- B: cone along y ----
+\begin{axis}[quadric, at={(6cm,0cm)}, anchor=north west,
+    xmin=-2.3, xmax=2.3, ymin=-2.4, ymax=2.4, zmin=-1.9, zmax=1.9]
+  \addplot3[surfstyle={B}{oiblue},
+      domain=0:360, samples=29, y domain=-2:2, samples y=19]
+    ({y*cos(x)}, {y}, {0.707*y*sin(x)});
+\end{axis}
+\node[font=\Large\bfseries] at (8.8cm, -5.3cm) {B};
+% ---- C: saddle y = x^2 - z^2 ----
+\begin{axis}[quadric, at={(12cm,0cm)}, anchor=north west,
+    xmin=-1.7, xmax=1.7, ymin=-2.4, ymax=2.4, zmin=-1.7, zmax=1.7]
+  \addplot3[surfstyle={C}{oiblue},
+      domain=-1.5:1.5, samples=21, y domain=-1.5:1.5, samples y=19]
+    ({x}, {x^2 - y^2}, {y});
+\end{axis}
+\node[font=\Large\bfseries] at (14.8cm, -5.3cm) {C};
+% ---- D: cylinder x^2 + 2z^2 = 1 ----
+\begin{axis}[quadric, at={(0cm,-6.4cm)}, anchor=north west,
+    xmin=-1.6, xmax=1.6, ymin=-2.4, ymax=2.4, zmin=-1.4, zmax=1.4]
+  \addplot3[surfstyle={D}{oiblue},
+      domain=0:360, samples=29, y domain=-2:2, samples y=15]
+    ({cos(x)}, {y}, {0.707*sin(x)});
+\end{axis}
+\node[font=\Large\bfseries] at (2.8cm, -11.7cm) {D};
+% ---- E: paraboloid y = 2x^2 + z^2 ----
+\begin{axis}[quadric, at={(6cm,-6.4cm)}, anchor=north west,
+    xmin=-1.4, xmax=1.4, ymin=-0.5, ymax=3.0, zmin=-1.6, zmax=1.6]
+  \addplot3[surfstyle={E}{oiblue},
+      domain=0:360, samples=29, y domain=0:1.5, samples y=15]
+    ({0.707*y*cos(x)}, {y*y}, {y*sin(x)});
+\end{axis}
+\node[font=\Large\bfseries] at (8.8cm, -11.7cm) {E};
+% ---- F: two bowls y = +-(x^2 + z^2) ----
+\begin{axis}[quadric, at={(12cm,-6.4cm)}, anchor=north west,
+    xmin=-1.6, xmax=1.6, ymin=-2.6, ymax=2.6, zmin=-1.6, zmax=1.6]
+  \addplot3[surfstyle={F}{oiblue},
+      domain=0:360, samples=29, y domain=0:1.5, samples y=15]
+    ({y*cos(x)}, {y*y}, {y*sin(x)});
+  \addplot3[surfstyle={F2}{oiblue},
+      domain=0:360, samples=29, y domain=0:1.5, samples y=15]
+    ({y*cos(x)}, {-y*y}, {y*sin(x)});
+\end{axis}
+\node[font=\Large\bfseries] at (14.8cm, -11.7cm) {F};
+\end{tikzpicture}
+}]]>
+      </latex-image>
+    </image>
+  </introduction>
+  <webwork>
+    <pg-code>
+      Context()->strings->add(
+        "A" => {}, "B" => {}, "C" => {},
+        "D" => {}, "E" => {}, "F" => {},
+      );
+      $match1 = String("E");
+      $match2 = String("B");
+      $match3 = String("D");
+      $match4 = String("C");
+    </pg-code>
+    <statement>
+      <p>
+        Match the equations of the surfaces with the graphs A<ndash/>F shown
+        above by entering a letter from A to F in each blank.
+      </p>
+      <p>
+        <m>y = 2x^2 + z^2</m> matches graph <var name="$match1" width="4"/>.
+      </p>
+      <p>
+        <m>y^2 = x^2 + 2z^2</m> matches graph <var name="$match2" width="4"/>.
+      </p>
+      <p>
+        <m>x^2 + 2z^2 = 1</m> matches graph <var name="$match3" width="4"/>.
+      </p>
+      <p>
+        <m>y = x^2 - z^2</m> matches graph <var name="$match4" width="4"/>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We identify each surface by slicing, just as in this section.  Here
+        the special axis is the <m>y</m>-axis, so we slice with the planes
+        <m>y = c</m>, <m>x = c</m>, and <m>z = c</m>.
+      </p>
+      <p>
+        For <m>y = 2x^2 + z^2</m>, the plane <m>y = c</m> gives
+        <m>2x^2 + z^2 = c</m>: no trace for <m>c \lt 0</m>, a single point
+        when <m>c = 0</m>, and ellipses that grow as <m>c</m> increases.  The
+        planes <m>x = c</m> and <m>z = c</m> give the parabolas
+        <m>y = z^2 + 2c^2</m> and <m>y = 2x^2 + c^2</m>, both opening in the
+        positive <m>y</m> direction.  Ellipses on one side only together with
+        parabolas: an elliptical paraboloid opening along the positive
+        <m>y</m>-axis, graph E.
+      </p>
+      <p>
+        For <m>y^2 = x^2 + 2z^2</m>, the plane <m>y = c</m> gives
+        <m>x^2 + 2z^2 = c^2</m>: an ellipse for every <m>c \neq 0</m>, on
+        both sides of the origin, shrinking to a single point when
+        <m>c = 0</m>.  The plane <m>z = 0</m> gives <m>y^2 = x^2</m>, the two
+        crossing lines <m>y = \pm x</m>.  Ellipses collapsing to a point,
+        together with crossing lines: an elliptic cone along the
+        <m>y</m>-axis, graph B.
+      </p>
+      <p>
+        For <m>x^2 + 2z^2 = 1</m>, the variable <m>y</m> is missing, so the
+        plane <m>y = c</m> gives the <em>same</em> ellipse
+        <m>x^2 + 2z^2 = 1</m> for every value of <m>c</m>.  Identical
+        elliptical slices at every station: a cylinder parallel to the
+        <m>y</m>-axis, graph D.
+      </p>
+      <p>
+        For <m>y = x^2 - z^2</m>, the plane <m>z = c</m> gives the parabola
+        <m>y = x^2 - c^2</m> opening in the positive <m>y</m> direction,
+        while the plane <m>x = c</m> gives the parabola <m>y = c^2 - z^2</m>
+        opening in the negative <m>y</m> direction, and the plane
+        <m>y = 0</m> gives the crossing lines <m>z = \pm x</m>.  Parabolas
+        opening in opposite directions: a hyperbolic paraboloid, a saddle,
+        graph C.
+      </p>
+      <p>
+        Graphs A and F match none of the equations.  Slicing the ellipsoid
+        in A gives bounded ellipses in every direction, which none of the
+        equations produce.  Slicing the two bowls in F with planes
+        <m>y = c</m> gives ellipses whose size grows like
+        <m>\sqrt{|c|}</m>, unlike the straight-sided linear growth of the
+        cone in B.
+      </p>
+    </solution>
+  </webwork>
+</exercise>
+
+<exercise xml:id="rf-5">
+<statement>
+<p>
+Identify and sketch the surface corresponding to the following
+equation:
+<md>
+z^2 - y^2 - x^2 = 0.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+We can rewrite the equation as <m>z^2 = x^2 + y^2</m>. Let us look at
+its traces:
+<ul>
+<li>
+<p>
+<m>z = c</m>: the horizontal traces <m>x^2 + y^2 = c^2</m> are circles
+of radius <m>|c|</m> (for <m>c \ne 0</m>).
+</p>
+</li>
+<li>
+<p>
+<m>x = 0</m>: <m>z = \pm y</m>, a pair of lines intersecting at the
+origin.
+</p>
+</li>
+<li>
+<p>
+<m>y = 0</m>: <m>z = \pm x</m>, a pair of lines intersecting at the
+origin.
+</p>
+</li>
+</ul>
+The surface is a <term>double cone</term> with its vertex at the
+origin, opening along the <m>z</m>-axis. See
+<xref ref="fig-rf-cone"/>.
+</p>
+
+<figure xml:id="fig-rf-cone">
+<caption>
+The surface <m>z^2 = x^2 + y^2</m>: a double cone with vertex at the
+origin. Horizontal cross sections are circles of radius <m>|z|</m>.
+</caption>
+<image width="56%">
+<description>
+<p>
+A double cone drawn in a three dimensional coordinate system: an
+upper cone opening upward along the z axis and a mirror image cone
+opening downward, meeting at a single vertex at the origin. Each cone
+is capped by an ellipse representing a circular cross section.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-2.6) -- (0,2.8) node[above] {$z$};
+  \draw[-stealth, thick] (-2.4,0) -- (2.6,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.95,0.68) -- (-1.3,-0.94) node[below left] {$x$};
+  % upper cone
+  \draw[mblue, thick] (0,0) -- (-1.5,1.8);
+  \draw[mblue, thick] (0,0) -- (1.5,1.8);
+  \draw[mblue, thick] (0,1.8) ellipse (1.5cm and 0.34cm);
+  % lower cone
+  \draw[mblue, thick] (0,0) -- (-1.5,-1.8);
+  \draw[mblue, thick] (0,0) -- (1.5,-1.8);
+  \draw[mblue, thick] (0,-1.8) ellipse (1.5cm and 0.34cm);
+  % vertex
+  \fill (0,0) circle (1.5pt);
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-7">
+<statement>
+<p>
+Identify and sketch the surface <m>x^2 - y^2 + z^2 - 4 = 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+We can rewrite the equation as <m>x^2 + z^2 = y^2 + 4</m>. Let us look
+at its traces:
+<ul>
+<li>
+<p>
+<m>y = c</m>: <m>x^2 + z^2 = c^2 + 4</m>, circles with radius
+<m>\sqrt{c^2+4} \ge 2</m>.
+</p>
+</li>
+<li>
+<p>
+<m>x = c</m>: <m>z^2 - y^2 = 4 - c^2</m>, hyperbolas.
+</p>
+</li>
+<li>
+<p>
+<m>z = c</m>: <m>x^2 - y^2 = 4 - c^2</m>, hyperbolas (for
+<m>c = 0</m>: <m>x^2 - y^2 = 4</m>).
+</p>
+</li>
+</ul>
+The surface is a <term>hyperboloid of one sheet</term> whose axis is
+the <m>y</m>-axis. See <xref ref="fig-rw23-hyperboloid"/>.
+</p>
+
+<figure xml:id="fig-rw23-hyperboloid">
+<caption>
+The hyperboloid of one sheet <m>x^2 + z^2 = y^2 + 4</m>, opening along
+the <m>y</m>-axis. The narrowest circle, of radius 2, occurs at
+<m>y = 0</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+A hyperboloid of one sheet drawn with its axis along the horizontal y
+axis: a surface shaped like a cooling tower lying on its side, with a
+narrow circular waist at the center and wide circular openings at the
+left and right ends, outlined by two large end ellipses and hyperbola
+shaped side curves.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-2.4) -- (0,2.6) node[above] {$z$};
+  \draw[-stealth, thick] (-3.5,0) -- (3.7,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  % end ellipses at y = +-3, radius sqrt(13) ~ 2.1 visually
+  \draw[mred, thick] (-3,0) ellipse (0.42cm and 2.1cm);
+  \draw[mred, thick] (3,0) ellipse (0.42cm and 2.1cm);
+  % waist ellipse at y = 0, radius 2 -> 1.15 visually
+  \draw[mred, thick] (0,0) ellipse (0.24cm and 1.15cm);
+  % hyperbola sides: top and bottom profiles z = +-sqrt(y^2/ (9/ (13-4)) ... use plot
+  \draw[mred, thick] plot[domain=-3:3, samples=41]
+    (\x, {0.60*sqrt(\x*\x + 3.67)});
+  \draw[mred, thick] plot[domain=-3:3, samples=41]
+    (\x, {-0.60*sqrt(\x*\x + 3.67)});
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-10">
+<statement>
+<p>
+Identify and sketch the surface corresponding to the equation
+<m>2x^2 - y + z^2 = 0</m>. Give reasons for your choice.
+</p>
+</statement>
+<solution>
+<p>
+We can rewrite the equation as <m>y = 2x^2 + z^2</m>. Let us look at
+its traces:
+<ul>
+<li>
+<p>
+<m>y = 0</m>: <m>2x^2 + z^2 = 0</m> forces <m>x = z = 0</m>, the
+single point <m>(0,0,0)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>x = 0</m>: <m>y = z^2</m>, a parabola in the <m>yz</m>-plane.
+</p>
+</li>
+<li>
+<p>
+<m>z = 0</m>: <m>y = 2x^2</m>, a parabola in the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+<m>y = c \gt 0</m>: <m>2x^2 + z^2 = c</m>, ellipses.
+</p>
+</li>
+</ul>
+The surface is an <term>elliptic paraboloid</term> with vertex at the
+origin, opening along the positive <m>y</m>-axis. See
+<xref ref="fig-rw21-paraboloid"/>.
+</p>
+
+<figure xml:id="fig-rw21-paraboloid">
+<caption>
+The elliptic paraboloid <m>y = 2x^2 + z^2</m>: a bowl with its vertex
+at the origin, opening along the positive <m>y</m>-axis. Cross
+sections <m>y = c \gt 0</m> are ellipses.
+</caption>
+<image width="58%">
+<description>
+<p>
+A bowl shaped surface in a three dimensional coordinate system with
+its vertex at the origin, opening to the right along the positive y
+axis. The bowl is outlined by two parabola shaped profile curves and
+capped by an ellipse at its wide right end.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,-2.3) -- (0,2.5) node[above] {$z$};
+  \draw[-stealth, thick] (-1.6,0) -- (4.1,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  % paraboloid profile: z = +-0.95*sqrt(y), vertex at origin, opening +y
+  \draw[mblue, thick] plot[domain=0:3.4, samples=31]
+    (\x, {0.95*sqrt(\x)});
+  \draw[mblue, thick] plot[domain=0:3.4, samples=31]
+    (\x, {-0.95*sqrt(\x)});
+  \draw[mblue, thick] (3.4,0) ellipse (0.32cm and 1.75cm);
+  % vertex
+  \fill (0,0) circle (1.6pt) node[below left=1pt] {$(0,0,0)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="m2b-2">
+<statement>
+<p>
+Sketch the surface <m>4x^2 - y^2 = -4 - z^2</m> in three dimensions.
+Label any points where the surface crosses the coordinate axes.
+</p>
+</statement>
+<solution>
+<p>
+Collect everything on the left and divide by <m>-4</m>:
+<md>
+<mrow>4x^2 - y^2 + z^2 \amp = -4</mrow>
+<mrow>-x^2 + \frac{y^2}{4} - \frac{z^2}{4} \amp = 1</mrow>
+<mrow>\frac{y^2}{4} - x^2 - \frac{z^2}{4} \amp = 1 .</mrow>
+</md>
+Two minus signs and one plus sign, with the constant <m>1</m> on the
+right, identify this as a <term>hyperboloid of two sheets</term>. The
+axis is the one belonging to the positive term, so the axis is the
+<m>y</m>-axis.
+</p>
+
+<p>
+The traces confirm this.
+<ul>
+<li>
+<p>
+Setting <m>y = k</m> gives <m>4x^2 + z^2 = k^2-4</m>, which is an
+ellipse when <m>|k| \gt 2</m>, a single point when <m>|k| = 2</m>, and
+empty when <m>|k| \lt 2</m>. So there is nothing at all in the slab
+<m>-2 \lt y \lt 2</m>: this is why there are two separate sheets.
+</p>
+</li>
+<li>
+<p>
+Setting <m>z = 0</m> gives <m>y^2/4 - x^2 = 1</m>, a hyperbola opening
+along the <m>y</m>-axis, and setting <m>x = 0</m> gives
+<m>y^2/4 - z^2/4 = 1</m>, likewise.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+<term>Axis crossings.</term> Setting <m>y = z = 0</m> gives
+<m>4x^2 = -4</m>, impossible; setting <m>x = y = 0</m> gives
+<m>z^2 = -4</m>, impossible. Setting <m>x = z = 0</m> gives
+<m>y^2 = 4</m>, so the surface meets the axes only at the two vertices
+<md>
+(0,\ 2,\ 0) \qquad\text{and}\qquad (0,\ -2,\ 0) .
+</md>
+See <xref ref="fig-m2b-hyperboloid"/>.
+</p>
+
+<figure xml:id="fig-m2b-hyperboloid">
+<caption>
+The hyperboloid of two sheets
+<m>\tfrac{y^2}{4} - x^2 - \tfrac{z^2}{4} = 1</m>, with vertices at
+<m>(0,\pm2,0)</m>. Nothing at all lies in the slab
+<m>-2 \lt y \lt 2</m>, which is why the two sheets are separate.
+</caption>
+<image width="74%">
+<description>
+<p>
+Two bowl shaped sheets opening away from each other along the y axis,
+with vertices at y equals two and y equals negative two. The region
+between the two vertices is empty.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=12cm, height=9cm,
+  view={-72}{16},
+  xmin=-2.4, xmax=2.4, ymin=-5.4, ymax=5.4, zmin=-4.4, zmax=4.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-4,-2,0,2,4}, ztick={-4,0,4},
+  clip=false,
+]
+% right-hand sheet: x = sinh(u)cos(v), y = 2cosh(u), z = 2 sinh(u) sin(v)
+\addplot3[surf, shader=flat, fill=mblue, draw=mblue,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:1.45, y domain=0:360, samples=11, samples y=37,
+          z buffer=sort]
+  ({sinh(x)*cos(y)},{2*cosh(x)},{2*sinh(x)*sin(y)});
+% left-hand sheet
+\addplot3[surf, shader=flat, fill=mgreen, draw=mgreen,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:1.45, y domain=0:360, samples=11, samples y=37,
+          z buffer=sort]
+  ({sinh(x)*cos(y)},{-2*cosh(x)},{2*sinh(x)*sin(y)});
+% vertices
+\addplot3[only marks, mark=*, mark size=2pt, mred]
+  coordinates {(0,2,0) (0,-2,0)};
+\node[mred, anchor=north east, inner sep=2pt, fill=white,
+      fill opacity=0.75, text opacity=1] at (axis cs:0,2,0) {$(0,2,0)$};
+\node[mred, anchor=north west, inner sep=2pt, fill=white,
+      fill opacity=0.75, text opacity=1] at (axis cs:0,-2,0) {$(0,-2,0)$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+</solution>
+</exercise>
+
+<exercise xml:id="pp-20">
+<statement>
+<p>
+Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
+<m>y = -3x</m> passing through the point <m>(0,2)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
+up and down, so it has the form
+<md>
+\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1,
+</md>
+whose asymptotes are <m>y = \pm\dfrac{a}{b}x</m>. Setting
+<m>x = 0</m>, <m>y = 2</m> gives <m>a = 2</m>, and matching the
+asymptote slopes,
+<md>
+\frac{a}{b} = 3 \;\Rightarrow\; b = \frac{a}{3} = \frac23.
+</md>
+Therefore
+<md>
+\frac{y^2}{4} - \frac{x^2}{\frac49} = 1
+\;\Rightarrow\;
+\frac{y^2}{4} - \frac{9x^2}{4} = 1
+\;\Rightarrow\;
+y^2 - 9x^2 = 4.
+</md>
+See <xref ref="fig-pp-hyperbola"/>.
+</p>
+
+<figure xml:id="fig-pp-hyperbola">
+<caption>
+The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
+<m>y = \pm 3x</m>, passing through <m>(0,2)</m> and <m>(0,-2)</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-hyperbola">
+<diagram dimensions="(300,280)" margins="12">
+<definition>hup(t) = (t, 2*(1 + 9*t^2/4)^(1/2))</definition>
+<definition>hdn(t) = (t, -2*(1 + 9*t^2/4)^(1/2))</definition>
+<coordinates bbox="(-2.4,-6.2,2.4,6.2)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="hy-a1" endpoints="((-1.95,-5.85),(1.95,5.85))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<line at="hy-a2" endpoints="((-1.95,5.85),(1.95,-5.85))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="hy-up" function="hup" domain="(-1.85,1.85)"
+                  stroke="#0072B2" thickness="3"/>
+<parametric-curve at="hy-dn" function="hdn" domain="(-1.85,1.85)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="hy-v1" p="(0,2)" fill="#D55E00"/>
+<point at="hy-v2" p="(0,-2)" fill="#D55E00"/>
+<label at="hy-v1-lab" anchor="(0.15,2.1)" alignment="ne" color="#D55E00">
+<m>(0,2)</m>
+</label>
+<label at="hy-a-lab" anchor="(1.6,4.2)" alignment="se" color="#7F7F7F">
+<m>y=3x</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A hyperbola with two branches opening up and down, passing through zero comma two and zero comma negative two. Two dashed gray lines of slope three and negative three through the origin are its asymptotes.">
+  <annotation ref="hy-up" text="The upper branch, with vertex at zero comma two."/>
+  <annotation ref="hy-dn" text="The lower branch, with vertex at zero comma negative two."/>
+  <annotation ref="hy-a1" text="The asymptote y equals three x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="exer-parabola-focus-directrix">
+<statement>
+<p>
+Find the equation of the parabola with vertex at the origin and axis of
+symmetry the <m>y</m>-axis, passing through the point <m>(4,2)</m>.
+Then find its focus and its directrix.
+</p>
+</statement>
+<solution>
+<p>
+The vertex is at the origin and the axis of symmetry is the
+<m>y</m>-axis, so the parabola has the form
+<md>
+x^2 = 4py,
+</md>
+whose focus is <m>(0,p)</m> and whose directrix is the line
+<m>y = -p</m>. Only the one number <m>p</m> is unknown, and the point
+<m>(4,2)</m> pins it down:
+<md>
+4^2 = 4p(2) \;\Rightarrow\; 16 = 8p \;\Rightarrow\; p = 2.
+</md>
+Therefore
+<md>
+x^2 = 8y, \qquad\text{that is}\qquad y = \frac{x^2}{8}.
+</md>
+Since <m>p = 2 \gt 0</m> the parabola opens upward, its focus is
+<m>(0,2)</m> and its directrix is the horizontal line <m>y = -2</m>.
+</p>
+
+<p>
+As a check on the defining property of a parabola, the point
+<m>(4,2)</m> is at distance
+<m>\sqrt{(4-0)^2 + (2-2)^2} = 4</m> from the focus and at distance
+<m>2 - (-2) = 4</m> from the directrix, and the two agree.
+See <xref ref="fig-parabola-focus-directrix"/>.
+</p>
+
+<figure xml:id="fig-parabola-focus-directrix">
+<caption>
+The parabola <m>x^2 = 8y</m> through <m>(4,2)</m>, with focus
+<m>(0,2)</m> and directrix <m>y = -2</m>. The point of the curve is
+the same distance from the focus as from the directrix.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-parabola-focus-directrix">
+<diagram dimensions="(300,280)" margins="12">
+<definition>par(t) = (t, t^2/8)</definition>
+<coordinates bbox="(-6.4,-3.4,6.4,6.4)">
+<grid-axes xlabel="x" ylabel="y"/>
+<line at="pf-dir" endpoints="((-6,-2),(6,-2))"
+      stroke="#7F7F7F" dash="6 4" thickness="2"/>
+<parametric-curve at="pf-curve" function="par" domain="(-6,6)"
+                  stroke="#0072B2" thickness="3"/>
+<line at="pf-r1" endpoints="((0,2),(4,2))"
+      stroke="#009E73" thickness="2"/>
+<line at="pf-r2" endpoints="((4,2),(4,-2))"
+      stroke="#009E73" thickness="2"/>
+<point at="pf-focus" p="(0,2)" fill="#D55E00"/>
+<point at="pf-P" p="(4,2)" fill="#D55E00"/>
+<label at="pf-focus-lab" anchor="(-0.2,2.2)" alignment="nw" color="#D55E00">
+<m>F(0,2)</m>
+</label>
+<label at="pf-P-lab" anchor="(4.2,2.2)" alignment="ne" color="#D55E00">
+<m>(4,2)</m>
+</label>
+<label at="pf-dir-lab" anchor="(-3.4,-2.1)" alignment="sw" color="#7F7F7F">
+<m>y=-2</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="An upward opening parabola with vertex at the origin, passing through the point four comma two. A dashed horizontal line at y equals negative two is the directrix, and the focus is marked at zero comma two. Two green segments of equal length four join the point four comma two to the focus and straight down to the directrix.">
+  <annotation ref="pf-curve" text="The parabola x squared equals eight y, opening upward from its vertex at the origin."/>
+  <annotation ref="pf-dir" text="The directrix, the dashed horizontal line y equals negative two."/>
+  <annotation ref="pf-focus" text="The focus at zero comma two."/>
+  <annotation ref="pf-P" text="The point four comma two on the parabola."/>
+  <annotation ref="pf-r1" text="The horizontal segment of length four from the focus to the point on the parabola."/>
+  <annotation ref="pf-r2" text="The vertical segment of length four from that point down to the directrix."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-21">
+<statement>
+<p>
+Two trees grow 100 feet apart. A 120 foot rope is attached to the
+first tree at a height of 100 feet and to the second tree at a height
+of 50 feet. A child folds an empty plastic water bottle over the rope
+and rappels from the high end of the rope to the low end. At each
+moment, the rope is taut. The point where the water bottle is folded
+over the rope traces a path. Ignoring the numbers, state what kind of
+curve the path makes: line, ellipse, parabola or hyperbola.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
+the point where the bottle folds over the taut rope. Because the rope
+is taut and has fixed total length, the two straight segments
+<m>\overline{AP}</m> and <m>\overline{PB}</m> together always use up
+the whole rope:
+<md>
+|AP| + |PB| = 120 \text{ feet} \qquad\text{(constant).}
+</md>
+This is precisely the defining property of an <term>ellipse</term>
+with foci <m>A</m> and <m>B</m>. (The curve exists because
+<m>120 \gt |AB|</m>: the distance between the attachment points is
+<m>\sqrt{100^2 + 50^2} \approx 111.8 \lt 120</m> feet.) So the path is
+an arc of an <term>ellipse</term>, lying in the vertical plane
+containing the two trees.
+</p>
+</solution>
+</exercise>
+
+</worksheet>

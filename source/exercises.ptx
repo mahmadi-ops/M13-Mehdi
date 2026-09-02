@@ -1,1081 +1,236 @@
 <chapter xml:id="section-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Exercises</title>
+  <title>Assignments and Review Problems</title>
 
-<!-- ================= Hyperbolic Functions ================= -->
-<xi:include href="exercises-hyperbolic.ptx"/>
-
-<!-- ================= Infinite Series ================= -->
-<xi:include href="exercises-infinite-series.ptx"/>
-
-<!-- ================= Taylor Series and its convergence ================= -->
-<xi:include href="activity-taylor-intro.ptx"/>
-
-<!-- ================= The Binomial Series ================= -->
-<xi:include href="exercises-binomial-series.ptx"/>
-
-<!-- ================= Three-Dimensional Coordinate Systems ================= -->
-<xi:include href="exercises-3d-coordinates.ptx"/>
-
-<!-- ================= Vectors ================= -->
-<xi:include href="exercises-vectors.ptx"/>
-
-<!-- ================= The Dot Product ================= -->
-<xi:include href="exercises-dot-product.ptx"/>
-
-<!-- ================= The Cross Product ================= -->
-<xi:include href="exercises-cross-product.ptx"/>
-
-<!-- ================= Parametrization of Plane Curves ================= -->
-<xi:include href="art11-projectile-velocity.ptx"/>
-
-<!-- ================= Lines and Planes in Space ================= -->
-<xi:include href="exercises-lines-planes.ptx"/>
-
-<!-- ================= Conic Sections ================= -->
-<!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
-<worksheet xml:id="section-conics-exercises">
-    <title> Exercises for <xref ref="section-conics"  text="title"/></title>
-    <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-conics" text="title"/>.
-    </p>
-    </introduction>
- <exercise xml:id="exer-parabolic-antenna">
-  <title>A Parabolic Antenna</title>
-    <introduction>
+<introduction>
 <p>
-      A parabolic antenna has the shape of a paraboloid of revolution: it is
-      created by rotating part of a parabola around its axis.  By the
-      reflection property, all signals arriving parallel to the axis are
-      concentrated at the focus after reflecting off the dish, so that is
-      where the receiver is mounted.  The axial cross-section of the dish is
-      described by two measurements: the <em>diameter</em> <m>d</m> of the
-      dish and its <em>depth</em> <m>h</m>.  Placing the vertex at the origin
-      with the dish opening upward, the cross-section is the parabola
-      <m>x^2 = 4py</m>, and the rim passes through the points
-      <m>\left(\pm\tfrac{d}{2},\, h\right)</m>.
-    </p>
-    <p>
-      Consider a dish antenna with diameter <m>d = 120</m> cm and depth
-      <m>h = 20.3</m> cm, suitable for the amateur radio band at
-      <m>5.76</m> GHz.
-    </p>
-    <figure xml:id="fig-antenna-model">
-      <caption>
-        Cross-section of the parabolic antenna: diameter <m>d</m>, depth
-        <m>h</m>, focus <m>F(0,p)</m>, and opening angle <m>2\varphi</m>.
-      </caption>
-      <image xml:id="prefig-antenna-model" width="75%">
-        <description>
-<p>
-A parabola opening upward with vertex at the origin.  The rim
-          points at (minus d over 2, h) and (d over 2, h) are joined by a
-          horizontal double arrow labeled d.  A vertical double arrow labeled
-          h shows the depth from the rim down to the axis level.  The focus
-          F(0,p) lies on the y axis above the rim, and two segments run from
-          the focus to the rim points, enclosing the opening angle two phi.
+The ten assignments and the four review problem sets, in one place. Worked
+solutions appear beneath each problem once the assignment's due date has
+passed; solutions for the review sets are posted the same way.
 </p>
-</description>
-        <prefigure xmlns="https://prefigure.org" label="prefig-antenna-model">
-          <diagram dimensions="(540,260)" margins="5">
-            <definition>d = 120</definition>
-            <definition>h = 20.3</definition>
-            <definition>p = d^2/(16*h)</definition>
-            <definition>f(x) = x^2/(4*p)</definition>
-            <coordinates bbox="[-80,-14,80,64]">
-              <axes at="axes" xlabel="x" ylabel="y"/>
-              <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
-              <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
-              <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
-              <angle-marker at="opening-angle" points="((-d/2,h),(0,p),(d/2,h))" stroke="blue">
-                <m>2\varphi</m>
-              </angle-marker>
-              <line at="diameter" endpoints="((-d/2+3,h),(d/2-3,h))" stroke="blue" arrows="2"/>
-              <label at="label-d" anchor="(-30,h)" alignment="n"><m>d</m></label>
-              <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
-              <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
-              <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
-                <m>\left(-\tfrac{d}{2},\,h\right)</m>
-              </point>
-              <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
-                <m>\left(\tfrac{d}{2},\,h\right)</m>
-              </point>
-              <point at="focus" p="(0,p)" fill="blue" alignment="ne">
-                <m>F(0,p)</m>
-              </point>
-            </coordinates>
-            <annotations>
-              <annotation ref="figure"
-                  text="Cross-section of a parabolic dish antenna, showing its diameter, depth, focus, and opening angle">
-                <annotation ref="dish" sonify="yes"
-                    text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
-                <annotation ref="left-rim"
-                    text="the left rim point, with coordinates minus d over 2, comma, h"/>
-                <annotation ref="right-rim"
-                    text="the right rim point, with coordinates d over 2, comma, h"/>
-                <annotation ref="diameter"
-                    text="the diameter d of the dish, 120 centimeters, measured between the two rim points"/>
-                <annotation ref="depth"
-                    text="the depth h of the dish, 20.3 centimeters, measured from the rim level down to the level of the vertex"/>
-                <annotation ref="focus"
-                    text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex, which is above the rim of this shallow dish"/>
-                <annotation ref="left-ray"
-                    text="a segment from the focus to the left rim point"/>
-                <annotation ref="right-ray"
-                    text="a segment from the focus to the right rim point"/>
-                <annotation ref="opening-angle"
-                    text="the opening angle, 2 phi, between the two segments meeting at the focus, about 136 degrees"/>
-              </annotation>
-            </annotations>
-          </diagram>
-        </prefigure>
-      </image>
-    </figure>
+
+<assemblage xml:id="assemblage-tutor-guide">
+<title>Using the AI Tutor</title>
+<p>
+<em>Stuck?</em> A Socratic AI tutor is available on every assignment page. It
+knows the problems on the page and will coach you with questions and gentle
+hints <mdash /> but it will never give away an answer. Here is how to use it.
+</p>
+<p>
+<alert>Opening the tutor.</alert> On an assignment page, click the round
+<q>Tutor</q> button in the lower-right corner. A chat panel opens and stays in
+place as you scroll, so you can read a problem and talk to the tutor at the
+same time. The dash button in the panel's title bar minimizes it back to the
+button.
+</p>
+<p>
+The tutor is available on each of the ten assignment pages. The review problem
+sets do not have it: those sets are practice for the exams, where you will be
+entirely on your own.
+</p>
+<p>
+<alert>One-time setup.</alert> The first time you open the tutor it asks for a
+free Google AI Studio key (this takes about a minute):
+<ol>
+<li>
+<p>
+Go to <url href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</url>
+and sign in with a <em>personal</em> Google account <mdash /> a regular Gmail.
+Do <em>not</em> use your <c>@scu.edu</c> account: the university has this
+service turned off, and you will see <q>Your account is managed by an
+organization.</q>
+</p>
+</li>
+<li><p>Click <em>Create API key</em> and copy it.</p></li>
+<li><p>Paste it into the tutor.</p></li>
+</ol>
+The key is stored only in your own browser and is sent only to Google; this
+site never sees it. Treat the key as yours alone: anyone who has it can spend
+your free quota, so do not share it or paste it anywhere else.
+</p>
+<p>
+<alert>Privacy: what to keep out of the chat.</alert> Everything you type into
+the tutor is sent to Google and handled under Google's terms, not the
+university's. On the free tier your conversations <em>may be read by people at
+Google</em> and used to improve their products, and they are not covered by the
+protections your school records have. Nothing you type is private, so treat the
+panel as a public place and keep it to mathematics.
+<ul>
+<li>
+<p>
+Do not type anything that identifies you: your name, student ID, SCU email,
+phone number, address, or date of birth. The tutor does not need to know who
+you are in order to help with a gradient.
+</p>
+</li>
+<li>
+<p>
+Do not type anything about anyone else <mdash /> a classmate's name, their
+work, or their grade. That is their information to share, not yours.
+</p>
+</li>
+<li>
+<p>
+Keep out anything sensitive or unrelated to the course: health, finances,
+immigration or visa status, family matters, passwords, or anything you would
+not want quoted back to you.
+</p>
+</li>
+<li>
+<p>
+Before you paste or upload, look at what you are sending. A screenshot or a
+photo of your work can carry your name, a page header, or a browser tab in the
+background.
+</p>
+</li>
+<li>
+<p>
+The tutor is a study aid, not a counselor and not the instructor. If something
+personal is affecting your work in this course, bring it to office hours or to
+the university's student services instead <mdash /> those conversations belong
+with a person, and they stay confidential.
+</p>
+</li>
+</ul>
+</p>
+<p>
+None of this is a reason to avoid the tutor. Ask it anything about the
+mathematics <mdash /> what you tried, where you are stuck, why a step feels
+wrong. Just keep yourself, and everyone else, out of the transcript.
+</p>
+<p>
+<alert>Working with the tutor.</alert> Choose the problem you are working on
+from the drop-down at the top of the panel, then tell the tutor what you have
+tried so far <mdash /> the more of your own thinking you show, the more useful
+its questions become. The tutor can nudge you toward a starting point, and it
+can point you to sections and worked examples in these notes to study.
+</p>
+<p>
+If your answer is wrong, the tutor will tell you so and help you understand
+<em>why</em> it is wrong: which step breaks, what misconception is behind it,
+and what picture or small example will let you see the failure for yourself.
+Note that this requires showing your reasoning <mdash /> a bare answer with no
+work, right or wrong, will simply get asked for the thinking behind it. And
+what the tutor will not do is tell you how to correct an error <mdash /> no
+fixed-up step, no <q>instead, you should&#8230;</q> Finding the right path once
+you understand why the old one fails is your part of the work.
+</p>
+<p>
+<alert>Two models.</alert> Next to the problem picker is a <q>Model</q>
+drop-down offering <em>Careful</em> and <em>Quick</em>. Both are Gemini Flash
+models. Careful is the default: it thinks before it answers, so it takes a few
+seconds longer and is better at staying in the role of a tutor rather than a
+solutions manual. Quick is lighter and replies almost instantly. Either will
+coach you and neither will hand you an answer; switching between them costs
+nothing and does not disturb your conversation or your hint count. Try both
+<mdash /> and tell me which you prefer.
+</p>
+<p>
+<alert>Hints are limited on purpose.</alert> The point of the tutor is to get
+you unstuck, not to walk you to the answer, so hints are deliberately scarce.
+The exact rules:
+<ul>
+<li>
+<p>
+You get at most <em>three hints per problem, total</em> <mdash /> the budget
+never resets. The panel always shows how many you have left on the problem you
+selected (<q>Hints left: 2/3</q>).
+</p>
+</li>
+<li>
+<p>
+<em>Every</em> reply from the tutor costs a hint <mdash /> there are no free
+ones. Lead with what you have tried, so each reply can meet your actual
+thinking instead of spending itself asking for it.
+</p>
+</li>
+<li>
+<p>
+Restarting the conversation, reloading the page, or switching problems does not
+refill hints. Spend them thoughtfully <mdash /> full solutions are posted after
+the due date.
+</p>
+</li>
+<li>
+<p>
+When your hints for a problem run out, bring your work to office hours
+<mdash /> working through it together is exactly what office hours are for.
+</p>
+</li>
+</ul>
+</p>
+<p>
+<alert>Tell me how it is going.</alert> Under every hint is a single question
+<mdash /> <q>Was this hint helpful?</q> <mdash /> with a thumb up and a thumb
+down. One tap is the whole thing, and it is the most useful second you can
+spend on this course: it tells me which hints land and which ones miss, hint by
+hint. Nothing but your answer and which problem you were on is sent.
+</p>
+<p>
+For anything longer there is the <q>feedback</q> button at the top of the
+panel, which sends me a short note about how the tutor is working for you:
+whether it helped, and <mdash /> in a box you can write as much as you like in
+<mdash /> what would make it better. Tapping the thumb down offers it too. All
+of it is anonymous, it has nothing to do with your grade, and the tutor itself
+never sees it. If you want me to see the exchange you just had, there is a box
+to attach it; it is off unless you tick it. The tutor is new, and what you
+write is how it gets better.
+</p>
+<p>
+Finally, know what the tutor will and will not do. It will not state answers,
+complete a solution, or turn a wrong answer into a right one <mdash /> no
+matter how you ask. There is exactly one way to get an answer confirmed: state
+your conclusion <em>together with your own justification</em>. If your
+reasoning is sound and complete, the tutor will tell you that you have it; if
+there is a gap, it will point at the gap and let you close it. A bare answer,
+right or wrong, earns nothing.
+</p>
+</assemblage>
 </introduction>
-  <task xml:id="task-antenna-focus">
-    <statement>
-      <p>
-        Determine the optimal location for the receiver, that is, find the
-        distance from the vertex of the dish to the focus.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The receiver must sit at the focus <m>(0,p)</m>.  The rim point
-        <m>\left(\tfrac{d}{2}, h\right) = (60,\, 20.3)</m> lies on the
-        parabola <m>x^2 = 4py</m>, so
-        <md>
-          60^2 = 4p(20.3)
-          \quad\Longrightarrow\quad
-          p = \frac{3600}{81.2} \approx 44.3.
-        </md>
-      </p>
-      <p>
-        The receiver should be mounted on the axis about <m>44.3</m> cm above
-        the vertex of the dish.  Note that <m>p \gt h</m> here, so the focus
-        sits <em>above</em> the rim of this shallow dish.
-      </p>
-    </solution>
-  </task>
-  <task xml:id="task-antenna-quadratic">
-    <statement>
-      <p>
-        Find the quadratic function <m>y = f(x)</m> (explicit form) that
-        describes the curvature of the dish, and graph it (for example, in
-        GeoGebra or Desmos).
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Solving <m>x^2 = 4py</m> for <m>y</m> with
-        <m>4p = \frac{3600}{20.3} \approx 177.3</m> gives
-        <md>
-          y = \frac{1}{4p}\,x^2 = \frac{20.3}{3600}\,x^2 \approx \frac{x^2}{177.3},
-          \qquad -60 \le x \le 60.
-        </md>
-      </p>
-      <p>
-        The graph captures the true curvature of the dish provided both axes
-        use the same scale.
-      </p>
-    </solution>
-  </task>
-  <task xml:id="task-antenna-angle">
-    <statement>
-      <p>
-        The <em>opening angle</em> <m>2\varphi</m> of the dish is the angle
-        at which the two edges of the rim are seen from the focus.  Compute
-        it.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The focus <m>F(0,p)</m>, the point <m>(0,h)</m>, and the rim point
-        <m>\left(\tfrac{d}{2}, h\right)</m> form a right triangle with legs
-        <m>p - h</m> (vertical) and <m>\tfrac{d}{2}</m> (horizontal), and
-        <m>\varphi</m> is the angle at the focus.  Hence
-        <md>
-          \tan\varphi = \frac{d/2}{p - h} = \frac{60}{44.3 - 20.3} = \frac{60}{24}
-          \quad\Longrightarrow\quad
-          \varphi \approx 68.2^\circ.
-        </md>
-      </p>
-      <figure xml:id="fig-antenna-angle-triangle">
-        <caption>
-          The right triangle used to compute the half opening angle
-          <m>\varphi</m>: legs <m>p-h</m> and <m>d/2</m>.
-        </caption>
-        <image xml:id="prefig-antenna-angle-triangle" width="75%">
-          <description>
-<p>
-The same parabola and focus as before, with a red right triangle
-            drawn from the focus: a vertical leg of length p minus h down to
-            the rim level, a horizontal leg of length d over 2 out to the
-            right rim point, and the segment from the focus to the rim point
-            as hypotenuse.  The angle phi at the focus is marked.
-</p>
-</description>
-          <prefigure xmlns="https://prefigure.org" label="prefig-antenna-angle-triangle">
-            <diagram dimensions="(540,260)" margins="5">
-              <definition>d = 120</definition>
-              <definition>h = 20.3</definition>
-              <definition>p = d^2/(16*h)</definition>
-              <definition>f(x) = x^2/(4*p)</definition>
-              <coordinates bbox="[-80,-14,80,64]">
-                <axes at="axes" xlabel="x" ylabel="y"/>
-                <graph at="dish" function="f" domain="(-60,60)" thickness="4"/>
-                <line at="left-ray" endpoints="((0,p),(-d/2,h))" stroke="blue" thickness="2"/>
-                <line at="right-ray" endpoints="((0,p),(d/2,h))" stroke="blue" thickness="2"/>
-                <line at="vertical-leg" endpoints="((0,p),(0,h))" stroke="red" thickness="3"/>
-                <line at="horizontal-leg" endpoints="((0,h),(d/2,h))" stroke="red" thickness="3"/>
-                <line at="square-1" endpoints="((0,h+4),(4,h+4))" stroke="red" thickness="1"/>
-                <line at="square-2" endpoints="((4,h+4),(4,h))" stroke="red" thickness="1"/>
-                <angle-marker at="half-angle" points="((0,h),(0,p),(d/2,h))" stroke="red">
-                  <m>\varphi</m>
-                </angle-marker>
-                <label at="label-vleg" anchor="(-2,(p+h)/2)" alignment="w"><m>p-h</m></label>
-                <label at="label-hleg" anchor="(d/4,h)" alignment="s"><m>d/2</m></label>
-                <line at="depth" endpoints="((-d/2,h-2),(-d/2,2))" stroke="blue" arrows="2"/>
-                <label at="label-h" anchor="(-d/2,h/2)" alignment="w"><m>h</m></label>
-                <point at="left-rim" p="(-d/2,h)" fill="blue" alignment="nw">
-                  <m>\left(-\tfrac{d}{2},\,h\right)</m>
-                </point>
-                <point at="right-rim" p="(d/2,h)" fill="blue" alignment="ne">
-                  <m>\left(\tfrac{d}{2},\,h\right)</m>
-                </point>
-                <point at="focus" p="(0,p)" fill="blue" alignment="ne">
-                  <m>F(0,p)</m>
-                </point>
-              </coordinates>
-              <annotations>
-                <annotation ref="figure"
-                    text="The right triangle used to compute the half opening angle phi of the parabolic dish">
-                  <annotation ref="dish" sonify="yes"
-                      text="the cross-section of the dish, the parabola x squared equals 4 p y, for x between minus 60 and 60 centimeters"/>
-                  <annotation ref="focus"
-                      text="the focus F at the point 0 comma p, about 44.3 centimeters above the vertex"/>
-                  <annotation ref="right-rim"
-                      text="the right rim point, with coordinates d over 2, comma, h"/>
-                  <annotation ref="vertical-leg"
-                      text="the vertical leg of the right triangle, running from the focus down to rim level, with length p minus h, about 24 centimeters"/>
-                  <annotation ref="horizontal-leg"
-                      text="the horizontal leg, running from the axis out to the right rim point, with length d over 2, which is 60 centimeters"/>
-                  <annotation ref="right-ray"
-                      text="the hypotenuse, the segment from the focus to the right rim point"/>
-                  <annotation ref="half-angle"
-                      text="the half opening angle phi at the focus, about 68.2 degrees; its tangent is d over 2, divided by p minus h"/>
-                  <annotation ref="depth"
-                      text="the depth h of the dish, 20.3 centimeters"/>
-                </annotation>
-              </annotations>
-            </diagram>
-          </prefigure>
-        </image>
-      </figure>
-      <p>
-        The opening angle of the dish is <m>2\varphi \approx 136.4^\circ</m>.
-      </p>
-    </solution>
-  </task>
- </exercise>
 
-<exercise xml:id="pp-20">
-<statement>
-<p>
-Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
-<m>y = -3x</m> passing through the point <m>(0,2)</m>.
-</p>
-</statement>
-<solution>
-<p>
-Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
-up and down, so it has the form
-<md>
-\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1,
-</md>
-whose asymptotes are <m>y = \pm\dfrac{a}{b}x</m>. Setting
-<m>x = 0</m>, <m>y = 2</m> gives <m>a = 2</m>, and matching the
-asymptote slopes,
-<md>
-\frac{a}{b} = 3 \;\Rightarrow\; b = \frac{a}{3} = \frac23.
-</md>
-Therefore
-<md>
-\frac{y^2}{4} - \frac{x^2}{\frac49} = 1
-\;\Rightarrow\;
-\frac{y^2}{4} - \frac{9x^2}{4} = 1
-\;\Rightarrow\;
-y^2 - 9x^2 = 4.
-</md>
-See <xref ref="fig-pp-hyperbola"/>.
-</p>
+<!-- ================= Assignment 1 ================= -->
+<xi:include href="assignment-1-hyperbolic.ptx"/>
 
-<figure xml:id="fig-pp-hyperbola">
-<caption>
-The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
-<m>y = \pm 3x</m>, passing through <m>(0,2)</m> and <m>(0,-2)</m>.
-</caption>
-<image width="60%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-pp-hyperbola">
-<diagram dimensions="(300,280)" margins="12">
-<definition>hup(t) = (t, 2*(1 + 9*t^2/4)^(1/2))</definition>
-<definition>hdn(t) = (t, -2*(1 + 9*t^2/4)^(1/2))</definition>
-<coordinates bbox="(-2.4,-6.2,2.4,6.2)">
-<grid-axes xlabel="x" ylabel="y"/>
-<line at="hy-a1" endpoints="((-1.95,-5.85),(1.95,5.85))"
-      stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<line at="hy-a2" endpoints="((-1.95,5.85),(1.95,-5.85))"
-      stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<parametric-curve at="hy-up" function="hup" domain="(-1.85,1.85)"
-                  stroke="#0072B2" thickness="3"/>
-<parametric-curve at="hy-dn" function="hdn" domain="(-1.85,1.85)"
-                  stroke="#0072B2" thickness="3"/>
-<point at="hy-v1" p="(0,2)" fill="#D55E00"/>
-<point at="hy-v2" p="(0,-2)" fill="#D55E00"/>
-<label at="hy-v1-lab" anchor="(0.15,2.1)" alignment="ne" color="#D55E00">
-<m>(0,2)</m>
-</label>
-<label at="hy-a-lab" anchor="(1.6,4.2)" alignment="se" color="#7F7F7F">
-<m>y=3x</m>
-</label>
-</coordinates>
+<!-- ================= Assignment 2 ================= -->
+<xi:include href="assignment-2-series-taylor.ptx"/>
 
-<annotations>
-<annotation ref="figure" text="A hyperbola with two branches opening up and down, passing through zero comma two and zero comma negative two. Two dashed gray lines of slope three and negative three through the origin are its asymptotes.">
-  <annotation ref="hy-up" text="The upper branch, with vertex at zero comma two."/>
-  <annotation ref="hy-dn" text="The lower branch, with vertex at zero comma negative two."/>
-  <annotation ref="hy-a1" text="The asymptote y equals three x."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
+<!-- ================= Assignment 3 ================= -->
+<xi:include href="assignment-3-taylor-convergence-binomial.ptx"/>
 
-<exercise xml:id="pp-21">
-<statement>
-<p>
-Two trees grow 100 feet apart. A 120 foot rope is attached to the
-first tree at a height of 100 feet and to the second tree at a height
-of 50 feet. A child folds an empty plastic water bottle over the rope
-and rappels from the high end of the rope to the low end. At each
-moment, the rope is taut. The point where the water bottle is folded
-over the rope traces a path. Ignoring the numbers, state what kind of
-curve the path makes: line, ellipse, parabola or hyperbola.
-</p>
-</statement>
-<solution>
-<p>
-Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
-the point where the bottle folds over the taut rope. Because the rope
-is taut and has fixed total length, the two straight segments
-<m>\overline{AP}</m> and <m>\overline{PB}</m> together always use up
-the whole rope:
-<md>
-\|AP\| + \|PB\| = 120 \text{ feet} \qquad\text{(constant).}
-</md>
-This is precisely the defining property of an <term>ellipse</term>
-with foci <m>A</m> and <m>B</m>. (The curve exists because
-<m>120 \gt \|AB\|</m>: the distance between the attachment points is
-<m>\sqrt{100^2 + 50^2} \approx 111.8 \lt 120</m> feet.) So the path is
-an arc of an <term>ellipse</term>, lying in the vertical plane
-containing the two trees.
-</p>
-</solution>
-</exercise>
+<!-- ================= Review Problems #1 ================= -->
+<!-- Everything from the four topics above that was not assigned. -->
+<xi:include href="review-problems-1.ptx"/>
 
-</worksheet>
+<!-- ================= Assignment 4 ================= -->
+<xi:include href="assignment-4-space-vectors-dot-product.ptx"/>
 
-<!-- ================= Quadric Surfaces ================= -->
-<xi:include href="exercises-quadric-surfaces.ptx"/>
+<!-- ================= Assignment 5 ================= -->
+<xi:include href="assignment-5-cross-product-lines-planes.ptx"/>
 
-<!-- ================= Functions of Several Variables ================= -->
-<xi:include href="exercises-functions-several-variables.ptx"/>
+<!-- ================= Assignment 6 ================= -->
+<xi:include href="assignment-6-quadric-surfaces.ptx"/>
 
-<!-- ================= Limits and Continuity in Higher Dimensions ================= -->
-<xi:include href="exercises-limits.ptx"/>
+<!-- ================= Review Problems #2 ================= -->
+<!-- Everything from the eight Chapter 3 topics that was not assigned. -->
+<xi:include href="review-problems-2.ptx"/>
 
-<!-- ================= Partial Derivatives ================= -->
-<xi:include href="exercises-partial-derivatives.ptx"/>
+<!-- ================= Assignment 7 ================= -->
+<xi:include href="assignment-7-functions-several-variables.ptx"/>
 
-<!-- ================= The Chain Rule ================= -->
-<xi:include href="exercises-chain-rule.ptx"/>
+<!-- ================= Assignment 8 ================= -->
+<xi:include href="assignment-8-chain-rule.ptx"/>
 
-<!-- ================= Directional Derivatives and Gradient Vectors ================= -->
-<xi:include href="exercises-gradients.ptx"/>
+<!-- ================= Assignment 9 ================= -->
+<xi:include href="assignment-9-tangent-planes.ptx"/>
 
-<!-- ================= Tangent Planes and Differentials ================= -->
-<xi:include href="exercises-tangent-chain.ptx"/>
+<!-- ================= Review Problems #3 ================= -->
+<!-- The rest of the Chapter 4 problems covered by Assignments 7 and 8. -->
+<xi:include href="review-problems-3.ptx"/>
 
-<!-- ================= Extreme Values and Saddle Points ================= -->
-<worksheet xml:id="subsection-abs-extrema">
-    <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
-    <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-extreme-values" text="title"/>.
-    </p>
-    </introduction>
+<!-- ================= Assignment 10 ================= -->
+<xi:include href="assignment-10-extreme-values-lagrange.ptx"/>
 
-      <exercise xml:id="ex-extrema-triangle">
-        <statement>
-          <p>
-            Find the absolute maximum and minimum values of
-            <md>f(x,y)=x^2-xy+y^2-3y</md>
-            on the region bounded by the <m>x</m>- and
-            <m>y</m>-axes and the line <m>x+y=4</m>.
-          </p>
-
-          <interactive
-            xml:id="hints-extrema-triangle"
-            width="80%"
-            aspect="5:4"
-            iframe="iframe/hint-extrema-triangle.html"/>
-        </statement>
-
-         <solution>
-      <p>
-        The gradient is <m>\nabla f = \langle 2x - y,\; -x + 2y - 3\rangle</m>, which
-        vanishes only at <m>(1,2)</m>, a point in the interior of the region. There
-        <m>f(1,2) = -3</m>. Since this is the only critical point on all of
-        <m>\mathbb{R}^2</m> and it is a minimum (by the second derivative test), it is a
-        global minimum. We now examine the three boundary segments to look for possible
-        maxima.
-      </p>
-      <p>
-        On the <m>x</m>-axis with <m>0 \le x \le 4</m>, we have <m>f(x,0) = x^2</m>, which
-        is maximized at <m>f(4,0) = 16</m>.
-      </p>
-      <p>
-        On the <m>y</m>-axis with <m>0 \le y \le 4</m>, we have <m>f(0,y) = y^2 - 3y</m>,
-        which is maximized at <m>f(0,4) = 4</m>.
-      </p>
-      <p>
-        Finally, on the line <m>x = 4 - y</m> with <m>0 \le y \le 4</m>, we have
-        <m>f(4-y,\,y) = 3y^2 - 15y + 16</m>, which is maximized at <m>f(4,0) = 16</m>.
-      </p>
-      <p>
-        Altogether, there is an absolute minimum <m>f(1,2) = -3</m> and an absolute maximum
-        <m>f(4,0) = 16</m>.
-      </p>
-    </solution>
-      </exercise>
-
-<exercise xml:id="rm2-ex-1">
-<title>True or False</title>
-<statement correct="no">
-<p>
-If <m>f(x,y)</m> has two local maxima, then it must have a local
-minimum too.
-</p>
-</statement>
-<feedback>
-<p>
-This is true for single-variable functions but no
-longer holds in two dimensions. For example, the function
-<m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>, shown in
-<xref ref="fig-rm2-two-maxima"/>, has two local maxima at
-<m>\left(\pm\frac{1}{\sqrt2}, 0\right)</m> with a saddle point at the
-origin lying between them, and no local minimum.
-</p>
-
-<figure xml:id="fig-rm2-two-maxima">
-<caption>
-The graph of <m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>: two local
-maxima with a saddle point between them, and no local minimum.
-</caption>
-<image width="72%">
-<description>
-<p>
-A three dimensional surface with two rounded peaks of equal height,
-one on the left and one on the right, separated by a saddle shaped
-dip in the middle. Away from the peaks the surface falls off in every
-direction, so there is no lowest point.
-</p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}
-\begin{axis}[
-  width=10.5cm, height=7.5cm,
-  view={-40}{28},
-  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-  ticks=none,
-  clip=false,
-]
-\addplot3[surf, shader=flat, fill=gray!45, draw=gray!60,
-          fill opacity=0.55, draw opacity=0.45,
-          domain=-1.15:1.15, y domain=-1.05:1.05,
-          samples=17, samples y=13]
-  {-x^4 + x^2 - 0.5*y^2};
-% the two maxima
-\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
-  coordinates {(-0.7071,0,0.25) (0.7071,0,0.25)};
-% the saddle point
-\addplot3[only marks, mark=*, mark size=1.7, color=blue!60!black]
-  coordinates {(0,0,0)};
-\node[above, purple!70!black] at (axis cs:-0.7071,0,0.30) {max};
-\node[above, purple!70!black] at (axis cs:0.7071,0,0.30) {max};
-\node[above right, blue!60!black] at (axis cs:0,0,0.02) {saddle};
-\end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
-</feedback>
-</exercise>
-
-<exercise xml:id="rm2-ex-2">
-<statement>
-<p>
-Find and classify all the critical points of
-<m>f(x,y) = xy\,e^{x^2+y^2}</m>.
-</p>
-</statement>
-<solution>
-<p>
-The gradient is
-<md>
-\nabla f(x,y) = \left\langle
-\left(1 + 2x^2\right) y\, e^{x^2+y^2},\;
-x \left(1 + 2y^2\right) e^{x^2+y^2}
-\right\rangle.
-</md>
-Since the exponential factors, as well as <m>1 + 2x^2</m> and
-<m>1 + 2y^2</m>, are always positive, we might as well ignore them
-when finding the zeros. So we are left with
-<m>\langle x, y\rangle = \langle 0, 0\rangle</m>, i.e. the only
-critical point is <m>(0,0)</m>. The second derivatives of <m>f</m> are
-<md>
-<mrow>f_{xx} \amp = \left(6x + 4x^3\right) y\, e^{x^2+y^2}</mrow>
-<mrow>f_{xy} \amp = \left(1 + 2x^2\right)\left(1 + 2y^2\right)
-e^{x^2+y^2}</mrow>
-<mrow>f_{yy} \amp = x\left(6y + 4y^3\right) e^{x^2+y^2}</mrow>
-</md>
-Hence <m>D(0,0) = f_{xx}f_{yy} - f_{xy}^2 = -1</m>, so <m>(0,0)</m> is
-a saddle point.
-</p>
-</solution>
-</exercise>
-
-
-<exercise xml:id="rs19-8">
-<statement>
-<p>
-Let <m>f(x,y) = x^2 - y^2 - 2x + 4y + 6</m>. Find all the critical
-points and classify them as local maxima, local minima, and saddle
-points.
-</p>
-</statement>
-<solution>
-<p>
-The first and second partial derivatives are
-<md>
-<mrow>f_x \amp = 2x - 2, \amp f_{xx} \amp = 2,
-\amp f_{xy} \amp = f_{yx} = 0,</mrow>
-<mrow>f_y \amp = -2y + 4, \amp f_{yy} \amp = -2.</mrow>
-</md>
-Setting <m>f_x = 0</m> gives <m>x = 1</m> and <m>f_y = 0</m> gives
-<m>y = 2</m>, so the only critical point is <m>(1,2)</m>. The Hessian
-is
-<md>
-H(x,y) =
-\begin{vmatrix}
-f_{xx} \amp f_{xy} \\
-f_{xy} \amp f_{yy}
-\end{vmatrix}
-=
-\begin{vmatrix}
-2 \amp 0 \\
-0 \amp -2
-\end{vmatrix}
-= -4 \lt 0,
-</md>
-so <m>(1,2)</m> is a saddle point since the Hessian is negative.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rw21-7">
-<statement>
-<p>
-Find the maximum and minimum values of the function
-<m>f(x,y) = 2x^2 + 3y^2 - 4x - 5</m> on the domain
-<m>x^2 + y^2 \le 121</m>.
-</p>
-</statement>
-<solution>
-<p>
-<em>Critical points in the interior:</em>
-<md>
-f_x = 4x - 4 = 0 \;\Rightarrow\; x = 1,
-\qquad
-f_y = 6y = 0 \;\Rightarrow\; y = 0,
-</md>
-so <m>(1,0)</m> is the only critical point, with
-<m>f(1,0) = -7</m>.
-</p>
-
-<p>
-<em>The boundary:</em> on the circle <m>x^2 + y^2 = 121</m> we have
-<m>y^2 = 121 - x^2</m> with <m>-11 \le x \le 11</m>, so
-<md>
-f = 2x^2 + 3\left(121 - x^2\right) - 4x - 5
-= 358 - 4x - x^2,
-</md>
-and
-<md>
-\frac{d}{dx}\left(358 - 4x - x^2\right) = -4 - 2x = 0
-\;\Rightarrow\; x = -2,
-</md>
-giving <m>y^2 = 117</m>, i.e. <m>y = \pm\sqrt{117}</m>, with
-<md>
-f\left(-2, \pm\sqrt{117}\right) = 358 + 8 - 4 = 362.
-</md>
-At the endpoints <m>x = \pm 11</m> (where <m>y = 0</m>),
-<m>f(11,0) = 193</m> and <m>f(-11,0) = 281</m>.
-</p>
-
-<p>
-Comparing all the values, the maximum value of <m>f</m> is
-<m>362</m>, attained at <m>\left(-2, \sqrt{117}\right)</m> and
-<m>\left(-2, -\sqrt{117}\right)</m>, and the minimum value is
-<m>-7</m>, attained at <m>(1,0)</m>. See
-<xref ref="fig-rw21-disk"/>.
-</p>
-
-<figure xml:id="fig-rw21-disk">
-<caption>
-The disk <m>x^2 + y^2 \le 121</m>, the interior minimum at
-<m>(1,0)</m>, and the boundary maxima at
-<m>\left(-2, \pm\sqrt{117}\right)</m>.
-</caption>
-<image width="56%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-disk">
-<diagram dimensions="(300,290)" margins="12">
-<definition>circ(t) = (11*cos(t), 11*sin(t))</definition>
-<coordinates bbox="(-15.5,-14.5,15.5,14.5)">
-<grid-axes xlabel="x" ylabel="y"/>
-<parametric-curve at="dk-circle" function="circ" domain="(0,6.2832)"
-                  stroke="#0072B2" thickness="3"/>
-<point at="dk-min" p="(1,0)" fill="#009E73"/>
-<point at="dk-max1" p="(-2,10.8167)" fill="#D55E00"/>
-<point at="dk-max2" p="(-2,-10.8167)" fill="#D55E00"/>
-<label at="dk-min-lab" anchor="(1.6,-2.6)" alignment="se" color="#009E73">
-<m>(1,0),\ f=-7</m>
-</label>
-<label at="dk-max1-lab" anchor="(-14.8,12.1)" alignment="e" color="#D55E00">
-<m>\left(-2,\sqrt{117}\right),\ f=362</m>
-</label>
-<label at="dk-max2-lab" anchor="(-14.8,-13.2)" alignment="e" color="#D55E00">
-<m>\left(-2,-\sqrt{117}\right),\ f=362</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A blue circle of radius eleven centered at the origin. A green point just right of the center at one comma zero marks the minimum, f equals negative seven. Two vermillion points on the circle at negative two comma plus and minus the square root of one hundred seventeen mark the maxima, f equals three hundred sixty two.">
-  <annotation ref="dk-circle" text="The boundary circle x squared plus y squared equals one hundred twenty one."/>
-  <annotation ref="dk-min" text="The interior critical point one comma zero, where the minimum negative seven occurs."/>
-  <annotation ref="dk-max1" text="A boundary maximum at negative two comma square root of one hundred seventeen."/>
-  <annotation ref="dk-max2" text="A boundary maximum at negative two comma negative square root of one hundred seventeen."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="rw21-9">
-<statement>
-<p>
-Find the absolute maximum and absolute minimum of
-<m>f(x,y) = 2 + xy - 2x - \frac14 y^2</m> in the closed triangular
-region with vertices given by <m>(0,0)</m>, <m>(1,0)</m>, and
-<m>(0,2)</m>.
-</p>
-</statement>
-<solution>
-<p>
-<em>Critical points:</em>
-<md>
-f_x = y - 2 = 0 \;\Rightarrow\; y = 2,
-\qquad
-f_y = x - \frac{y}{2} = 0 \;\Rightarrow\; x = 1,
-</md>
-so the only critical point is <m>(1,2)</m>. Note that this point is
-NOT in the closed region <m>R</m>, so we only need to check the
-boundary.
-</p>
-
-<p>
-<em>The boundary:</em> we check the three sides of the triangle.
-<ul>
-<li>
-<p>
-<m>L_1</m>: <m>x = 0</m>, <m>0 \le y \le 2</m>. Here
-<m>f(0,y) = 2 - \frac{y^2}{4}</m>, with maximum <m>2</m> at
-<m>(0,0)</m> and minimum <m>1</m> at <m>(0,2)</m>.
-</p>
-</li>
-<li>
-<p>
-<m>L_2</m>: <m>y = 0</m>, <m>0 \le x \le 1</m>. Here
-<m>f(x,0) = 2 - 2x</m>, with maximum <m>2</m> at <m>(0,0)</m> and
-minimum <m>0</m> at <m>(1,0)</m>.
-</p>
-</li>
-<li>
-<p>
-<m>L_3</m>: <m>y = -2x + 2</m>, <m>0 \le x \le 1</m>. Here
-<md>
-g(x) = f(x, -2x+2) = 2 - 2x^2 - (x-1)^2 = 1 - 3x^2 + 2x,
-</md>
-and <m>g'(x) = -6x + 2 = 0</m> gives <m>x = \frac13</m>,
-<m>y = \frac43</m>, with
-<m>f\left(\frac13, \frac43\right)
-= 2 + \frac49 - \frac23 - \frac49 = \frac43</m>. The endpoints of
-<m>L_3</m> give the previously found values <m>1</m> and <m>0</m>.
-</p>
-</li>
-</ul>
-</p>
-
-<p>
-Comparing all the values, the absolute maximum of <m>f</m> is
-<m>2</m>, attained at <m>(0,0)</m>, and the absolute minimum is
-<m>0</m>, attained at <m>(1,0)</m>. See
-<xref ref="fig-rw21-triangle"/>.
-</p>
-
-<figure xml:id="fig-rw21-triangle">
-<caption>
-The triangular region <m>R</m> with vertices <m>(0,0)</m>,
-<m>(1,0)</m>, and <m>(0,2)</m>. The critical point <m>(1,2)</m> lies
-outside <m>R</m>; the absolute maximum <m>2</m> occurs at
-<m>(0,0)</m> and the absolute minimum <m>0</m> at <m>(1,0)</m>.
-</caption>
-<image width="56%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-triangle">
-<diagram dimensions="(300,280)" margins="12">
-<coordinates bbox="(-1.6,-0.7,2.6,2.7)">
-<grid-axes xlabel="x" ylabel="y"/>
-<polygon at="tr-region" points="((0,0),(1,0),(0,2))"
-         fill="#56B4E9" fill-opacity="0.35"
-         stroke="#0072B2" thickness="3"/>
-<point at="tr-max" p="(0,0)" fill="#D55E00"/>
-<point at="tr-min" p="(1,0)" fill="#009E73"/>
-<point at="tr-crit" p="(1,2)" fill="#8B1A4A"/>
-<label at="tr-max-lab" anchor="(-0.1,-0.15)" alignment="sw" color="#D55E00">
-<m>(0,0),\ f=2</m>
-</label>
-<label at="tr-min-lab" anchor="(1.1,-0.15)" alignment="se" color="#009E73">
-<m>(1,0),\ f=0</m>
-</label>
-<label at="tr-crit-lab" anchor="(1.08,2.1)" alignment="ne" color="#8B1A4A">
-<m>(1,2)\notin R</m>
-</label>
-<label at="tr-R-lab" anchor="(0.28,0.55)" alignment="ne" color="#0072B2">
-<m>R</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A light blue right triangle with vertices at the origin, one comma zero, and zero comma two. The vertex at the origin is marked in vermillion as the absolute maximum, f equals two; the vertex at one comma zero is marked in green as the absolute minimum, f equals zero. A dark red point at one comma two, outside the triangle, marks the critical point that does not belong to the region.">
-  <annotation ref="tr-region" text="The closed triangular region R."/>
-  <annotation ref="tr-max" text="The absolute maximum at the origin, where f equals two."/>
-  <annotation ref="tr-min" text="The absolute minimum at one comma zero, where f equals zero."/>
-  <annotation ref="tr-crit" text="The critical point one comma two, which lies outside the region."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="rw23-4">
-<statement>
-<p>
-The business manager for Acme Corporation plots a grid on a map of the
-region Acme serves and determines that the company's three most
-important customers are located at points <m>A(1,5)</m>,
-<m>B(0,0)</m>, and <m>C(8,0)</m>, where units are in miles. At what
-point <m>W(x,y)</m> should a warehouse be located in order to minimize
-<em>the sum of the squares of the distances</em> (NOT the square of
-the sum) from <m>W</m> to <m>A</m>, <m>B</m>, and <m>C</m>?
-</p>
-</statement>
-<solution>
-<p>
-The sum of the squares of the distances is
-<md>
-<mrow>f(x,y) \amp = (x-1)^2 + (y-5)^2 + x^2 + y^2 + (x-8)^2 + y^2</mrow>
-<mrow>\amp = 3x^2 - 18x + 3y^2 - 10y + 90.</mrow>
-</md>
-Setting the partial derivatives equal to zero,
-<md>
-<mrow>f_x \amp = 6x - 18 = 0 \;\Rightarrow\; x = 3,</mrow>
-<mrow>f_y \amp = 6y - 10 = 0 \;\Rightarrow\; y = \frac53,</mrow>
-</md>
-so <m>\left(3, \frac53\right)</m> is the only critical point. The
-second derivatives are <m>f_{xx} = 6 \gt 0</m>, <m>f_{yy} = 6</m>,
-<m>f_{xy} = 0</m>, so
-<m>D = f_{xx}f_{yy} - f_{xy}^2 = 36 \gt 0</m>. Since <m>D \gt 0</m>
-and <m>f_{xx} \gt 0</m>, the point <m>\left(3, \frac53\right)</m> is a
-local minimum.
-</p>
-
-<p>
-Also, if we complete the squares we can see that this point is where
-the absolute minimum happens:
-<md>
-f(x,y) = 3\left(y - \frac53\right)^2 + 3(x-3)^2
-+ \underbrace{90 - \frac{25}{3} - 27}_{\gt 0},
-</md>
-where the first two terms are non-negative and vanish exactly at
-<m>\left(3, \frac53\right)</m>. See <xref ref="fig-rw23-warehouse"/>.
-</p>
-
-<figure xml:id="fig-rw23-warehouse">
-<caption>
-The three customers <m>A(1,5)</m>, <m>B(0,0)</m>, <m>C(8,0)</m>, and
-the warehouse location <m>W\left(3, \frac53\right)</m> that minimizes
-the sum of the squares of the distances.
-</caption>
-<image width="66%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-rw23-warehouse">
-<diagram dimensions="(360,260)" margins="12">
-<coordinates bbox="(-1.2,-1.2,9.2,6.2)">
-<grid-axes xlabel="x" ylabel="y"/>
-<line at="wh-wa" endpoints="((3,1.6667),(1,5))"
-      stroke="#009E73" dash="5 4" thickness="2"/>
-<line at="wh-wb" endpoints="((3,1.6667),(0,0))"
-      stroke="#009E73" dash="5 4" thickness="2"/>
-<line at="wh-wc" endpoints="((3,1.6667),(8,0))"
-      stroke="#009E73" dash="5 4" thickness="2"/>
-<point at="wh-A" p="(1,5)" fill="#0072B2"/>
-<point at="wh-B" p="(0,0)" fill="#0072B2"/>
-<point at="wh-C" p="(8,0)" fill="#0072B2"/>
-<point at="wh-W" p="(3,1.6667)" fill="#D55E00"/>
-<label at="wh-A-lab" anchor="(1.15,5.15)" alignment="ne" color="#0072B2">
-<m>A(1,5)</m>
-</label>
-<label at="wh-B-lab" anchor="(0.15,-0.35)" alignment="se" color="#0072B2">
-<m>B(0,0)</m>
-</label>
-<label at="wh-C-lab" anchor="(7.9,-0.35)" alignment="sw" color="#0072B2">
-<m>C(8,0)</m>
-</label>
-<label at="wh-W-lab" anchor="(3.25,1.85)" alignment="ne" color="#D55E00">
-<m>W\!\left(3,\frac53\right)</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="Three blue points mark the customers: A at one comma five, B at the origin, and C at eight comma zero. A vermillion point W at three comma five thirds sits between them, joined to each customer by a dashed green segment.">
-  <annotation ref="wh-W" text="The warehouse location W at three comma five thirds, the point minimizing the sum of the squares of the distances."/>
-  <annotation ref="wh-A" text="Customer A at one comma five."/>
-  <annotation ref="wh-B" text="Customer B at the origin."/>
-  <annotation ref="wh-C" text="Customer C at eight comma zero."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-
-<exercise xml:id="rw17-7">
-<statement>
-<p>
-The porosity of the soil beneath an elliptical section of a field,
-<m>x^2 + 4y^2 \le 25</m>, is given by
-<md>
-f(x,y) = 2x^2 - 9x + 2y^2 + 20.
-</md>
-Find the <m>(x,y)</m> location(s) in this section of the field where
-water will drain the fastest and slowest, i.e. the locations where
-porosity is an absolute maximum or absolute minimum.
-</p>
-</statement>
-<solution>
-<p>
-The region is closed and bounded and <m>f</m> is a polynomial, hence
-continuous, so by the Extreme Value Theorem absolute extrema exist. We
-check the interior and the boundary.
-</p>
-
-<p>
-<em>Interior critical points:</em>
-<md>
-f_x = 4x - 9 = 0 \;\Rightarrow\; x = \frac94,
-\qquad
-f_y = 4y = 0 \;\Rightarrow\; y = 0.
-</md>
-The point <m>\left(\frac94, 0\right)</m> satisfies
-<m>\left(\frac94\right)^2 = \frac{81}{16} \approx 5.06 \lt 25</m>, so
-it lies inside the region, and
-<md>
-<mrow>f\left(\frac94, 0\right)
-\amp = 2\left(\frac{81}{16}\right) - 9\left(\frac94\right) + 20</mrow>
-<mrow>\amp = \frac{81}{8} - \frac{81}{4} + 20
-= -\frac{81}{8} + 20
-= \frac{79}{8} = 9.875.</mrow>
-</md>
-</p>
-
-<p>
-<em>The boundary:</em> on <m>x^2 + 4y^2 = 25</m> we have
-<m>y^2 = \dfrac{25 - x^2}{4}</m> with <m>-5 \le x \le 5</m>, so
-<md>
-f = 2x^2 - 9x + 2\cdot\frac{25-x^2}{4} + 20
-= \frac32 x^2 - 9x + \frac{65}{2},
-</md>
-a function of the single variable <m>x</m>. Setting its derivative to
-zero,
-<md>
-3x - 9 = 0 \;\Rightarrow\; x = 3
-\;\Rightarrow\; y^2 = \frac{25-9}{4} = 4
-\;\Rightarrow\; y = \pm 2,
-</md>
-with <m>f(3, \pm 2) = \frac{27}{2} - 27 + \frac{65}{2} = 19</m>. At
-the endpoints of the interval,
-<md>
-f(5, 0) = \frac{75}{2} - 45 + \frac{65}{2} = 25,
-\qquad
-f(-5, 0) = \frac{75}{2} + 45 + \frac{65}{2} = 115.
-</md>
-</p>
-
-<p>
-Comparing all the values <m>\left\{\frac{79}{8}, 19, 25, 115\right\}</m>,
-the porosity is an absolute <em>maximum</em> of <m>115</m> at
-<m>(-5, 0)</m> — where water drains the fastest — and an absolute
-<em>minimum</em> of <m>\frac{79}{8}</m> at
-<m>\left(\frac94, 0\right)</m> — where water drains the slowest. See
-<xref ref="fig-rw17-porosity"/>.
-</p>
-
-<figure xml:id="fig-rw17-porosity">
-<caption>
-The elliptical section <m>x^2 + 4y^2 \le 25</m>. The porosity is
-largest at the boundary point <m>(-5,0)</m> and smallest at the
-interior critical point <m>\left(\frac94, 0\right)</m>.
-</caption>
-<image width="66%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-rw17-porosity">
-<diagram dimensions="(360,220)" margins="12">
-<definition>ell(t) = (5*cos(t), 2.5*sin(t))</definition>
-<coordinates bbox="(-6.6,-3.6,6.6,3.6)">
-<grid-axes xlabel="x" ylabel="y"/>
-<parametric-curve at="po-ell" function="ell" domain="(0,6.2832)"
-                  stroke="#0072B2" thickness="3"/>
-<point at="po-max" p="(-5,0)" fill="#D55E00"/>
-<point at="po-min" p="(2.25,0)" fill="#009E73"/>
-<point at="po-b1" p="(3,2)" fill="#7F7F7F"/>
-<point at="po-b2" p="(3,-2)" fill="#7F7F7F"/>
-<label at="po-max-lab" anchor="(-5,0.25)" alignment="n" color="#D55E00">
-<m>(-5,0),\ f=115</m>
-</label>
-<label at="po-min-lab" anchor="(2.25,-0.3)" alignment="s" color="#009E73">
-<m>\left(\frac94,0\right),\ f=\frac{79}{8}</m>
-</label>
-<label at="po-b1-lab" anchor="(2.85,2.2)" alignment="nw" color="#7F7F7F">
-<m>f=19</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A wide blue ellipse with semi axes five in x and two point five in y. A vermillion point at negative five comma zero on the left end marks the maximum porosity of one hundred fifteen. A green point inside at nine fourths comma zero marks the minimum porosity of seventy nine eighths. Two gray points on the boundary at three comma plus and minus two are the boundary critical points where f equals nineteen.">
-  <annotation ref="po-ell" text="The boundary ellipse x squared plus four y squared equals twenty five."/>
-  <annotation ref="po-max" text="The absolute maximum of the porosity, at negative five comma zero."/>
-  <annotation ref="po-min" text="The absolute minimum of the porosity, at the interior critical point nine fourths comma zero."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-35">
-<statement>
-<p>
-Find all local maxima, minima and saddle points for
-<m>f(x,y) = \frac13 x^3 - x + xy^2</m>.
-</p>
-</statement>
-<solution>
-<p>
-The first partials are
-<md>
-f_x = x^2 - 1 + y^2,
-\qquad
-f_y = 2xy.
-</md>
-Setting <m>f_y = 0</m> forces <m>x = 0</m> or <m>y = 0</m>.
-<ul>
-<li>
-<p>
-If <m>x = 0</m>: <m>f_x = -1 + y^2 = 0</m> gives <m>y = \pm 1</m>, so
-the critical points are <m>(0,1)</m> and <m>(0,-1)</m>.
-</p>
-</li>
-<li>
-<p>
-If <m>y = 0</m>: <m>f_x = x^2 - 1 = 0</m> gives <m>x = \pm 1</m>, so
-the critical points are <m>(1,0)</m> and <m>(-1,0)</m>.
-</p>
-</li>
-</ul>
-</p>
-
-<p>
-The second partials are <m>f_{xx} = 2x</m>, <m>f_{yy} = 2x</m>, and
-<m>f_{xy} = 2y</m>, so the discriminant is
-<md>
-D = f_{xx}f_{yy} - f_{xy}^{2} = 4x^2 - 4y^2.
-</md>
-Applying the second derivative test:
-<ul>
-<li>
-<p>
-<m>(0, \pm 1)</m>: <m>D = -4 \lt 0</m>, so both are
-<term>saddle points</term>.
-</p>
-</li>
-<li>
-<p>
-<m>(1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = 2 \gt 0</m>, so this
-is a <term>local minimum</term>.
-</p>
-</li>
-<li>
-<p>
-<m>(-1,0)</m>: <m>D = 4 \gt 0</m> and <m>f_{xx} = -2 \lt 0</m>, so
-this is a <term>local maximum</term>.
-</p>
-</li>
-</ul>
-</p>
-</solution>
-</exercise>
-
-</worksheet>
-
-<!-- ================= Lagrange Multipliers ================= -->
-<xi:include href="lagrange_exercise.ptx"/>
-
-<!-- ========= Runestone interactive question-type sampler ========= -->
-<!-- Uses dev-schema elements: validate with the CLI's dev schema option -->
-<xi:include href="exercises-runestone-samples.ptx"/>
+<!-- ================= Review Problems #4 ================= -->
+<!-- The rest of the extreme values and Lagrange multipliers problems. -->
+<xi:include href="review-problems-4.ptx"/>
 
 </chapter>

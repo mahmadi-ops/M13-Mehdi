@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-  In-Class Activity for the Taylor Series section, collected in the Exercises chapter.
+  Assignment 3: Convergence of Taylor Series, the Binomial Series and
+  Applications.
+
+  Problems drawn from the old "Exercises for Taylor Series and its
+  convergence" and "Exercises for The Binomial Series" worksheets.
+  exer-dipole-tolerance is starred: optional, not examined.
 -->
+<worksheet xml:id="worksheet-assignment-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 3</title>
 
-  <worksheet xml:id="activity-01-intro-activity">
-  <title> Exercises for <xref ref="section-taylor" text="title"/></title>
+<introduction>
+<p>
+These problems bound the error in a Taylor approximation with the Remainder
+Theorem, and then use the binomial series to approximate a physical law.
+Problems marked with a star (<m>*</m>) are for the interested reader and will
+not be examined. If you would like to review the material first, see
+<xref ref="section-taylor" text="title"/> and
+<xref ref="chapter-binomial-series" text="title"/>.
+</p>
+</introduction>
 
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-taylor" text="title"/>.
-    </p>
-  </introduction>
-
-  <!-- Exercises start here.  --> 
-
-  <!-- Review problems on Taylor polynomials and their error. -->
 <exercise xml:id="rev-ser-6">
 <statement>
 <p>
@@ -27,38 +31,59 @@ no greater than <m>4 \times 10^{-3}</m>?
 </statement>
 <solution>
 <p>
-Here <m>a = 0</m>, since <m>T_3(x) = x - \dfrac{x^3}{3!}</m>. The
-derivatives of <m>f(x) = \sin(x)</m> are
+Here <m>a = 0</m>, and the cubic <m>x - \dfrac{x^3}{3!}</m> is
+<m>T_3(x)</m>. But the Maclaurin series of <m>\sin</m> has no
+<m>x^4</m> term, so the same polynomial is also the fourth order
+Taylor polynomial:
 <md>
-<mrow>f'(x) \amp = \cos x, \amp
+T_4(x) = x - \frac{x^3}{3!} + \frac{f^{(4)}(0)}{4!}x^4
+= x - \frac{x^3}{3!} = T_3(x),
+\qquad\text{since } f^{(4)}(0) = \sin(0) = 0 .
+</md>
+We should therefore take <m>n = 4</m>, not <m>n = 3</m>: both choices
+describe the very same approximation, but the remainder <m>R_4</m> is
+one order smaller than <m>R_3</m> and so gives the sharper estimate.
+</p>
+
+<p>
+The derivatives of <m>f(x) = \sin(x)</m> are
+<md>
+<mrow>f'(x) \amp = \cos(x), \amp
 f''(x) \amp = -\sin(x),</mrow>
 <mrow>f^{(3)}(x) \amp = -\cos(x), \amp
 f^{(4)}(x) \amp = \sin(x),</mrow>
+<mrow>f^{(5)}(x) \amp = \cos(x), \amp \amp</mrow>
 </md>
 and therefore
-<m>\left|f^{(4)}(c)\right| = |\sin(c)| \le 1</m>, so we can take
+<m>\left|f^{(5)}(c)\right| = |\cos(c)| \le 1</m>, so we can take
 <m>M = 1</m>.
 </p>
 
 <p>
-By the Remainder Theorem,
+By the Remainder Theorem with <m>n = 4</m>,
 <md>
-\text{Error} = |R_3(x)| \le M\,\frac{|x-a|^4}{4!}
-= \frac{|x|^4}{4!} \le 4\times 10^{-3},
+\text{Error} = |R_4(x)| \le M\,\frac{|x-a|^5}{5!}
+= \frac{|x|^5}{5!} \le 4\times 10^{-3},
 </md>
 which gives
 <md>
-|x| \le \sqrt[4]{(4!)(0.004)} \approx 0.556
+|x| \le \sqrt[5]{(5!)(0.004)} = \sqrt[5]{0.48} \approx 0.863
 \quad\Rightarrow\quad
-x \in [-0.556,\; 0.556].
+x \in [-0.863,\; 0.863].
 </md>
 See <xref ref="fig-rev-sin-approx"/>.
+</p>
+
+<p>
+For comparison, stopping at <m>n = 3</m> would have given
+<m>|x| \le \sqrt[4]{(4!)(0.004)} \approx 0.556</m>, a needlessly small
+interval for exactly the same polynomial.
 </p>
 
 <figure xml:id="fig-rev-sin-approx">
 <caption>
 The function <m>y = \sin x</m> and the cubic <m>y = x - \frac{x^3}{6}</m>.
-Between the dashed lines <m>x = \pm 0.556</m> the two graphs differ by
+Between the dashed lines <m>x = \pm 0.863</m> the two graphs differ by
 at most <m>4\times 10^{-3}</m>.
 </caption>
 <image width="78%">
@@ -68,9 +93,9 @@ at most <m>4\times 10^{-3}</m>.
 <definition>p(t) = (t, t - t^3/6)</definition>
 <coordinates bbox="(-2.7,-1.7,2.7,1.9)">
 <grid-axes xlabel="x" ylabel="y"/>
-<line at="sa-left" endpoints="((-0.556,-1.45),(-0.556,1.45))"
+<line at="sa-left" endpoints="((-0.863,-1.45),(-0.863,1.45))"
       stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<line at="sa-right" endpoints="((0.556,-1.45),(0.556,1.45))"
+<line at="sa-right" endpoints="((0.863,-1.45),(0.863,1.45))"
       stroke="#7F7F7F" dash="6 4" thickness="2"/>
 <parametric-curve at="sa-p" function="p" domain="(-2.6,2.6)"
                   stroke="#D55E00" thickness="2"/>
@@ -82,20 +107,20 @@ at most <m>4\times 10^{-3}</m>.
 <label at="sa-p-lab" anchor="(-2.6,1.25)" alignment="e" color="#D55E00">
 <m>y=x-\frac{x^3}{6}</m>
 </label>
-<label at="sa-l-lab" anchor="(-0.62,-1.62)" alignment="w">
-<m>-0.556</m>
+<label at="sa-l-lab" anchor="(-0.93,-1.62)" alignment="w">
+<m>-0.863</m>
 </label>
-<label at="sa-r-lab" anchor="(0.62,-1.62)" alignment="e">
-<m>0.556</m>
+<label at="sa-r-lab" anchor="(0.93,-1.62)" alignment="e">
+<m>0.863</m>
 </label>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="The sine curve, dashed blue, and the cubic x minus x cubed over six, solid vermillion, plotted together. Two dashed gray vertical lines at x equals plus and minus zero point five five six mark the interval on which the two curves are visually indistinguishable; outside it the cubic pulls away from the sine curve.">
+<annotation ref="figure" text="The sine curve, dashed blue, and the cubic x minus x cubed over six, solid vermillion, plotted together. Two dashed gray vertical lines at x equals plus and minus zero point eight six three mark the interval on which the two curves are visually indistinguishable; outside it the cubic pulls away from the sine curve.">
   <annotation ref="sa-f" text="The function y equals sine x."/>
   <annotation ref="sa-p" text="The cubic Taylor polynomial x minus x cubed over six."/>
-  <annotation ref="sa-left" text="The left endpoint of the interval, x equals negative zero point five five six."/>
-  <annotation ref="sa-right" text="The right endpoint of the interval, x equals zero point five five six. Inside the interval the error is at most four thousandths."/>
+  <annotation ref="sa-left" text="The left endpoint of the interval, x equals negative zero point eight six three."/>
+  <annotation ref="sa-right" text="The right endpoint of the interval, x equals zero point eight six three. Inside the interval the error is at most four thousandths."/>
 </annotation>
 </annotations>
 </diagram>
@@ -316,19 +341,7 @@ graphs are nearly identical.
 </solution>
 </exercise>
 
-
-  <exercise xml:id="ex-tf-1">
-    <title>True or False</title>
-    <statement correct="no">
-        <p>If we manage to find the maximum value of <m>|f^{(n+1)}(c)|</m> for <m>c</m> in the interval between <m>a</m> and <m>x</m>, 
-          then we can find the exact error in the Taylor polynomial approximation.</p>
-    </statement>
-    <feedback>
-        <p>The statement is incorrect. While finding the maximum value of <m>|f^{(n+1)}(c)|</m> allows us to find an upper bound for the error, it does not give the exact error.</p>
-    </feedback>
-</exercise>
-
-<exercise>
+<exercise xml:id="exer-dipole-field">
     <title>Approximating The Electric Field due to an Electric Dipole</title>
     <statement>
         <p>Consider an electric dipole consisting of two charges, <m>+q</m> and <m>-q</m>, 
@@ -485,8 +498,12 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
 </exercise>
 
 <exercise xml:id="exer-dipole-tolerance">
-  <title>How small must the separation be?</title>
+  <title>*How small must the separation be?</title>
   <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
     <p>
       A dipole is often treated as a <term>point dipole</term> by replacing
       the exact axial field
@@ -553,33 +570,63 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
     </p>
   </solution>
 </exercise>
-<exercise xml:id="rw17-1">
+
+<exercise xml:id="rf-1">
 <statement>
 <p>
-For the following functions, give the Taylor <em>series</em> generated
-by the function at <m>x = 0</m> AND give the values of <m>x</m> for
-which the Taylor series converges to the given function.
+Use a <term>binomial series</term> to represent the function
+<m>f(x) = \dfrac{2x}{1-x}</m> as a series. Write your final answer in
+sigma notation.
+</p>
+</statement>
+<solution>
+<p>
+We start from the binomial series with <m>m = -1</m>:
+<md>
+\frac{1}{1-x} = (1-x)^{-1}
+= \sum_{k=0}^{\infty} \binom{-1}{k} (-x)^k.
+</md>
+The binomial coefficients are
+<md>
+<mrow>\binom{-1}{0} \amp = 1 = (-1)^0, \qquad
+\binom{-1}{1} = -1 = (-1)^1,</mrow>
+<mrow>\binom{-1}{2} \amp = \frac{(-1)(-2)}{2!} = (-1)^2, \qquad
+\binom{-1}{3} = \frac{(-1)(-2)(-3)}{3!} = (-1)^3,</mrow>
+</md>
+and in general <m>\dbinom{-1}{k} = (-1)^k</m>. Hence
+<md>
+\frac{1}{1-x}
+= \sum_{k=0}^{\infty} (-1)^k (-x)^k
+= \sum_{k=0}^{\infty} x^k.
+</md>
+</p>
+
+<p>
+Therefore,
+<md>
+f(x) = 2x\,\frac{1}{1-x}
+= 2x \sum_{k=0}^{\infty} x^k
+= \sum_{k=0}^{\infty} 2x^{k+1}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="exer-binomial-maclaurin">
+<statement>
+<p>
+Use the binomial series <xref ref="eq-binomial-series"/> to obtain
+the Maclaurin series for
 <ol marker="A.">
 <li>
 <p>
-<m>f(x) = \cos(x)</m>
+<m>\dfrac{1}{(1+x)^3}</m>. Write your answer in sigma notation,
+<m>\displaystyle\sum_{k=0}^{\infty}(\;\cdots)</m>.
 </p>
 </li>
 <li>
 <p>
-<m>g(x) = \dfrac{1}{1-x}</m>
-</p>
-</li>
-<li>
-<p>
-<m>h(x) = x^2 e^{x^2}</m>
-</p>
-</li>
-<li>
-<p>
-Using the Taylor series you found for <m>h(x)</m> in part C, find
-<m>h^{(12)}(0)</m>, i.e. the 12th order derivative of <m>h(x)</m> at
-<m>0</m>.
+<m>\sqrt[7]{1+x}</m>. Give the first four terms only.
 </p>
 </li>
 </ol>
@@ -590,57 +637,43 @@ Using the Taylor series you found for <m>h(x)</m> in part C, find
 <ol marker="A.">
 <li>
 <p>
-The derivatives of <m>\cos(x)</m> at <m>0</m> cycle through
-<m>1, 0, -1, 0</m>, so only even powers survive and
+Here <m>m = -3</m>, so
 <md>
-\cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}x^{2n}
-= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots,
+<mrow>\frac{1}{(1+x)^3} \amp = (1+x)^{-3}</mrow>
+<mrow>\amp = 1 - 3x + \frac{(-3)(-4)}{2!}x^2
+   + \frac{(-3)(-4)(-5)}{3!}x^3 + \cdots</mrow>
+<mrow>\amp = 1 - 3x + 6x^2 - 10x^3 + \cdots</mrow>
 </md>
-which converges to <m>\cos(x)</m> for all <m>x \in \R</m>.
+The coefficient of <m>x^k</m> is
+<md>
+\frac{(-3)(-4)\cdots(-3-k+1)}{k!}
+= (-1)^k\,\frac{3\cdot 4\cdots (k+2)}{k!}
+= (-1)^k\,\frac{(k+2)!}{2\,k!} ,
+</md>
+so
+<md>
+\frac{1}{(1+x)^3}
+= \sum_{k=0}^{\infty} (-1)^k \frac{(k+2)!}{2\,k!}\,x^k
+= \sum_{k=0}^{\infty} (-1)^k \frac{(k+1)(k+2)}{2}\,x^k .
+</md>
+As a check, <m>k = 0, 1, 2, 3</m> give the coefficients
+<m>1, -3, 6, -10</m> found above.
 </p>
 </li>
 <li>
 <p>
-This is the geometric series with <m>a = 1</m> and <m>r = x</m>:
+Here <m>m = \frac17</m>, so
 <md>
-\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n
-= 1 + x + x^2 + x^3 + \cdots,
-</md>
-which converges to <m>\dfrac{1}{1-x}</m> exactly when
-<m>|x| \lt 1</m>, i.e. for <m>-1 \lt x \lt 1</m>.
-</p>
-</li>
-<li>
-<p>
-We start from <m>e^{u} = \displaystyle\sum_{n=0}^{\infty}
-\frac{u^n}{n!}</m>, valid for all <m>u</m>, and substitute
-<m>u = x^2</m>:
-<md>
-e^{x^2} = \sum_{n=0}^{\infty} \frac{x^{2n}}{n!}.
-</md>
-Multiplying by <m>x^2</m>,
-<md>
-h(x) = x^2 e^{x^2}
-= \sum_{n=0}^{\infty} \frac{x^{2n+2}}{n!}
-= x^2 + x^4 + \frac{x^6}{2!} + \frac{x^8}{3!} + \cdots,
-</md>
-which converges to <m>h(x)</m> for all <m>x \in \R</m>.
-</p>
-</li>
-<li>
-<p>
-In the Taylor series
-<m>h(x) = \displaystyle\sum_{k=0}^{\infty}
-\frac{h^{(k)}(0)}{k!}x^{k}</m>, the coefficient of <m>x^{12}</m> is
-<m>\dfrac{h^{(12)}(0)}{12!}</m>. From part C, the term with
-<m>x^{12}</m> occurs when <m>2n + 2 = 12</m>, i.e. <m>n = 5</m>, and
-its coefficient is <m>\dfrac{1}{5!}</m>. Equating the two,
-<md>
-\frac{h^{(12)}(0)}{12!} = \frac{1}{5!}
-\;\Rightarrow\;
-h^{(12)}(0) = \frac{12!}{5!}
-= \frac{479001600}{120}
-= 3991680.
+<mrow>\sqrt[7]{1+x} \amp = (1+x)^{1/7}</mrow>
+<mrow>\amp = 1 + \frac17 x
+  + \frac{\left(\frac17\right)\left(-\frac67\right)}{2!}x^2</mrow>
+<mrow>\amp \qquad
+  + \frac{\left(\frac17\right)\left(-\frac67\right)
+          \left(-\frac{13}{7}\right)}{3!}x^3 + \cdots</mrow>
+<mrow>\amp = 1 + \frac{x}{7} - \frac{6}{7^2\,2!}x^2
+  + \frac{(6)(13)}{7^3\,3!}x^3 + \cdots</mrow>
+<mrow>\amp = 1 + \frac{x}{7} - \frac{3}{49}x^2
+  + \frac{13}{343}x^3 + \cdots</mrow>
 </md>
 </p>
 </li>
@@ -649,289 +682,192 @@ h^{(12)}(0) = \frac{12!}{5!}
 </solution>
 </exercise>
 
-<exercise xml:id="rw17-3">
+<exercise xml:id="exer-binomial-cube-root">
 <statement>
 <p>
-Given <m>f(x) = \ln(1 - 2x)</m>.
-<ol marker="A.">
-<li>
-<p>
-Find the 2nd order Maclaurin polynomial for <m>f(x)</m>.
-</p>
-</li>
-<li>
-<p>
-Use Taylor's Remainder Theorem to find an upper bound on the magnitude
-of the error if the 2nd order Maclaurin polynomial is used to
-approximate <m>f(x)</m> for <m>|x| \le \frac14</m>.
-</p>
-</li>
-</ol>
+Expand the quantity <m>\sqrt[3]{P+t}</m> about <m>0</m> in powers of
+<m>\dfrac{t}{P}</m>. Give four nonzero terms.
 </p>
 </statement>
 <solution>
 <p>
-<ol marker="A.">
-<li>
-<p>
-We compute the derivatives at <m>0</m>:
+The binomial series expands <m>(1+x)^m</m>, so first factor <m>P</m> out
+of the radicand to produce a <m>1 + {}</m> something:
 <md>
-<mrow>f(x) \amp = \ln(1-2x), \amp f(0) \amp = 0,</mrow>
-<mrow>f'(x) \amp = \frac{-2}{1-2x} = -2(1-2x)^{-1},
-\amp f'(0) \amp = -2,</mrow>
-<mrow>f''(x) \amp = -4(1-2x)^{-2}, \amp f''(0) \amp = -4.</mrow>
-</md>
-Hence
-<md>
-P_2(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2
-= -2x - 2x^2.
+<mrow>\sqrt[3]{P+t}
+\amp = \left(P + P\left(\frac{t}{P}\right)\right)^{1/3}</mrow>
+<mrow>\amp = \left(P\left(1 + \frac{t}{P}\right)\right)^{1/3}</mrow>
+<mrow>\amp = \sqrt[3]{P}\left(1 + \frac{t}{P}\right)^{1/3}.</mrow>
 </md>
 </p>
-</li>
-<li>
 <p>
-By Taylor's Remainder Theorem,
+Now apply the binomial series with <m>m = \frac13</m> and
+<m>x = \frac{t}{P}</m>:
 <md>
-<mrow>|R_2(x)| \amp \le M\,\frac{|x|^3}{3!},</mrow>
-<mrow>\amp \text{where } M \ge \left|f^{(3)}(c)\right|
-\text{ for all } c \text{ between } 0 \text{ and } x.</mrow>
-</md>
-Here <m>f^{(3)}(x) = -16(1-2x)^{-3}</m>, so
-<m>\left|f^{(3)}(c)\right| = \dfrac{16}{|1-2c|^{3}}</m>. For
-<m>|c| \le \frac14</m> we have
-<m>\frac12 \le 1 - 2c \le \frac32</m>, and the fraction is largest
-when the denominator is smallest, i.e. at <m>c = \frac14</m>:
-<md>
-\left|f^{(3)}(c)\right| \le \frac{16}{\left(\frac12\right)^{3}}
-= 16 \cdot 8 = 128 = M.
-</md>
-Therefore, for <m>|x| \le \frac14</m>,
-<md>
-|R_2(x)| \le 128 \cdot \frac{\left(\frac14\right)^3}{3!}
-= \frac{128}{64 \cdot 6}
-= \frac13.
-</md>
-</p>
-</li>
-</ol>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-3">
-<statement>
-<p>
-Find the sum of the series
-<m>\displaystyle\sum_{n=0}^{\infty} \frac{1}{n!}</m>.
-</p>
-</statement>
-<solution>
-<p>
-The Maclaurin series of the exponential function is
-<md>
-e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!},
-\qquad \text{valid for all } x \in \R.
-</md>
-Setting <m>x = 1</m> gives
-<md>
-\sum_{n=0}^{\infty} \frac{1}{n!} = e^{1} = e.
+<mrow>\sqrt[3]{P+t} \amp = \sqrt[3]{P}\,\Biggl(
+  1 + \frac13\cdot\frac{t}{P}
+  + \frac{\frac13\left(\frac13-1\right)}{2!}
+    \left(\frac{t}{P}\right)^2</mrow>
+<mrow>\amp \qquad
+  + \frac{\frac13\left(\frac13-1\right)\left(\frac13-2\right)}{3!}
+    \left(\frac{t}{P}\right)^3 + \cdots \Biggr)</mrow>
+<mrow>\amp = \sqrt[3]{P}\left(
+  1 + \frac13\,\frac{t}{P}
+  - \frac19\left(\frac{t}{P}\right)^2
+  + \frac{5}{81}\left(\frac{t}{P}\right)^3 + \cdots \right).</mrow>
 </md>
 </p>
 </solution>
 </exercise>
 
-<exercise xml:id="pp-5">
+<exercise xml:id="m1-4">
 <statement>
 <p>
-What function has Maclaurin series
-<m>x - \dfrac{x^3}{2!} + \dfrac{x^5}{4!} - \dfrac{x^7}{6!}
-+ \dfrac{x^9}{8!} - \cdots</m>?
+Let
+<md>
+f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
+</md>
+Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
 </p>
 </statement>
 <solution>
 <p>
-Factoring <m>x</m> out of every term,
+First we identify <m>f</m>. Its general term is <m>(n+1)x^n</m>, so
 <md>
-x - \frac{x^3}{2!} + \frac{x^5}{4!} - \frac{x^7}{6!} + \cdots
-= x\left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}
-+ \cdots\right),
+f(x) = \sum_{n=0}^{\infty} (n+1)x^n .
 </md>
-and the bracket is exactly the Maclaurin series of <m>\cos(x)</m>.
-Hence the function is
+This is exactly what you get by differentiating the geometric series
+term by term:
 <md>
-x\cos(x).
+<mrow>\frac{1}{1-x} \amp = \sum_{n=0}^{\infty} x^n
+  = 1 + x + x^2 + x^3 + \cdots , \qquad |x| \lt 1,</mrow>
+<mrow>\frac{d}{dx}\left(\frac{1}{1-x}\right)
+  \amp = \frac{1}{(1-x)^2}
+  = \sum_{n=1}^{\infty} n x^{n-1}
+  = 1 + 2x + 3x^2 + \cdots</mrow>
+</md>
+So <m>f(x) = \dfrac{1}{(1-x)^2}</m> for <m>|x| \lt 1</m>. Since
+<m>\tfrac1{13} \lt 1</m>, the whole interval of integration lies inside
+the interval of convergence.
+</p>
+
+<p>
+Now we integrate. An antiderivative of <m>(1-x)^{-2}</m> is
+<m>(1-x)^{-1}</m>, so
+<md>
+<mrow>\int_0^{1/13} \frac{dx}{(1-x)^2}
+  \amp = \left[\frac{1}{1-x}\right]_0^{1/13}</mrow>
+<mrow>\amp = \frac{1}{1-\frac{1}{13}} - \frac{1}{1-0}</mrow>
+<mrow>\amp = \frac{1}{\frac{12}{13}} - 1
+   = \frac{13}{12} - 1 = \frac{1}{12} .</mrow>
 </md>
 </p>
 </solution>
 </exercise>
 
-<exercise xml:id="pp-6">
+<exercise xml:id="exer-integral-cos-over-x">
 <statement>
 <p>
-<ol marker="A.">
-<li>
-<p>
-Use a third Taylor polynomial at <m>x = 100</m> to approximate
-<m>\sqrt{102}</m>.
-</p>
-</li>
-<li>
-<p>
-Give an upper bound for the error in using this approximation.
-</p>
-</li>
-</ol>
+Evaluate <m>\displaystyle\int \frac{\cos x - 1}{x}\,dx</m> as an infinite
+series. Give the first three nonzero terms.
 </p>
 </statement>
 <solution>
 <p>
-<ol marker="A.">
-<li>
-<p>
-Let <m>f(x) = \sqrt{x} = x^{1/2}</m> and <m>a = 100</m>. Then
+The integrand has no elementary antiderivative, so expand it as a series
+first. Starting from
+<m>\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}
+- \dfrac{x^6}{6!} + \cdots</m>, subtracting <m>1</m> kills the constant
+term, so every surviving power of <m>x</m> is even and at least
+<m>2</m>. Dividing by <m>x</m> therefore leaves an honest power series:
 <md>
-<mrow>f(x) \amp = x^{1/2}, \amp f(100) \amp = 10,</mrow>
-<mrow>f'(x) \amp = \frac12 x^{-1/2}, \amp f'(100) \amp = \frac{1}{20},</mrow>
-<mrow>f''(x) \amp = -\frac14 x^{-3/2}, \amp f''(100) \amp = -\frac{1}{4000},</mrow>
-<mrow>f'''(x) \amp = \frac38 x^{-5/2}, \amp f'''(100) \amp = \frac{3}{800000}.</mrow>
-</md>
-Hence
-<md>
-T_3(x) = 10 + \frac{x-100}{20} - \frac{(x-100)^2}{8000}
-+ \frac{(x-100)^3}{1600000},
-</md>
-and evaluating at <m>x = 102</m> (so <m>x - 100 = 2</m>),
-<md>
-<mrow>\sqrt{102} \amp \approx 10 + \frac{2}{20} - \frac{4}{8000}
-+ \frac{8}{1600000}</mrow>
-<mrow>\amp = 10 + \frac{1}{10} - \frac{1}{2000} + \frac{1}{200000}.</mrow>
+<mrow>\frac{\cos x - 1}{x}
+\amp = \frac{1}{x}\left(-\frac{x^2}{2!} + \frac{x^4}{4!}
+  - \frac{x^6}{6!} + \cdots\right)</mrow>
+<mrow>\amp = -\frac{x}{2!} + \frac{x^3}{4!} - \frac{x^5}{6!} + \cdots</mrow>
 </md>
 </p>
-</li>
-<li>
 <p>
-By Taylor's Remainder Theorem,
-<m>|R_3(x)| \le M\dfrac{|x-100|^4}{4!}</m>, where <m>M</m> bounds
-<m>\left|f^{(4)}\right|</m> on <m>[100, 102]</m>. Since
-<m>f^{(4)}(x) = -\frac{15}{16}x^{-7/2}</m> and
-<m>x^{-7/2}</m> is decreasing, the largest value occurs at
-<m>x = 100</m>:
+Integrating term by term,
 <md>
-M = \frac{15}{16}\cdot 100^{-7/2} = \frac{15}{16 \cdot 10^{7}}.
-</md>
-Therefore
-<md>
-|R_3(102)| \le \frac{15}{16\cdot 10^{7}} \cdot \frac{2^4}{24}
-= \frac{15}{24 \cdot 10^{7}}
-= \frac{1}{16000000}.
-</md>
-</p>
-</li>
-</ol>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-7">
-<statement>
-<p>
-Use a Maclaurin series to approximate
-<m>\displaystyle\int_0^1 e^{-x^3}\,dx</m> with error less than
-<m>\frac{1}{100}</m>. Leave your answer as a fraction.
-</p>
-</statement>
-<solution>
-<p>
-Starting from <m>e^{u} = \displaystyle\sum_{n=0}^{\infty}
-\frac{u^n}{n!}</m> with <m>u = -x^3</m>,
-<md>
-e^{-x^3} = \sum_{n=0}^{\infty} \frac{(-1)^n x^{3n}}{n!},
-</md>
-and integrating term by term from <m>0</m> to <m>1</m>,
-<md>
-\int_0^1 e^{-x^3}\,dx
-= \sum_{n=0}^{\infty} \frac{(-1)^n}{n!\,(3n+1)}
-= 1 - \frac14 + \frac{1}{14} - \frac{1}{60} + \frac{1}{312}
-- \cdots
-</md>
-</p>
-
-<p>
-This is an alternating series with terms decreasing to <m>0</m>, so
-the error made by stopping is smaller than the first omitted term.
-Since <m>\frac{1}{312} \lt \frac{1}{100}</m>, it is enough to keep the
-terms through <m>-\frac{1}{60}</m>:
-<md>
-<mrow>\int_0^1 e^{-x^3}\,dx
-\amp \approx 1 - \frac14 + \frac{1}{14} - \frac{1}{60}
-= \frac{420 - 105 + 30 - 7}{420}</mrow>
-<mrow>\amp = \frac{338}{420}
-= \frac{169}{210}.</mrow>
+<mrow>\int \frac{\cos x - 1}{x}\,dx
+\amp = C - \frac{x^2}{2\cdot 2!} + \frac{x^4}{4\cdot 4!}
+  - \frac{x^6}{6\cdot 6!} + \cdots</mrow>
+<mrow>\amp = C - \frac{x^2}{4} + \frac{x^4}{96}
+  - \frac{x^6}{4320} + \cdots</mrow>
 </md>
 </p>
 </solution>
 </exercise>
 
-<exercise xml:id="m1-1">
+<exercise xml:id="exer-series-limit-cos2x">
 <statement>
 <p>
-Find the sum of the series
+Use Taylor series to evaluate
 <md>
-5 + 5^2 + \frac{5^3}{2!} + \frac{5^4}{3!} + \cdots
-  + \frac{5^{n+1}}{n!} + \cdots
+\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}} .
 </md>
 </p>
 </statement>
 <solution>
 <p>
-The general term is <m>\dfrac{5^{n+1}}{n!}</m> starting at
-<m>n = 0</m>. Let us check the first few: at <m>n=0</m> we get
-<m>5^1/0! = 5</m>; at <m>n=1</m> we get <m>5^2/1! = 5^2</m>; at
-<m>n = 2</m> we get <m>5^3/2!</m>. These match, so the series is
+The quotient has the indeterminate form <m>\frac00</m>. Replace the
+numerator and the denominator by their Maclaurin series. Putting
+<m>2x</m> in place of <m>x</m> in
+<m>\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots</m>,
 <md>
-\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!} .
+<mrow>\cos(2x) \amp = 1 - \frac{(2x)^2}{2!} + \frac{(2x)^4}{4!} - \cdots
+  = 1 - 2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
+<mrow>\Rightarrow\quad \cos(2x) - 1
+  \amp = -2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
+</md>
+and from <m>e^{x} = 1 + x + \frac{x^2}{2!} + \cdots</m>,
+<md>
+x^2 e^{x} = x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)
+= x^2 + x^3 + \frac{x^4}{2} + \cdots .
 </md>
 </p>
-
 <p>
-Now pull out one factor of <m>5</m>, which does not depend on
-<m>n</m>:
+Both vanish to exactly second order, so cancel the common factor of
+<m>x^2</m> <mdash/> legitimate, since the limit never uses the value at
+<m>x = 0</m> itself:
 <md>
-\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!}
- = \sum_{n=0}^{\infty} \frac{5\cdot 5^{n}}{n!}
- = 5\sum_{n=0}^{\infty} \frac{5^{n}}{n!} .
+<mrow>\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}}
+\amp = \lim_{x\to 0}
+  \frac{x^2\left(-2 + \frac{2}{3}x^2 - \cdots\right)}
+       {x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)}</mrow>
+<mrow>\amp = \lim_{x\to 0}
+  \frac{-2 + \frac{2}{3}x^2 - \cdots}
+       {1 + x + \frac{x^2}{2!} + \cdots}
+  = \frac{-2}{1} = -2 .</mrow>
 </md>
-</p>
-
-<p>
-The remaining series is the Maclaurin series
-<m>\displaystyle e^{x} = \sum_{n=0}^{\infty}\frac{x^n}{n!}</m>
-evaluated at <m>x = 5</m>, which converges for every <m>x</m>.
-Therefore
-<md>
-5 + 5^2 + \frac{5^3}{2!} + \cdots = 5e^5 .
-</md>
+Each remaining series is continuous at <m>0</m> with a nonzero value
+there, so only the two leading coefficients matter.
 </p>
 </solution>
 </exercise>
 
-<exercise xml:id="m1-5">
+<exercise xml:id="m1-6">
 <statement>
 <p>
+The gravitational force exerted by the Earth on an object of mass
+<m>m</m> at height <m>h</m> above the surface is
+<md>
+F = \frac{mgR^2}{(R+h)^2} ,
+</md>
+where <m>R</m> is the radius of the Earth and <m>g</m> is the
+acceleration due to gravity at the surface.
 <ol marker="(a)">
 <li>
 <p>
-Give an example of a function whose Taylor series converges for all
-<m>x</m>.
+Express <m>F</m> as a Maclaurin series in the variable <m>h/R</m>,
+writing out the first four non-zero terms.
 </p>
 </li>
 <li>
 <p>
-Find a Taylor polynomial <m>P(x)</m> with the property that
-<md>
-|\ln x - P(x)| \lt 0.1 \qquad \text{for all } x \in [0.5, 1.5].
-</md>
-Use the smallest order you can, and justify your answer.
+What approximation to <m>F</m> do you get by keeping only the first
+term? When is it reasonable?
 </p>
 </li>
 </ol>
@@ -939,132 +875,51 @@ Use the smallest order you can, and justify your answer.
 </statement>
 <solution>
 <p>
-<term>(a)</term> Take <m>f(x) = e^x</m>. Its Maclaurin series is
-<m>\sum_{n\ge 0} x^n/n!</m>, and by the ratio test
+<term>(a)</term> The point of the problem is to get the expression into
+the form <m>(1+u)^{p}</m> with <m>u = h/R</m>. Factor <m>R</m> out of
+the denominator:
 <md>
-\lim_{n\to\infty}\left|\frac{x^{n+1}/(n+1)!}{x^n/n!}\right|
-= \lim_{n\to\infty}\frac{|x|}{n+1} = 0 \lt 1
-</md>
-for every <m>x</m>, so the radius of convergence is <m>\infty</m>.
-(The functions <m>\sin x</m> and <m>\cos x</m> would work equally
-well.)
-</p>
-
-<p>
-<term>(b)</term> Since the interval <m>[0.5,1.5]</m> is centred at
-<m>x = 1</m>, we expand about <m>a = 1</m>. Using
-<m>f(x) = \ln x</m>, <m>f'(x) = 1/x</m>, <m>f''(x) = -1/x^2</m>, we get
-<m>f(1) = 0</m>, <m>f'(1) = 1</m>, <m>f''(1) = -1</m>, so the Taylor
-polynomials of order <m>1</m> and <m>2</m> are
-<md>
-P_1(x) = x-1, \qquad
-P_2(x) = (x-1) - \frac{(x-1)^2}{2} .
+F = \frac{mgR^2}{(R+h)^2}
+  = \frac{mgR^2}{R^2\left(1+\frac{h}{R}\right)^2}
+  = mg\left(1+\frac{h}{R}\right)^{-2} .
 </md>
 </p>
 
 <p>
-<term>Order 1 is not enough.</term> At the endpoint <m>x = 0.5</m>,
+Now use the binomial series
+<m>\displaystyle (1+u)^{p} = \sum_{n=0}^{\infty}\binom{p}{n}u^n</m>
+with <m>p = -2</m>. The coefficients are
 <md>
-|\ln(0.5) - P_1(0.5)| = |-0.6931 - (-0.5)| = 0.1931 \gt 0.1 .
+<mrow>\binom{-2}{0} \amp = 1,</mrow>
+<mrow>\binom{-2}{1} \amp = -2,</mrow>
+<mrow>\binom{-2}{2} \amp = \frac{(-2)(-3)}{2!} = 3,</mrow>
+<mrow>\binom{-2}{3} \amp = \frac{(-2)(-3)(-4)}{3!} = -4 ,</mrow>
 </md>
-So <m>P_1</m> fails.
+and in general <m>\binom{-2}{n} = (-1)^n (n+1)</m>. Hence
+<md>
+(1+u)^{-2} = 1 - 2u + 3u^2 - 4u^3 + \cdots , \qquad |u| \lt 1,
+</md>
+and so
+<md>
+F = mg\left[1 - 2\left(\frac{h}{R}\right)
+    + 3\left(\frac{h}{R}\right)^2
+    - 4\left(\frac{h}{R}\right)^3 + \cdots\right] .
+</md>
+This is valid for <m>0 \le h \lt R</m>.
 </p>
 
 <p>
-<term>Order 2 works.</term> We check the two halves of the interval
-separately. Recall the Taylor series
+<term>(b)</term> Keeping only the first term gives
 <md>
-<mrow>\ln x \amp = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3}
-- \frac{(x-1)^4}{4} + \cdots ,</mrow>
-<mrow>\amp \qquad 0 \lt x \le 2 .</mrow>
+F \approx mg ,
 </md>
+the familiar constant weight of an object near the surface of the
+Earth. It is reasonable when <m>h/R</m> is very small, that is when the
+object stays close to the surface: the first term we discard is
+<m>-2mgh/R</m>, so the relative error is about <m>2h/R</m>. With
+<m>R \approx 6371</m> km, even at <m>h = 10</m> km the relative error is
+only about <m>0.3\%</m>.
 </p>
-
-<p>
-For <m>1 \le x \le 1.5</m> we have <m>0 \le x - 1 \le 0.5</m>, so the
-series is alternating with terms decreasing in absolute value. By the
-alternating series estimate the error is smaller than the first omitted
-term:
-<md>
-|\ln x - P_2(x)| \lt \frac{|x-1|^3}{3} \le \frac{(0.5)^3}{3}
-= \frac{0.125}{3} \approx 0.0417 \lt 0.1 .
-</md>
-</p>
-
-<p>
-For <m>0.5 \le x \lt 1</m> write <m>u = 1-x</m>, so
-<m>0 \lt u \le 0.5</m>. Then every term is negative and
-<md>
-<mrow>|\ln x - P_2(x)| \amp = \sum_{k=3}^{\infty}\frac{u^k}{k}
-  \le \frac13 \sum_{k=3}^{\infty} u^k
-  = \frac{u^3}{3(1-u)}</mrow>
-<mrow>\amp \le \frac{(0.5)^3}{3(0.5)} = \frac{0.125}{1.5}
-  \approx 0.0833 \lt 0.1 .</mrow>
-</md>
-</p>
-
-<p>
-So on the whole interval <m>[0.5,1.5]</m> the second-order Taylor
-polynomial
-<md>
-P(x) = (x-1) - \frac{(x-1)^2}{2}
-</md>
-satisfies <m>|\ln x - P(x)| \lt 0.1</m>, and no first-order polynomial
-does. <xref ref="fig-m1-taylor"/> shows the two graphs.
-</p>
-
-<figure xml:id="fig-m1-taylor">
-<caption>
-The graphs of <m>y = \ln x</m> and of the second-order Taylor
-polynomial <m>P(x) = (x-1) - \tfrac{(x-1)^2}{2}</m> on
-<m>[0.5,1.5]</m>. The largest gap occurs at the left endpoint, where it
-is about <m>0.068</m>, comfortably below <m>0.1</m>.
-</caption>
-<image width="72%">
-<description>
-<p>
-Two nearly coincident increasing curves on the interval from zero point
-five to one point five: the natural logarithm and its second degree
-Taylor polynomial about x equals one. They touch at x equals one and
-separate slightly toward the endpoints, most visibly at the left end.
-</p>
-</description>
-<prefigure xmlns="https://prefigure.org" label="prefigure-m1-taylor">
-<diagram dimensions="(430,330)" margins="52">
-<definition>lncurve(t) = (t, log(t))</definition>
-<definition>pcurve(t) = (t, (t-1) - (t-1)^2/2)</definition>
-<coordinates bbox="(0.35,-0.95,1.65,0.62)">
-<grid-axes at="m1t-axes" xlabel="x" ylabel="y"/>
-<parametric-curve at="m1t-ln" function="lncurve" domain="(0.5,1.5)"
-                  stroke="#0072B2" thickness="2.5"/>
-<parametric-curve at="m1t-p" function="pcurve" domain="(0.5,1.5)"
-                  stroke="#D55E00" thickness="2.5" dash="6 4"/>
-<line at="m1t-gap" p1="(0.5,-0.6931)" p2="(0.5,-0.625)"
-      stroke="#8B1A4A" thickness="3"/>
-<point at="m1t-a" p="(0.5,-0.6931)" fill="#0072B2"/>
-<point at="m1t-b" p="(0.5,-0.625)" fill="#D55E00"/>
-<label at="m1t-lnlab" anchor="(1.5,0.405)" alignment="nw" color="#0072B2">
-<m>y=\ln x</m>
-</label>
-<label at="m1t-plab" anchor="(1.42,0.30)" alignment="se" color="#D55E00">
-<m>y=P(x)</m>
-</label>
-<label at="m1t-gaplab" anchor="(0.53,-0.68)" alignment="e" color="#8B1A4A">
-<m>\text{gap}\approx 0.068</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="Two increasing curves on the interval from x equals zero point five to one point five. The solid blue curve is the natural logarithm and the dashed orange curve is its second degree Taylor polynomial about one. The curves agree closely, touching at x equals one, and the largest visible separation is at the left endpoint where a short dark red segment marks the gap.">
-  <annotation ref="m1t-ln" text="The graph of y equals the natural log of x."/>
-  <annotation ref="m1t-p" text="The graph of the Taylor polynomial P of x equals x minus one, minus one half of the square of x minus one."/>
-  <annotation ref="m1t-gap" text="The vertical gap between the two graphs at the left endpoint x equals zero point five, of size about zero point zero six eight."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
 </solution>
 </exercise>
 
