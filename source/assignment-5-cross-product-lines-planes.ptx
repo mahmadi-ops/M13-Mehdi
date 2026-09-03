@@ -15,7 +15,7 @@
   the old m2b-3 (the plane containing the parabola r(t) = <t+1, 2t, 2+3t-t^2>).
 
   Notation: m2b-1c in review-problems-2.ptx was the problem the markup asked
-  to restate with \vec u and \vec v; m2b-4 sits beside it and was renamed the
+  to restate with \mathbf u and \mathbf v; m2b-4 sits beside it and was renamed the
   same way for consistency.
 -->
 <worksheet xml:id="worksheet-assignment-5" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -37,10 +37,10 @@ you would like to review the material first, see
 <title>True or False</title>
 <statement correct="no">
 <p>
-If <m>\vec u</m> and <m>\vec v</m> are two non-zero vectors in
+If <m>\mathbf u</m> and <m>\mathbf v</m> are two non-zero vectors in
 <m>\R^3</m>, then
-<m>\vec u \cdot (\vec u \times \vec v)
-= \|\vec u\|^2 + \vec u \cdot \vec v</m>.
+<m>\mathbf u \cdot (\mathbf u \times \mathbf v)
+= \|\mathbf u\|^2 + \mathbf u \cdot \mathbf v</m>.
 </p>
 <p>
 Justify your answer fully: give a proof if the statement is true, or a
@@ -50,10 +50,10 @@ counterexample if it is false.
 <feedback>
 <p>
 Counterexample: take
-<m>\vec u = \mathbf i</m> and <m>\vec v = \mathbf i</m>. Then
+<m>\mathbf u = \mathbf i</m> and <m>\mathbf v = \mathbf i</m>. Then
 <md>
 \mathbf i \cdot
-\underbrace{(\mathbf i \times \mathbf i)}_{\vec 0} = 0,
+\underbrace{(\mathbf i \times \mathbf i)}_{\mathbf 0} = 0,
 \quad\text{whereas}\quad
 \|\mathbf i\|^2 + \mathbf i \cdot \mathbf i = 1 + 1 = 2,
 </md>
@@ -124,17 +124,17 @@ Dividing by <m>5</m> gives the simpler answer
 <exercise xml:id="m2b-4">
 <statement>
 <p>
-Suppose <m>\|\vec u\| = 3</m>, <m>\|\vec v\| = 4</m> and
-<m>\|\vec u\times\vec v\| = 6</m>. Find
+Suppose <m>\|\mathbf u\| = 3</m>, <m>\|\mathbf v\| = 4</m> and
+<m>\|\mathbf u\times\mathbf v\| = 6</m>. Find
 <ol marker="(a)">
 <li>
 <p>
-<m>\left|\vec u\cdot\vec v\right|</m>;
+<m>\left|\mathbf u\cdot\mathbf v\right|</m>;
 </p>
 </li>
 <li>
 <p>
-<m>\left\|\operatorname{proj}_{\vec u}\vec v\right\|</m>.
+<m>\left\|\operatorname{proj}_{\mathbf u}\mathbf v\right\|</m>.
 </p>
 </li>
 </ol>
@@ -144,7 +144,7 @@ Suppose <m>\|\vec u\| = 3</m>, <m>\|\vec v\| = 4</m> and
 <p>
 <term>(a)</term> Let <m>\theta</m> be the angle between the two
 vectors, <m>0 \le \theta \le \pi</m>. From
-<m>\|\vec u\times\vec v\| = \|\vec u\|\,\|\vec v\|\sin\theta</m>,
+<m>\|\mathbf u\times\mathbf v\| = \|\mathbf u\|\,\|\mathbf v\|\sin\theta</m>,
 <md>
 6 = (3)(4)\sin\theta \quad\Longrightarrow\quad
 \sin\theta = \frac{6}{12} = \frac12 .
@@ -157,25 +157,25 @@ Since <m>\sin^2\theta + \cos^2\theta = 1</m>,
 <m>\theta</m> could be <m>30^\circ</m> or <m>150^\circ</m>; this is
 exactly why the problem asks for the absolute value.) Therefore
 <md>
-\left|\vec u\cdot\vec v\right|
- = \|\vec u\|\,\|\vec v\|\,|\cos\theta|
+\left|\mathbf u\cdot\mathbf v\right|
+ = \|\mathbf u\|\,\|\mathbf v\|\,|\cos\theta|
  = (3)(4)\frac{\sqrt3}{2} = 6\sqrt3 .
 </md>
 </p>
 
 <p>
 <term>(b)</term> The projection is
-<m>\operatorname{proj}_{\vec u}\vec v
-= \left(\dfrac{\vec u\cdot\vec v}{\|\vec u\|^2}\right)\vec u</m>, so
+<m>\operatorname{proj}_{\mathbf u}\mathbf v
+= \left(\dfrac{\mathbf u\cdot\mathbf v}{\|\mathbf u\|^2}\right)\mathbf u</m>, so
 its length is
 <md>
-\left\|\operatorname{proj}_{\vec u}\vec v\right\|
- = \frac{\left|\vec u\cdot\vec v\right|}{\|\vec u\|^2}\,\|\vec u\|
- = \frac{\left|\vec u\cdot\vec v\right|}{\|\vec u\|}
+\left\|\operatorname{proj}_{\mathbf u}\mathbf v\right\|
+ = \frac{\left|\mathbf u\cdot\mathbf v\right|}{\|\mathbf u\|^2}\,\|\mathbf u\|
+ = \frac{\left|\mathbf u\cdot\mathbf v\right|}{\|\mathbf u\|}
  = \frac{6\sqrt3}{3} = 2\sqrt3 .
 </md>
 As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
-<m>\|\vec v\| = 4</m>, as a shadow must be.
+<m>\|\mathbf v\| = 4</m>, as a shadow must be.
 </p>
 </solution>
 </exercise>
@@ -511,11 +511,11 @@ planes:
 </statement>
 <solution>
 <p>
-The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
-<m>\vec n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
+The normal vectors are <m>\mathbf n_1 = \langle 2, 1, -1\rangle</m> and
+<m>\mathbf n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
 the line of intersection is
 <md>
-\mathbf v = \vec n_1 \times \vec n_2 =
+\mathbf v = \mathbf n_1 \times \mathbf n_2 =
 \begin{vmatrix}
 \mathbf i \amp \mathbf j \amp \mathbf k \\
 2 \amp 1 \amp -1 \\
@@ -556,9 +556,9 @@ coefficient of <m>x</m> is <m>-3</m>.
 Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
 the same normal vector
 <md>
-\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+\mathbf n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
 </md>
-(Note that <m>\vec n \cdot \langle -4, 6, -3\rangle
+(Note that <m>\mathbf n \cdot \langle -4, 6, -3\rangle
 = 12 - 6 - 6 = 0</m>, so the line is indeed parallel to such a plane.)
 When <m>t = 0</m>, the point <m>(-4, 5, -1)</m> is on the plane, so
 from the point-normal form,
@@ -586,14 +586,14 @@ We notice that the two lines are parallel (both have direction vector
 <m>\mathbf v = \langle -1, 2, 3\rangle</m>) and therefore we can find
 the distance between a point on <m>L_2</m> and the line <m>L_1</m>.
 Taking <m>S(5, 3, -5)</m> on <m>L_2</m> and <m>P(4, 3, -5)</m> on
-<m>L_1</m>, we get <m>\vec{PS} = \langle 1, 0, 0\rangle</m>, and
+<m>L_1</m>, we get <m>\overrightarrow{PS} = \langle 1, 0, 0\rangle</m>, and
 <m>\|\mathbf v\| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
 </p>
 
 <p>
 Using the cross product,
 <md>
-\vec{PS} \times \mathbf v =
+\overrightarrow{PS} \times \mathbf v =
 \begin{vmatrix}
 \mathbf i \amp \mathbf j \amp \mathbf k \\
 1 \amp 0 \amp 0 \\
@@ -601,11 +601,11 @@ Using the cross product,
 \end{vmatrix}
 = -3\,\mathbf j + 2\,\mathbf k,
 \qquad
-\left\|\vec{PS} \times \mathbf v\right\| = \sqrt{9 + 4} = \sqrt{13},
+\left\|\overrightarrow{PS} \times \mathbf v\right\| = \sqrt{9 + 4} = \sqrt{13},
 </md>
 and the distance is
 <md>
-d = \frac{\left\|\vec{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
+d = \frac{\left\|\overrightarrow{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
 = \frac{\sqrt{13}}{\sqrt{14}}.
 </md>
 </p>
@@ -623,8 +623,8 @@ normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
 <solution>
 <p>
 From <xref ref="pp-13"/>, the plane through those three points has
-normal vector <m>\vec n = \langle 3, 9, -2\rangle</m>. A line normal
-to the plane has <m>\vec n</m> as its direction vector, so through
+normal vector <m>\mathbf n = \langle 3, 9, -2\rangle</m>. A line normal
+to the plane has <m>\mathbf n</m> as its direction vector, so through
 <m>(2,1,1)</m>,
 <md>
 x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
@@ -649,22 +649,22 @@ Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
 Write <m>Q = (-2,2,-1)</m> and let
 <m>P(t) = (4+t,\ -1-2t,\ 5+t)</m> be the general point of <m>L</m>. The
 direction vector of the line is
-<m>\vec d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
+<m>\mathbf d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
 </p>
 
 <p>
 The closest point is the foot of the perpendicular from <m>Q</m>, so we
-want the value of <m>t</m> for which <m>\vec{QP}</m> is orthogonal to
-<m>\vec d</m>. First,
+want the value of <m>t</m> for which <m>\overrightarrow{QP}</m> is orthogonal to
+<m>\mathbf d</m>. First,
 <md>
-<mrow>\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+<mrow>\overrightarrow{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
 \right\rangle</mrow>
 <mrow>\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .</mrow>
 </md>
 </p>
 
 <p>
-Now impose <m>\vec{QP}\cdot\vec d = 0</m>:
+Now impose <m>\overrightarrow{QP}\cdot\mathbf d = 0</m>:
 <md>
 <mrow>(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0</mrow>
 <mrow>6 + t + 6 + 4t + 6 + t \amp = 0</mrow>
@@ -680,14 +680,14 @@ closest point
 P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
 </md>
 As a check, at <m>t=-3</m> we get
-<m>\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
+<m>\overrightarrow{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
 <md>
-\vec{QP}\cdot\vec d
+\overrightarrow{QP}\cdot\mathbf d
  = \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
  = 3 - 6 + 3 = 0 ,
 </md>
 as required. The distance from <m>Q</m> to the line is
-<m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
+<m>\|\overrightarrow{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
 </p>
 </solution>
 </exercise>

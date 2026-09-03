@@ -76,7 +76,7 @@ and collecting terms,
 This is the equation of a plane. Its normal vector is
 <m>\langle 14, -6, -10\rangle = 2\langle 7, -3, -5\rangle</m>, which
 is parallel to
-<m>\vec{AB} = \langle 6-(-1),\, 2-5,\, -2-3\rangle
+<m>\overrightarrow{AB} = \langle 6-(-1),\, 2-5,\, -2-3\rangle
 = \langle 7, -3, -5\rangle</m>. Moreover, the midpoint of
 <m>\overline{AB}</m>,
 <md>
@@ -87,7 +87,7 @@ satisfies the equation, since
 <m>14\left(\frac52\right) - 6\left(\frac72\right)
 - 10\left(\frac12\right) = 35 - 21 - 5 = 9</m>. Hence the set is the
 plane that passes through the midpoint of <m>\overline{AB}</m> and is
-orthogonal to <m>\vec{AB}</m>, i.e. the <term>perpendicular bisector
+orthogonal to <m>\overrightarrow{AB}</m>, i.e. the <term>perpendicular bisector
 plane</term> of the segment <m>\overline{AB}</m>. See
 <xref ref="fig-rw22-bisector"/>.
 </p>
@@ -99,7 +99,7 @@ plane</term> of the segment <m>\overline{AB}</m>. See
 <caption>
 The set of points equidistant from <m>A</m> and <m>B</m> is the plane
 through the midpoint <m>C</m> of <m>\overline{AB}</m> perpendicular to
-<m>\vec{AB}</m>.
+<m>\overrightarrow{AB}</m>.
 </caption>
 <image width="58%">
 <description>
@@ -422,17 +422,17 @@ Write each combination of vectors as a single vector. See
 <ol marker="A.">
 <li>
 <p>
-<m>\vec{PQ} + \vec{QR}</m>
+<m>\overrightarrow{PQ} + \overrightarrow{QR}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec{QS} - \vec{PS}</m>
+<m>\overrightarrow{QS} - \overrightarrow{PS}</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec{RS} + \vec{SP} + \vec{PQ}</m>
+<m>\overrightarrow{RS} + \overrightarrow{SP} + \overrightarrow{PQ}</m>
 </p>
 </li>
 </ol>
@@ -495,18 +495,18 @@ The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
 <ol marker="A.">
 <li>
 <p>
-By the triangle law, placing <m>\vec{QR}</m> at the tip of
-<m>\vec{PQ}</m>,
+By the triangle law, placing <m>\overrightarrow{QR}</m> at the tip of
+<m>\overrightarrow{PQ}</m>,
 <md>
-\vec{PQ} + \vec{QR} = \vec{PR}.
+\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR}.
 </md>
 </p>
 </li>
 <li>
 <p>
-Since <m>-\vec{PS} = \vec{SP}</m>,
+Since <m>-\overrightarrow{PS} = \overrightarrow{SP}</m>,
 <md>
-\vec{QS} - \vec{PS} = \vec{QS} + \vec{SP} = \vec{QP}.
+\overrightarrow{QS} - \overrightarrow{PS} = \overrightarrow{QS} + \overrightarrow{SP} = \overrightarrow{QP}.
 </md>
 </p>
 </li>
@@ -514,7 +514,7 @@ Since <m>-\vec{PS} = \vec{SP}</m>,
 <p>
 Chaining the three vectors tip to tail,
 <md>
-\vec{RS} + \vec{SP} + \vec{PQ} = \vec{RQ}.
+\overrightarrow{RS} + \overrightarrow{SP} + \overrightarrow{PQ} = \overrightarrow{RQ}.
 </md>
 </p>
 </li>
@@ -550,10 +550,10 @@ Multiplying by <m>-3</m> reverses the direction and gives length
 <exercise xml:id="m1-2">
 <statement>
 <p>
-Let <m>\vec v</m> be the vector that goes from the point
+Let <m>\mathbf v</m> be the vector that goes from the point
 <m>\left(5,-4,\sqrt3\right)</m> to the point <m>(3,-1,0)</m>. Find a
 vector of length <m>\tfrac13</m> that points in the same direction as
-<m>\vec v</m>.
+<m>\mathbf v</m>.
 </p>
 </statement>
 <solution>
@@ -561,7 +561,7 @@ vector of length <m>\tfrac13</m> that points in the same direction as
 The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
 by subtracting the tail from the head:
 <md>
-\vec v = \vec{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
+\mathbf v = \overrightarrow{PQ} = \left\langle 3-5,\ -1-(-4),\ 0-\sqrt3
 \right\rangle = \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
 </md>
 </p>
@@ -569,15 +569,15 @@ by subtracting the tail from the head:
 <p>
 Its length is
 <md>
-\|\vec v\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
+\|\mathbf v\| = \sqrt{(-2)^2 + 3^2 + \left(-\sqrt3\right)^2}
            = \sqrt{4+9+3} = \sqrt{16} = 4 .
 </md>
 </p>
 
 <p>
-The unit vector in the direction of <m>\vec v</m> is therefore
+The unit vector in the direction of <m>\mathbf v</m> is therefore
 <md>
-\hat u = \frac{\vec v}{\|\vec v\|}
+\hat u = \frac{\mathbf v}{\|\mathbf v\|}
        = \frac14 \left\langle -2,\ 3,\ -\sqrt3 \right\rangle .
 </md>
 Scaling by <m>\tfrac13</m> gives a vector of length <m>\tfrac13</m>
@@ -629,16 +629,16 @@ sides is given by the <em>same</em> vector, since equal vectors have both
 the same direction and the same length. Along the sides <m>AB</m> and
 <m>DC</m>,
 <md>
-<mrow>\vec{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
+<mrow>\overrightarrow{AB} \amp = \langle 4-1,\; 3-2,\; 3-5 \rangle
 = \langle 3,\; 1,\; -2 \rangle,</mrow>
-<mrow>\vec{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
+<mrow>\overrightarrow{DC} \amp = \langle 6-3,\; 7-6,\; 4-6 \rangle
 = \langle 3,\; 1,\; -2 \rangle.</mrow>
 </md>
-Since <m>\vec{AB} = \vec{DC}</m>, these two sides are parallel and have
+Since <m>\overrightarrow{AB} = \overrightarrow{DC}</m>, these two sides are parallel and have
 equal length, so <m>ABCD</m> is a parallelogram. The other pair of sides
 matches as well:
 <md>
-\vec{AD} = \langle 2,\; 4,\; 1 \rangle = \vec{BC}.
+\overrightarrow{AD} = \langle 2,\; 4,\; 1 \rangle = \overrightarrow{BC}.
 </md>
 See <xref ref="fig-vec-parallelogram-space"/>.
 </p>
@@ -647,18 +647,18 @@ See <xref ref="fig-vec-parallelogram-space"/>.
 <p>
 The diagonals of a parallelogram bisect each other, so <m>M</m> is the
 midpoint of <m>AC</m>. Using position vectors and
-<m>\vec{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
+<m>\overrightarrow{AC} = \langle 5,\; 5,\; -1 \rangle</m>,
 <md>
-<mrow>\vec{OM} \amp = \vec{OA} + \tfrac12 \vec{AC}
+<mrow>\overrightarrow{OM} \amp = \overrightarrow{OA} + \tfrac12 \overrightarrow{AC}
 = \langle 1,\; 2,\; 5 \rangle
 + \tfrac12\langle 5,\; 5,\; -1 \rangle</mrow>
 <mrow>\amp = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92
 \right\rangle.</mrow>
 </md>
 Travelling along the other diagonal instead, with
-<m>\vec{BD} = \langle -1,\; 3,\; 3\rangle</m>,
+<m>\overrightarrow{BD} = \langle -1,\; 3,\; 3\rangle</m>,
 <md>
-\vec{OB} + \tfrac12 \vec{BD}
+\overrightarrow{OB} + \tfrac12 \overrightarrow{BD}
 = \langle 4,\; 3,\; 3 \rangle + \tfrac12\langle -1,\; 3,\; 3 \rangle
 = \left\langle \tfrac72,\; \tfrac92,\; \tfrac92 \right\rangle,
 </md>
@@ -669,11 +669,11 @@ the same point, which confirms both the answer and part A. Hence
 <li>
 <p>
 Opposite sides have equal length, so the perimeter is
-<m>2\left(\left\|\vec{AB}\right\| + \left\|\vec{AD}\right\|\right)</m>, where
+<m>2\left(\left\|\overrightarrow{AB}\right\| + \left\|\overrightarrow{AD}\right\|\right)</m>, where
 <md>
-<mrow>\left\|\vec{AB}\right\| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
+<mrow>\left\|\overrightarrow{AB}\right\| \amp = \sqrt{3^2 + 1^2 + (-2)^2}
 = \sqrt{14},</mrow>
-<mrow>\left\|\vec{AD}\right\| \amp = \sqrt{2^2 + 4^2 + 1^2}
+<mrow>\left\|\overrightarrow{AD}\right\| \amp = \sqrt{2^2 + 4^2 + 1^2}
 = \sqrt{21}.</mrow>
 </md>
 The perimeter is therefore
@@ -687,8 +687,8 @@ The perimeter is therefore
 <figure xml:id="fig-vec-parallelogram-space">
 <caption>
 The parallelogram <m>ABCD</m>, with
-<m>\vec{AB} = \vec{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
-<m>\vec{AD} = \vec{BC} = \langle 2,4,1\rangle</m> in magenta. The
+<m>\overrightarrow{AB} = \overrightarrow{DC} = \langle 3,1,-2\rangle</m> drawn in blue and
+<m>\overrightarrow{AD} = \overrightarrow{BC} = \langle 2,4,1\rangle</m> in magenta. The
 diagonals <m>AC</m> and <m>BD</m> cross at their common midpoint
 <m>M\left(\frac72,\frac92,\frac92\right)</m>.
 </caption>
@@ -751,27 +751,27 @@ orthogonal to <m>\mathbf v</m>.
 </statement>
 <solution>
 <p>
-We have <m>\vec u \cdot \vec v = 3</m> and
-<m>\|\vec v\| = \sqrt{1+1} = \sqrt2</m>. The component of
-<m>\vec u</m> parallel to <m>\vec v</m> is
+We have <m>\mathbf u \cdot \mathbf v = 3</m> and
+<m>\|\mathbf v\| = \sqrt{1+1} = \sqrt2</m>. The component of
+<m>\mathbf u</m> parallel to <m>\mathbf v</m> is
 <md>
-\vec u_{\parallel}
-= \operatorname{proj}_{\vec v} \vec u
-= \left(\frac{\vec u \cdot \vec v}{\|\vec v\|^2}\right)\vec v
+\mathbf u_{\parallel}
+= \operatorname{proj}_{\mathbf v} \mathbf u
+= \left(\frac{\mathbf u \cdot \mathbf v}{\|\mathbf v\|^2}\right)\mathbf v
 = \frac32\,(\mathbf i + \mathbf j)
 = \frac32\,\mathbf i + \frac32\,\mathbf j,
 </md>
-and the component orthogonal to <m>\vec v</m> is
+and the component orthogonal to <m>\mathbf v</m> is
 <md>
-\vec u_{\perp}
-= \vec u - \vec u_{\parallel}
+\mathbf u_{\perp}
+= \mathbf u - \mathbf u_{\parallel}
 = \left(3\,\mathbf j + 4\,\mathbf k\right)
 - \left(\frac32\,\mathbf i + \frac32\,\mathbf j\right)
 = -\frac32\,\mathbf i + \frac32\,\mathbf j + 4\,\mathbf k.
 </md>
-Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
-<m>\vec u_{\perp}</m> is orthogonal to <m>\vec v</m>. Note that
-<m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
+Here <m>\mathbf u_{\parallel}</m> is parallel to <m>\mathbf v</m> and
+<m>\mathbf u_{\perp}</m> is orthogonal to <m>\mathbf v</m>. Note that
+<m>\mathbf u_{\parallel} + \mathbf u_{\perp} = \mathbf u</m>.
 </p>
 </solution>
 </exercise>
@@ -784,20 +784,20 @@ parallel, or neither.
 <ol marker="A.">
 <li>
 <p>
-<m>\vec u_1 = -3\,\mathbf i + 9\,\mathbf j + 6\,\mathbf k</m> and
-<m>\vec u_2 = 4\,\mathbf i - 12\,\mathbf j - 8\,\mathbf k</m>
+<m>\mathbf u_1 = -3\,\mathbf i + 9\,\mathbf j + 6\,\mathbf k</m> and
+<m>\mathbf u_2 = 4\,\mathbf i - 12\,\mathbf j - 8\,\mathbf k</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec v_1 = \mathbf i + \mathbf j - 2\,\mathbf k</m> and
-<m>\vec v_2 = \mathbf i + \mathbf j + \mathbf k</m>
+<m>\mathbf v_1 = \mathbf i + \mathbf j - 2\,\mathbf k</m> and
+<m>\mathbf v_2 = \mathbf i + \mathbf j + \mathbf k</m>
 </p>
 </li>
 <li>
 <p>
-<m>\vec w_1 = a\,\mathbf i + b\,\mathbf j</m> and
-<m>\vec w_2 = c\,\mathbf k</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
+<m>\mathbf w_1 = a\,\mathbf i + b\,\mathbf j</m> and
+<m>\mathbf w_2 = c\,\mathbf k</m>, where <m>a</m>, <m>b</m>, and <m>c</m>
 are non-zero real numbers.
 </p>
 </li>
@@ -809,7 +809,7 @@ are non-zero real numbers.
 <ol marker="A.">
 <li>
 <p>
-<term>Parallel</term>, since <m>\vec u_2 = -\frac43\,\vec u_1</m>:
+<term>Parallel</term>, since <m>\mathbf u_2 = -\frac43\,\mathbf u_1</m>:
 indeed
 <m>-\frac43\langle -3, 9, 6\rangle = \langle 4, -12, -8\rangle</m>.
 (Two vectors are parallel exactly when one is a scalar multiple of the
@@ -819,16 +819,16 @@ other.)
 <li>
 <p>
 <term>Orthogonal</term>, since
-<m>\vec v_1 \cdot \vec v_2 = 1 + 1 - 2 = 0</m>.
+<m>\mathbf v_1 \cdot \mathbf v_2 = 1 + 1 - 2 = 0</m>.
 </p>
 </li>
 <li>
 <p>
 <term>Orthogonal</term>, since
-<m>\vec w_1 \cdot \vec w_2
+<m>\mathbf w_1 \cdot \mathbf w_2
 = \langle a, b, 0\rangle \cdot \langle 0, 0, c\rangle = 0</m>. They
-are not parallel, because <m>\vec w_2</m> has a non-zero
-<m>\mathbf k</m> component while <m>\vec w_1</m> does not.
+are not parallel, because <m>\mathbf w_2</m> has a non-zero
+<m>\mathbf k</m> component while <m>\mathbf w_1</m> does not.
 </p>
 </li>
 </ol>
@@ -861,21 +861,21 @@ Find the velocity vector of the wind in the direction of the dash.
 </statement>
 <solution>
 <p>
-Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
-and <m>\vec v = \langle 5, 2\rangle</m> the wind velocity. Then
+Let <m>\mathbf d = \langle 2, 6\rangle</m> be the direction of the dash
+and <m>\mathbf v = \langle 5, 2\rangle</m> the wind velocity. Then
 <md>
-\vec v \cdot \vec d = 10 + 12 = 22,
+\mathbf v \cdot \mathbf d = 10 + 12 = 22,
 \qquad
-\|\vec d\| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
+\|\mathbf d\| = \sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}.
 </md>
 <ol marker="A.">
 <li>
 <p>
 The wind speed measured in the direction of the dash is the length of
-the projection of <m>\vec v</m> onto <m>\vec d</m>:
+the projection of <m>\mathbf v</m> onto <m>\mathbf d</m>:
 <md>
-\left\|\operatorname{proj}_{\vec d}\vec v\right\|
-= \frac{\vec v \cdot \vec d}{\|\vec d\|}
+\left\|\operatorname{proj}_{\mathbf d}\mathbf v\right\|
+= \frac{\mathbf v \cdot \mathbf d}{\|\mathbf d\|}
 = \frac{22}{2\sqrt{10}}
 = \frac{11}{\sqrt{10}} \approx 3.48 \text{ km/hr}.
 </md>
@@ -888,8 +888,8 @@ Since <m>3.48 \lt 5</m>, the wind is legal and the race results will
 The velocity vector of the wind in the direction of the dash is the
 vector projection
 <md>
-<mrow>\operatorname{proj}_{\vec d}\vec v
-\amp = \left(\frac{\vec v \cdot \vec d}{\|\vec d\|^2}\right)\vec d
+<mrow>\operatorname{proj}_{\mathbf d}\mathbf v
+\amp = \left(\frac{\mathbf v \cdot \mathbf d}{\|\mathbf d\|^2}\right)\mathbf d
 = \frac{22}{40}\langle 2, 6\rangle</mrow>
 <mrow>\amp = \left\langle \frac{11}{10}, \frac{33}{10}\right\rangle
 = 1.1\,\mathbf i + 3.3\,\mathbf j \text{ km/hr}.</mrow>

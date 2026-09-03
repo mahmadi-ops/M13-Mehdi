@@ -1,6 +1,6 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-rev-sin-approx-figure" speech2="The sine curve, dashed blue, and the cubic x minus x cubed over six, solid vermillion, plotted together. Two dashed gray vertical lines at x equals plus and minus zero point five five six mark the interval on which the two curves are visually indistinguishable; outside it the cubic pulls away from the sine curve.">
+    <annotation id="prefigure-rev-sin-approx-figure" speech2="The sine curve, dashed blue, and the cubic x minus x cubed over six, solid vermillion, plotted together. Two dashed gray vertical lines at x equals plus and minus zero point eight six three mark the interval on which the two curves are visually indistinguishable; outside it the cubic pulls away from the sine curve.">
       <grouped>prefigure-rev-sin-approx-figure</grouped>
       <position>1</position>
       <children>
@@ -61,14 +61,14 @@
         <grouped>prefigure-rev-sin-approx-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-rev-sin-approx-sa-left" speech2="The left endpoint of the interval, x equals negative zero point five five six.">
+    <annotation id="prefigure-rev-sin-approx-sa-left" speech2="The left endpoint of the interval, x equals negative zero point eight six three.">
       <active>prefigure-rev-sin-approx-sa-left</active>
       <position>4</position>
       <parents>
         <grouped>prefigure-rev-sin-approx-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-rev-sin-approx-sa-right" speech2="The right endpoint of the interval, x equals zero point five five six. Inside the interval the error is at most four thousandths.">
+    <annotation id="prefigure-rev-sin-approx-sa-right" speech2="The right endpoint of the interval, x equals zero point eight six three. Inside the interval the error is at most four thousandths.">
       <active>prefigure-rev-sin-approx-sa-right</active>
       <position>5</position>
       <parents>

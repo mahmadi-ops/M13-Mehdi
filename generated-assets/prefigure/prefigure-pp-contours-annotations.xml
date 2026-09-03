@@ -45,21 +45,21 @@
         <grouped>prefigure-pp-contours-grid-axes</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-pp-contours-ct-P" speech2="The point P, at the peak of the f equals twelve level curve, where the level curve is horizontal.">
+    <annotation id="prefigure-pp-contours-ct-P" speech2="The point P, on the f equals twelve level curve at its highest point, where that curve is horizontal.">
       <active>prefigure-pp-contours-ct-P</active>
       <position>2</position>
       <parents>
         <grouped>prefigure-pp-contours-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-pp-contours-ct-Q" speech2="The point Q, in the region at the lower right where the level curves are packed closely together.">
+    <annotation id="prefigure-pp-contours-ct-Q" speech2="The point Q, at the lower right, exactly midway between the f equals two and f equals four level curves, which are only about one quarter of a unit apart.">
       <active>prefigure-pp-contours-ct-Q</active>
       <position>3</position>
       <parents>
         <grouped>prefigure-pp-contours-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-pp-contours-ct-R" speech2="The point R, at the upper right where the level curves are far apart.">
+    <annotation id="prefigure-pp-contours-ct-R" speech2="The point R, at the upper right, exactly midway between the f equals ten and f equals twelve level curves, which are about one unit apart.">
       <active>prefigure-pp-contours-ct-R</active>
       <position>4</position>
       <parents>
