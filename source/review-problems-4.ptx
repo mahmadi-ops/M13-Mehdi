@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Review Problems #4.
+
+  The even-numbered problems of the old worksheet "Exercises for Extreme
+  Values and Saddle Points" (rm2-ex-1, rs19-8, rw21-9 and rw17-7), which
+  lived inline in exercises.ptx, followed by the even-numbered problems of
+  the old worksheet "Exercises for Lagrange Multipliers" (exer-xy-on-circle,
+  rm2-lm-1, rw23-5, rw22-5 and pp-38), which lived in lagrange_exercise.ptx.
+  The odd-numbered problems of both became Assignment 10
+  (assignment-10-extreme-values-lagrange.ptx).
+
+  rs-cardsort-critical ("Classify the Critical Points") closes the file.  It
+  came from the dissolved Interactive Problem Set and sat in
+  review-problems-3.ptx until Assignment 10 gave the second derivative test
+  an assignment of its own.  It is a DEV-schema element, so validate this
+  file with the CLI's dev schema option; the stable schema reports false
+  positives on it.  See CLAUDE.md for which markup triggers which question
+  type.
+-->
+<worksheet xml:id="worksheet-review-problems-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Review Problems #4</title>
+
+<introduction>
+<p>
+These are the problems on extreme values and Lagrange multipliers that were
+not assigned in Assignment 10, collected here for review. They are not
+assigned, but they are fair game on an exam. If you would like to review the
+material first, see
+<xref ref="section-extreme-values" text="title"/> and
+<xref ref="section-lagrange-multipliers" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rm2-ex-1">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If <m>f(x,y)</m> has two local maxima, then it must have a local
+minimum too.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
+</statement>
+<feedback>
+<p>
+This is true for single-variable functions but no
+longer holds in two dimensions. For example, the function
+<m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>, shown in
+<xref ref="fig-rm2-two-maxima"/>, has two local maxima at
+<m>\left(\pm\frac{1}{\sqrt2}, 0\right)</m> with a saddle point at the
+origin lying between them, and no local minimum.
+</p>
+
+<figure xml:id="fig-rm2-two-maxima">
+<caption>
+The graph of <m>f(x,y) = -x^4 + x^2 - \frac12 y^2</m>: two local
+maxima with a saddle point between them, and no local minimum.
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional surface with two rounded peaks of equal height,
+one on the left and one on the right, separated by a saddle shaped
+dip in the middle. Away from the peaks the surface falls off in every
+direction, so there is no lowest point.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}
+\begin{axis}[
+  width=10.5cm, height=7.5cm,
+  view={-40}{28},
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none,
+  clip=false,
+]
+\addplot3[surf, shader=flat, fill=gray!45, draw=gray!60,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.15:1.15, y domain=-1.05:1.05,
+          samples=17, samples y=13]
+  {-x^4 + x^2 - 0.5*y^2};
+% the two maxima
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(-0.7071,0,0.25) (0.7071,0,0.25)};
+% the saddle point
+\addplot3[only marks, mark=*, mark size=1.7, color=blue!60!black]
+  coordinates {(0,0,0)};
+\node[above, purple!70!black] at (axis cs:-0.7071,0,0.30) {max};
+\node[above, purple!70!black] at (axis cs:0.7071,0,0.30) {max};
+\node[above right, blue!60!black] at (axis cs:0,0,0.02) {saddle};
+\end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</feedback>
+</exercise>
+
+<exercise xml:id="rs19-8">
+<statement>
+<p>
+Let <m>f(x,y) = x^2 - y^2 - 2x + 4y + 6</m>. Find all the critical
+points and classify them as local maxima, local minima, and saddle
+points.
+</p>
+</statement>
+<solution>
+<p>
+The first and second partial derivatives are
+<md>
+<mrow>f_x \amp = 2x - 2, \amp f_{xx} \amp = 2,
+\amp f_{xy} \amp = f_{yx} = 0,</mrow>
+<mrow>f_y \amp = -2y + 4, \amp f_{yy} \amp = -2.</mrow>
+</md>
+Setting <m>f_x = 0</m> gives <m>x = 1</m> and <m>f_y = 0</m> gives
+<m>y = 2</m>, so the only critical point is <m>(1,2)</m>. The Hessian
+is
+<md>
+H(x,y) =
+\begin{vmatrix}
+f_{xx} \amp f_{xy} \\
+f_{xy} \amp f_{yy}
+\end{vmatrix}
+=
+\begin{vmatrix}
+2 \amp 0 \\
+0 \amp -2
+\end{vmatrix}
+= -4 \lt 0,
+</md>
+so <m>(1,2)</m> is a saddle point since the Hessian is negative.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-9">
+<statement>
+<p>
+Find the absolute maximum and absolute minimum of
+<m>f(x,y) = 2 + xy - 2x - \frac14 y^2</m> in the closed triangular
+region with vertices given by <m>(0,0)</m>, <m>(1,0)</m>, and
+<m>(0,2)</m>.
+</p>
+</statement>
+<solution>
+<p>
+<em>Critical points:</em>
+<md>
+f_x = y - 2 = 0 \;\Rightarrow\; y = 2,
+\qquad
+f_y = x - \frac{y}{2} = 0 \;\Rightarrow\; x = 1,
+</md>
+so the only critical point is <m>(1,2)</m>. Note that this point is
+NOT in the closed region <m>R</m>, so we only need to check the
+boundary.
+</p>
+
+<p>
+<em>The boundary:</em> we check the three sides of the triangle.
+<ul>
+<li>
+<p>
+<m>L_1</m>: <m>x = 0</m>, <m>0 \le y \le 2</m>. Here
+<m>f(0,y) = 2 - \frac{y^2}{4}</m>, with maximum <m>2</m> at
+<m>(0,0)</m> and minimum <m>1</m> at <m>(0,2)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>L_2</m>: <m>y = 0</m>, <m>0 \le x \le 1</m>. Here
+<m>f(x,0) = 2 - 2x</m>, with maximum <m>2</m> at <m>(0,0)</m> and
+minimum <m>0</m> at <m>(1,0)</m>.
+</p>
+</li>
+<li>
+<p>
+<m>L_3</m>: <m>y = -2x + 2</m>, <m>0 \le x \le 1</m>. Here
+<md>
+g(x) = f(x, -2x+2) = 2 - 2x^2 - (x-1)^2 = 1 - 3x^2 + 2x,
+</md>
+and <m>g'(x) = -6x + 2 = 0</m> gives <m>x = \frac13</m>,
+<m>y = \frac43</m>, with
+<m>f\left(\frac13, \frac43\right)
+= 2 + \frac49 - \frac23 - \frac49 = \frac43</m>. The endpoints of
+<m>L_3</m> give the previously found values <m>1</m> and <m>0</m>.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+Comparing all the values, the absolute maximum of <m>f</m> is
+<m>2</m>, attained at <m>(0,0)</m>, and the absolute minimum is
+<m>0</m>, attained at <m>(1,0)</m>. See
+<xref ref="fig-rw21-triangle"/>.
+</p>
+
+<figure xml:id="fig-rw21-triangle">
+<caption>
+The triangular region <m>R</m> with vertices <m>(0,0)</m>,
+<m>(1,0)</m>, and <m>(0,2)</m>. The critical point <m>(1,2)</m> lies
+outside <m>R</m>; the absolute maximum <m>2</m> occurs at
+<m>(0,0)</m> and the absolute minimum <m>0</m> at <m>(1,0)</m>.
+</caption>
+<image width="56%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw21-triangle">
+<diagram dimensions="(300,280)" margins="12">
+<coordinates bbox="(-1.6,-0.7,2.6,2.7)">
+<grid-axes xlabel="x" ylabel="y"/>
+<polygon at="tr-region" points="((0,0),(1,0),(0,2))"
+         fill="#56B4E9" fill-opacity="0.35"
+         stroke="#0072B2" thickness="3"/>
+<point at="tr-max" p="(0,0)" fill="#D55E00"/>
+<point at="tr-min" p="(1,0)" fill="#009E73"/>
+<point at="tr-crit" p="(1,2)" fill="#8B1A4A"/>
+<label at="tr-max-lab" anchor="(-0.1,-0.15)" alignment="sw" color="#D55E00">
+<m>(0,0),\ f=2</m>
+</label>
+<label at="tr-min-lab" anchor="(1.1,-0.15)" alignment="se" color="#009E73">
+<m>(1,0),\ f=0</m>
+</label>
+<label at="tr-crit-lab" anchor="(1.08,2.1)" alignment="ne" color="#8B1A4A">
+<m>(1,2)\notin R</m>
+</label>
+<label at="tr-R-lab" anchor="(0.28,0.55)" alignment="ne" color="#0072B2">
+<m>R</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A light blue right triangle with vertices at the origin, one comma zero, and zero comma two. The vertex at the origin is marked in vermillion as the absolute maximum, f equals two; the vertex at one comma zero is marked in green as the absolute minimum, f equals zero. A dark red point at one comma two, outside the triangle, marks the critical point that does not belong to the region.">
+  <annotation ref="tr-region" text="The closed triangular region R."/>
+  <annotation ref="tr-max" text="The absolute maximum at the origin, where f equals two."/>
+  <annotation ref="tr-min" text="The absolute minimum at one comma zero, where f equals zero."/>
+  <annotation ref="tr-crit" text="The critical point one comma two, which lies outside the region."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-7">
+<statement>
+<p>
+The porosity of the soil beneath an elliptical section of a field,
+<m>x^2 + 4y^2 \le 25</m>, is given by
+<md>
+f(x,y) = 2x^2 - 9x + 2y^2 + 20.
+</md>
+Find the <m>(x,y)</m> location(s) in this section of the field where
+water will drain the fastest and slowest, i.e. the locations where
+porosity is an absolute maximum or absolute minimum.
+</p>
+</statement>
+<solution>
+<p>
+The region is closed and bounded and <m>f</m> is a polynomial, hence
+continuous, so by the Extreme Value Theorem absolute extrema exist. We
+check the interior and the boundary.
+</p>
+
+<p>
+<em>Interior critical points:</em>
+<md>
+f_x = 4x - 9 = 0 \;\Rightarrow\; x = \frac94,
+\qquad
+f_y = 4y = 0 \;\Rightarrow\; y = 0.
+</md>
+The point <m>\left(\frac94, 0\right)</m> satisfies
+<m>\left(\frac94\right)^2 = \frac{81}{16} \approx 5.06 \lt 25</m>, so
+it lies inside the region, and
+<md>
+<mrow>f\left(\frac94, 0\right)
+\amp = 2\left(\frac{81}{16}\right) - 9\left(\frac94\right) + 20</mrow>
+<mrow>\amp = \frac{81}{8} - \frac{81}{4} + 20
+= -\frac{81}{8} + 20
+= \frac{79}{8} = 9.875.</mrow>
+</md>
+</p>
+
+<p>
+<em>The boundary:</em> on <m>x^2 + 4y^2 = 25</m> we have
+<m>y^2 = \dfrac{25 - x^2}{4}</m> with <m>-5 \le x \le 5</m>, so
+<md>
+f = 2x^2 - 9x + 2\cdot\frac{25-x^2}{4} + 20
+= \frac32 x^2 - 9x + \frac{65}{2},
+</md>
+a function of the single variable <m>x</m>. Setting its derivative to
+zero,
+<md>
+3x - 9 = 0 \;\Rightarrow\; x = 3
+\;\Rightarrow\; y^2 = \frac{25-9}{4} = 4
+\;\Rightarrow\; y = \pm 2,
+</md>
+with <m>f(3, \pm 2) = \frac{27}{2} - 27 + \frac{65}{2} = 19</m>. At
+the endpoints of the interval,
+<md>
+f(5, 0) = \frac{75}{2} - 45 + \frac{65}{2} = 25,
+\qquad
+f(-5, 0) = \frac{75}{2} + 45 + \frac{65}{2} = 115.
+</md>
+</p>
+
+<p>
+Comparing all the values <m>\left\{\frac{79}{8}, 19, 25, 115\right\}</m>,
+the porosity is an absolute <em>maximum</em> of <m>115</m> at
+<m>(-5, 0)</m> — where water drains the fastest — and an absolute
+<em>minimum</em> of <m>\frac{79}{8}</m> at
+<m>\left(\frac94, 0\right)</m> — where water drains the slowest. See
+<xref ref="fig-rw17-porosity"/>.
+</p>
+
+<figure xml:id="fig-rw17-porosity">
+<caption>
+The elliptical section <m>x^2 + 4y^2 \le 25</m>. The porosity is
+largest at the boundary point <m>(-5,0)</m> and smallest at the
+interior critical point <m>\left(\frac94, 0\right)</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rw17-porosity">
+<diagram dimensions="(360,220)" margins="12">
+<definition>ell(t) = (5*cos(t), 2.5*sin(t))</definition>
+<coordinates bbox="(-6.6,-3.6,6.6,3.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="po-ell" function="ell" domain="(0,6.2832)"
+                  stroke="#0072B2" thickness="3"/>
+<point at="po-max" p="(-5,0)" fill="#D55E00"/>
+<point at="po-min" p="(2.25,0)" fill="#009E73"/>
+<point at="po-b1" p="(3,2)" fill="#7F7F7F"/>
+<point at="po-b2" p="(3,-2)" fill="#7F7F7F"/>
+<label at="po-max-lab" anchor="(-5,0.25)" alignment="n" color="#D55E00">
+<m>(-5,0),\ f=115</m>
+</label>
+<label at="po-min-lab" anchor="(2.25,-0.3)" alignment="s" color="#009E73">
+<m>\left(\frac94,0\right),\ f=\frac{79}{8}</m>
+</label>
+<label at="po-b1-lab" anchor="(2.85,2.2)" alignment="nw" color="#7F7F7F">
+<m>f=19</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wide blue ellipse with semi axes five in x and two point five in y. A vermillion point at negative five comma zero on the left end marks the maximum porosity of one hundred fifteen. A green point inside at nine fourths comma zero marks the minimum porosity of seventy nine eighths. Two gray points on the boundary at three comma plus and minus two are the boundary critical points where f equals nineteen.">
+  <annotation ref="po-ell" text="The boundary ellipse x squared plus four y squared equals twenty five."/>
+  <annotation ref="po-max" text="The absolute maximum of the porosity, at negative five comma zero."/>
+  <annotation ref="po-min" text="The absolute minimum of the porosity, at the interior critical point nine fourths comma zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+    <exercise xml:id="exer-xy-on-circle">
+      <title>A product on a circle</title>
+
+      <statement>
+        <p>
+          Find the maximum and minimum values of the function
+          <m>f(x,y) = 4xy</m> subject to the constraint
+          <m>x^2 + y^2 = 8</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Write the constraint as
+          <me>
+            g(x,y) = x^2 + y^2 - 8 = 0,
+          </me>
+          so that <m>g_x = 2x</m> and <m>g_y = 2y</m>, while
+          <m>f_x = 4y</m> and <m>f_y = 4x</m>.
+          The Lagrange condition <m>\nabla f = \lambda\,\nabla g</m> gives
+          <me>
+            4y = 2\lambda x, \qquad 4x = 2\lambda y.
+          </me>
+        </p>
+
+        <p>
+          Solving each equation for <m>\lambda</m>,
+          <me>
+            \lambda = \frac{2y}{x} = \frac{2x}{y}
+            \qquad\Longrightarrow\qquad
+            x^2 = y^2.
+          </me>
+          Substituting into the constraint <m>x^2 + y^2 - 8 = 0</m> gives
+          <m>2x^2 = 8</m>, so
+          <me>
+            x = \pm 2, \qquad y = \pm 2.
+          </me>
+          Hence there are four extrema:
+          <m>(2,2)</m>, <m>(2,-2)</m>, <m>(-2,2)</m>, <m>(-2,-2)</m>.
+        </p>
+
+        <p>
+          Evaluating <m>f</m> at the four candidates:
+        </p>
+
+        <tabular halign="center">
+          <col width="30%"/>
+          <col width="30%"/>
+          <row header="yes" bottom="minor">
+            <cell><m>(x,y)</m></cell>
+            <cell><m>f(x,y)</m></cell>
+          </row>
+          <row>
+            <cell><m>(2,2)</m></cell>
+            <cell><m>16</m></cell>
+          </row>
+          <row>
+            <cell><m>(-2,-2)</m></cell>
+            <cell><m>16</m></cell>
+          </row>
+          <row>
+            <cell><m>(2,-2)</m></cell>
+            <cell><m>-16</m></cell>
+          </row>
+          <row>
+            <cell><m>(-2,2)</m></cell>
+            <cell><m>-16</m></cell>
+          </row>
+        </tabular>
+
+        <p>
+          The maximum value is <m>16</m>, attained at <m>(2,2)</m> and
+          <m>(-2,-2)</m>; the minimum value is <m>-16</m>, attained at
+          <m>(2,-2)</m> and <m>(-2,2)</m>.
+        </p>
+
+        <p>
+          <em>Geometric interpretation.</em>  A rectangle with corners
+          <m>(\pm x, \pm y)</m> inscribed in the circle <m>x^2+y^2=8</m>
+          has area exactly <m>4xy = f(x,y)</m>.  As the corner
+          <m>(x,y)</m> moves along the circle, we obtain rectangles of
+          different areas.
+        </p>
+
+        <figure xml:id="fig-inscribed-rects">
+          <caption>
+            Some of the possible rectangles inscribed in the circle
+            <m>x^2+y^2=8</m>.  Each has corners <m>(\pm x, \pm y)</m> for a
+            point <m>(x,y)</m> on the circle, and therefore area
+            <m>4xy = f(x,y)</m>.
+          </caption>
+          <image xml:id="img-inscribed-rects" width="55%">
+            <prefigure label="inscribed-rects" xmlns="https://prefigure.org">
+              <diagram dimensions="(400,360)" margins="5">
+                <definition>r = sqrt(8)</definition>
+                <definition>A = (r*cos(pi/9), r*sin(pi/9))</definition>
+                <definition>B = (r*cos(11*pi/36), r*sin(11*pi/36))</definition>
+                <definition>C = (r*cos(7*pi/18), r*sin(7*pi/18))</definition>
+                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
+
+                  <axes at="axes" xlabel="x" ylabel="y"/>
+
+                  <group at="constraint">
+                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
+                            stroke="blue" thickness="3"/>
+                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
+                      <m>x^2+y^2=8</m>
+                    </label>
+                  </group>
+
+                  <group at="candidates">
+                    <polygon at="rect-A" points="(A, (-A[0],A[1]), -A, (A[0],-A[1]))"
+                             closed="yes" stroke="gray" thickness="2" dash="7 4"/>
+                    <polygon at="rect-B" points="(B, (-B[0],B[1]), -B, (B[0],-B[1]))"
+                             closed="yes" stroke="orange" thickness="2" dash="7 4"/>
+                    <polygon at="rect-C" points="(C, (-C[0],C[1]), -C, (C[0],-C[1]))"
+                             closed="yes" stroke="red" thickness="2" dash="7 4"/>
+                    <point at="corner-generic" p="B" fill="orange" alignment="northeast">
+                      <m>(x,y)</m>
+                    </point>
+                  </group>
+
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The circle x squared plus y squared equals 8 with several inscribed rectangles of different proportions">
+                    <annotation ref="constraint"
+                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
+                    <annotation ref="candidates"
+                                text="Three of the possible inscribed rectangles, each with corners plus or minus x comma plus or minus y and area 4 x y">
+                      <annotation ref="rect-A"
+                                  text="A wide and short inscribed rectangle"/>
+                      <annotation ref="rect-B"
+                                  text="An inscribed rectangle of intermediate proportions, with the generic corner x comma y marked on the circle"/>
+                      <annotation ref="rect-C"
+                                  text="A tall and narrow inscribed rectangle"/>
+                    </annotation>
+                  </annotation>
+                </annotations>
+
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          The values of <m>(x,y)</m> that maximize <m>f</m> are exactly the
+          values that maximize the area of the inscribed rectangle.
+        </p>
+
+        <figure xml:id="fig-xy-on-circle">
+          <caption>
+            The optimal solution: the inscribed rectangle with corners
+            <m>(\pm 2, \pm 2)</m>, whose area
+            <m>4xy = f(2,2) = 16</m> is the largest possible.
+          </caption>
+          <image xml:id="img-xy-on-circle" width="55%">
+            <prefigure label="xy-on-circle" xmlns="https://prefigure.org">
+              <diagram dimensions="(400,360)" margins="5">
+                <coordinates bbox="[-4.4,-3.9,4.4,3.9]">
+
+                  <axes at="axes" xlabel="x" ylabel="y"/>
+
+                  <group at="constraint">
+                    <circle at="circle" center="(0,0)" radius="sqrt(8)"
+                            stroke="blue" thickness="3"/>
+                    <label at="circle-label" anchor="(1.1,-2.95)" alignment="southeast">
+                      <m>x^2+y^2=8</m>
+                    </label>
+                  </group>
+
+                  <group at="rectangle">
+                    <polygon at="rect" points="((2,2),(-2,2),(-2,-2),(2,-2))"
+                             closed="yes" stroke="red" thickness="2.5"/>
+                    <label at="area-label" anchor="(0,-1.1)" alignment="center"
+                           clear-background="yes">
+                      <m>\text{Area} = 4xy</m>
+                    </label>
+                  </group>
+
+                  <group at="corners">
+                    <point at="corner-pp" p="(2,2)" fill="red" alignment="northeast">
+                      <m>(2,2)</m>
+                    </point>
+                    <point at="corner-mp" p="(-2,2)" fill="red" alignment="northwest">
+                      <m>(-2,2)</m>
+                    </point>
+                    <point at="corner-mm" p="(-2,-2)" fill="red" alignment="southwest">
+                      <m>(-2,-2)</m>
+                    </point>
+                    <point at="corner-pm" p="(2,-2)" fill="red" alignment="southeast">
+                      <m>(2,-2)</m>
+                    </point>
+                  </group>
+
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The circle x squared plus y squared equals 8 with an inscribed rectangle whose corners are the four constrained extrema">
+                    <annotation ref="constraint"
+                                text="The constraint curve, the circle x squared plus y squared equals 8"/>
+                    <annotation ref="rectangle"
+                                text="The inscribed rectangle with corners plus or minus 2 comma plus or minus 2, whose area is 4 x y"/>
+                    <annotation ref="corners"
+                                text="The four constrained extrema of f">
+                      <annotation ref="corner-pp"
+                                  text="The point 2 comma 2, where f attains its maximum value 16"/>
+                      <annotation ref="corner-mm"
+                                  text="The point minus 2 comma minus 2, where f also attains its maximum value 16"/>
+                      <annotation ref="corner-pm"
+                                  text="The point 2 comma minus 2, where f attains its minimum value minus 16"/>
+                      <annotation ref="corner-mp"
+                                  text="The point minus 2 comma 2, where f also attains its minimum value minus 16"/>
+                    </annotation>
+                  </annotation>
+                </annotations>
+
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </solution>
+    </exercise>
+
+<exercise xml:id="rm2-lm-1">
+<statement>
+<p>
+Consider <m>f(x,y) = xy</m> and <m>x^2 - y = 12</m>. We assume
+<m>y \le 0</m>.
+<ol marker="A.">
+<li>
+<p>
+Why do we need <m>y \le 0</m> here?
+</p>
+</li>
+<li>
+<p>
+Find the extreme values of <m>f</m> subject to the above constraints.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Else a minimum and maximum would not exist, since we could just pick
+<m>y</m> very large and <m>x = \pm\sqrt{y + 12}</m> would also have a
+very large magnitude, resulting in a very large or very negative value
+of <m>f(x,y)</m>.
+</p>
+</li>
+<li>
+<p>
+The constraint describes the portion of the parabola
+<m>y = x^2 - 12</m> in the third and fourth quadrant. This shape is
+closed and bounded so we are guaranteed the existence of global
+maxima and minima. The two boundary points, which occur at
+<m>y = 0</m>, need to be handled separately; this part is not very
+hard, since we immediately see that <m>f</m> has value <m>0</m> on
+them.
+</p>
+<p>
+Now we proceed to find the critical points of <m>f</m> on the
+parabola <m>g(x,y) = x^2 - y - 12 = 0</m>. The system of equations we
+need to solve is obtained from
+<m>\nabla f(x,y) = \langle y, x\rangle</m> and
+<m>\nabla g(x,y) = \langle 2x, -1\rangle</m>. It is
+<md>
+<mrow>y \amp = 2\lambda x</mrow>
+<mrow>x \amp = -\lambda</mrow>
+<mrow>x^2 - y \amp = 12</mrow>
+</md>
+Combining the first two equations we see that <m>y = -2x^2</m>, and
+using the third, <m>3x^2 = 12</m>, so <m>x = \pm 2</m> and
+<m>y = -8</m>. Computing the value of <m>f</m> at these points, we
+see that the global maximum of <m>f</m> is at <m>(-2, -8)</m> with a
+value of <m>16</m>, while the global minimum with value <m>-16</m> is
+at <m>(2, -8)</m>. See <xref ref="fig-rm2-lagrange"/>.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-rm2-lagrange">
+<caption>
+The constraint curve <m>y = x^2 - 12</m> with <m>y \le 0</m>, and the
+level curves <m>xy = 16</m> and <m>xy = -16</m> of <m>f</m>. The
+extrema occur at <m>(-2,-8)</m> and <m>(2,-8)</m>, where the level
+curves are tangent to the parabola.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rm2-lagrange">
+<diagram dimensions="(360,300)" margins="12">
+<definition>par(t) = (t, t^2 - 12)</definition>
+<definition>hypp(t) = (t, 16/t)</definition>
+<definition>hypm(t) = (t, -16/t)</definition>
+<coordinates bbox="(-5.2,-13.5,5.2,1.8)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="lm-par" function="par" domain="(-3.4641,3.4641)"
+                  stroke="#0072B2" thickness="3"/>
+<parametric-curve at="lm-hm" function="hypm" domain="(1.25,5.0)"
+                  stroke="#009E73" dash="6 4" thickness="2"/>
+<parametric-curve at="lm-hp" function="hypp" domain="(-5.0,-1.25)"
+                  stroke="#D55E00" dash="6 4" thickness="2"/>
+<point at="lm-max" p="(-2,-8)" fill="#D55E00"/>
+<point at="lm-min" p="(2,-8)" fill="#009E73"/>
+<label at="lm-par-lab" anchor="(3.0,-11.9)" alignment="w" color="#0072B2">
+<m>y=x^2-12</m>
+</label>
+<label at="lm-max-lab" anchor="(-2.15,-8.2)" alignment="sw" color="#D55E00">
+<m>(-2,-8)</m>
+</label>
+<label at="lm-min-lab" anchor="(2.15,-8.2)" alignment="se" color="#009E73">
+<m>(2,-8)</m>
+</label>
+<label at="lm-hp-lab" anchor="(-4.95,-2.6)" alignment="se" color="#D55E00">
+<m>xy=16</m>
+</label>
+<label at="lm-hm-lab" anchor="(5.0,-2.3)" alignment="sw" color="#009E73">
+<m>xy=-16</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blue parabola y equals x squared minus twelve, drawn for y less than or equal to zero, opens upward with vertex at zero comma negative twelve. A dashed vermillion hyperbola branch x y equals sixteen in the third quadrant touches the parabola at negative two comma negative eight, and a dashed green hyperbola branch x y equals negative sixteen in the fourth quadrant touches it at two comma negative eight.">
+  <annotation ref="lm-par" text="The constraint curve, the portion of the parabola y equals x squared minus twelve with y at most zero."/>
+  <annotation ref="lm-hp" text="The level curve x y equals sixteen, tangent to the parabola at the maximum point negative two comma negative eight."/>
+  <annotation ref="lm-hm" text="The level curve x y equals negative sixteen, tangent to the parabola at the minimum point two comma negative eight."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-5">
+<statement>
+<p>
+Find the point(s) on the surface <m>xyz = 1</m> closest to the origin.
+</p>
+</statement>
+<solution>
+<p>
+The distance of a point from the origin is
+<m>\sqrt{x^2 + y^2 + z^2}</m>, so it suffices to minimize
+<m>f(x,y,z) = x^2 + y^2 + z^2</m> with the constraint
+<m>g(x,y,z) = xyz - 1 = 0</m>. The Lagrange system
+<m>\nabla f = \lambda \nabla g</m> is
+<md>
+\langle 2x, 2y, 2z\rangle
+= \langle \lambda yz, \lambda xz, \lambda xy\rangle.
+</md>
+Multiplying the first equation by <m>x</m> and using
+<m>xyz = 1</m>,
+<md>
+2x = \lambda yz
+\;\Rightarrow\; 2x^2 = \lambda xyz
+\;\overset{xyz=1}{\Rightarrow}\; 2x^2 = \lambda
+\;\Rightarrow\; x^2 = \frac{\lambda}{2},
+</md>
+and similarly <m>y^2 = \dfrac{\lambda}{2}</m> and
+<m>z^2 = \dfrac{\lambda}{2}</m>, hence <m>x^2 = y^2 = z^2</m>.
+</p>
+
+<p>
+Substituting into the constraint,
+<md>
+x^2 y^2 z^2 = 1
+\;\Rightarrow\; x^6 = 1
+\;\Rightarrow\; x^2 = 1.
+</md>
+Since <m>xyz = 1</m>, we know that <m>x</m>, <m>y</m>, and <m>z</m>
+are either all positive or two are negative and the third one is
+positive. Hence, the closest points are
+<md>
+(1,1,1), \quad (1,-1,-1), \quad (-1,1,-1), \quad (-1,-1,1).
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw22-5">
+<statement>
+<p>
+Find the point <m>P(x,y,z)</m> closest to the origin on the plane
+<m>2x + y - z - 5 = 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+The distance from the origin is <m>\sqrt{x^2+y^2+z^2}</m>, so it
+suffices to minimize the function
+<m>f(x,y,z) = x^2 + y^2 + z^2</m> subject to the constraint
+<m>g(x,y,z) = 2x + y - z - 5 = 0</m>. We compute
+<md>
+\nabla f = \langle 2x, 2y, 2z\rangle,
+\qquad
+\nabla g = \langle 2, 1, -1\rangle.
+</md>
+</p>
+
+<p>
+The Lagrange system <m>\nabla f = \lambda \nabla g</m> is
+<md>
+<mrow>2x \amp = 2\lambda \amp \;\Rightarrow\; x \amp = \lambda,</mrow>
+<mrow>2y \amp = \lambda \amp \;\Rightarrow\; y \amp = \frac{\lambda}{2},</mrow>
+<mrow>2z \amp = -\lambda \amp \;\Rightarrow\; z \amp = -\frac{\lambda}{2}.</mrow>
+</md>
+Substituting into the equation of the plane,
+<md>
+2\lambda + \frac{\lambda}{2} + \frac{\lambda}{2} - 5 = 0
+\;\Rightarrow\; 3\lambda = 5
+\;\Rightarrow\; \lambda = \frac53.
+</md>
+Hence the closest point is
+<md>
+P\left(\frac53,\; \frac56,\; -\frac56\right).
+</md>
+</p>
+
+<p>
+(Only one critical point arises, and the distance certainly has a
+minimum on the plane but no maximum, so this point must be the
+minimizer.)
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-38">
+<statement>
+<p>
+Find the minimum value of <m>x + y^2 + z^3</m> along the part of the
+plane <m>x + y + z = 2</m> in the first octant
+(<m>x, y, z \ge 0</m>). The solution found by Lagrange multipliers
+gives the minimum. Use common sense for the maximum value.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>f(x,y,z) = x + y^2 + z^3</m> and
+<m>g(x,y,z) = x + y + z - 2 = 0</m>. Then
+<md>
+\nabla f = \left\langle 1, 2y, 3z^2\right\rangle,
+\qquad
+\nabla g = \langle 1, 1, 1\rangle,
+</md>
+and <m>\nabla f = \lambda \nabla g</m> gives
+<md>
+1 = \lambda, \qquad 2y = \lambda, \qquad 3z^2 = \lambda.
+</md>
+Hence <m>\lambda = 1</m>, <m>y = \frac12</m>, and
+<m>z = \frac{1}{\sqrt3}</m> (taking the positive root, since
+<m>z \ge 0</m>). From the constraint,
+<m>x = 2 - \frac12 - \frac{1}{\sqrt3} = \frac32 - \frac{1}{\sqrt3}</m>,
+which is positive, so the point is in the first octant.
+</p>
+
+<p>
+The minimum value is therefore
+<md>
+<mrow>f \amp = \left(\frac32 - \frac{1}{\sqrt3}\right)
++ \frac14 + \frac{1}{3\sqrt3}</mrow>
+<mrow>\amp = \frac74 - \frac{1}{\sqrt3} + \frac{1}{3\sqrt3}
+= \frac74 - \frac{3}{3\sqrt3} + \frac{1}{3\sqrt3}</mrow>
+<mrow>\amp = \frac74 - \frac{2}{3\sqrt3}
+= \frac74 - \frac23\sqrt{\frac13}.</mrow>
+</md>
+</p>
+
+<p>
+For the maximum, note that the region is a triangle with vertices
+<m>(2,0,0)</m>, <m>(0,2,0)</m>, and <m>(0,0,2)</m>. Since the largest
+power dominates, the largest value should occur at the vertex where
+all the <q>weight</q> is on <m>z</m>. Checking the three vertices,
+<md>
+f(2,0,0) = 2, \qquad f(0,2,0) = 4, \qquad f(0,0,2) = 8,
+</md>
+so the maximum value is <m>8</m>, attained at <m>(0,0,2)</m>.
+</p>
+</solution>
+</exercise>
+
+<!-- ===== From the dissolved Interactive Problem Set
+     (exercises-runestone-samples.ptx), by way of review-problems-3.ptx:
+     the card sort on the second derivative test.  DEV-schema element. ===== -->
+<exercise xml:id="rs-cardsort-critical">
+<title>Classify the Critical Points</title>
+<statement>
+<p>
+The function <m>f(x,y) = x^3 - 3x + y^3 - 3y</m> has four critical points.
+Drag each one into the correct category.
+</p>
+</statement>
+<cardsort>
+<match>
+<premise><m>(1,1)</m></premise>
+<response>Local minimum</response>
+</match>
+<match>
+<premise><m>(-1,-1)</m></premise>
+<response>Local maximum</response>
+</match>
+<match>
+<premise><m>(1,-1)</m></premise>
+<premise><m>(-1,1)</m></premise>
+<response>Saddle point</response>
+</match>
+</cardsort>
+<solution>
+<p>
+From <m>f_x = 3x^2 - 3 = 0</m> and <m>f_y = 3y^2 - 3 = 0</m> we get
+<m>x = \pm 1</m> and <m>y = \pm 1</m>, giving four critical points. Since
+<m>f_{xx} = 6x</m>, <m>f_{yy} = 6y</m> and <m>f_{xy} = 0</m>,
+<md>
+D = f_{xx}f_{yy} - f_{xy}^2 = 36xy .
+</md>
+So <m>D = 36 \gt 0</m> at <m>(1,1)</m> and <m>(-1,-1)</m>, while
+<m>D = -36 \lt 0</m> at <m>(1,-1)</m> and <m>(-1,1)</m> — both saddles.
+Among the two with <m>D \gt 0</m>, the sign of <m>f_{xx}</m> decides:
+<m>f_{xx}(1,1) = 6 \gt 0</m> gives a local minimum, and
+<m>f_{xx}(-1,-1) = -6 \lt 0</m> gives a local maximum.
+</p>
+</solution>
+</exercise>
+
+</worksheet>

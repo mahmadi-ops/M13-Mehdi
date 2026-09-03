@@ -3,6 +3,13 @@
     <!-- directories are relative to the main source PreTeXt file -->
     <source>
         <directories external="../assets" generated="../generated-assets"/>
+        <!-- Selects which @component-marked elements survive assembly. The
+             Assignments and Review Problems chapter (copied from the skeletal
+             book) marks its interactive figures component="web" and their
+             one-paragraph paper stand-ins component="print"; without this
+             switch PreTeXt keeps both, so each page would show the figure and
+             the note saying the figure is only online. -->
+        <version include="web"/>
     </source>
 
     <common>

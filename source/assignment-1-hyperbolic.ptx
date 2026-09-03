@@ -1,45 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Final exam problems on hyperbolic functions
+  Assignment 1: Hyperbolic Functions.
+
+  Built from the problems marked for assignment work in the instructor's
+  markup of the old Chapter 5.  The problems left unmarked went to
+  review-problems-1.ptx.
 -->
-<worksheet xml:id="worksheet-exercises-hyperbolic" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-hyperbolic-functions" text="title"/></title>
+<worksheet xml:id="worksheet-assignment-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 1</title>
 
 <introduction>
 <p>
-A final exam problem on the hyperbolic identities. If you would like to review this topic first, see <xref ref="chapter-hyperbolic-functions" text="title"/>.
+These problems exercise the hyperbolic identities, the derivatives of the
+hyperbolic functions and the inverse hyperbolic functions. If you would like
+to review the material first, see
+<xref ref="chapter-hyperbolic-functions" text="title"/>.
 </p>
 </introduction>
-
-<exercise xml:id="rw23-9-b">
-<title>True or False</title>
-<statement correct="yes">
-<p>
-For any real number <m>x</m>, we have
-<m>\cosh^2(x) + \sinh^2(x) = \cosh(2x)</m>.
-</p>
-</statement>
-<feedback>
-<p>
-First,
-<md xml:id="eq-rw23-cosh2x" number="yes">
-\cosh(2x) = \frac12\left(e^{2x} + e^{-2x}\right).
-</md>
-Second,
-<md>
-<mrow>\cosh^2(x) + \sinh^2(x)
-\amp = \frac14\left(e^x + e^{-x}\right)^2
-+ \frac14\left(e^x - e^{-x}\right)^2</mrow>
-<mrow>\amp = \frac14\left(2e^{2x} + 2e^{-2x}\right)</mrow>
-<mrow xml:id="eq-rw23-sum" number="yes">\amp
-= \frac12\left(e^{2x} + e^{-2x}\right).</mrow>
-</md>
-Comparing <xref ref="eq-rw23-cosh2x"/> and
-<xref ref="eq-rw23-sum"/> gives
-<m>\cosh^2(x) + \sinh^2(x) = \cosh(2x)</m>.
-</p>
-</feedback>
-</exercise>
 
 <exercise xml:id="rw22-1">
 <statement>

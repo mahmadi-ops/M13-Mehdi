@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Assignment 2: Infinite Series and Taylor Series.
+
+  Problems drawn from the old "Exercises for Infinite Series" and
+  "Exercises for Taylor Series and its convergence" worksheets.
+  asgn2-nth-term-test and asgn2-evaluate-sums are the marked parts of the
+  old rev-ser-4 and rev-ser-5; the unmarked parts stayed behind in
+  review-problems-1.ptx.  asgn2-cos-series-sum is part C of the old pp-4,
+  moved here because it is a Taylor series problem.
+-->
+<worksheet xml:id="worksheet-assignment-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Assignment 2</title>
+
+<introduction>
+<p>
+These problems work with sequences, finite sums and geometric series, ask
+whether a series converges and what it sums to, and then use the Maclaurin
+series of the standard functions to recognise a sum. If you would like to
+review the material first, see
+<xref ref="chapter-infinite-series" text="title"/> and
+<xref ref="chapter-taylor-maclaurin" text="title"/>.
+</p>
+</introduction>
+
+<exercise xml:id="rev-ser-10">
+<statement>
+<p>
+The terms of a geometric series
+<m>a + ar + ar^2 + \cdots + ar^{n-1} + \cdots</m> satisfy
+<md>
+a_5 + a_7 = 1500
+\quad\text{and}\quad
+a_{11} + a_{13} = 187500,
+</md>
+where <m>a_n = ar^{n-1}</m> denotes the <m>n</m>th term. Find
+<m>a_1 + a_2 + a_3</m>.
+</p>
+</statement>
+<solution>
+<p>
+Using <m>a_n = ar^{n-1}</m>,
+<md>
+<mrow>a_5 + a_7 \amp = ar^4 + ar^6 = ar^4(1 + r^2) = 1500,</mrow>
+<mrow>a_{11} + a_{13} \amp = ar^{10} + ar^{12} = ar^{10}(1 + r^2)
+= 187500.</mrow>
+</md>
+Dividing the two equations,
+<md>
+\frac{a_{11} + a_{13}}{a_5 + a_7}
+= \frac{ar^{10}(1+r^2)}{ar^{4}(1+r^2)}
+= \frac{187500}{1500}
+\;\Rightarrow\; r^6 = 125 = 5^3
+\;\Rightarrow\; r^2 = 5.
+</md>
+</p>
+
+<p>
+Substituting back,
+<md>
+ar^4(1 + r^2) = 1500
+\;\Rightarrow\; a(25)(1+5) = 1500
+\;\Rightarrow\; a = \frac{1500}{150} = 10.
+</md>
+Since <m>r^2 = 5</m>, we have <m>r = \pm\sqrt5</m>, and therefore
+<md>
+<mrow>a_1 + a_2 + a_3 \amp = a + ar + ar^2 = a(1 + r + r^2)</mrow>
+<mrow>\amp = 10\left(1 \pm \sqrt5 + 5\right)
+= 10\left(6 \pm \sqrt5\right).</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-ser-2">
+<statement>
+<p>
+What is the sum of all multiples of 7 or 11 less than 1000?
+</p>
+</statement>
+<solution>
+<p>
+Note that we need to subtract the multiples of <m>77</m>, since they
+have been added twice:
+<md>
+<mrow>\amp \underbrace{(7 + 14 + 21 + \cdots + 77 + \cdots + 994)}_{\text{multiples of } 7}</mrow>
+<mrow>\amp \quad + \underbrace{(11 + 22 + \cdots + 77 + \cdots + 990)}_{\text{multiples of } 11}</mrow>
+<mrow>\amp \quad - \underbrace{(77 + 154 + \cdots + 924)}_{\text{multiples of } 77}</mrow>
+<mrow>\amp = 7(1 + 2 + 3 + \cdots + 142)
++ 11(1 + 2 + 3 + \cdots + 90)</mrow>
+<mrow>\amp \quad - 77(1 + 2 + \cdots + 12)</mrow>
+</md>
+</p>
+
+<p>
+Using <m>\displaystyle\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</m>:
+<md>
+<mrow>\amp = 7\,\frac{(142)(143)}{2}
++ 11\,\frac{(90)(91)}{2}
+- 77\,\frac{(12)(13)}{2}</mrow>
+<mrow>\amp = 7(71)(143) + 11(45)(91) - 77(6)(13)</mrow>
+<mrow>\amp = (7)(71)(13)(11) + (11)(13)(7)(45) - (7)(11)(6)(13)</mrow>
+<mrow>\amp = (7)(11)(13)(71 + 45 - 6)
+= (7)(11)(13)(110)
+= 110110,</mrow>
+</md>
+where we used <m>143 = (13)(11)</m> and <m>91 = (13)(7)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="asgn2-nth-term-test">
+<statement>
+<p>
+What can we conclude by applying the <m>n</m>th term test in the
+following series?
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{(5n+3)^{2n}}{(7n^2+2)^{n}}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{2\ln(n)}{3n}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+<md>
+<mrow>\lim_{n\to\infty} \frac{(5n+3)^{2n}}{(7n^2+2)^{n}}
+\amp = \lim_{n\to\infty} \left(\frac{(5n+3)^2}{7n^2+2}\right)^{n}</mrow>
+<mrow>\amp = \lim_{n\to\infty}
+\left(\frac{25n^2 + 30n + 9}{7n^2+2}\right)^{n}</mrow>
+<mrow>\amp = \lim_{n\to\infty} \left(\frac{25}{7}\right)^{n} = \infty
+\;\Rightarrow\; \text{the series diverges.}</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+<md>
+<mrow>\lim_{n\to\infty} \frac{2\ln(n)}{3n}
+\amp \;\overset{\text{H}}{=}\;
+\frac23 \lim_{n\to\infty} \frac{1/n}{1} = 0</mrow>
+<mrow>\amp \;\Rightarrow\; \text{the } n\text{th Term Test is inconclusive.}</mrow>
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="asgn2-evaluate-sums">
+<statement>
+<p>
+Evaluate the following sums or show that they diverge.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} e^{-2n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=0}^{\infty} e^{2n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \left(1 + \frac4n\right)^{n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=2}^{\infty} \frac{2}{3^n}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We use partial fractions:
+<md>
+<mrow>\frac{1}{n(n+1)(n+2)}
+\amp = \frac{A}{n} + \frac{B}{n+1} + \frac{C}{n+2}</mrow>
+<mrow>\amp = \frac{A(n+1)(n+2) + Bn(n+2) + Cn(n+1)}{n(n+1)(n+2)}.</mrow>
+</md>
+Setting <m>n = 0</m> gives <m>2A = 1</m>, so <m>A = \frac12</m>;
+setting <m>n = -1</m> gives <m>-B = 1</m>, so <m>B = -1</m>; and
+setting <m>n = -2</m> gives <m>2C = 1</m>, so <m>C = \frac12</m>.
+Hence
+<md>
+<mrow>\amp \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}</mrow>
+<mrow>\amp = \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
++ \frac{1}{n+2}\right)</mrow>
+<mrow>\amp = \frac12 \sum_{n=1}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=1}^{\infty}
+\left(\frac{1}{n+1} - \frac{1}{n+2}\right)</mrow>
+<mrow>\amp = \frac12 \sum_{n=1}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)</mrow>
+<mrow>\amp = \frac12\left(1 - \frac12\right)</mrow>
+<mrow>\amp \qquad
++ \underbrace{\frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)
+- \frac12 \sum_{n=2}^{\infty}
+\left(\frac1n - \frac{1}{n+1}\right)}_{\text{zero}}</mrow>
+<mrow>\amp = \frac14.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+This is a geometric series with <m>a = 1</m> and
+<m>r = \frac{1}{e^2}</m>:
+<md>
+<mrow>\sum_{n=0}^{\infty} e^{-2n}
+\amp = \sum_{n=0}^{\infty} \left(\frac{1}{e^2}\right)^{n}
+= \sum_{n=1}^{\infty} \left(\frac{1}{e^2}\right)^{n-1}</mrow>
+<mrow>\amp = \frac{1}{1 - \frac{1}{e^2}}
+= \frac{e^2}{e^2 - 1}.</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\lim\limits_{n\to\infty} a_n = \lim\limits_{n\to\infty} e^{2n}
+= \infty</m>, so by the <m>n</m>th Term Test the series diverges.
+</p>
+</li>
+<li>
+<p>
+Let <m>L = \lim\limits_{n\to\infty} \left(1 + \frac4n\right)^{n}</m>.
+Then
+<md>
+<mrow>\ln L \amp = \lim_{n\to\infty} n \ln\!\left(1 + \frac4n\right)
+= \lim_{n\to\infty}
+\frac{\ln\!\left(1 + \frac4n\right)}{\frac1n}</mrow>
+<mrow>\amp \;\overset{\text{H}}{=}\;
+\lim_{n\to\infty}
+\frac{\dfrac{-4/n^2}{1 + 4/n}}{-\dfrac{1}{n^2}}
+= \lim_{n\to\infty} \frac{4}{1 + \frac4n} = 4.</mrow>
+</md>
+Hence <m>L = e^4 \ne 0</m>, so by the <m>n</m>th Term Test the series
+diverges.
+</p>
+</li>
+<li>
+<p>
+<md>
+<mrow>\sum_{n=2}^{\infty} \frac{2}{3^n}
+\amp = \sum_{n=2}^{\infty} 2\left(\frac13\right)^{n}</mrow>
+<mrow>\amp = \frac{2}{1-\frac13} - \left(2 + \frac23\right)
+= 3 - \frac83 = \frac13,</mrow>
+</md>
+where the terms for <m>n = 0</m> and <m>n = 1</m> need to be
+subtracted.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-1">
+<statement>
+<p>
+Answer questions A and B below for the following infinite series:
+<md>
+\sum_{k=1}^{\infty} \left(\frac{6}{k^2} - \frac{6}{(k+1)^2}\right).
+</md>
+<ol marker="A.">
+<li>
+<p>
+Does the <m>n</m>th-term test apply? Remember to fully justify your
+answer.
+</p>
+</li>
+<li>
+<p>
+Evaluate the series or show that it diverges.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We compute the limit of the terms:
+<md>
+<mrow>\lim_{n\to\infty} a_n
+\amp = \lim_{n\to\infty} \frac{6}{n^2} - \frac{6}{(n+1)^2}
+= \lim_{n\to\infty} \frac{6(n+1)^2 - 6n^2}{n^2(n+1)^2}</mrow>
+<mrow>\amp = \lim_{n\to\infty} \frac{12n + 6}{n^2(n+1)^2}
+= \lim_{n\to\infty} \frac{12n}{n^4} = 0.</mrow>
+</md>
+Hence the <m>n</m>th-term test does <em>not</em> apply: since the
+limit of the terms is <m>0</m>, the test is inconclusive.
+</p>
+</li>
+<li>
+<p>
+The series telescopes. The partial sum is
+<md>
+<mrow>s_n \amp = \left(\frac{6}{1^2} - \frac{6}{2^2}\right)
++ \left(\frac{6}{2^2} - \frac{6}{3^2}\right)
++ \cdots</mrow>
+<mrow>\amp \quad + \left(\frac{6}{(n-1)^2} - \frac{6}{n^2}\right)
++ \left(\frac{6}{n^2} - \frac{6}{(n+1)^2}\right)</mrow>
+<mrow>\amp = 6 - \frac{6}{(n+1)^2},</mrow>
+</md>
+and therefore
+<md>
+\sum_{k=1}^{\infty} \left(\frac{6}{k^2} - \frac{6}{(k+1)^2}\right)
+= \lim_{n\to\infty} s_n
+= \lim_{n\to\infty} 6 - \frac{6}{(n+1)^2}
+= 6 - 0 = 6.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-4">
+<statement>
+<p>
+Express <m>8.81818181818\ldots</m> as a rational number, i.e. in the
+form <m>\dfrac{p}{q}</m>, where <m>p</m> and <m>q</m> are positive
+integers with no common factors.
+</p>
+</statement>
+<solution>
+<p>
+We write the repeating decimal as a geometric series:
+<md>
+8.81818181818\ldots
+= 8 + \frac{81}{100} + \frac{81}{10000} + \cdots
+= 8 + 81 \sum_{n=1}^{\infty} \left(\frac{1}{100}\right)^{n}.
+</md>
+Using the geometric series with <m>a = \frac{1}{100}</m> and
+<m>r = \frac{1}{100}</m>,
+<md>
+8 + 81\left(\frac{\frac{1}{100}}{1 - \frac{1}{100}}\right)
+= 8 + \frac{81}{99}
+= 8 + \frac{9}{11}
+= \frac{97}{11}.
+</md>
+Hence <m>p = 97</m> and <m>q = 11</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="asgn2-cos-series-sum">
+<statement>
+<p>
+Find the sum of the convergent series
+<m>\displaystyle\sum_{n=0}^{\infty} \frac{(-25)^n}{(2n)!}</m>.
+</p>
+</statement>
+<solution>
+<p>
+Recall <m>\cos x = \displaystyle\sum_{n=0}^{\infty}
+\frac{(-1)^n x^{2n}}{(2n)!}</m>. With <m>x = 5</m>,
+<md>
+<mrow>\cos(5) \amp = \sum_{n=0}^{\infty}
+  \frac{(-1)^n 5^{2n}}{(2n)!}
+= \sum_{n=0}^{\infty} \frac{(-1)^n 25^{n}}{(2n)!}</mrow>
+<mrow>\amp = \sum_{n=0}^{\infty} \frac{(-25)^{n}}{(2n)!},</mrow>
+</md>
+so the sum is <m>\cos(5)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-3">
+<statement>
+<p>
+Find the sum of the series
+<m>\displaystyle\sum_{n=0}^{\infty} \frac{1}{n!}</m>.
+</p>
+</statement>
+<solution>
+<p>
+The Maclaurin series of the exponential function is
+<md>
+e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!},
+\qquad \text{valid for all } x \in \R.
+</md>
+Setting <m>x = 1</m> gives
+<md>
+\sum_{n=0}^{\infty} \frac{1}{n!} = e^{1} = e.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m1-1">
+<statement>
+<p>
+Find the sum of the series
+<md>
+5 + 5^2 + \frac{5^3}{2!} + \frac{5^4}{3!} + \cdots
+  + \frac{5^{n+1}}{n!} + \cdots
+</md>
+</p>
+</statement>
+<solution>
+<p>
+The general term is <m>\dfrac{5^{n+1}}{n!}</m> starting at
+<m>n = 0</m>. Let us check the first few: at <m>n=0</m> we get
+<m>5^1/0! = 5</m>; at <m>n=1</m> we get <m>5^2/1! = 5^2</m>; at
+<m>n = 2</m> we get <m>5^3/2!</m>. These match, so the series is
+<md>
+\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!} .
+</md>
+</p>
+
+<p>
+Now pull out one factor of <m>5</m>, which does not depend on
+<m>n</m>:
+<md>
+\sum_{n=0}^{\infty} \frac{5^{n+1}}{n!}
+ = \sum_{n=0}^{\infty} \frac{5\cdot 5^{n}}{n!}
+ = 5\sum_{n=0}^{\infty} \frac{5^{n}}{n!} .
+</md>
+</p>
+
+<p>
+The remaining series is the Maclaurin series
+<m>\displaystyle e^{x} = \sum_{n=0}^{\infty}\frac{x^n}{n!}</m>
+evaluated at <m>x = 5</m>, which converges for every <m>x</m>.
+Therefore
+<md>
+5 + 5^2 + \frac{5^3}{2!} + \cdots = 5e^5 .
+</md>
+</p>
+</solution>
+</exercise>
+
+</worksheet>

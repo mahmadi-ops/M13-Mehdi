@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Preface of the completed lecture notes. Modelled on the preface of the
+  MATH 14 book (mahmadi-ops/MATH-14, source/introduction.ptx): an opening
+  paragraph, a list of what the web format makes possible, and an
+  accessibility section. Every claim below is about this book, not that one.
+-->
+<preface xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Preface</title>
+
+    <p>
+        This book covers the same mathematics as a traditional printed text
+        for the third quarter of calculus<mdash/>hyperbolic functions,
+        sequences, series and Taylor approximation, vectors and the geometry
+        of three-dimensional space, and the differential calculus of
+        functions of several variables up to Lagrange
+        multipliers<mdash/>but it was written from the start as an
+        interactive, accessible web book rather than a printed page. It grew
+        out of a project at Santa Clara University with two aims: to
+        strengthen conceptual understanding of these ideas through explicit
+        connections to physical phenomena, and to build materials that
+        support diverse learners, including readers who use screen readers
+        or tactile graphics. This preface points out what that makes
+        possible, and what you will find here that a conventional textbook
+        cannot offer.
+    </p>
+
+    <paragraphs>
+        <title>Special features of this book</title>
+
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <alert>Mathematics tied to the physical world.</alert>
+                        The ideas are introduced through the things they
+                        describe: the catenary of a hanging chain and the
+                        Gateway Arch, whispering galleries, the LORAN
+                        navigation system and the orbit of an interstellar
+                        comet, parabolic antennas and the Hubble mirror,
+                        cooling towers, projectile motion and collisions,
+                        the torque on a wrench, the electric field of a
+                        dipole, the isobars around a low-pressure system,
+                        the drainage of a field. The applications are not
+                        decoration at the end of a section; they are where
+                        the mathematics is worked out.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Figures you can move.</alert> More than thirty
+                        figures are live, three-dimensional interactives:
+                        you can slice a quadric surface with your own hands
+                        and watch the cross-sections change, swing a
+                        vertical plane through a surface to see a
+                        directional derivative appear as a slope, tilt a
+                        tangent plane against its surface, or walk a point
+                        along a level curve while a barometer or a
+                        voltmeter reads out what the function is
+                        doing<mdash/>instead of staring at one frozen
+                        perspective drawing.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Ideas that move.</alert> Nearly sixty short
+                        animations run through the book: a curve tracing
+                        itself out as its parameter runs, Taylor polynomials
+                        converging on a function, a plane slicing a cone
+                        into every conic section, a saddle surface being
+                        cut along two directions, a marble finding stable
+                        and unstable equilibria. Each shows a construction
+                        the way an instructor would build it up at the
+                        board.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>A Socratic tutor that will not tell you the
+                        answer.</alert> Every assignment page carries a tutor
+                        button in the corner. It knows the problems on that
+                        page and coaches you the way a good office hour
+                        does<mdash/>with questions and small hints, never
+                        with the answer handed over. It stays docked as you
+                        scroll, so you can read a problem and talk about it
+                        at the same time. See
+                        <xref ref="assemblage-tutor-guide" text="title"/>
+                        for how to set it up. The review sets deliberately do
+                        not have it: those are rehearsal for exams, where you
+                        are on your own.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Solutions that arrive where you need them.</alert>
+                        The ten assignments and the four review problem sets
+                        are gathered in
+                        <xref ref="section-exercises" text="title"/>. After
+                        an assignment's due date, a complete worked solution
+                        appears directly beneath every one of its
+                        problems<mdash/>on the same page where you worked
+                        them<mdash/>rather than in a separate solutions
+                        manual. The review problem sets get their solutions
+                        the same way, and several of their problems check
+                        your answer the moment you enter it.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Nothing is a page-flip away.</alert> Every
+                        reference to a definition, theorem, equation, or
+                        figure opens where you are standing, so checking what
+                        a symbol meant never costs you your place. A search
+                        box on every page finds any word in the book.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Free, current, and everywhere.</alert> The book
+                        costs nothing, opens on a phone, a tablet, or a
+                        laptop, and can be corrected and improved
+                        continuously<mdash/>a fixed typo or a clearer example
+                        reaches every reader the same day, with no second
+                        edition to buy.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </paragraphs>
+
+    <paragraphs>
+        <title>Accessibility</title>
+
+        <p>
+            Accessibility is a design goal of this book, not an afterthought.
+            The book is built with PreTeXt, which produces web pages designed
+            to support diverse learners, including readers who use assistive
+            technology:
+        </p>
+
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <alert>Mathematics a screen reader can speak.</alert>
+                        Every formula is real mathematical notation, not a
+                        picture of one. Screen readers can read expressions
+                        aloud piece by piece, and readers can magnify or
+                        explore any formula without it turning into a blur.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Figures built to be described, explored, and
+                        touched.</alert> Most diagrams are generated from
+                        descriptions of their mathematical content, so the
+                        same figure carries a spoken description of each of
+                        its parts, can be explored piece by piece from the
+                        keyboard, and can be produced as tactile graphics
+                        for readers who are blind or have low vision. A
+                        number of graphs can also be heard, their curves
+                        traced out as sound.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Navigation without a mouse.</alert> The book has
+                        a consistent structure<mdash/>chapters, sections, and
+                        a table of contents on every page<mdash/>that can be
+                        traversed entirely from the keyboard.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Type and layout that adapt to the reader.</alert>
+                        Text reflows to fit any screen and any zoom level, so
+                        enlarging the type never forces sideways scrolling,
+                        and the reading experience is the same on a phone as
+                        on a desktop monitor.
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            If any part of this book does not work well with the tools you
+            use to read it, please let the author know, so it can be fixed
+            for you and for every reader after you.
+        </p>
+    </paragraphs>
+
+</preface>
