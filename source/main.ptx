@@ -38,17 +38,22 @@
    <!-- <xi:include href="introduction.ptx" /> -->
 
     <!-- Chapter 1 -->
-    <xi:include href="ch-7-3.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-7-3.ptx" /> UNPOSTED -->
     <!-- Chapter 2 -->
-    <xi:include href="ch-series-sequences.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-series-sequences.ptx" /> UNPOSTED -->
     <!-- Chapter 3 -->
-    <xi:include href="ch-geometry.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-geometry.ptx" /> UNPOSTED -->
     <!-- Chapter 4 -->
-    <xi:include href="ch-functions-multiple-variables.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-functions-multiple-variables.ptx" /> UNPOSTED -->
     <!-- Chapter 5: the problem sets, gathered after the content chapters -->
-    <xi:include href="exercises.ptx" />
+    <!-- UNPOSTED <xi:include href="exercises.ptx" /> UNPOSTED -->
     <!-- Skeletal (fill-in) notes: posted and unposted from the Posting Desk. -->
     <!-- UNPOSTED <xi:include href="ch-hyperbolic-skeletal.ptx" /> UNPOSTED -->
+
+    <!-- Placeholder, in the book only while every real chapter is unposted;
+         scripts/desk_action.py toggles it automatically. -->
+    <xi:include href="ch-coming-soon.ptx" />
+
   </book>
 
 </pretext>

@@ -6,12 +6,12 @@
 <chapter xml:id="chapter-functions-multiple-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Functions of Multiple Variables</title>
 
-  <xi:include href="ch-14-1.ptx" />
-  <xi:include href="ch-14-2.ptx" />
-  <xi:include href="ch-14-3.ptx" />
-  <xi:include href="ch-14-4.ptx" />
-  <xi:include href="directional-derivatives.ptx" />
-  <xi:include href="TangentPlanesDifferentials.ptx" />
-  <xi:include href="extreme-values-saddle-points.ptx" />
-  <xi:include href="LagrangeMultipliers.ptx" />
+  <!-- UNPOSTED <xi:include href="ch-14-1.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-14-2.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-14-3.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-14-4.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="directional-derivatives.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="TangentPlanesDifferentials.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="extreme-values-saddle-points.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="LagrangeMultipliers.ptx" /> UNPOSTED -->
 </chapter>

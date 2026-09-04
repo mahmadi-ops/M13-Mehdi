@@ -6,12 +6,12 @@
 <chapter xml:id="chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>3D Space and Vector Algebra</title>
 
-  <xi:include href="ch-12-1.ptx" />
-  <xi:include href="ch-12-2.ptx" />
-  <xi:include href="Dotproduct.ptx" />
-  <xi:include href="the-cross-product.ptx" />
-  <xi:include href="Parametrization.ptx" />
-  <xi:include href="ch-12-5.ptx" />
-  <xi:include href="Conics.ptx" />
-  <xi:include href="QuadricSurface.ptx" />
+  <!-- UNPOSTED <xi:include href="ch-12-1.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-12-2.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="Dotproduct.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="the-cross-product.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="Parametrization.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-12-5.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="Conics.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="QuadricSurface.ptx" /> UNPOSTED -->
 </chapter>

@@ -6,8 +6,8 @@
 <chapter xml:id="chapter-series-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Series and Sequences</title>
 
-  <xi:include href="ch-10-2.ptx" />
-  <xi:include href="ch-10-8.ptx" />
-  <xi:include href="Taylor.ptx" />
-  <xi:include href="ch-10-10.ptx" />
+  <!-- UNPOSTED <xi:include href="ch-10-2.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-10-8.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="Taylor.ptx" /> UNPOSTED -->
+  <!-- UNPOSTED <xi:include href="ch-10-10.ptx" /> UNPOSTED -->
 </chapter>

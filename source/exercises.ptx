@@ -188,49 +188,49 @@ right or wrong, earns nothing.
 </introduction>
 
 <!-- ================= Assignment 1 ================= -->
-<xi:include href="assignment-1-hyperbolic.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-1-hyperbolic.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 2 ================= -->
-<xi:include href="assignment-2-series-taylor.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-2-series-taylor.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 3 ================= -->
-<xi:include href="assignment-3-taylor-convergence-binomial.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-3-taylor-convergence-binomial.ptx"/> UNPOSTED -->
 
 <!-- ================= Review Problems #1 ================= -->
 <!-- Everything from the four topics above that was not assigned. -->
-<xi:include href="review-problems-1.ptx"/>
+<!-- UNPOSTED <xi:include href="review-problems-1.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 4 ================= -->
-<xi:include href="assignment-4-space-vectors-dot-product.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-4-space-vectors-dot-product.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 5 ================= -->
-<xi:include href="assignment-5-cross-product-lines-planes.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-5-cross-product-lines-planes.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 6 ================= -->
-<xi:include href="assignment-6-quadric-surfaces.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-6-quadric-surfaces.ptx"/> UNPOSTED -->
 
 <!-- ================= Review Problems #2 ================= -->
 <!-- Everything from the eight Chapter 3 topics that was not assigned. -->
-<xi:include href="review-problems-2.ptx"/>
+<!-- UNPOSTED <xi:include href="review-problems-2.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 7 ================= -->
-<xi:include href="assignment-7-functions-several-variables.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-7-functions-several-variables.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 8 ================= -->
-<xi:include href="assignment-8-chain-rule.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-8-chain-rule.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 9 ================= -->
-<xi:include href="assignment-9-tangent-planes.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-9-tangent-planes.ptx"/> UNPOSTED -->
 
 <!-- ================= Review Problems #3 ================= -->
 <!-- The rest of the Chapter 4 problems covered by Assignments 7 and 8. -->
-<xi:include href="review-problems-3.ptx"/>
+<!-- UNPOSTED <xi:include href="review-problems-3.ptx"/> UNPOSTED -->
 
 <!-- ================= Assignment 10 ================= -->
-<xi:include href="assignment-10-extreme-values-lagrange.ptx"/>
+<!-- UNPOSTED <xi:include href="assignment-10-extreme-values-lagrange.ptx"/> UNPOSTED -->
 
 <!-- ================= Review Problems #4 ================= -->
 <!-- The rest of the extreme values and Lagrange multipliers problems. -->
-<xi:include href="review-problems-4.ptx"/>
+<!-- UNPOSTED <xi:include href="review-problems-4.ptx"/> UNPOSTED -->
 
 </chapter>
