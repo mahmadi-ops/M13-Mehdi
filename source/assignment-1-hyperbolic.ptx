@@ -25,6 +25,7 @@ Show that <m>\tanh^2(x) + \operatorname{sech}^2(x) = 1</m>, for all
 real numbers <m>x</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 We write both terms over the common denominator <m>\cosh^2(x)</m> and
@@ -41,6 +42,7 @@ Note that this is valid for every real <m>x</m>, since
 <m>\cosh(x) \ge 1 \gt 0</m> and so the denominator is never zero.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-1">
@@ -49,6 +51,7 @@ Note that this is valid for every real <m>x</m>, since
 Compute <m>\dfrac{d}{dx}\,3\sinh\!\left(\dfrac{3}{x}\right)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 We use <m>\dfrac{d}{dx}\sinh(u) = \cosh(u)\,\dfrac{du}{dx}</m> with
@@ -61,6 +64,7 @@ We use <m>\dfrac{d}{dx}\sinh(u) = \cosh(u)\,\dfrac{du}{dx}</m> with
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-2">
@@ -69,6 +73,7 @@ We use <m>\dfrac{d}{dx}\sinh(u) = \cosh(u)\,\dfrac{du}{dx}</m> with
 Simplify <m>\cosh(\ln 2)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 Using the definition <m>\cosh x = \dfrac{e^x + e^{-x}}{2}</m> together
@@ -82,6 +87,7 @@ with <m>e^{\ln 2} = 2</m> and
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-hyp-solve-equation">
@@ -90,6 +96,7 @@ with <m>e^{\ln 2} = 2</m> and
 Solve the equation <m>5\sinh(x) - 3\cosh(x) = 3</m> for <m>x</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 We first replace the hyperbolic functions by their definitions:
@@ -117,6 +124,7 @@ e^x = 4 \quad\Longrightarrow\quad x = \ln 4 = 2\ln 2.
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-hyp-arctanh">
@@ -130,6 +138,7 @@ inverse hyperbolic tangent is given by
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 Unlike <m>\cosh</m>, the function <m>\tanh</m> is increasing on all of
@@ -162,6 +171,7 @@ the set of <m>x</m> for which <m>\frac{1+x}{1-x}</m> is positive, so this
 is the domain of <m>\tanh^{-1}</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-hyp-arctanh-integral">
@@ -177,6 +187,7 @@ logarithm. <em>Hint:</em>
 <m>1 - \tanh^2(t) = \operatorname{sech}^2(t)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 With <m>x = \tanh(t)</m> we have
@@ -202,6 +213,7 @@ This agrees with the answer obtained by partial fractions, since
 = \frac12\ln(1+x) - \frac12\ln(1-x)</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

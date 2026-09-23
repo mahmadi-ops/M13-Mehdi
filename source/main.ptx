@@ -46,7 +46,7 @@
     <!-- Chapter 4 -->
     <!-- UNPOSTED <xi:include href="ch-functions-multiple-variables.ptx" /> UNPOSTED -->
     <!-- Chapter 5: the problem sets, gathered after the content chapters -->
-    <!-- UNPOSTED <xi:include href="exercises.ptx" /> UNPOSTED -->
+    <xi:include href="exercises.ptx" />
     <!-- Skeletal (fill-in) notes: posted and unposted from the Posting Desk. -->
     <!-- UNPOSTED <xi:include href="ch-hyperbolic-skeletal.ptx" /> UNPOSTED -->
 

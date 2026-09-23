@@ -188,7 +188,7 @@ right or wrong, earns nothing.
 </introduction>
 
 <!-- ================= Assignment 1 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-1-hyperbolic.ptx"/> UNPOSTED -->
+<xi:include href="assignment-1-hyperbolic.ptx"/>
 
 <!-- ================= Assignment 2 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-2-series-taylor.ptx"/> UNPOSTED -->
