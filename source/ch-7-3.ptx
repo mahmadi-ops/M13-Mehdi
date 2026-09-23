@@ -357,17 +357,22 @@ Both branches of <m>x^2 - y^2 = 1</m> are drawn in
 parametrize the <em>left</em> branch, where <m>x \leq -1</m>?
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <hint>
 <p>
 The identity <m>\cosh^2 t - \sinh^2 t = 1</m> is unaffected if you change
 the sign of the first coordinate.
 </p>
 </hint>
+END SOLUTION-LOCKED -->
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <answer>
 <p>
 <m>(x,y) = (-\cosh t, \sinh t)</m> for <m>t \in \R</m>.
 </p>
 </answer>
+END SOLUTION-LOCKED -->
+<!-- SOLUTION-LOCKED assignment="1" due="2026-09-25"
 <solution>
 <p>
 Every point of the hyperbola satisfies <m>x^2 = 1 + y^2 \geq 1</m>, so
@@ -392,6 +397,7 @@ mirror image across the <m>y</m>-axis of the parametrization of the right
 branch.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="checkpoint-hyp-left-branch-downward">
