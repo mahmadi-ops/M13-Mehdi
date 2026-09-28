@@ -40,7 +40,7 @@
     <!-- Chapter 1 -->
     <xi:include href="ch-7-3.ptx" />
     <!-- Chapter 2 -->
-    <!-- UNPOSTED <xi:include href="ch-series-sequences.ptx" /> UNPOSTED -->
+    <xi:include href="ch-series-sequences.ptx" />
     <!-- Chapter 3 -->
     <!-- UNPOSTED <xi:include href="ch-geometry.ptx" /> UNPOSTED -->
     <!-- Chapter 4 -->
