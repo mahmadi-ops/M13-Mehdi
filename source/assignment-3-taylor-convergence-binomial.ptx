@@ -134,7 +134,7 @@ at most <m>4\times 10^{-3}</m>.
 <statement>
 <p>
 Use the remainder estimation theorem to estimate the maximum error when
-approximating <m>f(x) = e^x</m> by <m>T_2(x) = 1 + x + x^2</m> on the
+approximating <m>f(x) = e^x</m> by <m>T_2(x) = 1 + x + \frac{x^2}{2}</m> on the
 interval <m>\left[-\dfrac56, \dfrac56\right]</m>.
 </p>
 </statement>
@@ -171,7 +171,7 @@ Hence, an estimate for the upper bound of the error is
 
 <figure xml:id="fig-rev-exp-approx">
 <caption>
-The function <m>y = e^x</m> and <m>y = T_2(x) = 1 + x + x^2</m> on the
+The function <m>y = e^x</m> and <m>y = T_2(x) = 1 + x + \frac{x^2}{2}</m> on the
 interval <m>\left[-\frac56, \frac56\right]</m>, marked by the dashed
 lines.
 </caption>
@@ -179,12 +179,12 @@ lines.
 <prefigure xmlns="https://prefigure.org" label="prefigure-rev-exp-approx">
 <diagram dimensions="(390,270)" margins="12">
 <definition>f(t) = (t, exp(t))</definition>
-<definition>p(t) = (t, 1 + t + t^2)</definition>
+<definition>p(t) = (t, 1 + t + t^2/2)</definition>
 <coordinates bbox="(-1.6,-0.5,1.6,3.4)">
 <grid-axes xlabel="x" ylabel="y"/>
-<line at="ea-left" endpoints="((-0.8333,-0.25),(-0.8333,3.1))"
+<line at="ea-left" endpoints="((-0.8333,-0.25),(-0.8333,2.45))"
       stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<line at="ea-right" endpoints="((0.8333,-0.25),(0.8333,3.1))"
+<line at="ea-right" endpoints="((0.8333,-0.25),(0.8333,2.45))"
       stroke="#7F7F7F" dash="6 4" thickness="2"/>
 <parametric-curve at="ea-p" function="p" domain="(-1.5,1.25)"
                   stroke="#D55E00" thickness="2"/>
@@ -194,20 +194,20 @@ lines.
 <m>y=e^{x}</m>
 </label>
 <label at="ea-p-lab" anchor="(-1.5,2.75)" alignment="e" color="#D55E00">
-<m>y=1+x+x^2</m>
+<m>y=1+x+\frac{x^2}{2}</m>
 </label>
-<label at="ea-l-lab" anchor="(-0.88,-0.42)" alignment="w">
+<label at="ea-l-lab" anchor="(-0.78,-0.32)" alignment="e">
 <m>-\frac56</m>
 </label>
-<label at="ea-r-lab" anchor="(0.88,-0.42)" alignment="e">
+<label at="ea-r-lab" anchor="(0.78,-0.32)" alignment="w">
 <m>\frac56</m>
 </label>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="The exponential curve, dashed blue, and the quadratic one plus x plus x squared, solid vermillion, plotted together. Dashed gray vertical lines at plus and minus five sixths mark the interval of the approximation; on that interval the two curves stay within about zero point three of each other.">
+<annotation ref="figure" text="The exponential curve, dashed blue, and the quadratic one plus x plus x squared over two, solid vermillion, plotted together. Dashed gray vertical lines at plus and minus five sixths mark the interval of the approximation; on that interval the two curves stay within about zero point one two of each other.">
   <annotation ref="ea-f" text="The function y equals e to the x."/>
-  <annotation ref="ea-p" text="The quadratic approximation one plus x plus x squared."/>
+  <annotation ref="ea-p" text="The quadratic approximation one plus x plus x squared over two."/>
   <annotation ref="ea-left" text="The left endpoint, x equals negative five sixths."/>
   <annotation ref="ea-right" text="The right endpoint, x equals five sixths. The error on the interval is at most about zero point two eight nine."/>
 </annotation>
@@ -261,14 +261,14 @@ i.e. <m>T_2(x) = 2x - 2x^2</m>.
 </li>
 <li>
 <p>
-We have <m>f^{(3)}(x) = 8(1+2x)^{-3}</m> and
+We have <m>f^{(3)}(x) = 16(1+2x)^{-3}</m> and
 <m>-\frac14 \le x \le \frac14</m>. Note that
-<m>f^{(4)}(x) = -24(1+2x)^{-4}</m> is negative, which means
+<m>f^{(4)}(x) = -96(1+2x)^{-4}</m> is negative, which means
 <m>f^{(3)}</m> is a decreasing function, hence at <m>x = -\frac14</m>
 the value <m>f^{(3)}(c)</m> is maximized, i.e.,
 <md>
 f^{(3)}(c) \le f^{(3)}(-0.25)
-= 8\left(1 - \frac12\right)^{-3} = 64.
+= 16\left(1 - \frac12\right)^{-3} = 128.
 </md>
 Also
 <md>
@@ -280,11 +280,11 @@ and therefore
 <md>
 \text{Error} = |R_2(x)|
 \le \left|\frac{f^{(3)}(c)}{3!}\,x^3\right|
-\le \frac{1}{3!}\cdot\frac{1}{64}\cdot 64 = \frac16.
+\le \frac{1}{3!}\cdot\frac{1}{64}\cdot 128 = \frac13.
 </md>
 This means that the error in estimating <m>f(x) = \ln(1+2x)</m> for
 <m>-\frac14 \le x \le \frac14</m> by <m>T_2(x) = 2x - 2x^2</m> is
-definitely smaller than <m>\frac16</m>. See
+definitely smaller than <m>\frac13</m>. See
 <xref ref="fig-rev-ln-approx"/>.
 </p>
 </li>
@@ -312,16 +312,16 @@ graphs are nearly identical.
                   stroke="#D55E00" thickness="2"/>
 <parametric-curve at="la-f" function="f" domain="(-0.44,0.72)"
                   stroke="#0072B2" thickness="3" dash="7 4"/>
-<label at="la-f-lab" anchor="(0.30,0.98)" alignment="e" color="#0072B2">
+<label at="la-f-lab" anchor="(0.30,-0.50)" alignment="e" color="#0072B2">
 <m>y=\ln(1+2x)</m>
 </label>
-<label at="la-p-lab" anchor="(0.30,0.70)" alignment="e" color="#D55E00">
+<label at="la-p-lab" anchor="(0.30,-0.80)" alignment="e" color="#D55E00">
 <m>y=2x-2x^2</m>
 </label>
-<label at="la-l-lab" anchor="(-0.27,-1.44)" alignment="w">
+<label at="la-l-lab" anchor="(-0.27,0.98)" alignment="w">
 <m>-0.25</m>
 </label>
-<label at="la-r-lab" anchor="(0.27,-1.44)" alignment="e">
+<label at="la-r-lab" anchor="(0.27,0.98)" alignment="e">
 <m>0.25</m>
 </label>
 </coordinates>
@@ -331,7 +331,7 @@ graphs are nearly identical.
   <annotation ref="la-f" text="The function y equals natural log of one plus two x."/>
   <annotation ref="la-p" text="The second order Taylor polynomial two x minus two x squared."/>
   <annotation ref="la-left" text="The left endpoint, x equals negative one quarter."/>
-  <annotation ref="la-right" text="The right endpoint, x equals one quarter. The error on the interval is smaller than one sixth."/>
+  <annotation ref="la-right" text="The right endpoint, x equals one quarter. The error on the interval is smaller than one third."/>
 </annotation>
 </annotations>
 </diagram>
