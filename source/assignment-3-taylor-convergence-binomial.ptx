@@ -14,8 +14,8 @@
 <p>
 These problems bound the error in a Taylor approximation with the Remainder
 Theorem, and then use the binomial series to approximate a physical law.
-Problems marked with a star (<m>*</m>) are for the interested reader and will
-not be examined. If you would like to review the material first, see
+Problems marked with a star (<m>*</m>) are for the interested reader: they do
+not need to be handed in and will not be examined. If you would like to review the material first, see
 <xref ref="section-taylor" text="title"/> and
 <xref ref="chapter-binomial-series" text="title"/>.
 </p>
@@ -36,9 +36,9 @@ Here <m>a = 0</m>, and the cubic <m>x - \dfrac{x^3}{3!}</m> is
 <m>x^4</m> term, so the same polynomial is also the fourth order
 Taylor polynomial:
 <md>
-T_4(x) = x - \frac{x^3}{3!} + \frac{f^{(4)}(0)}{4!}x^4
-= x - \frac{x^3}{3!} = T_3(x),
-\qquad\text{since } f^{(4)}(0) = \sin(0) = 0 .
+<mrow>T_4(x) \amp = x - \frac{x^3}{3!} + \frac{f^{(4)}(0)}{4!}x^4</mrow>
+<mrow>\amp = x - \frac{x^3}{3!} = T_3(x),
+\qquad\text{since } f^{(4)}(0) = \sin(0) = 0 .</mrow>
 </md>
 We should therefore take <m>n = 4</m>, not <m>n = 3</m>: both choices
 describe the very same approximation, but the remainder <m>R_4</m> is
@@ -67,9 +67,8 @@ By the Remainder Theorem with <m>n = 4</m>,
 </md>
 which gives
 <md>
-|x| \le \sqrt[5]{(5!)(0.004)} = \sqrt[5]{0.48} \approx 0.863
-\quad\Rightarrow\quad
-x \in [-0.863,\; 0.863].
+<mrow>|x| \amp \le \sqrt[5]{(5!)(0.004)} = \sqrt[5]{0.48} \approx 0.863,</mrow>
+<mrow>\amp \Rightarrow\quad x \in [-0.863,\; 0.863].</mrow>
 </md>
 See <xref ref="fig-rev-sin-approx"/>.
 </p>
@@ -566,7 +565,8 @@ be examined.
 </p>
         <p>Now, we can write the electric field <m>E</m> as:
 <md>
-          E = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right) = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r^2} - \frac{1}{(r+d)^2} \right)
+          <mrow>E \amp = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r^2} - \frac{q}{(r+d)^2} \right)</mrow>
+<mrow>\amp = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r^2} - \frac{1}{(r+d)^2} \right)</mrow>
         </md>
 </p>
         <p>Substituting the Taylor series expansion for <m>f(d)</m> and <m>f(0)</m>, we get:
@@ -724,10 +724,10 @@ We start from the binomial series with <m>m = -1</m>:
 </md>
 The binomial coefficients are
 <md>
-<mrow>\binom{-1}{0} \amp = 1 = (-1)^0, \qquad
-\binom{-1}{1} = -1 = (-1)^1,</mrow>
-<mrow>\binom{-1}{2} \amp = \frac{(-1)(-2)}{2!} = (-1)^2, \qquad
-\binom{-1}{3} = \frac{(-1)(-2)(-3)}{3!} = (-1)^3,</mrow>
+<mrow>\binom{-1}{0} \amp = 1 = (-1)^0,</mrow>
+<mrow>\binom{-1}{1} \amp = -1 = (-1)^1,</mrow>
+<mrow>\binom{-1}{2} \amp = \frac{(-1)(-2)}{2!} = (-1)^2,</mrow>
+<mrow>\binom{-1}{3} \amp = \frac{(-1)(-2)(-3)}{3!} = (-1)^3,</mrow>
 </md>
 and in general <m>\dbinom{-1}{k} = (-1)^k</m>. Hence
 <md>
@@ -787,15 +787,15 @@ Here <m>m = -3</m>, so
 </md>
 The coefficient of <m>x^k</m> is
 <md>
-\frac{(-3)(-4)\cdots(-3-k+1)}{k!}
-= (-1)^k\,\frac{3\cdot 4\cdots (k+2)}{k!}
-= (-1)^k\,\frac{(k+2)!}{2\,k!} ,
+<mrow>\frac{(-3)(-4)\cdots(-3-k+1)}{k!}
+\amp = (-1)^k\,\frac{3\cdot 4\cdots (k+2)}{k!}</mrow>
+<mrow>\amp = (-1)^k\,\frac{(k+2)!}{2\,k!} ,</mrow>
 </md>
 so
 <md>
-\frac{1}{(1+x)^3}
-= \sum_{k=0}^{\infty} (-1)^k \frac{(k+2)!}{2\,k!}\,x^k
-= \sum_{k=0}^{\infty} (-1)^k \frac{(k+1)(k+2)}{2}\,x^k .
+<mrow>\frac{1}{(1+x)^3}
+\amp = \sum_{k=0}^{\infty} (-1)^k \frac{(k+2)!}{2\,k!}\,x^k</mrow>
+<mrow>\amp = \sum_{k=0}^{\infty} (-1)^k \frac{(k+1)(k+2)}{2}\,x^k .</mrow>
 </md>
 As a check, <m>k = 0, 1, 2, 3</m> give the coefficients
 <m>1, -3, 6, -10</m> found above.

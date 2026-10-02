@@ -1019,9 +1019,9 @@ terms beyond them.
 Here <m>m = 5</m>, a positive integer:
 <md>
 <mrow>(1+x)^5 \amp = 1 + 5x + \frac{(5)(4)}{2!}x^2
-  + \frac{(5)(4)(3)}{3!}x^3
-  + \frac{(5)(4)(3)(2)}{4!}x^4
-  + \frac{(5)(4)(3)(2)(1)}{5!}x^5 + \cdots</mrow>
++ \frac{(5)(4)(3)}{3!}x^3</mrow>
+<mrow>\amp\qquad + \frac{(5)(4)(3)(2)}{4!}x^4
++ \frac{(5)(4)(3)(2)(1)}{5!}x^5 + \cdots</mrow>
 <mrow>\amp = 1 + 5x + 10x^2 + 10x^3 + 5x^4 + x^5 .</mrow>
 </md>
 The <m>k = 6</m> coefficient contains the factor
@@ -1106,8 +1106,8 @@ up to <m>x^3</m>,
 <md>
 <mrow>\sqrt{1+x}\,\cos(5x)
 \amp = \left(1 + \frac12 x - \frac18 x^2
-  + \frac{1}{16}x^3 - \cdots\right)
-  \left(1 - \frac{5^2}{2}x^2 + \cdots\right)</mrow>
++ \frac{1}{16}x^3 - \cdots\right)</mrow>
+<mrow>\amp\qquad \times \left(1 - \frac{5^2}{2}x^2 + \cdots\right)</mrow>
 <mrow>\amp = 1 + \frac{x}{2}
   - \left(\frac18 + \frac{5^2}{2}\right)x^2
   + \left(\frac{1}{16} - \frac{5^2}{4}\right)x^3 + \cdots</mrow>
