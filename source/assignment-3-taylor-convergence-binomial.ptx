@@ -341,6 +341,133 @@ graphs are nearly identical.
 </solution>
 </exercise>
 
+<exercise xml:id="m1-4">
+<statement>
+<p>
+Let
+<md>
+f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
+</md>
+Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
+</p>
+</statement>
+<solution>
+<p>
+First we identify <m>f</m>. Its general term is <m>(n+1)x^n</m>, so
+<md>
+f(x) = \sum_{n=0}^{\infty} (n+1)x^n .
+</md>
+This is exactly what you get by differentiating the geometric series
+term by term:
+<md>
+<mrow>\frac{1}{1-x} \amp = \sum_{n=0}^{\infty} x^n
+  = 1 + x + x^2 + x^3 + \cdots , \qquad |x| \lt 1,</mrow>
+<mrow>\frac{d}{dx}\left(\frac{1}{1-x}\right)
+  \amp = \frac{1}{(1-x)^2}
+  = \sum_{n=1}^{\infty} n x^{n-1}
+  = 1 + 2x + 3x^2 + \cdots</mrow>
+</md>
+So <m>f(x) = \dfrac{1}{(1-x)^2}</m> for <m>|x| \lt 1</m>. Since
+<m>\tfrac1{13} \lt 1</m>, the whole interval of integration lies inside
+the interval of convergence.
+</p>
+
+<p>
+Now we integrate. An antiderivative of <m>(1-x)^{-2}</m> is
+<m>(1-x)^{-1}</m>, so
+<md>
+<mrow>\int_0^{1/13} \frac{dx}{(1-x)^2}
+  \amp = \left[\frac{1}{1-x}\right]_0^{1/13}</mrow>
+<mrow>\amp = \frac{1}{1-\frac{1}{13}} - \frac{1}{1-0}</mrow>
+<mrow>\amp = \frac{1}{\frac{12}{13}} - 1
+   = \frac{13}{12} - 1 = \frac{1}{12} .</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="exer-integral-cos-over-x">
+<statement>
+<p>
+Evaluate <m>\displaystyle\int \frac{\cos x - 1}{x}\,dx</m> as an infinite
+series. Give the first three nonzero terms.
+</p>
+</statement>
+<solution>
+<p>
+The integrand has no elementary antiderivative, so expand it as a series
+first. Starting from
+<m>\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}
+- \dfrac{x^6}{6!} + \cdots</m>, subtracting <m>1</m> kills the constant
+term, so every surviving power of <m>x</m> is even and at least
+<m>2</m>. Dividing by <m>x</m> therefore leaves an honest power series:
+<md>
+<mrow>\frac{\cos x - 1}{x}
+\amp = \frac{1}{x}\left(-\frac{x^2}{2!} + \frac{x^4}{4!}
+  - \frac{x^6}{6!} + \cdots\right)</mrow>
+<mrow>\amp = -\frac{x}{2!} + \frac{x^3}{4!} - \frac{x^5}{6!} + \cdots</mrow>
+</md>
+</p>
+<p>
+Integrating term by term,
+<md>
+<mrow>\int \frac{\cos x - 1}{x}\,dx
+\amp = C - \frac{x^2}{2\cdot 2!} + \frac{x^4}{4\cdot 4!}
+  - \frac{x^6}{6\cdot 6!} + \cdots</mrow>
+<mrow>\amp = C - \frac{x^2}{4} + \frac{x^4}{96}
+  - \frac{x^6}{4320} + \cdots</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="exer-series-limit-cos2x">
+<statement>
+<p>
+Use Taylor series to evaluate
+<md>
+\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}} .
+</md>
+</p>
+</statement>
+<solution>
+<p>
+The quotient has the indeterminate form <m>\frac00</m>. Replace the
+numerator and the denominator by their Maclaurin series. Putting
+<m>2x</m> in place of <m>x</m> in
+<m>\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots</m>,
+<md>
+<mrow>\cos(2x) \amp = 1 - \frac{(2x)^2}{2!} + \frac{(2x)^4}{4!} - \cdots
+  = 1 - 2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
+<mrow>\Rightarrow\quad \cos(2x) - 1
+  \amp = -2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
+</md>
+and from <m>e^{x} = 1 + x + \frac{x^2}{2!} + \cdots</m>,
+<md>
+x^2 e^{x} = x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)
+= x^2 + x^3 + \frac{x^4}{2} + \cdots .
+</md>
+</p>
+<p>
+Both vanish to exactly second order, so cancel the common factor of
+<m>x^2</m> <mdash/> legitimate, since the limit never uses the value at
+<m>x = 0</m> itself:
+<md>
+<mrow>\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}}
+\amp = \lim_{x\to 0}
+  \frac{x^2\left(-2 + \frac{2}{3}x^2 - \cdots\right)}
+       {x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)}</mrow>
+<mrow>\amp = \lim_{x\to 0}
+  \frac{-2 + \frac{2}{3}x^2 - \cdots}
+       {1 + x + \frac{x^2}{2!} + \cdots}
+  = \frac{-2}{1} = -2 .</mrow>
+</md>
+Each remaining series is continuous at <m>0</m> with a nonzero value
+there, so only the two leading coefficients matter.
+</p>
+</solution>
+</exercise>
+
 <exercise xml:id="exer-dipole-field">
     <title>*Approximating The Electric Field due to an Electric Dipole</title>
     <statement>
@@ -735,133 +862,6 @@ Now apply the binomial series with <m>m = \frac13</m> and
   - \frac19\left(\frac{t}{P}\right)^2
   + \frac{5}{81}\left(\frac{t}{P}\right)^3 + \cdots \right).</mrow>
 </md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="m1-4">
-<statement>
-<p>
-Let
-<md>
-f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
-</md>
-Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
-</p>
-</statement>
-<solution>
-<p>
-First we identify <m>f</m>. Its general term is <m>(n+1)x^n</m>, so
-<md>
-f(x) = \sum_{n=0}^{\infty} (n+1)x^n .
-</md>
-This is exactly what you get by differentiating the geometric series
-term by term:
-<md>
-<mrow>\frac{1}{1-x} \amp = \sum_{n=0}^{\infty} x^n
-  = 1 + x + x^2 + x^3 + \cdots , \qquad |x| \lt 1,</mrow>
-<mrow>\frac{d}{dx}\left(\frac{1}{1-x}\right)
-  \amp = \frac{1}{(1-x)^2}
-  = \sum_{n=1}^{\infty} n x^{n-1}
-  = 1 + 2x + 3x^2 + \cdots</mrow>
-</md>
-So <m>f(x) = \dfrac{1}{(1-x)^2}</m> for <m>|x| \lt 1</m>. Since
-<m>\tfrac1{13} \lt 1</m>, the whole interval of integration lies inside
-the interval of convergence.
-</p>
-
-<p>
-Now we integrate. An antiderivative of <m>(1-x)^{-2}</m> is
-<m>(1-x)^{-1}</m>, so
-<md>
-<mrow>\int_0^{1/13} \frac{dx}{(1-x)^2}
-  \amp = \left[\frac{1}{1-x}\right]_0^{1/13}</mrow>
-<mrow>\amp = \frac{1}{1-\frac{1}{13}} - \frac{1}{1-0}</mrow>
-<mrow>\amp = \frac{1}{\frac{12}{13}} - 1
-   = \frac{13}{12} - 1 = \frac{1}{12} .</mrow>
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="exer-integral-cos-over-x">
-<statement>
-<p>
-Evaluate <m>\displaystyle\int \frac{\cos x - 1}{x}\,dx</m> as an infinite
-series. Give the first three nonzero terms.
-</p>
-</statement>
-<solution>
-<p>
-The integrand has no elementary antiderivative, so expand it as a series
-first. Starting from
-<m>\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}
-- \dfrac{x^6}{6!} + \cdots</m>, subtracting <m>1</m> kills the constant
-term, so every surviving power of <m>x</m> is even and at least
-<m>2</m>. Dividing by <m>x</m> therefore leaves an honest power series:
-<md>
-<mrow>\frac{\cos x - 1}{x}
-\amp = \frac{1}{x}\left(-\frac{x^2}{2!} + \frac{x^4}{4!}
-  - \frac{x^6}{6!} + \cdots\right)</mrow>
-<mrow>\amp = -\frac{x}{2!} + \frac{x^3}{4!} - \frac{x^5}{6!} + \cdots</mrow>
-</md>
-</p>
-<p>
-Integrating term by term,
-<md>
-<mrow>\int \frac{\cos x - 1}{x}\,dx
-\amp = C - \frac{x^2}{2\cdot 2!} + \frac{x^4}{4\cdot 4!}
-  - \frac{x^6}{6\cdot 6!} + \cdots</mrow>
-<mrow>\amp = C - \frac{x^2}{4} + \frac{x^4}{96}
-  - \frac{x^6}{4320} + \cdots</mrow>
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="exer-series-limit-cos2x">
-<statement>
-<p>
-Use Taylor series to evaluate
-<md>
-\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}} .
-</md>
-</p>
-</statement>
-<solution>
-<p>
-The quotient has the indeterminate form <m>\frac00</m>. Replace the
-numerator and the denominator by their Maclaurin series. Putting
-<m>2x</m> in place of <m>x</m> in
-<m>\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots</m>,
-<md>
-<mrow>\cos(2x) \amp = 1 - \frac{(2x)^2}{2!} + \frac{(2x)^4}{4!} - \cdots
-  = 1 - 2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
-<mrow>\Rightarrow\quad \cos(2x) - 1
-  \amp = -2x^2 + \frac{2}{3}x^4 - \cdots</mrow>
-</md>
-and from <m>e^{x} = 1 + x + \frac{x^2}{2!} + \cdots</m>,
-<md>
-x^2 e^{x} = x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)
-= x^2 + x^3 + \frac{x^4}{2} + \cdots .
-</md>
-</p>
-<p>
-Both vanish to exactly second order, so cancel the common factor of
-<m>x^2</m> <mdash/> legitimate, since the limit never uses the value at
-<m>x = 0</m> itself:
-<md>
-<mrow>\lim_{x\to 0} \frac{\cos(2x) - 1}{x^2 e^{x}}
-\amp = \lim_{x\to 0}
-  \frac{x^2\left(-2 + \frac{2}{3}x^2 - \cdots\right)}
-       {x^2\left(1 + x + \frac{x^2}{2!} + \cdots\right)}</mrow>
-<mrow>\amp = \lim_{x\to 0}
-  \frac{-2 + \frac{2}{3}x^2 - \cdots}
-       {1 + x + \frac{x^2}{2!} + \cdots}
-  = \frac{-2}{1} = -2 .</mrow>
-</md>
-Each remaining series is continuous at <m>0</m> with a nonzero value
-there, so only the two leading coefficients matter.
 </p>
 </solution>
 </exercise>
