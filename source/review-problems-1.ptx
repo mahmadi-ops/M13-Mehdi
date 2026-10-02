@@ -47,20 +47,18 @@ counterexample if it is false.
 <feedback>
 <p>
 First,
-<md xml:id="eq-rw23-cosh2x" number="yes">
+<md>
 \cosh(2x) = \frac12\left(e^{2x} + e^{-2x}\right).
 </md>
 Second,
 <md>
-<mrow>\cosh^2(x) + \sinh^2(x)
-\amp = \frac14\left(e^x + e^{-x}\right)^2
-+ \frac14\left(e^x - e^{-x}\right)^2</mrow>
-<mrow>\amp = \frac14\left(2e^{2x} + 2e^{-2x}\right)</mrow>
-<mrow xml:id="eq-rw23-sum" number="yes">\amp
-= \frac12\left(e^{2x} + e^{-2x}\right).</mrow>
+<mrow>\amp \cosh^2(x) + \sinh^2(x)</mrow>
+<mrow>\amp \quad = \frac14\left(e^x + e^{-x}\right)^2</mrow>
+<mrow>\amp \qquad + \frac14\left(e^x - e^{-x}\right)^2</mrow>
+<mrow>\amp \quad = \frac14\left(2e^{2x} + 2e^{-2x}\right)</mrow>
+<mrow>\amp \quad = \frac12\left(e^{2x} + e^{-2x}\right).</mrow>
 </md>
-Comparing <xref ref="eq-rw23-cosh2x"/> and
-<xref ref="eq-rw23-sum"/> gives
+Comparing the two results gives
 <m>\cosh^2(x) + \sinh^2(x) = \cosh(2x)</m>.
 </p>
 </feedback>

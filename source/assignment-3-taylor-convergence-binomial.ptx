@@ -345,7 +345,8 @@ graphs are nearly identical.
 <p>
 Let
 <md>
-f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
+<mrow>f(x) \amp = 1 + 2x + 3x^2</mrow>
+<mrow>\amp \quad + 4x^3 + 5x^4 + \cdots</mrow>
 </md>
 Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
 </p>
