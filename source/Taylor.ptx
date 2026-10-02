@@ -598,8 +598,12 @@ Use the slider to change the value of <m>x_0</m> and see how the error changes.
 
   
   <subsection>
-    <title>Applications of Taylor Series and Remainder Theorem</title>
+    <title>*Applications of Taylor Series and Remainder Theorem</title>
 <introduction>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
       Physicists often use Taylor series to approximate functions in order to 
       simplify calculations. The first example is the kinetic energy of an object 
@@ -1461,7 +1465,11 @@ there are many other methods to approximate <m>\pi</m>, which we will not cover 
 </subsection>
 
   <subsection xml:id="subsection-5">
-    <title> Proof of the remainder theorem</title>
+    <title>*Proof of the remainder theorem</title>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
     <p>
       In this subsection, we will provide a proof of the remainder theorem.
     </p>
