@@ -1,0 +1,393 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-cm-dotproduct-figure" viewBox="0 0 688 298">
+  <defs>
+    <clipPath id="prefigure-cm-dotproduct-__clipPath-0">
+      <rect x="14.0" y="14.0" width="660.0" height="270.0"/>
+    </clipPath>
+    <clipPath id="prefigure-cm-dotproduct-__clipPath-1">
+      <rect x="14.0" y="14.0" width="660.0" height="270.0"/>
+    </clipPath>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-h0072B2" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#0072B2" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-h0072B2-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-4_None_24_60-h009E73" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="13.1" refY="8.0">
+      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="#009E73" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-end-4_None_24_60-h009E73-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto" refX="15.1" refY="10.0">
+      <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-3_None_24_60-h0072B2" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#0072B2" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-3_None_24_60-h0072B2-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-4_None_24_60-h009E73" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.9" refY="8.0">
+      <g transform="rotate(180, 9.0, 8.0)">
+        <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="#009E73" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="prefigure-cm-dotproduct-arrow-head-start-4_None_24_60-h009E73-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.9" refY="10.0">
+      <g transform="rotate(180, 11.0, 10.0)">
+        <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+  </defs>
+  <path id="prefigure-cm-dotproduct-da-path" d="M 37.9 168.1 L 40.2 169.1 L 42.5 170.1 L 44.8 171.0 L 47.1 171.9 L 49.4 172.8 L 51.7 173.7 L 54.0 174.5 L 56.3 175.3 L 58.6 176.1 L 60.9 176.9 L 63.2 177.6 L 65.5 178.3 L 67.8 179.0 L 70.1 179.7 L 72.4 180.3 L 74.8 181.0 L 77.1 181.6 L 79.4 182.1 L 81.7 182.7 L 84.0 183.2 L 86.3 183.7 L 88.6 184.2 L 90.9 184.6 L 93.2 185.1 L 95.5 185.5 L 97.8 185.9 L 100.1 186.2 L 102.4 186.6 L 104.7 186.9 L 107.0 187.1 L 109.3 187.4 L 111.6 187.6 L 114.0 187.9 L 116.3 188.1 L 118.6 188.2 L 120.9 188.4 L 123.2 188.5 L 125.5 188.6 L 127.8 188.6 L 130.1 188.7 L 132.4 188.7 L 134.7 188.7 L 137.0 188.7 L 139.3 188.6 L 141.6 188.5 L 143.9 188.4 L 146.2 188.3 L 148.5 188.2 L 150.9 188.0 L 153.2 187.8 L 155.5 187.6 L 157.8 187.3 L 160.1 187.1 L 162.4 186.8 L 164.7 186.5 L 167.0 186.1 L 169.3 185.8 L 171.6 185.4 L 173.9 185.0 L 176.2 184.5 L 178.5 184.1 L 180.8 183.6 L 183.1 183.1 L 185.4 182.6 L 187.7 182.0 L 190.1 181.4 L 192.4 180.8 L 194.7 180.2 L 197.0 179.5 L 199.3 178.9 L 201.6 178.2 L 203.9 177.4 L 206.2 176.7 L 208.5 175.9 L 210.8 175.1 L 213.1 174.3 L 215.4 173.5 L 217.7 172.6 L 220.0 171.7 L 222.3 170.8 L 224.6 169.8 L 226.9 168.9 L 229.3 167.9 L 231.6 166.9 L 233.9 165.8 L 236.2 164.8 L 238.5 163.7 L 240.8 162.6 L 243.1 161.4 L 245.4 160.3 L 247.7 159.1 L 250.0 157.9 L 252.3 156.7 L 254.6 155.4 L 256.9 154.1 L 259.2 152.8 L 261.5 151.5 L 263.8 150.2 L 266.2 148.8 L 268.5 147.4" stroke="#BBBBBB" stroke-width="2" fill="none" clip-path="url(#prefigure-cm-dotproduct-__clipPath-1)"/>
+  <path id="prefigure-cm-dotproduct-da-v" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-h0072B2)" d="M 133.3 188.7 L 256.8 188.7"/>
+  <path id="prefigure-cm-dotproduct-da-F" stroke="#D55E00" stroke-width="3" fill="none" marker-end="url(#prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-hD55E00)" d="M 133.3 188.7 L 197.4 112.4"/>
+  <line id="prefigure-cm-dotproduct-da-drop" x1="199.7" y1="109.6" x2="199.7" y2="188.7" stroke="#888888" stroke-width="1.4" stroke-dasharray="4 3" fill="none"/>
+  <path id="prefigure-cm-dotproduct-da-proj" stroke="#009E73" stroke-width="4" fill="none" marker-end="url(#prefigure-cm-dotproduct-arrow-head-end-4_None_24_60-h009E73)" d="M 133.3 188.7 L 194.8 188.7"/>
+  <circle id="prefigure-cm-dotproduct-da-P" cx="133.3" cy="188.7" r="4" stroke="black" stroke-width="2" fill="black"/>
+  <g id="prefigure-cm-dotproduct-da-vl" transform="translate(268.5,187.9) translate(0.0,-4.0)">
+    <g id="prefigure-cm-dotproduct-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#0072B2" width="10.984px" height="8.040px" role="img" focusable="false" viewBox="0 -444 607 444" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-2-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-2-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-da-Fl" transform="translate(206.5,102.9) translate(0.0,-12.3)">
+    <g id="prefigure-cm-dotproduct-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#D55E00" width="13.104px" height="12.304px" role="img" focusable="false" viewBox="0 -680 724 680" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-3-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F">
+                <use data-c="1D405" xlink:href="#prefigure-cm-dotproduct-MJX-3-TEX-B-1D405"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-da-projl" transform="translate(166.7,199.1) translate(-74.4,-0.0)">
+    <g id="prefigure-cm-dotproduct-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.728px; color:#009E73" width="148.760px" height="16.288px" role="img" focusable="false" viewBox="0 -694 8219 900" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-20" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-N-A0" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-4-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="3" data-semantic-children="0,1" data-semantic-collapsed="(3 (c 2) 0 1)" data-semantic-speech="component along bold v">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-parent="3" data-semantic-speech="component along">
+              <use data-c="63" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-63"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6F" transform="translate(444,0)"/>
+              <use data-c="6D" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6D" transform="translate(944,0)"/>
+              <use data-c="70" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-70" transform="translate(1777,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6F" transform="translate(2333,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6E" transform="translate(2833,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-65" transform="translate(3389,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6E" transform="translate(3833,0)"/>
+              <use data-c="74" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-74" transform="translate(4389,0)"/>
+              <use data-c="20" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-20" transform="translate(4778,0)"/>
+              <use data-c="61" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-61" transform="translate(5028,0)"/>
+              <use data-c="6C" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6C" transform="translate(5528,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6F" transform="translate(5806,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-6E" transform="translate(6306,0)"/>
+              <use data-c="67" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-67" transform="translate(6862,0)"/>
+              <use data-c="A0" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-N-A0" transform="translate(7362,0)"/>
+            </g>
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(7612,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-4-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-da-concl" transform="translate(153.2,242.3) translate(-108.9,-8.4)">
+    <g id="prefigure-cm-dotproduct-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.888px" width="217.856px" height="16.848px" role="img" focusable="false" viewBox="0 -716 12036.6 931" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-2260" d="M166 -215T159 -215T147 -212T141 -204T139 -197Q139 -190 144 -183L306 133H70Q56 140 56 153Q56 168 72 173H327L406 327H72Q56 332 56 347Q56 360 70 367H426Q597 702 602 707Q605 716 618 716Q625 716 630 712T636 703T638 696Q638 692 471 367H707Q722 359 722 347Q722 336 708 328L451 327L371 173H708Q722 163 722 153Q722 140 707 133H351Q175 -210 170 -212Q166 -215 159 -215Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-20" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-5-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="13" data-semantic-children="11,8" data-semantic-collapsed="(13 (c 12) 11 8)" data-semantic-speech="bold upper F dot bold v not equals 0 right double arrow speed changes">
+            <g data-mml-node="mrow" data-semantic-type="multirel" data-semantic-role="unknown" data-semantic-id="11" data-semantic-children="9,4,10" data-semantic-content="3,6" data-semantic-parent="13" data-semantic-speech="bold upper F dot bold v not equals 0 right double arrow">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="multiplication" data-semantic-id="9" data-semantic-children="0,2" data-semantic-content="1" data-semantic-parent="11" data-semantic-speech="bold upper F dot bold v">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="9" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F">
+                    <use data-c="1D405" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-B-1D405"/>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="1" data-semantic-parent="9" data-semantic-operator="infixop,⋅" data-semantic-speech="dot" transform="translate(946.2,0)">
+                  <use data-c="22C5" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-22C5"/>
+                </g>
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1446.4,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="9" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                    <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-B-1D42F"/>
+                  </g>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="inequality" data-semantic-id="3" data-semantic-parent="11" data-semantic-operator="multirel" data-semantic-speech="not equals" transform="translate(2331.2,0)">
+                <use data-c="2260" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-2260"/>
+              </g>
+              <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="11" data-semantic-speech="0" transform="translate(3387,0)">
+                <use data-c="30" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-30"/>
+              </g>
+              <g data-mml-node="mstyle" transform="translate(3887,0)">
+                <g data-mml-node="mspace"/>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="arrow" data-semantic-id="6" data-semantic-parent="11" data-semantic-operator="multirel" data-semantic-speech="right double arrow" transform="translate(4442.8,0)">
+                <use data-c="21D2" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-21D2"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="empty" data-semantic-role="unknown" data-semantic-id="10" data-semantic-parent="11" data-semantic-speech="" transform="translate(5442.8,0)"/>
+            </g>
+            <g data-mml-node="mstyle" transform="translate(5442.8,0)">
+              <g data-mml-node="mspace"/>
+            </g>
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="8" data-semantic-parent="13" data-semantic-speech="speed changes" transform="translate(5998.6,0)">
+              <use data-c="73" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-73"/>
+              <use data-c="70" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-70" transform="translate(394,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-65" transform="translate(950,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-65" transform="translate(1394,0)"/>
+              <use data-c="64" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-64" transform="translate(1838,0)"/>
+              <use data-c="20" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-20" transform="translate(2394,0)"/>
+              <use data-c="63" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-63" transform="translate(2644,0)"/>
+              <use data-c="68" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-68" transform="translate(3088,0)"/>
+              <use data-c="61" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-61" transform="translate(3644,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-6E" transform="translate(4144,0)"/>
+              <use data-c="67" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-67" transform="translate(4700,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-65" transform="translate(5200,0)"/>
+              <use data-c="73" xlink:href="#prefigure-cm-dotproduct-MJX-5-TEX-N-73" transform="translate(5644,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="prefigure-cm-dotproduct-db-path" d="M 395.7 168.1 L 398.0 169.1 L 400.3 170.1 L 402.6 171.0 L 404.9 171.9 L 407.2 172.8 L 409.5 173.7 L 411.8 174.5 L 414.1 175.3 L 416.4 176.1 L 418.7 176.9 L 421.1 177.6 L 423.4 178.3 L 425.7 179.0 L 428.0 179.7 L 430.3 180.3 L 432.6 181.0 L 434.9 181.6 L 437.2 182.1 L 439.5 182.7 L 441.8 183.2 L 444.1 183.7 L 446.4 184.2 L 448.7 184.6 L 451.0 185.1 L 453.3 185.5 L 455.6 185.9 L 457.9 186.2 L 460.3 186.6 L 462.6 186.9 L 464.9 187.1 L 467.2 187.4 L 469.5 187.6 L 471.8 187.9 L 474.1 188.1 L 476.4 188.2 L 478.7 188.4 L 481.0 188.5 L 483.3 188.6 L 485.6 188.6 L 487.9 188.7 L 490.2 188.7 L 492.5 188.7 L 494.8 188.7 L 497.2 188.6 L 499.5 188.5 L 501.8 188.4 L 504.1 188.3 L 506.4 188.2 L 508.7 188.0 L 511.0 187.8 L 513.3 187.6 L 515.6 187.3 L 517.9 187.1 L 520.2 186.8 L 522.5 186.5 L 524.8 186.1 L 527.1 185.8 L 529.4 185.4 L 531.7 185.0 L 534.0 184.5 L 536.4 184.1 L 538.7 183.6 L 541.0 183.1 L 543.3 182.6 L 545.6 182.0 L 547.9 181.4 L 550.2 180.8 L 552.5 180.2 L 554.8 179.5 L 557.1 178.9 L 559.4 178.2 L 561.7 177.4 L 564.0 176.7 L 566.3 175.9 L 568.6 175.1 L 570.9 174.3 L 573.3 173.5 L 575.6 172.6 L 577.9 171.7 L 580.2 170.8 L 582.5 169.8 L 584.8 168.9 L 587.1 167.9 L 589.4 166.9 L 591.7 165.8 L 594.0 164.8 L 596.3 163.7 L 598.6 162.6 L 600.9 161.4 L 603.2 160.3 L 605.5 159.1 L 607.8 157.9 L 610.1 156.7 L 612.5 155.4 L 614.8 154.1 L 617.1 152.8 L 619.4 151.5 L 621.7 150.2 L 624.0 148.8 L 626.3 147.4" stroke="#BBBBBB" stroke-width="2" fill="none" clip-path="url(#prefigure-cm-dotproduct-__clipPath-1)"/>
+  <path id="prefigure-cm-dotproduct-db-v" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-h0072B2)" d="M 491.1 188.7 L 614.7 188.7"/>
+  <path id="prefigure-cm-dotproduct-db-F" stroke="#D55E00" stroke-width="3" fill="none" marker-end="url(#prefigure-cm-dotproduct-arrow-head-end-3_None_24_60-hD55E00)" d="M 491.1 188.7 L 491.1 89.1"/>
+  <path id="prefigure-cm-dotproduct-db-right" stroke="black" stroke-width="2" fill="none" d="M 511.1 188.7 L 511.1 168.7 L 491.1 168.7"/>
+  <circle id="prefigure-cm-dotproduct-db-P" cx="491.1" cy="188.7" r="4" stroke="black" stroke-width="2" fill="black"/>
+  <g id="prefigure-cm-dotproduct-db-vl" transform="translate(626.3,187.9) translate(0.0,-4.0)">
+    <g id="prefigure-cm-dotproduct-__g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#0072B2" width="10.984px" height="8.040px" role="img" focusable="false" viewBox="0 -444 607 444" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-6-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-6-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-db-Fl" transform="translate(491.1,77.5) translate(-6.6,-12.3)">
+    <g id="prefigure-cm-dotproduct-__g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#D55E00" width="13.104px" height="12.304px" role="img" focusable="false" viewBox="0 -680 724 680" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-7-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F">
+                <use data-c="1D405" xlink:href="#prefigure-cm-dotproduct-MJX-7-TEX-B-1D405"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-db-zero" transform="translate(517.0,210.5) translate(0.0,-8.1)">
+    <g id="prefigure-cm-dotproduct-__g-6">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.728px; color:#009E73" width="172.400px" height="16.288px" role="img" focusable="false" viewBox="0 -694 9525 900" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-20" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-N-A0" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-8-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="3" data-semantic-children="0,1" data-semantic-collapsed="(3 (c 2) 0 1)" data-semantic-speech="no component along bold v">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-parent="3" data-semantic-speech="no component along">
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6E"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6F" transform="translate(556,0)"/>
+              <use data-c="20" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-20" transform="translate(1056,0)"/>
+              <use data-c="63" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-63" transform="translate(1306,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6F" transform="translate(1750,0)"/>
+              <use data-c="6D" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6D" transform="translate(2250,0)"/>
+              <use data-c="70" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-70" transform="translate(3083,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6F" transform="translate(3639,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6E" transform="translate(4139,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-65" transform="translate(4695,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6E" transform="translate(5139,0)"/>
+              <use data-c="74" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-74" transform="translate(5695,0)"/>
+              <use data-c="20" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-20" transform="translate(6084,0)"/>
+              <use data-c="61" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-61" transform="translate(6334,0)"/>
+              <use data-c="6C" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6C" transform="translate(6834,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6F" transform="translate(7112,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-6E" transform="translate(7612,0)"/>
+              <use data-c="67" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-67" transform="translate(8168,0)"/>
+              <use data-c="A0" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-N-A0" transform="translate(8668,0)"/>
+            </g>
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(8918,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-8-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-cm-dotproduct-db-concl" transform="translate(511.0,242.3) translate(-112.0,-8.0)">
+    <g id="prefigure-cm-dotproduct-__g-7">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.512px" width="223.904px" height="16.072px" role="img" focusable="false" viewBox="0 -694 12370.6 888" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-20" d=""/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/>
+          <path id="prefigure-cm-dotproduct-MJX-9-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="13" data-semantic-children="11,8" data-semantic-collapsed="(13 (c 12) 11 8)" data-semantic-speech="bold upper F dot bold v equals 0 right double arrow speed constant">
+            <g data-mml-node="mrow" data-semantic-type="multirel" data-semantic-role="unknown" data-semantic-id="11" data-semantic-children="9,4,10" data-semantic-content="3,6" data-semantic-parent="13" data-semantic-speech="bold upper F dot bold v equals 0 right double arrow">
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="multiplication" data-semantic-id="9" data-semantic-children="0,2" data-semantic-content="1" data-semantic-parent="11" data-semantic-speech="bold upper F dot bold v">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="9" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold upper F">
+                    <use data-c="1D405" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-B-1D405"/>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="1" data-semantic-parent="9" data-semantic-operator="infixop,⋅" data-semantic-speech="dot" transform="translate(946.2,0)">
+                  <use data-c="22C5" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-22C5"/>
+                </g>
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1446.4,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="9" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                    <use data-c="1D42F" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-B-1D42F"/>
+                  </g>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="3" data-semantic-parent="11" data-semantic-operator="multirel" data-semantic-speech="equals" transform="translate(2331.2,0)">
+                <use data-c="3D" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-3D"/>
+              </g>
+              <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="11" data-semantic-speech="0" transform="translate(3387,0)">
+                <use data-c="30" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-30"/>
+              </g>
+              <g data-mml-node="mstyle" transform="translate(3887,0)">
+                <g data-mml-node="mspace"/>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="arrow" data-semantic-id="6" data-semantic-parent="11" data-semantic-operator="multirel" data-semantic-speech="right double arrow" transform="translate(4442.8,0)">
+                <use data-c="21D2" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-21D2"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="empty" data-semantic-role="unknown" data-semantic-id="10" data-semantic-parent="11" data-semantic-speech="" transform="translate(5442.8,0)"/>
+            </g>
+            <g data-mml-node="mstyle" transform="translate(5442.8,0)">
+              <g data-mml-node="mspace"/>
+            </g>
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="8" data-semantic-parent="13" data-semantic-speech="speed constant" transform="translate(5998.6,0)">
+              <use data-c="73" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-73"/>
+              <use data-c="70" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-70" transform="translate(394,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-65" transform="translate(950,0)"/>
+              <use data-c="65" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-65" transform="translate(1394,0)"/>
+              <use data-c="64" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-64" transform="translate(1838,0)"/>
+              <use data-c="20" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-20" transform="translate(2394,0)"/>
+              <use data-c="63" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-63" transform="translate(2644,0)"/>
+              <use data-c="6F" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-6F" transform="translate(3088,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-6E" transform="translate(3588,0)"/>
+              <use data-c="73" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-73" transform="translate(4144,0)"/>
+              <use data-c="74" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-74" transform="translate(4538,0)"/>
+              <use data-c="61" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-61" transform="translate(4927,0)"/>
+              <use data-c="6E" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-6E" transform="translate(5427,0)"/>
+              <use data-c="74" xlink:href="#prefigure-cm-dotproduct-MJX-9-TEX-N-74" transform="translate(5983,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>
