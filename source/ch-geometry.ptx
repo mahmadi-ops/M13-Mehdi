@@ -6,8 +6,8 @@
 <chapter xml:id="chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>3D Space and Vector Algebra</title>
 
-  <!-- UNPOSTED <xi:include href="ch-12-1.ptx" /> UNPOSTED -->
-  <!-- UNPOSTED <xi:include href="ch-12-2.ptx" /> UNPOSTED -->
+  <xi:include href="ch-12-1.ptx" />
+  <xi:include href="ch-12-2.ptx" />
   <!-- UNPOSTED <xi:include href="Dotproduct.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="the-cross-product.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="Parametrization.ptx" /> UNPOSTED -->
