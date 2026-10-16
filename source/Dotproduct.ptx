@@ -45,10 +45,11 @@ for expressing it.
 </li>
 <li>
 <p>
-Explain how the dot product is used in data science to measure similarity:
+*Explain how the dot product is used in data science to measure similarity:
 represent preferences as vectors, compute the cosine similarity and the
 angular distance between them, interpret the result, and extend the
-computation from two dimensions to <m>\mathbb R^n</m>.
+computation from two dimensions to <m>\mathbb R^n</m>. (Starred: for the
+interested reader, not examined.)
 </p>
 </li>
 </ul>
@@ -874,7 +875,12 @@ so by <xref ref="eq-work"/>, evaluated with <xref ref="eq-5"/>, the work done is
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-data-science">
-<title>Application in Data Science: Measuring Similarity in Tastes</title>
+<title>*Application in Data Science: Measuring Similarity in Tastes</title>
+
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 Every time a streaming service tells you <q>because you watched
