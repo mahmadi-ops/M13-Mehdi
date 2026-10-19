@@ -125,7 +125,7 @@ arranged this way.
 </p>
 
 <p>
-The right-hand rule will return in the section on the cross product,
+The right-hand rule will return in <xref ref="section-cross-product"/>,
 where we use it in a second form to determine the direction of the cross
 product <m>\mathbf u \times \mathbf v</m> of two vectors.
 </p>
