@@ -10,7 +10,7 @@
   <xi:include href="ch-12-2.ptx" />
   <xi:include href="Dotproduct.ptx" />
   <xi:include href="the-cross-product.ptx" />
-  <!-- UNPOSTED <xi:include href="Parametrization.ptx" /> UNPOSTED -->
+  <xi:include href="Parametrization.ptx" />
   <!-- UNPOSTED <xi:include href="ch-12-5.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="Conics.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="QuadricSurface.ptx" /> UNPOSTED -->
