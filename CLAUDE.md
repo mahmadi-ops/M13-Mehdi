@@ -146,23 +146,18 @@ assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
 markers (convention below) in its `assignment-<n>-*.ptx`; `release`
 after the due date deletes only the two marker lines; `relock` re-wraps.
 
-This repo's own Chapter 5 is a copy of that book's **Assignments and
-Review Problems** chapter (Sep 2026): `source/exercises.ptx` includes the
-same fourteen worksheet files (`assignment-<n>-*.ptx`,
-`review-problems-<n>.ptx`, pages `worksheet-assignment-<n>.html` and
-`worksheet-review-problems-<n>.html`), with their cross-references
-pointed at this book's section ids. The chapter and its worksheets are
-shown unnumbered, exactly as in the skeletal book, by the rules at the
-end of `assets/custom.css` (display-only; PreTeXt has no unnumbered
-chapter). The assignment pages carry the same Socratic tutor widget
-(`assets/custom.js`, `assets/gemini-tutor.html`). The old per-topic
-`exercises-*.ptx` worksheets are gone. Two consequences: the desk's
-`unpost-notes` for a topic here now takes down every assignment and
-review set whose introduction links that topic (the script wraps them
-`UNPOSTED-WITH` and restores them on repost); and any content change to
-an assignment should be made in both books, or copied across from the
-skeletal book, so the two stay identical. The skeletal rule below still
-applies to anything posted here.
+This book carries **no assignments or review sets** (removed Oct 2026 at
+the instructor's request): `source/main.ptx` no longer includes
+`source/exercises.ptx`, and `scripts/desk_action.py` knows no assignment
+or review-set topics here, so a desk click cannot bring them back. The
+fourteen worksheet files (`assignment-<n>-*.ptx`, `review-problems-<n>.ptx`)
+and `exercises.ptx` are still in `source/`, unbuilt, as an archive only;
+the skeletal book is the one place the problem sets are edited and
+posted. Do not re-include them unless the instructor asks. The
+unnumbered-chapter rules at the end of `assets/custom.css` and the tutor
+widget in `assets/custom.js` key on worksheet pages that no longer exist
+here and are inert. The skeletal rule below still applies to anything
+posted here.
 
 **Hidden binomial-series material.** Everything that uses the binomial
 series outside its own section (the starred problems of Assignment 3 and
@@ -184,14 +179,13 @@ only, never done on your own judgment.
   `source/main.ptx`) as
   `<!-- UNPOSTED <xi:include href="..."/> UNPOSTED -->`, so reposting is
   just removing the wrapper. Then build: if still-included files hold
-  `<xref>`s into the removed section (the exercises chapter often does),
-  the build breaks — in that case also unpost the referencing exercise
-  worksheet if it belongs to the same topic, and otherwise mark the
-  request `needs-input` naming the conflicting file instead of forcing
-  it. Finally set the desk state back (`posted: null`, `live: false`).
+  `<xref>`s into the removed section, the build breaks — in that case
+  mark the request `needs-input` naming the conflicting file instead of
+  forcing it (the script bails on its own when wrapping an include cannot
+  fix it). Finally set the desk state back (`posted: null`, `live: false`).
 - **Unpost an assignment** (`unpost-assignment`, `payload.n`): same
-  wrapper trick on the assignment's include in `source/exercises.ptx`;
-  desk state `posted: null`, `live: false`.
+  wrapper trick on the assignment's include in M13-Skeletal-Notes'
+  `source/exercises.ptx`; desk state `posted: null`, `live: false`.
 - **Re-lock solutions** (`relock`, `payload.n`): re-wrap that
   assignment's `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED
   markers (restore the original `assignment`/`due` attributes); desk

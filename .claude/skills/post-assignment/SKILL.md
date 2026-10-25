@@ -13,10 +13,11 @@ and 9 — sanity-check the given date against that.)
 Follow the **Posting an assignment** workflow in this repo's `CLAUDE.md`:
 
 1. Put the problems where the instructor's content says they go — the
-   assignment's `assignment-<n>-*.ptx` worksheet (this book carries a
-   copy of the skeletal book's Assignments and Review Problems chapter,
-   included from `source/exercises.ptx`), following the existing pattern.
-   Never invent problems or solutions; the instructor supplies them.
+   assignment's `assignment-<n>-*.ptx` worksheet in M13-Skeletal-Notes
+   (this book no longer carries the Assignments and Review Problems
+   chapter; its copies in `source/` are an unbuilt archive), following
+   the existing pattern. Never invent problems or solutions; the
+   instructor supplies them.
 2. Wrap **every** `<solution>`, `<answer>`, and `<hint>` of the
    assignment's problems in SOLUTION-LOCKED markers (see `CLAUDE.md`) with
    `assignment="<n>" due="<YYYY-MM-DD>"`. Unwrapped solutions go public on

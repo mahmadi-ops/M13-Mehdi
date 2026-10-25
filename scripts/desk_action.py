@@ -3,15 +3,13 @@
 
 Usage: desk_action.py post-notes|unpost-notes <topic-key> [<topic-key> ...]
 
-A topic is a lecture section (keyed by its xml:id, which is also its page
-name on the site) or an assignment or review set (keyed by its file name
-without .ptx).  Posting unwraps the topic's <xi:include>; unposting wraps
-it in the UNPOSTED comment described in CLAUDE.md.  Several keys make one
+A topic is a lecture section, keyed by its xml:id (which is also its page
+name on the site).  Posting unwraps the topic's <xi:include>; unposting
+wraps it in the UNPOSTED comment described in CLAUDE.md.  Several keys make one
 change, checked as a whole: that is how a clean slate is done, and how a set
 of topics that cite each other comes down together.
 
-Chapters 2-4 and the problems chapter are wrapper files holding includes
-(the problems chapter also has an introduction), and PreTeXt rejects a
+Chapters 2-4 are wrapper files holding includes, and PreTeXt rejects a
 chapter with no sections and a book with no chapters.  So a chapter whose
 every include is wrapped leaves main.ptx too, returns when one of its
 sections is posted, and the placeholder chapter ch-coming-soon.ptx stands
@@ -37,7 +35,6 @@ CONTAINERS = {
     "source/ch-series-sequences.ptx": "ch-series-sequences.ptx",
     "source/ch-geometry.ptx": "ch-geometry.ptx",
     "source/ch-functions-multiple-variables.ptx": "ch-functions-multiple-variables.ptx",
-    "source/exercises.ptx": "exercises.ptx",
 }
 
 # A book needs a chapter, so this placeholder stands in while every real
@@ -72,22 +69,6 @@ TOPICS = {
     "section-tangent-planes-differentials": ("source/ch-functions-multiple-variables.ptx", "TangentPlanesDifferentials.ptx"),
     "section-extreme-values": ("source/ch-functions-multiple-variables.ptx", "extreme-values-saddle-points.ptx"),
     "section-lagrange-multipliers": ("source/ch-functions-multiple-variables.ptx", "LagrangeMultipliers.ptx"),
-    # Assignments and Review Problems, all included from exercises.ptx
-    # (pages worksheet-assignment-N.html and worksheet-review-problems-N.html)
-    "assignment-1-hyperbolic": ("source/exercises.ptx", "assignment-1-hyperbolic.ptx"),
-    "assignment-2-series-taylor": ("source/exercises.ptx", "assignment-2-series-taylor.ptx"),
-    "assignment-3-taylor-convergence-binomial": ("source/exercises.ptx", "assignment-3-taylor-convergence-binomial.ptx"),
-    "assignment-4-space-vectors-dot-product": ("source/exercises.ptx", "assignment-4-space-vectors-dot-product.ptx"),
-    "assignment-5-cross-product-lines-planes": ("source/exercises.ptx", "assignment-5-cross-product-lines-planes.ptx"),
-    "assignment-6-quadric-surfaces": ("source/exercises.ptx", "assignment-6-quadric-surfaces.ptx"),
-    "assignment-7-functions-several-variables": ("source/exercises.ptx", "assignment-7-functions-several-variables.ptx"),
-    "assignment-8-chain-rule": ("source/exercises.ptx", "assignment-8-chain-rule.ptx"),
-    "assignment-9-tangent-planes": ("source/exercises.ptx", "assignment-9-tangent-planes.ptx"),
-    "assignment-10-extreme-values-lagrange": ("source/exercises.ptx", "assignment-10-extreme-values-lagrange.ptx"),
-    "review-problems-1": ("source/exercises.ptx", "review-problems-1.ptx"),
-    "review-problems-2": ("source/exercises.ptx", "review-problems-2.ptx"),
-    "review-problems-3": ("source/exercises.ptx", "review-problems-3.ptx"),
-    "review-problems-4": ("source/exercises.ptx", "review-problems-4.ptx"),
 }
 
 
