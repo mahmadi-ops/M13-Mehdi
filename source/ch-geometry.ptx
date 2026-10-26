@@ -12,6 +12,6 @@
   <xi:include href="the-cross-product.ptx" />
   <xi:include href="Parametrization.ptx" />
   <xi:include href="ch-12-5.ptx" />
-  <!-- UNPOSTED <xi:include href="Conics.ptx" /> UNPOSTED -->
+  <xi:include href="Conics.ptx" />
   <!-- UNPOSTED <xi:include href="QuadricSurface.ptx" /> UNPOSTED -->
 </chapter>
