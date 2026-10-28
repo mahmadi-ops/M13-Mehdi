@@ -13,5 +13,5 @@
   <xi:include href="Parametrization.ptx" />
   <xi:include href="ch-12-5.ptx" />
   <xi:include href="Conics.ptx" />
-  <!-- UNPOSTED <xi:include href="QuadricSurface.ptx" /> UNPOSTED -->
+  <xi:include href="QuadricSurface.ptx" />
 </chapter>
