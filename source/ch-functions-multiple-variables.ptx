@@ -7,7 +7,7 @@
   <title>Functions of Multiple Variables</title>
 
   <xi:include href="ch-14-1.ptx" />
-  <!-- UNPOSTED <xi:include href="ch-14-2.ptx" /> UNPOSTED -->
+  <xi:include href="ch-14-2.ptx" />
   <!-- UNPOSTED <xi:include href="ch-14-3.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="ch-14-4.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="directional-derivatives.ptx" /> UNPOSTED -->
