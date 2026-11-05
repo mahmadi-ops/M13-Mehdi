@@ -4,7 +4,12 @@
      Requires in assets/ :  isotherm-runner.html, isotherm-runner-preview.png -->
 
 <subsection xml:id="subsec-scalar-fields-potentials">
-  <title>Scalar Fields, Potentials, and the Direction Nature Chooses</title>
+  <title>*Scalar Fields, Potentials, and the Direction Nature Chooses</title>
+
+  <p>
+    <em>Starred section.</em> This one is for the interested reader. It will not
+    be examined.
+  </p>
 
   <p>
     A <term>scalar field</term> is a rule that assigns a single number to every point of
