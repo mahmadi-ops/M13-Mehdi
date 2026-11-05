@@ -213,3 +213,11 @@ body.letter #m13-tutor-fab, body.letter #m13-tutor-panel,
 body.a4 #m13-tutor-fab, body.a4 #m13-tutor-panel {
   display: none !important;
 }
+
+/* Let mobile equations use part of a knowl's inner horizontal padding. */
+@media (max-width: 640px) {
+  .responsive-math .knowl__content .displaymath {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
