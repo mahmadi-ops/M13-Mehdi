@@ -10,7 +10,7 @@
   <xi:include href="ch-14-2.ptx" />
   <xi:include href="ch-14-3.ptx" />
   <xi:include href="ch-14-4.ptx" />
-  <!-- UNPOSTED <xi:include href="directional-derivatives.ptx" /> UNPOSTED -->
+  <xi:include href="directional-derivatives.ptx" />
   <!-- UNPOSTED <xi:include href="TangentPlanesDifferentials.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="extreme-values-saddle-points.ptx" /> UNPOSTED -->
   <!-- UNPOSTED <xi:include href="LagrangeMultipliers.ptx" /> UNPOSTED -->
