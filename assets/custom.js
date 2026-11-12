@@ -446,7 +446,8 @@
 })();
 
 /* ------------------------------------------------------------------ *
- * Reflow equations in Sections 4.1--4.4 as the reading column changes.
+ * Reflow equations in Sections 4.1--4.4 and in Lagrange Multipliers as the
+ * reading column changes.
  * MathJax 4 can break long displays without shrinking their type. Reflow
  * after a solution opens as well: hidden knowls have no usable width
  * during the initial typesetting pass.
@@ -456,7 +457,8 @@
     "#chapter-functions-several-variables, #chapter-limits-continuity, " +
     "#chapter-partial-derivatives, #chapter-chain-rule, " +
     "section[id^='sec-fsv-'], section[id^='sec-lim-'], " +
-    "section[id^='sec-pd-'], section[id^='sec-cr-']"
+    "section[id^='sec-pd-'], section[id^='sec-cr-'], " +
+    "#section-lagrange-multipliers, section[id^='sec-lagrange-']"
   );
   if (!scope) return;
   var content = document.getElementById("ptx-content") || scope;
