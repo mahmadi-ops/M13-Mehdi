@@ -21,6 +21,20 @@
     - ComputingNormalVector.mp4          (video for Example I)
     - ComputingNormalVector-preview.png  (poster frame for that video)
 
+  The tangent plane is derived from the cross product of the direction
+  vectors of the two tangent lines (instructor request, Nov 2026); the two
+  figures of that derivation are Asymptote (interactive WebGL in HTML, vector
+  PDF in print), drawn on the surface and point of fig-pd-tangent-x.  The
+  layers of tangent-plane-manim.html follow the same order.
+
+  The four figures of "Estimating the Change in a Particular Direction" are
+  Asymptote as well (they replaced two PreFigure diagrams and two TikZ
+  pictures), and differential-estimate-manim.html, in assets, is the
+  interactive that compares df with Delta f for the example of that
+  subsection.
+  The figure of the first example (the paraboloid with its tangent plane and
+  normal line) is Asymptote too.
+
   In HTML output the first figure is the interactive explorer; in PDF it
   falls back to the TikZ picture kept in the <static> element, so print is
   unchanged.  The video renders inline in HTML and as the poster image with
@@ -40,8 +54,9 @@ After completing this section, you should be able to:
 <li>
 <p>
 Derive the equation of the tangent plane to the surface <m>z = f(x,y)</m>
-at a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> from the slopes
-<m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> of the two tangent lines in
+at a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> from the cross product of the
+direction vectors <m>\hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
+<m>\hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m> of the two tangent lines in
 the planes <m>y = y_0</m> and <m>x = x_0</m>.
 </p>
 </li>
@@ -78,7 +93,8 @@ and that <m>f_y(x_0,y_0)</m> is the slope of the tangent line to the
 curve cut by the plane <m>x = x_0</m>. In this section we put these two
 tangent lines together: the plane containing both of them is the tangent
 plane to the surface at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. We find its
-equation, use its normal vector to write the equation of the normal line
+equation from the cross product of the direction vectors of the two
+tangent lines, use its normal vector to write the equation of the normal line
 to the surface, estimate the change in <m>f</m> caused by moving a small
 distance away from <m>P_0</m> in a given direction, and finally use the
 tangent plane to linearize <m>f</m> near a point.
@@ -90,55 +106,284 @@ tangent plane to linearize <m>f</m> near a point.
 <title>Equation of the Tangent Plane</title>
 
 <p>
-We use what we learned about the partial derivatives and slopes of
-tangent lines to calculate the equation of the tangent plane to the
-surface <m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m>.
+We use two things we already know to calculate the equation of the
+tangent plane to the surface <m>z = f(x,y)</m> at
+<m>P_0(x_0, y_0, z_0)</m>, where <m>z_0 = f(x_0,y_0)</m>: the partial
+derivatives are the slopes of two tangent lines at <m>P_0</m>, and the
+cross product of two vectors is perpendicular to both of them
+(<xref ref="section-cross-product"/>).
 </p>
 
 <p>
-Let us consider the equation of the tangent plane
-<m>A(x - x_0) + B(y - y_0) + C(z - z_0) = 0</m>, where
-<m>z_0 = f(x_0,y_0)</m>. We then rewrite the equation as
-<md xml:id="eq-tp-plane-rewrite" number="yes">
-z - z_0 = -\frac{A}{C}(x - x_0) - \frac{B}{C}(y - y_0).
+<em>The direction vectors of the two tangent lines.</em> Consider the
+tangent line at <m>P_0</m> to the curve cut from the surface by the plane
+<m>y = y_0</m>. Along this line <m>y</m> stays equal to <m>y_0</m>, and
+the slope of the line is <m>f_x(x_0,y_0)</m>: each time <m>x</m>
+increases by <m>1</m>, <m>z</m> changes by <m>f_x(x_0,y_0)</m>. Therefore
+the displacement <m>\langle 1, 0, f_x(x_0,y_0)\rangle</m> takes
+<m>P_0</m> to another point of the line, which means it is a direction
+vector of this tangent line. Similarly, along the tangent line at
+<m>P_0</m> in the plane <m>x = x_0</m>, <m>x</m> stays equal to
+<m>x_0</m> and each time <m>y</m> increases by <m>1</m>, <m>z</m> changes
+by <m>f_y(x_0,y_0)</m>. The direction vectors of the two tangent lines
+are therefore
+<md xml:id="eq-tp-direction-vectors" number="yes">
+\mathbf v_1 = \hat{\imath} + f_x(x_0,y_0)\,\hat{k}
+\qquad\text{and}\qquad
+\mathbf v_2 = \hat{\jmath} + f_y(x_0,y_0)\,\hat{k},
 </md>
+as shown in <xref ref="fig-tp-direction-vectors"/>.
 </p>
 
-<p>
-When <m>y = y_0</m>, we have <m>z - z_0 = -\frac{A}{C}(x - x_0)</m>,
-which is the equation of the tangent line at <m>P_0</m> in the plane
-<m>y = y_0</m>, and therefore its slope <m>-\frac{A}{C}</m> is
-<m>f_x(x_0,y_0)</m>. Similarly, when <m>x = x_0</m>, we have
-<m>z - z_0 = -\frac{B}{C}(y - y_0)</m>, which is the equation of the
-tangent line at <m>P_0</m> in the plane <m>x = x_0</m>, and therefore its
-slope <m>-\frac{B}{C}</m> is <m>f_y(x_0,y_0)</m>.
-<xref ref="fig-tp-plane-normal"/> shows the two tangent lines inside
-the planes <m>y = y_0</m> and <m>x = x_0</m>.
-</p>
+<figure xml:id="fig-tp-direction-vectors">
+<caption>
+The direction vectors of the two tangent lines at <m>P_0</m>. In the
+plane <m>y = y_0</m> a run of <m>1</m> in the <m>x</m> direction comes
+with a rise of <m>f_x(x_0,y_0)</m>, so
+<m>\mathbf v_1 = \hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m>; in the plane
+<m>x = x_0</m> a run of <m>1</m> in the <m>y</m> direction comes with a
+rise of <m>f_y(x_0,y_0)</m>, so
+<m>\mathbf v_2 = \hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m>. (Both slopes
+are negative at this point, so both rises point down.)
+</caption>
+<image width="86%">
+<shortdescription>A grey surface with two curves through a magenta point P 0, the tangent line to each curve, and an arrow along each tangent line.</shortdescription>
+<description><p>
+A patch of the surface z equals 3 minus one quarter x squared minus 0.45
+y squared around the point P 0 at (0.5, 0.5, 2.825). The green curve cut
+by the plane y equals y 0 and the amber curve cut by the plane x equals
+x 0 cross at P 0. The teal tangent line to the green curve carries the
+teal arrow v 1 from P 0, and the dark purple tangent line to the amber
+curve carries the dark purple arrow v 2 from P 0. Dashed legs show each
+arrow as a run of 1, parallel to the x axis for v 1 and to the y axis for
+v 2, followed by a vertical rise labelled f x for v 1 and f y for v 2.
+</p></description>
+<asymptote label="asymptote-tp-direction-vectors"><![CDATA[
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(12cm,9cm);
+currentprojection=orthographic(camera=(7,5,5),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+
+// The surface, the point and the colours of fig-pd-tangent-x and
+// fig-pd-tangent-y, drawn on a smaller patch around P0 so that the two
+// direction vectors (each of run 1) are large enough to read.
+real a=-0.6, b=1.8;
+triple surfacePoint(pair p) {
+  return (p.x,p.y,3-0.25*p.x^2-0.45*p.y^2);
+}
+surface s=surface(surfacePoint,(a,a),(b,b),12,12);
+draw(s,surfacepen=gray(0.75)+opacity(0.35),
+     meshpen=gray(0.55)+opacity(0.4)+linewidth(0.3pt));
+
+real fx=-0.25, fy=-0.45;
+triple P=(0.5,0.5,2.825);
+triple v1=(1,0,fx), v2=(0,1,fy);
+pen xTrace=rgb("008000")+linewidth(1.4pt);
+pen yTrace=orange+linewidth(1.4pt);
+pen xTan=rgb("009999");
+pen yTan=rgb("660066");
+draw(graph(new triple(real t) {return (t,0.5,2.8875-0.25*t^2);},a,b),xTrace);
+draw(graph(new triple(real t) {return (0.5,t,2.9375-0.45*t^2);},a,b),yTrace);
+// the two tangent lines (thin), and a direction vector on each (thick)
+draw((P-1.1v1)--(P+1.15v1),xTan+linewidth(0.9pt));
+draw((P-1.1v2)--(P+1.15v2),yTan+linewidth(0.9pt));
+draw(P--P+v1,xTan+linewidth(3pt),Arrow3(size=12pt));
+draw(P--P+v2,yTan+linewidth(3pt),Arrow3(size=12pt));
+
+// run 1, rise f_x in the plane y = y0; run 1, rise f_y in the plane x = x0
+pen leg=gray(0.15)+linewidth(0.8pt)+linetype("4 3");
+draw(P--P+X--P+v1,leg);
+draw(P--P+Y--P+v2,leg);
+label("$1$",P+0.5X,N,gray(0.15));
+label("$f_x$",P+X+0.5*fx*Z,W,gray(0.15));
+label("$1$",P+0.5Y,N,gray(0.15));
+label("$f_y$",P+Y+0.5*fy*Z,E,gray(0.15));
+
+dot(P,magenta+linewidth(5pt));
+label("$P_0$",P+0.05Z,N,magenta);
+label("$\mathbf{v}_1$",P+1.18v1,SW,xTan);
+label("$\mathbf{v}_2$",P+1.18v2,SE,yTan);
+label("$y=y_0$",(b,0.5,2.8875-0.25*b^2),SE,xTrace);
+label("$x=x_0$",(0.5,b,2.9375-0.45*b^2),E,yTrace);
+label("$z=f(x,y)$",surfacePoint((1.8,-0.6)),W,gray(0.4));
+
+pen ax=gray(0.25)+linewidth(0.6pt);
+triple O=(a-0.2,a-0.2,0.7);
+draw(Label("$x$",1),O--(b+0.3,a-0.2,0.7),ax,Arrow3);
+draw(Label("$y$",1),O--(a-0.2,b+0.3,0.7),ax,Arrow3);
+draw(Label("$z$",1),O--(a-0.2,a-0.2,3.6),ax,Arrow3);
+]]></asymptote>
+</image>
+</figure>
 
 <p>
-Therefore the equation of the <term>tangent plane to the surface</term>
-<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> is
+<em>The normal vector.</em> The tangent plane at <m>P_0</m> is the plane
+that contains both tangent lines, so <m>\mathbf v_1</m> and
+<m>\mathbf v_2</m> are both parallel to it. These two vectors are not
+parallel to each other, so their cross product is a nonzero vector
+perpendicular to both of them, and hence it is normal to the tangent
+plane. Using <xref ref="eq-cross-determinant"/>, with <m>f_x</m> and
+<m>f_y</m> evaluated at <m>(x_0,y_0)</m>,
+<md>
+<mrow>
+\mathbf v_1 \times \mathbf v_2 \amp =
+\begin{vmatrix}
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
+1 \amp 0 \amp f_x \\
+0 \amp 1 \amp f_y
+\end{vmatrix}
+</mrow>
+<mrow>
+\amp =
+\begin{vmatrix} 0 \amp f_x \\ 1 \amp f_y \end{vmatrix}\hat{\imath}
+- \begin{vmatrix} 1 \amp f_x \\ 0 \amp f_y \end{vmatrix}\hat{\jmath}
++ \begin{vmatrix} 1 \amp 0 \\ 0 \amp 1 \end{vmatrix}\hat{k}
+</mrow>
+<mrow xml:id="eq-tp-v1-cross-v2" number="yes">
+\amp = -f_x(x_0,y_0)\,\hat{\imath} - f_y(x_0,y_0)\,\hat{\jmath} + \hat{k}.
+</mrow>
+</md>
+<xref ref="fig-tp-cross-product"/> shows this vector standing at a right
+angle to the tangent plane.
+</p>
+
+<figure xml:id="fig-tp-cross-product">
+<caption>
+The tangent plane at <m>P_0</m> contains <m>\mathbf v_1</m> and
+<m>\mathbf v_2</m>, and with them the parallelogram they span. The cross
+product
+<m>\mathbf v_1 \times \mathbf v_2 = -f_x\,\hat{\imath} - f_y\,\hat{\jmath} + \hat{k}</m>
+is perpendicular to both vectors, so it is normal to the tangent plane.
+Taking the cross product in the other order gives the opposite normal
+vector
+<m>\mathbf n = \mathbf v_2 \times \mathbf v_1 = f_x\,\hat{\imath} + f_y\,\hat{\jmath} - \hat{k}</m>.
+</caption>
+<image width="86%">
+<shortdescription>The surface with its pink tangent plane at P 0, the arrows v 1 and v 2 in the plane, and two opposite arrows perpendicular to the plane.</shortdescription>
+<description><p>
+The same patch of the surface and the same point P 0 as in the previous
+figure, now with the pink tangent plane touching the surface at P 0. The
+teal arrow v 1 and the dark purple arrow v 2 start at P 0 and lie in the
+plane, and the parallelogram they span is shaded darker. A black arrow,
+the cross product v 1 cross v 2, points up from P 0 at a right angle to
+the plane, with small right-angle marks against v 1 and v 2. A grey
+arrow, the vector n equals v 2 cross v 1, points from P 0 in the opposite
+direction, below the plane.
+</p></description>
+<asymptote label="asymptote-tp-cross-product"><![CDATA[
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(12cm,9cm);
+currentprojection=orthographic(camera=(7,5,5),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+
+// the same patch of the surface as in the figure of the direction vectors
+real a=-0.6, b=1.8;
+triple surfacePoint(pair p) {
+  return (p.x,p.y,3-0.25*p.x^2-0.45*p.y^2);
+}
+surface s=surface(surfacePoint,(a,a),(b,b),12,12);
+draw(s,surfacepen=gray(0.75)+opacity(0.35),
+     meshpen=gray(0.55)+opacity(0.4)+linewidth(0.3pt));
+
+real fx=-0.25, fy=-0.45;
+triple P=(0.5,0.5,2.825);
+triple v1=(1,0,fx), v2=(0,1,fy);
+triple n=cross(v1,v2);            // (-fx,-fy,1)
+
+// the tangent plane: the points P0 + s v1 + t v2
+pen planePen=rgb("e88a8a")+opacity(0.4);
+pen planeEdge=rgb("993333")+linewidth(0.5pt);
+path3 plane=(P-1.1v1-1.1v2)--(P+1.4v1-1.1v2)--(P+1.4v1+1.4v2)--(P-1.1v1+1.4v2)--cycle;
+draw(surface(plane),planePen,nolight);
+draw(plane,planeEdge);
+// the parallelogram spanned by v1 and v2 lies in the tangent plane
+path3 par=P--(P+v1)--(P+v1+v2)--(P+v2)--cycle;
+draw(surface(par),rgb("cc4444")+opacity(0.35),nolight);
+draw((P+v1)--(P+v1+v2)--(P+v2),rgb("993333")+linewidth(0.7pt)+linetype("4 3"));
+
+pen xTan=rgb("009999");
+pen yTan=rgb("660066");
+draw(P--P+v1,xTan+linewidth(3pt),Arrow3(size=12pt));
+draw(P--P+v2,yTan+linewidth(3pt),Arrow3(size=12pt));
+draw(P--P+n,black+linewidth(3pt),Arrow3(size=12pt));
+draw(P--P-n,gray(0.35)+linewidth(2.2pt),Arrow3(size=10pt));
+
+// right-angle marks between the cross product and each of v1, v2
+real m=0.16;
+triple nh=unit(n), e1=unit(v1), e2=unit(v2);
+draw((P+m*e1)--(P+m*e1+m*nh)--(P+m*nh),black+linewidth(0.6pt));
+draw((P+m*e2)--(P+m*e2+m*nh)--(P+m*nh),black+linewidth(0.6pt));
+
+dot(P,magenta+linewidth(5pt));
+label("$P_0$",P-0.1Z,S,magenta);
+label("$\mathbf{v}_1$",P+v1,NW,xTan);
+label("$\mathbf{v}_2$",P+v2,E,yTan);
+label("$\mathbf{v}_1\times\mathbf{v}_2=-f_x\,\hat{\imath}-f_y\,\hat{\jmath}+\hat{k}$",P+n,N,black);
+label("$\mathbf{n}=\mathbf{v}_2\times\mathbf{v}_1$",P-n,3S,gray(0.25));
+label("tangent plane",P+1.4v1-1.1v2,W,rgb("993333"));
+label("$z=f(x,y)$",surfacePoint((1.8,-0.6)),W,gray(0.4));
+
+pen ax=gray(0.25)+linewidth(0.6pt);
+triple O=(a-0.2,a-0.2,0.7);
+draw(Label("$x$",1),O--(b+0.3,a-0.2,0.7),ax,Arrow3);
+draw(Label("$y$",1),O--(a-0.2,b+0.3,0.7),ax,Arrow3);
+draw(Label("$z$",1),O--(a-0.2,a-0.2,3.6),ax,Arrow3);
+]]></asymptote>
+</image>
+</figure>
+
+<p>
+<em>The equation of the plane.</em> Recall from
+<xref ref="eq-planes-point-normal"/> that the plane through
+<m>P_0(x_0,y_0,z_0)</m> with normal vector
+<m>\langle A, B, C\rangle</m> has the equation
+<m>A(x - x_0) + B(y - y_0) + C(z - z_0) = 0</m>. Taking
+<m>\langle A, B, C\rangle = \mathbf v_1 \times \mathbf v_2</m> from
+<xref ref="eq-tp-v1-cross-v2"/> gives
+<md>
+-f_x(x_0,y_0)(x - x_0) - f_y(x_0,y_0)(y - y_0) + (z - z_0) = 0.
+</md>
+Multiplying both sides by <m>-1</m>, the equation of the
+<term>tangent plane to the surface</term> <m>z = f(x,y)</m> at
+<m>P_0(x_0, y_0, f(x_0,y_0))</m> is
 <md xml:id="eq-tp-tangent-plane" number="yes">
 f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0) - (z - z_0) = 0.
 </md>
 </p>
 
 <p>
-Note that we can write the equation of the surface as
+As a check, set <m>y = y_0</m> in <xref ref="eq-tp-tangent-plane"/>. We
+get <m>z - z_0 = f_x(x_0,y_0)(x - x_0)</m>, the line through <m>P_0</m>
+in the plane <m>y = y_0</m> with slope <m>f_x(x_0,y_0)</m>, which is the
+first tangent line. Similarly, setting <m>x = x_0</m> gives
+<m>z - z_0 = f_y(x_0,y_0)(y - y_0)</m>, the second tangent line. So the
+plane contains both tangent lines, as it should.
+</p>
+
+<p>
+The coefficients in <xref ref="eq-tp-tangent-plane"/> are the components
+of <m>-(\mathbf v_1 \times \mathbf v_2) = \mathbf v_2 \times \mathbf v_1</m>,
+which is also normal to the tangent plane, since multiplying a normal
+vector by <m>-1</m> gives another normal vector. This vector is a
+gradient. Note that we can write the equation of the surface as
 <m>w(x,y,z) = f(x,y) - z = 0</m> and define the gradient of <m>w</m> as
 <md>
 \nabla w = \left(\frac{\partial w}{\partial x}\right)\hat{\imath}
 + \left(\frac{\partial w}{\partial y}\right)\hat{\jmath}
 + \left(\frac{\partial w}{\partial z}\right)\hat{k}.
 </md>
-Then, reading off the coefficients in
-<xref ref="eq-tp-tangent-plane"/>, the <term>normal vector to the
-tangent plane</term> is
+Then the <term>normal vector to the tangent plane</term> is
 <md xml:id="eq-tp-normal-vector" number="yes">
 \mathbf n = \nabla w \Big|_{P_0}
-= f_x(x_0,y_0)\,\hat{\imath} + f_y(x_0,y_0)\,\hat{\jmath} - \hat{k}.
+= f_x(x_0,y_0)\,\hat{\imath} + f_y(x_0,y_0)\,\hat{\jmath} - \hat{k}
+= \mathbf v_2 \times \mathbf v_1.
 </md>
+<xref ref="fig-tp-plane-normal"/> puts the whole construction in one
+picture.
 </p>
 
 <figure xml:id="fig-tp-plane-normal">
@@ -149,10 +394,13 @@ The two vertical planes <m>y = y_0</m> and <m>x = x_0</m> cut the surface
 tangent lines at <m>P_0</m> have slopes <m>f_x(x_0,y_0)</m> and
 <m>f_y(x_0,y_0)</m>.
 The tangent plane at <m>P_0</m> contains both tangent lines, and its
-normal vector is <m>\mathbf n = \nabla w \Big|_{P_0}</m>. Equivalently,
-<m>\mathbf n</m> is given (up to sign) by the cross product of the
-direction vectors <m>\hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
-<m>\hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m> of the two tangent lines.
+normal vector is the cross product of the direction vectors
+<m>\mathbf v_1 = \hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
+<m>\mathbf v_2 = \hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m> of the two
+tangent lines. The normal arrow is drawn pointing up, in the direction of
+<m>\mathbf v_1 \times \mathbf v_2</m>; the vector
+<m>\mathbf n = \nabla w \Big|_{P_0} = \mathbf v_2 \times \mathbf v_1</m>
+points the opposite way, and both are normal to the plane.
 </caption>
 <image width="85%">
 <description>
@@ -249,9 +497,10 @@ the picture names each of these seven elements.
 
 <p>
 <xref ref="fig-tp-plane-interactive"/> rebuilds the picture above one
-layer at a time, so each ingredient of the construction can be seen
-arriving: the two slices with their tangent lines first, then the
-tangent plane that contains both lines, and finally the normal vector.
+layer at a time, in the order of the derivation: the two slices, each
+with its tangent line and its direction vector, then the cross product
+of the two direction vectors, and finally the tangent plane that this
+normal vector determines.
 </p>
 
 <figure xml:id="fig-tp-plane-interactive">
@@ -261,25 +510,35 @@ time. The plane <m>y = y_0</m> cuts the surface along the green curve of
 <xref ref="fig-pd-tangent-x"/>, whose tangent line at <m>P_0</m> has
 slope <m>f_x(x_0,y_0)</m>; the plane <m>x = x_0</m> cuts it along the
 amber curve of <xref ref="fig-pd-tangent-y"/>, whose tangent line has
-slope <m>f_y(x_0,y_0)</m>. The tangent plane contains both tangent
-lines, and <m>\mathbf n = \langle f_x, f_y, -1\rangle</m> stands
-perpendicular to it.
+slope <m>f_y(x_0,y_0)</m>. Their direction vectors are
+<m>\mathbf v_1 = \langle 1, 0, f_x\rangle</m> and
+<m>\mathbf v_2 = \langle 0, 1, f_y\rangle</m>, the cross product
+<m>\mathbf v_1 \times \mathbf v_2 = \langle -f_x, -f_y, 1\rangle</m> is
+perpendicular to both, and the tangent plane is the plane through
+<m>P_0</m> with this normal vector. Swapping the order gives
+<m>\mathbf n = \mathbf v_2 \times \mathbf v_1 = \langle f_x, f_y, -1\rangle</m>.
 </caption>
-<!-- aspect 6:5 rather than 3:2: like limit-paths-manim.html, the equation
+<!-- aspect 1:1 rather than 3:2: like limit-paths-manim.html, the equation
      card and the readout sit in a bar above the picture (and the caption in
      a strip below it) rather than overlaying it, so the frame needs the
-     extra height to keep the surface itself the same size. -->
+     extra height to keep the surface itself large enough for the direction
+     vectors and their labels to be read. -->
 <interactive xml:id="interactive-tp-plane"
-             iframe="tangent-plane-manim.html" width="100%" aspect="6:5">
+             iframe="tangent-plane-manim.html" width="100%" aspect="1:1">
 <instructions>
 <p>
 The surface and the point <m>P_0</m> are those of the figure above. Add
 the layers with the buttons <mdash/> the slice <m>y = y_0</m> with its
-blue tangent line, the slice <m>x = x_0</m> with its dark red tangent
-line, the pink tangent plane, and the normal vector <m>\mathbf n</m>
-<mdash/> in any order, or press <q>Build it up</q> to watch them arrive
-one at a time. The values of <m>f_x</m>, <m>f_y</m> and <m>\mathbf n</m>
-are collected in the panel above the picture. <q>Side view</q> looks
+blue tangent line and the direction vector <m>\mathbf v_1</m>, the slice
+<m>x = x_0</m> with its purple tangent line and the direction vector
+<m>\mathbf v_2</m>, the cross product
+<m>\mathbf v_1 \times \mathbf v_2</m> with the parallelogram the two
+vectors span, and the pink tangent plane <mdash/> in any order, or press
+<q>Build it up</q> to watch them arrive one at a time. <q>Swap</q>
+turns the cross product into
+<m>\mathbf v_2 \times \mathbf v_1 = \mathbf n</m>, which points the
+opposite way. The vectors <m>\mathbf v_1</m>, <m>\mathbf v_2</m> and
+their cross product are collected in the panel above the picture. <q>Side view</q> looks
 straight down the <m>y</m> axis so the slope of the blue tangent line can
 be read directly, <q>Spin</q> turns the picture, and dragging rotates it
 by hand.
@@ -402,68 +661,72 @@ The graph of <m>z = -x^2 - y^2</m>, the tangent plane
 <m>P_0(1,1,-2)</m>.
 </caption>
 <image width="80%">
+<shortdescription>The paraboloid z equals negative x squared minus y squared with its tangent plane and normal line at the point 1, 1, negative 2.</shortdescription>
 <description>
 <p>
 A downward-opening paraboloid drawn as a blue mesh, the graph of z equals
 negative x squared minus y squared. A green tangent plane patch touches
 the surface at the red point P 0 with coordinates 1, 1, negative 2, on
 the side of the dome. A black line passes through P 0 perpendicular to
-the plane: the normal line to the surface. A legend above the axes names
-the surface, the point P 0, the tangent plane and the normal line.
+the plane: the normal line to the surface. Labels beside them name the
+surface, the point P 0, the tangent plane with its equation, and the
+normal line with its parametric equations.
 </p>
 </description>
-<latex-image>
-\begin{tikzpicture}[font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont]
-\begin{axis}[
-  width=11.5cm, height=10cm,
-  view={-40}{25},
-  xmin=-2.3, xmax=2.9, ymin=-2.3, ymax=2.9, zmin=-8.3, zmax=2.4,
-  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-  xtick={-2,0,2}, ytick={-2,0,2}, ztick={2,0,-2,-4,-6,-8},
-  clip=false,
-  % the legend of fig-cr-saddle: above the axes, two columns, Helvetica, so
-  % that nothing has to be named by a callout line inside the picture
-  legend cell align=left,
-  legend columns=2,
-  legend style={
-    at={(0.5,1.03)}, anchor=south,
-    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
-    inner sep=5pt, row sep=2pt,
-    /tikz/every even column/.append style={column sep=10pt},
-    font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont,
-  },
-]
-% the surface z = -x^2 - y^2 (blue mesh)
-\addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
-          fill opacity=0.85, draw opacity=0.9, forget plot,
-          domain=-2:2, y domain=-2:2, samples=17, z buffer=sort]
-  {-x^2 - y^2};
-% the tangent plane -2x - 2y - z = -2 (green)
-\addplot3[surf, shader=flat, samples=2, domain=0.2:1.8, y domain=0.2:1.8,
-          fill=green!45!gray, fill opacity=0.50, draw=green!25!black,
-          draw opacity=0.7, forget plot]
-  {2 - 2*x - 2*y};
-% the normal line (1-2t, 1-2t, -2-t) (black)
-\addplot3[very thick, black, samples=2, domain=-0.55:0.4, forget plot]
-  ({1-2*x},{1-2*x},{-2-x});
-% the point P0, ringed in white so it reads against the surface
-\addplot3[only marks, mark=*, mark size=2.2, color=red, forget plot,
-          mark options={fill=red, draw=white, line width=0.5pt}]
-  coordinates {(1,1,-2)};
-% the legend: the two surfaces on the left, the point and the line on the right
-\addlegendimage{area legend, draw=blue!60, fill=blue!8}
-\addlegendentry{the surface $z=-x^2-y^2$}
-\addlegendimage{only marks, mark=*, mark size=2.2, color=red,
-                mark options={fill=red, draw=white, line width=0.5pt}}
-\addlegendentry{$P_0(1,1,-2)$}
-\addlegendimage{area legend, draw=green!25!black, fill=green!45!gray,
-                fill opacity=0.5}
-\addlegendentry{the tangent plane $-2x-2y-z=-2$}
-\addlegendimage{very thick, black}
-\addlegendentry{the normal line $(1-2t,\,1-2t,\,-2-t)$}
-\end{axis}
-\end{tikzpicture}
-</latex-image>
+<asymptote label="asymptote-tp-example-paraboloid"><![CDATA[
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(11.5cm,11cm);
+currentprojection=orthographic(camera=(9,-1,5),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+
+// the surface z = -x^2 - y^2 over the disc of radius 2.4
+triple dome(pair p) {return (p.x*cos(p.y),p.x*sin(p.y),-p.x^2);}
+surface s=surface(dome,(0,0),(2.4,2pi),12,36);
+draw(s,surfacepen=rgb(0.82,0.86,1)+opacity(0.55),
+     meshpen=rgb(0.25,0.35,0.85)+opacity(0.55)+linewidth(0.3pt));
+
+// the tangent plane -2x - 2y - z = -2 at P0(1,1,-2)
+triple P0=(1,1,-2);
+// a square patch of it, centred at P0: e1 is horizontal and e2 runs down the plane
+triple e1=unit((1,-1,0)), e2=unit((1,1,-4));
+pen planeFill=rgb("5fae5f")+opacity(0.5);
+pen planeEdge=rgb("1f5f1f")+linewidth(0.6pt);
+real h=1.05;
+path3 patch=(P0-h*e1-h*e2)--(P0+h*e1-h*e2)--(P0+h*e1+h*e2)--(P0-h*e1+h*e2)--cycle;
+draw(surface(patch),planeFill,nolight);
+draw(patch,planeEdge);
+
+// the normal line (1 - 2t, 1 - 2t, -2 - t)
+triple n=(-2,-2,-1);
+draw((P0-0.6n)--(P0+0.45n),black+linewidth(1.6pt));
+
+dot(P0,red+linewidth(6pt));
+
+pen ax=gray(0.25)+linewidth(0.6pt);
+draw(Label("$x$",1),(-2.3,0,0)--(3.1,0,0),ax,Arrow3);
+draw(Label("$y$",1),(0,-2.3,0)--(0,3.1,0),ax,Arrow3);
+draw(Label("$z$",1),(0,0,-6.6)--(0,0,2.2),ax,Arrow3);
+// a few ticks, to place the point (1,1,-2)
+pen tick=gray(0.25)+linewidth(0.6pt);
+for(int k=-6; k <= 2; k += 2) {
+  if(k != 0) {
+    draw((0,-0.08,k)--(0,0.08,k),tick);
+    label("$"+string(k)+"$",(0,-0.08,k),W,fontsize(8pt)+gray(0.25));
+  }
+}
+draw((2,-0.08,0)--(2,0.08,0),tick);
+label("$2$",(2,-0.08,0),W,fontsize(8pt)+gray(0.25));
+draw((-0.08,2,0)--(0.08,2,0),tick);
+label("$2$",(0.08,2,0),S,fontsize(8pt)+gray(0.25));
+
+// named beside the patch and in front of it, so that the plane does not hide the name
+label("$P_0(1,1,-2)$",P0+(h+0.1)*e1-0.2*unit(n),W,red);
+label("tangent plane $-2x-2y-z=-2$",P0-h*e1-h*e2,NE,rgb("1f5f1f"));
+label("normal line $(1-2t,\,1-2t,\,-2-t)$",P0-0.6n,E,black);
+label("$z=-x^2-y^2$",dome((2.4,pi/2)),E,rgb(0.2,0.3,0.75));
+]]></asymptote>
 </image>
 </figure>
 
@@ -521,92 +784,69 @@ along the tangent line, closely approximates the actual change
 <m>\Delta f = f(x+dx) - f(x)</m>, found by walking along the curve.
 </caption>
 <image width="72%">
+<shortdescription>The graph of y equals f of x with its tangent line at x, comparing the differential d f with the actual change delta f over a step d x.</shortdescription>
 <description>
 <p>
 The graph of a curve y equals f of x. At a point x on the curve, a
 right triangle formed by the tangent line has horizontal leg d x and
-vertical leg d f, equal to f prime of x times d x. A separate vertical
-bracket to the left, labeled delta f, compares this to the actual rise
-of the curve, f of x plus d x minus f of x, and a bracket to the right
-shows the differential d f equals f prime of x times d x next to the
-baseline height f of x.
+vertical leg d f, equal to f prime of x times d x. A vertical bracket to
+the left, labeled delta f, marks the actual rise of the curve, f of x
+plus d x minus f of x, and brackets to the right show the differential
+d f equals f prime of x times d x above the baseline height f of x. The
+curve ends slightly above the tangent line at x plus d x.
 </p>
 </description>
-<prefigure xmlns="https://prefigure.org" label="prefigure-tp-linear-approx-1d">
-<diagram dimensions="(500,340)" margins="14">
-<definition>curve(t) = (t, exp(0.35*t))</definition>
-<coordinates bbox="(-1.3,-0.5,6.2,4.9)">
-<vector at="la-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
-<vector at="la-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
-<parametric-curve at="la-curve" function="curve" domain="(0,4.3)"
-                   arrows="1" stroke="#D55E00" thickness="2"/>
-<line at="la-guide1" p1="(2.5,0)" p2="(2.5,2.398875)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide2" p1="(2.5,2.398875)" p2="(0,2.398875)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide3" p1="(3.5,0)" p2="(3.5,3.404166)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-guide4" p1="(3.5,3.404166)" p2="(0,3.404166)"
-      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
-<line at="la-tick1" p1="(3.5,2.398875)" p2="(5.6,2.398875)"
-      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
-<line at="la-tick2" p1="(3.5,3.238482)" p2="(5.6,3.238482)"
-      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
-<polygon at="la-triangle" points="((2.5,2.398875),(3.5,3.238482),(3.5,2.398875))"
-         closed="yes" stroke="#0072B2" thickness="2.5" fill="none" linejoin="round"/>
-<vector at="la-dx" tail="(2.5,1.898875)" v="(1.0,0)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dx-back" tail="(3.5,1.898875)" v="(-1.0,0)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-approx" tail="(4.6,2.398875)" v="(0,0.839607)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-approx-back" tail="(4.6,3.238482)" v="(0,-0.839607)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-actual" tail="(1.375,2.398875)" v="(0,1.005291)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-dfx-actual-back" tail="(1.375,3.404166)" v="(0,-1.005291)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-fx-base" tail="(4.6,2.398875)" v="(0,-2.398875)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<vector at="la-fx-base-back" tail="(4.6,0)" v="(0,2.398875)" arrow-width="6"
-        stroke="black" thickness="1"/>
-<label at="la-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
-<label at="la-ylabel" anchor="(-0.05,4.8)" alignment="w"><m>y</m></label>
-<label at="la-curvelabel" anchor="(3.5,4.05)" alignment="w" color="#D55E00">
-<m>y=f(x)</m>
-</label>
-<label at="la-x-tick" anchor="(2.5,-0.1)" alignment="s"><m>x</m></label>
-<label at="la-xdx-tick" anchor="(3.5,-0.1)" alignment="s">
-<m>x+dx</m>
-</label>
-<label at="la-fx-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x)</m></label>
-<label at="la-fxdx-tick" anchor="(-0.05,3.404166)" alignment="w">
-<m>f(x+dx)</m>
-</label>
-<label at="la-dx-label" anchor="(3.0,1.898875)" alignment="c" clear-background="yes">
-<m>dx</m>
-</label>
-<label at="la-dfx-approx-label" anchor="(4.6,2.818679)" alignment="e" clear-background="yes">
-<m>df=f'(x)\,dx</m>
-</label>
-<label at="la-dfx-actual-label" anchor="(1.2,2.90152)" alignment="w">
-<m>\Delta f</m>
-</label>
-<label at="la-fx-base-label" anchor="(4.6,1.199438)" alignment="w" clear-background="yes">
-<m>f(x)</m>
-</label>
-</coordinates>
+<asymptote label="asymptote-tp-linear-approx-1d"><![CDATA[
+import graph;
+size(11cm,7.6cm,IgnoreAspect);
 
-<annotations>
-<annotation ref="figure" text="The graph of a function y equals f of x, showing how the tangent line at x approximates the function near x plus d x.">
-  <annotation ref="la-curve" text="The graph of the function y equals f of x."/>
-  <annotation ref="la-triangle" text="A right triangle formed by the tangent line at x, with horizontal leg d x and vertical leg d f, equal to f prime of x times d x."/>
-  <annotation ref="la-dfx-actual" text="The actual change in the function, delta f, equal to f of x plus d x minus f of x, measured on the curve."/>
-  <annotation ref="la-dfx-approx" text="The differential predicted by the tangent line, d f equals f prime of x times d x."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// y = f(x), the point x and the step dx
+real f(real t) {return exp(0.35*t);}
+real x0=2.5, dx=1;
+real y0=f(x0), y1=f(x0+dx);
+real yt=y0+0.35*y0*dx;                 // the height reached along the tangent line
+
+pen curvePen=rgb("D55E00")+linewidth(1.4pt);
+pen tanPen=rgb("0072B2")+linewidth(1.6pt);
+pen guide=gray(0.5)+linewidth(0.6pt)+linetype("4 3");
+pen dim=black+linewidth(0.6pt);
+
+draw((-0.3,0)--(6.1,0),black+linewidth(0.9pt),Arrow(6));
+draw((0,-0.3)--(0,4.8),black+linewidth(0.9pt),Arrow(6));
+label("$x$",(6.1,0),E);
+label("$y$",(0,4.8),N);
+
+draw((x0,0)--(x0,y0)--(0,y0),guide);
+draw((x0+dx,0)--(x0+dx,y1)--(0,y1),guide);
+draw((x0+dx,y0)--(5.5,y0),guide);
+draw((x0+dx,yt)--(5.5,yt),guide);
+
+draw(graph(f,0,4.25),curvePen,Arrow(6));
+label("$y=f(x)$",(4.25,f(4.25)),E,curvePen);
+
+// the tangent line at x, and the triangle with legs dx and df
+draw((x0-0.9,y0-0.9*0.35*y0)--(x0+1.5*dx,y0+1.5*0.35*y0*dx),tanPen+linewidth(0.7pt));
+draw((x0,y0)--(x0+dx,yt)--(x0+dx,y0)--cycle,tanPen);
+
+// dx, df, f(x) and the actual change Delta f
+draw((x0,y0-0.42)--(x0+dx,y0-0.42),dim,Arrows(4));
+label("$dx$",(x0+dx/2,y0-0.42),S);
+draw((4.9,y0)--(4.9,yt),dim,Arrows(4));
+label("$df=f'(x)\,dx$",(4.9,(y0+yt)/2),E,tanPen);
+draw((4.9,0)--(4.9,y0),dim,Arrows(4));
+label("$f(x)$",(4.9,y0/2),E);
+draw((1.3,y0)--(1.3,y1),dim,Arrows(4));
+label("$\Delta f$",(1.3,(y0+y1)/2),W,curvePen);
+
+dot((x0,y0),curvePen+linewidth(4.5pt));
+dot((x0+dx,y1),curvePen+linewidth(4.5pt));
+dot((x0+dx,yt),tanPen+linewidth(4.5pt));
+
+label("$x$",(x0,0),S);
+label("$x+dx$",(x0+dx,0),S);
+label("$f(x)$",(0,y0),W);
+label("$f(x+dx)$",(0,y1),W);
+]]></asymptote>
 </image>
 </figure>
 
@@ -643,93 +883,85 @@ in the value of the function.
 <figure xml:id="fig-tp-change-schematic">
 <caption>
 Moving away from <m>P_0(x_0,y_0)</m> by the distance <m>ds</m> in the
-direction <m>\hat{u} = \langle u_1, u_2 \rangle</m> causes the change
+direction <m>\hat{u} = \langle u_1, u_2 \rangle</m> is the displacement
+<m>\hat{u}\,ds = u_1\,ds\,\hat{\imath} + u_2\,ds\,\hat{\jmath}</m> in the
+<m>xy</m>-plane. It takes us to the point <m>P</m> and causes the change
 <m>\Delta f = f(x_0 + u_1\,ds,\; y_0 + u_2\,ds) - f(x_0,y_0)</m> in the
-value of the function.
+value of the function, the difference between the heights of the surface
+<m>z = f(x,y)</m> above <m>P</m> and above <m>P_0</m>.
 </caption>
-<image width="95%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-tp-change">
-<diagram dimensions="(575,235)" margins="10">
-<definition>beztop(t) = ((1-t)^2*1.5 + 2*t*(1-t)*4.4 + t^2*7.6, (1-t)^2*1.55 + 2*t*(1-t)*3.35 + t^2*1.18)</definition>
-<definition>bezbot(t) = ((1-t)^2*0.7 + 2*t*(1-t)*3.6 + t^2*6.45, (1-t)^2*0.82 + 2*t*(1-t)*(-0.75) + t^2*0.78)</definition>
-<coordinates bbox="(-0.9,-1.0,10.45,3.6)">
-<vector at="cs-xaxis" v="(4.0,0)" tail="(-0.5,0)" stroke="black" thickness="2"/>
-<vector at="cs-yaxis" v="(0,3.0)" tail="(0,-0.5)" stroke="black" thickness="2"/>
-<vector at="cs-zaxis" v="(4.3,0)" tail="(5.1,1.0)" stroke="black" thickness="2"/>
-<parametric-curve at="cs-ftop" function="beztop" domain="(0,0.95)"
-                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
-<vector at="cs-ftop-arrow" v="(0.248,-0.168)" tail="(7.281,1.387)"
-        stroke="#7F7F7F" thickness="2"/>
-<parametric-curve at="cs-fbot" function="bezbot" domain="(0,0.95)"
-                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
-<vector at="cs-fbot-arrow" v="(0.264,0.142)" tail="(6.165,0.635)"
-        stroke="#7F7F7F" thickness="2"/>
-<vector at="cs-u1" v="(0.651,0)" tail="(0.7,0.9)" stroke="#E69F00" thickness="3"/>
-<vector at="cs-u2" v="(0,0.546)" tail="(1.351,0.9)" stroke="#009E73" thickness="3"/>
-<vector at="cs-uds" v="(0.651,0.546)" tail="(0.7,0.9)" stroke="black" thickness="3"/>
-<point at="cs-P0" p="(0.7,0.9)" fill="#0072B2" alignment="w">
-<m>P_0(x_0,y_0)</m>
-</point>
-<point at="cs-P" p="(1.351,1.446)" fill="#D55E00" alignment="ne">
-<m>P(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
-</point>
-<point at="cs-fP0" p="(6.6,1.0)" fill="#0072B2"/>
-<point at="cs-fP" p="(7.75,1.0)" fill="#D55E00"/>
-<label at="cs-x-label" anchor="(3.62,0.1)" alignment="e">
-<m>x</m>
-</label>
-<label at="cs-y-label" anchor="(-0.18,2.3)" alignment="w">
-<m>y</m>
-</label>
-<label at="cs-z-label" anchor="(9.5,1.0)" alignment="e">
-<m>z</m>
-</label>
-<label at="cs-header1" anchor="(-0.6,3.35)" alignment="e">
-<m>\hat{u} = u_1\,\hat{\imath} + u_2\,\hat{\jmath}</m>
-</label>
-<label at="cs-header2" anchor="(-0.6,2.9)" alignment="e">
-<m>\hat{u}\,ds = u_1\,ds\,\hat{\imath} + u_2\,ds\,\hat{\jmath},\quad \|\hat{u}\,ds\| = ds</m>
-</label>
-<label at="cs-u1-label" anchor="(1.0,0.8)" alignment="s" color="#E69F00">
-<m>u_1\,ds\,\hat{\imath}</m>
-</label>
-<label at="cs-u2-label" anchor="(1.43,1.12)" alignment="e" color="#009E73">
-<m>u_2\,ds\,\hat{\jmath}</m>
-</label>
-<label at="cs-uds-label" anchor="(0.72,1.42)" alignment="nw" color="black">
-<m>\hat{u}\,ds</m>
-</label>
-<label at="cs-fP0-label" anchor="(6.55,1.18)" alignment="n" color="#0072B2">
-<m>f(x_0,y_0)</m>
-</label>
-<label at="cs-fP-label" anchor="(7.95,0.68)" alignment="s" color="#D55E00">
-<m>f(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
-</label>
-<label at="cs-deltaf-label" anchor="(3.55,-0.62)" alignment="e">
-<m>\Delta f = f(x_0+u_1\,ds,\; y_0+u_2\,ds) - f(x_0,y_0)</m>
-</label>
-<label at="cs-ftop-label" anchor="(5.4,2.35)" alignment="n" color="#7F7F7F">
-<m>f</m>
-</label>
-<label at="cs-fbot-label" anchor="(3.0,-0.2)" alignment="s" color="#7F7F7F">
-<m>f</m>
-</label>
-</coordinates>
+<image width="90%">
+<shortdescription>A surface above the x y plane, with the displacement from P 0 to P in the plane and the change delta f in the height of the surface.</shortdescription>
+<description>
+<p>
+In the x y plane, a black arrow u d s leaves the blue point P 0 with
+coordinates x 0, y 0 and ends at the red point P with coordinates x 0
+plus u 1 d s, y 0 plus u 2 d s. Its component u 1 d s i along the x axis
+is drawn in orange and its component u 2 d s j along the y axis in green.
+Above the plane is a grey surface, the graph of z equals f of x y. Dashed
+vertical segments rise from P 0 and from P to the surface, where a blue
+point marks the height f of x 0, y 0 and a red point marks the height of
+f at P; a black curve on the surface joins them. A dashed horizontal
+segment carries the first height across to the second vertical segment,
+and a red double arrow between the two heights is labeled delta f.
+</p>
+</description>
+<asymptote label="asymptote-tp-change"><![CDATA[
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(12cm,9.5cm);
+currentprojection=orthographic(camera=(6,-7,4.5),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
 
-<annotations>
-<annotation ref="figure" text="On the left, the x y plane shows a point P 0 with coordinates x 0 y 0. A black arrow u d s leaves P 0 in the direction of the unit vector u, ending at the point P with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s. Its horizontal component u 1 d s i is drawn in orange and its vertical component u 2 d s j in green. On the right, a horizontal z axis carries the two output values: f of x 0 y 0 in blue and f of the moved point in red. Two dashed gray arrows labeled f map P 0 and P to their output values, and the difference of the outputs is the change delta f.">
-  <annotation ref="cs-P0" text="The starting point P 0 with coordinates x 0, y 0."/>
-  <annotation ref="cs-uds" text="The displacement u d s: moving away from P 0 a small distance d s in the direction of the unit vector u."/>
-  <annotation ref="cs-u1" text="The horizontal component of the displacement, u 1 d s times i, drawn in orange."/>
-  <annotation ref="cs-u2" text="The vertical component of the displacement, u 2 d s times j, drawn in green."/>
-  <annotation ref="cs-P" text="The point P reached after the displacement, with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s."/>
-  <annotation ref="cs-fbot" text="The function f maps the starting point P 0 to the output value f of x 0 y 0, marked in blue on the z axis."/>
-  <annotation ref="cs-ftop" text="The function f maps the moved point P to the output value f of x 0 plus u 1 d s, y 0 plus u 2 d s, marked in red on the z axis."/>
-  <annotation ref="cs-deltaf-label" text="The change in f, delta f, is the difference between the two output values on the z axis."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// a general surface z = f(x,y); its formula is only a prop
+real f(real x, real y) {return 1.3+0.28*x^2+0.22*y^2;}
+triple surfacePoint(pair p) {return (p.x,p.y,f(p.x,p.y));}
+surface s=surface(surfacePoint,(0.15,0.1),(2.35,2.1),12,12);
+draw(s,surfacepen=gray(0.75)+opacity(0.3),
+     meshpen=gray(0.55)+opacity(0.35)+linewidth(0.3pt));
+
+// P0, the displacement u ds and the point P, all in the xy-plane
+pair p0=(0.8,0.7), d=(0.9,0.75);
+pair p1=p0+d;
+triple P0=(p0.x,p0.y,0), P=(p1.x,p1.y,0);
+triple S0=surfacePoint(p0), S1=surfacePoint(p1);
+pen c0=rgb("0072B2"), c1=rgb("D55E00");
+pen cx=rgb("E69F00"), cy=rgb("009E73");
+
+draw(P0--(p1.x,p0.y,0),cx+linewidth(2pt),Arrow3(size=8pt));
+draw((p1.x,p0.y,0)--P,cy+linewidth(2pt),Arrow3(size=8pt));
+draw(P0--P,black+linewidth(2.4pt),Arrow3(size=10pt));
+
+// the two values of f, and the curve on the surface above the path
+pen riser=gray(0.4)+linewidth(0.7pt)+linetype("4 3");
+draw(P0--S0,riser);
+draw(P--S1,riser);
+draw(graph(new triple(real t) {return surfacePoint(p0+t*d);},0,1),black+linewidth(1.2pt));
+triple Q=(p1.x,p1.y,S0.z);
+draw(S0--Q,riser);
+draw(Q--S1,c1+linewidth(1.6pt),Arrows3(size=6pt));
+
+dot(P0,c0+linewidth(5pt));
+dot(P,c1+linewidth(5pt));
+dot(S0,c0+linewidth(5pt));
+dot(S1,c1+linewidth(5pt));
+
+label("$P_0(x_0,y_0)$",P0,W,c0);
+label("$P(x_0+u_1\,ds,\;y_0+u_2\,ds)$",P,NE,c1);
+label("$\hat{u}\,ds$",P0+0.5(P-P0),N,black);
+label("$u_1\,ds\,\hat{\imath}$",(p0.x+0.5*d.x,p0.y,0),SW,cx);
+label("$u_2\,ds\,\hat{\jmath}$",(p1.x,p0.y+0.4*d.y,0),SE,cy);
+label("$f(x_0,y_0)$",S0,W,c0);
+label("$f(x_0+u_1\,ds,\;y_0+u_2\,ds)$",S1,NE,c1);
+label("$\Delta f$",0.5(Q+S1),E,c1);
+label("$z=f(x,y)$",surfacePoint((0.15,2.1)),N,gray(0.4));
+
+pen ax=gray(0.25)+linewidth(0.6pt);
+draw(Label("$x$",1),O--(2.9,0,0),ax,Arrow3);
+draw(Label("$y$",1),O--(0,2.7,0),ax,Arrow3);
+draw(Label("$z$",1),O--(0,0,3.6),ax,Arrow3);
+]]></asymptote>
 </image>
 </figure>
 
@@ -807,98 +1039,82 @@ plane <m>x - y = 0</m> that contains the direction <m>\hat{u}</m>.
 Moving from <m>P_0(1,1,0)</m> by <m>ds = 0.1</m> along <m>\hat{u}</m>
 moves the input point (light blue), and the value of <m>f</m> climbs
 along the black intersection curve from <m>f(1,1) = 3</m> (green) to the
-orange point.
+orange point. The blue line is the tangent line to that curve at the
+green point; its slope is the directional derivative
+<m>\nabla f \Big|_{P_0} \cdot \hat{u} = 2\sqrt 2</m>.
 </caption>
 <image xml:id="image-tp-change-3d" width="75%">
+<shortdescription>The paraboloid z equals 1 plus x squared plus y squared cut by the vertical plane y equals x, with the points of the example and the tangent line.</shortdescription>
 <description>
 <p>
 An upward-opening gray paraboloid, the graph of z equals 1 plus x squared
 plus y squared, cut by a green vertical plane through the line y equals
-x. The plane meets the surface along a black parabola, and the branch of
-that parabola through the point 1, 1 faces the viewer. On the base plane,
+x. The plane meets the surface along a black parabola. On the base plane,
 a black arrow shows the unit vector u leaving the point 1, 1, 0. Four
-points are marked: the input point 1, 1, 0 in dark red, the moved input
-point in light blue just beyond it, the output point 1, 1, 3 in green on
-the curve, and the moved output point in orange on the curve; a dashed
-gray segment joins each input point to its output point. A legend below
-the picture names the surface, the plane, the curve, the vector u, and
-the four points.
+points are marked and labeled: the input point P 0 at 1, 1, 0 in dark
+red, the moved input point P in light blue just beyond it, the output
+point at height f of P 0 equals 3 in green on the curve, and the moved
+output point at height about 3.29 in orange on the curve; a dashed gray
+segment joins each input point to its output point. A blue line through
+the green point is the tangent line to the parabola there.
 </p>
 </description>
-<latex-image>
-\begin{tikzpicture}[font=\large]
-\begin{axis}[
-  width=11cm, height=10.5cm,
-  view={115}{26},
-  xmin=-2.4, xmax=2.7, ymin=-2.4, ymax=2.7, zmin=0, zmax=6.4,
-  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-  xtick={-2,0,2}, ytick={-2,0,2}, ztick={1,2,3,4,5,6},
-  clip=false,
-  legend style={
-    at={(0.5,-0.10)}, anchor=north, font=\normalsize,
-    draw=gray!50, fill=white,
-    cells={anchor=west}, legend columns=2,
-    row sep=1pt, column sep=8pt,
-  },
-]
-% the paraboloid z = 1 + x^2 + y^2 (gray, drawn over a disk)
-\addplot3[surf, shader=flat, fill=gray!40, draw=gray!55,
-          fill opacity=0.30, draw opacity=0.35,
-          domain=0:2.1, y domain=0:360, samples=18, samples y=37,
-          z buffer=sort, forget plot]
-  ({x*cos(y)},{x*sin(y)},{1+x^2});
-% the vertical plane x - y = 0 (green)
-\addplot3[surf, shader=flat, samples=2, domain=-1.7:1.7, y domain=0:6.2,
-          fill=green!50, fill opacity=0.30, draw=green!40!black,
-          draw opacity=0.5, forget plot]
-  ({x},{x},{y});
-% the intersection curve z = 1 + 2t^2 over the line y = x (black); samples
-% y=0 keeps this a single curve -- without it pgfplots closes the parabola
-% with a straight chord across the top
-\addplot3[very thick, black, domain=-1.6:1.6, samples=41, samples y=0,
-          forget plot]
-  ({x},{x},{1+2*x^2});
-% the unit vector u at (1,1,0)
-\draw[-stealth, black, very thick]
-  (axis cs:1,1,0) -- (axis cs:1.45,1.45,0);
-\node[black, anchor=south west] at (axis cs:1.25,1.25,0.05) {$\hat{u}$};
-% dashed connectors from each input point up to its output value
-\draw[gray!55, dashed] (axis cs:1,1,0) -- (axis cs:1,1,3);
-\draw[gray!55, dashed]
-  (axis cs:1.0707,1.0707,0) -- (axis cs:1.0707,1.0707,3.2929);
-% the points
-\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black,
-          forget plot]
-  coordinates {(1,1,0)};
-\addplot3[only marks, mark=*, mark size=1.7, color=cyan!70!black,
-          forget plot]
-  coordinates {(1.0707,1.0707,0)};
-\addplot3[only marks, mark=*, mark size=1.7, color=green!55!black,
-          forget plot]
-  coordinates {(1,1,3)};
-\addplot3[only marks, mark=*, mark size=1.7, color=orange, forget plot]
-  coordinates {(1.0707,1.0707,3.2929)};
-% legend
-\addlegendimage{area legend, fill=gray!40, fill opacity=0.30, draw=gray!55}
-\addlegendentry{$z=1+x^2+y^2$}
-\addlegendimage{area legend, fill=green!50, fill opacity=0.30,
-                draw=green!40!black}
-\addlegendentry{plane $x-y=0$}
-\addlegendimage{very thick, black}
-\addlegendentry{curve cut by the plane}
-\addlegendimage{-stealth, black, very thick}
-\addlegendentry{$\hat{u}=\frac{1}{\sqrt2}\hat{\imath}+\frac{1}{\sqrt2}\hat{\jmath}$}
-\addlegendimage{only marks, mark=*, mark size=1.7, color=purple!70!black}
-\addlegendentry{$P_0=(1,1,0)$}
-\addlegendimage{only marks, mark=*, mark size=1.7, color=cyan!70!black}
-\addlegendentry{$P=P_0+\hat{u}\,ds$}
-\addlegendimage{only marks, mark=*, mark size=1.7, color=green!55!black}
-\addlegendentry{$f(P_0)=3$}
-\addlegendimage{only marks, mark=*, mark size=1.7, color=orange}
-\addlegendentry{$f(P)\approx3.29$}
-\end{axis}
-\end{tikzpicture}
-</latex-image>
+<asymptote label="asymptote-tp-example-change"><![CDATA[
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(11.5cm,11cm);
+currentprojection=orthographic(camera=(8,-3,3.2),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+
+// the paraboloid z = 1 + x^2 + y^2 over the disc of radius 2.1
+triple bowl(pair p) {return (p.x*cos(p.y),p.x*sin(p.y),1+p.x^2);}
+surface s=surface(bowl,(0,0),(2.1,2pi),12,36);
+draw(s,surfacepen=gray(0.75)+opacity(0.28),
+     meshpen=gray(0.55)+opacity(0.3)+linewidth(0.3pt));
+
+// the vertical plane x - y = 0, which contains the direction u
+real h=sqrt(0.5);
+pen planeFill=rgb("66cc66")+opacity(0.25);
+pen planeEdge=rgb("2e7d32")+linewidth(0.5pt);
+path3 plane=(-1.7,-1.7,0)--(1.7,1.7,0)--(1.7,1.7,6.2)--(-1.7,-1.7,6.2)--cycle;
+draw(surface(plane),planeFill,nolight);
+draw(plane,planeEdge);
+
+// the curve cut by the plane, and its tangent line at (1,1,3)
+draw(graph(new triple(real t) {return (t,t,1+2t^2);},-1.6,1.6),black+linewidth(1.5pt));
+pen tanPen=rgb("1f4fb5")+linewidth(1.3pt);
+triple A=(1,1,3), T=(h,h,2*sqrt(2));       // T: one unit of s along the tangent line
+draw((A-0.55T)--(A+0.9T),tanPen);
+
+// u at P0, and the step ds = 0.1
+triple P0=(1,1,0), P=(1+0.1h,1+0.1h,0);
+triple B=(P.x,P.y,1+P.x^2+P.y^2);
+draw(P0--P0+(h,h,0),black+linewidth(2pt),Arrow3(size=8pt));
+pen riser=gray(0.4)+linewidth(0.7pt)+linetype("4 3");
+draw(P0--A,riser);
+draw(P--B,riser);
+
+pen cP0=rgb("8e1b3c"), cP=rgb("1ea7c5"), cA=rgb("2e8b2e"), cB=orange;
+dot(P0,cP0+linewidth(5pt));
+dot(P,cP+linewidth(5pt));
+dot(A,cA+linewidth(5pt));
+dot(B,cB+linewidth(5pt));
+
+label("$\hat{u}$",P0+(h,h,0),E,black);
+label("$P_0=(1,1,0)$",P0,W,cP0);
+label("$P=P_0+\hat{u}\,ds$",P,2S+E,cP);
+label("$f(P_0)=3$",A,2NW,cA);
+label("$f(P)\approx 3.29$",B,2E+S,cB);
+label("tangent line",A-0.55T,E,tanPen);
+label("plane $x-y=0$",(-1.7,-1.7,6.2),NW,rgb("2e7d32"));
+label("$z=1+x^2+y^2$",bowl((2.1,pi/2)),2N+E,gray(0.4));
+
+pen ax=gray(0.25)+linewidth(0.6pt);
+draw(Label("$x$",1),(-2.4,0,0)--(2.9,0,0),ax,Arrow3);
+draw(Label("$y$",1),(0,-2.4,0)--(0,2.9,0),ax,Arrow3);
+draw(Label("$z$",1),O--(0,0,6.6),ax,Arrow3);
+]]></asymptote>
 </image>
 </figure>
 
@@ -913,6 +1129,7 @@ them can be seen: at <m>s = ds = 0.1</m> the tangent line has risen by
 by <m>\Delta f \approx 0.293</m> to <m>3.293</m>.
 </caption>
 <image xml:id="image-tp-change-zoom" width="65%">
+<shortdescription>The value of f along u and its tangent line at P 0, zoomed in around s equals 0.1, where they differ by 0.01.</shortdescription>
 <description>
 <p>
 A two dimensional graph zoomed into the neighborhood of the moved point.
@@ -925,66 +1142,112 @@ stays just below the curve and the gap between them widens to the right.
 At s equals d s equals 0.1, dashed guide lines pick out the two heights:
 the tangent line reaches the blue point at 3.283, the estimate 3 plus d
 f, and the curve reaches the orange point at 3.293, the exact value of f
-at the moved point. A callout labels the gap between the two points as
-delta f minus d f equals 0.01. A legend below the picture names the
-curve, the tangent line, and the two marked values.
+at the moved point. A bracket labels the gap between the two points as
+delta f minus d f equals 0.01.
 </p>
 </description>
-<latex-image>
-\begin{tikzpicture}[font=\large]
-\begin{axis}[
-  width=10.667cm, height=11.078cm,
-  xmin=0.048, xmax=0.153, ymin=3.128, ymax=3.462,
-  xlabel={$s$: distance from $P_0$ along $\hat{u}$},
-  ylabel={$z$},
-  xtick={0.05,0.075,0.1,0.125,0.15},
-  xticklabels={$0.05$,,$ds=0.1$,,$0.15$},
-  ytick={3.15,3.2,3.25,3.3,3.35,3.4,3.45},
-  yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
-  axis lines=left,
-  clip=false,
-  legend style={
-    at={(0.5,-0.145)}, anchor=north, font=\normalsize,
-    draw=gray!50, fill=white,
-    cells={anchor=west}, legend columns=2,
-    row sep=1pt, column sep=6pt,
-  },
-]
-% guide lines at the two heights reached over ds = 0.1
-\draw[gray!60, dashed] (axis cs:0.048,3.28284) -- (axis cs:0.1115,3.28284);
-\draw[gray!60, dashed] (axis cs:0.048,3.29284) -- (axis cs:0.1115,3.29284);
-\draw[gray!60, dashed] (axis cs:0.1,3.128) -- (axis cs:0.1,3.29284);
-% f along u: z = 3 + 2 sqrt2 s + s^2
-\addplot[very thick, black, domain=0.048:0.152, samples=61, forget plot]
-  {3 + 2*sqrt(2)*x + x^2};
-% the tangent line at s = 0
-\addplot[very thick, blue!70!black, dashed, domain=0.048:0.152, samples=2,
-         forget plot]
-  {3 + 2*sqrt(2)*x};
-% the gap between the two at s = ds
-\node[purple!70!black, anchor=west, font=\normalsize]
-  at (axis cs:0.1095,3.2465) {$\Delta f-df=0.01$};
-\draw[purple!70!black, thin, -stealth]
-  (axis cs:0.1155,3.2525) -- (axis cs:0.1105,3.2865);
-% the points
-\addplot[only marks, mark=*, mark size=1.6, color=blue!70!black,
-         forget plot]
-  coordinates {(0.1,3.28284)};
-\addplot[only marks, mark=*, mark size=1.6, color=orange, forget plot]
-  coordinates {(0.1,3.29284)};
-% legend
-\addlegendimage{very thick, black}
-\addlegendentry{$f$ along $\hat{u}$}
-\addlegendimage{very thick, blue!70!black, dashed}
-\addlegendentry{tangent line at $P_0$}
-\addlegendimage{only marks, mark=*, mark size=1.6, color=blue!70!black}
-\addlegendentry{estimate $3+df=3.283$}
-\addlegendimage{only marks, mark=*, mark size=1.6, color=orange}
-\addlegendentry{exact $f(P)=3.293$}
-\end{axis}
-\end{tikzpicture}
-</latex-image>
+<asymptote label="asymptote-tp-example-change-zoom"><![CDATA[
+import graph;
+size(10.5cm,9.5cm,IgnoreAspect);
+
+// f along u, as a function of the distance s from P0: z = 3 + 2 sqrt2 s + s^2
+real g(real s) {return 3+2*sqrt(2)*s+s^2;}
+real L(real s) {return 3+2*sqrt(2)*s;}      // its tangent line at s = 0
+real a=0.048, b=0.153, lo=3.128, hi=3.462, ds=0.1;
+
+pen curvePen=black+linewidth(1.5pt);
+pen tanPen=rgb("1f4fb5")+linewidth(1.5pt)+linetype("6 4");
+pen guide=gray(0.55)+linewidth(0.6pt)+linetype("4 3");
+pen gapPen=rgb("8e1b3c");
+
+// axes, drawn by hand so that the tick at s = ds can carry its own name
+draw((a,lo)--(b,lo),black+linewidth(0.8pt),Arrow(5));
+draw((a,lo)--(a,hi),black+linewidth(0.8pt),Arrow(5));
+real[] xt={0.05,0.075,0.1,0.125,0.15};
+string[] xl={"$0.05$","","$ds=0.1$","","$0.15$"};
+for(int i=0; i < xt.length; ++i) {
+  draw((xt[i],lo)--(xt[i],lo-0.004),black+linewidth(0.6pt));
+  if(xl[i] != "") label(xl[i],(xt[i],lo-0.004),S);
+}
+for(real y=3.15; y < 3.46; y += 0.05) {
+  draw((a,y)--(a-0.0012,y),black+linewidth(0.6pt));
+  label("$"+format("%.2f",y)+"$",(a-0.0012,y),W);
+}
+label("$s$: distance from $P_0$ along $\hat{u}$",((a+b)/2,lo-0.022),S);
+label("$z$",(a,hi),N);
+
+// the two heights reached over ds = 0.1
+draw((a,L(ds))--(ds,L(ds)),guide);
+draw((a,g(ds))--(ds,g(ds)),guide);
+draw((ds,lo)--(ds,g(ds)),guide);
+
+draw(graph(g,a,b-0.002),curvePen);
+draw(graph(L,a,b-0.002),tanPen);
+label("$f$ along $\hat{u}$",(0.135,g(0.135)),NW,black);
+label("tangent line at $P_0$",(0.135,L(0.135)),SE,rgb("1f4fb5"));
+
+dot((ds,L(ds)),rgb("1f4fb5")+linewidth(5pt));
+dot((ds,g(ds)),orange+linewidth(5pt));
+label("exact $f(P)=3.293$",(ds,g(ds)),(-1,2.2),orange);
+label("estimate $3+df=3.283$",(ds,L(ds)),(1,-2.4),rgb("1f4fb5"));
+
+// the gap between the two at s = ds
+draw((ds+0.004,L(ds))--(ds+0.004,g(ds)),gapPen+linewidth(0.8pt),Bars(4));
+label("$\Delta f-df=0.01$",(ds+0.004,(L(ds)+g(ds))/2),E,gapPen);
+]]></asymptote>
 </image>
+</figure>
+
+<p>
+<xref ref="fig-tp-change-interactive"/> makes the same comparison for
+every direction and every distance. For this function the two changes can
+be compared exactly: since <m>\hat{u}</m> is a unit vector,
+<md>
+\Delta f = f(1 + u_1\,ds,\; 1 + u_2\,ds) - f(1,1)
+= \underbrace{(2u_1 + 2u_2)\,ds}_{df} + (ds)^2,
+</md>
+so the estimate <m>df</m> is off by <m>(ds)^2</m> in every direction, and
+the error shrinks much faster than the distance <m>ds</m> itself.
+</p>
+
+<figure xml:id="fig-tp-change-interactive">
+<caption>
+The differential <m>df</m> against the actual change <m>\Delta f</m> for
+<m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>. The vertical plane
+through <m>P_0</m> along <m>\hat{u}</m> cuts the surface in the gold
+curve. Over the distance <m>ds</m>, the tangent line to that curve (blue)
+changes its height by
+<m>df = \left(\nabla f \Big|_{P_0} \cdot \hat{u}\right) ds</m>, while the
+surface itself changes its height by <m>\Delta f</m> (orange); the red
+segment between the two is the error <m>\Delta f - df = (ds)^2</m>.
+</caption>
+<!-- aspect 5:6: the readout sits in a bar above the picture and the sliders
+     and buttons in a panel below it, all in type large enough to read in the
+     book's frame, so the frame is taller than it is wide to leave the
+     picture its room. -->
+<interactive xml:id="interactive-tp-change"
+             iframe="differential-estimate-manim.html" width="100%" aspect="5:6">
+<instructions>
+<p>
+The surface, the point <m>P_0</m> and the gradient
+<m>\nabla f \Big|_{P_0} = \langle 2, 2\rangle</m> are those of
+<xref ref="example-tp-change"/>. Choose the direction of
+<m>\hat{u}</m> and the distance <m>ds</m> with the two sliders; the panel
+above the picture reports the rate of change
+<m>\nabla f \Big|_{P_0} \cdot \hat{u}</m>, the estimate <m>df</m>, the
+actual change <m>\Delta f</m> and their difference. <q>Example</q> sets
+the direction and the distance of the example, <q>Shrink
+<m>ds</m></q> lets the distance go to zero, and <q>Turn
+<m>\hat{u}</m></q> takes the direction once around <m>P_0</m>.
+<q>Zoom in</q> moves the camera close to <m>P_0</m>, <q>Slice view</q>
+looks straight at the vertical plane so that the picture becomes the
+single-variable one of <xref ref="fig-tp-linear-approx-1d"/>,
+<q>Tangent plane</q> adds the tangent plane at <m>P_0</m>, which contains
+the tangent line of every direction, and dragging rotates the picture by
+hand.
+</p>
+</instructions>
+</interactive>
 </figure>
 
 </subsection>
