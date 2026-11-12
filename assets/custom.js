@@ -446,8 +446,8 @@
 })();
 
 /* ------------------------------------------------------------------ *
- * Reflow equations in Sections 4.1--4.4 and in Lagrange Multipliers as the
- * reading column changes.
+ * Reflow equations in Sections 4.1--4.4, 4.6 and 4.7 and in Lagrange
+ * Multipliers as the reading column changes.
  * MathJax 4 can break long displays without shrinking their type. Reflow
  * after a solution opens as well: hidden knowls have no usable width
  * during the initial typesetting pass.
@@ -458,6 +458,13 @@
     "#chapter-partial-derivatives, #chapter-chain-rule, " +
     "section[id^='sec-fsv-'], section[id^='sec-lim-'], " +
     "section[id^='sec-pd-'], section[id^='sec-cr-'], " +
+    // Section 4.6 (tangent planes and differentials) and its subsections
+    "#section-tangent-planes-differentials, section[id^='sec-tp-'], " +
+    // Section 4.7 (extreme values), its subsections and the included
+    // "Why the Second Derivative Test Works"
+    "#section-extreme-values, #sec-local-extrema, #sec-saddle-example, " +
+    "#sec-second-derivative-test, #sec-absolute-extrema, " +
+    "#sec-equilibrium-stability, #sec-why-second-derivative-test, " +
     "#section-lagrange-multipliers, section[id^='sec-lagrange-']"
   );
   if (!scope) return;
