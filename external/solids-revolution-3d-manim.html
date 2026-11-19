@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solids of Revolution</title>
+<!-- The same two families the book loads, so the figure's lettering matches the
+     page around it: Open Sans for text, PT Serif for the mathematics. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<style>
+  /* Layout: a one-line formula bar on top; below it the 3D solid fills the left
+     and the 2D profile sits mid-height on the right; controls along the bottom.
+     Palette kept in step with dirderiv-secant-3d-manim.html. */
+  :root {
+    --bg:     #06070a;
+    --panel:  #101218;
+    --field:  #0b0d12;
+    --edge:   #262a36;
+    --ink:    #ece6e2;   /* manim's off-white text */
+    --dim:    #9aa0ad;
+    --blue:   #58c4dd;   /* the region and its end caps */
+    --gold:   #f0ac5f;   /* f */
+    --green:  #83c167;   /* g */
+    --red:    #fc6255;   /* a and b */
+    --pink:   #d147bd;   /* the washer */
+    --purple: #b189c6;   /* the axis of revolution */
+    --yellow: #ffe14d;   /* the volume */
+    --sans:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: "PT Serif", "Times New Roman", Times, serif;
+    color-scheme: dark;
+  }
+  html { height: 100%; box-sizing: border-box; overflow: hidden; background: var(--bg); }
+  body {
+    height: 100%; margin: 0; overflow: hidden;
+    background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  #app { height: 100%; display: flex; flex-direction: column; }
+  [hidden] { display: none !important; }
+
+  /* ---- the formulas, one long line across the top ---- */
+  #top {
+    flex: 0 0 auto;
+    padding-block: 10px 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  #eqcard {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0;
+    padding: 6px 2px 7px 2px;
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--yellow);
+    border-radius: 6px;
+    line-height: 1.35;
+  }
+  #eqcard > * { white-space: nowrap; padding: 0 14px; }
+  #eqcard > * + * { border-left: 1px solid var(--edge); }
+  .math { font-family: var(--serif); font-size: 17px; }
+  .math i { font-style: italic; }
+  .math sup { font-size: 0.68em; line-height: 0; }
+  .lf { color: var(--gold); }
+  .lg { color: var(--green); }
+  .lp { color: var(--purple); }
+  .sub { font-size: 13px; color: var(--dim); font-variant-numeric: tabular-nums; }
+  .sub b { color: var(--ink); font-weight: 600; }
+  #volLine {
+    font-family: var(--serif); font-size: 16.5px; font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  #volLine .v { color: var(--yellow); }
+  .int { display: inline-flex; align-items: center; gap: 1px; margin: 0 2px; vertical-align: middle; }
+  .int .sign { font-size: 1.25em; font-weight: 400; }
+  .lims { display: inline-flex; flex-direction: column; font-size: 10.5px; line-height: 1.05; font-weight: 400; }
+  #cutNote { font-size: 12.5px; color: var(--purple); white-space: normal; }
+
+  /* ---- stage: the solid fills the left, the 2D profile sits mid-height on the right ---- */
+  #stage { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; background: var(--bg); }
+  #glWrap { position: relative; flex: 1 1 auto; align-self: stretch; min-width: 0; overflow: hidden; }
+  #gl { position: absolute; left: 0; top: 0; display: block; cursor: grab; touch-action: none; }
+  #gl:active { cursor: grabbing; }
+
+  /* GeoGebra's graphics view, as a panel beside the solid */
+  #inset {
+    flex: 0 0 auto;
+    width: clamp(220px, 32%, 340px);
+    margin-left: 8px;
+    margin-right: max(16px, env(safe-area-inset-right, 0px));
+    background: rgba(12,14,19,0.82);
+    border: 1px solid var(--edge);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  #insetHead {
+    padding: 5px 9px 3px 9px;
+    font-size: 11px; color: var(--dim); letter-spacing: .2px;
+    pointer-events: none;
+  }
+  #profile { display: block; width: 100%; aspect-ratio: 1.45; touch-action: none; }
+
+  /* ---- control panel ---- */
+  #panel {
+    flex: 0 0 auto;
+    border-top: 1px solid var(--edge);
+    background: var(--panel);
+    padding-block: 9px 11px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+  .grow { flex: 1 1 0; }
+  .lbl { font-size: 12.5px; color: var(--dim); }
+
+  .field { display: inline-flex; align-items: center; gap: 6px; font-family: var(--serif); font-size: 15px; }
+  .field i { font-style: italic; }
+  .field input {
+    font: 15px var(--serif); color: var(--ink);
+    background: var(--field);
+    border: 1px solid var(--edge); border-radius: 6px;
+    padding: 4px 8px;
+  }
+  .field input[type=text] { width: 8.6em; }
+  .fx input { border-left: 3px solid var(--gold); }
+  .gx input { border-left: 3px solid var(--green); }
+  .num { width: 4.4em; font-variant-numeric: tabular-nums; }
+  .field input.bad { border-color: var(--red); }
+  .field input:focus-visible { outline: 2px solid var(--blue); outline-offset: 1px; }
+  #msg { font-size: 12.5px; color: var(--red); margin-top: -3px; }
+
+  button {
+    font: inherit; font-size: 13.5px;
+    padding: 5px 12px; border-radius: 999px;
+    color: var(--ink); background: #1a1d26;
+    border: 1px solid var(--edge);
+    cursor: pointer; transition: background .15s, border-color .15s, color .15s;
+  }
+  button:hover { background: #232734; }
+  button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  #btnRevolve.running { background: var(--blue); border-color: var(--blue); color: var(--bg); font-weight: 600; }
+  #btnSpin.active     { background: var(--blue); border-color: var(--blue); color: var(--bg); font-weight: 600; }
+
+  .seg { display: inline-flex; border: 1px solid var(--edge); border-radius: 999px; overflow: hidden; }
+  .seg button { border: none; border-radius: 0; padding: 5px 11px; }
+  .seg button + button { border-left: 1px solid var(--edge); }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
+
+  .check { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; cursor: pointer; }
+  .check input { width: 15px; height: 15px; margin: 0; cursor: pointer; }
+  #chkWasher { accent-color: var(--pink); }
+  #chkOnly { accent-color: var(--blue); }
+
+  .sliders { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 20px; }
+  .sl { display: flex; flex-direction: column; min-width: 0; }
+  .sl label { font-family: var(--serif); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .sl label i { font-style: italic; }
+  input[type=range] {
+    width: 100%; height: 22px; margin: 0;
+    -webkit-appearance: none; appearance: none; background: transparent;
+  }
+  input[type=range]::-webkit-slider-runnable-track { height: 3px; border-radius: 2px; background: var(--edge); }
+  input[type=range]::-moz-range-track { height: 3px; border-radius: 2px; background: var(--edge); }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 14px; height: 14px; margin-top: -5.5px;
+    border-radius: 50%; background: var(--thumb, var(--blue)); border: none; cursor: pointer;
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 14px; height: 14px; border: none;
+    border-radius: 50%; background: var(--thumb, var(--blue)); cursor: pointer;
+  }
+  input[type=range]:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+  #kSlider { --thumb: var(--purple); }
+  #cSlider { --thumb: var(--pink); }
+
+  /* On a phone the solid and the profile stack: solid above, profile below it. */
+  @media (max-width: 560px) {
+    #top { padding-block: 8px 0; }
+    #eqcard > * { padding: 0 10px; }
+    .math { font-size: 16px; }
+    #volLine { font-size: 15px; }
+    #stage { flex-direction: column; align-items: stretch; }
+    #glWrap { min-height: 160px; }
+    #inset { width: min(340px, calc(100% - 32px)); margin: 0 auto 8px auto; }
+    #insetHead { display: none; }
+    #profile { aspect-ratio: 2; }
+    #panel { gap: 7px; padding-block: 7px 9px; }
+    .lbl { display: none; }
+    button { font-size: 13px; padding: 4px 10px; }
+    .seg button { padding: 4px 9px; }
+    .field input[type=text] { width: 7.2em; }
+    .sliders { grid-template-columns: 1fr 1fr; gap: 2px 14px; }
+    .sl:first-child { grid-column: 1 / -1; }
+    .sl label { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="top">
+    <div id="eqcard">
+      <span class="math"><span class="lf"><i>f</i>(<i>x</i>) =</span> <span id="fPretty"></span></span>
+      <span class="math"><span class="lg"><i>g</i>(<i>x</i>) =</span> <span id="gPretty"></span></span>
+      <span class="sub" id="rangeLine"></span>
+      <span id="volLine"></span>
+      <span id="cutNote" hidden>The axis crosses the region, so there each strip sweeps a full disk (<i>r</i> = 0).</span>
+    </div>
+  </div>
+
+  <div id="stage">
+    <div id="glWrap"></div>
+    <div id="inset">
+      <div id="insetHead">Profile · drag <i>a</i>, <i>b</i>, the washer, or the axis</div>
+      <canvas id="profile" aria-label="The region between f and g on the interval from a to b, with the axis of revolution y equals k. Drag a, b, the pink washer strip, or the purple axis."></canvas>
+    </div>
+  </div>
+
+  <div id="panel">
+    <div class="row">
+      <label class="field fx" for="inpF"><span><i>f</i>(<i>x</i>) =</span><input id="inpF" type="text" value="x^2" spellcheck="false" autocomplete="off" autocapitalize="off"></label>
+      <label class="field gx" for="inpG"><span><i>g</i>(<i>x</i>) =</span><input id="inpG" type="text" value="x" spellcheck="false" autocomplete="off" autocapitalize="off"></label>
+      <span class="field">
+        <label for="inpA"><i>a</i> =</label><input id="inpA" class="num" type="number" step="0.1" value="0">
+        <label for="inpB"><i>b</i> =</label><input id="inpB" class="num" type="number" step="0.1" value="1">
+      </span>
+      <span class="grow"></span>
+      <span class="lbl">Examples</span>
+      <div class="seg" role="group" aria-label="Examples">
+        <button id="ex1" data-ex="0" title="x² and x on [0, 1], about y = 0">1</button>
+        <button id="ex2" data-ex="1" title="2x² + 1 and 2x + 5 on [−1, 2], about y = 0">2</button>
+        <button id="ex3" data-ex="2" title="x² − 2x and x on [0, 3], about y = 4">3</button>
+      </div>
+    </div>
+    <div id="msg" role="status" hidden></div>
+    <div class="row">
+      <button id="btnRevolve">&#9654;&nbsp;Revolve</button>
+      <button id="btnStop">Stop</button>
+      <button id="btnSpin">Spin</button>
+      <button id="btnReset">Reset view</button>
+      <button id="btnSide">Side view</button>
+      <span class="grow"></span>
+      <div class="seg" role="group" aria-label="Surface style">
+        <button id="modeWire" data-mode="wire" aria-pressed="false">Wire</button>
+        <button id="modeGlass" data-mode="glass" aria-pressed="true">Glass</button>
+        <button id="modeSolid" data-mode="solid" aria-pressed="false">Solid</button>
+      </div>
+      <label class="check" for="chkWasher"><input type="checkbox" id="chkWasher" checked>Washer</label>
+      <label class="check" for="chkOnly"><input type="checkbox" id="chkOnly">Only solid</label>
+    </div>
+    <div class="sliders">
+      <div class="sl">
+        <label for="thetaSlider">revolved &theta; = <span id="thetaVal">270°</span></label>
+        <input type="range" id="thetaSlider" min="0" max="360" step="1" value="270">
+      </div>
+      <div class="sl">
+        <label for="kSlider">axis <i>y</i> = <span id="kVal">0</span></label>
+        <input type="range" id="kSlider" min="-5" max="5" step="0.5" value="0">
+      </div>
+      <div class="sl">
+        <label for="cSlider">washer at <i>x</i> = <span id="cVal">0.56</span></label>
+        <input type="range" id="cSlider" min="0" max="1" step="0.0025" value="0.56">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // Manim colour constants, so the palette below reads the way a Scene would.
+  var BLUE_A = 0xc7e9f1, BLUE_C = 0x58c4dd, BLUE_D = 0x29abca, BLUE_E = 0x1c758a,
+      GREEN_A = 0xc9e2ae, GREEN_C = 0x83c167, GREEN_D = 0x77b05d, GREEN_E = 0x699c52,
+      GOLD_A = 0xf7c797, GOLD_C = 0xf0ac5f, GOLD_D = 0xe1a158, GOLD_E = 0xc78d46,
+      RED_C = 0xfc6255, PINK = 0xd147bd, PINK_D = 0xa8379a, PINK_A = 0xf3bfe9,
+      PURPLE_B = 0xb189c6, GREY = 0x8a8f9c;
+  var CSS = { gold: "#f0ac5f", green: "#83c167", blue: "#58c4dd", red: "#fc6255",
+              pink: "#d147bd", purple: "#b189c6", dim: "#9aa0ad", ink: "#ece6e2" };
+
+  var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var TAU = 2 * Math.PI;
+
+  // ======================================================================
+  // A small, safe reader for f(x) and g(x): x^2, x², 2x+5, sin(x), sqrt(x),
+  // e^x, ln(x), |...| is written abs(...). Implicit products like 2x and
+  // x(x+1) are allowed. Unknown names are reported, never evaluated.
+  // ======================================================================
+  var FUNCS = {
+    sin: Math.sin, cos: Math.cos, tan: Math.tan,
+    sec: function (t) { return 1 / Math.cos(t); },
+    csc: function (t) { return 1 / Math.sin(t); },
+    cot: function (t) { return 1 / Math.tan(t); },
+    asin: Math.asin, acos: Math.acos, atan: Math.atan,
+    arcsin: Math.asin, arccos: Math.acos, arctan: Math.atan,
+    sinh: Math.sinh, cosh: Math.cosh, tanh: Math.tanh,
+    exp: Math.exp, ln: Math.log, log: Math.log, lg: Math.log10,
+    sqrt: Math.sqrt, cbrt: Math.cbrt, abs: Math.abs
+  };
+  var FNAMES = Object.keys(FUNCS).sort(function (p, q) { return q.length - p.length; });
+
+  function normalise(src) {
+    return src.replace(/[−–—]/g, "-").replace(/[×·⋅∙]/g, "*")
+      .replace(/÷/g, "/").replace(/²/g, "^2").replace(/³/g, "^3")
+      .replace(/π/g, "pi").replace(/√/g, "sqrt").replace(/\*\*/g, "^")
+      .replace(/^\s*(?:[a-zA-Z]\s*\(\s*x\s*\)|y)\s*=/, "");
+  }
+
+  function tokenize(src) {
+    var s = normalise(src), out = [], i = 0, m;
+    while (i < s.length) {
+      var ch = s[i];
+      if (/\s/.test(ch)) { i++; continue; }
+      m = /^\d+\.?\d*|^\.\d+/.exec(s.slice(i));
+      if (m) { out.push({ t: "num", v: parseFloat(m[0]) }); i += m[0].length; continue; }
+      m = /^[a-zA-Z]+/.exec(s.slice(i));
+      if (m) { splitWord(m[0].toLowerCase(), out); i += m[0].length; continue; }
+      if ("+-*/^()".indexOf(ch) >= 0) { out.push({ t: ch }); i++; continue; }
+      throw new Error("can't read the symbol “" + ch + "”");
+    }
+    return out;
+  }
+
+  function splitWord(w, out) {
+    while (w.length) {
+      var hit = null;
+      for (var n = 0; n < FNAMES.length; n++) if (w.indexOf(FNAMES[n]) === 0) { hit = FNAMES[n]; break; }
+      if (hit) { out.push({ t: "fn", v: hit }); w = w.slice(hit.length); continue; }
+      if (w.indexOf("pi") === 0) { out.push({ t: "num", v: Math.PI }); w = w.slice(2); continue; }
+      if (w[0] === "x") { out.push({ t: "x" }); w = w.slice(1); continue; }
+      if (w[0] === "e") { out.push({ t: "num", v: Math.E }); w = w.slice(1); continue; }
+      throw new Error("“" + w + "” isn't a name I know (use x, pi, e, sin, sqrt, ln, …)");
+    }
+  }
+
+  function parse(src) {
+    var tk = tokenize(src), p = 0;
+    if (!tk.length) throw new Error("it's empty");
+    function peek() { return tk[p]; }
+    function eat(t) { if (tk[p] && tk[p].t === t) { p++; return true; } return false; }
+    function startsFactor(t) { return t && (t.t === "num" || t.t === "x" || t.t === "fn" || t.t === "("); }
+
+    function expr() {
+      var a = term();
+      for (;;) {
+        if (eat("+")) { a = (function (l, r) { return function (x) { return l(x) + r(x); }; })(a, term()); }
+        else if (eat("-")) { a = (function (l, r) { return function (x) { return l(x) - r(x); }; })(a, term()); }
+        else return a;
+      }
+    }
+    function term() {
+      var a = unary();
+      for (;;) {
+        if (eat("*")) a = mul(a, unary());
+        else if (eat("/")) a = (function (l, r) { return function (x) { return l(x) / r(x); }; })(a, unary());
+        else if (startsFactor(peek())) a = mul(a, power());
+        else return a;
+      }
+    }
+    function mul(l, r) { return function (x) { return l(x) * r(x); }; }
+    function unary() {
+      if (eat("-")) { var u = unary(); return function (x) { return -u(x); }; }
+      if (eat("+")) return unary();
+      return power();
+    }
+    function power() {
+      var b = primary();
+      if (eat("^")) { var e = unary(); return function (x) { return Math.pow(b(x), e(x)); }; }
+      return b;
+    }
+    function primary() {
+      var t = tk[p++];
+      if (!t) throw new Error("it ends too soon");
+      if (t.t === "num") { var v = t.v; return function () { return v; }; }
+      if (t.t === "x") return function (x) { return x; };
+      if (t.t === "(") {
+        var e = expr();
+        if (!eat(")")) throw new Error("a “)” is missing");
+        return e;
+      }
+      if (t.t === "fn") {
+        var F = FUNCS[t.v], arg;
+        if (peek() && peek().t === "(") { p++; arg = expr(); if (!eat(")")) throw new Error("a “)” is missing"); }
+        else arg = power();
+        return function (x) { return F(arg(x)); };
+      }
+      throw new Error("there's an unexpected “" + t.t + "”");
+    }
+    var fn = expr();
+    if (p < tk.length) throw new Error("there's an unexpected “" + (tk[p].t === "num" ? tk[p].v : tk[p].t) + "”");
+    return fn;
+  }
+
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+  // The typed formula, set the way a MathTex would set it.
+  function pretty(src) {
+    var s = esc(normalise(src).replace(/\s+/g, " ").trim());
+    s = s.replace(/\*/g, "·").replace(/pi/g, "π").replace(/sqrt/g, "√");
+    s = s.replace(/\^\(([^()]*)\)/g, "<sup>$1</sup>").replace(/\^(-?[0-9.]+|-?[a-zπ])/g, "<sup>$1</sup>");
+    s = s.replace(/(exp)|x/g, function (m, e) { return e ? e : "<i>x</i>"; });
+    s = s.replace(/ ?([+]) ?/g, " $1 ").replace(/(\S) ?- ?/g, "$1 − ").replace(/-/g, "−");
+    return s;
+  }
+
+  // ======================================================================
+  // State
+  // ======================================================================
+  var EXAMPLES = [
+    { f: "x^2",    g: "x",    a: 0,  b: 1, k: 0, c: 0.56 },
+    { f: "2x^2+1", g: "2x+5", a: -1, b: 2, k: 0, c: 0.56 },
+    { f: "x^2-2x", g: "x",    a: 0,  b: 3, k: 4, c: 1.5 }
+  ];
+  var S = { fSrc: "x^2", gSrc: "x", f: null, g: null, a: 0, b: 1, k: 0, c: 0.56,
+            theta: 1.5 * Math.PI, washer: true, only: false, mode: "glass" };
+  S.f = parse(S.fSrc); S.g = parse(S.gSrc);
+  var M = null;                       // measurements of the current scene
+  var errs = { f: null, g: null };
+
+  function val(fn, x) { var v = fn(x); return isFinite(v) ? v : S.k; }
+
+  function measure() {
+    var lo = Math.min(S.a, S.b), hi = Math.max(S.a, S.b), N = 400;
+    var ymin = Infinity, ymax = -Infinity, R = 0, cuts = false, bad = false;
+    for (var i = 0; i <= N; i++) {
+      var x = lo + (hi - lo) * i / N, fy = S.f(x), gy = S.g(x);
+      if (!isFinite(fy) || !isFinite(gy)) { bad = true; continue; }
+      ymin = Math.min(ymin, fy, gy); ymax = Math.max(ymax, fy, gy);
+      var p = fy - S.k, q = gy - S.k;
+      R = Math.max(R, Math.abs(p), Math.abs(q));
+      if (i > 0 && i < N && p * q < -1e-12) cuts = true;
+    }
+    if (!isFinite(ymin)) { ymin = S.k - 1; ymax = S.k + 1; }
+    R = Math.max(R, 1e-3);
+    var m = 0.09 * Math.max(hi - lo, 2 * R, 1);
+    var X0 = Math.min(lo, 0) - m, X1 = Math.max(hi, 0) + m;
+    var Z0 = Math.min(0, S.k - R) - m, Z1 = Math.max(0, S.k + R) + m;
+    var Y1 = R + m;
+    return { lo: lo, hi: hi, ymin: ymin, ymax: ymax, R: R, cuts: cuts, bad: bad,
+             X0: X0, X1: X1, Z0: Z0, Z1: Z1, Y1: Y1,
+             E: Math.max(X1 - X0, Z1 - Z0, 2 * Y1) };
+  }
+
+  // A(x)/pi = R^2 - r^2. When the axis cuts the strip, the strip sweeps a full
+  // disk (r = 0); otherwise it sweeps a washer.
+  function strip(x) {
+    var p = S.f(x) - S.k, q = S.g(x) - S.k;
+    if (!isFinite(p) || !isFinite(q)) return { R: 0, r: 0, cut: false, outerIsF: true };
+    var P = Math.abs(p), Q = Math.abs(q), cut = p * q < 0;
+    return { R: Math.max(P, Q), r: cut ? 0 : Math.min(P, Q), cut: cut, outerIsF: P >= Q };
+  }
+  function volumeOverPi() {
+    var lo = M.lo, hi = M.hi, n = 1200, h = (hi - lo) / n, s = 0;
+    if (h <= 0) return 0;
+    for (var i = 0; i <= n; i++) {
+      var w = strip(lo + i * h), A = w.R * w.R - w.r * w.r;
+      s += A * (i === 0 || i === n ? 1 : (i % 2 ? 4 : 2));
+    }
+    return s * h / 3;
+  }
+
+  // ======================================================================
+  // Renderer, scene, camera
+  // ======================================================================
+  var glWrap = document.getElementById("glWrap"),
+      insetCv = document.getElementById("profile");
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var gl = renderer.domElement;
+  gl.id = "gl";
+  gl.setAttribute("role", "img");
+  gl.setAttribute("aria-label", "The solid swept out by revolving the region between f and g about the line y = k. Drag to turn it.");
+  glWrap.appendChild(gl);
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x06070a);
+  var camera = new THREE.PerspectiveCamera(36, 1, 0.01, 1000);
+  camera.up.set(0, 0, 1);            // math y is drawn up; the solid sweeps into depth
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.58));
+  var key = new THREE.DirectionalLight(0xffffff, 0.66); key.position.set(4, -6, 7);
+  var fill = new THREE.DirectionalLight(0x9fd8ff, 0.30); fill.position.set(-5, 4, -2);
+  scene.add(key); scene.add(fill);
+
+  var TH0 = -Math.PI / 2 + 0.62, PH0 = 1.12;          // the opening three-quarter view
+  var camTheta = TH0, camPhi = PH0;
+  var CENTER = new THREE.Vector3(), CLOUD = [];
+  var radius = 10, aimShift = 0, band = 1, aspect = 1;
+
+  var _e = new THREE.Vector3(), _up = new THREE.Vector3(), _rt = new THREE.Vector3();
+  // The smallest camera distance that keeps every sampled point in frame.
+  function computeRadius() {
+    _e.set(Math.sin(camPhi) * Math.cos(camTheta), Math.sin(camPhi) * Math.sin(camTheta), Math.cos(camPhi));
+    _up.set(0, 0, 1).addScaledVector(_e, -_e.z);
+    if (_up.lengthSq() < 1e-9) _up.set(0, 1, 0); else _up.normalize();
+    _rt.crossVectors(_up, _e).normalize();
+    var tanHalf = Math.tan(camera.fov * Math.PI / 360);
+    var tanV = tanHalf * band, tanH = tanHalf * aspect, r = 0.1;
+    for (var i = 0; i < CLOUD.length; i++) {
+      var d = CLOUD[i], along = d.dot(_e);
+      r = Math.max(r, along + Math.abs(d.dot(_up)) / tanV, along + Math.abs(d.dot(_rt)) / tanH);
+    }
+    radius = 1.02 * r;
+    camera.near = radius * 0.01;
+    camera.far = radius * 3 + 10;
+    camera.updateProjectionMatrix();
+  }
+  function placeCamera() {
+    computeRadius();
+    var eye = new THREE.Vector3(radius * Math.sin(camPhi) * Math.cos(camTheta),
+                                radius * Math.sin(camPhi) * Math.sin(camTheta),
+                                radius * Math.cos(camPhi));
+    var fwd = eye.clone().negate().normalize();
+    var up = camera.up.clone().addScaledVector(fwd, -camera.up.dot(fwd));
+    if (up.lengthSq() < 1e-9) up.set(0, 1, 0);
+    up.normalize().multiplyScalar(aimShift);
+    camera.position.copy(eye).add(up).add(CENTER);
+    var look = up.clone().add(CENTER);
+    camera.lookAt(look.x, look.y, look.z);
+  }
+
+  // ---------- text sprites, set in the book's serif ----------
+  var LABELS = [];
+  function paintLabel(rec) {
+    var H = 96, cv = document.createElement("canvas"), g = cv.getContext("2d"), w = 20;
+    function fontFor(part) { return (part.it ? "italic " : "") + '62px "PT Serif", "Times New Roman", Times, serif'; }
+    rec.parts.forEach(function (pt) { g.font = fontFor(pt); pt.w = g.measureText(pt.t).width; w += pt.w; });
+    cv.width = Math.ceil(w); cv.height = H;
+    g = cv.getContext("2d");
+    g.fillStyle = rec.color; g.textBaseline = "middle";
+    var x = 10;
+    rec.parts.forEach(function (pt) { g.font = fontFor(pt); g.fillText(pt.t, x, H / 2); x += pt.w; });
+    var tex = new THREE.CanvasTexture(cv);
+    tex.minFilter = THREE.LinearFilter;
+    if (rec.sprite.material.map) rec.sprite.material.map.dispose();
+    rec.sprite.material.map = tex;
+    rec.sprite.material.needsUpdate = true;
+    rec.sprite.scale.set(rec.size * cv.width / H, rec.size, 1);
+  }
+  // parts: "x" (italic) or [["y", true], [" = 4", false]]
+  function makeLabel(parts, cssColor, size, pos, parent) {
+    if (typeof parts === "string") parts = [[parts, true]];
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthTest: false }));
+    sp.renderOrder = 10;
+    var rec = { sprite: sp, parts: parts.map(function (p) { return { t: p[0], it: p[1] }; }), color: cssColor, size: size };
+    LABELS.push(rec);
+    paintLabel(rec);
+    sp.position.copy(pos);
+    parent.add(sp);
+    return sp;
+  }
+
+  // ---------- helpers ----------
+  function V(x, y, z) { return new THREE.Vector3(x, y, z); }
+  function clearGroup(gr) {
+    while (gr.children.length) {
+      var o = gr.children.pop();
+      o.traverse(function (n) {
+        if (n.isSprite) n.userData.dead = true;
+        if (n.geometry) n.geometry.dispose();
+        if (n.material) { if (n.material.map) n.material.map.dispose(); n.material.dispose(); }
+      });
+    }
+    LABELS = LABELS.filter(function (r) { return !r.sprite.userData.dead; });
+  }
+  // manim's bright stroke on a dark stage: a core tube and a soft additive halo
+  function tube(points, color, r, parent, glow, opacity) {
+    if (points.length < 2) return;
+    if (points[0].distanceTo(points[points.length - 1]) < 1e-9 && points.length === 2) return;
+    var curve = new THREE.CatmullRomCurve3(points);
+    var n = Math.min(360, Math.max(6, points.length * 2));
+    var op = opacity == null ? 1 : opacity;
+    parent.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, r, 8, false),
+      new THREE.MeshBasicMaterial({ color: color, transparent: op < 1, opacity: op })));
+    if (glow) parent.add(new THREE.Mesh(new THREE.TubeGeometry(curve, n, r * 2.7, 8, false),
+      new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.18,
+        blending: THREE.AdditiveBlending, depthWrite: false })));
+  }
+  function dashed(a, b, color, opacity, dash, parent) {
+    var l = new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]),
+      new THREE.LineDashedMaterial({ color: color, dashSize: dash, gapSize: dash * 0.7,
+        transparent: true, opacity: opacity }));
+    l.computeLineDistances();
+    parent.add(l);
+  }
+  // samples of y = fn(x) in the profile plane, broken where it is undefined or off the board
+  function sampleCurve(fn, x0, x1, n, zlo, zhi) {
+    var segs = [], cur = [];
+    for (var i = 0; i <= n; i++) {
+      var x = x0 + (x1 - x0) * i / n, y = fn(x);
+      if (isFinite(y) && y >= zlo && y <= zhi) cur.push(V(x, 0, y));
+      else { if (cur.length > 1) segs.push(cur); cur = []; }
+    }
+    if (cur.length > 1) segs.push(cur);
+    return segs;
+  }
+  function niceStep(raw) {
+    var p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p;
+    return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p;
+  }
+  function fmt(v, d) {
+    if (!isFinite(v)) return "—";
+    var a = Math.abs(v);
+    if (a !== 0 && (a < 1e-3 || a >= 1e6)) return v.toExponential(2);
+    return String(Number(v.toPrecision(d || 4))).replace("-", "−");
+  }
+  function fx(v, d) { return String(+v.toFixed(d == null ? 2 : d)).replace("-", "−"); }
+
+  // ======================================================================
+  // Surfaces of revolution. A profile (X_i, P_i), with P measured from the
+  // axis, is swept to (X, P sin v, P cos v) for v in [0, theta]. Tiles have
+  // a fixed angular size, so the checkerboard stays put as the sweep grows,
+  // the way manim colours a Surface.
+  // ======================================================================
+  var NV = 72, DV = TAU / NV, NS = 80;
+
+  function RevSurface(nseg, cA, cB, lineCol, everyRow, everyCol, smooth) {
+    this.nseg = nseg; this.smooth = smooth;
+    this.X = new Float64Array(nseg + 1); this.P = new Float64Array(nseg + 1);
+    this.DX = new Float64Array(nseg + 1); this.DP = new Float64Array(nseg + 1);   // per-vertex (smooth)
+    this.SX = new Float64Array(nseg); this.SP = new Float64Array(nseg);           // per-segment
+    var nt = nseg * NV * 6;
+    this.pos = new Float32Array(nt * 3); this.nor = new Float32Array(nt * 3);
+    var col = new Float32Array(nt * 3), A = new THREE.Color(cA), B = new THREE.Color(cB);
+    for (var j = 0; j < NV; j++) for (var i = 0; i < nseg; i++) {
+      var c = (i + j) % 2 ? B : A, base = (j * nseg + i) * 18;
+      for (var q = 0; q < 6; q++) { col[base + 3 * q] = c.r; col[base + 3 * q + 1] = c.g; col[base + 3 * q + 2] = c.b; }
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(this.pos, 3).setUsage(THREE.DynamicDrawUsage));
+    geo.setAttribute("normal", new THREE.BufferAttribute(this.nor, 3).setUsage(THREE.DynamicDrawUsage));
+    geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+    geo.setDrawRange(0, 0);
+    this.mat = new THREE.MeshPhongMaterial({ vertexColors: true, side: THREE.DoubleSide, transparent: true,
+      opacity: 0.6, depthWrite: false, shininess: 34, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+    this.mesh = new THREE.Mesh(geo, this.mat);
+    this.mesh.frustumCulled = false;
+
+    this.rowsL = []; for (var r = 0; r <= nseg; r++) if (r % everyRow === 0 || r === nseg) this.rowsL.push(r);
+    this.colsL = []; for (var cc = 0; cc < NV; cc += everyCol) this.colsL.push(cc);
+    this.lpos = new Float32Array((this.rowsL.length * NV + this.colsL.length * nseg) * 6);
+    var lg = new THREE.BufferGeometry();
+    lg.setAttribute("position", new THREE.BufferAttribute(this.lpos, 3).setUsage(THREE.DynamicDrawUsage));
+    this.lmat = new THREE.LineBasicMaterial({ color: lineCol, transparent: true, opacity: 0.3, depthWrite: false });
+    this.lines = new THREE.LineSegments(lg, this.lmat);
+    this.lines.frustumCulled = false;
+
+    this.group = new THREE.Group();
+    this.group.add(this.mesh); this.group.add(this.lines);
+  }
+  RevSurface.prototype.setProfile = function (xs, ps) {
+    var n = this.nseg, i;
+    for (i = 0; i <= n; i++) { this.X[i] = xs[i]; this.P[i] = ps[i]; }
+    for (i = 0; i < n; i++) {
+      var dx = this.X[i + 1] - this.X[i], dp = this.P[i + 1] - this.P[i], L = Math.hypot(dx, dp);
+      if (L < 1e-12) { dx = 1; dp = 0; L = 1; }
+      this.SX[i] = dx / L; this.SP[i] = dp / L;
+    }
+    for (i = 0; i <= n; i++) {
+      var a = Math.max(0, i - 1), b = Math.min(n - 1, i);
+      var sx = this.SX[a] + this.SX[b], sp = this.SP[a] + this.SP[b], LL = Math.hypot(sx, sp) || 1;
+      this.DX[i] = sx / LL; this.DP[i] = sp / LL;
+    }
+  };
+  RevSurface.prototype.update = function (theta) {
+    var n = this.nseg, pos = this.pos, nor = this.nor, X = this.X, P = this.P;
+    var cols = theta <= 1e-9 ? 0 : Math.min(NV, Math.ceil(theta / DV - 1e-9));
+    var cs = [], sn = [];
+    for (var j = 0; j <= NV; j++) { var v = Math.min(j * DV, theta); cs.push(Math.cos(v)); sn.push(Math.sin(v)); }
+    var self = this;
+    function put(o, i, jj, seg) {
+      var dx = self.smooth ? self.DX[i] : self.SX[seg], dp = self.smooth ? self.DP[i] : self.SP[seg];
+      pos[o] = X[i]; pos[o + 1] = P[i] * sn[jj]; pos[o + 2] = P[i] * cs[jj];
+      // the normal of (X(s), P(s) sin v, P(s) cos v) points along (-P', X' sin v, X' cos v)
+      nor[o] = -dp; nor[o + 1] = dx * sn[jj]; nor[o + 2] = dx * cs[jj];
+    }
+    for (j = 0; j < cols; j++) for (var i = 0; i < n; i++) {
+      var o = (j * n + i) * 18;
+      put(o, i, j, i);          put(o + 3, i + 1, j, i);      put(o + 6, i + 1, j + 1, i);
+      put(o + 9, i, j, i);      put(o + 12, i + 1, j + 1, i); put(o + 15, i, j + 1, i);
+    }
+    var geo = this.mesh.geometry;
+    geo.attributes.position.needsUpdate = true;
+    geo.attributes.normal.needsUpdate = true;
+    geo.setDrawRange(0, cols * n * 6);
+
+    var L = this.lpos, k = 0, r, rr, c;
+    for (r = 0; r < this.rowsL.length; r++) {          // parallels: circles of constant x
+      rr = this.rowsL[r];
+      for (j = 0; j < NV; j++) {
+        L[k++] = X[rr]; L[k++] = P[rr] * sn[j];     L[k++] = P[rr] * cs[j];
+        L[k++] = X[rr]; L[k++] = P[rr] * sn[j + 1]; L[k++] = P[rr] * cs[j + 1];
+      }
+    }
+    for (c = 0; c < this.colsL.length; c++) {          // meridians: copies of the profile
+      var jj = this.colsL[c], on = jj * DV <= theta + 1e-9, s0 = Math.sin(jj * DV), c0 = Math.cos(jj * DV);
+      for (i = 0; i < n; i++) {
+        var i1 = on ? i + 1 : i;
+        L[k++] = X[i];  L[k++] = P[i] * s0;  L[k++] = P[i] * c0;
+        L[k++] = X[i1]; L[k++] = P[i1] * s0; L[k++] = P[i1] * c0;
+      }
+    }
+    this.lines.geometry.attributes.position.needsUpdate = true;
+  };
+  // role: "outer" (farther from the axis), "inner" (the wall of the hole), or "cap".
+  // In Glass the inner wall keeps most of its colour and the outer skin becomes a
+  // thin clear film outlined by bright grid lines, drawn last, so you look through
+  // the solid to the hole instead of seeing two tinted layers blend into one colour.
+  RevSurface.prototype.style = function (mode, role) {
+    this.mesh.visible = mode !== "wire";
+    var op, lines;
+    if (mode === "wire")       { op = 1;    lines = 0.85; }
+    else if (mode === "solid") { op = 1;    lines = 0.2; }
+    else if (role === "inner") { op = 0.66; lines = 0.3; }
+    else if (role === "outer") { op = 0.16; lines = 0.6; }
+    else                       { op = 0.3;  lines = 0.45; }
+    this.mat.opacity = op;
+    this.mat.transparent = op < 1;
+    this.mat.depthWrite = op >= 1;
+    this.mat.needsUpdate = true;
+    this.lmat.opacity = lines;
+    this.mesh.renderOrder = role === "outer" ? 3 : role === "cap" ? 2 : 1;
+    this.lines.renderOrder = this.mesh.renderOrder + 1;
+  };
+
+  var fS = new RevSurface(NS, GOLD_D, GOLD_E, GOLD_A, 8, 4, true);
+  var gS = new RevSurface(NS, GREEN_D, GREEN_E, GREEN_A, 8, 4, true);
+  var capA = new RevSurface(6, BLUE_D, BLUE_E, BLUE_A, 6, 4, false);
+  var capB = new RevSurface(6, BLUE_D, BLUE_E, BLUE_A, 6, 4, false);
+  var washS = new RevSurface(8, PINK, PINK_D, PINK_A, 1, NV, false);
+  washS.mat.opacity = 1; washS.mat.transparent = false; washS.mat.depthWrite = true;
+  washS.lmat.opacity = 0.55;
+
+  // ---------- scene graph ----------
+  var world = new THREE.Group(); scene.add(world);
+  var extras = new THREE.Group();      // axes, a/b markers, full graphs: hidden by "Only solid"
+  var always = new THREE.Group();      // the region's own face and edges, the axis of revolution
+  var surfGroup = new THREE.Group();   // the swept surfaces, measured from the axis
+  [fS, gS, capA, capB, washS].forEach(function (s) { surfGroup.add(s.group); });
+  var pivot = new THREE.Group(), pivotInner = new THREE.Group(), pivotBody = new THREE.Group();
+  pivot.add(pivotInner); pivotInner.add(pivotBody);    // the region carried round to angle theta
+  var wStrip0 = new THREE.Group(), wStripP = new THREE.Group();
+  pivotInner.add(wStripP);
+  world.add(extras); world.add(always); world.add(surfGroup); world.add(pivot); world.add(wStrip0);
+
+  function regionMesh(opacity) {
+    var N = 90, pos = [], lo = M.lo, hi = M.hi;
+    for (var i = 0; i < N; i++) {
+      var x0 = lo + (hi - lo) * i / N, x1 = lo + (hi - lo) * (i + 1) / N;
+      var f0 = val(S.f, x0), f1 = val(S.f, x1), g0 = val(S.g, x0), g1 = val(S.g, x1);
+      pos.push(x0, 0, f0, x1, 0, f1, x1, 0, g1, x0, 0, f0, x1, 0, g1, x0, 0, g0);
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+    return new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: BLUE_C, transparent: true,
+      opacity: opacity, side: THREE.DoubleSide, depthWrite: false }));
+  }
+  function regionEdges(parent, r, glow) {
+    var lo = M.lo, hi = M.hi;
+    sampleCurve(function (x) { return val(S.f, x); }, lo, hi, 140, -Infinity, Infinity)
+      .forEach(function (s) { tube(s, GOLD_C, r, parent, glow); });
+    sampleCurve(function (x) { return val(S.g, x); }, lo, hi, 140, -Infinity, Infinity)
+      .forEach(function (s) { tube(s, GREEN_C, r, parent, glow); });
+    tube([V(lo, 0, val(S.g, lo)), V(lo, 0, val(S.f, lo))], BLUE_C, r * 0.8, parent, false);
+    tube([V(hi, 0, val(S.g, hi)), V(hi, 0, val(S.f, hi))], BLUE_C, r * 0.8, parent, false);
+  }
+
+  function buildStatic() {
+    clearGroup(extras); clearGroup(always); clearGroup(pivotBody);
+    var E = M.E, lo = M.lo, hi = M.hi, k = S.k;
+    var rT = 0.0042 * E, LB = 0.052 * E;
+
+    // ---- axes, with manim-ish arrow tips; math z points toward the viewer ----
+    var axMat = new THREE.LineBasicMaterial({ color: GREY, transparent: true, opacity: 0.6 });
+    var tipMat = new THREE.MeshBasicMaterial({ color: GREY, transparent: true, opacity: 0.8 });
+    function axis(a, b, rot, label, lpos) {
+      extras.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), axMat.clone()));
+      var tip = new THREE.Mesh(new THREE.ConeGeometry(0.012 * E, 0.04 * E, 14), tipMat.clone());
+      tip.position.copy(b); tip.rotation.set(rot[0], rot[1], rot[2]);
+      extras.add(tip);
+      makeLabel(label, CSS.dim, LB, lpos, extras);
+    }
+    axis(V(M.X0, 0, 0), V(M.X1, 0, 0), [0, 0, -Math.PI / 2], "x", V(M.X1 + 0.045 * E, 0, 0));
+    axis(V(0, 0, M.Z0), V(0, 0, M.Z1), [Math.PI / 2, 0, 0], "y", V(0, 0, M.Z1 + 0.045 * E));
+    axis(V(0, M.Y1, 0), V(0, -M.Y1, 0), [0, 0, Math.PI], "z", V(0, -M.Y1 - 0.045 * E, 0));
+
+    var tk = [], t = 0.01 * E, st = niceStep(Math.max(M.X1 - M.X0, M.Z1 - M.Z0) / 12), v;
+    for (v = Math.ceil(M.X0 / st) * st; v < M.X1 - st * 0.3; v += st)
+      if (Math.abs(v) > st * 0.01) tk.push(V(v, 0, -t), V(v, 0, t));
+    for (v = Math.ceil(M.Z0 / st) * st; v < M.Z1 - st * 0.3; v += st)
+      if (Math.abs(v) > st * 0.01) tk.push(V(-t, 0, v), V(t, 0, v));
+    extras.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(tk), axMat.clone()));
+
+    // ---- the whole graphs, faint, as GeoGebra shows them ----
+    [[S.f, GOLD_C], [S.g, GREEN_C]].forEach(function (pair) {
+      sampleCurve(pair[0], M.X0, M.X1, 320, M.Z0, M.Z1).forEach(function (seg) {
+        extras.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(seg),
+          new THREE.LineBasicMaterial({ color: pair[1], transparent: true, opacity: 0.45 })));
+      });
+    });
+
+    // ---- the region in the xy-plane, where the sweep starts ----
+    always.add(regionMesh(0.30));
+    regionEdges(always, rT, true);
+
+    // ---- x = a and x = b, with their points on the x-axis ----
+    var redMat = new THREE.MeshBasicMaterial({ color: RED_C });
+    [[lo, "a"], [hi, "b"]].forEach(function (pr) {
+      dashed(V(pr[0], 0, M.Z0), V(pr[0], 0, M.Z1), RED_C, 0.5, 0.02 * E, extras);
+      var dot = new THREE.Mesh(new THREE.SphereGeometry(0.011 * E, 16, 16), redMat.clone());
+      dot.position.set(pr[0], 0, 0); extras.add(dot);
+      makeLabel(pr[1], CSS.red, LB * 0.9, V(pr[0] + 0.02 * E, 0, -0.045 * E), extras);
+    });
+
+    // ---- labels for f and g at the right end of the region ----
+    var mid = 0.5 * (lo + hi), up = val(S.f, mid) >= val(S.g, mid) ? 1 : -1;
+    makeLabel("f", CSS.gold, LB, V(hi + 0.04 * E, 0, val(S.f, hi) + up * 0.035 * E), extras);
+    makeLabel("g", CSS.green, LB, V(hi + 0.04 * E, 0, val(S.g, hi) - up * 0.035 * E), extras);
+
+    // ---- the axis of revolution, y = k ----
+    dashed(V(M.X0, 0, k), V(M.X1, 0, k), PURPLE_B, 0.95, 0.03 * E, always);
+    makeLabel([["y", true], [" = " + fx(k, 2), false]], CSS.purple, LB * 0.9,
+              V(M.X1 - 0.03 * E, 0, k + 0.045 * E), always);
+
+    // ---- the region carried round to angle theta: the leading face ----
+    pivotBody.add(regionMesh(0.42));
+    regionEdges(pivotBody, rT * 0.85, false);
+    pivot.position.set(0, 0, k);
+    pivotInner.position.set(0, 0, -k);
+  }
+
+  function setSurfaces() {
+    var lo = M.lo, hi = M.hi, k = S.k, xs = [], pf = [], pg = [], i;
+    for (i = 0; i <= NS; i++) {
+      var x = lo + (hi - lo) * i / NS;
+      xs.push(x); pf.push(val(S.f, x) - k); pg.push(val(S.g, x) - k);
+    }
+    fS.setProfile(xs, pf); gS.setProfile(xs, pg);
+    // whichever curve lies farther from the axis over most of [a, b] is the outer skin
+    var sf = 0, sg = 0;
+    for (i = 0; i <= NS; i++) { sf += Math.abs(pf[i]); sg += Math.abs(pg[i]); }
+    S.outer = sf >= sg ? "f" : "g";
+    [[capA, lo], [capB, hi]].forEach(function (pr) {
+      var x = pr[1], p = val(S.f, x) - k, q = val(S.g, x) - k, X = [], P = [];
+      for (var j = 0; j <= 6; j++) { X.push(x); P.push(q + (p - q) * j / 6); }
+      pr[0].setProfile(X, P);
+    });
+    surfGroup.position.set(0, 0, k);
+  }
+
+  // The washer at x = c: a thin slab, so it reads as a washer and not a sheet.
+  function buildWasher() {
+    clearGroup(wStrip0); clearGroup(wStripP);
+    var c = S.c, k = S.k, h = 0.0055 * M.E;
+    var p = val(S.f, c) - k, q = val(S.g, c) - k, X = [], P = [], j;
+    for (j = 0; j <= 3; j++) { X.push(c - h); P.push(q + (p - q) * j / 3); }
+    X.push(c + h); P.push(p);
+    for (j = 1; j <= 3; j++) { X.push(c + h); P.push(p + (q - p) * j / 3); }
+    X.push(c - h); P.push(q);
+    washS.setProfile(X, P);
+    washS.update(S.theta);
+    [wStrip0, wStripP].forEach(function (gr) {
+      var geo = new THREE.PlaneGeometry(2 * h, Math.max(Math.abs(p - q), 1e-6));
+      var m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: PINK, side: THREE.DoubleSide }));
+      m.rotation.x = Math.PI / 2;
+      m.position.set(c, 0.0005 * M.E, k + 0.5 * (p + q));
+      gr.add(m);
+    });
+  }
+
+  function setTheta(t) {
+    S.theta = Math.max(0, Math.min(TAU, t));
+    [fS, gS, capA, capB, washS].forEach(function (s) { s.update(S.theta); });
+    pivot.rotation.x = -S.theta;
+    pivot.visible = S.theta > 1e-4;
+    var deg = Math.round(S.theta * 180 / Math.PI);
+    thetaSlider.value = String(deg);
+    document.getElementById("thetaVal").textContent = deg + "°";
+  }
+
+  function applyStyle() {
+    fS.style(S.mode, S.outer === "f" ? "outer" : "inner");
+    gS.style(S.mode, S.outer === "g" ? "outer" : "inner");
+    capA.style(S.mode, "cap");
+    capB.style(S.mode, "cap");
+    extras.visible = !S.only;
+    washS.group.visible = wStrip0.visible = wStripP.visible = S.washer;
+  }
+
+  function fitScene() {
+    var pts = [], E = M.E;
+    [M.lo, M.hi].forEach(function (x) {
+      for (var i = 0; i < 16; i++) {
+        var v = TAU * i / 16;
+        pts.push(V(x, M.R * Math.sin(v), S.k + M.R * Math.cos(v)));
+      }
+    });
+    pts.push(V(M.X0, 0, 0), V(M.X1 + 0.07 * E, 0, 0), V(0, 0, M.Z0), V(0, 0, M.Z1 + 0.07 * E),
+             V(0, M.Y1, 0), V(0, -M.Y1 - 0.07 * E, 0));
+    var box = new THREE.Box3();
+    pts.forEach(function (p) { box.expandByPoint(p); });
+    box.getCenter(CENTER);
+    CLOUD = pts.map(function (p) { return p.clone().sub(CENTER); });
+  }
+
+  // ======================================================================
+  // The 2D profile inset: GeoGebra's graphics view, with draggable a, b,
+  // washer position, and axis.
+  // ======================================================================
+  var ictx = insetCv.getContext("2d"), IW = null, roots = [], PAD = 8;
+
+  function insetWindow() {
+    var x0 = Math.min(M.lo, 0), x1 = Math.max(M.hi, 0), sx = Math.max(x1 - x0, 0.5);
+    var y0 = Math.min(0, S.k, M.ymin), y1 = Math.max(0, S.k, M.ymax), sy = Math.max(y1 - y0, 0.5);
+    return { x0: x0 - 0.16 * sx - 0.1, x1: x1 + 0.16 * sx + 0.1, y0: y0 - 0.14 * sy - 0.1, y1: y1 + 0.16 * sy + 0.1 };
+  }
+  function win() { return IW || insetWindow(); }
+  function cw() { return insetCv.clientWidth; }
+  function chh() { return insetCv.clientHeight; }
+  function X2(x) { var W = win(); return PAD + (x - W.x0) / (W.x1 - W.x0) * (cw() - 2 * PAD); }
+  function Y2(y) { var W = win(); return chh() - PAD - (y - W.y0) / (W.y1 - W.y0) * (chh() - 2 * PAD); }
+  function invX(px) { var W = win(); return W.x0 + (px - PAD) / (cw() - 2 * PAD) * (W.x1 - W.x0); }
+  function invY(py) { var W = win(); return W.y0 + (chh() - PAD - py) / (chh() - 2 * PAD) * (W.y1 - W.y0); }
+
+  function findRoots() {
+    var W = win(), N = 400, out = [], prev = null, px = null;
+    function d(x) { return S.f(x) - S.g(x); }
+    for (var i = 0; i <= N; i++) {
+      var x = W.x0 + (W.x1 - W.x0) * i / N, y = d(x);
+      if (!isFinite(y)) { prev = null; continue; }
+      if (y === 0) out.push(x);
+      else if (prev !== null && prev * y < 0) {
+        var a = px, b = x;
+        for (var it = 0; it < 50; it++) { var m = 0.5 * (a + b); if (d(a) * d(m) <= 0) b = m; else a = m; }
+        out.push(0.5 * (a + b));
+      }
+      prev = y; px = x;
+    }
+    roots = out;
+  }
+
+  function drawInset() {
+    var w = cw(), h = chh(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    if (!w || !h) return;
+    if (insetCv.width !== Math.round(w * dpr) || insetCv.height !== Math.round(h * dpr)) {
+      insetCv.width = Math.round(w * dpr); insetCv.height = Math.round(h * dpr);
+    }
+    var g = ictx, W = win();
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, w, h);
+
+    // grid and axes
+    var st = niceStep(Math.max(W.x1 - W.x0, W.y1 - W.y0) / 7), v;
+    g.lineWidth = 1; g.strokeStyle = "rgba(88,196,221,0.09)";
+    g.beginPath();
+    for (v = Math.ceil(W.x0 / st) * st; v <= W.x1; v += st) { g.moveTo(X2(v), 0); g.lineTo(X2(v), h); }
+    for (v = Math.ceil(W.y0 / st) * st; v <= W.y1; v += st) { g.moveTo(0, Y2(v)); g.lineTo(w, Y2(v)); }
+    g.stroke();
+    g.strokeStyle = "rgba(138,143,156,0.85)";
+    g.beginPath(); g.moveTo(0, Y2(0)); g.lineTo(w, Y2(0)); g.moveTo(X2(0), 0); g.lineTo(X2(0), h); g.stroke();
+    g.fillStyle = CSS.dim; g.font = "10px " + getComputedStyle(document.body).fontFamily;
+    g.textAlign = "center"; g.textBaseline = "top";
+    for (v = Math.ceil(W.x0 / st) * st; v <= W.x1; v += st)
+      if (Math.abs(v) > st * 0.01 && X2(v) > 10 && X2(v) < w - 10 &&
+          Math.abs(X2(v) - X2(S.a)) > 14 && Math.abs(X2(v) - X2(S.b)) > 14)
+        g.fillText(fmt(v, 3), X2(v), Y2(0) + 3);
+    g.textAlign = "right"; g.textBaseline = "middle";
+    for (v = Math.ceil(W.y0 / st) * st; v <= W.y1; v += st)
+      if (Math.abs(v) > st * 0.01 && Y2(v) > 8 && Y2(v) < h - 8) g.fillText(fmt(v, 3), X2(0) - 4, Y2(v));
+
+    // the region
+    var lo = M.lo, hi = M.hi, N = 120, i, x;
+    g.beginPath();
+    for (i = 0; i <= N; i++) { x = lo + (hi - lo) * i / N; g[i ? "lineTo" : "moveTo"](X2(x), Y2(val(S.f, x))); }
+    for (i = N; i >= 0; i--) { x = lo + (hi - lo) * i / N; g.lineTo(X2(x), Y2(val(S.g, x))); }
+    g.closePath(); g.fillStyle = "rgba(88,196,221,0.30)"; g.fill();
+
+    // x = a and x = b
+    g.setLineDash([4, 3]); g.lineWidth = 1; g.strokeStyle = "rgba(252,98,85,0.6)";
+    g.beginPath(); g.moveTo(X2(lo), 0); g.lineTo(X2(lo), h); g.moveTo(X2(hi), 0); g.lineTo(X2(hi), h); g.stroke();
+    // the axis of revolution
+    g.setLineDash([7, 4]); g.lineWidth = 1.6; g.strokeStyle = CSS.purple;
+    g.beginPath(); g.moveTo(0, Y2(S.k)); g.lineTo(w, Y2(S.k)); g.stroke();
+    g.setLineDash([]);
+
+    // the graphs
+    [[S.f, CSS.gold], [S.g, CSS.green]].forEach(function (pr) {
+      g.strokeStyle = pr[1]; g.lineWidth = 2; g.beginPath();
+      var pen = false;
+      for (var j = 0; j <= 260; j++) {
+        var xx = W.x0 + (W.x1 - W.x0) * j / 260, yy = pr[0](xx), py = Y2(yy);
+        if (!isFinite(yy) || py < -h || py > 2 * h) { pen = false; continue; }
+        if (pen) g.lineTo(X2(xx), py); else { g.moveTo(X2(xx), py); pen = true; }
+      }
+      g.stroke();
+    });
+
+    // the washer's strip
+    if (S.washer) {
+      var yf = Y2(val(S.f, S.c)), yg = Y2(val(S.g, S.c)), xc = X2(S.c);
+      g.fillStyle = CSS.pink;
+      g.fillRect(xc - 2, Math.min(yf, yg), 4, Math.max(1, Math.abs(yf - yg)));
+      g.beginPath(); g.arc(xc, 0.5 * (yf + yg), 4.5, 0, TAU); g.fill();
+    }
+
+    // handles
+    var serif = '"PT Serif", "Times New Roman", Times, serif';
+    g.fillStyle = CSS.red;
+    [[S.a, "a"], [S.b, "b"]].forEach(function (pr) {
+      g.beginPath(); g.arc(X2(pr[0]), Y2(0), 5.5, 0, TAU); g.fill();
+      g.font = "italic 13px " + serif; g.textAlign = "center"; g.textBaseline = "top";
+      g.fillText(pr[1], X2(pr[0]) + 8, Y2(0) + 5);
+    });
+    g.fillStyle = CSS.purple;
+    g.beginPath(); g.arc(PAD + 6, Y2(S.k), 4.5, 0, TAU); g.fill();
+    g.font = "italic 13px " + serif; g.textAlign = "right"; g.textBaseline = "bottom";
+    g.fillText("y = " + fx(S.k, 2), w - 6, Y2(S.k) - 3);
+  }
+
+  function pick(px, py) {
+    if (Math.hypot(px - X2(S.a), py - Y2(0)) <= 12) return "a";
+    if (Math.hypot(px - X2(S.b), py - Y2(0)) <= 12) return "b";
+    if (S.washer) {
+      var yf = Y2(val(S.f, S.c)), yg = Y2(val(S.g, S.c));
+      if (Math.abs(px - X2(S.c)) <= 9 && py >= Math.min(yf, yg) - 9 && py <= Math.max(yf, yg) + 9) return "c";
+    }
+    if (Math.abs(py - Y2(S.k)) <= 8) return "k";
+    return null;
+  }
+  function snapX(px) {
+    for (var i = 0; i < roots.length; i++) if (Math.abs(X2(roots[i]) - px) <= 8) return roots[i];
+    var x = invX(px), n = Math.round(x);
+    if (Math.abs(X2(n) - px) <= 5) return n;
+    return Math.round(x * 100) / 100;
+  }
+
+  var drag = null;
+  insetCv.addEventListener("pointerdown", function (e) {
+    var r = insetCv.getBoundingClientRect(), what = pick(e.clientX - r.left, e.clientY - r.top);
+    if (!what) return;
+    findRoots();
+    IW = insetWindow();          // freeze the window, so the handle stays under the pointer
+    drag = what;
+    insetCv.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  insetCv.addEventListener("pointermove", function (e) {
+    var r = insetCv.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top;
+    if (!drag) {
+      var h = pick(px, py);
+      insetCv.style.cursor = h === "k" ? "ns-resize" : h ? "ew-resize" : "default";
+      return;
+    }
+    var W = win(), gap = 0.02 * (W.x1 - W.x0);
+    if (drag === "a") { S.a = Math.min(snapX(px), S.b - gap); syncAB(); scheduleRebuild(); }
+    else if (drag === "b") { S.b = Math.max(snapX(px), S.a + gap); syncAB(); scheduleRebuild(); }
+    else if (drag === "c") { setC(invX(px)); }
+    else if (drag === "k") {
+      var k = Math.max(-5, Math.min(5, Math.round(invY(py) * 2) / 2));
+      if (k !== S.k) { S.k = k; kSlider.value = String(k); scheduleRebuild(); }
+    }
+  });
+  function endDrag() { if (!drag) return; drag = null; IW = null; scheduleRebuild(); }
+  insetCv.addEventListener("pointerup", endDrag);
+  insetCv.addEventListener("pointercancel", endDrag);
+
+  // ======================================================================
+  // Readouts
+  // ======================================================================
+  function paintReadouts() {
+    document.getElementById("fPretty").innerHTML = pretty(S.fSrc);
+    document.getElementById("gPretty").innerHTML = pretty(S.gSrc);
+    document.getElementById("rangeLine").innerHTML =
+      "from <b>" + fmt(M.lo, 4) + "</b> to <b>" + fmt(M.hi, 4) + "</b>, revolved about " +
+      '<span class="lp"><i>y</i> = ' + fx(S.k, 2) + "</span>";
+    var Vp = volumeOverPi();
+    document.getElementById("volLine").innerHTML =
+      '<i>V</i> = π<span class="int"><span class="sign">∫</span><span class="lims"><span>' +
+      fmt(M.hi, 3) + "</span><span>" + fmt(M.lo, 3) + "</span></span></span>(<i>R</i>² − <i>r</i>²) <i>dx</i>" +
+      ' <span class="v">≈ ' + fmt(Vp, 4) + "π ≈ " + fmt(Vp * Math.PI, 4) + "</span>";
+    document.getElementById("cutNote").hidden = !M.cuts;
+    paintWasher();
+  }
+  function paintWasher() {
+    document.getElementById("cVal").textContent = fx(S.c, 3);
+  }
+  function showErrs() {
+    var msg = [errs.f, errs.g].filter(Boolean);
+    if (M && M.bad) msg.push("f or g is undefined somewhere on [a, b]; those points are drawn on the axis.");
+    var el = document.getElementById("msg");
+    el.textContent = msg.join(" ");
+    el.hidden = msg.length === 0;
+  }
+
+  // ======================================================================
+  // Rebuild, sizing, render loop
+  // ======================================================================
+  function rebuild() {
+    M = measure();
+    if (S.c <= M.lo || S.c >= M.hi) S.c = M.lo + 0.56 * (M.hi - M.lo);
+    cSlider.min = String(M.lo); cSlider.max = String(M.hi);
+    cSlider.step = String(Math.max((M.hi - M.lo) / 400, 1e-4));
+    cSlider.value = String(S.c);
+    document.getElementById("kVal").textContent = fx(S.k, 2);
+    buildStatic();
+    setSurfaces();
+    buildWasher();
+    setTheta(S.theta);
+    applyStyle();
+    fitScene();
+    findRoots();
+    paintReadouts();
+    showErrs();
+    resize();
+  }
+
+  function setC(x) {
+    S.c = Math.max(M.lo + 1e-3 * (M.hi - M.lo), Math.min(M.hi - 1e-3 * (M.hi - M.lo), x));
+    cSlider.value = String(S.c);
+    buildWasher();
+    applyStyle();
+    paintWasher();
+    drawInset();
+    requestRender();
+  }
+
+  // The canvas is exactly the free area left of the profile, with nothing
+  // drawn over it, so the solid is framed to fill all of it.
+  function resize() {
+    var w = Math.max(60, glWrap.clientWidth), h = Math.max(60, glWrap.clientHeight);
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    aspect = camera.aspect;
+    band = 1;
+    aimShift = 0;
+    drawInset();
+    requestRender();
+  }
+  window.addEventListener("resize", resize);
+  if (window.ResizeObserver) new ResizeObserver(function () { resize(); }).observe(glWrap);
+
+  var rafId = null, lastT = 0, needsRender = false, pendingRebuild = false;
+  var spinning = false, sweep = null, camTween = null;
+  function smooth(t) { return t * t * t * (t * (t * 6 - 15) + 10); }   // manim's rate function
+
+  function ensureLoop() { if (rafId === null) { lastT = 0; rafId = requestAnimationFrame(frame); } }
+  function requestRender() { needsRender = true; ensureLoop(); }
+  function scheduleRebuild() { pendingRebuild = true; ensureLoop(); }
+
+  function frame(now) {
+    rafId = requestAnimationFrame(frame);
+    var dt = lastT ? Math.min(0.05, (now - lastT) / 1000) : 0;
+    lastT = now;
+    var dirty = needsRender; needsRender = false;
+    if (pendingRebuild) { pendingRebuild = false; rebuild(); dirty = true; }
+    if (spinning) { camTheta += 0.22 * dt; dirty = true; }
+    if (camTween) {
+      camTween.t += dt;
+      var u = smooth(Math.min(1, camTween.t / camTween.dur));
+      camTheta = camTween.th0 + (camTween.th1 - camTween.th0) * u;
+      camPhi = camTween.ph0 + (camTween.ph1 - camTween.ph0) * u;
+      if (camTween.t >= camTween.dur) camTween = null;
+      dirty = true;
+    }
+    if (sweep) {
+      sweep.t += dt;
+      setTheta(TAU * smooth(Math.min(1, sweep.t / sweep.dur)));
+      if (sweep.t >= sweep.dur) { sweep = null; btnRevolve.classList.remove("running"); }
+      dirty = true;
+    }
+    if (dirty) { placeCamera(); renderer.render(scene, camera); }
+    if (!spinning && !camTween && !sweep && !pendingRebuild && !needsRender) {
+      cancelAnimationFrame(rafId); rafId = null; lastT = 0;
+    }
+  }
+
+
+  // ======================================================================
+  // Controls
+  // ======================================================================
+  var thetaSlider = document.getElementById("thetaSlider"),
+      kSlider = document.getElementById("kSlider"),
+      cSlider = document.getElementById("cSlider"),
+      inpF = document.getElementById("inpF"), inpG = document.getElementById("inpG"),
+      inpA = document.getElementById("inpA"), inpB = document.getElementById("inpB"),
+      btnRevolve = document.getElementById("btnRevolve"),
+      btnSpin = document.getElementById("btnSpin");
+
+  function syncAB() { inpA.value = String(+S.a.toFixed(4)); inpB.value = String(+S.b.toFixed(4)); }
+
+  var timers = {};
+  function tryFunc(which, el) {
+    try {
+      var fn = parse(el.value);
+      S[which] = fn; S[which + "Src"] = el.value; errs[which] = null;
+      el.classList.remove("bad");
+      scheduleRebuild();
+    } catch (err) {
+      errs[which] = which + "(x): " + err.message + ".";
+      el.classList.add("bad");
+    }
+    showErrs();
+  }
+  [[inpF, "f"], [inpG, "g"]].forEach(function (pr) {
+    pr[0].addEventListener("input", function () {
+      clearTimeout(timers[pr[1]]);
+      timers[pr[1]] = setTimeout(function () { tryFunc(pr[1], pr[0]); }, 280);
+    });
+    pr[0].addEventListener("change", function () { clearTimeout(timers[pr[1]]); tryFunc(pr[1], pr[0]); });
+  });
+  [[inpA, "a"], [inpB, "b"]].forEach(function (pr) {
+    pr[0].addEventListener("change", function () {
+      var v = parseFloat(pr[0].value);
+      if (!isFinite(v)) { syncAB(); return; }
+      S[pr[1]] = v;
+      if (S.a > S.b) { var t = S.a; S.a = S.b; S.b = t; }
+      if (S.b - S.a < 1e-3) S.b = S.a + 0.1;
+      syncAB();
+      scheduleRebuild();
+    });
+  });
+
+  thetaSlider.addEventListener("input", function () {
+    sweep = null; btnRevolve.classList.remove("running");
+    setTheta(parseFloat(thetaSlider.value) * Math.PI / 180);
+    requestRender();
+  });
+  kSlider.addEventListener("input", function () { S.k = parseFloat(kSlider.value); scheduleRebuild(); });
+  cSlider.addEventListener("input", function () { setC(parseFloat(cSlider.value)); });
+
+  btnRevolve.addEventListener("click", function () {
+    sweep = { t: 0, dur: REDUCED ? 1.2 : 4.5 };
+    setTheta(0);
+    btnRevolve.classList.add("running");
+    ensureLoop();
+  });
+  document.getElementById("btnStop").addEventListener("click", function () {
+    sweep = null; spinning = false;
+    btnRevolve.classList.remove("running"); btnSpin.classList.remove("active");
+    requestRender();
+  });
+  btnSpin.addEventListener("click", function () {
+    spinning = !spinning;
+    btnSpin.classList.toggle("active", spinning);
+    if (spinning) { camTween = null; ensureLoop(); }
+  });
+  function flyTo(th, ph) {
+    spinning = false; btnSpin.classList.remove("active");
+    var d = ((th - camTheta) % TAU + 3 * Math.PI) % TAU - Math.PI;    // the short way round
+    camTween = { t: 0, dur: REDUCED ? 0.01 : 0.9, th0: camTheta, th1: camTheta + d, ph0: camPhi, ph1: ph };
+    ensureLoop();
+  }
+  document.getElementById("btnReset").addEventListener("click", function () { flyTo(TH0, PH0); });
+  // GeoGebra's "Reset View": look straight at the xy-plane, across the axis
+  document.getElementById("btnSide").addEventListener("click", function () { flyTo(-Math.PI / 2, Math.PI / 2); });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (b) {
+    b.addEventListener("click", function () {
+      S.mode = b.getAttribute("data-mode");
+      Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (o) {
+        o.setAttribute("aria-pressed", String(o === b));
+      });
+      applyStyle(); requestRender();
+    });
+  });
+  document.getElementById("chkWasher").addEventListener("change", function (e) {
+    S.washer = e.target.checked; applyStyle(); drawInset(); resize();
+  });
+  document.getElementById("chkOnly").addEventListener("change", function (e) {
+    S.only = e.target.checked; applyStyle(); requestRender();
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-ex]"), function (b) {
+    b.addEventListener("click", function () {
+      var ex = EXAMPLES[+b.getAttribute("data-ex")];
+      inpF.value = ex.f; inpG.value = ex.g;
+      S.fSrc = ex.f; S.gSrc = ex.g; S.f = parse(ex.f); S.g = parse(ex.g);
+      errs.f = errs.g = null; inpF.classList.remove("bad"); inpG.classList.remove("bad");
+      S.a = ex.a; S.b = ex.b; S.k = ex.k; S.c = ex.c;
+      syncAB(); kSlider.value = String(ex.k);
+      sweep = null; btnRevolve.classList.remove("running");
+      S.theta = 1.5 * Math.PI;
+      rebuild();
+    });
+  });
+
+  // ---------- drag to orbit ----------
+  var orbit = null;
+  gl.addEventListener("pointerdown", function (e) {
+    orbit = { x: e.clientX, y: e.clientY };
+    camTween = null;
+    gl.setPointerCapture(e.pointerId);
+  });
+  gl.addEventListener("pointermove", function (e) {
+    if (!orbit) return;
+    camTheta -= (e.clientX - orbit.x) * 0.008;
+    camPhi = Math.min(Math.PI - 0.05, Math.max(0.05, camPhi - (e.clientY - orbit.y) * 0.008));
+    orbit.x = e.clientX; orbit.y = e.clientY;
+    requestRender();
+  });
+  gl.addEventListener("pointerup", function () { orbit = null; });
+  gl.addEventListener("pointercancel", function () { orbit = null; });
+
+  // ---------- go ----------
+  rebuild();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      LABELS.forEach(paintLabel);
+      resize();
+    });
+  }
+})();
+</script>
+</body>
+</html>
